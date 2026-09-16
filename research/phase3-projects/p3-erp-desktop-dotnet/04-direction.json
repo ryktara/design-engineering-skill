@@ -1,0 +1,96 @@
+{
+  "brand": "Purchase order lines grid for our WPF ERP client; clerks enter 200 lines a day with the keyboard",
+  "fingerprint": {
+    "navigation_model": "command-palette",
+    "layout_topology": "table-first",
+    "grid_behavior": "virtualized",
+    "content_density": "high",
+    "surface_strategy": "bordered",
+    "card_geometry": "list-row",
+    "corner_language": "sharp",
+    "typography_character": "neutral-sans",
+    "color_strategy": "neutral-plus-accent",
+    "motion_character": "functional-minimal",
+    "focus_strategy": "ring",
+    "cta_strategy": "toolbar-commands",
+    "image_strategy": "none",
+    "icon_strategy": "outline",
+    "metadata_density": "rich"
+  },
+  "direction": {
+    "navigation": "nav-command-palette",
+    "layout": "layout-table-first",
+    "density": "density-high",
+    "surface": "surface-bordered-panes",
+    "cards": "card-list-row",
+    "typography": "typography-neutral-sans",
+    "color": "color-neutral-accent",
+    "motion": "motion-functional-minimal",
+    "focus": "focus-ring-standard",
+    "cta": "cta-toolbar-commands",
+    "imagery": "imagery-none",
+    "icon": "icon-outline-system",
+    "metadata": "metadata-rich"
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "desktop"
+    ],
+    "input": [
+      "keyboard",
+      "pointer"
+    ],
+    "product": [
+      "erp"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "wpf"
+    ],
+    "density": "high",
+    "components": [],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "create"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "known": [
+      "platform=desktop",
+      "input=keyboard",
+      "product=erp",
+      "stack=wpf"
+    ],
+    "inferred": [
+      "input=pointer",
+      "density=high",
+      "mode=create"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "AMBIGUOUS"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

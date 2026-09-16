@@ -1,0 +1,661 @@
+{
+  "schema": "guidance-bundle/v1",
+  "query": "Android TV live sports app home with rails, EPG entry and a mini player for the family TV, Compose",
+  "status": "AMBIGUOUS",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "tv"
+    ],
+    "input": [
+      "remote"
+    ],
+    "product": [
+      "media"
+    ],
+    "screen": [
+      "home",
+      "list",
+      "player"
+    ],
+    "screen_subtype": [
+      "epg",
+      "rails"
+    ],
+    "stack": [
+      "compose",
+      "compose-tv"
+    ],
+    "density": "medium",
+    "components": [
+      "media"
+    ],
+    "environment": [
+      "large-display",
+      "shared-device"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "create home",
+      "create list",
+      "create player"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "known": [
+      "platform=tv (request: tv, android tv, epg, rails)",
+      "input=remote (project inspection: DPAD/remote handling in source)",
+      "product=media (request: player, epg)",
+      "stack=compose (request: compose)",
+      "stack=compose-tv (project inspection)",
+      "screen=home (request: home)",
+      "screen=list (request: epg)",
+      "screen=player (request: player)"
+    ],
+    "inferred": [
+      "density=medium (implied by product media)",
+      "mode=create (default when no mode word is present)",
+      "environment=shared-device (a TV is normally a shared household device)",
+      "environment=large-display (TV platform)"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "conflicts": [
+      {
+        "field": "platform",
+        "request": [
+          "tv"
+        ],
+        "project": "mobile",
+        "resolution": "request kept; repository platform recorded as context"
+      }
+    ],
+    "status": "AMBIGUOUS",
+    "source": {
+      "request": [
+        "compose",
+        "epg",
+        "home",
+        "player",
+        "player, epg",
+        "tv, android tv, epg, rails"
+      ],
+      "project": [
+        "app\\build.gradle.kts: androidx.compose",
+        "app\\build.gradle.kts: androidx.tv:tv-material",
+        "app\\build.gradle.kts: androidx.media3",
+        "app\\build.gradle.kts: coil",
+        "app\\src\\main\\AndroidManifest.xml: leanback launcher (Android TV)",
+        "touchscreen not required in manifest (TV/set-top)",
+        "DPAD / remote key handling found in source",
+        "both mobile and TV Android targets; check product flavors before assuming one UI"
+      ]
+    },
+    "activation": {
+      "decision": "activate",
+      "ui_score": 3.0,
+      "non_ui_score": 0,
+      "ui_terms": [
+        "epg"
+      ],
+      "non_ui_terms": []
+    }
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "component",
+        "reason": "a specific component/screen is requested"
+      },
+      {
+        "concern": "structure",
+        "reason": "layout topology and hierarchy"
+      },
+      {
+        "concern": "navigation",
+        "reason": "entry screen or navigation component"
+      },
+      {
+        "concern": "states",
+        "reason": "every screen ships empty/loading/error states"
+      },
+      {
+        "concern": "interaction",
+        "reason": "input model: remote"
+      },
+      {
+        "concern": "accessibility",
+        "reason": "platform accessibility baseline"
+      },
+      {
+        "concern": "performance",
+        "reason": "focus latency and catalog virtualization on TV"
+      },
+      {
+        "concern": "data-display",
+        "reason": "numbers, tables or charts are the content"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "anti-pattern",
+        "reason": "create/refactor requests attract generic defaults"
+      },
+      {
+        "concern": "brand",
+        "reason": "visual identity direction"
+      },
+      {
+        "concern": "content",
+        "reason": "10-foot readability"
+      },
+      {
+        "concern": "environment",
+        "reason": "environment large-display (INFERRED)"
+      }
+    ],
+    "optional": [
+      "motion"
+    ],
+    "required_concepts": [
+      {
+        "concept": "state.loading_empty_error",
+        "reason": "screen states"
+      },
+      {
+        "concept": "interaction.dpad_reachability",
+        "reason": "remote input"
+      },
+      {
+        "concept": "interaction.focus_restore",
+        "reason": "remote input"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "remote input"
+      },
+      {
+        "concept": "tv.ten_foot_typography",
+        "reason": "tv"
+      },
+      {
+        "concept": "tv.safe_margins",
+        "reason": "tv"
+      },
+      {
+        "concept": "tv.player_autohide",
+        "reason": "player controls"
+      },
+      {
+        "concept": "interaction.back_semantics",
+        "reason": "player on remote"
+      },
+      {
+        "concept": "tv.epg_pinned_channels",
+        "reason": "screen subtype epg"
+      },
+      {
+        "concept": "table.virtualization",
+        "reason": "screen subtype epg"
+      }
+    ],
+    "recommended_concepts": [
+      "tv.no_touch_hover",
+      "perf.focus_latency",
+      "tv.dark_first",
+      "privacy.shared_device"
+    ]
+  },
+  "core": [
+    {
+      "id": "comp-player-controls",
+      "kind": "component",
+      "category": "player",
+      "title": "Player transport controls",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "interaction",
+        "structure"
+      ],
+      "concepts": [
+        "tv.player_autohide"
+      ],
+      "score": 0.696,
+      "guidance": "Play/pause, seek slider with time readout and keyboard/remote stepping, skip ±10 s, next/previous where relevant, captions and audio track selectors, quality only if user-facing, live indicator and go-to-live for live streams, volume on web/desktop only (TV uses the remote), controls overlay auto-hides except while focused/hovered; every control labelled; captions styling respects system preferences.",
+      "use_when": "Video/audio playback surfaces.",
+      "avoid_when": "Never custom-build when the platform control set already meets the need and the brand allows it.",
+      "risk": {
+        "a11y": "high",
+        "perf": "medium"
+      },
+      "provenance": "platform-standard",
+      "implementation": {
+        "compose-tv": "Media3 with a Compose overlay; KEYCODE handling for media keys; focusRequester on play/pause."
+      },
+      "why": {
+        "lexical": 0.512,
+        "structural": 0.92,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode create",
+          "product media",
+          "screen player"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "dir-broadcast-guide-tv",
+      "kind": "direction",
+      "category": "direction",
+      "title": "Broadcast guide (TV)",
+      "facets": [
+        "direction",
+        "platform"
+      ],
+      "concerns": [
+        "brand",
+        "structure"
+      ],
+      "concepts": [],
+      "score": 0.672,
+      "guidance": "Top tabs (Live, Guide, Catch-up, Search), a fast EPG grid with a now-line and channel logos, landscape channel cards with live badges, condensed titles with tabular times, flat tonal surfaces so text stays legible over 200 channels, focus border + scale (no glow needed), mini-player while browsing. Identity via the guide's colour coding of genres and the channel-card treatment.",
+      "use_when": "Live-TV-first products: many channels, EPG, catch-up, sports; users switch fast and read schedules.",
+      "avoid_when": "On-demand-first catalogues with rich art (use 'Cinematic media').",
+      "risk": {
+        "a11y": "high",
+        "perf": "high"
+      },
+      "provenance": "internal-preference",
+      "incompatible": [
+        "layout-immersive-rails",
+        "surface-imagery-backed",
+        "surface-glass",
+        "nav-left-rail"
+      ],
+      "why": {
+        "lexical": 0.535,
+        "structural": 0.84,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode create",
+          "product media"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring direction with lexical evidence"
+    },
+    {
+      "id": "comp-epg",
+      "kind": "component",
+      "category": "epg",
+      "title": "EPG / programme guide",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "data-display",
+        "navigation",
+        "structure"
+      ],
+      "concepts": [
+        "tv.epg_pinned_channels",
+        "table.virtualization",
+        "interaction.dpad_reachability"
+      ],
+      "score": 0.554,
+      "guidance": "See the EPG grid pattern for structure; component specifics: cell shows title + time with ellipsis, minimum cell width so 5-minute programmes stay focusable (with a time label on focus), current programme highlighted and the 'now' line updates every minute, channel column sticky with logo + number, day picker above the grid, focus moves by programme not by pixel, long press or a key opens programme detail with record/remind actions, jump-to-now shortcut, mini preview of the focused channel optional.",
+      "use_when": "Live TV with many channels.",
+      "avoid_when": "On-demand only catalogues; phones in portrait (use a per-channel list).",
+      "risk": {
+        "a11y": "high",
+        "perf": "high"
+      },
+      "provenance": "heuristic",
+      "implementation": {
+        "compose-tv": "Custom LazyLayout or LazyRow-of-LazyColumn sharing horizontal scroll; measure cells from time deltas; use Modifier.focusProperties to override up/down to the same time slot."
+      },
+      "incompatible": [
+        "layout-immersive-rails"
+      ],
+      "why": {
+        "lexical": 0.255,
+        "structural": 0.92,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode create",
+          "product media",
+          "screen home,list"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "anti-no-states",
+      "kind": "antipattern",
+      "category": "craft",
+      "title": "Only the happy state was designed",
+      "facets": [
+        "anti-pattern"
+      ],
+      "concerns": [
+        "anti-pattern",
+        "states"
+      ],
+      "concepts": [
+        "state.loading_empty_error"
+      ],
+      "score": 0.261,
+      "guidance": "Enumerate states per screen and per interactive component before implementation and verify each visually; test with long strings, zero items, 10k items, and slow networks.",
+      "use_when": "Screens with no empty, loading, error, offline, partial, or long-text states; buttons with no pressed/disabled/loading states; TV cards with no focused state.",
+      "avoid_when": "Never.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.58,
+        "matched": [
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required concern states: every screen ships empty/loading/error states"
+    },
+    {
+      "id": "a11y-tv-focus-always",
+      "kind": "rule",
+      "category": "focus",
+      "title": "TV: exactly one visible focus at all times",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.focus_restore",
+        "interaction.focus_visible"
+      ],
+      "score": 0.378,
+      "guidance": "Set initial focus deterministically (first actionable content or Play on detail), restore focus to the previously focused item when returning, keep focus on screen (scroll into view), move focus to a sensible neighbour when the focused item is removed, and never rely on colour tint alone for the focused state.",
+      "use_when": "Every TV screen, after every navigation, after data loads, after dialogs close, after list updates.",
+      "avoid_when": "Never leave focus on a hidden or off-screen element; never let focus disappear after a list refresh.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.84,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required concern accessibility: platform accessibility baseline"
+    },
+    {
+      "id": "tv-focus-performance",
+      "kind": "rule",
+      "category": "performance",
+      "title": "TV: focus response and list performance",
+      "facets": [
+        "performance",
+        "platform"
+      ],
+      "concerns": [
+        "interaction",
+        "performance"
+      ],
+      "concepts": [
+        "perf.focus_latency",
+        "table.virtualization",
+        "perf.image_sizing"
+      ],
+      "score": 0.378,
+      "guidance": "Focus moves must render within one frame (≤16 ms at 60 Hz) even while images load; key events are never dropped or coalesced into jumps; images sized to card, cached, and loaded with placeholders; rows virtualised vertically and horizontally; heavy backdrops debounced; test on the cheapest target device (e.g. 1–2 GB RAM set-top boxes), not the emulator.",
+      "use_when": "Rails, grids, EPG, any list on TV; especially with images.",
+      "avoid_when": "Never decode full-size artwork for thumbnails; never render all rails at once.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "high"
+      },
+      "provenance": "engineering-practice",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.84,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode create",
+          "product media"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required concern performance: focus latency and catalog virtualization on TV"
+    },
+    {
+      "id": "tv-typography-distance",
+      "kind": "rule",
+      "category": "typography",
+      "title": "TV: 10-foot typography",
+      "facets": [
+        "platform",
+        "visual"
+      ],
+      "concerns": [
+        "accessibility",
+        "content"
+      ],
+      "concepts": [
+        "tv.ten_foot_typography"
+      ],
+      "score": 0.378,
+      "guidance": "Body ≥24 sp (Android) / ≥29 pt (tvOS) at 1080p design scale, captions ≥20 sp, titles 32–48, display 57–72; sans with large x-height and open counters; short strings (titles ≤2 lines, synopsis ≤3 lines with expansion); avoid thin weights (<400) and light text on busy imagery; line height ≥1.3.",
+      "use_when": "All text on TV.",
+      "avoid_when": "Never scale a desktop type ramp up by a factor; rebuild the scale for distance and for reduced text volume.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "incompatible": [
+        "typography-serif-editorial"
+      ],
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.84,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required concept tv.ten_foot_typography"
+    },
+    {
+      "id": "tv-safe-area",
+      "kind": "rule",
+      "category": "layout",
+      "title": "TV: overscan-safe margins",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "interaction",
+        "structure"
+      ],
+      "concepts": [
+        "tv.safe_margins"
+      ],
+      "score": 0.378,
+      "guidance": "Keep interactive and text content ≥5% from edges: at the 960×540 dp design frame that is 48 dp horizontal and 27 dp vertical (Android guidance: up to 58/28 dp for maximum safety; tvOS: 60 pt sides, 60 pt top/bottom on the 1920×1080 frame). Let rails scroll under the margin so partial cards hint at more content.",
+      "use_when": "All persistent UI (nav, titles, buttons, subtitles); backgrounds and artwork may bleed.",
+      "avoid_when": "Do not inset full-bleed imagery; do not rely on the panel reporting overscan.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.84,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required concept tv.safe_margins"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "component",
+      "structure",
+      "navigation",
+      "states",
+      "interaction",
+      "accessibility",
+      "performance",
+      "data-display"
+    ],
+    "covered_required_concerns": [
+      "component",
+      "structure",
+      "navigation",
+      "states",
+      "interaction",
+      "accessibility",
+      "performance",
+      "data-display"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "anti-pattern",
+      "brand",
+      "content",
+      "environment"
+    ],
+    "covered_recommended_concerns": [
+      "anti-pattern",
+      "brand",
+      "content"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "state.loading_empty_error",
+      "interaction.dpad_reachability",
+      "interaction.focus_restore",
+      "interaction.focus_visible",
+      "tv.ten_foot_typography",
+      "tv.safe_margins",
+      "tv.player_autohide",
+      "interaction.back_semantics",
+      "tv.epg_pinned_channels",
+      "table.virtualization"
+    ],
+    "covered_required_concepts": [
+      "state.loading_empty_error",
+      "interaction.dpad_reachability",
+      "interaction.focus_restore",
+      "interaction.focus_visible",
+      "tv.ten_foot_typography",
+      "tv.safe_margins",
+      "tv.player_autohide",
+      "tv.epg_pinned_channels",
+      "table.virtualization"
+    ],
+    "uncovered_required_concepts": [
+      "interaction.back_semantics"
+    ],
+    "concept_coverage_ratio": 0.9,
+    "bundle_size": 8,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 3,
+    "guardrail_size": 5,
+    "category_diversity": 1.0,
+    "duplicate_pressure": 0.12,
+    "facet_coverage": 0.83,
+    "redundancy": 0.42
+  },
+  "token_coverage": 1.0,
+  "omitted": [],
+  "rejected": [
+    {
+      "id": "anti-hero-template",
+      "reason": "platform ['web'] not in request ['tv']"
+    },
+    {
+      "id": "comp-data-table",
+      "reason": "platform ['desktop', 'web'] not in request ['tv']"
+    },
+    {
+      "id": "comp-list-row-mobile",
+      "reason": "platform ['mobile', 'tablet'] not in request ['tv']"
+    },
+    {
+      "id": "comp-data-entry-grid",
+      "reason": "platform ['desktop', 'web'] not in request ['tv']"
+    },
+    {
+      "id": "comp-hero-section",
+      "reason": "platform ['mobile', 'web'] not in request ['tv']"
+    },
+    {
+      "id": "dir-service-app-mobile",
+      "reason": "platform ['mobile'] not in request ['tv']"
+    },
+    {
+      "id": "nav-left-rail",
+      "reason": "platform ['desktop', 'web'] not in request ['tv']"
+    },
+    {
+      "id": "nav-bottom-tabs",
+      "reason": "platform ['mobile'] not in request ['tv']"
+    }
+  ]
+}

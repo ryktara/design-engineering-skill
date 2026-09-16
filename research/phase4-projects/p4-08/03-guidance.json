@@ -1,0 +1,504 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "add a column-defaults settings dialog to the purchase order lines window so clerks can choose default warehouse and hidden columns",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "desktop"
+    ],
+    "input": [
+      "keyboard",
+      "pointer"
+    ],
+    "product": [
+      "erp"
+    ],
+    "screen": [
+      "settings"
+    ],
+    "screen_subtype": [],
+    "stack": [
+      "wpf"
+    ],
+    "density": "high",
+    "components": [
+      "dialog",
+      "settings",
+      "table"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "create settings"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "mode_evidence": [
+      "create: default (no mode cue)"
+    ],
+    "project_context": {
+      "navigation": "menu-bar (INFERRED)",
+      "theme": "light-first (INFERRED)",
+      "surfaces": "bordered-flat (INFERRED)",
+      "radius": "small (INFERRED)",
+      "spacing": "4 (INFERRED)",
+      "components": "wpf (KNOWN)"
+    },
+    "known": [
+      "platform=desktop",
+      "product=erp",
+      "stack=wpf",
+      "screen=settings",
+      "project_components=wpf"
+    ],
+    "inferred": [
+      "input=pointer",
+      "input=keyboard",
+      "density=high",
+      "mode=create",
+      "project_navigation=menu-bar",
+      "project_theme=light-first",
+      "project_surfaces=bordered-flat",
+      "project_radius=small",
+      "project_spacing=4"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT"
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "component",
+        "reason": "a specific component/screen is requested"
+      },
+      {
+        "concern": "structure",
+        "reason": "layout topology and hierarchy"
+      },
+      {
+        "concern": "states",
+        "reason": "asynchronous or remote data on this screen"
+      },
+      {
+        "concern": "interaction",
+        "reason": "input model: keyboard,pointer"
+      },
+      {
+        "concern": "accessibility",
+        "reason": "platform accessibility baseline"
+      },
+      {
+        "concern": "data-display",
+        "reason": "numbers, tables or charts are the content"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "navigation",
+        "reason": "how users arrive and leave"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "create/refactor requests attract generic defaults"
+      },
+      {
+        "concern": "brand",
+        "reason": "visual identity direction"
+      },
+      {
+        "concern": "feedback",
+        "reason": "actions need confirmation and status"
+      }
+    ],
+    "optional": [
+      "motion",
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "state.loading_empty_error",
+        "reason": "asynchronous or remote data on this screen"
+      },
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "desktop keyboard-first"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "desktop focus"
+      },
+      {
+        "concept": "layout.settings_grouping",
+        "reason": "settings screen"
+      },
+      {
+        "concept": "table.tabular_figures",
+        "reason": "numeric data"
+      },
+      {
+        "concept": "a11y.dialog_focus",
+        "reason": "dialog"
+      },
+      {
+        "concept": "interaction.focus_restore",
+        "reason": "required by a11y.dialog_focus"
+      }
+    ],
+    "recommended_concepts": [
+      "interaction.shortcuts",
+      "desktop.persist_workspace",
+      "desktop.fluent_materials",
+      "a11y.live_status",
+      "table.column_priority",
+      "table.virtualization",
+      "table.selection_bulk",
+      "feedback.confirmation_destructive"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "comp-settings-screen",
+      "kind": "component",
+      "category": "settings",
+      "title": "Settings screen",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "component",
+        "feedback",
+        "structure"
+      ],
+      "concepts": [
+        "layout.settings_grouping",
+        "feedback.confirmation_destructive"
+      ],
+      "covers": [
+        "settings grouped with visible current values",
+        "confirmation of destructive or high-risk actions"
+      ],
+      "score": 0.442,
+      "guidance": "Grouped rows with clear labels and current values visible, toggles for booleans with immediate effect, pickers for enums, destructive actions at the end with confirmation, search for long settings, platform idiom (grouped lists on mobile, sections/panes on desktop, TV: vertical list with DPAD and a right-side value column). Save behaviour explicit (auto vs Save button).",
+      "use_when": "Preferences, account, notifications, appearance.",
+      "avoid_when": "Never bury frequently changed settings three levels deep; never use toggles for actions.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "comp-dialog",
+      "kind": "component",
+      "category": "dialog",
+      "title": "Dialog / modal",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "accessibility",
+        "component",
+        "feedback",
+        "interaction"
+      ],
+      "concepts": [
+        "a11y.dialog_focus",
+        "feedback.confirmation_destructive"
+      ],
+      "covers": [
+        "dialog focus management",
+        "confirmation of destructive or high-risk actions"
+      ],
+      "score": 0.385,
+      "guidance": "Title as heading, one primary action, safe default for destructive confirmations, focus management per dialog rule, sized to content with max width, scroll inside the body not the page, Escape and close button, backdrop click closes only for non-destructive dialogs. Mobile: bottom sheet or full-screen; TV: full-screen with first focus on the safe action.",
+      "use_when": "Confirmation, short focused task, blocking decision.",
+      "avoid_when": "Long forms, content that users need to reference while working (use a panel), stacking dialogs, mobile (prefer sheets or full-screen), TV (prefer full-screen or side sheet with clear focus).",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "implementation": {
+        "wpf": "Owned Window with ShowDialog or a tested dialog service; set initial focus."
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "comp-form",
+      "kind": "component",
+      "category": "form",
+      "title": "Form",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "component",
+        "feedback",
+        "states",
+        "structure"
+      ],
+      "concepts": [
+        "feedback.validation_errors",
+        "touch.ime_keyboard",
+        "form.autofill_attributes",
+        "state.unsaved_changes_guard"
+      ],
+      "covers": [
+        "inline validation messages and error recovery",
+        "on-screen keyboard (IME) aware layout",
+        "autofill / input-type attributes per field",
+        "unsaved-changes guard"
+      ],
+      "score": 0.311,
+      "guidance": "Labels above, help text below, required marked in text, field widths sized to content, grouped by section with headings, one column, inline validation on blur, error summary on submit with links to fields, primary action last (or sticky), unsaved-changes guard, autosave with status for long forms, autofill attributes. TV: one field per row, DOWN moves to next, system keyboard, minimal fields.",
+      "use_when": "Any data entry: settings, checkout, applications, record editing.",
+      "avoid_when": "Batch entry of many similar rows (use a data-entry grid); single toggles (inline).",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "implementation": {
+        "wpf": "Binding with ValidatesOnNotifyDataErrors and an ErrorTemplate that shows text, not only a red border."
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "grid-single-tab-stop",
+      "kind": "rule",
+      "category": "table",
+      "title": "Grids with row actions are one Tab stop",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "data-display",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.keyboard_navigation",
+        "interaction.focus_visible",
+        "table.selection_bulk"
+      ],
+      "covers": [
+        "keyboard navigation and focus order",
+        "visible focus",
+        "selection state and bulk actions"
+      ],
+      "score": 0.381,
+      "guidance": "Tab enters the grid once and leaves it once; arrow keys move between cells/rows (roving tabindex or a focus manager), Enter/Space activates the focused cell's action, Escape returns from an edited cell to navigation mode; row actions become reachable when the row or actions cell is focused and are also available from a row context/actions menu; a table with 24 rows must never produce 24 Tab stops per action column. Announce the current row/column (aria-rowindex/colindex or the platform's automation properties) and keep a visible focus indicator on the active cell.",
+      "use_when": "Data tables or grids where each row has buttons/links (edit, delete, approve, download) and there are more than a handful of rows.",
+      "avoid_when": "Small static tables with no interactive cells.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "implementation": {
+        "wpf": "KeyboardNavigation.TabNavigation=\"Once\" on the DataGrid; use DataGridTemplateColumn with Focusable=\"False\" on the row buttons and a command on the row."
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: data-display, visible focus, keyboard navigation and focus order"
+    },
+    {
+      "id": "a11y-modal-dialog",
+      "kind": "rule",
+      "category": "dialog",
+      "title": "Dialog focus management",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "a11y.dialog_focus",
+        "interaction.focus_restore"
+      ],
+      "covers": [
+        "dialog focus management",
+        "focus restoration"
+      ],
+      "score": 0.486,
+      "guidance": "On open: focus the first meaningful control (or the heading), trap Tab inside, inert the background, label the dialog by its title. On close: return focus to the invoker. Escape and the visible close button both close; destructive confirmations put the safe action as default. Use <dialog>/showModal, ContentDialog, .sheet, ModalBottomSheet rather than a div overlay.",
+      "use_when": "Modals, sheets, drawers, popovers, confirmations.",
+      "avoid_when": "Do not use modals for content that could be inline; do not stack modals.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "role": "guardrail",
+      "selected_for": "required coverage: focus restoration"
+    },
+    {
+      "id": "data-tables-numeric",
+      "kind": "rule",
+      "category": "table",
+      "title": "Numeric tables: alignment, figures, units, precision",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "content",
+        "data-display"
+      ],
+      "concepts": [
+        "table.tabular_figures"
+      ],
+      "covers": [
+        "tabular figures and numeric alignment"
+      ],
+      "score": 0.387,
+      "guidance": "Right-align numbers with tabular lining figures, one precision per column, unit in the header not each cell, negative values with sign and colour (and parentheses in finance if house style), thousands separators by locale, totals visually distinct, sortable columns with an explicit sort indicator.",
+      "use_when": "Any table or KPI with numbers: money, quantities, percentages, dates.",
+      "avoid_when": "Never centre numbers; never mix precisions in a column; never rely on colour alone for negative values.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "role": "guardrail",
+      "selected_for": "required coverage: tabular figures and numeric alignment"
+    },
+    {
+      "id": "layout-states-empty-loading-error",
+      "kind": "rule",
+      "category": "feedback",
+      "title": "Design empty, loading, error, and partial states",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "states"
+      ],
+      "concepts": [
+        "state.loading_empty_error"
+      ],
+      "covers": [
+        "loading, empty and error states"
+      ],
+      "score": 0.261,
+      "guidance": "Empty: what this is, why it is empty, one action. Loading: skeleton with final dimensions, then content; announce completion. Error: what failed, what to do, retry that works; keep entered data. Partial: show what loaded, mark what didn't. On TV, focus must land somewhere valid in each state.",
+      "use_when": "Every list, table, chart, form, and detail screen.",
+      "avoid_when": "Never ship a blank area for empty data; never show a spinner for more than ~1 s without a skeleton or progress; never show an error without a next step.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "role": "guardrail",
+      "selected_for": "required coverage: loading, empty and error states"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "component",
+      "structure",
+      "states",
+      "interaction",
+      "accessibility",
+      "data-display"
+    ],
+    "covered_required_concerns": [
+      "component",
+      "structure",
+      "states",
+      "interaction",
+      "accessibility",
+      "data-display"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "navigation",
+      "anti-pattern",
+      "brand",
+      "feedback"
+    ],
+    "covered_recommended_concerns": [
+      "feedback"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "state.loading_empty_error",
+      "interaction.keyboard_navigation",
+      "interaction.focus_visible",
+      "layout.settings_grouping",
+      "table.tabular_figures",
+      "a11y.dialog_focus",
+      "interaction.focus_restore"
+    ],
+    "covered_required_concepts": [
+      "state.loading_empty_error",
+      "interaction.keyboard_navigation",
+      "interaction.focus_visible",
+      "layout.settings_grouping",
+      "table.tabular_figures",
+      "a11y.dialog_focus",
+      "interaction.focus_restore"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.25,
+    "bundle_size": 7,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 3,
+    "guardrail_size": 4,
+    "bundle_tokens": 1358,
+    "coverage_per_1k_tokens": 5.15,
+    "mean_purity": 0.86,
+    "contaminated": [],
+    "category_diversity": 0.71,
+    "duplicate_pressure": 0.29,
+    "facet_coverage": 0.33,
+    "redundancy": 0.58
+  },
+  "token_coverage": 0.86
+}

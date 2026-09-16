@@ -1,0 +1,8 @@
+{"task": "p6-30",
+ "records": [
+   {"id": "kiosk-public-use", "verdict": "relevant", "category": "", "why": "Idle timeout with countdown that clears the session, attract screen as hub and a visible cancel at every step is the shape of the fix."}
+ ],
+ "missing_critical": [],
+ "unjustified_direction_slots": 1,
+ "layer_review": {"core": [], "critical": ["kiosk-public-use"], "optional": []},
+ "change_vs_c3": "same - identical 1-record bundle with the same relevant record, both critical concepts still covered, the better-fitting a11y-time-and-auto / shared-device-privacy / states-persistence-and-session still unselected, and cta still the one unjustified slot."}

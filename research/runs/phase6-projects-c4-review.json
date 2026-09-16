@@ -1,0 +1,24 @@
+{
+ "tasks_reviewed": 32,
+ "records": 124,
+ "verdicts": {
+  "relevant": 59,
+  "partial": 51,
+  "off-target": 14
+ },
+ "categories": {
+  "generic": 55,
+  "wrong-screen": 9,
+  "contradicts-codebase": 1
+ },
+ "offtarget_rate_generic_wrongscreen_wrongproduct": 0.516,
+ "unjustified_direction_slots": 12,
+ "tasks_with_missing_critical": 20,
+ "change_vs_c3": {
+  "better:": 6,
+  "same": 9,
+  "worse": 5,
+  "same:": 1,
+  "better": 11
+ }
+}

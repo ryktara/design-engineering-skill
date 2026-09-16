@@ -1,0 +1,43 @@
+{
+  "currency": { "symbol": "£", "code": "GBP" },
+  "tickets": [
+    {
+      "id": "single",
+      "name": "Single",
+      "desc": "One journey, any direction. Valid 90 minutes.",
+      "prices": { "1": 280, "2": 340, "3": 420 },
+      "maxQty": 10
+    },
+    {
+      "id": "day",
+      "name": "Day pass",
+      "desc": "Unlimited travel until 04:00 tomorrow.",
+      "prices": { "1": 650, "2": 780, "3": 950 },
+      "maxQty": 10
+    },
+    {
+      "id": "weekly",
+      "name": "Weekly",
+      "desc": "7 days from first use. Bus, tram and metro.",
+      "prices": { "1": 2450, "2": 2980, "3": 3620 },
+      "maxQty": 4
+    },
+    {
+      "id": "concession",
+      "name": "Child / Senior",
+      "desc": "Under 16 or over 65. Single journey. ID may be checked.",
+      "prices": { "1": 140, "2": 170, "3": 210 },
+      "maxQty": 10
+    }
+  ],
+  "zones": [
+    { "id": 1, "label": "Zone 1" },
+    { "id": 2, "label": "Zones 1–2" },
+    { "id": 3, "label": "Zones 1–3" }
+  ],
+  "promos": {
+    "METRO10": 10,
+    "STUDENT15": 15,
+    "WELCOME5": 5
+  }
+}

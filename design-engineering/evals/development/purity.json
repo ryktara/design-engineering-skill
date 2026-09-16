@@ -1,0 +1,2296 @@
+{
+ "description": "Phase 6 bundle-purity cases (2026-09-10), written before any Phase 6 code change: pairwise wording (compare / tab / landscape / overlay / remote / terminal / card / sheet / tree / feed / poster), same-product screen pairs (e-commerce, finance, SaaS, media, healthcare, ERP), the same job across five platforms, small-bundle cases where generic fillers are forbidden, conditional critical concepts, wrong-product and direction dominance, off-platform leakage, literal-token traps. No held-out prompt is copied. New runner keys: forbid_kinds, expect_kinds_any.",
+ "suite": "guidance",
+ "cases": [
+  {
+   "id": "pp-cmp-1",
+   "query": "Compare monthly revenue by region on the finance dashboard.",
+   "expect_concepts": [
+    "data.chart_by_question"
+   ],
+   "expect_ids_any": [
+    "chart-compare-bar",
+    "comp-chart-container"
+   ],
+   "forbid_concepts": [
+    "data.comparison_structure"
+   ]
+  },
+  {
+   "id": "pp-cmp-2",
+   "query": "Compare these two pricing plans so people can pick one.",
+   "expect_concepts": [
+    "data.comparison_structure"
+   ],
+   "forbid_ids": [
+    "chart-compare-bar",
+    "chart-trend-line",
+    "chart-composition",
+    "comp-chart-container"
+   ]
+  },
+  {
+   "id": "pp-cmp-3",
+   "query": "The compare button is hard to find on the product page.",
+   "expect_concepts": [
+    "layout.one_primary_action"
+   ],
+   "forbid_ids": [
+    "chart-compare-bar",
+    "chart-composition",
+    "comp-plan-comparison",
+    "comp-chart-container"
+   ],
+   "max_bundle": 5
+  },
+  {
+   "id": "pp-cmp-4",
+   "query": "Compare two configuration files side by side in the editor.",
+   "forbid_ids": [
+    "chart-compare-bar",
+    "chart-composition",
+    "comp-plan-comparison",
+    "comp-chart-container",
+    "chart-small-multiples"
+   ],
+   "forbid_concepts": [
+    "data.chart_by_question"
+   ]
+  },
+  {
+   "id": "pp-cmp-5",
+   "query": "Users compare last week with this week and the bars are unreadable.",
+   "expect_concepts": [
+    "data.chart_by_question",
+    "a11y.contrast"
+   ],
+   "expect_ids_any": [
+    "chart-compare-bar",
+    "comp-chart-container",
+    "a11y-nontext-contrast"
+   ]
+  },
+  {
+   "id": "pp-tab-1",
+   "query": "Pressing Tab skips the search field entirely.",
+   "expect_concepts": [
+    "interaction.keyboard_navigation"
+   ],
+   "forbid_ids": [
+    "comp-tabs"
+   ]
+  },
+  {
+   "id": "pp-tab-2",
+   "query": "Shift+Tab from the dialog lands on the page body.",
+   "expect_concepts": [
+    "a11y.dialog_focus"
+   ],
+   "forbid_ids": [
+    "comp-tabs"
+   ]
+  },
+  {
+   "id": "pp-tab-3",
+   "query": "The settings tabs overflow on narrow windows.",
+   "expect_ids_any": [
+    "comp-tabs"
+   ],
+   "forbid_ids": [
+    "a11y-keyboard-operable"
+   ]
+  },
+  {
+   "id": "pp-tab-4",
+   "query": "Keyboard users hit Tab twenty times before reaching the filters.",
+   "expect_concepts": [
+    "interaction.keyboard_navigation"
+   ],
+   "expect_ids_any": [
+    "a11y-skip-link",
+    "grid-single-tab-stop",
+    "a11y-keyboard-operable"
+   ],
+   "forbid_ids": [
+    "comp-tabs"
+   ]
+  },
+  {
+   "id": "pp-tab-5",
+   "query": "Add a Billing tab next to Profile in the account area.",
+   "expect_ids_any": [
+    "comp-tabs"
+   ],
+   "forbid_ids": [
+    "a11y-skip-link"
+   ]
+  },
+  {
+   "id": "pp-land-1",
+   "query": "In landscape orientation the save button is off screen on phones.",
+   "hints": {
+    "platforms": [
+     "mobile"
+    ]
+   },
+   "expect_concepts": [
+    "adaptive.breakpoint_matrix",
+    "touch.safe_areas"
+   ],
+   "forbid_ids": [
+    "card-poster-landscape",
+    "imagery-poster",
+    "layout-rails"
+   ]
+  },
+  {
+   "id": "pp-land-2",
+   "query": "The inspector layout for landscape tablets wastes the right third.",
+   "hints": {
+    "platforms": [
+     "tablet"
+    ]
+   },
+   "forbid_ids": [
+    "card-poster-landscape",
+    "card-poster-portrait",
+    "imagery-poster"
+   ]
+  },
+  {
+   "id": "pp-land-3",
+   "query": "Episode tiles on the TV home should be landscape 16:9 with progress.",
+   "hints": {
+    "platforms": [
+     "tv"
+    ]
+   },
+   "expect_ids_any": [
+    "card-poster-landscape",
+    "comp-media-card",
+    "comp-tv-rail"
+   ]
+  },
+  {
+   "id": "pp-land-4",
+   "query": "Rotating the phone to landscape hides the bottom tabs.",
+   "hints": {
+    "platforms": [
+     "mobile"
+    ]
+   },
+   "expect_concepts": [
+    "adaptive.navigation_transform"
+   ],
+   "forbid_ids": [
+    "card-poster-landscape"
+   ]
+  },
+  {
+   "id": "pp-over-1",
+   "query": "The cookie overlay traps keyboard focus and cannot be dismissed.",
+   "expect_concepts": [
+    "a11y.dialog_focus"
+   ],
+   "forbid_ids": [
+    "comp-player-controls",
+    "tv-player-controls",
+    "comp-mini-player",
+    "layout-split-player"
+   ]
+  },
+  {
+   "id": "pp-over-2",
+   "query": "The video overlay controls never hide while a film plays.",
+   "hints": {
+    "platforms": [
+     "tv"
+    ]
+   },
+   "expect_concepts": [
+    "tv.player_autohide"
+   ],
+   "expect_ids_any": [
+    "tv-player-controls",
+    "comp-player-controls"
+   ]
+  },
+  {
+   "id": "pp-over-3",
+   "query": "A loading overlay covers the whole form for every keystroke.",
+   "expect_concepts": [
+    "state.loading_empty_error"
+   ],
+   "forbid_ids": [
+    "comp-player-controls",
+    "tv-player-controls",
+    "comp-mini-player"
+   ]
+  },
+  {
+   "id": "pp-rem-1",
+   "query": "The remote office team's dashboard loads slowly.",
+   "forbid_ids": [
+    "tv-dpad-axes",
+    "tv-safe-area",
+    "tv-back-behavior",
+    "a11y-tv-focus-always",
+    "tv-focus-performance"
+   ],
+   "forbid_concepts": [
+    "interaction.dpad_reachability"
+   ]
+  },
+  {
+   "id": "pp-rem-2",
+   "query": "Holding the remote's down arrow jumps two rows at a time.",
+   "expect_concepts": [
+    "perf.focus_latency",
+    "interaction.dpad_reachability"
+   ],
+   "expect_ids_any": [
+    "tv-dpad-hold-pacing",
+    "tv-dpad-axes"
+   ]
+  },
+  {
+   "id": "pp-term-1",
+   "query": "Terminal output in the log viewer wraps mid-word.",
+   "forbid_ids": [
+    "kiosk-public-use",
+    "comp-kiosk-keypad",
+    "shared-device-privacy",
+    "dir-public-kiosk"
+   ],
+   "forbid_concepts": [
+    "privacy.shared_device"
+   ]
+  },
+  {
+   "id": "pp-term-2",
+   "query": "The check-in terminal at reception wipes the form after ten seconds.",
+   "expect_concepts": [
+    "state.session_expiry"
+   ],
+   "expect_ids_any": [
+    "kiosk-public-use",
+    "a11y-time-and-auto"
+   ]
+  },
+  {
+   "id": "pp-win-1",
+   "query": "Windows in the dashboard resize each other when one collapses.",
+   "forbid_ids": [
+    "desktop-fluent-materials",
+    "nav-menu-bar-desktop",
+    "dir-windows-native-tool"
+   ],
+   "forbid_concepts": [
+    "desktop.fluent_materials"
+   ]
+  },
+  {
+   "id": "pp-card-1",
+   "query": "The credit card field rejects spaces.",
+   "expect_concepts": [
+    "feedback.validation_errors"
+   ],
+   "forbid_ids": [
+    "card-flat-tile",
+    "card-poster-portrait",
+    "card-list-row",
+    "anti-card-everything",
+    "surface-elevated-cards"
+   ]
+  },
+  {
+   "id": "pp-card-2",
+   "query": "Turn the list of projects into cards on the home page.",
+   "expect_ids_any": [
+    "card-flat-tile",
+    "card-bordered",
+    "layout-grid-catalog",
+    "layout-feed",
+    "card-list-row"
+   ],
+   "forbid_ids": [
+    "card-poster-portrait"
+   ],
+   "note": "2026-09-10 amended: list-row cards are an acceptable reading of 'turn the list into cards'"
+  },
+  {
+   "id": "pp-sheet-1",
+   "query": "The balance sheet totals do not line up.",
+   "expect_concepts": [
+    "table.tabular_figures"
+   ],
+   "forbid_ids": [
+    "comp-tv-side-sheet",
+    "comp-drawer-panel",
+    "a11y-modal-dialog"
+   ],
+   "forbid_concepts": [
+    "a11y.dialog_focus"
+   ]
+  },
+  {
+   "id": "pp-sheet-2",
+   "query": "The filter sheet slides up but you cannot close it with the keyboard.",
+   "expect_concepts": [
+    "a11y.dialog_focus"
+   ],
+   "expect_ids_any": [
+    "a11y-modal-dialog",
+    "comp-drawer-panel",
+    "comp-dialog"
+   ]
+  },
+  {
+   "id": "pp-tree-1",
+   "query": "Expanding a folder in the file tree loses the selected file.",
+   "expect_ids_any": [
+    "comp-tree-view"
+   ],
+   "forbid_ids": [
+    "comp-chart-container",
+    "chart-flow-sankey",
+    "chart-composition"
+   ],
+   "forbid_concepts": [
+    "data.chart_by_question"
+   ]
+  },
+  {
+   "id": "pp-tree-2",
+   "query": "Show the org chart as a tree of boxes.",
+   "expect_ids_any": [
+    "comp-tree-view",
+    "chart-relationship"
+   ]
+  },
+  {
+   "id": "pp-feed-1",
+   "query": "The RSS feed import fails silently.",
+   "expect_concepts": [
+    "feedback.progress_indicator"
+   ],
+   "forbid_ids": [
+    "layout-feed",
+    "dir-social-feed-mobile"
+   ]
+  },
+  {
+   "id": "pp-poster-1",
+   "query": "Print a poster-sized version of the timetable.",
+   "forbid_ids": [
+    "card-poster-portrait",
+    "card-poster-landscape",
+    "imagery-poster",
+    "dir-cinematic-media-tv"
+   ]
+  },
+  {
+   "id": "ps-ec-list",
+   "query": "Shoppers scroll the trainers listing and cannot narrow it down.",
+   "expect_ids_any": [
+    "comp-filters",
+    "layout-grid-catalog",
+    "comp-search"
+   ],
+   "forbid_ids": [
+    "comp-product-detail-page",
+    "comp-checkout-one-page",
+    "cta-sticky-bar",
+    "ecommerce-delivery-promise"
+   ]
+  },
+  {
+   "id": "ps-ec-detail",
+   "query": "On the trainer's page shoppers cannot tell which size is in stock.",
+   "expect_ids_any": [
+    "comp-product-detail-page"
+   ],
+   "forbid_ids": [
+    "comp-checkout-one-page",
+    "comp-filters",
+    "layout-grid-catalog",
+    "comp-pagination"
+   ]
+  },
+  {
+   "id": "ps-ec-cart",
+   "query": "The basket shows the wrong total after removing a pair of trainers.",
+   "expect_concepts": [
+    "feedback.trust_signals"
+   ],
+   "forbid_ids": [
+    "comp-product-detail-page",
+    "layout-grid-catalog",
+    "comp-filters",
+    "chart-compare-bar"
+   ]
+  },
+  {
+   "id": "ps-ec-checkout",
+   "query": "Paying for the trainers takes three screens and people drop off.",
+   "expect_ids_any": [
+    "comp-checkout-one-page",
+    "comp-wizard-stepper"
+   ],
+   "forbid_ids": [
+    "comp-product-detail-page",
+    "layout-grid-catalog",
+    "comp-filters",
+    "comp-plan-comparison"
+   ]
+  },
+  {
+   "id": "ps-ec-search",
+   "query": "Searching trainers by brand returns nothing and the page goes blank.",
+   "expect_concepts": [
+    "state.loading_empty_error",
+    "data.search_results"
+   ],
+   "expect_ids_any": [
+    "comp-search",
+    "comp-empty-state",
+    "layout-states-empty-loading-error"
+   ],
+   "forbid_ids": [
+    "comp-product-detail-page",
+    "comp-checkout-one-page"
+   ]
+  },
+  {
+   "id": "ps-fin-dash",
+   "query": "The treasury dashboard shows twelve equally sized tiles.",
+   "expect_concepts": [
+    "layout.focal_hierarchy",
+    "data.exception_first"
+   ],
+   "expect_ids_any": [
+    "comp-kpi-tile",
+    "layout-dashboard-grid",
+    "layout-hierarchy-one-thing",
+    "data-exceptions-first"
+   ],
+   "forbid_ids": [
+    "comp-checkout-one-page",
+    "comp-product-detail-page",
+    "comp-wizard-stepper"
+   ]
+  },
+  {
+   "id": "ps-fin-detail",
+   "query": "The transaction detail screen buries the amount under metadata.",
+   "expect_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "forbid_ids": [
+    "layout-dashboard-grid",
+    "comp-kpi-tile",
+    "comp-checkout-one-page",
+    "comp-data-entry-grid"
+   ]
+  },
+  {
+   "id": "ps-fin-entry",
+   "query": "Clerks key in journal lines all day and mis-type the account column.",
+   "expect_ids_any": [
+    "comp-data-entry-grid",
+    "table-column-disambiguation",
+    "data-tables-numeric"
+   ],
+   "forbid_ids": [
+    "layout-dashboard-grid",
+    "comp-kpi-tile",
+    "chart-trend-line"
+   ]
+  },
+  {
+   "id": "ps-fin-approve",
+   "query": "Approving a wire transfer is one tap with no confirmation.",
+   "expect_concepts": [
+    "feedback.confirmation_destructive"
+   ],
+   "forbid_ids": [
+    "layout-dashboard-grid",
+    "comp-kpi-tile",
+    "comp-data-entry-grid",
+    "chart-compare-bar"
+   ]
+  },
+  {
+   "id": "ps-saas-settings",
+   "query": "The workspace settings page mixes billing, members and API keys in one wall.",
+   "expect_concepts": [
+    "layout.settings_grouping"
+   ],
+   "expect_ids_any": [
+    "comp-settings-screen"
+   ],
+   "forbid_ids": [
+    "comp-plan-comparison",
+    "comp-checkout-one-page",
+    "layout-dashboard-grid",
+    "comp-data-table"
+   ]
+  },
+  {
+   "id": "ps-saas-plans",
+   "query": "Nobody understands the difference between the Team and Business plans.",
+   "expect_concepts": [
+    "data.comparison_structure"
+   ],
+   "expect_ids_any": [
+    "comp-plan-comparison"
+   ],
+   "forbid_ids": [
+    "comp-settings-screen",
+    "layout-dashboard-grid",
+    "chart-compare-bar"
+   ]
+  },
+  {
+   "id": "ps-saas-members",
+   "query": "The members list has no way to remove someone.",
+   "expect_ids_any": [
+    "comp-data-table",
+    "comp-list-row-mobile",
+    "cta-toolbar-commands",
+    "cta-contextual-inline"
+   ],
+   "forbid_ids": [
+    "comp-plan-comparison",
+    "comp-checkout-one-page",
+    "comp-kpi-tile"
+   ]
+  },
+  {
+   "id": "ps-saas-usage",
+   "query": "The usage page should show where we are against the quota this month.",
+   "expect_concepts": [
+    "data.kpi_comparison"
+   ],
+   "expect_ids_any": [
+    "comp-kpi-tile",
+    "chart-progress-gauge",
+    "comp-chart-container"
+   ],
+   "forbid_ids": [
+    "comp-plan-comparison",
+    "comp-checkout-one-page"
+   ]
+  },
+  {
+   "id": "ps-media-home",
+   "query": "The streaming home mixes continue-watching with new releases in one long list.",
+   "hints": {
+    "platforms": [
+     "tv"
+    ]
+   },
+   "expect_ids_any": [
+    "layout-rails",
+    "layout-immersive-rails",
+    "comp-tv-rail"
+   ],
+   "forbid_ids": [
+    "comp-player-controls",
+    "comp-epg",
+    "comp-tv-sign-in"
+   ]
+  },
+  {
+   "id": "ps-media-detail",
+   "query": "The film page makes you scroll past the cast to find Play.",
+   "hints": {
+    "platforms": [
+     "tv"
+    ]
+   },
+   "expect_concepts": [
+    "media.details_play_first"
+   ],
+   "expect_ids_any": [
+    "media-resume-and-details"
+   ],
+   "forbid_ids": [
+    "comp-epg",
+    "comp-tv-sign-in",
+    "comp-player-controls"
+   ]
+  },
+  {
+   "id": "ps-media-player",
+   "query": "Subtitles cannot be turned on while the film plays.",
+   "hints": {
+    "platforms": [
+     "tv"
+    ]
+   },
+   "expect_concepts": [
+    "media.track_selection"
+   ],
+   "expect_ids_any": [
+    "comp-tv-side-sheet",
+    "tv-player-controls",
+    "comp-player-controls"
+   ],
+   "forbid_ids": [
+    "comp-epg",
+    "layout-rails",
+    "comp-tv-sign-in"
+   ]
+  },
+  {
+   "id": "ps-media-guide",
+   "query": "The channel listings jump when the half hour ticks over.",
+   "hints": {
+    "platforms": [
+     "tv"
+    ]
+   },
+   "expect_concepts": [
+    "tv.time_navigation"
+   ],
+   "expect_ids_any": [
+    "comp-epg",
+    "layout-epg-grid"
+   ],
+   "forbid_ids": [
+    "comp-player-controls",
+    "media-resume-and-details"
+   ]
+  },
+  {
+   "id": "ps-media-signin",
+   "query": "Typing the activation code with the remote takes minutes.",
+   "hints": {
+    "platforms": [
+     "tv"
+    ]
+   },
+   "expect_concepts": [
+    "tv.sign_in_code"
+   ],
+   "expect_ids_any": [
+    "comp-tv-sign-in"
+   ],
+   "forbid_ids": [
+    "comp-epg",
+    "comp-player-controls",
+    "layout-rails"
+   ]
+  },
+  {
+   "id": "ps-health-list",
+   "query": "The patient list at the front desk shows everyone's diagnosis to passers-by.",
+   "expect_concepts": [
+    "privacy.shared_device"
+   ],
+   "forbid_ids": [
+    "comp-checkout-one-page",
+    "comp-product-detail-page",
+    "comp-wizard-stepper"
+   ]
+  },
+  {
+   "id": "ps-health-detail",
+   "query": "The patient record screen hides allergies below the fold.",
+   "expect_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "forbid_ids": [
+    "comp-data-entry-grid",
+    "comp-checkout-one-page",
+    "layout-grid-catalog"
+   ],
+   "note": "2026-09-10 amended: the allergy placement is a hierarchy defect; exceptions-first is a reviewer preference, not a must"
+  },
+  {
+   "id": "ps-health-form",
+   "query": "Intake forms make nurses retype the same address twice.",
+   "expect_concepts": [
+    "form.autofill_attributes"
+   ],
+   "expect_ids_any": [
+    "comp-form",
+    "layout-form-stack"
+   ],
+   "forbid_ids": [
+    "comp-checkout-one-page",
+    "layout-dashboard-grid"
+   ]
+  },
+  {
+   "id": "ps-erp-grid",
+   "query": "The stock adjustment grid loses your row when you sort.",
+   "expect_concepts": [
+    "interaction.selection_visible"
+   ],
+   "expect_ids_any": [
+    "comp-data-entry-grid",
+    "comp-data-table",
+    "grid-single-tab-stop"
+   ],
+   "forbid_ids": [
+    "comp-checkout-one-page",
+    "comp-product-detail-page",
+    "layout-grid-catalog"
+   ]
+  },
+  {
+   "id": "ps-erp-dash",
+   "query": "The operations overview hides late orders among healthy ones.",
+   "expect_concepts": [
+    "data.exception_first"
+   ],
+   "expect_ids_any": [
+    "data-exceptions-first",
+    "comp-kpi-tile",
+    "layout-dashboard-grid"
+   ],
+   "forbid_ids": [
+    "comp-data-entry-grid",
+    "comp-checkout-one-page"
+   ]
+  },
+  {
+   "id": "ps-erp-wizard",
+   "query": "Creating a purchase order walks through five steps with no way back.",
+   "expect_concepts": [
+    "onboarding.linear_wizard"
+   ],
+   "expect_ids_any": [
+    "comp-wizard-stepper",
+    "nav-wizard"
+   ],
+   "forbid_ids": [
+    "layout-dashboard-grid",
+    "comp-kpi-tile"
+   ]
+  },
+  {
+   "id": "pf-web",
+   "query": "Let people change their notification preferences on the settings screen.",
+   "hints": {
+    "platforms": [
+     "web"
+    ]
+   },
+   "expect_ids_any": [
+    "comp-settings-screen"
+   ],
+   "forbid_ids": [
+    "tv-safe-area",
+    "tv-dpad-axes",
+    "a11y-tv-focus-always",
+    "mobile-thumb-reach",
+    "kiosk-public-use",
+    "desktop-fluent-materials"
+   ]
+  },
+  {
+   "id": "pf-mobile",
+   "query": "Let people change their notification preferences on the settings screen.",
+   "hints": {
+    "platforms": [
+     "mobile"
+    ]
+   },
+   "expect_ids_any": [
+    "comp-settings-screen"
+   ],
+   "forbid_ids": [
+    "tv-safe-area",
+    "tv-dpad-axes",
+    "desktop-keyboard-first",
+    "kiosk-public-use",
+    "desktop-fluent-materials",
+    "web-responsive-breakpoints"
+   ]
+  },
+  {
+   "id": "pf-desktop",
+   "query": "Let people change their notification preferences on the settings screen.",
+   "hints": {
+    "platforms": [
+     "desktop"
+    ]
+   },
+   "expect_ids_any": [
+    "comp-settings-screen"
+   ],
+   "forbid_ids": [
+    "tv-safe-area",
+    "tv-dpad-axes",
+    "mobile-thumb-reach",
+    "mobile-safe-areas",
+    "kiosk-public-use",
+    "web-responsive-breakpoints"
+   ]
+  },
+  {
+   "id": "pf-tv",
+   "query": "Let people change their notification preferences on the settings screen.",
+   "hints": {
+    "platforms": [
+     "tv"
+    ]
+   },
+   "expect_ids_any": [
+    "comp-settings-screen"
+   ],
+   "expect_concepts": [
+    "interaction.dpad_reachability"
+   ],
+   "forbid_ids": [
+    "mobile-thumb-reach",
+    "mobile-safe-areas",
+    "desktop-keyboard-first",
+    "kiosk-public-use",
+    "web-responsive-breakpoints",
+    "mobile-keyboard-ime"
+   ]
+  },
+  {
+   "id": "pf-kiosk",
+   "query": "Let people change their notification preferences on the settings screen.",
+   "hints": {
+    "platforms": [
+     "kiosk"
+    ]
+   },
+   "expect_concepts": [
+    "privacy.shared_device",
+    "touch.minimum_target"
+   ],
+   "forbid_ids": [
+    "tv-dpad-axes",
+    "desktop-keyboard-first",
+    "mobile-thumb-reach",
+    "web-responsive-breakpoints",
+    "desktop-fluent-materials"
+   ]
+  },
+  {
+   "id": "pl-web",
+   "query": "A list of today's orders that staff scan for problems.",
+   "hints": {
+    "platforms": [
+     "web"
+    ]
+   },
+   "expect_concepts": [
+    "data.exception_first"
+   ],
+   "forbid_ids": [
+    "tv-dpad-axes",
+    "comp-tv-rail",
+    "mobile-thumb-reach",
+    "kiosk-public-use"
+   ]
+  },
+  {
+   "id": "pl-mobile",
+   "query": "A list of today's orders that staff scan for problems.",
+   "hints": {
+    "platforms": [
+     "mobile"
+    ]
+   },
+   "expect_concepts": [
+    "data.exception_first"
+   ],
+   "expect_ids_any": [
+    "comp-list-row-mobile",
+    "data-exceptions-first"
+   ],
+   "forbid_ids": [
+    "tv-dpad-axes",
+    "desktop-keyboard-first",
+    "comp-data-entry-grid",
+    "web-responsive-breakpoints"
+   ]
+  },
+  {
+   "id": "pl-desktop",
+   "query": "A list of today's orders that staff scan for problems.",
+   "hints": {
+    "platforms": [
+     "desktop"
+    ]
+   },
+   "expect_concepts": [
+    "data.exception_first"
+   ],
+   "forbid_ids": [
+    "tv-dpad-axes",
+    "comp-tv-rail",
+    "mobile-thumb-reach",
+    "mobile-safe-areas"
+   ]
+  },
+  {
+   "id": "pl-tv",
+   "query": "A list of today's orders that staff scan for problems.",
+   "hints": {
+    "platforms": [
+     "tv"
+    ]
+   },
+   "expect_concepts": [
+    "data.exception_first",
+    "tv.ten_foot_typography"
+   ],
+   "forbid_ids": [
+    "mobile-thumb-reach",
+    "desktop-keyboard-first",
+    "mobile-safe-areas",
+    "comp-data-entry-grid"
+   ]
+  },
+  {
+   "id": "pl-kiosk",
+   "query": "A list of today's orders that staff scan for problems.",
+   "hints": {
+    "platforms": [
+     "kiosk"
+    ]
+   },
+   "expect_concepts": [
+    "data.exception_first",
+    "touch.minimum_target"
+   ],
+   "forbid_ids": [
+    "tv-dpad-axes",
+    "desktop-keyboard-first",
+    "mobile-thumb-reach"
+   ]
+  },
+  {
+   "id": "sm-1",
+   "query": "Increase contrast of the selected row.",
+   "expect_concepts": [
+    "a11y.contrast",
+    "interaction.selection_visible"
+   ],
+   "forbid_ids": [
+    "layout-states-empty-loading-error",
+    "web-responsive-breakpoints",
+    "desktop-status-bar-and-error-navigation",
+    "anti-fashion-over-usability",
+    "a11y-labels-names",
+    "a11y-skip-link"
+   ],
+   "max_bundle": 4
+  },
+  {
+   "id": "sm-2",
+   "query": "Make the primary button colour match the brand blue.",
+   "forbid_ids": [
+    "layout-states-empty-loading-error",
+    "web-responsive-breakpoints",
+    "desktop-status-bar-and-error-navigation",
+    "anti-fashion-over-usability",
+    "a11y-labels-names",
+    "a11y-skip-link",
+    "mobile-safe-areas"
+   ],
+   "max_bundle": 4
+  },
+  {
+   "id": "sm-3",
+   "query": "Rename the column header from Qty to Quantity.",
+   "hints": {
+    "platforms": [
+     "desktop"
+    ]
+   },
+   "forbid_ids": [
+    "layout-states-empty-loading-error",
+    "desktop-status-bar-and-error-navigation",
+    "anti-fashion-over-usability",
+    "a11y-labels-names",
+    "a11y-skip-link",
+    "desktop-keyboard-first",
+    "desktop-fluent-materials"
+   ],
+   "max_bundle": 3
+  },
+  {
+   "id": "sm-4",
+   "query": "Tighten the spacing between the cards on the home grid.",
+   "expect_concepts": [
+    "layout.spacing_scale"
+   ],
+   "forbid_ids": [
+    "layout-states-empty-loading-error",
+    "web-responsive-breakpoints",
+    "desktop-status-bar-and-error-navigation",
+    "anti-fashion-over-usability",
+    "a11y-labels-names",
+    "a11y-skip-link",
+    "comp-checkout-one-page"
+   ],
+   "max_bundle": 4
+  },
+  {
+   "id": "sm-5",
+   "query": "The heading font looks too heavy next to the body text.",
+   "expect_concepts": [
+    "brand.type_roles"
+   ],
+   "forbid_ids": [
+    "layout-states-empty-loading-error",
+    "web-responsive-breakpoints",
+    "desktop-status-bar-and-error-navigation",
+    "anti-fashion-over-usability",
+    "a11y-labels-names",
+    "a11y-skip-link",
+    "mobile-safe-areas"
+   ],
+   "max_bundle": 4
+  },
+  {
+   "id": "sm-6",
+   "query": "Align the icons with the label baseline in the sidebar.",
+   "forbid_ids": [
+    "layout-states-empty-loading-error",
+    "web-responsive-breakpoints",
+    "desktop-status-bar-and-error-navigation",
+    "anti-fashion-over-usability",
+    "a11y-labels-names",
+    "a11y-skip-link",
+    "mobile-safe-areas",
+    "nav-left-rail"
+   ],
+   "max_bundle": 4
+  },
+  {
+   "id": "sm-7",
+   "query": "Round the corners of the avatar images.",
+   "forbid_ids": [
+    "layout-states-empty-loading-error",
+    "web-responsive-breakpoints",
+    "desktop-status-bar-and-error-navigation",
+    "anti-fashion-over-usability",
+    "a11y-labels-names",
+    "a11y-skip-link",
+    "mobile-safe-areas",
+    "imagery-hero"
+   ],
+   "max_bundle": 3
+  },
+  {
+   "id": "sm-8",
+   "query": "The focus ring is invisible on the dark toolbar.",
+   "expect_concepts": [
+    "interaction.focus_visible",
+    "a11y.contrast"
+   ],
+   "forbid_ids": [
+    "layout-states-empty-loading-error",
+    "web-responsive-breakpoints",
+    "desktop-status-bar-and-error-navigation",
+    "anti-fashion-over-usability",
+    "a11y-skip-link",
+    "mobile-safe-areas",
+    "comp-tabs"
+   ],
+   "max_bundle": 4
+  },
+  {
+   "id": "sm-9",
+   "query": "Add a tooltip to the export icon.",
+   "expect_concepts": [
+    "a11y.accessible_names"
+   ],
+   "forbid_ids": [
+    "layout-states-empty-loading-error",
+    "web-responsive-breakpoints",
+    "desktop-status-bar-and-error-navigation",
+    "anti-fashion-over-usability",
+    "a11y-skip-link",
+    "mobile-safe-areas",
+    "comp-data-table"
+   ],
+   "max_bundle": 4
+  },
+  {
+   "id": "sm-10",
+   "query": "The delete icon and the archive icon look identical.",
+   "forbid_ids": [
+    "layout-states-empty-loading-error",
+    "web-responsive-breakpoints",
+    "desktop-status-bar-and-error-navigation",
+    "anti-fashion-over-usability",
+    "a11y-skip-link",
+    "mobile-safe-areas"
+   ],
+   "max_bundle": 4
+  },
+  {
+   "id": "sm-11",
+   "query": "Use the same 8px grid on the new panel as the rest of the app.",
+   "expect_concepts": [
+    "layout.spacing_scale"
+   ],
+   "forbid_ids": [
+    "layout-states-empty-loading-error",
+    "web-responsive-breakpoints",
+    "desktop-status-bar-and-error-navigation",
+    "anti-fashion-over-usability",
+    "a11y-labels-names",
+    "a11y-skip-link",
+    "mobile-safe-areas"
+   ],
+   "max_bundle": 4
+  },
+  {
+   "id": "sm-12",
+   "query": "The disabled state of the button is indistinguishable from enabled.",
+   "expect_concepts": [
+    "a11y.contrast"
+   ],
+   "expect_ids_any": [
+    "color-states-complete",
+    "a11y-nontext-contrast"
+   ],
+   "forbid_ids": [
+    "layout-states-empty-loading-error",
+    "web-responsive-breakpoints",
+    "desktop-status-bar-and-error-navigation",
+    "anti-fashion-over-usability",
+    "a11y-skip-link",
+    "mobile-safe-areas"
+   ],
+   "max_bundle": 4
+  },
+  {
+   "id": "sm-13",
+   "query": "Swap the placeholder text for a visible label on the email field.",
+   "expect_concepts": [
+    "a11y.accessible_names"
+   ],
+   "expect_ids_any": [
+    "anti-placeholder-labels",
+    "a11y-labels-names",
+    "comp-form"
+   ],
+   "forbid_ids": [
+    "layout-states-empty-loading-error",
+    "web-responsive-breakpoints",
+    "desktop-status-bar-and-error-navigation",
+    "anti-fashion-over-usability",
+    "a11y-skip-link",
+    "mobile-safe-areas"
+   ],
+   "max_bundle": 4
+  },
+  {
+   "id": "sm-14",
+   "query": "Increase the tap target of the close button on the toast.",
+   "expect_concepts": [
+    "touch.minimum_target"
+   ],
+   "forbid_ids": [
+    "layout-states-empty-loading-error",
+    "web-responsive-breakpoints",
+    "desktop-status-bar-and-error-navigation",
+    "anti-fashion-over-usability",
+    "a11y-skip-link",
+    "comp-checkout-one-page"
+   ],
+   "max_bundle": 4
+  },
+  {
+   "id": "sm-15",
+   "query": "Change the chart palette so the two series are distinguishable when printed in greyscale.",
+   "expect_concepts": [
+    "a11y.color_not_only"
+   ],
+   "expect_ids_any": [
+    "chart-accessible-colour",
+    "a11y-color-not-only"
+   ],
+   "forbid_ids": [
+    "layout-states-empty-loading-error",
+    "web-responsive-breakpoints",
+    "desktop-status-bar-and-error-navigation",
+    "anti-fashion-over-usability",
+    "a11y-skip-link",
+    "mobile-safe-areas"
+   ],
+   "max_bundle": 4
+  },
+  {
+   "id": "sm-16",
+   "query": "The selected tab underline is one pixel and nobody sees it.",
+   "expect_concepts": [
+    "interaction.selection_visible"
+   ],
+   "forbid_ids": [
+    "layout-states-empty-loading-error",
+    "web-responsive-breakpoints",
+    "desktop-status-bar-and-error-navigation",
+    "anti-fashion-over-usability",
+    "a11y-skip-link",
+    "mobile-safe-areas"
+   ],
+   "max_bundle": 4
+  },
+  {
+   "id": "sm-17",
+   "query": "Put the currency symbol before the amount in the totals row.",
+   "expect_concepts": [
+    "table.tabular_figures"
+   ],
+   "forbid_ids": [
+    "layout-states-empty-loading-error",
+    "web-responsive-breakpoints",
+    "desktop-status-bar-and-error-navigation",
+    "anti-fashion-over-usability",
+    "a11y-skip-link",
+    "mobile-safe-areas",
+    "a11y-labels-names"
+   ],
+   "max_bundle": 4
+  },
+  {
+   "id": "sm-18",
+   "query": "The error text under the field is grey on grey.",
+   "expect_concepts": [
+    "a11y.contrast",
+    "feedback.validation_errors"
+   ],
+   "forbid_ids": [
+    "layout-states-empty-loading-error",
+    "web-responsive-breakpoints",
+    "desktop-status-bar-and-error-navigation",
+    "anti-fashion-over-usability",
+    "a11y-skip-link",
+    "mobile-safe-areas"
+   ],
+   "max_bundle": 4
+  },
+  {
+   "id": "sm-19",
+   "query": "Reduce the shadow on the cards; it looks like 2015.",
+   "forbid_ids": [
+    "layout-states-empty-loading-error",
+    "web-responsive-breakpoints",
+    "desktop-status-bar-and-error-navigation",
+    "a11y-labels-names",
+    "a11y-skip-link",
+    "mobile-safe-areas",
+    "comp-checkout-one-page"
+   ],
+   "max_bundle": 4
+  },
+  {
+   "id": "sm-20",
+   "query": "The badge count overlaps the bell icon.",
+   "forbid_ids": [
+    "layout-states-empty-loading-error",
+    "web-responsive-breakpoints",
+    "desktop-status-bar-and-error-navigation",
+    "anti-fashion-over-usability",
+    "a11y-skip-link",
+    "mobile-safe-areas",
+    "comp-toast-notification"
+   ],
+   "max_bundle": 4
+  },
+  {
+   "id": "cc-break-1",
+   "query": "The report layout breaks between 900 and 1100 pixels wide.",
+   "expect_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "expect_ids_any": [
+    "web-responsive-breakpoints",
+    "desktop-window-resizing"
+   ]
+  },
+  {
+   "id": "cc-break-2",
+   "query": "The 1080p TV home screen has a fixed grid of six tiles.",
+   "hints": {
+    "platforms": [
+     "tv"
+    ]
+   },
+   "forbid_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "forbid_ids": [
+    "web-responsive-breakpoints"
+   ]
+  },
+  {
+   "id": "cc-break-3",
+   "query": "Users shrink the window and the three panes collapse into a mess.",
+   "hints": {
+    "platforms": [
+     "desktop"
+    ]
+   },
+   "expect_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "expect_ids_any": [
+    "desktop-window-resizing"
+   ],
+   "forbid_ids": [
+    "mobile-safe-areas",
+    "mobile-thumb-reach"
+   ]
+  },
+  {
+   "id": "cc-focal-1",
+   "query": "Everything on the overview has the same weight; nothing stands out.",
+   "expect_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "expect_ids_any": [
+    "layout-hierarchy-one-thing"
+   ]
+  },
+  {
+   "id": "cc-focal-2",
+   "query": "The invoice detail puts the amount due in the footer.",
+   "expect_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "forbid_ids": [
+    "layout-states-empty-loading-error",
+    "web-responsive-breakpoints"
+   ]
+  },
+  {
+   "id": "cc-save-1",
+   "query": "Editing a customer and clicking another one throws the changes away.",
+   "expect_concepts": [
+    "state.unsaved_changes_guard",
+    "feedback.confirmation_destructive"
+   ],
+   "expect_ids_any": [
+    "states-persistence-and-session",
+    "comp-dialog",
+    "a11y-modal-dialog",
+    "comp-form"
+   ]
+  },
+  {
+   "id": "cc-save-2",
+   "query": "Two agents edit the same ticket and the second one overwrites the first.",
+   "expect_concepts": [
+    "state.saving_conflict"
+   ],
+   "expect_ids_any": [
+    "states-persistence-and-session",
+    "states-offline-and-sync"
+   ],
+   "note": "2026-09-10 amended: the offline/sync rule also states the conflict-resolution requirement"
+  },
+  {
+   "id": "cc-save-3",
+   "query": "The long application form loses everything if the tab is closed.",
+   "expect_concepts": [
+    "state.unsaved_changes_guard"
+   ],
+   "expect_ids_any": [
+    "states-persistence-and-session",
+    "comp-form",
+    "comp-wizard-stepper"
+   ]
+  },
+  {
+   "id": "cc-touch-1",
+   "query": "Customers at the counter miss the small Next button with a finger.",
+   "hints": {
+    "platforms": [
+     "kiosk"
+    ]
+   },
+   "expect_concepts": [
+    "touch.minimum_target"
+   ],
+   "expect_ids_any": [
+    "a11y-target-size",
+    "kiosk-public-use"
+   ]
+  },
+  {
+   "id": "cc-touch-2",
+   "query": "The terms-of-service text page on the phone app.",
+   "hints": {
+    "platforms": [
+     "mobile"
+    ]
+   },
+   "forbid_concepts": [
+    "touch.minimum_target",
+    "touch.gestures_discoverable"
+   ],
+   "forbid_ids": [
+    "a11y-target-size",
+    "mobile-gestures-discoverable",
+    "mobile-keyboard-ime"
+   ],
+   "max_bundle": 4
+  },
+  {
+   "id": "cc-touch-3",
+   "query": "Toggling filters on the phone requires precise taps on tiny chips.",
+   "hints": {
+    "platforms": [
+     "mobile"
+    ]
+   },
+   "expect_concepts": [
+    "touch.minimum_target"
+   ],
+   "expect_ids_any": [
+    "a11y-target-size",
+    "comp-filters"
+   ]
+  },
+  {
+   "id": "cc-states-1",
+   "query": "The orders list fetches from the server and shows nothing while it loads.",
+   "expect_concepts": [
+    "state.loading_empty_error"
+   ],
+   "expect_ids_any": [
+    "layout-states-empty-loading-error",
+    "comp-empty-state"
+   ]
+  },
+  {
+   "id": "cc-states-2",
+   "query": "The About Us page paragraph is too wide to read comfortably.",
+   "expect_concepts": [
+    "content.readable_measure"
+   ],
+   "forbid_concepts": [
+    "state.loading_empty_error"
+   ],
+   "forbid_ids": [
+    "layout-states-empty-loading-error",
+    "anti-no-states"
+   ],
+   "max_bundle": 4
+  },
+  {
+   "id": "cc-states-3",
+   "query": "Submitting the claim form gives no sign anything happened.",
+   "expect_concepts": [
+    "feedback.progress_indicator",
+    "state.loading_empty_error"
+   ],
+   "expect_ids_any": [
+    "feedback-progress-async",
+    "layout-states-empty-loading-error"
+   ]
+  },
+  {
+   "id": "cc-refresh-1",
+   "query": "The ops board shows yesterday's numbers with no indication of when it last updated.",
+   "expect_concepts": [
+    "data.refresh_timestamp"
+   ],
+   "expect_ids_any": [
+    "chart-realtime",
+    "states-offline-and-sync",
+    "data-exceptions-first"
+   ]
+  },
+  {
+   "id": "cc-refresh-2",
+   "query": "The static price list page.",
+   "forbid_concepts": [
+    "data.refresh_timestamp",
+    "state.loading_empty_error"
+   ],
+   "max_bundle": 4
+  },
+  {
+   "id": "cc-primary-1",
+   "query": "Save, Save & Close and Submit all look the same on the form.",
+   "expect_concepts": [
+    "layout.one_primary_action"
+   ],
+   "expect_ids_any": [
+    "cta-single-primary"
+   ]
+  },
+  {
+   "id": "cc-primary-2",
+   "query": "New users don't know what to do first on the empty workspace.",
+   "expect_concepts": [
+    "layout.one_primary_action",
+    "state.loading_empty_error"
+   ],
+   "expect_ids_any": [
+    "comp-empty-state",
+    "comp-setup-checklist",
+    "onboarding-first-run"
+   ]
+  },
+  {
+   "id": "cc-colprio-1",
+   "query": "The twelve-column orders table is unusable on phones.",
+   "hints": {
+    "platforms": [
+     "mobile"
+    ]
+   },
+   "expect_concepts": [
+    "table.column_priority"
+   ],
+   "expect_ids_any": [
+    "comp-data-table",
+    "comp-list-row-mobile",
+    "mobile-density-touch"
+   ]
+  },
+  {
+   "id": "cc-colprio-2",
+   "query": "The orders table on the 27-inch monitor.",
+   "hints": {
+    "platforms": [
+     "desktop"
+    ]
+   },
+   "forbid_concepts": [
+    "table.column_priority"
+   ],
+   "forbid_ids": [
+    "mobile-safe-areas",
+    "mobile-thumb-reach"
+   ]
+  },
+  {
+   "id": "cc-focus-1",
+   "query": "After closing the details, focus jumps to the top of the page.",
+   "expect_concepts": [
+    "interaction.focus_restore"
+   ],
+   "forbid_ids": [
+    "a11y-skip-link"
+   ]
+  },
+  {
+   "id": "cc-focus-2",
+   "query": "The focus outline is missing on the custom dropdown.",
+   "expect_concepts": [
+    "interaction.focus_visible"
+   ],
+   "expect_ids_any": [
+    "a11y-focus-visible"
+   ],
+   "forbid_ids": [
+    "a11y-skip-link"
+   ]
+  },
+  {
+   "id": "cc-focus-3",
+   "query": "Keyboard users cannot get past the mega menu to the content.",
+   "expect_concepts": [
+    "interaction.keyboard_navigation"
+   ],
+   "expect_ids_any": [
+    "a11y-skip-link",
+    "a11y-keyboard-operable"
+   ]
+  },
+  {
+   "id": "cc-focus-4",
+   "query": "Each cell of the grid is a tab stop, so reaching the footer takes forever.",
+   "expect_concepts": [
+    "interaction.keyboard_navigation"
+   ],
+   "expect_ids_any": [
+    "grid-single-tab-stop"
+   ],
+   "forbid_ids": [
+    "a11y-skip-link"
+   ]
+  },
+  {
+   "id": "cc-live-1",
+   "query": "Screen reader users are not told the upload finished.",
+   "expect_concepts": [
+    "a11y.live_status"
+   ],
+   "expect_ids_any": [
+    "a11y-live-status",
+    "feedback-progress-async"
+   ]
+  },
+  {
+   "id": "cc-names-1",
+   "query": "The icon-only toolbar buttons have no names for assistive tech.",
+   "expect_concepts": [
+    "a11y.accessible_names"
+   ],
+   "expect_ids_any": [
+    "a11y-labels-names"
+   ],
+   "max_bundle": 5
+  },
+  {
+   "id": "cc-thumb-1",
+   "query": "The primary action sits at the top of a tall phone screen.",
+   "hints": {
+    "platforms": [
+     "mobile"
+    ]
+   },
+   "expect_concepts": [
+    "touch.thumb_reach"
+   ],
+   "expect_ids_any": [
+    "mobile-thumb-reach",
+    "cta-sticky-bar"
+   ]
+  },
+  {
+   "id": "cc-dpad-1",
+   "query": "Some tiles on the TV grid cannot be reached with the arrow keys.",
+   "hints": {
+    "platforms": [
+     "tv"
+    ]
+   },
+   "expect_concepts": [
+    "interaction.dpad_reachability"
+   ],
+   "expect_ids_any": [
+    "tv-dpad-axes"
+   ]
+  },
+  {
+   "id": "cc-privacy-1",
+   "query": "The lobby check-in screen keeps the previous visitor's name on screen.",
+   "hints": {
+    "platforms": [
+     "kiosk"
+    ]
+   },
+   "expect_concepts": [
+    "privacy.shared_device",
+    "state.session_expiry"
+   ],
+   "expect_ids_any": [
+    "shared-device-privacy",
+    "kiosk-public-use"
+   ]
+  },
+  {
+   "id": "cc-progress-1",
+   "query": "The export runs for a minute with only a spinning circle.",
+   "expect_concepts": [
+    "feedback.progress_indicator"
+   ],
+   "expect_ids_any": [
+    "feedback-progress-async"
+   ]
+  },
+  {
+   "id": "cc-i18n-1",
+   "query": "German labels overflow the buttons on the toolbar.",
+   "expect_concepts": [
+    "content.i18n_expansion"
+   ],
+   "expect_ids_any": [
+    "i18n-text-expansion-rtl"
+   ]
+  },
+  {
+   "id": "cc-motion-1",
+   "query": "The slide-in animation on every panel makes some users queasy.",
+   "expect_concepts": [
+    "a11y.reduced_motion"
+   ],
+   "expect_ids_any": [
+    "a11y-reduced-motion"
+   ]
+  },
+  {
+   "id": "wp-1",
+   "query": "Add a KPI tile to the clinic's front-desk dashboard.",
+   "expect_ids_any": [
+    "comp-kpi-tile"
+   ],
+   "forbid_ids": [
+    "comp-checkout-one-page",
+    "comp-product-detail-page",
+    "dir-utility-commerce",
+    "dir-editorial-storefront"
+   ]
+  },
+  {
+   "id": "wp-2",
+   "query": "A poster grid for our film catalogue on the website.",
+   "expect_ids_any": [
+    "card-poster-portrait",
+    "layout-grid-catalog",
+    "comp-media-card"
+   ],
+   "forbid_ids": [
+    "comp-checkout-one-page",
+    "dir-clinical-workstation"
+   ]
+  },
+  {
+   "id": "wp-3",
+   "query": "Polish the spacing on the settings page.",
+   "forbid_kinds": [
+    "direction"
+   ],
+   "forbid_ids": [
+    "comp-checkout-one-page",
+    "comp-product-detail-page"
+   ],
+   "max_bundle": 5
+  },
+  {
+   "id": "wp-4",
+   "query": "The invoice editor's line items are hard to edit.",
+   "forbid_kinds": [
+    "direction"
+   ],
+   "expect_ids_any": [
+    "comp-data-entry-grid",
+    "table-column-disambiguation",
+    "comp-form"
+   ]
+  },
+  {
+   "id": "wp-5",
+   "query": "Fix the focus order in the checkout form.",
+   "forbid_kinds": [
+    "direction"
+   ],
+   "expect_concepts": [
+    "interaction.keyboard_navigation"
+   ],
+   "max_bundle": 5
+  },
+  {
+   "id": "wp-6",
+   "query": "Design a new field-service app for technicians repairing lifts.",
+   "expect_kinds_any": [
+    "direction"
+   ],
+   "forbid_ids": [
+    "dir-cinematic-media-tv",
+    "dir-editorial-storefront",
+    "comp-checkout-one-page"
+   ]
+  },
+  {
+   "id": "wp-7",
+   "query": "A fresh internal tool for the support team to search tickets on Windows.",
+   "hints": {
+    "platforms": [
+     "desktop"
+    ]
+   },
+   "expect_kinds_any": [
+    "direction",
+    "pattern"
+   ],
+   "forbid_ids": [
+    "dir-cinematic-media-tv",
+    "dir-public-kiosk",
+    "dir-social-feed-mobile",
+    "tv-safe-area"
+   ]
+  },
+  {
+   "id": "wp-8",
+   "query": "The habit tracker's weekly summary card.",
+   "forbid_ids": [
+    "comp-checkout-one-page",
+    "comp-product-detail-page",
+    "dir-utility-commerce",
+    "dir-editorial-storefront",
+    "cta-sticky-bar"
+   ]
+  },
+  {
+   "id": "wp-9",
+   "query": "Our recipe app's shopping list screen.",
+   "forbid_ids": [
+    "comp-checkout-one-page",
+    "ecommerce-delivery-promise",
+    "dir-utility-commerce"
+   ]
+  },
+  {
+   "id": "wp-10",
+   "query": "The lab results table in the patient portal.",
+   "expect_ids_any": [
+    "comp-data-table",
+    "data-tables-numeric"
+   ],
+   "forbid_ids": [
+    "comp-checkout-one-page",
+    "comp-product-detail-page",
+    "dir-utility-commerce",
+    "comp-data-entry-grid"
+   ]
+  },
+  {
+   "id": "wp-11",
+   "query": "Store hours are wrong on the branch finder map.",
+   "forbid_ids": [
+    "comp-checkout-one-page",
+    "comp-product-detail-page",
+    "dir-utility-commerce",
+    "cta-sticky-bar"
+   ]
+  },
+  {
+   "id": "wp-12",
+   "query": "The wallboard in the support room shows queue length.",
+   "forbid_ids": [
+    "comp-checkout-one-page",
+    "dir-social-feed-mobile",
+    "mobile-thumb-reach",
+    "mobile-keyboard-ime"
+   ]
+  },
+  {
+   "id": "wp-13",
+   "query": "The kiosk's attract loop autoplays a promo with sound.",
+   "hints": {
+    "platforms": [
+     "kiosk"
+    ]
+   },
+   "expect_concepts": [],
+   "expect_ids_any": [
+    "a11y-time-and-auto",
+    "kiosk-public-use"
+   ],
+   "forbid_ids": [
+    "comp-player-controls",
+    "tv-player-controls",
+    "dir-cinematic-media-tv"
+   ]
+  },
+  {
+   "id": "wp-14",
+   "query": "The hospital directory touch screen lists departments.",
+   "hints": {
+    "platforms": [
+     "kiosk"
+    ]
+   },
+   "forbid_ids": [
+    "dir-clinical-workstation",
+    "comp-data-entry-grid",
+    "desktop-keyboard-first"
+   ]
+  },
+  {
+   "id": "wp-15",
+   "query": "The trading blotter's rows update forty times a second.",
+   "hints": {
+    "platforms": [
+     "desktop"
+    ]
+   },
+   "expect_ids_any": [
+    "chart-realtime",
+    "comp-data-table",
+    "web-virtualize-long-lists",
+    "desktop-density-spacing"
+   ],
+   "forbid_ids": [
+    "dir-social-feed-mobile",
+    "comp-checkout-one-page",
+    "layout-feed"
+   ]
+  },
+  {
+   "id": "wp-16",
+   "query": "A seat map for the cinema booking page.",
+   "forbid_ids": [
+    "comp-media-card",
+    "card-poster-portrait",
+    "media-resume-and-details",
+    "comp-player-controls",
+    "dir-cinematic-media-tv"
+   ]
+  },
+  {
+   "id": "wp-17",
+   "query": "The drive-through order confirmation screen.",
+   "hints": {
+    "platforms": [
+     "kiosk"
+    ]
+   },
+   "forbid_ids": [
+    "chart-compare-bar",
+    "comp-tv-side-sheet",
+    "comp-player-controls",
+    "dir-cinematic-media-tv"
+   ]
+  },
+  {
+   "id": "wp-18",
+   "query": "The control-room wall shows alarms from forty sensors.",
+   "forbid_ids": [
+    "dir-social-feed-mobile",
+    "layout-feed",
+    "comp-checkout-one-page",
+    "mobile-thumb-reach"
+   ],
+   "expect_concepts": [
+    "data.exception_first"
+   ]
+  },
+  {
+   "id": "op-1",
+   "query": "The Windows tray flyout is cut off on the taskbar edge.",
+   "hints": {
+    "platforms": [
+     "desktop"
+    ]
+   },
+   "forbid_ids": [
+    "kiosk-public-use",
+    "dir-public-kiosk",
+    "tv-safe-area",
+    "mobile-thumb-reach",
+    "comp-kiosk-keypad"
+   ]
+  },
+  {
+   "id": "op-2",
+   "query": "Our Avalonia dock handles are invisible on the dark theme.",
+   "hints": {
+    "platforms": [
+     "desktop"
+    ]
+   },
+   "expect_concepts": [
+    "a11y.contrast"
+   ],
+   "forbid_ids": [
+    "dir-industrial-hmi",
+    "kiosk-public-use",
+    "tv-safe-area"
+   ]
+  },
+  {
+   "id": "op-3",
+   "query": "The TV watchlist feels like a stretched phone app.",
+   "hints": {
+    "platforms": [
+     "tv"
+    ]
+   },
+   "expect_ids_any": [
+    "anti-desktop-scaled-to-tv",
+    "layout-rails",
+    "comp-tv-rail"
+   ],
+   "forbid_ids": [
+    "mobile-thumb-reach",
+    "mobile-safe-areas",
+    "mobile-keyboard-ime"
+   ]
+  },
+  {
+   "id": "op-4",
+   "query": "The listings page for TV programmes on our website.",
+   "hints": {
+    "platforms": [
+     "web"
+    ]
+   },
+   "forbid_ids": [
+    "tv-dpad-axes",
+    "tv-safe-area",
+    "a11y-tv-focus-always",
+    "tv-back-behavior",
+    "comp-data-entry-grid"
+   ],
+   "forbid_concepts": [
+    "interaction.dpad_reachability"
+   ]
+  },
+  {
+   "id": "op-5",
+   "query": "The desktop app's DPI changes when dragging to the second monitor.",
+   "hints": {
+    "platforms": [
+     "desktop"
+    ]
+   },
+   "expect_ids_any": [
+    "desktop-window-resizing"
+   ],
+   "forbid_ids": [
+    "nav-hub-spoke",
+    "dir-service-app-mobile",
+    "a11y-tv-focus-always",
+    "mobile-thumb-reach"
+   ]
+  },
+  {
+   "id": "op-6",
+   "query": "The confirm and cancel buttons are flush together on the warehouse terminal.",
+   "hints": {
+    "platforms": [
+     "kiosk"
+    ]
+   },
+   "expect_concepts": [
+    "touch.minimum_target",
+    "feedback.confirmation_destructive"
+   ],
+   "forbid_ids": [
+    "desktop-keyboard-first",
+    "tv-dpad-axes"
+   ]
+  },
+  {
+   "id": "op-7",
+   "query": "Mounted PC at the gate; staff use a keyboard and mouse, never the glass.",
+   "hints": {
+    "platforms": [
+     "desktop"
+    ]
+   },
+   "forbid_ids": [
+    "comp-kiosk-keypad",
+    "kiosk-public-use",
+    "a11y-target-size"
+   ],
+   "forbid_concepts": [
+    "touch.minimum_target"
+   ]
+  },
+  {
+   "id": "op-8",
+   "query": "The mobile notch hides the score counter in the game overlay.",
+   "hints": {
+    "platforms": [
+     "mobile"
+    ]
+   },
+   "expect_concepts": [
+    "touch.safe_areas"
+   ],
+   "expect_ids_any": [
+    "mobile-safe-areas"
+   ],
+   "forbid_ids": [
+    "comp-player-controls",
+    "tv-player-controls",
+    "tv-safe-area"
+   ]
+  },
+  {
+   "id": "op-9",
+   "query": "Text size setting in the app should actually scale the labels.",
+   "hints": {
+    "platforms": [
+     "mobile"
+    ]
+   },
+   "expect_concepts": [
+    "a11y.text_scaling"
+   ],
+   "expect_ids_any": [
+    "a11y-text-scaling"
+   ],
+   "forbid_ids": [],
+   "note": "2026-09-10 amended: the setting lives on a settings screen; that record is not a wrong screen here"
+  },
+  {
+   "id": "op-10",
+   "query": "Photos in the gallery view load unsized and the grid shifts.",
+   "expect_concepts": [
+    "perf.layout_shift",
+    "perf.image_sizing"
+   ],
+   "forbid_ids": [],
+   "forbid_kinds": [
+    "direction"
+   ]
+  },
+  {
+   "id": "lt-1",
+   "query": "Press Tab to move between the fields in the wizard.",
+   "expect_concepts": [
+    "interaction.keyboard_navigation"
+   ],
+   "forbid_ids": [
+    "comp-tabs"
+   ]
+  },
+  {
+   "id": "lt-2",
+   "query": "The browser tab title never changes when you navigate.",
+   "forbid_ids": [
+    "comp-tabs"
+   ]
+  },
+  {
+   "id": "lt-3",
+   "query": "Landscape photos are cropped square in the listing.",
+   "expect_concepts": [
+    "perf.image_sizing"
+   ],
+   "forbid_ids": [
+    "card-poster-landscape",
+    "layout-rails"
+   ]
+  },
+  {
+   "id": "lt-4",
+   "query": "The overlay on the map hides the zoom buttons.",
+   "forbid_ids": [
+    "comp-player-controls",
+    "tv-player-controls",
+    "comp-mini-player"
+   ]
+  },
+  {
+   "id": "lt-5",
+   "query": "Play the onboarding video in a modal.",
+   "expect_concepts": [
+    "a11y.dialog_focus"
+   ],
+   "expect_ids_any": [
+    "a11y-modal-dialog",
+    "comp-dialog"
+   ]
+  },
+  {
+   "id": "lt-6",
+   "query": "Remote workers cannot find the timesheet link.",
+   "forbid_ids": [
+    "tv-dpad-axes",
+    "tv-back-behavior",
+    "a11y-tv-focus-always"
+   ],
+   "forbid_concepts": [
+    "interaction.dpad_reachability",
+    "interaction.back_semantics"
+   ]
+  },
+  {
+   "id": "lt-7",
+   "query": "The card reader step on the checkout times out.",
+   "expect_concepts": [
+    "state.session_expiry"
+   ],
+   "forbid_ids": [
+    "card-flat-tile",
+    "card-poster-portrait",
+    "surface-elevated-cards"
+   ]
+  },
+  {
+   "id": "lt-8",
+   "query": "The rail workers' shift roster screen.",
+   "forbid_ids": [
+    "comp-tv-rail",
+    "layout-rails",
+    "layout-immersive-rails",
+    "dir-cinematic-media-tv"
+   ]
+  },
+  {
+   "id": "lt-9",
+   "query": "The player profile page in the club app.",
+   "forbid_ids": [
+    "comp-player-controls",
+    "tv-player-controls",
+    "layout-split-player",
+    "comp-mini-player"
+   ]
+  },
+  {
+   "id": "lt-10",
+   "query": "Hero image on the landing page loads late.",
+   "expect_concepts": [
+    "perf.layout_shift"
+   ],
+   "expect_ids_any": [
+    "web-cls-and-lcp",
+    "comp-hero-section",
+    "imagery-hero"
+   ]
+  },
+  {
+   "id": "lt-11",
+   "query": "The feed of audit events should group by day.",
+   "forbid_ids": [
+    "dir-social-feed-mobile",
+    "layout-feed"
+   ]
+  },
+  {
+   "id": "lt-12",
+   "query": "The channel partner directory search.",
+   "hints": {
+    "platforms": [
+     "web"
+    ]
+   },
+   "forbid_ids": [
+    "comp-epg",
+    "layout-epg-grid",
+    "media-resume-and-details",
+    "dir-broadcast-guide-tv"
+   ],
+   "forbid_concepts": [
+    "tv.time_navigation"
+   ]
+  },
+  {
+   "id": "lt-13",
+   "query": "Users compare notes in the shared workspace.",
+   "forbid_ids": [
+    "chart-compare-bar",
+    "comp-plan-comparison"
+   ],
+   "forbid_concepts": [
+    "data.chart_by_question",
+    "data.comparison_structure"
+   ]
+  },
+  {
+   "id": "lt-14",
+   "query": "Pin the summary panel to the dashboard.",
+   "forbid_ids": [
+    "comp-player-controls"
+   ],
+   "forbid_concepts": [
+    "interaction.dpad_reachability"
+   ]
+  },
+  {
+   "id": "lt-15",
+   "query": "A guide to the new billing screen for support staff.",
+   "forbid_ids": [
+    "comp-epg",
+    "layout-epg-grid",
+    "dir-broadcast-guide-tv"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+## guidance: In dark mode the transaction dates are barely visible.
+status=PARTIAL mode=['accessibility', 'audit'] platform=['mobile'] input=['touch'] product=['finance'] screen=[] stack=['compose'] density=medium env=[] risk=medium negatives=[]
+budget=low mode evidence: accessibility: accessibility defect on existing UI | audit: diagnose the reported defect
+project context: navigation={'value': 'top-bar', 'status': 'KNOWN', 'evidence': ['top-bar: 30 matches in AccountDetailScreen.kt, AccountsScreen.kt, CardsScreen.kt (shell/layout file)']}, theme={'value': 'dual-theme', 'status': 'KNOWN', 'evidence': ['dark theme configuration signals: 3', 'light theme configuration signals: 2', 'hex palette: 0 near-white, 1 near-black'], 'default': 'light'}, surfaces={'value': 'bordered-flat', 'status': 'INFERRED', 'evidence': ['borders in 2 files, shadow/elevation in 0']}, radius={'value': 'small', 'status': 'INFERRED', 'evidence': ['most common radius 4 (2×); others [12.0, 8.0]']}, spacing={'value': 'unknown', 'status': 'UNKNOWN', 'evidence': []}, typography={'value': 'custom', 'status': 'KNOWN', 'evidence': ['font family System (8 refs)', 'weights medium, normal, bold', 'encoded type scale in 2 files']}, components={'value': 'compose, material3', 'status': 'KNOWN', 'evidence': ['compose', 'material3']}
+concepts required=1.0 covered (1/1); tokens≈103 coverage/1k=9.71 purity=0.5
+concerns required=['accessibility', 'interaction', 'component', 'data-display'] covered=0.5 uncovered=['component', 'data-display'] recommended=['states', 'anti-pattern', 'adaptive', 'feedback'] bundle=1 (core 0 + guardrails 1) diversity=1.0 redundancy=0.0
+
+### CRITICAL GUARDRAILS (must hold)
+- **Non-text contrast 3:1 for controls and focus** `a11y-nontext-contrast` [accessibility/interaction; accessibility-requirement; GENERIC] — Any visual that identifies a control or its state needs ≥3:1 against adjacent colours. Hairline dividers at 1.2:1 are fine as decoration but an input whose only boundary is that hairline fails. _(covers: high contrast, visible focus)_
+  - selected for: critical concept (GENERIC): high contrast
+
+Omitted (redundant): color-dark-accent (no positive task evidence (screen / subtype / component / job / product / wording) for a core record); nav-bottom-tabs (no positive task evidence (screen / subtype / component / job / product / wording) for a core record); focus-none-touch-only (no positive task evidence (screen / subtype / component / job / product / wording) for a core record); cta-sticky-bar (no positive task evidence (screen / subtype / component / job / product / wording) for a core record); metadata-inline-badges (no positive task evidence (screen / subtype / component / job / product / wording) for a core record); nav-hub-spoke (no positive task evidence (screen / subtype / component / job / product / wording) for a core record)
+Filtered out: anti-desktop-scaled-to-tv (platform ['tv'] not in request ['mobile']); anti-hover-only-actions (platform ['desktop', 'web'] not in request ['mobile']); chart-heatmap-matrix (platform ['desktop', 'web'] not in request ['mobile']); comp-data-table (platform ['desktop', 'web'] not in request ['mobile']); comp-command-palette (platform ['desktop', 'web'] not in request ['mobile']); comp-data-entry-grid (platform ['desktop', 'web'] not in request ['mobile'])
+
+Concept trace (explain): covered a11y.contrast [CRITICAL GENERIC]
+  - UNCOVERED a11y.accessible_names: candidates existed but the bundle cap or a lower utility left them out (candidates a11y-native-semantics, a11y-labels-names, comp-photo-capture-field)
+  - UNCOVERED a11y.semantics: candidates existed but the bundle cap or a lower utility left them out (candidates a11y-native-semantics)
+  - UNCOVERED a11y.color_not_only: candidates existed but the bundle cap or a lower utility left them out (candidates comp-chart-container, a11y-color-not-only, data-exceptions-first)
+  - UNCOVERED a11y.live_status: candidates existed but the bundle cap or a lower utility left them out (candidates interaction-drag-drop, a11y-live-status, search-filter-feedback)
+  - UNCOVERED a11y.text_scaling: candidates existed but the bundle cap or a lower utility left them out (candidates a11y-text-scaling)
+  - UNCOVERED a11y.reduced_motion: candidates existed but the bundle cap or a lower utility left them out (candidates onboarding-first-run, a11y-time-and-auto, a11y-reduced-motion)
+  - UNCOVERED process.reuse_first: candidates existed but the bundle cap or a lower utility left them out (candidates impl-reuse-before-new)
+  - UNCOVERED touch.gestures_discoverable: candidates existed but the bundle cap or a lower utility left them out (candidates mobile-gestures-discoverable, interaction-drag-drop, comp-list-row-mobile)

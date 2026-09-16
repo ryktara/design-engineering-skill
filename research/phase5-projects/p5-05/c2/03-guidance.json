@@ -1,0 +1,1176 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "Keyboard users can't get to the chart filters.",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "accessibility",
+      "audit"
+    ],
+    "platform": [
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "react"
+    ],
+    "density": null,
+    "components": [
+      "chart",
+      "search"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [
+      "accessibility"
+    ],
+    "risk": "low",
+    "primary_jobs": [
+      "accessibility chart",
+      "accessibility search"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "low",
+    "scope": {
+      "domain": "UI_ACCESSIBILITY",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "accessibility",
+        "interaction"
+      ],
+      "change_scope": "unknown",
+      "utterance": "observation",
+      "existing": true,
+      "problem": true,
+      "facet": "accessibility",
+      "diagnose_only": false,
+      "creation": false,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "accessibility: accessibility defect on existing UI",
+      "audit: diagnose the reported defect"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "top-bar",
+        "status": "KNOWN",
+        "evidence": [
+          "top-bar: 6 matches in App.jsx, styles.css (shell/layout file)"
+        ]
+      },
+      "theme": {
+        "value": "light-first",
+        "status": "INFERRED",
+        "evidence": [
+          "hex palette: 13 near-white, 1 near-black"
+        ]
+      },
+      "surfaces": {
+        "value": "bordered-flat",
+        "status": "INFERRED",
+        "evidence": [
+          "weak signal: shadow 0, border 1"
+        ]
+      },
+      "radius": {
+        "value": "small",
+        "status": "INFERRED",
+        "evidence": [
+          "most common radius 4 (1×); others [6.0, 999.0]"
+        ]
+      },
+      "spacing": {
+        "value": "irregular",
+        "status": "UNKNOWN",
+        "evidence": [
+          "most used spacing values [2, 4, 8, 12, 16]",
+          "tailwind spacing classes (5)"
+        ]
+      },
+      "typography": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": [
+          "no font family declaration found"
+        ]
+      },
+      "components": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": []
+      }
+    },
+    "known": [
+      "platform=web (project inspection)",
+      "input=keyboard (request: keyboard)",
+      "stack=react (project inspection)",
+      "project_navigation=top-bar (repository: top-bar: 6 matches in App.jsx, styles.css (shell/layout file))"
+    ],
+    "inferred": [
+      "input=pointer (implied by platform web)",
+      "input=touch (implied by platform web)",
+      "mode=accessibility (accessibility defect on existing UI)",
+      "mode=audit (diagnose the reported defect)",
+      "project_theme=light-first (repository: hex palette: 13 near-white, 1 near-black)",
+      "project_surfaces=bordered-flat (repository: weak signal: shadow 0, border 1)",
+      "project_radius=small (repository: most common radius 4 (1×); others [6.0, 999.0])"
+    ],
+    "missing": [],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [
+        "keyboard",
+        "keyboard users can't"
+      ],
+      "project": [
+        "package.json: react@^18.3.1",
+        "package.json: react-dom@^18.3.1"
+      ]
+    },
+    "activation": {
+      "decision": "activate",
+      "ui_score": 3.0,
+      "non_ui_score": 0,
+      "ui_terms": [
+        "chart"
+      ],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "to the",
+        "users"
+      ],
+      "new": [],
+      "defect": [
+        "can't",
+        "keyboard users can't"
+      ],
+      "operations": {},
+      "domains": {
+        "accessibility": [
+          "keyboard user",
+          "a11y facet"
+        ],
+        "interaction": [
+          "keyboard"
+        ]
+      },
+      "no_change": [],
+      "scope": {},
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "chart",
+        "keyboard",
+        "filter",
+        "concept:interaction.keyboard_navigation"
+      ],
+      "ux_symptoms": [
+        "keyboard",
+        "users",
+        "can't get to"
+      ],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_ACCESSIBILITY",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "accessibility",
+        "reason": "accessibility mode"
+      },
+      {
+        "concern": "interaction",
+        "reason": "accessibility mode: operability is part of the review"
+      },
+      {
+        "concern": "component",
+        "reason": "the reviewed component/screen"
+      },
+      {
+        "concern": "data-display",
+        "reason": "numbers, tables or charts are the content"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "states",
+        "reason": "audits check empty/loading/error handling"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "audits name generic-design defects"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "viewport range"
+      }
+    ],
+    "optional": [
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "named in the request: cant get to, keyboard user"
+      },
+      {
+        "concept": "a11y.accessible_names",
+        "reason": "accessibility review"
+      },
+      {
+        "concept": "a11y.contrast",
+        "reason": "accessibility review"
+      },
+      {
+        "concept": "a11y.semantics",
+        "reason": "accessibility review"
+      },
+      {
+        "concept": "a11y.color_not_only",
+        "reason": "accessibility review"
+      },
+      {
+        "concept": "data.chart_by_question",
+        "reason": "charts"
+      },
+      {
+        "concept": "data.search_results",
+        "reason": "search"
+      },
+      {
+        "concept": "data.filter_chips",
+        "reason": "filters mentioned"
+      },
+      {
+        "concept": "data.accessible_chart_alternative",
+        "reason": "required by data.chart_by_question"
+      }
+    ],
+    "recommended_concepts": [
+      "a11y.text_scaling",
+      "a11y.reduced_motion",
+      "process.reuse_first",
+      "touch.minimum_target",
+      "adaptive.breakpoint_matrix",
+      "data.exception_first",
+      "data.drilldown",
+      "data.kpi_comparison",
+      "layout.focal_hierarchy",
+      "a11y.live_status",
+      "state.loading_empty_error",
+      "interaction.hover_independence",
+      "interaction.focus_visible",
+      "interaction.shortcuts"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "comp-chart-container",
+      "kind": "component",
+      "category": "chart",
+      "title": "Chart container and interaction",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "component",
+        "data-display",
+        "states"
+      ],
+      "concepts": [
+        "a11y.color_not_only",
+        "data.chart_by_question",
+        "data.accessible_chart_alternative",
+        "state.loading_empty_error"
+      ],
+      "covers": [
+        "no colour alone for status",
+        "chart form chosen from the analytical question",
+        "accessible chart summary and table alternative",
+        "loading, empty and error states"
+      ],
+      "score": 0.497,
+      "guidance": "Title that states the question, unit and time range visible, legend as direct labels where possible, tooltip also keyboard-reachable (focusable points or a data table toggle), accessible summary text, consistent palette, responsive (reduce ticks, not data), empty/loading/error states, no animation beyond a single load transition and none on data refresh. Provide the data table or CSV.",
+      "use_when": "Any chart in a product.",
+      "avoid_when": "Decorative charts with no question; charts of fewer than ~4 points (use a stat).",
+      "risk": {
+        "a11y": "high",
+        "perf": "medium"
+      },
+      "provenance": "heuristic",
+      "implementation": {
+        "react": "Recharts/Visx/ECharts already in the project; add role=img + aria-label summary and a table fallback."
+      },
+      "why": {
+        "lexical": 0.592,
+        "structural": 0.38,
+        "matched": [
+          "platform web",
+          "secondary mode"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "comp-filters",
+      "kind": "component",
+      "category": "search",
+      "title": "Filter bar / faceted filters",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "data-display",
+        "navigation"
+      ],
+      "concepts": [
+        "data.filter_chips",
+        "navigation.deep_link_state"
+      ],
+      "covers": [
+        "applied filters as removable chips with counts",
+        "URL / route reflects state"
+      ],
+      "score": 0.422,
+      "guidance": "Desktop: filter row above the content with chips for applied filters; facets as popovers with checkboxes and counts; 'clear all'; results update with a count. Mobile: filter button with badge count opens a sheet; apply button; applied chips under the search field. Persist in URL.",
+      "use_when": "Lists with several filterable attributes.",
+      "avoid_when": "One or two filters (inline selects); TV (use rail categories or a simple filter row).",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.456,
+        "structural": 0.38,
+        "matched": [
+          "platform web",
+          "secondary mode"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "a11y-skip-link",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Bypass blocks: skip links and landmark shortcuts",
+      "facets": [
+        "accessibility",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility"
+      ],
+      "concepts": [
+        "interaction.keyboard_navigation",
+        "a11y.semantics",
+        "interaction.focus_visible"
+      ],
+      "covers": [
+        "keyboard navigation and focus order",
+        "semantic structure and roles",
+        "visible focus"
+      ],
+      "score": 0.91,
+      "guidance": "Provide a 'Skip to <region>' link as the first focusable element (visible on focus), targets with tabindex=-1 and a heading; expose landmarks (main, nav, region with aria-label) so screen-reader users can jump; keep the number of tab stops before the first control small (≤ 5) and give composite widgets a single tab stop.",
+      "use_when": "Any page where the keyboard user must tab through navigation, headers or a chart before reaching controls such as filters, forms or the main content.",
+      "avoid_when": "Never make the skip link the only visible-on-focus element without a focus ring; never point it at an element that cannot receive focus.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 1.0,
+        "structural": 0.8,
+        "matched": [
+          "platform web",
+          "input keyboard (stated)",
+          "mode accessibility"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "most relevant record for the request wording"
+    },
+    {
+      "id": "a11y-nontext-contrast",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Non-text contrast 3:1 for controls and focus",
+      "facets": [
+        "accessibility"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "a11y.contrast",
+        "interaction.focus_visible"
+      ],
+      "covers": [
+        "high contrast",
+        "visible focus"
+      ],
+      "score": 0.266,
+      "guidance": "Any visual that identifies a control or its state needs ≥3:1 against adjacent colours. Hairline dividers at 1.2:1 are fine as decoration but an input whose only boundary is that hairline fails.",
+      "use_when": "Input borders, checkbox/radio outlines, focus indicators, icons that carry meaning, chart marks, toggle states.",
+      "avoid_when": "Purely decorative borders and dividers are exempt, but then they must not be the only boundary of a control.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.043,
+        "structural": 0.54,
+        "matched": [
+          "mode accessibility"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: interaction, high contrast"
+    },
+    {
+      "id": "search-filter-feedback",
+      "kind": "rule",
+      "category": "search",
+      "title": "Search and filters: visible state and instant feedback",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "accessibility",
+        "component",
+        "data-display",
+        "feedback"
+      ],
+      "concepts": [
+        "a11y.live_status",
+        "data.filter_chips",
+        "data.search_results"
+      ],
+      "covers": [
+        "live region status announcements",
+        "applied filters as removable chips with counts",
+        "search field and results behaviour"
+      ],
+      "score": 0.446,
+      "guidance": "Applied filters as removable chips with a 'clear all', result count announced, debounced query (≈300 ms) with a loading indicator, empty results suggest next steps, filter state in the URL/route, and on TV a search screen with a system keyboard/voice plus results as rails.",
+      "use_when": "Catalogues, tables, media libraries, admin lists.",
+      "avoid_when": "Never hide applied filters; never reset filters on navigation without asking; never search on every keystroke against a slow backend without debounce.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.435,
+        "structural": 0.46,
+        "matched": [
+          "secondary mode"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: search field and results behaviour"
+    },
+    {
+      "id": "a11y-labels-names",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Accessible names for every control and image",
+      "facets": [
+        "accessibility"
+      ],
+      "concerns": [
+        "accessibility"
+      ],
+      "concepts": [
+        "a11y.accessible_names"
+      ],
+      "covers": [
+        "accessible names and labels"
+      ],
+      "score": 0.243,
+      "guidance": "Visible label for inputs (not placeholder-only), aria-label/accessibilityLabel/contentDescription/AutomationProperties.Name for icon-only controls, alt text for meaningful images and alt=\"\" for decorative ones, link text that makes sense out of context. The accessible name must contain the visible label text (label in name).",
+      "use_when": "Icon-only buttons, inputs, images, custom controls, links whose text is 'Read more'.",
+      "avoid_when": "Decorative images and icons beside visible text are hidden from assistive tech instead.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.54,
+        "matched": [
+          "mode accessibility"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: accessible names and labels"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "data-display"
+    ],
+    "covered_required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "data-display"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "states",
+      "anti-pattern",
+      "adaptive"
+    ],
+    "covered_recommended_concerns": [
+      "states"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "interaction.keyboard_navigation",
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "a11y.semantics",
+      "a11y.color_not_only",
+      "data.chart_by_question",
+      "data.search_results",
+      "data.filter_chips",
+      "data.accessible_chart_alternative"
+    ],
+    "covered_required_concepts": [
+      "interaction.keyboard_navigation",
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "a11y.semantics",
+      "a11y.color_not_only",
+      "data.chart_by_question",
+      "data.search_results",
+      "data.filter_chips",
+      "data.accessible_chart_alternative"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.21,
+    "bundle_size": 6,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 2,
+    "guardrail_size": 4,
+    "bundle_tokens": 861,
+    "coverage_per_1k_tokens": 10.45,
+    "mean_purity": 0.92,
+    "contaminated": [],
+    "category_diversity": 0.5,
+    "duplicate_pressure": 0.5,
+    "facet_coverage": 0.5,
+    "redundancy": 0.53
+  },
+  "token_coverage": 1.0,
+  "omitted": [],
+  "rejected": [
+    {
+      "id": "comp-tv-sign-in",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "comp-kiosk-keypad",
+      "reason": "platform ['kiosk', 'tablet'] not in request ['web']"
+    },
+    {
+      "id": "dir-windows-native-tool",
+      "reason": "platform ['desktop'] not in request ['web']"
+    },
+    {
+      "id": "focus-none-touch-only",
+      "reason": "platform ['kiosk', 'mobile'] not in request ['web']"
+    },
+    {
+      "id": "tv-no-touch-hover",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "mobile-safe-areas",
+      "reason": "platform ['mobile', 'tablet'] not in request ['web']"
+    },
+    {
+      "id": "mobile-keyboard-ime",
+      "reason": "platform ['mobile', 'tablet'] not in request ['web']"
+    },
+    {
+      "id": "mobile-density-touch",
+      "reason": "platform ['mobile', 'tablet'] not in request ['web']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "interaction.keyboard_navigation",
+      "priority": "required",
+      "reason": "named in the request: cant get to, keyboard user",
+      "candidate_records": [
+        [
+          "a11y-skip-link",
+          0.91
+        ],
+        [
+          "a11y-keyboard-operable",
+          0.487
+        ],
+        [
+          "interaction-drag-drop",
+          0.421
+        ],
+        [
+          "grid-single-tab-stop",
+          0.394
+        ]
+      ],
+      "selected_record": "a11y-skip-link",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.accessible_names",
+      "priority": "required",
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "comp-player-controls",
+          0.28
+        ],
+        [
+          "a11y-labels-names",
+          0.243
+        ],
+        [
+          "comp-product-detail-page",
+          0.178
+        ],
+        [
+          "comp-media-card",
+          0.171
+        ]
+      ],
+      "selected_record": "a11y-labels-names",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.contrast",
+      "priority": "required",
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "a11y-nontext-contrast",
+          0.266
+        ],
+        [
+          "a11y-contrast-text",
+          0.243
+        ],
+        [
+          "anti-fashion-over-usability",
+          0.207
+        ]
+      ],
+      "selected_record": "a11y-nontext-contrast",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.semantics",
+      "priority": "required",
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "a11y-skip-link",
+          0.91
+        ],
+        [
+          "a11y-semantics-structure",
+          0.297
+        ]
+      ],
+      "selected_record": "a11y-skip-link",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.color_not_only",
+      "priority": "required",
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "comp-chart-container",
+          0.497
+        ],
+        [
+          "a11y-color-not-only",
+          0.35
+        ],
+        [
+          "chart-accessible-colour",
+          0.332
+        ],
+        [
+          "chart-realtime",
+          0.301
+        ]
+      ],
+      "selected_record": "comp-chart-container",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "data.chart_by_question",
+      "priority": "required",
+      "reason": "charts",
+      "candidate_records": [
+        [
+          "comp-chart-container",
+          0.497
+        ],
+        [
+          "chart-small-multiples",
+          0.342
+        ],
+        [
+          "chart-relationship",
+          0.283
+        ],
+        [
+          "chart-heatmap-matrix",
+          0.257
+        ]
+      ],
+      "selected_record": "comp-chart-container",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "data.search_results",
+      "priority": "required",
+      "reason": "search",
+      "candidate_records": [
+        [
+          "search-filter-feedback",
+          0.446
+        ],
+        [
+          "comp-search",
+          0.161
+        ]
+      ],
+      "selected_record": "search-filter-feedback",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "data.filter_chips",
+      "priority": "required",
+      "reason": "filters mentioned",
+      "candidate_records": [
+        [
+          "search-filter-feedback",
+          0.446
+        ],
+        [
+          "comp-filters",
+          0.422
+        ],
+        [
+          "layout-grid-catalog",
+          0.275
+        ]
+      ],
+      "selected_record": "search-filter-feedback",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "data.accessible_chart_alternative",
+      "priority": "required",
+      "reason": "required by data.chart_by_question",
+      "candidate_records": [
+        [
+          "comp-chart-container",
+          0.497
+        ],
+        [
+          "chart-relationship",
+          0.283
+        ],
+        [
+          "chart-flow-sankey",
+          0.257
+        ],
+        [
+          "chart-trend-line",
+          0.215
+        ]
+      ],
+      "selected_record": "comp-chart-container",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.text_scaling",
+      "priority": "recommended",
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "a11y-text-scaling",
+          0.243
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "a11y.reduced_motion",
+      "priority": "recommended",
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "onboarding-first-run",
+          0.269
+        ],
+        [
+          "a11y-time-and-auto",
+          0.256
+        ],
+        [
+          "a11y-reduced-motion",
+          0.243
+        ],
+        [
+          "anti-scroll-animation-everything",
+          0.171
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "recommended",
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.171
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.minimum_target",
+      "priority": "recommended",
+      "reason": "touch on web",
+      "candidate_records": [
+        [
+          "a11y-target-size",
+          0.27
+        ],
+        [
+          "media-photo-viewer",
+          0.225
+        ],
+        [
+          "comp-product-detail-page",
+          0.178
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "adaptive.breakpoint_matrix",
+      "priority": "recommended",
+      "reason": "web viewport range",
+      "candidate_records": [
+        [
+          "web-responsive-breakpoints",
+          0.261
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "data.exception_first",
+      "priority": "recommended",
+      "reason": "dashboard focal point",
+      "candidate_records": [
+        [
+          "chart-realtime",
+          0.301
+        ],
+        [
+          "anti-generic-sidebar-dashboard",
+          0.245
+        ],
+        [
+          "data-exceptions-first",
+          0.223
+        ],
+        [
+          "layout-hierarchy-one-thing",
+          0.207
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "data.drilldown",
+      "priority": "recommended",
+      "reason": "dashboard to detail",
+      "candidate_records": [
+        [
+          "comp-kpi-tile",
+          0.221
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "data.kpi_comparison",
+      "priority": "recommended",
+      "reason": "KPIs",
+      "candidate_records": [
+        [
+          "chart-compare-bar",
+          0.242
+        ],
+        [
+          "comp-kpi-tile",
+          0.221
+        ],
+        [
+          "chart-progress-gauge",
+          0.14
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "layout.focal_hierarchy",
+      "priority": "recommended",
+      "reason": "dashboard hierarchy",
+      "candidate_records": [
+        [
+          "metadata-rich",
+          0.258
+        ],
+        [
+          "anti-oversized-hero-text",
+          0.207
+        ],
+        [
+          "typo-measure-and-rhythm",
+          0.207
+        ],
+        [
+          "layout-hierarchy-one-thing",
+          0.207
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "a11y.live_status",
+      "priority": "recommended",
+      "reason": "accessibility review (demoted: saturation cap)",
+      "candidate_records": [
+        [
+          "search-filter-feedback",
+          0.446
+        ],
+        [
+          "interaction-drag-drop",
+          0.421
+        ],
+        [
+          "a11y-live-status",
+          0.273
+        ],
+        [
+          "feedback-progress-async",
+          0.207
+        ]
+      ],
+      "selected_record": "search-filter-feedback",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "state.loading_empty_error",
+      "priority": "recommended",
+      "reason": "asynchronous or remote data on this screen (demoted: saturation cap)",
+      "candidate_records": [
+        [
+          "comp-chart-container",
+          0.497
+        ],
+        [
+          "layout-states-empty-loading-error",
+          0.238
+        ],
+        [
+          "anti-no-states",
+          0.207
+        ],
+        [
+          "comp-mini-player",
+          0.198
+        ]
+      ],
+      "selected_record": "comp-chart-container",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.hover_independence",
+      "priority": "recommended",
+      "reason": "web is used with touch as well as pointer (demoted: saturation cap)",
+      "candidate_records": [
+        [
+          "a11y-keyboard-operable",
+          0.487
+        ],
+        [
+          "anti-hover-only-actions",
+          0.42
+        ],
+        [
+          "a11y-hover-not-required",
+          0.36
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.focus_visible",
+      "priority": "recommended",
+      "reason": "web keyboard focus (demoted: saturation cap)",
+      "candidate_records": [
+        [
+          "a11y-skip-link",
+          0.91
+        ],
+        [
+          "focus-ring-standard",
+          0.437
+        ],
+        [
+          "grid-single-tab-stop",
+          0.394
+        ],
+        [
+          "a11y-focus-visible",
+          0.375
+        ]
+      ],
+      "selected_record": "a11y-skip-link",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.shortcuts",
+      "priority": "recommended",
+      "reason": "related to interaction.keyboard_navigation",
+      "candidate_records": [
+        [
+          "cta-toolbar-commands",
+          0.271
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates rejected as contaminated: product-specific with product unknown"
+    }
+  ]
+}

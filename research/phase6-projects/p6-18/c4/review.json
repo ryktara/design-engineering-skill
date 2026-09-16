@@ -1,0 +1,8 @@
+{"task": "p6-18",
+ "records": [
+   {"id": "desktop-keyboard-first", "verdict": "relevant", "category": "", "why": "F2/Delete+undo/Ctrl+F/F6/arrow keys/access keys is squarely the mouseless-entry request, as judged in c3."}
+ ],
+ "missing_critical": ["table.inline_edit"],
+ "unjustified_direction_slots": 0,
+ "layer_review": {"core": [], "critical": ["desktop-keyboard-first"], "optional": []},
+ "change_vs_c3": "worse - the off-target typo-scale-and-roles is gone, but a11y-keyboard-operable (the record the c3 implementer used for the focus-restore fix) was dropped too, leaving a one-record bundle that still misses table.inline_edit and comp-data-entry-grid."}

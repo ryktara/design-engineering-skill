@@ -1,0 +1,29 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:FleetDesk.ViewModels"
+             xmlns:views="using:FleetDesk.Views"
+             x:Class="FleetDesk.App"
+             RequestedThemeVariant="Light">
+
+  <!-- Light-first: the app always requests the Light variant. The Settings "theme" toggle is a stub. -->
+
+  <Application.Styles>
+    <FluentTheme />
+    <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml" />
+    <!-- FleetDesk design language: palette, type, radius, spacing, flat bordered surfaces. -->
+    <StyleInclude Source="avares://FleetDesk/Styles/Theme.axaml" />
+  </Application.Styles>
+
+  <Application.DataTemplates>
+    <DataTemplate DataType="{x:Type vm:VehiclesViewModel}">
+      <views:VehiclesView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:DispatchViewModel}">
+      <views:DispatchView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
+      <views:SettingsView />
+    </DataTemplate>
+  </Application.DataTemplates>
+
+</Application>

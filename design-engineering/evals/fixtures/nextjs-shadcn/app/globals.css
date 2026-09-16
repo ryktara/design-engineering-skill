@@ -1,0 +1,4 @@
+@import "tailwindcss";
+:root { --background: #fff; --foreground: #09090b; --primary: #18181b; --radius: 0.5rem; }
+@media (min-width: 768px) { .grid { gap: 1rem; } }
+@media (min-width: 1280px) { .grid { gap: 1.5rem; } }

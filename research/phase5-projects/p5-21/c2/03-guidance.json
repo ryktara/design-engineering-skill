@@ -1,0 +1,864 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "Add a weekly summary card to the top of the Today screen.",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "mobile"
+    ],
+    "input": [
+      "touch"
+    ],
+    "product": [],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "swiftui"
+    ],
+    "density": null,
+    "components": [
+      "card"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "create card"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "screen_reader": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "create"
+      ],
+      "problem_domain": [],
+      "change_scope": "screen",
+      "utterance": "request",
+      "existing": true,
+      "problem": false,
+      "facet": "general",
+      "diagnose_only": false,
+      "creation": true,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "create: build/create request on an existing surface"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "bottom-tabs",
+        "status": "KNOWN",
+        "evidence": [
+          "bottom-tabs: 7 matches in README.md, RootTabView.swift, StreaksApp.swift (shell/layout file)"
+        ]
+      },
+      "theme": {
+        "value": "dual-theme",
+        "status": "KNOWN",
+        "evidence": [
+          "dark theme configuration signals: 2",
+          "root/canvas backgrounds: 2 light, 2 dark",
+          "hex palette: 7 near-white, 6 near-black"
+        ],
+        "default": "light"
+      },
+      "surfaces": {
+        "value": "elevated",
+        "status": "INFERRED",
+        "evidence": [
+          "shadow/elevation in 5 files, borders in 1"
+        ]
+      },
+      "radius": {
+        "value": "small",
+        "status": "INFERRED",
+        "evidence": [
+          "most common radius 5 (4×); others [3.0, 8.0]"
+        ]
+      },
+      "spacing": {
+        "value": "irregular",
+        "status": "UNKNOWN",
+        "evidence": [
+          "most used spacing values [6, 32, 2, 3, 4]"
+        ]
+      },
+      "typography": {
+        "value": "custom",
+        "status": "KNOWN",
+        "evidence": [
+          "font family System (7 refs)",
+          "weights 600, 500, 700, 800",
+          "encoded type scale in 4 files"
+        ]
+      },
+      "components": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": []
+      }
+    },
+    "known": [
+      "platform=mobile (project inspection)",
+      "stack=swiftui (project inspection)",
+      "project_navigation=bottom-tabs (repository: bottom-tabs: 7 matches in README.md, RootTabView.swift, StreaksApp.swift (shell/layout file))",
+      "project_theme=dual-theme (repository: dark theme configuration signals: 2; root/canvas backgrounds: 2 light, 2 dark)",
+      "project_typography=custom (repository: font family System (7 refs); weights 600, 500, 700, 800)"
+    ],
+    "inferred": [
+      "input=touch (implied by platform mobile)",
+      "mode=create (build/create request on an existing surface)",
+      "project_surfaces=elevated (repository: shadow/elevation in 5 files, borders in 1)",
+      "project_radius=small (repository: most common radius 5 (4×); others [3.0, 8.0])"
+    ],
+    "missing": [
+      "product: product family / primary user task not stated",
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [],
+      "project": [
+        "Package.swift: Apple project",
+        "Package.swift: iOS target"
+      ]
+    },
+    "activation": {
+      "decision": "activate",
+      "ui_score": 4.0,
+      "non_ui_score": 0,
+      "ui_terms": [
+        "screen",
+        "card",
+        "summary card"
+      ],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "to the",
+        "today",
+        "the today screen"
+      ],
+      "new": [],
+      "defect": [],
+      "operations": {
+        "create": [
+          "add",
+          "add a"
+        ]
+      },
+      "domains": {},
+      "no_change": [],
+      "scope": {
+        "screen": [
+          "screen"
+        ]
+      },
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "screen",
+        "card",
+        "summary card",
+        "concept:data.kpi_comparison"
+      ],
+      "ux_symptoms": [],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "component",
+        "reason": "a specific component/screen is requested"
+      },
+      {
+        "concern": "structure",
+        "reason": "layout topology and hierarchy"
+      },
+      {
+        "concern": "interaction",
+        "reason": "input model: touch"
+      },
+      {
+        "concern": "accessibility",
+        "reason": "platform accessibility baseline"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "navigation",
+        "reason": "how users arrive and leave"
+      },
+      {
+        "concern": "states",
+        "reason": "few states; still handle failed media"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "create/refactor requests attract generic defaults"
+      },
+      {
+        "concern": "brand",
+        "reason": "visual identity direction"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "device sizes and orientation"
+      }
+    ],
+    "optional": [
+      "motion",
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "data.kpi_comparison",
+        "reason": "named in the request: weekly summary, summary card"
+      },
+      {
+        "concept": "process.reuse_first",
+        "reason": "existing repository: reuse its primitives"
+      },
+      {
+        "concept": "touch.minimum_target",
+        "reason": "touch platform"
+      }
+    ],
+    "recommended_concepts": [
+      "table.tabular_figures",
+      "layout.focal_hierarchy",
+      "touch.gestures_discoverable",
+      "touch.thumb_reach",
+      "touch.safe_areas",
+      "navigation.platform_grammar",
+      "layout.no_nested_cards"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "surface-elevated-cards",
+      "kind": "pattern",
+      "category": "surface",
+      "title": "Elevated cards as the primary container",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "brand",
+        "structure"
+      ],
+      "concepts": [],
+      "covers": [],
+      "score": 0.455,
+      "guidance": "One elevation level for resting cards, one for pressed/dragged; the whole card is the target with a single accessible name; never nest a card inside a card; cards in a grid share aspect ratio and padding. If more than ~30% of a screen is card borders, switch to dividers.",
+      "use_when": "Each item is a self-contained, tappable object (a product, a post, a course) and the card boundary is also the touch target.",
+      "avoid_when": "Dashboards and tables (cards inside cards), text-heavy content, dense desktop tools, or when the card contains a single line of text.",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "incompatible": [
+        "surface-flat-tonal",
+        "surface-bordered-panes",
+        "layout-table-first",
+        "layout-three-pane"
+      ],
+      "why": {
+        "lexical": 0.329,
+        "structural": 0.52,
+        "matched": [
+          "platform mobile",
+          "input touch",
+          "mode create"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring pattern with lexical evidence"
+    },
+    {
+      "id": "card-poster-landscape",
+      "kind": "pattern",
+      "category": "cards",
+      "title": "Landscape media cards (16:9)",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "structure"
+      ],
+      "concepts": [],
+      "covers": [],
+      "score": 0.443,
+      "guidance": "Fixed 16:9, progress bar inside the art bottom edge with a scrim, duration/remaining badge with text, channel logo for live, 4 per row on TV at 960 dp with 20 dp gutters, title below.",
+      "use_when": "Episodes, live channels, sports, continue-watching rows, video tutorials: landscape thumbnails with a progress bar and duration.",
+      "avoid_when": "Portrait-native art collections.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "platform-standard",
+      "incompatible": [
+        "card-list-row",
+        "card-poster-portrait",
+        "layout-table-first"
+      ],
+      "why": {
+        "lexical": 0.338,
+        "structural": 0.46,
+        "matched": [
+          "platform mobile",
+          "mode create"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring pattern with lexical evidence"
+    },
+    {
+      "id": "comp-kpi-tile",
+      "kind": "component",
+      "category": "chart",
+      "title": "KPI / stat tile",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "data-display",
+        "navigation"
+      ],
+      "concepts": [
+        "table.tabular_figures",
+        "data.kpi_comparison",
+        "data.drilldown"
+      ],
+      "covers": [
+        "tabular figures and numeric alignment",
+        "KPI with comparison and precision",
+        "drill-down from summary to detail"
+      ],
+      "score": 0.247,
+      "guidance": "Label, value with unit and tabular figures, comparison (vs previous period) with sign + arrow + colour, optional sparkline, consistent decimal precision, the most important KPI larger or first, no icon per tile unless it disambiguates, whole tile links to the detail. Avoid the 'four identical cards with big numbers and a gradient' default.",
+      "use_when": "Headline metrics on dashboards.",
+      "avoid_when": "More than ~6 KPIs in a row (users stop reading); KPIs without context (no comparison, no unit).",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.024,
+        "structural": 0.52,
+        "matched": [
+          "platform mobile",
+          "mode create"
+        ]
+      },
+      "role": "core",
+      "selected_for": "required coverage: component, KPI with comparison and precision"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "a11y-target-size",
+      "kind": "rule",
+      "category": "input",
+      "title": "Target size by platform",
+      "facets": [
+        "interaction"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "touch.minimum_target"
+      ],
+      "covers": [
+        "large touch targets (≥44–48 px)"
+      ],
+      "score": 0.27,
+      "guidance": "Web: ≥24×24 CSS px minimum (WCAG 2.5.8), 44×44 recommended for touch. iOS ≥44 pt, Android ≥48 dp, kiosk ≥60 px, desktop pointer ≥24 epx with 4–8 px spacing. Extend the hit area beyond the visual glyph rather than enlarging the icon.",
+      "use_when": "Every tappable/clickable element; especially icon buttons, table row actions, chips, close buttons, and pagination.",
+      "avoid_when": "Inline text links inside a sentence are exempt from the size rule but still need spacing.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.6,
+        "matched": [
+          "input touch",
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: accessibility, interaction, large touch targets (≥44–48 px)"
+    },
+    {
+      "id": "impl-reuse-before-new",
+      "kind": "rule",
+      "category": "implementation",
+      "title": "Reuse → extend → compose → new (in that order)",
+      "facets": [
+        "process"
+      ],
+      "concerns": [
+        "structure"
+      ],
+      "concepts": [
+        "process.reuse_first"
+      ],
+      "covers": [
+        "reuse → extend → compose → new"
+      ],
+      "score": 0.243,
+      "guidance": "Inspect the repository first (inspect_project.py): existing components, tokens, fonts, breakpoints, and conventions win. Reuse the existing component; if it lacks a variant, extend it through its API; if the composition is new, compose existing primitives; only create a new primitive when the gap is real, and put it where the others live.",
+      "use_when": "Any UI change in an existing codebase.",
+      "avoid_when": "Never install a second component library or a UI framework to build one screen; never fork a design-system component when a variant prop would do.",
+      "risk": {
+        "a11y": "low",
+        "perf": "medium"
+      },
+      "provenance": "engineering-practice",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.54,
+        "matched": [
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: reuse → extend → compose → new"
+    },
+    {
+      "id": "mobile-safe-areas",
+      "kind": "rule",
+      "category": "layout",
+      "title": "Mobile: safe areas and system insets",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "adaptive",
+        "structure"
+      ],
+      "concepts": [
+        "touch.safe_areas"
+      ],
+      "covers": [
+        "safe areas and notches"
+      ],
+      "score": 0.363,
+      "guidance": "Content respects safe-area insets (SwiftUI safeAreaInset / .ignoresSafeArea only for backgrounds, Compose WindowInsets + edge-to-edge, RN SafeAreaView/useSafeAreaInsets, web env(safe-area-inset-*)); bottom actions sit above the home indicator/gesture bar; keyboard (IME) insets push the focused field into view.",
+      "use_when": "Bottom bars, sticky CTAs, full-bleed backgrounds, top app bars, landscape.",
+      "avoid_when": "Never hard-code status/nav bar heights.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.072,
+        "structural": 0.72,
+        "matched": [
+          "platform mobile",
+          "input touch",
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "recommended coverage: adaptive, safe areas and notches"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "component",
+      "structure",
+      "interaction",
+      "accessibility"
+    ],
+    "covered_required_concerns": [
+      "component",
+      "structure",
+      "interaction",
+      "accessibility"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "navigation",
+      "states",
+      "anti-pattern",
+      "brand",
+      "adaptive"
+    ],
+    "covered_recommended_concerns": [
+      "navigation",
+      "brand",
+      "adaptive"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "data.kpi_comparison",
+      "process.reuse_first",
+      "touch.minimum_target"
+    ],
+    "covered_required_concepts": [
+      "data.kpi_comparison",
+      "process.reuse_first",
+      "touch.minimum_target"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.29,
+    "bundle_size": 6,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 3,
+    "guardrail_size": 3,
+    "bundle_tokens": 679,
+    "coverage_per_1k_tokens": 4.42,
+    "mean_purity": 0.94,
+    "contaminated": [],
+    "category_diversity": 1.0,
+    "duplicate_pressure": 0.17,
+    "facet_coverage": 0.6,
+    "redundancy": 0.27
+  },
+  "token_coverage": 0.83,
+  "omitted": [
+    {
+      "id": "comp-product-detail-page",
+      "reason": "contamination: product-specific with product unknown; low purity 0.20: most of its concepts are off-task"
+    },
+    {
+      "id": "comp-media-card",
+      "reason": "contamination: product-specific with product unknown; low purity 0.00: most of its concepts are off-task; media-card-specific record with no media-card evidence in the request"
+    },
+    {
+      "id": "comp-checkout-one-page",
+      "reason": "contamination: product-specific with product unknown; low purity 0.00: most of its concepts are off-task"
+    },
+    {
+      "id": "media-resume-and-details",
+      "reason": "contamination: product-specific with product unknown; low purity 0.00: most of its concepts are off-task"
+    },
+    {
+      "id": "card-none",
+      "reason": "same category as a core pick (adds no new concept) or incompatible with one"
+    },
+    {
+      "id": "nav-bottom-tabs",
+      "reason": "visual pattern without wording evidence on an existing UI (would restyle what the task does not concern)"
+    },
+    {
+      "id": "card-poster-portrait",
+      "reason": "same category as a core pick (adds no new concept) or incompatible with one"
+    },
+    {
+      "id": "cta-sticky-bar",
+      "reason": "visual pattern without wording evidence on an existing UI (would restyle what the task does not concern)"
+    },
+    {
+      "id": "card-flat-tile",
+      "reason": "visual pattern without wording evidence on an existing UI (would restyle what the task does not concern)"
+    },
+    {
+      "id": "metadata-moderate",
+      "reason": "visual pattern without wording evidence on an existing UI (would restyle what the task does not concern)"
+    }
+  ],
+  "rejected": [
+    {
+      "id": "anti-generic-sidebar-dashboard",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "anti-desktop-scaled-to-tv",
+      "reason": "platform ['tv'] not in request ['mobile']"
+    },
+    {
+      "id": "anti-hover-only-actions",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-tv-rail",
+      "reason": "platform ['tv'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-data-entry-grid",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-plan-comparison",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "dir-operational-workbench",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "dir-analytical-console",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "data.kpi_comparison",
+      "priority": "required",
+      "reason": "named in the request: weekly summary, summary card",
+      "candidate_records": [
+        [
+          "comp-kpi-tile",
+          0.247
+        ],
+        [
+          "chart-compare-bar",
+          0.18
+        ],
+        [
+          "chart-progress-gauge",
+          0.153
+        ]
+      ],
+      "selected_record": "comp-kpi-tile",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "required",
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.243
+        ]
+      ],
+      "selected_record": "impl-reuse-before-new",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "touch.minimum_target",
+      "priority": "required",
+      "reason": "touch platform",
+      "candidate_records": [
+        [
+          "comp-product-detail-page",
+          0.462
+        ],
+        [
+          "comp-photo-capture-field",
+          0.274
+        ],
+        [
+          "a11y-target-size",
+          0.27
+        ],
+        [
+          "comp-list-row-mobile",
+          0.261
+        ]
+      ],
+      "selected_record": "a11y-target-size",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "table.tabular_figures",
+      "priority": "recommended",
+      "reason": "KPI values line up",
+      "candidate_records": [
+        [
+          "comp-kpi-tile",
+          0.247
+        ],
+        [
+          "typo-scale-and-roles",
+          0.243
+        ],
+        [
+          "data-exceptions-first",
+          0.243
+        ]
+      ],
+      "selected_record": "comp-kpi-tile",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "layout.focal_hierarchy",
+      "priority": "recommended",
+      "reason": "one headline number first",
+      "candidate_records": [
+        [
+          "anti-oversized-hero-text",
+          0.243
+        ],
+        [
+          "typo-measure-and-rhythm",
+          0.243
+        ],
+        [
+          "layout-hierarchy-one-thing",
+          0.243
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.gestures_discoverable",
+      "priority": "recommended",
+      "reason": "touch platform",
+      "candidate_records": [
+        [
+          "interaction-drag-drop",
+          0.352
+        ],
+        [
+          "mobile-gestures-discoverable",
+          0.324
+        ],
+        [
+          "comp-list-row-mobile",
+          0.261
+        ],
+        [
+          "media-photo-viewer",
+          0.261
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.thumb_reach",
+      "priority": "recommended",
+      "reason": "one-handed use",
+      "candidate_records": [
+        [
+          "mobile-thumb-reach",
+          0.405
+        ],
+        [
+          "cta-sticky-bar",
+          0.378
+        ],
+        [
+          "anti-mobile-desktop-shrunk",
+          0.234
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.safe_areas",
+      "priority": "recommended",
+      "reason": "mobile",
+      "candidate_records": [
+        [
+          "cta-sticky-bar",
+          0.378
+        ],
+        [
+          "mobile-safe-areas",
+          0.363
+        ]
+      ],
+      "selected_record": "mobile-safe-areas",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "navigation.platform_grammar",
+      "priority": "recommended",
+      "reason": "mobile navigation grammar",
+      "candidate_records": [
+        [
+          "nav-bottom-tabs",
+          0.426
+        ],
+        [
+          "mobile-platform-navigation",
+          0.342
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "layout.no_nested_cards",
+      "priority": "recommended",
+      "reason": "cards",
+      "candidate_records": [
+        [
+          "card-none",
+          0.446
+        ],
+        [
+          "anti-card-everything",
+          0.432
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    }
+  ]
+}

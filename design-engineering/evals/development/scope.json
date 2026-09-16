@@ -1,0 +1,248 @@
+{
+  "description": "Phase 4 scope/domain cases written before implementation (2026-09-09). The skill classifies the task domain deterministically and decides internal scope (activation is a separate, frozen proxy). UI-adjacent technical prompts are the hard cases: the boundary is semantic, not a blacklist.",
+  "suite": "scope",
+  "cases": [
+    {
+      "id": "s-virtualize-freeze",
+      "query": "Virtualize this grid because scrolling freezes.",
+      "expect_domain_any": [
+        "UI_IMPLEMENTATION",
+        "FRONTEND_RUNTIME"
+      ],
+      "expect_in_scope": true,
+      "expect_concepts": [
+        "table.virtualization"
+      ]
+    },
+    {
+      "id": "s-api-mutation",
+      "query": "Fix my button's API mutation.",
+      "expect_domain_any": [
+        "FRONTEND_RUNTIME",
+        "BACKEND"
+      ],
+      "expect_in_scope": false
+    },
+    {
+      "id": "s-cls-hero",
+      "query": "Reduce CLS caused by the hero image.",
+      "expect_domain_any": [
+        "UI_IMPLEMENTATION",
+        "UI_DESIGN"
+      ],
+      "expect_in_scope": true,
+      "expect_concepts": [
+        "perf.layout_shift"
+      ]
+    },
+    {
+      "id": "s-modal-focus",
+      "query": "Why does this modal lose focus?",
+      "expect_domain_any": [
+        "UI_INTERACTION",
+        "UI_ACCESSIBILITY"
+      ],
+      "expect_in_scope": true,
+      "expect_concepts": [
+        "a11y.dialog_focus"
+      ]
+    },
+    {
+      "id": "s-tree-shake-icons",
+      "query": "Tree-shake the icon package.",
+      "expect_domain_any": [
+        "BUILD_TOOLING",
+        "FRONTEND_RUNTIME"
+      ],
+      "expect_in_scope": false
+    },
+    {
+      "id": "s-loading-state-ux",
+      "query": "Improve loading-state UX.",
+      "expect_domain_any": [
+        "UI_DESIGN",
+        "UI_INTERACTION"
+      ],
+      "expect_in_scope": true,
+      "expect_concepts": [
+        "state.loading_empty_error"
+      ]
+    },
+    {
+      "id": "s-react-rerender",
+      "query": "Why is my React component re-rendering?",
+      "expect_domain_any": [
+        "FRONTEND_RUNTIME"
+      ],
+      "expect_in_scope": false
+    },
+    {
+      "id": "s-css-build-slow",
+      "query": "the CSS build is slow",
+      "expect_domain_any": [
+        "BUILD_TOOLING"
+      ],
+      "expect_in_scope": false
+    },
+    {
+      "id": "s-css-grid-breaks",
+      "query": "the CSS grid breaks at 900px",
+      "expect_domain_any": [
+        "UI_IMPLEMENTATION",
+        "UI_DESIGN"
+      ],
+      "expect_in_scope": true
+    },
+    {
+      "id": "s-storybook-webpack",
+      "query": "Storybook fails to start after the webpack upgrade",
+      "expect_domain_any": [
+        "BUILD_TOOLING"
+      ],
+      "expect_in_scope": false
+    },
+    {
+      "id": "s-hydration-warning",
+      "query": "hydration mismatch warning on the pricing page",
+      "expect_domain_any": [
+        "FRONTEND_RUNTIME"
+      ],
+      "expect_in_scope": false
+    },
+    {
+      "id": "s-scss-to-modules",
+      "query": "migrate our SCSS to CSS modules mechanically, no visual changes",
+      "expect_domain_any": [
+        "BUILD_TOOLING",
+        "UI_IMPLEMENTATION"
+      ],
+      "expect_in_scope": false
+    },
+    {
+      "id": "s-postgres-index",
+      "query": "add an index so the orders query stops timing out",
+      "expect_domain_any": [
+        "DATA",
+        "BACKEND"
+      ],
+      "expect_in_scope": false
+    },
+    {
+      "id": "s-jwt-refresh",
+      "query": "refresh the JWT silently before it expires",
+      "expect_domain_any": [
+        "BACKEND"
+      ],
+      "expect_in_scope": false
+    },
+    {
+      "id": "s-session-expiry-ux",
+      "query": "warn users before their session expires so they don't lose the form",
+      "expect_domain_any": [
+        "UI_DESIGN",
+        "UI_INTERACTION"
+      ],
+      "expect_in_scope": true,
+      "expect_concepts": [
+        "state.session_expiry"
+      ]
+    },
+    {
+      "id": "s-ci-flaky",
+      "query": "the Playwright tests are flaky in CI",
+      "expect_domain_any": [
+        "BUILD_TOOLING",
+        "INFRASTRUCTURE"
+      ],
+      "expect_in_scope": false
+    },
+    {
+      "id": "s-perf-wording-ux",
+      "query": "the dashboard feels slow even though the API responds in 80 ms",
+      "expect_domain_any": [
+        "UI_INTERACTION",
+        "UI_DESIGN",
+        "FRONTEND_RUNTIME"
+      ],
+      "expect_in_scope": true,
+      "expect_concepts": [
+        "state.loading_empty_error"
+      ]
+    },
+    {
+      "id": "s-a11y-symptom-runtime",
+      "query": "screen reader announces the wrong count because the state updates twice",
+      "expect_domain_any": [
+        "UI_ACCESSIBILITY",
+        "FRONTEND_RUNTIME"
+      ],
+      "expect_in_scope": true,
+      "expect_concepts": [
+        "a11y.live_status"
+      ]
+    },
+    {
+      "id": "s-framework-data-task",
+      "query": "write the Prisma schema for our Next.js orders service",
+      "expect_domain_any": [
+        "DATA",
+        "BACKEND"
+      ],
+      "expect_in_scope": false
+    },
+    {
+      "id": "s-visual-word-build",
+      "query": "the Tailwind purge removed the dark mode classes in production",
+      "expect_domain_any": [
+        "BUILD_TOOLING"
+      ],
+      "expect_in_scope": false
+    },
+    {
+      "id": "s-ui-word-backend",
+      "query": "the dashboard endpoint returns 500 when filters are empty",
+      "expect_domain_any": [
+        "BACKEND"
+      ],
+      "expect_in_scope": false
+    },
+    {
+      "id": "s-deploy-tv-app",
+      "query": "sign and upload the Android TV APK to the Play console",
+      "expect_domain_any": [
+        "INFRASTRUCTURE",
+        "BUILD_TOOLING"
+      ],
+      "expect_in_scope": false
+    },
+    {
+      "id": "s-in-scope-tv",
+      "query": "the Android TV home rail loses its scroll position after playback",
+      "expect_domain_any": [
+        "UI_INTERACTION"
+      ],
+      "expect_in_scope": true,
+      "expect_concepts": [
+        "interaction.focus_restore"
+      ]
+    },
+    {
+      "id": "s-abstain-reason",
+      "query": "rotate the API keys for the payments service",
+      "expect_in_scope": false,
+      "expect_reason_contains": "not a UI"
+    },
+    {
+      "id": "s5-shard-table",
+      "query": "How should we shard the tenants table for multi-tenancy",
+      "expect_in_scope": false,
+      "note": "2026-09-09 written before fix: 'table' is a database table here; sharding is a data concern"
+    },
+    {
+      "id": "s5-binding-throws",
+      "query": "Avalonia DataGrid binding throws on null collection at startup",
+      "expect_in_scope": false,
+      "note": "2026-09-09 written before fix: runtime exception in a UI control is engineering, not design"
+    }
+  ]
+}

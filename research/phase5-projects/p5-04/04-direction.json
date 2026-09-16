@@ -1,0 +1,139 @@
+{
+  "brand": "The product page never tells shoppers when it will arrive or that returns are free.",
+  "fingerprint": {
+    "navigation_model": "top-bar",
+    "layout_topology": "grid-catalog",
+    "grid_behavior": "responsive-columns",
+    "content_density": "medium",
+    "surface_strategy": "elevated",
+    "card_geometry": "poster-landscape",
+    "corner_language": "small",
+    "typography_character": "geometric-sans",
+    "color_strategy": "neutral-plus-accent",
+    "motion_character": "crossfade",
+    "focus_strategy": "ring",
+    "cta_strategy": "single-primary",
+    "image_strategy": "thumbnails",
+    "icon_strategy": "text-only",
+    "metadata_density": "inline-badges"
+  },
+  "direction": {
+    "navigation": "nav-top-bar",
+    "layout": "layout-grid-catalog",
+    "density": "density-medium",
+    "surface": "surface-elevated-cards",
+    "cards": "card-poster-landscape",
+    "typography": "typography-geometric-sans",
+    "color": "color-neutral-accent",
+    "motion": "motion-crossfade",
+    "focus": "focus-ring-standard",
+    "cta": "cta-single-primary",
+    "imagery": "imagery-thumbnails",
+    "icon": "icon-text-only",
+    "metadata": "metadata-inline-badges"
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [
+      "ecommerce"
+    ],
+    "screen": [
+      "detail"
+    ],
+    "screen_subtype": [],
+    "stack": [
+      "html-css"
+    ],
+    "density": null,
+    "components": [],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "audit detail"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [],
+      "change_scope": "screen",
+      "utterance": "observation",
+      "preserve": []
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "audit: problem statement on existing UI",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": "top-bar (KNOWN)",
+      "theme": "light-first (INFERRED)",
+      "surfaces": "elevated (INFERRED)",
+      "radius": "pill (INFERRED)",
+      "typography": "geometric-sans (INFERRED)"
+    },
+    "known": [
+      "platform=web",
+      "product=ecommerce",
+      "stack=html-css",
+      "screen=detail",
+      "project_navigation=top-bar"
+    ],
+    "inferred": [
+      "input=pointer",
+      "input=keyboard",
+      "input=touch",
+      "mode=audit",
+      "mode=refactor",
+      "project_theme=light-first",
+      "project_surfaces=elevated",
+      "project_radius=pill",
+      "project_typography=geometric-sans"
+    ],
+    "missing": [],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": false,
+    "violations": [
+      "non-media product: poster (media) card geometry selected"
+    ]
+  }
+}

@@ -1,0 +1,574 @@
+{
+  "schema": "guidance-bundle/v1",
+  "query": "Add a team billing settings page with plan comparison, seat management table and invoice history to our Next.js SaaS admin",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [
+      "finance",
+      "saas"
+    ],
+    "screen": [
+      "settings"
+    ],
+    "screen_subtype": [],
+    "stack": [
+      "nextjs",
+      "react",
+      "shadcn",
+      "tailwind"
+    ],
+    "density": "high",
+    "components": [
+      "settings",
+      "table"
+    ],
+    "environment": [],
+    "jobs": [
+      "compare"
+    ],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "compare",
+      "create settings"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "known": [
+      "platform=web (project inspection)",
+      "product=saas (request: saas, settings page)",
+      "product=finance (request: invoice)",
+      "stack=nextjs (request: next.js)",
+      "stack=react (project inspection)",
+      "stack=tailwind (project inspection)",
+      "stack=shadcn (project inspection)",
+      "screen=settings (request: settings)",
+      "job=compare (request: comparison)"
+    ],
+    "inferred": [
+      "input=pointer (implied by platform web)",
+      "input=keyboard (implied by platform web)",
+      "input=touch (implied by platform web)",
+      "density=high (implied by product finance)",
+      "mode=create (default when no mode word is present)"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [
+        "comparison",
+        "invoice",
+        "next.js",
+        "saas, settings page",
+        "settings"
+      ],
+      "project": [
+        "package.json: next@15.3.0",
+        "package.json: react@19.1.0",
+        "package.json: react-dom@19.1.0",
+        "package.json: tailwindcss@4.1.3",
+        "package.json: @radix-ui/react-dialog@1.1.6",
+        "package.json: class-variance-authority@0.7.1",
+        "package.json: lucide-react@0.487.0",
+        "package.json: @tanstack/react-table@8.21.2",
+        "package.json: recharts@2.15.2",
+        "package.json: eslint-plugin-jsx-a11y@6.10.2",
+        "package.json: @playwright/test@1.52.0",
+        "package.json: next-intl@4.0.2"
+      ]
+    },
+    "activation": {
+      "decision": "activate",
+      "ui_score": 3.0,
+      "non_ui_score": 0,
+      "ui_terms": [
+        "page",
+        "table"
+      ],
+      "non_ui_terms": []
+    }
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "component",
+        "reason": "a specific component/screen is requested"
+      },
+      {
+        "concern": "structure",
+        "reason": "layout topology and hierarchy"
+      },
+      {
+        "concern": "states",
+        "reason": "every screen ships empty/loading/error states"
+      },
+      {
+        "concern": "interaction",
+        "reason": "input model: keyboard,pointer,touch"
+      },
+      {
+        "concern": "accessibility",
+        "reason": "platform accessibility baseline"
+      },
+      {
+        "concern": "data-display",
+        "reason": "numbers, tables or charts are the content"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "navigation",
+        "reason": "how users arrive and leave"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "create/refactor requests attract generic defaults"
+      },
+      {
+        "concern": "brand",
+        "reason": "visual identity direction"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "viewport range"
+      },
+      {
+        "concern": "feedback",
+        "reason": "actions need confirmation and status"
+      }
+    ],
+    "optional": [
+      "motion",
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "state.loading_empty_error",
+        "reason": "screen states"
+      },
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "web content must be keyboard operable"
+      },
+      {
+        "concept": "interaction.hover_independence",
+        "reason": "web is used with touch as well as pointer"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "web keyboard focus"
+      },
+      {
+        "concept": "table.tabular_figures",
+        "reason": "numeric data"
+      }
+    ],
+    "recommended_concepts": [
+      "touch.minimum_target",
+      "adaptive.breakpoint_matrix",
+      "a11y.live_status",
+      "table.column_priority",
+      "table.virtualization",
+      "feedback.confirmation_destructive"
+    ]
+  },
+  "core": [
+    {
+      "id": "dir-operational-workbench",
+      "kind": "direction",
+      "category": "direction",
+      "title": "Operational workbench",
+      "facets": [
+        "direction",
+        "platform"
+      ],
+      "concerns": [
+        "brand",
+        "structure"
+      ],
+      "concepts": [],
+      "score": 0.439,
+      "guidance": "Character comes from precision: a tight 4 px grid, tabular figures, hairline borders with real contrast, one accent used only for selection and primary commands, quiet surfaces, dense but aligned. Identity via a distinctive neutral tint, a characterful monospace for IDs/values, and a consistent status colour language. No hero, no cards-in-cards, no gradients.",
+      "use_when": "Daily-use record tools (ERP, ledgers, ticketing, admin) for trained users who value speed and scanning.",
+      "avoid_when": "Consumer, marketing, TV, or first-time-user products.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "internal-preference",
+      "incompatible": [
+        "surface-glass",
+        "motion-cinematic",
+        "imagery-hero",
+        "typography-serif-display"
+      ],
+      "why": {
+        "lexical": 0.11,
+        "structural": 0.84,
+        "matched": [
+          "platform web",
+          "input keyboard,pointer",
+          "mode create",
+          "product finance,saas",
+          "density high"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring direction with lexical evidence"
+    },
+    {
+      "id": "comp-data-entry-grid",
+      "kind": "component",
+      "category": "table",
+      "title": "Data-entry grid (spreadsheet-like)",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "data-display",
+        "structure"
+      ],
+      "concepts": [
+        "table.inline_edit",
+        "interaction.keyboard_navigation"
+      ],
+      "score": 0.424,
+      "guidance": "Enter/Tab move predictably (configurable), F2 edits, Escape cancels, arrow keys move without editing, type-to-edit on a cell, lookup cells with a picker (F4), validation per cell with a visible marker and a summary, totals row, paste from spreadsheet, undo, row add via Enter on the last row, keyboard shortcuts documented in a help panel.",
+      "use_when": "Batch entry of many similar rows (invoice lines, journal entries, stock counts).",
+      "avoid_when": "Occasional single-record edits (use a form).",
+      "risk": {
+        "a11y": "high",
+        "perf": "high"
+      },
+      "provenance": "heuristic",
+      "implementation": {
+        "react": "AG Grid or Glide Data Grid for real spreadsheet behaviour; do not hand-roll."
+      },
+      "incompatible": [
+        "layout-single-column",
+        "nav-bottom-tabs"
+      ],
+      "why": {
+        "lexical": 0.28,
+        "structural": 0.6,
+        "matched": [
+          "platform web",
+          "input keyboard,pointer",
+          "mode create",
+          "product finance",
+          "screen mismatch",
+          "density high"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "comp-settings-screen",
+      "kind": "component",
+      "category": "settings",
+      "title": "Settings screen",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "component",
+        "structure"
+      ],
+      "concepts": [],
+      "score": 0.387,
+      "guidance": "Grouped rows with clear labels and current values visible, toggles for booleans with immediate effect, pickers for enums, destructive actions at the end with confirmation, search for long settings, platform idiom (grouped lists on mobile, sections/panes on desktop, TV: vertical list with DPAD and a right-side value column). Save behaviour explicit (auto vs Save button).",
+      "use_when": "Preferences, account, notifications, appearance.",
+      "avoid_when": "Never bury frequently changed settings three levels deep; never use toggles for actions.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.277,
+        "structural": 0.52,
+        "matched": [
+          "mode create",
+          "screen settings"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "layout-states-empty-loading-error",
+      "kind": "rule",
+      "category": "feedback",
+      "title": "Design empty, loading, error, and partial states",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "states"
+      ],
+      "concepts": [
+        "state.loading_empty_error"
+      ],
+      "score": 0.276,
+      "guidance": "Empty: what this is, why it is empty, one action. Loading: skeleton with final dimensions, then content; announce completion. Error: what failed, what to do, retry that works; keep entered data. Partial: show what loaded, mark what didn't. On TV, focus must land somewhere valid in each state.",
+      "use_when": "Every list, table, chart, form, and detail screen.",
+      "avoid_when": "Never ship a blank area for empty data; never show a spinner for more than ~1 s without a skeleton or progress; never show an error without a next step.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.028,
+        "structural": 0.58,
+        "matched": [
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required concern states: every screen ships empty/loading/error states"
+    },
+    {
+      "id": "a11y-focus-visible",
+      "kind": "rule",
+      "category": "focus",
+      "title": "Focus visible and not obscured",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.focus_visible"
+      ],
+      "score": 0.342,
+      "guidance": "Focus indicator ≥2 px with ≥3:1 contrast against adjacent colours and against the unfocused state; sticky UI gets scroll-padding so a focused control scrolls into clear view. On TV the indicator must be obvious at 3 m (scale + border/glow).",
+      "use_when": "Every focusable element in every theme; sticky headers, footers, toasts, and cookie banners must never cover the focused element.",
+      "avoid_when": "Never remove focus styles; use :focus-visible to hide them for mouse clicks only.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.76,
+        "matched": [
+          "platform web",
+          "input keyboard",
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required concern interaction: input model: keyboard,pointer,touch"
+    },
+    {
+      "id": "anti-hover-only-actions",
+      "kind": "antipattern",
+      "category": "craft",
+      "title": "Actions only on hover",
+      "facets": [
+        "anti-pattern",
+        "platform"
+      ],
+      "concerns": [
+        "anti-pattern"
+      ],
+      "concepts": [
+        "interaction.hover_independence"
+      ],
+      "score": 0.342,
+      "guidance": "Show on focus too, keep a visible affordance (overflow menu) for touch, and never on TV.",
+      "use_when": "Row actions, card menus, and edit buttons that appear only on mouse hover.",
+      "avoid_when": "Never as the sole path.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.76,
+        "matched": [
+          "platform web",
+          "input keyboard,pointer,touch",
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required concept interaction.hover_independence"
+    },
+    {
+      "id": "data-tables-numeric",
+      "kind": "rule",
+      "category": "table",
+      "title": "Numeric tables: alignment, figures, units, precision",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "content",
+        "data-display"
+      ],
+      "concepts": [
+        "table.tabular_figures"
+      ],
+      "score": 0.46,
+      "guidance": "Right-align numbers with tabular lining figures, one precision per column, unit in the header not each cell, negative values with sign and colour (and parentheses in finance if house style), thousands separators by locale, totals visually distinct, sortable columns with an explicit sort indicator.",
+      "use_when": "Any table or KPI with numbers: money, quantities, percentages, dates.",
+      "avoid_when": "Never centre numbers; never mix precisions in a column; never rely on colour alone for negative values.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.15,
+        "structural": 0.84,
+        "matched": [
+          "platform web",
+          "input keyboard,pointer",
+          "mode create",
+          "product finance,saas",
+          "density high"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required concept table.tabular_figures"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "component",
+      "structure",
+      "states",
+      "interaction",
+      "accessibility",
+      "data-display"
+    ],
+    "covered_required_concerns": [
+      "component",
+      "structure",
+      "states",
+      "interaction",
+      "accessibility",
+      "data-display"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "navigation",
+      "anti-pattern",
+      "brand",
+      "adaptive",
+      "feedback"
+    ],
+    "covered_recommended_concerns": [
+      "anti-pattern",
+      "brand"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "state.loading_empty_error",
+      "interaction.keyboard_navigation",
+      "interaction.hover_independence",
+      "interaction.focus_visible",
+      "table.tabular_figures"
+    ],
+    "covered_required_concepts": [
+      "state.loading_empty_error",
+      "interaction.keyboard_navigation",
+      "interaction.hover_independence",
+      "interaction.focus_visible",
+      "table.tabular_figures"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "bundle_size": 7,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 3,
+    "guardrail_size": 4,
+    "category_diversity": 0.86,
+    "duplicate_pressure": 0.29,
+    "facet_coverage": 0.6,
+    "redundancy": 0.31
+  },
+  "token_coverage": 0.85,
+  "omitted": [
+    {
+      "id": "comp-data-table",
+      "reason": "same category as a core pick or incompatible with one"
+    }
+  ],
+  "rejected": [
+    {
+      "id": "anti-mobile-desktop-shrunk",
+      "reason": "platform ['mobile'] not in request ['web']"
+    },
+    {
+      "id": "dir-service-app-mobile",
+      "reason": "platform ['mobile'] not in request ['web']"
+    },
+    {
+      "id": "dir-industrial-hmi",
+      "reason": "platform ['desktop', 'kiosk', 'tablet'] not in request ['web']"
+    },
+    {
+      "id": "nav-bottom-tabs",
+      "reason": "platform ['mobile'] not in request ['web']"
+    },
+    {
+      "id": "nav-tv-side",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "typography-system-native",
+      "reason": "platform ['desktop', 'mobile', 'tv'] not in request ['web']"
+    },
+    {
+      "id": "cta-focus-selects",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "cta-fab",
+      "reason": "platform ['mobile'] not in request ['web']"
+    }
+  ]
+}

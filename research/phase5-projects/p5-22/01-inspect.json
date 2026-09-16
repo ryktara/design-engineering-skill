@@ -1,0 +1,108 @@
+{
+  "root": "D:\\indigo pro\\MYownSkills\\research\\phase5-projects\\p5-swiftui-habits\\project",
+  "findings": [
+    {
+      "status": "KNOWN",
+      "note": "Package.swift: Apple project"
+    },
+    {
+      "status": "KNOWN",
+      "note": "Package.swift: iOS target"
+    }
+  ],
+  "stack_groups": [
+    "swiftui"
+  ],
+  "platforms": [
+    "mobile"
+  ],
+  "ui_libraries": [],
+  "package_manager": null,
+  "css_architecture": [],
+  "tokens": [],
+  "fonts": [
+    "Nunito (1)"
+  ],
+  "icons": [],
+  "routing": [],
+  "breakpoints": [],
+  "accessibility": [
+    "a11y attributes present in 5 files"
+  ],
+  "focus_handling": [
+    "explicit focus handling in 0 files"
+  ],
+  "design_docs": [],
+  "component_dirs": [],
+  "tests": [],
+  "i18n": [],
+  "product_hints": [
+    "ecommerce"
+  ],
+  "sample": {
+    "files_scanned": 30
+  },
+  "design_context": {
+    "navigation": {
+      "value": "bottom-tabs",
+      "status": "KNOWN",
+      "evidence": [
+        "bottom-tabs: 7 matches in README.md, RootTabView.swift, StreaksApp.swift (shell/layout file)"
+      ],
+      "candidates": {
+        "bottom-tabs": 7
+      }
+    },
+    "theme": {
+      "value": "dual-theme",
+      "status": "INFERRED",
+      "evidence": [
+        "dark theme configuration signals: 2",
+        "hex palette: 0 near-white, 0 near-black"
+      ]
+    },
+    "surfaces": {
+      "value": "elevated",
+      "status": "INFERRED",
+      "evidence": [
+        "shadow/elevation in 4 files, borders in 0"
+      ]
+    },
+    "radius": {
+      "value": "medium",
+      "status": "INFERRED",
+      "evidence": [
+        "most common radius 8 (1\u00d7); others []"
+      ]
+    },
+    "spacing": {
+      "value": 4,
+      "status": "INFERRED",
+      "evidence": [
+        "most used spacing values [2, 4, 12, 16]"
+      ]
+    },
+    "typography": {
+      "value": "humanist-sans",
+      "status": "INFERRED",
+      "evidence": [
+        "font family Nunito (1 refs)",
+        "encoded type scale in 3 files",
+        "monospace usage",
+        "tabular numerals"
+      ],
+      "features": {
+        "weights": [],
+        "type_scale": true,
+        "monospace": true,
+        "tabular_numerals": true
+      }
+    },
+    "components": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "schema": "design-context/v1"
+  }
+}

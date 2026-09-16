@@ -1,0 +1,215 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "audit",
+    "refactor"
+  ],
+  "platform": [
+    "web"
+  ],
+  "input": [
+    "keyboard",
+    "pointer",
+    "touch"
+  ],
+  "product": [
+    "healthcare"
+  ],
+  "screen": [],
+  "screen_subtype": [],
+  "stack": [
+    "svelte",
+    "tailwind"
+  ],
+  "density": null,
+  "components": [],
+  "environment": [],
+  "jobs": [],
+  "problems": [],
+  "risk": "medium",
+  "primary_jobs": [
+    "audit"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "focus_handling_present": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "keyboard": true,
+    "screen_reader": true,
+    "focus": true,
+    "touch_targets": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "change_budget": "moderate",
+  "scope": {
+    "domain": "UI_IMPLEMENTATION",
+    "in_scope": true,
+    "kind": "partial",
+    "reason": "technical cause (re-render) with a user-visible symptom (stutter); design-engineering contributes the UX side",
+    "nearest_ui_task": "design-engineering contribution: the user-facing states, responsiveness and feedback around 'stutter'; non-design portion: frontend runtime work (re-render) belongs to the engineering side"
+  },
+  "intent": {
+    "artifact_state": "existing",
+    "operations": [
+      "diagnose",
+      "modify"
+    ],
+    "problem_domain": [
+      "interaction",
+      "performance-ux"
+    ],
+    "change_scope": "screen",
+    "utterance": "observation",
+    "existing": true,
+    "problem": true,
+    "facet": "interaction",
+    "diagnose_only": false,
+    "creation": false,
+    "redesign": false,
+    "responsive_cues": false,
+    "preserve": [],
+    "scope": "moderate"
+  },
+  "platform_evidence": [],
+  "mode_evidence": [
+    "audit: interaction defect on existing UI",
+    "refactor: fix follows the diagnosis"
+  ],
+  "project_context": {
+    "navigation": {
+      "value": "left-rail",
+      "status": "KNOWN",
+      "evidence": [
+        "left-rail: 1 matches in +layout.svelte (shell/layout file)",
+        "also breadcrumb-tree: 1 matches"
+      ]
+    },
+    "theme": {
+      "value": "light-first",
+      "status": "INFERRED",
+      "evidence": [
+        "hex palette: 13 near-white, 1 near-black"
+      ]
+    },
+    "surfaces": {
+      "value": "bordered-flat",
+      "status": "INFERRED",
+      "evidence": [
+        "borders in 12 files, shadow/elevation in 2"
+      ]
+    },
+    "radius": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "spacing": {
+      "value": 4,
+      "status": "INFERRED",
+      "evidence": [
+        "most used spacing values [16, 8, 12, 4, 24]",
+        "tailwind spacing classes (119)"
+      ]
+    },
+    "typography": {
+      "value": "custom",
+      "status": "INFERRED",
+      "evidence": [
+        "font family theme (1 refs)",
+        "tabular numerals"
+      ]
+    },
+    "components": {
+      "value": "tailwind",
+      "status": "KNOWN",
+      "evidence": [
+        "tailwind"
+      ]
+    }
+  },
+  "known": [
+    "platform=web (project inspection)",
+    "product=healthcare (project inspection (README))",
+    "stack=svelte (project inspection)",
+    "stack=tailwind (project inspection)",
+    "project_navigation=left-rail (repository: left-rail: 1 matches in +layout.svelte (shell/layout file); also breadcrumb-tree: 1 matches)",
+    "project_components=tailwind (repository: tailwind)"
+  ],
+  "inferred": [
+    "input=pointer (implied by platform web)",
+    "input=keyboard (implied by platform web)",
+    "input=touch (implied by platform web)",
+    "mode=audit (interaction defect on existing UI)",
+    "mode=refactor (fix follows the diagnosis)",
+    "project_theme=light-first (repository: hex palette: 13 near-white, 1 near-black)",
+    "project_surfaces=bordered-flat (repository: borders in 12 files, shadow/elevation in 2)",
+    "project_spacing=4 (repository: most used spacing values [16, 8, 12, 4, 24]; tailwind spacing classes (119))",
+    "project_typography=custom (repository: font family theme (1 refs); tabular numerals)"
+  ],
+  "missing": [],
+  "status": "CONFIDENT",
+  "source": {
+    "request": [],
+    "project": [
+      "package.json: svelte@^5.16.0",
+      "package.json: @sveltejs/kit@^2.12.0",
+      "package.json: tailwindcss@^3.4.17"
+    ]
+  },
+  "activation": {
+    "decision": "activate",
+    "ui_score": 2.0,
+    "non_ui_score": 0,
+    "ui_terms": [
+      "grid",
+      "chip"
+    ],
+    "non_ui_terms": []
+  },
+  "intent_evidence": {
+    "existing": [
+      "the appointments grid"
+    ],
+    "new": [],
+    "defect": [
+      "observed behaviour"
+    ],
+    "operations": {},
+    "domains": {
+      "interaction": [
+        "drag",
+        "drag"
+      ],
+      "performance-ux": [
+        "stutter"
+      ]
+    },
+    "no_change": [],
+    "scope": {
+      "screen": [
+        "grid"
+      ]
+    },
+    "question": false
+  },
+  "scope_evidence": {
+    "ui": [
+      "grid",
+      "chip",
+      "concept:touch.gestures_discoverable"
+    ],
+    "ux_symptoms": [
+      "stutter"
+    ],
+    "technical": {
+      "FRONTEND_RUNTIME": [
+        "re-render"
+      ]
+    },
+    "non_visual": []
+  }
+}

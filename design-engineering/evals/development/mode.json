@@ -1,0 +1,30 @@
+{
+  "description": "Phase 4 task-intent cases written before implementation (2026-09-09). Mode must come from structural cues (existing-state, problem, change, creation indicators in combination), with evidence exposed. Assertions are on primary/secondary modes only.",
+  "suite": "mode",
+  "cases": [
+    {"id": "m-selected-row-hard", "query": "The selected row is hard to distinguish.", "expect_primary_any": ["polish", "audit"], "forbid_primary": "create", "expect_intent": {"existing": true, "problem": true}},
+    {"id": "m-customers-miss-continue", "query": "Customers miss the continue button.", "expect_primary_any": ["audit", "refactor"], "forbid_primary": "create", "expect_secondary_any": ["refactor", "audit", "polish"]},
+    {"id": "m-layout-shifts-validation", "query": "The layout shifts when validation appears.", "expect_primary_any": ["audit", "refactor"], "forbid_primary": "create"},
+    {"id": "m-less-tiring-dashboard", "query": "Make this dashboard less tiring to scan.", "expect_primary_any": ["polish", "refactor"], "forbid_primary": "create", "expect_intent": {"existing": true}},
+    {"id": "m-build-dense-telemetry", "query": "Build a dashboard with dense telemetry.", "expect_primary": "create", "expect_intent": {"existing": false}},
+    {"id": "m-add-shortcuts-existing-grid", "query": "Add keyboard shortcuts to the existing grid.", "expect_primary_any": ["refactor", "create"], "expect_intent": {"existing": true}, "expect_budget": "moderate"},
+    {"id": "m-review-no-code", "query": "Review this screen but don't change code.", "expect_primary_any": ["review", "audit"], "forbid_secondary": ["refactor", "polish", "create"], "expect_intent": {"diagnose_only": true}},
+    {"id": "m-lose-focus-after-dialog", "query": "Users keep losing focus after closing the dialog.", "expect_primary_any": ["audit", "refactor", "accessibility"], "forbid_primary": "create", "expect_intent": {"problem": true, "facet": "interaction"}},
+    {"id": "m-audit-and-fix-keyboard", "query": "Audit and fix keyboard navigation on the orders page", "expect_primary_any": ["accessibility", "audit"], "expect_secondary_any": ["refactor", "audit", "accessibility"]},
+    {"id": "m-feels-cluttered", "query": "This page feels cluttered", "expect_primary_any": ["polish"], "expect_secondary_any": ["audit", "refactor"], "forbid_primary": "create"},
+    {"id": "m-build-checkout", "query": "Build a new checkout page", "expect_primary": "create"},
+    {"id": "m-still-clipped-after-resize", "query": "the sidebar labels are still clipped after the window is resized below 900px", "expect_primary_any": ["responsive", "refactor", "audit"], "forbid_primary": "create"},
+    {"id": "m-sometimes-doesnt-respond", "query": "sometimes the save button doesn't respond on the tablet", "expect_primary_any": ["audit", "refactor"], "forbid_primary": "create"},
+    {"id": "m-simplify-existing-settings", "query": "simplify our settings screen", "expect_primary_any": ["refactor", "polish"], "forbid_primary": "create"},
+    {"id": "m-new-feature-in-existing", "query": "add a bulk export action to the existing invoices table", "expect_primary_any": ["create", "refactor"], "expect_intent": {"existing": true}, "expect_budget_any": ["moderate", "low"]},
+    {"id": "m-redesign-explicit", "query": "redesign the onboarding flow from scratch", "expect_primary_any": ["create", "refactor"], "expect_budget_any": ["high", "greenfield"]},
+    {"id": "m-what-is-wrong", "query": "what is wrong with our checkout form? users abandon at the address step", "expect_primary_any": ["audit"], "forbid_primary": "create"},
+    {"id": "m-screen-reader-symptom", "query": "VoiceOver reads the price twice and skips the sale badge", "expect_primary_any": ["accessibility", "audit"], "forbid_primary": "create", "expect_intent": {"facet": "accessibility"}},
+    {"id": "m-make-it-look-premium", "query": "make the dashboard look more premium without changing how it works", "expect_primary_any": ["polish"], "expect_budget": "low"},
+    {"id": "m-brand-two-tenants", "query": "we run two brands on the same codebase, make them look distinct", "expect_primary_any": ["brand"]},
+    {"id": "m-tokens-dark-mode", "query": "set up a token system with a dark theme for the admin", "expect_primary_any": ["design-system"]},
+    {"id": "m-reconstruct-screenshot", "query": "implement this screenshot as a React page", "expect_primary_any": ["reconstruct", "create"]},
+    {"id": "m-keep-nav-redesign-ia", "query": "Keep the existing navigation but redesign the information architecture.", "expect_conflict": true, "expect_status_any": ["AMBIGUOUS", "PARTIAL"]},
+    {"id": "m-multi-concern-winui", "query": "Refactor this dense WinUI financial grid so keyboard users can edit quickly without changing the existing navigation.", "expect_primary": "refactor", "expect_intent": {"existing": true}, "expect_preserve": ["navigation"], "expect_platforms": ["desktop"], "expect_concepts": ["interaction.keyboard_navigation", "table.tabular_figures", "table.inline_edit", "interaction.focus_visible"]}
+  ]
+}

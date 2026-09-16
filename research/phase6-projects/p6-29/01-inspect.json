@@ -1,0 +1,122 @@
+{
+  "root": "D:\\indigo pro\\MYownSkills\\research\\phase3-projects\\p3-kiosk-pharmacy\\project",
+  "findings": [
+    {
+      "status": "KNOWN",
+      "note": "*.html without a framework manifest: plain HTML/CSS site"
+    },
+    {
+      "status": "KNOWN",
+      "note": "README: public touch kiosk (web technology is the substrate, not the target platform)"
+    }
+  ],
+  "stack_groups": [
+    "html-css"
+  ],
+  "platforms": [
+    "kiosk"
+  ],
+  "ui_libraries": [],
+  "package_manager": null,
+  "css_architecture": [
+    "plain stylesheets",
+    ".css (2 files)"
+  ],
+  "tokens": [
+    "tokens.json",
+    "css custom properties: --color* (36), --font* (13), --space* (7), --target* (3), --key* (2), --radius* (2), --primary* (1), --secondary* (1)"
+  ],
+  "fonts": [
+    "Nunito (1)"
+  ],
+  "icons": [],
+  "routing": [],
+  "breakpoints": [],
+  "accessibility": [
+    "a11y attributes present in 5 files"
+  ],
+  "focus_handling": [
+    "explicit focus handling in 4 files"
+  ],
+  "design_docs": [],
+  "component_dirs": [],
+  "tests": [],
+  "i18n": [],
+  "product_hints": [
+    "healthcare",
+    "iot"
+  ],
+  "environment_hints": [
+    "public"
+  ],
+  "sample": {
+    "files_scanned": 11
+  },
+  "design_context": {
+    "navigation": {
+      "value": "hub-spoke",
+      "status": "KNOWN",
+      "evidence": [
+        "hub-spoke: 29 matches in README.md, app.js, i18n.js (shell/layout file)"
+      ],
+      "candidates": {
+        "hub-spoke": 29,
+        "top-bar": 10
+      }
+    },
+    "theme": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": [
+        "hex palette: 25 near-white, 17 near-black"
+      ]
+    },
+    "surfaces": {
+      "value": "elevated",
+      "status": "INFERRED",
+      "evidence": [
+        "weak signal: shadow 1, border 1"
+      ]
+    },
+    "radius": {
+      "value": "medium",
+      "status": "INFERRED",
+      "evidence": [
+        "most common radius 12 (1\u00d7); others [20.0, 32.0]"
+      ]
+    },
+    "spacing": {
+      "value": "irregular",
+      "status": "UNKNOWN",
+      "evidence": [
+        "most used spacing values [6, 16]"
+      ]
+    },
+    "typography": {
+      "value": "humanist-sans",
+      "status": "KNOWN",
+      "evidence": [
+        "font family Nunito (2 refs)",
+        "weights 700, 800, 600, 500",
+        "tabular numerals"
+      ],
+      "features": {
+        "weights": [
+          "700",
+          "800",
+          "600",
+          "500"
+        ],
+        "type_scale": false,
+        "monospace": false,
+        "tabular_numerals": true
+      }
+    },
+    "components": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "schema": "design-context/v1"
+  }
+}

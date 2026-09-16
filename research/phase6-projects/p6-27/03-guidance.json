@@ -1,0 +1,1476 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "In the channel guide the time header jumps every half hour and you lose where you were.",
+  "status": "PARTIAL",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "tv",
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "remote",
+      "touch"
+    ],
+    "product": [
+      "media"
+    ],
+    "screen": [
+      "list"
+    ],
+    "screen_subtype": [
+      "epg"
+    ],
+    "stack": [
+      "html-css"
+    ],
+    "density": "medium",
+    "components": [],
+    "environment": [
+      "large-display",
+      "shared-device"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "audit list"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_INTERACTION",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "performance-ux"
+      ],
+      "change_scope": "screen",
+      "utterance": "observation",
+      "existing": true,
+      "problem": true,
+      "facet": "general",
+      "diagnose_only": false,
+      "creation": false,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [
+      {
+        "platform": "tv",
+        "strength": "STRONG_INFERENCE",
+        "evidence": [
+          "channel guide",
+          "channel"
+        ]
+      }
+    ],
+    "mode_evidence": [
+      "audit: perceived-performance defect",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "top-bar",
+        "status": "KNOWN",
+        "evidence": [
+          "top-bar: 6 matches in app.js, index.html, tv.css (shell/layout file)"
+        ]
+      },
+      "theme": {
+        "value": "dark-first",
+        "status": "INFERRED",
+        "evidence": [
+          "root/canvas backgrounds: 0 light, 1 dark",
+          "hex palette: 1 near-white, 14 near-black"
+        ]
+      },
+      "surfaces": {
+        "value": "bordered-flat",
+        "status": "INFERRED",
+        "evidence": [
+          "weak signal: shadow 0, border 1"
+        ]
+      },
+      "radius": {
+        "value": "small",
+        "status": "INFERRED",
+        "evidence": [
+          "most common radius 4 (2×); others [999.0, 5.0]"
+        ]
+      },
+      "spacing": {
+        "value": 4,
+        "status": "INFERRED",
+        "evidence": [
+          "most used spacing values [16, 12, 8, 20, 24]"
+        ]
+      },
+      "typography": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": [
+          "no font family declaration found"
+        ]
+      },
+      "components": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": []
+      }
+    },
+    "known": [
+      "platform=web (project inspection)",
+      "product=media (request: channel)",
+      "stack=html-css (project inspection)",
+      "screen=list (request: channel guide)",
+      "project_navigation=top-bar (repository: top-bar: 6 matches in app.js, index.html, tv.css (shell/layout file))"
+    ],
+    "inferred": [
+      "platform=tv (wording suggests tv: channel guide)",
+      "input=remote (implied by platform tv)",
+      "input=pointer (implied by platform web)",
+      "input=keyboard (implied by platform web)",
+      "input=touch (implied by platform web)",
+      "density=medium (implied by product media)",
+      "mode=audit (perceived-performance defect)",
+      "mode=refactor (fix follows the diagnosis)",
+      "environment=shared-device (a TV is normally a shared household device)",
+      "environment=large-display (TV platform)",
+      "project_theme=dark-first (repository: root/canvas backgrounds: 0 light, 1 dark; hex palette: 1 near-white, 14 near-black)",
+      "project_surfaces=bordered-flat (repository: weak signal: shadow 0, border 1)",
+      "project_radius=small (repository: most common radius 4 (2×); others [999.0, 5.0])",
+      "project_spacing=4 (repository: most used spacing values [16, 12, 8, 20, 24])"
+    ],
+    "missing": [
+      "platform: only inferred from wording (tv); confirm before committing"
+    ],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [
+        "channel",
+        "channel guide"
+      ],
+      "project": [
+        "*.html without a framework manifest: plain HTML/CSS site"
+      ]
+    },
+    "activation": {
+      "decision": "skip",
+      "ui_score": 0,
+      "non_ui_score": 0,
+      "ui_terms": [],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "the channel guide"
+      ],
+      "new": [],
+      "defect": [
+        "jumps",
+        "lose"
+      ],
+      "operations": {},
+      "domains": {
+        "performance-ux": [
+          "jump"
+        ]
+      },
+      "no_change": [],
+      "scope": {
+        "screen": [
+          "guide"
+        ]
+      },
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "header",
+        "guide"
+      ],
+      "ux_symptoms": [
+        "jumps"
+      ],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_INTERACTION",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "accessibility",
+        "reason": "audit mode"
+      },
+      {
+        "concern": "interaction",
+        "reason": "audit mode: operability is part of the review"
+      },
+      {
+        "concern": "component",
+        "reason": "the reviewed component/screen"
+      },
+      {
+        "concern": "performance",
+        "reason": "focus latency and catalog virtualization on TV"
+      },
+      {
+        "concern": "data-display",
+        "reason": "numbers, tables or charts are the content"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "states",
+        "reason": "audits check empty/loading/error handling"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "audits name generic-design defects"
+      },
+      {
+        "concern": "feedback",
+        "reason": "audits check that actions are discoverable and confirmed"
+      },
+      {
+        "concern": "content",
+        "reason": "10-foot readability"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "viewport range"
+      },
+      {
+        "concern": "navigation",
+        "reason": "screen subtype epg"
+      },
+      {
+        "concern": "environment",
+        "reason": "environment large-display (INFERRED)"
+      }
+    ],
+    "optional": [],
+    "required_concepts": [
+      {
+        "concept": "state.loading_empty_error",
+        "reason": "asynchronous or remote data on this screen",
+        "priority": 2,
+        "critical": false
+      },
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "web content must be keyboard operable",
+        "priority": 3,
+        "critical": false
+      },
+      {
+        "concept": "interaction.hover_independence",
+        "reason": "web is used with touch as well as pointer",
+        "priority": 3,
+        "critical": false
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "web keyboard focus",
+        "priority": 3,
+        "critical": false
+      },
+      {
+        "concept": "interaction.dpad_reachability",
+        "reason": "TV / remote input",
+        "priority": 3,
+        "critical": false
+      },
+      {
+        "concept": "interaction.focus_restore",
+        "reason": "TV / remote input",
+        "priority": 3,
+        "critical": false
+      },
+      {
+        "concept": "tv.epg_pinned_channels",
+        "reason": "screen subtype epg",
+        "priority": 1,
+        "critical": true
+      },
+      {
+        "concept": "tv.time_navigation",
+        "reason": "screen subtype epg",
+        "priority": 1,
+        "critical": true
+      }
+    ],
+    "recommended_concepts": [
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "process.reuse_first",
+      "touch.minimum_target",
+      "adaptive.breakpoint_matrix",
+      "interaction.back_semantics",
+      "tv.no_touch_hover",
+      "perf.focus_latency",
+      "tv.dark_first",
+      "data.pagination_strategy",
+      "table.virtualization",
+      "media.live_channel_switching",
+      "privacy.shared_device",
+      "tv.ten_foot_typography",
+      "tv.safe_margins",
+      "interaction.shortcuts"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "layout-epg-grid",
+      "kind": "pattern",
+      "category": "layout",
+      "title": "EPG / program guide grid",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "structure"
+      ],
+      "concepts": [
+        "tv.epg_pinned_channels",
+        "table.virtualization",
+        "tv.time_navigation"
+      ],
+      "covers": [
+        "pinned channel column and now marker",
+        "virtualization of long collections",
+        "time navigation in the guide: now marker, jump by time and day"
+      ],
+      "score": 0.733,
+      "guidance": "Two-dimensional virtualisation (channels vertical, time horizontal), sticky channel column and time header, programme cells sized by duration with a minimum width so short programmes stay focusable, current time line always visible, LEFT/RIGHT move within a channel's programmes (not by pixel), UP/DOWN keep the same time slot, long press or a shortcut jumps to now, focused cell shows full title + time in a detail strip rather than truncating inside the cell.",
+      "use_when": "Live TV channel × time grids with a 'now' line, current programme highlighted, and channel logos in a fixed column.",
+      "avoid_when": "On-demand catalogues (use rails), or phone portrait (use a per-channel list).",
+      "risk": {
+        "a11y": "high",
+        "perf": "high"
+      },
+      "provenance": "heuristic",
+      "incompatible": [
+        "layout-immersive-rails",
+        "layout-feed",
+        "layout-editorial"
+      ],
+      "why": {
+        "lexical": 0.674,
+        "structural": 0.76,
+        "matched": [
+          "platform tv,web",
+          "input pointer,remote,touch",
+          "secondary mode",
+          "product media",
+          "screen list"
+        ]
+      },
+      "role": "core",
+      "selected_for": "critical concept (DIRECT): pinned channel column and now marker, time navigation in the guide: now marker, jump by time and day"
+    },
+    {
+      "id": "comp-epg",
+      "kind": "component",
+      "category": "epg",
+      "title": "EPG / programme guide",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "data-display",
+        "navigation",
+        "structure"
+      ],
+      "concepts": [
+        "tv.epg_pinned_channels",
+        "table.virtualization",
+        "interaction.dpad_reachability",
+        "media.live_channel_switching",
+        "tv.time_navigation"
+      ],
+      "covers": [
+        "pinned channel column and now marker",
+        "virtualization of long collections",
+        "D-pad focus reachability",
+        "live channel switching and mini guide",
+        "time navigation in the guide: now marker, jump by time and day"
+      ],
+      "score": 0.717,
+      "guidance": "See the EPG grid pattern for structure; component specifics: cell shows title + time with ellipsis, minimum cell width so 5-minute programmes stay focusable (with a time label on focus), current programme highlighted and the 'now' line updates every minute, channel column sticky with logo + number, day picker above the grid, focus moves by programme not by pixel, long press or a key opens programme detail with record/remind actions, jump-to-now shortcut, mini preview of the focused channel optional.",
+      "use_when": "Live TV with many channels.",
+      "avoid_when": "On-demand only catalogues; phones in portrait (use a per-channel list).",
+      "risk": {
+        "a11y": "high",
+        "perf": "high"
+      },
+      "provenance": "heuristic",
+      "incompatible": [
+        "layout-immersive-rails"
+      ],
+      "why": {
+        "lexical": 0.617,
+        "structural": 0.84,
+        "matched": [
+          "platform tv,web",
+          "input pointer,remote,touch",
+          "mode audit",
+          "product media",
+          "screen list"
+        ]
+      },
+      "role": "core",
+      "selected_for": "task evidence: screen, subtype, product, lexical_strong"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "a11y-tv-focus-always",
+      "kind": "rule",
+      "category": "focus",
+      "title": "TV: exactly one visible focus at all times",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "component",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.focus_restore",
+        "interaction.focus_visible",
+        "media.details_play_first"
+      ],
+      "covers": [
+        "focus restoration",
+        "visible focus",
+        "details screen with Play as default focus"
+      ],
+      "score": 0.45,
+      "guidance": "Set initial focus deterministically (first actionable content or Play on detail), restore focus to the previously focused item when returning, keep focus on screen (scroll into view), move focus to a sensible neighbour when the focused item is removed, and never rely on colour tint alone for the focused state.",
+      "use_when": "Every TV screen, after every navigation, after data loads, after dialogs close, after list updates.",
+      "avoid_when": "Never leave focus on a hidden or off-screen element; never let focus disappear after a list refresh.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.197,
+        "structural": 0.76,
+        "matched": [
+          "platform tv",
+          "input remote",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage (SPECIFIC): focus restoration, visible focus, accessibility, interaction"
+    },
+    {
+      "id": "tv-no-touch-hover",
+      "kind": "rule",
+      "category": "input",
+      "title": "TV: no touch, no hover, no scrollbars",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "interaction"
+      ],
+      "concepts": [
+        "tv.no_touch_hover",
+        "interaction.hover_independence"
+      ],
+      "covers": [
+        "no touch or hover assumptions on TV",
+        "no hover dependence"
+      ],
+      "score": 0.347,
+      "guidance": "Every interaction maps to DPAD + SELECT + BACK (+ optional MENU/PLAY keys); text entry is minimal and uses the system keyboard or voice; no hover-only affordances; no visible scrollbars; no small inline links; a desktop layout enlarged is not a TV layout.",
+      "use_when": "Porting web or mobile screens to TV; reviewing any TV screen.",
+      "avoid_when": "Never ship swipe gestures, hover menus, drag handles, pinch zoom, or on-screen keyboards as the primary text input on TV.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.009,
+        "structural": 0.76,
+        "matched": [
+          "platform tv",
+          "input remote",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage (SPECIFIC): no hover dependence"
+    },
+    {
+      "id": "layout-states-empty-loading-error",
+      "kind": "rule",
+      "category": "feedback",
+      "title": "Design empty, loading, error, and partial states",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "states"
+      ],
+      "concepts": [
+        "state.loading_empty_error"
+      ],
+      "covers": [
+        "loading, empty and error states"
+      ],
+      "score": 0.273,
+      "guidance": "Empty: what this is, why it is empty, one action. Loading: skeleton with final dimensions, then content; announce completion. Error: what failed, what to do, retry that works; keep entered data. Partial: show what loaded, mark what didn't. On TV, focus must land somewhere valid in each state.",
+      "use_when": "Every list, table, chart, form, and detail screen.",
+      "avoid_when": "Never ship a blank area for empty data; never show a spinner for more than ~1 s without a skeleton or progress; never show an error without a next step.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.022,
+        "structural": 0.58,
+        "matched": [
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage (GENERIC): loading, empty and error states"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "performance",
+      "data-display"
+    ],
+    "covered_required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "data-display"
+    ],
+    "uncovered_required_concerns": [
+      "performance"
+    ],
+    "recommended_concerns": [
+      "states",
+      "anti-pattern",
+      "feedback",
+      "content",
+      "adaptive",
+      "navigation",
+      "environment"
+    ],
+    "covered_recommended_concerns": [
+      "states",
+      "navigation"
+    ],
+    "coverage_ratio": 0.8,
+    "required_concepts": [
+      "state.loading_empty_error",
+      "interaction.keyboard_navigation",
+      "interaction.hover_independence",
+      "interaction.focus_visible",
+      "interaction.dpad_reachability",
+      "interaction.focus_restore",
+      "tv.epg_pinned_channels",
+      "tv.time_navigation"
+    ],
+    "covered_required_concepts": [
+      "state.loading_empty_error",
+      "interaction.hover_independence",
+      "interaction.focus_visible",
+      "interaction.dpad_reachability",
+      "interaction.focus_restore",
+      "tv.epg_pinned_channels",
+      "tv.time_navigation"
+    ],
+    "uncovered_required_concepts": [
+      "interaction.keyboard_navigation"
+    ],
+    "critical_concepts": [
+      "tv.epg_pinned_channels",
+      "tv.time_navigation"
+    ],
+    "uncovered_critical_concepts": [],
+    "critical_coverage_ratio": 1.0,
+    "concept_coverage_ratio": 0.88,
+    "recommended_concept_coverage": 0.19,
+    "not_surfaced": [
+      {
+        "concept": "a11y.accessible_names",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "a11y.contrast",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "process.reuse_first",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "touch.minimum_target",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "adaptive.breakpoint_matrix",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "interaction.back_semantics",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "perf.focus_latency",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "tv.dark_first",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "data.pagination_strategy",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "privacy.shared_device",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "tv.ten_foot_typography",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "tv.safe_margins",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "interaction.shortcuts",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "feedback",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "content",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "environment",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      }
+    ],
+    "bundle_size": 5,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 2,
+    "guardrail_size": 3,
+    "bundle_tokens": 840,
+    "coverage_per_1k_tokens": 8.33,
+    "mean_purity": 0.93,
+    "mean_specificity": 2.4,
+    "quality_counts": {
+      "DIRECT": 1,
+      "SPECIFIC": 3,
+      "GENERIC": 1
+    },
+    "contaminated": [],
+    "category_diversity": 1.0,
+    "duplicate_pressure": 0.2,
+    "facet_coverage": 0.6,
+    "redundancy": 0.3,
+    "critical_trace": {
+      "covered": [
+        "tv.epg_pinned_channels",
+        "tv.time_navigation"
+      ],
+      "uncovered": [],
+      "carrier_quality": {
+        "tv.epg_pinned_channels": "DIRECT",
+        "tv.time_navigation": "DIRECT"
+      }
+    }
+  },
+  "token_coverage": 0.82,
+  "omitted": [],
+  "marginal": {
+    "layout-epg-grid": {
+      "new_critical": [
+        "tv.epg_pinned_channels",
+        "tv.time_navigation"
+      ],
+      "new_required": [],
+      "new_recommended": [
+        "table.virtualization"
+      ],
+      "new_concerns": [
+        "structure"
+      ],
+      "specificity": 5,
+      "evidence": [
+        "lexical_strong",
+        "lexical",
+        "screen",
+        "product",
+        "platform_specific",
+        "explicit_demand"
+      ],
+      "quality": "DIRECT",
+      "contamination": 0.0,
+      "tokens": 254
+    },
+    "comp-epg": {
+      "new_critical": [],
+      "new_required": [
+        "interaction.dpad_reachability"
+      ],
+      "new_recommended": [
+        "media.live_channel_switching"
+      ],
+      "new_concerns": [
+        "component",
+        "data-display",
+        "navigation"
+      ],
+      "specificity": 5,
+      "evidence": [
+        "lexical_strong",
+        "lexical",
+        "screen",
+        "subtype",
+        "product",
+        "explicit_demand"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 227
+    },
+    "a11y-tv-focus-always": {
+      "new_critical": [],
+      "new_required": [
+        "interaction.focus_restore",
+        "interaction.focus_visible"
+      ],
+      "new_recommended": [],
+      "new_concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "lexical",
+        "platform_specific"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 127
+    },
+    "tv-no-touch-hover": {
+      "new_critical": [],
+      "new_required": [
+        "interaction.hover_independence"
+      ],
+      "new_recommended": [
+        "tv.no_touch_hover"
+      ],
+      "new_concerns": [],
+      "specificity": 1,
+      "evidence": [
+        "platform_specific"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 109
+    },
+    "layout-states-empty-loading-error": {
+      "new_critical": [],
+      "new_required": [
+        "state.loading_empty_error"
+      ],
+      "new_recommended": [],
+      "new_concerns": [
+        "states"
+      ],
+      "specificity": 0,
+      "evidence": [],
+      "quality": "GENERIC",
+      "contamination": 0.0,
+      "tokens": 123
+    }
+  },
+  "rejected": [
+    {
+      "id": "comp-list-row-mobile",
+      "reason": "platform ['mobile', 'tablet'] not in request ['tv', 'web']"
+    },
+    {
+      "id": "comp-photo-capture-field",
+      "reason": "platform ['mobile', 'tablet'] not in request ['tv', 'web']"
+    },
+    {
+      "id": "dir-social-feed-mobile",
+      "reason": "platform ['mobile'] not in request ['tv', 'web']"
+    },
+    {
+      "id": "dir-public-kiosk",
+      "reason": "platform ['kiosk'] not in request ['tv', 'web']"
+    },
+    {
+      "id": "nav-hub-spoke",
+      "reason": "platform ['kiosk', 'mobile', 'tablet'] not in request ['tv', 'web']"
+    },
+    {
+      "id": "nav-menu-bar-desktop",
+      "reason": "platform ['desktop'] not in request ['tv', 'web']"
+    },
+    {
+      "id": "focus-none-touch-only",
+      "reason": "platform ['kiosk', 'mobile'] not in request ['tv', 'web']"
+    },
+    {
+      "id": "cta-fab",
+      "reason": "platform ['mobile'] not in request ['tv', 'web']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "state.loading_empty_error",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 2,
+      "reason": "asynchronous or remote data on this screen",
+      "candidate_records": [
+        [
+          "comp-mini-player",
+          0.378
+        ],
+        [
+          "layout-states-empty-loading-error",
+          0.273
+        ],
+        [
+          "anti-no-states",
+          0.261
+        ],
+        [
+          "comp-empty-state",
+          0.198
+        ]
+      ],
+      "selected_record": "layout-states-empty-loading-error",
+      "carrier_quality": "GENERIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.keyboard_navigation",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 3,
+      "reason": "web content must be keyboard operable",
+      "candidate_records": [
+        [
+          "a11y-skip-link",
+          0.387
+        ],
+        [
+          "a11y-keyboard-operable",
+          0.359
+        ],
+        [
+          "interaction-drag-drop",
+          0.348
+        ],
+        [
+          "grid-single-tab-stop",
+          0.346
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.hover_independence",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 3,
+      "reason": "web is used with touch as well as pointer",
+      "candidate_records": [
+        [
+          "a11y-keyboard-operable",
+          0.359
+        ],
+        [
+          "tv-no-touch-hover",
+          0.347
+        ],
+        [
+          "anti-hover-only-actions",
+          0.342
+        ],
+        [
+          "a11y-hover-not-required",
+          0.342
+        ]
+      ],
+      "selected_record": "tv-no-touch-hover",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.focus_visible",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 3,
+      "reason": "web keyboard focus",
+      "candidate_records": [
+        [
+          "a11y-tv-focus-always",
+          0.45
+        ],
+        [
+          "a11y-focus-visible",
+          0.413
+        ],
+        [
+          "tv-dpad-hold-pacing",
+          0.406
+        ],
+        [
+          "grid-single-tab-stop",
+          0.346
+        ]
+      ],
+      "selected_record": "a11y-tv-focus-always",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.dpad_reachability",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 3,
+      "reason": "TV / remote input",
+      "candidate_records": [
+        [
+          "comp-epg",
+          0.717
+        ],
+        [
+          "tv-dpad-axes",
+          0.367
+        ],
+        [
+          "tv-search-input",
+          0.342
+        ]
+      ],
+      "selected_record": "comp-epg",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.focus_restore",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 3,
+      "reason": "TV / remote input",
+      "candidate_records": [
+        [
+          "a11y-tv-focus-always",
+          0.45
+        ],
+        [
+          "layout-rails",
+          0.442
+        ],
+        [
+          "comp-tv-rail",
+          0.414
+        ],
+        [
+          "comp-mini-player",
+          0.378
+        ]
+      ],
+      "selected_record": "a11y-tv-focus-always",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "tv.epg_pinned_channels",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 1,
+      "reason": "screen subtype epg",
+      "candidate_records": [
+        [
+          "layout-epg-grid",
+          0.733
+        ],
+        [
+          "comp-epg",
+          0.717
+        ]
+      ],
+      "selected_record": "layout-epg-grid",
+      "carrier_quality": "DIRECT",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "tv.time_navigation",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 1,
+      "reason": "screen subtype epg",
+      "candidate_records": [
+        [
+          "layout-epg-grid",
+          0.733
+        ],
+        [
+          "comp-epg",
+          0.717
+        ]
+      ],
+      "selected_record": "layout-epg-grid",
+      "carrier_quality": "DIRECT",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.accessible_names",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "comp-media-card",
+          0.387
+        ],
+        [
+          "a11y-native-semantics",
+          0.315
+        ],
+        [
+          "a11y-labels-names",
+          0.287
+        ],
+        [
+          "comp-player-controls",
+          0.261
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "a11y.contrast",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "tv-dark-first",
+          0.342
+        ],
+        [
+          "a11y-contrast-text",
+          0.276
+        ],
+        [
+          "anti-fashion-over-usability",
+          0.267
+        ],
+        [
+          "a11y-nontext-contrast",
+          0.261
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.232
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.minimum_target",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "touch on web",
+      "candidate_records": [
+        [
+          "a11y-target-size",
+          0.297
+        ],
+        [
+          "media-photo-viewer",
+          0.279
+        ],
+        [
+          "comp-product-detail-page",
+          0.168
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "adaptive.breakpoint_matrix",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "web viewport range",
+      "candidate_records": [
+        [
+          "web-responsive-breakpoints",
+          0.325
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.back_semantics",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "remote input",
+      "candidate_records": [
+        [
+          "tv-player-controls",
+          0.402
+        ],
+        [
+          "comp-mini-player",
+          0.378
+        ],
+        [
+          "tv-back-behavior",
+          0.356
+        ],
+        [
+          "media-photo-viewer",
+          0.279
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "tv.no_touch_hover",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "tv",
+      "candidate_records": [
+        [
+          "tv-no-touch-hover",
+          0.347
+        ]
+      ],
+      "selected_record": "tv-no-touch-hover",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "perf.focus_latency",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "tv",
+      "candidate_records": [
+        [
+          "comp-tv-rail",
+          0.414
+        ],
+        [
+          "tv-dpad-hold-pacing",
+          0.406
+        ],
+        [
+          "tv-focus-performance",
+          0.349
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "tv.dark_first",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "tv",
+      "candidate_records": [
+        [
+          "tv-dark-first",
+          0.342
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "data.pagination_strategy",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "long lists",
+      "candidate_records": [
+        [
+          "layout-grid-catalog",
+          0.443
+        ],
+        [
+          "comp-data-table",
+          0.28
+        ],
+        [
+          "comp-pagination",
+          0.198
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "table.virtualization",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "screen subtype epg",
+      "candidate_records": [
+        [
+          "layout-epg-grid",
+          0.733
+        ],
+        [
+          "comp-epg",
+          0.717
+        ],
+        [
+          "tv-focus-performance",
+          0.349
+        ],
+        [
+          "web-virtualize-long-lists",
+          0.315
+        ]
+      ],
+      "selected_record": "layout-epg-grid",
+      "carrier_quality": "DIRECT",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "media.live_channel_switching",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "screen subtype epg",
+      "candidate_records": [
+        [
+          "comp-epg",
+          0.717
+        ],
+        [
+          "tv-player-controls",
+          0.402
+        ]
+      ],
+      "selected_record": "comp-epg",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "privacy.shared_device",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "environment shared-device",
+      "candidate_records": [
+        [
+          "shared-device-privacy",
+          0.315
+        ],
+        [
+          "comp-tv-sign-in",
+          0.234
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "tv.ten_foot_typography",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "TV / remote input (demoted: saturation cap)",
+      "candidate_records": [
+        [
+          "tv-typography-distance",
+          0.342
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "tv.safe_margins",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "TV / remote input (demoted: saturation cap)",
+      "candidate_records": [
+        [
+          "comp-mini-player",
+          0.378
+        ],
+        [
+          "anti-desktop-scaled-to-tv",
+          0.342
+        ],
+        [
+          "tv-safe-area",
+          0.342
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.shortcuts",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "related to interaction.keyboard_navigation",
+      "candidate_records": [
+        [
+          "cta-toolbar-commands",
+          0.276
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates rejected as contaminated: product-specific (devtools,erp,finance,saas) vs ['media']"
+    }
+  ]
+}

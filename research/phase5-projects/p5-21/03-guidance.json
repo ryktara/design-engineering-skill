@@ -1,0 +1,772 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "Add a weekly summary card to the top of the Today screen.",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "mobile"
+    ],
+    "input": [
+      "touch"
+    ],
+    "product": [
+      "ecommerce"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "swiftui"
+    ],
+    "density": null,
+    "components": [
+      "card"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "create card"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "screen_reader": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "create"
+      ],
+      "problem_domain": [],
+      "change_scope": "screen",
+      "utterance": "request",
+      "existing": true,
+      "problem": false,
+      "facet": "general",
+      "diagnose_only": false,
+      "creation": true,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "create: build/create request on an existing surface"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "bottom-tabs",
+        "status": "KNOWN",
+        "evidence": [
+          "bottom-tabs: 7 matches in README.md, RootTabView.swift, StreaksApp.swift (shell/layout file)"
+        ]
+      },
+      "theme": {
+        "value": "dual-theme",
+        "status": "INFERRED",
+        "evidence": [
+          "dark theme configuration signals: 2",
+          "hex palette: 0 near-white, 0 near-black"
+        ]
+      },
+      "surfaces": {
+        "value": "elevated",
+        "status": "INFERRED",
+        "evidence": [
+          "shadow/elevation in 4 files, borders in 0"
+        ]
+      },
+      "radius": {
+        "value": "medium",
+        "status": "INFERRED",
+        "evidence": [
+          "most common radius 8 (1×); others []"
+        ]
+      },
+      "spacing": {
+        "value": 4,
+        "status": "INFERRED",
+        "evidence": [
+          "most used spacing values [2, 4, 12, 16]"
+        ]
+      },
+      "typography": {
+        "value": "humanist-sans",
+        "status": "INFERRED",
+        "evidence": [
+          "font family Nunito (1 refs)",
+          "encoded type scale in 3 files"
+        ]
+      },
+      "components": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": []
+      }
+    },
+    "known": [
+      "platform=mobile (project inspection)",
+      "product=ecommerce (project inspection (README))",
+      "stack=swiftui (project inspection)",
+      "project_navigation=bottom-tabs (repository: bottom-tabs: 7 matches in README.md, RootTabView.swift, StreaksApp.swift (shell/layout file))"
+    ],
+    "inferred": [
+      "input=touch (implied by platform mobile)",
+      "mode=create (build/create request on an existing surface)",
+      "project_theme=dual-theme (repository: dark theme configuration signals: 2; hex palette: 0 near-white, 0 near-black)",
+      "project_surfaces=elevated (repository: shadow/elevation in 4 files, borders in 0)",
+      "project_radius=medium (repository: most common radius 8 (1×); others [])",
+      "project_spacing=4 (repository: most used spacing values [2, 4, 12, 16])",
+      "project_typography=humanist-sans (repository: font family Nunito (1 refs); encoded type scale in 3 files)"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [],
+      "project": [
+        "Package.swift: Apple project",
+        "Package.swift: iOS target"
+      ]
+    },
+    "activation": {
+      "decision": "activate",
+      "ui_score": 3.0,
+      "non_ui_score": 0,
+      "ui_terms": [
+        "screen",
+        "card"
+      ],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "to the",
+        "today",
+        "the today screen"
+      ],
+      "new": [],
+      "defect": [],
+      "operations": {
+        "create": [
+          "add",
+          "add a"
+        ]
+      },
+      "domains": {},
+      "no_change": [],
+      "scope": {
+        "screen": [
+          "screen"
+        ]
+      },
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "screen",
+        "card"
+      ],
+      "ux_symptoms": [],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "component",
+        "reason": "a specific component/screen is requested"
+      },
+      {
+        "concern": "structure",
+        "reason": "layout topology and hierarchy"
+      },
+      {
+        "concern": "interaction",
+        "reason": "input model: touch"
+      },
+      {
+        "concern": "accessibility",
+        "reason": "platform accessibility baseline"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "navigation",
+        "reason": "how users arrive and leave"
+      },
+      {
+        "concern": "states",
+        "reason": "few states; still handle failed media"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "create/refactor requests attract generic defaults"
+      },
+      {
+        "concern": "brand",
+        "reason": "visual identity direction"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "device sizes and orientation"
+      }
+    ],
+    "optional": [
+      "motion",
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "touch.minimum_target",
+        "reason": "touch platform"
+      }
+    ],
+    "recommended_concepts": [
+      "process.reuse_first",
+      "touch.gestures_discoverable",
+      "touch.thumb_reach",
+      "touch.safe_areas",
+      "navigation.platform_grammar",
+      "layout.no_nested_cards"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "comp-product-detail-page",
+      "kind": "component",
+      "category": "detail",
+      "title": "Product detail page (PDP)",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "content",
+        "feedback",
+        "structure"
+      ],
+      "concepts": [
+        "layout.one_primary_action",
+        "perf.layout_shift",
+        "a11y.accessible_names",
+        "touch.minimum_target",
+        "feedback.trust_signals"
+      ],
+      "covers": [
+        "one primary action per view",
+        "no layout shift",
+        "accessible names and labels",
+        "large touch targets (≥44–48 px)",
+        "trust and cost transparency before commitment"
+      ],
+      "score": 0.552,
+      "guidance": "Above the fold on every viewport: product name, price (with tabular figures and any discount stated in words), primary image, variant selectors and one add-to-cart action; variant choice is a radio group with visible labels and a disabled-but-visible state for out-of-stock options; the add-to-cart button is sticky on phones without covering focused controls; shipping, returns and stock are stated next to the price, not in a tab; the gallery has fixed aspect boxes (no layout shift), keyboard-operable thumbnails and alt text per image; reviews show the distribution and a count, and stars always have a text value; secondary actions (wishlist, share, size guide) never compete visually with add-to-cart; the size guide opens as a dialog that returns focus.",
+      "use_when": "Selling a physical or digital product: gallery, variants, price, availability, add-to-cart, trust and shipping information, reviews.",
+      "avoid_when": "Catalog/listing pages (use list + filters) or marketing landing pages (hero + narrative).",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.464,
+        "structural": 0.66,
+        "matched": [
+          "platform mobile",
+          "mode create",
+          "product ecommerce"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "comp-checkout-one-page",
+      "kind": "component",
+      "category": "form",
+      "title": "One-page checkout",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "feedback",
+        "states",
+        "structure"
+      ],
+      "concepts": [
+        "feedback.validation_errors",
+        "touch.ime_keyboard",
+        "feedback.confirmation_destructive",
+        "state.saving_conflict",
+        "layout.one_primary_action",
+        "feedback.trust_signals"
+      ],
+      "covers": [
+        "inline validation messages and error recovery",
+        "on-screen keyboard (IME) aware layout",
+        "confirmation of destructive or high-risk actions",
+        "saving, saved and conflict states",
+        "one primary action per view",
+        "trust and cost transparency before commitment"
+      ],
+      "score": 0.426,
+      "guidance": "Order summary is visible on desktop (side column) and collapsible-but-present at the top on phones with the total always shown; guest checkout first, account optional; sections in the order contact → shipping → payment → review, each with a visible heading and inline validation on blur plus a focused error summary on submit; address fields use autocomplete attributes and correct input types/IME; the pay button states the amount, is disabled only while processing (with a visible status), and is protected against double submission; trust and cost information (shipping, tax) appears before payment, never as a surprise; progress is saved locally so a reload does not lose entries.",
+      "use_when": "Purchase flows with contact, shipping, payment and review on one scrolling page.",
+      "avoid_when": "Multi-session or regulated flows that need a stepper with server-side validation per step.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "incompatible": [
+        "nav-wizard"
+      ],
+      "why": {
+        "lexical": 0.235,
+        "structural": 0.66,
+        "matched": [
+          "platform mobile",
+          "mode create",
+          "product ecommerce"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "surface-elevated-cards",
+      "kind": "pattern",
+      "category": "surface",
+      "title": "Elevated cards as the primary container",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "brand",
+        "structure"
+      ],
+      "concepts": [],
+      "covers": [],
+      "score": 0.545,
+      "guidance": "One elevation level for resting cards, one for pressed/dragged; the whole card is the target with a single accessible name; never nest a card inside a card; cards in a grid share aspect ratio and padding. If more than ~30% of a screen is card borders, switch to dividers.",
+      "use_when": "Each item is a self-contained, tappable object (a product, a post, a course) and the card boundary is also the touch target.",
+      "avoid_when": "Dashboards and tables (cards inside cards), text-heavy content, dense desktop tools, or when the card contains a single line of text.",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "incompatible": [
+        "surface-flat-tonal",
+        "surface-bordered-panes",
+        "layout-table-first",
+        "layout-three-pane"
+      ],
+      "why": {
+        "lexical": 0.329,
+        "structural": 0.72,
+        "matched": [
+          "platform mobile",
+          "input touch",
+          "mode create",
+          "product ecommerce"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring pattern with lexical evidence"
+    },
+    {
+      "id": "nav-bottom-tabs",
+      "kind": "pattern",
+      "category": "navigation",
+      "title": "Bottom tab bar",
+      "facets": [
+        "navigation",
+        "platform"
+      ],
+      "concerns": [
+        "navigation"
+      ],
+      "concepts": [
+        "navigation.platform_grammar"
+      ],
+      "covers": [
+        "platform navigation grammar"
+      ],
+      "score": 0.426,
+      "guidance": "3–5 items, icon + label always (no icon-only), safe-area aware, current item indicated by more than tint. Each tab keeps its own navigation stack. Don't put actions (compose, add) in the tab bar unless it is the app's primary action and it is styled as an action, not a destination.",
+      "use_when": "Phone apps with 3–5 top-level destinations of similar importance that users switch between often.",
+      "avoid_when": "More than five destinations, tablet/desktop widths (use a rail), single-flow apps, or when one destination dominates usage.",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "implementation": {
+        "swiftui": "TabView with Label(text, systemImage); avoid custom bars unless brand requires, since the system bar handles Dynamic Type and VoiceOver."
+      },
+      "incompatible": [
+        "nav-left-rail",
+        "nav-top-bar",
+        "nav-tv-side",
+        "nav-tv-top-tabs"
+      ],
+      "why": {
+        "lexical": 0.155,
+        "structural": 0.58,
+        "matched": [
+          "platform mobile",
+          "input touch",
+          "mode create"
+        ]
+      },
+      "role": "core",
+      "selected_for": "recommended coverage: navigation, platform navigation grammar"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "a11y-modal-dialog",
+      "kind": "rule",
+      "category": "dialog",
+      "title": "Dialog focus management",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "a11y.dialog_focus",
+        "interaction.focus_restore"
+      ],
+      "covers": [
+        "dialog focus management",
+        "focus restoration"
+      ],
+      "score": 0.297,
+      "guidance": "On open: focus the first meaningful control (or the heading), trap Tab inside, inert the background, label the dialog by its title. On close: return focus to the invoker. Escape and the visible close button both close; destructive confirmations put the safe action as default. Use <dialog>/showModal, ContentDialog, .sheet, ModalBottomSheet rather than a div overlay.",
+      "use_when": "Modals, sheets, drawers, popovers, confirmations.",
+      "avoid_when": "Do not use modals for content that could be inline; do not stack modals.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.66,
+        "matched": [
+          "platform mobile",
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: accessibility, interaction"
+    },
+    {
+      "id": "mobile-safe-areas",
+      "kind": "rule",
+      "category": "layout",
+      "title": "Mobile: safe areas and system insets",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "adaptive",
+        "structure"
+      ],
+      "concepts": [
+        "touch.safe_areas"
+      ],
+      "covers": [
+        "safe areas and notches"
+      ],
+      "score": 0.364,
+      "guidance": "Content respects safe-area insets (SwiftUI safeAreaInset / .ignoresSafeArea only for backgrounds, Compose WindowInsets + edge-to-edge, RN SafeAreaView/useSafeAreaInsets, web env(safe-area-inset-*)); bottom actions sit above the home indicator/gesture bar; keyboard (IME) insets push the focused field into view.",
+      "use_when": "Bottom bars, sticky CTAs, full-bleed backgrounds, top app bars, landscape.",
+      "avoid_when": "Never hard-code status/nav bar heights.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.072,
+        "structural": 0.72,
+        "matched": [
+          "platform mobile",
+          "input touch",
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "recommended coverage: adaptive, safe areas and notches"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "component",
+      "structure",
+      "interaction",
+      "accessibility"
+    ],
+    "covered_required_concerns": [
+      "component",
+      "structure",
+      "interaction",
+      "accessibility"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "navigation",
+      "states",
+      "anti-pattern",
+      "brand",
+      "adaptive"
+    ],
+    "covered_recommended_concerns": [
+      "navigation",
+      "states",
+      "brand",
+      "adaptive"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "touch.minimum_target"
+    ],
+    "covered_required_concepts": [
+      "touch.minimum_target"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.33,
+    "bundle_size": 6,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 4,
+    "guardrail_size": 2,
+    "bundle_tokens": 1197,
+    "coverage_per_1k_tokens": 0.84,
+    "mean_purity": 0.53,
+    "contaminated": [],
+    "category_diversity": 1.0,
+    "duplicate_pressure": 0.17,
+    "facet_coverage": 0.8,
+    "redundancy": 0.33
+  },
+  "token_coverage": 0.83,
+  "omitted": [
+    {
+      "id": "comp-media-card",
+      "reason": "contamination: low purity 0.00: most of its concepts are off-task; media-card-specific record with no media-card evidence in the request"
+    },
+    {
+      "id": "media-resume-and-details",
+      "reason": "contamination: product-specific (media) vs ['ecommerce']; low purity 0.00: most of its concepts are off-task"
+    }
+  ],
+  "rejected": [
+    {
+      "id": "anti-generic-sidebar-dashboard",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "anti-desktop-scaled-to-tv",
+      "reason": "platform ['tv'] not in request ['mobile']"
+    },
+    {
+      "id": "anti-hover-only-actions",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-tv-rail",
+      "reason": "platform ['tv'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-data-entry-grid",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-plan-comparison",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "dir-operational-workbench",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "dir-analytical-console",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "touch.minimum_target",
+      "priority": "required",
+      "reason": "touch platform",
+      "candidate_records": [
+        [
+          "comp-product-detail-page",
+          0.552
+        ],
+        [
+          "comp-photo-capture-field",
+          0.338
+        ],
+        [
+          "a11y-target-size",
+          0.27
+        ],
+        [
+          "comp-list-row-mobile",
+          0.261
+        ]
+      ],
+      "selected_record": "comp-product-detail-page",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "recommended",
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.243
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.gestures_discoverable",
+      "priority": "recommended",
+      "reason": "touch platform",
+      "candidate_records": [
+        [
+          "mobile-gestures-discoverable",
+          0.324
+        ],
+        [
+          "comp-list-row-mobile",
+          0.261
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.thumb_reach",
+      "priority": "recommended",
+      "reason": "one-handed use",
+      "candidate_records": [
+        [
+          "mobile-thumb-reach",
+          0.405
+        ],
+        [
+          "anti-mobile-desktop-shrunk",
+          0.198
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.safe_areas",
+      "priority": "recommended",
+      "reason": "mobile",
+      "candidate_records": [
+        [
+          "mobile-safe-areas",
+          0.364
+        ]
+      ],
+      "selected_record": "mobile-safe-areas",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "navigation.platform_grammar",
+      "priority": "recommended",
+      "reason": "mobile navigation grammar",
+      "candidate_records": [
+        [
+          "nav-bottom-tabs",
+          0.426
+        ],
+        [
+          "mobile-platform-navigation",
+          0.342
+        ]
+      ],
+      "selected_record": "nav-bottom-tabs",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "layout.no_nested_cards",
+      "priority": "recommended",
+      "reason": "cards",
+      "candidate_records": [
+        [
+          "card-none",
+          0.446
+        ],
+        [
+          "anti-card-everything",
+          0.431
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    }
+  ]
+}

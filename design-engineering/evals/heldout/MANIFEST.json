@@ -1,0 +1,46 @@
+{
+ "files": {
+  "cases.json": {
+   "sha256": "592e4c4fedd2ee78c56e7218184d21de88fb629648770a19a519d02a3914551a",
+   "count": 145
+  }
+ },
+ "generated": "2026-09-08",
+ "method": "independent-subagent-from-taxonomy-only",
+ "immutable_for": "phase-2",
+ "categories": {
+  "abstain": 6,
+  "accessibility": 4,
+  "adversarial": 15,
+  "android-tv": 4,
+  "avalonia": 4,
+  "brand": 4,
+  "compose": 4,
+  "dashboards": 4,
+  "ecommerce": 4,
+  "erp": 4,
+  "finance": 4,
+  "flutter": 4,
+  "forms": 4,
+  "healthcare": 4,
+  "kiosk": 4,
+  "media": 4,
+  "mobile": 4,
+  "negative-constraint": 4,
+  "nextjs": 4,
+  "onboarding": 4,
+  "polish": 4,
+  "react": 4,
+  "responsive": 4,
+  "saas": 4,
+  "screenshot": 4,
+  "search": 4,
+  "settings": 4,
+  "swiftui": 4,
+  "tables": 4,
+  "tvos": 4,
+  "web": 4,
+  "winui": 4,
+  "wpf": 4
+ }
+}

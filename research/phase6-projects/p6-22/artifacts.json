@@ -1,0 +1,128 @@
+{
+  "task": "p6-22",
+  "project": "p5-avalonia-fleet",
+  "platform_expected": "desktop",
+  "platform_resolved": "desktop",
+  "platform_correct": "yes",
+  "stack": "avalonia",
+  "existing_ui": true,
+  "new_screen": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": ["refactor", "audit", "review", "polish"],
+  "mode_resolved": ["audit", "refactor"],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "moderate",
+  "render_mode": "html-twin",
+  "screenshots": [
+    "render/first-dispatch-1280x800.png",
+    "render/first-dispatch-prompt-1280x800.png",
+    "render/final-dispatch-1280x800.png",
+    "render/final-dispatch-prompt-1280x800.png"
+  ],
+  "context_detection": {
+    "navigation": "yes",
+    "theme": "partial",
+    "typography": "yes",
+    "surfaces": "yes",
+    "spacing": "partial"
+  },
+  "preservation": {
+    "navigation": true,
+    "theme": true,
+    "typography": true,
+    "component_reuse": true,
+    "unjustified_structural_change": 0
+  },
+  "expected_concepts": [
+    "process.reuse_first",
+    "a11y.accessible_names",
+    "state.unsaved_changes_guard",
+    "layout.settings_grouping",
+    "desktop.spacing_grid",
+    "interaction.keyboard_navigation"
+  ],
+  "critical_concepts": [
+    "process.reuse_first",
+    "a11y.accessible_names",
+    "state.unsaved_changes_guard"
+  ],
+  "delivered_concepts": [
+    "feedback.validation_errors",
+    "touch.ime_keyboard",
+    "form.autofill_attributes",
+    "state.unsaved_changes_guard",
+    "interaction.keyboard_navigation",
+    "interaction.shortcuts",
+    "interaction.focus_visible",
+    "state.loading_empty_error"
+  ],
+  "concept_recall": 0.33,
+  "critical_recall": 0.33,
+  "concept_misses": [
+    {"concept": "process.reuse_first", "layer": "bundle-selection"},
+    {"concept": "a11y.accessible_names", "layer": "bundle-selection"},
+    {"concept": "layout.settings_grouping", "layer": "expected-concepts"},
+    {"concept": "desktop.spacing_grid", "layer": "expected-concepts"}
+  ],
+  "first_render_defects": {"visual": 1, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+  "final_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+  "iterations": 1,
+  "guidance_relevant": 1,
+  "guidance_partial": 2,
+  "guidance_offtarget": 1,
+  "bad_guidance": [
+    {"record": "layout-master-detail", "category": "generic", "why": "true of any list+detail screen; says nothing about the reported duplicate-data-entry problem; 0.25 contamination (TV / narrow-width advice)"},
+    {"record": "desktop-keyboard-first", "category": "generic", "why": "platform-correct but F2/Delete/Ctrl+F/grid selection has no bearing on the task"},
+    {"record": "layout-states-empty-loading-error", "category": "generic", "why": "selected as required coverage for state.loading_empty_error, but the screen has no async or remote data (deterministic in-memory SampleData)"},
+    {"record": "<bundle>", "category": "missing-critical", "why": "process.reuse_first and a11y.accessible_names, both pre-registered critical, were demanded but dropped by bundle selection"}
+  ],
+  "layer_review": {
+    "core": ["comp-form", "layout-master-detail"],
+    "critical": ["desktop-keyboard-first", "layout-states-empty-loading-error"],
+    "optional": [],
+    "optional_useful": 0,
+    "optional_noise": 0
+  },
+  "guidance_used": ["comp-form"],
+  "guidance_ignored": [
+    {"id": "layout-master-detail", "why": "the list/detail split is correct as built; nothing to change"},
+    {"id": "layout-states-empty-loading-error", "why": "no async data on this screen; adding loading/skeleton states would be a defect"},
+    {"id": "desktop-keyboard-first", "why": "grid/editing shortcuts are unrelated to a duplicated-field complaint; existing keyboard behaviour left intact"}
+  ],
+  "unjustified_direction_slots": 0,
+  "process_records_needed": true,
+  "skill_effect": "neutral",
+  "guidance_tokens": 762,
+  "misses": [
+    {"layer": "requirements", "what": "intent.problem_domain empty on a sentence that names a concrete domain (duplicated data entry); 'driver' scored as a non-UI activation term"},
+    {"layer": "bundle-selection", "what": "impl-reuse-before-new (process.reuse_first) was a live candidate and was dropped; it is the actual fix for this task"},
+    {"layer": "bundle-selection", "what": "a11y-labels-names / a11y-native-semantics dropped, leaving the 'accessibility' concern uncovered on an audit-mode task"},
+    {"layer": "candidate-compatibility", "what": "layout-states-empty-loading-error admitted as required coverage without evidence of async data in the project"}
+  ],
+  "knowledge_gaps": [
+    "No record (and no ONTOLOGY id) for 'do not ask for data the system already holds; derive it read-only from the source record and display it' - the single concept this task is about. Nearest records (comp-form, a11y-forms-errors, layout-form-stack) only cover how to lay a field out, not whether it should exist."
+  ],
+  "regressions": [
+    {"query": "Dispatchers say the job form asks for the same driver details twice.", "expect": "CORE carries a record about deriving read-only values from the existing source record instead of re-asking the user"},
+    {"query": "Dispatchers say the job form asks for the same driver details twice.", "expect": "impl-reuse-before-new present in the bundle for modify-on-existing tasks"},
+    {"query": "Dispatchers say the job form asks for the same driver details twice.", "expect": "intent.problem_domain non-empty (duplicated/redundant data entry); 'driver' not counted as a non-UI activation term"},
+    {"query": "desktop form task on a project with only in-memory deterministic data", "expect": "layout-states-empty-loading-error not selected as a required-coverage guardrail"}
+  ],
+  "tags": [
+    "concept-miss",
+    "ranking-miss",
+    "knowledge-gap",
+    "requirements-miss",
+    "render-defect-fixed",
+    "preservation-ok",
+    "skill-neutral",
+    "partial-scope-ok"
+  ],
+  "build_hash_start": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947",
+  "build_hash_end": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947"
+}

@@ -1,0 +1,25 @@
+{
+  "task": "p5-19",
+  "reviewer_model": "claude-opus-5[1m]",
+  "c2_records": [
+    {"id": "dir-service-app-mobile", "verdict": "off-target", "bad_category": "contradicts-codebase"},
+    {"id": "feedback-progress-async", "verdict": "relevant", "bad_category": null},
+    {"id": "mobile-field-use", "verdict": "relevant", "bad_category": null},
+    {"id": "mobile-keyboard-ime", "verdict": "off-target", "bad_category": "generic"},
+    {"id": "states-offline-and-sync", "verdict": "relevant", "bad_category": null},
+    {"id": "mobile-safe-areas", "verdict": "off-target", "bad_category": "generic"}
+  ],
+  "c2_relevant": 3,
+  "c2_partial": 0,
+  "c2_offtarget": 3,
+  "c2_bad": [
+    {"record": "dir-service-app-mobile", "category": "contradicts-codebase", "why": "Prescribes a hub-and-spoke home with 'account balance/status as the single focal element' and onboarding illustration. Field Inspect is a top-bar checklist/defect-form app with no hub, no account, no illustration, and the task changes one status banner. Chosen on lexical 0.008 with the explicit note 'no record matched the wording' - it should have been dropped rather than promoted to the only core record."},
+    {"record": "mobile-keyboard-ime", "category": "generic", "why": "Keyboard types, autofill hints and IME insets are unrelated to a sync-status indicator. Selected only to satisfy 'required coverage: component'."},
+    {"record": "mobile-safe-areas", "category": "generic", "why": "Safe-area insets and home-indicator clearance are true of any mobile screen and say nothing about what a spinner should report. Pure concern-filling ('recommended coverage: adaptive')."}
+  ],
+  "c2_direction_unjustified": [],
+  "platform_mode_scope_ok": true,
+  "verdict_vs_c1": "better",
+  "why": "c2 adds feedback-progress-async, which states verbatim the fix the implementer had to invent unaided in c1 ('Sending 2 of 3 . Photo ...', determinate bar, name the failed item and reason with Retry, 'All sent' confirmation, a stable live region announcing start/failure/completion once per run); the cost is losing c1's a11y-color-not-only and layout-states-empty-loading-error, and three of six slots are still concern-filling or brand-direction noise.",
+  "would_have_helped": "helped"
+}

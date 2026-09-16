@@ -1,0 +1,1249 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "Stock adjustment form: Save and Discard look identical and people click the wrong one.",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "polish",
+      "audit"
+    ],
+    "platform": [
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [],
+    "screen": [
+      "form"
+    ],
+    "screen_subtype": [],
+    "stack": [
+      "vue"
+    ],
+    "density": null,
+    "components": [
+      "form"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "polish form"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "low",
+    "scope": {
+      "domain": "UI_INTERACTION",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "visual",
+        "interaction",
+        "brand"
+      ],
+      "change_scope": "unknown",
+      "utterance": "observation",
+      "existing": true,
+      "problem": true,
+      "facet": "visual",
+      "diagnose_only": false,
+      "creation": false,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "polish: visual defect on existing UI",
+      "audit: diagnose first"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "top-bar",
+        "status": "KNOWN",
+        "evidence": [
+          "top-bar: 8 matches in App.vue, TopBar.vue, tokens.css (shell/layout file)"
+        ]
+      },
+      "theme": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": [
+          "hex palette: 11 near-white, 6 near-black"
+        ]
+      },
+      "surfaces": {
+        "value": "bordered-flat",
+        "status": "INFERRED",
+        "evidence": [
+          "borders in 11 files, shadow/elevation in 2"
+        ]
+      },
+      "radius": {
+        "value": "small",
+        "status": "INFERRED",
+        "evidence": [
+          "most common radius 5 (1×); others [6.0]"
+        ]
+      },
+      "spacing": {
+        "value": "irregular",
+        "status": "UNKNOWN",
+        "evidence": [
+          "most used spacing values [6, 4, 2]"
+        ]
+      },
+      "typography": {
+        "value": "humanist-sans",
+        "status": "KNOWN",
+        "evidence": [
+          "font family IBM Plex Sans (2 refs)",
+          "weights 600, 500",
+          "encoded type scale in 1 files"
+        ]
+      },
+      "components": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": []
+      }
+    },
+    "known": [
+      "platform=web (project inspection)",
+      "stack=vue (project inspection)",
+      "screen=form (request: form)",
+      "project_navigation=top-bar (repository: top-bar: 8 matches in App.vue, TopBar.vue, tokens.css (shell/layout file))",
+      "project_typography=humanist-sans (repository: font family IBM Plex Sans (2 refs); weights 600, 500)"
+    ],
+    "inferred": [
+      "input=pointer (implied by platform web)",
+      "input=keyboard (implied by platform web)",
+      "input=touch (implied by platform web)",
+      "mode=polish (visual defect on existing UI)",
+      "mode=audit (diagnose first)",
+      "project_surfaces=bordered-flat (repository: borders in 11 files, shadow/elevation in 2)",
+      "project_radius=small (repository: most common radius 5 (1×); others [6.0])"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [
+        "form"
+      ],
+      "project": [
+        "package.json: vue@^3.5.13"
+      ]
+    },
+    "activation": {
+      "decision": "activate",
+      "ui_score": 3.0,
+      "non_ui_score": 0,
+      "ui_terms": [
+        "form",
+        "look"
+      ],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "people"
+      ],
+      "new": [],
+      "defect": [
+        "look identical and people click the wron"
+      ],
+      "operations": {},
+      "domains": {
+        "interaction": [
+          "click"
+        ],
+        "visual": [
+          "look",
+          "identical"
+        ],
+        "brand": [
+          "look identical"
+        ]
+      },
+      "no_change": [],
+      "scope": {},
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "form",
+        "concept:feedback.confirmation_destructive",
+        "concept:brand.structural_differentiation"
+      ],
+      "ux_symptoms": [
+        "look identical"
+      ],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_INTERACTION",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "structure",
+        "reason": "hierarchy and spacing are the usual polish defects"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "polish removes generic devices"
+      },
+      {
+        "concern": "interaction",
+        "reason": "input model: keyboard,pointer,touch"
+      },
+      {
+        "concern": "accessibility",
+        "reason": "platform accessibility baseline"
+      },
+      {
+        "concern": "feedback",
+        "reason": "form validation and submission feedback"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "content",
+        "reason": "typography"
+      },
+      {
+        "concern": "component",
+        "reason": "the component being polished"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "viewport range"
+      }
+    ],
+    "optional": [
+      "motion",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "feedback.confirmation_destructive",
+        "reason": "named in the request: discard",
+        "priority": 0,
+        "critical": true
+      },
+      {
+        "concept": "brand.structural_differentiation",
+        "reason": "named in the request: look identical",
+        "priority": 0,
+        "critical": true
+      },
+      {
+        "concept": "state.loading_empty_error",
+        "reason": "asynchronous or remote data on this screen",
+        "priority": 2,
+        "critical": false
+      }
+    ],
+    "recommended_concepts": [
+      "layout.no_nested_cards",
+      "process.safe_modification",
+      "state.unsaved_changes_guard",
+      "state.saving_conflict",
+      "touch.minimum_target",
+      "adaptive.breakpoint_matrix",
+      "feedback.validation_errors",
+      "form.autofill_attributes",
+      "layout.spacing_scale",
+      "layout.focal_hierarchy",
+      "process.reuse_first",
+      "interaction.keyboard_navigation",
+      "interaction.hover_independence",
+      "interaction.focus_visible",
+      "process.decision_order"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "comp-dialog",
+      "kind": "component",
+      "category": "dialog",
+      "title": "Dialog / modal",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "accessibility",
+        "component",
+        "feedback",
+        "interaction"
+      ],
+      "concepts": [
+        "a11y.dialog_focus",
+        "feedback.confirmation_destructive"
+      ],
+      "covers": [
+        "dialog focus management",
+        "confirmation of destructive or high-risk actions"
+      ],
+      "score": 0.19,
+      "guidance": "Title as heading, one primary action, safe default for destructive confirmations, focus management per dialog rule, sized to content with max width, scroll inside the body not the page, Escape and close button, backdrop click closes only for non-destructive dialogs. Mobile: bottom sheet or full-screen; TV: full-screen with first focus on the safe action.",
+      "use_when": "Confirmation, short focused task, blocking decision.",
+      "avoid_when": "Long forms, content that users need to reference while working (use a panel), stacking dialogs, mobile (prefer sheets or full-screen), TV (prefer full-screen or side sheet with clear focus).",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.05,
+        "structural": 0.36,
+        "matched": [
+          "secondary mode"
+        ]
+      },
+      "role": "core",
+      "selected_for": "critical concept (GENERIC): confirmation of destructive or high-risk actions"
+    },
+    {
+      "id": "comp-form",
+      "kind": "component",
+      "category": "form",
+      "title": "Form",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "component",
+        "feedback",
+        "states",
+        "structure"
+      ],
+      "concepts": [
+        "feedback.validation_errors",
+        "touch.ime_keyboard",
+        "form.autofill_attributes",
+        "state.unsaved_changes_guard"
+      ],
+      "covers": [
+        "inline validation messages and error recovery",
+        "on-screen keyboard (IME) aware layout",
+        "autofill / input-type attributes per field",
+        "unsaved-changes guard"
+      ],
+      "score": 0.433,
+      "guidance": "Labels above, help text below, required marked in text, field widths sized to content, grouped by section with headings, one column, inline validation on blur, error summary on submit with links to fields, primary action last (or sticky), unsaved-changes guard, autosave with status for long forms, autofill attributes. TV: one field per row, DOWN moves to next, system keyboard, minimal fields.",
+      "use_when": "Any data entry: settings, checkout, applications, record editing.",
+      "avoid_when": "Batch entry of many similar rows (use a data-entry grid); single toggles (inline).",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.426,
+        "structural": 0.44,
+        "matched": [
+          "secondary mode",
+          "screen form"
+        ]
+      },
+      "role": "core",
+      "selected_for": "task evidence: screen, component, lexical_strong"
+    },
+    {
+      "id": "layout-form-stack",
+      "kind": "pattern",
+      "category": "layout",
+      "title": "Form stack with sections",
+      "facets": [
+        "layout"
+      ],
+      "concerns": [
+        "structure"
+      ],
+      "concepts": [],
+      "covers": [],
+      "score": 0.477,
+      "guidance": "Labels above fields (not placeholders), one column except for tightly related pairs (city/postcode), section headings as real headings, inline validation on blur with error text linked via aria-describedby, and the primary action at the end of the form or in a sticky footer. Field width should hint expected length.",
+      "use_when": "Data entry and settings: labelled fields in one column, grouped into titled sections, with the save/submit action fixed in a predictable place.",
+      "avoid_when": "Spreadsheet-style batch entry (use a data-entry grid), or tiny forms of 1–2 fields (inline them).",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "incompatible": [
+        "layout-immersive-rails",
+        "layout-rails"
+      ],
+      "why": {
+        "lexical": 0.463,
+        "structural": 0.36,
+        "matched": [
+          "screen form"
+        ]
+      },
+      "role": "core",
+      "selected_for": "task evidence: screen, lexical_strong"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "anti-brand-cosmetic-only",
+      "kind": "antipattern",
+      "category": "brand",
+      "title": "Brands that differ only by logo, primary colour, and font",
+      "facets": [
+        "anti-pattern"
+      ],
+      "concerns": [
+        "anti-pattern"
+      ],
+      "concepts": [
+        "brand.structural_differentiation"
+      ],
+      "covers": [
+        "structural, not cosmetic, brand differentiation"
+      ],
+      "score": 0.225,
+      "guidance": "Run fingerprint.py compare on the candidate brand systems; a COSMETIC-ONLY verdict fails differentiation. Vary at least two structural axes (navigation model, layout topology, density, surface strategy, image strategy, metadata density, CTA strategy) per brand, then cosmetics.",
+      "use_when": "Multi-brand or white-label products where every brand shares navigation, layout, density, card geometry, imagery, and CTA behaviour.",
+      "avoid_when": "Shared structure is acceptable when brands are explicitly meant to be the same product with a skin; then say so.",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.5,
+        "matched": [
+          "secondary mode"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "critical concept (GENERIC): structural, not cosmetic, brand differentiation"
+    },
+    {
+      "id": "layout-states-empty-loading-error",
+      "kind": "rule",
+      "category": "feedback",
+      "title": "Design empty, loading, error, and partial states",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "states"
+      ],
+      "concepts": [
+        "state.loading_empty_error"
+      ],
+      "covers": [
+        "loading, empty and error states"
+      ],
+      "score": 0.257,
+      "guidance": "Empty: what this is, why it is empty, one action. Loading: skeleton with final dimensions, then content; announce completion. Error: what failed, what to do, retry that works; keep entered data. Partial: show what loaded, mark what didn't. On TV, focus must land somewhere valid in each state.",
+      "use_when": "Every list, table, chart, form, and detail screen.",
+      "avoid_when": "Never ship a blank area for empty data; never show a spinner for more than ~1 s without a skeleton or progress; never show an error without a next step.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.058,
+        "structural": 0.5,
+        "matched": [
+          "secondary mode"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage (GENERIC): loading, empty and error states"
+    },
+    {
+      "id": "layout-hierarchy-one-thing",
+      "kind": "rule",
+      "category": "layout",
+      "title": "One clear focal point per screen",
+      "facets": [
+        "layout"
+      ],
+      "concerns": [
+        "data-display",
+        "structure"
+      ],
+      "concepts": [
+        "layout.focal_hierarchy",
+        "layout.one_primary_action",
+        "data.exception_first"
+      ],
+      "covers": [
+        "visual hierarchy with one focal point",
+        "one primary action per view",
+        "exceptions and anomalies first"
+      ],
+      "score": 0.413,
+      "guidance": "Decide the screen's job and the one element that serves it; give that element the strongest size/contrast/position; demote everything else by one or two steps; navigation and chrome are quieter than content. On dashboards the focal point is the most important metric or the anomaly, not the page title.",
+      "use_when": "Designing any screen; reviewing 'it looks busy'.",
+      "avoid_when": "Never give three elements the same maximum emphasis; never make the primary content compete with chrome.",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.276,
+        "structural": 0.58,
+        "matched": [
+          "mode polish"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "recommended coverage (SPECIFIC): visual hierarchy with one focal point"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "structure",
+      "anti-pattern",
+      "interaction",
+      "accessibility",
+      "feedback"
+    ],
+    "covered_required_concerns": [
+      "structure",
+      "anti-pattern",
+      "interaction",
+      "accessibility",
+      "feedback"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "content",
+      "component",
+      "adaptive"
+    ],
+    "covered_recommended_concerns": [
+      "component"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "feedback.confirmation_destructive",
+      "brand.structural_differentiation",
+      "state.loading_empty_error"
+    ],
+    "covered_required_concepts": [
+      "feedback.confirmation_destructive",
+      "brand.structural_differentiation",
+      "state.loading_empty_error"
+    ],
+    "uncovered_required_concepts": [],
+    "critical_concepts": [
+      "brand.structural_differentiation",
+      "feedback.confirmation_destructive"
+    ],
+    "uncovered_critical_concepts": [],
+    "critical_coverage_ratio": 1.0,
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.27,
+    "not_surfaced": [
+      {
+        "concept": "layout.no_nested_cards",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "process.safe_modification",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "state.saving_conflict",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "touch.minimum_target",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "adaptive.breakpoint_matrix",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "layout.spacing_scale",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "process.reuse_first",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "interaction.hover_independence",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "process.decision_order",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "content",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      }
+    ],
+    "bundle_size": 6,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 3,
+    "guardrail_size": 3,
+    "bundle_tokens": 1059,
+    "coverage_per_1k_tokens": 2.83,
+    "mean_purity": 0.76,
+    "mean_specificity": 1.33,
+    "quality_counts": {
+      "SPECIFIC": 3,
+      "GENERIC": 3
+    },
+    "contaminated": [],
+    "category_diversity": 0.83,
+    "duplicate_pressure": 0.33,
+    "facet_coverage": 0.75,
+    "redundancy": 0.38,
+    "critical_trace": {
+      "covered": [
+        "feedback.confirmation_destructive",
+        "brand.structural_differentiation"
+      ],
+      "uncovered": [],
+      "carrier_quality": {
+        "feedback.confirmation_destructive": "GENERIC",
+        "brand.structural_differentiation": "GENERIC"
+      }
+    }
+  },
+  "token_coverage": 0.91,
+  "omitted": [
+    {
+      "id": "comp-checkout-one-page",
+      "reason": "contamination: product-specific with product unknown; screen-specific (checkout) vs ['form']"
+    }
+  ],
+  "marginal": {
+    "anti-brand-cosmetic-only": {
+      "new_critical": [
+        "brand.structural_differentiation"
+      ],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [
+        "anti-pattern"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "explicit_demand"
+      ],
+      "quality": "GENERIC",
+      "contamination": 0.0,
+      "tokens": 130
+    },
+    "comp-dialog": {
+      "new_critical": [
+        "feedback.confirmation_destructive"
+      ],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [
+        "accessibility",
+        "component",
+        "feedback",
+        "interaction"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "explicit_demand"
+      ],
+      "quality": "GENERIC",
+      "contamination": 0.0,
+      "tokens": 271
+    },
+    "comp-form": {
+      "new_critical": [],
+      "new_required": [],
+      "new_recommended": [
+        "feedback.validation_errors",
+        "form.autofill_attributes",
+        "state.unsaved_changes_guard"
+      ],
+      "new_concerns": [
+        "states",
+        "structure"
+      ],
+      "specificity": 3,
+      "evidence": [
+        "lexical_strong",
+        "lexical",
+        "screen",
+        "component"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 283
+    },
+    "layout-form-stack": {
+      "new_critical": [],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [],
+      "specificity": 2,
+      "evidence": [
+        "lexical_strong",
+        "lexical",
+        "screen"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 139
+    },
+    "layout-states-empty-loading-error": {
+      "new_critical": [],
+      "new_required": [
+        "state.loading_empty_error"
+      ],
+      "new_recommended": [],
+      "new_concerns": [],
+      "specificity": 0,
+      "evidence": [],
+      "quality": "GENERIC",
+      "contamination": 0.0,
+      "tokens": 123
+    },
+    "layout-hierarchy-one-thing": {
+      "new_critical": [],
+      "new_required": [],
+      "new_recommended": [
+        "layout.focal_hierarchy"
+      ],
+      "new_concerns": [
+        "data-display"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "lexical_strong",
+        "lexical"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 113
+    }
+  },
+  "rejected": [
+    {
+      "id": "anti-desktop-scaled-to-tv",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "comp-tv-rail",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "comp-tv-sign-in",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "comp-kiosk-keypad",
+      "reason": "platform ['kiosk', 'tablet'] not in request ['web']"
+    },
+    {
+      "id": "comp-photo-capture-field",
+      "reason": "platform ['mobile', 'tablet'] not in request ['web']"
+    },
+    {
+      "id": "dir-service-app-mobile",
+      "reason": "platform ['mobile'] not in request ['web']"
+    },
+    {
+      "id": "dir-social-feed-mobile",
+      "reason": "platform ['mobile'] not in request ['web']"
+    },
+    {
+      "id": "dir-public-kiosk",
+      "reason": "platform ['kiosk'] not in request ['web']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "feedback.confirmation_destructive",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 0,
+      "reason": "named in the request: discard",
+      "candidate_records": [
+        [
+          "states-persistence-and-session",
+          0.404
+        ],
+        [
+          "comp-checkout-one-page",
+          0.296
+        ],
+        [
+          "comp-dialog",
+          0.19
+        ],
+        [
+          "comp-settings-screen",
+          0.127
+        ]
+      ],
+      "selected_record": "comp-dialog",
+      "carrier_quality": "GENERIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "brand.structural_differentiation",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 0,
+      "reason": "named in the request: look identical",
+      "candidate_records": [
+        [
+          "anti-brand-cosmetic-only",
+          0.225
+        ]
+      ],
+      "selected_record": "anti-brand-cosmetic-only",
+      "carrier_quality": "GENERIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "state.loading_empty_error",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 2,
+      "reason": "asynchronous or remote data on this screen",
+      "candidate_records": [
+        [
+          "layout-states-empty-loading-error",
+          0.257
+        ],
+        [
+          "anti-no-states",
+          0.225
+        ],
+        [
+          "comp-empty-state",
+          0.204
+        ],
+        [
+          "comp-mini-player",
+          0.111
+        ]
+      ],
+      "selected_record": "layout-states-empty-loading-error",
+      "carrier_quality": "GENERIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "layout.no_nested_cards",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "polish removes container noise",
+      "candidate_records": [
+        [
+          "anti-card-everything",
+          0.275
+        ],
+        [
+          "card-none",
+          0.268
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "process.safe_modification",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "modifying an existing system",
+      "candidate_records": [
+        [
+          "impl-safe-modification",
+          0.261
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "state.unsaved_changes_guard",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "long form",
+      "candidate_records": [
+        [
+          "comp-form",
+          0.433
+        ],
+        [
+          "states-persistence-and-session",
+          0.404
+        ]
+      ],
+      "selected_record": "comp-form",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "state.saving_conflict",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "long form",
+      "candidate_records": [
+        [
+          "states-persistence-and-session",
+          0.404
+        ],
+        [
+          "comp-checkout-one-page",
+          0.296
+        ],
+        [
+          "states-offline-and-sync",
+          0.279
+        ],
+        [
+          "comp-wizard-stepper",
+          0.218
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.minimum_target",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "touch on web",
+      "candidate_records": [
+        [
+          "media-photo-viewer",
+          0.279
+        ],
+        [
+          "a11y-target-size",
+          0.252
+        ],
+        [
+          "comp-product-detail-page",
+          0.225
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "adaptive.breakpoint_matrix",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "web viewport range",
+      "candidate_records": [
+        [
+          "web-responsive-breakpoints",
+          0.279
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "feedback.validation_errors",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "form",
+      "candidate_records": [
+        [
+          "table-column-disambiguation",
+          0.444
+        ],
+        [
+          "comp-form",
+          0.433
+        ],
+        [
+          "a11y-forms-errors",
+          0.411
+        ],
+        [
+          "comp-checkout-one-page",
+          0.296
+        ]
+      ],
+      "selected_record": "comp-form",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "form.autofill_attributes",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "form",
+      "candidate_records": [
+        [
+          "comp-form",
+          0.433
+        ]
+      ],
+      "selected_record": "comp-form",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "layout.spacing_scale",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "visual problem / polish (narrow task: kept as a recommendation)",
+      "candidate_records": [
+        [
+          "anti-inconsistent-spacing",
+          0.361
+        ],
+        [
+          "layout-spacing-scale",
+          0.291
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "layout.focal_hierarchy",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "visual problem / polish (narrow task: kept as a recommendation)",
+      "candidate_records": [
+        [
+          "layout-hierarchy-one-thing",
+          0.413
+        ],
+        [
+          "typo-measure-and-rhythm",
+          0.31
+        ],
+        [
+          "anti-oversized-hero-text",
+          0.265
+        ],
+        [
+          "metadata-rich",
+          0.24
+        ]
+      ],
+      "selected_record": "layout-hierarchy-one-thing",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "existing repository: reuse its primitives (narrow task: kept as a recommendation)",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.261
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.keyboard_navigation",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "web content must be keyboard operable (narrow task: kept as a recommendation)",
+      "candidate_records": [
+        [
+          "interaction-drag-drop",
+          0.342
+        ],
+        [
+          "grid-single-tab-stop",
+          0.334
+        ],
+        [
+          "a11y-skip-link",
+          0.319
+        ],
+        [
+          "a11y-keyboard-operable",
+          0.306
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.hover_independence",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "web is used with touch as well as pointer (narrow task: kept as a recommendation)",
+      "candidate_records": [
+        [
+          "anti-hover-only-actions",
+          0.306
+        ],
+        [
+          "a11y-keyboard-operable",
+          0.306
+        ],
+        [
+          "a11y-hover-not-required",
+          0.306
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.focus_visible",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "web keyboard focus (narrow task: kept as a recommendation)",
+      "candidate_records": [
+        [
+          "a11y-focus-visible",
+          0.342
+        ],
+        [
+          "grid-single-tab-stop",
+          0.334
+        ],
+        [
+          "focus-ring-standard",
+          0.291
+        ],
+        [
+          "color-states-complete",
+          0.261
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "process.decision_order",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "related to brand.structural_differentiation",
+      "candidate_records": [
+        [
+          "anti-fashion-over-usability",
+          0.272
+        ],
+        [
+          "anti-style-before-product",
+          0.242
+        ],
+        [
+          "anti-generic-sidebar-dashboard",
+          0.225
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    }
+  ]
+}

@@ -1,0 +1,819 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "Add a Welsh language option to the ticket machine.",
+  "status": "PARTIAL",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "kiosk"
+    ],
+    "input": [
+      "touch"
+    ],
+    "product": [],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "html-css"
+    ],
+    "density": null,
+    "components": [],
+    "environment": [
+      "public"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "create"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "screen_reader": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "create"
+      ],
+      "problem_domain": [
+        "content"
+      ],
+      "change_scope": "unknown",
+      "utterance": "request",
+      "existing": true,
+      "problem": false,
+      "facet": "general",
+      "diagnose_only": false,
+      "creation": true,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [
+      {
+        "platform": "kiosk",
+        "strength": "DIRECT",
+        "evidence": [
+          "ticket machine",
+          "ticket",
+          "machine"
+        ]
+      }
+    ],
+    "mode_evidence": [
+      "create: build/create request on an existing surface"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "hub-spoke",
+        "status": "KNOWN",
+        "evidence": [
+          "hub-spoke: 28 matches in README.md, app.js, i18n.js (shell/layout file)"
+        ]
+      },
+      "theme": {
+        "value": "light-first",
+        "status": "INFERRED",
+        "evidence": [
+          "hex palette: 8 near-white, 1 near-black"
+        ]
+      },
+      "surfaces": {
+        "value": "elevated",
+        "status": "INFERRED",
+        "evidence": [
+          "weak signal: shadow 1, border 1"
+        ]
+      },
+      "radius": {
+        "value": "small",
+        "status": "INFERRED",
+        "evidence": [
+          "most common radius 5 (2×); others [8.0, 12.0]"
+        ]
+      },
+      "spacing": {
+        "value": 8,
+        "status": "INFERRED",
+        "evidence": [
+          "most used spacing values [8]"
+        ]
+      },
+      "typography": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": [
+          "no font family declaration found"
+        ]
+      },
+      "components": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": []
+      }
+    },
+    "known": [
+      "platform=kiosk (request: ticket machine)",
+      "stack=html-css (project inspection)",
+      "environment=public (project inspection (README))",
+      "project_navigation=hub-spoke (repository: hub-spoke: 28 matches in README.md, app.js, i18n.js (shell/layout file))"
+    ],
+    "inferred": [
+      "input=touch (implied by platform kiosk)",
+      "mode=create (build/create request on an existing surface)",
+      "project_theme=light-first (repository: hex palette: 8 near-white, 1 near-black)",
+      "project_surfaces=elevated (repository: weak signal: shadow 1, border 1)",
+      "project_radius=small (repository: most common radius 5 (2×); others [8.0, 12.0])",
+      "project_spacing=8 (repository: most used spacing values [8])"
+    ],
+    "missing": [
+      "product: product family / primary user task not stated",
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [
+        "ticket machine"
+      ],
+      "project": [
+        "*.html without a framework manifest: plain HTML/CSS site",
+        "README: public touch kiosk (web technology is the substrate, not the target platform)"
+      ]
+    },
+    "activation": {
+      "decision": "skip",
+      "ui_score": 0,
+      "non_ui_score": 0,
+      "ui_terms": [],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "to the"
+      ],
+      "new": [],
+      "defect": [],
+      "operations": {
+        "create": [
+          "add",
+          "add a"
+        ]
+      },
+      "domains": {
+        "content": [
+          "language"
+        ]
+      },
+      "no_change": [],
+      "scope": {},
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "concept:content.i18n_expansion"
+      ],
+      "ux_symptoms": [],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "structure",
+        "reason": "layout topology and hierarchy"
+      },
+      {
+        "concern": "interaction",
+        "reason": "input model: touch"
+      },
+      {
+        "concern": "accessibility",
+        "reason": "platform accessibility baseline"
+      },
+      {
+        "concern": "environment",
+        "reason": "public kiosk use"
+      },
+      {
+        "concern": "privacy",
+        "reason": "shared public device"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "navigation",
+        "reason": "how users arrive and leave"
+      },
+      {
+        "concern": "states",
+        "reason": "few states; still handle failed media"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "create/refactor requests attract generic defaults"
+      },
+      {
+        "concern": "brand",
+        "reason": "visual identity direction"
+      },
+      {
+        "concern": "performance",
+        "reason": "performance-sensitive context"
+      }
+    ],
+    "optional": [
+      "motion",
+      "content"
+    ],
+    "required_concepts": [
+      {
+        "concept": "content.i18n_expansion",
+        "reason": "named in the request: language option, welsh",
+        "priority": 0,
+        "critical": true
+      },
+      {
+        "concept": "process.reuse_first",
+        "reason": "existing repository: reuse its primitives",
+        "priority": 1,
+        "critical": true
+      },
+      {
+        "concept": "privacy.shared_device",
+        "reason": "environment public (repository hint)",
+        "priority": 2,
+        "critical": false
+      },
+      {
+        "concept": "touch.minimum_target",
+        "reason": "environment public (repository hint)",
+        "priority": 2,
+        "critical": false
+      }
+    ],
+    "recommended_concepts": [
+      "touch.gestures_discoverable",
+      "touch.thumb_reach",
+      "state.session_expiry",
+      "env.glanceable_status"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [],
+  "guardrails": [
+    {
+      "id": "i18n-text-expansion-rtl",
+      "kind": "rule",
+      "category": "content",
+      "title": "Internationalisation: expansion, RTL, formats",
+      "facets": [
+        "visual"
+      ],
+      "concerns": [
+        "adaptive",
+        "content"
+      ],
+      "concepts": [
+        "content.i18n_expansion"
+      ],
+      "covers": [
+        "text expansion and RTL"
+      ],
+      "score": 0.483,
+      "guidance": "Allow 30–50% text expansion (German, Finnish), test with pseudo-localisation, use logical CSS properties / start-end alignment, mirror navigation and progress in RTL, format dates/numbers/currency by locale, verify font coverage per script, keep tabular figures across locales. A language switch is one visible control on every screen of the flow, labelled in its own language (Español, not 'Spanish'); switching keeps the session, typed input, selection and focus, announces the change politely, and re-renders every label including error text.",
+      "use_when": "Any product with more than one locale; fixed-width buttons, tab labels, truncated titles, mirrored layouts.",
+      "avoid_when": "Never hard-code widths around English strings; never concatenate translated fragments; never flip icons that indicate physical direction (play) in RTL.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "engineering-practice",
+      "why": {
+        "lexical": 0.437,
+        "structural": 0.54,
+        "matched": [
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "critical concept (DIRECT): text expansion and RTL"
+    },
+    {
+      "id": "impl-reuse-before-new",
+      "kind": "rule",
+      "category": "implementation",
+      "title": "Reuse → extend → compose → new (in that order)",
+      "facets": [
+        "process"
+      ],
+      "concerns": [
+        "structure"
+      ],
+      "concepts": [
+        "process.reuse_first"
+      ],
+      "covers": [
+        "reuse → extend → compose → new"
+      ],
+      "score": 0.243,
+      "guidance": "Inspect the repository first (inspect_project.py): existing components, tokens, fonts, breakpoints, and conventions win. Reuse the existing component; if it lacks a variant, extend it through its API; if the composition is new, compose existing primitives; only create a new primitive when the gap is real, and put it where the others live.",
+      "use_when": "Any UI change in an existing codebase.",
+      "avoid_when": "Never install a second component library or a UI framework to build one screen; never fork a design-system component when a variant prop would do.",
+      "risk": {
+        "a11y": "low",
+        "perf": "medium"
+      },
+      "provenance": "engineering-practice",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.54,
+        "matched": [
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "critical concept (GENERIC): reuse → extend → compose → new"
+    },
+    {
+      "id": "kiosk-public-use",
+      "kind": "rule",
+      "category": "input",
+      "title": "Kiosk: public, hurried, standing users",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "environment",
+        "interaction",
+        "privacy"
+      ],
+      "concepts": [
+        "touch.minimum_target",
+        "privacy.shared_device",
+        "state.session_expiry"
+      ],
+      "covers": [
+        "large touch targets (≥44–48 px)",
+        "privacy of on-screen data on shared devices",
+        "session expiry and idle reset"
+      ],
+      "score": 0.324,
+      "guidance": "Targets ≥60 px, body text ≥20 px, high contrast for glare, one task per screen, reachable-height controls (ADA reach ranges: interactive elements within 380–1220 mm), idle timeout with countdown that clears the session, attract screen as the hub, audio/visual feedback on every tap, and a visible way to cancel at every step.",
+      "use_when": "Self-service, POS, check-in, ticketing, signage with touch.",
+      "avoid_when": "Never require hover, precise dragging, small text, or scrolling to find the primary action; never keep personal data on screen after inactivity.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "incompatible": [
+        "layout-table-first",
+        "density-high",
+        "nav-menu-bar-desktop"
+      ],
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.72,
+        "matched": [
+          "platform kiosk",
+          "input touch",
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage (SPECIFIC): privacy of on-screen data on shared devices, large touch targets (≥44–48 px), environment, interaction, privacy"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "structure",
+      "interaction",
+      "accessibility",
+      "environment",
+      "privacy"
+    ],
+    "covered_required_concerns": [
+      "structure",
+      "interaction",
+      "environment",
+      "privacy"
+    ],
+    "uncovered_required_concerns": [
+      "accessibility"
+    ],
+    "recommended_concerns": [
+      "navigation",
+      "states",
+      "anti-pattern",
+      "brand",
+      "performance"
+    ],
+    "covered_recommended_concerns": [],
+    "coverage_ratio": 0.8,
+    "required_concepts": [
+      "content.i18n_expansion",
+      "process.reuse_first",
+      "privacy.shared_device",
+      "touch.minimum_target"
+    ],
+    "covered_required_concepts": [
+      "content.i18n_expansion",
+      "process.reuse_first",
+      "privacy.shared_device",
+      "touch.minimum_target"
+    ],
+    "uncovered_required_concepts": [],
+    "critical_concepts": [
+      "content.i18n_expansion",
+      "process.reuse_first"
+    ],
+    "uncovered_critical_concepts": [],
+    "critical_coverage_ratio": 1.0,
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.25,
+    "not_surfaced": [
+      {
+        "concept": "touch.gestures_discoverable",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "touch.thumb_reach",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "env.glanceable_status",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "navigation",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "states",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "brand",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "performance",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      }
+    ],
+    "bundle_size": 3,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 0,
+    "guardrail_size": 3,
+    "bundle_tokens": 463,
+    "coverage_per_1k_tokens": 8.64,
+    "mean_purity": 1.0,
+    "mean_specificity": 1.33,
+    "quality_counts": {
+      "DIRECT": 1,
+      "SPECIFIC": 1,
+      "GENERIC": 1
+    },
+    "contaminated": [],
+    "category_diversity": 1.0,
+    "duplicate_pressure": 0.33,
+    "facet_coverage": 0.4,
+    "redundancy": 0.0,
+    "critical_trace": {
+      "covered": [
+        "content.i18n_expansion",
+        "process.reuse_first"
+      ],
+      "uncovered": [],
+      "carrier_quality": {
+        "content.i18n_expansion": "DIRECT",
+        "process.reuse_first": "GENERIC"
+      }
+    }
+  },
+  "token_coverage": 0.75,
+  "omitted": [
+    {
+      "id": "focus-none-touch-only",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "icon-filled-system",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "layout-single-column",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "imagery-illustration",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "typography-neutral-sans",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "nav-hub-spoke",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "comp-kiosk-keypad",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "typography-rounded-friendly",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "dir-public-kiosk",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "dir-industrial-hmi",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    }
+  ],
+  "marginal": {
+    "i18n-text-expansion-rtl": {
+      "new_critical": [
+        "content.i18n_expansion"
+      ],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [
+        "adaptive",
+        "content"
+      ],
+      "specificity": 2,
+      "evidence": [
+        "lexical_strong",
+        "lexical",
+        "explicit_demand"
+      ],
+      "quality": "DIRECT",
+      "contamination": 0.0,
+      "tokens": 200
+    },
+    "impl-reuse-before-new": {
+      "new_critical": [
+        "process.reuse_first"
+      ],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [
+        "structure"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "explicit_demand",
+        "repository"
+      ],
+      "quality": "GENERIC",
+      "contamination": 0.0,
+      "tokens": 131
+    },
+    "kiosk-public-use": {
+      "new_critical": [],
+      "new_required": [
+        "privacy.shared_device",
+        "touch.minimum_target"
+      ],
+      "new_recommended": [
+        "state.session_expiry"
+      ],
+      "new_concerns": [
+        "environment",
+        "interaction",
+        "privacy"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "platform_specific"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 132
+    }
+  },
+  "rejected": [
+    {
+      "id": "comp-data-entry-grid",
+      "reason": "platform ['desktop', 'web'] not in request ['kiosk']"
+    },
+    {
+      "id": "comp-product-detail-page",
+      "reason": "platform ['mobile', 'web'] not in request ['kiosk']"
+    },
+    {
+      "id": "media-resume-and-details",
+      "reason": "platform ['mobile', 'tv', 'web'] not in request ['kiosk']"
+    },
+    {
+      "id": "comp-photo-capture-field",
+      "reason": "platform ['mobile', 'tablet'] not in request ['kiosk']"
+    },
+    {
+      "id": "comp-tv-side-sheet",
+      "reason": "platform ['tv'] not in request ['kiosk']"
+    },
+    {
+      "id": "dir-operational-workbench",
+      "reason": "platform ['desktop', 'web'] not in request ['kiosk']"
+    },
+    {
+      "id": "dir-editorial-storefront",
+      "reason": "platform ['mobile', 'web'] not in request ['kiosk']"
+    },
+    {
+      "id": "dir-utility-commerce",
+      "reason": "platform ['mobile', 'web'] not in request ['kiosk']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "content.i18n_expansion",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 0,
+      "reason": "named in the request: language option, welsh",
+      "candidate_records": [
+        [
+          "i18n-text-expansion-rtl",
+          0.483
+        ]
+      ],
+      "selected_record": "i18n-text-expansion-rtl",
+      "carrier_quality": "DIRECT",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 1,
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.243
+        ]
+      ],
+      "selected_record": "impl-reuse-before-new",
+      "carrier_quality": "GENERIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "privacy.shared_device",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 2,
+      "reason": "environment public (repository hint)",
+      "candidate_records": [
+        [
+          "kiosk-public-use",
+          0.324
+        ],
+        [
+          "shared-device-privacy",
+          0.297
+        ]
+      ],
+      "selected_record": "kiosk-public-use",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "touch.minimum_target",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 2,
+      "reason": "environment public (repository hint)",
+      "candidate_records": [
+        [
+          "kiosk-public-use",
+          0.324
+        ],
+        [
+          "a11y-target-size",
+          0.27
+        ],
+        [
+          "comp-kiosk-keypad",
+          0.261
+        ]
+      ],
+      "selected_record": "kiosk-public-use",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "touch.gestures_discoverable",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "touch platform",
+      "candidate_records": [],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "carriers were not admissible for this platform/input/environment"
+    },
+    {
+      "concept": "touch.thumb_reach",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "one-handed use",
+      "candidate_records": [],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "carriers filtered before ranking: platform ['mobile', 'tablet', 'web'] not in request ['kiosk']"
+    },
+    {
+      "concept": "state.session_expiry",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "kiosk idle reset",
+      "candidate_records": [
+        [
+          "kiosk-public-use",
+          0.324
+        ],
+        [
+          "shared-device-privacy",
+          0.297
+        ],
+        [
+          "a11y-time-and-auto",
+          0.243
+        ]
+      ],
+      "selected_record": "kiosk-public-use",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "env.glanceable_status",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "kiosk",
+      "candidate_records": [
+        [
+          "data-exceptions-first",
+          0.243
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    }
+  ]
+}

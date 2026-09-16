@@ -1,0 +1,266 @@
+{
+  "description": "Phase 5 real-project round c1 (2026-09-09): codebase-aware regressions written before the c2 fix. Fixtures are the real Phase 3 / Phase 5 codebases. New keys: expect_scope_kind, forbid_products_ctx, expect_products_ctx, expect_environment_ctx, expect_no_missing_platform, expect_modes_any_ctx.",
+  "suite": "context",
+  "cases": [
+    {
+      "id": "p5r-c-kiosk-platform",
+      "fixture": "research/phase3-projects/p3-kiosk-pharmacy/project",
+      "query": "Older customers time out on the identify step before they finish typing.",
+      "expect_platforms_ctx": [
+        "kiosk"
+      ],
+      "forbid_platforms_ctx": [
+        "mobile",
+        "tv"
+      ],
+      "expect_no_missing_platform": true,
+      "expect_budget": "low",
+      "forbid_direction_slots": {
+        "density": [
+          "density-high"
+        ],
+        "surface": [
+          "surface-flat-tonal"
+        ]
+      },
+      "note": "README: 'Public touch kiosk (portrait 1080x1920)'; web is the substrate, not the platform"
+    },
+    {
+      "id": "p5r-c-kiosk-spanish",
+      "fixture": "research/phase3-projects/p3-kiosk-pharmacy/project",
+      "query": "Add a Spanish language switch to the pick-up flow.",
+      "expect_platforms_ctx": [
+        "kiosk"
+      ],
+      "forbid_direction_slots": {
+        "cards": [
+          "card-poster-landscape",
+          "card-poster-portrait"
+        ],
+        "density": [
+          "density-high"
+        ]
+      }
+    },
+    {
+      "id": "p5r-c-phones-on-web-project",
+      "fixture": "research/phase3-projects/p3-ecommerce-web/project",
+      "query": "Checkout on phones: the order summary pushes the pay button below the fold.",
+      "expect_platforms_ctx": [
+        "web"
+      ],
+      "forbid_platforms_ctx": [
+        "mobile"
+      ],
+      "expect_modes_any_ctx": [
+        "responsive",
+        "refactor",
+        "audit"
+      ],
+      "note": "'on phones' is a viewport of the web storefront, not a platform switch"
+    },
+    {
+      "id": "p5r-c-tvos-no-confirm",
+      "fixture": "research/phase3-projects/p3-tvos-swiftui/project",
+      "query": "From the sofa nobody can tell which row is selected on the living-room screen.",
+      "expect_platforms_ctx": [
+        "tv"
+      ],
+      "expect_no_missing_platform": true,
+      "expect_preserved": [
+        "navigation",
+        "typography"
+      ]
+    },
+    {
+      "id": "p5r-c-habits-not-ecommerce",
+      "fixture": "research/phase5-projects/p5-swiftui-habits/project",
+      "query": "Add a weekly summary card to the top of the Today screen.",
+      "forbid_products_ctx": [
+        "ecommerce"
+      ],
+      "expect_context": {
+        "navigation": "bottom-tabs",
+        "theme": "dual-theme"
+      },
+      "forbid_direction_slots": {
+        "cards": [
+          "card-poster-landscape",
+          "card-poster-portrait"
+        ],
+        "layout": [
+          "layout-grid-catalog"
+        ],
+        "cta": [
+          "cta-sticky-bar"
+        ]
+      }
+    },
+    {
+      "id": "p5r-c-habits-keyboard",
+      "fixture": "research/phase5-projects/p5-swiftui-habits/project",
+      "query": "Make the Add Habit sheet work when the keyboard is up.",
+      "expect_budget_any": [
+        "low",
+        "moderate"
+      ],
+      "expect_preserved": [
+        "navigation",
+        "typography",
+        "color"
+      ],
+      "forbid_products_ctx": [
+        "ecommerce"
+      ]
+    },
+    {
+      "id": "p5r-c-clinic-board-scope",
+      "fixture": "research/phase5-projects/p5-sveltekit-clinic/project",
+      "query": "The waiting room board: nothing tells the front desk how long each patient has been sitting there.",
+      "expect_scope_kind": "in-scope",
+      "forbid_products_ctx": [
+        "ecommerce"
+      ],
+      "expect_context_any_of": {
+        "surfaces": [
+          "bordered-flat"
+        ]
+      },
+      "expect_preserved": [
+        "navigation",
+        "color",
+        "typography"
+      ]
+    },
+    {
+      "id": "p5r-c-clinic-drag-partial",
+      "fixture": "research/phase5-projects/p5-sveltekit-clinic/project",
+      "query": "The appointments grid re-renders the whole day when one chip is dragged, so dragging stutters.",
+      "expect_scope_kind": "partial",
+      "forbid_direction_slots": {
+        "cards": [
+          "card-poster-landscape",
+          "card-poster-portrait"
+        ]
+      }
+    },
+    {
+      "id": "p5r-c-avalonia-scope",
+      "fixture": "research/phase5-projects/p5-avalonia-fleet/project",
+      "query": "Dispatchers want to see which vehicles are overdue for service without opening each one.",
+      "expect_scope_kind": "in-scope",
+      "expect_platforms_ctx": [
+        "desktop"
+      ],
+      "expect_budget_any": [
+        "low",
+        "moderate"
+      ],
+      "expect_context": {
+        "navigation": "menu-bar",
+        "theme": "light-first"
+      },
+      "expect_context_any_of": {
+        "radius": [
+          "small"
+        ],
+        "surfaces": [
+          "bordered-flat"
+        ],
+        "spacing": [
+          4,
+          8,
+          "4",
+          "8"
+        ]
+      },
+      "direction_ok": true,
+      "note": "2026-09-09 amended: the theme declares an 8-step scale but views also use 4/6/12 insets, so a 4 base is a defensible reading"
+    },
+    {
+      "id": "p5r-c-avalonia-unsaved",
+      "fixture": "research/phase5-projects/p5-avalonia-fleet/project",
+      "query": "The dispatch job form lets you lose an unsaved job by clicking another one.",
+      "expect_scope_kind": "in-scope",
+      "expect_preserved": [
+        "navigation",
+        "typography",
+        "density"
+      ],
+      "forbid_direction_slots": {
+        "typography": [
+          "typography-geometric-sans",
+          "typography-serif-editorial"
+        ]
+      }
+    },
+    {
+      "id": "p5r-c-flutter-field-env",
+      "fixture": "research/phase3-projects/p3-mobile-flutter-field/project",
+      "query": "Sync status is a spinner that never says what is happening.",
+      "expect_platforms_ctx": [
+        "mobile"
+      ],
+      "expect_no_missing_platform": true,
+      "expect_environment_ctx": [
+        "outdoor"
+      ],
+      "forbid_products_ctx": [
+        "erp"
+      ],
+      "expect_preserved": [
+        "navigation",
+        "density"
+      ]
+    },
+    {
+      "id": "p5r-c-wpf-focus-preserved",
+      "fixture": "research/phase3-projects/p3-erp-desktop-dotnet/project",
+      "query": "Purchase-order lines: operators keep typing the quantity into the price column.",
+      "expect_preserved": [
+        "focus"
+      ],
+      "expect_context_any_of": {
+        "typography": [
+          "system",
+          "humanist-sans"
+        ]
+      },
+      "forbid_direction_slots": {
+        "typography": [
+          "typography-mono-metrics",
+          "typography-monospace"
+        ]
+      }
+    },
+    {
+      "id": "p5r-c-dashboard-focus-preserved",
+      "fixture": "research/phase3-projects/p3-react-dashboard-polish/project",
+      "query": "Keyboard users can't get to the chart filters.",
+      "expect_preserved": [
+        "focus",
+        "navigation"
+      ],
+      "expect_budget": "low"
+    },
+    {
+      "id": "p5r-c-nextjs-audit-a11y-ok",
+      "fixture": "research/phase3-projects/p3-nextjs-saas/project",
+      "query": "The invoices table on the billing page is hard to scan once there are more than twenty rows.",
+      "expect_preserved": [
+        "navigation",
+        "typography",
+        "color"
+      ],
+      "forbid_direction_slots": {
+        "cta": [
+          "cta-toolbar-commands"
+        ],
+        "imagery": [
+          "imagery-data-graphics"
+        ]
+      },
+      "direction_ok": true
+    }
+  ]
+}

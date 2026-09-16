@@ -1,0 +1,5 @@
+{"platform": "web", "artifact_state": "existing", "acceptable_modes": ["refactor", "polish", "create"], "scope_kind": "in-scope",
+ "expected_concepts": ["data.exception_first", "data.drilldown", "data.kpi_comparison", "layout.focal_hierarchy", "a11y.color_not_only", "data.refresh_timestamp", "table.tabular_figures"],
+ "critical_concepts": ["data.exception_first", "data.drilldown", "layout.focal_hierarchy"],
+ "forbidden_concepts": ["tv.ten_foot_typography", "media.watchlist", "touch.thumb_reach", "onboarding.linear_wizard"],
+ "preservation": ["navigation", "theme", "typography"]}

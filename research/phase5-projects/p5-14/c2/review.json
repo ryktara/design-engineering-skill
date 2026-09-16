@@ -1,0 +1,25 @@
+{
+  "task": "p5-14",
+  "reviewer_model": "claude-opus-5[1m]",
+  "c2_records": [
+    {"id": "comp-data-table", "verdict": "partial", "bad_category": null},
+    {"id": "table-column-disambiguation", "verdict": "relevant", "bad_category": null},
+    {"id": "grid-single-tab-stop", "verdict": "partial", "bad_category": null},
+    {"id": "desktop-status-bar-and-error-navigation", "verdict": "off-target", "bad_category": "generic"},
+    {"id": "anti-no-states", "verdict": "off-target", "bad_category": "generic"},
+    {"id": "desktop-fluent-materials", "verdict": "off-target", "bad_category": "contradicts-codebase"}
+  ],
+  "c2_relevant": 1,
+  "c2_partial": 2,
+  "c2_offtarget": 3,
+  "c2_bad": [
+    {"record": "desktop-status-bar-and-error-navigation", "category": "generic", "why": "Repeat of the c1 miss: it describes almost verbatim what the project already implements (fixed status-bar regions, 'Line 50: Quantity must be greater than 0', F8/Shift+F8 next-error) and has no bearing on quantity-into-price column confusion."},
+    {"record": "anti-no-states", "category": "generic", "why": "Loading/empty/error state enumeration; the 24-row grid's states already exist and the task does not touch them."},
+    {"record": "desktop-fluent-materials", "category": "contradicts-codebase", "why": "Advises SystemControl* resources, Mica and Acrylic on a WPF app that deliberately ships its own semantic token theme (Themes/Light.xaml, Brush.*, DynamicResource); the c1 run at least left this concept uncovered, c2 promotes it into the bundle where it conflicts with the preserved theme."}
+  ],
+  "c2_direction_unjustified": [],
+  "platform_mode_scope_ok": true,
+  "verdict_vs_c1": "better",
+  "why": "The c1 knowledge gap is closed exactly: table-column-disambiguation states the four moves the implementer had to invent from the code (mark the active column in the header, unit/currency affix inside the editor, role-distinct precision with the unit in the header, stronger divider bracketing the money columns) plus the plausibility check, and the inspect/direction no longer assert a monospace type system that would have put the numeric columns in Cascadia Mono.",
+  "would_have_helped": "helped"
+}

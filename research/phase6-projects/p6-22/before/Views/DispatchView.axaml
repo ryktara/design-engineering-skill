@@ -1,0 +1,125 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:FleetDesk.ViewModels"
+             x:Class="FleetDesk.Views.DispatchView">
+
+  <Design.DataContext>
+    <vm:DispatchViewModel />
+  </Design.DataContext>
+
+  <!-- The unsaved-changes prompt itself is hosted by MainWindow so it covers the whole window. -->
+  <DockPanel LastChildFill="True">
+
+    <!-- Header -->
+    <StackPanel DockPanel.Dock="Top" Spacing="4" Margin="{StaticResource MarginBelow2}">
+      <TextBlock Classes="title" Text="Dispatch" />
+      <TextBlock Classes="muted">
+        <Run Text="{Binding PendingCount}" />
+        <Run Text="pending jobs -" />
+        <Run Text="{Binding UnassignedCount}" />
+        <Run Text="unassigned" />
+      </TextBlock>
+    </StackPanel>
+
+    <!-- Two panes: jobs list | job detail form -->
+    <Grid ColumnDefinitions="360,16,*">
+
+      <!-- Left: pending jobs -->
+      <Border Grid.Column="0" Classes="surface" Padding="{StaticResource Pad1}">
+        <DockPanel LastChildFill="True">
+          <TextBlock DockPanel.Dock="Top" Classes="section" Text="Pending jobs" Margin="{StaticResource Pad1}" />
+          <ListBox ItemsSource="{Binding PendingJobs}"
+                   SelectedItem="{Binding SelectedJob, Mode=TwoWay}">
+            <ListBox.ItemTemplate>
+              <DataTemplate>
+                <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto">
+                  <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Title}" FontWeight="SemiBold" />
+                  <Border Grid.Row="0" Grid.Column="1" Classes="badge"
+                          Classes.high="{Binding IsHighPriority}"
+                          Classes.normal="{Binding IsNormalPriority}">
+                    <TextBlock Text="{Binding Priority}" />
+                  </Border>
+                  <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Classes="muted" Margin="0,2,0,0">
+                    <Run Text="{Binding ScheduledLabel}" />
+                    <Run Text="-" />
+                    <Run Text="{Binding Customer}" />
+                    <Run Text="-" />
+                    <Run Text="{Binding AssignmentLabel}" />
+                  </TextBlock>
+                </Grid>
+              </DataTemplate>
+            </ListBox.ItemTemplate>
+          </ListBox>
+        </DockPanel>
+      </Border>
+
+      <!-- Right: job detail form -->
+      <Border Grid.Column="2" Classes="surface" Padding="{StaticResource Pad3}">
+        <DockPanel LastChildFill="True" IsEnabled="{Binding HasSelection}">
+
+          <!-- Heading + dirty marker (text, not colour alone) -->
+          <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Spacing="{StaticResource Space1}" Margin="{StaticResource MarginBelow2}">
+            <TextBlock Classes="section" Text="{Binding EditorHeading}" VerticalAlignment="Center" />
+            <Border Classes="badge warning" IsVisible="{Binding HasChanges}">
+              <TextBlock Text="Unsaved changes" />
+            </Border>
+          </StackPanel>
+
+          <!-- Save / Cancel -->
+          <Grid DockPanel.Dock="Bottom" ColumnDefinitions="*,Auto,Auto" Margin="{StaticResource MarginAbove1}">
+            <TextBlock Grid.Column="0" Classes="muted" Text="{Binding StatusMessage}" VerticalAlignment="Center" />
+            <Button Grid.Column="1" Content="Cancel" Command="{Binding CancelCommand}" Margin="{StaticResource MarginRight1}" MinWidth="96" />
+            <Button Grid.Column="2" Classes="accent" Content="Save" Command="{Binding SaveCommand}" MinWidth="96" />
+          </Grid>
+
+          <ScrollViewer>
+            <Grid ColumnDefinitions="*,16,*"
+                  RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+                  MaxWidth="760" HorizontalAlignment="Left">
+
+              <!-- Row 0: Title -->
+              <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="{StaticResource MarginBelow2}">
+                <TextBlock Classes="label" Text="Title" />
+                <TextBox Text="{Binding EditTitle, Mode=TwoWay}" />
+              </StackPanel>
+
+              <!-- Row 1: Customer | Priority -->
+              <StackPanel Grid.Row="1" Grid.Column="0" Margin="{StaticResource MarginBelow2}">
+                <TextBlock Classes="label" Text="Customer" />
+                <TextBox Text="{Binding EditCustomer, Mode=TwoWay}" />
+              </StackPanel>
+              <StackPanel Grid.Row="1" Grid.Column="2" Margin="{StaticResource MarginBelow2}">
+                <TextBlock Classes="label" Text="Priority" />
+                <ComboBox ItemsSource="{Binding Priorities}" SelectedItem="{Binding EditPriority, Mode=TwoWay}" HorizontalAlignment="Stretch" />
+              </StackPanel>
+
+              <!-- Row 2: Pickup | Drop-off -->
+              <StackPanel Grid.Row="2" Grid.Column="0" Margin="{StaticResource MarginBelow2}">
+                <TextBlock Classes="label" Text="Pickup" />
+                <TextBox Text="{Binding EditPickup, Mode=TwoWay}" />
+              </StackPanel>
+              <StackPanel Grid.Row="2" Grid.Column="2" Margin="{StaticResource MarginBelow2}">
+                <TextBlock Classes="label" Text="Drop-off" />
+                <TextBox Text="{Binding EditDropoff, Mode=TwoWay}" />
+              </StackPanel>
+
+              <!-- Row 3: Assigned vehicle -->
+              <StackPanel Grid.Row="3" Grid.Column="0" Margin="{StaticResource MarginBelow2}">
+                <TextBlock Classes="label" Text="Assigned vehicle" />
+                <ComboBox ItemsSource="{Binding VehicleChoices}" SelectedItem="{Binding EditVehicleId, Mode=TwoWay}" HorizontalAlignment="Stretch" />
+              </StackPanel>
+
+              <!-- Row 4: Notes -->
+              <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Margin="{StaticResource MarginBelow2}">
+                <TextBlock Classes="label" Text="Notes" />
+                <TextBox Text="{Binding EditNotes, Mode=TwoWay}" AcceptsReturn="True" TextWrapping="Wrap" MinHeight="96" />
+              </StackPanel>
+
+            </Grid>
+          </ScrollViewer>
+        </DockPanel>
+      </Border>
+
+    </Grid>
+  </DockPanel>
+</UserControl>

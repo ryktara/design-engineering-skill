@@ -1,0 +1,113 @@
+{
+  "root": "D:\\indigo pro\\MYownSkills\\research\\phase6-projects\\p6-vue-inventory\\project",
+  "findings": [
+    {
+      "status": "KNOWN",
+      "note": "package.json: vue@^3.5.13"
+    }
+  ],
+  "stack_groups": [
+    "vue"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "ui_libraries": [],
+  "package_manager": "npm",
+  "css_architecture": [
+    ".css (2 files)"
+  ],
+  "tokens": [
+    "src/styles/tokens.css",
+    "css custom properties: --color* (40), --space* (6), --text* (6), --font* (2), --shadow* (2), --radius* (1), --topbar* (1), --sidenav* (1)"
+  ],
+  "fonts": [
+    "IBM Plex Sans (1)"
+  ],
+  "icons": [],
+  "routing": [],
+  "breakpoints": [],
+  "accessibility": [
+    "a11y attributes present in 5 files"
+  ],
+  "focus_handling": [
+    "explicit focus handling in 4 files"
+  ],
+  "design_docs": [],
+  "component_dirs": [
+    "src/components/ (9 files)"
+  ],
+  "tests": [],
+  "i18n": [],
+  "product_hints": [],
+  "environment_hints": [],
+  "sample": {
+    "files_scanned": 31
+  },
+  "design_context": {
+    "navigation": {
+      "value": "top-bar",
+      "status": "KNOWN",
+      "evidence": [
+        "top-bar: 8 matches in App.vue, TopBar.vue, tokens.css (shell/layout file)"
+      ],
+      "candidates": {
+        "top-bar": 8
+      }
+    },
+    "theme": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": [
+        "hex palette: 11 near-white, 6 near-black"
+      ]
+    },
+    "surfaces": {
+      "value": "bordered-flat",
+      "status": "INFERRED",
+      "evidence": [
+        "borders in 12 files, shadow/elevation in 2"
+      ]
+    },
+    "radius": {
+      "value": "small",
+      "status": "INFERRED",
+      "evidence": [
+        "most common radius 5 (1\u00d7); others [6.0]"
+      ]
+    },
+    "spacing": {
+      "value": "irregular",
+      "status": "UNKNOWN",
+      "evidence": [
+        "most used spacing values [2, 6, 4]"
+      ]
+    },
+    "typography": {
+      "value": "humanist-sans",
+      "status": "KNOWN",
+      "evidence": [
+        "font family IBM Plex Sans (2 refs)",
+        "weights 500, 600",
+        "encoded type scale in 1 files",
+        "monospace usage",
+        "tabular numerals"
+      ],
+      "features": {
+        "weights": [
+          "500",
+          "600"
+        ],
+        "type_scale": true,
+        "monospace": true,
+        "tabular_numerals": true
+      }
+    },
+    "components": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "schema": "design-context/v1"
+  }
+}

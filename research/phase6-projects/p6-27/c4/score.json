@@ -1,0 +1,137 @@
+{
+ "task": "p6-27",
+ "build": "32e67640c9b8ef1d519ef9695016fb396116b92412e63c324da090aecf1df385",
+ "c1_recorded": {
+  "platform_expected": "tv",
+  "platform_resolved": [
+   "tv",
+   "web"
+  ],
+  "platform_correct": "extra",
+  "missing_platform_entry": true,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "audit",
+   "polish",
+   "refactor"
+  ],
+  "mode_resolved": [
+   "audit",
+   "refactor"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "PARTIAL",
+  "bundle_ids": [
+   "layout-epg-grid",
+   "comp-epg",
+   "a11y-tv-focus-always",
+   "tv-no-touch-hover",
+   "layout-states-empty-loading-error"
+  ],
+  "bundle_tokens": 840,
+  "expected_concepts": [
+   "tv.time_navigation",
+   "tv.epg_pinned_channels",
+   "navigation.orientation_and_back",
+   "interaction.focus_visible",
+   "interaction.dpad_reachability",
+   "perf.focus_latency"
+  ],
+  "critical_concepts": [
+   "tv.time_navigation",
+   "navigation.orientation_and_back",
+   "interaction.focus_visible"
+  ],
+  "delivered_concepts": [
+   "interaction.dpad_reachability",
+   "interaction.focus_restore",
+   "interaction.focus_visible",
+   "interaction.hover_independence",
+   "media.details_play_first",
+   "media.live_channel_switching",
+   "state.loading_empty_error",
+   "table.virtualization",
+   "tv.epg_pinned_channels",
+   "tv.no_touch_hover",
+   "tv.time_navigation"
+  ],
+  "concept_recall": 0.667,
+  "critical_recall": 0.667,
+  "forbidden_delivered": [
+   "media.details_play_first"
+  ],
+  "change_budget": "moderate"
+ },
+ "c4": {
+  "platform_expected": "tv",
+  "platform_resolved": [
+   "tv"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "audit",
+   "polish",
+   "refactor"
+  ],
+  "mode_resolved": [
+   "audit",
+   "refactor"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "PARTIAL",
+  "bundle_ids": [
+   "comp-epg",
+   "dir-broadcast-guide-tv",
+   "nav-orientation-and-back",
+   "a11y-tv-focus-always",
+   "tv-typography-distance",
+   "tv-safe-area"
+  ],
+  "bundle_tokens": 816,
+  "expected_concepts": [
+   "tv.time_navigation",
+   "tv.epg_pinned_channels",
+   "navigation.orientation_and_back",
+   "interaction.focus_visible",
+   "interaction.dpad_reachability",
+   "perf.focus_latency"
+  ],
+  "critical_concepts": [
+   "tv.time_navigation",
+   "navigation.orientation_and_back",
+   "interaction.focus_visible"
+  ],
+  "delivered_concepts": [
+   "interaction.dpad_reachability",
+   "interaction.focus_restore",
+   "interaction.focus_visible",
+   "media.details_play_first",
+   "media.live_channel_switching",
+   "navigation.deep_link_state",
+   "navigation.orientation_and_back",
+   "table.virtualization",
+   "tv.epg_pinned_channels",
+   "tv.safe_margins",
+   "tv.ten_foot_typography",
+   "tv.time_navigation"
+  ],
+  "concept_recall": 0.833,
+  "critical_recall": 1.0,
+  "forbidden_delivered": [
+   "media.details_play_first"
+  ],
+  "change_budget": "moderate"
+ }
+}

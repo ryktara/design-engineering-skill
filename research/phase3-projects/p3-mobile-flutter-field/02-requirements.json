@@ -1,0 +1,88 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "create"
+  ],
+  "platform": [
+    "mobile"
+  ],
+  "input": [
+    "touch"
+  ],
+  "product": [
+    "erp"
+  ],
+  "screen": [
+    "form"
+  ],
+  "screen_subtype": [],
+  "stack": [
+    "flutter"
+  ],
+  "density": "medium",
+  "components": [
+    "form"
+  ],
+  "environment": [
+    "gloves",
+    "low-bandwidth",
+    "outdoor"
+  ],
+  "jobs": [],
+  "problems": [],
+  "risk": "low",
+  "primary_jobs": [
+    "create form"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "performance_sensitive": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "screen_reader": true,
+    "touch_targets": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "known": [
+    "platform=mobile (project inspection)",
+    "product=erp (project inspection (README))",
+    "stack=flutter (request: flutter)",
+    "screen=form (request: form)",
+    "environment=outdoor (request: outdoor, outdoors)",
+    "environment=low-bandwidth (request: offline)",
+    "environment=gloves (request: gloves)"
+  ],
+  "inferred": [
+    "input=touch (implied by platform mobile)",
+    "density=medium (implied by product erp (capped for touch/remote platform))",
+    "mode=create (default when no mode word is present)"
+  ],
+  "missing": [
+    "brand: no brand assets, guideline, or character description available"
+  ],
+  "status": "CONFIDENT",
+  "source": {
+    "request": [
+      "flutter",
+      "form",
+      "gloves",
+      "offline",
+      "outdoor, outdoors"
+    ],
+    "project": [
+      "pubspec.yaml: Flutter"
+    ]
+  },
+  "activation": {
+    "decision": "activate",
+    "ui_score": 2.0,
+    "non_ui_score": 0,
+    "ui_terms": [
+      "form"
+    ],
+    "non_ui_terms": []
+  }
+}

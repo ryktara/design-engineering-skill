@@ -1,0 +1,146 @@
+{
+  "brand": "Nobody can find the API keys section; it is buried at the bottom of the settings page.",
+  "fingerprint": {
+    "navigation_model": "left-rail",
+    "surface_strategy": "bordered",
+    "card_geometry": "none",
+    "corner_language": "sharp",
+    "color_strategy": "neutral-plus-accent"
+  },
+  "direction": {
+    "navigation": "nav-left-rail",
+    "layout": null,
+    "density": null,
+    "surface": "surface-bordered-panes",
+    "cards": null,
+    "typography": null,
+    "color": "color-neutral-accent",
+    "motion": null,
+    "focus": null,
+    "cta": null,
+    "imagery": null,
+    "icon": null,
+    "metadata": null
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [
+      "finance",
+      "saas"
+    ],
+    "screen": [
+      "settings"
+    ],
+    "screen_subtype": [],
+    "stack": [
+      "nextjs",
+      "react",
+      "shadcn",
+      "tailwind"
+    ],
+    "density": "high",
+    "components": [
+      "settings"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "audit settings"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "navigation",
+        "layout"
+      ],
+      "change_scope": "screen",
+      "utterance": "observation",
+      "preserve": []
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "audit: navigation defect on existing UI",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": "left-rail (KNOWN)",
+      "theme": "dual-theme (KNOWN)",
+      "surfaces": "bordered-flat (INFERRED)",
+      "radius": "small (INFERRED)",
+      "spacing": "8 (INFERRED)",
+      "typography": "custom (KNOWN)",
+      "components": "tailwind, radix, shadcn-style cva, table:tanstack, shadcn (KNOWN)"
+    },
+    "known": [
+      "platform=web",
+      "product=saas",
+      "product=finance",
+      "stack=nextjs",
+      "stack=react",
+      "stack=tailwind",
+      "stack=shadcn",
+      "screen=settings",
+      "project_navigation=left-rail",
+      "project_theme=dual-theme",
+      "project_typography=custom",
+      "project_components=tailwind, radix, shadcn-style cva, table:tanstack, shadcn"
+    ],
+    "inferred": [
+      "input=pointer",
+      "input=keyboard",
+      "input=touch",
+      "density=high",
+      "mode=audit",
+      "mode=refactor",
+      "project_surfaces=bordered-flat",
+      "project_radius=small",
+      "project_spacing=8"
+    ],
+    "missing": [],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

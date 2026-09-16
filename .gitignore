@@ -1,0 +1,26 @@
+# dependencies and build output of the research fixture apps
+node_modules/
+dist/
+build/
+.next/
+.svelte-kit/
+bin/
+obj/
+.gradle/
+.dart_tool/
+__pycache__/
+*.pyc
+.venv/
+
+# render artefacts and screenshots from the real-project rounds (kept locally, not published)
+research/**/render/
+research/**/screenshots/
+*.png
+*.jpg
+*.webm
+
+# local scratch
+.design-inspect.json
+*.log
+.DS_Store
+Thumbs.db

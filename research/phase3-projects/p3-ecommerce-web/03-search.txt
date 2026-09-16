@@ -1,0 +1,88 @@
+## design-engineering search: Design the product detail page and checkout for our outdoor gear web store; must convert well on phones
+status=AMBIGUOUS modes=['create'] platforms={'web': 'KNOWN', 'mobile': 'KNOWN'} inputs={'pointer': 'INFERRED', 'keyboard': 'INFERRED', 'touch': 'INFERRED'} products={'ecommerce': 'KNOWN'} density=None stacks=[] screens=['checkout', 'detail'] negatives=[]
+facets required=['component', 'layout', 'platform', 'navigation', 'direction'] unmet=[] diversity=0.83
+MISSING: brand: no brand assets, guideline, or character description available; stack: implementation stack not stated and no repository evidence
+
+### Master–detail (list + detail pane)  `layout-master-detail`  [pattern/layout; layout/platform] score 0.495 · platform-standard
+List pane with selection state that is keyboard-navigable (arrow keys change selection, Enter opens), detail pane that updates in place and announces its title to assistive tech. Persist the selected item across navigation. On narrow widths collapse to a two-screen stack with Back.
+- use when: Users scan a list of records and act on one at a time (tickets, orders, patients, mail); wide enough for two panes (≥ ~900 px / 641 epx).
+- avoid when: Phone widths (collapse to list → push detail), records that need the full width (large tables, editors), or when the list has only a handful of items.
+- incompatible with: layout-single-column, layout-immersive-rails, layout-rails
+- why: lexical 0.333, structural 0.56 (platform web, input keyboard,pointer,touch, mode create, product mismatch, screen detail)
+
+### Field use: sunlight readability and glanceable status  `mobile-field-use`  [rule/environment; accessibility/platform] score 0.492 · heuristic
+Target ≥7:1 text contrast and avoid thin weights and pale tints (glare washes them out); prefer light UI on white or very high-contrast dark, not mid-tone surfaces; make the current state glanceable (large status word plus colour plus icon, readable at arm's length in two seconds); ≥48 dp targets with ≥12 dp spacing and no precision gestures when gloves are likely; put the next action in thumb reach; large numerals for counts and readings; keep the screen usable one-handed and interruptible (state survives backgrounding).
+- use when: Couriers, inspectors, technicians, warehouse and construction workers, outdoor kiosks: bright light, gloves, movement, interruptions.
+- avoid when: Desk-bound indoor use.
+- why: lexical 0.208, structural 0.84 (platform mobile, input touch, mode create, environment outdoor)
+
+### Sticky action bar  `cta-sticky-bar`  [pattern/cta; layout/platform] score 0.471 · heuristic
+Bottom-fixed on mobile inside the safe area, sticky footer on desktop; content gets bottom padding equal to the bar height; the bar must not obscure a focused field (WCAG 2.4.11) so scroll the field into view above it.
+- use when: Long forms or detail pages where the primary action must stay reachable (Add to cart, Save, Continue).
+- avoid when: Short screens, TV, or when the bar would cover content without a scroll padding compensation.
+- incompatible with: cta-focus-selects, layout-rails
+- why: lexical 0.133, structural 0.84 (platform mobile,web, input pointer,touch, mode create, product ecommerce, screen checkout,detail)
+
+### Hero imagery on landing/brand pages  `imagery-hero`  [pattern/imagery; platform/visual] score 0.445 · heuristic
+The hero is a thesis about the product: show the actual thing (product, interface, outcome). Reserve aspect box to avoid CLS, serve responsive sources, LCP image preloaded, text contrast guaranteed by placement or scrim, and no autoplay video without a static poster and reduced-motion respect.
+- use when: Landing and campaign pages where a real photograph, product render, or live demo communicates the offer better than words.
+- avoid when: Dashboards, apps, article pages; and never as a default 'headline + subtitle + two buttons + screenshot' block for unrelated products.
+- incompatible with: imagery-none, layout-table-first, layout-dashboard-grid, density-high
+- why: lexical 0.182, structural 0.7 (platform mobile,web, mode create, product ecommerce)
+
+### Top bar navigation  `nav-top-bar`  [pattern/navigation; navigation/platform] score 0.432 · heuristic
+Put primary destinations in a single horizontal bar; collapse to a menu button below the container width rather than hiding destinations one by one. The active item must be marked by more than colour (underline, weight, or aria-current). On narrow widths, the bar keeps the brand mark and one primary action visible.
+- use when: Five or fewer top-level destinations, content-first pages, public or marketing surfaces where a persistent side rail would steal width.
+- avoid when: Deep hierarchies with many peer sections, admin tools that need permanent wayfinding, or anything on TV.
+- incompatible with: nav-left-rail, nav-tv-side, nav-tv-top-tabs, nav-bottom-tabs
+- why: lexical 0.017, structural 0.76 (platform web, input keyboard,pointer,touch, mode create, product ecommerce)
+
+### Inline badges and status chips  `metadata-inline-badges`  [pattern/metadata; layout/platform] score 0.411 · heuristic
+Pill only for status/category/count; text inside the pill (never colour only); ≤2 per item; consistent colour mapping across the product; not clickable unless it is a filter.
+- use when: Status, category, or count must be scannable in lists and headers (Open/Closed, New, 3 unread).
+- avoid when: As decoration on everything; when more than two badges per item appear, the design has become noisy.
+- incompatible with: metadata-minimal, layout-immersive-rails
+- why: lexical 0.101, structural 0.7 (platform mobile,web, mode create, product ecommerce)
+
+### Linear wizard / stepper  `nav-wizard`  [pattern/navigation; navigation] score 0.404 · heuristic
+Show step count and current step, allow going back without data loss, put one primary action per step, validate per step not at the end, and let completed steps be revisited. Save progress for flows longer than ~3 minutes. On TV, each step is a full screen with a single focused default action.
+- use when: One task with ordered dependent steps (checkout, onboarding, application forms) where finishing matters more than exploring.
+- avoid when: Steps are independent and users need to jump around (use tabs or a form with sections), or the whole thing fits on one screen.
+- incompatible with: nav-left-rail, nav-tv-side
+- why: lexical 0.157, structural 0.66 (mode create, product ecommerce, screen checkout)
+
+### Elevated cards as the primary container  `surface-elevated-cards`  [pattern/surface; layout/platform] score 0.398 · platform-standard
+One elevation level for resting cards, one for pressed/dragged; the whole card is the target with a single accessible name; never nest a card inside a card; cards in a grid share aspect ratio and padding. If more than ~30% of a screen is card borders, switch to dividers.
+- use when: Each item is a self-contained, tappable object (a product, a post, a course) and the card boundary is also the touch target.
+- avoid when: Dashboards and tables (cards inside cards), text-heavy content, dense desktop tools, or when the card contains a single line of text.
+- incompatible with: surface-flat-tonal, surface-bordered-panes, layout-table-first, layout-three-pane
+- why: lexical 0.029, structural 0.76 (platform mobile,web, input pointer,touch, mode create, product ecommerce)
+
+### Functional thumbnails  `imagery-thumbnails`  [pattern/imagery; visual] score 0.392 · heuristic
+Fixed size per context, consistent crop (object-fit cover with a focal point), alt text that is empty when redundant with the adjacent text, lazy-loaded below the fold with intrinsic size set.
+- use when: Lists and grids where a small image helps recognition (products, people, files) but text carries the meaning.
+- avoid when: When the thumbnail would be a generic placeholder for most items.
+- incompatible with: imagery-immersive-backdrop, surface-imagery-backed
+- why: lexical 0.147, structural 0.58 (mode create, product ecommerce)
+
+### Spring-based physical motion  `motion-spring`  [pattern/motion; platform/visual] score 0.382 · platform-standard
+Use the platform spring APIs (SwiftUI .spring, Compose spring(), Motion/Framer spring on web) with one or two named presets (snappy, gentle); interruptible and gesture-tracking; never chain springs on page load.
+- use when: Gesture-driven mobile UI (sheets, swipes, drags) where motion should track the finger and settle naturally; consumer brands wanting liveliness.
+- avoid when: Desktop enterprise tools, TV (springs read as lag on focus), anywhere without gestures.
+- incompatible with: motion-cinematic, density-high, nav-menu-bar-desktop
+- why: lexical 0.0, structural 0.76 (platform mobile,web, input pointer,touch, mode create, product ecommerce)
+
+### Wizard / stepper  `comp-wizard-stepper`  [component/wizard; component] score 0.38 · heuristic
+Step indicator with names and progress (list semantics, aria-current=step), Back never loses data, one primary action per step, review step before submit, resume support, each step a real page/route on web; TV: full-screen steps with default focus on the primary action.
+- use when: Ordered multi-step flows (checkout, applications, setup).
+- avoid when: Independent sections (tabs); flows that fit one screen.
+- why: lexical 0.15, structural 0.66 (mode create, product ecommerce, screen checkout)
+
+### Product marketing site  `dir-product-marketing-site`  [direction/direction; direction/platform] score 0.372 · internal-preference
+Structure derived from the buyer's questions (what is it, does it work for me, proof, price), a hero that shows the real product, one display face with character, one accent, one orchestrated motion moment, everything else quiet; no icon-feature grids, no gradient blobs, no testimonial carousel by default. Identity via the hero concept and type; run the anti-template check.
+- use when: Landing/marketing sites for software products; the goal is comprehension and one conversion.
+- avoid when: App screens; docs.
+- incompatible with: layout-table-first, nav-left-rail, metadata-rich, surface-glass
+- why: lexical 0.285, structural 0.48 (platform web, input pointer,touch, mode create, product mismatch)
+
+Filtered out: dir-broadcast-guide-tv (platform ['tv'] not in request ['mobile', 'web']); nav-tv-top-tabs (platform ['tv'] not in request ['mobile', 'web']); nav-menu-bar-desktop (platform ['desktop'] not in request ['mobile', 'web']); motion-focus-scale (platform ['tv'] not in request ['mobile', 'web']); focus-scale-glow (platform ['tv'] not in request ['mobile', 'web']); cta-focus-selects (platform ['tv'] not in request ['mobile', 'web']); metadata-focus-reveal (platform ['tv'] not in request ['mobile', 'web']); a11y-tv-focus-always (platform ['tv'] not in request ['mobile', 'web'])

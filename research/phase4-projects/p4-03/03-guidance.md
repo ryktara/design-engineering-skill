@@ -1,0 +1,28 @@
+## guidance: add keyboard shortcuts and a command bar to the existing stock adjustments page without changing its navigation or theme
+status=PARTIAL mode=['create'] platform=['desktop'] input=['keyboard', 'pointer'] product=['erp'] screen=[] stack=['winui'] density=high env=[] risk=low negatives=[]
+MISSING: brand: no brand assets, guideline, or character description available
+budget=moderate mode evidence: create: default (no mode cue)
+project context: navigation={'value': 'left-rail', 'status': 'KNOWN', 'evidence': ['left-rail: 7 matches in MainWindow.xaml, MainWindow.xaml.cs, OrdersPage.xaml (shell/layout file)', 'also menu-bar: 9 matches']}, theme={'value': 'dual-theme', 'status': 'INFERRED', 'evidence': ['dark theme configuration signals: 1', 'hex palette: 0 near-white, 0 near-black']}, surfaces={'value': 'bordered-flat', 'status': 'INFERRED', 'evidence': ['weak signal: shadow 0, border 1']}, radius={'value': 'unknown', 'status': 'UNKNOWN', 'evidence': []}, spacing={'value': 4, 'status': 'INFERRED', 'evidence': ['most used spacing values [16, 12, 8, 4, 2]']}, typography={'value': 'unknown', 'status': 'UNKNOWN', 'evidence': ['no font family declaration found']}, components={'value': 'winui3, community-toolkit', 'status': 'KNOWN', 'evidence': ['winui3', 'community-toolkit']}
+concepts required=1.0 covered (3/3); tokens≈807 coverage/1k=3.72 purity=0.83
+concerns required=['component', 'structure', 'navigation', 'interaction', 'accessibility', 'data-display'] covered=0.83 uncovered=['component'] recommended=['states', 'anti-pattern', 'brand'] bundle=6 (core 3 + guardrails 3) diversity=0.83 redundancy=0.27
+
+### Core (what to build)
+- **Toolbar / command bar with selection-driven commands** `cta-toolbar-commands` [data-display/interaction/structure] — Primary commands as labelled buttons, overflow into a menu, disabled (not hidden) when no selection, keyboard accelerators shown in tooltips, and the count of selected items visible near the commands. _(covers: keyboard shortcuts / accelerators, selection state and bulk actions)_
+  - winui: CommandBar with AppBarButton + KeyboardAccelerator; IsEnabled bound to selection.
+  - selected for: highest-scoring pattern with lexical evidence; lexical 0.426, structural 0.88
+- **No decorative imagery** `imagery-none` [brand/content] — Remove stock photos, abstract blobs, and hero illustrations from working screens; empty states may use a small, meaningful illustration or none. Identity comes from type, colour, and structure.
+  - selected for: highest-scoring pattern with lexical evidence; lexical 0.1, structural 0.62
+- **Table-first working screen** `layout-table-first` [structure] — Table fills the viewport height with internal scrolling and sticky header, row density selectable, column widths persisted, filters as a row of chips/fields above the table (not a hidden drawer), bulk actions appear in the toolbar on selection. Numeric columns right-aligned with tabular figures. Virtualise beyond a few hundred rows. _(covers: virtualization of long collections, tabular figures and numeric alignment)_
+  - winui: DataGrid from CommunityToolkit or a virtualised ListView with a header; enable IsItemClickEnabled and keyboard sorting.
+  - selected for: required coverage: tabular figures and numeric alignment; lexical 0.0, structural 0.88
+
+### Guardrails (must hold)
+- **Desktop: keyboard is a first-class input** `desktop-keyboard-first` [interaction; platform-standard] — Document shortcuts in menus and tooltips; F2 edits, Delete deletes with undo, Ctrl+F finds, F6 cycles panes; grids use arrow keys and Ctrl/Shift selection; every dialog has a default and cancel button; access keys shown on Alt (Windows). _(covers: keyboard navigation and focus order, keyboard shortcuts / accelerators, visible focus)_
+  - selected for: required coverage: visible focus, keyboard navigation and focus order
+- **Hover reveals need a non-hover path** `a11y-hover-not-required` [accessibility/interaction; accessibility-requirement] — Hover-revealed content must also appear on focus and be reachable by touch (persistent affordance, long-press, or an explicit menu). Tooltips: dismissible, hoverable, persistent (WCAG 1.4.13). Never put essential actions only in hover. _(covers: no hover dependence)_
+  - selected for: required coverage: accessibility
+- **Desktop: persist layout and selection state** `desktop-state-persistence` [navigation/states; heuristic] — Restore the workspace on launch (per user, per view), offer 'reset layout', keep undo history per document, and never lose selection on data refresh (re-select by key). _(covers: persisted workspace and selection)_
+  - selected for: required coverage: navigation
+
+Omitted (redundant): comp-command-palette (contamination: command-palette-specific record with no command-palette evidence in the request); comp-sidebar-nav (contamination: navigation must be preserved); comp-data-entry-grid (contamination: table-specific record with no table evidence in the request); chart-compare-bar (contamination: low purity 0.00: most of its concepts are off-task; chart record outside a data-visualisation task); nav-menu-bar-desktop (contamination: navigation must be preserved); nav-command-palette (contamination: navigation must be preserved)
+Filtered out: anti-desktop-scaled-to-tv (platform ['tv'] not in request ['desktop']); anti-mobile-desktop-shrunk (platform ['mobile'] not in request ['desktop']); comp-media-card (platform ['mobile', 'tv', 'web'] not in request ['desktop']); comp-player-controls (platform ['mobile', 'tv', 'web'] not in request ['desktop']); comp-tv-rail (platform ['tv'] not in request ['desktop']); comp-hero-section (platform ['mobile', 'web'] not in request ['desktop'])

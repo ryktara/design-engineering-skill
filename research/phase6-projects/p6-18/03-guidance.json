@@ -1,0 +1,933 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "Purchase order screen: operators want to do the whole entry without touching the mouse.",
+  "status": "PARTIAL",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "desktop"
+    ],
+    "input": [
+      "keyboard",
+      "pointer"
+    ],
+    "product": [
+      "erp"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "wpf"
+    ],
+    "density": "high",
+    "components": [],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "audit"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [],
+      "change_scope": "screen",
+      "utterance": "observation",
+      "existing": true,
+      "problem": true,
+      "facet": "general",
+      "diagnose_only": false,
+      "creation": false,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [
+      {
+        "platform": "desktop",
+        "strength": "WEAK_INFERENCE",
+        "evidence": [
+          "mouse"
+        ]
+      }
+    ],
+    "mode_evidence": [
+      "audit: problem statement on existing UI",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "menu-bar",
+        "status": "KNOWN",
+        "evidence": [
+          "menu-bar: 2 matches in App.xaml.cs, PurchaseOrderLinesView.xaml (shell/layout file)"
+        ]
+      },
+      "theme": {
+        "value": "light-first",
+        "status": "KNOWN",
+        "evidence": [
+          "root/canvas backgrounds: 4 light, 0 dark",
+          "hex palette: 11 near-white, 1 near-black"
+        ]
+      },
+      "surfaces": {
+        "value": "bordered-flat",
+        "status": "INFERRED",
+        "evidence": [
+          "borders in 5 files, shadow/elevation in 0"
+        ]
+      },
+      "radius": {
+        "value": "small",
+        "status": "INFERRED",
+        "evidence": [
+          "most common radius 2 (4×); others [1.0, 10.0]"
+        ]
+      },
+      "spacing": {
+        "value": 4,
+        "status": "INFERRED",
+        "evidence": [
+          "most used spacing values [16, 8, 6, 2, 12]"
+        ]
+      },
+      "typography": {
+        "value": "humanist-sans",
+        "status": "INFERRED",
+        "evidence": [
+          "font family Segoe UI Variable Text, Segoe UI (1 refs)",
+          "monospace face Cascadia Mono, Consolas used for a code/number role",
+          "weights semibold, bold"
+        ]
+      },
+      "components": {
+        "value": "wpf",
+        "status": "KNOWN",
+        "evidence": [
+          "wpf"
+        ]
+      }
+    },
+    "known": [
+      "platform=desktop (project inspection)",
+      "input=pointer (request: mouse)",
+      "product=erp (request: purchase order)",
+      "stack=wpf (project inspection)",
+      "project_navigation=menu-bar (repository: menu-bar: 2 matches in App.xaml.cs, PurchaseOrderLinesView.xaml (shell/layout file))",
+      "project_theme=light-first (repository: root/canvas backgrounds: 4 light, 0 dark; hex palette: 11 near-white, 1 near-black)",
+      "project_components=wpf (repository: wpf)"
+    ],
+    "inferred": [
+      "input=keyboard (implied by platform desktop)",
+      "density=high (implied by product erp)",
+      "mode=audit (problem statement on existing UI)",
+      "mode=refactor (fix follows the diagnosis)",
+      "project_surfaces=bordered-flat (repository: borders in 5 files, shadow/elevation in 0)",
+      "project_radius=small (repository: most common radius 2 (4×); others [1.0, 10.0])",
+      "project_spacing=4 (repository: most used spacing values [16, 8, 6, 2, 12])",
+      "project_typography=humanist-sans (repository: font family Segoe UI Variable Text, Segoe UI (1 refs); monospace face Cascadia Mono, Consolas used for a code/number role)"
+    ],
+    "missing": [],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [
+        "mouse",
+        "purchase order"
+      ],
+      "project": [
+        "ErpClient.csproj: UseWPF"
+      ]
+    },
+    "activation": {
+      "decision": "ambiguous",
+      "ui_score": 1.0,
+      "non_ui_score": 0,
+      "ui_terms": [
+        "screen"
+      ],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "operators"
+      ],
+      "new": [],
+      "defect": [
+        "observed behaviour"
+      ],
+      "operations": {},
+      "domains": {},
+      "no_change": [],
+      "scope": {
+        "screen": [
+          "screen"
+        ]
+      },
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "screen"
+      ],
+      "ux_symptoms": [],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "accessibility",
+        "reason": "audit mode"
+      },
+      {
+        "concern": "interaction",
+        "reason": "audit mode: operability is part of the review"
+      },
+      {
+        "concern": "component",
+        "reason": "the reviewed component/screen"
+      },
+      {
+        "concern": "data-display",
+        "reason": "numbers, tables or charts are the content"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "states",
+        "reason": "audits check empty/loading/error handling"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "audits name generic-design defects"
+      },
+      {
+        "concern": "feedback",
+        "reason": "audits check that actions are discoverable and confirmed"
+      }
+    ],
+    "optional": [
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "desktop keyboard-first",
+        "priority": 3,
+        "critical": false
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "desktop focus",
+        "priority": 3,
+        "critical": false
+      },
+      {
+        "concept": "interaction.hover_independence",
+        "reason": "pointer stated",
+        "priority": 3,
+        "critical": false
+      },
+      {
+        "concept": "table.tabular_figures",
+        "reason": "numeric data",
+        "priority": 1,
+        "critical": true
+      }
+    ],
+    "recommended_concepts": [
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "state.loading_empty_error",
+      "process.reuse_first",
+      "interaction.shortcuts",
+      "desktop.persist_workspace",
+      "desktop.fluent_materials"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [],
+  "guardrails": [
+    {
+      "id": "typo-scale-and-roles",
+      "kind": "rule",
+      "category": "typography",
+      "title": "One type scale with named roles",
+      "facets": [
+        "visual"
+      ],
+      "concerns": [
+        "content",
+        "data-display"
+      ],
+      "concepts": [
+        "table.tabular_figures",
+        "brand.type_roles"
+      ],
+      "covers": [
+        "tabular figures and numeric alignment",
+        "type roles and scale"
+      ],
+      "score": 0.243,
+      "guidance": "Roles display/heading/title/body/label/caption/numeric with size, line height, weight, and letter spacing per role; body ≥16 px web/mobile, 14 desktop, 24 TV; numeric role uses tabular lining figures; headings use tighter line height (1.1–1.25) and body 1.4–1.6. Generate with tokens.py scale and map the roles to the framework's text styles.",
+      "use_when": "Any screen with more than two text sizes; any design system.",
+      "avoid_when": "Never pick sizes per screen; never use more than ~7 sizes.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.54,
+        "matched": [
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "critical concept (GENERIC): tabular figures and numeric alignment"
+    },
+    {
+      "id": "desktop-keyboard-first",
+      "kind": "rule",
+      "category": "input",
+      "title": "Desktop: keyboard is a first-class input",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.keyboard_navigation",
+        "interaction.shortcuts",
+        "interaction.focus_visible"
+      ],
+      "covers": [
+        "keyboard navigation and focus order",
+        "keyboard shortcuts / accelerators",
+        "visible focus"
+      ],
+      "score": 0.36,
+      "guidance": "Document shortcuts in menus and tooltips; F2 edits, Delete deletes with undo, Ctrl+F finds, F6 cycles panes; grids use arrow keys and Ctrl/Shift selection; every dialog has a default and cancel button; access keys shown on Alt (Windows).",
+      "use_when": "Every desktop screen: shortcuts for frequent commands, access keys for menus, Tab/arrow semantics in lists, trees, grids, and toolbars, Enter/Escape in dialogs.",
+      "avoid_when": "Never assign shortcuts that collide with platform or assistive-tech shortcuts; never make Tab stop on every cell of a grid.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.8,
+        "matched": [
+          "platform desktop",
+          "input pointer (stated)",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage (SPECIFIC): visible focus, keyboard navigation and focus order, interaction"
+    },
+    {
+      "id": "a11y-keyboard-operable",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Everything operable by keyboard, no traps",
+      "facets": [
+        "accessibility",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.keyboard_navigation",
+        "interaction.hover_independence"
+      ],
+      "covers": [
+        "keyboard navigation and focus order",
+        "no hover dependence"
+      ],
+      "score": 0.401,
+      "guidance": "Tab reaches every control in visual order; composite widgets use arrow keys with a roving tabindex so Tab is not consumed by every cell; Escape closes layers and returns focus to the invoker; nothing traps focus except a modal, and the modal itself must be escapable. Provide a keyboard alternative for every drag interaction.",
+      "use_when": "Every interactive element, including custom widgets, drag/drop, sliders, menus, date pickers, and anything that appears on hover.",
+      "avoid_when": "Never skip.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.14,
+        "structural": 0.72,
+        "matched": [
+          "platform desktop",
+          "input keyboard",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage (GENERIC): no hover dependence, accessibility"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "data-display"
+    ],
+    "covered_required_concerns": [
+      "accessibility",
+      "interaction",
+      "data-display"
+    ],
+    "uncovered_required_concerns": [
+      "component"
+    ],
+    "recommended_concerns": [
+      "states",
+      "anti-pattern",
+      "feedback"
+    ],
+    "covered_recommended_concerns": [],
+    "coverage_ratio": 0.75,
+    "required_concepts": [
+      "interaction.keyboard_navigation",
+      "interaction.focus_visible",
+      "interaction.hover_independence",
+      "table.tabular_figures"
+    ],
+    "covered_required_concepts": [
+      "interaction.keyboard_navigation",
+      "interaction.focus_visible",
+      "interaction.hover_independence",
+      "table.tabular_figures"
+    ],
+    "uncovered_required_concepts": [],
+    "critical_concepts": [
+      "table.tabular_figures"
+    ],
+    "uncovered_critical_concepts": [],
+    "critical_coverage_ratio": 1.0,
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.14,
+    "not_surfaced": [
+      {
+        "concept": "a11y.accessible_names",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "a11y.contrast",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "state.loading_empty_error",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "process.reuse_first",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "desktop.persist_workspace",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "desktop.fluent_materials",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "states",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "feedback",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      }
+    ],
+    "bundle_size": 3,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 0,
+    "guardrail_size": 3,
+    "bundle_tokens": 361,
+    "coverage_per_1k_tokens": 11.08,
+    "mean_purity": 0.83,
+    "mean_specificity": 0.67,
+    "quality_counts": {
+      "SPECIFIC": 1,
+      "GENERIC": 2
+    },
+    "contaminated": [],
+    "category_diversity": 1.0,
+    "duplicate_pressure": 0.33,
+    "facet_coverage": 0.6,
+    "redundancy": 0.2,
+    "critical_trace": {
+      "covered": [
+        "table.tabular_figures"
+      ],
+      "uncovered": [],
+      "carrier_quality": {
+        "table.tabular_figures": "GENERIC"
+      }
+    }
+  },
+  "token_coverage": 1.0,
+  "omitted": [
+    {
+      "id": "comp-data-entry-grid",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "comp-data-table",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "layout-table-first",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "metadata-rich",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "layout-master-detail",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "nav-left-rail",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "layout-dashboard-grid",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "cta-toolbar-commands",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "density-high",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "surface-bordered-panes",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    }
+  ],
+  "marginal": {
+    "typo-scale-and-roles": {
+      "new_critical": [
+        "table.tabular_figures"
+      ],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [
+        "content",
+        "data-display"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "explicit_demand"
+      ],
+      "quality": "GENERIC",
+      "contamination": 0.0,
+      "tokens": 115
+    },
+    "desktop-keyboard-first": {
+      "new_critical": [],
+      "new_required": [
+        "interaction.focus_visible",
+        "interaction.keyboard_navigation"
+      ],
+      "new_recommended": [
+        "interaction.shortcuts"
+      ],
+      "new_concerns": [
+        "interaction"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "platform_specific"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 130
+    },
+    "a11y-keyboard-operable": {
+      "new_critical": [],
+      "new_required": [
+        "interaction.hover_independence"
+      ],
+      "new_recommended": [],
+      "new_concerns": [
+        "accessibility"
+      ],
+      "specificity": 0,
+      "evidence": [
+        "lexical"
+      ],
+      "quality": "GENERIC",
+      "contamination": 0.0,
+      "tokens": 116
+    }
+  },
+  "rejected": [
+    {
+      "id": "anti-hero-template",
+      "reason": "platform ['web'] not in request ['desktop']"
+    },
+    {
+      "id": "anti-desktop-scaled-to-tv",
+      "reason": "platform ['tv'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-media-card",
+      "reason": "platform ['mobile', 'tv', 'web'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-tv-sign-in",
+      "reason": "platform ['tv'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-checkout-one-page",
+      "reason": "platform ['mobile', 'web'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-kiosk-keypad",
+      "reason": "platform ['kiosk', 'tablet'] not in request ['desktop']"
+    },
+    {
+      "id": "media-photo-viewer",
+      "reason": "platform ['mobile', 'tablet', 'web'] not in request ['desktop']"
+    },
+    {
+      "id": "dir-editorial-storefront",
+      "reason": "platform ['mobile', 'web'] not in request ['desktop']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "interaction.keyboard_navigation",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 3,
+      "reason": "desktop keyboard-first",
+      "candidate_records": [
+        [
+          "comp-data-entry-grid",
+          0.606
+        ],
+        [
+          "grid-single-tab-stop",
+          0.403
+        ],
+        [
+          "a11y-keyboard-operable",
+          0.401
+        ],
+        [
+          "desktop-keyboard-first",
+          0.36
+        ]
+      ],
+      "selected_record": "a11y-keyboard-operable",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.focus_visible",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 3,
+      "reason": "desktop focus",
+      "candidate_records": [
+        [
+          "grid-single-tab-stop",
+          0.403
+        ],
+        [
+          "a11y-focus-visible",
+          0.375
+        ],
+        [
+          "desktop-keyboard-first",
+          0.36
+        ],
+        [
+          "focus-ring-standard",
+          0.341
+        ]
+      ],
+      "selected_record": "desktop-keyboard-first",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.hover_independence",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 3,
+      "reason": "pointer stated",
+      "candidate_records": [
+        [
+          "a11y-keyboard-operable",
+          0.401
+        ],
+        [
+          "anti-hover-only-actions",
+          0.36
+        ],
+        [
+          "a11y-hover-not-required",
+          0.36
+        ]
+      ],
+      "selected_record": "a11y-keyboard-operable",
+      "carrier_quality": "GENERIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "table.tabular_figures",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 1,
+      "reason": "numeric data",
+      "candidate_records": [
+        [
+          "table-column-disambiguation",
+          0.809
+        ],
+        [
+          "comp-data-table",
+          0.519
+        ],
+        [
+          "layout-table-first",
+          0.446
+        ],
+        [
+          "metadata-rich",
+          0.441
+        ]
+      ],
+      "selected_record": "typo-scale-and-roles",
+      "carrier_quality": "GENERIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.accessible_names",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "a11y-native-semantics",
+          0.297
+        ],
+        [
+          "a11y-labels-names",
+          0.243
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "a11y.contrast",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "desktop-status-bar-and-error-navigation",
+          0.387
+        ],
+        [
+          "anti-fashion-over-usability",
+          0.243
+        ],
+        [
+          "a11y-contrast-text",
+          0.243
+        ],
+        [
+          "a11y-nontext-contrast",
+          0.243
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "state.loading_empty_error",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "asynchronous or remote data on this screen",
+      "candidate_records": [
+        [
+          "comp-chart-container",
+          0.297
+        ],
+        [
+          "layout-states-empty-loading-error",
+          0.264
+        ],
+        [
+          "anti-no-states",
+          0.243
+        ],
+        [
+          "comp-empty-state",
+          0.18
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.3
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.shortcuts",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "desktop accelerators",
+      "candidate_records": [
+        [
+          "cta-toolbar-commands",
+          0.42
+        ],
+        [
+          "desktop-status-bar-and-error-navigation",
+          0.387
+        ],
+        [
+          "desktop-keyboard-first",
+          0.36
+        ]
+      ],
+      "selected_record": "desktop-keyboard-first",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "desktop.persist_workspace",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "desktop state persistence",
+      "candidate_records": [
+        [
+          "desktop-status-bar-and-error-navigation",
+          0.387
+        ],
+        [
+          "desktop-state-persistence",
+          0.362
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "desktop.fluent_materials",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "Windows stack",
+      "candidate_records": [
+        [
+          "desktop-fluent-materials",
+          0.324
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    }
+  ]
+}

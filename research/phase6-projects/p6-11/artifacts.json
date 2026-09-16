@@ -1,0 +1,130 @@
+{
+  "task": "p6-11",
+  "project": "p3-mobile-flutter-field",
+  "platform_expected": "mobile",
+  "platform_resolved": "mobile",
+  "platform_correct": "yes",
+  "stack": "flutter",
+  "existing_ui": true,
+  "new_screen": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": ["polish", "accessibility", "refactor"],
+  "mode_resolved": ["audit", "responsive", "refactor"],
+  "mode_correct": "acceptable",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "moderate",
+  "render_mode": "html-twin",
+  "screenshots": [
+    "render/first-checklist.png",
+    "render/first-checklist-hc.png",
+    "render/first-offline.png",
+    "render/final-checklist.png",
+    "render/final-checklist-hc.png",
+    "render/final-offline.png",
+    "render/final-loading.png"
+  ],
+  "context_detection": {
+    "navigation": "yes",
+    "theme": "yes",
+    "typography": "yes",
+    "surfaces": "partial",
+    "spacing": "partial"
+  },
+  "preservation": {
+    "navigation": true,
+    "theme": true,
+    "typography": true,
+    "component_reuse": true,
+    "unjustified_structural_change": 0
+  },
+  "expected_concepts": [
+    "touch.minimum_target",
+    "a11y.color_not_only",
+    "env.glanceable_status",
+    "a11y.semantics",
+    "interaction.selection_visible",
+    "a11y.accessible_names"
+  ],
+  "critical_concepts": ["touch.minimum_target", "a11y.color_not_only"],
+  "delivered_concepts": [
+    "data.exception_first",
+    "data.refresh_timestamp",
+    "env.glanceable_status",
+    "env.outdoor_readability",
+    "interaction.back_semantics",
+    "layout.focal_hierarchy",
+    "layout.one_primary_action",
+    "perf.image_sizing",
+    "state.offline_sync",
+    "state.saving_conflict",
+    "touch.gestures_discoverable",
+    "touch.minimum_target"
+  ],
+  "concept_recall": 0.33,
+  "critical_recall": 0.5,
+  "concept_misses": [
+    {"concept": "a11y.color_not_only", "layer": "expected-concepts"},
+    {"concept": "a11y.semantics", "layer": "expected-concepts"},
+    {"concept": "interaction.selection_visible", "layer": "expected-concepts"},
+    {"concept": "a11y.accessible_names", "layer": "bundle-selection"}
+  ],
+  "first_render_defects": {"visual": 1, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+  "final_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+  "iterations": 1,
+  "guidance_relevant": 1,
+  "guidance_partial": 2,
+  "guidance_offtarget": 1,
+  "bad_guidance": [
+    {"record": "media-photo-viewer", "category": "wrong-screen", "why": "full-screen photo viewer took the CORE slot on a checklist-row control task; its own selection line shows empty task evidence (lexical 0.098) while list-row records were omitted for 'no positive task evidence'"},
+    {"record": "states-offline-and-sync", "category": "generic", "why": "true for the app, says nothing about the row control the task is about"},
+    {"record": "layout-hierarchy-one-thing", "category": "generic", "why": "generic focal-point advice; useful only as a negative check"},
+    {"record": "<bundle>", "category": "missing-critical", "why": "pre-registered critical concept a11y.color_not_only is never demanded and never delivered as a concept (only touched in mobile-field-use prose); interaction.selection_visible likewise absent"}
+  ],
+  "layer_review": {
+    "core": ["media-photo-viewer"],
+    "critical": ["mobile-field-use", "states-offline-and-sync", "layout-hierarchy-one-thing"],
+    "optional": [],
+    "optional_useful": 0,
+    "optional_noise": 0
+  },
+  "guidance_used": ["mobile-field-use"],
+  "guidance_ignored": [
+    {"id": "media-photo-viewer", "why": "guidance for the defect-report photo screen, not the checklist row"},
+    {"id": "states-offline-and-sync", "why": "no offline behaviour changed; the existing setStatus -> PendingSync queue path was reused unchanged"},
+    {"id": "layout-hierarchy-one-thing", "why": "focal point ('3 / 6 checked') deliberately untouched"}
+  ],
+  "unjustified_direction_slots": 1,
+  "process_records_needed": false,
+  "skill_effect": "neutral",
+  "guidance_tokens": 596,
+  "misses": [
+    {"layer": "mode", "what": "'responsive' inferred from the adjective 'small' with no viewport cue in the sentence"},
+    {"layer": "expected-concepts", "what": "a11y.color_not_only, interaction.selection_visible and a11y.semantics never demanded for a gloved outdoor row-status-control task, although carriers exist"},
+    {"layer": "bundle-selection", "what": "a11y.accessible_names demanded, candidates a11y-labels-names / a11y-native-semantics present, dropped by the cap"},
+    {"layer": "candidate-compatibility", "what": "media-photo-viewer won CORE with empty task evidence while comp-list-row-mobile and card-list-row were omitted for lacking exactly that evidence"},
+    {"layer": "project-context", "what": "radius detected 4 (FieldSizes.radius is 8); spacing UNKNOWN/'irregular' where a 4-based FieldSizes scale is declared; Dart BorderSide/Border.all not read as border declarations — this also produced the unjustified 'cards = new' direction slot"}
+  ],
+  "knowledge_gaps": [],
+  "regressions": [
+    {"query": "Inspectors in gloves keep missing the small checkbox on each defect row.", "expect": "a11y.color_not_only and interaction.selection_visible are demanded; the CORE slot is a list-row / target-size record, not media-photo-viewer"},
+    {"query": "mobile task naming a per-row control (checkbox, toggle, status chip)", "expect": "a record carrying a11y.accessible_names survives bundle selection when the control has no visible text label"},
+    {"query": "a sentence whose only size word is an adjective on a control ('the small checkbox')", "expect": "mode does not include responsive"},
+    {"query": "inspect_project.py on p3-mobile-flutter-field", "expect": "radius = 8 from FieldSizes.radius; spacing KNOWN as a 4-based token scale; BorderSide / Border.all counted as border declarations"}
+  ],
+  "tags": [
+    "mode-miss",
+    "concept-miss",
+    "ranking-miss",
+    "context-detection-miss",
+    "direction-mismatch",
+    "render-defect-fixed",
+    "skill-neutral",
+    "preservation-ok"
+  ],
+  "build_hash_start": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947",
+  "build_hash_end": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947"
+}

@@ -1,0 +1,209 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "polish",
+    "audit"
+  ],
+  "platform": [
+    "desktop"
+  ],
+  "input": [
+    "keyboard",
+    "pointer"
+  ],
+  "product": [
+    "erp"
+  ],
+  "screen": [],
+  "screen_subtype": [],
+  "stack": [
+    "wpf"
+  ],
+  "density": "high",
+  "components": [
+    "form",
+    "navigation"
+  ],
+  "environment": [],
+  "jobs": [],
+  "problems": [
+    "visual"
+  ],
+  "risk": "low",
+  "primary_jobs": [
+    "polish form",
+    "polish navigation"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "keyboard": true,
+    "screen_reader": true,
+    "focus": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "change_budget": "low",
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "mode_evidence": [
+    "polish: explicit: polish",
+    "polish: visual problem on existing UI",
+    "audit: diagnose first"
+  ],
+  "project_context": {
+    "navigation": {
+      "value": "menu-bar",
+      "status": "INFERRED",
+      "evidence": [
+        "menu-bar: 1 matches in PurchaseOrderLinesView.xaml"
+      ]
+    },
+    "theme": {
+      "value": "light-first",
+      "status": "INFERRED",
+      "evidence": [
+        "hex palette: 11 near-white, 1 near-black"
+      ]
+    },
+    "surfaces": {
+      "value": "bordered-flat",
+      "status": "INFERRED",
+      "evidence": [
+        "weak signal: shadow 0, border 1"
+      ]
+    },
+    "radius": {
+      "value": "small",
+      "status": "INFERRED",
+      "evidence": [
+        "most common radius 2 (2×); others [1.0, 10.0]"
+      ]
+    },
+    "spacing": {
+      "value": 4,
+      "status": "INFERRED",
+      "evidence": [
+        "most used spacing values [16, 4, 12, 10, 6]"
+      ]
+    },
+    "typography": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": [
+        "no font family declaration found"
+      ]
+    },
+    "components": {
+      "value": "wpf",
+      "status": "KNOWN",
+      "evidence": [
+        "wpf"
+      ]
+    }
+  },
+  "known": [
+    "platform=desktop (project inspection)",
+    "product=erp (request: purchase order)",
+    "stack=wpf (request: wpf)",
+    "mode=polish (explicit: polish; visual problem on existing UI)",
+    "project_components=wpf (repository: wpf)"
+  ],
+  "inferred": [
+    "input=pointer (implied by platform desktop)",
+    "input=keyboard (implied by platform desktop)",
+    "density=high (implied by product erp)",
+    "mode=audit (diagnose first)",
+    "project_navigation=menu-bar (repository: menu-bar: 1 matches in PurchaseOrderLinesView.xaml)",
+    "project_theme=light-first (repository: hex palette: 11 near-white, 1 near-black)",
+    "project_surfaces=bordered-flat (repository: weak signal: shadow 0, border 1)",
+    "project_radius=small (repository: most common radius 2 (2×); others [1.0, 10.0])",
+    "project_spacing=4 (repository: most used spacing values [16, 4, 12, 10, 6])"
+  ],
+  "missing": [
+    "brand: no brand assets, guideline, or character description available"
+  ],
+  "status": "CONFIDENT",
+  "source": {
+    "request": [
+      "hard to read",
+      "inconsistent",
+      "polish",
+      "purchase order",
+      "wpf"
+    ],
+    "project": [
+      "ErpClient.csproj: UseWPF"
+    ]
+  },
+  "activation": {
+    "decision": "activate",
+    "ui_score": 10.0,
+    "non_ui_score": 0,
+    "ui_terms": [
+      "screen",
+      "theme",
+      "spacing",
+      "polish",
+      "toolbar",
+      "light theme",
+      "hard to read"
+    ],
+    "non_ui_terms": []
+  },
+  "intent": {
+    "existing": true,
+    "problem": true,
+    "facet": "visual",
+    "diagnose_only": false,
+    "creation": false,
+    "redesign": false,
+    "responsive_cues": false,
+    "preserve": [],
+    "scope": "low"
+  },
+  "intent_evidence": {
+    "existing": [
+      "this",
+      "existing"
+    ],
+    "problem": [
+      "hard to",
+      "hard to read",
+      "inconsistent"
+    ],
+    "change": [
+      "polish"
+    ],
+    "create": [],
+    "diagnose": [],
+    "no_change": [],
+    "redesign": [],
+    "look_feel": [
+      "spacing",
+      "polish",
+      "inconsistent"
+    ],
+    "structural": [],
+    "responsive": [],
+    "accessibility": [],
+    "interaction": []
+  },
+  "scope_evidence": {
+    "ui": [
+      "screen",
+      "theme",
+      "spacing"
+    ],
+    "ux_symptoms": [],
+    "technical": {},
+    "non_visual": []
+  }
+}

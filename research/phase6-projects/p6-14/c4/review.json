@@ -1,0 +1,11 @@
+{"task": "p6-14", "records": [
+{"id": "comp-toast-notification", "verdict": "off-target", "category": "wrong-screen", "why": "A toast/snackbar component is not part of a VoiceOver labelling fix on the streak ring."},
+{"id": "a11y-native-semantics", "verdict": "relevant", "category": "", "why": "Names the exact SwiftUI mechanism (labels, traits, merge descendants, test with VoiceOver) the c3 implementer used."},
+{"id": "a11y-color-not-only", "verdict": "partial", "category": "generic", "why": "True of the ring but the code already satisfied it; not the reported defect."},
+{"id": "a11y-contrast-text", "verdict": "partial", "category": "generic", "why": "Text contrast was never the complaint; the ring's issue is non-text contrast."},
+{"id": "a11y-live-status", "verdict": "partial", "category": "generic", "why": "Live-region wording is adjacent to the ring's updatesFrequently trait but the fix is a static accessible name."},
+{"id": "mobile-density-touch", "verdict": "off-target", "category": "wrong-screen", "why": "Tables, filter sheets and bulk selection do not exist on the Today screen."}
+],
+"missing_critical": [], "unjustified_direction_slots": 0,
+"layer_review": {"core": ["comp-toast-notification"], "critical": ["a11y-native-semantics", "a11y-color-not-only", "a11y-contrast-text", "a11y-live-status", "mobile-density-touch"], "optional": []},
+"change_vs_c3": "Better: interaction-drag-drop is gone and a11y-native-semantics (the record actually used) is kept, though comp-toast-notification adds new off-target noise."}

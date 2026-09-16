@@ -1,0 +1,86 @@
+{
+  "case": "p3-winui-erp-audit",
+  "platform": "desktop",
+  "stack": "winui3 (Windows App SDK 1.7, XAML + C#, CommunityToolkit.Mvvm, Toolkit DataGrid)",
+  "task": "Warehouse clerks say our WinUI stock adjustments page is confusing and they keep missing rows; the screen reader reads the status column as just text",
+  "mode_detected": ["accessibility", "audit"],
+  "rendered": true,
+  "render_mode": "html-twin",
+  "native_build": {
+    "attempted": true,
+    "result": "failed",
+    "errors": [
+      "NU1101: fixture package id CommunityToolkit.WinUI.Controls.DataGrid 8.2.250402 does not exist on nuget.org (fixture defect; corrected to CommunityToolkit.WinUI.UI.Controls.DataGrid 7.1.2 in the case copy)",
+      "MSB4062: Microsoft.Build.Packaging.Pri.Tasks.dll missing (Windows App SDK / VS AppxPackage build tooling not installed)"
+    ]
+  },
+  "viewport": "1440x900",
+  "screenshots": [
+    "render/first-before.png",
+    "render/first-before-empty.png",
+    "render/first-after.png",
+    "render/first-after-empty.png",
+    "render/first-after-focus-rowaction.png",
+    "render/final-before.png",
+    "render/final-before-empty.png",
+    "render/final-after.png",
+    "render/final-after-empty.png",
+    "render/final-after-focus-rowaction.png"
+  ],
+  "first_render_defects": 7,
+  "final_defects": 4,
+  "iterations": 2,
+  "guidance_relevant": 5,
+  "guidance_partial": 1,
+  "guidance_offtarget": 2,
+  "guidance_control_run_without_tv_false_positive": { "relevant": 4, "partial": 1, "offtarget": 1 },
+  "knowledge_gaps": [
+    "grid with per-row buttons: single Tab stop / roving tabindex, arrows reach the row actions",
+    "column-width budget for the target window; default visible column set and persisted column chooser",
+    "WinUI recipes: Typography.NumeralAlignment=Tabular, icon+text status cell with one AutomationProperties.Name and AccessibilityView=Raw glyph, DataGridColumn.Visibility",
+    "short visible status label vs full accessible name in narrow columns"
+  ],
+  "ranking_misses": [
+    "anti-hover-only-actions (search rank 2, not in guidance bundle)",
+    "a11y-color-not-only (search rank 9, not in bundle)",
+    "data-tables-numeric (not in k=12 for the task; only via targeted query)",
+    "anti-placeholder-labels (not in k=12)",
+    "layout-states-empty-loading-error / comp-empty-state (states concern satisfied by states-persistence-and-session instead)",
+    "metadata-rich / metadata-inline-badges (status as text+colour; search rank 1/3, absent from guidance)"
+  ],
+  "requirements_errors": [
+    "platform=tv (inspect_project.py DPAD_RE '|isTV' with re.I matches 'ListView')",
+    "input=remote (same root cause)",
+    "density=medium (capped for remote; should be high for desktop ERP)",
+    "environment=[large-display, shared-device] (TV-derived)",
+    "screen=[] and components=[] not inferred from 'page', 'rows', 'status column'",
+    "status=CONFIDENT although desktop+tv is a platform conflict (documented exit 4 not triggered)"
+  ],
+  "inspection_errors": [
+    "false positive: DPAD/remote handling from ListView",
+    "NavigationView shell not detected as navigation convention",
+    "Segoe Fluent Icons glyph usage not detected under icons",
+    "PointerEntered/PointerExited hover-only handlers not surfaced"
+  ],
+  "direction_validation": { "protocol_run": "VIOLATIONS (tv/remote focus ring)", "control_run": "OK" },
+  "interaction_checks_after": {
+    "row_actions_visible_named_keyboard_reachable": true,
+    "focus_visible_all_tab_stops": true,
+    "status_text_plus_icon_with_accessible_name": true,
+    "numeric_right_aligned_tabular": true,
+    "filter_labels_visible": true,
+    "empty_state_present": true,
+    "no_horizontal_overflow": true,
+    "reduced_motion_respected": true
+  },
+  "tags": [
+    "requirements-miss",
+    "ranking-miss",
+    "knowledge-gap",
+    "direction-invariant",
+    "render-defect-fixed",
+    "render-defect-remaining",
+    "tooling-limit",
+    "skill-helped"
+  ]
+}

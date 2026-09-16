@@ -1,0 +1,90 @@
+## design-engineering search: add a product listing page with filters to our outdoor gear web store, matching the existing product and checkout pages
+status=CONFIDENT modes=['create'] platforms={'web': 'KNOWN'} inputs={'pointer': 'INFERRED', 'keyboard': 'INFERRED', 'touch': 'INFERRED'} products={'ecommerce': 'KNOWN'} density=None stacks=['html-css'] screens=['checkout', 'list'] negatives=[]
+facets required=['component', 'layout', 'platform', 'navigation', 'direction'] unmet=[] diversity=0.92
+MISSING: brand: no brand assets, guideline, or character description available
+
+### Hero imagery on landing/brand pages  `imagery-hero`  [pattern/imagery; platform/visual] score 0.534 · heuristic
+The hero is a thesis about the product: show the actual thing (product, interface, outcome). Reserve aspect box to avoid CLS, serve responsive sources, LCP image preloaded, text contrast guaranteed by placement or scrim, and no autoplay video without a static poster and reduced-motion respect.
+- use when: Landing and campaign pages where a real photograph, product render, or live demo communicates the offer better than words.
+- avoid when: Dashboards, apps, article pages; and never as a default 'headline + subtitle + two buttons + screenshot' block for unrelated products.
+- incompatible with: imagery-none, layout-table-first, layout-dashboard-grid, density-high
+- why: lexical 0.343, structural 0.7 (platform web, mode create, product ecommerce)
+
+### Catalog grid  `layout-grid-catalog`  [pattern/layout; layout/platform] score 0.533 · heuristic
+Responsive columns from a minimum tile width (auto-fill/minmax), consistent aspect ratio per catalog, text under the image not over it unless contrast is guaranteed, and a filter/sort bar that stays reachable. Lazy-load images with reserved aspect boxes to avoid layout shift.
+- use when: Browsing many visually distinguishable items (products, courses, photos) where the image is the primary recognition cue.
+- avoid when: Items with no meaningful image, dense attribute comparison (use a table), or TV (use rails).
+- incompatible with: layout-table-first, layout-three-pane, layout-immersive-rails
+- why: lexical 0.174, structural 0.84 (platform web, input keyboard,pointer,touch, mode create, product ecommerce, screen list)
+
+### Sticky action bar  `cta-sticky-bar`  [pattern/cta; layout/platform] score 0.516 · heuristic
+Bottom-fixed on mobile inside the safe area, sticky footer on desktop; content gets bottom padding equal to the bar height; the bar must not obscure a focused field (WCAG 2.4.11) so scroll the field into view above it.
+- use when: Long forms or detail pages where the primary action must stay reachable (Add to cart, Save, Continue).
+- avoid when: Short screens, TV, or when the bar would cover content without a scroll padding compensation.
+- incompatible with: cta-focus-selects, layout-rails
+- why: lexical 0.214, structural 0.84 (platform web, input pointer,touch, mode create, product ecommerce, screen checkout)
+
+### Filter bar / faceted filters  `comp-filters`  [component/search; component/platform] score 0.511 · heuristic
+Desktop: filter row above the content with chips for applied filters; facets as popovers with checkboxes and counts; 'clear all'; results update with a count. Mobile: filter button with badge count opens a sheet; apply button; applied chips under the search field. Persist in URL.
+- use when: Lists with several filterable attributes.
+- avoid when: One or two filters (inline selects); TV (use rail categories or a simple filter row).
+- why: lexical 0.291, structural 0.78 (platform web, mode create, product ecommerce, screen list)
+
+### One-page checkout  `comp-checkout-one-page`  [component/form; component/platform] score 0.474 · heuristic
+Order summary is visible on desktop (side column) and collapsible-but-present at the top on phones with the total always shown; guest checkout first, account optional; sections in the order contact → shipping → payment → review, each with a visible heading and inline validation on blur plus a focused error summary on submit; address fields use autocomplete attributes and correct input types/IME; the pay button states the amount, is disabled only while processing (with a visible status), and is protected against double submission; trust and cost information (shipping, tax) appears before payment, never as a surprise; progress is saved locally so a reload does not lose entries.
+- use when: Purchase flows with contact, shipping, payment and review on one scrolling page.
+- avoid when: Multi-session or regulated flows that need a stepper with server-side validation per step.
+- html-css: autocomplete="shipping postal-code" etc.; inputmode="numeric" for card and postal fields; aria-describedby error links; aria-live status on the pay button.
+- incompatible with: nav-wizard
+- why: lexical 0.223, structural 0.78 (platform web, mode create, product ecommerce, screen checkout)
+
+### Product detail page (PDP)  `comp-product-detail-page`  [component/detail; component/platform] score 0.442 · heuristic
+Above the fold on every viewport: product name, price (with tabular figures and any discount stated in words), primary image, variant selectors and one add-to-cart action; variant choice is a radio group with visible labels and a disabled-but-visible state for out-of-stock options; the add-to-cart button is sticky on phones without covering focused controls; shipping, returns and stock are stated next to the price, not in a tab; the gallery has fixed aspect boxes (no layout shift), keyboard-operable thumbnails and alt text per image; reviews show the distribution and a count, and stars always have a text value; secondary actions (wishlist, share, size guide) never compete visually with add-to-cart; the size guide opens as a dialog that returns focus.
+- use when: Selling a physical or digital product: gallery, variants, price, availability, add-to-cart, trust and shipping information, reviews.
+- avoid when: Catalog/listing pages (use list + filters) or marketing landing pages (hero + narrative).
+- html-css: <fieldset> variants; <output aria-live="polite"> for price/availability updates; position: sticky bar with scroll-padding-bottom so focused fields stay visible.
+- why: lexical 0.426, structural 0.46 (platform web, mode create, product ecommerce, screen mismatch)
+
+### Top bar navigation  `nav-top-bar`  [pattern/navigation; navigation/platform] score 0.436 · heuristic
+Put primary destinations in a single horizontal bar; collapse to a menu button below the container width rather than hiding destinations one by one. The active item must be marked by more than colour (underline, weight, or aria-current). On narrow widths, the bar keeps the brand mark and one primary action visible.
+- use when: Five or fewer top-level destinations, content-first pages, public or marketing surfaces where a persistent side rail would steal width.
+- avoid when: Deep hierarchies with many peer sections, admin tools that need permanent wayfinding, or anything on TV.
+- html-css: <header><nav aria-label=Primary><ul>…; use :has() or a checkbox-free JS toggle for the collapsed menu.
+- incompatible with: nav-left-rail, nav-tv-side, nav-tv-top-tabs, nav-bottom-tabs
+- why: lexical 0.025, structural 0.76 (platform web, input keyboard,pointer,touch, mode create, product ecommerce)
+
+### Utility commerce  `dir-utility-commerce`  [direction/direction; direction/platform] score 0.412 · internal-preference
+Search and filters dominate the header, product tiles with price and the deciding fact, comparison-friendly metadata, sticky add-to-cart on PDP, brand colour on action and header only, humanist sans for long product names and multilingual catalogues. Identity via tile geometry, price typography, and the filter chip language.
+- use when: Catalogue-heavy retail where finding, comparing, and buying fast matters (electronics, parts, groceries, B2B ordering).
+- avoid when: Brand-led luxury (use 'Editorial storefront').
+- incompatible with: layout-editorial, icon-text-only, metadata-minimal, motion-cinematic
+- why: lexical 0.127, structural 0.76 (platform web, input pointer,touch, mode create, product ecommerce)
+
+### Search and filters: visible state and instant feedback  `search-filter-feedback`  [rule/search; component] score 0.396 · heuristic
+Applied filters as removable chips with a 'clear all', result count announced, debounced query (≈300 ms) with a loading indicator, empty results suggest next steps, filter state in the URL/route, and on TV a search screen with a system keyboard/voice plus results as rails.
+- use when: Catalogues, tables, media libraries, admin lists.
+- avoid when: Never hide applied filters; never reset filters on navigation without asking; never search on every keystroke against a slow backend without debounce.
+- why: lexical 0.181, structural 0.66 (mode create, screen list)
+
+### Elevated cards as the primary container  `surface-elevated-cards`  [pattern/surface; layout/platform] score 0.393 · platform-standard
+One elevation level for resting cards, one for pressed/dragged; the whole card is the target with a single accessible name; never nest a card inside a card; cards in a grid share aspect ratio and padding. If more than ~30% of a screen is card borders, switch to dividers.
+- use when: Each item is a self-contained, tappable object (a product, a post, a course) and the card boundary is also the touch target.
+- avoid when: Dashboards and tables (cards inside cards), text-heavy content, dense desktop tools, or when the card contains a single line of text.
+- incompatible with: surface-flat-tonal, surface-bordered-panes, layout-table-first, layout-three-pane
+- why: lexical 0.019, structural 0.76 (platform web, input pointer,touch, mode create, product ecommerce)
+
+### Inline badges and status chips  `metadata-inline-badges`  [pattern/metadata; layout/platform] score 0.391 · heuristic
+Pill only for status/category/count; text inside the pill (never colour only); ≤2 per item; consistent colour mapping across the product; not clickable unless it is a filter.
+- use when: Status, category, or count must be scannable in lists and headers (Open/Closed, New, 3 unread).
+- avoid when: As decoration on everything; when more than two badges per item appear, the design has become noisy.
+- incompatible with: metadata-minimal, layout-immersive-rails
+- why: lexical 0.065, structural 0.7 (platform web, mode create, product ecommerce)
+
+### Spring-based physical motion  `motion-spring`  [pattern/motion; platform/visual] score 0.382 · platform-standard
+Use the platform spring APIs (SwiftUI .spring, Compose spring(), Motion/Framer spring on web) with one or two named presets (snappy, gentle); interruptible and gesture-tracking; never chain springs on page load.
+- use when: Gesture-driven mobile UI (sheets, swipes, drags) where motion should track the finger and settle naturally; consumer brands wanting liveliness.
+- avoid when: Desktop enterprise tools, TV (springs read as lag on focus), anywhere without gestures.
+- incompatible with: motion-cinematic, density-high, nav-menu-bar-desktop
+- why: lexical 0.0, structural 0.76 (platform web, input pointer,touch, mode create, product ecommerce)
+
+Filtered out: dir-broadcast-guide-tv (platform ['tv'] not in request ['web']); nav-bottom-tabs (platform ['mobile'] not in request ['web']); typography-system-native (platform ['desktop', 'mobile', 'tv'] not in request ['web']); cta-focus-selects (platform ['tv'] not in request ['web']); cta-fab (platform ['mobile'] not in request ['web']); tv-player-controls (platform ['tv'] not in request ['web']); mobile-density-touch (platform ['mobile'] not in request ['web']); desktop-state-persistence (platform ['desktop'] not in request ['web'])

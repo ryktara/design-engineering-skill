@@ -1,0 +1,142 @@
+{
+ "task": "p4-12",
+ "project": "p3-tvos-swiftui",
+ "platform": "tv",
+ "stack": "swiftui",
+ "existing_ui": true,
+ "new_screen": true,
+ "mode": "create",
+ "change_budget": "moderate",
+ "render_mode": "html-twin",
+ "screenshots": [
+  "render/first-search-idle.png",
+  "render/first-search-idle-recent.png",
+  "render/first-search-keyboard-typing.png",
+  "render/first-search-results-first-card.png",
+  "render/first-search-results-episodes.png",
+  "render/first-search-results-field.png",
+  "render/first-search-empty.png",
+  "render/first-search-reduced-motion.png",
+  "render/final-search-idle.png",
+  "render/final-search-idle-recent.png",
+  "render/final-search-keyboard-typing.png",
+  "render/final-search-results-first-card.png",
+  "render/final-search-results-episodes.png",
+  "render/final-search-results-field.png",
+  "render/final-search-empty.png",
+  "render/final-search-reduced-motion.png"
+ ],
+ "context_detection": {
+  "navigation": "partial",
+  "theme": "yes",
+  "typography": "no",
+  "surfaces": "no",
+  "spacing": "no"
+ },
+ "preservation": {
+  "navigation": true,
+  "theme": true,
+  "typography": true,
+  "component_reuse": true,
+  "unjustified_structural_change": 0,
+  "justified_structural_change": "two-tab CatalogueShell added as the entry point for Search (app had no navigation)"
+ },
+ "first_render_defects": {
+  "visual": 1,
+  "interaction": 1,
+  "accessibility": 0,
+  "platform": 2,
+  "existing-system-mismatch": 0,
+  "implementation-bug": 1
+ },
+ "final_defects": {
+  "visual": 0,
+  "interaction": 0,
+  "accessibility": 0,
+  "platform": 0,
+  "existing-system-mismatch": 0,
+  "implementation-bug": 0
+ },
+ "iterations": 3,
+ "guidance_relevant": 4,
+ "guidance_partial": 1,
+ "guidance_offtarget": 3,
+ "interaction_test": {
+  "file": "05-interaction-final.json",
+  "pass": 33,
+  "fail": 0,
+  "first_pass": 29,
+  "first_fail": 2,
+  "phase3_suite": "51/51 (one pre-existing timing flake observed in 1 of 4 runs)"
+ },
+ "misses": [
+  {
+   "layer": "requirements",
+   "what": "'existing sign-in and player styling' parsed as screens auth+player and job authentication to create; intent.preserve empty; risk=medium unexplained"
+  },
+  {
+   "layer": "candidate-retrieval",
+   "what": "comp-search absent from the top-12 for the task sentence (comp-tv-sign-in, comp-player-controls, comp-mini-player rank above it); a focused query ranks it first at 0.748"
+  },
+  {
+   "layer": "bundle-selection",
+   "what": "three off-target cores (sign-in, player controls, mini player); tv-back-behavior, layout-rails/comp-tv-rail, tv-safe-area not selected; performance concern uncovered"
+  },
+  {
+   "layer": "project-adaptation",
+   "what": "inspector: surfaces 'elevated' (actual flat tonal), radius 8 (actual 16 continuous), spacing 'irregular' (LumenSpace scale), typography unknown (LumenFont), components unknown (TVButtonStyle etc.)"
+  },
+  {
+   "layer": "direction",
+   "what": "nav-tv-side for a 2-section tvOS app (platform file: top tabs), layout-split-player for a search screen, condensed display type against the stack file, immersive backdrop"
+  },
+  {
+   "layer": "expected-concepts",
+   "what": "no concept for the tvOS system keyboard model (scrolling row, DOWN into content, Menu closes, dictation) or for wide-control lift at the safe edge"
+  }
+ ],
+ "knowledge_gaps": [
+  "tvOS system keyboard interaction model (one scrolling row; DOWN leaves into content; Menu closes it; Siri dictation) as a record comp-search can point to",
+  "wide control (field/button > ~500 pt) at the safe-area edge must lift less or reserve the overflow — Phase 3 tvOS gap still open",
+  "adding a first navigation to an app that had none: section count decides top tabs vs side nav (rule exists in platforms/tv.md but not as a retrievable record)"
+ ],
+ "regressions": [
+  {
+   "query": "add a search screen to the tvOS documentary app that fits the existing sign-in and player styling",
+   "expect": "screen=[search]; jobs=[search]; comp-search first; no sign-in/player/mini-player cores; tv-back-behavior + layout-rails present; direction navigation=top tabs, typography=system"
+  },
+  {
+   "query": "which navigation for a tvOS app with two sections",
+   "expect": "top tabs (TabView), not nav-tv-side"
+  },
+  {
+   "query": "tvOS search: what happens to focus when Menu is pressed in the results",
+   "expect": "results → keyboard/field → leave"
+  },
+  {
+   "query": "inspect SwiftUI project with Font.system(size:) enum, spacing enum and cornerRadius 16",
+   "expect": "typography KNOWN, spacing KNOWN, radius large, surfaces flat"
+  }
+ ],
+ "tags": [
+  "preservation-ok",
+  "skill-helped",
+  "requirements-miss",
+  "context-detection-miss",
+  "direction-mismatch",
+  "ranking-miss",
+  "knowledge-gap",
+  "render-defect-fixed",
+  "tooling-limit"
+ ],
+ "kb_drift_during_run": {
+  "skill_data_modified_at": "12:23-12:57 (not by this run)",
+  "analysis_files_at": "12:20-12:21",
+  "rerun_files": [
+   "02-requirements-rerun-1303.json",
+   "03-guidance-rerun-1303.json"
+  ],
+  "guidance_changed": false,
+  "requirements_changed": false
+ }
+}

@@ -1,0 +1,18 @@
+{
+  "platform": "mobile",
+  "artifact_state": "existing",
+  "acceptable_modes": ["create", "refactor"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "state.offline_sync",
+    "state.loading_empty_error",
+    "a11y.live_status",
+    "touch.minimum_target",
+    "a11y.color_not_only",
+    "process.reuse_first"
+  ],
+  "critical_concepts": ["state.offline_sync", "state.loading_empty_error"],
+  "forbidden_concepts": ["tv.no_touch_hover", "media.live_channel_switching", "table.virtualization", "state.session_expiry"],
+  "preservation": ["navigation", "theme", "typography"],
+  "reviewer_note": "The codebase ALREADY has lib/widgets/offline_banner.dart (five states incl. a Retry action on send failure) mounted on the checklist screen (the only 'report list' surface) and ErrorView with a 'Try again' retry. Correct answer is therefore reuse-first: do not build a second banner; the real gap is that the offline state of the banner offers only 'Queue' and no manual retry/'Try again now' when signal comes back, so guidance that pushes a new component would be wrong for this codebase."
+}

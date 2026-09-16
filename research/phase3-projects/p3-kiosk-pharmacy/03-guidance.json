@@ -1,0 +1,380 @@
+{
+  "schema": "guidance-bundle/v1",
+  "query": "Pharmacy prescription pick-up kiosk flow: identify the patient, show ready prescriptions, confirm; public touch screen in the store",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "kiosk"
+    ],
+    "input": [
+      "touch"
+    ],
+    "product": [
+      "ecommerce",
+      "healthcare"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [],
+    "density": null,
+    "components": [],
+    "environment": [
+      "public"
+    ],
+    "jobs": [
+      "high-risk-action"
+    ],
+    "problems": [],
+    "risk": "high",
+    "primary_jobs": [
+      "high-risk-action",
+      "create"
+    ],
+    "constraints": {
+      "performance_sensitive": true
+    },
+    "accessibility": {
+      "screen_reader": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "known": [
+      "platform=kiosk",
+      "input=touch",
+      "product=ecommerce",
+      "product=healthcare",
+      "job=high-risk-action"
+    ],
+    "inferred": [
+      "mode=create",
+      "environment=public"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available",
+      "stack: implementation stack not stated and no repository evidence"
+    ],
+    "status": "CONFIDENT"
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "structure",
+        "reason": "layout topology and hierarchy"
+      },
+      {
+        "concern": "states",
+        "reason": "every screen ships empty/loading/error states"
+      },
+      {
+        "concern": "interaction",
+        "reason": "input model: touch"
+      },
+      {
+        "concern": "accessibility",
+        "reason": "platform accessibility baseline"
+      },
+      {
+        "concern": "environment",
+        "reason": "public kiosk use"
+      },
+      {
+        "concern": "privacy",
+        "reason": "shared public device"
+      },
+      {
+        "concern": "feedback",
+        "reason": "high-risk action: confirmation and recovery"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "navigation",
+        "reason": "how users arrive and leave"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "create/refactor requests attract generic defaults"
+      },
+      {
+        "concern": "brand",
+        "reason": "visual identity direction"
+      },
+      {
+        "concern": "performance",
+        "reason": "performance-sensitive context"
+      }
+    ],
+    "optional": [
+      "motion",
+      "content"
+    ],
+    "required_concepts": [
+      {
+        "concept": "touch.minimum_target",
+        "reason": "touch platform"
+      },
+      {
+        "concept": "privacy.shared_device",
+        "reason": "kiosk"
+      },
+      {
+        "concept": "feedback.confirmation_destructive",
+        "reason": "high-risk job"
+      }
+    ],
+    "recommended_concepts": [
+      "state.loading_empty_error",
+      "touch.gestures_discoverable",
+      "touch.thumb_reach",
+      "state.session_expiry"
+    ]
+  },
+  "core": [
+    {
+      "id": "dir-public-kiosk",
+      "kind": "direction",
+      "category": "direction",
+      "title": "Public kiosk",
+      "facets": [
+        "direction",
+        "platform"
+      ],
+      "concerns": [
+        "brand",
+        "structure"
+      ],
+      "concepts": [],
+      "score": 0.572,
+      "guidance": "Attract screen → hub of large tiles → linear flows with one giant primary action, ≥60 px targets in the reach zone, ≥20 px text with high contrast for glare, brand colour on header and primary action, filled icons with labels, idle timeout with countdown, cancel always visible, audio/visual feedback. Identity via tile geometry, illustration, and the brand colour field.",
+      "use_when": "Self-service terminals, check-in, ordering, ticketing.",
+      "avoid_when": "Never for staff-side tools.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "internal-preference",
+      "incompatible": [
+        "layout-table-first",
+        "nav-left-rail",
+        "density-high",
+        "surface-glass",
+        "metadata-rich"
+      ],
+      "role": "core",
+      "selected_for": "highest-scoring direction with lexical evidence"
+    },
+    {
+      "id": "icon-filled-system",
+      "kind": "pattern",
+      "category": "icon",
+      "title": "Filled icons for distance and touch",
+      "facets": [
+        "platform",
+        "visual"
+      ],
+      "concerns": [
+        "brand",
+        "content"
+      ],
+      "concepts": [],
+      "score": 0.457,
+      "guidance": "Filled or bold-weight set at ≥24 dp (≥32 dp on TV), always with a visible label in navigation, filled/outline swap allowed only to show selection.",
+      "use_when": "TV, kiosks, and touch UI where icons must read at a glance and at distance; selected states in tab bars (filled = selected).",
+      "avoid_when": "Dense desktop UI where filled icons become heavy blobs.",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "incompatible": [
+        "icon-outline-system",
+        "surface-bordered-panes"
+      ],
+      "role": "core",
+      "selected_for": "highest-scoring pattern with lexical evidence"
+    },
+    {
+      "id": "focus-none-touch-only",
+      "kind": "pattern",
+      "category": "focus",
+      "title": "Touch-only focus handling (mobile)",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [],
+      "score": 0.395,
+      "guidance": "Pressed state within 100 ms (ripple/opacity/scale), 44 pt / 48 dp targets, screen-reader focus order = visual order, and platform focus visuals left enabled for keyboard/switch users (do not disable). Kiosks: larger targets (≥ 60 px) and no hover-dependent affordances.",
+      "use_when": "Native mobile and kiosk apps where there is no persistent keyboard focus; feedback is pressed state + screen-reader focus provided by the platform.",
+      "avoid_when": "Any app that supports hardware keyboards, external pointers (iPadOS, Android desktop mode), or switch access without testing them.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "incompatible": [
+        "focus-ring-standard",
+        "focus-scale-glow"
+      ],
+      "role": "core",
+      "selected_for": "highest-scoring pattern with lexical evidence"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "states-persistence-and-session",
+      "kind": "rule",
+      "category": "states",
+      "title": "Saving, saved, autosave, session expiry, and permission-denied states",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "feedback",
+        "states"
+      ],
+      "concepts": [
+        "state.saving_conflict",
+        "state.session_expiry",
+        "feedback.confirmation_destructive"
+      ],
+      "score": 0.309,
+      "guidance": "Show saving → saved as a quiet inline status with a timestamp (not a toast per keystroke); autosave drafts and say so; warn before a session expires with a way to extend, and never discard entered data on expiry (restore the draft after re-authentication); permission-denied is a designed state that explains what is missing and who can grant it rather than an empty screen; destructive or irreversible saves confirm once with the safe action as default.",
+      "use_when": "Forms and editors longer than a minute, multi-step flows, authenticated sessions with timeouts, screens whose data depends on permissions.",
+      "avoid_when": "Trivial one-field actions that complete instantly.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "role": "guardrail",
+      "selected_for": "required concern states: every screen ships empty/loading/error states"
+    },
+    {
+      "id": "kiosk-public-use",
+      "kind": "rule",
+      "category": "input",
+      "title": "Kiosk: public, hurried, standing users",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "environment",
+        "interaction",
+        "privacy"
+      ],
+      "concepts": [
+        "touch.minimum_target",
+        "privacy.shared_device",
+        "state.session_expiry"
+      ],
+      "score": 0.498,
+      "guidance": "Targets ≥60 px, body text ≥20 px, high contrast for glare, one task per screen, reachable-height controls (ADA reach ranges: interactive elements within 380–1220 mm), idle timeout with countdown that clears the session, attract screen as the hub, audio/visual feedback on every tap, and a visible way to cancel at every step.",
+      "use_when": "Self-service, POS, check-in, ticketing, signage with touch.",
+      "avoid_when": "Never require hover, precise dragging, small text, or scrolling to find the primary action; never keep personal data on screen after inactivity.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "incompatible": [
+        "layout-table-first",
+        "density-high",
+        "nav-menu-bar-desktop"
+      ],
+      "role": "guardrail",
+      "selected_for": "required concern environment: public kiosk use"
+    },
+    {
+      "id": "nav-orientation-and-back",
+      "kind": "rule",
+      "category": "navigation",
+      "title": "Users always know where they are and how to go back",
+      "facets": [
+        "navigation"
+      ],
+      "concerns": [
+        "navigation"
+      ],
+      "concepts": [],
+      "score": 0.265,
+      "guidance": "Current location marked (aria-current, selected tab, breadcrumb, page title); URL/route reflects state on web and deep-linkable screens; back returns to the previous screen with its scroll and selection; titles match the navigation label that led there.",
+      "use_when": "Every navigation model; deep links; multi-step flows; tabs that hold stacks.",
+      "avoid_when": "Never break the browser/system back; never use a single URL for many states on the web.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "role": "guardrail",
+      "selected_for": "recommended concern navigation: how users arrive and leave"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "structure",
+      "states",
+      "interaction",
+      "accessibility",
+      "environment",
+      "privacy",
+      "feedback"
+    ],
+    "covered_required_concerns": [
+      "structure",
+      "states",
+      "interaction",
+      "accessibility",
+      "environment",
+      "privacy",
+      "feedback"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "navigation",
+      "anti-pattern",
+      "brand",
+      "performance"
+    ],
+    "covered_recommended_concerns": [
+      "navigation",
+      "brand"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "touch.minimum_target",
+      "privacy.shared_device",
+      "feedback.confirmation_destructive"
+    ],
+    "covered_required_concepts": [
+      "touch.minimum_target",
+      "privacy.shared_device",
+      "feedback.confirmation_destructive"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "bundle_size": 6,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 3,
+    "guardrail_size": 3,
+    "category_diversity": 1.0,
+    "duplicate_pressure": 0.17,
+    "facet_coverage": 0.8,
+    "redundancy": 0.17
+  },
+  "token_coverage": 0.67
+}

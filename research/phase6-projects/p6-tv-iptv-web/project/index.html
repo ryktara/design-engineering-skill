@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920, height=1080, user-scalable=no">
+  <title>Meridian TV</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/tv.css">
+</head>
+<body>
+  <div id="app" class="app">
+    <header class="topbar" id="topbar">
+      <div class="brand">Meridian<span class="brand-dot">.</span>TV</div>
+      <nav class="topnav" id="topnav">
+        <button class="nav-item focusable" data-screen="home">Home</button>
+        <button class="nav-item focusable" data-screen="guide">Guide</button>
+        <button class="nav-item focusable" data-screen="settings">Settings</button>
+      </nav>
+      <div class="clock" id="clock">--:--</div>
+    </header>
+
+    <main id="screen" class="screen"></main>
+  </div>
+
+  <script src="js/keys.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/focus.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

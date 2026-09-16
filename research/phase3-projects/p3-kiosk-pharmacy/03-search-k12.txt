@@ -1,0 +1,88 @@
+## design-engineering search: Pharmacy prescription pick-up kiosk flow: identify the patient, show ready prescriptions, confirm; public touch screen in the store
+status=CONFIDENT modes=['create'] platforms={'kiosk': 'KNOWN'} inputs={'touch': 'KNOWN'} products={'ecommerce': 'KNOWN', 'healthcare': 'KNOWN'} density=None stacks=[] screens=[] negatives=[]
+facets required=['layout', 'platform', 'interaction', 'navigation', 'direction'] unmet=['layout'] diversity=0.75
+MISSING: brand: no brand assets, guideline, or character description available; stack: implementation stack not stated and no repository evidence
+
+### Public kiosk  `dir-public-kiosk`  [direction/direction; direction/platform] score 0.572 · internal-preference
+Attract screen → hub of large tiles → linear flows with one giant primary action, ≥60 px targets in the reach zone, ≥20 px text with high contrast for glare, brand colour on header and primary action, filled icons with labels, idle timeout with countdown, cancel always visible, audio/visual feedback. Identity via tile geometry, illustration, and the brand colour field.
+- use when: Self-service terminals, check-in, ordering, ticketing.
+- avoid when: Never for staff-side tools.
+- incompatible with: layout-table-first, nav-left-rail, density-high, surface-glass, metadata-rich
+- why: lexical 0.5, structural 0.66 (platform kiosk, input touch (stated), mode create)
+
+### Kiosk: public, hurried, standing users  `kiosk-public-use`  [rule/input; interaction/platform] score 0.498 · platform-standard
+Targets ≥60 px, body text ≥20 px, high contrast for glare, one task per screen, reachable-height controls (ADA reach ranges: interactive elements within 380–1220 mm), idle timeout with countdown that clears the session, attract screen as the hub, audio/visual feedback on every tap, and a visible way to cancel at every step.
+- use when: Self-service, POS, check-in, ticketing, signage with touch.
+- avoid when: Never require hover, precise dragging, small text, or scrolling to find the primary action; never keep personal data on screen after inactivity.
+- incompatible with: layout-table-first, density-high, nav-menu-bar-desktop
+- why: lexical 0.251, structural 0.8 (platform kiosk, input touch (stated), mode create)
+
+### Filled icons for distance and touch  `icon-filled-system`  [pattern/icon; platform/visual] score 0.457 · platform-standard
+Filled or bold-weight set at ≥24 dp (≥32 dp on TV), always with a visible label in navigation, filled/outline swap allowed only to show selection.
+- use when: TV, kiosks, and touch UI where icons must read at a glance and at distance; selected states in tab bars (filled = selected).
+- avoid when: Dense desktop UI where filled icons become heavy blobs.
+- incompatible with: icon-outline-system, surface-bordered-panes
+- why: lexical 0.182, structural 0.66 (platform kiosk, input touch (stated), mode create)
+
+### Hub and spoke  `nav-hub-spoke`  [pattern/navigation; navigation/platform] score 0.412 · heuristic
+One home screen of large, labelled entry points; each spoke is a linear flow with an obvious way back to the hub. Group entry points by user goal, not by internal system module. On kiosks, the hub also serves as the idle/attract screen and every spoke must time out back to it.
+- use when: Infrequent, distinct tasks (pay a bill, book a slot, check a reading) where users come in for one job and leave; kiosks and public-service apps.
+- avoid when: Frequent switching between areas, browsing/discovery products, or dense tools.
+- incompatible with: nav-left-rail, nav-bottom-tabs, nav-top-bar, layout-three-pane
+- why: lexical 0.022, structural 0.8 (platform kiosk, input touch (stated), mode create, product healthcare)
+
+### Touch-only focus handling (mobile)  `focus-none-touch-only`  [pattern/focus; interaction/platform] score 0.395 · platform-standard
+Pressed state within 100 ms (ripple/opacity/scale), 44 pt / 48 dp targets, screen-reader focus order = visual order, and platform focus visuals left enabled for keyboard/switch users (do not disable). Kiosks: larger targets (≥ 60 px) and no hover-dependent affordances.
+- use when: Native mobile and kiosk apps where there is no persistent keyboard focus; feedback is pressed state + screen-reader focus provided by the platform.
+- avoid when: Any app that supports hardware keyboards, external pointers (iPadOS, Android desktop mode), or switch access without testing them.
+- incompatible with: focus-ring-standard, focus-scale-glow
+- why: lexical 0.069, structural 0.66 (platform kiosk, input touch (stated), mode create)
+
+### Rounded friendly sans  `typography-rounded-friendly`  [pattern/typography; platform/visual] score 0.393 · aesthetic
+Rounded terminals (e.g. Nunito, Quicksand for display only, Varela Round, M PLUS Rounded) with generous size; keep weights ≥500 for legibility; pair corner radius and icon style consistently with the type.
+- use when: Children, wellness, playful consumer brands, kiosks for the general public.
+- avoid when: Finance, enterprise, anything where 'friendly' undermines trust; also avoid if it is only chosen because the icons are rounded.
+- incompatible with: typography-serif-editorial, density-high, surface-bordered-panes
+- why: lexical 0.043, structural 0.8 (platform kiosk, input touch (stated), mode create, product healthcare)
+
+### Privacy on shared and public screens  `shared-device-privacy`  [rule/privacy; accessibility/platform] score 0.368 · heuristic
+Assume onlookers: mask sensitive values by default with an explicit reveal (balances, medication, addresses), gate personal profiles and purchases behind a PIN on shared TVs, keep notifications and previews generic on shared screens, clear the session and screen on idle or sign-out (kiosks, waiting rooms), and never show one user's data while another profile is active. Announce masked values to assistive tech as masked, not as the value.
+- use when: TVs in a household, waiting-room tablets, kiosks, wall displays, any screen other people can see; personal data, balances, health details, viewing history, messages.
+- avoid when: Single-user personal devices with a lock screen already protecting the data.
+- why: lexical 0.129, structural 0.66 (platform kiosk, mode create, product healthcare)
+
+### Target size by platform  `a11y-target-size`  [rule/input; interaction] score 0.362 · accessibility-requirement
+Web: ≥24×24 CSS px minimum (WCAG 2.5.8), 44×44 recommended for touch. iOS ≥44 pt, Android ≥48 dp, kiosk ≥60 px, desktop pointer ≥24 epx with 4–8 px spacing. Extend the hit area beyond the visual glyph rather than enlarging the icon.
+- use when: Every tappable/clickable element; especially icon buttons, table row actions, chips, close buttons, and pagination.
+- avoid when: Inline text links inside a sentence are exempt from the size rule but still need spacing.
+- why: lexical 0.102, structural 0.68 (input touch (stated), mode create)
+
+### Humanist sans for approachable products  `typography-humanist-sans`  [pattern/typography; visual] score 0.342 · aesthetic
+Open apertures and generous x-height (e.g. Source Sans 3, Nunito Sans, Open Sans, Fira Sans, Noto Sans for coverage). Pair with a slightly heavier weight for headings rather than a second family unless brand demands it.
+- use when: Consumer or public-service products where warmth and legibility for broad audiences matter; long forms; multilingual content.
+- avoid when: Tech/luxury brands wanting a sharp identity, or when the product already uses a geometric face consistently.
+- incompatible with: typography-condensed-display, typography-monospace-technical
+- why: lexical 0.09, structural 0.54 (mode create, product ecommerce,healthcare)
+
+### Hero imagery on landing/brand pages  `imagery-hero`  [pattern/imagery; platform/visual] score 0.335 · heuristic
+The hero is a thesis about the product: show the actual thing (product, interface, outcome). Reserve aspect box to avoid CLS, serve responsive sources, LCP image preloaded, text contrast guaranteed by placement or scrim, and no autoplay video without a static poster and reduced-motion respect.
+- use when: Landing and campaign pages where a real photograph, product render, or live demo communicates the offer better than words.
+- avoid when: Dashboards, apps, article pages; and never as a default 'headline + subtitle + two buttons + screenshot' block for unrelated products.
+- incompatible with: imagery-none, layout-table-first, layout-dashboard-grid, density-high
+- why: lexical 0.015, structural 0.66 (platform kiosk, mode create, product ecommerce)
+
+### Dominant brand colour  `color-dominant-brand`  [pattern/color; platform/visual] score 0.327 · aesthetic
+Brand colour on large surfaces with a verified on-colour text token; a secondary neutral for content areas; do not derive the whole palette by tinting everything with the brand hue. Interactive states need visible deltas on the brand surface.
+- use when: Brand recognition is the goal (marketing, consumer apps, kiosks in a branded space) and the brand colour can carry large surfaces with compliant text on it.
+- avoid when: Data-dense tools (colour noise), or when the brand colour fails 4.5:1 with both black and white text (then it can only be an accent).
+- incompatible with: color-neutral-accent, layout-table-first, density-high
+- why: lexical 0.0, structural 0.66 (platform kiosk, mode create, product ecommerce)
+
+### Illustration system  `imagery-illustration`  [pattern/imagery; platform/visual] score 0.317 · aesthetic
+Define the style (line, flat, isometric) once, use it in ≤4 places (onboarding, empty, error, success), keep it meaningful (depicts the task), and mark decorative instances aria-hidden.
+- use when: Onboarding, empty states, and explanatory moments where a consistent illustration style (one stroke weight, one palette) supports comprehension; brands with an illustration language.
+- avoid when: As decoration on every card/section (the 'blob and person' AI marker), or when no consistent style can be maintained.
+- incompatible with: imagery-immersive-backdrop, density-high, layout-table-first
+- why: lexical 0.0, structural 0.66 (platform kiosk, mode create, product healthcare)
+
+Filtered out: anti-desktop-scaled-to-tv (platform ['tv'] not in request ['kiosk']); anti-hover-only-actions (platform ['desktop', 'web'] not in request ['kiosk']); chart-flow-sankey (platform ['desktop', 'web'] not in request ['kiosk']); comp-media-card (platform ['mobile', 'tv', 'web'] not in request ['kiosk']); comp-epg (platform ['tablet', 'tv', 'web'] not in request ['kiosk']); comp-hero-section (platform ['mobile', 'web'] not in request ['kiosk']); comp-tv-sign-in (platform ['tv'] not in request ['kiosk']); dir-service-app-mobile (platform ['mobile'] not in request ['kiosk'])

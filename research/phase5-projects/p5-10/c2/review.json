@@ -1,0 +1,26 @@
+{
+  "task": "p5-10",
+  "reviewer_model": "claude-opus-5[1m]",
+  "c2_records": [
+    {"id": "comp-tv-side-sheet", "verdict": "relevant", "bad_category": null},
+    {"id": "comp-player-controls", "verdict": "relevant", "bad_category": null},
+    {"id": "layout-split-player", "verdict": "relevant", "bad_category": null},
+    {"id": "comp-mini-player", "verdict": "partial", "bad_category": null},
+    {"id": "tv-dpad-hold-pacing", "verdict": "off-target", "bad_category": "generic"},
+    {"id": "a11y-color-not-only", "verdict": "relevant", "bad_category": null},
+    {"id": "impl-reuse-before-new", "verdict": "partial", "bad_category": null},
+    {"id": "tv-focus-performance", "verdict": "off-target", "bad_category": "generic"}
+  ],
+  "c2_relevant": 4,
+  "c2_partial": 2,
+  "c2_offtarget": 2,
+  "c2_bad": [
+    {"record": "tv-dpad-hold-pacing", "category": "generic", "why": "Hold-repeat pacing for rails and grids (cards per second, page-jump for long lists) is the p5-09 defect, not a two-column track chooser; selected only to cover dpad_reachability/focus_visible."},
+    {"record": "tv-focus-performance", "category": "generic", "why": "Repeat of the c1 miss: virtualisation, image sizing and 'never coalesce key events' are irrelevant to a track chooser, and it still delivers table.virtualization, a forbidden concept for this task."}
+  ],
+  "c2_direction_unjustified": [],
+  "platform_mode_scope_ok": true,
+  "verdict_vs_c1": "better",
+  "why": "The new comp-tv-side-sheet record states almost exactly what the implementer had to supply from own knowledge in c1 (first focus on the current value, selected = fill + check + semantics distinct from the focus ring, BACK returns focus to the opening button, current choice shown next to the button, Off row and a no-tracks state, controls not auto-hiding while the sheet is open), closing both c1 critical concept misses (interaction.selection_visible, a11y.dialog_focus), and the direction no longer proposes icon-custom-glyphs or metadata-focus-reveal against the codebase.",
+  "would_have_helped": "helped"
+}

@@ -1,0 +1,1132 @@
+{
+ "description": "Phase 5 platform-evidence cases (written before implementation, 2026-09-09). Platform must come from typed evidence (explicit, stack, form factor, modality, OS, environment, repository, product wording) with strengths; weak evidence alone must stay UNKNOWN with a MISSING confirm entry rather than a wrong platform.",
+ "suite": "platform_evidence",
+ "cases": [
+  {
+   "id": "pe-001",
+   "query": "Design this for people sitting ten feet away.",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "tv": "STRONG_INFERENCE"
+   },
+   "expect_inputs": [
+    "remote"
+   ]
+  },
+  {
+   "id": "pe-002",
+   "query": "living-room media app controlled from the couch",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "tv": "STRONG_INFERENCE"
+   }
+  },
+  {
+   "id": "pe-003",
+   "query": "Optimize this controller-driven media browser.",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [
+    "desktop"
+   ],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "tv": "STRONG_INFERENCE"
+   }
+  },
+  {
+   "id": "pe-004",
+   "query": "This React interface runs inside our smart-TV shell.",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "web"
+   ],
+   "expect_strength": {
+    "tv": "DIRECT"
+   }
+  },
+  {
+   "id": "pe-005",
+   "query": "the guide screen on the cable box",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "tv": "DIRECT"
+   },
+   "note": "2026-09-09: strength expectation corrected before implementation review: a phrase that names the device class (cable box, Roku, Tizen, fire stick, ticket machine, self-checkout, check-in terminal, Chrome/Safari, intranet, 'desktop ... client') is DIRECT evidence by the model's own definition."
+  },
+  {
+   "id": "pe-006",
+   "query": "set-top box UI for a hotel",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "tv": "DIRECT"
+   }
+  },
+  {
+   "id": "pe-007",
+   "query": "Compose interface running on TV",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile"
+   ],
+   "expect_strength": {
+    "tv": "DIRECT"
+   }
+  },
+  {
+   "id": "pe-008",
+   "query": "SwiftUI app for Apple TV",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile"
+   ],
+   "expect_strength": {
+    "tv": "DIRECT"
+   }
+  },
+  {
+   "id": "pe-009",
+   "query": "Android app for a television with touch input",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile"
+   ],
+   "expect_inputs": [
+    "touch"
+   ]
+  },
+  {
+   "id": "pe-010",
+   "query": "the home screen users navigate with the arrow keys on their remote",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "tv": "STRONG_INFERENCE"
+   }
+  },
+  {
+   "id": "pe-011",
+   "query": "our Roku-style channel app",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "tv": "DIRECT"
+   },
+   "note": "2026-09-09: strength expectation corrected before implementation review: a phrase that names the device class (cable box, Roku, Tizen, fire stick, ticket machine, self-checkout, check-in terminal, Chrome/Safari, intranet, 'desktop ... client') is DIRECT evidence by the model's own definition."
+  },
+  {
+   "id": "pe-012",
+   "query": "a webview that plays inside a Samsung Tizen app",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [
+    "web"
+   ],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "tv": "DIRECT"
+   },
+   "note": "2026-09-09: strength expectation corrected before implementation review: a phrase that names the device class (cable box, Roku, Tizen, fire stick, ticket machine, self-checkout, check-in terminal, Chrome/Safari, intranet, 'desktop ... client') is DIRECT evidence by the model's own definition."
+  },
+  {
+   "id": "pe-013",
+   "query": "leanback catalogue for our streaming service",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "tv": "DIRECT"
+   }
+  },
+  {
+   "id": "pe-014",
+   "query": "the big-screen version of the player",
+   "expect_platforms": [],
+   "acceptable": [
+    "tv",
+    "desktop"
+   ],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "tv": "WEAK_INFERENCE"
+   },
+   "note": "big screen alone is weak: TV likely but a large monitor is possible 2026-09-09: corrected before implementation review: the case demanded a platform from WEAK evidence, contradicting the model rule that weak evidence alone stays UNKNOWN with a MISSING confirm entry.",
+   "expect_unknown": true
+  },
+  {
+   "id": "pe-015",
+   "query": "used one-handed while walking between jobs",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "mobile": "STRONG_INFERENCE"
+   },
+   "expect_inputs": [
+    "touch"
+   ]
+  },
+  {
+   "id": "pe-016",
+   "query": "the app people use on the bus with one thumb",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "mobile": "STRONG_INFERENCE"
+   }
+  },
+  {
+   "id": "pe-017",
+   "query": "Make the checkout easier on handsets.",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [
+    "web"
+   ],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "mobile": "DIRECT"
+   }
+  },
+  {
+   "id": "pe-018",
+   "query": "our Play Store app's settings",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "mobile": "DIRECT"
+   }
+  },
+  {
+   "id": "pe-019",
+   "query": "the iOS version of the timeline",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "mobile": "DIRECT"
+   }
+  },
+  {
+   "id": "pe-020",
+   "query": "pocket-sized companion app for the vending machines",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "mobile": "STRONG_INFERENCE"
+   }
+  },
+  {
+   "id": "pe-021",
+   "query": "SwiftUI screen for the iPhone client",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "mobile": "DIRECT"
+   }
+  },
+  {
+   "id": "pe-022",
+   "query": "React Native order tracker",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "mobile": "STRONG_INFERENCE"
+   },
+   "note": "framework alone is inference, not direct"
+  },
+  {
+   "id": "pe-023",
+   "query": "Flutter checklist for field crews",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "mobile": "STRONG_INFERENCE"
+   }
+  },
+  {
+   "id": "pe-024",
+   "query": "a Compose screen for the courier handset",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "mobile": "DIRECT"
+   }
+  },
+  {
+   "id": "pe-025",
+   "query": "Android widget for glanceable delivery status",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "mobile": "STRONG_INFERENCE"
+   }
+  },
+  {
+   "id": "pe-026",
+   "query": "Make the admin tool work well on Surface tablets.",
+   "expect_platforms": [
+    "tablet"
+   ],
+   "acceptable": [
+    "web",
+    "desktop"
+   ],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "tablet": "DIRECT"
+   }
+  },
+  {
+   "id": "pe-027",
+   "query": "on an iPad in the clinic",
+   "expect_platforms": [
+    "tablet"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "tablet": "DIRECT"
+   },
+   "expect_inputs": [
+    "touch"
+   ]
+  },
+  {
+   "id": "pe-028",
+   "query": "Android tablet app for restaurant waiters",
+   "expect_platforms": [
+    "tablet"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "tv"
+   ],
+   "expect_strength": {
+    "tablet": "DIRECT"
+   }
+  },
+  {
+   "id": "pe-029",
+   "query": "desktop web app used on tablets",
+   "expect_platforms": [
+    "web",
+    "tablet"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "web": "DIRECT",
+    "tablet": "DIRECT"
+   }
+  },
+  {
+   "id": "pe-030",
+   "query": "the 12-inch slate our nurses carry",
+   "expect_platforms": [
+    "tablet"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "tablet": "STRONG_INFERENCE"
+   }
+  },
+  {
+   "id": "pe-031",
+   "query": "Improve this macOS utility window.",
+   "expect_platforms": [
+    "desktop"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "desktop": "DIRECT"
+   }
+  },
+  {
+   "id": "pe-032",
+   "query": "desktop inventory client",
+   "expect_platforms": [
+    "desktop"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "desktop": "DIRECT"
+   },
+   "note": "2026-09-09: strength expectation corrected before implementation review: a phrase that names the device class (cable box, Roku, Tizen, fire stick, ticket machine, self-checkout, check-in terminal, Chrome/Safari, intranet, 'desktop ... client') is DIRECT evidence by the model's own definition."
+  },
+  {
+   "id": "pe-033",
+   "query": "an Electron app for our support agents",
+   "expect_platforms": [
+    "desktop"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "desktop": "DIRECT"
+   }
+  },
+  {
+   "id": "pe-034",
+   "query": "WPF tool for the finance team",
+   "expect_platforms": [
+    "desktop"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "desktop": "DIRECT"
+   }
+  },
+  {
+   "id": "pe-035",
+   "query": "Avalonia screen for the lab technicians' workstation",
+   "expect_platforms": [
+    "desktop"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "desktop": "DIRECT"
+   }
+  },
+  {
+   "id": "pe-036",
+   "query": "the Windows program our dispatchers keep open all day",
+   "expect_platforms": [
+    "desktop"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "desktop": "STRONG_INFERENCE"
+   }
+  },
+  {
+   "id": "pe-037",
+   "query": "a multi-monitor trading floor application",
+   "expect_platforms": [
+    "desktop"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "desktop": "STRONG_INFERENCE"
+   }
+  },
+  {
+   "id": "pe-038",
+   "query": "menu-bar app that lives in the tray",
+   "expect_platforms": [
+    "desktop"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "desktop": "DIRECT"
+   }
+  },
+  {
+   "id": "pe-039",
+   "query": "touch-screen Windows terminal for the warehouse",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "acceptable": [
+    "desktop"
+   ],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "kiosk": "STRONG_INFERENCE"
+   },
+   "expect_inputs": [
+    "touch"
+   ]
+  },
+  {
+   "id": "pe-040",
+   "query": "Create a touch-screen Windows kiosk.",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "acceptable": [
+    "desktop"
+   ],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "kiosk": "DIRECT"
+   }
+  },
+  {
+   "id": "pe-041",
+   "query": "public check-in terminal in the clinic lobby",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "kiosk": "DIRECT"
+   },
+   "note": "2026-09-09: strength expectation corrected before implementation review: a phrase that names the device class (cable box, Roku, Tizen, fire stick, ticket machine, self-checkout, check-in terminal, Chrome/Safari, intranet, 'desktop ... client') is DIRECT evidence by the model's own definition."
+  },
+  {
+   "id": "pe-042",
+   "query": "Improve the interface on a 32-inch check-in display.",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "acceptable": [
+    "tv",
+    "desktop"
+   ],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "kiosk": "STRONG_INFERENCE"
+   },
+   "note": "2026-09-09: strength expectation corrected before implementation review: a phrase that names the device class (cable box, Roku, Tizen, fire stick, ticket machine, self-checkout, check-in terminal, Chrome/Safari, intranet, 'desktop ... client') is DIRECT evidence by the model's own definition."
+  },
+  {
+   "id": "pe-043",
+   "query": "browser-based kiosk",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "acceptable": [
+    "web"
+   ],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "kiosk": "DIRECT"
+   }
+  },
+  {
+   "id": "pe-044",
+   "query": "the ticket machine at the station",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "kiosk": "DIRECT"
+   },
+   "note": "2026-09-09: strength expectation corrected before implementation review: a phrase that names the device class (cable box, Roku, Tizen, fire stick, ticket machine, self-checkout, check-in terminal, Chrome/Safari, intranet, 'desktop ... client') is DIRECT evidence by the model's own definition."
+  },
+  {
+   "id": "pe-045",
+   "query": "self-checkout screens for the supermarket",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "kiosk": "DIRECT"
+   },
+   "note": "2026-09-09: strength expectation corrected before implementation review: a phrase that names the device class (cable box, Roku, Tizen, fire stick, ticket machine, self-checkout, check-in terminal, Chrome/Safari, intranet, 'desktop ... client') is DIRECT evidence by the model's own definition."
+  },
+  {
+   "id": "pe-046",
+   "query": "Make the warehouse terminal usable with gloves.",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "acceptable": [
+    "mobile",
+    "tablet",
+    "desktop"
+   ],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "kiosk": "STRONG_INFERENCE"
+   },
+   "expect_inputs": [
+    "touch"
+   ],
+   "note": "terminal + gloves: kiosk-like touch terminal; other rugged devices acceptable 2026-09-09: 'terminal' as a form factor is strong kiosk evidence; the case originally said weak."
+  },
+  {
+   "id": "pe-047",
+   "query": "wayfinding screen in the shopping centre",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "kiosk": "DIRECT"
+   },
+   "note": "2026-09-09: wayfinding names the kiosk class directly."
+  },
+  {
+   "id": "pe-048",
+   "query": "a tablet bolted to the wall for visitor sign-in",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "acceptable": [
+    "tablet"
+   ],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "kiosk": "STRONG_INFERENCE"
+   }
+  },
+  {
+   "id": "pe-049",
+   "query": "The same web application is used from laptops and phones.",
+   "expect_platforms": [
+    "web"
+   ],
+   "acceptable": [
+    "mobile",
+    "desktop"
+   ],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "web": "DIRECT"
+   }
+  },
+  {
+   "id": "pe-050",
+   "query": "responsive website for a law firm",
+   "expect_platforms": [
+    "web"
+   ],
+   "acceptable": [
+    "mobile"
+   ],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "web": "DIRECT"
+   }
+  },
+  {
+   "id": "pe-051",
+   "query": "runs in Chrome and Safari",
+   "expect_platforms": [
+    "web"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "web": "DIRECT"
+   },
+   "note": "2026-09-09: strength expectation corrected before implementation review: a phrase that names the device class (cable box, Roku, Tizen, fire stick, ticket machine, self-checkout, check-in terminal, Chrome/Safari, intranet, 'desktop ... client') is DIRECT evidence by the model's own definition."
+  },
+  {
+   "id": "pe-052",
+   "query": "our Next.js customer portal",
+   "expect_platforms": [
+    "web"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "web": "STRONG_INFERENCE"
+   }
+  },
+  {
+   "id": "pe-053",
+   "query": "the intranet page HR maintains",
+   "expect_platforms": [
+    "web"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "web": "DIRECT"
+   },
+   "note": "2026-09-09: strength expectation corrected before implementation review: a phrase that names the device class (cable box, Roku, Tizen, fire stick, ticket machine, self-checkout, check-in terminal, Chrome/Safari, intranet, 'desktop ... client') is DIRECT evidence by the model's own definition."
+  },
+  {
+   "id": "pe-054",
+   "query": "a Progressive Web App installed on delivery drivers' phones",
+   "expect_platforms": [
+    "web",
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "web": "DIRECT",
+    "mobile": "DIRECT"
+   }
+  },
+  {
+   "id": "pe-055",
+   "query": "desktop browser only, no mobile support needed",
+   "expect_platforms": [
+    "web"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile"
+   ],
+   "expect_strength": {
+    "web": "DIRECT"
+   }
+  },
+  {
+   "id": "pe-056",
+   "query": "Vue admin used in the browser by accountants",
+   "expect_platforms": [
+    "web"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "web": "DIRECT"
+   }
+  },
+  {
+   "id": "pe-057",
+   "query": "an embeddable widget for partner sites",
+   "expect_platforms": [
+    "web"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "web": "STRONG_INFERENCE"
+   }
+  },
+  {
+   "id": "pe-058",
+   "query": "Improve this media browser.",
+   "expect_platforms": [],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_unknown": true
+  },
+  {
+   "id": "pe-059",
+   "query": "the reporting screen",
+   "expect_platforms": [],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_unknown": true
+  },
+  {
+   "id": "pe-060",
+   "query": "a large wall display in the operations room",
+   "expect_platforms": [],
+   "acceptable": [
+    "tv",
+    "kiosk",
+    "desktop"
+   ],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "tv": "WEAK_INFERENCE"
+   },
+   "note": "weak inference only: must not assert a platform; should ask"
+  },
+  {
+   "id": "pe-061",
+   "query": "settings for the new product",
+   "expect_platforms": [],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_unknown": true
+  },
+  {
+   "id": "pe-062",
+   "query": "dashboard for facility managers",
+   "expect_platforms": [],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_unknown": true,
+   "note": "'dashboard' is a layout, not a platform"
+  },
+  {
+   "id": "pe-063",
+   "query": "make the checkout feel faster",
+   "expect_platforms": [],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_unknown": true
+  },
+  {
+   "id": "pe-064",
+   "query": "Android",
+   "expect_platforms": [],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_unknown": true,
+   "note": "alone: phone, tablet, TV or auto"
+  },
+  {
+   "id": "pe-065",
+   "query": "Compose",
+   "expect_platforms": [],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_unknown": true,
+   "note": "framework alone is not platform evidence"
+  },
+  {
+   "id": "pe-066",
+   "query": "Android app for a television with touch input, kids' museum",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile"
+   ],
+   "expect_inputs": [
+    "touch"
+   ]
+  },
+  {
+   "id": "pe-067",
+   "query": "TV webview for our React catalogue",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [
+    "web"
+   ],
+   "forbid_platforms": [
+    "mobile"
+   ]
+  },
+  {
+   "id": "pe-068",
+   "query": "kiosk web page but staff mostly use it from home on their laptops",
+   "expect_platforms": [
+    "web"
+   ],
+   "acceptable": [
+    "kiosk",
+    "desktop"
+   ],
+   "forbid_platforms": []
+  },
+  {
+   "id": "pe-069",
+   "query": "iPad app that also runs on Macs",
+   "expect_platforms": [
+    "tablet",
+    "desktop"
+   ],
+   "acceptable": [
+    "mobile"
+   ],
+   "forbid_platforms": []
+  },
+  {
+   "id": "pe-070",
+   "query": "phone app with a companion watch face",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "mobile": "DIRECT"
+   }
+  },
+  {
+   "id": "pe-071",
+   "query": "web app on phones",
+   "expect_platforms": [
+    "web",
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "web": "DIRECT",
+    "mobile": "DIRECT"
+   }
+  },
+  {
+   "id": "pe-072",
+   "query": "tablet kiosk in the hotel lobby",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "acceptable": [
+    "tablet"
+   ],
+   "forbid_platforms": []
+  },
+  {
+   "id": "pe-073",
+   "query": "Windows desktop app that must also work on a touchscreen laptop",
+   "expect_platforms": [
+    "desktop"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_inputs": [
+    "touch",
+    "keyboard",
+    "pointer"
+   ]
+  },
+  {
+   "id": "pe-074",
+   "query": "smart-TV browser rendering our responsive site",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [
+    "web"
+   ],
+   "forbid_platforms": []
+  },
+  {
+   "id": "pe-075",
+   "query": "the same Flutter code on phones and tablets",
+   "expect_platforms": [
+    "mobile",
+    "tablet"
+   ],
+   "acceptable": [],
+   "forbid_platforms": []
+  },
+  {
+   "id": "pe-076",
+   "query": "in-car infotainment screen",
+   "expect_platforms": [],
+   "acceptable": [
+    "kiosk",
+    "tablet"
+   ],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "kiosk": "WEAK_INFERENCE"
+   },
+   "note": "automotive is not a supported platform; must not claim TV or mobile"
+  },
+  {
+   "id": "pe-077",
+   "query": "Chromebook classroom app",
+   "expect_platforms": [
+    "web"
+   ],
+   "acceptable": [
+    "desktop"
+   ],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "web": "STRONG_INFERENCE"
+   }
+  },
+  {
+   "id": "pe-078",
+   "query": "point-of-sale screen for baristas",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "acceptable": [
+    "tablet"
+   ],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "kiosk": "DIRECT"
+   }
+  },
+  {
+   "id": "pe-079",
+   "query": "second-screen remote control app on the phone for the TV player",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [
+    "tv"
+   ],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "mobile": "DIRECT"
+   }
+  },
+  {
+   "id": "pe-080",
+   "query": "hospital bedside screen patients use from bed",
+   "expect_platforms": [],
+   "acceptable": [
+    "tv",
+    "tablet",
+    "kiosk"
+   ],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "tv": "WEAK_INFERENCE"
+   },
+   "note": "bedside terminal: weak; acceptable set covers the real options 2026-09-09: corrected before implementation review: the case demanded a platform from WEAK evidence, contradicting the model rule that weak evidence alone stays UNKNOWN with a MISSING confirm entry.",
+   "expect_unknown": true
+  },
+  {
+   "id": "pe-081",
+   "query": "the operator console in the control room, 4K monitor, keyboard and mouse",
+   "expect_platforms": [
+    "desktop"
+   ],
+   "acceptable": [
+    "web"
+   ],
+   "forbid_platforms": [],
+   "expect_inputs": [
+    "keyboard",
+    "pointer"
+   ]
+  },
+  {
+   "id": "pe-082",
+   "query": "glove-friendly handheld scanner app",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "mobile": "STRONG_INFERENCE"
+   },
+   "expect_inputs": [
+    "touch"
+   ]
+  },
+  {
+   "id": "pe-083",
+   "query": "a screen that lives on the factory floor HMI panel",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "acceptable": [
+    "desktop",
+    "tablet"
+   ],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "kiosk": "STRONG_INFERENCE"
+   }
+  },
+  {
+   "id": "pe-084",
+   "query": "thumb-reachable layout",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "mobile": "STRONG_INFERENCE"
+   }
+  },
+  {
+   "id": "pe-085",
+   "query": "right-click context menus and keyboard accelerators everywhere",
+   "expect_platforms": [],
+   "acceptable": [
+    "desktop",
+    "web"
+   ],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "desktop": "WEAK_INFERENCE"
+   },
+   "note": "modality suggests desktop but web power tools also use them: weak, may stay unknown 2026-09-09: corrected before implementation review: the case demanded a platform from WEAK evidence, contradicting the model rule that weak evidence alone stays UNKNOWN with a MISSING confirm entry.",
+   "expect_unknown": true
+  },
+  {
+   "id": "pe-086",
+   "query": "MAUI app for our sales reps' phones",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "mobile": "DIRECT"
+   }
+  },
+  {
+   "id": "pe-087",
+   "query": "the fire stick version",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "expect_strength": {
+    "tv": "DIRECT"
+   },
+   "note": "2026-09-09: strength expectation corrected before implementation review: a phrase that names the device class (cable box, Roku, Tizen, fire stick, ticket machine, self-checkout, check-in terminal, Chrome/Safari, intranet, 'desktop ... client') is DIRECT evidence by the model's own definition."
+  }
+ ]
+}

@@ -1,0 +1,152 @@
+{
+  "task": "p6-08",
+  "project": "p6-vue-inventory",
+  "platform_expected": "web",
+  "platform_resolved": "web",
+  "platform_correct": "yes",
+  "stack": "Vue 3 + Vite + Pinia + vue-router (TypeScript)",
+  "existing_ui": true,
+  "new_screen": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": ["refactor", "polish", "audit"],
+  "mode_resolved": ["audit", "refactor"],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "moderate",
+  "render_mode": "native",
+  "screenshots": [
+    "render/first-desktop.png",
+    "render/first-desktop-scrolled.png",
+    "render/first-desktop-sorted.png",
+    "render/first-desktop-page2.png",
+    "render/first-mobile.png",
+    "render/final-desktop.png",
+    "render/final-desktop-scrolled.png",
+    "render/final-desktop-region-scrolled.png",
+    "render/final-desktop-rowfocus.png",
+    "render/final-desktop-sorted.png",
+    "render/final-desktop-page2.png",
+    "render/final-desktop-empty.png",
+    "render/final-desktop-suppliers.png",
+    "render/final-mobile.png"
+  ],
+  "context_detection": {
+    "navigation": "partial",
+    "theme": "partial",
+    "typography": "partial",
+    "surfaces": "yes",
+    "spacing": "no"
+  },
+  "preservation": {
+    "navigation": true,
+    "theme": true,
+    "typography": true,
+    "component_reuse": true,
+    "unjustified_structural_change": 0
+  },
+  "expected_concepts": [
+    "data.pagination_strategy",
+    "table.virtualization",
+    "table.tabular_figures",
+    "data.filter_chips",
+    "data.search_results",
+    "state.loading_empty_error"
+  ],
+  "critical_concepts": ["data.pagination_strategy", "table.tabular_figures"],
+  "delivered_concepts": [
+    "data.pagination_strategy",
+    "interaction.focus_visible",
+    "interaction.keyboard_navigation",
+    "interaction.selection_visible",
+    "state.loading_empty_error",
+    "table.inline_edit",
+    "table.selection_bulk",
+    "table.tabular_figures",
+    "table.virtualization"
+  ],
+  "concept_recall": 0.67,
+  "critical_recall": 1.0,
+  "concept_misses": [
+    { "concept": "data.filter_chips", "layer": "expected-concepts" },
+    { "concept": "data.search_results", "layer": "expected-concepts" }
+  ],
+  "first_render_defects": {
+    "visual": 1,
+    "interaction": 2,
+    "accessibility": 0,
+    "platform": 0,
+    "existing-system-mismatch": 1,
+    "implementation-bug": 0
+  },
+  "final_defects": {
+    "visual": 0,
+    "interaction": 0,
+    "accessibility": 0,
+    "platform": 0,
+    "existing-system-mismatch": 1,
+    "implementation-bug": 0
+  },
+  "iterations": 1,
+  "guidance_relevant": 3,
+  "guidance_partial": 1,
+  "guidance_offtarget": 0,
+  "bad_guidance": [
+    {
+      "record": "layout-states-empty-loading-error",
+      "category": "generic",
+      "why": "Marked GENERIC by the bundle itself; the table already had an empty-state row and there is no async loading in this seeded store, so the record only produced a better empty-state sentence."
+    }
+  ],
+  "layer_review": {
+    "core": ["comp-data-table"],
+    "critical": ["data-tables-numeric", "grid-single-tab-stop", "layout-states-empty-loading-error"],
+    "optional": [],
+    "optional_useful": 0,
+    "optional_noise": 0
+  },
+  "guidance_used": ["comp-data-table", "data-tables-numeric", "grid-single-tab-stop", "layout-states-empty-loading-error"],
+  "guidance_ignored": [
+    { "id": "comp-data-table", "why": "Partially: column resize/reorder/visibility persistence, selection checkbox column with bulk actions, inline edit and loading skeletons were not implemented — out of the sentence's scope at a moderate budget on a read-only catalogue table. Pagination was chosen over virtualisation (both offered) because it needs no dependency and keeps row heights native." },
+    { "id": "data-tables-numeric", "why": "Partially: 'unit in the header not each cell' ignored — the existing formatMoney() prints a leading currency symbol per cell and changing that is a system-wide convention change outside this task." }
+  ],
+  "unjustified_direction_slots": 0,
+  "process_records_needed": false,
+  "skill_effect": "helped",
+  "guidance_tokens": 883,
+  "misses": [
+    { "layer": "project-context", "what": "inspect_project reported typography features tabular_numerals: true; no font-variant-numeric / tabular setting exists anywhere in the codebase (the numbers were proportional, which is part of the actual defect). Confident wrong value." },
+    { "layer": "project-context", "what": "routing: [] and breakpoints: [] although src/router.ts defines 6 vue-router routes; the empty breakpoints list is correct (no @media anywhere) but is reported the same way as the wrong routing value." },
+    { "layer": "project-context", "what": "spacing 'irregular' / UNKNOWN and theme UNKNOWN although tokens.css declares an explicit 4-pt --space scale and a full [data-theme='dark'] palette; components UNKNOWN although src/components has 9 reusable SFCs." },
+    { "layer": "expected-concepts", "what": "Neither data.filter_chips nor data.search_results was demanded, although the screen's only narrowing affordances are a FilterBar and a ?q= search whose state is invisible once applied." },
+    { "layer": "candidate-compatibility", "what": "table.column_priority carriers were filtered out as platform ['mobile','tablet'] not in ['web']. Column priority is exactly what this 8-column web table needs below ~900px; the web viewport at 390px is still a narrow viewport." }
+  ],
+  "knowledge_gaps": [],
+  "regressions": [
+    {
+      "query": "The products table is unusable once the warehouse has 200 SKUs.",
+      "expect": "bundle carries data.pagination_strategy AND table.tabular_figures AND (table.virtualization OR data.pagination_strategy); sort affordance with aria-sort is named"
+    },
+    {
+      "query": "The products table is unusable once the warehouse has 200 SKUs.",
+      "expect": "table.column_priority is not filtered out for a web request: the mobile/tablet platform tag on its carriers must not exclude narrow web viewports"
+    },
+    {
+      "query": "vue project: sticky table header inside a scrolling panel",
+      "expect": "a record states that position: sticky on <th> requires the scroll container, not an overflow-x-only wrapper — the single most likely implementation defect of the data-table record's 'sticky header' instruction"
+    }
+  ],
+  "tags": [
+    "skill-helped",
+    "context-detection-miss",
+    "concept-miss",
+    "render-defect-fixed",
+    "render-defect-remaining",
+    "preservation-ok"
+  ],
+  "build_hash_start": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947",
+  "build_hash_end": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947"
+}

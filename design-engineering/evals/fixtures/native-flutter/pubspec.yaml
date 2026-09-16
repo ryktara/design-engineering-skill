@@ -1,0 +1,6 @@
+name: fieldapp
+dependencies:
+  flutter:
+    sdk: flutter
+  go_router: ^14.0.0
+  google_fonts: ^6.2.1

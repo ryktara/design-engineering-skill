@@ -1,0 +1,502 @@
+{
+  "label": "fix1",
+  "viewport": "1440x900",
+  "url": "file:///D:/indigo%20pro/MYownSkills/research/phase3-projects/p3-react-dashboard-polish/project/public/index.html",
+  "layoutShift": {
+    "mainTopBeforeBanner": 100,
+    "mainTopAfterBanner": 100,
+    "shiftPx": 0,
+    "bannerPresent": true,
+    "pass": true
+  },
+  "onePrimaryPerView": {
+    "count": 1,
+    "labels": [
+      "Export report"
+    ],
+    "pass": true
+  },
+  "statusNotColourOnly": {
+    "rows": [
+      {
+        "row": "Main incomer A",
+        "hasText": true,
+        "text": "●"
+      },
+      {
+        "row": "Chiller plant",
+        "hasText": true,
+        "text": "▲"
+      },
+      {
+        "row": "Cold store 2",
+        "hasText": true,
+        "text": "✖"
+      },
+      {
+        "row": "Dock lighting",
+        "hasText": true,
+        "text": "●"
+      },
+      {
+        "row": "Office HVAC",
+        "hasText": true,
+        "text": "●"
+      }
+    ],
+    "pass": true
+  },
+  "numbers": {
+    "values": [
+      {
+        "text": "18,432.7 kWh",
+        "tabular": true,
+        "textAlign": "start",
+        "right": 371,
+        "left": 69
+      },
+      {
+        "text": "18,432.7",
+        "tabular": true,
+        "textAlign": "start",
+        "right": 185,
+        "left": 69
+      },
+      {
+        "text": "-4.2%",
+        "tabular": true,
+        "textAlign": "start",
+        "right": 114,
+        "left": 83
+      },
+      {
+        "text": "912.4 kW",
+        "tabular": true,
+        "textAlign": "start",
+        "right": 696,
+        "left": 420
+      },
+      {
+        "text": "912.4",
+        "tabular": true,
+        "textAlign": "start",
+        "right": 486,
+        "left": 420
+      },
+      {
+        "text": "+1.8%",
+        "tabular": true,
+        "textAlign": "start",
+        "right": 468,
+        "left": 433
+      },
+      {
+        "text": "£27,614.05",
+        "tabular": true,
+        "textAlign": "start",
+        "right": 1022,
+        "left": 745
+      },
+      {
+        "text": "£27,614.05",
+        "tabular": true,
+        "textAlign": "start",
+        "right": 877,
+        "left": 745
+      },
+      {
+        "text": "+3.1%",
+        "tabular": true,
+        "textAlign": "start",
+        "right": 793,
+        "left": 759
+      },
+      {
+        "text": "0.19 kgCO2e/kWh",
+        "tabular": true,
+        "textAlign": "start",
+        "right": 1347,
+        "left": 1071
+      },
+      {
+        "text": "0.19",
+        "tabular": true,
+        "textAlign": "start",
+        "right": 1122,
+        "left": 1071
+      },
+      {
+        "text": "-0.7%",
+        "tabular": true,
+        "textAlign": "start",
+        "right": 1115,
+        "left": 1084
+      },
+      {
+        "text": "410",
+        "tabular": true,
+        "textAlign": "right",
+        "right": 167,
+        "left": 124
+      },
+      {
+        "text": "380",
+        "tabular": true,
+        "textAlign": "right",
+        "right": 167,
+        "left": 124
+      },
+      {
+        "text": "362",
+        "tabular": true,
+        "textAlign": "right",
+        "right": 167,
+        "left": 124
+      },
+      {
+        "text": "355",
+        "tabular": true,
+        "textAlign": "right",
+        "right": 167,
+        "left": 124
+      },
+      {
+        "text": "372",
+        "tabular": true,
+        "textAlign": "right",
+        "right": 167,
+        "left": 124
+      },
+      {
+        "text": "440",
+        "tabular": true,
+        "textAlign": "right",
+        "right": 167,
+        "left": 124
+      },
+      {
+        "text": "610",
+        "tabular": true,
+        "textAlign": "right",
+        "right": 167,
+        "left": 124
+      },
+      {
+        "text": "780",
+        "tabular": true,
+        "textAlign": "right",
+        "right": 167,
+        "left": 124
+      },
+      {
+        "text": "860",
+        "tabular": true,
+        "textAlign": "right",
+        "right": 167,
+        "left": 124
+      },
+      {
+        "text": "902",
+        "tabular": true,
+        "textAlign": "right",
+        "right": 167,
+        "left": 124
+      },
+      {
+        "text": "912",
+        "tabular": true,
+        "textAlign": "right",
+        "right": 167,
+        "left": 124
+      },
+      {
+        "text": "890",
+        "tabular": true,
+        "textAlign": "right",
+        "right": 167,
+        "left": 124
+      },
+      {
+        "text": "871",
+        "tabular": true,
+        "textAlign": "right",
+        "right": 167,
+        "left": 124
+      },
+      {
+        "text": "884",
+        "tabular": true,
+        "textAlign": "right",
+        "right": 167,
+        "left": 124
+      },
+      {
+        "text": "866",
+        "tabular": true,
+        "textAlign": "right",
+        "right": 167,
+        "left": 124
+      },
+      {
+        "text": "840",
+        "tabular": true,
+        "textAlign": "right",
+        "right": 167,
+        "left": 124
+      },
+      {
+        "text": "795",
+        "tabular": true,
+        "textAlign": "right",
+        "right": 167,
+        "left": 124
+      },
+      {
+        "text": "720",
+        "tabular": true,
+        "textAlign": "right",
+        "right": 167,
+        "left": 124
+      },
+      {
+        "text": "650",
+        "tabular": true,
+        "textAlign": "right",
+        "right": 167,
+        "left": 124
+      },
+      {
+        "text": "590",
+        "tabular": true,
+        "textAlign": "right",
+        "right": 167,
+        "left": 124
+      },
+      {
+        "text": "540",
+        "tabular": true,
+        "textAlign": "right",
+        "right": 167,
+        "left": 124
+      },
+      {
+        "text": "500",
+        "tabular": true,
+        "textAlign": "right",
+        "right": 167,
+        "left": 124
+      },
+      {
+        "text": "460",
+        "tabular": true,
+        "textAlign": "right",
+        "right": 167,
+        "left": 124
+      },
+      {
+        "text": "430",
+        "tabular": true,
+        "textAlign": "right",
+        "right": 167,
+        "left": 124
+      },
+      {
+        "text": "3,120.4 kWh",
+        "tabular": true,
+        "textAlign": "right",
+        "right": 1371,
+        "left": 1295
+      },
+      {
+        "text": "812.9 kWh",
+        "tabular": true,
+        "textAlign": "right",
+        "right": 1371,
+        "left": 1306
+      },
+      {
+        "text": "No reading",
+        "tabular": true,
+        "textAlign": "right",
+        "right": 1371,
+        "left": 1301
+      },
+      {
+        "text": "46.0 kWh",
+        "tabular": true,
+        "textAlign": "right",
+        "right": 1371,
+        "left": 1314
+      },
+      {
+        "text": "1,188.3 kWh",
+        "tabular": true,
+        "textAlign": "right",
+        "right": 1371,
+        "left": 1295
+      }
+    ],
+    "kpiTextAligns": [
+      "start"
+    ],
+    "readingsRightAligned": true,
+    "allTabular": true,
+    "pass": true
+  },
+  "chart": {
+    "found": true,
+    "role": "img",
+    "accessibleName": "Demand, last 24 hours",
+    "textSummary": "Demand peaked at 912 kW at 10:00 and was lowest at 355 kW at 03:00; the 24-hour average was 642 kW.",
+    "hasDataTable": true,
+    "ariaHidden": null,
+    "pass": true
+  },
+  "alertsEmptyState": {
+    "items": null,
+    "emptyStateText": null,
+    "pass": true
+  },
+  "targets": {
+    "smallerThan24px": [
+      {
+        "text": "Learn more",
+        "h": 19
+      }
+    ],
+    "pass": false
+  },
+  "headings": {
+    "h1Count": 1,
+    "pass": true
+  },
+  "reducedMotion": {
+    "ruleInCss": false,
+    "maxTransitionSecondsUnderReduce": 0,
+    "pass": false
+  },
+  "spacing": {
+    "valuesPx": [
+      8,
+      12,
+      16,
+      24
+    ],
+    "offScalePx": [],
+    "pass": true
+  },
+  "nestedCards": {
+    "count": 0,
+    "pass": true
+  },
+  "keyboard": {
+    "tabOrder": [
+      "Overview",
+      "Meters",
+      "Reports",
+      "Settings",
+      "Learn more",
+      "Dismiss notice",
+      "Run optimisation",
+      "Export report",
+      "Show hourly data",
+      "Add meter",
+      "Alert rules"
+    ],
+    "focusVisibleOnAll": true,
+    "details": [
+      {
+        "tag": "a",
+        "text": "Overview",
+        "ring": true,
+        "outline": "solid 2px rgb(255, 255, 255)",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "a",
+        "text": "Meters",
+        "ring": true,
+        "outline": "solid 2px rgb(255, 255, 255)",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "a",
+        "text": "Reports",
+        "ring": true,
+        "outline": "solid 2px rgb(255, 255, 255)",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "a",
+        "text": "Settings",
+        "ring": true,
+        "outline": "solid 2px rgb(255, 255, 255)",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "a",
+        "text": "Learn more",
+        "ring": true,
+        "outline": "solid 2px rgb(29, 78, 216)",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "button",
+        "text": "Dismiss notice",
+        "ring": true,
+        "outline": "solid 2px rgb(29, 78, 216)",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "button",
+        "text": "Run optimisation",
+        "ring": true,
+        "outline": "solid 2px rgb(29, 78, 216)",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "button",
+        "text": "Export report",
+        "ring": true,
+        "outline": "solid 2px rgb(29, 78, 216)",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "summary",
+        "text": "Show hourly data",
+        "ring": true,
+        "outline": "solid 2px rgb(29, 78, 216)",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "button",
+        "text": "Add meter",
+        "ring": true,
+        "outline": "solid 2px rgb(29, 78, 216)",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "a",
+        "text": "Alert rules",
+        "ring": true,
+        "outline": "solid 2px rgb(29, 78, 216)",
+        "boxShadow": "none"
+      }
+    ],
+    "pass": true
+  },
+  "summary": {
+    "layoutShift": "PASS",
+    "onePrimaryPerView": "PASS",
+    "statusNotColourOnly": "PASS",
+    "numbers": "PASS",
+    "chart": "PASS",
+    "alertsEmptyState": "PASS",
+    "targets": "FAIL",
+    "headings": "PASS",
+    "reducedMotion": "FAIL",
+    "spacing": "PASS",
+    "nestedCards": "PASS",
+    "keyboard": "PASS"
+  }
+}

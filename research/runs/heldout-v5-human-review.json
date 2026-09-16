@@ -1,0 +1,2631 @@
+{
+ "reviewer": "sonnet (6 sessions)",
+ "brief": "evals/heldout-v5/QUALITY-REVIEW-BRIEF.md",
+ "verdicts": {
+  "hv5-g01-001": {
+   "verdict": "PARTIAL",
+   "defect": "wrong-screen",
+   "why": "Wizard and form guidance fit the 3-step onboarding well, but the analytical console record is a dashboard/chart pattern irrelevant to a loan onboarding flow."
+  },
+  "hv5-g01-002": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Operational workbench and type-scale guidance both fit a precision scan-confirmation screen with nothing distracting."
+  },
+  "hv5-g01-003": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Dashboard grid, chart container, and the anti-template dashboard notes are all directly relevant to a nurse meds-due dashboard."
+  },
+  "hv5-g01-004": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Setup checklist and stepper guidance both apply cleanly to a no-account first-run flow."
+  },
+  "hv5-g01-005": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "None of the records address side-by-side comparison structure; analytical console/settings/metadata don't cover the one thing a compare-two-quotes screen needs."
+  },
+  "hv5-g01-006": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Marketing site, landing hero, and focal-point guidance are all squarely relevant to a from-scratch landing page."
+  },
+  "hv5-g01-007": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "One-page checkout, form, and focal-point guardrails cover a cash/card checkout flow well."
+  },
+  "hv5-g01-008": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Only a generic empty-state record is given; nothing addresses building a scheduling/booking screen itself."
+  },
+  "hv5-g01-009": {
+   "verdict": "PARTIAL",
+   "defect": "off-platform",
+   "why": "Empty-state and illustration guidance fit, but the Windows-native Fluent record assumes a WinUI platform never stated in the request."
+  },
+  "hv5-g01-010": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Exceptions-first and never-colour-alone touch on glanceability, but nothing addresses the driving/glanceable-at-a-glance large-text need directly."
+  },
+  "hv5-g01-011": {
+   "verdict": "BAD",
+   "defect": "wrong-screen",
+   "why": "Player transport/overlay control guidance is for video playback, not a loadout-building screen; only the states guardrail is even tangentially useful."
+  },
+  "hv5-g01-012": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Search, filters, and states guidance fit well, but the choropleth map record is for regional rate data, not an individual-property pin map."
+  },
+  "hv5-g01-013": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Wizard, commerce, form, and the keyboard/focus guardrails together cover a retail returns wizard thoroughly."
+  },
+  "hv5-g01-014": {
+   "verdict": "BAD",
+   "defect": "wrong-product",
+   "why": "Utility commerce (product tiles, add-to-cart) is an e-commerce pattern with no relevance to a shop-floor throughput panel."
+  },
+  "hv5-g01-015": {
+   "verdict": "PARTIAL",
+   "defect": "wrong-screen",
+   "why": "Form/keyboard/focus guardrails suit a signup flow, but the Learning platform record describes course browsing, not the signup screen itself."
+  },
+  "hv5-g01-016": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "The comparison-card structure transfers, but the record is dominated by billing-specific detail (seats, invoices, upgrade/downgrade) irrelevant to flight itineraries."
+  },
+  "hv5-g01-017": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Offline/sync guidance is exactly on point for offline data entry, and privacy-on-shared-screens is a reasonable adjacent concern."
+  },
+  "hv5-g01-018": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Settings screen guidance is on point, but the hub-and-spoke home pattern and swipeable-list pattern don't fit a settings screen itself."
+  },
+  "hv5-g01-019": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Nothing here addresses an upload/capture flow; the hub-and-spoke home pattern and generic empty state miss the actual task."
+  },
+  "hv5-g01-020": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "A list-view screen from scratch is squarely a UI design task; declining was wrong."
+  },
+  "hv5-g01-021": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Badge guidance covers the badges part, but avatar and stats layout for a profile page are left unaddressed."
+  },
+  "hv5-g01-022": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Generic checkout/storefront/delivery records are given but nothing addresses the actual optional-tip selection UI the request is about."
+  },
+  "hv5-g01-023": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "A manifest-entry screen from scratch is a UI design task; declining was wrong."
+  },
+  "hv5-g01-024": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "The permission-priming and feature-education guardrail is a direct, well-scoped match for a welcome tour."
+  },
+  "hv5-g01-025": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "TV rail, EPG, cinematic media, and TV guardrails together cover an EPG-style genre browse screen comprehensively."
+  },
+  "hv5-g01-026": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Checkout, commerce, and the state/keyboard/focus guardrails cover a b2b cart build well even without bulk-line-item specifics."
+  },
+  "hv5-g01-027": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Only a monospace-typeface record is given; nothing addresses the referral/rewards screen structure itself."
+  },
+  "hv5-g01-028": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Form and wizard guidance fit an intake form, but the analytical console (dashboard/chart) record is irrelevant to it."
+  },
+  "hv5-g01-029": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Dashboard grid, KPI tile, and the colour/live-region guardrails suit an alarms dashboard well despite one off-topic funnel-chart record."
+  },
+  "hv5-g01-030": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Analytical console/settings/metadata are given but nothing addresses the actual side-by-side mortgage comparison structure."
+  },
+  "hv5-g01-031": {
+   "verdict": "BAD",
+   "defect": "contradicts-request",
+   "why": "The request explicitly says no filters yet, but the guidance is dominated by filter-bar and filter-state records."
+  },
+  "hv5-g01-032": {
+   "verdict": "BAD",
+   "defect": "wrong-product",
+   "why": "All records are statistical chart-type guidance (pie, bar, funnel, KPI); none addresses building a spatial seating-chart layout tool."
+  },
+  "hv5-g01-033": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Dialog and inline-action guidance is generic; nothing addresses the dose-tracking list/record structure a tracking screen needs."
+  },
+  "hv5-g01-034": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Setup checklist, wizard, and single-column guidance suit a driver-side onboarding flow well."
+  },
+  "hv5-g01-035": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "A leaderboard screen is a UI design task; declining was wrong."
+  },
+  "hv5-g01-036": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "A pothole-reporting screen from scratch is a UI design task; declining was wrong."
+  },
+  "hv5-g01-037": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "A seating-plan builder screen is a UI design task; declining was wrong."
+  },
+  "hv5-g01-038": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "The photo-capture-field record is a precise, comprehensive match for a receipts/photos claims flow."
+  },
+  "hv5-g01-039": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Only a motion-guideline record is given, completely unrelated to a drug-interaction flagging screen."
+  },
+  "hv5-g01-040": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Only a setup-checklist record is given; nothing addresses avatar cropping or profile setup itself."
+  },
+  "hv5-g01-041": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Skip links, accessible names, contrast, colour, and live-region guardrails together give strong, directly relevant accessibility coverage for a ballot screen."
+  },
+  "hv5-g01-042": {
+   "verdict": "BAD",
+   "defect": "wrong-screen",
+   "why": "Pagination and a line/area trend chart are irrelevant to browsing an exhibit map; only the kiosk guardrail is on topic."
+  },
+  "hv5-g01-043": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Analytical console and a table-first pattern don't address the actual side-by-side tariff comparison the request needs."
+  },
+  "hv5-g01-044": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Checkout-form and storefront records are for the payment flow itself, not a confirmation screen; nothing addresses an order-confirmation/tracking layout."
+  },
+  "hv5-g01-045": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "A bill-splitting screen is a UI design task; declining was wrong."
+  },
+  "hv5-g01-046": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "The offline/sync guardrail directly addresses the offline-capable requirement with nothing distracting."
+  },
+  "hv5-g01-047": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Wizard, form, and the form/type guardrails cover a multi-step admin onboarding well."
+  },
+  "hv5-g01-048": {
+   "verdict": "BAD",
+   "defect": "wrong-screen",
+   "why": "The EPG/program-guide-grid record is entirely unrelated to a notifications center; only the toast/banner record is loosely relevant."
+  },
+  "hv5-g01-049": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Only a 10-foot-typography record is given; nothing addresses the actual guest-request logging interaction."
+  },
+  "hv5-g01-050": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "The sunlight/glanceable guardrail fits gloved field use well, but the full-size photo-viewer record is unrelated to barcode scanning."
+  },
+  "hv5-g01-051": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Drag-and-drop, gesture, and keyboard guardrails directly match a drag-to-build workout planner."
+  },
+  "hv5-g01-052": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "The comparison-card structure applies, but the record is dominated by billing/seat-management detail irrelevant to comparing resumes."
+  },
+  "hv5-g01-053": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Form and typeface guidance are given but nothing addresses the spotty-signal/offline reporting concern the prompt names."
+  },
+  "hv5-g01-054": {
+   "verdict": "BAD",
+   "defect": "wrong-screen",
+   "why": "A three-pane resizable workbench layout is a desktop power-tool pattern, not a paywall/pricing screen."
+  },
+  "hv5-g01-055": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "The hub-and-spoke pattern is a loose fit but nothing addresses a status-tracking/timeline pattern for a permit application."
+  },
+  "hv5-g01-056": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Form and single-column guidance suit a linear device-pairing flow well."
+  },
+  "hv5-g01-057": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Only a type-scale guardrail is given; nothing addresses the comparison structure the request is about."
+  },
+  "hv5-g01-058": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Form, one-primary-action, and the kiosk guardrail together cover a walk-up badge kiosk well."
+  },
+  "hv5-g01-059": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "A practice-plan-building screen is a UI design task; declining was wrong."
+  },
+  "hv5-g01-060": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Only an expressive-motion record is given, unrelated to designing a recurring-gift amount picker."
+  },
+  "hv5-g01-061": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "The kiosk guardrail is a strong, direct match for a walk-up badge printer; the pills note is a minor, non-dominant tangent."
+  },
+  "hv5-g01-062": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Analytical console/settings/metadata are given but nothing addresses the actual loan-term comparison structure."
+  },
+  "hv5-g01-063": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "A substitute-teacher-request screen is a UI design task; declining was wrong."
+  },
+  "hv5-g01-064": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Only typeface/motion records are given; nothing addresses the appointment-tracking screen structure itself."
+  },
+  "hv5-g01-065": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "The data-table pattern loosely fits a table-status screen, but the chart/numeric-table records don't apply to marking tables dirty or clean."
+  },
+  "hv5-g01-066": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Drag-and-drop and gesture/keyboard guardrails directly match a drag-to-reorder itinerary builder."
+  },
+  "hv5-g01-067": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Comparison-card structure applies, but billing-specific detail and duotone branding notes dominate over anything loyalty-tier specific."
+  },
+  "hv5-g01-068": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "A picker-zone assignment screen is a UI design task; declining was wrong."
+  },
+  "hv5-g01-069": {
+   "verdict": "BAD",
+   "defect": "wrong-screen",
+   "why": "Player transport/overlay-control and kiosk records are for video playback and walk-up kiosks, not an avatar-customization screen."
+  },
+  "hv5-g01-070": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "An order-splitting tool screen is a UI design task; declining was wrong."
+  },
+  "hv5-g01-071": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "The type-scale/tabular-figures guardrail directly addresses a numeric alignment bug on an invoice summary."
+  },
+  "hv5-g01-072": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Form and the keyboard-operability guardrail directly address a tab-order bug on an intake form."
+  },
+  "hv5-g01-073": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Empty-state records don't address a below-the-fold save button; the sticky-action-bar pattern that would actually fix this is absent."
+  },
+  "hv5-g01-074": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "The background-progress guardrail and the states guardrail both directly address a flickering loading indicator."
+  },
+  "hv5-g01-075": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Generic checkout-form records don't address the actual bug: the summary card failing to reflect a quantity change."
+  },
+  "hv5-g01-076": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "Freezing from lost signal is a technical/connectivity failure, not a UI design or interaction request; declining was reasonable."
+  },
+  "hv5-g01-077": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "The player-transport-controls record directly addresses overlay auto-hide behaviour after playback ends."
+  },
+  "hv5-g01-078": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Mostly unrelated chart-type and storefront records are given; nothing addresses preserving zoom state across chart updates."
+  },
+  "hv5-g01-079": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "The menu/dropdown record directly addresses touch-scroll behaviour in a dropdown component."
+  },
+  "hv5-g01-080": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "Wrong diff colours half the time reads as a data/logic bug in colour assignment, not a design-pattern request; declining was reasonable."
+  },
+  "hv5-g01-081": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Generic checkout records are given but nothing addresses the actual bug: a cart badge count failing to update after removal."
+  },
+  "hv5-g01-082": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "A resize crash/exception is a runtime bug, not a UI design or interaction request; declining was reasonable."
+  },
+  "hv5-g01-083": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Drag-and-drop and gesture guardrails directly address concurrent-drag conflicts, but the chart records are irrelevant to a seating chart."
+  },
+  "hv5-g01-084": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "The orientation and touch-density guardrails directly address a table column being cut off in tablet landscape."
+  },
+  "hv5-g01-085": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Only a photo-viewer record is given, unrelated to a stale-data/refresh bug on a med schedule."
+  },
+  "hv5-g01-086": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "Mid-checkin timeouts on a kiosk are squarely a session/idle-timeout UX design concern the kiosk guardrail already covers elsewhere; declining was wrong."
+  },
+  "hv5-g01-087": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "The states guardrail (skeleton at final dimensions) and catalog-grid layout-shift note directly address results flickering and reordering after load."
+  },
+  "hv5-g01-088": {
+   "verdict": "BAD",
+   "defect": "wrong-product",
+   "why": "The Broadcast guide (TV) record is a live-TV EPG pattern, entirely unrelated to an internal new-hire guide page with a dead link."
+  },
+  "hv5-g01-089": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Keyboard/focus-order guardrail is on point but Form, Tabs, and CLS records are unrelated filler."
+  },
+  "hv5-g01-090": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "",
+   "why": "Stale display on a named screen after an event is a UI staleness issue the system addresses elsewhere; should not have declined."
+  },
+  "hv5-g01-091": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Only a Dialog/modal record is given; nothing addresses double-click/double-submit prevention on a button."
+  },
+  "hv5-g01-092": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "No-card-container and accessible-name records don't address text truncation vs wrapping, the actual ask."
+  },
+  "hv5-g01-093": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Toast/banner record is on point but commerce, focal-point, and upsell records are unrelated filler."
+  },
+  "hv5-g01-094": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Chart container record is directly relevant but KPI tile, real-time streams, and colour records are generic filler."
+  },
+  "hv5-g01-095": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "None of the records address input lag/responsiveness; photo viewer and typography records are wrong-screen filler."
+  },
+  "hv5-g01-096": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "",
+   "why": "Truncating log entries instead of allowing scroll is a layout/interaction issue, not a backend concern; should not have declined."
+  },
+  "hv5-g01-097": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Mobile orientation guardrail directly covers preserving form state on rotation, plus a relevant unsaved-changes guard."
+  },
+  "hv5-g01-098": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Dialog focus management guardrail directly addresses premature dismissal."
+  },
+  "hv5-g01-099": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "Scan-duplicate-item is a backend/data dedup issue with no UI symptom described."
+  },
+  "hv5-g01-100": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "Print bleed margin accuracy is a print-production concern outside interaction/UI design scope."
+  },
+  "hv5-g01-101": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "Print queue jamming from concurrent kiosk check-ins is a backend timing/hardware issue, not a UI design task."
+  },
+  "hv5-g01-102": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Non-text contrast and dark-mode colour guardrails directly address an invisible focus ring."
+  },
+  "hv5-g01-103": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Drag-and-drop and keyboard guardrails directly cover the reorder-past-last-item bug; one wrong-screen photo-viewer record doesn't dominate."
+  },
+  "hv5-g01-104": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "Quiz timer continuing after submit is a logic bug with no UI vocabulary or visual symptom."
+  },
+  "hv5-g01-105": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Dialog and accessible-naming records directly address mislabeled confirm actions."
+  },
+  "hv5-g01-106": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "None of the six records address staleness/refresh of displayed points; mostly generic chart and brand-differentiation filler."
+  },
+  "hv5-g01-107": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "Split-billing rounding error is a calculation bug, not a UI design task."
+  },
+  "hv5-g01-108": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "",
+   "why": "Losing assigned state after a refresh is the kind of state-persistence issue the system addresses elsewhere (unsaved-changes/autosave); should not have declined."
+  },
+  "hv5-g01-109": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Dialog/modal record's 'primary action last' note answers the ordering question, but the empty-state record is irrelevant filler."
+  },
+  "hv5-g01-110": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Toast/banner dismissibility note is relevant but exceptions-first, density, and focal-point records are unrelated filler."
+  },
+  "hv5-g01-111": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "General form-validation guidance is present but nothing addresses international phone number format specifically."
+  },
+  "hv5-g01-112": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Spacing-scale guardrail directly targets the touching price elements."
+  },
+  "hv5-g01-113": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Tabs record covers roving tabindex/URL state, not incorrect icon rendering, the actual bug."
+  },
+  "hv5-g01-114": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Offline/sync guardrail directly addresses saving signatures offline."
+  },
+  "hv5-g01-115": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "",
+   "why": "An overlay that won't dismiss and blocks the whole app is squarely a modal/dialog UI issue the system addresses elsewhere; should not have declined."
+  },
+  "hv5-g01-116": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Never-colour-alone guardrail directly addresses colour semantics colliding with the error state."
+  },
+  "hv5-g01-117": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "",
+   "why": "Losing data when switching classes mid-edit is an unsaved-changes/state-guard issue the system handles elsewhere; should not have declined."
+  },
+  "hv5-g01-118": {
+   "verdict": "BAD",
+   "defect": "wrong-screen",
+   "why": "Both records treat 'stepper' as a wizard/multi-step flow, not the numeric serving-size stepper control in the request."
+  },
+  "hv5-g01-119": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Neither record addresses premature/false status display before a transaction actually clears."
+  },
+  "hv5-g01-120": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Accessible-names guardrail directly fixes a generic 'button' screen-reader label."
+  },
+  "hv5-g02-001": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Tabular-figures guardrail directly addresses totals not lining up."
+  },
+  "hv5-g02-002": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Tabs record covers focus/URL state, not the double-trigger/idempotency issue that causes duplicate rows."
+  },
+  "hv5-g02-003": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Keyboard guardrail plus Tabs record directly address Tab skipping a tab."
+  },
+  "hv5-g02-004": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "Whether one label is bold or regular is a one-off taste call too small to warrant systemic guidance."
+  },
+  "hv5-g02-005": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Text-contrast guardrail directly addresses unreadable dialog behind a counter."
+  },
+  "hv5-g02-006": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Offline/sync and empty/loading state guardrails directly address stale data after sync."
+  },
+  "hv5-g02-007": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Search-field record is generic guidance; the actual cause (dropped first keystroke, a focus/race condition) isn't addressed, and the filter-bar record is irrelevant."
+  },
+  "hv5-g02-008": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Pagination/virtualization is relevant to freezing on large lists but breakpoint and hover-reveal records are unrelated filler."
+  },
+  "hv5-g02-009": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Tabs record's URL-state note is relevant but the focus-visible record is unrelated."
+  },
+  "hv5-g02-010": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Settings-screen record is generic; nothing specifically addresses list/row collapse after deletion."
+  },
+  "hv5-g02-011": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "",
+   "why": "A displayed total not updating until the user taps away is a reactive-UI staleness bug similar to others the system addresses; should not have declined."
+  },
+  "hv5-g02-012": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "None of the records address element overlap/z-index collision across builds."
+  },
+  "hv5-g02-013": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Design-empty/loading/error-states guardrail directly addresses an overlay that outlives its trigger."
+  },
+  "hv5-g02-014": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Filter-state guidance is present but sort-order persistence specifically isn't addressed."
+  },
+  "hv5-g02-015": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Toast/banner record doesn't address badge counting logic at all."
+  },
+  "hv5-g02-016": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Dialog focus-trap guidance is relevant but physical reachability (bedside) isn't addressed."
+  },
+  "hv5-g02-017": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "No-card-containers record doesn't address flicker/mount animation, the actual issue."
+  },
+  "hv5-g02-018": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Pagination record directly covers the single-page edge case."
+  },
+  "hv5-g02-019": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Drag-and-drop and mobile-gesture guardrails directly address an unreliable drag handle."
+  },
+  "hv5-g02-020": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "Wrong timezone computation is a data/logic bug with no UI vocabulary."
+  },
+  "hv5-g02-021": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Progress-for-background-work record doesn't address preventing data loss on fast navigation; missing unsaved-changes/autosave guidance."
+  },
+  "hv5-g02-022": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "None of the records address re-render performance on keystroke."
+  },
+  "hv5-g02-023": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Design-empty/loading/error-states guardrail directly addresses a flashing empty state."
+  },
+  "hv5-g02-024": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Generic Form record doesn't address stale labels from unrefreshed bound data."
+  },
+  "hv5-g02-025": {
+   "verdict": "BAD",
+   "defect": "wrong-screen",
+   "why": "Chart and kiosk records are for the wrong screen type; nothing meaningfully addresses two elements sharing the same colour."
+  },
+  "hv5-g02-026": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Flat-tiles, no-card-containers, and pill-radius records directly address corner-radius choice."
+  },
+  "hv5-g02-027": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "No-card-containers record doesn't address masking a sensitive payment card number."
+  },
+  "hv5-g02-028": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Dialog record is generic; nothing specifically answers left vs. centre text alignment."
+  },
+  "hv5-g02-029": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Orientation and image-sizing guardrails directly address a cut-off landscape thumbnail."
+  },
+  "hv5-g02-030": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Pagination record is irrelevant to an independently-scrolling status indicator."
+  },
+  "hv5-g02-031": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "No-card-containers record doesn't address matching an existing card's visual design/brand."
+  },
+  "hv5-g02-032": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "",
+   "why": "A toggle's visual state contradicting its actual state is a UI feedback-mismatch bug similar to others the system addresses; should not have declined."
+  },
+  "hv5-g02-033": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Tabs record is generic; shared state between tab instances isn't specifically addressed."
+  },
+  "hv5-g02-034": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Reserve-space/CLS guardrail directly addresses jumping row heights during streaming."
+  },
+  "hv5-g02-035": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "",
+   "why": "Dropped keystrokes before submit is directly analogous to a sibling case (search box eating input) the system addressed with guidance; should not have declined."
+  },
+  "hv5-g02-036": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "",
+   "why": "A window resize permanently breaking layout is a responsive/breakpoint UI issue the system addresses elsewhere; should not have declined."
+  },
+  "hv5-g02-037": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "",
+   "why": "Briefly showing a previous user's data after switching accounts is a privacy/session-reset UI issue the system addresses elsewhere; should not have declined."
+  },
+  "hv5-g02-038": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Progress-for-background-work guardrail directly addresses a progress bar regressing."
+  },
+  "hv5-g02-039": {
+   "verdict": "BAD",
+   "defect": "overlong",
+   "why": "Billing/plan-comparison and real-time-stream records are wrong-screen filler; the actual truncate-mid-word issue gets only thin, indirect coverage."
+  },
+  "hv5-g02-040": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Visible-focus-ring record directly answers the question asked."
+  },
+  "hv5-g02-041": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Filter-bar and search/filter-state guardrails directly address persisting filter selection."
+  },
+  "hv5-g02-042": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Neutral-canvas-plus-accent record directly addresses choosing an error label colour."
+  },
+  "hv5-g02-043": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Generic settings-screen record doesn't address inconsistent decimal precision formatting."
+  },
+  "hv5-g02-044": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Mobile-gesture guardrail directly addresses swipe-vs-scroll conflict; one wrong-screen photo-viewer record doesn't dominate."
+  },
+  "hv5-g02-045": {
+   "verdict": "PARTIAL",
+   "defect": "overlong",
+   "why": "Focal-point record is relevant to a buried link but overscan-margin and typography records are unrelated bulk."
+  },
+  "hv5-g02-046": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Checkout and delivery-promise records don't address a sidebar dismiss incorrectly closing the page behind it."
+  },
+  "hv5-g02-047": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Form-error guidance is generic; input-type/pattern constraint for numeric-only fields isn't specifically addressed."
+  },
+  "hv5-g02-048": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "None of the records address a duplicate-icon rendering bug after a theme switch."
+  },
+  "hv5-g02-049": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Neither record addresses two features on a screen sharing a confusable icon."
+  },
+  "hv5-g02-050": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Generic settings-screen record doesn't address a toggle that expands instead of collapsing."
+  },
+  "hv5-g02-051": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Spacing-scale guardrail directly addresses cramped spacing near the footer."
+  },
+  "hv5-g02-052": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Focal-point record addresses hierarchy generally but the specific fix (a type scale with distinct heading weights) isn't given."
+  },
+  "hv5-g02-053": {
+   "verdict": "BAD",
+   "defect": "overlong",
+   "why": "Six of seven records are wrong-screen chart-type filler; only the spacing-scale record addresses the actual pixel misalignment."
+  },
+  "hv5-g02-054": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "",
+   "why": "Line-height/typography readability on a large display is a concrete UI request the system addresses elsewhere (10-foot typography, type scale); should not have declined."
+  },
+  "hv5-g02-055": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "",
+   "why": "Inconsistent button heights is a concrete visual-consistency UI issue the system addresses elsewhere; should not have declined."
+  },
+  "hv5-g02-056": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Settings-screen and spacing-scale records directly address alignment tightening."
+  },
+  "hv5-g02-057": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Contrast guardrail directly answers the label/background contrast complaint."
+  },
+  "hv5-g02-058": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Nothing about transition timing/easing; tabs structure and nav grammar don't address abruptness."
+  },
+  "hv5-g02-059": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "No record addresses icon-size consistency; photo viewer record is off-topic filler."
+  },
+  "hv5-g02-060": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "No spacing guidance included despite the request being purely about whitespace around the tab bar."
+  },
+  "hv5-g02-061": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Nothing about text wrapping/truncation for long names; card and accessible-name records don't cover it."
+  },
+  "hv5-g02-062": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Flat-surfaces record directly states shadows are reserved for transient layers, answering the shadow-weight complaint."
+  },
+  "hv5-g02-063": {
+   "verdict": "BAD",
+   "defect": "wrong-screen",
+   "why": "Request is about a side-by-side file comparison feature but guidance is all data-chart and billing-comparison records."
+  },
+  "hv5-g02-064": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Only a background-progress record is given; nothing addresses button order/primacy on the poster layout."
+  },
+  "hv5-g02-065": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Chart container record touches legends/spacing generically but nothing addresses crowding next to a specific counter element."
+  },
+  "hv5-g02-066": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Spacing-scale record answers the gap value but is buried among several irrelevant chart-type records (choropleth, bar)."
+  },
+  "hv5-g02-067": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "No type-scale record included even though the request is exactly about a font-size jump between components."
+  },
+  "hv5-g02-068": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Spacing scale and focal point directly address inconsistent margins across sections."
+  },
+  "hv5-g02-069": {
+   "verdict": "BAD",
+   "defect": "generic",
+   "why": "Generic TV checklist (colour, focus, typography, margins) dumped without engaging the actual complaint about not seeing the preview."
+  },
+  "hv5-g02-070": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "No corner-radius/consistency record given though the request is specifically about mismatched corner sharpness."
+  },
+  "hv5-g02-071": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "",
+   "why": "Divider colour darkness is a concrete UI design tweak; the system should not have declined."
+  },
+  "hv5-g02-072": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "No type-scale/hierarchy record; condensed-display record is tangential and contrast is only optional."
+  },
+  "hv5-g02-073": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Media card and layout-shift/aspect-ratio records directly address poster-vs-thumbnail mismatch."
+  },
+  "hv5-g02-074": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Search/filter records are generically relevant but nothing addresses button placement within result rows specifically."
+  },
+  "hv5-g02-075": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Loading-state guardrail explicitly requires skeletons to match final dimensions, directly on point."
+  },
+  "hv5-g02-076": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Sidebar records are relevant in general but don't specifically address narrow-width squishing/collapse behaviour."
+  },
+  "hv5-g02-077": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "",
+   "why": "A divider colour question is a concrete UI vocabulary request; declining as 'no UI vocabulary' is wrong."
+  },
+  "hv5-g02-078": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Neither tabs nor nested-cards record addresses tab-label centering/alignment."
+  },
+  "hv5-g02-079": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Generic form record doesn't help decide between 'Cancel' and 'Dismiss' wording."
+  },
+  "hv5-g02-080": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Empty-state record calls for a small illustration, directly relevant to an oversized illustration complaint."
+  },
+  "hv5-g02-081": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "No dedicated spacing-scale record given for what is fundamentally a gap-sizing question; only tangential no-card-container guidance."
+  },
+  "hv5-g02-082": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Filter/search records don't address colour clash with the brand palette; no colour-token guidance given."
+  },
+  "hv5-g02-083": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Neither media-card nor no-card-container record addresses vertical text centering."
+  },
+  "hv5-g02-084": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Comprehensive, on-topic checkout, focal-point, and spacing records directly address clutter with real data."
+  },
+  "hv5-g02-085": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Spacing-scale record directly addresses rhythm breaking when a card wraps to two lines."
+  },
+  "hv5-g02-086": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "No focal-point/visual-weight record given though the complaint is exactly about relative visual weight versus importance."
+  },
+  "hv5-g02-087": {
+   "verdict": "BAD",
+   "defect": "wrong-screen",
+   "why": "Form records given for a motion/dismiss-animation complaint on a profile screen; nothing about motion timing."
+  },
+  "hv5-g02-088": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "No type-scale/font-family record despite the request being about mismatched caption typeface."
+  },
+  "hv5-g02-089": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "No spacing-scale record included even though the request is literally about a stray gap value."
+  },
+  "hv5-g02-090": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "",
+   "why": "Matching row heights between overlay and tooltip is a concrete UI consistency task that should have been handled."
+  },
+  "hv5-g02-091": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "One-primary-action record doesn't address the filled-vs-outlined icon style question."
+  },
+  "hv5-g02-092": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Spacing/misalignment guardrail explicitly calls out icon/text baseline alignment."
+  },
+  "hv5-g02-093": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "",
+   "why": "A bold-vs-regular label weight question is a concrete UI decision comparable to other handled binary style questions."
+  },
+  "hv5-g02-094": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Dialog/modal and spacing/focal-point records are generically relevant but don't address 'looks dated' modernization specifically."
+  },
+  "hv5-g02-095": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "No one-primary-action/weight-hierarchy record given though the request is exactly about button weight differentiation."
+  },
+  "hv5-g02-096": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Flat-tiles and pills records give concrete radius values and corner-language guidance."
+  },
+  "hv5-g02-097": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Relevant spacing-scale record is buried among several irrelevant records (plan comparison, dialog focus)."
+  },
+  "hv5-g02-098": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Settings-screen record doesn't address left-vs-center text alignment specifically."
+  },
+  "hv5-g02-099": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Focus-ring records directly answer what the focus indicator should look like."
+  },
+  "hv5-g02-100": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Rhythm/hierarchy record explicitly states headings should sit closer to the content below than above."
+  },
+  "hv5-g02-101": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Chart-colour and semantic-token records directly address palette/desaturation concerns."
+  },
+  "hv5-g02-102": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Neutral-canvas-plus-accent record directly states error colour must differ in hue from the accent."
+  },
+  "hv5-g02-103": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Dialog records don't address title/subtitle hierarchy competing for attention; no type-scale record given."
+  },
+  "hv5-g02-104": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Spacing record is relevant but generic; nothing specifically addresses a divider between widget and icon set."
+  },
+  "hv5-g02-105": {
+   "verdict": "PARTIAL",
+   "defect": "wrong-screen",
+   "why": "Editable-grid record is about data-grid columns, not layout grid alignment, and distracts from the relevant spacing-scale record."
+  },
+  "hv5-g02-106": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Spacing/alignment record is tangential; nothing specifically addresses icon-size consistency across a row."
+  },
+  "hv5-g02-107": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Only one of four records (one-primary-action) is relevant to button order; design-states and progress records are off-topic filler."
+  },
+  "hv5-g02-108": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Single, focused spacing-scale record directly answers the gap-value question."
+  },
+  "hv5-g02-109": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "No type-scale record given though the request is explicitly about typography not matching the established scale."
+  },
+  "hv5-g02-110": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "No corner-radius/pills record given even though the request is specifically about radius inconsistency."
+  },
+  "hv5-g02-111": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "",
+   "why": "Divider colour question contains clear UI vocabulary and should have been handled, as with similar prompts elsewhere."
+  },
+  "hv5-g02-112": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Only an empty-state record is given for a broad first-time-usability review; no structural/hierarchy guidance."
+  },
+  "hv5-g02-113": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Wizard/stepper and checklist records are directly relevant to an end-to-end onboarding flow review."
+  },
+  "hv5-g02-114": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Dialog/modal and focus-management records directly support a pre-ship modal critique."
+  },
+  "hv5-g02-115": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Player transport/overlay control records directly address a player-screen critique."
+  },
+  "hv5-g02-116": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Sidebar record is relevant but the progress/background-work record is off-topic filler."
+  },
+  "hv5-g02-117": {
+   "verdict": "BAD",
+   "defect": "wrong-screen",
+   "why": "Developer-tool workbench record is unrelated to a Cancel/Dismiss button-label decision on an event log."
+  },
+  "hv5-g02-118": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "",
+   "why": "Assessing a status indicator's design against comparable screens is a legitimate UI review task."
+  },
+  "hv5-g02-119": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Table-first, chart, and KPI records are directly relevant to an admin-console inconsistency audit."
+  },
+  "hv5-g02-120": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Single, focused focal-point record directly supports a hierarchy rating request."
+  },
+  "hv5-g02-121": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "",
+   "why": "A design-reviewer pass over the order summary is a concrete UI review task the system should have handled."
+  },
+  "hv5-g02-122": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "",
+   "why": "Checking whether a view communicates its purpose is a UI/UX task the system should have handled."
+  },
+  "hv5-g02-123": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Dashboard grid, chart, and KPI records are directly relevant to a pre-demo dashboard review."
+  },
+  "hv5-g02-124": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "",
+   "why": "A critical layout pass on a profile page is a concrete UI review task the system should have handled."
+  },
+  "hv5-g02-125": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "",
+   "why": "Assessing whether a header matches product tone is a UI/brand consistency task, not a backend request as the decline reason claims."
+  },
+  "hv5-g02-126": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Filter-bar and feedback-state records directly support a cold review of the filter panel."
+  },
+  "hv5-g02-127": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Dashboard grid and SaaS-dashboard guardrail directly address a clarity grading request."
+  },
+  "hv5-g02-128": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "",
+   "why": "Reviewing an end-to-end flow for sense-making is a concrete UI review task the system should have handled."
+  },
+  "hv5-g02-129": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Player control records directly support judging whether a player screen feels finished."
+  },
+  "hv5-g02-130": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "",
+   "why": "A five-minute design-lead style review of a poster layout is a concrete UI task the system should have handled."
+  },
+  "hv5-g02-131": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Player transport-control record directly supports a usability-heuristics audit of the player."
+  },
+  "hv5-g02-132": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Toast/banner record is directly relevant to evaluating whether a notification tray solves its purpose."
+  },
+  "hv5-g02-133": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Plan-comparison, no-card-container, and type-scale records are directly relevant to a card regression comparison."
+  },
+  "hv5-g02-134": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Spacing and focal-point records directly support a cross-screen inconsistency review of the home screen."
+  },
+  "hv5-g02-135": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Bordered-cards and nested-cards records directly support a portfolio-style card critique."
+  },
+  "hv5-g02-136": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "",
+   "why": "A filled-vs-outlined icon style question is a concrete UI decision, handled for an equivalent toolbar-icon prompt elsewhere."
+  },
+  "hv5-g02-137": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Checklist and wizard/stepper records directly support ranking onboarding fixes."
+  },
+  "hv5-g02-138": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "",
+   "why": "A bold-vs-regular label question is a concrete UI decision the system should have handled."
+  },
+  "hv5-g02-139": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "",
+   "why": "Auditing a report view for visual rhythm breaks is a concrete UI review task the system should have handled."
+  },
+  "hv5-g02-140": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Player-control records directly support evaluating whether a player overlay earns its place."
+  },
+  "hv5-g02-141": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "",
+   "why": "A stakeholder-eye assessment of a tab is a concrete UI review task the system should have handled."
+  },
+  "hv5-g02-142": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Spacing/focal-point records are generic; nothing brand-specific (semantic tokens, brand differentiation) is given for a brand-consistency check."
+  },
+  "hv5-g02-143": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Checkout, sticky-bar, form, and delivery-promise records comprehensively address checkout clarity."
+  },
+  "hv5-g02-144": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Checkout, sticky-bar, and form-error records comprehensively support an honest checkout critique."
+  },
+  "hv5-g02-145": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Directly gives radius, container, and corner-language guidance for a single-card radius question."
+  },
+  "hv5-g02-146": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "Reviewing a report view for design issues is a UI audit task; declining was wrong."
+  },
+  "hv5-g02-147": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "Checking a profile page's layout consistency after a footer change is a UI task."
+  },
+  "hv5-g02-148": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Dashboard grid, chart container, and default-dashboard critique directly answer a first-impression dashboard review."
+  },
+  "hv5-g02-149": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Settings screen and contrast records are given but no guidance on text alignment, the actual question."
+  },
+  "hv5-g02-150": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Focus ring token, focus-visible guardrail, and player controls all address the focus ring question directly."
+  },
+  "hv5-g02-151": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Neutral-canvas-plus-accent record explicitly addresses error color hue and form error guidance covers placement."
+  },
+  "hv5-g02-152": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Dashboard/chart/KPI records assume an analytics screen but say nothing about where a flow gets a user stuck (dialogs, forms, dead ends)."
+  },
+  "hv5-g02-153": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "One-primary-action guidance directly informs button hierarchy/order on a card."
+  },
+  "hv5-g02-154": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Single focused settings-screen record is exactly on topic for a settings once-over."
+  },
+  "hv5-g02-155": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Two near-duplicate generic spacing-scale guardrails, no concrete toolbar gap value."
+  },
+  "hv5-g02-156": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "Picking a gray shade for a divider is a concrete UI/color task that should have been answered."
+  },
+  "hv5-g02-157": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Wizard/stepper guidance gives a concrete lens for evaluating whether the onboarding flow earns its steps."
+  },
+  "hv5-g02-158": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Dropdown/menu behavior is covered but nothing addresses the actual wording choice (Cancel vs Dismiss)."
+  },
+  "hv5-g02-159": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Drawer/side-panel and sidebar records directly support auditing a navigation drawer for filler."
+  },
+  "hv5-g02-160": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "A pre-release rough-spot review of a profile page is a UI audit task."
+  },
+  "hv5-g03-001": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Filter chips and focus-visible guardrails directly match a disappearing focus ring on a filter chip."
+  },
+  "hv5-g03-002": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Toast/live-region records directly address duplicate screen-reader announcements."
+  },
+  "hv5-g03-003": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Never-colour-alone guardrail is exactly the fix for a status-only-by-color vitals row."
+  },
+  "hv5-g03-004": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Sunlight-readability and non-text-contrast records directly answer an outdoor-glare contrast failure."
+  },
+  "hv5-g03-005": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Keyboard-trap and dialog-focus records are on point but type-scale and generic empty-state records dilute the bundle."
+  },
+  "hv5-g03-006": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Native accessibility semantics is relevant but toast, contrast, and colour-alone records are unrelated filler for a rotor-heading gap."
+  },
+  "hv5-g03-007": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "Flagging color-only status in a grade table is a concrete UI accessibility task."
+  },
+  "hv5-g03-008": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Nothing in the bundle addresses touch target size for tremor, the entire point of the request."
+  },
+  "hv5-g03-009": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "No reduced-motion record is present despite the request being specifically about ignored reduced-motion settings."
+  },
+  "hv5-g03-010": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Hover-reveal, checkout, and focal-point records collectively support a keyboard/mouse-free checkout audit."
+  },
+  "hv5-g03-011": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Accessible-names guardrail directly answers a missing input label read as 'edit text'."
+  },
+  "hv5-g03-012": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Text contrast and kiosk guardrails directly help triage contrast findings for a factory kiosk."
+  },
+  "hv5-g03-013": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Keyboard-no-traps and search/filter records address a broken tab order skipping a results grid."
+  },
+  "hv5-g03-014": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "None of toast/dialog/focal-point/density records address giving a sound alert a visual equivalent."
+  },
+  "hv5-g03-015": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Target-size-by-platform guardrail directly answers whether 44px suffices for a gloved thumb."
+  },
+  "hv5-g03-016": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Data grid and row-action tab-stop records support fixing header announcement in a grid for JAWS."
+  },
+  "hv5-g03-017": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Toast record's minimum duration/live-region rule directly answers a too-fast, unannounced toast."
+  },
+  "hv5-g03-018": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "No keyboard-no-traps guardrail is present despite the request being exactly about a focus loop trapping switch-access users."
+  },
+  "hv5-g03-019": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "A badge that is color-only with no text is a concrete UI accessibility issue that should have been answered."
+  },
+  "hv5-g03-020": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Windows Fluent materials record explicitly calls out verifying high-contrast mode."
+  },
+  "hv5-g03-021": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Announce-dynamic-status guardrail directly answers an audio-only gate-change alert."
+  },
+  "hv5-g03-022": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Data table record explicitly covers aria-sort indicator placement, the exact bug described."
+  },
+  "hv5-g03-023": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "No focus-visible guardrail appears in a bundle for a request specifically about polishing focus states."
+  },
+  "hv5-g03-024": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Single text-contrast record directly targets a small, hard-to-read warehouse label."
+  },
+  "hv5-g03-025": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Never-colour-alone is the right answer but is buried among unrelated player-control and dialog records."
+  },
+  "hv5-g03-026": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "Assessing readability of a monospace alarm log for dyslexic users is a concrete UI/typography task."
+  },
+  "hv5-g03-027": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Focus-visible guardrail directly targets a low-contrast blue-on-blue focus ring."
+  },
+  "hv5-g03-028": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Chart-container's accessible-summary-text requirement directly answers the missing alt text for a chart."
+  },
+  "hv5-g03-029": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "General toast/contrast/name records are present but nothing addresses a screen reader user getting stuck mid-flow at a scan step."
+  },
+  "hv5-g03-030": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "The drag-and-drop keyboard-alternative record is exactly on point but is diluted by unrelated sankey-chart and photo-viewer records."
+  },
+  "hv5-g03-031": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Skip-links record is the right answer but seven other records (toast, colour, contrast, hover, names) are unrelated filler."
+  },
+  "hv5-g03-032": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Neither record addresses giving a visual overlay a companion sound/alert cue, the actual complaint."
+  },
+  "hv5-g03-033": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Accessible-names guardrail directly targets an unlabeled icon-only toggle row."
+  },
+  "hv5-g03-034": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Dialog records say nothing about line-height or reflow at 200% zoom, the actual low-vision complaint."
+  },
+  "hv5-g03-035": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Data table and numeric table records give solid grid-accessibility grounding for a merged-cell screen reader break."
+  },
+  "hv5-g03-036": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Form-errors record explicitly requires moving focus to the error summary on submit, the exact question."
+  },
+  "hv5-g03-037": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Dialog focus-management record directly covers a trapped bottom sheet with no dismiss affordance."
+  },
+  "hv5-g03-038": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Dialog guidance is relevant but no target-size guardrail addresses the tiny checkbox itself, and utility-commerce is irrelevant filler."
+  },
+  "hv5-g03-039": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Single text-contrast record is exactly on point for a badge contrast fix."
+  },
+  "hv5-g03-040": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Search/catalog records are generic; nothing addresses DOM/reading-order for screen readers, the actual bug."
+  },
+  "hv5-g03-041": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Form/wizard records don't address accessible naming/labeling needed for voice-control targeting, the core ask."
+  },
+  "hv5-g03-042": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "Testing a calculator at 400% screen magnification is a concrete UI accessibility QA task."
+  },
+  "hv5-g03-043": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Photo viewer's explicit zoom-button alternative is relevant but buried among six unrelated records."
+  },
+  "hv5-g03-044": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Form and contrast records don't cover cognitive load specifically (chunking, plain language, reducing steps), which the request explicitly asked to look beyond contrast for."
+  },
+  "hv5-g03-045": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Announce-dynamic-status covers the aria-live gap but nothing addresses giving the timer a pause option, half the request."
+  },
+  "hv5-g03-046": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Sidebar record doesn't mention the breakpoint/navigation-transform guidance that would actually fix a vanishing-with-no-fallback sidebar."
+  },
+  "hv5-g03-047": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Mobile-density-bounded-by-touch record directly addresses a table crushed in split view."
+  },
+  "hv5-g03-048": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Single orientation-changes record is exactly on point for a frozen rotation transition."
+  },
+  "hv5-g03-049": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Dashboard/card records are generic; no web-breakpoint-test-matrix record addresses the specific 834px overlap bug."
+  },
+  "hv5-g03-050": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Web breakpoint test-matrix record directly targets clipping at a resized browser width."
+  },
+  "hv5-g03-051": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Chart records mention general responsiveness but nothing covers desktop window breakpoints/DPI for a legend at narrow widths."
+  },
+  "hv5-g03-052": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Desktop-resizing record is tangentially useful but pagination is irrelevant filler for a landscape-mode row-clipping bug."
+  },
+  "hv5-g03-053": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Spacing and focal-point records don't address adaptive grid layout across phone/foldable sizes, the entire request."
+  },
+  "hv5-g03-054": {
+   "verdict": "BAD",
+   "defect": "wrong-screen",
+   "why": "Part-to-whole and funnel chart records treat 'patient chart' as a data visualization rather than the clinical record screen the request means."
+  },
+  "hv5-g03-055": {
+   "verdict": "BAD",
+   "defect": "wrong-screen",
+   "why": "Plan-comparison/billing and generic accessibility records don't match a file-diff comparison view's breakpoint collapse issue."
+  },
+  "hv5-g03-056": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Kiosk guardrail is relevant but nothing addresses text-length/localization overlap, the actual bug."
+  },
+  "hv5-g03-057": {
+   "verdict": "BAD",
+   "defect": "wrong-screen",
+   "why": "Choropleth and line-chart records treat 'map view' as a data-viz chart type rather than the geographic map component the request describes, and neither addresses resizing."
+  },
+  "hv5-g03-058": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "The breakpoint test-matrix record is relevant but editable-grid records assume a data grid, not pricing-page columns."
+  },
+  "hv5-g03-059": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Desktop-layouts-survive-resizing record directly covers pane-collapse behavior when a window is snapped."
+  },
+  "hv5-g03-060": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Form/photo-capture records are on-topic but no orientation-changes record addresses a sideways-propped tablet layout."
+  },
+  "hv5-g03-061": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Spacing-scale guardrail is exactly on point for a single gutter-token change."
+  },
+  "hv5-g03-062": {
+   "verdict": "PARTIAL",
+   "defect": "wrong-screen",
+   "why": "Most records (categorical color, bar chart, KPI tile) assume a data chart rather than a seating-chart layout tool; only the breakpoint matrix is genuinely relevant."
+  },
+  "hv5-g03-063": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Checkout and web-breakpoint-matrix records directly cover testing across breakpoints including small Android widths."
+  },
+  "hv5-g03-064": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Kiosk guardrail's target-size and layout points reasonably address a non-rescaling touchscreen menu."
+  },
+  "hv5-g03-065": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Chart-container's responsive requirement directly addresses charts rendering at a fixed pixel width."
+  },
+  "hv5-g03-066": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Privacy, kiosk, and type-scale records don't address a resizing/overlap layout bug on a desktop trading terminal."
+  },
+  "hv5-g03-067": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Pagination and mobile-list records don't address scaling a timeline component from phone to large-display projector."
+  },
+  "hv5-g03-068": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Single desktop-layouts-survive-resizing record is exactly on point for text wrapping under 900px."
+  },
+  "hv5-g03-069": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Mobile-density record is genuinely useful but chart/KPI records misread 'medication chart' as a data visualization, diluting the bundle."
+  },
+  "hv5-g03-070": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Wizard and desktop-resizing records directly cover preserving form state through a window resize mid-step."
+  },
+  "hv5-g03-071": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Form and kiosk records don't address the actual layout-cutoff/responsive problem on a smaller POS terminal."
+  },
+  "hv5-g03-072": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Filter bar, drawer, and breakpoint-matrix records directly cover a filter drawer misbehaving on tablet portrait."
+  },
+  "hv5-g03-073": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "Portrait-vs-landscape terminal UI is a clear responsive/orientation UI task that should have been handled."
+  },
+  "hv5-g03-074": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Records cover charts and dashboard structure generally but nothing addresses the specific horizontal-scrollbar-at-1280px overflow/breakpoint problem asked about."
+  },
+  "hv5-g03-075": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Orientation/size-class and focal-point/target-size guidance directly addresses a tablet split-view panel losing space for alert text."
+  },
+  "hv5-g03-076": {
+   "verdict": "BAD",
+   "defect": "overlong",
+   "why": "A one-line column-width fix gets a full data-table/editable-grid guardrail dump, wildly disproportionate to the tiny request."
+  },
+  "hv5-g03-077": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Breakpoint test matrix and no-nested-cards guidance directly address whether a flight-number field wraps or overflows in a card grid."
+  },
+  "hv5-g03-078": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Form and keyboard guidance is generic to any mobile form; nothing specifically addresses foldable half-open screen behavior asked about."
+  },
+  "hv5-g03-079": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Desktop resizing/DPI guardrail on star/auto sizing over absolute widths directly targets a fixed-width toolbar eating space on resize."
+  },
+  "hv5-g03-080": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "List/form/keyboard records are generic; none specifically address truncated address text at a fixed character count, the actual complaint."
+  },
+  "hv5-g03-081": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Desktop breakpoint/DPI guardrail is exactly on-topic for auditing a desktop-only flow's responsiveness."
+  },
+  "hv5-g03-082": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "Orientation lock failure on a kiosk is a concrete UI/interaction bug that should have been addressed, e.g. with kiosk or orientation guidance."
+  },
+  "hv5-g03-083": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "Whether a layout survives a narrow mounted tablet is a responsive-design UI question the system should have handled."
+  },
+  "hv5-g03-084": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Master-detail record mentions collapsing on narrow widths but gives no guidance on choosing a reasonable breakpoint, the actual complaint about 1100px being too early."
+  },
+  "hv5-g03-085": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Top bar navigation and breakpoint test matrix directly address nav wrapping at a specific laptop width with sidebar open."
+  },
+  "hv5-g03-086": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Lots of general TV/EPG and focus guidance included but nothing narrowly explains why focus jumps two rows on DOWN, the specific bug."
+  },
+  "hv5-g03-087": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Player transport controls record directly covers overlay controls and distinguishing seek bar from volume control."
+  },
+  "hv5-g03-088": {
+   "verdict": "PARTIAL",
+   "defect": "overlong",
+   "why": "Focus-loss-on-load is real but buried under many loosely related TV/media-card/typography records not about the specific bug."
+  },
+  "hv5-g03-089": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "EPG grid guidance on virtualization and minimum cell width directly addresses a marathon block causing endless row scrolling."
+  },
+  "hv5-g03-090": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "10-foot typography and TV focus/performance records directly address blurry thumbnails and unreadable text from ten feet."
+  },
+  "hv5-g03-091": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "TV predictable BACK and transport control conventions directly address BACK exiting the app instead of showing controls."
+  },
+  "hv5-g03-092": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Focus visible/contrast guardrail directly addresses an invisible focus ring against dark hero art."
+  },
+  "hv5-g03-093": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Single focused spacing-scale guardrail is proportionate and directly answers the one-line spacing-fix request."
+  },
+  "hv5-g03-094": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "D-pad held-repeat pacing guidance directly explains and fixes double-press channel skipping."
+  },
+  "hv5-g03-095": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "TV side sheet / chooser pattern directly addresses reducing clicks to reach the subtitle track selector."
+  },
+  "hv5-g03-096": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Only a generic broadcast-guide record is given; nothing addresses live score overlay failing to update without re-entering the stream, a data/refresh issue this system doesn't speak to but at minimum no relevant guidance is offered."
+  },
+  "hv5-g03-097": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Rail/card/mini-player records are generic; the landing-skeleton record is off-topic for a rails-and-hero screen; readability-from-a-distance guidance itself is thin/absent given the prompt is specifically about that."
+  },
+  "hv5-g03-098": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Player/transport records dominate but the actual ask (numeric PIN entry without a numpad) is only weakly covered by generic 'no touch, D-pad only' guardrails, not a PIN-specific pattern."
+  },
+  "hv5-g03-099": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "General TV focus rules included but nothing specifically addresses focus engine misdetecting the nearest tile between vertically close rails."
+  },
+  "hv5-g03-100": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Mini player and player transport records directly address the mini player overlapping captions and positioning rules."
+  },
+  "hv5-g03-101": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Cinematic TV and focal-point records are generic aesthetic guidance; nothing specifically addresses making an exit control discoverable/reachable from the couch."
+  },
+  "hv5-g03-102": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "No-touch/D-pad-only guardrail directly addresses a queue screen requiring mouse-pointer mode instead of remote scrolling."
+  },
+  "hv5-g03-103": {
+   "verdict": "BAD",
+   "defect": "overlong",
+   "why": "A one-line spinner color change gets toast/banner and background-progress guardrails unrelated to a simple color token change."
+  },
+  "hv5-g03-104": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Player/transport, 10-foot typography, and BACK/focus guardrails comprehensively address a full player-chrome ten-foot legibility review."
+  },
+  "hv5-g03-105": {
+   "verdict": "BAD",
+   "defect": "wrong-screen",
+   "why": "Only chart/part-to-whole records given for a broadcast ticker/lower-third overlap problem; completely mismatched to the request."
+  },
+  "hv5-g03-106": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Held-repeat pacing guardrail directly addresses fast-forward skipping whole episodes instead of smooth scrubbing."
+  },
+  "hv5-g03-107": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "10-foot typography guardrail directly and proportionately addresses small font on a wall-mounted display."
+  },
+  "hv5-g03-108": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Mini-player and generic 'one visible focus' records included but nothing specifically addresses focus indication persisting once scrolled past the first row of a rail."
+  },
+  "hv5-g03-109": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "TV predictable BACK guardrail directly addresses inconsistent back-button behavior across screens."
+  },
+  "hv5-g03-110": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Player transport and TV chooser/transport-convention records directly address caption sizing overlapping player controls."
+  },
+  "hv5-g03-111": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Kiosk guardrail is generic public-kiosk advice; nothing specific to fixing transition stutter on ad rotation."
+  },
+  "hv5-g03-112": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Non-text contrast guardrail directly targets the red-on-red live badge contrast fix requested."
+  },
+  "hv5-g03-113": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Only generic kiosk guidance given; nothing addresses the actual ask, which is about typeface digit legibility/disambiguation at distance."
+  },
+  "hv5-g03-114": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Privacy/shared-screen guardrail on PIN gating directly addresses the profile switcher typing complaint, suggesting PIN over typed entry."
+  },
+  "hv5-g03-115": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "10-foot typography guardrail is a focused, proportionate answer to an eyesight-focused guide audit request."
+  },
+  "hv5-g03-116": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Media card, mini-player and TV focus-restoration records directly address a rail losing scroll position on back navigation."
+  },
+  "hv5-g03-117": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "A frozen frame with no buffering indicator during pause is a concrete UI feedback-state problem the system should have addressed."
+  },
+  "hv5-g03-118": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Many generic dashboard/offline/privacy records included but only the exceptions-first record narrowly addresses making the current-turn highlight more distinct."
+  },
+  "hv5-g03-119": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "TV search-with-voice-then-keyboard and D-pad reachability records directly address whether voice search results are then selectable by d-pad."
+  },
+  "hv5-g03-120": {
+   "verdict": "BAD",
+   "defect": "wrong-screen",
+   "why": "Chart/analytics records dominate for a multi-camera angle switcher overlapping a scoreboard graphic during a live sports broadcast; mismatched content."
+  },
+  "hv5-g03-121": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Desktop menu bar/context menu records directly address a context menu not mirroring the ribbon's own commands."
+  },
+  "hv5-g03-122": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Desktop DPI/resizing guardrail on grid interactions is relevant, and the small-target problem is implicitly covered though somewhat indirect."
+  },
+  "hv5-g03-123": {
+   "verdict": "BAD",
+   "defect": "wrong-screen",
+   "why": "Real-time chart and funnel records are unrelated to whether window position persists across restarts on multi-monitor; only the DPI/resize record is even tangential."
+  },
+  "hv5-g03-124": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Desktop menu bar and Fluent-style records directly address native-vs-generic menu bar appearance across platforms."
+  },
+  "hv5-g03-125": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "The single desktop-keyboard-shortcuts guardrail directly and proportionately addresses hotkey conflicts with the OS."
+  },
+  "hv5-g03-126": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "Title bar not respecting system dark mode is a concrete, addressable UI theming bug the system should have handled."
+  },
+  "hv5-g03-127": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Grid/drag-drop/keyboard records are generic; none specifically addresses row-drag also selecting underlying text, the actual bug."
+  },
+  "hv5-g03-128": {
+   "verdict": "BAD",
+   "defect": "overlong",
+   "why": "A single menu-item reorder gets full menu/nav records and breadcrumb guidance, disproportionate to the trivial one-line request."
+  },
+  "hv5-g03-129": {
+   "verdict": "BAD",
+   "defect": "wrong-screen",
+   "why": "Chart-color and privacy/exceptions records are irrelevant to multi-window snapping consistency across ultrawide monitors; nothing addresses window management."
+  },
+  "hv5-g03-130": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Dialog and dialog-focus-management records directly address inconsistent OK/Cancel button ordering across dialogs."
+  },
+  "hv5-g03-131": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Desktop resizing/DPI guardrail on minimum window size directly addresses clipping instead of enforcing a minimum."
+  },
+  "hv5-g03-132": {
+   "verdict": "PARTIAL",
+   "defect": "wrong-screen",
+   "why": "Plan-comparison/billing and sidebar records are unrelated to toolbar icon retina scaling; only the type-scale record is loosely relevant, and nothing addresses icon asset resolution directly."
+  },
+  "hv5-g03-133": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Keyboard-operability guardrail on tab order directly addresses unpredictable tab order in a form."
+  },
+  "hv5-g03-134": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "Alt+Tab preview content (frozen thumbnail vs live frame) is a legitimate, answerable UI behavior question."
+  },
+  "hv5-g03-135": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "An undockable inspector panel is a concrete UI/layout feature request the system should have addressed with panel/docking guidance."
+  },
+  "hv5-g03-136": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "Whether closing the last window quits the app is a standard desktop UX convention question that should have been answered."
+  },
+  "hv5-g03-137": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Context menu positioning-within-viewport guidance directly addresses the menu obscuring the selected object."
+  },
+  "hv5-g03-138": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Settings/form/tabs records are generic; none specifically addresses inconsistent control choice (slider vs text field) for the same value type across tabs."
+  },
+  "hv5-g03-139": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Dialog records are generic to any dialog; nothing addresses persisting a user setting (paper size) across sessions, the actual bug."
+  },
+  "hv5-g03-140": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Accessible-names guardrail directly supports renaming a vague 'Go' button label to something descriptive."
+  },
+  "hv5-g03-141": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Data table and empty/loading-state records directly address the grid appearing frozen during a long filter without a loading indicator."
+  },
+  "hv5-g03-142": {
+   "verdict": "BAD",
+   "defect": "wrong-screen",
+   "why": "Real-time chart, funnel, and chart-container records are irrelevant to Windows high-DPI scaling on an external 4K monitor; only the keyboard guardrail is unrelated too."
+  },
+  "hv5-g03-143": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "Missing tooltips on toolbar buttons is a straightforward discoverability/labeling UI issue that should have been handled."
+  },
+  "hv5-g03-144": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Spacing and focal-point guardrails are generic and don't address the actual issue, a font-stack mismatch from packaging."
+  },
+  "hv5-g03-145": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "Custom scrollbar clashing with OS scrollbar in the same window is an answerable UI consistency issue."
+  },
+  "hv5-g03-146": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Form/keyboard records are generic and don't address the real issue: a splash screen blocking input after the window is already interactive."
+  },
+  "hv5-g03-147": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Tree view context menu records directly address whether move-here is offered alongside copy in a right-click menu."
+  },
+  "hv5-g03-148": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Empty-state and state-token records are generic; nothing specifically addresses multi-select selection state surviving scroll/virtualization, the actual bug."
+  },
+  "hv5-g03-149": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Toast/banner record is generic to notifications broadly; nothing specifically addresses the native OS notification deep-linking to a file location on click."
+  },
+  "hv5-g03-150": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Dialog, sidebar, keyboard, and focus-visibility records comprehensively address an audit of window chrome, menus, dialogs, and shortcuts."
+  },
+  "hv5-g04-001": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Sticky action bar and focus-visible-not-obscured records directly address the checkout button hiding behind the keyboard."
+  },
+  "hv5-g04-002": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "List/toast/offline/virtualization records are generic mobile-list guidance; none specifically addresses scroll stutter caused by an offline banner's layout/render cost."
+  },
+  "hv5-g04-003": {
+   "verdict": "PARTIAL",
+   "defect": "wrong-screen",
+   "why": "Wizard, checkout, and photo-capture records are unrelated to a med-dose stepper's fat-finger/target-size problem; no touch-target-specific stepper guidance is present."
+  },
+  "hv5-g04-004": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "Adding pull-to-refresh to a tracker is a concrete, well-known mobile UI pattern request that should have been handled."
+  },
+  "hv5-g04-005": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Mobile orientation and safe-area guardrails directly address incorrect safe-area padding on notch phones in landscape."
+  },
+  "hv5-g04-006": {
+   "verdict": "BAD",
+   "defect": "wrong-screen",
+   "why": "Sticky-bar, checkout, and delivery-promise records are unrelated to a Compose recomposition/performance issue on a cart badge update; nothing addresses render performance."
+  },
+  "hv5-g04-007": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Dialog and mobile-gesture guardrails directly address a bottom sheet dismiss gesture conflicting with the back swipe."
+  },
+  "hv5-g04-008": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Safe-areas guardrail directly and precisely addresses the tab bar overlapping the home indicator."
+  },
+  "hv5-g04-009": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Checklist and density records are generic; nothing addresses persisting carousel/swipe position across app backgrounding, the actual bug."
+  },
+  "hv5-g04-010": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Text-scaling/Dynamic-Type guardrail directly addresses tiny text under maximum Dynamic Type on the loyalty card screen."
+  },
+  "hv5-g04-011": {
+   "verdict": "BAD",
+   "defect": "missing-critical",
+   "why": "Dialog/focus guidance is irrelevant to a biometric prompt racing the splash screen init order."
+  },
+  "hv5-g04-012": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Thumb-reach guardrail directly addresses a one-handed reachability mode."
+  },
+  "hv5-g04-013": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Mostly generic list/pagination guidance; only a passing mention of scroll restoration touches the actual hot-reload bug."
+  },
+  "hv5-g04-014": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Orientation-change guardrail directly covers rotation handling for the scanner view."
+  },
+  "hv5-g04-015": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Banner placement record is relevant but is diluted by generic progress/empty-state filler not about overlap."
+  },
+  "hv5-g04-016": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Keyboard-aware layout guardrail directly covers keeping the apply button reachable above the IME."
+  },
+  "hv5-g04-017": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Bottom tab bar and thumb-reach records directly address redesigning nav for reach on big phones."
+  },
+  "hv5-g04-018": {
+   "verdict": "BAD",
+   "defect": "wrong-screen",
+   "why": "Bundle is dominated by checkout/dialog guidance unrelated to a review app's swipe-gesture conflict."
+  },
+  "hv5-g04-019": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Checkout, sticky action bar, target size, and keyboard records together cover one-thumb checkout usability well."
+  },
+  "hv5-g04-020": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "A picker-wheel snapping to the wrong row on release is a concrete UI interaction bug the system should have addressed."
+  },
+  "hv5-g04-021": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Progress/loading-state guardrails directly address a spinner that never resolves."
+  },
+  "hv5-g04-022": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "A stale-balance widget is a refresh/last-updated UI state problem the system handles elsewhere and should have here."
+  },
+  "hv5-g04-023": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Search field, map, and spacing records together address the overlap between the cluster and search bar."
+  },
+  "hv5-g04-024": {
+   "verdict": "PARTIAL",
+   "defect": "wrong-screen",
+   "why": "Tabs and data-grid-focus records are unrelated to spacing a simple order-row list; only the spacing guardrail is on point."
+  },
+  "hv5-g04-025": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "A duplicated haptic trigger is a native/firmware timing bug with no UI-design content."
+  },
+  "hv5-g04-026": {
+   "verdict": "BAD",
+   "defect": "generic",
+   "why": "Auto-rotating-carousel guidance is about timed content, not a freeze/crash bug triggered by device rotation."
+  },
+  "hv5-g04-027": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Toast and contrast guardrails directly address low-contrast text in the low-battery toast."
+  },
+  "hv5-g04-028": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Drag-and-drop and gesture-alternative records directly address reorder snapping back; photo-viewer record is a minor distractor."
+  },
+  "hv5-g04-029": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "A duplicate permission-prompt request is an OS/platform flow question, not a UI design task."
+  },
+  "hv5-g04-030": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "Incorrect rounding math on the last share is a logic bug, not a UI design issue."
+  },
+  "hv5-g04-031": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Wizard and kiosk idle-timeout guardrails directly address a payment flow timing out mid-step."
+  },
+  "hv5-g04-032": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Field-use/glove guardrail is an exact match for signature-pad unresponsiveness with gloves."
+  },
+  "hv5-g04-033": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "A language toggle resetting to English is a UI internationalisation bug the system covers elsewhere (see g04-042)."
+  },
+  "hv5-g04-034": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Only privacy guidance is given; the core public-kiosk hub/wayfinding pattern needed to build a directory kiosk is absent."
+  },
+  "hv5-g04-035": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Field-use sunlight-readability guardrail is an exact match for glare washing out the queue number."
+  },
+  "hv5-g04-036": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Kiosk idle-timeout and auto-rotating-content records directly cover adding a reset countdown."
+  },
+  "hv5-g04-037": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Generic kiosk guardrail is given but nothing addresses debounce/double-submission protection for slow taps."
+  },
+  "hv5-g04-038": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Public kiosk and reach-range guardrails directly address wheelchair-height check-in redesign."
+  },
+  "hv5-g04-039": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "Language-switching clarity on a kiosk is a UI task the system handles elsewhere (internationalisation record)."
+  },
+  "hv5-g04-040": {
+   "verdict": "BAD",
+   "defect": "wrong-screen",
+   "why": "Bordered-card component guidance has nothing to do with a hardware LED indicator never lighting up."
+  },
+  "hv5-g04-041": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Generic kiosk idle guardrail given but nothing on motion/animation or reduced-motion specifics for the idle animation itself."
+  },
+  "hv5-g04-042": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Internationalisation and kiosk guardrails together directly address the language toggle resetting on timeout."
+  },
+  "hv5-g04-043": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Target-size, kiosk, and glove/field-use records directly address touch targets being too small for gloved hands."
+  },
+  "hv5-g04-044": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Form-error guidance doesn't address a persistent system message that fails to clear from the screen."
+  },
+  "hv5-g04-045": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Generic public-kiosk pattern given but nothing addresses a frozen/stuck state after a reading."
+  },
+  "hv5-g04-046": {
+   "verdict": "PARTIAL",
+   "defect": "wrong-screen",
+   "why": "Analytical-console dashboard record is unrelated filler; only the field-use sunlight record is on topic for a low-glare mode."
+  },
+  "hv5-g04-047": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "A print queue backing up under load is a backend/hardware throughput issue, not a UI design task."
+  },
+  "hv5-g04-048": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Contrast, accessible-names, live-region, and kiosk records comprehensively cover a screen-reader accessibility audit."
+  },
+  "hv5-g04-049": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Trend-aesthetics-vs-usability and contrast guardrails directly address unreadable text at reading distance."
+  },
+  "hv5-g04-050": {
+   "verdict": "PARTIAL",
+   "defect": "wrong-screen",
+   "why": "The kiosk-keypad record is on point but data-entry-grid and editable-grid records are spreadsheet patterns unrelated to an ATM keypad."
+  },
+  "hv5-g04-051": {
+   "verdict": "BAD",
+   "defect": "wrong-product",
+   "why": "Utility-commerce storefront pattern is unrelated to a shop-floor touchscreen losing calibration after a shift change."
+  },
+  "hv5-g04-052": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Kiosk timeout guardrail is relevant but nothing addresses writing clear timeout-warning copy itself, which is the actual ask."
+  },
+  "hv5-g04-053": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Generic kiosk target-size guardrail given but no guidance on a glove-friendly zoom alternative to pinch gestures."
+  },
+  "hv5-g04-054": {
+   "verdict": "PARTIAL",
+   "defect": "missing-critical",
+   "why": "Privacy and kiosk guardrails are generic; nothing addresses clarifying the confusing insurance-scan step itself."
+  },
+  "hv5-g04-055": {
+   "verdict": "GOOD",
+   "defect": "",
+   "why": "Dialog/modal record with one-primary-action guidance directly addresses button order on the confirmation dialog."
+  },
+  "hv5-g04-056": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "CI test-suite runtime is a build-tooling issue with no UI dimension."
+  },
+  "hv5-g04-057": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "A database migration timeout is backend data work, not a UI task."
+  },
+  "hv5-g04-058": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "SQL query optimization is a backend data task with no UI-design content."
+  },
+  "hv5-g04-059": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "Webpack bundle size is a build-tooling concern, not a UI design task."
+  },
+  "hv5-g04-060": {
+   "verdict": "BAD",
+   "defect": "should-abstain",
+   "why": "API rate limiting is pure backend work; the system answered with unrelated full checkout/form UI guidance."
+  },
+  "hv5-g04-061": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "A self-contradictory 'redesign but change nothing visible' request has no actionable UI ask."
+  },
+  "hv5-g04-062": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "Load balancer websocket drops during deploys is infrastructure work, not UI design."
+  },
+  "hv5-g04-063": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "Framework choice (React vs Vue) is an engineering decision, not a UI design task."
+  },
+  "hv5-g04-064": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "Kubernetes pod restarts are infrastructure operations, not UI design."
+  },
+  "hv5-g04-065": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "A data backfill migration script is backend data work, not UI design."
+  },
+  "hv5-g04-066": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "Redis cache invalidation logic is backend runtime work, not UI design."
+  },
+  "hv5-g04-067": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "Auditing npm dependencies for vulnerabilities is a security task, not UI design."
+  },
+  "hv5-g04-068": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "Out-of-order webhook delivery is backend integration work, not UI design."
+  },
+  "hv5-g04-069": {
+   "verdict": "PARTIAL",
+   "defect": "generic",
+   "why": "Generic form guidance is given but nothing addresses the actual contradictory ask (minimal yet packed with options)."
+  },
+  "hv5-g04-070": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "S3 bucket permissions are a security/infrastructure concern, not UI design."
+  },
+  "hv5-g04-071": {
+   "verdict": "BAD",
+   "defect": "should-abstain",
+   "why": "Git branching strategy is an engineering-process question; the system answered with unrelated product-detail-page UI guidance."
+  },
+  "hv5-g04-072": {
+   "verdict": "BAD",
+   "defect": "should-abstain",
+   "why": "A stale GraphQL resolver is a backend data-freshness bug; the system answered with unrelated dashboard/chart guidance."
+  },
+  "hv5-g04-073": {
+   "verdict": "BAD",
+   "defect": "should-abstain",
+   "why": "Blue-green deployment is an infrastructure task; the system answered with unrelated full checkout UI guidance."
+  },
+  "hv5-g04-074": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "A silently failing cron job is backend infrastructure work, not UI design."
+  },
+  "hv5-g04-075": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "Terraform state drift is infrastructure work, not UI design."
+  },
+  "hv5-g04-076": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "Analytics event ordering is a backend/data pipeline issue, not UI design."
+  },
+  "hv5-g04-077": {
+   "verdict": "BAD",
+   "defect": "contradicts-request",
+   "why": "The request explicitly forbids touching code, but the guidance is a normal settings-screen layout pattern that ignores that constraint and doesn't address speed."
+  },
+  "hv5-g04-078": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "An OAuth token refresh loop is backend auth logic, not UI design."
+  },
+  "hv5-g04-079": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "Build pipeline cache invalidation is a build-tooling issue, not UI design."
+  },
+  "hv5-g04-080": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "Microservices-vs-monolith is an architecture decision, not UI design."
+  },
+  "hv5-g04-081": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "Message queue backpressure from a small worker pool is backend infrastructure, not UI design."
+  },
+  "hv5-g04-082": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "'Fix the bug' has no UI vocabulary or specificity to act on."
+  },
+  "hv5-g04-083": {
+   "verdict": "BAD",
+   "defect": "should-abstain",
+   "why": "Tightening a CORS policy is a backend security task; the system answered with unrelated developer-tool UI guidance."
+  },
+  "hv5-g04-084": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "A feature flag service returning inconsistent values per region is backend infrastructure, not UI design."
+  },
+  "hv5-g04-085": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "Rewriting auth middleware for multi-tenancy is backend architecture, not UI design."
+  },
+  "hv5-g04-086": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "Docker image size growth is a build/infrastructure concern, not UI design."
+  },
+  "hv5-g04-087": {
+   "verdict": "BAD",
+   "defect": "should-abstain",
+   "why": "A search index falling out of sync with the catalog is a backend indexing bug; the system answered with unrelated search/filter UI guidance."
+  },
+  "hv5-g04-088": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "On-call rotation and alerting thresholds are operations concerns, not UI design."
+  },
+  "hv5-g04-089": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "A flaky test assertion is a testing/engineering issue, not UI design."
+  },
+  "hv5-g04-090": {
+   "verdict": "WRONG_ABSTAIN",
+   "defect": "should-not-abstain",
+   "why": "'Make it feel more premium' is a vague but legitimate visual-design request the system should have engaged with."
+  },
+  "hv5-g04-091": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "API rate limiter tuning is backend work, not UI design."
+  },
+  "hv5-g04-092": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "A logging pipeline dropping events under load is backend infrastructure, not UI design."
+  },
+  "hv5-g04-093": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "REST-vs-gRPC for a service mesh is a backend architecture decision, not UI design."
+  },
+  "hv5-g04-094": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "A hardcoded staging URL in a deploy script is an infrastructure bug, not UI design."
+  },
+  "hv5-g04-095": {
+   "verdict": "CORRECT_ABSTAIN",
+   "defect": "",
+   "why": "'Do the thing we talked about last time' has no retrievable context or UI content to act on."
+  }
+ }
+}

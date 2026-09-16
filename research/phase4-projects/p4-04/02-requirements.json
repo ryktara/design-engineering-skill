@@ -1,0 +1,203 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "create"
+  ],
+  "platform": [
+    "web"
+  ],
+  "input": [
+    "keyboard",
+    "pointer",
+    "touch"
+  ],
+  "product": [
+    "finance",
+    "iot"
+  ],
+  "screen": [
+    "dashboard"
+  ],
+  "screen_subtype": [
+    "calendar"
+  ],
+  "stack": [
+    "react"
+  ],
+  "density": "high",
+  "components": [
+    "chart"
+  ],
+  "environment": [],
+  "jobs": [
+    "compare"
+  ],
+  "problems": [],
+  "risk": "medium",
+  "primary_jobs": [
+    "compare",
+    "create dashboard"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "keyboard": true,
+    "screen_reader": true,
+    "focus": true,
+    "touch_targets": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "change_budget": "moderate",
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "mode_evidence": [
+    "create: default (no mode cue)"
+  ],
+  "project_context": {
+    "navigation": {
+      "value": "top-bar",
+      "status": "KNOWN",
+      "evidence": [
+        "top-bar: 5 matches in App.jsx, styles.css (shell/layout file)"
+      ]
+    },
+    "theme": {
+      "value": "light-first",
+      "status": "INFERRED",
+      "evidence": [
+        "hex palette: 12 near-white, 1 near-black"
+      ]
+    },
+    "surfaces": {
+      "value": "bordered-flat",
+      "status": "INFERRED",
+      "evidence": [
+        "weak signal: shadow 0, border 1"
+      ]
+    },
+    "radius": {
+      "value": "small",
+      "status": "INFERRED",
+      "evidence": [
+        "most common radius 6 (1×); others [999.0]"
+      ]
+    },
+    "spacing": {
+      "value": 4,
+      "status": "INFERRED",
+      "evidence": [
+        "most used spacing values [4, 8, 12, 16, 20]",
+        "tailwind spacing classes (5)"
+      ]
+    },
+    "typography": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": [
+        "no font family declaration found"
+      ]
+    },
+    "components": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": []
+    }
+  },
+  "known": [
+    "platform=web (project inspection)",
+    "product=finance (request: kpi)",
+    "product=iot (request: energy)",
+    "stack=react (project inspection)",
+    "screen=dashboard (request: dashboard)",
+    "job=compare (request: compare)",
+    "project_navigation=top-bar (repository: top-bar: 5 matches in App.jsx, styles.css (shell/layout file))"
+  ],
+  "inferred": [
+    "input=pointer (implied by platform web)",
+    "input=keyboard (implied by platform web)",
+    "input=touch (implied by platform web)",
+    "density=high (implied by product finance)",
+    "mode=create (default (no mode cue))",
+    "project_theme=light-first (repository: hex palette: 12 near-white, 1 near-black)",
+    "project_surfaces=bordered-flat (repository: weak signal: shadow 0, border 1)",
+    "project_radius=small (repository: most common radius 6 (1×); others [999.0])",
+    "project_spacing=4 (repository: most used spacing values [4, 8, 12, 16, 20]; tailwind spacing classes (5))"
+  ],
+  "missing": [
+    "brand: no brand assets, guideline, or character description available"
+  ],
+  "status": "CONFIDENT",
+  "source": {
+    "request": [
+      "compare",
+      "dashboard",
+      "energy",
+      "kpi"
+    ],
+    "project": [
+      "package.json: react@^18.3.1",
+      "package.json: react-dom@^18.3.1"
+    ]
+  },
+  "activation": {
+    "decision": "activate",
+    "ui_score": 6.0,
+    "non_ui_score": 0,
+    "ui_terms": [
+      "theme",
+      "dashboard",
+      "view",
+      "chart",
+      "light theme"
+    ],
+    "non_ui_terms": []
+  },
+  "intent": {
+    "existing": true,
+    "problem": false,
+    "facet": "general",
+    "diagnose_only": false,
+    "creation": false,
+    "redesign": false,
+    "responsive_cues": false,
+    "preserve": [],
+    "scope": "moderate"
+  },
+  "intent_evidence": {
+    "existing": [
+      "existing"
+    ],
+    "problem": [],
+    "change": [],
+    "create": [
+      "add a"
+    ],
+    "diagnose": [],
+    "no_change": [],
+    "redesign": [],
+    "look_feel": [],
+    "structural": [],
+    "responsive": [],
+    "accessibility": [],
+    "interaction": []
+  },
+  "scope_evidence": {
+    "ui": [
+      "theme",
+      "dashboard",
+      "chart",
+      "kpi"
+    ],
+    "ux_symptoms": [],
+    "technical": {},
+    "non_visual": []
+  }
+}

@@ -1,0 +1,1078 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "Add a usage page showing this month's API calls against the plan quota.",
+  "status": "PARTIAL",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [
+      "finance",
+      "saas"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "nextjs",
+      "react",
+      "shadcn",
+      "tailwind"
+    ],
+    "density": "high",
+    "components": [],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "create"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "create"
+      ],
+      "problem_domain": [],
+      "change_scope": "screen",
+      "utterance": "request",
+      "existing": true,
+      "problem": false,
+      "facet": "general",
+      "diagnose_only": false,
+      "creation": true,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "create: build/create request on an existing surface"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "left-rail",
+        "status": "KNOWN",
+        "evidence": [
+          "left-rail: 1 matches in app-shell.tsx (shell/layout file)"
+        ]
+      },
+      "theme": {
+        "value": "dual-theme",
+        "status": "KNOWN",
+        "evidence": [
+          "dark theme configuration signals: 1",
+          "root/canvas backgrounds: 1 light, 0 dark",
+          "hex palette: 15 near-white, 9 near-black"
+        ],
+        "default": "light"
+      },
+      "surfaces": {
+        "value": "bordered-flat",
+        "status": "INFERRED",
+        "evidence": [
+          "borders in 13 files, shadow/elevation in 1"
+        ]
+      },
+      "radius": {
+        "value": "small",
+        "status": "INFERRED",
+        "evidence": [
+          "most common radius 0.5 (1×); others []"
+        ]
+      },
+      "spacing": {
+        "value": 8,
+        "status": "INFERRED",
+        "evidence": [
+          "most used spacing values [8, 16, 12, 4, 24]",
+          "tailwind spacing classes (124)"
+        ]
+      },
+      "typography": {
+        "value": "custom",
+        "status": "KNOWN",
+        "evidence": [
+          "font family Var (2 refs)",
+          "monospace usage",
+          "tabular numerals"
+        ]
+      },
+      "components": {
+        "value": "tailwind, radix, shadcn-style cva, table:tanstack, shadcn",
+        "status": "KNOWN",
+        "evidence": [
+          "tailwind",
+          "radix",
+          "shadcn-style cva"
+        ]
+      }
+    },
+    "known": [
+      "platform=web (project inspection)",
+      "product=finance (project inspection (README))",
+      "product=saas (project inspection (README))",
+      "stack=nextjs (project inspection)",
+      "stack=react (project inspection)",
+      "stack=tailwind (project inspection)",
+      "stack=shadcn (project inspection)",
+      "project_navigation=left-rail (repository: left-rail: 1 matches in app-shell.tsx (shell/layout file))",
+      "project_theme=dual-theme (repository: dark theme configuration signals: 1; root/canvas backgrounds: 1 light, 0 dark)",
+      "project_typography=custom (repository: font family Var (2 refs); monospace usage)",
+      "project_components=tailwind, radix, shadcn-style cva, table:tanstack, shadcn (repository: tailwind; radix)"
+    ],
+    "inferred": [
+      "input=pointer (implied by platform web)",
+      "input=keyboard (implied by platform web)",
+      "input=touch (implied by platform web)",
+      "density=high (implied by product finance)",
+      "mode=create (build/create request on an existing surface)",
+      "project_surfaces=bordered-flat (repository: borders in 13 files, shadow/elevation in 1)",
+      "project_radius=small (repository: most common radius 0.5 (1×); others [])",
+      "project_spacing=8 (repository: most used spacing values [8, 16, 12, 4, 24]; tailwind spacing classes (124))"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [],
+      "project": [
+        "package.json: next@15.3.0",
+        "package.json: react@19.1.0",
+        "package.json: react-dom@19.1.0",
+        "package.json: tailwindcss@4.1.3",
+        "package.json: @radix-ui/react-dialog@1.1.6",
+        "package.json: class-variance-authority@0.7.1",
+        "package.json: lucide-react@0.487.0",
+        "package.json: @tanstack/react-table@8.21.2",
+        "package.json: recharts@2.15.2",
+        "package.json: eslint-plugin-jsx-a11y@6.10.2",
+        "package.json: @playwright/test@1.52.0",
+        "package.json: next-intl@4.0.2"
+      ]
+    },
+    "activation": {
+      "decision": "ambiguous",
+      "ui_score": 1.0,
+      "non_ui_score": 1,
+      "ui_terms": [
+        "page"
+      ],
+      "non_ui_terms": [
+        "api call"
+      ]
+    },
+    "intent_evidence": {
+      "existing": [
+        "this"
+      ],
+      "new": [],
+      "defect": [],
+      "operations": {
+        "create": [
+          "add",
+          "add a"
+        ]
+      },
+      "domains": {},
+      "no_change": [],
+      "scope": {
+        "screen": [
+          "page"
+        ]
+      },
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "page",
+        "plan",
+        "usage page",
+        "quota",
+        "concept:data.kpi_comparison"
+      ],
+      "ux_symptoms": [],
+      "technical": {
+        "BACKEND": [
+          "api"
+        ]
+      },
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "structure",
+        "reason": "layout topology and hierarchy"
+      },
+      {
+        "concern": "states",
+        "reason": "asynchronous or remote data on this screen"
+      },
+      {
+        "concern": "interaction",
+        "reason": "input model: keyboard,pointer,touch"
+      },
+      {
+        "concern": "accessibility",
+        "reason": "platform accessibility baseline"
+      },
+      {
+        "concern": "data-display",
+        "reason": "numbers, tables or charts are the content"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "navigation",
+        "reason": "how users arrive and leave"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "create/refactor requests attract generic defaults"
+      },
+      {
+        "concern": "brand",
+        "reason": "visual identity direction"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "viewport range"
+      },
+      {
+        "concern": "feedback",
+        "reason": "sensitive domain: errors must be recoverable"
+      }
+    ],
+    "optional": [
+      "motion",
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "data.kpi_comparison",
+        "reason": "named in the request: quota",
+        "priority": 0,
+        "critical": true
+      },
+      {
+        "concept": "process.reuse_first",
+        "reason": "existing repository: reuse its primitives",
+        "priority": 1,
+        "critical": true
+      },
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "web content must be keyboard operable",
+        "priority": 3,
+        "critical": false
+      },
+      {
+        "concept": "interaction.hover_independence",
+        "reason": "web is used with touch as well as pointer",
+        "priority": 3,
+        "critical": false
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "web keyboard focus",
+        "priority": 3,
+        "critical": false
+      },
+      {
+        "concept": "table.tabular_figures",
+        "reason": "numeric data",
+        "priority": 1,
+        "critical": true
+      }
+    ],
+    "recommended_concepts": [
+      "state.loading_empty_error",
+      "layout.focal_hierarchy",
+      "touch.minimum_target",
+      "adaptive.breakpoint_matrix",
+      "feedback.confirmation_destructive",
+      "interaction.shortcuts"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "chart-progress-gauge",
+      "kind": "chart",
+      "category": "chart",
+      "title": "Progress to target → bullet / progress bar, not gauge",
+      "facets": [
+        "data-viz"
+      ],
+      "concerns": [
+        "data-display"
+      ],
+      "concepts": [
+        "data.chart_by_question",
+        "data.kpi_comparison"
+      ],
+      "covers": [
+        "chart form chosen from the analytical question",
+        "KPI with comparison and precision"
+      ],
+      "score": 0.476,
+      "guidance": "Bullet graph: measure bar, target tick, qualitative bands in greys; label the value and target numerically; multiple bullets align for comparison; progress bars must show the numeric value and the whole.",
+      "use_when": "Actual vs target with context bands (poor/ok/good).",
+      "avoid_when": "Circular gauges waste space and hide comparison; use only for a single real-time reading where the metaphor is native (speed, load).",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.424,
+        "structural": 0.54,
+        "matched": [
+          "mode create",
+          "product finance,saas"
+        ]
+      },
+      "role": "core",
+      "selected_for": "critical concept (DIRECT): KPI with comparison and precision"
+    },
+    {
+      "id": "chart-compare-bar",
+      "kind": "chart",
+      "category": "chart",
+      "title": "Compare categories → bar",
+      "facets": [
+        "data-viz"
+      ],
+      "concerns": [
+        "data-display"
+      ],
+      "concepts": [
+        "data.chart_by_question",
+        "data.kpi_comparison"
+      ],
+      "covers": [
+        "chart form chosen from the analytical question",
+        "KPI with comparison and precision"
+      ],
+      "score": 0.18,
+      "guidance": "Horizontal bars for long labels, sorted by value unless order is meaningful, single colour (highlight one bar for emphasis), zero-based axis always, value labels at bar ends when space allows, grouped bars ≤3 groups, no 3D, no rounded bar ends that misstate length.",
+      "use_when": "Magnitudes across ≤15 discrete categories; ranking.",
+      "avoid_when": ">15 categories (table or search), time on the x-axis (line), parts of a whole (stacked bar or waffle).",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.4,
+        "matched": [
+          "mode create"
+        ]
+      },
+      "role": "core",
+      "selected_for": "task evidence: "
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "impl-reuse-before-new",
+      "kind": "rule",
+      "category": "implementation",
+      "title": "Reuse → extend → compose → new (in that order)",
+      "facets": [
+        "process"
+      ],
+      "concerns": [
+        "structure"
+      ],
+      "concepts": [
+        "process.reuse_first"
+      ],
+      "covers": [
+        "reuse → extend → compose → new"
+      ],
+      "score": 0.256,
+      "guidance": "Inspect the repository first (inspect_project.py): existing components, tokens, fonts, breakpoints, and conventions win. Reuse the existing component; if it lacks a variant, extend it through its API; if the composition is new, compose existing primitives; only create a new primitive when the gap is real, and put it where the others live.",
+      "use_when": "Any UI change in an existing codebase.",
+      "avoid_when": "Never install a second component library or a UI framework to build one screen; never fork a design-system component when a variant prop would do.",
+      "risk": {
+        "a11y": "low",
+        "perf": "medium"
+      },
+      "provenance": "engineering-practice",
+      "why": {
+        "lexical": 0.023,
+        "structural": 0.54,
+        "matched": [
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "critical concept (GENERIC): reuse → extend → compose → new"
+    },
+    {
+      "id": "typo-scale-and-roles",
+      "kind": "rule",
+      "category": "typography",
+      "title": "One type scale with named roles",
+      "facets": [
+        "visual"
+      ],
+      "concerns": [
+        "content",
+        "data-display"
+      ],
+      "concepts": [
+        "table.tabular_figures",
+        "brand.type_roles"
+      ],
+      "covers": [
+        "tabular figures and numeric alignment",
+        "type roles and scale"
+      ],
+      "score": 0.243,
+      "guidance": "Roles display/heading/title/body/label/caption/numeric with size, line height, weight, and letter spacing per role; body ≥16 px web/mobile, 14 desktop, 24 TV; numeric role uses tabular lining figures; headings use tighter line height (1.1–1.25) and body 1.4–1.6. Generate with tokens.py scale and map the roles to the framework's text styles.",
+      "use_when": "Any screen with more than two text sizes; any design system.",
+      "avoid_when": "Never pick sizes per screen; never use more than ~7 sizes.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.54,
+        "matched": [
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "critical concept (GENERIC): tabular figures and numeric alignment"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "structure",
+      "states",
+      "interaction",
+      "accessibility",
+      "data-display"
+    ],
+    "covered_required_concerns": [
+      "structure",
+      "data-display"
+    ],
+    "uncovered_required_concerns": [
+      "states",
+      "interaction",
+      "accessibility"
+    ],
+    "recommended_concerns": [
+      "navigation",
+      "anti-pattern",
+      "brand",
+      "adaptive",
+      "feedback"
+    ],
+    "covered_recommended_concerns": [],
+    "coverage_ratio": 0.4,
+    "required_concepts": [
+      "data.kpi_comparison",
+      "process.reuse_first",
+      "interaction.keyboard_navigation",
+      "interaction.hover_independence",
+      "interaction.focus_visible",
+      "table.tabular_figures"
+    ],
+    "covered_required_concepts": [
+      "data.kpi_comparison",
+      "process.reuse_first",
+      "table.tabular_figures"
+    ],
+    "uncovered_required_concepts": [
+      "interaction.keyboard_navigation",
+      "interaction.hover_independence",
+      "interaction.focus_visible"
+    ],
+    "critical_concepts": [
+      "data.kpi_comparison",
+      "process.reuse_first",
+      "table.tabular_figures"
+    ],
+    "uncovered_critical_concepts": [],
+    "critical_coverage_ratio": 1.0,
+    "concept_coverage_ratio": 0.5,
+    "recommended_concept_coverage": 0.0,
+    "not_surfaced": [
+      {
+        "concept": "state.loading_empty_error",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "layout.focal_hierarchy",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "touch.minimum_target",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "adaptive.breakpoint_matrix",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "feedback.confirmation_destructive",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "interaction.shortcuts",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "navigation",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "brand",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "feedback",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      }
+    ],
+    "bundle_size": 4,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 2,
+    "guardrail_size": 2,
+    "bundle_tokens": 446,
+    "coverage_per_1k_tokens": 6.73,
+    "mean_purity": 0.62,
+    "mean_specificity": 1.25,
+    "quality_counts": {
+      "DIRECT": 1,
+      "SPECIFIC": 1,
+      "GENERIC": 2
+    },
+    "contaminated": [],
+    "category_diversity": 0.75,
+    "duplicate_pressure": 0.5,
+    "facet_coverage": 0.0,
+    "redundancy": 0.4,
+    "critical_trace": {
+      "covered": [
+        "data.kpi_comparison",
+        "process.reuse_first",
+        "table.tabular_figures"
+      ],
+      "uncovered": [],
+      "carrier_quality": {
+        "data.kpi_comparison": "DIRECT",
+        "process.reuse_first": "GENERIC",
+        "table.tabular_figures": "GENERIC"
+      }
+    }
+  },
+  "token_coverage": 1.0,
+  "omitted": [
+    {
+      "id": "comp-kpi-tile",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "comp-plan-comparison",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "layout-table-first",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "metadata-rich",
+      "reason": "visual pattern without wording evidence on an existing UI (would restyle what the task does not concern)"
+    },
+    {
+      "id": "comp-data-table",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "card-bordered",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "nav-left-rail",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "cta-toolbar-commands",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "density-high",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "layout-master-detail",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    }
+  ],
+  "marginal": {
+    "chart-progress-gauge": {
+      "new_critical": [
+        "data.kpi_comparison"
+      ],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [
+        "data-display"
+      ],
+      "specificity": 2,
+      "evidence": [
+        "lexical_strong",
+        "lexical",
+        "explicit_demand"
+      ],
+      "quality": "DIRECT",
+      "contamination": 0.0,
+      "tokens": 96
+    },
+    "impl-reuse-before-new": {
+      "new_critical": [
+        "process.reuse_first"
+      ],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [
+        "structure"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "explicit_demand",
+        "repository"
+      ],
+      "quality": "GENERIC",
+      "contamination": 0.0,
+      "tokens": 131
+    },
+    "typo-scale-and-roles": {
+      "new_critical": [
+        "table.tabular_figures"
+      ],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [
+        "content"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "explicit_demand"
+      ],
+      "quality": "GENERIC",
+      "contamination": 0.0,
+      "tokens": 115
+    },
+    "chart-compare-bar": {
+      "new_critical": [],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [],
+      "specificity": 1,
+      "evidence": [
+        "explicit_demand"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 104
+    }
+  },
+  "rejected": [
+    {
+      "id": "comp-photo-capture-field",
+      "reason": "platform ['mobile', 'tablet'] not in request ['web']"
+    },
+    {
+      "id": "nav-bottom-tabs",
+      "reason": "platform ['mobile'] not in request ['web']"
+    },
+    {
+      "id": "typography-system-native",
+      "reason": "platform ['desktop', 'mobile', 'tv'] not in request ['web']"
+    },
+    {
+      "id": "focus-scale-glow",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "cta-focus-selects",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "cta-fab",
+      "reason": "platform ['mobile'] not in request ['web']"
+    },
+    {
+      "id": "icon-platform-native",
+      "reason": "platform ['desktop', 'mobile', 'tv'] not in request ['web']"
+    },
+    {
+      "id": "tv-player-controls",
+      "reason": "platform ['tv'] not in request ['web']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "data.kpi_comparison",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 0,
+      "reason": "named in the request: quota",
+      "candidate_records": [
+        [
+          "comp-kpi-tile",
+          0.511
+        ],
+        [
+          "chart-progress-gauge",
+          0.476
+        ],
+        [
+          "chart-compare-bar",
+          0.18
+        ]
+      ],
+      "selected_record": "chart-progress-gauge",
+      "carrier_quality": "DIRECT",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 1,
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.256
+        ]
+      ],
+      "selected_record": "impl-reuse-before-new",
+      "carrier_quality": "GENERIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.keyboard_navigation",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 3,
+      "reason": "web content must be keyboard operable",
+      "candidate_records": [
+        [
+          "comp-data-entry-grid",
+          0.37
+        ],
+        [
+          "a11y-keyboard-operable",
+          0.324
+        ],
+        [
+          "grid-single-tab-stop",
+          0.324
+        ],
+        [
+          "a11y-skip-link",
+          0.324
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.hover_independence",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 3,
+      "reason": "web is used with touch as well as pointer",
+      "candidate_records": [
+        [
+          "anti-hover-only-actions",
+          0.324
+        ],
+        [
+          "a11y-keyboard-operable",
+          0.324
+        ],
+        [
+          "a11y-hover-not-required",
+          0.324
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.focus_visible",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 3,
+      "reason": "web keyboard focus",
+      "candidate_records": [
+        [
+          "focus-ring-standard",
+          0.363
+        ],
+        [
+          "a11y-focus-visible",
+          0.34
+        ],
+        [
+          "grid-single-tab-stop",
+          0.324
+        ],
+        [
+          "a11y-nontext-contrast",
+          0.256
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "table.tabular_figures",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 1,
+      "reason": "numeric data",
+      "candidate_records": [
+        [
+          "comp-kpi-tile",
+          0.511
+        ],
+        [
+          "comp-plan-comparison",
+          0.48
+        ],
+        [
+          "layout-table-first",
+          0.42
+        ],
+        [
+          "metadata-rich",
+          0.42
+        ]
+      ],
+      "selected_record": "typo-scale-and-roles",
+      "carrier_quality": "GENERIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "state.loading_empty_error",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "asynchronous or remote data on this screen",
+      "candidate_records": [
+        [
+          "comp-chart-container",
+          0.297
+        ],
+        [
+          "anti-no-states",
+          0.243
+        ],
+        [
+          "layout-states-empty-loading-error",
+          0.243
+        ],
+        [
+          "comp-empty-state",
+          0.18
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "layout.focal_hierarchy",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "one headline number first",
+      "candidate_records": [
+        [
+          "metadata-rich",
+          0.42
+        ],
+        [
+          "anti-oversized-hero-text",
+          0.243
+        ],
+        [
+          "typo-measure-and-rhythm",
+          0.243
+        ],
+        [
+          "layout-hierarchy-one-thing",
+          0.243
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.minimum_target",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "touch on web",
+      "candidate_records": [
+        [
+          "a11y-target-size",
+          0.27
+        ],
+        [
+          "comp-product-detail-page",
+          0.235
+        ],
+        [
+          "media-photo-viewer",
+          0.225
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "adaptive.breakpoint_matrix",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "web viewport range",
+      "candidate_records": [
+        [
+          "web-responsive-breakpoints",
+          0.297
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "feedback.confirmation_destructive",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "sensitive domain",
+      "candidate_records": [
+        [
+          "comp-plan-comparison",
+          0.48
+        ],
+        [
+          "states-persistence-and-session",
+          0.297
+        ],
+        [
+          "comp-settings-screen",
+          0.213
+        ],
+        [
+          "comp-dialog",
+          0.18
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.shortcuts",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "related to interaction.keyboard_navigation",
+      "candidate_records": [
+        [
+          "cta-toolbar-commands",
+          0.42
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "task": "p5-08",
+  "reviewer_model": "claude-opus-5[1m]",
+  "c2_records": [
+    {"id": "dir-analytical-console", "verdict": "off-target", "bad_category": "contradicts-codebase"},
+    {"id": "comp-data-table", "verdict": "partial", "bad_category": "generic"},
+    {"id": "interaction-drag-drop", "verdict": "relevant", "bad_category": null},
+    {"id": "grid-single-tab-stop", "verdict": "partial", "bad_category": null},
+    {"id": "a11y-hover-not-required", "verdict": "relevant", "bad_category": null},
+    {"id": "states-persistence-and-session", "verdict": "partial", "bad_category": null}
+  ],
+  "c2_relevant": 2,
+  "c2_partial": 3,
+  "c2_offtarget": 1,
+  "c2_bad": [
+    {"record": "dir-analytical-console", "category": "contradicts-codebase", "why": "Holds a CORE slot on lexical 0.029 ('no record matched the wording') and prescribes 'dark-first tonal surfaces', a chart palette, chart imagery and small multiples for ClinicBoard, which is light-only by design (app.css sets color-scheme: light, no dark tokens) and has no charts on /appointments. Following it would trip the forbidden brand.dark_mode_redesign. It replaced c1's equally wrong comp-checkout-one-page, so the second core slot is still wasted."},
+    {"record": "comp-data-table", "category": "generic", "why": "Carried over from c1 and still a table spec applied to a 25-chip absolutely-positioned time grid: sticky header, sort with aria-sort, column resize/reorder persistence, skeleton rows and virtualised rows do not exist here, and it delivers the forbidden table.virtualization. Only 'row actions visible on focus as well as hover' and 'selected state distinct from focus and hover' apply."}
+  ],
+  "c2_direction_unjustified": [
+    {"slot": "layout", "why": "layout-dashboard-grid for a fixed 08:00-18:00 time grid (72px gutter, 2px per minute, one column per practitioner). A 12-column module dashboard is a rewrite of the screen the task only wants to stop stuttering - and the guidance layer itself omitted this record as 'visual pattern without wording evidence on an existing UI (would restyle what the task does not concern)', so the two layers disagree."},
+    {"slot": "metadata", "why": "metadata-rich (user-controlled column visibility/order, dense metadata) is unjustified for a drag-performance fix on appointment chips that already carry a fixed Badge + time + name."},
+    {"slot": "fingerprint.corner_language", "why": "'sharp' contradicts the codebase: tailwind.config.ts / README define a 6px default radius (4px rounded-sm) used on every card, chip and control; inspect reports radius=UNKNOWN, so the value is asserted from no evidence."}
+  ],
+  "platform_mode_scope_ok": true,
+  "verdict_vs_c1": "better",
+  "why": "Two pre-registered failures are fixed at once: scope.kind is now 'partial' with an explicit engineering/design split matching the task's whole purpose, and interaction-drag-drop - a record c1's RESULTS confirmed did not exist anywhere in the base - now supplies grip affordance, transform-only movement, a snapped drop target labelled with the value it will take, a single store write on drop, a keyboard alternative that keeps focus on the moved item, a live-region announcement, Escape-cancels and reduced motion, i.e. nearly the entire design half of what was actually built.",
+  "would_have_helped": "helped"
+}

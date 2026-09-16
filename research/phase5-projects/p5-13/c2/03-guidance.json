@@ -1,0 +1,877 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "Add a Spanish language switch to the pick-up flow.",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "kiosk"
+    ],
+    "input": [
+      "touch"
+    ],
+    "product": [
+      "healthcare",
+      "iot"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "html-css"
+    ],
+    "density": null,
+    "components": [],
+    "environment": [
+      "public"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "create"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "screen_reader": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "create"
+      ],
+      "problem_domain": [
+        "content"
+      ],
+      "change_scope": "flow",
+      "utterance": "request",
+      "existing": true,
+      "problem": false,
+      "facet": "general",
+      "diagnose_only": false,
+      "creation": true,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "create: build/create request on an existing surface"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "hub-spoke",
+        "status": "KNOWN",
+        "evidence": [
+          "hub-spoke: 29 matches in README.md, app.js, i18n.js (shell/layout file)"
+        ]
+      },
+      "theme": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": [
+          "hex palette: 25 near-white, 17 near-black"
+        ]
+      },
+      "surfaces": {
+        "value": "elevated",
+        "status": "INFERRED",
+        "evidence": [
+          "weak signal: shadow 1, border 1"
+        ]
+      },
+      "radius": {
+        "value": "medium",
+        "status": "INFERRED",
+        "evidence": [
+          "most common radius 12 (1×); others [20.0, 32.0]"
+        ]
+      },
+      "spacing": {
+        "value": "irregular",
+        "status": "UNKNOWN",
+        "evidence": [
+          "most used spacing values [6, 16]"
+        ]
+      },
+      "typography": {
+        "value": "humanist-sans",
+        "status": "KNOWN",
+        "evidence": [
+          "font family Nunito (2 refs)",
+          "weights 700, 800, 600, 500",
+          "tabular numerals"
+        ]
+      },
+      "components": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": []
+      }
+    },
+    "known": [
+      "platform=kiosk (project inspection)",
+      "product=healthcare (project inspection (README))",
+      "product=iot (project inspection (README))",
+      "stack=html-css (project inspection)",
+      "environment=public (project inspection (README))",
+      "project_navigation=hub-spoke (repository: hub-spoke: 29 matches in README.md, app.js, i18n.js (shell/layout file))",
+      "project_typography=humanist-sans (repository: font family Nunito (2 refs); weights 700, 800, 600, 500)"
+    ],
+    "inferred": [
+      "input=touch (implied by platform kiosk)",
+      "mode=create (build/create request on an existing surface)",
+      "project_surfaces=elevated (repository: weak signal: shadow 1, border 1)",
+      "project_radius=medium (repository: most common radius 12 (1×); others [20.0, 32.0])"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [],
+      "project": [
+        "*.html without a framework manifest: plain HTML/CSS site",
+        "README: public touch kiosk (web technology is the substrate, not the target platform)"
+      ]
+    },
+    "activation": {
+      "decision": "ambiguous",
+      "ui_score": 1.0,
+      "non_ui_score": 0,
+      "ui_terms": [
+        "language switch"
+      ],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "to the",
+        "the pick-up flow"
+      ],
+      "new": [],
+      "defect": [],
+      "operations": {
+        "create": [
+          "add",
+          "add a"
+        ]
+      },
+      "domains": {
+        "content": [
+          "language",
+          "spanish"
+        ]
+      },
+      "no_change": [],
+      "scope": {
+        "flow": [
+          "flow"
+        ]
+      },
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "language switch",
+        "flow",
+        "concept:content.i18n_expansion"
+      ],
+      "ux_symptoms": [],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "structure",
+        "reason": "layout topology and hierarchy"
+      },
+      {
+        "concern": "states",
+        "reason": "asynchronous or remote data on this screen"
+      },
+      {
+        "concern": "interaction",
+        "reason": "input model: touch"
+      },
+      {
+        "concern": "accessibility",
+        "reason": "platform accessibility baseline"
+      },
+      {
+        "concern": "environment",
+        "reason": "public kiosk use"
+      },
+      {
+        "concern": "privacy",
+        "reason": "shared public device"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "navigation",
+        "reason": "how users arrive and leave"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "create/refactor requests attract generic defaults"
+      },
+      {
+        "concern": "brand",
+        "reason": "visual identity direction"
+      },
+      {
+        "concern": "feedback",
+        "reason": "sensitive domain: errors must be recoverable"
+      },
+      {
+        "concern": "performance",
+        "reason": "performance-sensitive context"
+      }
+    ],
+    "optional": [
+      "motion",
+      "content"
+    ],
+    "required_concepts": [
+      {
+        "concept": "content.i18n_expansion",
+        "reason": "named in the request: language switch, spanish"
+      },
+      {
+        "concept": "process.reuse_first",
+        "reason": "existing repository: reuse its primitives"
+      },
+      {
+        "concept": "touch.minimum_target",
+        "reason": "touch platform"
+      },
+      {
+        "concept": "privacy.shared_device",
+        "reason": "kiosk"
+      },
+      {
+        "concept": "state.session_expiry",
+        "reason": "kiosk idle reset"
+      },
+      {
+        "concept": "privacy.sensitive_masking",
+        "reason": "balances / health data visible to onlookers"
+      }
+    ],
+    "recommended_concepts": [
+      "state.loading_empty_error",
+      "a11y.live_status",
+      "touch.gestures_discoverable",
+      "touch.thumb_reach",
+      "env.glanceable_status",
+      "feedback.confirmation_destructive"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "dir-industrial-hmi",
+      "kind": "direction",
+      "category": "direction",
+      "title": "Industrial HMI / control panel",
+      "facets": [
+        "direction",
+        "platform"
+      ],
+      "concerns": [
+        "brand",
+        "structure"
+      ],
+      "concepts": [],
+      "covers": [],
+      "score": 0.324,
+      "guidance": "Grey-scale by default so alarms are the only saturated colour (ISA-101 high-performance HMI), large touch targets with gloves in mind, state shown by shape + text + colour, trend sparklines with thresholds, confirm-and-hold for hazardous commands, no decorative anything. Identity via the schematic style and status semantics.",
+      "use_when": "Machine control, SCADA, building management, device dashboards viewed at arm's length on the floor.",
+      "avoid_when": "Consumer smart-home apps (use 'Service app' or 'Feed').",
+      "risk": {
+        "a11y": "high",
+        "perf": "medium"
+      },
+      "provenance": "platform-standard",
+      "incompatible": [
+        "surface-glass",
+        "motion-cinematic",
+        "imagery-hero",
+        "color-dominant-brand"
+      ],
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.72,
+        "matched": [
+          "platform kiosk",
+          "input touch",
+          "mode create",
+          "product iot"
+        ]
+      },
+      "role": "core",
+      "selected_for": "no record matched the wording; best structural fit for platform/product"
+    },
+    {
+      "id": "comp-kiosk-keypad",
+      "kind": "component",
+      "category": "form",
+      "title": "On-screen keypad / keyboard for kiosks",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "component",
+        "feedback",
+        "interaction",
+        "privacy"
+      ],
+      "concepts": [
+        "touch.minimum_target",
+        "a11y.accessible_names",
+        "a11y.live_status",
+        "feedback.validation_errors",
+        "interaction.focus_restore",
+        "privacy.sensitive_masking"
+      ],
+      "covers": [
+        "large touch targets (≥44–48 px)",
+        "accessible names and labels",
+        "live region status announcements",
+        "inline validation messages and error recovery",
+        "focus restoration",
+        "masking of sensitive values with explicit reveal"
+      ],
+      "score": 0.324,
+      "guidance": "Keys ≥ 64 px with ≥ 16 px gaps, one key = one accessible name ('Hyphen', 'Delete', 'Space'), the keypad is a role=group labelled by the field it edits; the value box is focusable and read back through a polite live region as it changes; a persistent format hint (not a placeholder) is tied to the field with aria-describedby and errors set aria-invalid with a specific message ('Day must be 1–31'); focus never falls to the page body after a tap (re-focus the equivalent key after a re-render); a physical keypad or scanner wedge writes into the same field (human-speed keys fill, Enter continues, bursts are treated as scans); masked entry for PINs with a visible dot per character; in accessible mode the keypad and value sit in the reach zone (lower part of the screen).",
+      "use_when": "Identify / PIN / date-of-birth / name entry on a public touch screen, with or without a tactile keypad or scanner.",
+      "avoid_when": "Devices with a physical keyboard as the primary input.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "implementation": {
+        "html-css": "<div role=\"group\" aria-labelledby=…> of <button> keys; <output aria-live=\"polite\"> for the value; keydown handler distinguishes scanner bursts by inter-key interval."
+      },
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.72,
+        "matched": [
+          "platform kiosk",
+          "input touch",
+          "mode create",
+          "product healthcare"
+        ]
+      },
+      "role": "core",
+      "selected_for": "required coverage: accessibility, masking of sensitive values with explicit reveal"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "i18n-text-expansion-rtl",
+      "kind": "rule",
+      "category": "content",
+      "title": "Internationalisation: expansion, RTL, formats",
+      "facets": [
+        "visual"
+      ],
+      "concerns": [
+        "adaptive",
+        "content"
+      ],
+      "concepts": [
+        "content.i18n_expansion"
+      ],
+      "covers": [
+        "text expansion and RTL"
+      ],
+      "score": 0.659,
+      "guidance": "Allow 30–50% text expansion (German, Finnish), test with pseudo-localisation, use logical CSS properties / start-end alignment, mirror navigation and progress in RTL, format dates/numbers/currency by locale, verify font coverage per script, keep tabular figures across locales. A language switch is one visible control on every screen of the flow, labelled in its own language (Español, not 'Spanish'); switching keeps the session, typed input, selection and focus, announces the change politely, and re-renders every label including error text.",
+      "use_when": "Any product with more than one locale; fixed-width buttons, tab labels, truncated titles, mirrored layouts.",
+      "avoid_when": "Never hard-code widths around English strings; never concatenate translated fragments; never flip icons that indicate physical direction (play) in RTL.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "engineering-practice",
+      "why": {
+        "lexical": 0.756,
+        "structural": 0.54,
+        "matched": [
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "most relevant record for the request wording"
+    },
+    {
+      "id": "kiosk-public-use",
+      "kind": "rule",
+      "category": "input",
+      "title": "Kiosk: public, hurried, standing users",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "environment",
+        "interaction",
+        "privacy"
+      ],
+      "concepts": [
+        "touch.minimum_target",
+        "privacy.shared_device",
+        "state.session_expiry"
+      ],
+      "covers": [
+        "large touch targets (≥44–48 px)",
+        "privacy of on-screen data on shared devices",
+        "session expiry and idle reset"
+      ],
+      "score": 0.324,
+      "guidance": "Targets ≥60 px, body text ≥20 px, high contrast for glare, one task per screen, reachable-height controls (ADA reach ranges: interactive elements within 380–1220 mm), idle timeout with countdown that clears the session, attract screen as the hub, audio/visual feedback on every tap, and a visible way to cancel at every step.",
+      "use_when": "Self-service, POS, check-in, ticketing, signage with touch.",
+      "avoid_when": "Never require hover, precise dragging, small text, or scrolling to find the primary action; never keep personal data on screen after inactivity.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "incompatible": [
+        "layout-table-first",
+        "density-high",
+        "nav-menu-bar-desktop"
+      ],
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.72,
+        "matched": [
+          "platform kiosk",
+          "input touch",
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: environment, interaction, privacy, privacy of on-screen data on shared devices, session expiry and idle reset, large touch targets (≥44–48 px)"
+    },
+    {
+      "id": "impl-reuse-before-new",
+      "kind": "rule",
+      "category": "implementation",
+      "title": "Reuse → extend → compose → new (in that order)",
+      "facets": [
+        "process"
+      ],
+      "concerns": [
+        "structure"
+      ],
+      "concepts": [
+        "process.reuse_first"
+      ],
+      "covers": [
+        "reuse → extend → compose → new"
+      ],
+      "score": 0.243,
+      "guidance": "Inspect the repository first (inspect_project.py): existing components, tokens, fonts, breakpoints, and conventions win. Reuse the existing component; if it lacks a variant, extend it through its API; if the composition is new, compose existing primitives; only create a new primitive when the gap is real, and put it where the others live.",
+      "use_when": "Any UI change in an existing codebase.",
+      "avoid_when": "Never install a second component library or a UI framework to build one screen; never fork a design-system component when a variant prop would do.",
+      "risk": {
+        "a11y": "low",
+        "perf": "medium"
+      },
+      "provenance": "engineering-practice",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.54,
+        "matched": [
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: reuse → extend → compose → new"
+    },
+    {
+      "id": "a11y-time-and-auto",
+      "kind": "rule",
+      "category": "motion",
+      "title": "Auto-rotating and timed content is controllable",
+      "facets": [
+        "visual"
+      ],
+      "concerns": [
+        "accessibility",
+        "motion",
+        "states"
+      ],
+      "concepts": [
+        "state.session_expiry",
+        "a11y.reduced_motion"
+      ],
+      "covers": [
+        "session expiry and idle reset",
+        "reduced motion"
+      ],
+      "score": 0.243,
+      "guidance": "Pause/stop control, stop on focus/hover, keyboard next/previous, announce slide position; timeouts warn and allow extension; kiosks show a visible countdown before resetting.",
+      "use_when": "Carousels, hero rotators, auto-advancing banners, session timeouts, kiosk idle resets.",
+      "avoid_when": "Prefer no auto-rotation at all on content the user must read.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.54,
+        "matched": [
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: states"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "structure",
+      "states",
+      "interaction",
+      "accessibility",
+      "environment",
+      "privacy"
+    ],
+    "covered_required_concerns": [
+      "structure",
+      "states",
+      "interaction",
+      "accessibility",
+      "environment",
+      "privacy"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "navigation",
+      "anti-pattern",
+      "brand",
+      "feedback",
+      "performance"
+    ],
+    "covered_recommended_concerns": [
+      "brand",
+      "feedback"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "content.i18n_expansion",
+      "process.reuse_first",
+      "touch.minimum_target",
+      "privacy.shared_device",
+      "state.session_expiry",
+      "privacy.sensitive_masking"
+    ],
+    "covered_required_concepts": [
+      "content.i18n_expansion",
+      "process.reuse_first",
+      "touch.minimum_target",
+      "privacy.shared_device",
+      "state.session_expiry",
+      "privacy.sensitive_masking"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.17,
+    "bundle_size": 6,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 2,
+    "guardrail_size": 4,
+    "bundle_tokens": 939,
+    "coverage_per_1k_tokens": 6.39,
+    "mean_purity": 0.83,
+    "contaminated": [],
+    "category_diversity": 1.0,
+    "duplicate_pressure": 0.17,
+    "facet_coverage": 0.6,
+    "redundancy": 0.25
+  },
+  "token_coverage": 0.86,
+  "omitted": [],
+  "rejected": [
+    {
+      "id": "chart-flow-sankey",
+      "reason": "platform ['desktop', 'web'] not in request ['kiosk']"
+    },
+    {
+      "id": "comp-data-entry-grid",
+      "reason": "platform ['desktop', 'web'] not in request ['kiosk']"
+    },
+    {
+      "id": "comp-product-detail-page",
+      "reason": "platform ['mobile', 'web'] not in request ['kiosk']"
+    },
+    {
+      "id": "comp-checkout-one-page",
+      "reason": "platform ['mobile', 'web'] not in request ['kiosk']"
+    },
+    {
+      "id": "media-resume-and-details",
+      "reason": "platform ['mobile', 'tv', 'web'] not in request ['kiosk']"
+    },
+    {
+      "id": "comp-photo-capture-field",
+      "reason": "platform ['mobile', 'tablet'] not in request ['kiosk']"
+    },
+    {
+      "id": "comp-tv-side-sheet",
+      "reason": "platform ['tv'] not in request ['kiosk']"
+    },
+    {
+      "id": "dir-operational-workbench",
+      "reason": "platform ['desktop', 'web'] not in request ['kiosk']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "content.i18n_expansion",
+      "priority": "required",
+      "reason": "named in the request: language switch, spanish",
+      "candidate_records": [
+        [
+          "i18n-text-expansion-rtl",
+          0.659
+        ]
+      ],
+      "selected_record": "i18n-text-expansion-rtl",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "required",
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.243
+        ]
+      ],
+      "selected_record": "impl-reuse-before-new",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "touch.minimum_target",
+      "priority": "required",
+      "reason": "touch platform",
+      "candidate_records": [
+        [
+          "comp-kiosk-keypad",
+          0.324
+        ],
+        [
+          "kiosk-public-use",
+          0.324
+        ],
+        [
+          "a11y-target-size",
+          0.27
+        ]
+      ],
+      "selected_record": "comp-kiosk-keypad",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "privacy.shared_device",
+      "priority": "required",
+      "reason": "kiosk",
+      "candidate_records": [
+        [
+          "kiosk-public-use",
+          0.324
+        ],
+        [
+          "shared-device-privacy",
+          0.297
+        ]
+      ],
+      "selected_record": "kiosk-public-use",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "state.session_expiry",
+      "priority": "required",
+      "reason": "kiosk idle reset",
+      "candidate_records": [
+        [
+          "kiosk-public-use",
+          0.324
+        ],
+        [
+          "shared-device-privacy",
+          0.297
+        ],
+        [
+          "a11y-time-and-auto",
+          0.243
+        ]
+      ],
+      "selected_record": "kiosk-public-use",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "privacy.sensitive_masking",
+      "priority": "required",
+      "reason": "balances / health data visible to onlookers",
+      "candidate_records": [
+        [
+          "comp-kiosk-keypad",
+          0.324
+        ],
+        [
+          "shared-device-privacy",
+          0.297
+        ]
+      ],
+      "selected_record": "comp-kiosk-keypad",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "state.loading_empty_error",
+      "priority": "recommended",
+      "reason": "asynchronous or remote data on this screen",
+      "candidate_records": [
+        [
+          "anti-no-states",
+          0.243
+        ],
+        [
+          "layout-states-empty-loading-error",
+          0.243
+        ],
+        [
+          "comp-empty-state",
+          0.18
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "a11y.live_status",
+      "priority": "recommended",
+      "reason": "language change announced",
+      "candidate_records": [
+        [
+          "comp-kiosk-keypad",
+          0.324
+        ],
+        [
+          "a11y-live-status",
+          0.243
+        ],
+        [
+          "search-filter-feedback",
+          0.243
+        ],
+        [
+          "feedback-progress-async",
+          0.243
+        ]
+      ],
+      "selected_record": "comp-kiosk-keypad",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "touch.gestures_discoverable",
+      "priority": "recommended",
+      "reason": "touch platform",
+      "candidate_records": [],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "carriers were not admissible for this platform/input/environment"
+    },
+    {
+      "concept": "touch.thumb_reach",
+      "priority": "recommended",
+      "reason": "one-handed use",
+      "candidate_records": [],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "carriers filtered before ranking: platform ['mobile', 'tablet', 'web'] not in request ['kiosk']"
+    },
+    {
+      "concept": "env.glanceable_status",
+      "priority": "recommended",
+      "reason": "kiosk",
+      "candidate_records": [
+        [
+          "data-exceptions-first",
+          0.243
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "feedback.confirmation_destructive",
+      "priority": "recommended",
+      "reason": "sensitive domain",
+      "candidate_records": [
+        [
+          "comp-dialog",
+          0.18
+        ],
+        [
+          "comp-settings-screen",
+          0.18
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    }
+  ]
+}

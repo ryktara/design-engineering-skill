@@ -1,0 +1,151 @@
+{
+  "task": "p6-27",
+  "project": "p6-tv-iptv-web",
+  "platform_expected": "tv",
+  "platform_resolved": "tv",
+  "platform_correct": "yes",
+  "stack": "plain HTML/CSS/ES5 smart-TV web app (Tizen/webOS), no framework, no build",
+  "existing_ui": true,
+  "new_screen": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": ["refactor", "polish", "audit"],
+  "mode_resolved": ["audit", "refactor"],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "moderate",
+  "render_mode": "native",
+  "screenshots": [
+    "render/first-01-guide-initial.png",
+    "render/first-02-guide-right3.png",
+    "render/first-03-guide-right7.png",
+    "render/first-04-guide-down5.png",
+    "render/first-05-guide-left3.png",
+    "render/first-06-guide-jumpnow.png",
+    "render/final-00-home.png",
+    "render/final-01-guide-initial.png",
+    "render/final-02-guide-right3.png",
+    "render/final-03-guide-right7.png",
+    "render/final-04-guide-down5.png",
+    "render/final-05-guide-left3.png",
+    "render/final-06-guide-jumpnow.png",
+    "render/final-07-detail.png"
+  ],
+  "context_detection": {
+    "navigation": "yes",
+    "theme": "yes",
+    "typography": "no",
+    "surfaces": "yes",
+    "spacing": "yes"
+  },
+  "preservation": {
+    "navigation": true,
+    "theme": true,
+    "typography": true,
+    "component_reuse": true,
+    "unjustified_structural_change": 0
+  },
+  "expected_concepts": [
+    "tv.time_navigation",
+    "tv.epg_pinned_channels",
+    "navigation.orientation_and_back",
+    "interaction.focus_visible",
+    "interaction.dpad_reachability",
+    "perf.focus_latency"
+  ],
+  "critical_concepts": [
+    "tv.time_navigation",
+    "navigation.orientation_and_back",
+    "interaction.focus_visible"
+  ],
+  "delivered_concepts": [
+    "tv.epg_pinned_channels",
+    "tv.time_navigation",
+    "table.virtualization",
+    "interaction.dpad_reachability",
+    "media.live_channel_switching",
+    "interaction.focus_restore",
+    "interaction.focus_visible",
+    "media.details_play_first",
+    "tv.no_touch_hover",
+    "interaction.hover_independence",
+    "state.loading_empty_error"
+  ],
+  "concept_recall": 0.67,
+  "critical_recall": 0.67,
+  "concept_misses": [
+    {"concept": "navigation.orientation_and_back", "layer": "expected-concepts"},
+    {"concept": "perf.focus_latency", "layer": "bundle-selection"}
+  ],
+  "first_render_defects": {
+    "visual": 2,
+    "interaction": 0,
+    "accessibility": 0,
+    "platform": 0,
+    "existing-system-mismatch": 0,
+    "implementation-bug": 0
+  },
+  "final_defects": {
+    "visual": 0,
+    "interaction": 0,
+    "accessibility": 0,
+    "platform": 0,
+    "existing-system-mismatch": 0,
+    "implementation-bug": 0
+  },
+  "iterations": 2,
+  "guidance_relevant": 3,
+  "guidance_partial": 1,
+  "guidance_offtarget": 1,
+  "bad_guidance": [
+    {"record": "tv-no-touch-hover", "category": "generic", "why": "True and on-platform, but the codebase already has no hover, no touch and no scrollbars anywhere; the record demanded no change and contributed nothing this task needed."},
+    {"record": "layout-states-empty-loading-error", "category": "generic", "why": "The guide is built synchronously from a seeded array in data.js; there is no loading, empty or error state and the task is a scrolling defect. Pure bundle filler at GENERIC quality."},
+    {"record": "bundle", "category": "missing-critical", "why": "Pre-registered critical concept navigation.orientation_and_back is absent from the bundle and was never even demanded — the 'you lose where you were' half of the sentence produced no concept."}
+  ],
+  "layer_review": {
+    "core": ["layout-epg-grid", "comp-epg"],
+    "critical": ["a11y-tv-focus-always", "tv-no-touch-hover", "layout-states-empty-loading-error"],
+    "optional": [],
+    "optional_useful": 0,
+    "optional_noise": 0
+  },
+  "guidance_used": ["layout-epg-grid", "comp-epg", "a11y-tv-focus-always"],
+  "guidance_ignored": [
+    {"id": "tv-no-touch-hover", "why": "already fully satisfied by the existing codebase; nothing to implement"},
+    {"id": "layout-states-empty-loading-error", "why": "no async data on this screen; implementing loading/empty/error would be invented work outside the task"}
+  ],
+  "unjustified_direction_slots": 0,
+  "process_records_needed": false,
+  "skill_effect": "helped",
+  "guidance_tokens": 840,
+  "misses": [
+    {"layer": "expected-concepts", "what": "navigation.orientation_and_back never demanded; nothing in the bundle addresses keeping the user's place, which is half the sentence"},
+    {"layer": "project-context", "what": "typography reported UNKNOWN although tokens.css declares --font and a full TV type scale"},
+    {"layer": "project-context", "what": "inspect_project.py assigns platforms ['web'] and ignores config.xml (Tizen widget), appinfo.json (webOS), js/keys.js Tizen/webOS key codes and the fixed 1920x1080 body; this also produced the spurious required concept interaction.keyboard_navigation that forced PARTIAL status"},
+    {"layer": "bundle-selection", "what": "perf.focus_latency demanded, candidates tv-focus-performance / tv-dpad-hold-pacing retrieved, dropped by the bundle cap on a per-keypress-response task"},
+    {"layer": "direction", "what": "direction validates nav 'top-bar' as a tv/remote violation while preserving it in the same output, on a codebase whose top bar is d-pad reachable"}
+  ],
+  "knowledge_gaps": [],
+  "regressions": [
+    {"query": "In the channel guide the time header jumps every half hour and you lose where you were.", "expect": "navigation.orientation_and_back is demanded and ideally critical; 'lose where you were' is an orientation complaint, so the bundle must carry a persistent-position / anchor concept, not only EPG structure"},
+    {"query": "TV guide task phrased as scrolling or paging losing the user's place", "expect": "perf.focus_latency survives the bundle cap when the complaint is about per-keypress response"},
+    {"query": "inspect_project.py on a project with a Tizen config.xml widget, appinfo.json, or Tizen/webOS key codes", "expect": "platforms includes tv, not web alone; and interaction.keyboard_navigation is not demanded as required for a d-pad-only app"},
+    {"query": "inspect_project.py on a project whose token file declares --font / font-family", "expect": "design_context.typography is KNOWN with the declared stack, not UNKNOWN"},
+    {"query": "direction on a TV project whose top bar is reachable by d-pad", "expect": "no 'navigation top-bar is a pointer/touch model' violation against a slot the same output preserves on repository evidence"}
+  ],
+  "tags": [
+    "skill-helped",
+    "concept-miss",
+    "ranking-miss",
+    "context-detection-miss",
+    "direction-mismatch",
+    "render-defect-fixed",
+    "preservation-ok",
+    "partial-scope-ok"
+  ],
+  "build_hash_start": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947",
+  "build_hash_end": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947"
+}

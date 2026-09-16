@@ -1,0 +1,42 @@
+{"task": "p5-10", "project": "p3-android-tv-compose", "platform_expected": "tv", "platform_resolved": "tv", "platform_correct": "yes",
+ "stack": "kotlin, jetpack-compose 1.8, androidx.tv tv-material 1.0, media3, coil", "existing_ui": true, "new_screen": true,
+ "artifact_state_expected": "existing", "artifact_state_resolved": "existing", "artifact_state_correct": true,
+ "mode_expected": ["create", "refactor"], "mode_resolved": ["create"], "mode_correct": "yes",
+ "scope_kind_expected": "in-scope", "scope_kind_resolved": "in-scope", "scope_correct": true,
+ "change_budget": "moderate", "render_mode": "html-twin",
+ "screenshots": ["render/first-player-overlay.png", "render/first-player-tracks-focused.png", "render/first-player-sheet-open.png", "render/first-player-sheet-focus-vs-selected.png", "render/first-player-sheet-applied.png", "render/first-player-sheet-audio.png", "render/first-player-sheet-closed.png", "render/first-player-overlay-hidden.png", "render/first-player-overlay-revealed.png", "render/first-player-seek.png", "render/first-player-back-home.png", "render/first-player-prefs-remembered.png", "render/first-player-sheet-safe-overlay.png", "render/first-player-sheet-no-subtitles.png", "render/first-player-reduced-motion.png", "render/final-player-overlay.png", "render/final-player-tracks-focused.png", "render/final-player-sheet-open.png", "render/final-player-sheet-focus-vs-selected.png", "render/final-player-sheet-applied.png", "render/final-player-sheet-audio.png", "render/final-player-sheet-closed.png", "render/final-player-overlay-hidden.png", "render/final-player-overlay-revealed.png", "render/final-player-seek.png", "render/final-player-back-home.png", "render/final-player-prefs-remembered.png", "render/final-player-sheet-safe-overlay.png", "render/final-player-sheet-no-subtitles.png", "render/final-player-reduced-motion.png", "render/final-home-initial.png", "render/final-home-live-rail.png", "render/final-home-epg-tile.png", "render/final-home-deep-rail.png", "render/final-details.png", "render/final-home-after-back.png", "render/final-home-nav-open.png", "render/final-home-safe-overlay.png", "render/final-home-mini-paused.png", "render/final-home-reduced-motion.png"],
+ "context_detection": {"navigation": "yes", "theme": "yes", "typography": "partial", "surfaces": "partial", "spacing": "yes"},
+ "preservation": {"navigation": true, "theme": true, "typography": true, "component_reuse": true, "unjustified_structural_change": 0},
+ "expected_concepts": ["media.track_selection", "interaction.selection_visible", "a11y.dialog_focus", "interaction.back_semantics", "interaction.dpad_reachability", "tv.player_autohide", "interaction.focus_visible"],
+ "critical_concepts": ["media.track_selection", "interaction.selection_visible", "interaction.back_semantics"],
+ "delivered_concepts": ["tv.player_autohide", "a11y.accessible_names", "media.track_selection", "interaction.focus_restore", "interaction.back_semantics", "state.loading_empty_error", "tv.safe_margins", "media.live_channel_switching", "tv.ten_foot_typography", "interaction.focus_visible", "interaction.dpad_reachability", "perf.focus_latency", "table.virtualization", "perf.image_sizing"],
+ "concept_recall": 0.71, "critical_recall": 0.67,
+ "concept_misses": [{"concept": "interaction.selection_visible", "layer": "expected-concepts"}, {"concept": "a11y.dialog_focus", "layer": "expected-concepts"}],
+ "first_render_defects": {"visual": 2, "interaction": 1, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 1},
+ "final_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+ "iterations": 3, "guidance_relevant": 4, "guidance_partial": 3, "guidance_offtarget": 1,
+ "bad_guidance": [
+  {"record": "tv-focus-performance", "category": "generic", "why": "virtualisation, image sizing and 'never coalesce key events' for a track chooser; carries table.virtualization, a forbidden concept for this task"},
+  {"record": "comp-mini-player", "category": "generic", "why": "selected into core to cover states/focus_restore/back; the mini player already exists in the codebase and nothing in the record applies to the chooser; also reported as 'omitted (redundant)' in the same output"},
+  {"record": "comp-player-controls", "category": "missing-critical", "why": "names the captions/audio selectors but says nothing about how the chooser itself works: selected state distinct from focus, default focus on the current track, focus return to the opener on close, the no-tracks state"}
+ ],
+ "skill_effect": "helped", "guidance_tokens": 1408,
+ "misses": [
+  {"layer": "expected-concepts", "what": "interaction.selection_visible never demanded for a chooser (radio-style list where selected must read apart from focus); a11y.dialog_focus never demanded for a sheet"},
+  {"layer": "knowledge-gap", "what": "a11y-modal-dialog (return focus to the invoker, first focus on the meaningful control) is platform web/desktop/mobile and can never be selected for tv; no TV side-sheet record; comp-dialog has TV notes but was neither demanded nor retrieved"},
+  {"layer": "bundle-selection", "what": "tv-focus-performance selected for the performance concern (table.virtualization, perf.image_sizing in a chooser); comp-mini-player in core for coverage; state.loading_empty_error marked covered by a record about a different component while the one empty state that matters (no subtitle tracks) is not in the bundle"},
+  {"layer": "requirements", "what": "intent.preserve empty on an existing repo with KNOWN navigation/theme"},
+  {"layer": "context-detection", "what": "design/tokens.json not detected; typography UNKNOWN despite explicit Compose Typography; surfaces 'bordered' when borders are focus rings; direction labels five slots the code has as 'no repository evidence'"},
+  {"layer": "direction", "what": "icon-custom-glyphs (app uses material-icons-core) and metadata-focus-reveal (cards always show title + subtitle) contradict the codebase; harmless for this task"},
+  {"layer": "bundle-selection", "what": "explain output prints 'Omitted (redundant): comp-mini-player' while the record is in core (reporting inconsistency)"}
+ ],
+ "knowledge_gaps": ["tv: side sheet / chooser as a component — first focus on the current value, selected state distinct from the focus ring, SELECT applies immediately, BACK closes and returns focus to the control that opened it, does not auto-hide while open; the existing dialog-focus rule excludes tv", "tv: track chooser specifics — Off row, per-language preference remembered across streams, no-tracks state as text, current choice shown next to the control"],
+ "regressions": [
+  {"query": "Add a subtitles and audio language chooser to the player.", "expect": "interaction.selection_visible and a11y.dialog_focus demanded; a candidate stating selected ≠ focused for radio-style lists and focus return to the opener on close; no table.virtualization; intent.preserve = [navigation, theme]"},
+  {"query": "Let viewers switch the commentary language while the match is playing.", "expect": "media.track_selection + interaction.selection_visible; tv-player-controls / layout-split-player; mode create"},
+  {"query": "The captions menu disappears when the player controls auto-hide.", "expect": "tv.player_autohide + a11y.dialog_focus; layout-split-player 'never while a menu is open'"},
+  {"query": "platform: tv request mentioning a sheet, dialog or chooser", "expect": "a dialog-focus rule is retrievable for tv (a11y-modal-dialog is web/desktop/mobile only today)"},
+  {"query": "direction: repo using androidx.compose.material.icons core set", "expect": "icon slot preserved as a system icon set, never icon-custom-glyphs"}
+ ],
+ "tags": ["concept-miss", "knowledge-gap", "ranking-miss", "requirements-miss", "direction-mismatch", "context-detection-miss", "render-defect-fixed", "tooling-limit", "skill-helped", "preservation-ok"],
+ "build_hash_start": "bf034323a2b68202e8c902768e0de78cd93761b1a71670a49ee595648cd5f0d8", "build_hash_end": "bf034323a2b68202e8c902768e0de78cd93761b1a71670a49ee595648cd5f0d8"}

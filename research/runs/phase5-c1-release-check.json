@@ -1,0 +1,31 @@
+{
+  "gates": {
+    "validator": {
+      "ok": false,
+      "summary": "validate_skill: FAIL — 237 records, 1 errors, 1 warnings; cases {'development': 512, 'regression': 40, 'heldout': 145, 'heldout-v2': 212, 'heldout-v3': 311, 'heldout-v4': 0, 'activation': 180}"
+    },
+    "development+regression": {
+      "ok": false,
+      "passed": 551,
+      "total": 552,
+      "failing": [
+        "validate-skill"
+      ]
+    },
+    "activation_proxy": {
+      "ok": true,
+      "precision": 1.0,
+      "recall": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.0
+    },
+    "performance_sanity": {
+      "ok": true,
+      "load_ms": 7,
+      "search_ms": 277,
+      "direction_ms": 116
+    }
+  },
+  "real_activation": "NOT RUN (pass --real-activation)",
+  "ok": false
+}

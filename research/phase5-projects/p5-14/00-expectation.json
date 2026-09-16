@@ -1,0 +1,28 @@
+{
+  "platform": "desktop",
+  "artifact_state": "existing",
+  "acceptable_modes": ["refactor", "polish"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "table.inline_edit",
+    "table.tabular_figures",
+    "interaction.focus_visible",
+    "interaction.keyboard_navigation",
+    "a11y.accessible_names",
+    "feedback.validation_errors",
+    "process.reuse_first"
+  ],
+  "critical_concepts": ["table.inline_edit", "interaction.focus_visible", "table.tabular_figures"],
+  "forbidden_concepts": [
+    "touch.minimum_target",
+    "touch.ime_keyboard",
+    "tv.ten_foot_typography",
+    "adaptive.navigation_transform",
+    "brand.dark_mode_redesign",
+    "layout.hero_thesis",
+    "data.pagination_strategy",
+    "anti.platform_scaling"
+  ],
+  "preservation": ["navigation", "theme", "typography", "component_reuse"],
+  "notes": "Existing WPF (.NET 10) ERP client, one screen: menu bar (File/Edit/View/Help) + title band + command bar + DataGrid of 24 purchase-order lines + status bar, light theme (Themes/Light.xaml semantic brushes, Segoe UI Variable 14/12/20, Controls.xaml styles, 32 px rows, 4 px grid). Root cause as read from the code: ColQty (Width 76, header 'Qty', StringFormat=N2) and ColPrice (Width 100, header 'Unit price', N2) share the same Text.Numeric / Edit.Cell.Numeric styles and the same two-decimal format, so '240.00' and '14.75' look like the same kind of number; the only thing between them is the 72 px Unit ComboBox column. The active cell has a 2 px focus ring but the column header is not highlighted, type-to-edit starts on any digit, and Enter commits and moves DOWN in the same column, so a clerk who lands one column too far right keeps typing quantities into price row after row without a visible cue. Expected fix (in-scope, refactor/polish on the existing grid, no new screen): make the two numeric roles visibly different (quantity with unit-appropriate precision e.g. N0 or a 'Qty × Unit' pairing; price with the order currency in the header 'Unit price (AED)' and/or a currency prefix in the editor), highlight the current column's header while a cell is focused/editing so the column is obvious at a glance, spell 'Quantity' in full, add a visible group divider between the quantity group (Qty·Unit) and the money group (Unit price·Disc·Tax·Line total), keep the existing keyboard flow (Enter down, Tab right, F2, Esc) and keep AutomationProperties so the editor announces its column. Optional plausibility check: when a unit price is committed that equals the row's quantity, show a non-blocking warning in the status bar. Must reuse Text.Numeric / Grid.Header.Numeric / Brush.* tokens; keep the menu bar, command bar, status bar, light theme, typography, column-priority behaviour and the --capture harness intact."
+}

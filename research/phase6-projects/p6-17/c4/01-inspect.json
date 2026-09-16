@@ -1,0 +1,119 @@
+{
+  "root": "D:\\indigo pro\\MYownSkills\\research\\phase6-projects\\p6-compose-banking\\project",
+  "findings": [
+    {
+      "status": "KNOWN",
+      "note": "app\\build.gradle.kts: androidx.compose"
+    },
+    {
+      "status": "KNOWN",
+      "note": "app\\build.gradle.kts: androidx.compose.material3"
+    }
+  ],
+  "stack_groups": [
+    "compose"
+  ],
+  "platforms": [
+    "mobile"
+  ],
+  "ui_libraries": [
+    "compose",
+    "material3"
+  ],
+  "package_manager": null,
+  "css_architecture": [],
+  "tokens": [],
+  "fonts": [],
+  "icons": [],
+  "routing": [],
+  "breakpoints": [],
+  "accessibility": [
+    "a11y attributes present in 5 files"
+  ],
+  "focus_handling": [
+    "explicit focus handling in 0 files"
+  ],
+  "design_docs": [],
+  "component_dirs": [],
+  "tests": [],
+  "i18n": [],
+  "product_hints": [
+    "finance"
+  ],
+  "environment_hints": [],
+  "sample": {
+    "files_scanned": 37
+  },
+  "design_context": {
+    "navigation": {
+      "value": "top-bar",
+      "status": "KNOWN",
+      "evidence": [
+        "top-bar: 30 matches in AccountDetailScreen.kt, AccountsScreen.kt, CardsScreen.kt (shell/layout file)"
+      ],
+      "candidates": {
+        "top-bar": 30,
+        "bottom-tabs": 5
+      }
+    },
+    "theme": {
+      "value": "dual-theme",
+      "default": "light",
+      "status": "KNOWN",
+      "evidence": [
+        "dark theme configuration signals: 3",
+        "light theme configuration signals: 2",
+        "hex palette: 0 near-white, 1 near-black",
+        "default polarity light (root canvas)"
+      ]
+    },
+    "surfaces": {
+      "value": "bordered-flat",
+      "status": "INFERRED",
+      "evidence": [
+        "borders in 2 files, shadow/elevation in 0"
+      ]
+    },
+    "radius": {
+      "value": "small",
+      "status": "INFERRED",
+      "evidence": [
+        "most common radius 4 (2\u00d7); others [12.0, 8.0]"
+      ]
+    },
+    "spacing": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "typography": {
+      "value": "custom",
+      "status": "KNOWN",
+      "evidence": [
+        "font family System (8 refs)",
+        "weights medium, normal, bold",
+        "encoded type scale in 2 files",
+        "tabular numerals"
+      ],
+      "features": {
+        "weights": [
+          "medium",
+          "normal",
+          "bold"
+        ],
+        "type_scale": true,
+        "monospace": false,
+        "tabular_numerals": true
+      }
+    },
+    "components": {
+      "value": "compose, material3",
+      "status": "KNOWN",
+      "evidence": [
+        "compose",
+        "material3"
+      ]
+    },
+    "schema": "design-context/v1"
+  }
+}

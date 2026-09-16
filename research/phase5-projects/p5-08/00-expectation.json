@@ -1,0 +1,31 @@
+{
+  "platform": "web",
+  "artifact_state": "existing",
+  "acceptable_modes": ["refactor", "polish", "audit"],
+  "scope_kind": "partial",
+  "expected_concepts": [
+    "perf.js_budget",
+    "touch.gestures_discoverable",
+    "interaction.keyboard_navigation",
+    "interaction.selection_visible",
+    "perf.layout_shift",
+    "a11y.reduced_motion",
+    "a11y.live_status"
+  ],
+  "critical_concepts": ["perf.js_budget", "touch.gestures_discoverable", "interaction.keyboard_navigation"],
+  "forbidden_concepts": [
+    "tv.ten_foot_typography", "tv.dark_first", "tv.safe_margins", "tv.player_autohide", "tv.epg_pinned_channels", "tv.time_navigation",
+    "media.search_tv", "media.resume_playback", "media.track_selection", "interaction.dpad_reachability",
+    "table.virtualization", "data.chart_by_question", "data.search_results", "state.loading_empty_error",
+    "layout.hero_thesis", "anti.template_landing", "onboarding.setup_checklist", "onboarding.linear_wizard",
+    "brand.dark_mode_redesign", "interaction.command_palette", "navigation.rail_semantics", "adaptive.navigation_transform"
+  ],
+  "preservation": [
+    "navigation", "theme", "typography", "component_reuse",
+    "appointments store + visibleAppointments derived + practitionerFilter",
+    "New appointment modal and addAppointment",
+    "chip status colours (chipStyle / statusTone / Badge)",
+    "time grid geometry (08:00-18:00, 30-min slots, 2 px per minute, 72 px time gutter)"
+  ],
+  "notes": "Reviewer reading before any advise call. /appointments is a header row (h2, date + count line, Practitioner Select bound to practitionerFilter, primary 'New appointment' Button) above a Card holding a CSS-grid day view: 72 px time gutter + one column per practitioner, 08:00-18:00 at 2 px/min, absolutely positioned chips (top/height from start/durationMin) keyed by appt.id inside a per-column `$visibleAppointments.filter(...)`. There is NO drag support at all: no pointer/drag handlers, no cursor affordance, no keyboard way to move a chip, no moveAppointment store function. The sentence therefore describes a technical cause (whole-day re-render on drag) plus a user-visible symptom (stutter). Pre-registered scope: PARTIAL. Expected split: engineering side = keyed per-chip updates, a single-item store mutation on drop (not per pointermove), drag position via transform on the dragged chip only, per-practitioner buckets derived once (not re-filtered per column), no store writes during the drag; design side = drag affordance (grab cursor / handle glyph, tooltip text saying it can be moved), drop feedback (snapped ghost / target time label, visible dragging state distinct from hover and status colour), no layout shift or thrash (transform/opacity only, no re-layout of other chips), keyboard alternative (arrow keys move by slot / across practitioners), announcement of the new time for AT, reduced-motion respected. Skill should say the perf root cause is engineering but the drag UX is in scope; a full ABSTAIN would be wrong (the user-visible drag UX is design), a plain IN-SCOPE without splitting would be acceptable-but-weaker. Mode: refactor (fix follows a diagnosis) or polish; audit acceptable because the sentence is an observation. Forbidden: TV/media/dpad, virtualization (25 chips), dark mode, search/empty-state concepts (those belong to p5-07). Preserve the store shape and visibleAppointments derived (p5-06 waiting room reads the same store), the modal, chip colour language and grid geometry."
+}

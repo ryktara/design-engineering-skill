@@ -1,0 +1,365 @@
+{
+ "description": "Phase 5 real-project round c1 (2026-09-09): expected-concept and bundle regressions written before the c2 fix. Each case is a verbatim task sentence or a proposed variant; expectations come from the agents' pre-registered 00-expectation.json files and RESULTS.md proposals.",
+ "suite": "guidance",
+ "cases": [
+  {
+   "id": "p5r-g-invoices-scan",
+   "query": "The invoices table on the billing page is hard to scan once there are more than twenty rows.",
+   "expect_concepts": [
+    "data.pagination_strategy",
+    "data.exception_first"
+   ],
+   "forbid_ids": [
+    "web-virtualize-long-lists"
+   ],
+   "note": "2026-09-09 amended: comp-data-table legitimately carries table.virtualization; the harmful outcome is a virtualization record in the bundle 2026-09-10: inline_edit is a legitimate concept of the data-table record; forbidding the concept punished the right record"
+  },
+  {
+   "id": "p5r-g-unsaved-job",
+   "query": "The dispatch job form lets you lose an unsaved job by clicking another one.",
+   "expect_concepts": [
+    "state.unsaved_changes_guard",
+    "feedback.confirmation_destructive",
+    "a11y.dialog_focus"
+   ],
+   "note": "2026-09-09 amended before the c2 rerun: the reviewer's point was that validation_errors must not be a REQUIRED concept; a bundle may still carry it via the form record"
+  },
+  {
+   "id": "p5r-g-close-unsaved",
+   "query": "The editor lets you close the window with unsaved changes",
+   "hints": {
+    "platforms": [
+     "desktop"
+    ]
+   },
+   "expect_concepts": [
+    "state.unsaved_changes_guard",
+    "feedback.confirmation_destructive"
+   ]
+  },
+  {
+   "id": "p5r-g-sync-spinner",
+   "query": "Sync status is a spinner that never says what is happening.",
+   "expect_concepts": [
+    "feedback.progress_indicator",
+    "a11y.live_status"
+   ],
+   "expect_ids_any": [
+    "feedback-progress-async"
+   ]
+  },
+  {
+   "id": "p5r-g-upload-spinner",
+   "query": "the upload spinner never says what is happening",
+   "expect_concepts": [
+    "feedback.progress_indicator"
+   ]
+  },
+  {
+   "id": "p5r-g-spanish-switch",
+   "query": "Add a Spanish language switch to the pick-up flow.",
+   "expect_concepts": [
+    "content.i18n_expansion"
+   ],
+   "expect_ids_any": [
+    "i18n-text-expansion-rtl"
+   ]
+  },
+  {
+   "id": "p5r-g-tv-track-chooser",
+   "query": "Add a subtitles and audio language chooser to the player.",
+   "hints": {
+    "platforms": [
+     "tv"
+    ]
+   },
+   "expect_concepts": [
+    "media.track_selection",
+    "interaction.selection_visible",
+    "a11y.dialog_focus"
+   ],
+   "forbid_ids": [
+    "web-virtualize-long-lists",
+    "comp-data-table"
+   ],
+   "note": "2026-09-09 amended: tv-focus-performance legitimately mentions lazy composition of long rails; the harmful outcome would be a table/web virtualization record"
+  },
+  {
+   "id": "p5r-g-commentary-language",
+   "query": "Let viewers switch the commentary language while the match is playing.",
+   "hints": {
+    "platforms": [
+     "tv"
+    ]
+   },
+   "expect_concepts": [
+    "media.track_selection"
+   ]
+  },
+  {
+   "id": "p5r-g-dark-bars",
+   "query": "Stats screen in dark mode: the bars are barely visible.",
+   "expect_concepts": [
+    "a11y.contrast"
+   ],
+   "forbid_ids": [
+    "cta-sticky-bar",
+    "cta-toolbar-commands"
+   ]
+  },
+  {
+   "id": "p5r-g-chart-bars-dark",
+   "query": "the chart bars are hard to see in dark mode",
+   "expect_concepts": [
+    "a11y.contrast"
+   ],
+   "forbid_ids": [
+    "cta-sticky-bar"
+   ]
+  },
+  {
+   "id": "p5r-g-add-habit-keyboard",
+   "query": "Make the Add Habit sheet work when the keyboard is up.",
+   "hints": {
+    "platforms": [
+     "mobile"
+    ]
+   },
+   "expect_concepts": [
+    "touch.ime_keyboard"
+   ],
+   "expect_ids_any": [
+    "mobile-keyboard-ime"
+   ],
+   "forbid_ids": [
+    "desktop-keyboard-first",
+    "a11y-keyboard-operable"
+   ],
+   "note": "2026-09-09 amended: the harmful outcome is a hardware-keyboard record, not the concept id"
+  },
+  {
+   "id": "p5r-g-thumbnails",
+   "query": "Photos attached to a defect report are tiny thumbnails you can't check in the field.",
+   "hints": {
+    "platforms": [
+     "mobile"
+    ]
+   },
+   "expect_concepts": [
+    "perf.image_sizing"
+   ],
+   "expect_ids_any": [
+    "media-photo-viewer"
+   ],
+   "forbid_ids": [
+    "imagery-none"
+   ]
+  },
+  {
+   "id": "p5r-g-skip-link",
+   "query": "Keyboard users can't get to the chart filters.",
+   "expect_concepts": [
+    "interaction.keyboard_navigation"
+   ],
+   "expect_ids_any": [
+    "a11y-skip-link",
+    "a11y-keyboard-operable"
+   ]
+  },
+  {
+   "id": "p5r-g-dpad-hold",
+   "query": "When you hold right on the remote the rail flies past too fast to read the titles.",
+   "expect_concepts": [
+    "perf.focus_latency",
+    "a11y.reduced_motion"
+   ],
+   "expect_ids_any": [
+    "tv-dpad-hold-pacing"
+   ]
+  },
+  {
+   "id": "p5r-g-overdue-vehicles",
+   "query": "Dispatchers want to see which vehicles are overdue for service without opening each one.",
+   "expect_scope_kind": "in-scope",
+   "expect_concepts": [
+    "data.exception_first",
+    "a11y.color_not_only"
+   ],
+   "expect_ids_any": [
+    "data-exceptions-first"
+   ]
+  },
+  {
+   "id": "p5r-g-late-orders",
+   "query": "Ops wants to see which orders are late in the list without opening each one.",
+   "expect_scope_kind": "in-scope",
+   "expect_concepts": [
+    "data.exception_first",
+    "a11y.color_not_only"
+   ]
+  },
+  {
+   "id": "p5r-g-a11y-checklist",
+   "query": "Review the stock adjustments page against our accessibility checklist.",
+   "hints": {
+    "platforms": [
+     "desktop"
+    ]
+   },
+   "expect_concepts": [
+    "a11y.color_not_only",
+    "a11y.live_status"
+   ],
+   "forbid_ids": [
+    "comp-setup-checklist"
+   ]
+  },
+  {
+   "id": "p5r-g-weekly-summary",
+   "query": "Add a weekly summary card to the top of the Today screen.",
+   "hints": {
+    "platforms": [
+     "mobile"
+    ]
+   },
+   "expect_concepts": [
+    "data.kpi_comparison"
+   ],
+   "expect_ids_any": [
+    "comp-kpi-tile"
+   ],
+   "forbid_ids": [
+    "comp-product-detail-page",
+    "comp-checkout-one-page"
+   ]
+  },
+  {
+   "id": "p5r-g-delivery-promise",
+   "query": "The product page never tells shoppers when it will arrive or that returns are free.",
+   "expect_concepts": [
+    "feedback.trust_signals"
+   ],
+   "expect_ids_any": [
+    "ecommerce-delivery-promise"
+   ]
+  },
+  {
+   "id": "p5r-g-drag-stutter",
+   "query": "The appointments grid re-renders the whole day when one chip is dragged, so dragging stutters.",
+   "expect_scope_kind": "partial",
+   "expect_concepts": [
+    "interaction.keyboard_navigation",
+    "a11y.live_status"
+   ],
+   "expect_ids_any": [
+    "interaction-drag-drop"
+   ],
+   "forbid_ids": [
+    "comp-checkout-one-page"
+   ]
+  },
+  {
+   "id": "p5r-g-kanban-drag",
+   "query": "Dragging cards between columns on the kanban board feels laggy and there is no way to do it from the keyboard.",
+   "expect_concepts": [
+    "interaction.keyboard_navigation"
+   ],
+   "expect_ids_any": [
+    "interaction-drag-drop"
+   ]
+  },
+  {
+   "id": "p5r-g-po-lines",
+   "query": "Purchase-order lines: operators keep typing the quantity into the price column.",
+   "hints": {
+    "platforms": [
+     "desktop"
+    ]
+   },
+   "expect_concepts": [
+    "table.tabular_figures"
+   ],
+   "expect_ids_any": [
+    "table-column-disambiguation",
+    "data-tables-numeric"
+   ]
+  },
+  {
+   "id": "p5r-g-kiosk-timeout",
+   "query": "Older customers time out on the identify step before they finish typing.",
+   "hints": {
+    "platforms": [
+     "kiosk"
+    ]
+   },
+   "expect_concepts": [
+    "state.session_expiry",
+    "touch.minimum_target"
+   ],
+   "expect_ids_any": [
+    "a11y-time-and-auto",
+    "kiosk-public-use"
+   ],
+   "forbid_ids": [
+    "web-responsive-breakpoints",
+    "surface-flat-tonal"
+   ]
+  },
+  {
+   "id": "p5r-g-waiting-board",
+   "query": "The waiting room board: nothing tells the front desk how long each patient has been sitting there.",
+   "expect_scope_kind": "in-scope",
+   "expect_concepts": [
+    "env.glanceable_status",
+    "a11y.color_not_only"
+   ]
+  },
+  {
+   "id": "p5r-g-sofa-selected",
+   "query": "From the sofa nobody can tell which row is selected on the living-room screen.",
+   "expect_concepts": [
+    "a11y.contrast",
+    "interaction.focus_visible",
+    "interaction.selection_visible"
+   ],
+   "forbid_ids": [
+    "web-virtualize-long-lists"
+   ]
+  },
+  {
+   "id": "p5r-g-search-blank",
+   "query": "Patient search that finds nothing just shows a blank area.",
+   "expect_concepts": [
+    "state.loading_empty_error",
+    "data.search_results"
+   ],
+   "expect_ids_any": [
+    "comp-empty-state",
+    "layout-states-empty-loading-error"
+   ],
+   "forbid_concepts": [
+    "media.search_tv"
+   ]
+  },
+  {
+   "id": "p5r-g-invite-flow",
+   "query": "Add a team members page with an invite flow, consistent with the rest of the settings area.",
+   "expect_concepts": [
+    "feedback.validation_errors",
+    "process.reuse_first"
+   ],
+   "forbid_ids": [
+    "cta-sticky-bar"
+   ],
+   "note": "2026-09-09 amended: a11y.dialog_focus is implied only if the invite is a dialog, which the sentence does not say"
+  },
+  {
+   "id": "p5r-g-existing-modify-reuse",
+   "query": "Users lose their edits when they switch records in the settings page",
+   "expect_concepts": [
+    "state.unsaved_changes_guard",
+    "feedback.confirmation_destructive"
+   ]
+  }
+ ]
+}

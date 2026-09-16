@@ -1,0 +1,11 @@
+{"task": "p6-09", "records": [
+{"id": "comp-dialog", "verdict": "relevant", "category": "", "why": "Supplies the destructive confirmation and safe-default focus the fix used."},
+{"id": "comp-form", "verdict": "partial", "category": "generic", "why": "Form-wide advice; only primary-action-last and the unsaved-changes guard touch the task."},
+{"id": "comp-empty-state", "verdict": "off-target", "category": "generic", "why": "A 5-field adjustment form has no empty/zero state; entered with near-zero lexical evidence."},
+{"id": "layout-states-empty-loading-error", "verdict": "off-target", "category": "generic", "why": "Loading/empty/error states for a form that has none; off-target in c3 too."},
+{"id": "layout-hierarchy-one-thing", "verdict": "relevant", "category": "", "why": "Carries one primary action per view, the actual fix — still demoted to OPTIONAL."}
+],
+"missing_critical": [],
+"unjustified_direction_slots": 0,
+"layer_review": {"core": ["comp-dialog", "comp-form", "comp-empty-state"], "critical": ["layout-states-empty-loading-error"], "optional": ["layout-hierarchy-one-thing"]},
+"change_vs_c3": "better — the wrong-product anti-brand-cosmetic-only guardrail and layout-form-stack are gone and all three used records survive, though comp-empty-state adds new generic noise and the load-bearing record is still optional."}

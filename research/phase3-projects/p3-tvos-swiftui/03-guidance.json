@@ -1,0 +1,679 @@
+{
+  "schema": "guidance-bundle/v1",
+  "query": "tvOS documentary streaming app: sign-in with an activation code and a player with auto-hiding transport controls and a subtitle picker",
+  "status": "AMBIGUOUS",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "tv"
+    ],
+    "input": [
+      "remote"
+    ],
+    "product": [
+      "media"
+    ],
+    "screen": [
+      "auth",
+      "player"
+    ],
+    "screen_subtype": [
+      "sign-in"
+    ],
+    "stack": [
+      "swiftui"
+    ],
+    "density": "medium",
+    "components": [
+      "media"
+    ],
+    "environment": [
+      "large-display",
+      "shared-device"
+    ],
+    "jobs": [
+      "authentication"
+    ],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "authentication",
+      "create auth",
+      "create player"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "known": [
+      "platform=tv (request: tvos)",
+      "input=remote (project inspection: DPAD/remote handling in source)",
+      "product=media (request: streaming, player)",
+      "stack=swiftui (project inspection)",
+      "screen=player (request: player)",
+      "screen=auth (request: sign in)",
+      "job=authentication (request: sign in, sign-in)"
+    ],
+    "inferred": [
+      "density=medium (implied by product media)",
+      "mode=create (default when no mode word is present)",
+      "environment=shared-device (a TV is normally a shared household device)",
+      "environment=large-display (TV platform)"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "conflicts": [
+      {
+        "field": "platform",
+        "request": [
+          "tv"
+        ],
+        "project": "mobile",
+        "resolution": "request kept; repository platform recorded as context"
+      }
+    ],
+    "status": "AMBIGUOUS",
+    "source": {
+      "request": [
+        "player",
+        "sign in",
+        "sign in, sign-in",
+        "streaming, player",
+        "tvos"
+      ],
+      "project": [
+        "Package.swift: Apple project",
+        "Package.swift: tvOS target",
+        "DPAD / remote key handling found in source"
+      ]
+    },
+    "activation": {
+      "decision": "activate",
+      "ui_score": 2.0,
+      "non_ui_score": 0,
+      "ui_terms": [],
+      "non_ui_terms": []
+    }
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "component",
+        "reason": "a specific component/screen is requested"
+      },
+      {
+        "concern": "structure",
+        "reason": "layout topology and hierarchy"
+      },
+      {
+        "concern": "states",
+        "reason": "every screen ships empty/loading/error states"
+      },
+      {
+        "concern": "interaction",
+        "reason": "input model: remote"
+      },
+      {
+        "concern": "accessibility",
+        "reason": "platform accessibility baseline"
+      },
+      {
+        "concern": "performance",
+        "reason": "focus latency and catalog virtualization on TV"
+      },
+      {
+        "concern": "feedback",
+        "reason": "form validation and submission feedback"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "navigation",
+        "reason": "how users arrive and leave"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "create/refactor requests attract generic defaults"
+      },
+      {
+        "concern": "brand",
+        "reason": "visual identity direction"
+      },
+      {
+        "concern": "content",
+        "reason": "10-foot readability"
+      },
+      {
+        "concern": "privacy",
+        "reason": "screen subtype sign-in"
+      },
+      {
+        "concern": "environment",
+        "reason": "environment large-display (INFERRED)"
+      }
+    ],
+    "optional": [
+      "motion"
+    ],
+    "required_concepts": [
+      {
+        "concept": "state.loading_empty_error",
+        "reason": "screen states"
+      },
+      {
+        "concept": "interaction.dpad_reachability",
+        "reason": "remote input"
+      },
+      {
+        "concept": "interaction.focus_restore",
+        "reason": "remote input"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "remote input"
+      },
+      {
+        "concept": "tv.ten_foot_typography",
+        "reason": "tv"
+      },
+      {
+        "concept": "tv.safe_margins",
+        "reason": "tv"
+      },
+      {
+        "concept": "feedback.validation_errors",
+        "reason": "form screen"
+      },
+      {
+        "concept": "tv.player_autohide",
+        "reason": "player controls"
+      },
+      {
+        "concept": "interaction.back_semantics",
+        "reason": "player on remote"
+      },
+      {
+        "concept": "tv.sign_in_code",
+        "reason": "screen subtype sign-in"
+      }
+    ],
+    "recommended_concepts": [
+      "tv.no_touch_hover",
+      "perf.focus_latency",
+      "tv.dark_first",
+      "feedback.confirmation_destructive",
+      "privacy.shared_device"
+    ]
+  },
+  "core": [
+    {
+      "id": "comp-tv-sign-in",
+      "kind": "component",
+      "category": "sign-in",
+      "title": "TV sign-in: code on screen and companion device",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "feedback",
+        "privacy"
+      ],
+      "concepts": [
+        "tv.sign_in_code",
+        "privacy.shared_device"
+      ],
+      "covers": [
+        "activation-code sign-in",
+        "privacy of on-screen data on shared devices"
+      ],
+      "score": 0.724,
+      "guidance": "Primary path: a short activation code (6–8 chars, no ambiguous glyphs, large 10-foot type) plus a short URL or QR code, polled until the companion device completes sign-in; the TV screen shows what to do in one sentence, the code, a 'waiting' state that is obviously alive, expiry with a regenerate action, and a secondary 'type here' fallback using the system keyboard. On success land on the profile picker; on shared TVs offer a PIN for adult profiles. Focus starts on the primary fallback button so BACK/SELECT behave predictably.",
+      "use_when": "Any TV app with accounts or subscriptions.",
+      "avoid_when": "Never make remote-typed passwords the primary path.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "implementation": {
+        "swiftui": "tvOS: use system keyboard fallback with .focusable(); consider Apple TV's built-in Continuity Keyboard / passkeys where applicable."
+      },
+      "why": {
+        "lexical": 0.564,
+        "structural": 0.92,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode create",
+          "product media",
+          "screen auth"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "comp-player-controls",
+      "kind": "component",
+      "category": "player",
+      "title": "Player transport controls",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "interaction",
+        "structure"
+      ],
+      "concepts": [
+        "tv.player_autohide"
+      ],
+      "covers": [
+        "auto-hide timing of player controls"
+      ],
+      "score": 0.701,
+      "guidance": "Play/pause, seek slider with time readout and keyboard/remote stepping, skip ±10 s, next/previous where relevant, captions and audio track selectors, quality only if user-facing, live indicator and go-to-live for live streams, volume on web/desktop only (TV uses the remote), controls overlay auto-hides except while focused/hovered; every control labelled; captions styling respects system preferences.",
+      "use_when": "Video/audio playback surfaces.",
+      "avoid_when": "Never custom-build when the platform control set already meets the need and the brand allows it.",
+      "risk": {
+        "a11y": "high",
+        "perf": "medium"
+      },
+      "provenance": "platform-standard",
+      "implementation": {
+        "swiftui": "AVPlayerViewController on tvOS gives system transport UI with Siri Remote support; customise only if brand requires."
+      },
+      "why": {
+        "lexical": 0.522,
+        "structural": 0.92,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode create",
+          "product media",
+          "screen player"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "dir-cinematic-media-tv",
+      "kind": "direction",
+      "category": "direction",
+      "title": "Cinematic media (TV)",
+      "facets": [
+        "direction",
+        "platform"
+      ],
+      "concerns": [
+        "brand",
+        "structure"
+      ],
+      "concepts": [],
+      "covers": [],
+      "score": 0.508,
+      "guidance": "Backdrop-driven home, side navigation, landscape rails with focus scale + glow, focus-revealed metadata, dark tinted canvas, a heavy display face for titles, filled icons at ≥32 dp, cinematic but debounced crossfades, and a player with transient controls. Identity via backdrop treatment (scrim shape, grain), display type, and the focus glow colour.",
+      "use_when": "Streaming/IPTV/VOD apps on TV with strong artwork; the brand wants immersion.",
+      "avoid_when": "Weak artwork, low-end boxes, catalogues where text metadata dominates (use 'Broadcast guide').",
+      "risk": {
+        "a11y": "medium",
+        "perf": "high"
+      },
+      "provenance": "internal-preference",
+      "incompatible": [
+        "nav-top-bar",
+        "layout-table-first",
+        "surface-bordered-panes",
+        "focus-ring-standard",
+        "motion-spring"
+      ],
+      "why": {
+        "lexical": 0.17,
+        "structural": 0.92,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode create",
+          "product media",
+          "density medium"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring direction with lexical evidence"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "tv-player-controls",
+      "kind": "rule",
+      "category": "player",
+      "title": "TV: transport control conventions",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "interaction"
+      ],
+      "concepts": [
+        "tv.player_autohide",
+        "interaction.back_semantics"
+      ],
+      "covers": [
+        "auto-hide timing of player controls",
+        "BACK behaviour"
+      ],
+      "score": 0.726,
+      "guidance": "Media keys work without showing the overlay (PLAY/PAUSE, FF/RW); DPAD_CENTER on the playing video toggles play/pause or shows controls (pick one and be consistent with the platform); LEFT/RIGHT on the progress bar seek in fixed steps with preview; overlay auto-hides after 3–5 s of no input; subtitle/audio pickers are side sheets that keep playback visible; live TV adds channel UP/DOWN and a mini guide.",
+      "use_when": "Video/audio playback screens.",
+      "avoid_when": "Never hide controls while a control is focused; never require SELECT twice to pause.",
+      "risk": {
+        "a11y": "high",
+        "perf": "medium"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.632,
+        "structural": 0.84,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode create",
+          "product media"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "most relevant record for the request wording"
+    },
+    {
+      "id": "anti-no-states",
+      "kind": "antipattern",
+      "category": "craft",
+      "title": "Only the happy state was designed",
+      "facets": [
+        "anti-pattern"
+      ],
+      "concerns": [
+        "anti-pattern",
+        "states"
+      ],
+      "concepts": [
+        "state.loading_empty_error"
+      ],
+      "covers": [
+        "loading, empty and error states"
+      ],
+      "score": 0.261,
+      "guidance": "Enumerate states per screen and per interactive component before implementation and verify each visually; test with long strings, zero items, 10k items, and slow networks.",
+      "use_when": "Screens with no empty, loading, error, offline, partial, or long-text states; buttons with no pressed/disabled/loading states; TV cards with no focused state.",
+      "avoid_when": "Never.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.58,
+        "matched": [
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required concern states: every screen ships empty/loading/error states"
+    },
+    {
+      "id": "a11y-tv-focus-always",
+      "kind": "rule",
+      "category": "focus",
+      "title": "TV: exactly one visible focus at all times",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.focus_restore",
+        "interaction.focus_visible"
+      ],
+      "covers": [
+        "focus restoration",
+        "visible focus"
+      ],
+      "score": 0.378,
+      "guidance": "Set initial focus deterministically (first actionable content or Play on detail), restore focus to the previously focused item when returning, keep focus on screen (scroll into view), move focus to a sensible neighbour when the focused item is removed, and never rely on colour tint alone for the focused state.",
+      "use_when": "Every TV screen, after every navigation, after data loads, after dialogs close, after list updates.",
+      "avoid_when": "Never leave focus on a hidden or off-screen element; never let focus disappear after a list refresh.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.84,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required concern accessibility: platform accessibility baseline"
+    },
+    {
+      "id": "tv-focus-performance",
+      "kind": "rule",
+      "category": "performance",
+      "title": "TV: focus response and list performance",
+      "facets": [
+        "performance",
+        "platform"
+      ],
+      "concerns": [
+        "interaction",
+        "performance"
+      ],
+      "concepts": [
+        "perf.focus_latency",
+        "table.virtualization",
+        "perf.image_sizing"
+      ],
+      "covers": [
+        "focus latency",
+        "virtualization of long collections",
+        "image sizing and formats"
+      ],
+      "score": 0.378,
+      "guidance": "Focus moves must render within one frame (≤16 ms at 60 Hz) even while images load; key events are never dropped or coalesced into jumps; images sized to card, cached, and loaded with placeholders; rows virtualised vertically and horizontally; heavy backdrops debounced; test on the cheapest target device (e.g. 1–2 GB RAM set-top boxes), not the emulator.",
+      "use_when": "Rails, grids, EPG, any list on TV; especially with images.",
+      "avoid_when": "Never decode full-size artwork for thumbnails; never render all rails at once.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "high"
+      },
+      "provenance": "engineering-practice",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.84,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode create",
+          "product media"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required concern performance: focus latency and catalog virtualization on TV"
+    },
+    {
+      "id": "tv-dpad-axes",
+      "kind": "rule",
+      "category": "navigation",
+      "title": "TV: vertical = sections, horizontal = items",
+      "facets": [
+        "navigation",
+        "platform"
+      ],
+      "concerns": [
+        "navigation"
+      ],
+      "concepts": [
+        "interaction.dpad_reachability"
+      ],
+      "covers": [
+        "D-pad focus reachability"
+      ],
+      "score": 0.378,
+      "guidance": "Every focusable element must be reachable with straight UP/DOWN/LEFT/RIGHT presses; no diagonal reasoning, no hidden hops. Search and settings live at a predictable edge. Grids: LEFT at the first column may enter side navigation, RIGHT at the last column stays. Forms: one field per row, DOWN advances.",
+      "use_when": "Any TV layout: rails, grids, menus, settings, forms.",
+      "avoid_when": "Avoid nested horizontal groups inside horizontal groups; avoid controls placed where no straight DPAD path reaches them.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.84,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required concept interaction.dpad_reachability"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "component",
+      "structure",
+      "states",
+      "interaction",
+      "accessibility",
+      "performance",
+      "feedback"
+    ],
+    "covered_required_concerns": [
+      "component",
+      "structure",
+      "states",
+      "interaction",
+      "accessibility",
+      "performance",
+      "feedback"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "navigation",
+      "anti-pattern",
+      "brand",
+      "content",
+      "privacy",
+      "environment"
+    ],
+    "covered_recommended_concerns": [
+      "navigation",
+      "anti-pattern",
+      "brand",
+      "privacy"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "state.loading_empty_error",
+      "interaction.dpad_reachability",
+      "interaction.focus_restore",
+      "interaction.focus_visible",
+      "tv.ten_foot_typography",
+      "tv.safe_margins",
+      "feedback.validation_errors",
+      "tv.player_autohide",
+      "interaction.back_semantics",
+      "tv.sign_in_code"
+    ],
+    "covered_required_concepts": [
+      "state.loading_empty_error",
+      "interaction.dpad_reachability",
+      "interaction.focus_restore",
+      "interaction.focus_visible",
+      "tv.player_autohide",
+      "interaction.back_semantics",
+      "tv.sign_in_code"
+    ],
+    "uncovered_required_concepts": [
+      "tv.ten_foot_typography",
+      "tv.safe_margins",
+      "feedback.validation_errors"
+    ],
+    "concept_coverage_ratio": 0.7,
+    "bundle_size": 8,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 3,
+    "guardrail_size": 5,
+    "category_diversity": 0.88,
+    "duplicate_pressure": 0.25,
+    "facet_coverage": 0.83,
+    "redundancy": 0.35
+  },
+  "token_coverage": 0.82,
+  "omitted": [],
+  "rejected": [
+    {
+      "id": "anti-hero-template",
+      "reason": "platform ['web'] not in request ['tv']"
+    },
+    {
+      "id": "comp-data-entry-grid",
+      "reason": "platform ['desktop', 'web'] not in request ['tv']"
+    },
+    {
+      "id": "dir-windows-native-tool",
+      "reason": "platform ['desktop'] not in request ['tv']"
+    },
+    {
+      "id": "dir-industrial-hmi",
+      "reason": "platform ['desktop', 'kiosk', 'tablet'] not in request ['tv']"
+    },
+    {
+      "id": "nav-bottom-tabs",
+      "reason": "platform ['mobile'] not in request ['tv']"
+    },
+    {
+      "id": "layout-three-pane",
+      "reason": "platform ['desktop', 'web'] not in request ['tv']"
+    },
+    {
+      "id": "typography-serif-editorial",
+      "reason": "platform ['mobile', 'tablet', 'web'] not in request ['tv']"
+    },
+    {
+      "id": "typography-monospace-technical",
+      "reason": "platform ['desktop', 'web'] not in request ['tv']"
+    }
+  ]
+}

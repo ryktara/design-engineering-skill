@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ClinicBoard: light theme only. */
+:root {
+  color-scheme: light;
+  --cb-bg: theme('colors.neutral.50');
+  --cb-surface: #ffffff;
+  --cb-border: theme('colors.neutral.200');
+  --cb-text: theme('colors.neutral.800');
+  --cb-text-muted: theme('colors.neutral.500');
+  --cb-primary: theme('colors.primary.600');
+  --cb-rail-width: 240px;
+  --cb-header-height: 56px;
+}
+
+@layer base {
+  html,
+  body {
+    height: 100%;
+    background-color: var(--cb-bg);
+    color: var(--cb-text);
+    font-family: theme('fontFamily.sans');
+    -webkit-font-smoothing: antialiased;
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "brand": "In the channel guide the time header jumps every half hour and you lose where you were.",
+  "fingerprint": {
+    "navigation_model": "tv-side-nav",
+    "color_strategy": "dark-with-accent"
+  },
+  "direction": {
+    "navigation": "nav-tv-side",
+    "layout": null,
+    "density": null,
+    "surface": null,
+    "cards": null,
+    "typography": null,
+    "color": "color-dark-accent",
+    "motion": null,
+    "focus": null,
+    "cta": null,
+    "imagery": null,
+    "icon": null,
+    "metadata": null
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "tv"
+    ],
+    "input": [
+      "remote"
+    ],
+    "product": [
+      "media"
+    ],
+    "screen": [
+      "list"
+    ],
+    "screen_subtype": [
+      "epg"
+    ],
+    "stack": [
+      "html-css"
+    ],
+    "density": "medium",
+    "components": [],
+    "environment": [
+      "large-display",
+      "shared-device"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "audit list"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_INTERACTION",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "performance-ux"
+      ],
+      "change_scope": "screen",
+      "utterance": "observation",
+      "preserve": []
+    },
+    "platform_evidence": [
+      {
+        "platform": "tv",
+        "strength": "STRONG_INFERENCE",
+        "evidence": [
+          "channel guide",
+          "channel"
+        ]
+      }
+    ],
+    "mode_evidence": [
+      "audit: perceived-performance defect",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": "tv-rails (KNOWN)",
+      "theme": "dark-first (INFERRED)",
+      "surfaces": "bordered-flat (INFERRED)",
+      "radius": "small (INFERRED)",
+      "spacing": "4 (INFERRED)"
+    },
+    "known": [
+      "platform=tv",
+      "input=remote",
+      "product=media",
+      "stack=html-css",
+      "screen=list",
+      "project_navigation=tv-rails"
+    ],
+    "inferred": [
+      "density=medium",
+      "mode=audit",
+      "mode=refactor",
+      "environment=shared-device",
+      "environment=large-display",
+      "project_theme=dark-first",
+      "project_surfaces=bordered-flat",
+      "project_radius=small",
+      "project_spacing=4"
+    ],
+    "missing": [],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

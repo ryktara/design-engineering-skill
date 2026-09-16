@@ -1,0 +1,1126 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "Front desk on a tablet: the appointment chips are too small to tap.",
+  "status": "AMBIGUOUS",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "responsive",
+      "audit"
+    ],
+    "platform": [
+      "tablet"
+    ],
+    "input": [
+      "touch"
+    ],
+    "product": [
+      "healthcare"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "svelte",
+      "tailwind"
+    ],
+    "density": null,
+    "components": [],
+    "environment": [],
+    "jobs": [],
+    "problems": [
+      "visual"
+    ],
+    "risk": "medium",
+    "primary_jobs": [
+      "responsive"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "screen_reader": true,
+      "touch_targets": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_INTERACTION",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "responsive",
+        "interaction",
+        "visual"
+      ],
+      "change_scope": "unknown",
+      "utterance": "observation",
+      "existing": true,
+      "problem": true,
+      "facet": "general",
+      "diagnose_only": false,
+      "creation": false,
+      "redesign": false,
+      "responsive_cues": true,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [
+      {
+        "platform": "tablet",
+        "strength": "DIRECT",
+        "evidence": [
+          "tablet"
+        ]
+      },
+      {
+        "platform": "mobile",
+        "strength": "WEAK_INFERENCE",
+        "evidence": [
+          "tap"
+        ]
+      }
+    ],
+    "mode_evidence": [
+      "responsive: responsive defect",
+      "audit: diagnose first"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "left-rail",
+        "status": "KNOWN",
+        "evidence": [
+          "left-rail: 1 matches in +layout.svelte (shell/layout file)",
+          "also breadcrumb-tree: 1 matches"
+        ]
+      },
+      "theme": {
+        "value": "light-first",
+        "status": "INFERRED",
+        "evidence": [
+          "hex palette: 13 near-white, 1 near-black"
+        ]
+      },
+      "surfaces": {
+        "value": "bordered-flat",
+        "status": "INFERRED",
+        "evidence": [
+          "borders in 12 files, shadow/elevation in 2"
+        ]
+      },
+      "radius": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": []
+      },
+      "spacing": {
+        "value": 4,
+        "status": "INFERRED",
+        "evidence": [
+          "most used spacing values [16, 8, 12, 4, 24]",
+          "tailwind spacing classes (123)"
+        ]
+      },
+      "typography": {
+        "value": "custom",
+        "status": "INFERRED",
+        "evidence": [
+          "font family theme (1 refs)",
+          "tabular numerals"
+        ]
+      },
+      "components": {
+        "value": "tailwind",
+        "status": "KNOWN",
+        "evidence": [
+          "tailwind"
+        ]
+      }
+    },
+    "known": [
+      "platform=tablet (request: tablet)",
+      "input=touch (request: tap)",
+      "product=healthcare (project inspection (README))",
+      "stack=svelte (project inspection)",
+      "stack=tailwind (project inspection)",
+      "project_navigation=left-rail (repository: left-rail: 1 matches in +layout.svelte (shell/layout file); also breadcrumb-tree: 1 matches)",
+      "project_components=tailwind (repository: tailwind)"
+    ],
+    "inferred": [
+      "mode=responsive (responsive defect)",
+      "mode=audit (diagnose first)",
+      "project_theme=light-first (repository: hex palette: 13 near-white, 1 near-black)",
+      "project_surfaces=bordered-flat (repository: borders in 12 files, shadow/elevation in 2)",
+      "project_spacing=4 (repository: most used spacing values [16, 8, 12, 4, 24]; tailwind spacing classes (123))",
+      "project_typography=custom (repository: font family theme (1 refs); tabular numerals)"
+    ],
+    "missing": [],
+    "conflicts": [
+      {
+        "field": "platform",
+        "request": [
+          "tablet"
+        ],
+        "project": "web",
+        "resolution": "request kept; repository platform recorded as context"
+      }
+    ],
+    "status": "AMBIGUOUS",
+    "source": {
+      "request": [
+        "tablet",
+        "tap",
+        "too small"
+      ],
+      "project": [
+        "package.json: svelte@^5.16.0",
+        "package.json: @sveltejs/kit@^2.12.0",
+        "package.json: tailwindcss@^3.4.17"
+      ]
+    },
+    "activation": {
+      "decision": "activate",
+      "ui_score": 5.0,
+      "non_ui_score": 0,
+      "ui_terms": [
+        "chip",
+        "chips",
+        "front desk"
+      ],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "present-tense observation"
+      ],
+      "new": [],
+      "defect": [
+        "are too",
+        "too small"
+      ],
+      "operations": {},
+      "domains": {
+        "interaction": [
+          "tap"
+        ],
+        "visual": [
+          "visual problem"
+        ],
+        "responsive": [
+          "small",
+          "tablet"
+        ]
+      },
+      "no_change": [],
+      "scope": {},
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "table",
+        "front desk",
+        "chips"
+      ],
+      "ux_symptoms": [
+        "too small"
+      ],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_INTERACTION",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "adaptive",
+        "reason": "responsive mode"
+      },
+      {
+        "concern": "structure",
+        "reason": "layout transformation"
+      },
+      {
+        "concern": "interaction",
+        "reason": "input model: touch"
+      },
+      {
+        "concern": "accessibility",
+        "reason": "platform accessibility baseline"
+      },
+      {
+        "concern": "privacy",
+        "reason": "sensitive data on a shared screen"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "navigation",
+        "reason": "navigation transforms across widths"
+      },
+      {
+        "concern": "feedback",
+        "reason": "sensitive domain: errors must be recoverable"
+      }
+    ],
+    "optional": [
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "layout.spacing_scale",
+        "reason": "visual problem / polish",
+        "priority": 2,
+        "critical": false
+      },
+      {
+        "concept": "layout.focal_hierarchy",
+        "reason": "visual problem / polish",
+        "priority": 2,
+        "critical": false
+      },
+      {
+        "concept": "adaptive.breakpoint_matrix",
+        "reason": "responsive mode",
+        "priority": 2,
+        "critical": false
+      },
+      {
+        "concept": "process.reuse_first",
+        "reason": "existing repository: reuse its primitives",
+        "priority": 1,
+        "critical": true
+      },
+      {
+        "concept": "touch.minimum_target",
+        "reason": "touch platform",
+        "priority": 3,
+        "critical": false
+      },
+      {
+        "concept": "privacy.shared_device",
+        "reason": "sensitive data on a shared screen",
+        "priority": 1,
+        "critical": true
+      },
+      {
+        "concept": "privacy.sensitive_masking",
+        "reason": "balances / health data visible to onlookers",
+        "priority": 1,
+        "critical": true
+      }
+    ],
+    "recommended_concepts": [
+      "layout.no_nested_cards",
+      "adaptive.navigation_transform",
+      "touch.gestures_discoverable",
+      "touch.thumb_reach",
+      "feedback.confirmation_destructive"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [],
+  "guardrails": [
+    {
+      "id": "shared-device-privacy",
+      "kind": "rule",
+      "category": "privacy",
+      "title": "Privacy on shared and public screens",
+      "facets": [
+        "accessibility",
+        "platform"
+      ],
+      "concerns": [
+        "environment",
+        "privacy"
+      ],
+      "concepts": [
+        "privacy.shared_device",
+        "state.session_expiry",
+        "privacy.sensitive_masking"
+      ],
+      "covers": [
+        "privacy of on-screen data on shared devices",
+        "session expiry and idle reset",
+        "masking of sensitive values with explicit reveal"
+      ],
+      "score": 0.261,
+      "guidance": "Assume onlookers: mask sensitive values by default with an explicit reveal (balances, medication, addresses), gate personal profiles and purchases behind a PIN on shared TVs, keep notifications and previews generic on shared screens, clear the session and screen on idle or sign-out (kiosks, waiting rooms), and never show one user's data while another profile is active. Announce masked values to assistive tech as masked, not as the value.",
+      "use_when": "TVs in a household, waiting-room tablets, kiosks, wall displays, any screen other people can see; personal data, balances, health details, viewing history, messages.",
+      "avoid_when": "Single-user personal devices with a lock screen already protecting the data.",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.58,
+        "matched": [
+          "platform tablet",
+          "secondary mode",
+          "product healthcare"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "critical concept (GENERIC): masking of sensitive values with explicit reveal, privacy of on-screen data on shared devices"
+    },
+    {
+      "id": "impl-reuse-before-new",
+      "kind": "rule",
+      "category": "implementation",
+      "title": "Reuse → extend → compose → new (in that order)",
+      "facets": [
+        "process"
+      ],
+      "concerns": [
+        "structure"
+      ],
+      "concepts": [
+        "process.reuse_first"
+      ],
+      "covers": [
+        "reuse → extend → compose → new"
+      ],
+      "score": 0.171,
+      "guidance": "Inspect the repository first (inspect_project.py): existing components, tokens, fonts, breakpoints, and conventions win. Reuse the existing component; if it lacks a variant, extend it through its API; if the composition is new, compose existing primitives; only create a new primitive when the gap is real, and put it where the others live.",
+      "use_when": "Any UI change in an existing codebase.",
+      "avoid_when": "Never install a second component library or a UI framework to build one screen; never fork a design-system component when a variant prop would do.",
+      "risk": {
+        "a11y": "low",
+        "perf": "medium"
+      },
+      "provenance": "engineering-practice",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.38,
+        "matched": []
+      },
+      "role": "guardrail",
+      "selected_for": "critical concept (GENERIC): reuse → extend → compose → new"
+    },
+    {
+      "id": "a11y-target-size",
+      "kind": "rule",
+      "category": "input",
+      "title": "Target size by platform",
+      "facets": [
+        "interaction"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "touch.minimum_target"
+      ],
+      "covers": [
+        "large touch targets (≥44–48 px)"
+      ],
+      "score": 0.45,
+      "guidance": "Web: ≥24×24 CSS px minimum (WCAG 2.5.8), 44×44 recommended for touch. iOS ≥44 pt, Android ≥48 dp, kiosk ≥60 px, desktop pointer ≥24 epx with 4–8 px spacing. Extend the hit area beyond the visual glyph rather than enlarging the icon.",
+      "use_when": "Every tappable/clickable element; especially icon buttons, table row actions, chips, close buttons, and pagination.",
+      "avoid_when": "Inline text links inside a sentence are exempt from the size rule but still need spacing.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.262,
+        "structural": 0.68,
+        "matched": [
+          "input touch (stated)",
+          "mode responsive"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage (SPECIFIC): large touch targets (≥44–48 px), accessibility, interaction"
+    },
+    {
+      "id": "layout-hierarchy-one-thing",
+      "kind": "rule",
+      "category": "layout",
+      "title": "One clear focal point per screen",
+      "facets": [
+        "layout"
+      ],
+      "concerns": [
+        "data-display",
+        "structure"
+      ],
+      "concepts": [
+        "layout.focal_hierarchy",
+        "layout.one_primary_action",
+        "data.exception_first"
+      ],
+      "covers": [
+        "visual hierarchy with one focal point",
+        "one primary action per view",
+        "exceptions and anomalies first"
+      ],
+      "score": 0.222,
+      "guidance": "Decide the screen's job and the one element that serves it; give that element the strongest size/contrast/position; demote everything else by one or two steps; navigation and chrome are quieter than content. On dashboards the focal point is the most important metric or the anomaly, not the page title.",
+      "use_when": "Designing any screen; reviewing 'it looks busy'.",
+      "avoid_when": "Never give three elements the same maximum emphasis; never make the primary content compete with chrome.",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.027,
+        "structural": 0.46,
+        "matched": [
+          "secondary mode"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage (SPECIFIC): visual hierarchy with one focal point"
+    },
+    {
+      "id": "layout-spacing-scale",
+      "kind": "rule",
+      "category": "layout",
+      "title": "Spacing from one scale, grouping by proximity",
+      "facets": [
+        "layout"
+      ],
+      "concerns": [
+        "structure"
+      ],
+      "concepts": [
+        "layout.spacing_scale"
+      ],
+      "covers": [
+        "consistent spacing scale"
+      ],
+      "score": 0.207,
+      "guidance": "A geometric-ish scale (4/8/12/16/24/32/48/64), inside-group spacing smaller than between-group spacing (ratio ≥1.5×), alignment to a grid, consistent inset per container type, optical alignment for icons and text baselines. Inconsistent spacing is the most common 'unprofessional' signal.",
+      "use_when": "Every layout decision; every 'spacing feels off' complaint.",
+      "avoid_when": "Never use arbitrary values (13px, 22px); never use equal spacing everywhere (kills grouping).",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.46,
+        "matched": [
+          "secondary mode"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage (SPECIFIC): consistent spacing scale"
+    },
+    {
+      "id": "mobile-orientation-size-classes",
+      "kind": "rule",
+      "category": "responsive",
+      "title": "Mobile: orientation changes and size classes",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "adaptive"
+      ],
+      "concepts": [
+        "adaptive.breakpoint_matrix",
+        "adaptive.navigation_transform",
+        "touch.safe_areas"
+      ],
+      "covers": [
+        "breakpoint matrix",
+        "navigation transforms across widths",
+        "safe areas and notches"
+      ],
+      "score": 0.36,
+      "guidance": "Design for compact and regular width and for landscape height: keep the primary action and the bottom navigation on screen in both orientations (pin the action bar above the safe area, let content scroll), keep the same navigation model across orientations (tabs stay tabs, a rail may replace them only on regular width), preserve scroll position and form state on rotation, and verify with the keyboard open.",
+      "use_when": "Any screen that can rotate, run on tablets, or be shown in split view / multi-window; primary actions and navigation that must stay reachable in landscape.",
+      "avoid_when": "Never lock orientation to dodge the layout work (accessibility exemptions aside); never let the keyboard or the landscape height push the primary action off screen.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.8,
+        "matched": [
+          "platform tablet",
+          "input touch (stated)",
+          "mode responsive"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage (GENERIC): breakpoint matrix, adaptive"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "adaptive",
+      "structure",
+      "interaction",
+      "accessibility",
+      "privacy"
+    ],
+    "covered_required_concerns": [
+      "adaptive",
+      "structure",
+      "interaction",
+      "accessibility",
+      "privacy"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "navigation",
+      "feedback"
+    ],
+    "covered_recommended_concerns": [],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "layout.spacing_scale",
+      "layout.focal_hierarchy",
+      "adaptive.breakpoint_matrix",
+      "process.reuse_first",
+      "touch.minimum_target",
+      "privacy.shared_device",
+      "privacy.sensitive_masking"
+    ],
+    "covered_required_concepts": [
+      "layout.spacing_scale",
+      "layout.focal_hierarchy",
+      "adaptive.breakpoint_matrix",
+      "process.reuse_first",
+      "touch.minimum_target",
+      "privacy.shared_device",
+      "privacy.sensitive_masking"
+    ],
+    "uncovered_required_concepts": [],
+    "critical_concepts": [
+      "privacy.sensitive_masking",
+      "privacy.shared_device",
+      "process.reuse_first"
+    ],
+    "uncovered_critical_concepts": [],
+    "critical_coverage_ratio": 1.0,
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.2,
+    "not_surfaced": [
+      {
+        "concept": "layout.no_nested_cards",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "touch.gestures_discoverable",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "touch.thumb_reach",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "feedback.confirmation_destructive",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "navigation",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "feedback",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      }
+    ],
+    "bundle_size": 6,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 0,
+    "guardrail_size": 6,
+    "bundle_tokens": 815,
+    "coverage_per_1k_tokens": 8.59,
+    "mean_purity": 0.78,
+    "mean_specificity": 0.83,
+    "quality_counts": {
+      "SPECIFIC": 3,
+      "GENERIC": 3
+    },
+    "contaminated": [],
+    "category_diversity": 0.83,
+    "duplicate_pressure": 0.33,
+    "facet_coverage": 0.5,
+    "redundancy": 0.22,
+    "critical_trace": {
+      "covered": [
+        "process.reuse_first",
+        "privacy.shared_device",
+        "privacy.sensitive_masking"
+      ],
+      "uncovered": [],
+      "carrier_quality": {
+        "process.reuse_first": "GENERIC",
+        "privacy.shared_device": "GENERIC",
+        "privacy.sensitive_masking": "GENERIC"
+      }
+    }
+  },
+  "token_coverage": 0.62,
+  "omitted": [
+    {
+      "id": "layout-dashboard-grid",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "comp-kiosk-keypad",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "layout-master-detail",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "surface-elevated-cards",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "color-multicolour-semantic",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "card-flat-tile",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "comp-photo-capture-field",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "nav-hub-spoke",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "comp-sidebar-nav",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "cta-sticky-bar",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    }
+  ],
+  "marginal": {
+    "shared-device-privacy": {
+      "new_critical": [
+        "privacy.sensitive_masking",
+        "privacy.shared_device"
+      ],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [
+        "environment",
+        "privacy"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "explicit_demand"
+      ],
+      "quality": "GENERIC",
+      "contamination": 0.0,
+      "tokens": 170
+    },
+    "impl-reuse-before-new": {
+      "new_critical": [
+        "process.reuse_first"
+      ],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [
+        "structure"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "explicit_demand",
+        "repository"
+      ],
+      "quality": "GENERIC",
+      "contamination": 0.0,
+      "tokens": 131
+    },
+    "a11y-target-size": {
+      "new_critical": [],
+      "new_required": [
+        "touch.minimum_target"
+      ],
+      "new_recommended": [],
+      "new_concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "lexical_strong",
+        "lexical"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 109
+    },
+    "layout-hierarchy-one-thing": {
+      "new_critical": [],
+      "new_required": [
+        "layout.focal_hierarchy"
+      ],
+      "new_recommended": [],
+      "new_concerns": [
+        "data-display"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "problem"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 113
+    },
+    "layout-spacing-scale": {
+      "new_critical": [],
+      "new_required": [
+        "layout.spacing_scale"
+      ],
+      "new_recommended": [],
+      "new_concerns": [],
+      "specificity": 1,
+      "evidence": [
+        "problem"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 110
+    },
+    "mobile-orientation-size-classes": {
+      "new_critical": [],
+      "new_required": [
+        "adaptive.breakpoint_matrix"
+      ],
+      "new_recommended": [
+        "adaptive.navigation_transform"
+      ],
+      "new_concerns": [
+        "adaptive"
+      ],
+      "specificity": 0,
+      "evidence": [],
+      "quality": "GENERIC",
+      "contamination": 0.0,
+      "tokens": 182
+    }
+  },
+  "rejected": [
+    {
+      "id": "anti-desktop-scaled-to-tv",
+      "reason": "platform ['tv'] not in request ['tablet']"
+    },
+    {
+      "id": "anti-hover-only-actions",
+      "reason": "platform ['desktop', 'web'] not in request ['tablet']"
+    },
+    {
+      "id": "chart-heatmap-matrix",
+      "reason": "platform ['desktop', 'web'] not in request ['tablet']"
+    },
+    {
+      "id": "chart-small-multiples",
+      "reason": "platform ['desktop', 'web'] not in request ['tablet']"
+    },
+    {
+      "id": "comp-menu",
+      "reason": "platform ['desktop', 'mobile', 'web'] not in request ['tablet']"
+    },
+    {
+      "id": "comp-filters",
+      "reason": "platform ['desktop', 'mobile', 'web'] not in request ['tablet']"
+    },
+    {
+      "id": "comp-setup-checklist",
+      "reason": "platform ['desktop', 'mobile', 'web'] not in request ['tablet']"
+    },
+    {
+      "id": "comp-product-detail-page",
+      "reason": "platform ['mobile', 'web'] not in request ['tablet']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "layout.spacing_scale",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 2,
+      "reason": "visual problem / polish",
+      "candidate_records": [
+        [
+          "anti-inconsistent-spacing",
+          0.207
+        ],
+        [
+          "layout-spacing-scale",
+          0.207
+        ]
+      ],
+      "selected_record": "layout-spacing-scale",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "layout.focal_hierarchy",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 2,
+      "reason": "visual problem / polish",
+      "candidate_records": [
+        [
+          "layout-hierarchy-one-thing",
+          0.222
+        ],
+        [
+          "anti-oversized-hero-text",
+          0.207
+        ],
+        [
+          "typo-measure-and-rhythm",
+          0.207
+        ]
+      ],
+      "selected_record": "layout-hierarchy-one-thing",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "adaptive.breakpoint_matrix",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 2,
+      "reason": "responsive mode",
+      "candidate_records": [
+        [
+          "mobile-orientation-size-classes",
+          0.36
+        ]
+      ],
+      "selected_record": "mobile-orientation-size-classes",
+      "carrier_quality": "GENERIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 1,
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.171
+        ]
+      ],
+      "selected_record": "impl-reuse-before-new",
+      "carrier_quality": "GENERIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "touch.minimum_target",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 3,
+      "reason": "touch platform",
+      "candidate_records": [
+        [
+          "a11y-target-size",
+          0.45
+        ],
+        [
+          "mobile-density-touch",
+          0.383
+        ],
+        [
+          "comp-kiosk-keypad",
+          0.355
+        ],
+        [
+          "comp-photo-capture-field",
+          0.332
+        ]
+      ],
+      "selected_record": "a11y-target-size",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "privacy.shared_device",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 1,
+      "reason": "sensitive data on a shared screen",
+      "candidate_records": [
+        [
+          "shared-device-privacy",
+          0.261
+        ]
+      ],
+      "selected_record": "shared-device-privacy",
+      "carrier_quality": "GENERIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "privacy.sensitive_masking",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 1,
+      "reason": "balances / health data visible to onlookers",
+      "candidate_records": [
+        [
+          "comp-kiosk-keypad",
+          0.355
+        ],
+        [
+          "shared-device-privacy",
+          0.261
+        ]
+      ],
+      "selected_record": "shared-device-privacy",
+      "carrier_quality": "GENERIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "layout.no_nested_cards",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "polish removes container noise",
+      "candidate_records": [
+        [
+          "anti-card-everything",
+          0.232
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "adaptive.navigation_transform",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "responsive mode",
+      "candidate_records": [
+        [
+          "mobile-orientation-size-classes",
+          0.36
+        ]
+      ],
+      "selected_record": "mobile-orientation-size-classes",
+      "carrier_quality": "GENERIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "touch.gestures_discoverable",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "touch platform",
+      "candidate_records": [
+        [
+          "mobile-gestures-discoverable",
+          0.386
+        ],
+        [
+          "interaction-drag-drop",
+          0.368
+        ],
+        [
+          "media-photo-viewer",
+          0.289
+        ],
+        [
+          "comp-list-row-mobile",
+          0.261
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.thumb_reach",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "one-handed use",
+      "candidate_records": [
+        [
+          "cta-sticky-bar",
+          0.308
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates rejected as contaminated: call-to-action pattern with no action wording or commitment screen in the request"
+    },
+    {
+      "concept": "feedback.confirmation_destructive",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "sensitive domain",
+      "candidate_records": [
+        [
+          "states-persistence-and-session",
+          0.261
+        ],
+        [
+          "comp-dialog",
+          0.144
+        ],
+        [
+          "comp-settings-screen",
+          0.144
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    }
+  ]
+}

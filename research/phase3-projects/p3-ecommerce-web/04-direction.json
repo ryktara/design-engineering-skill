@@ -1,0 +1,104 @@
+{
+  "brand": "Design the product detail page and checkout for our outdoor gear web store; must convert well on phones",
+  "fingerprint": {
+    "navigation_model": "wizard",
+    "layout_topology": "master-detail",
+    "grid_behavior": "fixed",
+    "content_density": "low",
+    "surface_strategy": "elevated",
+    "card_geometry": "poster-landscape",
+    "corner_language": "small",
+    "typography_character": "humanist-sans",
+    "color_strategy": "monochrome",
+    "motion_character": "crossfade",
+    "focus_strategy": "ring",
+    "cta_strategy": "sticky-bar",
+    "image_strategy": "hero-imagery",
+    "icon_strategy": "filled",
+    "metadata_density": "inline-badges"
+  },
+  "direction": {
+    "navigation": "nav-wizard",
+    "layout": "layout-master-detail",
+    "density": "density-low",
+    "surface": "surface-elevated-cards",
+    "cards": "card-poster-landscape",
+    "typography": "typography-humanist-sans",
+    "color": "color-monochrome-light",
+    "motion": "motion-crossfade",
+    "focus": "focus-ring-standard",
+    "cta": "cta-sticky-bar",
+    "imagery": "imagery-hero",
+    "icon": "icon-filled-system",
+    "metadata": "metadata-inline-badges"
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "mobile",
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [
+      "ecommerce"
+    ],
+    "screen": [
+      "checkout",
+      "detail"
+    ],
+    "screen_subtype": [],
+    "stack": [],
+    "density": null,
+    "components": [],
+    "environment": [
+      "outdoor"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "create checkout",
+      "create detail"
+    ],
+    "constraints": {},
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "known": [
+      "platform=web",
+      "platform=mobile",
+      "product=ecommerce",
+      "screen=detail",
+      "screen=checkout",
+      "mode=create",
+      "environment=outdoor"
+    ],
+    "inferred": [
+      "input=pointer",
+      "input=keyboard",
+      "input=touch"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available",
+      "stack: implementation stack not stated and no repository evidence"
+    ],
+    "status": "AMBIGUOUS"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

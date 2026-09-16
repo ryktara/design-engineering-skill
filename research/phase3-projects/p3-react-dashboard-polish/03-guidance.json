@@ -1,0 +1,402 @@
+{
+  "schema": "guidance-bundle/v1",
+  "query": "our React energy dashboard looks cramped and inconsistent, facility managers complain the numbers are hard to read and they don't know which button to press",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "polish",
+      "audit"
+    ],
+    "platform": [
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [],
+    "screen": [
+      "dashboard"
+    ],
+    "screen_subtype": [],
+    "stack": [
+      "react"
+    ],
+    "density": null,
+    "components": [
+      "button"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [
+      "general",
+      "visual"
+    ],
+    "risk": "low",
+    "primary_jobs": [
+      "polish dashboard"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "known": [
+      "platform=web",
+      "stack=react",
+      "screen=dashboard"
+    ],
+    "inferred": [
+      "input=pointer",
+      "input=keyboard",
+      "input=touch",
+      "mode=polish",
+      "mode=audit"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT"
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "structure",
+        "reason": "hierarchy and spacing are the usual polish defects"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "polish removes generic devices"
+      },
+      {
+        "concern": "interaction",
+        "reason": "input model: keyboard,pointer,touch"
+      },
+      {
+        "concern": "accessibility",
+        "reason": "platform accessibility baseline"
+      },
+      {
+        "concern": "data-display",
+        "reason": "numbers, tables or charts are the content"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "content",
+        "reason": "typography"
+      },
+      {
+        "concern": "component",
+        "reason": "the component being polished"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "viewport range"
+      },
+      {
+        "concern": "feedback",
+        "reason": "actions need confirmation and status"
+      }
+    ],
+    "optional": [
+      "motion",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "layout.spacing_scale",
+        "reason": "polish"
+      },
+      {
+        "concept": "layout.focal_hierarchy",
+        "reason": "polish"
+      },
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "web content must be keyboard operable"
+      },
+      {
+        "concept": "interaction.hover_independence",
+        "reason": "web is used with touch as well as pointer"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "web keyboard focus"
+      }
+    ],
+    "recommended_concepts": [
+      "touch.minimum_target",
+      "adaptive.breakpoint_matrix",
+      "a11y.live_status",
+      "a11y.color_not_only"
+    ]
+  },
+  "core": [
+    {
+      "id": "comp-kpi-tile",
+      "kind": "component",
+      "category": "chart",
+      "title": "KPI / stat tile",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "data-display"
+      ],
+      "concepts": [
+        "table.tabular_figures"
+      ],
+      "score": 0.36,
+      "guidance": "Label, value with unit and tabular figures, comparison (vs previous period) with sign + arrow + colour, optional sparkline, consistent decimal precision, the most important KPI larger or first, no icon per tile unless it disambiguates, whole tile links to the detail. Avoid the 'four identical cards with big numbers and a gradient' default.",
+      "use_when": "Headline metrics on dashboards.",
+      "avoid_when": "More than ~6 KPIs in a row (users stop reading); KPIs without context (no comparison, no unit).",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "dir-analytical-console",
+      "kind": "direction",
+      "category": "direction",
+      "title": "Analytical console",
+      "facets": [
+        "direction",
+        "platform"
+      ],
+      "concerns": [
+        "brand",
+        "structure"
+      ],
+      "concepts": [],
+      "score": 0.263,
+      "guidance": "Charts are the imagery; one chart palette; modules sized by importance not by a uniform card grid; dark-first tonal surfaces with the accent reserved for alerts and selection; large readable numerics; small multiples over spaghetti charts. Distinctiveness via chart mark style and a signature numeric typeface.",
+      "use_when": "Monitoring and analysis: dashboards with real questions, alerting, drill-down, often on dark themes for long sessions or wall displays.",
+      "avoid_when": "Task-entry tools (workbench), consumer products.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "internal-preference",
+      "incompatible": [
+        "surface-glass",
+        "imagery-hero",
+        "motion-cinematic",
+        "typography-serif-editorial"
+      ],
+      "role": "core",
+      "selected_for": "highest-scoring direction with lexical evidence"
+    },
+    {
+      "id": "layout-dashboard-grid",
+      "kind": "pattern",
+      "category": "layout",
+      "title": "Dashboard grid of modules",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "structure"
+      ],
+      "concepts": [],
+      "score": 0.405,
+      "guidance": "12-column responsive grid, modules sized by importance (the primary KPI or chart spans wider), reading order = importance order (top-left first), each module a region with a heading and its own loading/empty/error states. Cards are optional: a divider grid with headings is often clearer than nested boxes.",
+      "use_when": "Monitoring/overview screens where several independent modules (KPIs, charts, lists) are scanned together and ranked by importance.",
+      "avoid_when": "Task screens (forms, editors), narrow widths (stack instead), or when modules have no ordering logic and would be a wall of equal boxes.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "heuristic",
+      "incompatible": [
+        "layout-single-column",
+        "layout-immersive-rails",
+        "layout-rails",
+        "layout-editorial"
+      ],
+      "role": "core",
+      "selected_for": "highest-scoring pattern with lexical evidence"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "anti-inconsistent-spacing",
+      "kind": "antipattern",
+      "category": "craft",
+      "title": "Arbitrary spacing and misaligned edges",
+      "facets": [
+        "anti-pattern"
+      ],
+      "concerns": [
+        "anti-pattern"
+      ],
+      "concepts": [
+        "layout.spacing_scale"
+      ],
+      "score": 0.486,
+      "guidance": "Snap every value to the spacing scale, align left edges of text across components, use one inset per container type, check icon/text baseline alignment, and equalise gaps in repeated structures. This single fix does more for 'looks professional' than any colour change.",
+      "use_when": "Paddings like 13/18/22 px, cards with different inner padding, text not aligned to the grid, icons off-baseline, unequal gaps between equal items.",
+      "avoid_when": "Never.",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "role": "guardrail",
+      "selected_for": "required concern anti-pattern: polish removes generic devices"
+    },
+    {
+      "id": "a11y-keyboard-operable",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Everything operable by keyboard, no traps",
+      "facets": [
+        "accessibility",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.keyboard_navigation",
+        "interaction.hover_independence"
+      ],
+      "score": 0.306,
+      "guidance": "Tab reaches every control in visual order; composite widgets use arrow keys with a roving tabindex so Tab is not consumed by every cell; Escape closes layers and returns focus to the invoker; nothing traps focus except a modal, and the modal itself must be escapable. Provide a keyboard alternative for every drag interaction.",
+      "use_when": "Every interactive element, including custom widgets, drag/drop, sliders, menus, date pickers, and anything that appears on hover.",
+      "avoid_when": "Never skip.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "role": "guardrail",
+      "selected_for": "required concern interaction: input model: keyboard,pointer,touch"
+    },
+    {
+      "id": "layout-hierarchy-one-thing",
+      "kind": "rule",
+      "category": "layout",
+      "title": "One clear focal point per screen",
+      "facets": [
+        "layout"
+      ],
+      "concerns": [
+        "structure"
+      ],
+      "concepts": [
+        "layout.focal_hierarchy",
+        "layout.one_primary_action"
+      ],
+      "score": 0.348,
+      "guidance": "Decide the screen's job and the one element that serves it; give that element the strongest size/contrast/position; demote everything else by one or two steps; navigation and chrome are quieter than content. On dashboards the focal point is the most important metric or the anomaly, not the page title.",
+      "use_when": "Designing any screen; reviewing 'it looks busy'.",
+      "avoid_when": "Never give three elements the same maximum emphasis; never make the primary content compete with chrome.",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "role": "guardrail",
+      "selected_for": "required concept layout.focal_hierarchy"
+    },
+    {
+      "id": "a11y-focus-visible",
+      "kind": "rule",
+      "category": "focus",
+      "title": "Focus visible and not obscured",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.focus_visible"
+      ],
+      "score": 0.342,
+      "guidance": "Focus indicator ≥2 px with ≥3:1 contrast against adjacent colours and against the unfocused state; sticky UI gets scroll-padding so a focused control scrolls into clear view. On TV the indicator must be obvious at 3 m (scale + border/glow).",
+      "use_when": "Every focusable element in every theme; sticky headers, footers, toasts, and cookie banners must never cover the focused element.",
+      "avoid_when": "Never remove focus styles; use :focus-visible to hide them for mouse clicks only.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "role": "guardrail",
+      "selected_for": "required concept interaction.focus_visible"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "structure",
+      "anti-pattern",
+      "interaction",
+      "accessibility",
+      "data-display"
+    ],
+    "covered_required_concerns": [
+      "structure",
+      "anti-pattern",
+      "interaction",
+      "accessibility",
+      "data-display"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "content",
+      "component",
+      "adaptive",
+      "feedback"
+    ],
+    "covered_recommended_concerns": [],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "layout.spacing_scale",
+      "layout.focal_hierarchy",
+      "interaction.keyboard_navigation",
+      "interaction.hover_independence",
+      "interaction.focus_visible"
+    ],
+    "covered_required_concepts": [
+      "layout.spacing_scale",
+      "layout.focal_hierarchy",
+      "interaction.keyboard_navigation",
+      "interaction.hover_independence",
+      "interaction.focus_visible"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "bundle_size": 7,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 3,
+    "guardrail_size": 4,
+    "category_diversity": 0.86,
+    "duplicate_pressure": 0.29,
+    "facet_coverage": 0.75,
+    "redundancy": 0.4
+  },
+  "token_coverage": 0.89
+}

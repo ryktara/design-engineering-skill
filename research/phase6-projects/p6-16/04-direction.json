@@ -1,0 +1,119 @@
+{
+  "brand": "Freezing a card happens the instant you touch the switch.",
+  "fingerprint": {
+    "card_geometry": "none",
+    "color_strategy": "neutral-plus-accent"
+  },
+  "direction": {
+    "navigation": null,
+    "layout": null,
+    "density": null,
+    "surface": null,
+    "cards": "card-none",
+    "typography": null,
+    "color": "color-neutral-accent",
+    "motion": null,
+    "focus": null,
+    "cta": null,
+    "imagery": null,
+    "icon": null,
+    "metadata": null
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "mobile"
+    ],
+    "input": [
+      "touch"
+    ],
+    "product": [
+      "finance"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "compose"
+    ],
+    "density": "medium",
+    "components": [
+      "card"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "create card"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "screen_reader": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "unknown",
+      "operations": [],
+      "problem_domain": [
+        "performance-ux"
+      ],
+      "change_scope": "unknown",
+      "utterance": "observation",
+      "preserve": []
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "create: default (no cue at all)"
+    ],
+    "project_context": {
+      "navigation": "top-bar (KNOWN)",
+      "theme": "dual-theme (KNOWN)",
+      "surfaces": "bordered-flat (INFERRED)",
+      "radius": "small (INFERRED)",
+      "typography": "custom (KNOWN)",
+      "components": "compose, material3 (KNOWN)"
+    },
+    "known": [
+      "platform=mobile",
+      "input=touch",
+      "product=finance",
+      "stack=compose",
+      "project_navigation=top-bar",
+      "project_theme=dual-theme",
+      "project_typography=custom",
+      "project_components=compose, material3"
+    ],
+    "inferred": [
+      "density=medium",
+      "mode=create",
+      "project_surfaces=bordered-flat",
+      "project_radius=small"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

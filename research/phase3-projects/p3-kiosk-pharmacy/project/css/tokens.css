@@ -1,0 +1,78 @@
+/* Semantic design tokens for the RxPoint kiosk.
+   Contrast ratios computed with design-engineering/scripts/tokens.py contrast:
+   text-primary on canvas 15.58:1 · text-secondary on canvas 7.3:1 · on-primary on action 6.18:1
+   action-pressed 9.51:1 · error on surface 7.33:1 · focus ring on canvas 7.23:1
+   Accessible theme: white on black 21:1 · black on yellow action 14.67:1 */
+:root {
+  --color-bg-canvas: #F5F7F6;
+  --color-bg-surface: #FFFFFF;
+  --color-bg-brand: #0B6E5B;            /* header field */
+  --color-bg-brand-deep: #084F42;
+  --color-bg-muted: #E6ECEA;            /* tonal step 2 */
+  --color-text-primary: #14201C;
+  --color-text-secondary: #46554F;
+  --color-text-on-brand: #FFFFFF;
+  --color-action-primary: #0B6E5B;
+  --color-action-primary-pressed: #084F42;
+  --color-action-on-primary: #FFFFFF;
+  --color-action-secondary-border: #14201C;
+  --color-border-default: #7A8A84;      /* 3.62:1 on white: passes UI 3:1 */
+  --color-border-strong: #14201C;
+  --color-focus-ring: #0B4FA8;
+  --color-feedback-error: #A12A1E;
+  --color-feedback-warning-bg: #FFF3CD;
+  --color-feedback-success: #0B6E5B;
+
+  --space-1: 8px;  --space-2: 16px; --space-3: 24px; --space-4: 32px;
+  --space-5: 48px; --space-6: 64px; --space-7: 96px;
+
+  --font-family: "Nunito", "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-body: 28px;      /* ≥20 px kiosk minimum, sized for standing distance */
+  --font-small: 24px;
+  --font-lede: 32px;
+  --font-h2: 40px;
+  --font-h1: 60px;
+  --font-display: 84px;
+  --line-body: 1.35;
+
+  --target-min: 72px;     /* touch target floor; test asserts ≥64 */
+  --target-primary: 112px;
+  --key-size: 84px;       /* 10 keys + 9 × 16 px gaps = 984 px content width; still ≥ 64 px */
+  --key-gap: 16px;        /* kiosk floor: ≥ 16 px between adjacent targets */
+  --radius: 20px;
+  --radius-sm: 12px;
+  --ring: 6px;
+
+  --dur: 220ms;
+  --ease: cubic-bezier(.2,.7,.2,1);
+}
+
+/* Accessible mode: larger text, high contrast, controls pulled into the lower reach zone (layout in kiosk.css) */
+html[data-a11y="on"] {
+  --color-bg-canvas: #000000;
+  --color-bg-surface: #000000;
+  --color-bg-brand: #000000;
+  --color-bg-brand-deep: #000000;
+  --color-bg-muted: #1A1F1D;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #FFFFFF;
+  --color-text-on-brand: #FFD400;
+  --color-action-primary: #FFD400;
+  --color-action-primary-pressed: #FFFFFF;
+  --color-action-on-primary: #000000;
+  --color-action-secondary-border: #FFFFFF;
+  --color-border-default: #FFFFFF;
+  --color-border-strong: #FFFFFF;
+  --color-focus-ring: #FFFFFF;
+  --color-feedback-error: #FFB4A8;
+  --color-feedback-warning-bg: #1A1F1D;
+  --color-feedback-success: #FFD400;
+
+  --font-body: 34px;
+  --font-small: 30px;
+  --font-lede: 38px;
+  --font-h2: 46px;
+  --font-h1: 64px;
+  --font-display: 84px;
+  --target-min: 84px;
+}

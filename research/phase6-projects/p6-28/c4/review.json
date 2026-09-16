@@ -1,0 +1,15 @@
+{"task": "p6-28",
+ "records": [
+   {"id": "comp-player-controls", "verdict": "relevant", "category": "", "why": "Carries the exact fix - controls overlay auto-hides except while focused - plus labelling."},
+   {"id": "layout-split-player", "verdict": "relevant", "category": "", "why": "Show on any key, hide after 3-5s but never while a control has focus, first focus on play/pause; the record c3 had to recover by hand."},
+   {"id": "tv-player-controls", "verdict": "relevant", "category": "", "why": "Overlay auto-hides after 3-5s of no input with any key resetting the timer; previously lost to the platform=web mis-detection."},
+   {"id": "a11y-tv-focus-always", "verdict": "relevant", "category": "", "why": "Focus restoration and keeping exactly one visible focus is the second critical concept for a re-showing overlay."},
+   {"id": "tv-typography-distance", "verdict": "partial", "category": "generic", "why": "On-platform but type size is not what the auto-hide fix touches."},
+   {"id": "tv-dpad-axes", "verdict": "partial", "category": "generic", "why": "Reachability is already satisfied; nothing to change for overlay timing."},
+   {"id": "tv-safe-area", "verdict": "partial", "category": "generic", "why": "Overscan margins unrelated to the control auto-hide defect."},
+   {"id": "tv-back-behavior", "verdict": "partial", "category": "generic", "why": "Only the 'BACK closes player controls' clause touches this task; the rest of the ladder is out of scope."}
+ ],
+ "missing_critical": [],
+ "unjustified_direction_slots": 0,
+ "layer_review": {"core": ["comp-player-controls", "layout-split-player"], "critical": ["tv-player-controls", "a11y-tv-focus-always", "tv-typography-distance", "tv-dpad-axes", "tv-safe-area", "tv-back-behavior"], "optional": []},
+ "change_vs_c3": "better - platform is now tv instead of web, so layout-split-player and tv-player-controls (the two best-matching records, previously omitted and platform-filtered) are in the bundle, comp-player-controls is retained and the off-target comp-mini-player is gone; the cost is four TV boilerplate guardrails padding the bundle to 8."}

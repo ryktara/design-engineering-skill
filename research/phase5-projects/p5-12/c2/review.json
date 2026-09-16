@@ -1,0 +1,24 @@
+{
+  "task": "p5-12",
+  "reviewer_model": "claude-opus-5[1m]",
+  "c2_records": [
+    {"id": "dir-industrial-hmi", "verdict": "off-target", "bad_category": "contradicts-codebase"},
+    {"id": "comp-kiosk-keypad", "verdict": "relevant", "bad_category": null},
+    {"id": "kiosk-public-use", "verdict": "relevant", "bad_category": null},
+    {"id": "a11y-nontext-contrast", "verdict": "partial", "bad_category": null},
+    {"id": "a11y-color-not-only", "verdict": "off-target", "bad_category": "generic"},
+    {"id": "a11y-time-and-auto", "verdict": "relevant", "bad_category": null}
+  ],
+  "c2_relevant": 3,
+  "c2_partial": 1,
+  "c2_offtarget": 2,
+  "c2_bad": [
+    {"record": "dir-industrial-hmi", "category": "contradicts-codebase", "why": "A grey-scale ISA-101 industrial HMI direction (alarms the only saturated colour, gloves, trend sparklines, confirm-and-hold) promoted to core with lexical 0.0 for a green-branded consumer pharmacy kiosk with an EN/ES black-yellow accessible mode; following it would restyle the whole product for a timeout fix with change_budget low."},
+    {"record": "a11y-color-not-only", "category": "generic", "why": "Nothing in the identify step or the idle dialog conveys status by colour alone; selected purely for 'required coverage: no colour alone for status'."}
+  ],
+  "c2_direction_unjustified": [],
+  "platform_mode_scope_ok": true,
+  "verdict_vs_c1": "better",
+  "why": "The c1 root failure is gone: platform is now kiosk, so comp-kiosk-keypad, kiosk-public-use and a11y-time-and-auto (the exact 'timeouts warn and allow extension; kiosks show a visible countdown' rule, plus polite live region on the value and 'focus never falls to the page body') replace web-responsive-breakpoints, nav-wizard and surface-flat-tonal, the two forbidden adaptive.* concepts are no longer delivered, privacy.shared_device / a11y.live_status / touch.minimum_target / interaction.focus_restore are now covered, and the direction dropped the unjustified density-high slot.",
+  "would_have_helped": "helped"
+}

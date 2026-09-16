@@ -1,0 +1,5 @@
+{"platform": "web", "artifact_state": "existing", "acceptable_modes": ["polish", "refactor", "audit"], "scope_kind": "in-scope",
+ "expected_concepts": ["layout.one_primary_action", "feedback.confirmation_destructive", "a11y.accessible_names", "interaction.focus_visible", "state.unsaved_changes_guard", "process.reuse_first"],
+ "critical_concepts": ["layout.one_primary_action", "feedback.confirmation_destructive"],
+ "forbidden_concepts": ["tv.ten_foot_typography", "interaction.dpad_reachability", "media.resume_playback", "touch.thumb_reach"],
+ "preservation": ["navigation", "theme", "typography"]}

@@ -1,0 +1,243 @@
+{
+  "label": "first",
+  "results": {
+    "1440x900": {
+      "chipsKeyboardOperable": {
+        "tabsToFirstChip": 9,
+        "chip": {
+          "tag": "button",
+          "text": "Jackets (3)",
+          "ring": true,
+          "outline": "solid 3px rgb(11, 95, 209)",
+          "pressed": "false"
+        },
+        "afterSpace": {
+          "tag": "button",
+          "text": "Jackets (3)",
+          "ring": true,
+          "outline": "solid 3px rgb(11, 95, 209)",
+          "pressed": "true"
+        },
+        "afterEnter": {
+          "tag": "button",
+          "text": "Jackets (3)",
+          "ring": true,
+          "outline": "solid 3px rgb(11, 95, 209)",
+          "pressed": "false"
+        },
+        "pass": true
+      },
+      "resultCountAnnounced": {
+        "role": "status",
+        "ariaLive": "polite",
+        "before": "12 products",
+        "afterToggle": "3 of 12 products",
+        "afterRemove": "12 products",
+        "pass": true
+      },
+      "appliedChipRemovable": {
+        "applied": [
+          "Remove filter Jackets",
+          "Clear all"
+        ],
+        "removeChip": {
+          "tag": "button",
+          "text": "Remove filter Jackets",
+          "ring": true,
+          "outline": "solid 3px rgb(11, 95, 209)",
+          "pressed": null
+        },
+        "focusAfterRemove": {
+          "tag": "p",
+          "text": "12 products",
+          "ring": true,
+          "outline": "solid 3px rgb(11, 95, 209)",
+          "pressed": null
+        },
+        "tabsToRemove": 10,
+        "pass": false
+      },
+      "urlReflectsState": {
+        "afterToggle": "category=jackets",
+        "afterRemove": "",
+        "pass": true
+      },
+      "focusVisible": {
+        "stops": 23,
+        "ringOnEveryStop": true,
+        "sample": [
+          "Skip to content",
+          "Trailhead Supply",
+          "Jackets",
+          "Packs",
+          "Footwear",
+          "Camp",
+          "Cart, 1 item",
+          "Home",
+          "Jackets (1)",
+          "Packs (1)",
+          "Footwear (1)",
+          "Camp (2)"
+        ],
+        "pass": true
+      },
+      "targets": {
+        "minimum": 24,
+        "checked": 21,
+        "small": [],
+        "pass": true
+      },
+      "emptyState": {
+        "hidden": false,
+        "heading": "No gear matches those filters",
+        "actions": 1,
+        "count": "0 of 12 products",
+        "catalogHidden": true,
+        "afterClear": {
+          "count": "12 products",
+          "focus": "Jackets (3)",
+          "url": ""
+        },
+        "pass": true
+      },
+      "matchesExistingPages": {
+        "nav": "Jackets,Packs,Footwear,Camp",
+        "current": "Jackets",
+        "bodyBg": "rgb(246, 244, 238)",
+        "bodyFont": "Inter",
+        "h1Font": "Georgia",
+        "headerBg": "rgb(255, 255, 255)",
+        "h1Count": 1,
+        "title": "Jackets — Trailhead Supply",
+        "crumb": "Jackets",
+        "chipHeight": 44,
+        "chipRadius": "999px",
+        "pressedBg": "rgb(29, 33, 30)",
+        "catalogCols": 5,
+        "pass": true
+      },
+      "visibleAfterToggle": 3,
+      "passCount": 7,
+      "total": 8
+    },
+    "390x844": {
+      "chipsKeyboardOperable": {
+        "tabsToFirstChip": 1,
+        "chip": {
+          "tag": "button",
+          "text": "Jackets (3)",
+          "ring": true,
+          "outline": "solid 3px rgb(11, 95, 209)",
+          "pressed": "false"
+        },
+        "afterSpace": {
+          "tag": "button",
+          "text": "Jackets (3)",
+          "ring": true,
+          "outline": "solid 3px rgb(11, 95, 209)",
+          "pressed": "true"
+        },
+        "afterEnter": {
+          "tag": "button",
+          "text": "Jackets (3)",
+          "ring": true,
+          "outline": "solid 3px rgb(11, 95, 209)",
+          "pressed": "false"
+        },
+        "pass": true
+      },
+      "resultCountAnnounced": {
+        "role": "status",
+        "ariaLive": "polite",
+        "before": "12 products",
+        "afterToggle": "3 of 12 products",
+        "afterRemove": "12 products",
+        "pass": true
+      },
+      "appliedChipRemovable": {
+        "applied": [
+          "Remove filter Jackets",
+          "Clear all"
+        ],
+        "removeChip": {
+          "tag": "button",
+          "text": "Remove filter Jackets",
+          "ring": true,
+          "outline": "solid 3px rgb(11, 95, 209)",
+          "pressed": null
+        },
+        "focusAfterRemove": {
+          "tag": "p",
+          "text": "12 products",
+          "ring": true,
+          "outline": "solid 3px rgb(11, 95, 209)",
+          "pressed": null
+        },
+        "tabsToRemove": 10,
+        "pass": false
+      },
+      "urlReflectsState": {
+        "afterToggle": "category=jackets",
+        "afterRemove": "",
+        "pass": true
+      },
+      "focusVisible": {
+        "stops": 15,
+        "ringOnEveryStop": true,
+        "sample": [
+          "Jackets (1)",
+          "Packs (1)",
+          "Footwear (1)",
+          "Camp (2)",
+          "Under $150",
+          "$150–$300",
+          "Over $300",
+          "Waterproof (1)",
+          "Lightweight (2)",
+          "On sale (1)",
+          "Remove filter Jackets",
+          "Remove filter Waterproof"
+        ],
+        "pass": true
+      },
+      "targets": {
+        "minimum": 44,
+        "checked": 19,
+        "small": [],
+        "pass": true
+      },
+      "emptyState": {
+        "hidden": false,
+        "heading": "No gear matches those filters",
+        "actions": 1,
+        "count": "0 of 12 products",
+        "catalogHidden": true,
+        "afterClear": {
+          "count": "12 products",
+          "focus": "Skip to content\n\n  \n",
+          "url": ""
+        },
+        "pass": true
+      },
+      "matchesExistingPages": {
+        "nav": "Jackets,Packs,Footwear,Camp",
+        "current": "Jackets",
+        "bodyBg": "rgb(246, 244, 238)",
+        "bodyFont": "Inter",
+        "h1Font": "Georgia",
+        "headerBg": "rgb(255, 255, 255)",
+        "h1Count": 1,
+        "title": "Jackets — Trailhead Supply",
+        "crumb": "Jackets",
+        "chipHeight": 44,
+        "chipRadius": "999px",
+        "pressedBg": "rgb(29, 33, 30)",
+        "catalogCols": 2,
+        "pass": true
+      },
+      "visibleAfterToggle": 3,
+      "passCount": 7,
+      "total": 8
+    }
+  }
+}

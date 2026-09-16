@@ -1,0 +1,27 @@
+{
+  "task": "p5-05",
+  "reviewer_model": "claude-opus-5[1m]",
+  "c2_records": [
+    {"id": "comp-chart-container", "verdict": "partial", "bad_category": null},
+    {"id": "comp-filters", "verdict": "off-target", "bad_category": "contradicts-codebase"},
+    {"id": "a11y-skip-link", "verdict": "relevant", "bad_category": null},
+    {"id": "a11y-nontext-contrast", "verdict": "relevant", "bad_category": null},
+    {"id": "search-filter-feedback", "verdict": "off-target", "bad_category": "generic"},
+    {"id": "a11y-labels-names", "verdict": "partial", "bad_category": null}
+  ],
+  "c2_relevant": 2,
+  "c2_partial": 2,
+  "c2_offtarget": 2,
+  "c2_bad": [
+    {"record": "comp-filters", "category": "contradicts-codebase", "why": "Unchanged from c1: it prescribes a faceted filter row with popovers, checkbox facets, counts, chips and a mobile filter sheet for a control that is a two-option segmented native radiogroup (CompareSwitch.jsx). Its own avoid_when ('one or two filters') applies, and following it would be a redesign under a low change budget. It is still a CORE record, i.e. the 'what to build' half of the bundle is still wrong."},
+    {"record": "search-filter-feedback", "category": "generic", "why": "Still selected although the page has no search field: debounce, result counts, empty-results suggestions and a TV search screen have nothing to attach to. It traces back to the same requirements error (components/primary_jobs mapping 'filters' to search), which c2 did not fix."},
+    {"record": "a11y-keyboard-operable", "category": "missing-critical", "why": "Dropped relative to c1, where it was judged relevant and was used ('Tab order in visual order, do not add custom key handling to a native group'). It is the primary carrier of interaction.keyboard_navigation, a critical concept for a sentence that is literally about keyboard reach; a11y-skip-link now carries that tag but only via its <=5-tab-stops clause."}
+  ],
+  "c2_direction_unjustified": [
+    {"slot": "fingerprint.corner_language", "why": "'sharp' against a codebase whose --radius token and inspect result are 4-6px (radius=small); minor, and the direction slot itself is null so nothing downstream acts on it."}
+  ],
+  "platform_mode_scope_ok": true,
+  "verdict_vs_c1": "better",
+  "why": "c2 adds a11y-skip-link - the bypass-blocks/reach-distance record whose complete absence c1's RESULTS filed as a knowledge gap, and which describes the fix that was actually shipped (skip link as first focusable, target with tabindex=-1, keep tab stops before the first control <=5) - though it pays for it by dropping a11y-keyboard-operable and leaves both wrong records (comp-filters, search-filter-feedback) in place, so the core half of the bundle would still point an unwary implementer at rebuilding the segmented control.",
+  "would_have_helped": "helped"
+}

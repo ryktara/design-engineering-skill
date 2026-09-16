@@ -1,0 +1,150 @@
+{
+  "task": "p6-25",
+  "project": "p3-android-tv-compose",
+  "platform_expected": "tv",
+  "platform_resolved": "tv",
+  "platform_correct": "yes",
+  "stack": "kotlin/compose-for-tv (androidx.tv.material3, media3, coil)",
+  "existing_ui": true,
+  "new_screen": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": ["create", "refactor"],
+  "mode_resolved": ["create"],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "moderate",
+  "render_mode": "html-twin",
+  "screenshots": [
+    "render/first-01-home-top.png",
+    "render/first-02-continue-focused.png",
+    "render/first-03-resume-select.png",
+    "render/first-04-back-to-card.png",
+    "render/first-05-empty-history.png",
+    "render/final-01-home-top.png",
+    "render/final-02-continue-focused.png",
+    "render/final-03-resume-select.png",
+    "render/final-04-back-to-card.png",
+    "render/final-05-empty-history.png",
+    "render/evidence-before-no-continue.png"
+  ],
+  "context_detection": {
+    "navigation": "yes",
+    "theme": "yes",
+    "typography": "yes",
+    "surfaces": "yes",
+    "spacing": "yes",
+    "radius": "partial"
+  },
+  "preservation": {
+    "navigation": true,
+    "theme": true,
+    "typography": true,
+    "component_reuse": true,
+    "unjustified_structural_change": 0
+  },
+  "expected_concepts": [
+    "media.resume_playback",
+    "layout.media_card",
+    "interaction.dpad_reachability",
+    "interaction.focus_restore",
+    "state.loading_empty_error",
+    "process.reuse_first",
+    "tv.ten_foot_typography"
+  ],
+  "critical_concepts": [
+    "media.resume_playback",
+    "state.loading_empty_error",
+    "interaction.dpad_reachability"
+  ],
+  "delivered_concepts": [
+    "a11y.accessible_names",
+    "a11y.color_not_only",
+    "interaction.back_semantics",
+    "interaction.dpad_reachability",
+    "interaction.focus_restore",
+    "interaction.focus_visible",
+    "layout.media_card",
+    "media.details_play_first",
+    "media.resume_playback",
+    "media.watchlist",
+    "perf.focus_latency",
+    "process.reuse_first",
+    "tv.ten_foot_typography"
+  ],
+  "concept_recall": 0.857,
+  "critical_recall": 0.667,
+  "concept_misses": [
+    {"concept": "state.loading_empty_error", "layer": "bundle-selection"}
+  ],
+  "first_render_defects": {
+    "visual": 0,
+    "interaction": 0,
+    "accessibility": 0,
+    "platform": 0,
+    "existing-system-mismatch": 1,
+    "implementation-bug": 1
+  },
+  "final_defects": {
+    "visual": 0,
+    "interaction": 0,
+    "accessibility": 0,
+    "platform": 0,
+    "existing-system-mismatch": 0,
+    "implementation-bug": 0
+  },
+  "iterations": 2,
+  "guidance_relevant": 6,
+  "guidance_partial": 2,
+  "guidance_offtarget": 0,
+  "bad_guidance": [
+    {"record": "dir-cinematic-media-tv", "category": "generic", "why": "carries no concepts; restates the identity the app already has (backdrop, side nav, rails, focus glow) and gives nothing actionable for a new rail, while holding a slot at the cap-8 bundle"},
+    {"record": "tv-typography-distance", "category": "generic", "why": "correct and platform-specific, but SportsTypography already encodes the whole 10-foot scale; used only to grade, no change followed from it"},
+    {"record": "<bundle>", "category": "missing-critical", "why": "state.loading_empty_error was a pre-registered critical concept and a required concept of the skill's own metrics; candidates (layout-states-empty-loading-error, anti-no-states) existed and were dropped. A continue-watching rail is empty on a fresh install and must then be omitted."}
+  ],
+  "layer_review": {
+    "core": ["comp-media-card", "media-resume-and-details", "dir-cinematic-media-tv", "comp-tv-rail"],
+    "critical": ["impl-reuse-before-new", "tv-typography-distance", "tv-dpad-axes", "a11y-tv-focus-always"],
+    "optional": [],
+    "optional_useful": 0,
+    "optional_noise": 0
+  },
+  "guidance_used": [
+    "media-resume-and-details",
+    "comp-media-card",
+    "comp-tv-rail",
+    "impl-reuse-before-new",
+    "tv-dpad-axes",
+    "a11y-tv-focus-always"
+  ],
+  "guidance_ignored": [
+    {"id": "dir-cinematic-media-tv", "why": "describes the identity the app already implements; its display-face/icon-size prescriptions are not this task"},
+    {"id": "tv-typography-distance", "why": "already satisfied by the project's type scale; no change made"}
+  ],
+  "unjustified_direction_slots": 0,
+  "process_records_needed": false,
+  "skill_effect": "helped",
+  "guidance_tokens": 1352,
+  "misses": [
+    {"layer": "bundle-selection", "what": "state.loading_empty_error dropped from the bundle although demanded and carried by available candidates; the omit-the-rail-when-empty behaviour came from my own pre-registration"}
+  ],
+  "knowledge_gaps": [],
+  "regressions": [
+    {"query": "Add a \"continue watching\" row to the home screen.", "expect": "bundle carries state.loading_empty_error: a derived row with no items is omitted, never rendered as an empty rail"},
+    {"query": "Show the last thing the viewer was watching on the TV home screen.", "expect": "media.resume_playback + layout.media_card + interaction.focus_restore; no touch.* or tv.sign_in_code records"},
+    {"query": "Add a \"continue watching\" row to the home screen.", "expect": "a zero-concept identity record (dir-cinematic-media-tv) loses its slot to a record carrying an uncovered required concept when the bundle is at cap"}
+  ],
+  "tags": [
+    "concept-miss",
+    "ranking-miss",
+    "context-detection-miss",
+    "render-defect-fixed",
+    "skill-helped",
+    "preservation-ok"
+  ],
+  "build_hash_start": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947",
+  "build_hash_end": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947"
+}

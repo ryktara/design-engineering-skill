@@ -1,0 +1,22 @@
+tokens.py validate — platform tv — OK (0 errors, 1 warnings)
+
+[dark]
+  ok    16.31:1 (min 4.5) body text on canvas [AA 1.4.3]
+  ok    14.89:1 (min 4.5) body text on surface [AA 1.4.3]
+  ok     8.45:1 (min 4.5) secondary text on canvas [AA 1.4.3]
+  ok     7.71:1 (min 4.5) secondary text on surface [AA 1.4.3]
+  ok    11.85:1 (min 4.5) label on primary action [AA 1.4.3]
+  ok    13.25:1 (min 4.5) label on hovered action [AA 1.4.3]
+  ok     9.46:1 (min 4.5) label on pressed action [AA 1.4.3]
+  ok    11.85:1 (min 3.0) primary action against canvas [AA 1.4.11]
+  WARN   1.48:1 (min 3.0) default border against canvas (if it conveys a boundary) [AA 1.4.11 (advisory)]
+  ok     4.25:1 (min 3.0) strong border against canvas [AA 1.4.11]
+  ok    18.72:1 (min 3.0) focus ring against canvas [AA 1.4.11 / 2.4.13]
+  ok    17.09:1 (min 3.0) focus ring against surface [AA 1.4.11 / 2.4.13]
+  ok     6.19:1 (min 4.5) error text on canvas [AA 1.4.3 (when used as text)]
+  ok    10.49:1 (min 3.0) success indicator on canvas [AA 1.4.11]
+  ok    10.24:1 (min 3.0) warning indicator on canvas [AA 1.4.11]
+  ok     1.24:1 (min 1.05) elevated surface distinguishable from canvas (heuristic) [heuristic]
+  ok    16.31:1 (min 7.0) TV body text (10-foot viewing) target [heuristic: viewing distance]
+  ok    17.09:1 (min 4.5) TV focus indicator must be obvious from 3 m [heuristic: 10-foot UI]
+  hues: primary=orange, destructive=red, error=red, success=green, warning=orange, info=blue

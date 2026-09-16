@@ -1,0 +1,992 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "Purchase-order lines: operators keep typing the quantity into the price column.",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "desktop"
+    ],
+    "input": [
+      "keyboard",
+      "pointer"
+    ],
+    "product": [
+      "erp"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "wpf"
+    ],
+    "density": "high",
+    "components": [],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "audit"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "interaction"
+      ],
+      "change_scope": "unknown",
+      "utterance": "observation",
+      "existing": true,
+      "problem": true,
+      "facet": "interaction",
+      "diagnose_only": false,
+      "creation": false,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "audit: interaction defect on existing UI",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "menu-bar",
+        "status": "KNOWN",
+        "evidence": [
+          "menu-bar: 2 matches in App.xaml.cs, PurchaseOrderLinesView.xaml (shell/layout file)"
+        ]
+      },
+      "theme": {
+        "value": "light-first",
+        "status": "KNOWN",
+        "evidence": [
+          "root/canvas backgrounds: 4 light, 0 dark",
+          "hex palette: 11 near-white, 1 near-black"
+        ]
+      },
+      "surfaces": {
+        "value": "bordered-flat",
+        "status": "INFERRED",
+        "evidence": [
+          "borders in 5 files, shadow/elevation in 0"
+        ]
+      },
+      "radius": {
+        "value": "small",
+        "status": "INFERRED",
+        "evidence": [
+          "most common radius 2 (4×); others [1.0, 10.0]"
+        ]
+      },
+      "spacing": {
+        "value": 4,
+        "status": "INFERRED",
+        "evidence": [
+          "most used spacing values [16, 8, 6, 2, 12]"
+        ]
+      },
+      "typography": {
+        "value": "humanist-sans",
+        "status": "INFERRED",
+        "evidence": [
+          "font family Segoe UI Variable Text, Segoe UI (1 refs)",
+          "monospace face Cascadia Mono, Consolas used for a code/number role",
+          "weights semibold, bold"
+        ]
+      },
+      "components": {
+        "value": "wpf",
+        "status": "KNOWN",
+        "evidence": [
+          "wpf"
+        ]
+      }
+    },
+    "known": [
+      "platform=desktop (project inspection)",
+      "product=erp (request: purchase order)",
+      "stack=wpf (project inspection)",
+      "project_navigation=menu-bar (repository: menu-bar: 2 matches in App.xaml.cs, PurchaseOrderLinesView.xaml (shell/layout file))",
+      "project_theme=light-first (repository: root/canvas backgrounds: 4 light, 0 dark; hex palette: 11 near-white, 1 near-black)",
+      "project_components=wpf (repository: wpf)"
+    ],
+    "inferred": [
+      "input=pointer (implied by platform desktop)",
+      "input=keyboard (implied by platform desktop)",
+      "density=high (implied by product erp)",
+      "mode=audit (interaction defect on existing UI)",
+      "mode=refactor (fix follows the diagnosis)",
+      "project_surfaces=bordered-flat (repository: borders in 5 files, shadow/elevation in 0)",
+      "project_radius=small (repository: most common radius 2 (4×); others [1.0, 10.0])",
+      "project_spacing=4 (repository: most used spacing values [16, 8, 6, 2, 12])",
+      "project_typography=humanist-sans (repository: font family Segoe UI Variable Text, Segoe UI (1 refs); monospace face Cascadia Mono, Consolas used for a code/number role)"
+    ],
+    "missing": [],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [
+        "purchase order"
+      ],
+      "project": [
+        "ErpClient.csproj: UseWPF"
+      ]
+    },
+    "activation": {
+      "decision": "skip",
+      "ui_score": 0,
+      "non_ui_score": 0,
+      "ui_terms": [],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "keep",
+        "into the",
+        "operators"
+      ],
+      "new": [],
+      "defect": [
+        "keep"
+      ],
+      "operations": {},
+      "domains": {
+        "interaction": [
+          "typing",
+          "keep typing"
+        ]
+      },
+      "no_change": [],
+      "scope": {},
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "column",
+        "concept:table.inline_edit",
+        "concept:table.tabular_figures"
+      ],
+      "ux_symptoms": [
+        "keep typing"
+      ],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "accessibility",
+        "reason": "audit mode"
+      },
+      {
+        "concern": "interaction",
+        "reason": "audit mode: operability is part of the review"
+      },
+      {
+        "concern": "component",
+        "reason": "the reviewed component/screen"
+      },
+      {
+        "concern": "data-display",
+        "reason": "numbers, tables or charts are the content"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "states",
+        "reason": "audits check empty/loading/error handling"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "audits name generic-design defects"
+      },
+      {
+        "concern": "feedback",
+        "reason": "audits check that actions are discoverable and confirmed"
+      }
+    ],
+    "optional": [
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "table.inline_edit",
+        "reason": "named in the request: typing the quantity, operator keep typing"
+      },
+      {
+        "concept": "table.tabular_figures",
+        "reason": "named in the request: price column, quantity into the price"
+      },
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "desktop keyboard-first"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "desktop focus"
+      },
+      {
+        "concept": "feedback.validation_errors",
+        "reason": "required by table.inline_edit"
+      }
+    ],
+    "recommended_concepts": [
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "state.loading_empty_error",
+      "process.reuse_first",
+      "interaction.shortcuts",
+      "desktop.persist_workspace",
+      "desktop.fluent_materials",
+      "state.saving_conflict",
+      "form.autofill_attributes",
+      "a11y.live_status"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "comp-data-table",
+      "kind": "component",
+      "category": "table",
+      "title": "Data table / grid",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "data-display",
+        "structure"
+      ],
+      "concepts": [
+        "table.selection_bulk",
+        "table.inline_edit",
+        "table.virtualization",
+        "table.tabular_figures",
+        "data.pagination_strategy",
+        "interaction.selection_visible"
+      ],
+      "covers": [
+        "selection state and bulk actions",
+        "inline editing",
+        "virtualization of long collections",
+        "tabular figures and numeric alignment",
+        "pagination / load-more strategy",
+        "selected state visible and distinct from focus and hover"
+      ],
+      "score": 0.444,
+      "guidance": "Sticky header, row height by density token, zebra striping optional (prefer hover/selection highlight), column resize/reorder/visibility persisted, sort indicator with aria-sort, selection checkbox column with header select-all and a count, row actions visible on focus as well as hover, inline edit with Enter/Escape, keyboard grid navigation (arrows, Home/End, PageUp/Down), virtualised rows, loading skeleton rows, empty state inside the table body. Financial tables: see numeric rule.",
+      "use_when": "Homogeneous records with several comparable attributes; sorting, filtering, selection, bulk actions, inline editing.",
+      "avoid_when": "Fewer than ~10 rows (use a list), heterogeneous items (use cards/list), phone widths (convert to rows).",
+      "risk": {
+        "a11y": "high",
+        "perf": "high"
+      },
+      "provenance": "heuristic",
+      "implementation": {
+        "wpf": "DataGrid with virtualisation flags; DevExpress GridControl if present in the project."
+      },
+      "incompatible": [
+        "layout-rails",
+        "surface-elevated-cards"
+      ],
+      "why": {
+        "lexical": 0.152,
+        "structural": 0.8,
+        "matched": [
+          "platform desktop",
+          "input keyboard,pointer",
+          "mode audit",
+          "product erp",
+          "density high"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "table-column-disambiguation",
+      "kind": "rule",
+      "category": "table",
+      "title": "Editable grids: make the current column and its unit unmistakable",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "data-display"
+      ],
+      "concepts": [
+        "table.tabular_figures",
+        "table.inline_edit",
+        "feedback.validation_errors"
+      ],
+      "covers": [
+        "tabular figures and numeric alignment",
+        "inline editing",
+        "inline validation messages and error recovery"
+      ],
+      "score": 0.784,
+      "guidance": "Mark the active column in the header (bar + strong text); show the unit as an affix inside the editor (EA suffix for quantities, currency prefix for money); use role-distinct formats (integers for counts, fixed decimals for money, unit in the header); bracket money columns with a stronger divider; validate implausible values (a price typed as a quantity) inline before commit.",
+      "use_when": "Data-entry grids where adjacent numeric columns hold different roles (quantity vs price, hours vs rate) and operators type into the wrong one.",
+      "avoid_when": "Never format a count like money; never rely on header text alone; never leave the active column unmarked while typing.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.837,
+        "structural": 0.72,
+        "matched": [
+          "platform desktop",
+          "input keyboard,pointer",
+          "mode audit",
+          "product erp"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "most relevant record for the request wording"
+    },
+    {
+      "id": "grid-single-tab-stop",
+      "kind": "rule",
+      "category": "table",
+      "title": "Grids with row actions are one Tab stop",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "data-display",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.keyboard_navigation",
+        "interaction.focus_visible",
+        "table.selection_bulk",
+        "interaction.selection_visible"
+      ],
+      "covers": [
+        "keyboard navigation and focus order",
+        "visible focus",
+        "selection state and bulk actions",
+        "selected state visible and distinct from focus and hover"
+      ],
+      "score": 0.356,
+      "guidance": "Tab enters the grid once and leaves it once; arrow keys move between cells/rows (roving tabindex or a focus manager), Enter/Space activates the focused cell's action, Escape returns from an edited cell to navigation mode; row actions become reachable when the row or actions cell is focused and are also available from a row context/actions menu; a table with 24 rows must never produce 24 Tab stops per action column. Announce the current row/column (aria-rowindex/colindex or the platform's automation properties) and keep a visible focus indicator on the active cell.",
+      "use_when": "Data tables or grids where each row has buttons/links (edit, delete, approve, download) and there are more than a handful of rows.",
+      "avoid_when": "Small static tables with no interactive cells.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "implementation": {
+        "wpf": "KeyboardNavigation.TabNavigation=\"Once\" on the DataGrid; use DataGridTemplateColumn with Focusable=\"False\" on the row buttons and a command on the row."
+      },
+      "why": {
+        "lexical": 0.058,
+        "structural": 0.72,
+        "matched": [
+          "platform desktop",
+          "input keyboard,pointer",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: accessibility, interaction, visible focus, keyboard navigation and focus order"
+    },
+    {
+      "id": "desktop-status-bar-and-error-navigation",
+      "kind": "rule",
+      "category": "feedback",
+      "title": "Desktop status bar as the persistent feedback surface, with next-error navigation",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "feedback",
+        "states",
+        "structure"
+      ],
+      "concepts": [
+        "feedback.validation_errors",
+        "a11y.live_status",
+        "a11y.contrast",
+        "interaction.shortcuts",
+        "desktop.persist_workspace"
+      ],
+      "covers": [
+        "inline validation messages and error recovery",
+        "live region status announcements",
+        "high contrast",
+        "keyboard shortcuts / accelerators",
+        "persisted workspace and selection"
+      ],
+      "score": 0.343,
+      "guidance": "One status bar at the bottom of the window with fixed regions (selection summary, sync/save state with timestamp, error count as a link, active filter) separated by real separators, not spaces; validation for the current row/cell is echoed there in words ('Line 50: Quantity must be greater than 0') and the error count opens a list; F8 / Shift+F8 (or the project's convention) walk to the next and previous error and move focus into the cell; error styling never paints over the value text (tint the cell background and keep ≥ 4.5:1 for the text); announce status changes with LiveSetting/UIA so screen readers hear them; the bar keeps its height at every window width.",
+      "use_when": "Data-entry and workbench windows where validation, selection and sync state must be visible without dialogs or toasts.",
+      "avoid_when": "Consumer apps without a persistent window chrome; mobile.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "implementation": {
+        "wpf": "StatusBar with StatusBarItem regions and Separator; Validation.ErrorTemplate sets a Border behind the AdornedElementPlaceholder, not over it; RoutedUICommand for NextError (F8)."
+      },
+      "why": {
+        "lexical": 0.035,
+        "structural": 0.72,
+        "matched": [
+          "platform desktop",
+          "input keyboard,pointer",
+          "mode audit",
+          "product erp"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "recommended coverage: feedback, states, high contrast, live region status announcements, persisted workspace and selection, keyboard shortcuts / accelerators"
+    },
+    {
+      "id": "anti-no-states",
+      "kind": "antipattern",
+      "category": "craft",
+      "title": "Only the happy state was designed",
+      "facets": [
+        "anti-pattern"
+      ],
+      "concerns": [
+        "anti-pattern",
+        "states"
+      ],
+      "concepts": [
+        "state.loading_empty_error"
+      ],
+      "covers": [
+        "loading, empty and error states"
+      ],
+      "score": 0.243,
+      "guidance": "Enumerate states per screen and per interactive component before implementation and verify each visually; test with long strings, zero items, 10k items, and slow networks.",
+      "use_when": "Screens with no empty, loading, error, offline, partial, or long-text states; buttons with no pressed/disabled/loading states; TV cards with no focused state.",
+      "avoid_when": "Never.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.54,
+        "matched": [
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "recommended coverage: anti-pattern, loading, empty and error states"
+    },
+    {
+      "id": "desktop-fluent-materials",
+      "kind": "rule",
+      "category": "surface",
+      "title": "Windows: Fluent layering and materials, sparingly",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "brand",
+        "structure"
+      ],
+      "concepts": [
+        "desktop.fluent_materials"
+      ],
+      "covers": [
+        "Fluent system resources and materials"
+      ],
+      "score": 0.288,
+      "guidance": "Use the system resources (SystemControl*, Layer/Card brushes, ControlCornerRadius) so light/dark/high-contrast themes work; Mica for the window, Acrylic only for transient surfaces; verify high-contrast mode renders every state.",
+      "use_when": "WinUI/WPF apps aiming for Windows 11 fit: Mica on the window backdrop, layer/card surfaces, 8 px corner radius on top-level, 4 px on nested.",
+      "avoid_when": "Acrylic on large content areas (performance, readability), custom title bars without full keyboard/accessibility support, non-Fluent controls mixed with Fluent ones.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "platform-standard",
+      "incompatible": [
+        "surface-glass"
+      ],
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.64,
+        "matched": [
+          "platform desktop",
+          "input keyboard,pointer",
+          "secondary mode"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "recommended coverage: Fluent system resources and materials"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "data-display"
+    ],
+    "covered_required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "data-display"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "states",
+      "anti-pattern",
+      "feedback"
+    ],
+    "covered_recommended_concerns": [
+      "states",
+      "anti-pattern",
+      "feedback"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "table.inline_edit",
+      "table.tabular_figures",
+      "interaction.keyboard_navigation",
+      "interaction.focus_visible",
+      "feedback.validation_errors"
+    ],
+    "covered_required_concepts": [
+      "table.inline_edit",
+      "table.tabular_figures",
+      "interaction.keyboard_navigation",
+      "interaction.focus_visible",
+      "feedback.validation_errors"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.6,
+    "bundle_size": 6,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 1,
+    "guardrail_size": 5,
+    "bundle_tokens": 1326,
+    "coverage_per_1k_tokens": 3.77,
+    "mean_purity": 0.81,
+    "contaminated": [],
+    "category_diversity": 0.67,
+    "duplicate_pressure": 0.5,
+    "facet_coverage": 0.6,
+    "redundancy": 0.4
+  },
+  "token_coverage": 0.9,
+  "omitted": [],
+  "rejected": [
+    {
+      "id": "anti-hero-template",
+      "reason": "platform ['web'] not in request ['desktop']"
+    },
+    {
+      "id": "anti-scroll-animation-everything",
+      "reason": "platform ['mobile', 'web'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-media-card",
+      "reason": "platform ['mobile', 'tv', 'web'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-epg",
+      "reason": "platform ['tablet', 'tv', 'web'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-list-row-mobile",
+      "reason": "platform ['mobile', 'tablet'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-product-detail-page",
+      "reason": "platform ['mobile', 'web'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-checkout-one-page",
+      "reason": "platform ['mobile', 'web'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-mini-player",
+      "reason": "platform ['mobile', 'tv', 'web'] not in request ['desktop']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "table.inline_edit",
+      "priority": "required",
+      "reason": "named in the request: typing the quantity, operator keep typing",
+      "candidate_records": [
+        [
+          "table-column-disambiguation",
+          0.784
+        ],
+        [
+          "comp-data-table",
+          0.444
+        ],
+        [
+          "comp-data-entry-grid",
+          0.386
+        ]
+      ],
+      "selected_record": "table-column-disambiguation",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "table.tabular_figures",
+      "priority": "required",
+      "reason": "named in the request: price column, quantity into the price",
+      "candidate_records": [
+        [
+          "table-column-disambiguation",
+          0.784
+        ],
+        [
+          "comp-data-table",
+          0.444
+        ],
+        [
+          "metadata-rich",
+          0.427
+        ],
+        [
+          "layout-table-first",
+          0.402
+        ]
+      ],
+      "selected_record": "table-column-disambiguation",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.keyboard_navigation",
+      "priority": "required",
+      "reason": "desktop keyboard-first",
+      "candidate_records": [
+        [
+          "comp-data-entry-grid",
+          0.386
+        ],
+        [
+          "grid-single-tab-stop",
+          0.356
+        ],
+        [
+          "a11y-keyboard-operable",
+          0.346
+        ],
+        [
+          "interaction-drag-drop",
+          0.338
+        ]
+      ],
+      "selected_record": "grid-single-tab-stop",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.focus_visible",
+      "priority": "required",
+      "reason": "desktop focus",
+      "candidate_records": [
+        [
+          "grid-single-tab-stop",
+          0.356
+        ],
+        [
+          "a11y-focus-visible",
+          0.339
+        ],
+        [
+          "a11y-skip-link",
+          0.327
+        ],
+        [
+          "desktop-keyboard-first",
+          0.324
+        ]
+      ],
+      "selected_record": "grid-single-tab-stop",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "feedback.validation_errors",
+      "priority": "required",
+      "reason": "required by table.inline_edit",
+      "candidate_records": [
+        [
+          "table-column-disambiguation",
+          0.784
+        ],
+        [
+          "desktop-status-bar-and-error-navigation",
+          0.343
+        ],
+        [
+          "anti-placeholder-labels",
+          0.257
+        ],
+        [
+          "a11y-forms-errors",
+          0.246
+        ]
+      ],
+      "selected_record": "table-column-disambiguation",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.accessible_names",
+      "priority": "recommended",
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "a11y-native-semantics",
+          0.297
+        ],
+        [
+          "a11y-labels-names",
+          0.243
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "a11y.contrast",
+      "priority": "recommended",
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "desktop-status-bar-and-error-navigation",
+          0.343
+        ],
+        [
+          "anti-fashion-over-usability",
+          0.243
+        ],
+        [
+          "a11y-contrast-text",
+          0.243
+        ],
+        [
+          "a11y-nontext-contrast",
+          0.243
+        ]
+      ],
+      "selected_record": "desktop-status-bar-and-error-navigation",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "state.loading_empty_error",
+      "priority": "recommended",
+      "reason": "asynchronous or remote data on this screen",
+      "candidate_records": [
+        [
+          "comp-chart-container",
+          0.297
+        ],
+        [
+          "layout-states-empty-loading-error",
+          0.246
+        ],
+        [
+          "anti-no-states",
+          0.243
+        ],
+        [
+          "comp-empty-state",
+          0.18
+        ]
+      ],
+      "selected_record": "anti-no-states",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "recommended",
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.234
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.shortcuts",
+      "priority": "recommended",
+      "reason": "desktop accelerators",
+      "candidate_records": [
+        [
+          "cta-toolbar-commands",
+          0.384
+        ],
+        [
+          "desktop-status-bar-and-error-navigation",
+          0.343
+        ],
+        [
+          "desktop-keyboard-first",
+          0.324
+        ]
+      ],
+      "selected_record": "desktop-status-bar-and-error-navigation",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "desktop.persist_workspace",
+      "priority": "recommended",
+      "reason": "desktop state persistence",
+      "candidate_records": [
+        [
+          "desktop-state-persistence",
+          0.399
+        ],
+        [
+          "desktop-status-bar-and-error-navigation",
+          0.343
+        ]
+      ],
+      "selected_record": "desktop-status-bar-and-error-navigation",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "desktop.fluent_materials",
+      "priority": "recommended",
+      "reason": "Windows stack",
+      "candidate_records": [
+        [
+          "desktop-fluent-materials",
+          0.288
+        ]
+      ],
+      "selected_record": "desktop-fluent-materials",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "state.saving_conflict",
+      "priority": "recommended",
+      "reason": "related to table.inline_edit",
+      "candidate_records": [
+        [
+          "states-persistence-and-session",
+          0.297
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "form.autofill_attributes",
+      "priority": "recommended",
+      "reason": "related to feedback.validation_errors",
+      "candidate_records": [
+        [
+          "comp-form",
+          0.183
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "a11y.live_status",
+      "priority": "recommended",
+      "reason": "related to feedback.validation_errors",
+      "candidate_records": [
+        [
+          "desktop-status-bar-and-error-navigation",
+          0.343
+        ],
+        [
+          "interaction-drag-drop",
+          0.338
+        ],
+        [
+          "feedback-progress-async",
+          0.247
+        ],
+        [
+          "a11y-live-status",
+          0.243
+        ]
+      ],
+      "selected_record": "desktop-status-bar-and-error-navigation",
+      "status": "covered",
+      "why": ""
+    }
+  ]
+}

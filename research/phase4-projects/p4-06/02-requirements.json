@@ -1,0 +1,190 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "create"
+  ],
+  "platform": [
+    "web"
+  ],
+  "input": [
+    "keyboard",
+    "pointer",
+    "touch"
+  ],
+  "product": [
+    "ecommerce"
+  ],
+  "screen": [
+    "checkout",
+    "list"
+  ],
+  "screen_subtype": [],
+  "stack": [
+    "html-css"
+  ],
+  "density": null,
+  "components": [
+    "search"
+  ],
+  "environment": [],
+  "jobs": [],
+  "problems": [],
+  "risk": "medium",
+  "primary_jobs": [
+    "create checkout",
+    "create list"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "keyboard": true,
+    "screen_reader": true,
+    "focus": true,
+    "touch_targets": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "change_budget": "moderate",
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "mode_evidence": [
+    "create: default (no mode cue)"
+  ],
+  "project_context": {
+    "navigation": {
+      "value": "top-bar",
+      "status": "KNOWN",
+      "evidence": [
+        "top-bar: 3 matches in checkout.html, index.html, product.html (shell/layout file)"
+      ]
+    },
+    "theme": {
+      "value": "light-first",
+      "status": "INFERRED",
+      "evidence": [
+        "hex palette: 6 near-white, 2 near-black"
+      ]
+    },
+    "surfaces": {
+      "value": "elevated",
+      "status": "INFERRED",
+      "evidence": [
+        "weak signal: shadow 1, border 1"
+      ]
+    },
+    "radius": {
+      "value": "pill",
+      "status": "INFERRED",
+      "evidence": [
+        "most common radius 50 (3×); others [999.0, 4.0]"
+      ]
+    },
+    "spacing": {
+      "value": "irregular",
+      "status": "UNKNOWN",
+      "evidence": [
+        "most used spacing values [4, 14]"
+      ]
+    },
+    "typography": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": [
+        "no font family declaration found"
+      ]
+    },
+    "components": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": []
+    }
+  },
+  "known": [
+    "platform=web (request: web)",
+    "product=ecommerce (request: product listing, checkout, web store)",
+    "stack=html-css (project inspection)",
+    "screen=list (request: listing)",
+    "screen=checkout (request: checkout)",
+    "project_navigation=top-bar (repository: top-bar: 3 matches in checkout.html, index.html, product.html (shell/layout file))"
+  ],
+  "inferred": [
+    "input=pointer (implied by platform web)",
+    "input=keyboard (implied by platform web)",
+    "input=touch (implied by platform web)",
+    "mode=create (default (no mode cue))",
+    "project_theme=light-first (repository: hex palette: 6 near-white, 2 near-black)",
+    "project_surfaces=elevated (repository: weak signal: shadow 1, border 1)",
+    "project_radius=pill (repository: most common radius 50 (3×); others [999.0, 4.0])"
+  ],
+  "missing": [
+    "brand: no brand assets, guideline, or character description available"
+  ],
+  "status": "CONFIDENT",
+  "source": {
+    "request": [
+      "checkout",
+      "listing",
+      "product listing, checkout, web store",
+      "web"
+    ],
+    "project": [
+      "*.html without a framework manifest: plain HTML/CSS site"
+    ]
+  },
+  "activation": {
+    "decision": "activate",
+    "ui_score": 4.0,
+    "non_ui_score": 0,
+    "ui_terms": [
+      "page",
+      "pages"
+    ],
+    "non_ui_terms": []
+  },
+  "intent": {
+    "existing": true,
+    "problem": false,
+    "facet": "general",
+    "diagnose_only": false,
+    "creation": false,
+    "redesign": false,
+    "responsive_cues": false,
+    "preserve": [],
+    "scope": "moderate"
+  },
+  "intent_evidence": {
+    "existing": [
+      "our",
+      "existing"
+    ],
+    "problem": [],
+    "change": [],
+    "create": [
+      "add a"
+    ],
+    "diagnose": [],
+    "no_change": [],
+    "redesign": [],
+    "look_feel": [],
+    "structural": [],
+    "responsive": [],
+    "accessibility": [],
+    "interaction": []
+  },
+  "scope_evidence": {
+    "ui": [
+      "page",
+      "checkout"
+    ],
+    "ux_symptoms": [],
+    "technical": {},
+    "non_visual": []
+  }
+}

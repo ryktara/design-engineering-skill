@@ -1,0 +1,117 @@
+{
+  "brand": "Add a team billing settings page with plan comparison, seat management table and invoice history to our Next.js SaaS admin",
+  "fingerprint": {
+    "navigation_model": "left-rail",
+    "layout_topology": "table-first",
+    "grid_behavior": "virtualized",
+    "content_density": "high",
+    "surface_strategy": "bordered",
+    "card_geometry": "bordered",
+    "corner_language": "small",
+    "typography_character": "neutral-sans",
+    "color_strategy": "dark-with-accent",
+    "motion_character": "functional-minimal",
+    "focus_strategy": "ring",
+    "cta_strategy": "sticky-bar",
+    "image_strategy": "data-graphics",
+    "icon_strategy": "outline",
+    "metadata_density": "rich"
+  },
+  "direction": {
+    "navigation": "nav-left-rail",
+    "layout": "layout-table-first",
+    "density": "density-high",
+    "surface": "surface-bordered-panes",
+    "cards": "card-bordered",
+    "typography": "typography-neutral-sans",
+    "color": "color-dark-accent",
+    "motion": "motion-functional-minimal",
+    "focus": "focus-ring-standard",
+    "cta": "cta-sticky-bar",
+    "imagery": "imagery-data-graphics",
+    "icon": "icon-outline-system",
+    "metadata": "metadata-rich"
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [
+      "finance",
+      "saas"
+    ],
+    "screen": [
+      "settings"
+    ],
+    "screen_subtype": [],
+    "stack": [
+      "nextjs",
+      "react",
+      "shadcn",
+      "tailwind"
+    ],
+    "density": "high",
+    "components": [
+      "settings",
+      "table"
+    ],
+    "environment": [],
+    "jobs": [
+      "compare"
+    ],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "compare",
+      "create settings"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "known": [
+      "platform=web",
+      "product=saas",
+      "product=finance",
+      "stack=nextjs",
+      "stack=react",
+      "stack=tailwind",
+      "stack=shadcn",
+      "screen=settings",
+      "job=compare"
+    ],
+    "inferred": [
+      "input=pointer",
+      "input=keyboard",
+      "input=touch",
+      "density=high",
+      "mode=create"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

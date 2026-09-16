@@ -1,0 +1,26 @@
+{
+ "light": {
+  "color": {
+   "bg": {
+    "canvas": "#FFFFFF",
+    "surface": "#FAFAFA"
+   },
+   "text": {
+    "primary": "#222222",
+    "secondary": "#9A9A9A",
+    "on-action": "#FFFFFF"
+   },
+   "action": {
+    "primary": "#6FA8FF"
+   },
+   "border": {
+    "default": "#EEEEEE"
+   },
+   "feedback": {
+    "error": "#FF8080",
+    "success": "#22AA55",
+    "warning": "#FFCC00"
+   }
+  }
+ }
+}

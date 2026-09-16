@@ -1,0 +1,89 @@
+## design-engineering search: add a compare-to-last-week view to the energy dashboard KPIs and the hourly chart, keeping the existing top bar and light theme
+status=CONFIDENT modes=['create'] platforms={'web': 'KNOWN'} inputs={'pointer': 'INFERRED', 'keyboard': 'INFERRED', 'touch': 'INFERRED'} products={'finance': 'KNOWN', 'iot': 'KNOWN'} density=high stacks=['react'] screens=['dashboard'] negatives=[]
+facets required=['component', 'layout', 'platform', 'navigation', 'direction', 'data-viz'] unmet=[] diversity=0.75
+MISSING: brand: no brand assets, guideline, or character description available
+
+### Dashboard grid of modules  `layout-dashboard-grid`  [pattern/layout; layout/platform] score 0.684 · heuristic
+12-column responsive grid, modules sized by importance (the primary KPI or chart spans wider), reading order = importance order (top-left first), each module a region with a heading and its own loading/empty/error states. Cards are optional: a divider grid with headings is often clearer than nested boxes.
+- use when: Monitoring/overview screens where several independent modules (KPIs, charts, lists) are scanned together and ranked by importance.
+- avoid when: Task screens (forms, editors), narrow widths (stack instead), or when modules have no ordering logic and would be a wall of equal boxes.
+- incompatible with: layout-single-column, layout-immersive-rails, layout-rails, layout-editorial
+- why: lexical 0.399, structural 0.92 (platform web, input keyboard,pointer,touch, mode create, product finance,iot, screen dashboard, density high)
+
+### The default SaaS dashboard (sidebar + 4 KPI cards + chart + table)  `anti-generic-sidebar-dashboard`  [antipattern/generic-ai; anti-pattern/platform] score 0.546 · heuristic
+Start from the user's job: what decision or action happens here, how often, and what must be noticed first. Many 'dashboards' should be a table-first working screen, a queue, or a single chart with alerts. Choose navigation by section count, KPIs by decisions, charts by questions. If the result is a sidebar and four KPIs, be able to say why.
+- use when: Any 'dashboard' request answered with the same skeleton regardless of what the user monitors or does.
+- avoid when: Each element can be right; the failure is choosing them before knowing the task.
+- why: lexical 0.42, structural 0.7 (platform web, mode create, product finance)
+
+### Toolbar / command bar with selection-driven commands  `cta-toolbar-commands`  [pattern/cta; layout/platform] score 0.515 · platform-standard
+Primary commands as labelled buttons, overflow into a menu, disabled (not hidden) when no selection, keyboard accelerators shown in tooltips, and the count of selected items visible near the commands.
+- use when: Workbenches and tables: commands apply to the current selection, live in a persistent bar, and are mirrored by context menus and shortcuts.
+- avoid when: Consumer or single-task screens; touch-first products.
+- react: Toolbar following the APG toolbar pattern (roving tabindex); disable via aria-disabled with reason in tooltip.
+- incompatible with: cta-single-primary, cta-focus-selects, cta-sticky-bar
+- why: lexical 0.075, structural 0.92 (platform web, input keyboard,pointer, mode create, product finance, screen dashboard, density high)
+
+### Analytical console  `dir-analytical-console`  [direction/direction; direction/platform] score 0.504 · internal-preference
+Charts are the imagery; one chart palette; modules sized by importance not by a uniform card grid; dark-first tonal surfaces with the accent reserved for alerts and selection; large readable numerics; small multiples over spaghetti charts. Distinctiveness via chart mark style and a signature numeric typeface.
+- use when: Monitoring and analysis: dashboards with real questions, alerting, drill-down, often on dark themes for long sessions or wall displays.
+- avoid when: Task-entry tools (workbench), consumer products.
+- incompatible with: surface-glass, imagery-hero, motion-cinematic, typography-serif-editorial
+- why: lexical 0.229, structural 0.84 (platform web, input keyboard,pointer, mode create, product finance,iot, density high)
+
+### Persistent left rail / sidebar  `nav-left-rail`  [pattern/navigation; navigation/platform] score 0.498 · heuristic
+Fixed-width rail (collapsible to icons with labels on hover/focus) holding grouped sections; secondary navigation lives in the content header, not as a second rail. Don't add a rail because 'apps have sidebars': justify it with section count and switching frequency. Mark active section with a visible indicator that survives collapse.
+- use when: Authenticated tools with 6+ peer sections, frequent switching, and wide viewports; power users who need stable wayfinding.
+- avoid when: Marketing pages, single-task flows (checkout, onboarding), phone widths, or when the product has three destinations and the rail would be mostly empty.
+- incompatible with: nav-top-bar, nav-bottom-tabs, nav-tv-side, nav-hub-spoke
+- why: lexical 0.073, structural 0.84 (platform web, input keyboard,pointer,touch, mode create, product finance, density high)
+
+### Table-first working screen  `layout-table-first`  [pattern/layout; layout/platform] score 0.498 · heuristic
+Table fills the viewport height with internal scrolling and sticky header, row density selectable, column widths persisted, filters as a row of chips/fields above the table (not a hidden drawer), bulk actions appear in the toolbar on selection. Numeric columns right-aligned with tabular figures. Virtualise beyond a few hundred rows.
+- use when: The record set is the product (orders, transactions, tickets, inventory): users filter, sort, select, and bulk-act. Screen = toolbar + filters + table + optional side panel.
+- avoid when: Phone widths (switch to list rows), fewer than ~20 rows, or when each record needs rich media.
+- react: TanStack Table for logic + TanStack Virtual for rows; render <table> semantics or role=grid with aria-rowcount.
+- incompatible with: layout-single-column, layout-immersive-rails, layout-feed, layout-editorial
+- why: lexical 0.043, structural 0.92 (platform web, input keyboard,pointer, mode create, product finance, screen dashboard, density high)
+
+### Chart container and interaction  `comp-chart-container`  [component/chart; component/platform] score 0.489 · heuristic
+Title that states the question, unit and time range visible, legend as direct labels where possible, tooltip also keyboard-reachable (focusable points or a data table toggle), accessible summary text, consistent palette, responsive (reduce ticks, not data), empty/loading/error states, no animation beyond a single load transition and none on data refresh. Provide the data table or CSV.
+- use when: Any chart in a product.
+- avoid when: Decorative charts with no question; charts of fewer than ~4 points (use a stat).
+- react: Recharts/Visx/ECharts already in the project; add role=img + aria-label summary and a table fallback.
+- why: lexical 0.251, structural 0.78 (platform web, mode create, product finance,iot, screen dashboard)
+
+### KPI / stat tile  `comp-kpi-tile`  [component/chart; component/platform] score 0.488 · heuristic
+Label, value with unit and tabular figures, comparison (vs previous period) with sign + arrow + colour, optional sparkline, consistent decimal precision, the most important KPI larger or first, no icon per tile unless it disambiguates, whole tile links to the detail. Avoid the 'four identical cards with big numbers and a gradient' default.
+- use when: Headline metrics on dashboards.
+- avoid when: More than ~6 KPIs in a row (users stop reading); KPIs without context (no comparison, no unit).
+- why: lexical 0.248, structural 0.78 (platform web, mode create, product finance,iot, screen dashboard)
+
+### Data graphics as the visual layer  `imagery-data-graphics`  [pattern/imagery; platform/visual] score 0.461 · heuristic
+One chart palette and one mark style across the product, sparklines in tables for trends, no decorative charts (every chart answers a question), accessible alternatives (table or summary) for each chart.
+- use when: Analytics, monitoring, and finance where charts, sparklines, and status marks are the imagery; identity comes from the chart style.
+- avoid when: Content or commerce products.
+- incompatible with: imagery-hero, imagery-immersive-backdrop
+- why: lexical 0.077, structural 0.84 (platform web, input keyboard,pointer, mode create, product finance,iot, density high)
+
+### Real-time streams → rolling window charts  `chart-realtime`  [chart/chart; data-viz/platform] score 0.455 · engineering-practice
+Fixed time window that scrolls, stable y-range with occasional stepwise rescale, no per-point animation, thresholds drawn as lines with labels, alert states via colour + icon + text, pause on hover/focus, render on canvas/WebGL beyond a few thousand points, and a 'last updated' timestamp. Wall/TV displays: larger type, fewer panels, high contrast.
+- use when: Monitoring dashboards, telemetry, trading, wall displays.
+- avoid when: Never animate every tick with transitions; never let the axis rescale continuously (readers lose reference).
+- why: lexical 0.189, structural 0.78 (platform web, mode create, product finance,iot, density high)
+
+### Tree view  `comp-tree-view`  [component/tree; component/platform] score 0.44 · platform-standard
+Full APG tree semantics (roles tree/treeitem/group, aria-expanded, aria-level), arrow keys expand/collapse/move, type-ahead, multi-select with Shift/Ctrl where needed, lazy children with a loading indicator, virtualised for large trees, indentation lines optional but consistent, drag/drop with a keyboard alternative.
+- use when: Hierarchies (folders, accounts, org units, categories) that users expand and select.
+- avoid when: Flat lists; mobile (use drill-down lists).
+- react: react-arborist or React Aria Tree; never nested <ul> with onClick only.
+- why: lexical 0.113, structural 0.84 (platform web, input keyboard,pointer, mode create, product finance, density high)
+
+### High density  `density-high`  [pattern/density; layout/platform] score 0.438 · heuristic
+4 px base grid, 32 px row height in tables, 13–14 px body, 8–12 px gaps inside groups and 16–24 px between groups; density must be achieved by tightening spacing and sizes coherently, not by shrinking text below the platform floor. Offer a 'comfortable' density toggle where users differ.
+- use when: Expert users, repeated daily use, comparison and scanning tasks, large screens with a pointer.
+- avoid when: Touch-only, first-time users, TV, or emotional/branding surfaces.
+- incompatible with: density-low, layout-editorial, typography-serif-display
+- why: lexical 0.0, structural 0.84 (platform web, input keyboard,pointer, mode create, product finance, density high)
+
+Filtered out: anti-desktop-scaled-to-tv (platform ['tv'] not in request ['web']); anti-mobile-desktop-shrunk (platform ['mobile'] not in request ['web']); comp-tv-rail (platform ['tv'] not in request ['web']); dir-broadcast-guide-tv (platform ['tv'] not in request ['web']); dir-windows-native-tool (platform ['desktop'] not in request ['web']); dir-industrial-hmi (platform ['desktop', 'kiosk', 'tablet'] not in request ['web']); nav-bottom-tabs (platform ['mobile'] not in request ['web']); nav-tv-side (platform ['tv'] not in request ['web'])

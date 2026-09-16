@@ -1,0 +1,120 @@
+{
+ "task": "p6-15",
+ "build": "32e67640c9b8ef1d519ef9695016fb396116b92412e63c324da090aecf1df385",
+ "c1_recorded": {
+  "platform_expected": "mobile",
+  "platform_resolved": [
+   "mobile"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "audit",
+   "polish",
+   "refactor"
+  ],
+  "mode_resolved": [
+   "audit",
+   "refactor"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "PARTIAL",
+  "bundle_ids": [
+   "typo-scale-and-roles",
+   "mobile-keyboard-ime",
+   "mobile-density-touch",
+   "interaction-drag-drop",
+   "layout-states-empty-loading-error"
+  ],
+  "bundle_tokens": 612,
+  "expected_concepts": [
+   "touch.ime_keyboard",
+   "form.autofill_attributes",
+   "touch.minimum_target",
+   "feedback.validation_errors",
+   "interaction.focus_visible"
+  ],
+  "critical_concepts": [
+   "touch.ime_keyboard",
+   "form.autofill_attributes"
+  ],
+  "delivered_concepts": [
+   "a11y.live_status",
+   "brand.type_roles",
+   "interaction.keyboard_navigation",
+   "perf.layout_shift",
+   "state.loading_empty_error",
+   "table.column_priority",
+   "table.tabular_figures",
+   "touch.gestures_discoverable",
+   "touch.ime_keyboard",
+   "touch.minimum_target"
+  ],
+  "concept_recall": 0.4,
+  "critical_recall": 0.5,
+  "forbidden_delivered": [],
+  "change_budget": "moderate"
+ },
+ "c4": {
+  "platform_expected": "mobile",
+  "platform_resolved": [
+   "mobile"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "audit",
+   "polish",
+   "refactor"
+  ],
+  "mode_resolved": [
+   "audit",
+   "refactor"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "PARTIAL",
+  "bundle_ids": [
+   "typo-scale-and-roles",
+   "mobile-keyboard-ime",
+   "mobile-density-touch",
+   "color-states-complete"
+  ],
+  "bundle_tokens": 439,
+  "expected_concepts": [
+   "touch.ime_keyboard",
+   "form.autofill_attributes",
+   "touch.minimum_target",
+   "feedback.validation_errors",
+   "interaction.focus_visible"
+  ],
+  "critical_concepts": [
+   "touch.ime_keyboard",
+   "form.autofill_attributes"
+  ],
+  "delivered_concepts": [
+   "brand.type_roles",
+   "interaction.focus_visible",
+   "interaction.selection_visible",
+   "table.column_priority",
+   "table.tabular_figures",
+   "touch.ime_keyboard",
+   "touch.minimum_target"
+  ],
+  "concept_recall": 0.6,
+  "critical_recall": 0.5,
+  "forbidden_delivered": [],
+  "change_budget": "moderate"
+ }
+}

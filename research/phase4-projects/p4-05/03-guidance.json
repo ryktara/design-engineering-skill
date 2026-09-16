@@ -1,0 +1,482 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "facility managers don't notice new alerts; make exceptions the first thing they see on the dashboard without redesigning it",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [
+      "iot"
+    ],
+    "screen": [
+      "dashboard"
+    ],
+    "screen_subtype": [],
+    "stack": [
+      "react"
+    ],
+    "density": null,
+    "components": [
+      "notification"
+    ],
+    "environment": [],
+    "jobs": [
+      "monitor"
+    ],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "monitor",
+      "audit dashboard"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "low",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "mode_evidence": [
+      "audit: problem statement on existing UI",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": "top-bar (KNOWN)",
+      "theme": "light-first (INFERRED)",
+      "surfaces": "bordered-flat (INFERRED)",
+      "radius": "small (INFERRED)",
+      "spacing": "4 (INFERRED)"
+    },
+    "known": [
+      "platform=web",
+      "product=iot",
+      "stack=react",
+      "screen=dashboard",
+      "job=monitor",
+      "project_navigation=top-bar"
+    ],
+    "inferred": [
+      "input=pointer",
+      "input=keyboard",
+      "input=touch",
+      "mode=audit",
+      "mode=refactor",
+      "project_theme=light-first",
+      "project_surfaces=bordered-flat",
+      "project_radius=small",
+      "project_spacing=4"
+    ],
+    "missing": [],
+    "status": "CONFIDENT"
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "accessibility",
+        "reason": "audit mode"
+      },
+      {
+        "concern": "interaction",
+        "reason": "audit mode: operability is part of the review"
+      },
+      {
+        "concern": "component",
+        "reason": "the reviewed component/screen"
+      },
+      {
+        "concern": "data-display",
+        "reason": "numbers, tables or charts are the content"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "states",
+        "reason": "audits check empty/loading/error handling"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "audits name generic-design defects"
+      },
+      {
+        "concern": "feedback",
+        "reason": "audits check that actions are discoverable and confirmed"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "viewport range"
+      }
+    ],
+    "optional": [
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "state.loading_empty_error",
+        "reason": "asynchronous or remote data on this screen"
+      },
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "web content must be keyboard operable"
+      },
+      {
+        "concept": "interaction.hover_independence",
+        "reason": "web is used with touch as well as pointer"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "web keyboard focus"
+      },
+      {
+        "concept": "data.chart_by_question",
+        "reason": "charts"
+      },
+      {
+        "concept": "a11y.color_not_only",
+        "reason": "status and series colour"
+      },
+      {
+        "concept": "data.realtime_window",
+        "reason": "job monitor"
+      },
+      {
+        "concept": "data.exception_first",
+        "reason": "job monitor"
+      },
+      {
+        "concept": "data.accessible_chart_alternative",
+        "reason": "required by data.chart_by_question"
+      },
+      {
+        "concept": "data.refresh_timestamp",
+        "reason": "required by data.realtime_window"
+      }
+    ],
+    "recommended_concepts": [
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "touch.minimum_target",
+      "adaptive.breakpoint_matrix",
+      "a11y.live_status",
+      "data.drilldown",
+      "data.kpi_comparison",
+      "layout.focal_hierarchy",
+      "interaction.shortcuts"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "dir-analytical-console",
+      "kind": "direction",
+      "category": "direction",
+      "title": "Analytical console",
+      "facets": [
+        "direction",
+        "platform"
+      ],
+      "concerns": [
+        "brand",
+        "structure"
+      ],
+      "concepts": [],
+      "covers": [],
+      "score": 0.468,
+      "guidance": "Charts are the imagery; one chart palette; modules sized by importance not by a uniform card grid; dark-first tonal surfaces with the accent reserved for alerts and selection; large readable numerics; small multiples over spaghetti charts. Distinctiveness via chart mark style and a signature numeric typeface.",
+      "use_when": "Monitoring and analysis: dashboards with real questions, alerting, drill-down, often on dark themes for long sessions or wall displays.",
+      "avoid_when": "Task-entry tools (workbench), consumer products.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "internal-preference",
+      "incompatible": [
+        "surface-glass",
+        "imagery-hero",
+        "motion-cinematic",
+        "typography-serif-editorial"
+      ],
+      "role": "core",
+      "selected_for": "highest-scoring direction with lexical evidence"
+    },
+    {
+      "id": "comp-kpi-tile",
+      "kind": "component",
+      "category": "chart",
+      "title": "KPI / stat tile",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "data-display",
+        "navigation"
+      ],
+      "concepts": [
+        "table.tabular_figures",
+        "data.kpi_comparison",
+        "data.drilldown"
+      ],
+      "covers": [
+        "tabular figures and numeric alignment",
+        "KPI with comparison and precision",
+        "drill-down from summary to detail"
+      ],
+      "score": 0.403,
+      "guidance": "Label, value with unit and tabular figures, comparison (vs previous period) with sign + arrow + colour, optional sparkline, consistent decimal precision, the most important KPI larger or first, no icon per tile unless it disambiguates, whole tile links to the detail. Avoid the 'four identical cards with big numbers and a gradient' default.",
+      "use_when": "Headline metrics on dashboards.",
+      "avoid_when": "More than ~6 KPIs in a row (users stop reading); KPIs without context (no comparison, no unit).",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "comp-chart-container",
+      "kind": "component",
+      "category": "chart",
+      "title": "Chart container and interaction",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "component",
+        "data-display",
+        "states"
+      ],
+      "concepts": [
+        "a11y.color_not_only",
+        "data.chart_by_question",
+        "data.accessible_chart_alternative",
+        "state.loading_empty_error"
+      ],
+      "covers": [
+        "no colour alone for status",
+        "chart form chosen from the analytical question",
+        "accessible chart summary and table alternative",
+        "loading, empty and error states"
+      ],
+      "score": 0.401,
+      "guidance": "Title that states the question, unit and time range visible, legend as direct labels where possible, tooltip also keyboard-reachable (focusable points or a data table toggle), accessible summary text, consistent palette, responsive (reduce ticks, not data), empty/loading/error states, no animation beyond a single load transition and none on data refresh. Provide the data table or CSV.",
+      "use_when": "Any chart in a product.",
+      "avoid_when": "Decorative charts with no question; charts of fewer than ~4 points (use a stat).",
+      "risk": {
+        "a11y": "high",
+        "perf": "medium"
+      },
+      "provenance": "heuristic",
+      "implementation": {
+        "react": "Recharts/Visx/ECharts already in the project; add role=img + aria-label summary and a table fallback."
+      },
+      "role": "core",
+      "selected_for": "required coverage: accessibility, no colour alone for status, accessible chart summary and table alternative, chart form chosen from the analytical question, loading, empty and error states"
+    },
+    {
+      "id": "chart-realtime",
+      "kind": "chart",
+      "category": "chart",
+      "title": "Real-time streams → rolling window charts",
+      "facets": [
+        "data-viz",
+        "platform"
+      ],
+      "concerns": [
+        "data-display",
+        "states"
+      ],
+      "concepts": [
+        "data.realtime_window",
+        "data.refresh_timestamp",
+        "data.exception_first",
+        "a11y.color_not_only"
+      ],
+      "covers": [
+        "real-time rolling window and thresholds",
+        "last-updated / refresh state",
+        "exceptions and anomalies first",
+        "no colour alone for status"
+      ],
+      "score": 0.37,
+      "guidance": "Fixed time window that scrolls, stable y-range with occasional stepwise rescale, no per-point animation, thresholds drawn as lines with labels, alert states via colour + icon + text, pause on hover/focus, render on canvas/WebGL beyond a few thousand points, and a 'last updated' timestamp. Wall/TV displays: larger type, fewer panels, high contrast.",
+      "use_when": "Monitoring dashboards, telemetry, trading, wall displays.",
+      "avoid_when": "Never animate every tick with transitions; never let the axis rescale continuously (readers lose reference).",
+      "risk": {
+        "a11y": "medium",
+        "perf": "high"
+      },
+      "provenance": "engineering-practice",
+      "role": "core",
+      "selected_for": "required coverage: exceptions and anomalies first, real-time rolling window and thresholds, last-updated / refresh state"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "a11y-keyboard-operable",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Everything operable by keyboard, no traps",
+      "facets": [
+        "accessibility",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.keyboard_navigation",
+        "interaction.hover_independence"
+      ],
+      "covers": [
+        "keyboard navigation and focus order",
+        "no hover dependence"
+      ],
+      "score": 0.342,
+      "guidance": "Tab reaches every control in visual order; composite widgets use arrow keys with a roving tabindex so Tab is not consumed by every cell; Escape closes layers and returns focus to the invoker; nothing traps focus except a modal, and the modal itself must be escapable. Provide a keyboard alternative for every drag interaction.",
+      "use_when": "Every interactive element, including custom widgets, drag/drop, sliders, menus, date pickers, and anything that appears on hover.",
+      "avoid_when": "Never skip.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "role": "guardrail",
+      "selected_for": "required coverage: interaction, no hover dependence, keyboard navigation and focus order"
+    },
+    {
+      "id": "a11y-focus-visible",
+      "kind": "rule",
+      "category": "focus",
+      "title": "Focus visible and not obscured",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.focus_visible"
+      ],
+      "covers": [
+        "visible focus"
+      ],
+      "score": 0.342,
+      "guidance": "Focus indicator ≥2 px with ≥3:1 contrast against adjacent colours and against the unfocused state; sticky UI gets scroll-padding so a focused control scrolls into clear view. On TV the indicator must be obvious at 3 m (scale + border/glow).",
+      "use_when": "Every focusable element in every theme; sticky headers, footers, toasts, and cookie banners must never cover the focused element.",
+      "avoid_when": "Never remove focus styles; use :focus-visible to hide them for mouse clicks only.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "role": "guardrail",
+      "selected_for": "required coverage: visible focus"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "data-display"
+    ],
+    "covered_required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "data-display"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "states",
+      "anti-pattern",
+      "feedback",
+      "adaptive"
+    ],
+    "covered_recommended_concerns": [
+      "states"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "state.loading_empty_error",
+      "interaction.keyboard_navigation",
+      "interaction.hover_independence",
+      "interaction.focus_visible",
+      "data.chart_by_question",
+      "a11y.color_not_only",
+      "data.realtime_window",
+      "data.exception_first",
+      "data.accessible_chart_alternative",
+      "data.refresh_timestamp"
+    ],
+    "covered_required_concepts": [
+      "state.loading_empty_error",
+      "interaction.keyboard_navigation",
+      "interaction.hover_independence",
+      "interaction.focus_visible",
+      "data.chart_by_question",
+      "a11y.color_not_only",
+      "data.realtime_window",
+      "data.exception_first",
+      "data.accessible_chart_alternative",
+      "data.refresh_timestamp"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.22,
+    "bundle_size": 6,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 4,
+    "guardrail_size": 2,
+    "bundle_tokens": 806,
+    "coverage_per_1k_tokens": 12.41,
+    "mean_purity": 0.94,
+    "contaminated": [],
+    "category_diversity": 0.67,
+    "duplicate_pressure": 0.5,
+    "facet_coverage": 0.8,
+    "redundancy": 0.47
+  },
+  "token_coverage": 0.77
+}

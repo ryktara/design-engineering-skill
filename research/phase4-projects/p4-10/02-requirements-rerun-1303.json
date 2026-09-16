@@ -1,0 +1,93 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "audit",
+    "refactor"
+  ],
+  "platform": [
+    "tv"
+  ],
+  "input": [
+    "remote"
+  ],
+  "product": [
+    "media"
+  ],
+  "screen": [],
+  "screen_subtype": [
+    "rails"
+  ],
+  "stack": [
+    "compose",
+    "compose-tv"
+  ],
+  "density": "medium",
+  "components": [
+    "media"
+  ],
+  "environment": [
+    "large-display",
+    "shared-device"
+  ],
+  "jobs": [],
+  "problems": [
+    "interaction"
+  ],
+  "risk": "low",
+  "primary_jobs": [
+    "audit media"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "preserve_navigation": true,
+    "performance_sensitive": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "keyboard": true,
+    "screen_reader": true,
+    "focus": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "change_budget": "moderate",
+  "scope": {
+    "domain": "UI_INTERACTION",
+    "in_scope": true,
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "mode_evidence": [
+    "audit: interaction problem on existing UI",
+    "refactor: fix follows the diagnosis"
+  ],
+  "project_context": {
+    "navigation": "tv-rails (KNOWN)",
+    "theme": "dark-first (INFERRED)",
+    "surfaces": "bordered-flat (INFERRED)",
+    "radius": "medium (INFERRED)",
+    "components": "compose, compose-tv-material, media3, images:coil (KNOWN)"
+  },
+  "known": [
+    "platform=tv",
+    "input=remote",
+    "product=media",
+    "stack=compose",
+    "stack=compose-tv",
+    "project_navigation=tv-rails",
+    "project_components=compose, compose-tv-material, media3, images:coil"
+  ],
+  "inferred": [
+    "density=medium",
+    "mode=audit",
+    "mode=refactor",
+    "environment=shared-device",
+    "environment=large-display",
+    "project_theme=dark-first",
+    "project_surfaces=bordered-flat",
+    "project_radius=medium"
+  ],
+  "missing": [],
+  "status": "CONFIDENT"
+}

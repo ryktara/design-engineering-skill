@@ -1,0 +1,31 @@
+{
+  "task": "p5-11",
+  "sentence": "From the sofa nobody can tell which row is selected on the living-room screen.",
+  "platform": "tv",
+  "artifact_state": "existing",
+  "acceptable_modes": ["polish", "accessibility", "refactor"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "interaction.focus_visible",
+    "a11y.contrast",
+    "tv.ten_foot_typography",
+    "tv.dark_first",
+    "a11y.reduced_motion",
+    "interaction.selection_visible",
+    "tv.no_touch_hover"
+  ],
+  "critical_concepts": ["interaction.focus_visible", "a11y.contrast"],
+  "forbidden_concepts": [
+    "touch.minimum_target",
+    "interaction.hover_independence",
+    "adaptive.breakpoint_matrix",
+    "table.selection_bulk",
+    "interaction.keyboard_navigation"
+  ],
+  "preservation": ["navigation", "theme", "typography"],
+  "reviewer_notes": {
+    "what_the_code_does_now": "TVButtonStyle: focus = 4 pt white ring + scale 1.04 (wide/cards) or 1.08 (icons) + shadow; background surface #1A1F29 -> surfaceRaised #242B38 (approx 1.4:1 between the two states). CardRail cards: ring drawn on the 400x225 artwork only, no fill change, rail heading never changes. TextTileRail tiles use the same style. Nothing marks which RAIL (row) holds focus: headings of all rails stay textPrimary, unfocused rails are not dimmed. Selected tab in CatalogueShell is the system TabView.",
+    "what_a_good_answer_says": "On TV 'selected' = focused. The focused item must read from 3 m: ring/lift/fill change with high contrast (ring >= 3:1 vs surroundings and thick enough to survive scaling down to a 10-foot view), the focused row itself must be distinguishable (row heading emphasis or dimming of non-focused rows), keep the ring with Reduce Motion, keep colour not the only cue, keep within the 60 pt safe margin / 48 pt overscan limit when lifting, and keep selected (checkmark) distinct from focused where both exist (track picker, tabs). Must not talk about hover, touch targets, breakpoints or mouse/keyboard focus rings for the web.",
+    "screen_in_scope": "CatalogueShell (Watch tab: ContinueWatchingView; Search tab: CardRail / TextTileRail rails) and the shared TVButtonStyle. Player/sign-in only insofar as the shared style changes."
+  }
+}

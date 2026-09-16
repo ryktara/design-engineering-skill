@@ -1,0 +1,146 @@
+{
+ "task": "p4-11",
+ "project": "p3-android-tv-compose",
+ "platform": "tv",
+ "stack": "compose-tv",
+ "existing_ui": true,
+ "new_screen": true,
+ "mode": "create",
+ "change_budget": "moderate",
+ "render_mode": "html-twin",
+ "screenshots": [
+  "render/first-details-live.png",
+  "render/first-details-watchlist-on.png",
+  "render/first-details-related-rail.png",
+  "render/first-home-after-back-saved.png",
+  "render/first-details-replay-play.png",
+  "render/first-player-from-start.png",
+  "render/first-details-replay-resume.png",
+  "render/first-player-resume.png",
+  "render/first-home-resume-progress.png",
+  "render/first-details-upcoming.png",
+  "render/first-details-reduced-motion.png",
+  "render/final-details-live.png",
+  "render/final-details-watchlist-on.png",
+  "render/final-details-related-rail.png",
+  "render/final-home-after-back-saved.png",
+  "render/final-details-replay-play.png",
+  "render/final-player-from-start.png",
+  "render/final-details-replay-resume.png",
+  "render/final-player-resume.png",
+  "render/final-home-resume-progress.png",
+  "render/final-details-upcoming.png",
+  "render/final-details-reduced-motion.png"
+ ],
+ "context_detection": {
+  "navigation": "partial",
+  "theme": "yes",
+  "typography": "no",
+  "surfaces": "partial",
+  "spacing": "no"
+ },
+ "preservation": {
+  "navigation": true,
+  "theme": true,
+  "typography": true,
+  "component_reuse": true,
+  "unjustified_structural_change": 0
+ },
+ "first_render_defects": {
+  "visual": 2,
+  "interaction": 0,
+  "accessibility": 0,
+  "platform": 1,
+  "existing-system-mismatch": 0,
+  "implementation-bug": 2
+ },
+ "final_defects": {
+  "visual": 0,
+  "interaction": 0,
+  "accessibility": 0,
+  "platform": 0,
+  "existing-system-mismatch": 0,
+  "implementation-bug": 0
+ },
+ "iterations": 3,
+ "guidance_relevant": 5,
+ "guidance_partial": 2,
+ "guidance_offtarget": 1,
+ "interaction_test": {
+  "file": "05-interaction-final.json",
+  "pass": 28,
+  "fail": 0,
+  "first_pass": 26,
+  "first_fail": 2,
+  "phase3_suite": "23/23",
+  "p4_10_suite": "18/18"
+ },
+ "misses": [
+  {
+   "layer": "requirements",
+   "what": "'existing dark rails home' parsed as screen=home / primary_job 'create home'; intent.preserve empty despite 'consistent with the existing'"
+  },
+  {
+   "layer": "project-adaptation",
+   "what": "inspector: spacing/typography/tokens/component dirs not detected (same as p4-10)"
+  },
+  {
+   "layer": "direction",
+   "what": "cards card-flat-tile and typography system-native proposed as new although EventCard (16:9) and SportsTypography exist; density text in web units"
+  },
+  {
+   "layer": "bundle-selection",
+   "what": "comp-mini-player selected for states/safe-margin coverage; tv-safe-area, card-poster-landscape, a11y-tv-focus-always, tv-back-behavior not selected"
+  },
+  {
+   "layer": "expected-concepts",
+   "what": "no concept for reserving focus-scale overflow at the safe-area edge, for the vertical budget of a bottom-aligned details block, or for toast placement away from the focused row"
+  }
+ ],
+ "knowledge_gaps": [
+  "focused control at the safe-area edge must reserve its scale overflow (or lift less) — Phase 3 tvOS gap still open",
+  "details block vertical budget: title lines x size + synopsis lines + metadata + actions must fit frame minus margins",
+  "status toast placement: never over the focused row or rail captions"
+ ],
+ "regressions": [
+  {
+   "query": "add a match details screen with play, resume and add-to-watchlist, consistent with the existing dark rails home",
+   "expect": "screen=[detail]; preserve theme/components; tv-safe-area guardrail; no comp-mini-player; cards/typography preserved from the repo"
+  },
+  {
+   "query": "details screen action row at the safe-area edge with focus scale",
+   "expect": "reserve the scale overflow on the edge side or reduce the lift for wide buttons"
+  },
+  {
+   "query": "details text block overflows the top of the screen on TV",
+   "expect": "vertical budget rule for bottom-aligned detail blocks"
+  },
+  {
+   "query": "watchlist toggle on TV",
+   "expect": "text state + state semantics + reflected on cards; card-poster-landscape for continue-watching progress"
+  }
+ ],
+ "tags": [
+  "preservation-ok",
+  "skill-helped",
+  "requirements-miss",
+  "context-detection-miss",
+  "direction-mismatch",
+  "ranking-miss",
+  "knowledge-gap",
+  "render-defect-fixed",
+  "tooling-limit"
+ ],
+ "kb_drift_during_run": {
+  "skill_data_modified_at": "12:23-12:57 (not by this run)",
+  "analysis_files_at": "12:20-12:21",
+  "rerun_files": [
+   "02-requirements-rerun-1303.json",
+   "03-guidance-rerun-1303.json"
+  ],
+  "guidance_changed": true,
+  "guidance_delta": "+tv-safe-area +layout-states-empty-loading-error -comp-mini-player -comp-tv-rail; CONFIDENT->PARTIAL",
+  "requirements_changed": true,
+  "requirements_delta": "screen [detail,home]->[detail]; 'create home' dropped (fix)"
+ }
+}

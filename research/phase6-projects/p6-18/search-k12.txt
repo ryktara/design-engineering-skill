@@ -1,0 +1,85 @@
+## design-engineering search: Purchase order screen: operators want to do the whole entry without touching the mouse.
+status=PARTIAL modes=['audit', 'refactor'] platforms={} inputs={'pointer': 'KNOWN'} products={'erp': 'KNOWN'} density=high stacks=[] screens=[] negatives=[]
+facets required=['accessibility', 'interaction', 'component', 'anti-pattern'] unmet=['accessibility', 'interaction', 'anti-pattern'] diversity=0.75
+MISSING: platform: audit targets differ by platform; not stated
+
+### Editable grids: make the current column and its unit unmistakable  `table-column-disambiguation`  [rule/table; component/platform] score 0.636 · heuristic
+Mark the active column in the header (bar + strong text); show the unit as an affix inside the editor (EA suffix for quantities, currency prefix for money); use role-distinct formats (integers for counts, fixed decimals for money, unit in the header); bracket money columns with a stronger divider; validate implausible values (a price typed as a quantity) inline before commit.
+- use when: Data-entry grids where adjacent numeric columns hold different roles (quantity vs price, hours vs rate) and operators type into the wrong one.
+- avoid when: Never format a count like money; never rely on header text alone; never leave the active column unmarked while typing.
+- why: lexical 0.665, structural 0.6 (input pointer (stated), mode audit, product erp)
+
+### Data-entry grid (spreadsheet-like)  `comp-data-entry-grid`  [component/table; component/platform] score 0.565 · heuristic
+Enter/Tab move predictably (configurable), F2 edits, Escape cancels, arrow keys move without editing, type-to-edit on a cell, lookup cells with a picker (F4), validation per cell with a visible marker and a summary, totals row, paste from spreadsheet, undo, row add via Enter on the last row, keyboard shortcuts documented in a help panel.
+- use when: Batch entry of many similar rows (invoice lines, journal entries, stock counts).
+- avoid when: Occasional single-record edits (use a form).
+- incompatible with: layout-single-column, nav-bottom-tabs
+- why: lexical 0.471, structural 0.68 (input pointer (stated), mode audit, product erp, density high)
+
+### Master–detail (list + detail pane)  `layout-master-detail`  [pattern/layout; layout/platform] score 0.352 · platform-standard
+List pane with selection state that is keyboard-navigable (arrow keys change selection, Enter opens), detail pane that updates in place and announces its title to assistive tech. Persist the selected item across navigation. On narrow widths collapse to a two-screen stack with Back.
+- use when: Users scan a list of records and act on one at a time (tickets, orders, patients, mail); wide enough for two panes (≥ ~900 px / 641 epx).
+- avoid when: Phone widths (collapse to list → push detail), records that need the full width (large tables, editors), or when the list has only a handful of items.
+- incompatible with: layout-single-column, layout-immersive-rails, layout-rails
+- why: lexical 0.04, structural 0.6 (input pointer (stated), secondary mode, product erp, density high)
+
+### Table-first working screen  `layout-table-first`  [pattern/layout; layout/platform] score 0.351 · heuristic
+Table fills the viewport height with internal scrolling and sticky header, row density selectable, column widths persisted, filters as a row of chips/fields above the table (not a hidden drawer), bulk actions appear in the toolbar on selection. Numeric columns right-aligned with tabular figures. Virtualise beyond a few hundred rows.
+- use when: The record set is the product (orders, transactions, tickets, inventory): users filter, sort, select, and bulk-act. Screen = toolbar + filters + table + optional side panel.
+- avoid when: Phone widths (switch to list rows), fewer than ~20 rows, or when each record needs rich media.
+- incompatible with: layout-single-column, layout-immersive-rails, layout-feed, layout-editorial
+- why: lexical 0.039, structural 0.6 (input pointer (stated), secondary mode, product erp, density high)
+
+### Persistent left rail / sidebar  `nav-left-rail`  [pattern/navigation; navigation/platform] score 0.35 · heuristic
+Fixed-width rail (collapsible to icons with labels on hover/focus) holding grouped sections; secondary navigation lives in the content header, not as a second rail. Don't add a rail because 'apps have sidebars': justify it with section count and switching frequency. Mark active section with a visible indicator that survives collapse.
+- use when: Authenticated tools with 6+ peer sections, frequent switching, and wide viewports; power users who need stable wayfinding.
+- avoid when: Marketing pages, single-task flows (checkout, onboarding), phone widths, or when the product has three destinations and the rail would be mostly empty.
+- incompatible with: nav-top-bar, nav-bottom-tabs, nav-tv-side, nav-hub-spoke
+- why: lexical 0.0, structural 0.6 (input pointer (stated), secondary mode, product erp, density high)
+
+### Rich metadata (operational)  `metadata-rich`  [pattern/metadata; layout/platform] score 0.347 · heuristic
+Columns with user-controlled visibility and order, consistent formatting per type (dates, currency, IDs in monospace), status as text+colour, truncation with full value on focus/hover and in the detail pane.
+- use when: Operations: many attributes per record visible at once (tables, ledgers, tickets), with sorting/filtering on any of them.
+- avoid when: Consumer browsing, mobile, TV.
+- incompatible with: metadata-minimal, layout-rails, layout-immersive-rails, density-low
+- why: lexical 0.031, structural 0.6 (input pointer (stated), secondary mode, product erp, density high)
+
+### Desktop status bar as the persistent feedback surface, with next-error navigation  `desktop-status-bar-and-error-navigation`  [rule/feedback; component/platform] score 0.337 · platform-standard
+One status bar at the bottom of the window with fixed regions (selection summary, sync/save state with timestamp, error count as a link, active filter) separated by real separators, not spaces; validation for the current row/cell is echoed there in words ('Line 50: Quantity must be greater than 0') and the error count opens a list; F8 / Shift+F8 (or the project's convention) walk to the next and previous error and move focus into the cell; error styling never paints over the value text (tint the cell background and keep ≥ 4.5:1 for the text); announce status changes with LiveSetting/UIA so screen readers hear them; the bar keeps its height at every window width.
+- use when: Data-entry and workbench windows where validation, selection and sync state must be visible without dialogs or toasts.
+- avoid when: Consumer apps without a persistent window chrome; mobile.
+- why: lexical 0.122, structural 0.6 (input pointer (stated), mode audit, product erp)
+
+### Toolbar / command bar with selection-driven commands  `cta-toolbar-commands`  [pattern/cta; layout/platform] score 0.33 · platform-standard
+Primary commands as labelled buttons, overflow into a menu, disabled (not hidden) when no selection, keyboard accelerators shown in tooltips, and the count of selected items visible near the commands.
+- use when: Workbenches and tables: commands apply to the current selection, live in a persistent bar, and are mirrored by context menus and shortcuts.
+- avoid when: Consumer or single-task screens; touch-first products.
+- incompatible with: cta-single-primary, cta-focus-selects, cta-sticky-bar
+- why: lexical 0.0, structural 0.6 (input pointer (stated), secondary mode, product erp, density high)
+
+### High density  `density-high`  [pattern/density; layout/platform] score 0.33 · heuristic
+4 px base grid, 32 px row height in tables, 13–14 px body, 8–12 px gaps inside groups and 16–24 px between groups; density must be achieved by tightening spacing and sizes coherently, not by shrinking text below the platform floor. Offer a 'comfortable' density toggle where users differ.
+- use when: Expert users, repeated daily use, comparison and scanning tasks, large screens with a pointer.
+- avoid when: Touch-only, first-time users, TV, or emotional/branding surfaces.
+- incompatible with: density-low, layout-editorial, typography-serif-display
+- why: lexical 0.0, structural 0.6 (input pointer (stated), secondary mode, product erp, density high)
+
+### Bordered panes  `surface-bordered-panes`  [pattern/surface; layout/platform] score 0.32 · heuristic
+One neutral canvas, borders with ≥3:1 contrast where they define panes, headers as slightly darker/lighter strips, no rounded card containers inside panes. Focus rings and selection highlights carry the colour.
+- use when: Dense workbenches where regions are separated by 1 px borders and the canvas is a single tone; the IDE/spreadsheet aesthetic.
+- avoid when: Consumer or brand-led products, touch-first products with fat targets.
+- incompatible with: surface-glass, surface-elevated-cards, layout-immersive-rails
+- why: lexical 0.0, structural 0.6 (input pointer (stated), secondary mode, product erp, density high)
+
+### Tree + breadcrumb for deep hierarchies  `nav-breadcrumb-tree`  [pattern/navigation; navigation/platform] score 0.311 · platform-standard
+Tree in the left pane with full keyboard semantics (arrow keys expand/collapse, type-ahead), breadcrumb above the content that mirrors the tree path and is clickable at every level. Persist expansion state per session. Virtualise beyond ~500 nodes.
+- use when: Hierarchies of 3+ levels (accounts → cost centres → entries, folders, org charts) where users need to see where they are and jump laterally.
+- avoid when: Flat structures, mobile widths, or when the tree would exceed a few hundred visible nodes without virtualisation.
+- incompatible with: nav-bottom-tabs, nav-tv-side, nav-hub-spoke
+- why: lexical 0.038, structural 0.6 (input pointer (stated), secondary mode, product erp, density high)
+
+### Command palette  `comp-command-palette`  [component/command-palette; component/platform] score 0.306 · heuristic
+Global shortcut, combobox semantics (aria-activedescendant), grouped results (commands, records, navigation), recent items, fuzzy match with highlighted matches, keyboard hints, Escape restores focus, executes in ≤1 keystroke after selection, debounced async search with loading state.
+- use when: Power-user tools with many commands and records; augments visible navigation.
+- avoid when: As the only way to reach features; touch-first apps.
+- why: lexical 0.0, structural 0.68 (input pointer (stated), mode audit, product erp, density high)

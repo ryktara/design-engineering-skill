@@ -1,0 +1,147 @@
+{
+  "task": "p6-02",
+  "project": "p3-nextjs-saas",
+  "platform_expected": "web",
+  "platform_resolved": "web",
+  "platform_correct": "yes",
+  "stack": "Next.js 15 App Router + React 19 + Tailwind v4 + shadcn-style (zinc/new-york) + Radix",
+  "existing_ui": true,
+  "new_screen": true,
+  "artifact_state_expected": "new",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": false,
+  "mode_expected": ["create"],
+  "mode_resolved": ["create"],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "moderate",
+  "render_mode": "html",
+  "screenshots": [
+    "render/first-desktop.png",
+    "render/first-desktop-details.png",
+    "render/first-mobile.png",
+    "render/final-desktop.png",
+    "render/final-desktop-details.png",
+    "render/final-mobile.png"
+  ],
+  "context_detection": {
+    "navigation": "yes",
+    "theme": "yes",
+    "typography": "partial",
+    "surfaces": "partial",
+    "spacing": "yes"
+  },
+  "preservation": {
+    "navigation": true,
+    "theme": true,
+    "typography": true,
+    "component_reuse": true,
+    "unjustified_structural_change": 0
+  },
+  "expected_concepts": [
+    "data.kpi_comparison",
+    "navigation.orientation_and_back",
+    "state.loading_empty_error",
+    "a11y.semantics",
+    "table.tabular_figures",
+    "data.refresh_timestamp",
+    "process.reuse_first"
+  ],
+  "critical_concepts": ["data.kpi_comparison", "navigation.orientation_and_back", "state.loading_empty_error"],
+  "delivered_concepts": [
+    "data.chart_by_question",
+    "data.kpi_comparison",
+    "process.reuse_first",
+    "table.tabular_figures",
+    "brand.type_roles"
+  ],
+  "concept_recall": 0.43,
+  "critical_recall": 0.33,
+  "concept_misses": [
+    {"concept": "navigation.orientation_and_back", "layer": "expected-concepts"},
+    {"concept": "state.loading_empty_error", "layer": "criticality"},
+    {"concept": "a11y.semantics", "layer": "expected-concepts"},
+    {"concept": "data.refresh_timestamp", "layer": "expected-concepts"}
+  ],
+  "first_render_defects": {
+    "visual": 1,
+    "interaction": 0,
+    "accessibility": 0,
+    "platform": 0,
+    "existing-system-mismatch": 0,
+    "implementation-bug": 1
+  },
+  "final_defects": {
+    "visual": 0,
+    "interaction": 0,
+    "accessibility": 0,
+    "platform": 0,
+    "existing-system-mismatch": 0,
+    "implementation-bug": 0
+  },
+  "iterations": 1,
+  "guidance_relevant": 2,
+  "guidance_partial": 2,
+  "guidance_offtarget": 0,
+  "bad_guidance": [
+    {
+      "record": "typo-scale-and-roles",
+      "category": "generic",
+      "why": "Only the 'numeric role uses tabular lining figures' clause was usable; the rest (define a type scale, body >=16px web / 14 desktop / 24 TV, generate with tokens.py) is a from-scratch type-system record delivered on an existing shadcn type system whose typography slot the direction itself marked preserved."
+    },
+    {
+      "record": "chart-compare-bar",
+      "category": "generic",
+      "why": "Entered the bundle with zero marginal concepts/concerns (marginal.new_critical/required/recommended/concerns all empty). Its 'sorted by value' rule is also wrong for the daily time series, where order is meaningful; usable only for the by-key bars."
+    },
+    {
+      "record": "<bundle>",
+      "category": "missing-critical",
+      "why": "Two pre-registered critical concepts are absent from the bundle: state.loading_empty_error (every settings route in this codebase ships loading.tsx + error.tsx; 'states' was a required concern and stayed uncovered) and navigation.orientation_and_back (a new settings sub-page is unreachable until it is added to SettingsNav; never demanded at all)."
+    }
+  ],
+  "layer_review": {
+    "core": ["chart-progress-gauge", "chart-compare-bar"],
+    "critical": ["impl-reuse-before-new", "typo-scale-and-roles"],
+    "optional": [],
+    "optional_useful": 0,
+    "optional_noise": 0
+  },
+  "guidance_used": ["chart-progress-gauge", "chart-compare-bar", "impl-reuse-before-new"],
+  "guidance_ignored": [
+    {
+      "id": "typo-scale-and-roles",
+      "why": "Used only the tabular-figures clause. Building a new type scale or changing body size would have broken the preserved shadcn typography."
+    }
+  ],
+  "unjustified_direction_slots": 0,
+  "process_records_needed": false,
+  "skill_effect": "helped",
+  "guidance_tokens": 446,
+  "misses": [
+    {"layer": "expected-concepts", "what": "navigation.orientation_and_back never demanded for a create-a-new-page request on an existing multi-tab settings shell; a new route that is not added to the nav is unreachable."},
+    {"layer": "criticality", "what": "state.loading_empty_error demanded only as 'recommended' although 'states' was a required concern and the project ships loading.tsx/error.tsx per route; it then lost the bundle-selection race and was reported 'not surfaced'."},
+    {"layer": "bundle-selection", "what": "Bundle stopped at 4 records with a soft cap of 6 while three required concerns (states, interaction, accessibility) were uncovered and named candidates existed (layout-states-empty-loading-error, a11y-focus-visible, a11y-keyboard-operable)."},
+    {"layer": "candidate-compatibility", "what": "comp-kpi-tile was the top-scoring carrier (0.511) for both critical data concepts but was omitted for 'no positive task evidence' on a sentence that says 'showing this month's API calls against the plan quota' — a KPI screen by definition."},
+    {"layer": "project-context", "what": "Direction fingerprint reports card_geometry 'none' and corner_language 'sharp' for a codebase whose every surface is a rounded-lg shadcn Card with shadow-sm; harmless only because the cards/surface slots were marked preserved."}
+  ],
+  "knowledge_gaps": [],
+  "regressions": [
+    {"query": "Add a usage page showing this month's API calls against the plan quota.", "expect": "navigation.orientation_and_back demanded (and a nav/IA record selected) whenever mode=create adds a screen to a project whose inspect shows an existing nav; the new route must be placed in the existing navigation."},
+    {"query": "Add a usage page showing this month's API calls against the plan quota.", "expect": "state.loading_empty_error treated as required (not recommended) when 'states' is a required concern and the project already has per-route loading/error conventions; a states record must reach the bundle."},
+    {"query": "Add a usage page showing this month's API calls against the plan quota.", "expect": "comp-kpi-tile retained as a core record; 'quota', 'this month' and a metric noun are positive task evidence for a KPI screen."},
+    {"query": "Add a usage page showing this month's API calls against the plan quota.", "expect": "bundle fills to the soft cap while required concerns remain uncovered rather than stopping at 4 records with states/interaction/accessibility uncovered."}
+  ],
+  "tags": [
+    "concept-miss",
+    "ranking-miss",
+    "context-detection-miss",
+    "render-defect-fixed",
+    "skill-helped",
+    "preservation-ok"
+  ],
+  "build_hash_start": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947",
+  "build_hash_end": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947"
+}

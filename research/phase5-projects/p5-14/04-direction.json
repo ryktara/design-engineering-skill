@@ -1,0 +1,128 @@
+{
+  "brand": "Purchase-order lines: operators keep typing the quantity into the price column.",
+  "fingerprint": {
+    "navigation_model": "menu-bar",
+    "surface_strategy": "bordered",
+    "card_geometry": "none",
+    "corner_language": "sharp",
+    "typography_character": "monospace-technical",
+    "color_strategy": "neutral-plus-accent",
+    "focus_strategy": "ring"
+  },
+  "direction": {
+    "navigation": "nav-menu-bar-desktop",
+    "layout": null,
+    "density": null,
+    "surface": "surface-bordered-panes",
+    "cards": null,
+    "typography": "typography-monospace-technical",
+    "color": "color-neutral-accent",
+    "motion": null,
+    "focus": "focus-ring-standard",
+    "cta": null,
+    "imagery": null,
+    "icon": null,
+    "metadata": null
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "desktop"
+    ],
+    "input": [
+      "keyboard",
+      "pointer"
+    ],
+    "product": [
+      "erp"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "wpf"
+    ],
+    "density": "high",
+    "components": [],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "audit"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "low",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [],
+      "change_scope": "unknown",
+      "utterance": "observation",
+      "preserve": []
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "audit: problem statement on existing UI",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": "menu-bar (KNOWN)",
+      "theme": "light-first (KNOWN)",
+      "surfaces": "bordered-flat (INFERRED)",
+      "radius": "small (INFERRED)",
+      "spacing": "4 (INFERRED)",
+      "typography": "monospace (INFERRED)",
+      "components": "wpf (KNOWN)"
+    },
+    "known": [
+      "platform=desktop",
+      "product=erp",
+      "stack=wpf",
+      "project_navigation=menu-bar",
+      "project_theme=light-first",
+      "project_components=wpf"
+    ],
+    "inferred": [
+      "input=pointer",
+      "input=keyboard",
+      "density=high",
+      "mode=audit",
+      "mode=refactor",
+      "project_surfaces=bordered-flat",
+      "project_radius=small",
+      "project_spacing=4",
+      "project_typography=monospace"
+    ],
+    "missing": [],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

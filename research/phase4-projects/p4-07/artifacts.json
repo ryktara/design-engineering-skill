@@ -1,0 +1,28 @@
+{"task": "p4-07", "project": "p3-erp-desktop-dotnet", "platform": "desktop", "stack": "wpf", "existing_ui": true, "mode": "polish+audit", "change_budget": "low",
+ "render_mode": "native",
+ "screenshots": ["render/before-ready-1440x900.png", "render/before-validation.png", "render/before-ready-1100x700.png",
+   "render/first-ready-1440x900.png", "render/first-validation.png", "render/first-next-error.png", "render/first-ready-1100x700.png", "render/first-editing.png", "render/first-focus-cell.png", "render/first-selection.png", "render/first-scrolled.png",
+   "render/final-ready-1440x900.png", "render/final-validation.png", "render/final-next-error.png", "render/final-ready-1100x700.png", "render/final-ready-820x600.png", "render/final-error-1440x900.png", "render/final-empty-1440x900.png", "render/final-editing.png", "render/final-focus-cell.png", "render/final-selection.png", "render/final-scrolled.png"],
+ "context_detection": {"navigation": "yes", "theme": "yes", "typography": "no", "surfaces": "yes", "spacing": "partial"},
+ "preservation": {"navigation": true, "theme": true, "typography": true, "component_reuse": true, "unjustified_structural_change": 0},
+ "first_render_defects": {"visual": 1, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 1},
+ "final_defects": {"visual": 2, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 1, "implementation-bug": 0},
+ "iterations": 2, "guidance_relevant": 4, "guidance_partial": 3, "guidance_offtarget": 1,
+ "misses": [
+   {"layer": "bundle-selection", "what": "a11y-forms-errors (rank 8) and a11y-color-not-only (rank 6) not selected although the accessibility concern was reported uncovered; they are the records for 'validation errors are hard to read'"},
+   {"layer": "bundle-selection", "what": "layout-spacing-scale (rank 3, 0.426) not selected for a spacing complaint (tolerable: anti-inconsistent-spacing covered it)"},
+   {"layer": "requirements", "what": "components = form/navigation; toolbar, status bar and grid never became components, so comp-data-table was pruned as 'no table evidence'"},
+   {"layer": "expected-concepts", "what": "no concept for a desktop status bar (segments, separators, narrow-width priority, where a validation message lives)"},
+   {"layer": "expected-concepts", "what": "no concept for validation display in an editable grid (cell tint + row marker + message + F8 next/previous error)"},
+   {"layer": "project-adaptation", "what": "stacks/wpf.md does not warn that a Validation.ErrorTemplate adorner draws over the element (a tinted adorner washes out the value text) — the actual cause of 'hard to read'"},
+   {"layer": "direction", "what": "polish task with budget low still filled layout=dashboard-grid, imagery=data-graphics, metadata=inline-badges as 'new' slots for a table-first grid with no charts"},
+   {"layer": "project-adaptation", "what": "inspect_project: WPF <FontFamily x:Key> resources not recognised → typography UNKNOWN, monospace false, type_scale false"}
+ ],
+ "knowledge_gaps": ["desktop status bar pattern", "editable-grid validation display and next-error navigation", "WPF adorner layer draws over the adorned element"],
+ "regressions": [
+   {"query": "polish inconsistent spacing in the toolbar and status bar of a WPF screen", "expect": "anti-inconsistent-spacing and layout-spacing-scale in the bundle; no states record; components include toolbar/status bar"},
+   {"query": "validation errors are hard to read in an editable data grid", "expect": "accessibility concern covered by a11y-forms-errors and a11y-color-not-only; comp-data-entry-grid retained"},
+   {"query": "polish this existing screen (change budget low)", "expect": "direction adds no new visual device slots (data graphics, badges) without request or repository evidence"},
+   {"query": "inspect a WPF project whose Typography.xaml declares <FontFamily x:Key=\"Font.UI\">", "expect": "typography KNOWN with family, monospace and type scale"}
+ ],
+ "tags": ["context-detection-miss", "requirements-miss", "ranking-miss", "knowledge-gap", "direction-mismatch", "render-defect-fixed", "render-defect-remaining", "skill-helped", "preservation-ok"]}

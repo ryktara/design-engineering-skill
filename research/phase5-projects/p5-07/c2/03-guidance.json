@@ -1,0 +1,929 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "Patient search that finds nothing just shows a blank area.",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [
+      "healthcare"
+    ],
+    "screen": [
+      "search"
+    ],
+    "screen_subtype": [],
+    "stack": [
+      "svelte",
+      "tailwind"
+    ],
+    "density": null,
+    "components": [
+      "search"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "audit search"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "navigation",
+        "performance-ux"
+      ],
+      "change_scope": "unknown",
+      "utterance": "observation",
+      "existing": true,
+      "problem": true,
+      "facet": "interaction",
+      "diagnose_only": false,
+      "creation": false,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "audit: navigation defect on existing UI",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "left-rail",
+        "status": "KNOWN",
+        "evidence": [
+          "left-rail: 1 matches in +layout.svelte (shell/layout file)",
+          "also breadcrumb-tree: 1 matches"
+        ]
+      },
+      "theme": {
+        "value": "light-first",
+        "status": "INFERRED",
+        "evidence": [
+          "hex palette: 13 near-white, 1 near-black"
+        ]
+      },
+      "surfaces": {
+        "value": "bordered-flat",
+        "status": "INFERRED",
+        "evidence": [
+          "borders in 12 files, shadow/elevation in 2"
+        ]
+      },
+      "radius": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": []
+      },
+      "spacing": {
+        "value": 4,
+        "status": "INFERRED",
+        "evidence": [
+          "most used spacing values [16, 8, 12, 4, 24]",
+          "tailwind spacing classes (119)"
+        ]
+      },
+      "typography": {
+        "value": "custom",
+        "status": "INFERRED",
+        "evidence": [
+          "font family theme (1 refs)",
+          "tabular numerals"
+        ]
+      },
+      "components": {
+        "value": "tailwind",
+        "status": "KNOWN",
+        "evidence": [
+          "tailwind"
+        ]
+      }
+    },
+    "known": [
+      "platform=web (project inspection)",
+      "product=healthcare (request: patient)",
+      "stack=svelte (project inspection)",
+      "stack=tailwind (project inspection)",
+      "screen=search (request: search)",
+      "project_navigation=left-rail (repository: left-rail: 1 matches in +layout.svelte (shell/layout file); also breadcrumb-tree: 1 matches)",
+      "project_components=tailwind (repository: tailwind)"
+    ],
+    "inferred": [
+      "input=pointer (implied by platform web)",
+      "input=keyboard (implied by platform web)",
+      "input=touch (implied by platform web)",
+      "mode=audit (navigation defect on existing UI)",
+      "mode=refactor (fix follows the diagnosis)",
+      "project_theme=light-first (repository: hex palette: 13 near-white, 1 near-black)",
+      "project_surfaces=bordered-flat (repository: borders in 12 files, shadow/elevation in 2)",
+      "project_spacing=4 (repository: most used spacing values [16, 8, 12, 4, 24]; tailwind spacing classes (119))",
+      "project_typography=custom (repository: font family theme (1 refs); tabular numerals)"
+    ],
+    "missing": [],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [
+        "patient",
+        "search"
+      ],
+      "project": [
+        "package.json: svelte@^5.16.0",
+        "package.json: @sveltejs/kit@^2.12.0",
+        "package.json: tailwindcss@^3.4.17"
+      ]
+    },
+    "activation": {
+      "decision": "ambiguous",
+      "ui_score": 1.0,
+      "non_ui_score": 0,
+      "ui_terms": [],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "present-tense observation"
+      ],
+      "new": [],
+      "defect": [
+        "observed behaviour"
+      ],
+      "operations": {},
+      "domains": {
+        "navigation": [
+          "find"
+        ],
+        "performance-ux": [
+          "blank"
+        ]
+      },
+      "no_change": [],
+      "scope": {},
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "search"
+      ],
+      "ux_symptoms": [],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "accessibility",
+        "reason": "audit mode"
+      },
+      {
+        "concern": "interaction",
+        "reason": "audit mode: operability is part of the review"
+      },
+      {
+        "concern": "component",
+        "reason": "the reviewed component/screen"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "states",
+        "reason": "audits check empty/loading/error handling"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "audits name generic-design defects"
+      },
+      {
+        "concern": "feedback",
+        "reason": "audits check that actions are discoverable and confirmed"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "viewport range"
+      }
+    ],
+    "optional": [
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "state.loading_empty_error",
+        "reason": "asynchronous or remote data on this screen"
+      },
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "web content must be keyboard operable"
+      },
+      {
+        "concept": "interaction.hover_independence",
+        "reason": "web is used with touch as well as pointer"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "web keyboard focus"
+      },
+      {
+        "concept": "data.search_results",
+        "reason": "search"
+      }
+    ],
+    "recommended_concepts": [
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "process.reuse_first",
+      "touch.minimum_target",
+      "adaptive.breakpoint_matrix",
+      "data.filter_chips",
+      "a11y.live_status",
+      "feedback.confirmation_destructive",
+      "interaction.shortcuts"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "comp-search",
+      "kind": "component",
+      "category": "search",
+      "title": "Search field and results",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "component",
+        "feedback",
+        "navigation"
+      ],
+      "concepts": [
+        "data.search_results",
+        "navigation.deep_link_state"
+      ],
+      "covers": [
+        "search field and results behaviour",
+        "URL / route reflects state"
+      ],
+      "score": 0.428,
+      "guidance": "Prominent field with type=search, clear button, suggestions as a listbox with keyboard support, result count announced, query in the URL, recent searches, empty-result guidance, debounce. Mobile: full-screen search with the keyboard open and results as a list. TV: a dedicated search screen, system keyboard or voice, results in rails, focus returns to the field on BACK.",
+      "use_when": "Catalogues, media libraries, admin lists, docs.",
+      "avoid_when": "Tiny data sets where filtering chips suffice.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.354,
+        "structural": 0.52,
+        "matched": [
+          "mode audit",
+          "screen search"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "dir-clinical-workstation",
+      "kind": "direction",
+      "category": "direction",
+      "title": "Clinical workstation",
+      "facets": [
+        "direction",
+        "platform"
+      ],
+      "concerns": [
+        "brand",
+        "structure"
+      ],
+      "concepts": [],
+      "covers": [],
+      "score": 0.412,
+      "guidance": "Patient banner always visible (identity, allergies, alerts) as the focal element, master-detail for patient lists and records, strict status colour language with text and icons (never colour alone), large legible numerics with units, quiet neutral surfaces, confirmation for critical actions with the safe default, interruption-safe autosave. Identity via the banner treatment and status language; restraint is the brand.",
+      "use_when": "EHR/EMR, lab, pharmacy, ward tools for clinicians under time pressure and interruption.",
+      "avoid_when": "Patient-facing apps (use 'Service app').",
+      "risk": {
+        "a11y": "high",
+        "perf": "medium"
+      },
+      "provenance": "internal-preference",
+      "incompatible": [
+        "surface-glass",
+        "imagery-hero",
+        "motion-expressive",
+        "color-dominant-brand"
+      ],
+      "why": {
+        "lexical": 0.193,
+        "structural": 0.68,
+        "matched": [
+          "platform web",
+          "input keyboard,pointer,touch",
+          "secondary mode",
+          "product healthcare"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring direction with lexical evidence"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "a11y-keyboard-operable",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Everything operable by keyboard, no traps",
+      "facets": [
+        "accessibility",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.keyboard_navigation",
+        "interaction.hover_independence"
+      ],
+      "covers": [
+        "keyboard navigation and focus order",
+        "no hover dependence"
+      ],
+      "score": 0.36,
+      "guidance": "Tab reaches every control in visual order; composite widgets use arrow keys with a roving tabindex so Tab is not consumed by every cell; Escape closes layers and returns focus to the invoker; nothing traps focus except a modal, and the modal itself must be escapable. Provide a keyboard alternative for every drag interaction.",
+      "use_when": "Every interactive element, including custom widgets, drag/drop, sliders, menus, date pickers, and anything that appears on hover.",
+      "avoid_when": "Never skip.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.033,
+        "structural": 0.76,
+        "matched": [
+          "platform web",
+          "input keyboard",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: accessibility, interaction, no hover dependence, keyboard navigation and focus order"
+    },
+    {
+      "id": "a11y-skip-link",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Bypass blocks: skip links and landmark shortcuts",
+      "facets": [
+        "accessibility",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility"
+      ],
+      "concepts": [
+        "interaction.keyboard_navigation",
+        "a11y.semantics",
+        "interaction.focus_visible"
+      ],
+      "covers": [
+        "keyboard navigation and focus order",
+        "semantic structure and roles",
+        "visible focus"
+      ],
+      "score": 0.342,
+      "guidance": "Provide a 'Skip to <region>' link as the first focusable element (visible on focus), targets with tabindex=-1 and a heading; expose landmarks (main, nav, region with aria-label) so screen-reader users can jump; keep the number of tab stops before the first control small (≤ 5) and give composite widgets a single tab stop.",
+      "use_when": "Any page where the keyboard user must tab through navigation, headers or a chart before reaching controls such as filters, forms or the main content.",
+      "avoid_when": "Never make the skip link the only visible-on-focus element without a focus ring; never point it at an element that cannot receive focus.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.76,
+        "matched": [
+          "platform web",
+          "input keyboard",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: visible focus"
+    },
+    {
+      "id": "layout-states-empty-loading-error",
+      "kind": "rule",
+      "category": "feedback",
+      "title": "Design empty, loading, error, and partial states",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "states"
+      ],
+      "concepts": [
+        "state.loading_empty_error"
+      ],
+      "covers": [
+        "loading, empty and error states"
+      ],
+      "score": 0.27,
+      "guidance": "Empty: what this is, why it is empty, one action. Loading: skeleton with final dimensions, then content; announce completion. Error: what failed, what to do, retry that works; keep entered data. Partial: show what loaded, mark what didn't. On TV, focus must land somewhere valid in each state.",
+      "use_when": "Every list, table, chart, form, and detail screen.",
+      "avoid_when": "Never ship a blank area for empty data; never show a spinner for more than ~1 s without a skeleton or progress; never show an error without a next step.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.016,
+        "structural": 0.58,
+        "matched": [
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: loading, empty and error states"
+    },
+    {
+      "id": "search-filter-feedback",
+      "kind": "rule",
+      "category": "search",
+      "title": "Search and filters: visible state and instant feedback",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "accessibility",
+        "component",
+        "data-display",
+        "feedback"
+      ],
+      "concepts": [
+        "a11y.live_status",
+        "data.filter_chips",
+        "data.search_results"
+      ],
+      "covers": [
+        "live region status announcements",
+        "applied filters as removable chips with counts",
+        "search field and results behaviour"
+      ],
+      "score": 0.438,
+      "guidance": "Applied filters as removable chips with a 'clear all', result count announced, debounced query (≈300 ms) with a loading indicator, empty results suggest next steps, filter state in the URL/route, and on TV a search screen with a system keyboard/voice plus results as rails.",
+      "use_when": "Catalogues, tables, media libraries, admin lists.",
+      "avoid_when": "Never hide applied filters; never reset filters on navigation without asking; never search on every keystroke against a slow backend without debounce.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.256,
+        "structural": 0.66,
+        "matched": [
+          "mode audit",
+          "screen search"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "recommended coverage: live region status announcements, applied filters as removable chips with counts"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "accessibility",
+      "interaction",
+      "component"
+    ],
+    "covered_required_concerns": [
+      "accessibility",
+      "interaction",
+      "component"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "states",
+      "anti-pattern",
+      "feedback",
+      "adaptive"
+    ],
+    "covered_recommended_concerns": [
+      "states",
+      "feedback"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "state.loading_empty_error",
+      "interaction.keyboard_navigation",
+      "interaction.hover_independence",
+      "interaction.focus_visible",
+      "data.search_results"
+    ],
+    "covered_required_concepts": [
+      "state.loading_empty_error",
+      "interaction.keyboard_navigation",
+      "interaction.hover_independence",
+      "interaction.focus_visible",
+      "data.search_results"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.22,
+    "bundle_size": 6,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 2,
+    "guardrail_size": 4,
+    "bundle_tokens": 834,
+    "coverage_per_1k_tokens": 6.0,
+    "mean_purity": 0.86,
+    "contaminated": [],
+    "category_diversity": 0.67,
+    "duplicate_pressure": 0.33,
+    "facet_coverage": 0.6,
+    "redundancy": 0.31
+  },
+  "token_coverage": 0.88,
+  "omitted": [],
+  "rejected": [
+    {
+      "id": "comp-tv-rail",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "comp-tv-sign-in",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "comp-photo-capture-field",
+      "reason": "platform ['mobile', 'tablet'] not in request ['web']"
+    },
+    {
+      "id": "comp-tv-side-sheet",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "dir-broadcast-guide-tv",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "nav-bottom-tabs",
+      "reason": "platform ['mobile'] not in request ['web']"
+    },
+    {
+      "id": "nav-tv-side",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "nav-tv-top-tabs",
+      "reason": "platform ['tv'] not in request ['web']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "state.loading_empty_error",
+      "priority": "required",
+      "reason": "asynchronous or remote data on this screen",
+      "candidate_records": [
+        [
+          "layout-states-empty-loading-error",
+          0.27
+        ],
+        [
+          "anti-no-states",
+          0.261
+        ],
+        [
+          "comp-empty-state",
+          0.218
+        ],
+        [
+          "comp-chart-container",
+          0.207
+        ]
+      ],
+      "selected_record": "layout-states-empty-loading-error",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.keyboard_navigation",
+      "priority": "required",
+      "reason": "web content must be keyboard operable",
+      "candidate_records": [
+        [
+          "a11y-keyboard-operable",
+          0.36
+        ],
+        [
+          "interaction-drag-drop",
+          0.354
+        ],
+        [
+          "grid-single-tab-stop",
+          0.342
+        ],
+        [
+          "a11y-skip-link",
+          0.342
+        ]
+      ],
+      "selected_record": "a11y-keyboard-operable",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.hover_independence",
+      "priority": "required",
+      "reason": "web is used with touch as well as pointer",
+      "candidate_records": [
+        [
+          "a11y-keyboard-operable",
+          0.36
+        ],
+        [
+          "anti-hover-only-actions",
+          0.355
+        ],
+        [
+          "a11y-hover-not-required",
+          0.342
+        ]
+      ],
+      "selected_record": "a11y-keyboard-operable",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.focus_visible",
+      "priority": "required",
+      "reason": "web keyboard focus",
+      "candidate_records": [
+        [
+          "a11y-focus-visible",
+          0.342
+        ],
+        [
+          "grid-single-tab-stop",
+          0.342
+        ],
+        [
+          "a11y-skip-link",
+          0.342
+        ],
+        [
+          "focus-ring-standard",
+          0.323
+        ]
+      ],
+      "selected_record": "a11y-skip-link",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "data.search_results",
+      "priority": "required",
+      "reason": "search",
+      "candidate_records": [
+        [
+          "search-filter-feedback",
+          0.438
+        ],
+        [
+          "comp-search",
+          0.428
+        ]
+      ],
+      "selected_record": "search-filter-feedback",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.accessible_names",
+      "priority": "recommended",
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "a11y-labels-names",
+          0.261
+        ],
+        [
+          "comp-media-card",
+          0.225
+        ],
+        [
+          "comp-product-detail-page",
+          0.087
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "a11y.contrast",
+      "priority": "recommended",
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "anti-fashion-over-usability",
+          0.261
+        ],
+        [
+          "a11y-contrast-text",
+          0.261
+        ],
+        [
+          "a11y-nontext-contrast",
+          0.261
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "recommended",
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.225
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.minimum_target",
+      "priority": "recommended",
+      "reason": "touch on web",
+      "candidate_records": [
+        [
+          "a11y-target-size",
+          0.335
+        ],
+        [
+          "media-photo-viewer",
+          0.279
+        ],
+        [
+          "comp-product-detail-page",
+          0.087
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "adaptive.breakpoint_matrix",
+      "priority": "recommended",
+      "reason": "web viewport range",
+      "candidate_records": [
+        [
+          "web-responsive-breakpoints",
+          0.315
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "data.filter_chips",
+      "priority": "recommended",
+      "reason": "search filters",
+      "candidate_records": [
+        [
+          "search-filter-feedback",
+          0.438
+        ],
+        [
+          "layout-grid-catalog",
+          0.276
+        ],
+        [
+          "comp-filters",
+          0.265
+        ]
+      ],
+      "selected_record": "search-filter-feedback",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.live_status",
+      "priority": "recommended",
+      "reason": "result count",
+      "candidate_records": [
+        [
+          "search-filter-feedback",
+          0.438
+        ],
+        [
+          "interaction-drag-drop",
+          0.354
+        ],
+        [
+          "feedback-progress-async",
+          0.277
+        ],
+        [
+          "a11y-live-status",
+          0.261
+        ]
+      ],
+      "selected_record": "search-filter-feedback",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "feedback.confirmation_destructive",
+      "priority": "recommended",
+      "reason": "sensitive domain",
+      "candidate_records": [
+        [
+          "states-persistence-and-session",
+          0.322
+        ],
+        [
+          "comp-dialog",
+          0.198
+        ],
+        [
+          "comp-settings-screen",
+          0.102
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.shortcuts",
+      "priority": "recommended",
+      "reason": "related to interaction.keyboard_navigation",
+      "candidate_records": [],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "carriers filtered before ranking: platform ['desktop'] not in request ['web']"
+    }
+  ]
+}

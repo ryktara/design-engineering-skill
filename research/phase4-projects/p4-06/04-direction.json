@@ -1,0 +1,128 @@
+{
+  "brand": "add a product listing page with filters to our outdoor gear web store, matching the existing product and checkout pages",
+  "fingerprint": {
+    "navigation_model": "top-bar",
+    "layout_topology": "grid-catalog",
+    "grid_behavior": "responsive-columns",
+    "content_density": "low",
+    "surface_strategy": "elevated",
+    "card_geometry": "poster-landscape",
+    "corner_language": "small",
+    "typography_character": "humanist-sans",
+    "color_strategy": "neutral-plus-accent",
+    "motion_character": "crossfade",
+    "focus_strategy": "ring",
+    "cta_strategy": "sticky-bar",
+    "image_strategy": "hero-imagery",
+    "icon_strategy": "outline",
+    "metadata_density": "inline-badges"
+  },
+  "direction": {
+    "navigation": "nav-top-bar",
+    "layout": "layout-grid-catalog",
+    "density": "density-low",
+    "surface": "surface-elevated-cards",
+    "cards": "card-poster-landscape",
+    "typography": "typography-humanist-sans",
+    "color": "color-neutral-accent",
+    "motion": "motion-crossfade",
+    "focus": "focus-ring-standard",
+    "cta": "cta-sticky-bar",
+    "imagery": "imagery-hero",
+    "icon": "icon-outline-system",
+    "metadata": "metadata-inline-badges"
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [
+      "ecommerce"
+    ],
+    "screen": [
+      "checkout",
+      "list"
+    ],
+    "screen_subtype": [],
+    "stack": [
+      "html-css"
+    ],
+    "density": null,
+    "components": [
+      "search"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "create checkout",
+      "create list"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "mode_evidence": [
+      "create: default (no mode cue)"
+    ],
+    "project_context": {
+      "navigation": "top-bar (KNOWN)",
+      "theme": "light-first (INFERRED)",
+      "surfaces": "elevated (INFERRED)",
+      "radius": "pill (INFERRED)"
+    },
+    "known": [
+      "platform=web",
+      "product=ecommerce",
+      "stack=html-css",
+      "screen=list",
+      "screen=checkout",
+      "project_navigation=top-bar"
+    ],
+    "inferred": [
+      "input=pointer",
+      "input=keyboard",
+      "input=touch",
+      "mode=create",
+      "project_theme=light-first",
+      "project_surfaces=elevated",
+      "project_radius=pill"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": false,
+    "violations": [
+      "non-media product: poster (media) card geometry selected"
+    ]
+  }
+}

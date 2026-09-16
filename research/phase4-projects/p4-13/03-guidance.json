@@ -1,0 +1,810 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "refactor the defect report form so it stays usable with the keyboard open and photos can be retaken, keeping the app's existing theme and navigation",
+  "status": "PARTIAL",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "refactor"
+    ],
+    "platform": [
+      "mobile",
+      "tv"
+    ],
+    "input": [
+      "keyboard",
+      "remote",
+      "touch"
+    ],
+    "product": [
+      "erp",
+      "iot"
+    ],
+    "screen": [
+      "form"
+    ],
+    "screen_subtype": [],
+    "stack": [
+      "flutter"
+    ],
+    "density": "medium",
+    "components": [
+      "form",
+      "navigation"
+    ],
+    "environment": [
+      "large-display",
+      "shared-device"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "refactor form"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_INTERACTION",
+      "in_scope": true,
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "mode_evidence": [
+      "refactor: explicit: refactor",
+      "refactor: change request with structural words: refactor, navigation"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "top-bar",
+        "status": "KNOWN",
+        "evidence": [
+          "top-bar: 2 matches in checklist_screen.dart, defect_report_screen.dart (shell/layout file)"
+        ]
+      },
+      "theme": {
+        "value": "dual-theme",
+        "status": "KNOWN",
+        "evidence": [
+          "dark theme configuration signals: 4",
+          "light theme configuration signals: 1",
+          "hex palette: 13 near-white, 6 near-black"
+        ],
+        "default": "light"
+      },
+      "surfaces": {
+        "value": "elevated",
+        "status": "INFERRED",
+        "evidence": [
+          "weak signal: shadow 1, border 0"
+        ]
+      },
+      "radius": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": []
+      },
+      "spacing": {
+        "value": 4,
+        "status": "INFERRED",
+        "evidence": [
+          "most used spacing values [12]"
+        ]
+      },
+      "typography": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": [
+          "no font family declaration found"
+        ]
+      },
+      "components": {
+        "value": "go_router, riverpod",
+        "status": "KNOWN",
+        "evidence": [
+          "go_router",
+          "riverpod"
+        ]
+      }
+    },
+    "known": [
+      "platform=mobile (project inspection)",
+      "platform=tv (project inspection)",
+      "input=keyboard (request: keyboard)",
+      "input=remote (project inspection: DPAD/remote handling in source)",
+      "product=erp (project inspection (README))",
+      "product=iot (project inspection (README))",
+      "stack=flutter (project inspection)",
+      "screen=form (request: form)",
+      "mode=refactor (explicit: refactor; change request with structural words: refactor, navigation)",
+      "project_navigation=top-bar (repository: top-bar: 2 matches in checklist_screen.dart, defect_report_screen.dart (shell/layout file))",
+      "project_theme=dual-theme (repository: dark theme configuration signals: 4; light theme configuration signals: 1)",
+      "project_components=go_router, riverpod (repository: go_router; riverpod)"
+    ],
+    "inferred": [
+      "input=touch (implied by platform mobile)",
+      "density=medium (implied by product erp (capped for touch/remote platform))",
+      "environment=shared-device (a TV is normally a shared household device)",
+      "environment=large-display (TV platform)",
+      "project_surfaces=elevated (repository: weak signal: shadow 1, border 0)",
+      "project_spacing=4 (repository: most used spacing values [12])"
+    ],
+    "missing": [],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [
+        "form",
+        "keyboard",
+        "refactor"
+      ],
+      "project": [
+        "pubspec.yaml: Flutter",
+        "DPAD / remote key handling found in source"
+      ]
+    },
+    "activation": {
+      "decision": "activate",
+      "ui_score": 5.0,
+      "non_ui_score": 0,
+      "ui_terms": [
+        "theme",
+        "navigation",
+        "form"
+      ],
+      "non_ui_terms": []
+    },
+    "intent": {
+      "existing": true,
+      "problem": false,
+      "facet": "interaction",
+      "diagnose_only": false,
+      "creation": false,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "intent_evidence": {
+      "existing": [
+        "existing"
+      ],
+      "problem": [],
+      "change": [
+        "refactor"
+      ],
+      "create": [],
+      "diagnose": [],
+      "no_change": [],
+      "redesign": [],
+      "look_feel": [],
+      "structural": [
+        "refactor",
+        "navigation"
+      ],
+      "responsive": [],
+      "accessibility": [],
+      "interaction": [
+        "keyboard"
+      ]
+    },
+    "scope_evidence": {
+      "ui": [
+        "form",
+        "navigation",
+        "theme",
+        "keyboard"
+      ],
+      "ux_symptoms": [
+        "keyboard"
+      ],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_INTERACTION",
+    "in_scope": true,
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "component",
+        "reason": "a specific component/screen is requested"
+      },
+      {
+        "concern": "structure",
+        "reason": "layout topology and hierarchy"
+      },
+      {
+        "concern": "navigation",
+        "reason": "entry screen or navigation component"
+      },
+      {
+        "concern": "states",
+        "reason": "submission states"
+      },
+      {
+        "concern": "interaction",
+        "reason": "input model: keyboard,remote,touch"
+      },
+      {
+        "concern": "accessibility",
+        "reason": "platform accessibility baseline"
+      },
+      {
+        "concern": "performance",
+        "reason": "focus latency and catalog virtualization on TV"
+      },
+      {
+        "concern": "feedback",
+        "reason": "form validation and submission feedback"
+      },
+      {
+        "concern": "data-display",
+        "reason": "numbers, tables or charts are the content"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "anti-pattern",
+        "reason": "create/refactor requests attract generic defaults"
+      },
+      {
+        "concern": "content",
+        "reason": "10-foot readability"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "device sizes and orientation"
+      },
+      {
+        "concern": "environment",
+        "reason": "environment large-display (INFERRED)"
+      }
+    ],
+    "optional": [],
+    "required_concepts": [
+      {
+        "concept": "touch.minimum_target",
+        "reason": "touch platform"
+      },
+      {
+        "concept": "interaction.dpad_reachability",
+        "reason": "TV / remote input"
+      },
+      {
+        "concept": "interaction.focus_restore",
+        "reason": "TV / remote input"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "TV / remote input"
+      },
+      {
+        "concept": "tv.ten_foot_typography",
+        "reason": "TV / remote input"
+      },
+      {
+        "concept": "tv.safe_margins",
+        "reason": "TV / remote input"
+      },
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "keyboard stated"
+      },
+      {
+        "concept": "feedback.validation_errors",
+        "reason": "form"
+      },
+      {
+        "concept": "touch.ime_keyboard",
+        "reason": "form on touch"
+      },
+      {
+        "concept": "table.tabular_figures",
+        "reason": "numeric data"
+      }
+    ],
+    "recommended_concepts": [
+      "process.safe_modification",
+      "state.loading_empty_error",
+      "state.unsaved_changes_guard",
+      "state.saving_conflict",
+      "touch.gestures_discoverable",
+      "touch.thumb_reach",
+      "touch.safe_areas",
+      "navigation.platform_grammar",
+      "interaction.back_semantics",
+      "tv.no_touch_hover",
+      "perf.focus_latency",
+      "tv.dark_first",
+      "form.autofill_attributes",
+      "navigation.orientation_and_back",
+      "privacy.shared_device",
+      "interaction.shortcuts",
+      "a11y.live_status"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "comp-form",
+      "kind": "component",
+      "category": "form",
+      "title": "Form",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "component",
+        "feedback",
+        "states",
+        "structure"
+      ],
+      "concepts": [
+        "feedback.validation_errors",
+        "touch.ime_keyboard",
+        "form.autofill_attributes",
+        "state.unsaved_changes_guard"
+      ],
+      "covers": [
+        "inline validation messages and error recovery",
+        "on-screen keyboard (IME) aware layout",
+        "autofill / input-type attributes per field",
+        "unsaved-changes guard"
+      ],
+      "score": 0.417,
+      "guidance": "Labels above, help text below, required marked in text, field widths sized to content, grouped by section with headings, one column, inline validation on blur, error summary on submit with links to fields, primary action last (or sticky), unsaved-changes guard, autosave with status for long forms, autofill attributes. TV: one field per row, DOWN moves to next, system keyboard, minimal fields.",
+      "use_when": "Any data entry: settings, checkout, applications, record editing.",
+      "avoid_when": "Batch entry of many similar rows (use a data-entry grid); single toggles (inline).",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.333,
+        "structural": 0.52,
+        "matched": [
+          "mode refactor",
+          "screen form"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "nav-tv-top-tabs",
+      "kind": "pattern",
+      "category": "navigation",
+      "title": "TV top tabs",
+      "facets": [
+        "navigation",
+        "platform"
+      ],
+      "concerns": [
+        "navigation"
+      ],
+      "concepts": [],
+      "covers": [],
+      "score": 0.485,
+      "guidance": "Tabs sit in the top safe area; Back from any rail jumps focus to the active tab and scrolls to top; focused tab shows the underline/pill with ≥3:1 contrast and the label stays visible. Switching tabs does not move focus into content until the user presses DOWN.",
+      "use_when": "Two to five sections, when the left edge must stay free for immersive artwork or when the brand wants a browsing feel closer to a broadcast guide.",
+      "avoid_when": "More than five sections, or when rows below are long (UP from deep rows must scroll back to tabs predictably; that gets slow).",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "incompatible": [
+        "nav-tv-side",
+        "nav-top-bar",
+        "nav-left-rail",
+        "nav-bottom-tabs"
+      ],
+      "why": {
+        "lexical": 0.171,
+        "structural": 0.78,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode refactor",
+          "density medium"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring pattern with lexical evidence"
+    },
+    {
+      "id": "layout-form-stack",
+      "kind": "pattern",
+      "category": "layout",
+      "title": "Form stack with sections",
+      "facets": [
+        "layout"
+      ],
+      "concerns": [
+        "structure"
+      ],
+      "concepts": [],
+      "covers": [],
+      "score": 0.414,
+      "guidance": "Labels above fields (not placeholders), one column except for tightly related pairs (city/postcode), section headings as real headings, inline validation on blur with error text linked via aria-describedby, and the primary action at the end of the form or in a sticky footer. Field width should hint expected length.",
+      "use_when": "Data entry and settings: labelled fields in one column, grouped into titled sections, with the save/submit action fixed in a predictable place.",
+      "avoid_when": "Spreadsheet-style batch entry (use a data-entry grid), or tiny forms of 1–2 fields (inline them).",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "incompatible": [
+        "layout-immersive-rails",
+        "layout-rails"
+      ],
+      "why": {
+        "lexical": 0.152,
+        "structural": 0.6,
+        "matched": [
+          "mode refactor",
+          "screen form",
+          "density medium"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring pattern with lexical evidence"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "a11y-tv-focus-always",
+      "kind": "rule",
+      "category": "focus",
+      "title": "TV: exactly one visible focus at all times",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "component",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.focus_restore",
+        "interaction.focus_visible",
+        "media.details_play_first"
+      ],
+      "covers": [
+        "focus restoration",
+        "visible focus",
+        "details screen with Play as default focus"
+      ],
+      "score": 0.392,
+      "guidance": "Set initial focus deterministically (first actionable content or Play on detail), restore focus to the previously focused item when returning, keep focus on screen (scroll into view), move focus to a sensible neighbour when the focused item is removed, and never rely on colour tint alone for the focused state.",
+      "use_when": "Every TV screen, after every navigation, after data loads, after dialogs close, after list updates.",
+      "avoid_when": "Never leave focus on a hidden or off-screen element; never let focus disappear after a list refresh.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.025,
+        "structural": 0.84,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode refactor"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: accessibility, interaction, focus restoration, visible focus"
+    },
+    {
+      "id": "mobile-density-touch",
+      "kind": "rule",
+      "category": "layout",
+      "title": "Mobile: density is bounded by touch",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "adaptive",
+        "data-display",
+        "interaction"
+      ],
+      "concepts": [
+        "table.column_priority",
+        "touch.minimum_target"
+      ],
+      "covers": [
+        "column priority on narrow widths",
+        "large touch targets (≥44–48 px)"
+      ],
+      "score": 0.35,
+      "guidance": "Convert tables to list rows with the 2–3 deciding columns, put the rest in a detail screen; filters in a sheet with applied-filter chips; bulk actions via selection mode; numbers stay tabular; row height ≥48 dp. Dense on phone means fewer things, not smaller things.",
+      "use_when": "Porting dense desktop tools (ERP, tables, dashboards) to phones.",
+      "avoid_when": "Never shrink a desktop table to fit; never rely on horizontal scroll for primary data.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "incompatible": [
+        "layout-table-first",
+        "density-high"
+      ],
+      "why": {
+        "lexical": 0.015,
+        "structural": 0.76,
+        "matched": [
+          "platform mobile",
+          "input touch",
+          "mode refactor",
+          "product erp"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: data-display, large touch targets (≥44–48 px)"
+    },
+    {
+      "id": "tv-dpad-axes",
+      "kind": "rule",
+      "category": "navigation",
+      "title": "TV: vertical = sections, horizontal = items",
+      "facets": [
+        "navigation",
+        "platform"
+      ],
+      "concerns": [
+        "interaction",
+        "navigation"
+      ],
+      "concepts": [
+        "interaction.dpad_reachability"
+      ],
+      "covers": [
+        "D-pad focus reachability"
+      ],
+      "score": 0.529,
+      "guidance": "Every focusable element must be reachable with straight UP/DOWN/LEFT/RIGHT presses; no diagonal reasoning, no hidden hops. Search and settings live at a predictable edge. Grids: LEFT at the first column may enter side navigation, RIGHT at the last column stays. Forms: one field per row, DOWN advances.",
+      "use_when": "Any TV layout: rails, grids, menus, settings, forms.",
+      "avoid_when": "Avoid nested horizontal groups inside horizontal groups; avoid controls placed where no straight DPAD path reaches them.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.275,
+        "structural": 0.84,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode refactor"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: D-pad focus reachability"
+    },
+    {
+      "id": "tv-typography-distance",
+      "kind": "rule",
+      "category": "typography",
+      "title": "TV: 10-foot typography",
+      "facets": [
+        "platform",
+        "visual"
+      ],
+      "concerns": [
+        "accessibility",
+        "content"
+      ],
+      "concepts": [
+        "tv.ten_foot_typography"
+      ],
+      "covers": [
+        "10-foot typography, readable at distance"
+      ],
+      "score": 0.386,
+      "guidance": "Body ≥24 sp (Android) / ≥29 pt (tvOS) at 1080p design scale, captions ≥20 sp, titles 32–48, display 57–72; sans with large x-height and open counters; short strings (titles ≤2 lines, synopsis ≤3 lines with expansion); avoid thin weights (<400) and light text on busy imagery; line height ≥1.3.",
+      "use_when": "All text on TV.",
+      "avoid_when": "Never scale a desktop type ramp up by a factor; rebuild the scale for distance and for reduced text volume.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "incompatible": [
+        "typography-serif-editorial"
+      ],
+      "why": {
+        "lexical": 0.014,
+        "structural": 0.84,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode refactor"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: 10-foot typography, readable at distance"
+    },
+    {
+      "id": "tv-safe-area",
+      "kind": "rule",
+      "category": "layout",
+      "title": "TV: overscan-safe margins",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "interaction",
+        "structure"
+      ],
+      "concepts": [
+        "tv.safe_margins"
+      ],
+      "covers": [
+        "TV safe margins"
+      ],
+      "score": 0.383,
+      "guidance": "Keep interactive and text content ≥5% from edges: at the 960×540 dp design frame that is 48 dp horizontal and 27 dp vertical (Android guidance: up to 58/28 dp for maximum safety; tvOS: 60 pt sides, 60 pt top/bottom on the 1920×1080 frame). Let rails scroll under the margin so partial cards hint at more content.",
+      "use_when": "All persistent UI (nav, titles, buttons, subtitles); backgrounds and artwork may bleed.",
+      "avoid_when": "Do not inset full-bleed imagery; do not rely on the panel reporting overscan.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.01,
+        "structural": 0.84,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode refactor"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: TV safe margins"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "component",
+      "structure",
+      "navigation",
+      "states",
+      "interaction",
+      "accessibility",
+      "performance",
+      "feedback",
+      "data-display"
+    ],
+    "covered_required_concerns": [
+      "component",
+      "structure",
+      "navigation",
+      "states",
+      "interaction",
+      "accessibility",
+      "feedback",
+      "data-display"
+    ],
+    "uncovered_required_concerns": [
+      "performance"
+    ],
+    "recommended_concerns": [
+      "anti-pattern",
+      "content",
+      "adaptive",
+      "environment"
+    ],
+    "covered_recommended_concerns": [
+      "content",
+      "adaptive"
+    ],
+    "coverage_ratio": 0.89,
+    "required_concepts": [
+      "touch.minimum_target",
+      "interaction.dpad_reachability",
+      "interaction.focus_restore",
+      "interaction.focus_visible",
+      "tv.ten_foot_typography",
+      "tv.safe_margins",
+      "interaction.keyboard_navigation",
+      "feedback.validation_errors",
+      "touch.ime_keyboard",
+      "table.tabular_figures"
+    ],
+    "covered_required_concepts": [
+      "touch.minimum_target",
+      "interaction.dpad_reachability",
+      "interaction.focus_restore",
+      "interaction.focus_visible",
+      "tv.ten_foot_typography",
+      "tv.safe_margins",
+      "feedback.validation_errors",
+      "touch.ime_keyboard"
+    ],
+    "uncovered_required_concepts": [
+      "interaction.keyboard_navigation",
+      "table.tabular_figures"
+    ],
+    "concept_coverage_ratio": 0.8,
+    "recommended_concept_coverage": 0.12,
+    "bundle_size": 8,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 3,
+    "guardrail_size": 5,
+    "bundle_tokens": 1175,
+    "coverage_per_1k_tokens": 6.81,
+    "mean_purity": 0.9,
+    "contaminated": [],
+    "category_diversity": 0.62,
+    "duplicate_pressure": 0.38,
+    "facet_coverage": 0.83,
+    "redundancy": 0.44
+  },
+  "token_coverage": 0.8,
+  "omitted": [
+    {
+      "id": "comp-checkout-one-page",
+      "reason": "contamination: product-specific (ecommerce) vs ['erp', 'iot']; screen-specific (checkout) vs ['form']"
+    }
+  ],
+  "rejected": [
+    {
+      "id": "anti-generic-sidebar-dashboard",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile', 'tv']"
+    },
+    {
+      "id": "anti-hover-only-actions",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile', 'tv']"
+    },
+    {
+      "id": "chart-relationship",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile', 'tv']"
+    },
+    {
+      "id": "chart-small-multiples",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile', 'tv']"
+    },
+    {
+      "id": "comp-data-table",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile', 'tv']"
+    },
+    {
+      "id": "comp-sidebar-nav",
+      "reason": "platform ['desktop', 'tablet', 'web'] not in request ['mobile', 'tv']"
+    },
+    {
+      "id": "comp-command-palette",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile', 'tv']"
+    },
+    {
+      "id": "comp-tree-view",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile', 'tv']"
+    }
+  ]
+}

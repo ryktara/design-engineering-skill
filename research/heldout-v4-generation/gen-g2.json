@@ -1,0 +1,2820 @@
+{
+ "generator": "g2",
+ "model": "claude-sonnet-5",
+ "cases": [
+  {
+   "id": "hv4-g2-001",
+   "prompt": "the settings page has like 40 toggles in one long scroll and nobody can find anything, support keeps asking where things are",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ]
+   },
+   "required_concerns": [
+    "structure",
+    "navigation"
+   ],
+   "required_concepts": [
+    "layout.settings_grouping",
+    "layout.focal_hierarchy",
+    "navigation.orientation_and_back"
+   ],
+   "critical_concepts": [
+    "layout.settings_grouping"
+   ],
+   "recommended_concepts": [
+    "layout.spacing_scale"
+   ],
+   "forbidden_concepts": [
+    "tv.safe_margins",
+    "touch.thumb_reach"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-002",
+   "prompt": "our checkout is a single giant form, name/address/card/review all stacked on one page, drop-off is brutal after step one",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "web"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "feedback"
+   ],
+   "required_concepts": [
+    "onboarding.linear_wizard",
+    "feedback.validation_errors",
+    "state.saving_conflict",
+    "form.autofill_attributes"
+   ],
+   "critical_concepts": [
+    "onboarding.linear_wizard"
+   ],
+   "recommended_concepts": [
+    "feedback.trust_signals"
+   ],
+   "forbidden_concepts": [
+    "tv.dark_first",
+    "media.resume_playback"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-003",
+   "prompt": "split the seven-step onboarding wizard down to three steps, keep all the same fields just grouped better",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "web"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure"
+   ],
+   "required_concepts": [
+    "onboarding.linear_wizard",
+    "layout.one_primary_action",
+    "feedback.validation_errors"
+   ],
+   "critical_concepts": [
+    "onboarding.linear_wizard"
+   ],
+   "recommended_concepts": [
+    "state.unsaved_changes_guard"
+   ],
+   "forbidden_concepts": [
+    "tv.epg_pinned_channels"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": true,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-004",
+   "prompt": "the orders table has 14 columns and everyone just horizontal-scrolls to find status, thinking this should be cards with the important stuff up top",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ]
+   },
+   "required_concerns": [
+    "structure",
+    "data-display"
+   ],
+   "required_concepts": [
+    "table.column_priority",
+    "data.comparison_structure",
+    "layout.media_card",
+    "table.tabular_figures"
+   ],
+   "critical_concepts": [
+    "table.column_priority"
+   ],
+   "recommended_concepts": [
+    "table.virtualization"
+   ],
+   "forbidden_concepts": [
+    "tv.ten_foot_typography"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {
+    "layout.media_card": [
+     "table.column_priority"
+    ]
+   },
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-005",
+   "prompt": "top nav has 11 items crammed in, three of them are dropdowns with dropdowns inside, users can't find billing at all",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "web"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "navigation",
+    "structure"
+   ],
+   "required_concepts": [
+    "navigation.rail_semantics",
+    "navigation.orientation_and_back",
+    "interaction.menu_semantics"
+   ],
+   "critical_concepts": [
+    "navigation.rail_semantics"
+   ],
+   "recommended_concepts": [
+    "adaptive.navigation_transform"
+   ],
+   "forbidden_concepts": [
+    "tv.sign_in_code"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-006",
+   "prompt": "collapse the left sidebar into a rail with icons, right now it's a fixed 280px panel that eats half the screen on laptop sizes",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [
+     "web"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "navigation",
+    "adaptive"
+   ],
+   "required_concepts": [
+    "navigation.rail_semantics",
+    "adaptive.breakpoint_matrix",
+    "adaptive.navigation_transform"
+   ],
+   "critical_concepts": [
+    "navigation.rail_semantics"
+   ],
+   "recommended_concepts": [
+    "interaction.focus_restore"
+   ],
+   "forbidden_concepts": [
+    "touch.thumb_reach"
+   ],
+   "preservation": [
+    "navigation"
+   ],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": true,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-007",
+   "prompt": "why does saving a new contact require going through account > people > add > confirm > details, that's four screens for one form",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ]
+   },
+   "required_concerns": [
+    "structure",
+    "navigation"
+   ],
+   "required_concepts": [
+    "layout.one_primary_action",
+    "navigation.orientation_and_back",
+    "onboarding.linear_wizard"
+   ],
+   "critical_concepts": [
+    "layout.one_primary_action"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "tv.player_autohide"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-008",
+   "prompt": "dashboard filters live in a separate page you have to navigate to, apply, then come back — should just be inline chips above the results",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "web"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "data-display"
+   ],
+   "required_concepts": [
+    "data.filter_chips",
+    "navigation.deep_link_state",
+    "data.search_results"
+   ],
+   "critical_concepts": [
+    "data.filter_chips"
+   ],
+   "recommended_concepts": [
+    "navigation.orientation_and_back"
+   ],
+   "forbidden_concepts": [
+    "media.watchlist"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-009",
+   "prompt": "merge the profile and account-preferences screens, they're both \"settings\" and users bounce between them constantly looking for the same handful of fields",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ]
+   },
+   "required_concerns": [
+    "structure",
+    "navigation"
+   ],
+   "required_concepts": [
+    "layout.settings_grouping",
+    "navigation.orientation_and_back",
+    "layout.spacing_scale"
+   ],
+   "critical_concepts": [
+    "layout.settings_grouping"
+   ],
+   "recommended_concepts": [
+    "state.saving_conflict"
+   ],
+   "forbidden_concepts": [
+    "tv.epg_pinned_channels"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": true,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-010",
+   "prompt": "breadcrumbs disappear once you're two levels deep in the reports tree, coming back to where you were means starting the whole search over",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "web"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "navigation"
+   ],
+   "required_concepts": [
+    "navigation.orientation_and_back",
+    "interaction.tree_semantics",
+    "navigation.deep_link_state"
+   ],
+   "critical_concepts": [
+    "navigation.orientation_and_back"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "tv.time_navigation"
+   ],
+   "preservation": [
+    "navigation"
+   ],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-011",
+   "prompt": "bulk actions on the user list only work if you open each row's kebab menu one at a time, checkboxes don't even exist yet",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ]
+   },
+   "required_concerns": [
+    "structure",
+    "interaction"
+   ],
+   "required_concepts": [
+    "table.selection_bulk",
+    "interaction.selection_visible",
+    "layout.one_primary_action"
+   ],
+   "critical_concepts": [
+    "table.selection_bulk"
+   ],
+   "recommended_concepts": [
+    "feedback.confirmation_destructive"
+   ],
+   "forbidden_concepts": [
+    "tv.no_touch_hover"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-012",
+   "prompt": "restructure the pricing page tiers into a comparison table instead of three separate cards you have to scroll past each other to compare",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "web"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "data-display"
+   ],
+   "required_concepts": [
+    "data.comparison_structure",
+    "layout.focal_hierarchy",
+    "table.tabular_figures"
+   ],
+   "critical_concepts": [
+    "data.comparison_structure"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "anti.template_landing"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": true,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-013",
+   "prompt": "the invoice detail view and the invoice edit view are two totally different layouts, switching between read and edit mode feels like a different app",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ]
+   },
+   "required_concerns": [
+    "structure",
+    "component"
+   ],
+   "required_concepts": [
+    "layout.focal_hierarchy",
+    "state.saving_conflict",
+    "layout.spacing_scale"
+   ],
+   "critical_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "tv.dark_first"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-014",
+   "prompt": "notifications, messages and activity are three separate bell icons in the header doing basically overlapping jobs, can we consolidate into one inbox concept",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "web"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "navigation"
+   ],
+   "required_concepts": [
+    "navigation.rail_semantics",
+    "a11y.live_status",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "navigation.rail_semantics"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "tv.epg_pinned_channels"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-015",
+   "prompt": "ticket: 'reorganize left nav IA — flatten the 3-level category tree, most users never go past level 1'",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "web"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "navigation",
+    "structure"
+   ],
+   "required_concepts": [
+    "navigation.rail_semantics",
+    "interaction.tree_semantics",
+    "navigation.orientation_and_back"
+   ],
+   "critical_concepts": [
+    "navigation.rail_semantics"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "tv.safe_margins"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": true,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-016",
+   "prompt": "search results and the filter panel are on completely separate routes, every filter change reloads the whole page and loses your scroll position",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [
+     "web"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "performance"
+   ],
+   "required_concepts": [
+    "data.search_results",
+    "navigation.deep_link_state",
+    "perf.layout_shift"
+   ],
+   "critical_concepts": [
+    "data.search_results"
+   ],
+   "recommended_concepts": [
+    "data.filter_chips"
+   ],
+   "forbidden_concepts": [
+    "tv.player_autohide"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-017",
+   "prompt": "flatten the tab structure on the project page, right now there are tabs inside tabs and half our users never find the second row",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "web"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "interaction"
+   ],
+   "required_concepts": [
+    "interaction.tabs_roving",
+    "layout.focal_hierarchy",
+    "navigation.orientation_and_back"
+   ],
+   "critical_concepts": [
+    "interaction.tabs_roving"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "tv.no_touch_hover"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": true,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-018",
+   "prompt": "the admin console mixes global settings and per-team settings in the same list with no grouping, a customer changed the wrong tenant's billing plan yesterday",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "web"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "feedback"
+   ],
+   "required_concepts": [
+    "layout.settings_grouping",
+    "feedback.confirmation_destructive",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "layout.settings_grouping",
+    "feedback.confirmation_destructive"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "media.resume_playback"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-019",
+   "prompt": "why is there a modal, that opens a drawer, that opens another modal just to edit one field on a team member",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ]
+   },
+   "required_concerns": [
+    "structure",
+    "interaction"
+   ],
+   "required_concepts": [
+    "interaction.drawer_focus",
+    "layout.one_primary_action",
+    "a11y.dialog_focus"
+   ],
+   "critical_concepts": [
+    "layout.one_primary_action"
+   ],
+   "recommended_concepts": [
+    "interaction.focus_restore"
+   ],
+   "forbidden_concepts": [
+    "tv.time_navigation"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-020",
+   "prompt": "reorganize how the analytics dashboard groups its cards, right now it's ordered by whenever someone added the widget instead of by what people actually check first",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "web"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "data-display"
+   ],
+   "required_concepts": [
+    "data.exception_first",
+    "layout.focal_hierarchy",
+    "data.kpi_comparison"
+   ],
+   "critical_concepts": [
+    "data.exception_first"
+   ],
+   "recommended_concepts": [
+    "data.drilldown"
+   ],
+   "forbidden_concepts": [
+    "tv.ten_foot_typography"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": true,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-021",
+   "prompt": "the whole app has a global search bar in the header but it only searches customers, none of the other entities — feels broken but it's really just scoped wrong and buried",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "web"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "data-display"
+   ],
+   "required_concepts": [
+    "data.search_results",
+    "navigation.orientation_and_back",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "data.search_results"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "media.search_tv"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-022",
+   "prompt": "spec: two-pane inbox layout — thread list left, reading pane right, replacing the current click-through to a full new page per message",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "web"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "navigation"
+   ],
+   "required_concepts": [
+    "layout.focal_hierarchy",
+    "navigation.deep_link_state",
+    "adaptive.breakpoint_matrix"
+   ],
+   "critical_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "recommended_concepts": [
+    "interaction.focus_restore"
+   ],
+   "forbidden_concepts": [
+    "tv.epg_pinned_channels"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-023",
+   "prompt": "the account creation flow asks for company info before it even confirms the email, people bail because it feels like a sales form not a signup",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "web"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "feedback"
+   ],
+   "required_concepts": [
+    "onboarding.linear_wizard",
+    "form.autofill_attributes",
+    "feedback.validation_errors"
+   ],
+   "critical_concepts": [
+    "onboarding.linear_wizard"
+   ],
+   "recommended_concepts": [
+    "feedback.trust_signals"
+   ],
+   "forbidden_concepts": [
+    "tv.sign_in_code"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-024",
+   "prompt": "turn the vertical list of team members into a grid of cards, keep the same invite and remove actions, just the layout topology needs to change",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "web"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure"
+   ],
+   "required_concepts": [
+    "layout.media_card",
+    "layout.spacing_scale",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "layout.media_card"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "tv.no_touch_hover"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": true,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-025",
+   "prompt": "our help center has articles filed under both \"billing\" and \"account\" categories with no cross-linking, same question answered twice in different words depending which door you came through",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "web"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "content"
+   ],
+   "required_concepts": [
+    "navigation.rail_semantics",
+    "content.readable_measure",
+    "data.search_results"
+   ],
+   "critical_concepts": [
+    "navigation.rail_semantics"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "tv.dark_first"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-026",
+   "prompt": "collapse the three-tab \"upload → map fields → review\" import flow into a single scrollable page with sticky field mapping, that's what most competitors do and our support load for this feature is huge",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "web"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "feedback"
+   ],
+   "required_concepts": [
+    "onboarding.linear_wizard",
+    "feedback.progress_indicator",
+    "state.loading_empty_error"
+   ],
+   "critical_concepts": [
+    "onboarding.linear_wizard"
+   ],
+   "recommended_concepts": [
+    "feedback.validation_errors"
+   ],
+   "forbidden_concepts": [
+    "tv.time_navigation"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": true,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-027",
+   "prompt": "the bottom tab bar has five tabs but two of them are basically the same feature renamed, thumb keeps hitting the wrong one on the way home from work",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "navigation",
+    "structure"
+   ],
+   "required_concepts": [
+    "navigation.platform_grammar",
+    "touch.thumb_reach",
+    "navigation.orientation_and_back"
+   ],
+   "critical_concepts": [
+    "navigation.platform_grammar"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "tv.safe_margins",
+    "desktop.spacing_grid"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-028",
+   "prompt": "checkout in the app is a hamburger menu > cart > separate shipping screen > separate payment screen, each one a full push navigation, four back-swipes to fix a typo in your address",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "navigation"
+   ],
+   "required_concepts": [
+    "onboarding.linear_wizard",
+    "interaction.back_semantics",
+    "state.unsaved_changes_guard"
+   ],
+   "critical_concepts": [
+    "interaction.back_semantics"
+   ],
+   "recommended_concepts": [
+    "form.autofill_attributes"
+   ],
+   "forbidden_concepts": [
+    "desktop.fluent_materials"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-029",
+   "prompt": "collapse the profile edit screen and the profile view screen into one screen with an edit toggle, right now switching between them loses your scroll position and re-fetches everything",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "performance"
+   ],
+   "required_concepts": [
+    "state.saving_conflict",
+    "perf.layout_shift",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "state.saving_conflict"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "interaction.shortcuts"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": true,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-030",
+   "prompt": "the onboarding asks for notification permission, location permission, and camera permission back to back before showing a single screen of the actual app — half our uninstalls happen right there",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "privacy"
+   ],
+   "required_concepts": [
+    "onboarding.permission_priming",
+    "onboarding.linear_wizard",
+    "onboarding.feature_education"
+   ],
+   "critical_concepts": [
+    "onboarding.permission_priming"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "tv.sign_in_code"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-031",
+   "prompt": "swiping to delete a row on the saved-cards screen has no confirmation and no undo, someone already lost their default card by accident during a fast scroll",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "interaction",
+    "feedback"
+   ],
+   "required_concepts": [
+    "feedback.confirmation_destructive",
+    "touch.gestures_discoverable",
+    "touch.minimum_target"
+   ],
+   "critical_concepts": [
+    "feedback.confirmation_destructive"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "interaction.dpad_reachability"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-032",
+   "prompt": "restructure the app's tab bar so search gets its own tab instead of living behind a magnifying glass buried in the profile tab",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "navigation"
+   ],
+   "required_concepts": [
+    "navigation.platform_grammar",
+    "data.search_results",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "navigation.platform_grammar"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "desktop.persist_workspace"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": true,
+    "canonical_platform_name": true
+   }
+  },
+  {
+   "id": "hv4-g2-033",
+   "prompt": "the composer for a new post opens as a full-screen modal that covers the tab bar, then a second modal on top for adding a photo, then a third for tagging people — three deep before you've typed a word",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "interaction"
+   ],
+   "required_concepts": [
+    "interaction.back_semantics",
+    "layout.one_primary_action",
+    "state.unsaved_changes_guard"
+   ],
+   "critical_concepts": [
+    "interaction.back_semantics"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "interaction.command_palette"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-034",
+   "prompt": "notification settings are a flat list of 30 switches with no sections, half of them control the exact same underlying alert just for different channels",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure"
+   ],
+   "required_concepts": [
+    "layout.settings_grouping",
+    "touch.minimum_target",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "layout.settings_grouping"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "interaction.shortcuts"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-035",
+   "prompt": "flip the checkout back button and confirm button positions, right now confirm is where the OS back gesture zone sits and people cancel orders by accident going back a screen",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "interaction",
+    "structure"
+   ],
+   "required_concepts": [
+    "touch.safe_areas",
+    "interaction.back_semantics",
+    "feedback.confirmation_destructive"
+   ],
+   "critical_concepts": [
+    "touch.safe_areas"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "interaction.dpad_reachability"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": true,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-036",
+   "prompt": "our tablet layout is literally the phone layout centered in a big empty frame with margins on both sides, feels like nobody touched it since the phone build shipped",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [
+     "tablet"
+    ],
+    "acceptable_inferred": [
+     "mobile"
+    ]
+   },
+   "required_concerns": [
+    "adaptive",
+    "structure"
+   ],
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "adaptive.navigation_transform",
+    "anti.platform_scaling"
+   ],
+   "critical_concepts": [
+    "anti.platform_scaling"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "tv.dark_first"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-037",
+   "prompt": "reorganize the RN app's drawer nav into the bottom tabs, we inherited the drawer from an older version and it just doesn't match how anyone actually moves through the app now",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "navigation"
+   ],
+   "required_concepts": [
+    "navigation.platform_grammar",
+    "interaction.drawer_focus",
+    "navigation.orientation_and_back"
+   ],
+   "critical_concepts": [
+    "navigation.platform_grammar"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "desktop.fluent_materials"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": true,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-038",
+   "prompt": "the compose-message screen keyboard covers the send button on smaller phones, you have to dismiss keyboard first, tap send, and it's confusing enough that people think the button vanished",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "adaptive"
+   ],
+   "required_concepts": [
+    "touch.ime_keyboard",
+    "layout.one_primary_action",
+    "touch.safe_areas"
+   ],
+   "critical_concepts": [
+    "touch.ime_keyboard"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "interaction.tabs_roving"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-039",
+   "prompt": "the workout summary card layout buries total time and calories below three rows of secondary stats nobody scrolls to, should lead with what people actually check first thing after finishing a run",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile"
+    ]
+   },
+   "required_concerns": [
+    "data-display",
+    "structure"
+   ],
+   "required_concepts": [
+    "layout.focal_hierarchy",
+    "data.kpi_comparison",
+    "layout.media_card"
+   ],
+   "critical_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "tv.epg_pinned_channels"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-040",
+   "prompt": "SwiftUI app's settings uses a plain List for everything including a destructive \"delete account\" row sitting right next to \"change language\" with identical styling",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "feedback"
+   ],
+   "required_concepts": [
+    "layout.settings_grouping",
+    "feedback.confirmation_destructive",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "feedback.confirmation_destructive"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "desktop.spacing_grid"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-041",
+   "prompt": "the WPF app has settings scattered across four separate windows you open from different menu items, no single place shows what's already configured",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure"
+   ],
+   "required_concepts": [
+    "layout.settings_grouping",
+    "desktop.persist_workspace",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "layout.settings_grouping"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "touch.thumb_reach"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-042",
+   "prompt": "right-click context menu on a file row has 22 items in one flat list with no separators, finding \"rename\" takes real hunting every time",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "desktop"
+    ]
+   },
+   "required_concerns": [
+    "structure",
+    "interaction"
+   ],
+   "required_concepts": [
+    "interaction.menu_semantics",
+    "layout.focal_hierarchy",
+    "interaction.shortcuts"
+   ],
+   "critical_concepts": [
+    "interaction.menu_semantics"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "touch.gestures_discoverable"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-043",
+   "prompt": "move the export and print actions out of the menu bar's File menu into a persistent toolbar, they're used every single session but hidden three clicks deep under a menu nobody thinks to open",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "interaction"
+   ],
+   "required_concepts": [
+    "interaction.menu_semantics",
+    "interaction.shortcuts",
+    "layout.one_primary_action"
+   ],
+   "critical_concepts": [
+    "interaction.menu_semantics"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "tv.player_autohide"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": true,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-044",
+   "prompt": "the tray icon menu and the main window's system tray settings do overlapping but not identical things, changing something in the tray doesn't reflect back in the window until restart",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "states"
+   ],
+   "required_concepts": [
+    "desktop.persist_workspace",
+    "state.saving_conflict",
+    "data.refresh_timestamp"
+   ],
+   "critical_concepts": [
+    "state.saving_conflict"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "tv.sign_in_code"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-045",
+   "prompt": "reflow the multi-monitor layout logic, dragging the inspector panel to the second display currently just clones the main window instead of docking as its own panel",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "adaptive"
+   ],
+   "required_concepts": [
+    "desktop.persist_workspace",
+    "adaptive.breakpoint_matrix",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "desktop.persist_workspace"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "touch.safe_areas"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": true,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-046",
+   "prompt": "the preferences dialog is non-resizable and truncates the longest labels in the Avalonia build, but only in the German locale where the strings run long",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "content"
+   ],
+   "required_concepts": [
+    "content.i18n_expansion",
+    "desktop.spacing_grid",
+    "a11y.text_scaling"
+   ],
+   "critical_concepts": [
+    "content.i18n_expansion"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "tv.ten_foot_typography"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-047",
+   "prompt": "there's no consistent set of keyboard accelerators across the three main windows, save is ctrl+s in one and only reachable through a menu click in another",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "interaction",
+    "structure"
+   ],
+   "required_concepts": [
+    "interaction.shortcuts",
+    "interaction.keyboard_navigation",
+    "interaction.focus_visible"
+   ],
+   "critical_concepts": [
+    "interaction.shortcuts"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "touch.gestures_discoverable"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-048",
+   "prompt": "the project explorer tree and the properties panel are two independent windows that don't sync selection, clicking a node on the left does nothing to what's shown on the right anymore since the last refactor",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "interaction"
+   ],
+   "required_concepts": [
+    "interaction.tree_semantics",
+    "interaction.selection_visible",
+    "desktop.persist_workspace"
+   ],
+   "critical_concepts": [
+    "interaction.selection_visible"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "touch.thumb_reach"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-049",
+   "prompt": "consolidate the ribbon's four tabs down, half the commands on the \"Insert\" tab are duplicates of ones already on \"Home\" just grouped under a different label",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure"
+   ],
+   "required_concepts": [
+    "interaction.menu_semantics",
+    "layout.focal_hierarchy",
+    "desktop.fluent_materials"
+   ],
+   "critical_concepts": [
+    "interaction.menu_semantics"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "tv.epg_pinned_channels"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": true,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-050",
+   "prompt": "closing the app while a document has unsaved changes just quits silently, no prompt, we've lost an afternoon of someone's work twice this month",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "states",
+    "feedback"
+   ],
+   "required_concepts": [
+    "state.unsaved_changes_guard",
+    "feedback.confirmation_destructive",
+    "state.saving_conflict"
+   ],
+   "critical_concepts": [
+    "state.unsaved_changes_guard"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "tv.player_autohide"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-051",
+   "prompt": "command palette exists but only covers a third of the app's actions, the rest still need mouse-only paths through nested menus even though power users clearly prefer typing",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "interaction",
+    "structure"
+   ],
+   "required_concepts": [
+    "interaction.command_palette",
+    "interaction.shortcuts",
+    "interaction.keyboard_navigation"
+   ],
+   "critical_concepts": [
+    "interaction.command_palette"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "touch.thumb_reach"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-052",
+   "prompt": "reorganize this desktop app's window chrome so the toolbar, breadcrumb, and tab strip aren't all fighting for the same 40px of vertical space at three different visual weights",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure"
+   ],
+   "required_concepts": [
+    "desktop.spacing_grid",
+    "layout.focal_hierarchy",
+    "interaction.tabs_roving"
+   ],
+   "critical_concepts": [
+    "desktop.spacing_grid"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "touch.minimum_target"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": true,
+    "canonical_platform_name": true
+   }
+  },
+  {
+   "id": "hv4-g2-053",
+   "prompt": "the channel guide only shows what's on right now, jumping ahead to see tonight's 9pm lineup means mashing the right arrow one half-hour block at a time from the couch",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "navigation",
+    "structure"
+   ],
+   "required_concepts": [
+    "tv.time_navigation",
+    "tv.epg_pinned_channels",
+    "interaction.dpad_reachability"
+   ],
+   "critical_concepts": [
+    "tv.time_navigation"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "touch.gestures_discoverable"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-054",
+   "prompt": "the show detail screen buries the play button below three rows of cast photos and related titles, you have to scroll down with the remote just to start watching the thing you clicked on",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "navigation"
+   ],
+   "required_concepts": [
+    "media.details_play_first",
+    "interaction.dpad_reachability",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "media.details_play_first"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "touch.thumb_reach"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-055",
+   "prompt": "restructure the home screen rails so continue-watching sits above the genre browse rows, right now someone has to scroll past four rows of recommendations to resume the episode they were on last night",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure"
+   ],
+   "required_concepts": [
+    "media.resume_playback",
+    "layout.focal_hierarchy",
+    "layout.media_card"
+   ],
+   "critical_concepts": [
+    "media.resume_playback"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "touch.ime_keyboard"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": true,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-056",
+   "prompt": "typing a search query with the remote's on-screen keyboard is its own D-pad marathon, and there's no voice entry point even though the remote has a mic button",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "interaction",
+    "structure"
+   ],
+   "required_concepts": [
+    "media.search_tv",
+    "interaction.dpad_reachability",
+    "tv.no_touch_hover"
+   ],
+   "critical_concepts": [
+    "media.search_tv"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "touch.minimum_target"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-057",
+   "prompt": "player controls, the episode list, and subtitle/audio settings are three separate full-screen takeovers you back out of one at a time, pausing to change a caption language shouldn't be a five-click detour",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "interaction"
+   ],
+   "required_concepts": [
+    "media.track_selection",
+    "tv.player_autohide",
+    "interaction.back_semantics"
+   ],
+   "critical_concepts": [
+    "media.track_selection"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "touch.gestures_discoverable"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-058",
+   "prompt": "swap the settings menu from a vertical list that scrolls off the bottom of frame to a paginated grid, on the set-top box test unit the last three items are literally unreachable with the standard remote",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "environment"
+   ],
+   "required_concepts": [
+    "tv.safe_margins",
+    "interaction.dpad_reachability",
+    "tv.ten_foot_typography"
+   ],
+   "critical_concepts": [
+    "tv.safe_margins"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "touch.safe_areas"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": true,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-059",
+   "prompt": "watchlist and continue-watching are on two different tabs of the main menu even though they're both \"things i'm in the middle of or planning to watch\" to any normal viewer",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure"
+   ],
+   "required_concepts": [
+    "media.watchlist",
+    "media.resume_playback",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "media.watchlist"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "touch.thumb_reach"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-060",
+   "prompt": "sign-in on the TV listings page in our set-top box UI still routes through a full email and password form via the remote's number-pad-style keyboard instead of the pair-with-a-code flow every other app on the same box uses",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "interaction"
+   ],
+   "required_concepts": [
+    "tv.sign_in_code",
+    "interaction.dpad_reachability",
+    "tv.no_touch_hover"
+   ],
+   "critical_concepts": [
+    "tv.sign_in_code"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "form.autofill_attributes"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-061",
+   "prompt": "the lobby check-in touch table has you pick a visit reason, then a host name, then a badge photo, then a waiver, all as separate full-screen steps — line backs up every time someone hesitates on step two",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "environment"
+   ],
+   "required_concepts": [
+    "onboarding.linear_wizard",
+    "state.session_expiry",
+    "touch.minimum_target"
+   ],
+   "critical_concepts": [
+    "onboarding.linear_wizard"
+   ],
+   "recommended_concepts": [
+    "feedback.progress_indicator"
+   ],
+   "forbidden_concepts": [
+    "interaction.shortcuts"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-062",
+   "prompt": "self-checkout lane groups \"scan item\" and \"apply loyalty card\" and \"choose bag type\" as three sequential screens, most shoppers just want to scan and pay, the loyalty and bag steps should be optional side paths not mandatory gates",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure"
+   ],
+   "required_concepts": [
+    "onboarding.linear_wizard",
+    "layout.one_primary_action",
+    "touch.minimum_target"
+   ],
+   "critical_concepts": [
+    "layout.one_primary_action"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "interaction.keyboard_navigation"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-063",
+   "prompt": "wayfinding directory groups stores alphabetically instead of by floor and category, someone looking for \"a coffee place near the north entrance\" has to read the entire alphabet first",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "data-display"
+   ],
+   "required_concepts": [
+    "data.search_results",
+    "layout.focal_hierarchy",
+    "navigation.orientation_and_back"
+   ],
+   "critical_concepts": [
+    "data.search_results"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "interaction.shortcuts"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-064",
+   "prompt": "restructure the badge-scanner check-in flow so a failed scan doesn't dead-end on an error screen with no path back to manual entry, warehouse floor staff wearing gloves just walk away when that happens",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "states"
+   ],
+   "required_concepts": [
+    "state.loading_empty_error",
+    "touch.minimum_target",
+    "feedback.validation_errors"
+   ],
+   "critical_concepts": [
+    "state.loading_empty_error"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "interaction.hover_independence"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": true,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-065",
+   "prompt": "the order-ahead terminal in the lobby leaves a completed order screen up with the last customer's name and full order history still visible until someone taps \"new order\" — next person in line can just read it",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "privacy",
+    "states"
+   ],
+   "required_concepts": [
+    "privacy.shared_device",
+    "state.session_expiry",
+    "privacy.sensitive_masking"
+   ],
+   "critical_concepts": [
+    "privacy.shared_device"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "desktop.persist_workspace"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-066",
+   "prompt": "reorganize the parking-payment terminal so plate entry and payment method selection aren't on two screens with a mandatory ad interstitial wedged between them, that pause is exactly where the line behind you starts complaining",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "anti-pattern"
+   ],
+   "required_concepts": [
+    "anti.interruptive_upsell",
+    "onboarding.linear_wizard",
+    "state.session_expiry"
+   ],
+   "critical_concepts": [
+    "anti.interruptive_upsell"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "media.watchlist"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": true,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-067",
+   "prompt": "the settings screen has become a dumping ground, every new feature just adds one more row to a list that was already too long two years ago",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure"
+   ],
+   "required_concepts": [
+    "layout.settings_grouping",
+    "layout.focal_hierarchy",
+    "layout.spacing_scale"
+   ],
+   "critical_concepts": [
+    "layout.settings_grouping"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "tv.safe_margins",
+    "touch.thumb_reach"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-068",
+   "prompt": "the multi-step signup asks for the same three fields twice because two teams built two different chunks of the flow at different times and nobody ever reconciled the data model behind them",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure"
+   ],
+   "required_concepts": [
+    "onboarding.linear_wizard",
+    "form.autofill_attributes",
+    "feedback.validation_errors"
+   ],
+   "critical_concepts": [
+    "onboarding.linear_wizard"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "tv.dark_first",
+    "desktop.fluent_materials"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-069",
+   "prompt": "the results list mixes three record types with different fields into one flat table, half the columns show blank for two-thirds of the rows because they only apply to one type",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "data-display"
+   ],
+   "required_concepts": [
+    "table.column_priority",
+    "data.comparison_structure",
+    "table.tabular_figures"
+   ],
+   "critical_concepts": [
+    "data.comparison_structure"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "tv.epg_pinned_channels"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-070",
+   "prompt": "restructure the notification center so mentions, system alerts, and marketing messages aren't all interleaved chronologically in one undifferentiated feed, keep the existing read/unread behaviour exactly as is",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "data-display"
+   ],
+   "required_concepts": [
+    "layout.focal_hierarchy",
+    "a11y.live_status",
+    "navigation.orientation_and_back"
+   ],
+   "critical_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "media.details_play_first"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": true,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-071",
+   "prompt": "the help articles and the in-app tooltips explain the same feature two different ways because they were written for two different navigation structures that no longer both exist",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "content"
+   ],
+   "required_concepts": [
+    "content.readable_measure",
+    "onboarding.feature_education",
+    "navigation.orientation_and_back"
+   ],
+   "critical_concepts": [
+    "onboarding.feature_education"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "tv.sign_in_code"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  },
+  {
+   "id": "hv4-g2-072",
+   "prompt": "there's a whole approval workflow buried three menus deep that maybe five people in the company know exists, keep the underlying permission logic untouched, just make the thing findable and its steps legible",
+   "category": "refactor",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": []
+   },
+   "required_concerns": [
+    "structure",
+    "navigation"
+   ],
+   "required_concepts": [
+    "navigation.rail_semantics",
+    "onboarding.linear_wizard",
+    "feedback.progress_indicator"
+   ],
+   "critical_concepts": [
+    "navigation.rail_semantics"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "tv.dark_first"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {},
+   "wording": {
+    "explicit_mode_verb": false,
+    "canonical_platform_name": false
+   }
+  }
+ ]
+}

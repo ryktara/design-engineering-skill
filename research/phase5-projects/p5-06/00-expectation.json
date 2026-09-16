@@ -1,0 +1,24 @@
+{
+  "platform": "web",
+  "artifact_state": "existing",
+  "acceptable_modes": ["polish", "refactor", "create"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "env.glanceable_status",
+    "data.realtime_window",
+    "a11y.color_not_only",
+    "table.tabular_figures",
+    "data.exception_first",
+    "process.reuse_first",
+    "perf.layout_shift"
+  ],
+  "critical_concepts": ["env.glanceable_status", "a11y.color_not_only", "data.realtime_window"],
+  "forbidden_concepts": [
+    "tv.ten_foot_typography", "tv.dark_first", "tv.safe_margins", "interaction.dpad_reachability",
+    "touch.thumb_reach", "touch.safe_areas", "brand.dark_mode_redesign", "anti.platform_scaling",
+    "data.chart_by_question", "adaptive.navigation_transform", "navigation.rail_semantics",
+    "layout.hero_thesis", "anti.template_landing"
+  ],
+  "preservation": ["navigation", "theme", "typography", "component_reuse", "board columns and Call in / Mark done / Back flow"],
+  "notes": "Reviewer reading of the code before any advise call: /waiting is a 3-column board of white cards on neutral-100 columns; each card shows name, reason, scheduled start, practitioner, and Back / Call in buttons. There is NO check-in timestamp in the Appointment model (only start HH:MM), so the implementation must add checkedInAt (set in setAppointmentStatus, seeded for sample checked-in rows) and a ticking elapsed-time readout. Expected design: per-card wait duration in tabular figures, escalating tone (neutral -> warning -> danger) at thresholds with a text label so colour is not the only carrier, longest-waiting sorted first or at least visibly flagged, column header showing longest wait, no layout shift as minutes tick, no dark mode, no new nav, reuse Badge/Button. Mode: polish/refactor of an existing screen (small feature on existing UI); 'create' acceptable since it adds a new element."
+}

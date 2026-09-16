@@ -1,0 +1,259 @@
+{
+  "label": "before",
+  "viewport": "1440x900",
+  "url": "file:///D:/indigo%20pro/MYownSkills/research/phase3-projects/p3-react-dashboard-polish/project/public/index.html",
+  "layoutShift": {
+    "mainTopBeforeBanner": 53,
+    "mainTopAfterBanner": 105,
+    "shiftPx": 52,
+    "bannerPresent": true,
+    "pass": false
+  },
+  "onePrimaryPerView": {
+    "count": 4,
+    "labels": [
+      "Start trial",
+      "Export report",
+      "Add meter",
+      "Run optimisation"
+    ],
+    "pass": false
+  },
+  "statusNotColourOnly": {
+    "rows": [
+      {
+        "row": "Main incomer A",
+        "hasText": false,
+        "text": null
+      },
+      {
+        "row": "Chiller plant",
+        "hasText": false,
+        "text": null
+      },
+      {
+        "row": "Cold store 2",
+        "hasText": false,
+        "text": null
+      },
+      {
+        "row": "Dock lighting",
+        "hasText": false,
+        "text": null
+      },
+      {
+        "row": "Office HVAC",
+        "hasText": false,
+        "text": null
+      }
+    ],
+    "pass": false
+  },
+  "numbers": {
+    "values": [
+      {
+        "text": "18,432.7 kWh",
+        "tabular": false,
+        "textAlign": "left",
+        "right": 371,
+        "left": 64
+      },
+      {
+        "text": "912.4 kW",
+        "tabular": false,
+        "textAlign": "right",
+        "right": 706,
+        "left": 399
+      },
+      {
+        "text": "£27,614.05",
+        "tabular": false,
+        "textAlign": "center",
+        "right": 1041,
+        "left": 734
+      },
+      {
+        "text": "0.19 kgCO2e/kWh",
+        "tabular": false,
+        "textAlign": "right",
+        "right": 1376,
+        "left": 1069
+      },
+      {
+        "text": "3120.4 kWh",
+        "tabular": false,
+        "textAlign": "start",
+        "right": 1387,
+        "left": 1320
+      },
+      {
+        "text": "812.9 kWh",
+        "tabular": false,
+        "textAlign": "start",
+        "right": 1387,
+        "left": 1327
+      },
+      {
+        "text": "—",
+        "tabular": false,
+        "textAlign": "start",
+        "right": 1387,
+        "left": 1374
+      },
+      {
+        "text": "46.0 kWh",
+        "tabular": false,
+        "textAlign": "start",
+        "right": 1387,
+        "left": 1334
+      },
+      {
+        "text": "1188.3 kWh",
+        "tabular": false,
+        "textAlign": "start",
+        "right": 1387,
+        "left": 1320
+      }
+    ],
+    "kpiTextAligns": [
+      "left",
+      "right",
+      "center"
+    ],
+    "readingsRightAligned": true,
+    "allTabular": false,
+    "pass": false
+  },
+  "chart": {
+    "found": true,
+    "role": null,
+    "accessibleName": null,
+    "textSummary": null,
+    "hasDataTable": false,
+    "ariaHidden": null,
+    "pass": false
+  },
+  "alertsEmptyState": {
+    "items": 0,
+    "emptyStateText": null,
+    "pass": false
+  },
+  "targets": {
+    "smallerThan24px": [],
+    "pass": true
+  },
+  "headings": {
+    "h1Count": 1,
+    "pass": true
+  },
+  "reducedMotion": {
+    "ruleInCss": false,
+    "maxTransitionSecondsUnderReduce": 0,
+    "pass": false
+  },
+  "spacing": {
+    "valuesPx": [
+      6,
+      10,
+      14,
+      22
+    ],
+    "offScalePx": [
+      6,
+      10,
+      14,
+      22
+    ],
+    "pass": false
+  },
+  "nestedCards": {
+    "count": 5,
+    "pass": false
+  },
+  "keyboard": {
+    "tabOrder": [
+      "Overview",
+      "Meters",
+      "Reports",
+      "Settings",
+      "Start trial",
+      "Export report",
+      "Add meter",
+      "Run optimisation"
+    ],
+    "focusVisibleOnAll": true,
+    "details": [
+      {
+        "tag": "a",
+        "text": "Overview",
+        "ring": true,
+        "outline": "auto 1px rgb(16, 16, 16)",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "a",
+        "text": "Meters",
+        "ring": true,
+        "outline": "auto 1px rgb(16, 16, 16)",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "a",
+        "text": "Reports",
+        "ring": true,
+        "outline": "auto 1px rgb(16, 16, 16)",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "a",
+        "text": "Settings",
+        "ring": true,
+        "outline": "auto 1px rgb(16, 16, 16)",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "button",
+        "text": "Start trial",
+        "ring": true,
+        "outline": "auto 1px rgb(16, 16, 16)",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "button",
+        "text": "Export report",
+        "ring": true,
+        "outline": "auto 1px rgb(16, 16, 16)",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "button",
+        "text": "Add meter",
+        "ring": true,
+        "outline": "auto 1px rgb(16, 16, 16)",
+        "boxShadow": "none"
+      },
+      {
+        "tag": "button",
+        "text": "Run optimisation",
+        "ring": true,
+        "outline": "auto 1px rgb(16, 16, 16)",
+        "boxShadow": "none"
+      }
+    ],
+    "pass": true
+  },
+  "summary": {
+    "layoutShift": "FAIL",
+    "onePrimaryPerView": "FAIL",
+    "statusNotColourOnly": "FAIL",
+    "numbers": "FAIL",
+    "chart": "FAIL",
+    "alertsEmptyState": "FAIL",
+    "targets": "PASS",
+    "headings": "PASS",
+    "reducedMotion": "FAIL",
+    "spacing": "FAIL",
+    "nestedCards": "FAIL",
+    "keyboard": "PASS"
+  }
+}

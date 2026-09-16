@@ -1,0 +1,32 @@
+{
+  "task": "p5-20",
+  "sentence": "Stats screen in dark mode: the bars are barely visible.",
+  "platform": "mobile",
+  "artifact_state": "existing",
+  "acceptable_modes": ["accessibility", "polish", "refactor"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "a11y.contrast",
+    "brand.dark_mode_redesign",
+    "brand.token_layers",
+    "process.safe_modification",
+    "process.render_verify",
+    "a11y.color_not_only"
+  ],
+  "critical_concepts": ["a11y.contrast", "brand.token_layers"],
+  "forbidden_concepts": [
+    "tv.dark_first",
+    "anti.platform_scaling",
+    "interaction.dpad_reachability",
+    "desktop.fluent_materials",
+    "layout.hero_thesis",
+    "navigation.platform_grammar"
+  ],
+  "preservation": ["navigation", "theme", "typography", "component_reuse"],
+  "reviewer_notes": {
+    "root_cause_from_code": "Views/StatsView.swift draws the per-day 'Total' BarMark with theme.color.accentSoft, whose dark value #4A2A22 sits on the card surface #1E1C1A at 1.33:1 (WCAG). accentSoft is designed as a chip/ring-track tint, not a chart mark. The completed bar (accent #FF8A6E) is 7.37:1 and fine.",
+    "expected_fix_shape": "Add a semantic chart-track token to Theme.Palette (and the mirrored Assets.xcassets colorset) with a dark value >= 3:1 against surface (WCAG 1.4.11 non-text), use it for the Total mark. Do not repaint accentSoft (it is used for icon chips and the progress-ring track). Keep tabs, NavigationStack, fonts, radius 16/10, spacing untouched.",
+    "light_mode_note": "Light track is 1.18:1 vs white; also below 3:1 but the sentence scopes dark mode. Preserving light appearance is acceptable; a fix touching light must be small.",
+    "static_review_note": "Two BarMarks at the same x in Swift Charts stack by default; the intended 'track behind completed' rendering needs stacking: .unstacked. Cannot verify without Xcode; will flag."
+  }
+}

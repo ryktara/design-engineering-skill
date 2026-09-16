@@ -1,0 +1,5 @@
+{"platform": "mobile", "artifact_state": "existing", "acceptable_modes": ["accessibility", "audit", "polish"], "scope_kind": "in-scope",
+ "expected_concepts": ["a11y.accessible_names", "a11y.semantics", "data.accessible_chart_alternative", "a11y.color_not_only", "a11y.text_scaling", "process.safe_modification"],
+ "critical_concepts": ["a11y.accessible_names", "a11y.semantics"],
+ "forbidden_concepts": ["interaction.keyboard_navigation", "interaction.dpad_reachability", "tv.ten_foot_typography", "desktop.spacing_grid", "brand.structural_differentiation", "data.pagination_strategy"],
+ "preservation": ["navigation", "theme", "typography", "ring geometry and colours", "TodayView layout"]}

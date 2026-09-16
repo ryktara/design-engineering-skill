@@ -1,0 +1,80 @@
+## design-engineering search: Add a Spanish language switch to the pick-up flow.
+status=PARTIAL modes=['create'] platforms={} inputs={} products={} density=None stacks=[] screens=[] negatives=[]
+facets required=['layout', 'navigation', 'direction'] unmet=['direction'] diversity=0.67
+MISSING: platform: not stated and not detectable from a repository; product: product family / primary user task not stated; brand: no brand assets, guideline, or character description available; stack: implementation stack not stated and no repository evidence
+
+### Web fonts: subset, preload, fallback metrics, language coverage  `typo-font-loading-coverage`  [rule/typography; platform/visual] score 0.356 · engineering-practice
+Self-host, subset by unicode-range, variable font if it saves bytes, preload the above-the-fold face, font-display: swap with size-adjust fallback, ≤2 families, verify glyph coverage and tabular figures, and confirm the licence.
+- use when: Any non-system font on the web; multilingual products; TV web apps.
+- avoid when: Never load six weights when two are used; never pick a display font without checking the product's scripts (Arabic, CJK, Cyrillic, Devanagari).
+- why: lexical 0.27, structural 0.46 (mode create)
+
+### Flows between states → Sankey / alluvial  `chart-flow-sankey`  [chart/chart; data-viz/platform] score 0.298 · heuristic
+≤~12 nodes, link width proportional to flow, node labels with totals, hover/focus isolates a path, consistent node ordering to reduce crossings, table alternative mandatory.
+- use when: Quantities moving between categories (budget allocation, user paths, energy).
+- avoid when: Few nodes (a table is clearer), audiences unfamiliar with the form, mobile widths.
+- why: lexical 0.378, structural 0.2 (mode create)
+
+### Pills for everything  `anti-pill-everything`  [antipattern/generic-ai; anti-pattern] score 0.296 · heuristic
+Pick one corner language for controls (small/medium radius) and reserve full-round for chips/badges; ≤2 badges per item; buttons and inputs share a radius; if everything is a pill, nothing reads as a tag.
+- use when: Pill-shaped buttons, inputs, nav items, badges, and tags all at once; pill badges on every list item.
+- avoid when: Pills are right for filters/tags, compact status, segmented controls.
+- why: lexical 0.128, structural 0.5 (mode create)
+
+### Bottom tab bar  `nav-bottom-tabs`  [pattern/navigation; navigation/platform] score 0.279 · platform-standard
+3–5 items, icon + label always (no icon-only), safe-area aware, current item indicated by more than tint. Each tab keeps its own navigation stack. Don't put actions (compose, add) in the tab bar unless it is the app's primary action and it is styled as an action, not a destination.
+- use when: Phone apps with 3–5 top-level destinations of similar importance that users switch between often.
+- avoid when: More than five destinations, tablet/desktop widths (use a rail), single-flow apps, or when one destination dominates usage.
+- incompatible with: nav-left-rail, nav-top-bar, nav-tv-side, nav-tv-top-tabs
+- why: lexical 0.149, structural 0.26 (mode create)
+
+### Users always know where they are and how to go back  `nav-orientation-and-back`  [rule/navigation; navigation] score 0.257 · heuristic
+Current location marked (aria-current, selected tab, breadcrumb, page title); URL/route reflects state on web and deep-linkable screens; back returns to the previous screen with its scroll and selection; titles match the navigation label that led there.
+- use when: Every navigation model; deep links; multi-step flows; tabs that hold stacks.
+- avoid when: Never break the browser/system back; never use a single URL for many states on the web.
+- why: lexical 0.058, structural 0.5 (mode create)
+
+### UI changes must not break routes, state, contracts, or tests  `impl-safe-modification`  [rule/implementation; process] score 0.245 · engineering-practice
+Keep routes, state management, API calls, data-testid/automation ids, accessibility semantics, keyboard/remote handling, playback/auth flows unchanged unless the task is about them; run the existing tests; verify each supported input mode still works after the change.
+- use when: Any modification to an existing screen.
+- avoid when: Never rename props/ids/routes/test hooks as part of a visual change; never mix backend changes into a UI commit.
+- why: lexical 0.037, structural 0.5 (mode create)
+
+### Saving, saved, autosave, session expiry, and permission-denied states  `states-persistence-and-session`  [rule/states; component/platform] score 0.234 · heuristic
+Show saving → saved as a quiet inline status with a timestamp (not a toast per keystroke); autosave drafts and say so; warn before a session expires with a way to extend, and never discard entered data on expiry on a personal device (restore the draft after re-authentication; on shared or public screens clear it instead); permission-denied is a designed state that explains what is missing and who can grant it rather than an empty screen; destructive or irreversible saves confirm once with the safe action as default.
+- use when: Forms and editors longer than a minute, multi-step flows, authenticated sessions with timeouts, screens whose data depends on permissions.
+- avoid when: Public kiosks and shared screens: there the session is cleared on idle and nothing is restored (see shared-device-privacy).
+- why: lexical 0.05, structural 0.46 (mode create)
+
+### Media details screen, resume playback and watchlist  `media-resume-and-details`  [component/detail; component/platform] score 0.228 · platform-standard
+Details: the primary action is Play (or Resume with the remaining time and a Start over alternative) and it takes default focus; metadata is a short scannable block (duration, year, rating, badges as text not colour), synopsis ≤3 lines with an expander, episodes as a rail or list with progress bars and the next unwatched episode preselected; secondary actions (watchlist, trailer, more like this) sit after Play in one row. Resume: a continue-watching row shows progress on each card, resumes at the saved position, and removes finished items; entering a title from the row returns focus to that card. Watchlist: one toggle with a clear on/off state and text label, works from cards and details, and is reflected immediately in the watchlist row. Everything is reachable with D-pad UP/DOWN/LEFT/RIGHT and BACK returns to the row that launched the details.
+- use when: Title/episode details, continue-watching rows, watchlist actions in a streaming or catch-up app.
+- avoid when: Live-only channels without on-demand content (use the guide and player rules).
+- why: lexical 0.252, structural 0.2 (mode create)
+
+### Neutral workhorse sans  `typography-neutral-sans`  [pattern/typography; visual] score 0.226 · heuristic
+One family with tabular figures and a wide weight range (e.g. IBM Plex Sans, Source Sans 3, Public Sans, Atkinson Hyperlegible, or the platform system font). Display role uses the same family at heavier weight and tighter tracking rather than a second face. If the codebase already uses a system font, keep it.
+- use when: Dense, functional UI where the type must disappear: tables, forms, consoles. Prioritise x-height, tabular figures, and broad language coverage.
+- avoid when: Brand-led or editorial products where the type is part of the identity (this choice will read as default).
+- incompatible with: typography-serif-display, typography-condensed-display
+- why: lexical 0.056, structural 0.3 (mode create)
+
+### Product detail page (PDP)  `comp-product-detail-page`  [component/detail; component/platform] score 0.222 · heuristic
+Above the fold on every viewport: product name, price (with tabular figures and any discount stated in words), primary image, variant selectors and one add-to-cart action; variant choice is a radio group with visible labels and a disabled-but-visible state for out-of-stock options; the add-to-cart button is sticky on phones without covering focused controls; shipping, returns and stock are stated next to the price, not in a tab; the gallery has fixed aspect boxes (no layout shift), keyboard-operable thumbnails and alt text per image; reviews show the distribution and a count, and stars always have a text value; secondary actions (wishlist, share, size guide) never compete visually with add-to-cart; the size guide opens as a dialog that returns focus.
+- use when: Selling a physical or digital product: gallery, variants, price, availability, add-to-cart, trust and shipping information, reviews.
+- avoid when: Catalog/listing pages (use list + filters) or marketing landing pages (hero + narrative).
+- why: lexical 0.191, structural 0.26 (mode create)
+
+### Focus is the action (TV)  `cta-focus-selects`  [pattern/cta; layout/platform] score 0.221 · platform-standard
+No 'button-like' cards with an inner button; the whole card is focusable and selectable. Detail screen: ≤4 actions in one row, first focus on Play/Resume, LEFT/RIGHT between them, DOWN to rails. Long press or a Menu key can open secondary actions. Never require diagonal or multi-key gestures.
+- use when: TV browse/detail screens: the focused card is the call to action, SELECT opens, and detail screens expose a small row of focusable buttons (Play, Resume, Add to list) with a deterministic first focus.
+- avoid when: Never on touch/pointer platforms.
+- incompatible with: cta-single-primary, cta-toolbar-commands, cta-sticky-bar
+- why: lexical 0.044, structural 0.26 (mode create)
+
+### Sticky action bar  `cta-sticky-bar`  [pattern/cta; layout/platform] score 0.22 · heuristic
+Bottom-fixed on mobile inside the safe area, sticky footer on desktop; content gets bottom padding equal to the bar height; the bar must not obscure a focused field (WCAG 2.4.11) so scroll the field into view above it.
+- use when: Long forms or detail pages where the primary action must stay reachable (Add to cart, Save, Continue).
+- avoid when: Short screens, TV, or when the bar would cover content without a scroll padding compensation.
+- incompatible with: cta-focus-selects, layout-rails
+- why: lexical 0.2, structural 0.2 (mode create)

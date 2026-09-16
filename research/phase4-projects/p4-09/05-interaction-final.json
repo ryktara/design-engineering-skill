@@ -1,0 +1,543 @@
+{
+  "checks": [
+    {
+      "name": "identify-dob: all targets >= 64px",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "identify-dob: key spacing >= 16px",
+      "pass": true,
+      "detail": {
+        "minGap": 16
+      }
+    },
+    {
+      "name": "identify-dob: every key has an accessible name",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "identify-dob: key groups have role=group + label",
+      "pass": true,
+      "detail": [
+        {
+          "role": "group",
+          "label": "Date of birth"
+        }
+      ]
+    },
+    {
+      "name": "identify-dob: value box labelled by a visible label",
+      "pass": true,
+      "detail": {
+        "tabindex": "0",
+        "invalid": null,
+        "labelVisible": true,
+        "labelText": "Date of birth",
+        "describedBy": [
+          "field-hint",
+          "field-error"
+        ],
+        "descResolved": 2
+      }
+    },
+    {
+      "name": "identify-dob: value box is focusable (tabindex=0)",
+      "pass": true,
+      "detail": "0"
+    },
+    {
+      "name": "identify-dob: persistent visible hint, described-by resolves",
+      "pass": true,
+      "detail": {
+        "hint": {
+          "text": "Month, day, year: 8 digits, for example 04 12 1968.",
+          "visible": true,
+          "size": 24
+        },
+        "describedBy": [
+          "field-hint",
+          "field-error"
+        ]
+      }
+    },
+    {
+      "name": "identify-dob: error line is role=alert",
+      "pass": true,
+      "detail": {
+        "role": "alert",
+        "text": "",
+        "visible": false
+      }
+    },
+    {
+      "name": "identify-dob: text contrast >= 4.5:1",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "identify-dob: body text >= 20px",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "name": "identify-dob: nothing clipped (h1 below the top bar, screen within 1920)",
+      "pass": true,
+      "detail": {
+        "h1Top": 200,
+        "topbarBottom": 136,
+        "screenBottom": 1729.609375
+      }
+    },
+    {
+      "name": "dob: incomplete date blocks with a specific message + aria-invalid",
+      "pass": true,
+      "detail": {
+        "err": "Enter a complete date, for example 04 / 12 / 1968.",
+        "invalid": "true",
+        "screen": "identify-dob"
+      }
+    },
+    {
+      "name": "dob: impossible date (13/45) is rejected with guidance",
+      "pass": true,
+      "detail": {
+        "err": "That date is not valid. Check the month (01 to 12) and the day.",
+        "invalid": "true",
+        "screen": "identify-dob"
+      }
+    },
+    {
+      "name": "dob: typed digits are announced in a polite live region",
+      "pass": true,
+      "detail": "Date of birth so far: 0 4 1 2"
+    },
+    {
+      "name": "identify-name: all targets >= 64px",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "identify-name: key spacing >= 16px",
+      "pass": true,
+      "detail": {
+        "minGap": 16
+      }
+    },
+    {
+      "name": "identify-name: every key has an accessible name",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "identify-name: key groups have role=group + label",
+      "pass": true,
+      "detail": [
+        {
+          "role": "group",
+          "label": "Last name"
+        }
+      ]
+    },
+    {
+      "name": "identify-name: value box labelled by a visible label",
+      "pass": true,
+      "detail": {
+        "tabindex": "0",
+        "invalid": null,
+        "labelVisible": true,
+        "labelText": "Last name",
+        "describedBy": [
+          "field-hint",
+          "field-error"
+        ],
+        "descResolved": 2
+      }
+    },
+    {
+      "name": "identify-name: value box is focusable (tabindex=0)",
+      "pass": true,
+      "detail": "0"
+    },
+    {
+      "name": "identify-name: persistent visible hint, described-by resolves",
+      "pass": true,
+      "detail": {
+        "hint": {
+          "text": "Letters, hyphen, and space. You can also use the keypad below the screen.",
+          "visible": true,
+          "size": 24
+        },
+        "describedBy": [
+          "field-hint",
+          "field-error"
+        ]
+      }
+    },
+    {
+      "name": "identify-name: error line is role=alert",
+      "pass": true,
+      "detail": {
+        "role": "alert",
+        "text": "",
+        "visible": false
+      }
+    },
+    {
+      "name": "identify-name: text contrast >= 4.5:1",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "identify-name: body text >= 20px",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "name": "identify-name: nothing clipped (h1 below the top bar, screen within 1920)",
+      "pass": true,
+      "detail": {
+        "h1Top": 200,
+        "topbarBottom": 136,
+        "screenBottom": 1729.609375
+      }
+    },
+    {
+      "name": "name: 1-letter name gets a 'enter at least 2 letters' message",
+      "pass": true,
+      "detail": {
+        "err": "Enter at least the first 2 letters of your last name.",
+        "invalid": "true"
+      }
+    },
+    {
+      "name": "name: no-match error keeps the entered name",
+      "pass": true,
+      "detail": {
+        "err": "We could not find a match. Check the date and spelling, or call staff.",
+        "name": "OK"
+      }
+    },
+    {
+      "name": "a11y:identify-dob: all targets >= 64px",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:identify-dob: key spacing >= 16px",
+      "pass": true,
+      "detail": {
+        "minGap": 16
+      }
+    },
+    {
+      "name": "a11y:identify-dob: every key has an accessible name",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "a11y:identify-dob: key groups have role=group + label",
+      "pass": true,
+      "detail": [
+        {
+          "role": "group",
+          "label": "Date of birth"
+        }
+      ]
+    },
+    {
+      "name": "a11y:identify-dob: value box labelled by a visible label",
+      "pass": true,
+      "detail": {
+        "tabindex": "0",
+        "invalid": null,
+        "labelVisible": true,
+        "labelText": "Date of birth",
+        "describedBy": [
+          "field-hint",
+          "field-error"
+        ],
+        "descResolved": 2
+      }
+    },
+    {
+      "name": "a11y:identify-dob: value box is focusable (tabindex=0)",
+      "pass": true,
+      "detail": "0"
+    },
+    {
+      "name": "a11y:identify-dob: persistent visible hint, described-by resolves",
+      "pass": true,
+      "detail": {
+        "hint": {
+          "text": "Month, day, year: 8 digits, for example 04 12 1968.",
+          "visible": true,
+          "size": 30
+        },
+        "describedBy": [
+          "field-hint",
+          "field-error"
+        ]
+      }
+    },
+    {
+      "name": "a11y:identify-dob: error line is role=alert",
+      "pass": true,
+      "detail": {
+        "role": "alert",
+        "text": "",
+        "visible": false
+      }
+    },
+    {
+      "name": "a11y:identify-dob: text contrast >= 4.5:1",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:identify-dob: body text >= 20px",
+      "pass": true,
+      "detail": 30
+    },
+    {
+      "name": "a11y:identify-dob: nothing clipped (h1 below the top bar, screen within 1920)",
+      "pass": true,
+      "detail": {
+        "h1Top": 185.390625,
+        "topbarBottom": 153.390625,
+        "screenBottom": 1721
+      }
+    },
+    {
+      "name": "a11y:identify-dob: interactive controls within the lower 60% (y >= 768)",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:dob: incomplete date blocks with a specific message + aria-invalid",
+      "pass": true,
+      "detail": {
+        "err": "Enter a complete date, for example 04 / 12 / 1968.",
+        "invalid": "true",
+        "screen": "identify-dob"
+      }
+    },
+    {
+      "name": "a11y:dob: impossible date (13/45) is rejected with guidance",
+      "pass": true,
+      "detail": {
+        "err": "That date is not valid. Check the month (01 to 12) and the day.",
+        "invalid": "true",
+        "screen": "identify-dob"
+      }
+    },
+    {
+      "name": "a11y:dob: typed digits are announced in a polite live region",
+      "pass": true,
+      "detail": "Date of birth so far: 0 4 1 2"
+    },
+    {
+      "name": "a11y:identify-name: all targets >= 64px",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:identify-name: key spacing >= 16px",
+      "pass": true,
+      "detail": {
+        "minGap": 16
+      }
+    },
+    {
+      "name": "a11y:identify-name: every key has an accessible name",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "a11y:identify-name: key groups have role=group + label",
+      "pass": true,
+      "detail": [
+        {
+          "role": "group",
+          "label": "Last name"
+        }
+      ]
+    },
+    {
+      "name": "a11y:identify-name: value box labelled by a visible label",
+      "pass": true,
+      "detail": {
+        "tabindex": "0",
+        "invalid": null,
+        "labelVisible": true,
+        "labelText": "Last name",
+        "describedBy": [
+          "field-hint",
+          "field-error"
+        ],
+        "descResolved": 2
+      }
+    },
+    {
+      "name": "a11y:identify-name: value box is focusable (tabindex=0)",
+      "pass": true,
+      "detail": "0"
+    },
+    {
+      "name": "a11y:identify-name: persistent visible hint, described-by resolves",
+      "pass": true,
+      "detail": {
+        "hint": {
+          "text": "Letters, hyphen, and space. You can also use the keypad below the screen.",
+          "visible": true,
+          "size": 30
+        },
+        "describedBy": [
+          "field-hint",
+          "field-error"
+        ]
+      }
+    },
+    {
+      "name": "a11y:identify-name: error line is role=alert",
+      "pass": true,
+      "detail": {
+        "role": "alert",
+        "text": "",
+        "visible": false
+      }
+    },
+    {
+      "name": "a11y:identify-name: text contrast >= 4.5:1",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:identify-name: body text >= 20px",
+      "pass": true,
+      "detail": 30
+    },
+    {
+      "name": "a11y:identify-name: nothing clipped (h1 below the top bar, screen within 1920)",
+      "pass": true,
+      "detail": {
+        "h1Top": 185.390625,
+        "topbarBottom": 153.390625,
+        "screenBottom": 1721
+      }
+    },
+    {
+      "name": "a11y:identify-name: interactive controls within the lower 60% (y >= 768)",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:name: 1-letter name gets a 'enter at least 2 letters' message",
+      "pass": true,
+      "detail": {
+        "err": "Enter at least the first 2 letters of your last name.",
+        "invalid": "true"
+      }
+    },
+    {
+      "name": "a11y:name: no-match error keeps the entered name",
+      "pass": true,
+      "detail": {
+        "err": "We could not find a match. Check the date and spelling, or call staff.",
+        "name": "OK"
+      }
+    },
+    {
+      "name": "focus: after a tap the tapped key keeps focus, without a focus ring",
+      "pass": true,
+      "detail": {
+        "key": "5",
+        "outline": "none",
+        "w": "3px",
+        "fv": false,
+        "dob": "5"
+      }
+    },
+    {
+      "name": "focus: Enter on a focused key keeps focus on that key (no fall-back to body) with a visible ring",
+      "pass": true,
+      "detail": {
+        "key": "1",
+        "ring": true,
+        "fv": true,
+        "dob": "51 / 11"
+      }
+    },
+    {
+      "name": "focus: the value box is in the Tab order (Shift+Tab from the keypad reaches role=textbox)",
+      "pass": true,
+      "detail": [
+        "textbox",
+        "BODY",
+        "BUTTON",
+        "BUTTON",
+        "BUTTON",
+        "BUTTON"
+      ]
+    },
+    {
+      "name": "tactile keypad: human-speed digits fill the date (Backspace works)",
+      "pass": true,
+      "detail": "04 / 12 / 1968"
+    },
+    {
+      "name": "tactile keypad: Enter continues to the name step",
+      "pass": true
+    },
+    {
+      "name": "tactile keypad: letters are upper-cased into the name",
+      "pass": true
+    },
+    {
+      "name": "tactile keypad: Enter finds the prescriptions",
+      "pass": true
+    },
+    {
+      "name": "scan: fast burst + Enter reaches the list",
+      "pass": true
+    },
+    {
+      "name": "scan: an unknown code does not leak characters into the date field",
+      "pass": true,
+      "detail": {
+        "screen": "identify-dob",
+        "dob": "MM / DD / YYYY"
+      }
+    },
+    {
+      "name": "idle: countdown dialog shown on the identify step",
+      "pass": true
+    },
+    {
+      "name": "idle: session cleared, no date of birth left in the DOM or the live region",
+      "pass": true
+    },
+    {
+      "name": "motion: no entry animation under prefers-reduced-motion",
+      "pass": true,
+      "detail": "none"
+    }
+  ],
+  "shots": [
+    "final-02-identify-dob.png",
+    "final-02b-identify-dob-error.png",
+    "final-02c-identify-dob-invalid.png",
+    "final-03-identify-name.png",
+    "final-03b-identify-name-error.png",
+    "final-a11y-02-identify-dob.png",
+    "final-a11y-02b-identify-dob-error.png",
+    "final-a11y-02c-identify-dob-invalid.png",
+    "final-a11y-03-identify-name.png",
+    "final-a11y-03b-identify-name-error.png"
+  ],
+  "summary": {
+    "passed": 68,
+    "failed": 0
+  }
+}

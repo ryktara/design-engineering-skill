@@ -1,0 +1,79 @@
+## design-engineering search: Make the Add Habit sheet work when the keyboard is up.
+status=CONFIDENT modes=['create'] platforms={} inputs={'keyboard': 'KNOWN'} products={} density=None stacks=[] screens=[] negatives=[]
+facets required=['component', 'layout', 'interaction', 'navigation', 'direction'] unmet=['direction'] diversity=0.83
+MISSING: platform: not stated and not detectable from a repository; product: product family / primary user task not stated; brand: no brand assets, guideline, or character description available; stack: implementation stack not stated and no repository evidence
+
+### Everything operable by keyboard, no traps  `a11y-keyboard-operable`  [rule/accessibility; accessibility/platform] score 0.465 · accessibility-requirement
+Tab reaches every control in visual order; composite widgets use arrow keys with a roving tabindex so Tab is not consumed by every cell; Escape closes layers and returns focus to the invoker; nothing traps focus except a modal, and the modal itself must be escapable. Provide a keyboard alternative for every drag interaction.
+- use when: Every interactive element, including custom widgets, drag/drop, sliders, menus, date pickers, and anything that appears on hover.
+- avoid when: Never skip.
+- why: lexical 0.355, structural 0.6 (input keyboard (stated), mode create)
+
+### Desktop: keyboard is a first-class input  `desktop-keyboard-first`  [rule/input; interaction/platform] score 0.453 · platform-standard
+Document shortcuts in menus and tooltips; F2 edits, Delete deletes with undo, Ctrl+F finds, F6 cycles panes; grids use arrow keys and Ctrl/Shift selection; every dialog has a default and cancel button; access keys shown on Alt (Windows).
+- use when: Every desktop screen: shortcuts for frequent commands, access keys for menus, Tab/arrow semantics in lists, trees, grids, and toolbars, Enter/Escape in dialogs.
+- avoid when: Never assign shortcuts that collide with platform or assistive-tech shortcuts; never make Tab stop on every cell of a grid.
+- why: lexical 0.332, structural 0.6 (input keyboard (stated), mode create)
+
+### Mobile: follow the platform navigation grammar  `mobile-platform-navigation`  [rule/navigation; navigation/platform] score 0.451 · platform-standard
+iOS: tab bar + navigation stack with large titles where idiomatic, sheets for secondary tasks, swipe back. Android: navigation bar, predictive back, top app bar, modal bottom sheets, up vs back. Cross-platform frameworks still map to these; state deviations as brand decisions.
+- use when: Choosing tab bars, drawers, stacks, sheets, and back behaviour on iOS vs Android.
+- avoid when: Do not port an iOS tab bar with iOS icons to Android unchanged or vice versa unless the product is deliberately brand-uniform; do not build custom back handling that breaks the system back.
+- why: lexical 0.492, structural 0.4 (mode create)
+
+### Mobile: keyboard and input types  `mobile-keyboard-ime`  [rule/forms; component/platform] score 0.388 · platform-standard
+Set keyboard type and autocomplete/textContentType/autofillHints per field, return key action (Next/Done), scroll the focused field above the keyboard, keep the primary action reachable while the keyboard is open (or on the keyboard toolbar), and dismiss on tap outside for non-modal forms.
+- use when: Every text field.
+- avoid when: Never leave the default keyboard for emails, numbers, phone, or URLs; never let the keyboard cover the focused field or the submit button.
+- why: lexical 0.378, structural 0.4 (mode create)
+
+### Dialog focus management  `a11y-modal-dialog`  [rule/dialog; component/platform] score 0.381 · accessibility-requirement
+On open: focus the first meaningful control (or the heading), trap Tab inside, inert the background, label the dialog by its title. On close: return focus to the invoker. Escape and the visible close button both close; destructive confirmations put the safe action as default. Use <dialog>/showModal, ContentDialog, .sheet, ModalBottomSheet rather than a div overlay.
+- use when: Modals, sheets, drawers, popovers, confirmations.
+- avoid when: Do not use modals for content that could be inline; do not stack modals.
+- why: lexical 0.316, structural 0.46 (mode create)
+
+### Visible focus ring (web/desktop)  `focus-ring-standard`  [pattern/focus; interaction/platform] score 0.38 · accessibility-requirement
+One focus token (colour + width + offset) applied globally; never outline:none without a replacement; ring must remain visible on the accent surface (use a two-tone ring or offset); composite focus in tables/lists uses a cell/row highlight plus the ring on the active element.
+- use when: All pointer+keyboard UI: a 2–3 px ring with ≥3:1 contrast against adjacent colours, offset so it is not hidden by borders, shown for :focus-visible.
+- avoid when: TV (needs scale/glow because the ring is too subtle at 3 m).
+- incompatible with: focus-scale-glow, focus-none-touch-only
+- why: lexical 0.168, structural 0.46 (input keyboard (stated), mode create)
+
+### Grids with row actions are one Tab stop  `grid-single-tab-stop`  [rule/table; component/platform] score 0.366 · accessibility-requirement
+Tab enters the grid once and leaves it once; arrow keys move between cells/rows (roving tabindex or a focus manager), Enter/Space activates the focused cell's action, Escape returns from an edited cell to navigation mode; row actions become reachable when the row or actions cell is focused and are also available from a row context/actions menu; a table with 24 rows must never produce 24 Tab stops per action column. Announce the current row/column (aria-rowindex/colindex or the platform's automation properties) and keep a visible focus indicator on the active cell.
+- use when: Data tables or grids where each row has buttons/links (edit, delete, approve, download) and there are more than a handful of rows.
+- avoid when: Small static tables with no interactive cells.
+- why: lexical 0.174, structural 0.6 (input keyboard (stated), mode create)
+
+### Actions only on hover  `anti-hover-only-actions`  [antipattern/craft; anti-pattern/platform] score 0.363 · accessibility-requirement
+Show on focus too, keep a visible affordance (overflow menu) for touch, and never on TV.
+- use when: Row actions, card menus, and edit buttons that appear only on mouse hover.
+- avoid when: Never as the sole path.
+- why: lexical 0.168, structural 0.6 (input keyboard (stated), mode create)
+
+### Media details screen, resume playback and watchlist  `media-resume-and-details`  [component/detail; component/platform] score 0.353 · platform-standard
+Details: the primary action is Play (or Resume with the remaining time and a Start over alternative) and it takes default focus; metadata is a short scannable block (duration, year, rating, badges as text not colour), synopsis ≤3 lines with an expander, episodes as a rail or list with progress bars and the next unwatched episode preselected; secondary actions (watchlist, trailer, more like this) sit after Play in one row. Resume: a continue-watching row shows progress on each card, resumes at the saved position, and removes finished items; entering a title from the row returns focus to that card. Watchlist: one toggle with a clear on/off state and text label, works from cards and details, and is reflected immediately in the watchlist row. Everything is reachable with D-pad UP/DOWN/LEFT/RIGHT and BACK returns to the row that launched the details.
+- use when: Title/episode details, continue-watching rows, watchlist actions in a streaming or catch-up app.
+- avoid when: Live-only channels without on-demand content (use the guide and player rules).
+- why: lexical 0.478, structural 0.2 (mode create)
+
+### Desktop: layouts survive window resizing and DPI  `desktop-window-resizing`  [rule/layout; layout/platform] score 0.352 · platform-standard
+Define a minimum window size (e.g. 800×600 epx) and breakpoints (Windows: <641 small, 641–1007 medium, ≥1008 large epx); panes collapse in a documented order; use star/auto grid sizing, not absolute; test at 150% and 200% DPI; remember window size/position and pane widths per user.
+- use when: Every desktop window: minimum size, pane collapse order, DPI scaling 100–300%, multi-monitor.
+- avoid when: Never fix pixel widths for content columns; never assume 1920×1080.
+- why: lexical 0.15, structural 0.6 (input keyboard (stated), mode create)
+
+### Product detail page (PDP)  `comp-product-detail-page`  [component/detail; component/platform] score 0.341 · heuristic
+Above the fold on every viewport: product name, price (with tabular figures and any discount stated in words), primary image, variant selectors and one add-to-cart action; variant choice is a radio group with visible labels and a disabled-but-visible state for out-of-stock options; the add-to-cart button is sticky on phones without covering focused controls; shipping, returns and stock are stated next to the price, not in a tab; the gallery has fixed aspect boxes (no layout shift), keyboard-operable thumbnails and alt text per image; reviews show the distribution and a count, and stars always have a text value; secondary actions (wishlist, share, size guide) never compete visually with add-to-cart; the size guide opens as a dialog that returns focus.
+- use when: Selling a physical or digital product: gallery, variants, price, availability, add-to-cart, trust and shipping information, reviews.
+- avoid when: Catalog/listing pages (use list + filters) or marketing landing pages (hero + narrative).
+- why: lexical 0.408, structural 0.26 (mode create)
+
+### Command palette as primary navigation accelerator  `nav-command-palette`  [pattern/navigation; navigation/platform] score 0.329 · heuristic
+Global shortcut (Ctrl/Cmd+K), fuzzy search over commands and records, recent items first, arrow-key navigation with aria-activedescendant, Escape closes and restores focus. Every command in the palette must also exist somewhere visible.
+- use when: Power-user tools with many commands/records; users who live on the keyboard; anywhere a menu tree would be three levels deep.
+- avoid when: Touch-first products, casual users, or as the only way to reach a feature (it augments visible navigation, never replaces it).
+- why: lexical 0.234, structural 0.4 (input keyboard (stated), mode create)
+
+Filtered out: mobile-field-use (environment ['gloves', 'outdoor'] not in request)

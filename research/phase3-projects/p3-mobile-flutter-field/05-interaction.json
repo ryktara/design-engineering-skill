@@ -1,0 +1,184 @@
+{
+  "viewport": "390x844",
+  "generated": "2026-09-08T20:43:14.255Z",
+  "checks": {
+    "checklist_targets": {
+      "screen": "checklist",
+      "targets": 6,
+      "min_size_ok": true,
+      "too_small": [],
+      "spacing_ok": true,
+      "too_close": []
+    },
+    "checklist_contrast": {
+      "screen": "checklist",
+      "sampled": 25,
+      "all_ge_7": true,
+      "failing": [],
+      "min_ratio": 7.82
+    },
+    "checklist_primary_in_bottom_40": {
+      "top": 742,
+      "threshold": 506.4,
+      "ok": true,
+      "note": "Complete button (disabled until all items done)"
+    },
+    "offline_targets": {
+      "screen": "offline",
+      "targets": 7,
+      "min_size_ok": true,
+      "too_small": [],
+      "spacing_ok": true,
+      "too_close": []
+    },
+    "offline_contrast": {
+      "screen": "offline",
+      "sampled": 28,
+      "all_ge_7": true,
+      "failing": [],
+      "min_ratio": 7.82
+    },
+    "offline_banner_not_blocking": {
+      "banner_height": 84.171875,
+      "banner_bottom": 203.171875,
+      "content_top": 203.171875,
+      "content_height": 525.828125,
+      "first_row_top": 377.53125,
+      "rows_fully_visible": 3,
+      "position": "static",
+      "role": "status",
+      "live": "polite",
+      "ok": true,
+      "note": "banner is in-flow above the scroll region; content starts below it and stays scrollable"
+    },
+    "queue_sheet_targets": {
+      "screen": "queue-sheet",
+      "targets": 0,
+      "min_size_ok": true,
+      "too_small": [],
+      "spacing_ok": true,
+      "too_close": []
+    },
+    "form_targets": {
+      "screen": "form",
+      "targets": 10,
+      "min_size_ok": true,
+      "too_small": [],
+      "spacing_ok": true,
+      "too_close": []
+    },
+    "form_contrast": {
+      "screen": "form",
+      "sampled": 18,
+      "all_ge_7": true,
+      "failing": [],
+      "min_ratio": 7.82
+    },
+    "form_primary_in_bottom_40": {
+      "top": 742,
+      "threshold": 506.4,
+      "ok": true
+    },
+    "form_validation_association": {
+      "aria_invalid": "true",
+      "describedby": [
+        "notes-error",
+        "notes-help"
+      ],
+      "error_id_in_describedby": true,
+      "error_role": "alert",
+      "error_text": "Add a little more detail (at least 12 characters).",
+      "label_for_matches": true,
+      "radiogroup_labelled": true,
+      "photo_group_labelled": true,
+      "ok": true
+    },
+    "form_keyboard_300": {
+      "visible_height": 544,
+      "save_top": 476,
+      "save_bottom": 532,
+      "save_reachable": true,
+      "cancel_reachable": true,
+      "bar_bottom": 544,
+      "keyboard_top": 544,
+      "bar_above_keyboard": true,
+      "notes_top": 230.9375,
+      "notes_bottom": 350.9375,
+      "notes_visible_above_bar": true,
+      "focused": "notes",
+      "ok": true
+    },
+    "form_keyboard_targets": {
+      "screen": "form-keyboard",
+      "targets": 4,
+      "min_size_ok": true,
+      "too_small": [],
+      "spacing_ok": true,
+      "too_close": []
+    },
+    "form_keyboard_scroll_to_top": {
+      "photo_button_bottom": 442.765625,
+      "ok": true
+    },
+    "focus_visible_textarea": {
+      "outline": "none",
+      "outlineWidth": "0px",
+      "border": "3px rgb(163, 21, 31)",
+      "boxShadow": "none",
+      "ok": true
+    },
+    "focus_visible_button": {
+      "el": "cancel-btn",
+      "outline": "auto",
+      "outlineWidth": "1px",
+      "boxShadow": "none",
+      "ok": true
+    },
+    "reduced_motion": {
+      "matches": true,
+      "row_transition": "0s",
+      "ok": true
+    },
+    "states": {
+      "empty": {
+        "visible": true,
+        "text": "No checklist items This transformer has no inspection templa",
+        "buttons": 1
+      },
+      "loading": {
+        "visible": true,
+        "text": "",
+        "buttons": 0
+      },
+      "error": {
+        "visible": true,
+        "text": "Could not load this inspection Bad state: Could not load ins",
+        "buttons": 2
+      },
+      "ok": true
+    }
+  },
+  "summary": {
+    "passed": [
+      "checklist_targets",
+      "checklist_contrast",
+      "checklist_primary_in_bottom_40",
+      "offline_targets",
+      "offline_contrast",
+      "offline_banner_not_blocking",
+      "queue_sheet_targets",
+      "form_targets",
+      "form_contrast",
+      "form_primary_in_bottom_40",
+      "form_validation_association",
+      "form_keyboard_300",
+      "form_keyboard_targets",
+      "form_keyboard_scroll_to_top",
+      "focus_visible_textarea",
+      "focus_visible_button",
+      "reduced_motion",
+      "states"
+    ],
+    "failed": []
+  }
+}

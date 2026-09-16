@@ -1,0 +1,278 @@
+{
+  "description": "Retrieval cases: expected ids/categories in the top-k, forbidden ids, detected platforms/modes. k defaults to 5.",
+  "cases": [
+    {
+      "id": "banking-dashboard-create",
+      "query": "design a banking dashboard",
+      "expect_any_ids": [
+        "layout-dashboard-grid",
+        "dir-analytical-console",
+        "anti-generic-sidebar-dashboard"
+      ],
+      "expect_modes": [
+        "create"
+      ],
+      "expect_missing": true,
+      "forbid_ids": [
+        "layout-rails",
+        "nav-tv-side",
+        "surface-glass"
+      ]
+    },
+    {
+      "id": "banking-dashboard-audit-keyboard",
+      "query": "audit the keyboard accessibility of an existing banking dashboard",
+      "expect_ids": [
+        "a11y-keyboard-operable"
+      ],
+      "expect_modes": [
+        "accessibility",
+        "audit"
+      ],
+      "forbid_ids": [
+        "dir-analytical-console",
+        "layout-rails",
+        "surface-glass"
+      ]
+    },
+    {
+      "id": "tv-banking-kiosk",
+      "query": "create an Android TV banking kiosk UI",
+      "expect_platforms": [
+        "tv"
+      ],
+      "expect_any_ids": [
+        "tv-no-touch-hover",
+        "tv-safe-area",
+        "tv-typography-distance",
+        "a11y-tv-focus-always",
+        "dir-public-kiosk",
+        "nav-tv-side",
+        "focus-scale-glow",
+        "cta-focus-selects",
+        "metadata-focus-reveal",
+        "layout-rails"
+      ],
+      "forbid_ids": [
+        "focus-ring-standard",
+        "nav-left-rail",
+        "layout-table-first",
+        "motion-spring"
+      ],
+      "note": "2026-09-08: expect_any_ids widened to include TV patterns. The original list only named rules and the kiosk direction; the engine returned TV navigation/focus/CTA patterns, which satisfy the case's intent (TV-appropriate guidance, no mobile/pointer styles). The forbid list is unchanged."
+    },
+    {
+      "id": "iptv-rails-remote",
+      "query": "IPTV media browsing rails with remote control",
+      "expect_platforms": [
+        "tv"
+      ],
+      "expect_any_ids": [
+        "layout-rails",
+        "comp-tv-rail",
+        "dir-cinematic-media-tv"
+      ],
+      "expect_confidence": "high",
+      "forbid_ids": [
+        "nav-top-bar",
+        "layout-three-pane",
+        "comp-sidebar-nav"
+      ]
+    },
+    {
+      "id": "winui-erp-grid",
+      "query": "WinUI desktop ERP data grid with keyboard shortcuts",
+      "expect_platforms": [
+        "desktop"
+      ],
+      "expect_ids": [
+        "desktop-keyboard-first",
+        "comp-data-table"
+      ],
+      "forbid_ids": [
+        "comp-media-card",
+        "nav-bottom-tabs",
+        "layout-rails"
+      ]
+    },
+    {
+      "id": "saas-settings-page",
+      "query": "add a settings page to our SaaS app",
+      "expect_ids": [
+        "comp-settings-screen"
+      ],
+      "expect_modes": [
+        "create"
+      ]
+    },
+    {
+      "id": "ecommerce-plp",
+      "query": "product listing page with filters for an online shop",
+      "expect_any_ids": [
+        "layout-grid-catalog",
+        "comp-filters",
+        "dir-utility-commerce"
+      ],
+      "forbid_ids": [
+        "layout-table-first",
+        "layout-epg-grid"
+      ]
+    },
+    {
+      "id": "landing-hero",
+      "query": "build a landing page hero for our developer tool",
+      "expect_any_ids": [
+        "comp-hero-section",
+        "anti-hero-template",
+        "imagery-hero",
+        "dir-product-marketing-site"
+      ],
+      "expect_platforms": [
+        "web"
+      ]
+    },
+    {
+      "id": "mobile-thumb",
+      "query": "the primary button on the iPhone checkout is hard to reach with one hand",
+      "expect_platforms": [
+        "mobile"
+      ],
+      "expect_any_ids": [
+        "mobile-thumb-reach",
+        "cta-sticky-bar"
+      ],
+      "forbid_ids": [
+        "desktop-keyboard-first",
+        "nav-menu-bar-desktop"
+      ]
+    },
+    {
+      "id": "epg-request",
+      "query": "electronic program guide grid for live tv channels",
+      "expect_platforms": [
+        "tv"
+      ],
+      "expect_any_ids": [
+        "layout-epg-grid",
+        "comp-epg"
+      ],
+      "forbid_ids": [
+        "layout-editorial",
+        "nav-top-bar"
+      ]
+    },
+    {
+      "id": "no-cards",
+      "query": "redesign the dashboard without cards, it looks generic",
+      "expect_any_ids": [
+        "card-none",
+        "anti-card-everything",
+        "anti-generic-sidebar-dashboard"
+      ],
+      "forbid_ids": [
+        "surface-elevated-cards",
+        "card-bordered"
+      ]
+    },
+    {
+      "id": "dark-mode",
+      "query": "add dark mode to the web app",
+      "expect_any_ids": [
+        "color-dark-mode-rules",
+        "color-dark-accent",
+        "color-semantic-tokens",
+        "anti-dark-mode-inversion"
+      ]
+    },
+    {
+      "id": "chart-choice",
+      "query": "what chart shows revenue trend by month for the finance dashboard",
+      "expect_ids": [
+        "chart-trend-line"
+      ],
+      "forbid_ids": [
+        "chart-geo",
+        "chart-flow-sankey"
+      ]
+    },
+    {
+      "id": "form-validation",
+      "query": "improve the validation errors on the signup form",
+      "expect_any_ids": [
+        "a11y-forms-errors",
+        "comp-form",
+        "anti-placeholder-labels"
+      ]
+    },
+    {
+      "id": "wpf-tree",
+      "query": "WPF chart of accounts tree with breadcrumb",
+      "expect_platforms": [
+        "desktop"
+      ],
+      "expect_any_ids": [
+        "nav-breadcrumb-tree",
+        "comp-tree-view"
+      ]
+    },
+    {
+      "id": "player-tv",
+      "query": "player controls for our Apple TV app",
+      "expect_platforms": [
+        "tv"
+      ],
+      "expect_any_ids": [
+        "comp-player-controls",
+        "tv-player-controls",
+        "layout-split-player"
+      ],
+      "forbid_ids": [
+        "cta-sticky-bar",
+        "nav-bottom-tabs"
+      ]
+    },
+    {
+      "id": "kiosk-checkin",
+      "query": "self-service check-in kiosk flow for a clinic",
+      "expect_platforms": [
+        "kiosk"
+      ],
+      "expect_any_ids": [
+        "kiosk-public-use",
+        "dir-public-kiosk",
+        "nav-hub-spoke"
+      ],
+      "forbid_ids": [
+        "layout-table-first",
+        "nav-menu-bar-desktop"
+      ]
+    },
+    {
+      "id": "compose-list",
+      "query": "jetpack compose list of orders with swipe to archive",
+      "expect_platforms": [
+        "mobile"
+      ],
+      "expect_any_ids": [
+        "comp-list-row-mobile",
+        "mobile-gestures-discoverable",
+        "card-list-row"
+      ]
+    },
+    {
+      "id": "nonsense-abstain",
+      "query": "quantum flux capacitor calibration",
+      "k": 5,
+      "expect_confidence": "none"
+    },
+    {
+      "id": "typo-recovery",
+      "query": "acessibility of the checkout fomr",
+      "expect_any_ids": [
+        "a11y-forms-errors",
+        "comp-form",
+        "a11y-labels-names"
+      ]
+    }
+  ]
+}

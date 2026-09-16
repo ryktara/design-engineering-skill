@@ -1,0 +1,20 @@
+{
+ "brand": "B",
+ "fingerprint": {
+  "navigation_model": "top-bar",
+  "layout_topology": "editorial-columns",
+  "content_density": "low",
+  "grid_behavior": "fluid",
+  "card_geometry": "none",
+  "corner_language": "sharp",
+  "typography_character": "serif-editorial",
+  "color_strategy": "monochrome",
+  "surface_strategy": "flat",
+  "image_strategy": "hero-imagery",
+  "icon_strategy": "text-only",
+  "motion_character": "crossfade",
+  "focus_strategy": "underline",
+  "metadata_density": "minimal",
+  "cta_strategy": "contextual-inline"
+ }
+}

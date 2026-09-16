@@ -1,0 +1,427 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "Sync status is a spinner that never says what is happening.",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "mobile"
+    ],
+    "input": [
+      "touch"
+    ],
+    "product": [
+      "erp",
+      "iot"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "flutter"
+    ],
+    "density": "medium",
+    "components": [],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "audit"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "low",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "performance-ux"
+      ],
+      "change_scope": "unknown",
+      "utterance": "observation",
+      "preserve": []
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "audit: perceived-performance defect",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": "top-bar (KNOWN)",
+      "theme": "dual-theme (KNOWN)",
+      "radius": "small (INFERRED)",
+      "components": "go_router, riverpod (KNOWN)"
+    },
+    "known": [
+      "platform=mobile",
+      "product=erp",
+      "product=iot",
+      "stack=flutter",
+      "project_navigation=top-bar",
+      "project_theme=dual-theme",
+      "project_components=go_router, riverpod"
+    ],
+    "inferred": [
+      "input=touch",
+      "density=medium",
+      "mode=audit",
+      "mode=refactor",
+      "project_radius=small"
+    ],
+    "missing": [],
+    "status": "CONFIDENT"
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "accessibility",
+        "reason": "audit mode"
+      },
+      {
+        "concern": "interaction",
+        "reason": "audit mode: operability is part of the review"
+      },
+      {
+        "concern": "component",
+        "reason": "the reviewed component/screen"
+      },
+      {
+        "concern": "data-display",
+        "reason": "numbers, tables or charts are the content"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "states",
+        "reason": "audits check empty/loading/error handling"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "audits name generic-design defects"
+      },
+      {
+        "concern": "feedback",
+        "reason": "audits check that actions are discoverable and confirmed"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "device sizes and orientation"
+      }
+    ],
+    "optional": [
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "state.loading_empty_error",
+        "reason": "named in the request: spinner"
+      },
+      {
+        "concept": "touch.minimum_target",
+        "reason": "touch platform"
+      },
+      {
+        "concept": "table.tabular_figures",
+        "reason": "numeric data"
+      }
+    ],
+    "recommended_concepts": [
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "process.reuse_first",
+      "touch.gestures_discoverable",
+      "touch.thumb_reach",
+      "touch.safe_areas",
+      "navigation.platform_grammar"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "metadata-inline-badges",
+      "kind": "pattern",
+      "category": "metadata",
+      "title": "Inline badges and status chips",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "content",
+        "structure"
+      ],
+      "concepts": [],
+      "covers": [],
+      "score": 0.56,
+      "guidance": "Pill only for status/category/count; text inside the pill (never colour only); ≤2 per item; consistent colour mapping across the product; not clickable unless it is a filter.",
+      "use_when": "Status, category, or count must be scannable in lists and headers (Open/Closed, New, 3 unread).",
+      "avoid_when": "As decoration on everything; when more than two badges per item appear, the design has become noisy.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "incompatible": [
+        "metadata-minimal",
+        "layout-immersive-rails"
+      ],
+      "role": "core",
+      "selected_for": "highest-scoring pattern with lexical evidence"
+    },
+    {
+      "id": "comp-list-row-mobile",
+      "kind": "component",
+      "category": "list",
+      "title": "Mobile list and swipe actions",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "data-display",
+        "interaction"
+      ],
+      "concepts": [
+        "touch.minimum_target",
+        "touch.gestures_discoverable",
+        "data.pagination_strategy"
+      ],
+      "covers": [
+        "large touch targets (≥44–48 px)",
+        "discoverable gestures",
+        "pagination / load-more strategy"
+      ],
+      "score": 0.297,
+      "guidance": "Row ≥48 dp / 44 pt, leading avatar/icon optional, title + secondary line, trailing meta or chevron, dividers or spacing, swipe actions with labelled buttons and a menu equivalent, pull-to-refresh where data is live, sticky section headers for grouped lists, lazy lists with stable keys, selection mode via long press with a visible toolbar.",
+      "use_when": "Phone lists of homogeneous items.",
+      "avoid_when": "Image-first browsing (grid), dense comparison (desktop table).",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "platform-standard",
+      "implementation": {
+        "flutter": "ListView.builder + Dismissible/Slidable; ListTile."
+      },
+      "role": "core",
+      "selected_for": "required coverage: component, data-display, interaction, large touch targets (≥44–48 px)"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "states-offline-and-sync",
+      "kind": "rule",
+      "category": "states",
+      "title": "Offline, sync, and connectivity states",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "environment",
+        "feedback",
+        "states"
+      ],
+      "concepts": [
+        "state.offline_sync",
+        "state.saving_conflict"
+      ],
+      "covers": [
+        "offline and sync states",
+        "saving, saved and conflict states"
+      ],
+      "score": 0.657,
+      "guidance": "Design the offline state as a first-class state: show connectivity clearly but calmly (a persistent status strip, not a blocking modal), keep already-loaded content usable, queue writes locally with a visible 'pending sync' marker per item and a 'last synced' timestamp, retry automatically with backoff and let the user retry manually, never lose entered data, and resolve conflicts explicitly (show both versions or last-writer-wins with an undo). Reads: stale data is labelled with its age.",
+      "use_when": "Field, travel, and public-venue apps; anything used with poor connectivity; any screen that writes data.",
+      "avoid_when": "Read-only always-online desktop tools where connectivity loss is exceptional (still show an error, not a blank).",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "engineering-practice",
+      "role": "guardrail",
+      "selected_for": "most relevant record for the request wording"
+    },
+    {
+      "id": "layout-states-empty-loading-error",
+      "kind": "rule",
+      "category": "feedback",
+      "title": "Design empty, loading, error, and partial states",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "states"
+      ],
+      "concepts": [
+        "state.loading_empty_error"
+      ],
+      "covers": [
+        "loading, empty and error states"
+      ],
+      "score": 0.267,
+      "guidance": "Empty: what this is, why it is empty, one action. Loading: skeleton with final dimensions, then content; announce completion. Error: what failed, what to do, retry that works; keep entered data. Partial: show what loaded, mark what didn't. On TV, focus must land somewhere valid in each state.",
+      "use_when": "Every list, table, chart, form, and detail screen.",
+      "avoid_when": "Never ship a blank area for empty data; never show a spinner for more than ~1 s without a skeleton or progress; never show an error without a next step.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "role": "guardrail",
+      "selected_for": "required coverage: loading, empty and error states"
+    },
+    {
+      "id": "typo-scale-and-roles",
+      "kind": "rule",
+      "category": "typography",
+      "title": "One type scale with named roles",
+      "facets": [
+        "visual"
+      ],
+      "concerns": [
+        "content",
+        "data-display"
+      ],
+      "concepts": [
+        "table.tabular_figures",
+        "brand.type_roles"
+      ],
+      "covers": [
+        "tabular figures and numeric alignment",
+        "type roles and scale"
+      ],
+      "score": 0.243,
+      "guidance": "Roles display/heading/title/body/label/caption/numeric with size, line height, weight, and letter spacing per role; body ≥16 px web/mobile, 14 desktop, 24 TV; numeric role uses tabular lining figures; headings use tighter line height (1.1–1.25) and body 1.4–1.6. Generate with tokens.py scale and map the roles to the framework's text styles.",
+      "use_when": "Any screen with more than two text sizes; any design system.",
+      "avoid_when": "Never pick sizes per screen; never use more than ~7 sizes.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "role": "guardrail",
+      "selected_for": "required coverage: tabular figures and numeric alignment"
+    },
+    {
+      "id": "a11y-color-not-only",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Never colour alone",
+      "facets": [
+        "accessibility"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "a11y.color_not_only",
+        "interaction.selection_visible"
+      ],
+      "covers": [
+        "no colour alone for status",
+        "selected state visible and distinct from focus and hover"
+      ],
+      "score": 0.437,
+      "guidance": "Pair colour with text, icon, pattern, weight, or underline. Error fields get an icon and message; chart series get labels or line styles; links in prose get underlines; selected rows get a check or a border, not only a tint.",
+      "use_when": "Status, validation errors, chart series, selected/active states, required fields, links inside text.",
+      "avoid_when": "Never skip.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "role": "guardrail",
+      "selected_for": "required coverage: accessibility"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "data-display"
+    ],
+    "covered_required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "data-display"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "states",
+      "anti-pattern",
+      "feedback",
+      "adaptive"
+    ],
+    "covered_recommended_concerns": [
+      "states",
+      "feedback"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "state.loading_empty_error",
+      "touch.minimum_target",
+      "table.tabular_figures"
+    ],
+    "covered_required_concepts": [
+      "state.loading_empty_error",
+      "touch.minimum_target",
+      "table.tabular_figures"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.14,
+    "bundle_size": 6,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 2,
+    "guardrail_size": 4,
+    "bundle_tokens": 768,
+    "coverage_per_1k_tokens": 3.91,
+    "mean_purity": 0.53,
+    "contaminated": [],
+    "category_diversity": 1.0,
+    "duplicate_pressure": 0.17,
+    "facet_coverage": 0.6,
+    "redundancy": 0.31
+  },
+  "token_coverage": 0.71
+}

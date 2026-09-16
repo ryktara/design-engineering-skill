@@ -1,0 +1,141 @@
+{
+ "task": "p6-26",
+ "build": "32e67640c9b8ef1d519ef9695016fb396116b92412e63c324da090aecf1df385",
+ "c1_recorded": {
+  "platform_expected": "tv",
+  "platform_resolved": [
+   "tv"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "accessibility",
+   "polish",
+   "refactor"
+  ],
+  "mode_resolved": [
+   "polish",
+   "responsive"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "PARTIAL",
+  "bundle_ids": [
+   "comp-media-card",
+   "comp-mini-player",
+   "impl-reuse-before-new",
+   "tv-typography-distance",
+   "tv-dpad-axes",
+   "color-states-complete",
+   "layout-spacing-scale",
+   "layout-hierarchy-one-thing"
+  ],
+  "bundle_tokens": 1219,
+  "expected_concepts": [
+   "tv.ten_foot_typography",
+   "layout.media_card",
+   "perf.layout_shift",
+   "content.i18n_expansion",
+   "a11y.accessible_names",
+   "tv.no_touch_hover"
+  ],
+  "critical_concepts": [
+   "tv.ten_foot_typography",
+   "layout.media_card",
+   "perf.layout_shift"
+  ],
+  "delivered_concepts": [
+   "a11y.accessible_names",
+   "data.exception_first",
+   "interaction.back_semantics",
+   "interaction.dpad_reachability",
+   "interaction.focus_restore",
+   "interaction.focus_visible",
+   "interaction.selection_visible",
+   "layout.focal_hierarchy",
+   "layout.media_card",
+   "layout.one_primary_action",
+   "layout.spacing_scale",
+   "process.reuse_first",
+   "state.loading_empty_error",
+   "tv.safe_margins",
+   "tv.ten_foot_typography"
+  ],
+  "concept_recall": 0.5,
+  "critical_recall": 0.667,
+  "forbidden_delivered": [],
+  "change_budget": "low"
+ },
+ "c4": {
+  "platform_expected": "tv",
+  "platform_resolved": [
+   "tv"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "accessibility",
+   "polish",
+   "refactor"
+  ],
+  "mode_resolved": [
+   "polish",
+   "audit"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "PARTIAL",
+  "bundle_ids": [
+   "comp-media-card",
+   "comp-player-controls",
+   "impl-reuse-before-new",
+   "a11y-tv-focus-always",
+   "tv-safe-area",
+   "tv-typography-distance",
+   "tv-dpad-axes",
+   "layout-spacing-scale"
+  ],
+  "bundle_tokens": 1112,
+  "expected_concepts": [
+   "tv.ten_foot_typography",
+   "layout.media_card",
+   "perf.layout_shift",
+   "content.i18n_expansion",
+   "a11y.accessible_names",
+   "tv.no_touch_hover"
+  ],
+  "critical_concepts": [
+   "tv.ten_foot_typography",
+   "layout.media_card",
+   "perf.layout_shift"
+  ],
+  "delivered_concepts": [
+   "a11y.accessible_names",
+   "interaction.dpad_reachability",
+   "interaction.focus_restore",
+   "interaction.focus_visible",
+   "layout.media_card",
+   "layout.spacing_scale",
+   "media.details_play_first",
+   "media.track_selection",
+   "process.reuse_first",
+   "tv.player_autohide",
+   "tv.safe_margins",
+   "tv.ten_foot_typography"
+  ],
+  "concept_recall": 0.5,
+  "critical_recall": 0.667,
+  "forbidden_delivered": [],
+  "change_budget": "low"
+ }
+}

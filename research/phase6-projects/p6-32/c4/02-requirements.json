@@ -1,0 +1,197 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "create"
+  ],
+  "platform": [
+    "kiosk"
+  ],
+  "input": [
+    "touch"
+  ],
+  "product": [],
+  "screen": [],
+  "screen_subtype": [],
+  "stack": [
+    "html-css"
+  ],
+  "density": null,
+  "components": [],
+  "environment": [
+    "public"
+  ],
+  "jobs": [],
+  "problems": [],
+  "risk": "low",
+  "primary_jobs": [
+    "create"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "focus_handling_present": true,
+    "performance_sensitive": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "screen_reader": true,
+    "touch_targets": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "change_budget": "moderate",
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "intent": {
+    "artifact_state": "existing",
+    "operations": [
+      "create"
+    ],
+    "problem_domain": [
+      "content"
+    ],
+    "change_scope": "unknown",
+    "utterance": "request",
+    "existing": true,
+    "problem": false,
+    "facet": "general",
+    "diagnose_only": false,
+    "creation": true,
+    "redesign": false,
+    "responsive_cues": false,
+    "preserve": [],
+    "scope": "moderate"
+  },
+  "platform_evidence": [
+    {
+      "platform": "kiosk",
+      "strength": "DIRECT",
+      "evidence": [
+        "ticket machine",
+        "ticket",
+        "machine"
+      ]
+    }
+  ],
+  "mode_evidence": [
+    "create: build/create request on an existing surface"
+  ],
+  "project_context": {
+    "navigation": {
+      "value": "hub-spoke",
+      "status": "KNOWN",
+      "evidence": [
+        "hub-spoke: 28 matches in README.md, app.js, i18n.js (shell/layout file)"
+      ]
+    },
+    "theme": {
+      "value": "light-first",
+      "status": "INFERRED",
+      "evidence": [
+        "hex palette: 8 near-white, 1 near-black"
+      ]
+    },
+    "surfaces": {
+      "value": "elevated",
+      "status": "INFERRED",
+      "evidence": [
+        "weak signal: shadow 1, border 1"
+      ]
+    },
+    "radius": {
+      "value": "small",
+      "status": "INFERRED",
+      "evidence": [
+        "most common radius 5 (2×); others [8.0, 12.0]"
+      ]
+    },
+    "spacing": {
+      "value": 8,
+      "status": "INFERRED",
+      "evidence": [
+        "most used spacing values [8]"
+      ]
+    },
+    "typography": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": [
+        "no font family declaration found"
+      ]
+    },
+    "components": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": []
+    }
+  },
+  "known": [
+    "platform=kiosk (request: ticket machine)",
+    "stack=html-css (project inspection)",
+    "environment=public (project inspection (README))",
+    "project_navigation=hub-spoke (repository: hub-spoke: 28 matches in README.md, app.js, i18n.js (shell/layout file))"
+  ],
+  "inferred": [
+    "input=touch (implied by platform kiosk)",
+    "mode=create (build/create request on an existing surface)",
+    "project_theme=light-first (repository: hex palette: 8 near-white, 1 near-black)",
+    "project_surfaces=elevated (repository: weak signal: shadow 1, border 1)",
+    "project_radius=small (repository: most common radius 5 (2×); others [8.0, 12.0])",
+    "project_spacing=8 (repository: most used spacing values [8])"
+  ],
+  "missing": [
+    "product: product family / primary user task not stated",
+    "brand: no brand assets, guideline, or character description available"
+  ],
+  "status": "CONFIDENT",
+  "source": {
+    "request": [
+      "ticket machine"
+    ],
+    "project": [
+      "*.html without a framework manifest: plain HTML/CSS site",
+      "README: public touch kiosk (web technology is the substrate, not the target platform)"
+    ]
+  },
+  "activation": {
+    "decision": "skip",
+    "ui_score": 0,
+    "non_ui_score": 0,
+    "ui_terms": [],
+    "non_ui_terms": []
+  },
+  "intent_evidence": {
+    "existing": [
+      "to the"
+    ],
+    "new": [],
+    "defect": [],
+    "operations": {
+      "create": [
+        "add",
+        "add a"
+      ]
+    },
+    "domains": {
+      "content": [
+        "language"
+      ]
+    },
+    "no_change": [],
+    "scope": {},
+    "question": false
+  },
+  "scope_evidence": {
+    "ui": [
+      "concept:content.i18n_expansion"
+    ],
+    "ux_symptoms": [],
+    "technical": {},
+    "non_visual": []
+  }
+}

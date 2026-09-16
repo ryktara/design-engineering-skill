@@ -1,0 +1,129 @@
+{
+  "brand": "polish this existing light-theme WPF purchase-order screen: inconsistent spacing in the toolbar and status bar, and validation errors are hard to read",
+  "fingerprint": {
+    "navigation_model": "menu-bar",
+    "layout_topology": "dashboard-grid",
+    "grid_behavior": "responsive-columns",
+    "surface_strategy": "bordered",
+    "card_geometry": "none",
+    "corner_language": "sharp",
+    "typography_character": "system-native",
+    "color_strategy": "neutral-plus-accent",
+    "motion_character": "functional-minimal",
+    "focus_strategy": "ring",
+    "cta_strategy": "toolbar-commands",
+    "image_strategy": "data-graphics",
+    "icon_strategy": "outline",
+    "metadata_density": "inline-badges"
+  },
+  "direction": {
+    "navigation": "nav-menu-bar-desktop",
+    "layout": "layout-dashboard-grid",
+    "density": null,
+    "surface": "surface-bordered-panes",
+    "cards": "card-none",
+    "typography": "typography-system-native",
+    "color": "color-neutral-accent",
+    "motion": "motion-functional-minimal",
+    "focus": "focus-ring-standard",
+    "cta": "cta-toolbar-commands",
+    "imagery": "imagery-data-graphics",
+    "icon": "icon-outline-system",
+    "metadata": "metadata-inline-badges"
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "polish",
+      "audit"
+    ],
+    "platform": [
+      "desktop"
+    ],
+    "input": [
+      "keyboard",
+      "pointer"
+    ],
+    "product": [
+      "erp"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "wpf"
+    ],
+    "density": "high",
+    "components": [
+      "form",
+      "navigation"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [
+      "visual"
+    ],
+    "risk": "low",
+    "primary_jobs": [
+      "polish form",
+      "polish navigation"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "low",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "mode_evidence": [
+      "polish: explicit: polish",
+      "polish: visual problem on existing UI",
+      "audit: diagnose first"
+    ],
+    "project_context": {
+      "navigation": "menu-bar (INFERRED)",
+      "theme": "light-first (INFERRED)",
+      "surfaces": "bordered-flat (INFERRED)",
+      "radius": "small (INFERRED)",
+      "spacing": "4 (INFERRED)",
+      "components": "wpf (KNOWN)"
+    },
+    "known": [
+      "platform=desktop",
+      "product=erp",
+      "stack=wpf",
+      "mode=polish",
+      "project_components=wpf"
+    ],
+    "inferred": [
+      "input=pointer",
+      "input=keyboard",
+      "density=high",
+      "mode=audit",
+      "project_navigation=menu-bar",
+      "project_theme=light-first",
+      "project_surfaces=bordered-flat",
+      "project_radius=small",
+      "project_spacing=4"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

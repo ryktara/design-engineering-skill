@@ -1,0 +1,194 @@
+{
+  "gates": {
+    "validator": {
+      "ok": true,
+      "summary": "validate_skill: OK — 220 records, 0 errors, 0 warnings; cases {'development': 142, 'regression': 15, 'heldout': 145, 'activation': 180}"
+    },
+    "development+regression": {
+      "ok": true,
+      "passed": 157,
+      "total": 157,
+      "failing": []
+    },
+    "activation_proxy": {
+      "ok": true,
+      "precision": 0.987,
+      "recall": 0.987,
+      "fpr": 0.014,
+      "fnr": 0.013
+    },
+    "performance_sanity": {
+      "ok": true,
+      "load_ms": 8,
+      "search_ms": 207,
+      "direction_ms": 31
+    }
+  },
+  "heldout": {
+    "passed": 10,
+    "total": 145,
+    "summary": {
+      "heldout/cases": {
+        "cases": 145,
+        "acceptable": 10,
+        "platform_correct": 123,
+        "platform_precise": 137,
+        "mode_correct": 98,
+        "input_correct": 130,
+        "negatives_correct": 138,
+        "missing_correct": 112,
+        "mean_concept_recall": 0.184,
+        "mean_offtarget_rate": 0.178,
+        "concept_recall_ge_half": 15,
+        "concept_recall_ge_third": 15,
+        "offtarget_within_third": 131,
+        "facet_coverage_full": 72,
+        "empty_results": 1,
+        "status_counts": {
+          "CONFIDENT": 91,
+          "PARTIAL": 32,
+          "AMBIGUOUS": 21,
+          "ABSTAIN": 1
+        },
+        "abstain_correct": 6,
+        "abstain_cases": 6,
+        "by_category": {
+          "web": {
+            "n": 4,
+            "ok": 0
+          },
+          "mobile": {
+            "n": 4,
+            "ok": 0
+          },
+          "android-tv": {
+            "n": 4,
+            "ok": 0
+          },
+          "tvos": {
+            "n": 4,
+            "ok": 0
+          },
+          "kiosk": {
+            "n": 4,
+            "ok": 0
+          },
+          "winui": {
+            "n": 4,
+            "ok": 0
+          },
+          "wpf": {
+            "n": 4,
+            "ok": 0
+          },
+          "avalonia": {
+            "n": 4,
+            "ok": 0
+          },
+          "react": {
+            "n": 4,
+            "ok": 1
+          },
+          "nextjs": {
+            "n": 4,
+            "ok": 0
+          },
+          "compose": {
+            "n": 4,
+            "ok": 1
+          },
+          "swiftui": {
+            "n": 4,
+            "ok": 0
+          },
+          "flutter": {
+            "n": 4,
+            "ok": 0
+          },
+          "erp": {
+            "n": 4,
+            "ok": 0
+          },
+          "saas": {
+            "n": 4,
+            "ok": 0
+          },
+          "finance": {
+            "n": 4,
+            "ok": 0
+          },
+          "healthcare": {
+            "n": 4,
+            "ok": 1
+          },
+          "ecommerce": {
+            "n": 4,
+            "ok": 0
+          },
+          "media": {
+            "n": 4,
+            "ok": 0
+          },
+          "settings": {
+            "n": 4,
+            "ok": 0
+          },
+          "forms": {
+            "n": 4,
+            "ok": 0
+          },
+          "tables": {
+            "n": 4,
+            "ok": 0
+          },
+          "search": {
+            "n": 4,
+            "ok": 1
+          },
+          "dashboards": {
+            "n": 4,
+            "ok": 0
+          },
+          "onboarding": {
+            "n": 4,
+            "ok": 0
+          },
+          "accessibility": {
+            "n": 4,
+            "ok": 0
+          },
+          "brand": {
+            "n": 4,
+            "ok": 0
+          },
+          "responsive": {
+            "n": 4,
+            "ok": 0
+          },
+          "screenshot": {
+            "n": 4,
+            "ok": 0
+          },
+          "polish": {
+            "n": 4,
+            "ok": 0
+          },
+          "negative-constraint": {
+            "n": 4,
+            "ok": 0
+          },
+          "adversarial": {
+            "n": 15,
+            "ok": 0
+          },
+          "abstain": {
+            "n": 6,
+            "ok": 6
+          }
+        }
+      }
+    }
+  },
+  "real_activation": "SKIPPED — claude CLI not authenticated for non-interactive use",
+  "ok": true
+}

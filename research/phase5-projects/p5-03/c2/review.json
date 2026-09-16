@@ -1,0 +1,24 @@
+{
+  "task": "p5-03",
+  "reviewer_model": "claude-opus-5[1m]",
+  "c2_records": [
+    {"id": "comp-checkout-one-page", "verdict": "relevant", "bad_category": null},
+    {"id": "a11y-keyboard-operable", "verdict": "partial", "bad_category": null},
+    {"id": "web-responsive-breakpoints", "verdict": "relevant", "bad_category": null},
+    {"id": "impl-reuse-before-new", "verdict": "relevant", "bad_category": null},
+    {"id": "layout-states-empty-loading-error", "verdict": "off-target", "bad_category": "generic"},
+    {"id": "a11y-target-size", "verdict": "relevant", "bad_category": null}
+  ],
+  "c2_relevant": 4,
+  "c2_partial": 1,
+  "c2_offtarget": 1,
+  "c2_bad": [
+    {"record": "layout-states-empty-loading-error", "category": "generic", "why": "Same off-target pick as c1: checkout.html is a static page with local validation and no asynchronous or remote data, so empty/loading/skeleton/partial guidance has nothing to attach to. It occupies the slot that cta-sticky-bar (search 0.362, the record that literally answers 'pay button below the fold') or mobile-thumb-reach (0.321) should hold."},
+    {"record": "mobile-safe-areas", "category": "missing-critical", "why": "Dropped relative to c1. It was a record the implementation actually used (env(safe-area-inset-bottom) on the sticky bar) and it carried touch.safe_areas, an expected concept; correcting platform mobile->web filtered its carrier out without a web-side replacement, so the bottom-inset rule for a fixed bottom action is now absent."}
+  ],
+  "c2_direction_unjustified": [],
+  "platform_mode_scope_ok": true,
+  "verdict_vs_c1": "better",
+  "why": "The c1 platform error (mobile instead of web) is fixed, which lifts status to CONFIDENT, restores the critical adaptive.breakpoint_matrix carrier, removes the off-platform mobile-platform-navigation record, and clears the four direction slots that contradicted the codebase (card-poster-landscape, motion-spring, focus-none-touch-only, icon-filled-system); impl-reuse-before-new is added as c1's RESULTS asked.",
+  "would_have_helped": "neutral"
+}

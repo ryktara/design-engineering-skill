@@ -1,0 +1,135 @@
+{
+  "brand": "The dispatch job form lets you lose an unsaved job by clicking another one.",
+  "fingerprint": {
+    "navigation_model": "menu-bar",
+    "layout_topology": "form-stack",
+    "grid_behavior": "fluid",
+    "content_density": "medium",
+    "surface_strategy": "bordered",
+    "card_geometry": "list-row",
+    "corner_language": "sharp",
+    "typography_character": "geometric-sans",
+    "color_strategy": "neutral-plus-accent",
+    "motion_character": "functional-minimal",
+    "focus_strategy": "ring",
+    "cta_strategy": "single-primary",
+    "image_strategy": "data-graphics",
+    "icon_strategy": "outline",
+    "metadata_density": "minimal"
+  },
+  "direction": {
+    "navigation": "nav-menu-bar-desktop",
+    "layout": "layout-form-stack",
+    "density": "density-medium",
+    "surface": "surface-bordered-panes",
+    "cards": "card-list-row",
+    "typography": "typography-geometric-sans",
+    "color": "color-neutral-accent",
+    "motion": "motion-functional-minimal",
+    "focus": "focus-ring-standard",
+    "cta": "cta-single-primary",
+    "imagery": "imagery-data-graphics",
+    "icon": "icon-outline-system",
+    "metadata": "metadata-minimal"
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "desktop"
+    ],
+    "input": [
+      "keyboard",
+      "pointer"
+    ],
+    "product": [],
+    "screen": [
+      "form"
+    ],
+    "screen_subtype": [],
+    "stack": [
+      "avalonia"
+    ],
+    "density": null,
+    "components": [
+      "form"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "audit form"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_INTERACTION",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "interaction"
+      ],
+      "change_scope": "unknown",
+      "utterance": "observation",
+      "preserve": []
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "audit: interaction defect on existing UI",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": "menu-bar (KNOWN)",
+      "theme": "light-first (INFERRED)",
+      "spacing": "4 (INFERRED)",
+      "typography": "geometric-sans (KNOWN)",
+      "components": "avalonia (KNOWN)"
+    },
+    "known": [
+      "platform=desktop",
+      "stack=avalonia",
+      "screen=form",
+      "project_navigation=menu-bar",
+      "project_typography=geometric-sans",
+      "project_components=avalonia"
+    ],
+    "inferred": [
+      "input=pointer",
+      "input=keyboard",
+      "mode=audit",
+      "mode=refactor",
+      "project_theme=light-first",
+      "project_spacing=4"
+    ],
+    "missing": [],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

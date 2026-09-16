@@ -1,0 +1,24 @@
+{
+  "patients": [
+    {
+      "id": "pt-1029",
+      "lastName": "Okafor",
+      "dob": "1968-04-12",
+      "pickupCode": "RX-48Q2-7L",
+      "prescriptions": [
+        { "rxNumber": "7734102", "drug": "Atorvastatin 20 mg", "form": "30 tablets", "prescriber": "Dr. Sandoval", "price": 4.00, "readySince": "2026-09-08T09:15:00", "status": "ready" },
+        { "rxNumber": "7734117", "drug": "Lisinopril 10 mg", "form": "90 tablets", "prescriber": "Dr. Sandoval", "price": 0.00, "readySince": "2026-09-08T09:20:00", "status": "ready" },
+        { "rxNumber": "7734990", "drug": "Metformin 500 mg", "form": "60 tablets", "prescriber": "Dr. Ibarra", "price": 12.50, "readySince": null, "status": "processing" }
+      ]
+    },
+    {
+      "id": "pt-2210",
+      "lastName": "Nguyen",
+      "dob": "1991-11-03",
+      "pickupCode": "RX-9K1D-2P",
+      "prescriptions": [
+        { "rxNumber": "7735001", "drug": "Amoxicillin 500 mg", "form": "21 capsules", "prescriber": "Dr. Weiss", "price": 8.25, "readySince": "2026-09-09T08:05:00", "status": "ready" }
+      ]
+    }
+  ]
+}

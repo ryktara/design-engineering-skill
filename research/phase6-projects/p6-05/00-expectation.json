@@ -1,0 +1,26 @@
+{
+  "platform": "web",
+  "artifact_state": "existing",
+  "acceptable_modes": ["review", "accessibility", "audit"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "a11y.accessible_names",
+    "interaction.focus_restore",
+    "a11y.live_status",
+    "a11y.color_not_only",
+    "a11y.contrast",
+    "a11y.semantics",
+    "interaction.keyboard_navigation",
+    "interaction.focus_visible"
+  ],
+  "critical_concepts": ["a11y.accessible_names", "interaction.focus_restore", "a11y.live_status"],
+  "forbidden_concepts": ["brand.dark_mode_redesign", "brand.structural_differentiation", "anti.template_landing", "layout.hero_thesis", "tv.ten_foot_typography", "touch.ime_keyboard", "data.chart_by_question"],
+  "preservation": ["navigation", "theme", "typography", "component_reuse", "exception-strip-live-region", "url-hash-state"],
+  "reviewer_notes_from_code": [
+    "AlertsWidget.jsx: every row's button is the bare word 'Acknowledge' - with 2+ alerts a screen-reader user hears identical buttons; needs per-alert accessible name.",
+    "AlertsWidget.jsx: acknowledging replaces the <button> with a <span>, so keyboard focus falls to <body>; the row also re-sorts to the bottom. Needs focus management (move focus to the row/next control) and an announcement of the state change.",
+    "AlertsWidget.jsx: <ul> with list-style:none loses list semantics in WebKit; add role=list.",
+    "Contrast of acknowledged chip (#6b7280 on #f9fafb ~4.6:1) and muted text passes AA at 12px/600 - borderline, not a defect.",
+    "Severity uses glyph + label + tint (colour-not-only already satisfied); focus ring token exists (:focus-visible 2px)."
+  ]
+}

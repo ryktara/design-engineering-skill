@@ -1,0 +1,8 @@
+{"task": "p6-31",
+ "records": [
+   {"id": "kiosk-public-use", "verdict": "partial", "category": "generic", "why": "Only the target-size, body-size, tap-feedback and ADA reach clauses apply; idle timeout, attract hub and shared-device privacy are other screens and one is owned by a concurrent task."}
+ ],
+ "missing_critical": ["a11y.accessible_names"],
+ "unjustified_direction_slots": 1,
+ "layer_review": {"core": [], "critical": ["kiosk-public-use"], "optional": []},
+ "change_vs_c3": "same - identical 1-record bundle; a11y.accessible_names and a11y.live_status are still dropped at selection despite named candidates, the self-reported coverage of 1.0 against an off-task concept set is unchanged, and cta is still the one unjustified slot."}

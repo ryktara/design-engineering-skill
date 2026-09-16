@@ -1,0 +1,230 @@
+{
+ "aggregate": {
+  "tasks": 22,
+  "relevant": 56,
+  "partial": 39,
+  "offtarget": 46,
+  "bad_by_category": {
+   "generic": 39,
+   "missing-critical": 6,
+   "contradicts-codebase": 8,
+   "off-platform": 2,
+   "wrong-mode": 1
+  },
+  "verdict_vs_c1": {
+   "better": 21,
+   "same": 1
+  },
+  "would_have_helped": {
+   "helped": 18,
+   "neutral": 4
+  },
+  "direction_unjustified_slots": 10,
+  "platform_mode_scope_ok": {
+   "True": 22
+  },
+  "reviewer_models": [
+   "claude-opus-5[1m]"
+  ]
+ },
+ "per_task": [
+  {
+   "task": "p5-01",
+   "c2_relevant": 2,
+   "c2_partial": 4,
+   "c2_offtarget": 0,
+   "verdict_vs_c1": "better",
+   "would_have_helped": "helped",
+   "why": "c2 adds data-exceptions-first - the exact record whose absence c1's RESULTS flagged as a knowledge gap and whose content the implementer had to invent (exceptions grouped first, count in the header, no colour alone) - and the direction drops the four c1 over-reaches (cta-toolbar-commands, imagery-data-graphics, metadata-rich, grid_behavior=virtualized) by leaving those slots null; the cost is losing web-responsive-breakpoints, which in c1 caught the 390px clipping defect."
+  },
+  {
+   "task": "p5-02",
+   "c2_relevant": 4,
+   "c2_partial": 1,
+   "c2_offtarget": 1,
+   "verdict_vs_c1": "better",
+   "would_have_helped": "helped",
+   "why": "c2 drops cta-sticky-bar (the c1 record that contradicted the settings area and had to be actively ignored) and its matching cta/layout/imagery direction slots, and adds the two records c1's RESULTS named as missing - impl-reuse-before-new (critical process.reuse_first) and a11y-forms-errors - plus anti-no-states; the residual weaknesses are a single, mismatched core record and still-absent a11y.dialog_focus / a11y.live_status."
+  },
+  {
+   "task": "p5-03",
+   "c2_relevant": 4,
+   "c2_partial": 1,
+   "c2_offtarget": 1,
+   "verdict_vs_c1": "better",
+   "would_have_helped": "neutral",
+   "why": "The c1 platform error (mobile instead of web) is fixed, which lifts status to CONFIDENT, restores the critical adaptive.breakpoint_matrix carrier, removes the off-platform mobile-platform-navigation record, and clears the four direction slots that contradicted the codebase (card-poster-landscape, motion-spring, focus-none-touch-only, icon-filled-system); impl-reuse-before-new is added as c1's RESULTS asked."
+  },
+  {
+   "task": "p5-04",
+   "c2_relevant": 3,
+   "c2_partial": 1,
+   "c2_offtarget": 2,
+   "verdict_vs_c1": "better",
+   "would_have_helped": "helped",
+   "why": "c2 closes the knowledge gap c1's RESULTS named: ecommerce-delivery-promise states the delivery window as dates with <time>, 'Free delivery', an order-deadline countdown that updates without a live region, and 'Free 60-day returns - prepaid label' - which is almost exactly the implementation the reviewer had to derive unaided - while the wasted imagery-thumbnails core slot and the four contradicting direction slots (layout-grid-catalog, card-poster-landscape, motion-crossfade, icon-text-only) are gone."
+  },
+  {
+   "task": "p5-05",
+   "c2_relevant": 2,
+   "c2_partial": 2,
+   "c2_offtarget": 2,
+   "verdict_vs_c1": "better",
+   "would_have_helped": "helped",
+   "why": "c2 adds a11y-skip-link - the bypass-blocks/reach-distance record whose complete absence c1's RESULTS filed as a knowledge gap, and which describes the fix that was actually shipped (skip link as first focusable, target with tabindex=-1, keep tab stops before the first control <=5) - though it pays for it by dropping a11y-keyboard-operable and leaves both wrong records (comp-filters, search-filter-feedback) in place, so the core half of the bundle would still point an unwary implementer at rebuilding the segmented control."
+  },
+  {
+   "task": "p5-06",
+   "c2_relevant": 1,
+   "c2_partial": 2,
+   "c2_offtarget": 3,
+   "verdict_vs_c1": "better",
+   "would_have_helped": "helped",
+   "why": "c1 abstained outright (OUT_OF_SCOPE, zero records, 0/7 concept recall) on a plainly in-scope UI sentence; c2 classifies it in-scope and delivers data-exceptions-first, which maps almost line-for-line onto the shipped fix (status computed in the model, word+icon+colour badge, exceptions sorted first, count in the column header, state the threshold rule) plus dir-clinical-workstation's 'never colour alone / large legible numerics' - although half the bundle is still filler (toast, skip link, offline-sync) and data.realtime_window and perf.layout_shift remain undelivered."
+  },
+  {
+   "task": "p5-07",
+   "c2_relevant": 2,
+   "c2_partial": 2,
+   "c2_offtarget": 2,
+   "verdict_vs_c1": "better",
+   "would_have_helped": "neutral",
+   "why": "The guidance bundle is materially the same as c1 (one guardrail swapped, and comp-search no longer tags the forbidden media.search_tv), but the direction is transformed: the six slots that c1 emitted and the implementer had to ignore - layout-master-detail, surface-elevated-cards, card-poster-landscape, cta-sticky-bar, imagery-poster, icon-text-only, plus the density change - are now null, surfaces is correctly detected as bordered-flat, and validation passes."
+  },
+  {
+   "task": "p5-08",
+   "c2_relevant": 2,
+   "c2_partial": 3,
+   "c2_offtarget": 1,
+   "verdict_vs_c1": "better",
+   "would_have_helped": "helped",
+   "why": "Two pre-registered failures are fixed at once: scope.kind is now 'partial' with an explicit engineering/design split matching the task's whole purpose, and interaction-drag-drop - a record c1's RESULTS confirmed did not exist anywhere in the base - now supplies grip affordance, transform-only movement, a snapped drop target labelled with the value it will take, a single store write on drop, a keyboard alternative that keeps focus on the moved item, a live-region announcement, Escape-cancels and reduced motion, i.e. nearly the entire design half of what was actually built."
+  },
+  {
+   "task": "p5-09",
+   "c2_relevant": 2,
+   "c2_partial": 1,
+   "c2_offtarget": 3,
+   "verdict_vs_c1": "better",
+   "would_have_helped": "helped",
+   "why": "c2 adds tv-dpad-hold-pacing, which carries the exact fix (first press immediate, ~3-5 cards/s while held, finish each scroll step, keep the focused card at a stable position, same pace under reduced motion) that c1 lacked entirely, and it drops the three worst c1 picks (dir-broadcast-guide-tv, comp-mini-player, and the card-poster-portrait / metadata-focus-reveal direction slots that contradicted the 16:9 cards and would have hidden the very titles the user wants to read)."
+  },
+  {
+   "task": "p5-10",
+   "c2_relevant": 4,
+   "c2_partial": 2,
+   "c2_offtarget": 2,
+   "verdict_vs_c1": "better",
+   "would_have_helped": "helped",
+   "why": "The new comp-tv-side-sheet record states almost exactly what the implementer had to supply from own knowledge in c1 (first focus on the current value, selected = fill + check + semantics distinct from the focus ring, BACK returns focus to the opening button, current choice shown next to the button, Off row and a no-tracks state, controls not auto-hiding while the sheet is open), closing both c1 critical concept misses (interaction.selection_visible, a11y.dialog_focus), and the direction no longer proposes icon-custom-glyphs or metadata-focus-reveal against the codebase."
+  },
+  {
+   "task": "p5-11",
+   "c2_relevant": 1,
+   "c2_partial": 2,
+   "c2_offtarget": 5,
+   "verdict_vs_c1": "same",
+   "would_have_helped": "neutral",
+   "why": "Requirements got better (mode accessibility+audit, status CONFIDENT with no spurious platform-confirm, problem_domain includes accessibility) and a11y.contrast / tv.dark_first / a11y.reduced_motion are now actually delivered via tv-dark-first, but the bundle lost the two records c1 actually used (tv-safe-area for the lift/overscan budget, color-states-complete for 'selected != focused'), added a spurious core sheet record, kept media-resume-and-details and web-virtualize-long-lists, and still has no record stating focus-indicator contrast at distance or a row-level focus cue."
+  },
+  {
+   "task": "p5-12",
+   "c2_relevant": 3,
+   "c2_partial": 1,
+   "c2_offtarget": 2,
+   "verdict_vs_c1": "better",
+   "would_have_helped": "helped",
+   "why": "The c1 root failure is gone: platform is now kiosk, so comp-kiosk-keypad, kiosk-public-use and a11y-time-and-auto (the exact 'timeouts warn and allow extension; kiosks show a visible countdown' rule, plus polite live region on the value and 'focus never falls to the page body') replace web-responsive-breakpoints, nav-wizard and surface-flat-tonal, the two forbidden adaptive.* concepts are no longer delivered, privacy.shared_device / a11y.live_status / touch.minimum_target / interaction.focus_restore are now covered, and the direction dropped the unjustified density-high slot."
+  },
+  {
+   "task": "p5-13",
+   "c2_relevant": 4,
+   "c2_partial": 0,
+   "c2_offtarget": 2,
+   "verdict_vs_c1": "better",
+   "would_have_helped": "helped",
+   "why": "c1 had zero concept recall and a core record with an empty concepts list; c2 gets platform=kiosk and both critical concepts, and i18n-text-expansion-rtl now spells out the exact contract the implementer had to derive by hand (one visible control on every screen of the flow, labelled in its own language, keeps session/typed input/selection/focus, announces politely, and re-renders every label including error text - the stale-error bug that cost the c1 render iteration), while the direction dropped its ten unjustified new slots and its self-reported poster-card violation."
+  },
+  {
+   "task": "p5-14",
+   "c2_relevant": 1,
+   "c2_partial": 2,
+   "c2_offtarget": 3,
+   "verdict_vs_c1": "better",
+   "would_have_helped": "helped",
+   "why": "The c1 knowledge gap is closed exactly: table-column-disambiguation states the four moves the implementer had to invent from the code (mark the active column in the header, unit/currency affix inside the editor, role-distinct precision with the unit in the header, stronger divider bracketing the money columns) plus the plausibility check, and the inspect/direction no longer assert a monospace type system that would have put the numeric columns in Cascadia Mono."
+  },
+  {
+   "task": "p5-15",
+   "c2_relevant": 3,
+   "c2_partial": 2,
+   "c2_offtarget": 2,
+   "verdict_vs_c1": "better",
+   "would_have_helped": "helped",
+   "why": "All seven expected checklist concepts are now delivered (c1: 5/7, critical 3/4) - in particular a11y.color_not_only via data-exceptions-first and a11y.live_status via desktop-status-bar-and-error-navigation, whose WinUI note points straight at the page's biggest real defect (the InfoBar/summary live region), and the c1 lexical mis-pick comp-setup-checklist is gone; the offset is a new wrong-mode core pick (comp-wizard-stepper) and the continued exclusion of grid records ('contamination: no table evidence in the request') on a project whose page is a Toolkit DataGrid."
+  },
+  {
+   "task": "p5-16",
+   "c2_relevant": 1,
+   "c2_partial": 3,
+   "c2_offtarget": 2,
+   "verdict_vs_c1": "better",
+   "would_have_helped": "helped",
+   "why": "c1 abstained outright ('not a UI design task as written') and delivered zero records; c2 scopes it in-scope and returns data-exceptions-first, which names almost exactly the fix that was actually implemented (computed status in the model, word+icon+colour badge, exceptions-first sort or an 'only overdue' filter, count in the header/status bar, and stating the interval rule)."
+  },
+  {
+   "task": "p5-17",
+   "c2_relevant": 1,
+   "c2_partial": 4,
+   "c2_offtarget": 1,
+   "verdict_vs_c1": "better",
+   "would_have_helped": "helped",
+   "why": "c2 swaps c1's two pure-filler accessibility records (a11y-hover-not-required, a11y-forms-errors, both about validation/hover the task does not have) for states-persistence-and-session, which states the second critical concept outright - 'destructive or irreversible saves confirm once with the safe action as default', plus saving/saved status and never discarding entered data - and the direction no longer proposes the harmful layout=form-stack slot that would have restructured the master-detail screen."
+  },
+  {
+   "task": "p5-18",
+   "c2_relevant": 3,
+   "c2_partial": 2,
+   "c2_offtarget": 1,
+   "verdict_vs_c1": "better",
+   "would_have_helped": "helped",
+   "why": "c2 leads with media-photo-viewer, which states almost exactly the implementation that was actually built (2-up thumbnails decoded at display size x DPR, full-screen route closed by system back, pinch/double-tap zoom plus an explicit zoom button, labelled prev/next, dark chrome with 48dp high-contrast controls, report state preserved), and it drops c1's off-task comp-form and typo-scale-and-roles; imagery-none survives only as a low-harm direction slot instead of a core record."
+  },
+  {
+   "task": "p5-19",
+   "c2_relevant": 3,
+   "c2_partial": 0,
+   "c2_offtarget": 3,
+   "verdict_vs_c1": "better",
+   "would_have_helped": "helped",
+   "why": "c2 adds feedback-progress-async, which states verbatim the fix the implementer had to invent unaided in c1 ('Sending 2 of 3 . Photo ...', determinate bar, name the failed item and reason with Retry, 'All sent' confirmation, a stable live region announcing start/failure/completion once per run); the cost is losing c1's a11y-color-not-only and layout-states-empty-loading-error, and three of six slots are still concern-filling or brand-direction noise."
+  },
+  {
+   "task": "p5-20",
+   "c2_relevant": 4,
+   "c2_partial": 2,
+   "c2_offtarget": 2,
+   "verdict_vs_c1": "better",
+   "would_have_helped": "neutral",
+   "why": "c2 gets the mode right (accessibility) and replaces c1's four ignored fillers (sticky bar, type measure, spacing scale, target size) with chart- and dark-palette-specific records (comp-chart-container, color-dark-accent) that c1 had wrongly suppressed as 'chart record outside a data-visualisation task'; but it still omits the 3:1 non-text contrast rule and the token-layer guidance, and it imports two new irrelevant records (photo capture, drag and drop)."
+  },
+  {
+   "task": "p5-21",
+   "c2_relevant": 3,
+   "c2_partial": 1,
+   "c2_offtarget": 2,
+   "verdict_vs_c1": "better",
+   "would_have_helped": "helped",
+   "why": "c1 was actively harmful - two ecommerce core records (product detail page, one-page checkout) from a spurious product hint, plus a direction whose own validator failed on poster-card geometry, grid catalog layout and a sticky action bar; c2 drops the product contamination, adds the two critical concepts (comp-kpi-tile for data.kpi_comparison, impl-reuse-before-new for process.reuse_first), and the direction now proposes only the three slots the codebase already has."
+  },
+  {
+   "task": "p5-22",
+   "c2_relevant": 3,
+   "c2_partial": 1,
+   "c2_offtarget": 4,
+   "verdict_vs_c1": "better",
+   "would_have_helped": "helped",
+   "why": "c2 fixes the mode (refactor, not create) and puts mobile-keyboard-ime in the bundle - the one record that states this task's fix (return key Next/Done, scroll the focused field above the keyboard, keep the primary action reachable, dismiss on tap outside), which in c1 the implementer had to dig out of the raw search himself - and it drops the ecommerce PDP core record and the failed poster/grid/sticky-bar direction; four of eight slots are still irrelevant filler, one of which re-imports the forbidden hardware-keyboard reading."
+  }
+ ]
+}

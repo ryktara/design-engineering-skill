@@ -1,0 +1,333 @@
+<Page
+    x:Class="Erp.Client.Views.StockAdjustmentsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
+    xmlns:primitives="using:CommunityToolkit.WinUI.UI.Controls.Primitives"
+    xmlns:models="using:Erp.Client.Models"
+    xmlns:conv="using:Erp.Client.Converters"
+    xmlns:vm="using:Erp.Client.ViewModels"
+    Background="{ThemeResource LayerFillColorDefaultBrush}">
+
+    <!-- Refactored after the design-engineering audit.
+         Direction: table-first working screen, high density (4 epx grid, 36 epx rows, 14 epx body),
+         command bar with accelerators, status as icon + text, numerics right-aligned with tabular figures,
+         visible field headers, empty/loading states, theme resources instead of literal hex. -->
+
+    <Page.Resources>
+        <conv:StatusToPresentationConverter x:Key="StatusPresentation" />
+        <conv:SignedNumberConverter x:Key="SignedNumber" />
+        <conv:RowActionNameConverter x:Key="RowActionName" />
+        <conv:CountToVisibilityConverter x:Key="ZeroToVisible" ZeroIsVisible="True" />
+        <conv:CountToVisibilityConverter x:Key="NonZeroToVisible" ZeroIsVisible="False" />
+
+        <!-- Numeric cell: right-aligned, tabular lining figures, one precision per column -->
+        <Style x:Key="NumericCellText" TargetType="TextBlock" BasedOn="{StaticResource BodyTextBlockStyle}">
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="TextAlignment" Value="Right" />
+            <Setter Property="Typography.NumeralAlignment" Value="Tabular" />
+            <Setter Property="Margin" Value="8,0" />
+        </Style>
+        <!-- Numeric column header: the Header stays a string so DataGridColumnHeaderAutomationPeer.GetNameCore
+             (Toolkit 7.1.2: only a string Content becomes the UIA name) exposes it; alignment comes from the style. -->
+        <Style x:Key="NumericHeader" TargetType="primitives:DataGridColumnHeader">
+            <Setter Property="HorizontalContentAlignment" Value="Right" />
+        </Style>
+        <Style x:Key="CompactCell" TargetType="controls:DataGridCell">
+            <Setter Property="Padding" Value="8,0" />
+        </Style>
+        <Style x:Key="RowActionButton" TargetType="Button">
+            <Setter Property="MinWidth" Value="28" />
+            <Setter Property="MinHeight" Value="28" />
+            <Setter Property="Padding" Value="4" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="UseSystemFocusVisuals" Value="True" />
+        </Style>
+    </Page.Resources>
+
+    <Grid x:Name="Root" Padding="16,12,16,16" RowSpacing="12">
+        <Grid.KeyboardAccelerators>
+            <!-- F6 / Shift+F6 cycle the three regions without tabbing through every control (desktop pane convention) -->
+            <KeyboardAccelerator Key="F6" Invoked="CycleRegion_Invoked" />
+            <KeyboardAccelerator Key="F6" Modifiers="Shift" Invoked="CycleRegionBack_Invoked" />
+        </Grid.KeyboardAccelerators>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Header: title + command bar. Accelerators shown in tooltips, access keys on Alt. -->
+        <Grid Grid.Row="0" ColumnSpacing="16">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Spacing="2">
+                <TextBlock Text="Stock adjustments" Style="{StaticResource TitleTextBlockStyle}"
+                           AutomationProperties.HeadingLevel="Level1" />
+                <!-- Live region: LiveSetting alone is not announced in XAML; the code-behind raises LiveRegionChanged when the text changes. -->
+                <TextBlock x:Name="ResultSummaryText" Style="{StaticResource CaptionTextBlockStyle}"
+                           Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                           AutomationProperties.LiveSetting="Polite"
+                           Text="{x:Bind ViewModel.ResultSummary, Mode=OneWay}" />
+            </StackPanel>
+
+            <!-- Command bar: primary commands with accelerators + access keys, the current selection named next to
+                 the commands, secondary (overflow) commands for view options and the shortcut reference (F1).
+                 Every accelerator is documented in the tooltip, the context menu and the F1 dialog. -->
+            <CommandBar x:Name="Commands" Grid.Column="1" DefaultLabelPosition="Right" Background="Transparent" IsOpen="False"
+                        OverflowButtonVisibility="Auto" AutomationProperties.Name="Stock adjustment commands">
+                <CommandBar.Content>
+                    <TextBlock x:Name="SelectionLabelText" VerticalAlignment="Center" Margin="0,0,12,0"
+                               Style="{StaticResource CaptionTextBlockStyle}"
+                               Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                               AutomationProperties.LiveSetting="Polite"
+                               Text="{x:Bind ViewModel.SelectionLabel, Mode=OneWay}" />
+                </CommandBar.Content>
+                <AppBarButton Icon="Add" Label="New adjustment" AccessKey="N"
+                              Command="{x:Bind ViewModel.NewAdjustmentCommand}"
+                              ToolTipService.ToolTip="New adjustment (Ctrl+N)">
+                    <AppBarButton.KeyboardAccelerators>
+                        <KeyboardAccelerator Key="N" Modifiers="Control" />
+                    </AppBarButton.KeyboardAccelerators>
+                </AppBarButton>
+                <AppBarButton Icon="Accept" Label="Approve" AccessKey="A"
+                              Command="{x:Bind ViewModel.ApproveCommand}"
+                              CommandParameter="{x:Bind ViewModel.Selected, Mode=OneWay}"
+                              IsEnabled="{x:Bind ViewModel.CanApproveSelected, Mode=OneWay}"
+                              ToolTipService.ToolTip="Approve selected (Ctrl+Shift+A)">
+                    <AppBarButton.KeyboardAccelerators>
+                        <KeyboardAccelerator Key="A" Modifiers="Control,Shift" />
+                    </AppBarButton.KeyboardAccelerators>
+                </AppBarButton>
+                <AppBarButton Icon="Cancel" Label="Reject" AccessKey="J"
+                              Command="{x:Bind ViewModel.RejectCommand}"
+                              CommandParameter="{x:Bind ViewModel.Selected, Mode=OneWay}"
+                              IsEnabled="{x:Bind ViewModel.CanApproveSelected, Mode=OneWay}"
+                              ToolTipService.ToolTip="Reject selected (Ctrl+Shift+R)">
+                    <AppBarButton.KeyboardAccelerators>
+                        <KeyboardAccelerator Key="R" Modifiers="Control,Shift" />
+                    </AppBarButton.KeyboardAccelerators>
+                </AppBarButton>
+                <AppBarSeparator />
+                <AppBarButton Icon="Refresh" Label="Refresh" AccessKey="R"
+                              Command="{x:Bind ViewModel.RefreshCommand}"
+                              ToolTipService.ToolTip="Refresh (F5)">
+                    <AppBarButton.KeyboardAccelerators>
+                        <KeyboardAccelerator Key="F5" />
+                    </AppBarButton.KeyboardAccelerators>
+                </AppBarButton>
+                <CommandBar.SecondaryCommands>
+                    <AppBarToggleButton x:Name="CreatedByToggle" Icon="ContactInfo" Label="Show 'Created by' column" AccessKey="C"
+                                        Click="CreatedByToggle_Click" />
+                    <AppBarButton Icon="ClearSelection" Label="Clear filters" AccessKey="L"
+                                  Command="{x:Bind ViewModel.ClearFiltersCommand}"
+                                  ToolTipService.ToolTip="Clear filters (Ctrl+Shift+L)">
+                        <AppBarButton.KeyboardAccelerators>
+                            <KeyboardAccelerator Key="L" Modifiers="Control,Shift" />
+                        </AppBarButton.KeyboardAccelerators>
+                    </AppBarButton>
+                    <AppBarSeparator />
+                    <AppBarButton Icon="Keyboard" Label="Keyboard shortcuts" AccessKey="K"
+                                  Click="ShowShortcuts_Click" ToolTipService.ToolTip="Keyboard shortcuts (F1)">
+                        <AppBarButton.KeyboardAccelerators>
+                            <KeyboardAccelerator Key="F1" />
+                        </AppBarButton.KeyboardAccelerators>
+                    </AppBarButton>
+                </CommandBar.SecondaryCommands>
+            </CommandBar>
+        </Grid>
+
+        <!-- Filter row: visible headers; placeholder used only as a format hint. -->
+        <StackPanel x:Name="Filters" Grid.Row="1" Orientation="Horizontal" Spacing="12">
+            <TextBox x:Name="SearchBox" Width="280" Header="Search" PlaceholderText="Id, SKU or description"
+                     Text="{x:Bind ViewModel.SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     AccessKey="S" ToolTipService.ToolTip="Search (Ctrl+F)">
+                <TextBox.KeyboardAccelerators>
+                    <KeyboardAccelerator Key="F" Modifiers="Control" Invoked="FocusSearch_Invoked" />
+                    <!-- Escape inside the search box clears it; scoped to the box so it does not fight dialogs/flyouts -->
+                    <KeyboardAccelerator Key="Escape" ScopeOwner="{x:Bind SearchBox}" Invoked="ClearSearch_Invoked" />
+                </TextBox.KeyboardAccelerators>
+            </TextBox>
+            <TextBox Width="140" Header="Location" PlaceholderText="e.g. A-01-03"
+                     Text="{x:Bind ViewModel.LocationFilter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <ComboBox Width="180" Header="Status" PlaceholderText="Any status"
+                      ItemsSource="{x:Bind ViewModel.StatusOptions}"
+                      SelectedItem="{x:Bind ViewModel.StatusFilter, Mode=TwoWay}" />
+            <Button Content="Clear filters" VerticalAlignment="Bottom" Command="{x:Bind ViewModel.ClearFiltersCommand}"
+                    IsEnabled="{x:Bind ViewModel.HasActiveFilters, Mode=OneWay}" />
+        </StackPanel>
+
+        <!-- Feedback (approve/reject result, errors): announced politely, never focus-stealing -->
+        <InfoBar Grid.Row="2" IsOpen="{x:Bind ViewModel.HasMessage, Mode=OneWay}"
+                 Severity="{x:Bind ViewModel.MessageSeverity, Mode=OneWay}"
+                 Message="{x:Bind ViewModel.Message, Mode=OneWay}"
+                 AutomationProperties.LiveSetting="Polite" />
+
+        <Grid Grid.Row="3" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1"
+              CornerRadius="{StaticResource OverlayCornerRadius}"
+              Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+
+            <!-- The grid is the only scrolling region and it sits in a Height="*" row, so it keeps a bounded
+                 viewport and virtualises rows; never wrap it in a ScrollViewer or put it in an Auto-height row,
+                 which gives it infinite height and realises all 3,000 rows at once. RowHeight is fixed so the
+                 scrollbar geometry is stable and rows never re-measure while scrolling. -->
+            <controls:DataGrid x:Name="Grid"
+                               AutomationProperties.Name="Stock adjustments"
+                               ItemsSource="{x:Bind ViewModel.FilteredItems, Mode=OneWay}"
+                               SelectedItem="{x:Bind ViewModel.Selected, Mode=TwoWay}"
+                               SelectionMode="Single"
+                               AutoGenerateColumns="False"
+                               IsReadOnly="True"
+                               CanUserSortColumns="True"
+                               CanUserResizeColumns="True"
+                               CanUserReorderColumns="True"
+                               RowHeight="36"
+                               CellStyle="{StaticResource CompactCell}"
+                               ColumnHeaderHeight="36"
+                               HeadersVisibility="Column"
+                               GridLinesVisibility="Horizontal"
+                               HorizontalGridLinesBrush="{ThemeResource DividerStrokeColorDefaultBrush}"
+                               AlternatingRowBackground="Transparent"
+                               Sorting="Grid_Sorting"
+                               Visibility="{x:Bind ViewModel.FilteredItems.Count, Mode=OneWay, Converter={StaticResource NonZeroToVisible}}">
+                <!-- One menu for the whole grid: opened by Shift+F10 / right-click on a row and by the row
+                     actions button. A MenuFlyout declared per row would be three more objects per realised row. -->
+                <controls:DataGrid.ContextFlyout>
+                    <MenuFlyout x:Name="RowActionsFlyout">
+                        <MenuFlyoutItem Text="Edit" Icon="Edit" Command="{x:Bind ViewModel.EditCommand}"
+                                        CommandParameter="{x:Bind ViewModel.Selected, Mode=OneWay}">
+                            <MenuFlyoutItem.KeyboardAccelerators>
+                                <KeyboardAccelerator Key="F2" />
+                            </MenuFlyoutItem.KeyboardAccelerators>
+                        </MenuFlyoutItem>
+                        <MenuFlyoutItem Text="Approve" Icon="Accept" Command="{x:Bind ViewModel.ApproveCommand}"
+                                        CommandParameter="{x:Bind ViewModel.Selected, Mode=OneWay}"
+                                        KeyboardAcceleratorTextOverride="Ctrl+Shift+A" />
+                        <MenuFlyoutItem Text="Reject" Icon="Cancel" Command="{x:Bind ViewModel.RejectCommand}"
+                                        CommandParameter="{x:Bind ViewModel.Selected, Mode=OneWay}"
+                                        KeyboardAcceleratorTextOverride="Ctrl+Shift+R" />
+                    </MenuFlyout>
+                </controls:DataGrid.ContextFlyout>
+                <controls:DataGrid.KeyboardAccelerators>
+                    <KeyboardAccelerator Key="F2" Invoked="EditSelected_Invoked" />
+                </controls:DataGrid.KeyboardAccelerators>
+
+                <controls:DataGrid.Columns>
+                    <!-- Status: icon + text, one accessible name for the cell -->
+                    <controls:DataGridTemplateColumn Header="Status" Width="108" CanUserSort="True" Tag="Status">
+                        <controls:DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate x:DataType="models:StockAdjustment">
+                                <StackPanel Orientation="Horizontal" Spacing="6" VerticalAlignment="Center" Margin="8,0"
+                                            AutomationProperties.Name="{x:Bind Status, Converter={StaticResource StatusPresentation}, ConverterParameter=Name}">
+                                    <FontIcon FontSize="14"
+                                              Glyph="{x:Bind Status, Converter={StaticResource StatusPresentation}, ConverterParameter=Glyph}"
+                                              Foreground="{x:Bind Status, Converter={StaticResource StatusPresentation}, ConverterParameter=Brush}"
+                                              AutomationProperties.AccessibilityView="Raw" />
+                                    <TextBlock Style="{StaticResource BodyTextBlockStyle}"
+                                               Text="{x:Bind Status, Converter={StaticResource StatusPresentation}, ConverterParameter=Text}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </controls:DataGridTemplateColumn.CellTemplate>
+                    </controls:DataGridTemplateColumn>
+
+                    <controls:DataGridTextColumn Header="Adjustment" Binding="{Binding Id}" Width="96" Tag="Id" />
+                    <controls:DataGridTextColumn Header="SKU" Binding="{Binding Sku}" Width="112" Tag="Sku" />
+                    <controls:DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="*" MinWidth="160" Tag="Description" />
+                    <controls:DataGridTextColumn Header="Location" Binding="{Binding Location}" Width="80" Tag="Location" />
+                    <controls:DataGridTextColumn Header="Reason" Binding="{Binding Reason}" Width="96" Tag="Reason" />
+
+                    <!-- Numeric columns: header right-aligned, unit in the header, tabular figures -->
+                    <!-- Text columns, not template columns: a DataGridTextColumn realises one TextBlock per cell,
+                         a template column realises a ContentPresenter plus the inflated DataTemplate. The
+                         formatting (right alignment, tabular figures) moves to ElementStyle and is identical. -->
+                    <controls:DataGridTextColumn Header="Before" HeaderStyle="{StaticResource NumericHeader}"
+                                                 ElementStyle="{StaticResource NumericCellText}" Width="76" Tag="QuantityBefore"
+                                                 Binding="{Binding QuantityBefore, Converter={StaticResource SignedNumber}, ConverterParameter=N0}" />
+                    <controls:DataGridTemplateColumn Header="Change" HeaderStyle="{StaticResource NumericHeader}" Width="76" Tag="QuantityDelta" CanUserSort="True">
+                        <controls:DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate x:DataType="models:StockAdjustment">
+                                <!-- Sign always shown; colour is secondary to the sign -->
+                                <TextBlock Style="{StaticResource NumericCellText}" FontWeight="SemiBold"
+                                           Text="{x:Bind QuantityDelta, Converter={StaticResource SignedNumber}, ConverterParameter=+N0}"
+                                           Foreground="{x:Bind QuantityDelta, Converter={StaticResource SignedNumber}, ConverterParameter=Brush}" />
+                            </DataTemplate>
+                        </controls:DataGridTemplateColumn.CellTemplate>
+                    </controls:DataGridTemplateColumn>
+                    <controls:DataGridTextColumn Header="After" HeaderStyle="{StaticResource NumericHeader}"
+                                                 ElementStyle="{StaticResource NumericCellText}" Width="76" Tag="QuantityAfter"
+                                                 Binding="{Binding QuantityAfter, Converter={StaticResource SignedNumber}, ConverterParameter=N0}" />
+                    <controls:DataGridTextColumn Header="Value (EUR)" HeaderStyle="{StaticResource NumericHeader}"
+                                                 ElementStyle="{StaticResource NumericCellText}" Width="88" Tag="ValueImpact"
+                                                 Binding="{Binding ValueImpact, Converter={StaticResource SignedNumber}, ConverterParameter=+N2}" />
+
+                    <!-- Hidden by default to keep the table inside a 1088 epx content area at 1440 wide; a column chooser (persisted) is the intended way to show it. -->
+                    <controls:DataGridTextColumn x:Name="CreatedByColumn" Header="Created by" Binding="{Binding CreatedBy}" Width="96" Tag="CreatedBy" Visibility="Collapsed" />
+
+                    <!-- Row actions: one button per row opening the shared actions menu (Edit / Approve / Reject).
+                         Three buttons per row meant ~9,000 focusable controls and three visual subtrees to build for
+                         every row the grid realises while scrolling, and three Tab stops per row. The same three
+                         commands stay on the command bar, the row context menu (Shift+F10) and the accelerators,
+                         so nothing became unreachable. -->
+                    <controls:DataGridTemplateColumn Header="Actions" Width="72" CanUserSort="False" CanUserReorder="False">
+                        <controls:DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate x:DataType="models:StockAdjustment">
+                                <Button Style="{StaticResource RowActionButton}" Margin="4,0" VerticalAlignment="Center"
+                                        AutomationProperties.Name="{x:Bind Id, Converter={StaticResource RowActionName}, ConverterParameter=Actions}"
+                                        ToolTipService.ToolTip="Actions (Shift+F10)"
+                                        Click="RowActions_Click" Tag="{x:Bind}">
+                                    <FontIcon Glyph="&#xE712;" FontSize="14" />
+                                </Button>
+                            </DataTemplate>
+                        </controls:DataGridTemplateColumn.CellTemplate>
+                    </controls:DataGridTemplateColumn>
+                </controls:DataGrid.Columns>
+            </controls:DataGrid>
+
+            <!-- Empty state: same region as the table, one heading, one sentence, one action -->
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="8" MaxWidth="360"
+                        Visibility="{x:Bind ViewModel.FilteredItems.Count, Mode=OneWay, Converter={StaticResource ZeroToVisible}}">
+                <FontIcon Glyph="&#xE9D5;" FontSize="28" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" TextAlignment="Center"
+                           Text="{x:Bind ViewModel.EmptyTitle, Mode=OneWay}" />
+                <TextBlock Style="{StaticResource BodyTextBlockStyle}" TextAlignment="Center" TextWrapping="Wrap"
+                           Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                           Text="{x:Bind ViewModel.EmptyBody, Mode=OneWay}" />
+                <Button HorizontalAlignment="Center" Margin="0,8,0,0"
+                        Content="{x:Bind ViewModel.EmptyActionLabel, Mode=OneWay}"
+                        Command="{x:Bind ViewModel.EmptyActionCommand, Mode=OneWay}" />
+            </StackPanel>
+
+            <!-- Loading -->
+            <ProgressRing IsActive="{x:Bind ViewModel.IsLoading, Mode=OneWay}" Width="32" Height="32"
+                          HorizontalAlignment="Center" VerticalAlignment="Center"
+                          AutomationProperties.Name="Loading stock adjustments" />
+        </Grid>
+
+        <!-- Keyboard shortcut reference: one place that lists every accelerator on this page (F1). -->
+        <ContentDialog x:Name="ShortcutsDialog" Title="Keyboard shortcuts" CloseButtonText="Close" DefaultButton="Close">
+            <ItemsControl ItemsSource="{x:Bind ViewModel.Shortcuts}" IsTabStop="False" Width="360">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate x:DataType="vm:ShortcutInfo">
+                        <Grid ColumnSpacing="16" Padding="0,4" AutomationProperties.Name="{x:Bind Description}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="132" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Border Background="{ThemeResource ControlFillColorSecondaryBrush}"
+                                    BorderBrush="{ThemeResource ControlStrokeColorDefaultBrush}" BorderThickness="1"
+                                    CornerRadius="{StaticResource ControlCornerRadius}" Padding="8,2" HorizontalAlignment="Left">
+                                <TextBlock Text="{x:Bind Keys}" Style="{StaticResource CaptionTextBlockStyle}" />
+                            </Border>
+                            <TextBlock Grid.Column="1" Text="{x:Bind Description}" Style="{StaticResource BodyTextBlockStyle}"
+                                       VerticalAlignment="Center" TextWrapping="Wrap" />
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ContentDialog>
+    </Grid>
+</Page>

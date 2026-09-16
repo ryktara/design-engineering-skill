@@ -1,0 +1,725 @@
+{
+  "generator": "sonnet",
+  "prompts": [
+    {
+      "id": "hv5-g01-001",
+      "prompt": "Need a new onboarding flow for the loan app, three steps, nothing fancy.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-002",
+      "prompt": "Building a screen from scratch where warehouse pickers confirm a scanned bin location.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-003",
+      "prompt": "We want a dashboard for the ward nurses to see who's due for meds next.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-004",
+      "prompt": "Sketch out a first-run experience for the fitness tracker, no accounts yet.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-005",
+      "prompt": "Add a new tab for comparing two insurance quotes side by side.",
+      "category": "create",
+      "stress": "wrong-screen"
+    },
+    {
+      "id": "hv5-g01-006",
+      "prompt": "Client wants a landing page for the new savings product, nothing built yet.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-007",
+      "prompt": "Put together a checkout flow for the farmers market app, cash and card both.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-008",
+      "prompt": "We're starting from zero on a scheduling screen for the salon booking app.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-009",
+      "prompt": "Design the empty state for a brand new project workspace, first-time user.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-010",
+      "prompt": "Need a screen where drivers pick their route for the day, in the van, glanceable.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-011",
+      "prompt": "New feature: let players build a custom loadout before a match starts.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-012",
+      "prompt": "Product wants a whole new results page for the property search, map plus list.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-013",
+      "prompt": "From scratch — a returns wizard for the retail site, three steps max.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-014",
+      "prompt": "On the shop floor screen we need a new panel showing live line throughput.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-015",
+      "prompt": "Build a signup flow for the student portal, parents can co-sign.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-016",
+      "prompt": "Create a new comparison view for two flight itineraries.",
+      "category": "create",
+      "stress": "wrong-screen"
+    },
+    {
+      "id": "hv5-g01-017",
+      "prompt": "We need a screen for the census workers to log a household visit offline.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-018",
+      "prompt": "First cut of a settings screen for the smart thermostat companion app.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-019",
+      "prompt": "Design a new upload flow for lab results, patient facing, mobile first.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-020",
+      "prompt": "Nothing exists yet for the vendor invoice review, start with the list view.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-021",
+      "prompt": "Build a new player profile page, avatar, stats, badges.",
+      "category": "create",
+      "stress": "wrong-screen"
+    },
+    {
+      "id": "hv5-g01-022",
+      "prompt": "We're adding a brand new tipping screen at the end of checkout, optional.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-023",
+      "prompt": "Need a fresh screen for the customs broker to enter shipment manifests.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-024",
+      "prompt": "Create a welcome tour for first-time users of the budgeting app.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-025",
+      "prompt": "New EPG-style browse screen for the streaming app, rails by genre.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-026",
+      "prompt": "Design a from-scratch cart for the b2b ordering portal, bulk quantities.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-027",
+      "prompt": "Build a new referral screen where users share a code and track rewards.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-028",
+      "prompt": "We need a new intake form for the clinic's telehealth triage, first visit.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-029",
+      "prompt": "Sketch a new dashboard for plant supervisors, one screen, key alarms only.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-030",
+      "prompt": "Add a whole new screen for comparing two mortgage offers.",
+      "category": "create",
+      "stress": "wrong-screen"
+    },
+    {
+      "id": "hv5-g01-031",
+      "prompt": "Starting a new library screen for saved recipes, no filters yet.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-032",
+      "prompt": "Need a first version of a seating chart builder for the event app.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-033",
+      "prompt": "Build a new screen from the ground up for tracking vaccine doses per child.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-034",
+      "prompt": "We want a totally new onboarding for the trucking dispatch app, driver side.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-035",
+      "prompt": "Design a new leaderboard screen for the trivia game, weekly and all-time.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-036",
+      "prompt": "Nothing here yet — build the initial screen for reporting a pothole.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-037",
+      "prompt": "New feature request: a screen letting teachers build a seating plan.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-038",
+      "prompt": "Create the first version of a claims submission flow, photos and receipts.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-039",
+      "prompt": "We need a screen from scratch for pharmacists to flag drug interactions.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-040",
+      "prompt": "Build a new profile setup screen with avatar cropping for the kids app.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-041",
+      "prompt": "Design a brand new voting ballot review screen, accessible by default.",
+      "category": "create",
+      "stress": "generic-guardrail"
+    },
+    {
+      "id": "hv5-g01-042",
+      "prompt": "Need a screen where museum visitors can browse an exhibit map, kiosk-ish.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-043",
+      "prompt": "First pass at a new screen for comparing energy tariffs.",
+      "category": "create",
+      "stress": "wrong-screen"
+    },
+    {
+      "id": "hv5-g01-044",
+      "prompt": "Build a new checkout confirmation screen with order tracking link.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-045",
+      "prompt": "We're launching a new feature: split billing between roommates.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-046",
+      "prompt": "Create a screen for logging maintenance on factory equipment, offline capable.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-047",
+      "prompt": "New onboarding wizard for the payroll admin, five steps.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-048",
+      "prompt": "Design a fresh notifications center, nothing exists right now.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-049",
+      "prompt": "Build a screen for the concierge desk to log guest requests, from the sofa in the lounge nearby.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-050",
+      "prompt": "Need a new screen for scanning a barcode and adding stock, gloves on most of the day.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-051",
+      "prompt": "Create a first draft of a workout builder, drag exercises into a plan.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-052",
+      "prompt": "We want a new comparison screen for two candidate resumes.",
+      "category": "create",
+      "stress": "wrong-screen"
+    },
+    {
+      "id": "hv5-g01-053",
+      "prompt": "Build a screen for reporting outages, used by field techs, spotty signal.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-054",
+      "prompt": "Design the initial screen for a subscription paywall, three tiers.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-055",
+      "prompt": "New feature: a screen where citizens track their permit application status.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-056",
+      "prompt": "Need a from-scratch screen for pairing a new device over bluetooth.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-057",
+      "prompt": "Build a new screen for comparing two shipment routes on cost and time.",
+      "category": "create",
+      "stress": "wrong-screen"
+    },
+    {
+      "id": "hv5-g01-058",
+      "prompt": "Create a screen for the security desk badge kiosk, walk-up, no login.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-059",
+      "prompt": "First version of a screen letting coaches build a practice plan.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-060",
+      "prompt": "We need a totally new screen for donors to pick a recurring gift amount.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-061",
+      "prompt": "Design a screen for the machine in the lobby to print a visitor badge.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-062",
+      "prompt": "Build a new screen for comparing two loan terms side by side.",
+      "category": "create",
+      "stress": "wrong-screen"
+    },
+    {
+      "id": "hv5-g01-063",
+      "prompt": "Need a fresh screen for parents to request a substitute teacher day.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-064",
+      "prompt": "Create a new screen for tracking blood donation appointments.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-065",
+      "prompt": "From nothing, build a screen for restaurant staff to mark a table dirty or clean.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-066",
+      "prompt": "New feature: an itinerary builder for the travel app, drag to reorder days.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-067",
+      "prompt": "Design a first pass at a screen for comparing two loyalty card tiers.",
+      "category": "create",
+      "stress": "wrong-screen"
+    },
+    {
+      "id": "hv5-g01-068",
+      "prompt": "We need a screen for warehouse leads to assign pickers to zones.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-069",
+      "prompt": "Build a screen where players customize their in-game avatar before entering the lobby.",
+      "category": "create",
+      "stress": "wrong-screen"
+    },
+    {
+      "id": "hv5-g01-070",
+      "prompt": "Create the initial screen for a co-op grocery order splitting tool.",
+      "category": "create",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-071",
+      "prompt": "The totals never line up on the invoice summary, off by a pixel or two.",
+      "category": "refactor-fix",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-072",
+      "prompt": "The tab key skips over half the fields on the intake form.",
+      "category": "refactor-fix",
+      "stress": "wrong-screen"
+    },
+    {
+      "id": "hv5-g01-073",
+      "prompt": "Users keep missing the save button, it's below the fold on smaller windows.",
+      "category": "refactor-fix",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-074",
+      "prompt": "Something's off with the loading spinner on the payments screen, it flickers.",
+      "category": "refactor-fix",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-075",
+      "prompt": "The card on the checkout page doesn't update when quantity changes.",
+      "category": "refactor-fix",
+      "stress": "wrong-screen"
+    },
+    {
+      "id": "hv5-g01-076",
+      "prompt": "Drivers say the route screen freezes when they lose signal in the tunnel.",
+      "category": "refactor-fix",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-077",
+      "prompt": "The overlay stays visible after the video ends, blocking the controls.",
+      "category": "refactor-fix",
+      "stress": "wrong-screen"
+    },
+    {
+      "id": "hv5-g01-078",
+      "prompt": "On the ward, the vitals chart resets the zoom every time a new reading comes in.",
+      "category": "refactor-fix",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-079",
+      "prompt": "The dropdown for state selection doesn't scroll on touch, it just jumps.",
+      "category": "refactor-fix",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-080",
+      "prompt": "Compare two files feature shows the wrong diff colors half the time.",
+      "category": "refactor-fix",
+      "stress": "wrong-screen"
+    },
+    {
+      "id": "hv5-g01-081",
+      "prompt": "Fix the cart badge count, it doesn't update after a remove.",
+      "category": "refactor-fix",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-082",
+      "prompt": "The remote screen in the WPF app throws when you resize below 800px wide.",
+      "category": "refactor-fix",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-083",
+      "prompt": "Something breaks the seating chart when two people drag at once.",
+      "category": "refactor-fix",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-084",
+      "prompt": "The landscape mode on the tablet cuts off the last column of the table.",
+      "category": "refactor-fix",
+      "stress": "wrong-screen"
+    },
+    {
+      "id": "hv5-g01-085",
+      "prompt": "Nurses report the med schedule doesn't refresh unless you force close the app.",
+      "category": "refactor-fix",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-086",
+      "prompt": "The terminal at gate 12 kiosk keeps timing out mid-checkin.",
+      "category": "refactor-fix",
+      "stress": "wrong-screen"
+    },
+    {
+      "id": "hv5-g01-087",
+      "prompt": "Search results flicker and reorder themselves right after loading.",
+      "category": "refactor-fix",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-088",
+      "prompt": "The guide screen for new hires links to a page that doesn't exist anymore.",
+      "category": "refactor-fix",
+      "stress": "wrong-screen"
+    },
+    {
+      "id": "hv5-g01-089",
+      "prompt": "Something's wrong with focus order on the payment form, tab jumps around.",
+      "category": "refactor-fix",
+      "stress": "generic-guardrail"
+    },
+    {
+      "id": "hv5-g01-090",
+      "prompt": "The player profile page shows stale stats after a match ends.",
+      "category": "refactor-fix",
+      "stress": "wrong-screen"
+    },
+    {
+      "id": "hv5-g01-091",
+      "prompt": "Fix the export button, it triggers twice if you double click by accident.",
+      "category": "refactor-fix",
+      "stress": "generic-guardrail"
+    },
+    {
+      "id": "hv5-g01-092",
+      "prompt": "The member profile card cuts off long names instead of wrapping.",
+      "category": "refactor-fix",
+      "stress": "wrong-screen"
+    },
+    {
+      "id": "hv5-g01-093",
+      "prompt": "On the shop floor screen the alarm banner never clears even after the fix is logged.",
+      "category": "refactor-fix",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-094",
+      "prompt": "The comparison chart on the energy dashboard mislabels the axes after a resize.",
+      "category": "refactor-fix",
+      "stress": "wrong-screen"
+    },
+    {
+      "id": "hv5-g01-095",
+      "prompt": "From the sofa, the remote control app lags a full second behind button presses.",
+      "category": "refactor-fix",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-096",
+      "prompt": "The event log screen truncates entries instead of scrolling.",
+      "category": "refactor-fix",
+      "stress": "wrong-screen"
+    },
+    {
+      "id": "hv5-g01-097",
+      "prompt": "The claim form loses everything typed if you rotate the phone.",
+      "category": "refactor-fix",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-098",
+      "prompt": "Fix the confirmation modal, it closes itself before the user can read it.",
+      "category": "refactor-fix",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-099",
+      "prompt": "Warehouse staff say scanning a code sometimes adds the item twice.",
+      "category": "refactor-fix",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-100",
+      "prompt": "The poster-sized print preview shows the wrong bleed margins.",
+      "category": "refactor-fix",
+      "stress": "wrong-screen"
+    },
+    {
+      "id": "hv5-g01-101",
+      "prompt": "The badge kiosk print queue jams if two visitors check in within a second.",
+      "category": "refactor-fix",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-102",
+      "prompt": "Fix the focus ring color on the primary button, it's invisible on dark mode.",
+      "category": "refactor-fix",
+      "stress": "generic-guardrail"
+    },
+    {
+      "id": "hv5-g01-103",
+      "prompt": "The itinerary screen reorders days wrong when you drag past the last item.",
+      "category": "refactor-fix",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-104",
+      "prompt": "Students say the quiz timer keeps running after they submit.",
+      "category": "refactor-fix",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-105",
+      "prompt": "Fix the one label on the delete confirmation, it says 'Confirm' instead of what it deletes.",
+      "category": "refactor-fix",
+      "stress": "generic-guardrail"
+    },
+    {
+      "id": "hv5-g01-106",
+      "prompt": "The loyalty tier comparison screen shows last month's points, not current.",
+      "category": "refactor-fix",
+      "stress": "wrong-screen"
+    },
+    {
+      "id": "hv5-g01-107",
+      "prompt": "Something's wrong with the split billing screen, rounding leaves a cent unaccounted.",
+      "category": "refactor-fix",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-108",
+      "prompt": "The dispatch board loses the driver's assigned zone after a refresh.",
+      "category": "refactor-fix",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-109",
+      "prompt": "Fix the button order on the save dialog, cancel and confirm are swapped from usual.",
+      "category": "refactor-fix",
+      "stress": "generic-guardrail"
+    },
+    {
+      "id": "hv5-g01-110",
+      "prompt": "The pharmacy interaction alert dismisses on tap instead of requiring acknowledgment.",
+      "category": "refactor-fix",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-111",
+      "prompt": "The clinic intake form validates the phone field wrong for international numbers.",
+      "category": "refactor-fix",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-112",
+      "prompt": "Fix the spacing value between the price and the strike-through price, they're touching.",
+      "category": "refactor-fix",
+      "stress": "generic-guardrail"
+    },
+    {
+      "id": "hv5-g01-113",
+      "prompt": "The tab for shipment history shows the wrong carrier icon sometimes.",
+      "category": "refactor-fix",
+      "stress": "wrong-screen"
+    },
+    {
+      "id": "hv5-g01-114",
+      "prompt": "In the van, the delivery confirmation screen doesn't save signatures offline.",
+      "category": "refactor-fix",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-115",
+      "prompt": "The overlay for the tutorial won't dismiss on some devices, blocks the whole app.",
+      "category": "refactor-fix",
+      "stress": "wrong-screen"
+    },
+    {
+      "id": "hv5-g01-116",
+      "prompt": "Fix the one color on the low-stock badge, it's the same red as the error state.",
+      "category": "refactor-fix",
+      "stress": "generic-guardrail"
+    },
+    {
+      "id": "hv5-g01-117",
+      "prompt": "The seating plan tool for teachers doesn't save if you switch classes mid-edit.",
+      "category": "refactor-fix",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-118",
+      "prompt": "Something's broken in the recipe screen, the serving size stepper goes negative.",
+      "category": "refactor-fix",
+      "stress": "none"
+    },
+    {
+      "id": "hv5-g01-119",
+      "prompt": "The card reader terminal screen shows approved before the transaction actually clears.",
+      "category": "refactor-fix",
+      "stress": "wrong-screen"
+    },
+    {
+      "id": "hv5-g01-120",
+      "prompt": "Fix the screen reader label on the mute icon, it just says 'button'.",
+      "category": "refactor-fix",
+      "stress": "generic-guardrail"
+    }
+  ]
+}

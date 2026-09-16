@@ -1,0 +1,975 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "Checkout on phones: the order summary pushes the pay button below the fold.",
+  "status": "AMBIGUOUS",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "responsive",
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "mobile"
+    ],
+    "input": [
+      "touch"
+    ],
+    "product": [
+      "ecommerce"
+    ],
+    "screen": [
+      "checkout"
+    ],
+    "screen_subtype": [],
+    "stack": [
+      "html-css"
+    ],
+    "density": null,
+    "components": [
+      "button"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "responsive checkout"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "screen_reader": true,
+      "touch_targets": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "layout",
+        "interaction",
+        "responsive"
+      ],
+      "change_scope": "local",
+      "utterance": "observation",
+      "existing": true,
+      "problem": true,
+      "facet": "visual",
+      "diagnose_only": false,
+      "creation": false,
+      "redesign": false,
+      "responsive_cues": true,
+      "preserve": [],
+      "scope": "low"
+    },
+    "platform_evidence": [
+      {
+        "platform": "mobile",
+        "strength": "DIRECT",
+        "evidence": [
+          "phones"
+        ]
+      }
+    ],
+    "mode_evidence": [
+      "responsive: explicit: on phones",
+      "audit: layout/structure defect on existing UI",
+      "refactor: structural fix follows"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "top-bar",
+        "status": "KNOWN",
+        "evidence": [
+          "top-bar: 4 matches in checkout.html, index.html, product.html (shell/layout file)"
+        ]
+      },
+      "theme": {
+        "value": "light-first",
+        "status": "INFERRED",
+        "evidence": [
+          "hex palette: 6 near-white, 2 near-black"
+        ]
+      },
+      "surfaces": {
+        "value": "elevated",
+        "status": "INFERRED",
+        "evidence": [
+          "weak signal: shadow 1, border 1"
+        ]
+      },
+      "radius": {
+        "value": "pill",
+        "status": "INFERRED",
+        "evidence": [
+          "most common radius 999 (5×); others [5.0, 4.0]"
+        ]
+      },
+      "spacing": {
+        "value": "irregular",
+        "status": "UNKNOWN",
+        "evidence": [
+          "most used spacing values [4, 14, 2]"
+        ]
+      },
+      "typography": {
+        "value": "geometric-sans",
+        "status": "INFERRED",
+        "evidence": [
+          "font family Inter (1 refs)",
+          "weights 600, 500, 400",
+          "encoded type scale in 1 files"
+        ]
+      },
+      "components": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": []
+      }
+    },
+    "known": [
+      "platform=mobile (request: phones)",
+      "product=ecommerce (request: checkout)",
+      "stack=html-css (project inspection)",
+      "screen=checkout (request: checkout)",
+      "mode=responsive (explicit: on phones)",
+      "project_navigation=top-bar (repository: top-bar: 4 matches in checkout.html, index.html, product.html (shell/layout file))"
+    ],
+    "inferred": [
+      "input=touch (implied by platform mobile)",
+      "mode=audit (layout/structure defect on existing UI)",
+      "mode=refactor (structural fix follows)",
+      "project_theme=light-first (repository: hex palette: 6 near-white, 2 near-black)",
+      "project_surfaces=elevated (repository: weak signal: shadow 1, border 1)",
+      "project_radius=pill (repository: most common radius 999 (5×); others [5.0, 4.0])",
+      "project_typography=geometric-sans (repository: font family Inter (1 refs); weights 600, 500, 400)"
+    ],
+    "missing": [],
+    "conflicts": [
+      {
+        "field": "platform",
+        "request": [
+          "mobile"
+        ],
+        "project": "web",
+        "resolution": "request kept; repository platform recorded as context"
+      }
+    ],
+    "status": "AMBIGUOUS",
+    "source": {
+      "request": [
+        "checkout",
+        "on phones",
+        "phones"
+      ],
+      "project": [
+        "*.html without a framework manifest: plain HTML/CSS site"
+      ]
+    },
+    "activation": {
+      "decision": "activate",
+      "ui_score": 4.0,
+      "non_ui_score": 0,
+      "ui_terms": [
+        "button"
+      ],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "present-tense observation"
+      ],
+      "new": [],
+      "defect": [
+        "observed behaviour"
+      ],
+      "operations": {},
+      "domains": {
+        "interaction": [
+          "button"
+        ],
+        "layout": [
+          "below the fold",
+          "pushes"
+        ],
+        "responsive": [
+          "on phones"
+        ]
+      },
+      "no_change": [],
+      "scope": {
+        "flow": [
+          "checkout"
+        ],
+        "local": [
+          "button"
+        ]
+      },
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "button",
+        "checkout"
+      ],
+      "ux_symptoms": [],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "adaptive",
+        "reason": "responsive mode"
+      },
+      {
+        "concern": "structure",
+        "reason": "layout transformation"
+      },
+      {
+        "concern": "interaction",
+        "reason": "input model: touch"
+      },
+      {
+        "concern": "accessibility",
+        "reason": "platform accessibility baseline"
+      },
+      {
+        "concern": "feedback",
+        "reason": "form validation and submission feedback"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "navigation",
+        "reason": "navigation transforms across widths"
+      }
+    ],
+    "optional": [
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "adaptive.breakpoint_matrix",
+        "reason": "responsive mode"
+      },
+      {
+        "concept": "state.loading_empty_error",
+        "reason": "asynchronous or remote data on this screen"
+      },
+      {
+        "concept": "touch.minimum_target",
+        "reason": "touch platform"
+      },
+      {
+        "concept": "feedback.validation_errors",
+        "reason": "form"
+      },
+      {
+        "concept": "touch.ime_keyboard",
+        "reason": "form on touch"
+      },
+      {
+        "concept": "layout.one_primary_action",
+        "reason": "checkout"
+      },
+      {
+        "concept": "feedback.trust_signals",
+        "reason": "commitment step"
+      }
+    ],
+    "recommended_concepts": [
+      "adaptive.navigation_transform",
+      "touch.gestures_discoverable",
+      "touch.thumb_reach",
+      "touch.safe_areas",
+      "navigation.platform_grammar",
+      "form.autofill_attributes",
+      "feedback.confirmation_destructive",
+      "a11y.live_status"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "comp-checkout-one-page",
+      "kind": "component",
+      "category": "form",
+      "title": "One-page checkout",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "feedback",
+        "states",
+        "structure"
+      ],
+      "concepts": [
+        "feedback.validation_errors",
+        "touch.ime_keyboard",
+        "feedback.confirmation_destructive",
+        "state.saving_conflict",
+        "layout.one_primary_action",
+        "feedback.trust_signals"
+      ],
+      "covers": [
+        "inline validation messages and error recovery",
+        "on-screen keyboard (IME) aware layout",
+        "confirmation of destructive or high-risk actions",
+        "saving, saved and conflict states",
+        "one primary action per view",
+        "trust and cost transparency before commitment"
+      ],
+      "score": 0.75,
+      "guidance": "Order summary is visible on desktop (side column) and collapsible-but-present at the top on phones with the total always shown; guest checkout first, account optional; sections in the order contact → shipping → payment → review, each with a visible heading and inline validation on blur plus a focused error summary on submit; address fields use autocomplete attributes and correct input types/IME; the pay button states the amount, is disabled only while processing (with a visible status), and is protected against double submission; trust and cost information (shipping, tax) appears before payment, never as a surprise; progress is saved locally so a reload does not lose entries.",
+      "use_when": "Purchase flows with contact, shipping, payment and review on one scrolling page.",
+      "avoid_when": "Multi-session or regulated flows that need a stepper with server-side validation per step.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "implementation": {
+        "html-css": "autocomplete=\"shipping postal-code\" etc.; inputmode=\"numeric\" for card and postal fields; aria-describedby error links; aria-live status on the pay button."
+      },
+      "incompatible": [
+        "nav-wizard"
+      ],
+      "why": {
+        "lexical": 0.791,
+        "structural": 0.7,
+        "matched": [
+          "platform mobile",
+          "secondary mode",
+          "product ecommerce",
+          "screen checkout"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "cta-single-primary",
+      "kind": "pattern",
+      "category": "cta",
+      "title": "One primary action per screen",
+      "facets": [
+        "layout"
+      ],
+      "concerns": [
+        "interaction",
+        "structure"
+      ],
+      "concepts": [
+        "layout.one_primary_action"
+      ],
+      "covers": [
+        "one primary action per view"
+      ],
+      "score": 0.351,
+      "guidance": "Exactly one filled button per view, secondaries as outlined/text, destructive actions separated and confirmed, button label is a verb phrase naming the outcome ('Save changes'), disabled only with an explanation nearby.",
+      "use_when": "Task screens (forms, checkout, onboarding, settings) where one action completes the job; the primary is filled, secondaries are quiet.",
+      "avoid_when": "Workbenches with many equal commands (toolbar pattern) or browse screens where selection is the action (focus-selects).",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "incompatible": [
+        "cta-toolbar-commands",
+        "cta-focus-selects"
+      ],
+      "why": {
+        "lexical": 0.114,
+        "structural": 0.44,
+        "matched": [
+          "secondary mode",
+          "screen checkout"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring pattern with lexical evidence"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "a11y-target-size",
+      "kind": "rule",
+      "category": "input",
+      "title": "Target size by platform",
+      "facets": [
+        "interaction"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "touch.minimum_target"
+      ],
+      "covers": [
+        "large touch targets (≥44–48 px)"
+      ],
+      "score": 0.323,
+      "guidance": "Web: ≥24×24 CSS px minimum (WCAG 2.5.8), 44×44 recommended for touch. iOS ≥44 pt, Android ≥48 dp, kiosk ≥60 px, desktop pointer ≥24 epx with 4–8 px spacing. Extend the hit area beyond the visual glyph rather than enlarging the icon.",
+      "use_when": "Every tappable/clickable element; especially icon buttons, table row actions, chips, close buttons, and pagination.",
+      "avoid_when": "Inline text links inside a sentence are exempt from the size rule but still need spacing.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.063,
+        "structural": 0.64,
+        "matched": [
+          "input touch",
+          "mode responsive"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: accessibility, large touch targets (≥44–48 px)"
+    },
+    {
+      "id": "layout-states-empty-loading-error",
+      "kind": "rule",
+      "category": "feedback",
+      "title": "Design empty, loading, error, and partial states",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "states"
+      ],
+      "concepts": [
+        "state.loading_empty_error"
+      ],
+      "covers": [
+        "loading, empty and error states"
+      ],
+      "score": 0.225,
+      "guidance": "Empty: what this is, why it is empty, one action. Loading: skeleton with final dimensions, then content; announce completion. Error: what failed, what to do, retry that works; keep entered data. Partial: show what loaded, mark what didn't. On TV, focus must land somewhere valid in each state.",
+      "use_when": "Every list, table, chart, form, and detail screen.",
+      "avoid_when": "Never ship a blank area for empty data; never show a spinner for more than ~1 s without a skeleton or progress; never show an error without a next step.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.5,
+        "matched": [
+          "secondary mode"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: loading, empty and error states"
+    },
+    {
+      "id": "mobile-safe-areas",
+      "kind": "rule",
+      "category": "layout",
+      "title": "Mobile: safe areas and system insets",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "adaptive",
+        "structure"
+      ],
+      "concepts": [
+        "touch.safe_areas"
+      ],
+      "covers": [
+        "safe areas and notches"
+      ],
+      "score": 0.342,
+      "guidance": "Content respects safe-area insets (SwiftUI safeAreaInset / .ignoresSafeArea only for backgrounds, Compose WindowInsets + edge-to-edge, RN SafeAreaView/useSafeAreaInsets, web env(safe-area-inset-*)); bottom actions sit above the home indicator/gesture bar; keyboard (IME) insets push the focused field into view.",
+      "use_when": "Bottom bars, sticky CTAs, full-bleed backgrounds, top app bars, landscape.",
+      "avoid_when": "Never hard-code status/nav bar heights.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.76,
+        "matched": [
+          "platform mobile",
+          "input touch",
+          "mode responsive"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: adaptive"
+    },
+    {
+      "id": "mobile-platform-navigation",
+      "kind": "rule",
+      "category": "navigation",
+      "title": "Mobile: follow the platform navigation grammar",
+      "facets": [
+        "navigation",
+        "platform"
+      ],
+      "concerns": [
+        "navigation"
+      ],
+      "concepts": [
+        "navigation.platform_grammar"
+      ],
+      "covers": [
+        "platform navigation grammar"
+      ],
+      "score": 0.306,
+      "guidance": "iOS: tab bar + navigation stack with large titles where idiomatic, sheets for secondary tasks, swipe back. Android: navigation bar, predictive back, top app bar, modal bottom sheets, up vs back. Cross-platform frameworks still map to these; state deviations as brand decisions.",
+      "use_when": "Choosing tab bars, drawers, stacks, sheets, and back behaviour on iOS vs Android.",
+      "avoid_when": "Do not port an iOS tab bar with iOS icons to Android unchanged or vice versa unless the product is deliberately brand-uniform; do not build custom back handling that breaks the system back.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.68,
+        "matched": [
+          "platform mobile",
+          "input touch",
+          "secondary mode"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "recommended coverage: navigation, platform navigation grammar"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "adaptive",
+      "structure",
+      "interaction",
+      "accessibility",
+      "feedback"
+    ],
+    "covered_required_concerns": [
+      "adaptive",
+      "structure",
+      "interaction",
+      "accessibility",
+      "feedback"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "navigation"
+    ],
+    "covered_recommended_concerns": [
+      "navigation"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "adaptive.breakpoint_matrix",
+      "state.loading_empty_error",
+      "touch.minimum_target",
+      "feedback.validation_errors",
+      "touch.ime_keyboard",
+      "layout.one_primary_action",
+      "feedback.trust_signals"
+    ],
+    "covered_required_concepts": [
+      "state.loading_empty_error",
+      "touch.minimum_target",
+      "feedback.validation_errors",
+      "touch.ime_keyboard",
+      "layout.one_primary_action",
+      "feedback.trust_signals"
+    ],
+    "uncovered_required_concepts": [
+      "adaptive.breakpoint_matrix"
+    ],
+    "concept_coverage_ratio": 0.86,
+    "recommended_concept_coverage": 0.38,
+    "bundle_size": 6,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 2,
+    "guardrail_size": 4,
+    "bundle_tokens": 878,
+    "coverage_per_1k_tokens": 6.83,
+    "mean_purity": 0.97,
+    "contaminated": [],
+    "category_diversity": 1.0,
+    "duplicate_pressure": 0.17,
+    "facet_coverage": 1.0,
+    "redundancy": 0.33
+  },
+  "token_coverage": 1.0,
+  "omitted": [
+    {
+      "id": "comp-wizard-stepper",
+      "reason": "contamination: low purity 0.00: most of its concepts are off-task; wizard-specific record with no wizard evidence in the request"
+    },
+    {
+      "id": "comp-form",
+      "reason": "same category as a core pick (adds no new concept) or incompatible with one"
+    },
+    {
+      "id": "nav-wizard",
+      "reason": "same category as a core pick (adds no new concept) or incompatible with one"
+    }
+  ],
+  "rejected": [
+    {
+      "id": "anti-hero-template",
+      "reason": "platform ['web'] not in request ['mobile']"
+    },
+    {
+      "id": "anti-hover-only-actions",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-data-table",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-data-entry-grid",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-tv-sign-in",
+      "reason": "platform ['tv'] not in request ['mobile']"
+    },
+    {
+      "id": "nav-top-bar",
+      "reason": "platform ['web'] not in request ['mobile']"
+    },
+    {
+      "id": "layout-master-detail",
+      "reason": "platform ['desktop', 'tablet', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "layout-three-pane",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "adaptive.breakpoint_matrix",
+      "priority": "required",
+      "reason": "responsive mode",
+      "candidate_records": [],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "carriers filtered before ranking: platform ['desktop'] not in request ['mobile']"
+    },
+    {
+      "concept": "state.loading_empty_error",
+      "priority": "required",
+      "reason": "asynchronous or remote data on this screen",
+      "candidate_records": [
+        [
+          "anti-no-states",
+          0.232
+        ],
+        [
+          "layout-states-empty-loading-error",
+          0.225
+        ],
+        [
+          "comp-empty-state",
+          0.162
+        ],
+        [
+          "comp-chart-container",
+          0.052
+        ]
+      ],
+      "selected_record": "layout-states-empty-loading-error",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "touch.minimum_target",
+      "priority": "required",
+      "reason": "touch platform",
+      "candidate_records": [
+        [
+          "a11y-target-size",
+          0.323
+        ],
+        [
+          "comp-product-detail-page",
+          0.223
+        ],
+        [
+          "mobile-density-touch",
+          0.216
+        ],
+        [
+          "comp-photo-capture-field",
+          0.198
+        ]
+      ],
+      "selected_record": "a11y-target-size",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "feedback.validation_errors",
+      "priority": "required",
+      "reason": "form",
+      "candidate_records": [
+        [
+          "comp-checkout-one-page",
+          0.75
+        ],
+        [
+          "comp-form",
+          0.294
+        ],
+        [
+          "a11y-forms-errors",
+          0.246
+        ],
+        [
+          "anti-placeholder-labels",
+          0.225
+        ]
+      ],
+      "selected_record": "comp-checkout-one-page",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "touch.ime_keyboard",
+      "priority": "required",
+      "reason": "form on touch",
+      "candidate_records": [
+        [
+          "comp-checkout-one-page",
+          0.75
+        ],
+        [
+          "mobile-keyboard-ime",
+          0.306
+        ],
+        [
+          "comp-form",
+          0.294
+        ]
+      ],
+      "selected_record": "comp-checkout-one-page",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "layout.one_primary_action",
+      "priority": "required",
+      "reason": "checkout",
+      "candidate_records": [
+        [
+          "comp-checkout-one-page",
+          0.75
+        ],
+        [
+          "cta-single-primary",
+          0.351
+        ],
+        [
+          "layout-hierarchy-one-thing",
+          0.225
+        ],
+        [
+          "comp-product-detail-page",
+          0.223
+        ]
+      ],
+      "selected_record": "comp-checkout-one-page",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "feedback.trust_signals",
+      "priority": "required",
+      "reason": "commitment step",
+      "candidate_records": [
+        [
+          "comp-checkout-one-page",
+          0.75
+        ],
+        [
+          "comp-product-detail-page",
+          0.223
+        ]
+      ],
+      "selected_record": "comp-checkout-one-page",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "adaptive.navigation_transform",
+      "priority": "recommended",
+      "reason": "responsive mode",
+      "candidate_records": [],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "carriers filtered before ranking: platform ['web'] not in request ['mobile']"
+    },
+    {
+      "concept": "touch.gestures_discoverable",
+      "priority": "recommended",
+      "reason": "touch platform",
+      "candidate_records": [
+        [
+          "mobile-gestures-discoverable",
+          0.314
+        ],
+        [
+          "comp-list-row-mobile",
+          0.14
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.thumb_reach",
+      "priority": "recommended",
+      "reason": "one-handed use",
+      "candidate_records": [
+        [
+          "mobile-thumb-reach",
+          0.321
+        ],
+        [
+          "anti-mobile-desktop-shrunk",
+          0.216
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.safe_areas",
+      "priority": "recommended",
+      "reason": "mobile",
+      "candidate_records": [
+        [
+          "mobile-safe-areas",
+          0.342
+        ]
+      ],
+      "selected_record": "mobile-safe-areas",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "navigation.platform_grammar",
+      "priority": "recommended",
+      "reason": "mobile navigation grammar",
+      "candidate_records": [
+        [
+          "nav-bottom-tabs",
+          0.323
+        ],
+        [
+          "mobile-platform-navigation",
+          0.306
+        ]
+      ],
+      "selected_record": "mobile-platform-navigation",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "form.autofill_attributes",
+      "priority": "recommended",
+      "reason": "form",
+      "candidate_records": [
+        [
+          "comp-form",
+          0.294
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "feedback.confirmation_destructive",
+      "priority": "recommended",
+      "reason": "sensitive domain",
+      "candidate_records": [
+        [
+          "comp-checkout-one-page",
+          0.75
+        ],
+        [
+          "states-persistence-and-session",
+          0.279
+        ],
+        [
+          "comp-dialog",
+          0.167
+        ],
+        [
+          "comp-settings-screen",
+          0.059
+        ]
+      ],
+      "selected_record": "comp-checkout-one-page",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.live_status",
+      "priority": "recommended",
+      "reason": "related to feedback.validation_errors",
+      "candidate_records": [
+        [
+          "a11y-live-status",
+          0.225
+        ],
+        [
+          "comp-toast-notification",
+          0.162
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    }
+  ]
+}

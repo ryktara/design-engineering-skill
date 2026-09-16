@@ -1,0 +1,1728 @@
+{
+ "outcomes": {
+  "resolved-correct": 186,
+  "unresolved": 51
+ },
+ "platform_correctness": 0.785,
+ "false_platform": 0.0,
+ "resolution_rate": 0.964,
+ "matrix": {
+  "tv": {
+   "tv": 36,
+   "tv,web": 3
+  },
+  "UNKNOWN": {
+   "UNKNOWN": 44
+  },
+  "mobile": {
+   "mobile": 39
+  },
+  "desktop": {
+   "desktop": 28
+  },
+  "any": {
+   "UNKNOWN": 7,
+   "mobile": 1
+  },
+  "kiosk": {
+   "kiosk": 27,
+   "kiosk,web": 2,
+   "kiosk,tablet": 2
+  },
+  "web": {
+   "web": 28,
+   "kiosk,web": 1
+  },
+  "mobile,web": {
+   "mobile,web": 3
+  },
+  "desktop,web": {
+   "desktop,web": 2
+  },
+  "mobile,tv": {
+   "mobile,tv": 2
+  },
+  "kiosk,mobile": {
+   "kiosk,mobile": 1
+  },
+  "kiosk,web": {
+   "kiosk,web": 2
+  },
+  "mobile,tablet": {
+   "mobile,tablet": 2
+  },
+  "desktop,mobile": {
+   "desktop,mobile": 1
+  },
+  "tablet": {
+   "tablet": 4
+  },
+  "tablet,web": {
+   "tablet,web": 1
+  },
+  "desktop,tablet": {
+   "desktop,tablet": 1
+  }
+ },
+ "rows": [
+  {
+   "id": "ps-001",
+   "file": "evals/development/platform-situational.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-002",
+   "file": "evals/development/platform-situational.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-003",
+   "file": "evals/development/platform-situational.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-004",
+   "file": "evals/development/platform-situational.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-005",
+   "file": "evals/development/platform-situational.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-006",
+   "file": "evals/development/platform-situational.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-007",
+   "file": "evals/development/platform-situational.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-008",
+   "file": "evals/development/platform-situational.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-009",
+   "file": "evals/development/platform-situational.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-010",
+   "file": "evals/development/platform-situational.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-011",
+   "file": "evals/development/platform-situational.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-012",
+   "file": "evals/development/platform-situational.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-013",
+   "file": "evals/development/platform-situational.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-014",
+   "file": "evals/development/platform-situational.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-015",
+   "file": "evals/development/platform-situational.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-016",
+   "file": "evals/development/platform-situational.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-017",
+   "file": "evals/development/platform-situational.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-018",
+   "file": "evals/development/platform-situational.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-019",
+   "file": "evals/development/platform-situational.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-020",
+   "file": "evals/development/platform-situational.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-021",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-022",
+   "file": "evals/development/platform-situational.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-023",
+   "file": "evals/development/platform-situational.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-024",
+   "file": "evals/development/platform-situational.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-025",
+   "file": "evals/development/platform-situational.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-026",
+   "file": "evals/development/platform-situational.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-027",
+   "file": "evals/development/platform-situational.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-028",
+   "file": "evals/development/platform-situational.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-029",
+   "file": "evals/development/platform-situational.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-030",
+   "file": "evals/development/platform-situational.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-031",
+   "file": "evals/development/platform-situational.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-032",
+   "file": "evals/development/platform-situational.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-033",
+   "file": "evals/development/platform-situational.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-034",
+   "file": "evals/development/platform-situational.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-035",
+   "file": "evals/development/platform-situational.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-036",
+   "file": "evals/development/platform-situational.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-037",
+   "file": "evals/development/platform-situational.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-038",
+   "file": "evals/development/platform-situational.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-039",
+   "file": "evals/development/platform-situational.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-040",
+   "file": "evals/development/platform-situational.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-041",
+   "file": "evals/development/platform-situational.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-042",
+   "file": "evals/development/platform-situational.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-043",
+   "file": "evals/development/platform-situational.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-044",
+   "file": "evals/development/platform-situational.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-045",
+   "file": "evals/development/platform-situational.json",
+   "expected": "desktop",
+   "resolved": "desktop",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-046",
+   "file": "evals/development/platform-situational.json",
+   "expected": "desktop",
+   "resolved": "desktop",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-047",
+   "file": "evals/development/platform-situational.json",
+   "expected": "any",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-048",
+   "file": "evals/development/platform-situational.json",
+   "expected": "desktop",
+   "resolved": "desktop",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-049",
+   "file": "evals/development/platform-situational.json",
+   "expected": "any",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-050",
+   "file": "evals/development/platform-situational.json",
+   "expected": "desktop",
+   "resolved": "desktop",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-051",
+   "file": "evals/development/platform-situational.json",
+   "expected": "desktop",
+   "resolved": "desktop",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-052",
+   "file": "evals/development/platform-situational.json",
+   "expected": "desktop",
+   "resolved": "desktop",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-053",
+   "file": "evals/development/platform-situational.json",
+   "expected": "desktop",
+   "resolved": "desktop",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-054",
+   "file": "evals/development/platform-situational.json",
+   "expected": "desktop",
+   "resolved": "desktop",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-055",
+   "file": "evals/development/platform-situational.json",
+   "expected": "desktop",
+   "resolved": "desktop",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-056",
+   "file": "evals/development/platform-situational.json",
+   "expected": "desktop",
+   "resolved": "desktop",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-057",
+   "file": "evals/development/platform-situational.json",
+   "expected": "desktop",
+   "resolved": "desktop",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-058",
+   "file": "evals/development/platform-situational.json",
+   "expected": "desktop",
+   "resolved": "desktop",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-059",
+   "file": "evals/development/platform-situational.json",
+   "expected": "desktop",
+   "resolved": "desktop",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-060",
+   "file": "evals/development/platform-situational.json",
+   "expected": "desktop",
+   "resolved": "desktop",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-061",
+   "file": "evals/development/platform-situational.json",
+   "expected": "desktop",
+   "resolved": "desktop",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-062",
+   "file": "evals/development/platform-situational.json",
+   "expected": "desktop",
+   "resolved": "desktop",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-063",
+   "file": "evals/development/platform-situational.json",
+   "expected": "desktop",
+   "resolved": "desktop",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-064",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-065",
+   "file": "evals/development/platform-situational.json",
+   "expected": "kiosk",
+   "resolved": "kiosk",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-066",
+   "file": "evals/development/platform-situational.json",
+   "expected": "kiosk",
+   "resolved": "kiosk,web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-067",
+   "file": "evals/development/platform-situational.json",
+   "expected": "kiosk",
+   "resolved": "kiosk",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-068",
+   "file": "evals/development/platform-situational.json",
+   "expected": "kiosk",
+   "resolved": "kiosk",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-069",
+   "file": "evals/development/platform-situational.json",
+   "expected": "kiosk",
+   "resolved": "kiosk",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-070",
+   "file": "evals/development/platform-situational.json",
+   "expected": "kiosk",
+   "resolved": "kiosk",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-071",
+   "file": "evals/development/platform-situational.json",
+   "expected": "kiosk",
+   "resolved": "kiosk",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-072",
+   "file": "evals/development/platform-situational.json",
+   "expected": "kiosk",
+   "resolved": "kiosk",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-073",
+   "file": "evals/development/platform-situational.json",
+   "expected": "kiosk",
+   "resolved": "kiosk",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-074",
+   "file": "evals/development/platform-situational.json",
+   "expected": "kiosk",
+   "resolved": "kiosk",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-075",
+   "file": "evals/development/platform-situational.json",
+   "expected": "kiosk",
+   "resolved": "kiosk",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-076",
+   "file": "evals/development/platform-situational.json",
+   "expected": "kiosk",
+   "resolved": "kiosk",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-077",
+   "file": "evals/development/platform-situational.json",
+   "expected": "kiosk",
+   "resolved": "kiosk",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-078",
+   "file": "evals/development/platform-situational.json",
+   "expected": "kiosk",
+   "resolved": "kiosk",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-079",
+   "file": "evals/development/platform-situational.json",
+   "expected": "kiosk",
+   "resolved": "kiosk",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-080",
+   "file": "evals/development/platform-situational.json",
+   "expected": "kiosk",
+   "resolved": "kiosk",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-081",
+   "file": "evals/development/platform-situational.json",
+   "expected": "kiosk",
+   "resolved": "kiosk",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-082",
+   "file": "evals/development/platform-situational.json",
+   "expected": "kiosk",
+   "resolved": "kiosk",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-083",
+   "file": "evals/development/platform-situational.json",
+   "expected": "web",
+   "resolved": "web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-084",
+   "file": "evals/development/platform-situational.json",
+   "expected": "web",
+   "resolved": "web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-085",
+   "file": "evals/development/platform-situational.json",
+   "expected": "any",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-086",
+   "file": "evals/development/platform-situational.json",
+   "expected": "any",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-087",
+   "file": "evals/development/platform-situational.json",
+   "expected": "web",
+   "resolved": "web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-088",
+   "file": "evals/development/platform-situational.json",
+   "expected": "any",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-089",
+   "file": "evals/development/platform-situational.json",
+   "expected": "any",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-090",
+   "file": "evals/development/platform-situational.json",
+   "expected": "web",
+   "resolved": "web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-091",
+   "file": "evals/development/platform-situational.json",
+   "expected": "web",
+   "resolved": "web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-092",
+   "file": "evals/development/platform-situational.json",
+   "expected": "web",
+   "resolved": "web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-093",
+   "file": "evals/development/platform-situational.json",
+   "expected": "web",
+   "resolved": "web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-094",
+   "file": "evals/development/platform-situational.json",
+   "expected": "web",
+   "resolved": "web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-095",
+   "file": "evals/development/platform-situational.json",
+   "expected": "web",
+   "resolved": "web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-096",
+   "file": "evals/development/platform-situational.json",
+   "expected": "web",
+   "resolved": "web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-097",
+   "file": "evals/development/platform-situational.json",
+   "expected": "web",
+   "resolved": "web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-098",
+   "file": "evals/development/platform-situational.json",
+   "expected": "web",
+   "resolved": "web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-099",
+   "file": "evals/development/platform-situational.json",
+   "expected": "web",
+   "resolved": "web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-100",
+   "file": "evals/development/platform-situational.json",
+   "expected": "web",
+   "resolved": "web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-101",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-102",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-103",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-104",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-105",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-106",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-107",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-108",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-109",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-110",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-111",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-112",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-113",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-114",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-115",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-116",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-117",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-118",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-119",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-120",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-121",
+   "file": "evals/development/platform-situational.json",
+   "expected": "mobile,web",
+   "resolved": "mobile,web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-122",
+   "file": "evals/development/platform-situational.json",
+   "expected": "desktop,web",
+   "resolved": "desktop,web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-123",
+   "file": "evals/development/platform-situational.json",
+   "expected": "mobile,tv",
+   "resolved": "mobile,tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-124",
+   "file": "evals/development/platform-situational.json",
+   "expected": "kiosk,mobile",
+   "resolved": "kiosk,mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-125",
+   "file": "evals/development/platform-situational.json",
+   "expected": "kiosk,web",
+   "resolved": "kiosk,web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-126",
+   "file": "evals/development/platform-situational.json",
+   "expected": "desktop,web",
+   "resolved": "desktop,web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-127",
+   "file": "evals/development/platform-situational.json",
+   "expected": "mobile,tablet",
+   "resolved": "mobile,tablet",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-128",
+   "file": "evals/development/platform-situational.json",
+   "expected": "kiosk,web",
+   "resolved": "kiosk,web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-129",
+   "file": "evals/development/platform-situational.json",
+   "expected": "desktop",
+   "resolved": "desktop",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-130",
+   "file": "evals/development/platform-situational.json",
+   "expected": "desktop,mobile",
+   "resolved": "desktop,mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-131",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-132",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-133",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-134",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-135",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-136",
+   "file": "evals/development/platform-situational.json",
+   "expected": "web",
+   "resolved": "web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-137",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-138",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-139",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-140",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-141",
+   "file": "evals/development/platform-situational.json",
+   "expected": "web",
+   "resolved": "web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-142",
+   "file": "evals/development/platform-situational.json",
+   "expected": "web",
+   "resolved": "web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-143",
+   "file": "evals/development/platform-situational.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-144",
+   "file": "evals/development/platform-situational.json",
+   "expected": "web",
+   "resolved": "web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-145",
+   "file": "evals/development/platform-situational.json",
+   "expected": "web",
+   "resolved": "web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-146",
+   "file": "evals/development/platform-situational.json",
+   "expected": "mobile,tv",
+   "resolved": "mobile,tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-147",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-148",
+   "file": "evals/development/platform-situational.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "ps-149",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "ps-150",
+   "file": "evals/development/platform-situational.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "pe-001",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-002",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-003",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-004",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-005",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-006",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-007",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-008",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-009",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-010",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-011",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-012",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "tv",
+   "resolved": "tv,web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-013",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-014",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "pe-015",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-016",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-017",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-018",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-019",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-020",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-021",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-022",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-023",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-024",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-025",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-026",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "tablet",
+   "resolved": "tablet",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-027",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "tablet",
+   "resolved": "tablet",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-028",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "tablet",
+   "resolved": "tablet",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-029",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "tablet,web",
+   "resolved": "tablet,web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-030",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "tablet",
+   "resolved": "tablet",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-031",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "desktop",
+   "resolved": "desktop",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-032",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "desktop",
+   "resolved": "desktop",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-033",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "desktop",
+   "resolved": "desktop",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-034",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "desktop",
+   "resolved": "desktop",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-035",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "desktop",
+   "resolved": "desktop",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-036",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "desktop",
+   "resolved": "desktop",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-037",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "desktop",
+   "resolved": "desktop",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-038",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "desktop",
+   "resolved": "desktop",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-039",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "kiosk",
+   "resolved": "kiosk",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-040",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "kiosk",
+   "resolved": "kiosk",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-041",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "kiosk",
+   "resolved": "kiosk",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-042",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "kiosk",
+   "resolved": "kiosk",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-043",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "kiosk",
+   "resolved": "kiosk,web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-044",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "kiosk",
+   "resolved": "kiosk",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-045",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "kiosk",
+   "resolved": "kiosk",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-046",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "kiosk",
+   "resolved": "kiosk",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-047",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "kiosk",
+   "resolved": "kiosk",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-048",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "kiosk",
+   "resolved": "kiosk,tablet",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-049",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "web",
+   "resolved": "web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-050",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "web",
+   "resolved": "web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-051",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "web",
+   "resolved": "web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-052",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "web",
+   "resolved": "web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-053",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "web",
+   "resolved": "web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-054",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "mobile,web",
+   "resolved": "mobile,web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-055",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "web",
+   "resolved": "web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-056",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "web",
+   "resolved": "web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-057",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "web",
+   "resolved": "web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-058",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "pe-059",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "pe-060",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "any",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "pe-061",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "pe-062",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "pe-063",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "pe-064",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "pe-065",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "pe-066",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-067",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "tv",
+   "resolved": "tv,web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-068",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "web",
+   "resolved": "kiosk,web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-069",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "desktop,tablet",
+   "resolved": "desktop,tablet",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-070",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-071",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "mobile,web",
+   "resolved": "mobile,web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-072",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "kiosk",
+   "resolved": "kiosk,tablet",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-073",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "desktop",
+   "resolved": "desktop",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-074",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "tv",
+   "resolved": "tv,web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-075",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "mobile,tablet",
+   "resolved": "mobile,tablet",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-076",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "any",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "pe-077",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "web",
+   "resolved": "web",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-078",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "kiosk",
+   "resolved": "kiosk",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-079",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-080",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "pe-081",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "desktop",
+   "resolved": "desktop",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-082",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-083",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "kiosk",
+   "resolved": "kiosk",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-084",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-085",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "UNKNOWN",
+   "resolved": "UNKNOWN",
+   "outcome": "unresolved"
+  },
+  {
+   "id": "pe-086",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "mobile",
+   "resolved": "mobile",
+   "outcome": "resolved-correct"
+  },
+  {
+   "id": "pe-087",
+   "file": "evals/development/platform-evidence.json",
+   "expected": "tv",
+   "resolved": "tv",
+   "outcome": "resolved-correct"
+  }
+ ]
+}

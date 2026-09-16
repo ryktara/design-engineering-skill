@@ -1,0 +1,27 @@
+{
+  "platform": "web",
+  "artifact_state": "existing",
+  "acceptable_modes": ["polish", "refactor", "audit"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "table.tabular_figures",
+    "data.kpi_comparison",
+    "layout.spacing_scale",
+    "a11y.semantics",
+    "a11y.color_not_only",
+    "process.reuse_first",
+    "process.render_verify"
+  ],
+  "critical_concepts": ["table.tabular_figures"],
+  "forbidden_concepts": [
+    "table.virtualization",
+    "data.pagination_strategy",
+    "brand.dark_mode_redesign",
+    "anti.platform_scaling",
+    "touch.minimum_target",
+    "tv.ten_foot_typography",
+    "adaptive.navigation_transform"
+  ],
+  "preservation": ["navigation", "theme", "typography", "component_reuse (Table/Badge/Tabs/Card)", "routes and tab ids"],
+  "notes": "Written from code before any advise call. Billing tab = Table with amount column align:right (Table already sets text-right tabular-nums on right-aligned td). Existing weaknesses read from code: no totals row; the header Balance badge (patient.balance) is not reconciled with the sum of outstanding invoices (sample.ts generator does not make them equal); Status column mixes badge heights with text rows; description column has no width so amount column position depends on content. The ambiguous sentence could also be read as a data bug (amounts vs balance)."
+}

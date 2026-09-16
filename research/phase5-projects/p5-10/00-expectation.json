@@ -1,0 +1,11 @@
+{
+  "platform": "tv",
+  "artifact_state": "existing",
+  "acceptable_modes": ["create", "refactor"],
+  "scope_kind": "in-scope",
+  "expected_concepts": ["media.track_selection", "interaction.selection_visible", "a11y.dialog_focus", "interaction.back_semantics", "interaction.dpad_reachability", "tv.player_autohide", "interaction.focus_visible"],
+  "critical_concepts": ["media.track_selection", "interaction.selection_visible", "interaction.back_semantics"],
+  "forbidden_concepts": ["touch.ime_keyboard", "touch.safe_areas", "tv.sign_in_code", "tv.epg_pinned_channels", "tv.time_navigation", "table.virtualization", "adaptive.breakpoint_matrix", "media.search_tv", "data.filter_chips", "layout.hero_thesis"],
+  "preservation": ["navigation", "theme", "typography"],
+  "reviewer_note": "The app's player is a placeholder (FullPlayerPlaceholder in SportsApp.kt: 'Media3 PlayerView + transport overlay live here in the real app'); there is no transport overlay yet. The chooser therefore has to hang off a minimal transport overlay: a control (button, labelled in text, e.g. 'Subtitles & audio') in the auto-hiding overlay opens a side sheet / dialog with two groups (Subtitles incl. Off; Audio), one radio-style list each, the current track marked by text + check (selected state distinct from the focus ring), default focus on the currently selected subtitle entry, D-pad LEFT/RIGHT or UP/DOWN between the two groups, SELECT applies immediately and the sheet stays or closes (either is fine, must be consistent), BACK closes the sheet and returns focus to the control that opened it (not to Home). The overlay must not auto-hide while the sheet is open. Dark-first theme, existing SportsColors/SportsDimens/SportsTypography, pill buttons with the white 3 dp focus ring + accent glow, 48/27 dp safe margins. Expected mode: create (new component on an existing screen) — refactor acceptable. Off-target would be: EPG/time navigation, sign-in, touch/IME, home rail/hero direction records."
+}

@@ -1,0 +1,25 @@
+{
+  "task": "p5-15",
+  "reviewer_model": "claude-opus-5[1m]",
+  "c2_records": [
+    {"id": "imagery-none", "verdict": "off-target", "bad_category": "generic"},
+    {"id": "comp-wizard-stepper", "verdict": "off-target", "bad_category": "wrong-mode"},
+    {"id": "a11y-skip-link", "verdict": "partial", "bad_category": null},
+    {"id": "data-exceptions-first", "verdict": "partial", "bad_category": null},
+    {"id": "desktop-status-bar-and-error-navigation", "verdict": "relevant", "bad_category": null},
+    {"id": "a11y-native-semantics", "verdict": "relevant", "bad_category": null},
+    {"id": "a11y-hover-not-required", "verdict": "relevant", "bad_category": null}
+  ],
+  "c2_relevant": 3,
+  "c2_partial": 2,
+  "c2_offtarget": 2,
+  "c2_bad": [
+    {"record": "imagery-none", "category": "generic", "why": "Repeat of the c1 miss: the page has no imagery, so 'remove stock photos and hero illustrations' delivers nothing to an accessibility review, yet it takes a core slot."},
+    {"record": "comp-wizard-stepper", "category": "wrong-mode", "why": "A 'what to build' wizard/stepper component selected for 'required coverage: component' on a read-only review (intent.diagnose_only=true) of a DataGrid page that has no wizard; it replaces c1's comp-setup-checklist with an equally inapplicable build record."}
+  ],
+  "c2_direction_unjustified": [],
+  "platform_mode_scope_ok": true,
+  "verdict_vs_c1": "better",
+  "why": "All seven expected checklist concepts are now delivered (c1: 5/7, critical 3/4) - in particular a11y.color_not_only via data-exceptions-first and a11y.live_status via desktop-status-bar-and-error-navigation, whose WinUI note points straight at the page's biggest real defect (the InfoBar/summary live region), and the c1 lexical mis-pick comp-setup-checklist is gone; the offset is a new wrong-mode core pick (comp-wizard-stepper) and the continued exclusion of grid records ('contamination: no table evidence in the request') on a project whose page is a Toolkit DataGrid.",
+  "would_have_helped": "helped"
+}

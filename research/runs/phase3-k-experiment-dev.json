@@ -1,0 +1,45 @@
+{
+ "note": "development guidance suite (39 cases); fixed caps via --size vs variable (soft 6 / hard 8)",
+ "results": {
+  "k5": {
+   "cov": 0.921,
+   "ccov": 0.786,
+   "n": 39,
+   "size": 5.0,
+   "bytes": 5656.385,
+   "dup": 0.272,
+   "ok": 0.949,
+   "md_tokens": 845.308
+  },
+  "k7": {
+   "cov": 0.955,
+   "ccov": 0.967,
+   "n": 39,
+   "size": 6.974,
+   "bytes": 7653.949,
+   "dup": 0.243,
+   "ok": 1.0,
+   "md_tokens": 1050.872
+  },
+  "k8": {
+   "cov": 0.985,
+   "ccov": 0.973,
+   "n": 39,
+   "size": 7.872,
+   "bytes": 8569.949,
+   "dup": 0.219,
+   "ok": 1.0,
+   "md_tokens": 1151.821
+  },
+  "variable": {
+   "cov": 0.985,
+   "ccov": 0.973,
+   "n": 39,
+   "size": 6.59,
+   "bytes": 7284.615,
+   "dup": 0.243,
+   "ok": 1.0,
+   "md_tokens": 1011.564
+  }
+ }
+}

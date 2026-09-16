@@ -1,0 +1,11 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "signin.title" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Sign in to Lumen" } } } },
+    "signin.instructions" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "On your phone or computer, go to lumen.tv/activate and enter this code." } } } },
+    "signin.fallback" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Sign in on this Apple TV instead" } } } },
+    "signin.newcode" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Get a new code" } } } },
+    "player.next" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Next episode" } } } }
+  },
+  "version" : "1.0"
+}

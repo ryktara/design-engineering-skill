@@ -1,0 +1,167 @@
+{
+  "task": "p6-06",
+  "project": "p5-sveltekit-clinic",
+  "platform_expected": "web",
+  "platform_resolved": "web",
+  "platform_correct": "yes",
+  "stack": "sveltekit-2/svelte-5/tailwind-3/typescript",
+  "existing_ui": true,
+  "new_screen": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": ["polish", "refactor", "audit"],
+  "mode_resolved": ["polish", "audit"],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "low",
+  "render_mode": "html",
+  "screenshots": [
+    "render/pre-desktop-p-1000.png",
+    "render/pre-desktop-p-1003.png",
+    "render/pre-desktop-p-1007.png",
+    "render/pre-mobile-p-1007.png",
+    "render/first-desktop-p-1000.png",
+    "render/first-desktop-p-1003.png",
+    "render/first-desktop-p-1007.png",
+    "render/first-mobile-p-1007.png",
+    "render/zoom-first.png",
+    "render/final-desktop-p-1000.png",
+    "render/final-desktop-p-1003.png",
+    "render/final-desktop-p-1007.png",
+    "render/final-mobile-p-1007.png",
+    "render/final-desktop-patients-list.png",
+    "render/final-desktop-reports.png",
+    "render/zoom-final.png"
+  ],
+  "context_detection": {
+    "navigation": "yes",
+    "theme": "yes",
+    "typography": "yes",
+    "surfaces": "yes",
+    "spacing": "yes",
+    "radius": "partial",
+    "components": "partial"
+  },
+  "preservation": {
+    "navigation": true,
+    "theme": true,
+    "typography": true,
+    "component_reuse": true,
+    "unjustified_structural_change": 0
+  },
+  "expected_concepts": [
+    "table.tabular_figures",
+    "data.kpi_comparison",
+    "layout.spacing_scale",
+    "a11y.semantics",
+    "a11y.color_not_only",
+    "process.reuse_first",
+    "process.render_verify"
+  ],
+  "critical_concepts": ["table.tabular_figures"],
+  "delivered_concepts": [
+    "interaction.tabs_roving",
+    "navigation.deep_link_state",
+    "table.tabular_figures",
+    "brand.type_roles"
+  ],
+  "concept_recall": 0.14,
+  "critical_recall": 1.0,
+  "concept_misses": [
+    { "concept": "data.kpi_comparison", "layer": "expected-concepts" },
+    { "concept": "layout.spacing_scale", "layer": "bundle-selection" },
+    { "concept": "a11y.semantics", "layer": "expected-concepts" },
+    { "concept": "a11y.color_not_only", "layer": "expected-concepts" },
+    { "concept": "process.reuse_first", "layer": "bundle-selection" },
+    { "concept": "process.render_verify", "layer": "expected-concepts" }
+  ],
+  "first_render_defects": {
+    "visual": 2,
+    "interaction": 0,
+    "accessibility": 0,
+    "platform": 1,
+    "existing-system-mismatch": 1,
+    "implementation-bug": 0
+  },
+  "final_defects": {
+    "visual": 1,
+    "interaction": 0,
+    "accessibility": 0,
+    "platform": 1,
+    "existing-system-mismatch": 0,
+    "implementation-bug": 0
+  },
+  "final_defects_note": "Both remaining defects are pre-existing and outside the low change budget: (1) Badge text baseline ~1px below the row baseline in the Status column (shared Badge component used on 6 screens); (2) the whole app has no responsive behaviour at 390px (fixed 240px rail), identical before and after this change.",
+  "iterations": 2,
+  "guidance_relevant": 1,
+  "guidance_partial": 2,
+  "guidance_offtarget": 1,
+  "layer_review": {
+    "core": ["layout-master-detail", "comp-tabs", "dir-clinical-workstation"],
+    "critical": ["typo-scale-and-roles"],
+    "optional": [],
+    "optional_useful": 0,
+    "optional_noise": 0
+  },
+  "bad_guidance": [
+    {
+      "record": "layout-master-detail",
+      "category": "wrong-screen",
+      "why": "Tells how to build a list+detail pane; the task is a numeric defect inside one tab of an already-built detail screen. Nothing actionable."
+    },
+    {
+      "record": "comp-tabs",
+      "category": "generic",
+      "why": "Correct component identification, but roving tabindex / URL state / lazy panels are unrelated to the reported defect."
+    },
+    {
+      "record": "dir-clinical-workstation",
+      "category": "generic",
+      "why": "One clause touches the screen (status colour never alone, legible numerics); the rest (patient banner, autosave, destructive confirmation) is off-task and outside a low budget."
+    }
+  ],
+  "skill_effect": "neutral",
+  "guidance_tokens": 701,
+  "guidance_used": ["typo-scale-and-roles"],
+  "guidance_ignored": [
+    { "id": "layout-master-detail", "why": "the master-detail shell already exists and the task is not about it" },
+    { "id": "comp-tabs", "why": "tab behaviour is not the defect; changing it would risk the existing tab state" },
+    { "id": "dir-clinical-workstation", "why": "banner / autosave / confirmation clauses are outside the billing tab and the low change budget" }
+  ],
+  "unjustified_direction_slots": 0,
+  "process_records_needed": false,
+  "process_records_reason": "SKILL.md §2 (inspect first), §6 (build in the project's component model, do not break routes/state/semantics) and §7 (render, look, fix, re-render) produced both the reuse decision and the render loop that caught the cross-screen mismatch. impl-reuse-before-new and verify-render-and-inspect were demanded as recommended concepts and dropped at bundle selection; that cost nothing here.",
+  "misses": [
+    { "layer": "requirements", "what": "'billing tab shows amounts' yielded components=['tabs'] only; no table / data-display component, so the table records had no structural path into the candidate set" },
+    { "layer": "candidate-retrieval", "what": "'amounts that do not line up' does not retrieve data-tables-numeric ('Right-align numbers with tabular lining figures ... totals visually distinct', keywords 'numeric alignment', 'align numbers', 'totals') or table-column-disambiguation; both absent from the top 12 of search, while TV/mobile/ecommerce records outrank them" },
+    { "layer": "expected-concepts", "what": "a11y.semantics, a11y.color_not_only and process.render_verify were never demanded although carriers exist in the base" },
+    { "layer": "criticality", "what": "data.kpi_comparison — the 'displayed figure must agree with its reference figure' idea that this task is actually about — was never demanded and has no carrier record" },
+    { "layer": "bundle-selection", "what": "layout.spacing_scale and process.reuse_first had live candidates and were dropped; 3 of 4 bundle slots went to records that contributed nothing to the reported defect" }
+  ],
+  "knowledge_gaps": [
+    "No record in data/rules.jsonl carries data.kpi_comparison, and none covers 'a summary figure (header badge, KPI) must reconcile with the rows it summarises' — the actual defect behind this sentence."
+  ],
+  "regressions": [
+    { "query": "The patient detail billing tab shows amounts that do not line up.", "expect": "data-tables-numeric in the bundle (core or guardrail) and components includes 'table'" },
+    { "query": "The invoice amounts in the billing table don't line up.", "expect": "numeric-table alignment guidance retrieved without the word 'align' appearing in the query" },
+    { "query": "The totals under this table don't match the number in the header.", "expect": "a record covering 'a displayed figure must reconcile with the rows it summarises' (data.kpi_comparison or a new table.totals_reconcile); currently no carrier exists" },
+    { "query": "The amounts in the table are right-aligned but the totals row isn't.", "expect": "data-tables-numeric ('totals visually distinct') plus a11y.semantics for tfoot / th scope=row" },
+    { "query": "web + screen=detail + product=healthcare polish query", "expect": "nav-tv-top-tabs and media-resume-and-details must not appear in the top 5 of search" }
+  ],
+  "tags": [
+    "requirements-miss",
+    "concept-miss",
+    "ranking-miss",
+    "knowledge-gap",
+    "context-detection-miss",
+    "render-defect-fixed",
+    "render-defect-remaining",
+    "skill-neutral",
+    "preservation-ok"
+  ],
+  "build_hash_start": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947",
+  "build_hash_end": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947"
+}

@@ -1,0 +1,4562 @@
+{
+ "reviewer": "opus",
+ "cases": [
+  {
+   "id": "hv5-g01-001",
+   "prompt": "Need a new onboarding flow for the loan app, three steps, nothing fancy.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "onboarding.linear_wizard",
+    "feedback.progress_indicator",
+    "feedback.validation_errors",
+    "form.autofill_attributes"
+   ],
+   "critical_concepts": [
+    "onboarding.linear_wizard"
+   ],
+   "recommended_concepts": [
+    "layout.one_primary_action",
+    "state.loading_empty_error"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-002",
+   "prompt": "Building a screen from scratch where warehouse pickers confirm a scanned bin location.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.one_primary_action",
+    "touch.minimum_target",
+    "env.glanceable_status",
+    "state.offline_sync",
+    "feedback.validation_errors"
+   ],
+   "critical_concepts": [
+    "layout.one_primary_action",
+    "touch.minimum_target"
+   ],
+   "recommended_concepts": [
+    "a11y.live_status",
+    "env.outdoor_readability"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-003",
+   "prompt": "We want a dashboard for the ward nurses to see who's due for meds next.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile",
+     "tablet"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "data.exception_first",
+    "data.refresh_timestamp",
+    "env.glanceable_status",
+    "layout.focal_hierarchy",
+    "privacy.shared_device"
+   ],
+   "critical_concepts": [
+    "data.exception_first",
+    "data.refresh_timestamp"
+   ],
+   "recommended_concepts": [
+    "a11y.color_not_only",
+    "table.tabular_figures"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-004",
+   "prompt": "Sketch out a first-run experience for the fitness tracker, no accounts yet.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "onboarding.feature_education",
+    "onboarding.permission_priming",
+    "layout.one_primary_action",
+    "state.loading_empty_error"
+   ],
+   "critical_concepts": [
+    "onboarding.feature_education",
+    "onboarding.permission_priming"
+   ],
+   "recommended_concepts": [
+    "onboarding.setup_checklist",
+    "a11y.reduced_motion"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-005",
+   "prompt": "Add a new tab for comparing two insurance quotes side by side.",
+   "category": "create",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "data.comparison_structure",
+    "table.tabular_figures",
+    "feedback.trust_signals",
+    "table.column_priority"
+   ],
+   "critical_concepts": [
+    "data.comparison_structure"
+   ],
+   "recommended_concepts": [
+    "content.readable_measure",
+    "layout.focal_hierarchy"
+   ],
+   "forbidden_concepts": [
+    "interaction.tabs_roving",
+    "data.chart_by_question"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-006",
+   "prompt": "Client wants a landing page for the new savings product, nothing built yet.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "web"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.hero_thesis",
+    "anti.template_landing",
+    "brand.type_roles",
+    "feedback.trust_signals",
+    "perf.image_sizing"
+   ],
+   "critical_concepts": [
+    "layout.hero_thesis",
+    "anti.template_landing"
+   ],
+   "recommended_concepts": [
+    "content.readable_measure",
+    "anti.decorative_gradient"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-007",
+   "prompt": "Put together a checkout flow for the farmers market app, cash and card both.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "feedback.trust_signals",
+    "layout.one_primary_action",
+    "form.autofill_attributes",
+    "feedback.validation_errors",
+    "state.loading_empty_error"
+   ],
+   "critical_concepts": [
+    "feedback.trust_signals",
+    "layout.one_primary_action"
+   ],
+   "recommended_concepts": [
+    "touch.minimum_target",
+    "interaction.selection_visible"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-008",
+   "prompt": "We're starting from zero on a scheduling screen for the salon booking app.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.one_primary_action",
+    "state.loading_empty_error",
+    "touch.minimum_target",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "layout.one_primary_action",
+    "state.loading_empty_error"
+   ],
+   "recommended_concepts": [
+    "a11y.accessible_names",
+    "feedback.validation_errors"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-009",
+   "prompt": "Design the empty state for a brand new project workspace, first-time user.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.loading_empty_error",
+    "layout.one_primary_action",
+    "onboarding.setup_checklist",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "state.loading_empty_error"
+   ],
+   "recommended_concepts": [
+    "onboarding.feature_education"
+   ],
+   "forbidden_concepts": [
+    "anti.template_landing"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-010",
+   "prompt": "Need a screen where drivers pick their route for the day, in the van, glanceable.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "env.glanceable_status",
+    "touch.minimum_target",
+    "env.outdoor_readability",
+    "state.offline_sync",
+    "layout.one_primary_action"
+   ],
+   "critical_concepts": [
+    "env.glanceable_status",
+    "touch.minimum_target"
+   ],
+   "recommended_concepts": [
+    "a11y.contrast",
+    "touch.thumb_reach"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-011",
+   "prompt": "New feature: let players build a custom loadout before a match starts.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "desktop",
+     "web",
+     "tv"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.selection_visible",
+    "layout.focal_hierarchy",
+    "state.saving_conflict",
+    "interaction.keyboard_navigation"
+   ],
+   "critical_concepts": [
+    "interaction.selection_visible"
+   ],
+   "recommended_concepts": [
+    "interaction.focus_visible",
+    "state.loading_empty_error"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-012",
+   "prompt": "Product wants a whole new results page for the property search, map plus list.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "web"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "data.search_results",
+    "data.filter_chips",
+    "data.pagination_strategy",
+    "navigation.deep_link_state",
+    "layout.media_card"
+   ],
+   "critical_concepts": [
+    "data.search_results",
+    "data.filter_chips"
+   ],
+   "recommended_concepts": [
+    "perf.image_sizing",
+    "state.loading_empty_error"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-013",
+   "prompt": "From scratch — a returns wizard for the retail site, three steps max.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "web"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "onboarding.linear_wizard",
+    "feedback.progress_indicator",
+    "feedback.validation_errors",
+    "layout.one_primary_action"
+   ],
+   "critical_concepts": [
+    "onboarding.linear_wizard",
+    "feedback.progress_indicator"
+   ],
+   "recommended_concepts": [
+    "state.unsaved_changes_guard"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-014",
+   "prompt": "On the shop floor screen we need a new panel showing live line throughput.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "kiosk",
+     "desktop",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "data.realtime_window",
+    "env.glanceable_status",
+    "data.refresh_timestamp",
+    "data.exception_first",
+    "a11y.contrast"
+   ],
+   "critical_concepts": [
+    "data.realtime_window",
+    "env.glanceable_status"
+   ],
+   "recommended_concepts": [
+    "layout.focal_hierarchy",
+    "a11y.color_not_only"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "color"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-015",
+   "prompt": "Build a signup flow for the student portal, parents can co-sign.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "feedback.validation_errors",
+    "onboarding.linear_wizard",
+    "form.autofill_attributes",
+    "feedback.progress_indicator",
+    "state.saving_conflict"
+   ],
+   "critical_concepts": [
+    "feedback.validation_errors",
+    "onboarding.linear_wizard"
+   ],
+   "recommended_concepts": [
+    "a11y.accessible_names",
+    "state.session_expiry"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-016",
+   "prompt": "Create a new comparison view for two flight itineraries.",
+   "category": "create",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "data.comparison_structure",
+    "table.tabular_figures",
+    "content.readable_measure",
+    "table.column_priority"
+   ],
+   "critical_concepts": [
+    "data.comparison_structure"
+   ],
+   "recommended_concepts": [
+    "layout.focal_hierarchy",
+    "feedback.trust_signals"
+   ],
+   "forbidden_concepts": [
+    "data.chart_by_question",
+    "data.kpi_comparison"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-017",
+   "prompt": "We need a screen for the census workers to log a household visit offline.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.offline_sync",
+    "feedback.validation_errors",
+    "form.autofill_attributes",
+    "state.saving_conflict",
+    "touch.minimum_target"
+   ],
+   "critical_concepts": [
+    "state.offline_sync"
+   ],
+   "recommended_concepts": [
+    "touch.ime_keyboard",
+    "feedback.progress_indicator"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-018",
+   "prompt": "First cut of a settings screen for the smart thermostat companion app.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.settings_grouping",
+    "a11y.accessible_names",
+    "state.saving_conflict",
+    "touch.minimum_target"
+   ],
+   "critical_concepts": [
+    "layout.settings_grouping"
+   ],
+   "recommended_concepts": [
+    "a11y.text_scaling",
+    "state.offline_sync"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-019",
+   "prompt": "Design a new upload flow for lab results, patient facing, mobile first.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "feedback.progress_indicator",
+    "state.loading_empty_error",
+    "touch.minimum_target",
+    "feedback.validation_errors",
+    "privacy.sensitive_masking"
+   ],
+   "critical_concepts": [
+    "feedback.progress_indicator",
+    "state.loading_empty_error"
+   ],
+   "recommended_concepts": [
+    "onboarding.permission_priming",
+    "perf.image_sizing"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-020",
+   "prompt": "Nothing exists yet for the vendor invoice review, start with the list view.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "table.tabular_figures",
+    "table.column_priority",
+    "data.pagination_strategy",
+    "state.loading_empty_error",
+    "table.selection_bulk"
+   ],
+   "critical_concepts": [
+    "table.tabular_figures",
+    "table.column_priority"
+   ],
+   "recommended_concepts": [
+    "data.filter_chips",
+    "table.virtualization"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-021",
+   "prompt": "Build a new player profile page, avatar, stats, badges.",
+   "category": "create",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.focal_hierarchy",
+    "brand.imagery_purpose",
+    "perf.image_sizing",
+    "content.readable_measure"
+   ],
+   "critical_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "recommended_concepts": [
+    "table.tabular_figures",
+    "state.loading_empty_error"
+   ],
+   "forbidden_concepts": [
+    "media.details_play_first",
+    "media.resume_playback",
+    "tv.player_autohide"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-022",
+   "prompt": "We're adding a brand new tipping screen at the end of checkout, optional.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.one_primary_action",
+    "anti.interruptive_upsell",
+    "feedback.trust_signals",
+    "touch.minimum_target"
+   ],
+   "critical_concepts": [
+    "layout.one_primary_action",
+    "anti.interruptive_upsell"
+   ],
+   "recommended_concepts": [
+    "interaction.selection_visible"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-023",
+   "prompt": "Need a fresh screen for the customs broker to enter shipment manifests.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "desktop",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "feedback.validation_errors",
+    "interaction.keyboard_navigation",
+    "table.inline_edit",
+    "table.tabular_figures",
+    "state.saving_conflict"
+   ],
+   "critical_concepts": [
+    "feedback.validation_errors",
+    "interaction.keyboard_navigation"
+   ],
+   "recommended_concepts": [
+    "interaction.shortcuts",
+    "state.unsaved_changes_guard"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-024",
+   "prompt": "Create a welcome tour for first-time users of the budgeting app.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "onboarding.feature_education",
+    "layout.one_primary_action",
+    "a11y.reduced_motion",
+    "onboarding.setup_checklist"
+   ],
+   "critical_concepts": [
+    "onboarding.feature_education"
+   ],
+   "recommended_concepts": [
+    "a11y.dialog_focus",
+    "interaction.focus_restore"
+   ],
+   "forbidden_concepts": [
+    "onboarding.linear_wizard"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-025",
+   "prompt": "New EPG-style browse screen for the streaming app, rails by genre.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.dpad_reachability",
+    "tv.ten_foot_typography",
+    "tv.safe_margins",
+    "layout.media_card",
+    "media.resume_playback"
+   ],
+   "critical_concepts": [
+    "interaction.dpad_reachability",
+    "tv.ten_foot_typography"
+   ],
+   "recommended_concepts": [
+    "tv.dark_first",
+    "tv.no_touch_hover",
+    "perf.focus_latency"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-026",
+   "prompt": "Design a from-scratch cart for the b2b ordering portal, bulk quantities.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "table.inline_edit",
+    "table.tabular_figures",
+    "feedback.validation_errors",
+    "layout.one_primary_action",
+    "state.saving_conflict"
+   ],
+   "critical_concepts": [
+    "table.inline_edit",
+    "table.tabular_figures"
+   ],
+   "recommended_concepts": [
+    "interaction.keyboard_navigation",
+    "data.pagination_strategy"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-027",
+   "prompt": "Build a new referral screen where users share a code and track rewards.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.one_primary_action",
+    "state.loading_empty_error",
+    "feedback.trust_signals",
+    "a11y.accessible_names"
+   ],
+   "critical_concepts": [
+    "layout.one_primary_action",
+    "state.loading_empty_error"
+   ],
+   "recommended_concepts": [
+    "table.tabular_figures",
+    "touch.minimum_target"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-028",
+   "prompt": "We need a new intake form for the clinic's telehealth triage, first visit.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "feedback.validation_errors",
+    "form.autofill_attributes",
+    "a11y.accessible_names",
+    "touch.ime_keyboard",
+    "privacy.sensitive_masking"
+   ],
+   "critical_concepts": [
+    "feedback.validation_errors",
+    "form.autofill_attributes"
+   ],
+   "recommended_concepts": [
+    "state.saving_conflict",
+    "content.readable_measure"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-029",
+   "prompt": "Sketch a new dashboard for plant supervisors, one screen, key alarms only.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "kiosk",
+     "desktop",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "data.exception_first",
+    "env.glanceable_status",
+    "a11y.color_not_only",
+    "data.refresh_timestamp",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "data.exception_first",
+    "env.glanceable_status"
+   ],
+   "recommended_concepts": [
+    "a11y.contrast",
+    "data.realtime_window"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-030",
+   "prompt": "Add a whole new screen for comparing two mortgage offers.",
+   "category": "create",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "data.comparison_structure",
+    "table.tabular_figures",
+    "feedback.trust_signals",
+    "content.readable_measure"
+   ],
+   "critical_concepts": [
+    "data.comparison_structure"
+   ],
+   "recommended_concepts": [
+    "layout.focal_hierarchy",
+    "table.column_priority"
+   ],
+   "forbidden_concepts": [
+    "data.chart_by_question",
+    "data.kpi_comparison"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-031",
+   "prompt": "Starting a new library screen for saved recipes, no filters yet.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.loading_empty_error",
+    "layout.media_card",
+    "perf.image_sizing",
+    "data.pagination_strategy"
+   ],
+   "critical_concepts": [
+    "state.loading_empty_error",
+    "layout.media_card"
+   ],
+   "recommended_concepts": [
+    "layout.spacing_scale"
+   ],
+   "forbidden_concepts": [
+    "data.filter_chips"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-032",
+   "prompt": "Need a first version of a seating chart builder for the event app.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "desktop",
+     "tablet"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.selection_visible",
+    "interaction.keyboard_navigation",
+    "touch.gestures_discoverable",
+    "state.saving_conflict",
+    "a11y.accessible_names"
+   ],
+   "critical_concepts": [
+    "interaction.selection_visible",
+    "interaction.keyboard_navigation"
+   ],
+   "recommended_concepts": [
+    "state.unsaved_changes_guard",
+    "interaction.focus_visible"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-033",
+   "prompt": "Build a new screen from the ground up for tracking vaccine doses per child.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.focal_hierarchy",
+    "a11y.color_not_only",
+    "state.loading_empty_error",
+    "privacy.sensitive_masking"
+   ],
+   "critical_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "recommended_concepts": [
+    "table.tabular_figures",
+    "data.exception_first"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-034",
+   "prompt": "We want a totally new onboarding for the trucking dispatch app, driver side.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "onboarding.permission_priming",
+    "touch.minimum_target",
+    "onboarding.linear_wizard",
+    "state.offline_sync",
+    "env.glanceable_status"
+   ],
+   "critical_concepts": [
+    "onboarding.permission_priming",
+    "touch.minimum_target"
+   ],
+   "recommended_concepts": [
+    "feedback.progress_indicator",
+    "env.outdoor_readability"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-035",
+   "prompt": "Design a new leaderboard screen for the trivia game, weekly and all-time.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "table.tabular_figures",
+    "data.pagination_strategy",
+    "state.loading_empty_error",
+    "interaction.tabs_roving"
+   ],
+   "critical_concepts": [
+    "table.tabular_figures"
+   ],
+   "recommended_concepts": [
+    "table.virtualization",
+    "layout.focal_hierarchy"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-036",
+   "prompt": "Nothing here yet — build the initial screen for reporting a pothole.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.one_primary_action",
+    "onboarding.permission_priming",
+    "touch.minimum_target",
+    "state.offline_sync",
+    "feedback.validation_errors"
+   ],
+   "critical_concepts": [
+    "layout.one_primary_action"
+   ],
+   "recommended_concepts": [
+    "perf.image_sizing",
+    "feedback.progress_indicator"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-037",
+   "prompt": "New feature request: a screen letting teachers build a seating plan.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "tablet",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.selection_visible",
+    "interaction.keyboard_navigation",
+    "state.saving_conflict",
+    "touch.gestures_discoverable"
+   ],
+   "critical_concepts": [
+    "interaction.selection_visible"
+   ],
+   "recommended_concepts": [
+    "state.unsaved_changes_guard",
+    "a11y.accessible_names"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-038",
+   "prompt": "Create the first version of a claims submission flow, photos and receipts.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "feedback.progress_indicator",
+    "state.loading_empty_error",
+    "perf.image_sizing",
+    "feedback.validation_errors",
+    "onboarding.permission_priming"
+   ],
+   "critical_concepts": [
+    "feedback.progress_indicator",
+    "state.loading_empty_error"
+   ],
+   "recommended_concepts": [
+    "touch.minimum_target",
+    "state.saving_conflict"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-039",
+   "prompt": "We need a screen from scratch for pharmacists to flag drug interactions.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "desktop",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "data.exception_first",
+    "feedback.confirmation_destructive",
+    "a11y.color_not_only",
+    "a11y.live_status",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "data.exception_first",
+    "feedback.confirmation_destructive"
+   ],
+   "recommended_concepts": [
+    "a11y.contrast",
+    "interaction.keyboard_navigation"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-040",
+   "prompt": "Build a new profile setup screen with avatar cropping for the kids app.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "touch.gestures_discoverable",
+    "touch.minimum_target",
+    "perf.image_sizing",
+    "a11y.accessible_names",
+    "feedback.progress_indicator"
+   ],
+   "critical_concepts": [
+    "touch.gestures_discoverable",
+    "touch.minimum_target"
+   ],
+   "recommended_concepts": [
+    "interaction.keyboard_navigation",
+    "state.saving_conflict"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-041",
+   "prompt": "Design a brand new voting ballot review screen, accessible by default.",
+   "category": "create",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "kiosk"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.semantics",
+    "interaction.keyboard_navigation",
+    "a11y.contrast",
+    "a11y.accessible_names",
+    "a11y.text_scaling",
+    "content.readable_measure"
+   ],
+   "critical_concepts": [
+    "a11y.semantics",
+    "interaction.keyboard_navigation"
+   ],
+   "recommended_concepts": [
+    "feedback.confirmation_destructive",
+    "a11y.color_not_only"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-042",
+   "prompt": "Need a screen where museum visitors can browse an exhibit map, kiosk-ish.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "touch.minimum_target",
+    "state.session_expiry",
+    "navigation.orientation_and_back",
+    "a11y.text_scaling",
+    "touch.gestures_discoverable"
+   ],
+   "critical_concepts": [
+    "touch.minimum_target",
+    "state.session_expiry"
+   ],
+   "recommended_concepts": [
+    "a11y.contrast",
+    "privacy.shared_device"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-043",
+   "prompt": "First pass at a new screen for comparing energy tariffs.",
+   "category": "create",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "data.comparison_structure",
+    "table.tabular_figures",
+    "feedback.trust_signals",
+    "content.readable_measure"
+   ],
+   "critical_concepts": [
+    "data.comparison_structure"
+   ],
+   "recommended_concepts": [
+    "layout.focal_hierarchy",
+    "table.column_priority"
+   ],
+   "forbidden_concepts": [
+    "data.chart_by_question",
+    "data.kpi_comparison"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-044",
+   "prompt": "Build a new checkout confirmation screen with order tracking link.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.focal_hierarchy",
+    "feedback.trust_signals",
+    "state.loading_empty_error",
+    "navigation.deep_link_state"
+   ],
+   "critical_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "recommended_concepts": [
+    "a11y.accessible_names",
+    "table.tabular_figures"
+   ],
+   "forbidden_concepts": [
+    "anti.interruptive_upsell"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-045",
+   "prompt": "We're launching a new feature: split billing between roommates.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "table.tabular_figures",
+    "layout.one_primary_action",
+    "feedback.trust_signals",
+    "feedback.validation_errors",
+    "state.saving_conflict"
+   ],
+   "critical_concepts": [
+    "table.tabular_figures",
+    "layout.one_primary_action"
+   ],
+   "recommended_concepts": [
+    "a11y.accessible_names"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-046",
+   "prompt": "Create a screen for logging maintenance on factory equipment, offline capable.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.offline_sync",
+    "touch.minimum_target",
+    "feedback.validation_errors",
+    "state.saving_conflict",
+    "env.glanceable_status"
+   ],
+   "critical_concepts": [
+    "state.offline_sync"
+   ],
+   "recommended_concepts": [
+    "env.outdoor_readability",
+    "form.autofill_attributes"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-047",
+   "prompt": "New onboarding wizard for the payroll admin, five steps.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "onboarding.linear_wizard",
+    "feedback.progress_indicator",
+    "state.unsaved_changes_guard",
+    "feedback.validation_errors",
+    "interaction.keyboard_navigation"
+   ],
+   "critical_concepts": [
+    "onboarding.linear_wizard",
+    "feedback.progress_indicator"
+   ],
+   "recommended_concepts": [
+    "layout.one_primary_action",
+    "state.saving_conflict"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-048",
+   "prompt": "Design a fresh notifications center, nothing exists right now.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.loading_empty_error",
+    "data.pagination_strategy",
+    "a11y.live_status",
+    "layout.focal_hierarchy",
+    "table.selection_bulk"
+   ],
+   "critical_concepts": [
+    "state.loading_empty_error"
+   ],
+   "recommended_concepts": [
+    "table.virtualization",
+    "layout.settings_grouping"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-049",
+   "prompt": "Build a screen for the concierge desk to log guest requests, from the sofa in the lounge nearby.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "tablet",
+     "desktop",
+     "web",
+     "tv"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.one_primary_action",
+    "state.loading_empty_error",
+    "feedback.validation_errors",
+    "touch.minimum_target"
+   ],
+   "critical_concepts": [
+    "layout.one_primary_action"
+   ],
+   "recommended_concepts": [
+    "data.refresh_timestamp",
+    "a11y.accessible_names"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-050",
+   "prompt": "Need a new screen for scanning a barcode and adding stock, gloves on most of the day.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "touch.minimum_target",
+    "a11y.live_status",
+    "env.glanceable_status",
+    "feedback.validation_errors",
+    "state.offline_sync"
+   ],
+   "critical_concepts": [
+    "touch.minimum_target"
+   ],
+   "recommended_concepts": [
+    "env.outdoor_readability",
+    "layout.one_primary_action"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-051",
+   "prompt": "Create a first draft of a workout builder, drag exercises into a plan.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "touch.gestures_discoverable",
+    "interaction.keyboard_navigation",
+    "interaction.selection_visible",
+    "touch.minimum_target",
+    "state.saving_conflict"
+   ],
+   "critical_concepts": [
+    "touch.gestures_discoverable",
+    "interaction.keyboard_navigation"
+   ],
+   "recommended_concepts": [
+    "a11y.live_status",
+    "state.loading_empty_error"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-052",
+   "prompt": "We want a new comparison screen for two candidate resumes.",
+   "category": "create",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "data.comparison_structure",
+    "content.readable_measure",
+    "layout.focal_hierarchy",
+    "a11y.semantics"
+   ],
+   "critical_concepts": [
+    "data.comparison_structure"
+   ],
+   "recommended_concepts": [
+    "table.column_priority"
+   ],
+   "forbidden_concepts": [
+    "data.chart_by_question",
+    "data.kpi_comparison"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-053",
+   "prompt": "Build a screen for reporting outages, used by field techs, spotty signal.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.offline_sync",
+    "env.outdoor_readability",
+    "touch.minimum_target",
+    "feedback.validation_errors",
+    "state.saving_conflict"
+   ],
+   "critical_concepts": [
+    "state.offline_sync"
+   ],
+   "recommended_concepts": [
+    "env.glanceable_status",
+    "feedback.progress_indicator"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-054",
+   "prompt": "Design the initial screen for a subscription paywall, three tiers.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "data.comparison_structure",
+    "feedback.trust_signals",
+    "layout.one_primary_action",
+    "content.readable_measure",
+    "anti.interruptive_upsell"
+   ],
+   "critical_concepts": [
+    "data.comparison_structure",
+    "feedback.trust_signals"
+   ],
+   "recommended_concepts": [
+    "table.tabular_figures",
+    "layout.focal_hierarchy"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-055",
+   "prompt": "New feature: a screen where citizens track their permit application status.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "feedback.progress_indicator",
+    "state.loading_empty_error",
+    "data.refresh_timestamp",
+    "a11y.color_not_only",
+    "navigation.deep_link_state"
+   ],
+   "critical_concepts": [
+    "feedback.progress_indicator"
+   ],
+   "recommended_concepts": [
+    "a11y.accessible_names",
+    "content.readable_measure"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-056",
+   "prompt": "Need a from-scratch screen for pairing a new device over bluetooth.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "onboarding.permission_priming",
+    "feedback.progress_indicator",
+    "state.loading_empty_error",
+    "a11y.live_status",
+    "feedback.validation_errors"
+   ],
+   "critical_concepts": [
+    "onboarding.permission_priming",
+    "feedback.progress_indicator"
+   ],
+   "recommended_concepts": [
+    "touch.minimum_target"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-057",
+   "prompt": "Build a new screen for comparing two shipment routes on cost and time.",
+   "category": "create",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "data.comparison_structure",
+    "table.tabular_figures",
+    "content.readable_measure",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "data.comparison_structure"
+   ],
+   "recommended_concepts": [
+    "table.column_priority",
+    "data.kpi_comparison"
+   ],
+   "forbidden_concepts": [
+    "data.chart_by_question"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-058",
+   "prompt": "Create a screen for the security desk badge kiosk, walk-up, no login.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.session_expiry",
+    "touch.minimum_target",
+    "privacy.shared_device",
+    "layout.one_primary_action",
+    "a11y.text_scaling"
+   ],
+   "critical_concepts": [
+    "state.session_expiry",
+    "touch.minimum_target"
+   ],
+   "recommended_concepts": [
+    "a11y.contrast",
+    "state.loading_empty_error"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-059",
+   "prompt": "First version of a screen letting coaches build a practice plan.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile",
+     "web",
+     "tablet"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.one_primary_action",
+    "interaction.selection_visible",
+    "state.saving_conflict",
+    "touch.gestures_discoverable"
+   ],
+   "critical_concepts": [
+    "layout.one_primary_action",
+    "interaction.selection_visible"
+   ],
+   "recommended_concepts": [
+    "state.unsaved_changes_guard"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-060",
+   "prompt": "We need a totally new screen for donors to pick a recurring gift amount.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.one_primary_action",
+    "feedback.trust_signals",
+    "interaction.selection_visible",
+    "touch.minimum_target",
+    "feedback.validation_errors"
+   ],
+   "critical_concepts": [
+    "layout.one_primary_action",
+    "feedback.trust_signals"
+   ],
+   "recommended_concepts": [
+    "a11y.accessible_names"
+   ],
+   "forbidden_concepts": [
+    "anti.interruptive_upsell"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-061",
+   "prompt": "Design a screen for the machine in the lobby to print a visitor badge.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "touch.minimum_target",
+    "state.session_expiry",
+    "feedback.progress_indicator",
+    "layout.one_primary_action",
+    "a11y.text_scaling"
+   ],
+   "critical_concepts": [
+    "touch.minimum_target",
+    "state.session_expiry"
+   ],
+   "recommended_concepts": [
+    "privacy.shared_device",
+    "a11y.contrast"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-062",
+   "prompt": "Build a new screen for comparing two loan terms side by side.",
+   "category": "create",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "data.comparison_structure",
+    "table.tabular_figures",
+    "feedback.trust_signals",
+    "content.readable_measure"
+   ],
+   "critical_concepts": [
+    "data.comparison_structure"
+   ],
+   "recommended_concepts": [
+    "table.column_priority",
+    "layout.focal_hierarchy"
+   ],
+   "forbidden_concepts": [
+    "data.chart_by_question",
+    "data.kpi_comparison"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-063",
+   "prompt": "Need a fresh screen for parents to request a substitute teacher day.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.one_primary_action",
+    "feedback.validation_errors",
+    "state.loading_empty_error",
+    "form.autofill_attributes"
+   ],
+   "critical_concepts": [
+    "layout.one_primary_action"
+   ],
+   "recommended_concepts": [
+    "a11y.accessible_names",
+    "feedback.progress_indicator"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-064",
+   "prompt": "Create a new screen for tracking blood donation appointments.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.loading_empty_error",
+    "layout.focal_hierarchy",
+    "data.refresh_timestamp",
+    "a11y.accessible_names"
+   ],
+   "critical_concepts": [
+    "state.loading_empty_error",
+    "layout.focal_hierarchy"
+   ],
+   "recommended_concepts": [
+    "touch.minimum_target",
+    "feedback.confirmation_destructive"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-065",
+   "prompt": "From nothing, build a screen for restaurant staff to mark a table dirty or clean.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "tablet",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "touch.minimum_target",
+    "a11y.color_not_only",
+    "env.glanceable_status",
+    "interaction.selection_visible",
+    "state.offline_sync"
+   ],
+   "critical_concepts": [
+    "touch.minimum_target",
+    "a11y.color_not_only"
+   ],
+   "recommended_concepts": [
+    "a11y.contrast",
+    "data.refresh_timestamp"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-066",
+   "prompt": "New feature: an itinerary builder for the travel app, drag to reorder days.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "touch.gestures_discoverable",
+    "interaction.keyboard_navigation",
+    "interaction.selection_visible",
+    "state.saving_conflict"
+   ],
+   "critical_concepts": [
+    "touch.gestures_discoverable",
+    "interaction.keyboard_navigation"
+   ],
+   "recommended_concepts": [
+    "a11y.live_status",
+    "state.loading_empty_error"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-067",
+   "prompt": "Design a first pass at a screen for comparing two loyalty card tiers.",
+   "category": "create",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "data.comparison_structure",
+    "table.tabular_figures",
+    "content.readable_measure",
+    "feedback.trust_signals"
+   ],
+   "critical_concepts": [
+    "data.comparison_structure"
+   ],
+   "recommended_concepts": [
+    "table.column_priority"
+   ],
+   "forbidden_concepts": [
+    "data.chart_by_question",
+    "data.kpi_comparison"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-068",
+   "prompt": "We need a screen for warehouse leads to assign pickers to zones.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "desktop",
+     "tablet"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "table.selection_bulk",
+    "interaction.selection_visible",
+    "state.saving_conflict",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "table.selection_bulk",
+    "interaction.selection_visible"
+   ],
+   "recommended_concepts": [
+    "data.refresh_timestamp",
+    "state.loading_empty_error"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-069",
+   "prompt": "Build a screen where players customize their in-game avatar before entering the lobby.",
+   "category": "create",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "desktop",
+     "web",
+     "tv"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.selection_visible",
+    "layout.focal_hierarchy",
+    "perf.image_sizing",
+    "state.saving_conflict"
+   ],
+   "critical_concepts": [
+    "interaction.selection_visible"
+   ],
+   "recommended_concepts": [
+    "interaction.keyboard_navigation",
+    "state.loading_empty_error"
+   ],
+   "forbidden_concepts": [
+    "media.details_play_first",
+    "media.resume_playback",
+    "tv.player_autohide"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-070",
+   "prompt": "Create the initial screen for a co-op grocery order splitting tool.",
+   "category": "create",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "table.tabular_figures",
+    "layout.one_primary_action",
+    "state.saving_conflict",
+    "feedback.validation_errors"
+   ],
+   "critical_concepts": [
+    "table.tabular_figures"
+   ],
+   "recommended_concepts": [
+    "feedback.trust_signals",
+    "state.loading_empty_error"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-071",
+   "prompt": "The totals never line up on the invoice summary, off by a pixel or two.",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "polish",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "table.tabular_figures",
+    "layout.spacing_scale"
+   ],
+   "critical_concepts": [
+    "table.tabular_figures"
+   ],
+   "recommended_concepts": [
+    "brand.type_roles",
+    "content.readable_measure"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-072",
+   "prompt": "The tab key skips over half the fields on the intake form.",
+   "category": "refactor-fix",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.keyboard_navigation",
+    "a11y.semantics",
+    "interaction.focus_visible",
+    "a11y.accessible_names"
+   ],
+   "critical_concepts": [
+    "interaction.keyboard_navigation"
+   ],
+   "recommended_concepts": [
+    "a11y.text_scaling"
+   ],
+   "forbidden_concepts": [
+    "interaction.tabs_roving"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-073",
+   "prompt": "Users keep missing the save button, it's below the fold on smaller windows.",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.one_primary_action",
+    "adaptive.breakpoint_matrix",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "layout.one_primary_action"
+   ],
+   "recommended_concepts": [
+    "layout.spacing_scale",
+    "state.unsaved_changes_guard"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour",
+    "navigation"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-074",
+   "prompt": "Something's off with the loading spinner on the payments screen, it flickers.",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.loading_empty_error",
+    "perf.layout_shift",
+    "feedback.progress_indicator",
+    "a11y.reduced_motion"
+   ],
+   "critical_concepts": [
+    "state.loading_empty_error"
+   ],
+   "recommended_concepts": [
+    "a11y.live_status"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-075",
+   "prompt": "The card on the checkout page doesn't update when quantity changes.",
+   "category": "refactor-fix",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.live_status",
+    "state.saving_conflict",
+    "table.tabular_figures"
+   ],
+   "critical_concepts": [
+    "a11y.live_status"
+   ],
+   "recommended_concepts": [
+    "data.refresh_timestamp",
+    "state.loading_empty_error"
+   ],
+   "forbidden_concepts": [
+    "layout.media_card"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-076",
+   "prompt": "Drivers say the route screen freezes when they lose signal in the tunnel.",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.offline_sync",
+    "state.loading_empty_error",
+    "env.glanceable_status",
+    "feedback.progress_indicator"
+   ],
+   "critical_concepts": [
+    "state.offline_sync"
+   ],
+   "recommended_concepts": [
+    "a11y.live_status",
+    "touch.minimum_target"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour",
+    "navigation"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-077",
+   "prompt": "The overlay stays visible after the video ends, blocking the controls.",
+   "category": "refactor-fix",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile",
+     "tv"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "tv.player_autohide",
+    "a11y.dialog_focus",
+    "interaction.focus_restore"
+   ],
+   "critical_concepts": [
+    "tv.player_autohide"
+   ],
+   "recommended_concepts": [
+    "interaction.hover_independence",
+    "media.track_selection"
+   ],
+   "forbidden_concepts": [
+    "interaction.dpad_reachability",
+    "tv.ten_foot_typography"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-078",
+   "prompt": "On the ward, the vitals chart resets the zoom every time a new reading comes in.",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "tablet",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "data.realtime_window",
+    "data.refresh_timestamp",
+    "state.loading_empty_error",
+    "data.chart_by_question"
+   ],
+   "critical_concepts": [
+    "data.realtime_window"
+   ],
+   "recommended_concepts": [
+    "interaction.selection_visible",
+    "data.exception_first"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-079",
+   "prompt": "The dropdown for state selection doesn't scroll on touch, it just jumps.",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile",
+     "tablet",
+     "kiosk"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.semantics",
+    "touch.minimum_target",
+    "interaction.hover_independence"
+   ],
+   "critical_concepts": [
+    "a11y.semantics"
+   ],
+   "recommended_concepts": [
+    "form.autofill_attributes",
+    "touch.ime_keyboard"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-080",
+   "prompt": "Compare two files feature shows the wrong diff colors half the time.",
+   "category": "refactor-fix",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.color_not_only",
+    "a11y.contrast",
+    "data.comparison_structure"
+   ],
+   "critical_concepts": [
+    "a11y.color_not_only"
+   ],
+   "recommended_concepts": [
+    "brand.token_layers"
+   ],
+   "forbidden_concepts": [
+    "data.chart_by_question",
+    "data.kpi_comparison"
+   ],
+   "preservation": [
+    "color"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-081",
+   "prompt": "Fix the cart badge count, it doesn't update after a remove.",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.live_status",
+    "state.saving_conflict",
+    "a11y.accessible_names"
+   ],
+   "critical_concepts": [
+    "a11y.live_status"
+   ],
+   "recommended_concepts": [
+    "state.loading_empty_error"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-082",
+   "prompt": "The remote screen in the WPF app throws when you resize below 800px wide.",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "adaptive.navigation_transform",
+    "desktop.spacing_grid",
+    "state.loading_empty_error"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "desktop.persist_workspace",
+    "table.column_priority"
+   ],
+   "forbidden_concepts": [
+    "interaction.dpad_reachability",
+    "tv.ten_foot_typography"
+   ],
+   "preservation": [
+    "behaviour",
+    "navigation"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-083",
+   "prompt": "Something breaks the seating chart when two people drag at once.",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "tablet",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.saving_conflict",
+    "a11y.live_status",
+    "interaction.selection_visible"
+   ],
+   "critical_concepts": [
+    "state.saving_conflict"
+   ],
+   "recommended_concepts": [
+    "state.loading_empty_error",
+    "feedback.validation_errors"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-084",
+   "prompt": "The landscape mode on the tablet cuts off the last column of the table.",
+   "category": "refactor-fix",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "tablet",
+     "mobile",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "table.column_priority",
+    "adaptive.breakpoint_matrix",
+    "touch.safe_areas"
+   ],
+   "critical_concepts": [
+    "table.column_priority"
+   ],
+   "recommended_concepts": [
+    "table.tabular_figures",
+    "anti.platform_scaling"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-085",
+   "prompt": "Nurses report the med schedule doesn't refresh unless you force close the app.",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile",
+     "tablet"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "data.refresh_timestamp",
+    "state.offline_sync",
+    "a11y.live_status",
+    "state.session_expiry"
+   ],
+   "critical_concepts": [
+    "data.refresh_timestamp"
+   ],
+   "recommended_concepts": [
+    "data.exception_first",
+    "state.loading_empty_error"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-086",
+   "prompt": "The terminal at gate 12 kiosk keeps timing out mid-checkin.",
+   "category": "refactor-fix",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.session_expiry",
+    "feedback.progress_indicator",
+    "state.saving_conflict",
+    "privacy.shared_device"
+   ],
+   "critical_concepts": [
+    "state.session_expiry"
+   ],
+   "recommended_concepts": [
+    "a11y.live_status",
+    "state.loading_empty_error"
+   ],
+   "forbidden_concepts": [
+    "interaction.command_palette",
+    "interaction.shortcuts"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-087",
+   "prompt": "Search results flicker and reorder themselves right after loading.",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "perf.layout_shift",
+    "data.search_results",
+    "state.loading_empty_error",
+    "a11y.live_status"
+   ],
+   "critical_concepts": [
+    "perf.layout_shift",
+    "data.search_results"
+   ],
+   "recommended_concepts": [
+    "perf.js_budget"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-088",
+   "prompt": "The guide screen for new hires links to a page that doesn't exist anymore.",
+   "category": "refactor-fix",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.loading_empty_error",
+    "navigation.deep_link_state",
+    "onboarding.feature_education"
+   ],
+   "critical_concepts": [
+    "state.loading_empty_error"
+   ],
+   "recommended_concepts": [
+    "navigation.orientation_and_back"
+   ],
+   "forbidden_concepts": [
+    "tv.epg_pinned_channels",
+    "tv.time_navigation",
+    "media.live_channel_switching"
+   ],
+   "preservation": [
+    "navigation"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-089",
+   "prompt": "Something's wrong with focus order on the payment form, tab jumps around.",
+   "category": "refactor-fix",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.keyboard_navigation",
+    "interaction.focus_visible",
+    "a11y.semantics"
+   ],
+   "critical_concepts": [
+    "interaction.keyboard_navigation"
+   ],
+   "recommended_concepts": [
+    "form.autofill_attributes",
+    "a11y.accessible_names"
+   ],
+   "forbidden_concepts": [
+    "a11y.contrast",
+    "a11y.text_scaling"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-090",
+   "prompt": "The player profile page shows stale stats after a match ends.",
+   "category": "refactor-fix",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "data.refresh_timestamp",
+    "a11y.live_status",
+    "state.loading_empty_error"
+   ],
+   "critical_concepts": [
+    "data.refresh_timestamp"
+   ],
+   "recommended_concepts": [
+    "table.tabular_figures"
+   ],
+   "forbidden_concepts": [
+    "media.details_play_first",
+    "media.resume_playback",
+    "tv.player_autohide"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-091",
+   "prompt": "Fix the export button, it triggers twice if you double click by accident.",
+   "category": "refactor-fix",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "feedback.progress_indicator",
+    "state.loading_empty_error",
+    "layout.one_primary_action"
+   ],
+   "critical_concepts": [
+    "feedback.progress_indicator"
+   ],
+   "recommended_concepts": [
+    "a11y.live_status"
+   ],
+   "forbidden_concepts": [
+    "a11y.contrast",
+    "a11y.text_scaling"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-092",
+   "prompt": "The member profile card cuts off long names instead of wrapping.",
+   "category": "refactor-fix",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "polish",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "content.i18n_expansion",
+    "content.readable_measure",
+    "layout.spacing_scale",
+    "a11y.text_scaling"
+   ],
+   "critical_concepts": [
+    "content.i18n_expansion"
+   ],
+   "recommended_concepts": [
+    "brand.type_roles"
+   ],
+   "forbidden_concepts": [
+    "layout.media_card"
+   ],
+   "preservation": [
+    "typography"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-093",
+   "prompt": "On the shop floor screen the alarm banner never clears even after the fix is logged.",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "kiosk",
+     "desktop",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.live_status",
+    "data.exception_first",
+    "state.loading_empty_error",
+    "data.refresh_timestamp"
+   ],
+   "critical_concepts": [
+    "a11y.live_status",
+    "data.exception_first"
+   ],
+   "recommended_concepts": [
+    "a11y.color_not_only",
+    "env.glanceable_status"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-094",
+   "prompt": "The comparison chart on the energy dashboard mislabels the axes after a resize.",
+   "category": "refactor-fix",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "data.chart_by_question",
+    "perf.layout_shift",
+    "adaptive.breakpoint_matrix",
+    "data.accessible_chart_alternative"
+   ],
+   "critical_concepts": [
+    "data.chart_by_question"
+   ],
+   "recommended_concepts": [
+    "a11y.accessible_names",
+    "table.tabular_figures"
+   ],
+   "forbidden_concepts": [
+    "data.comparison_structure"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-095",
+   "prompt": "From the sofa, the remote control app lags a full second behind button presses.",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile",
+     "tv"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "perf.focus_latency",
+    "touch.minimum_target",
+    "feedback.progress_indicator"
+   ],
+   "critical_concepts": [
+    "perf.focus_latency"
+   ],
+   "recommended_concepts": [
+    "a11y.live_status",
+    "perf.js_budget"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-096",
+   "prompt": "The event log screen truncates entries instead of scrolling.",
+   "category": "refactor-fix",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "table.virtualization",
+    "content.readable_measure",
+    "data.pagination_strategy"
+   ],
+   "critical_concepts": [
+    "table.virtualization"
+   ],
+   "recommended_concepts": [
+    "content.i18n_expansion",
+    "table.column_priority"
+   ],
+   "forbidden_concepts": [
+    "tv.epg_pinned_channels",
+    "tv.time_navigation"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-097",
+   "prompt": "The claim form loses everything typed if you rotate the phone.",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.unsaved_changes_guard",
+    "adaptive.breakpoint_matrix",
+    "touch.ime_keyboard",
+    "state.saving_conflict"
+   ],
+   "critical_concepts": [
+    "state.unsaved_changes_guard"
+   ],
+   "recommended_concepts": [
+    "touch.safe_areas",
+    "feedback.validation_errors"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-098",
+   "prompt": "Fix the confirmation modal, it closes itself before the user can read it.",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.dialog_focus",
+    "feedback.confirmation_destructive",
+    "interaction.focus_restore",
+    "a11y.live_status"
+   ],
+   "critical_concepts": [
+    "a11y.dialog_focus",
+    "feedback.confirmation_destructive"
+   ],
+   "recommended_concepts": [
+    "a11y.reduced_motion"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-099",
+   "prompt": "Warehouse staff say scanning a code sometimes adds the item twice.",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.live_status",
+    "state.saving_conflict",
+    "feedback.validation_errors"
+   ],
+   "critical_concepts": [
+    "a11y.live_status"
+   ],
+   "recommended_concepts": [
+    "env.glanceable_status",
+    "feedback.progress_indicator"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-100",
+   "prompt": "The poster-sized print preview shows the wrong bleed margins.",
+   "category": "refactor-fix",
+   "stress": "wrong-screen",
+   "scope": "partial",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.spacing_scale",
+    "state.loading_empty_error"
+   ],
+   "critical_concepts": [
+    "layout.spacing_scale"
+   ],
+   "recommended_concepts": [
+    "perf.image_sizing",
+    "process.render_verify"
+   ],
+   "forbidden_concepts": [
+    "tv.safe_margins",
+    "tv.ten_foot_typography",
+    "anti.platform_scaling"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-101",
+   "prompt": "The badge kiosk print queue jams if two visitors check in within a second.",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "partial",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "feedback.progress_indicator",
+    "state.saving_conflict",
+    "state.session_expiry"
+   ],
+   "critical_concepts": [
+    "feedback.progress_indicator"
+   ],
+   "recommended_concepts": [
+    "a11y.live_status",
+    "state.loading_empty_error"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-102",
+   "prompt": "Fix the focus ring color on the primary button, it's invisible on dark mode.",
+   "category": "refactor-fix",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "polish",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.focus_visible",
+    "a11y.contrast",
+    "brand.dark_mode_redesign"
+   ],
+   "critical_concepts": [
+    "interaction.focus_visible"
+   ],
+   "recommended_concepts": [
+    "brand.token_layers"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "color"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-103",
+   "prompt": "The itinerary screen reorders days wrong when you drag past the last item.",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "touch.gestures_discoverable",
+    "interaction.keyboard_navigation",
+    "interaction.selection_visible",
+    "a11y.live_status"
+   ],
+   "critical_concepts": [
+    "touch.gestures_discoverable"
+   ],
+   "recommended_concepts": [
+    "state.saving_conflict"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-104",
+   "prompt": "Students say the quiz timer keeps running after they submit.",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "feedback.progress_indicator",
+    "a11y.live_status",
+    "state.session_expiry",
+    "state.loading_empty_error"
+   ],
+   "critical_concepts": [
+    "feedback.progress_indicator"
+   ],
+   "recommended_concepts": [
+    "feedback.confirmation_destructive"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-105",
+   "prompt": "Fix the one label on the delete confirmation, it says 'Confirm' instead of what it deletes.",
+   "category": "refactor-fix",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "polish"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "feedback.confirmation_destructive",
+    "a11y.accessible_names"
+   ],
+   "critical_concepts": [
+    "feedback.confirmation_destructive"
+   ],
+   "recommended_concepts": [
+    "a11y.dialog_focus",
+    "content.readable_measure"
+   ],
+   "forbidden_concepts": [
+    "a11y.contrast",
+    "interaction.focus_visible"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-106",
+   "prompt": "The loyalty tier comparison screen shows last month's points, not current.",
+   "category": "refactor-fix",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "data.refresh_timestamp",
+    "state.loading_empty_error",
+    "a11y.live_status"
+   ],
+   "critical_concepts": [
+    "data.refresh_timestamp"
+   ],
+   "recommended_concepts": [
+    "table.tabular_figures"
+   ],
+   "forbidden_concepts": [
+    "data.chart_by_question",
+    "data.comparison_structure"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-107",
+   "prompt": "Something's wrong with the split billing screen, rounding leaves a cent unaccounted.",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "partial",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "table.tabular_figures",
+    "feedback.trust_signals"
+   ],
+   "critical_concepts": [
+    "table.tabular_figures"
+   ],
+   "recommended_concepts": [
+    "content.readable_measure",
+    "feedback.validation_errors"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-108",
+   "prompt": "The dispatch board loses the driver's assigned zone after a refresh.",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.saving_conflict",
+    "navigation.deep_link_state",
+    "desktop.persist_workspace"
+   ],
+   "critical_concepts": [
+    "state.saving_conflict"
+   ],
+   "recommended_concepts": [
+    "state.loading_empty_error",
+    "data.refresh_timestamp"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {
+    "state.saving_conflict": [
+     "desktop.persist_workspace"
+    ],
+    "navigation.deep_link_state": [
+     "desktop.persist_workspace"
+    ]
+   }
+  },
+  {
+   "id": "hv5-g01-109",
+   "prompt": "Fix the button order on the save dialog, cancel and confirm are swapped from usual.",
+   "category": "refactor-fix",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "polish"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "desktop",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "navigation.platform_grammar",
+    "layout.one_primary_action",
+    "a11y.dialog_focus"
+   ],
+   "critical_concepts": [
+    "navigation.platform_grammar",
+    "layout.one_primary_action"
+   ],
+   "recommended_concepts": [
+    "interaction.focus_restore"
+   ],
+   "forbidden_concepts": [
+    "a11y.contrast"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-110",
+   "prompt": "The pharmacy interaction alert dismisses on tap instead of requiring acknowledgment.",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile",
+     "desktop",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "feedback.confirmation_destructive",
+    "a11y.dialog_focus",
+    "a11y.live_status",
+    "data.exception_first"
+   ],
+   "critical_concepts": [
+    "feedback.confirmation_destructive"
+   ],
+   "recommended_concepts": [
+    "touch.minimum_target",
+    "interaction.focus_restore"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-111",
+   "prompt": "The clinic intake form validates the phone field wrong for international numbers.",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "feedback.validation_errors",
+    "form.autofill_attributes",
+    "content.i18n_expansion"
+   ],
+   "critical_concepts": [
+    "feedback.validation_errors",
+    "form.autofill_attributes"
+   ],
+   "recommended_concepts": [
+    "touch.ime_keyboard",
+    "a11y.accessible_names"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-112",
+   "prompt": "Fix the spacing value between the price and the strike-through price, they're touching.",
+   "category": "refactor-fix",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.spacing_scale",
+    "table.tabular_figures"
+   ],
+   "critical_concepts": [
+    "layout.spacing_scale"
+   ],
+   "recommended_concepts": [
+    "brand.type_roles",
+    "a11y.color_not_only"
+   ],
+   "forbidden_concepts": [
+    "interaction.focus_visible",
+    "interaction.keyboard_navigation"
+   ],
+   "preservation": [
+    "typography",
+    "color"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-113",
+   "prompt": "The tab for shipment history shows the wrong carrier icon sometimes.",
+   "category": "refactor-fix",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.imagery_purpose",
+    "a11y.accessible_names",
+    "state.loading_empty_error"
+   ],
+   "critical_concepts": [
+    "brand.imagery_purpose"
+   ],
+   "recommended_concepts": [
+    "perf.image_sizing"
+   ],
+   "forbidden_concepts": [
+    "interaction.tabs_roving"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-114",
+   "prompt": "In the van, the delivery confirmation screen doesn't save signatures offline.",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.offline_sync",
+    "state.saving_conflict",
+    "touch.gestures_discoverable",
+    "feedback.validation_errors"
+   ],
+   "critical_concepts": [
+    "state.offline_sync"
+   ],
+   "recommended_concepts": [
+    "a11y.live_status",
+    "state.unsaved_changes_guard"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-115",
+   "prompt": "The overlay for the tutorial won't dismiss on some devices, blocks the whole app.",
+   "category": "refactor-fix",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.dialog_focus",
+    "onboarding.feature_education",
+    "interaction.focus_restore",
+    "touch.minimum_target"
+   ],
+   "critical_concepts": [
+    "a11y.dialog_focus",
+    "onboarding.feature_education"
+   ],
+   "recommended_concepts": [
+    "a11y.reduced_motion",
+    "adaptive.breakpoint_matrix"
+   ],
+   "forbidden_concepts": [
+    "tv.player_autohide",
+    "media.details_play_first"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-116",
+   "prompt": "Fix the one color on the low-stock badge, it's the same red as the error state.",
+   "category": "refactor-fix",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.color_not_only",
+    "brand.token_layers",
+    "a11y.contrast"
+   ],
+   "critical_concepts": [
+    "a11y.color_not_only"
+   ],
+   "recommended_concepts": [
+    "env.glanceable_status"
+   ],
+   "forbidden_concepts": [
+    "interaction.focus_visible"
+   ],
+   "preservation": [
+    "color"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-117",
+   "prompt": "The seating plan tool for teachers doesn't save if you switch classes mid-edit.",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "tablet",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.unsaved_changes_guard",
+    "state.saving_conflict",
+    "navigation.orientation_and_back"
+   ],
+   "critical_concepts": [
+    "state.unsaved_changes_guard"
+   ],
+   "recommended_concepts": [
+    "a11y.live_status",
+    "state.loading_empty_error"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour",
+    "navigation"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-118",
+   "prompt": "Something's broken in the recipe screen, the serving size stepper goes negative.",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "feedback.validation_errors",
+    "a11y.accessible_names",
+    "touch.minimum_target"
+   ],
+   "critical_concepts": [
+    "feedback.validation_errors"
+   ],
+   "recommended_concepts": [
+    "a11y.live_status"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-119",
+   "prompt": "The card reader terminal screen shows approved before the transaction actually clears.",
+   "category": "refactor-fix",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "kiosk",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "feedback.progress_indicator",
+    "feedback.trust_signals",
+    "state.loading_empty_error",
+    "a11y.live_status"
+   ],
+   "critical_concepts": [
+    "feedback.progress_indicator",
+    "feedback.trust_signals"
+   ],
+   "recommended_concepts": [
+    "state.session_expiry"
+   ],
+   "forbidden_concepts": [
+    "layout.media_card",
+    "interaction.command_palette"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g01-120",
+   "prompt": "Fix the screen reader label on the mute icon, it just says 'button'.",
+   "category": "refactor-fix",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "accessibility",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.accessible_names",
+    "a11y.semantics"
+   ],
+   "critical_concepts": [
+    "a11y.accessible_names"
+   ],
+   "recommended_concepts": [
+    "a11y.live_status",
+    "brand.imagery_purpose"
+   ],
+   "forbidden_concepts": [
+    "a11y.contrast",
+    "interaction.focus_visible"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  }
+ ]
+}

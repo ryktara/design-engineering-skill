@@ -1,0 +1,113 @@
+{
+  "root": "D:\\indigo pro\\MYownSkills\\research\\phase3-projects\\p3-ecommerce-web\\project",
+  "findings": [
+    {
+      "status": "KNOWN",
+      "note": "*.html without a framework manifest: plain HTML/CSS site"
+    }
+  ],
+  "stack_groups": [
+    "html-css"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "ui_libraries": [],
+  "package_manager": null,
+  "css_architecture": [
+    "plain stylesheets",
+    ".css (1 files)"
+  ],
+  "tokens": [
+    "css custom properties: --color* (18), --sp* (9), --fs* (6), --font* (2), --lh* (2), --radius* (2), --primary* (2), --tap* (1)"
+  ],
+  "fonts": [],
+  "icons": [],
+  "routing": [],
+  "breakpoints": [
+    "900px (5 rules)",
+    "720px (3 rules)",
+    "901px (2 rules)",
+    "560px (1 rules)"
+  ],
+  "accessibility": [
+    "a11y attributes present in 6 files"
+  ],
+  "focus_handling": [
+    "explicit focus handling in 1 files"
+  ],
+  "design_docs": [],
+  "component_dirs": [],
+  "tests": [],
+  "i18n": [],
+  "product_hints": [],
+  "sample": {
+    "files_scanned": 6
+  },
+  "design_context": {
+    "navigation": {
+      "value": "top-bar",
+      "status": "KNOWN",
+      "evidence": [
+        "top-bar: 4 matches in checkout.html, index.html, product.html (shell/layout file)"
+      ],
+      "candidates": {
+        "top-bar": 4,
+        "breadcrumb-tree": 2
+      }
+    },
+    "theme": {
+      "value": "light-first",
+      "status": "INFERRED",
+      "evidence": [
+        "hex palette: 6 near-white, 2 near-black"
+      ]
+    },
+    "surfaces": {
+      "value": "elevated",
+      "status": "INFERRED",
+      "evidence": [
+        "weak signal: shadow 1, border 1"
+      ]
+    },
+    "radius": {
+      "value": "pill",
+      "status": "INFERRED",
+      "evidence": [
+        "most common radius 999 (5\u00d7); others [5.0, 4.0]"
+      ]
+    },
+    "spacing": {
+      "value": "irregular",
+      "status": "UNKNOWN",
+      "evidence": [
+        "most used spacing values [4, 14, 2]"
+      ]
+    },
+    "typography": {
+      "value": "geometric-sans",
+      "status": "INFERRED",
+      "evidence": [
+        "font family Inter (1 refs)",
+        "weights 600, 500, 400",
+        "encoded type scale in 1 files"
+      ],
+      "features": {
+        "weights": [
+          "600",
+          "500",
+          "400"
+        ],
+        "type_scale": true,
+        "monospace": false,
+        "tabular_numerals": false
+      }
+    },
+    "components": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "schema": "design-context/v1"
+  }
+}

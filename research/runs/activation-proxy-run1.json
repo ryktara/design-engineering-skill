@@ -1,0 +1,107 @@
+{
+  "cases": 180,
+  "proxy": {
+    "tp": 73,
+    "fp": 13,
+    "tn": 61,
+    "fn": 3,
+    "precision": 0.849,
+    "recall": 0.961,
+    "false_positive_rate": 0.176,
+    "false_negative_rate": 0.039,
+    "ambiguous_behaviour": {
+      "activate": 13,
+      "skip": 7,
+      "ambiguous": 10
+    },
+    "per_group": {
+      "positive": {
+        "n": 60,
+        "correct": 58
+      },
+      "negative": {
+        "n": 60,
+        "correct": 53
+      },
+      "ambiguous": {
+        "n": 30,
+        "correct": 17
+      },
+      "competing": {
+        "n": 30,
+        "correct": 23
+      }
+    },
+    "false_positives": [
+      {
+        "id": "act-061",
+        "prompt": "Optimise this Postgres query, it takes 12s on the orders table"
+      },
+      {
+        "id": "act-077",
+        "prompt": "Migrate the users table to add a soft-delete column"
+      },
+      {
+        "id": "act-097",
+        "prompt": "Next.js middleware redirect loop between /login and /dashboard"
+      },
+      {
+        "id": "act-099",
+        "prompt": "SwiftUI @State not updating when set from a background thread"
+      },
+      {
+        "id": "act-106",
+        "prompt": "React Native Android build fails, duplicate class in Gradle"
+      },
+      {
+        "id": "act-110",
+        "prompt": "WPF MVVM: ICommand CanExecute never re-evaluates after async call"
+      },
+      {
+        "id": "act-119",
+        "prompt": "How should we shard the tenants table for multi-tenancy"
+      },
+      {
+        "id": "act-155",
+        "prompt": "Implement API caching in Next.js with revalidate"
+      },
+      {
+        "id": "act-157",
+        "prompt": "SwiftUI view doesn't re-render when the @Published array changes"
+      },
+      {
+        "id": "act-159",
+        "prompt": "Tailwind classes aren't being purged in production build"
+      },
+      {
+        "id": "act-167",
+        "prompt": "Chart.js tooltip shows wrong values after data update"
+      },
+      {
+        "id": "act-179",
+        "prompt": "Next.js Image component throws because the remote domain isn't configured"
+      },
+      {
+        "id": "act-180",
+        "prompt": "Avalonia DataGrid binding throws on null collection at startup"
+      }
+    ],
+    "false_negatives": [
+      {
+        "id": "act-042",
+        "prompt": "Improve line length and readability of the article view on wide monitors",
+        "got": "ambiguous"
+      },
+      {
+        "id": "act-059",
+        "prompt": "Progress indicator for the 5-step kiosk checkout, users don't know how far along they are",
+        "got": "skip"
+      },
+      {
+        "id": "act-168",
+        "prompt": "Choose between bar and line for this Recharts dashboard and fix the legend clutter",
+        "got": "ambiguous"
+      }
+    ]
+  }
+}

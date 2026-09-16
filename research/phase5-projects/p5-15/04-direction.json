@@ -1,0 +1,131 @@
+{
+  "brand": "Review the stock adjustments page against our accessibility checklist.",
+  "fingerprint": {
+    "navigation_model": "left-rail",
+    "surface_strategy": "bordered",
+    "card_geometry": "none",
+    "corner_language": "sharp",
+    "color_strategy": "neutral-plus-accent",
+    "focus_strategy": "ring"
+  },
+  "direction": {
+    "navigation": "nav-left-rail",
+    "layout": null,
+    "density": null,
+    "surface": "surface-bordered-panes",
+    "cards": null,
+    "typography": null,
+    "color": "color-neutral-accent",
+    "motion": null,
+    "focus": "focus-ring-standard",
+    "cta": null,
+    "imagery": null,
+    "icon": null,
+    "metadata": null
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "accessibility",
+      "audit",
+      "review"
+    ],
+    "platform": [
+      "desktop"
+    ],
+    "input": [
+      "keyboard",
+      "pointer"
+    ],
+    "product": [
+      "erp"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "winui"
+    ],
+    "density": "high",
+    "components": [
+      "list"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "accessibility list"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "low",
+    "scope": {
+      "domain": "UI_ACCESSIBILITY",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "review"
+      ],
+      "problem_domain": [
+        "accessibility"
+      ],
+      "change_scope": "screen",
+      "utterance": "request",
+      "preserve": []
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "audit: explicit: review the",
+      "accessibility: explicit: accessibility",
+      "review: assessment without changes (review)",
+      "audit: diagnosis is part of the review",
+      "accessibility: accessibility problem domain"
+    ],
+    "project_context": {
+      "navigation": "left-rail (KNOWN)",
+      "theme": "dual-theme (INFERRED)",
+      "surfaces": "bordered-flat (INFERRED)",
+      "spacing": "4 (INFERRED)",
+      "components": "winui3, community-toolkit (KNOWN)"
+    },
+    "known": [
+      "platform=desktop",
+      "product=erp",
+      "stack=winui",
+      "mode=accessibility",
+      "mode=audit",
+      "project_navigation=left-rail",
+      "project_components=winui3, community-toolkit"
+    ],
+    "inferred": [
+      "input=pointer",
+      "input=keyboard",
+      "density=high",
+      "mode=review",
+      "project_theme=dual-theme",
+      "project_surfaces=bordered-flat",
+      "project_spacing=4"
+    ],
+    "missing": [],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

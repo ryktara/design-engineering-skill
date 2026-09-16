@@ -1,0 +1,141 @@
+{
+  "gates": {
+    "validator": {
+      "ok": false,
+      "summary": "Traceback (most recent call last):"
+    },
+    "development+regression": {
+      "ok": false,
+      "passed": 614,
+      "total": 615,
+      "failing": [
+        "validate-skill"
+      ]
+    },
+    "activation_proxy": {
+      "ok": true,
+      "precision": 1.0,
+      "recall": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.0
+    },
+    "performance_sanity": {
+      "ok": true,
+      "load_ms": 6,
+      "search_ms": 212,
+      "direction_ms": 120
+    }
+  },
+  "heldout_v4": {
+    "passed": 100,
+    "total": 434,
+    "summary": {
+      "cases": 434,
+      "abstain_cases": 20,
+      "acceptable": 100,
+      "scope_correct": 406,
+      "abstain_correct": 8,
+      "scope_kinds": {
+        "in-scope": 399,
+        "partial": 11,
+        "abstain": 24
+      },
+      "platform_claims": 394,
+      "platform_correct": 208,
+      "platform_false_assignment": 12,
+      "platform_unknown": 174,
+      "mode_correct": 366,
+      "mode_fundamental_miss": 15,
+      "artifact_state_correct": 353,
+      "artifact_state_claims": 414,
+      "mean_concept_recall": 0.535,
+      "concept_recall_ge_half": 236,
+      "mean_critical_recall": 0.63,
+      "critical_cases": 414,
+      "mean_recommended_recall": 0.408,
+      "forbidden_violation_cases": 40,
+      "preservation_correct": 369,
+      "mean_required_concern_coverage": 0.794,
+      "mean_bundle_size": 5.983,
+      "mean_bundle_tokens": 894.913,
+      "empty_results": 0,
+      "status_counts": {
+        "CONFIDENT": 93,
+        "PARTIAL": 313,
+        "AMBIGUOUS": 4,
+        "ABSTAIN": 24
+      },
+      "by_category": {
+        "accessibility": {
+          "n": 40,
+          "ok": 10
+        },
+        "adversarial": {
+          "n": 26,
+          "ok": 10
+        },
+        "audit-review": {
+          "n": 42,
+          "ok": 12
+        },
+        "create": {
+          "n": 72,
+          "ok": 11
+        },
+        "desktop-native": {
+          "n": 26,
+          "ok": 0
+        },
+        "kiosk": {
+          "n": 22,
+          "ok": 7
+        },
+        "mobile-native": {
+          "n": 26,
+          "ok": 3
+        },
+        "polish": {
+          "n": 52,
+          "ok": 15
+        },
+        "refactor": {
+          "n": 72,
+          "ok": 21
+        },
+        "responsive": {
+          "n": 30,
+          "ok": 6
+        },
+        "tv-media": {
+          "n": 26,
+          "ok": 5
+        }
+      }
+    },
+    "human_review": null,
+    "thresholds": {
+      "1_platform_ge_0.88": false,
+      "2_false_platform_le_0.05": true,
+      "3_mode_ge_0.75": true,
+      "4_scope_ge_0.92": true,
+      "5_concern_coverage_ge_0.90": false,
+      "6_concept_recall_ge_0.58": false,
+      "7_critical_recall_ge_0.80": false,
+      "8_forbidden_le_0.05": false,
+      "9_human_good_plus_partial_ge_0.82": null,
+      "10_human_bad_le_0.18": null
+    },
+    "secondary": {
+      "empty_le_0.01": true,
+      "acceptable_ge_0.50": false,
+      "fundamental_mode_miss_le_0.10": true,
+      "mean_tokens_le_1200": true
+    },
+    "primary_met": 3,
+    "primary_total": 10,
+    "mandatory_met": false,
+    "stable_candidate_blind_policy": false
+  },
+  "real_activation": "NOT RUN (pass --real-activation)",
+  "ok": false
+}

@@ -1,0 +1,8379 @@
+{
+ "records": [
+  {
+   "id": "anti-card-everything",
+   "kind": "antipattern",
+   "category": "generic-ai",
+   "concerns": [
+    "anti-pattern"
+   ],
+   "concepts": [
+    "layout.no_nested_cards"
+   ],
+   "concepts_before": [
+    "layout.no_nested_cards"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 122
+  },
+  {
+   "id": "anti-gradient-default",
+   "kind": "antipattern",
+   "category": "generic-ai",
+   "concerns": [
+    "anti-pattern",
+    "brand"
+   ],
+   "concepts": [
+    "anti.decorative_gradient"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 121
+  },
+  {
+   "id": "anti-glass-everywhere",
+   "kind": "antipattern",
+   "category": "generic-ai",
+   "concerns": [
+    "anti-pattern",
+    "brand"
+   ],
+   "concepts": [
+    "anti.decorative_gradient"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "high"
+   },
+   "environment": [],
+   "tokens": 88
+  },
+  {
+   "id": "anti-pill-everything",
+   "kind": "antipattern",
+   "category": "generic-ai",
+   "concerns": [
+    "anti-pattern",
+    "brand"
+   ],
+   "concepts": [
+    "brand.corner_language"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 93
+  },
+  {
+   "id": "anti-icon-per-heading",
+   "kind": "antipattern",
+   "category": "generic-ai",
+   "concerns": [
+    "anti-pattern",
+    "brand"
+   ],
+   "concepts": [
+    "brand.imagery_purpose"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 104
+  },
+  {
+   "id": "anti-hero-template",
+   "kind": "antipattern",
+   "category": "generic-ai",
+   "concerns": [
+    "anti-pattern",
+    "content"
+   ],
+   "concepts": [
+    "anti.template_landing",
+    "layout.hero_thesis"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "web"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "marketing",
+    "ecommerce",
+    "saas"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 154
+  },
+  {
+   "id": "anti-oversized-hero-text",
+   "kind": "antipattern",
+   "category": "generic-ai",
+   "concerns": [
+    "anti-pattern",
+    "structure"
+   ],
+   "concepts": [
+    "anti.oversized_display",
+    "layout.focal_hierarchy"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 100
+  },
+  {
+   "id": "anti-generic-sidebar-dashboard",
+   "kind": "antipattern",
+   "category": "generic-ai",
+   "concerns": [
+    "anti-pattern",
+    "data-display"
+   ],
+   "concepts": [
+    "anti.template_landing",
+    "data.exception_first",
+    "process.decision_order"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "desktop"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "saas",
+    "erp",
+    "finance"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 131
+  },
+  {
+   "id": "anti-style-before-product",
+   "kind": "antipattern",
+   "category": "process",
+   "concerns": [
+    "anti-pattern"
+   ],
+   "concepts": [
+    "process.decision_order"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 121
+  },
+  {
+   "id": "anti-fashion-over-usability",
+   "kind": "antipattern",
+   "category": "process",
+   "concerns": [
+    "accessibility",
+    "anti-pattern"
+   ],
+   "concepts": [
+    "process.decision_order",
+    "a11y.contrast"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 110
+  },
+  {
+   "id": "anti-scroll-animation-everything",
+   "kind": "antipattern",
+   "category": "generic-ai",
+   "concerns": [
+    "accessibility",
+    "anti-pattern",
+    "motion"
+   ],
+   "concepts": [
+    "anti.scroll_animation",
+    "a11y.reduced_motion"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "mobile"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "marketing",
+    "content",
+    "ecommerce"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 90
+  },
+  {
+   "id": "anti-desktop-scaled-to-tv",
+   "kind": "antipattern",
+   "category": "platform",
+   "concerns": [
+    "anti-pattern",
+    "structure"
+   ],
+   "concepts": [
+    "anti.platform_scaling",
+    "tv.safe_margins"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "tv"
+   ],
+   "input": [
+    "remote"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 94
+  },
+  {
+   "id": "anti-mobile-desktop-shrunk",
+   "kind": "antipattern",
+   "category": "platform",
+   "concerns": [
+    "anti-pattern",
+    "interaction"
+   ],
+   "concepts": [
+    "anti.platform_scaling",
+    "touch.thumb_reach"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "mobile"
+   ],
+   "input": [
+    "touch"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "erp",
+    "finance",
+    "saas"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 84
+  },
+  {
+   "id": "anti-brand-cosmetic-only",
+   "kind": "antipattern",
+   "category": "brand",
+   "concerns": [
+    "anti-pattern"
+   ],
+   "concepts": [
+    "brand.structural_differentiation"
+   ],
+   "concepts_before": [
+    "brand.structural_differentiation"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 130
+  },
+  {
+   "id": "anti-inconsistent-spacing",
+   "kind": "antipattern",
+   "category": "craft",
+   "concerns": [
+    "anti-pattern"
+   ],
+   "concepts": [
+    "layout.spacing_scale"
+   ],
+   "concepts_before": [
+    "layout.spacing_scale"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 105
+  },
+  {
+   "id": "anti-default-fonts",
+   "kind": "antipattern",
+   "category": "generic-ai",
+   "concerns": [
+    "anti-pattern",
+    "brand"
+   ],
+   "concepts": [
+    "anti.default_fonts"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "web"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "marketing",
+    "saas",
+    "ecommerce",
+    "content"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 114
+  },
+  {
+   "id": "anti-dark-mode-inversion",
+   "kind": "antipattern",
+   "category": "craft",
+   "concerns": [
+    "anti-pattern",
+    "brand"
+   ],
+   "concepts": [
+    "brand.dark_mode_redesign"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 78
+  },
+  {
+   "id": "anti-hover-only-actions",
+   "kind": "antipattern",
+   "category": "craft",
+   "concerns": [
+    "anti-pattern"
+   ],
+   "concepts": [
+    "interaction.hover_independence"
+   ],
+   "concepts_before": [
+    "interaction.hover_independence"
+   ],
+   "platform": [
+    "web",
+    "desktop"
+   ],
+   "input": [
+    "pointer",
+    "touch",
+    "keyboard"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 46
+  },
+  {
+   "id": "anti-placeholder-labels",
+   "kind": "antipattern",
+   "category": "craft",
+   "concerns": [
+    "anti-pattern"
+   ],
+   "concepts": [
+    "feedback.validation_errors"
+   ],
+   "concepts_before": [
+    "feedback.validation_errors"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 53
+  },
+  {
+   "id": "anti-no-states",
+   "kind": "antipattern",
+   "category": "craft",
+   "concerns": [
+    "anti-pattern",
+    "states"
+   ],
+   "concepts": [
+    "state.loading_empty_error"
+   ],
+   "concepts_before": [
+    "state.loading_empty_error"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 83
+  },
+  {
+   "id": "anti-interruptive-upsell",
+   "kind": "antipattern",
+   "category": "generic-ai",
+   "concerns": [
+    "anti-pattern",
+    "feedback"
+   ],
+   "concepts": [
+    "anti.interruptive_upsell",
+    "perf.layout_shift"
+   ],
+   "concepts_before": [
+    "anti.interruptive_upsell",
+    "perf.layout_shift"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "media",
+    "ecommerce",
+    "saas",
+    "finance"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 144
+  },
+  {
+   "id": "chart-trend-line",
+   "kind": "chart",
+   "category": "chart",
+   "concerns": [
+    "data-display"
+   ],
+   "concepts": [
+    "data.chart_by_question",
+    "data.accessible_chart_alternative"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "finance",
+    "saas",
+    "iot",
+    "healthcare",
+    "devtools"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 144
+  },
+  {
+   "id": "chart-compare-bar",
+   "kind": "chart",
+   "category": "chart",
+   "concerns": [
+    "data-display"
+   ],
+   "concepts": [
+    "data.chart_by_question",
+    "data.kpi_comparison"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 104
+  },
+  {
+   "id": "chart-composition",
+   "kind": "chart",
+   "category": "chart",
+   "concerns": [
+    "data-display"
+   ],
+   "concepts": [
+    "data.chart_by_question",
+    "a11y.color_not_only"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 104
+  },
+  {
+   "id": "chart-distribution",
+   "kind": "chart",
+   "category": "chart",
+   "concerns": [
+    "data-display"
+   ],
+   "concepts": [
+    "data.chart_by_question"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "finance",
+    "healthcare",
+    "devtools",
+    "saas"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 77
+  },
+  {
+   "id": "chart-relationship",
+   "kind": "chart",
+   "category": "chart",
+   "concerns": [
+    "data-display"
+   ],
+   "concepts": [
+    "data.chart_by_question",
+    "data.accessible_chart_alternative"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "desktop"
+   ],
+   "input": [
+    "pointer",
+    "keyboard"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "finance",
+    "saas",
+    "healthcare",
+    "devtools"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 101
+  },
+  {
+   "id": "chart-heatmap-matrix",
+   "kind": "chart",
+   "category": "chart",
+   "concerns": [
+    "data-display"
+   ],
+   "concepts": [
+    "data.chart_by_question",
+    "a11y.color_not_only"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "desktop"
+   ],
+   "input": [
+    "pointer",
+    "keyboard"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "devtools",
+    "finance",
+    "iot",
+    "saas"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 118
+  },
+  {
+   "id": "chart-flow-funnel",
+   "kind": "chart",
+   "category": "chart",
+   "concerns": [
+    "data-display"
+   ],
+   "concepts": [
+    "data.chart_by_question",
+    "data.exception_first"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "saas",
+    "ecommerce",
+    "marketing"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 92
+  },
+  {
+   "id": "chart-flow-sankey",
+   "kind": "chart",
+   "category": "chart",
+   "concerns": [
+    "data-display"
+   ],
+   "concepts": [
+    "data.chart_by_question",
+    "data.accessible_chart_alternative"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "desktop"
+   ],
+   "input": [
+    "pointer",
+    "keyboard"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "finance",
+    "saas",
+    "iot"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 83
+  },
+  {
+   "id": "chart-progress-gauge",
+   "kind": "chart",
+   "category": "chart",
+   "concerns": [
+    "data-display"
+   ],
+   "concepts": [
+    "data.chart_by_question",
+    "data.kpi_comparison"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "saas",
+    "finance",
+    "iot",
+    "erp"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 96
+  },
+  {
+   "id": "chart-small-multiples",
+   "kind": "chart",
+   "category": "chart",
+   "concerns": [
+    "data-display"
+   ],
+   "concepts": [
+    "data.chart_by_question"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "desktop"
+   ],
+   "input": [
+    "pointer",
+    "keyboard"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "finance",
+    "saas",
+    "iot",
+    "healthcare",
+    "devtools"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 84
+  },
+  {
+   "id": "chart-geo",
+   "kind": "chart",
+   "category": "chart",
+   "concerns": [
+    "data-display"
+   ],
+   "concepts": [
+    "data.chart_by_question",
+    "data.accessible_chart_alternative"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "desktop",
+    "mobile"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "saas",
+    "finance",
+    "government",
+    "iot"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "high"
+   },
+   "environment": [],
+   "tokens": 120
+  },
+  {
+   "id": "chart-uncertainty",
+   "kind": "chart",
+   "category": "chart",
+   "concerns": [
+    "data-display"
+   ],
+   "concepts": [
+    "data.chart_by_question"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "finance",
+    "healthcare",
+    "iot",
+    "saas"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 90
+  },
+  {
+   "id": "chart-realtime",
+   "kind": "chart",
+   "category": "chart",
+   "concerns": [
+    "data-display",
+    "states"
+   ],
+   "concepts": [
+    "data.realtime_window",
+    "data.refresh_timestamp",
+    "data.exception_first",
+    "a11y.color_not_only"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "desktop",
+    "tv"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "iot",
+    "devtools",
+    "finance"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "high"
+   },
+   "environment": [],
+   "tokens": 128
+  },
+  {
+   "id": "chart-accessible-colour",
+   "kind": "chart",
+   "category": "chart",
+   "concerns": [
+    "data-display"
+   ],
+   "concepts": [
+    "a11y.color_not_only"
+   ],
+   "concepts_before": [
+    "a11y.color_not_only"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 100
+  },
+  {
+   "id": "comp-data-table",
+   "kind": "component",
+   "category": "table",
+   "concerns": [
+    "component",
+    "data-display",
+    "structure"
+   ],
+   "concepts": [
+    "table.selection_bulk",
+    "table.inline_edit",
+    "table.virtualization",
+    "table.tabular_figures",
+    "data.pagination_strategy"
+   ],
+   "concepts_before": [
+    "table.selection_bulk",
+    "table.inline_edit",
+    "table.virtualization",
+    "table.tabular_figures"
+   ],
+   "platform": [
+    "web",
+    "desktop"
+   ],
+   "input": [
+    "pointer",
+    "keyboard"
+   ],
+   "screen": [
+    "list",
+    "dashboard"
+   ],
+   "product": [
+    "erp",
+    "finance",
+    "saas",
+    "devtools",
+    "healthcare"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "high"
+   },
+   "environment": [],
+   "tokens": 328
+  },
+  {
+   "id": "comp-form",
+   "kind": "component",
+   "category": "form",
+   "concerns": [
+    "component",
+    "feedback",
+    "states",
+    "structure"
+   ],
+   "concepts": [
+    "feedback.validation_errors",
+    "touch.ime_keyboard",
+    "form.autofill_attributes",
+    "state.unsaved_changes_guard"
+   ],
+   "concepts_before": [
+    "feedback.validation_errors",
+    "touch.ime_keyboard"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "form",
+    "settings",
+    "auth",
+    "checkout",
+    "onboarding"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 283
+  },
+  {
+   "id": "comp-dialog",
+   "kind": "component",
+   "category": "dialog",
+   "concerns": [
+    "accessibility",
+    "component",
+    "feedback",
+    "interaction"
+   ],
+   "concepts": [
+    "a11y.dialog_focus",
+    "feedback.confirmation_destructive"
+   ],
+   "concepts_before": [
+    "a11y.dialog_focus",
+    "feedback.confirmation_destructive"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 271
+  },
+  {
+   "id": "comp-drawer-panel",
+   "kind": "component",
+   "category": "drawer",
+   "concerns": [
+    "component",
+    "interaction",
+    "navigation"
+   ],
+   "concepts": [
+    "interaction.drawer_focus"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "desktop",
+    "mobile",
+    "tv"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 206
+  },
+  {
+   "id": "comp-menu",
+   "kind": "component",
+   "category": "menu",
+   "concerns": [
+    "component",
+    "interaction"
+   ],
+   "concepts": [
+    "interaction.menu_semantics"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "desktop",
+    "mobile"
+   ],
+   "input": [
+    "pointer",
+    "keyboard",
+    "touch"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 213
+  },
+  {
+   "id": "comp-tabs",
+   "kind": "component",
+   "category": "tabs",
+   "concerns": [
+    "component",
+    "interaction",
+    "navigation"
+   ],
+   "concepts": [
+    "interaction.tabs_roving",
+    "navigation.deep_link_state"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 223
+  },
+  {
+   "id": "comp-sidebar-nav",
+   "kind": "component",
+   "category": "navigation",
+   "concerns": [
+    "navigation"
+   ],
+   "concepts": [
+    "navigation.rail_semantics",
+    "navigation.orientation_and_back"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "desktop",
+    "tablet"
+   ],
+   "input": [
+    "pointer",
+    "keyboard",
+    "touch"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "saas",
+    "erp",
+    "finance",
+    "devtools",
+    "healthcare"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 209
+  },
+  {
+   "id": "comp-command-palette",
+   "kind": "component",
+   "category": "command-palette",
+   "concerns": [
+    "component",
+    "interaction",
+    "navigation"
+   ],
+   "concepts": [
+    "interaction.command_palette"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "desktop"
+   ],
+   "input": [
+    "keyboard",
+    "pointer"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "devtools",
+    "saas",
+    "erp",
+    "finance"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 160
+  },
+  {
+   "id": "comp-search",
+   "kind": "component",
+   "category": "search",
+   "concerns": [
+    "component",
+    "feedback",
+    "navigation"
+   ],
+   "concepts": [
+    "data.search_results",
+    "media.search_tv",
+    "navigation.deep_link_state"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "search",
+    "list",
+    "home"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 189
+  },
+  {
+   "id": "comp-filters",
+   "kind": "component",
+   "category": "search",
+   "concerns": [
+    "component",
+    "data-display",
+    "navigation"
+   ],
+   "concepts": [
+    "data.filter_chips",
+    "navigation.deep_link_state"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "desktop",
+    "mobile"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "list",
+    "search"
+   ],
+   "product": [
+    "ecommerce",
+    "erp",
+    "saas",
+    "finance",
+    "media"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 154
+  },
+  {
+   "id": "comp-pagination",
+   "kind": "component",
+   "category": "list",
+   "concerns": [
+    "component",
+    "data-display"
+   ],
+   "concepts": [
+    "data.pagination_strategy"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 110
+  },
+  {
+   "id": "comp-chart-container",
+   "kind": "component",
+   "category": "chart",
+   "concerns": [
+    "accessibility",
+    "component",
+    "data-display",
+    "states"
+   ],
+   "concepts": [
+    "a11y.color_not_only",
+    "data.chart_by_question",
+    "data.accessible_chart_alternative",
+    "state.loading_empty_error"
+   ],
+   "concepts_before": [
+    "a11y.color_not_only"
+   ],
+   "platform": [
+    "web",
+    "desktop",
+    "mobile"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "dashboard",
+    "detail"
+   ],
+   "product": [
+    "finance",
+    "saas",
+    "devtools",
+    "iot",
+    "healthcare",
+    "erp"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 211
+  },
+  {
+   "id": "comp-kpi-tile",
+   "kind": "component",
+   "category": "chart",
+   "concerns": [
+    "component",
+    "data-display",
+    "navigation"
+   ],
+   "concepts": [
+    "table.tabular_figures",
+    "data.kpi_comparison",
+    "data.drilldown"
+   ],
+   "concepts_before": [
+    "table.tabular_figures"
+   ],
+   "platform": [
+    "web",
+    "desktop",
+    "mobile"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "dashboard",
+    "home"
+   ],
+   "product": [
+    "finance",
+    "saas",
+    "erp",
+    "iot",
+    "healthcare"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 116
+  },
+  {
+   "id": "comp-media-card",
+   "kind": "component",
+   "category": "media-card",
+   "concerns": [
+    "accessibility",
+    "component",
+    "content"
+   ],
+   "concepts": [
+    "layout.media_card",
+    "a11y.accessible_names"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "tv",
+    "mobile",
+    "web"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "home",
+    "list",
+    "search",
+    "detail"
+   ],
+   "product": [
+    "media",
+    "education",
+    "ecommerce"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 179
+  },
+  {
+   "id": "comp-player-controls",
+   "kind": "component",
+   "category": "player",
+   "concerns": [
+    "accessibility",
+    "component",
+    "interaction",
+    "structure"
+   ],
+   "concepts": [
+    "tv.player_autohide",
+    "a11y.accessible_names"
+   ],
+   "concepts_before": [
+    "tv.player_autohide"
+   ],
+   "platform": [
+    "tv",
+    "mobile",
+    "web"
+   ],
+   "input": [
+    "remote",
+    "touch",
+    "pointer",
+    "keyboard"
+   ],
+   "screen": [
+    "player"
+   ],
+   "product": [
+    "media"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 225
+  },
+  {
+   "id": "comp-tv-rail",
+   "kind": "component",
+   "category": "tv-rail",
+   "concerns": [
+    "component",
+    "navigation",
+    "performance"
+   ],
+   "concepts": [
+    "interaction.focus_restore",
+    "perf.focus_latency",
+    "layout.media_card"
+   ],
+   "concepts_before": [
+    "interaction.focus_restore",
+    "perf.focus_latency"
+   ],
+   "platform": [
+    "tv"
+   ],
+   "input": [
+    "remote"
+   ],
+   "screen": [
+    "home",
+    "list",
+    "search",
+    "detail"
+   ],
+   "product": [
+    "media",
+    "education",
+    "ecommerce"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "high"
+   },
+   "environment": [],
+   "tokens": 238
+  },
+  {
+   "id": "comp-epg",
+   "kind": "component",
+   "category": "epg",
+   "concerns": [
+    "component",
+    "data-display",
+    "navigation",
+    "structure"
+   ],
+   "concepts": [
+    "tv.epg_pinned_channels",
+    "table.virtualization",
+    "interaction.dpad_reachability",
+    "media.live_channel_switching"
+   ],
+   "concepts_before": [
+    "tv.epg_pinned_channels",
+    "table.virtualization",
+    "interaction.dpad_reachability"
+   ],
+   "platform": [
+    "tv",
+    "web",
+    "tablet"
+   ],
+   "input": [
+    "remote",
+    "pointer",
+    "touch"
+   ],
+   "screen": [
+    "list",
+    "home"
+   ],
+   "product": [
+    "media"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "high"
+   },
+   "environment": [],
+   "tokens": 227
+  },
+  {
+   "id": "comp-list-row-mobile",
+   "kind": "component",
+   "category": "list",
+   "concerns": [
+    "component",
+    "data-display",
+    "interaction"
+   ],
+   "concepts": [
+    "touch.minimum_target",
+    "touch.gestures_discoverable",
+    "data.pagination_strategy"
+   ],
+   "concepts_before": [
+    "touch.minimum_target",
+    "touch.gestures_discoverable"
+   ],
+   "platform": [
+    "mobile",
+    "tablet"
+   ],
+   "input": [
+    "touch"
+   ],
+   "screen": [
+    "list",
+    "home",
+    "settings"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 178
+  },
+  {
+   "id": "comp-settings-screen",
+   "kind": "component",
+   "category": "settings",
+   "concerns": [
+    "component",
+    "feedback",
+    "structure"
+   ],
+   "concepts": [
+    "layout.settings_grouping",
+    "feedback.confirmation_destructive"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "settings"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 127
+  },
+  {
+   "id": "comp-empty-state",
+   "kind": "component",
+   "category": "empty-state",
+   "concerns": [
+    "states"
+   ],
+   "concepts": [
+    "state.loading_empty_error"
+   ],
+   "concepts_before": [
+    "state.loading_empty_error"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 99
+  },
+  {
+   "id": "comp-toast-notification",
+   "kind": "component",
+   "category": "notification",
+   "concerns": [
+    "accessibility",
+    "component",
+    "feedback",
+    "states"
+   ],
+   "concepts": [
+    "a11y.live_status"
+   ],
+   "concepts_before": [
+    "a11y.live_status"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 209
+  },
+  {
+   "id": "comp-wizard-stepper",
+   "kind": "component",
+   "category": "wizard",
+   "concerns": [
+    "component",
+    "feedback",
+    "states",
+    "structure"
+   ],
+   "concepts": [
+    "feedback.progress_indicator",
+    "state.saving_conflict",
+    "onboarding.linear_wizard"
+   ],
+   "concepts_before": [
+    "feedback.progress_indicator",
+    "state.saving_conflict"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "form",
+    "checkout",
+    "onboarding"
+   ],
+   "product": [
+    "finance",
+    "ecommerce",
+    "government",
+    "healthcare",
+    "saas"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 95
+  },
+  {
+   "id": "comp-tree-view",
+   "kind": "component",
+   "category": "tree",
+   "concerns": [
+    "component",
+    "interaction",
+    "navigation",
+    "performance"
+   ],
+   "concepts": [
+    "interaction.tree_semantics",
+    "table.virtualization"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "desktop",
+    "web"
+   ],
+   "input": [
+    "keyboard",
+    "pointer"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "erp",
+    "devtools",
+    "finance",
+    "content"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 171
+  },
+  {
+   "id": "comp-data-entry-grid",
+   "kind": "component",
+   "category": "table",
+   "concerns": [
+    "component",
+    "data-display",
+    "interaction"
+   ],
+   "concepts": [
+    "table.inline_edit",
+    "interaction.keyboard_navigation"
+   ],
+   "concepts_before": [
+    "table.inline_edit",
+    "interaction.keyboard_navigation"
+   ],
+   "platform": [
+    "desktop",
+    "web"
+   ],
+   "input": [
+    "keyboard",
+    "pointer"
+   ],
+   "screen": [
+    "form",
+    "list"
+   ],
+   "product": [
+    "erp",
+    "finance"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "high"
+   },
+   "environment": [],
+   "tokens": 178
+  },
+  {
+   "id": "comp-hero-section",
+   "kind": "component",
+   "category": "hero",
+   "concerns": [
+    "component",
+    "content",
+    "performance",
+    "structure"
+   ],
+   "concepts": [
+    "layout.hero_thesis",
+    "layout.one_primary_action",
+    "perf.image_sizing"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "mobile"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "landing"
+   ],
+   "product": [
+    "marketing",
+    "ecommerce"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "high"
+   },
+   "environment": [],
+   "tokens": 162
+  },
+  {
+   "id": "comp-tv-sign-in",
+   "kind": "component",
+   "category": "sign-in",
+   "concerns": [
+    "component",
+    "feedback",
+    "privacy"
+   ],
+   "concepts": [
+    "tv.sign_in_code",
+    "privacy.shared_device"
+   ],
+   "concepts_before": [
+    "tv.sign_in_code",
+    "privacy.shared_device"
+   ],
+   "platform": [
+    "tv"
+   ],
+   "input": [
+    "remote"
+   ],
+   "screen": [
+    "auth",
+    "onboarding"
+   ],
+   "product": [
+    "media",
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 246
+  },
+  {
+   "id": "comp-setup-checklist",
+   "kind": "component",
+   "category": "wizard",
+   "concerns": [
+    "component",
+    "feedback",
+    "states"
+   ],
+   "concepts": [
+    "onboarding.setup_checklist",
+    "feedback.progress_indicator"
+   ],
+   "concepts_before": [
+    "onboarding.setup_checklist",
+    "feedback.progress_indicator"
+   ],
+   "platform": [
+    "web",
+    "mobile",
+    "desktop"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "onboarding",
+    "home"
+   ],
+   "product": [
+    "saas",
+    "education",
+    "finance",
+    "healthcare",
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 162
+  },
+  {
+   "id": "comp-product-detail-page",
+   "kind": "component",
+   "category": "detail",
+   "concerns": [
+    "component",
+    "content",
+    "feedback",
+    "structure"
+   ],
+   "concepts": [
+    "layout.one_primary_action",
+    "perf.layout_shift",
+    "a11y.accessible_names",
+    "touch.minimum_target"
+   ],
+   "concepts_before": [
+    "layout.one_primary_action",
+    "perf.layout_shift",
+    "a11y.accessible_names",
+    "touch.minimum_target"
+   ],
+   "platform": [
+    "web",
+    "mobile"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "detail"
+   ],
+   "product": [
+    "ecommerce"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 318
+  },
+  {
+   "id": "comp-checkout-one-page",
+   "kind": "component",
+   "category": "form",
+   "concerns": [
+    "component",
+    "feedback",
+    "states",
+    "structure"
+   ],
+   "concepts": [
+    "feedback.validation_errors",
+    "touch.ime_keyboard",
+    "feedback.confirmation_destructive",
+    "state.saving_conflict",
+    "layout.one_primary_action"
+   ],
+   "concepts_before": [
+    "feedback.validation_errors",
+    "touch.ime_keyboard",
+    "feedback.confirmation_destructive",
+    "state.saving_conflict",
+    "layout.one_primary_action"
+   ],
+   "platform": [
+    "web",
+    "mobile"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "checkout"
+   ],
+   "product": [
+    "ecommerce"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 286
+  },
+  {
+   "id": "comp-plan-comparison",
+   "kind": "component",
+   "category": "settings",
+   "concerns": [
+    "component",
+    "data-display",
+    "feedback",
+    "structure"
+   ],
+   "concepts": [
+    "table.tabular_figures",
+    "layout.one_primary_action",
+    "a11y.color_not_only",
+    "feedback.confirmation_destructive",
+    "table.selection_bulk"
+   ],
+   "concepts_before": [
+    "table.tabular_figures",
+    "layout.one_primary_action",
+    "a11y.color_not_only",
+    "feedback.confirmation_destructive",
+    "table.selection_bulk"
+   ],
+   "platform": [
+    "web",
+    "desktop"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "settings"
+   ],
+   "product": [
+    "saas"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 318
+  },
+  {
+   "id": "comp-mini-player",
+   "kind": "component",
+   "category": "player",
+   "concerns": [
+    "component",
+    "interaction",
+    "navigation",
+    "states"
+   ],
+   "concepts": [
+    "interaction.focus_restore",
+    "interaction.back_semantics",
+    "state.loading_empty_error",
+    "tv.safe_margins"
+   ],
+   "concepts_before": [
+    "interaction.focus_restore",
+    "interaction.back_semantics",
+    "state.loading_empty_error",
+    "tv.safe_margins"
+   ],
+   "platform": [
+    "tv",
+    "mobile",
+    "web"
+   ],
+   "input": [
+    "remote",
+    "touch",
+    "pointer"
+   ],
+   "screen": [
+    "home",
+    "player",
+    "list"
+   ],
+   "product": [
+    "media"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 356
+  },
+  {
+   "id": "media-resume-and-details",
+   "kind": "component",
+   "category": "detail",
+   "concerns": [
+    "component",
+    "interaction",
+    "navigation",
+    "states"
+   ],
+   "concepts": [
+    "media.details_play_first",
+    "media.resume_playback",
+    "media.watchlist",
+    "interaction.focus_restore",
+    "interaction.back_semantics",
+    "a11y.color_not_only"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "tv",
+    "mobile",
+    "web"
+   ],
+   "input": [
+    "remote",
+    "touch",
+    "pointer"
+   ],
+   "screen": [
+    "detail",
+    "home"
+   ],
+   "product": [
+    "media"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 326
+  },
+  {
+   "id": "dir-operational-workbench",
+   "kind": "direction",
+   "category": "direction",
+   "concerns": [
+    "brand",
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "desktop",
+    "web"
+   ],
+   "input": [
+    "pointer",
+    "keyboard"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "erp",
+    "finance",
+    "devtools",
+    "saas"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 129
+  },
+  {
+   "id": "dir-analytical-console",
+   "kind": "direction",
+   "category": "direction",
+   "concerns": [
+    "brand",
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "desktop"
+   ],
+   "input": [
+    "pointer",
+    "keyboard"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "finance",
+    "saas",
+    "iot",
+    "devtools",
+    "healthcare"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 123
+  },
+  {
+   "id": "dir-cinematic-media-tv",
+   "kind": "direction",
+   "category": "direction",
+   "concerns": [
+    "brand",
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "tv"
+   ],
+   "input": [
+    "remote"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "media"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "high"
+   },
+   "environment": [],
+   "tokens": 130
+  },
+  {
+   "id": "dir-broadcast-guide-tv",
+   "kind": "direction",
+   "category": "direction",
+   "concerns": [
+    "brand",
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "tv"
+   ],
+   "input": [
+    "remote"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "media"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "high"
+   },
+   "environment": [],
+   "tokens": 136
+  },
+  {
+   "id": "dir-editorial-storefront",
+   "kind": "direction",
+   "category": "direction",
+   "concerns": [
+    "brand",
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "mobile"
+   ],
+   "input": [
+    "touch",
+    "pointer"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "ecommerce",
+    "content",
+    "marketing"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 133
+  },
+  {
+   "id": "dir-utility-commerce",
+   "kind": "direction",
+   "category": "direction",
+   "concerns": [
+    "brand",
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "mobile"
+   ],
+   "input": [
+    "touch",
+    "pointer"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "ecommerce"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 122
+  },
+  {
+   "id": "dir-service-app-mobile",
+   "kind": "direction",
+   "category": "direction",
+   "concerns": [
+    "brand",
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "mobile"
+   ],
+   "input": [
+    "touch"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "finance",
+    "healthcare",
+    "government",
+    "iot",
+    "education"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 139
+  },
+  {
+   "id": "dir-social-feed-mobile",
+   "kind": "direction",
+   "category": "direction",
+   "concerns": [
+    "brand",
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "mobile"
+   ],
+   "input": [
+    "touch"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "social",
+    "content",
+    "education",
+    "media"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 106
+  },
+  {
+   "id": "dir-windows-native-tool",
+   "kind": "direction",
+   "category": "direction",
+   "concerns": [
+    "brand",
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "desktop"
+   ],
+   "input": [
+    "pointer",
+    "keyboard"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "erp",
+    "devtools",
+    "finance",
+    "saas",
+    "iot"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 145
+  },
+  {
+   "id": "dir-developer-tool",
+   "kind": "direction",
+   "category": "direction",
+   "concerns": [
+    "brand",
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "desktop"
+   ],
+   "input": [
+    "keyboard",
+    "pointer"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "devtools"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 109
+  },
+  {
+   "id": "dir-learning-platform",
+   "kind": "direction",
+   "category": "direction",
+   "concerns": [
+    "brand",
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "mobile",
+    "tv"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "education"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 120
+  },
+  {
+   "id": "dir-public-kiosk",
+   "kind": "direction",
+   "category": "direction",
+   "concerns": [
+    "brand",
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "kiosk"
+   ],
+   "input": [
+    "touch"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 113
+  },
+  {
+   "id": "dir-clinical-workstation",
+   "kind": "direction",
+   "category": "direction",
+   "concerns": [
+    "brand",
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "desktop",
+    "web",
+    "tablet"
+   ],
+   "input": [
+    "pointer",
+    "keyboard",
+    "touch"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "healthcare"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 137
+  },
+  {
+   "id": "dir-industrial-hmi",
+   "kind": "direction",
+   "category": "direction",
+   "concerns": [
+    "brand",
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "desktop",
+    "kiosk",
+    "tablet"
+   ],
+   "input": [
+    "touch",
+    "pointer"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "iot"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 120
+  },
+  {
+   "id": "dir-product-marketing-site",
+   "kind": "direction",
+   "category": "direction",
+   "concerns": [
+    "brand",
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web"
+   ],
+   "input": [
+    "pointer",
+    "touch"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "marketing",
+    "saas",
+    "devtools"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 121
+  },
+  {
+   "id": "nav-top-bar",
+   "kind": "pattern",
+   "category": "navigation",
+   "concerns": [
+    "navigation"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web"
+   ],
+   "input": [
+    "pointer",
+    "touch",
+    "keyboard"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "marketing",
+    "content",
+    "ecommerce",
+    "social",
+    "education"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 200
+  },
+  {
+   "id": "nav-left-rail",
+   "kind": "pattern",
+   "category": "navigation",
+   "concerns": [
+    "navigation"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "desktop"
+   ],
+   "input": [
+    "pointer",
+    "keyboard",
+    "touch"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "saas",
+    "erp",
+    "finance",
+    "devtools",
+    "healthcare"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 261
+  },
+  {
+   "id": "nav-bottom-tabs",
+   "kind": "pattern",
+   "category": "navigation",
+   "concerns": [
+    "navigation"
+   ],
+   "concepts": [
+    "navigation.platform_grammar"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "mobile"
+   ],
+   "input": [
+    "touch"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 233
+  },
+  {
+   "id": "nav-hub-spoke",
+   "kind": "pattern",
+   "category": "navigation",
+   "concerns": [
+    "navigation"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "mobile",
+    "kiosk",
+    "tablet"
+   ],
+   "input": [
+    "touch"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "finance",
+    "healthcare",
+    "government",
+    "iot",
+    "education"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 124
+  },
+  {
+   "id": "nav-tv-side",
+   "kind": "pattern",
+   "category": "navigation",
+   "concerns": [
+    "navigation"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "tv"
+   ],
+   "input": [
+    "remote"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "media",
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 276
+  },
+  {
+   "id": "nav-tv-top-tabs",
+   "kind": "pattern",
+   "category": "navigation",
+   "concerns": [
+    "navigation"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "tv"
+   ],
+   "input": [
+    "remote"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "media",
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 182
+  },
+  {
+   "id": "nav-command-palette",
+   "kind": "pattern",
+   "category": "navigation",
+   "concerns": [
+    "navigation"
+   ],
+   "concepts": [
+    "interaction.command_palette"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "desktop"
+   ],
+   "input": [
+    "keyboard",
+    "pointer"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "devtools",
+    "saas",
+    "erp",
+    "finance"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 191
+  },
+  {
+   "id": "nav-breadcrumb-tree",
+   "kind": "pattern",
+   "category": "navigation",
+   "concerns": [
+    "navigation"
+   ],
+   "concepts": [
+    "interaction.tree_semantics",
+    "navigation.orientation_and_back"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "desktop",
+    "web"
+   ],
+   "input": [
+    "keyboard",
+    "pointer"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "erp",
+    "devtools",
+    "finance",
+    "content"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 198
+  },
+  {
+   "id": "nav-wizard",
+   "kind": "pattern",
+   "category": "navigation",
+   "concerns": [
+    "navigation"
+   ],
+   "concepts": [
+    "feedback.progress_indicator",
+    "onboarding.linear_wizard"
+   ],
+   "concepts_before": [
+    "feedback.progress_indicator"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "form",
+    "checkout",
+    "onboarding"
+   ],
+   "product": [
+    "finance",
+    "ecommerce",
+    "government",
+    "healthcare",
+    "saas"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 136
+  },
+  {
+   "id": "nav-menu-bar-desktop",
+   "kind": "pattern",
+   "category": "navigation",
+   "concerns": [
+    "navigation"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "desktop"
+   ],
+   "input": [
+    "pointer",
+    "keyboard"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "erp",
+    "devtools",
+    "finance",
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 195
+  },
+  {
+   "id": "layout-single-column",
+   "kind": "pattern",
+   "category": "layout",
+   "concerns": [
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "mobile",
+    "web",
+    "kiosk"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "home",
+    "form",
+    "auth",
+    "onboarding",
+    "checkout",
+    "detail",
+    "settings"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 102
+  },
+  {
+   "id": "layout-master-detail",
+   "kind": "pattern",
+   "category": "layout",
+   "concerns": [
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "desktop",
+    "web",
+    "tablet"
+   ],
+   "input": [
+    "pointer",
+    "keyboard",
+    "touch"
+   ],
+   "screen": [
+    "list",
+    "detail",
+    "home"
+   ],
+   "product": [
+    "erp",
+    "saas",
+    "finance",
+    "healthcare",
+    "devtools",
+    "social"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 226
+  },
+  {
+   "id": "layout-three-pane",
+   "kind": "pattern",
+   "category": "layout",
+   "concerns": [
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "desktop",
+    "web"
+   ],
+   "input": [
+    "pointer",
+    "keyboard"
+   ],
+   "screen": [
+    "list",
+    "detail",
+    "home"
+   ],
+   "product": [
+    "devtools",
+    "erp",
+    "finance",
+    "content"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 170
+  },
+  {
+   "id": "layout-dashboard-grid",
+   "kind": "pattern",
+   "category": "layout",
+   "concerns": [
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "desktop",
+    "tablet"
+   ],
+   "input": [
+    "pointer",
+    "keyboard",
+    "touch"
+   ],
+   "screen": [
+    "dashboard",
+    "home"
+   ],
+   "product": [
+    "saas",
+    "finance",
+    "erp",
+    "devtools",
+    "iot",
+    "healthcare"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 143
+  },
+  {
+   "id": "layout-table-first",
+   "kind": "pattern",
+   "category": "layout",
+   "concerns": [
+    "structure"
+   ],
+   "concepts": [
+    "table.virtualization",
+    "table.tabular_figures"
+   ],
+   "concepts_before": [
+    "table.virtualization",
+    "table.tabular_figures"
+   ],
+   "platform": [
+    "web",
+    "desktop"
+   ],
+   "input": [
+    "pointer",
+    "keyboard"
+   ],
+   "screen": [
+    "list",
+    "dashboard"
+   ],
+   "product": [
+    "erp",
+    "finance",
+    "saas",
+    "devtools"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "high"
+   },
+   "environment": [],
+   "tokens": 257
+  },
+  {
+   "id": "layout-form-stack",
+   "kind": "pattern",
+   "category": "layout",
+   "concerns": [
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "form",
+    "settings",
+    "auth",
+    "checkout",
+    "onboarding"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 139
+  },
+  {
+   "id": "layout-grid-catalog",
+   "kind": "pattern",
+   "category": "layout",
+   "concerns": [
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "mobile",
+    "tablet"
+   ],
+   "input": [
+    "touch",
+    "pointer",
+    "keyboard"
+   ],
+   "screen": [
+    "list",
+    "home",
+    "search"
+   ],
+   "product": [
+    "ecommerce",
+    "media",
+    "content",
+    "education",
+    "social"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 122
+  },
+  {
+   "id": "layout-feed",
+   "kind": "pattern",
+   "category": "layout",
+   "concerns": [
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "mobile",
+    "web"
+   ],
+   "input": [
+    "touch",
+    "pointer"
+   ],
+   "screen": [
+    "home",
+    "list"
+   ],
+   "product": [
+    "social",
+    "content",
+    "media",
+    "education"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 122
+  },
+  {
+   "id": "layout-editorial",
+   "kind": "pattern",
+   "category": "layout",
+   "concerns": [
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "tablet"
+   ],
+   "input": [
+    "pointer",
+    "touch"
+   ],
+   "screen": [
+    "detail",
+    "landing",
+    "home"
+   ],
+   "product": [
+    "content",
+    "marketing",
+    "education"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 122
+  },
+  {
+   "id": "layout-rails",
+   "kind": "pattern",
+   "category": "layout",
+   "concerns": [
+    "structure"
+   ],
+   "concepts": [
+    "interaction.focus_restore"
+   ],
+   "concepts_before": [
+    "interaction.focus_restore"
+   ],
+   "platform": [
+    "tv"
+   ],
+   "input": [
+    "remote"
+   ],
+   "screen": [
+    "home",
+    "list",
+    "search",
+    "detail"
+   ],
+   "product": [
+    "media",
+    "education",
+    "ecommerce"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "high"
+   },
+   "environment": [],
+   "tokens": 304
+  },
+  {
+   "id": "layout-immersive-rails",
+   "kind": "pattern",
+   "category": "layout",
+   "concerns": [
+    "structure"
+   ],
+   "concepts": [
+    "interaction.focus_restore",
+    "layout.media_card"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "tv"
+   ],
+   "input": [
+    "remote"
+   ],
+   "screen": [
+    "home",
+    "detail"
+   ],
+   "product": [
+    "media"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "high"
+   },
+   "environment": [],
+   "tokens": 232
+  },
+  {
+   "id": "layout-split-player",
+   "kind": "pattern",
+   "category": "layout",
+   "concerns": [
+    "structure"
+   ],
+   "concepts": [
+    "tv.player_autohide"
+   ],
+   "concepts_before": [
+    "tv.player_autohide"
+   ],
+   "platform": [
+    "tv",
+    "mobile",
+    "web"
+   ],
+   "input": [
+    "remote",
+    "touch",
+    "pointer"
+   ],
+   "screen": [
+    "player"
+   ],
+   "product": [
+    "media"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "high"
+   },
+   "environment": [],
+   "tokens": 224
+  },
+  {
+   "id": "layout-epg-grid",
+   "kind": "pattern",
+   "category": "layout",
+   "concerns": [
+    "structure"
+   ],
+   "concepts": [
+    "tv.epg_pinned_channels",
+    "table.virtualization"
+   ],
+   "concepts_before": [
+    "tv.epg_pinned_channels",
+    "table.virtualization"
+   ],
+   "platform": [
+    "tv",
+    "web",
+    "tablet"
+   ],
+   "input": [
+    "remote",
+    "pointer",
+    "touch"
+   ],
+   "screen": [
+    "list",
+    "home"
+   ],
+   "product": [
+    "media"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "high"
+   },
+   "environment": [],
+   "tokens": 254
+  },
+  {
+   "id": "density-high",
+   "kind": "pattern",
+   "category": "density",
+   "concerns": [
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "desktop"
+   ],
+   "input": [
+    "pointer",
+    "keyboard"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "erp",
+    "finance",
+    "devtools",
+    "saas",
+    "healthcare"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 111
+  },
+  {
+   "id": "density-medium",
+   "kind": "pattern",
+   "category": "density",
+   "concerns": [
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 85
+  },
+  {
+   "id": "density-low",
+   "kind": "pattern",
+   "category": "density",
+   "concerns": [
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "mobile",
+    "tv",
+    "kiosk"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "marketing",
+    "content",
+    "media",
+    "education"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 100
+  },
+  {
+   "id": "surface-flat-tonal",
+   "kind": "pattern",
+   "category": "surface",
+   "concerns": [
+    "brand",
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 136
+  },
+  {
+   "id": "surface-bordered-panes",
+   "kind": "pattern",
+   "category": "surface",
+   "concerns": [
+    "brand",
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "desktop",
+    "web"
+   ],
+   "input": [
+    "pointer",
+    "keyboard"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "erp",
+    "devtools",
+    "finance",
+    "saas"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 101
+  },
+  {
+   "id": "surface-elevated-cards",
+   "kind": "pattern",
+   "category": "surface",
+   "concerns": [
+    "brand",
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "mobile",
+    "web",
+    "tablet"
+   ],
+   "input": [
+    "touch",
+    "pointer"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "ecommerce",
+    "social",
+    "education",
+    "healthcare"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 132
+  },
+  {
+   "id": "surface-imagery-backed",
+   "kind": "pattern",
+   "category": "surface",
+   "concerns": [
+    "brand",
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "tv",
+    "mobile",
+    "web"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "media",
+    "ecommerce",
+    "marketing"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "high"
+   },
+   "environment": [],
+   "tokens": 130
+  },
+  {
+   "id": "surface-glass",
+   "kind": "pattern",
+   "category": "surface",
+   "concerns": [
+    "brand",
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "mobile",
+    "desktop",
+    "web"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "media",
+    "marketing",
+    "iot"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "high"
+   },
+   "environment": [],
+   "tokens": 153
+  },
+  {
+   "id": "typography-neutral-sans",
+   "kind": "pattern",
+   "category": "typography",
+   "concerns": [
+    "brand",
+    "content"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "erp",
+    "finance",
+    "saas",
+    "devtools",
+    "healthcare",
+    "government"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 139
+  },
+  {
+   "id": "typography-system-native",
+   "kind": "pattern",
+   "category": "typography",
+   "concerns": [
+    "brand",
+    "content"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "mobile",
+    "desktop",
+    "tv"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 200
+  },
+  {
+   "id": "typography-humanist-sans",
+   "kind": "pattern",
+   "category": "typography",
+   "concerns": [
+    "brand",
+    "content"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "healthcare",
+    "education",
+    "government",
+    "social",
+    "ecommerce"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 113
+  },
+  {
+   "id": "typography-geometric-sans",
+   "kind": "pattern",
+   "category": "typography",
+   "concerns": [
+    "brand",
+    "content"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "saas",
+    "devtools",
+    "marketing",
+    "iot"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 130
+  },
+  {
+   "id": "typography-grotesk-display",
+   "kind": "pattern",
+   "category": "typography",
+   "concerns": [
+    "brand",
+    "content"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "mobile",
+    "tv"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "marketing",
+    "media",
+    "content",
+    "ecommerce"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 136
+  },
+  {
+   "id": "typography-serif-editorial",
+   "kind": "pattern",
+   "category": "typography",
+   "concerns": [
+    "brand",
+    "content"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "tablet",
+    "mobile"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "content",
+    "education",
+    "marketing",
+    "finance"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 114
+  },
+  {
+   "id": "typography-serif-display",
+   "kind": "pattern",
+   "category": "typography",
+   "concerns": [
+    "brand",
+    "content"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "mobile"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "ecommerce",
+    "marketing",
+    "content"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 119
+  },
+  {
+   "id": "typography-monospace-technical",
+   "kind": "pattern",
+   "category": "typography",
+   "concerns": [
+    "brand",
+    "content"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "desktop"
+   ],
+   "input": [
+    "pointer",
+    "keyboard"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "devtools"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 100
+  },
+  {
+   "id": "typography-condensed-display",
+   "kind": "pattern",
+   "category": "typography",
+   "concerns": [
+    "brand",
+    "content"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "tv",
+    "web",
+    "mobile"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "media",
+    "ecommerce"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 92
+  },
+  {
+   "id": "typography-rounded-friendly",
+   "kind": "pattern",
+   "category": "typography",
+   "concerns": [
+    "brand",
+    "content"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "mobile",
+    "web",
+    "kiosk"
+   ],
+   "input": [
+    "touch"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "education",
+    "healthcare",
+    "social",
+    "iot"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 101
+  },
+  {
+   "id": "color-neutral-accent",
+   "kind": "pattern",
+   "category": "color",
+   "concerns": [
+    "accessibility",
+    "brand"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "saas",
+    "erp",
+    "finance",
+    "devtools",
+    "healthcare",
+    "government"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 119
+  },
+  {
+   "id": "color-dark-accent",
+   "kind": "pattern",
+   "category": "color",
+   "concerns": [
+    "accessibility",
+    "brand"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "tv",
+    "desktop",
+    "web",
+    "mobile"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "media",
+    "devtools",
+    "finance",
+    "iot"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 149
+  },
+  {
+   "id": "color-dominant-brand",
+   "kind": "pattern",
+   "category": "color",
+   "concerns": [
+    "accessibility",
+    "brand"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "mobile",
+    "kiosk",
+    "tv"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "marketing",
+    "ecommerce",
+    "media",
+    "social"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 132
+  },
+  {
+   "id": "color-duotone",
+   "kind": "pattern",
+   "category": "color",
+   "concerns": [
+    "accessibility",
+    "brand"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "mobile",
+    "tv"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "media",
+    "marketing",
+    "education",
+    "social"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 123
+  },
+  {
+   "id": "color-multicolour-semantic",
+   "kind": "pattern",
+   "category": "color",
+   "concerns": [
+    "accessibility",
+    "brand"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "education",
+    "media",
+    "saas",
+    "healthcare"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 97
+  },
+  {
+   "id": "color-monochrome-light",
+   "kind": "pattern",
+   "category": "color",
+   "concerns": [
+    "accessibility",
+    "brand"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "mobile",
+    "desktop"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "content",
+    "marketing",
+    "devtools",
+    "ecommerce"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 127
+  },
+  {
+   "id": "color-material-tonal",
+   "kind": "pattern",
+   "category": "color",
+   "concerns": [
+    "accessibility",
+    "brand"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "mobile",
+    "tv"
+   ],
+   "input": [
+    "touch",
+    "remote"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 180
+  },
+  {
+   "id": "motion-functional-minimal",
+   "kind": "pattern",
+   "category": "motion",
+   "concerns": [
+    "motion"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 123
+  },
+  {
+   "id": "motion-spring",
+   "kind": "pattern",
+   "category": "motion",
+   "concerns": [
+    "motion"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "mobile",
+    "web"
+   ],
+   "input": [
+    "touch",
+    "pointer"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "social",
+    "ecommerce",
+    "education",
+    "media"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 110
+  },
+  {
+   "id": "motion-focus-scale",
+   "kind": "pattern",
+   "category": "motion",
+   "concerns": [
+    "motion"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "tv"
+   ],
+   "input": [
+    "remote"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "media",
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 107
+  },
+  {
+   "id": "motion-crossfade",
+   "kind": "pattern",
+   "category": "motion",
+   "concerns": [
+    "motion"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "media",
+    "ecommerce",
+    "content",
+    "social"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 177
+  },
+  {
+   "id": "motion-cinematic",
+   "kind": "pattern",
+   "category": "motion",
+   "concerns": [
+    "motion"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "tv",
+    "mobile"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "marketing",
+    "media"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "high"
+   },
+   "environment": [],
+   "tokens": 113
+  },
+  {
+   "id": "motion-expressive",
+   "kind": "pattern",
+   "category": "motion",
+   "concerns": [
+    "motion"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "mobile",
+    "web"
+   ],
+   "input": [
+    "touch",
+    "pointer"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "social",
+    "education",
+    "ecommerce"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 114
+  },
+  {
+   "id": "focus-ring-standard",
+   "kind": "pattern",
+   "category": "focus",
+   "concerns": [
+    "accessibility",
+    "interaction"
+   ],
+   "concepts": [
+    "interaction.focus_visible"
+   ],
+   "concepts_before": [
+    "interaction.focus_visible"
+   ],
+   "platform": [
+    "web",
+    "desktop"
+   ],
+   "input": [
+    "keyboard",
+    "pointer"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 236
+  },
+  {
+   "id": "focus-scale-glow",
+   "kind": "pattern",
+   "category": "focus",
+   "concerns": [
+    "accessibility",
+    "interaction"
+   ],
+   "concepts": [
+    "interaction.focus_visible"
+   ],
+   "concepts_before": [
+    "interaction.focus_visible"
+   ],
+   "platform": [
+    "tv"
+   ],
+   "input": [
+    "remote"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 264
+  },
+  {
+   "id": "focus-underline",
+   "kind": "pattern",
+   "category": "focus",
+   "concerns": [
+    "accessibility",
+    "interaction"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web"
+   ],
+   "input": [
+    "keyboard",
+    "pointer"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "content",
+    "marketing"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 99
+  },
+  {
+   "id": "focus-none-touch-only",
+   "kind": "pattern",
+   "category": "focus",
+   "concerns": [
+    "accessibility",
+    "interaction"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "mobile",
+    "kiosk"
+   ],
+   "input": [
+    "touch"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 136
+  },
+  {
+   "id": "cta-single-primary",
+   "kind": "pattern",
+   "category": "cta",
+   "concerns": [
+    "interaction",
+    "structure"
+   ],
+   "concepts": [
+    "layout.one_primary_action"
+   ],
+   "concepts_before": [
+    "layout.one_primary_action"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "form",
+    "settings",
+    "onboarding",
+    "checkout",
+    "auth",
+    "home",
+    "detail"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 118
+  },
+  {
+   "id": "cta-sticky-bar",
+   "kind": "pattern",
+   "category": "cta",
+   "concerns": [
+    "interaction",
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "mobile",
+    "web",
+    "tablet"
+   ],
+   "input": [
+    "touch",
+    "pointer"
+   ],
+   "screen": [
+    "form",
+    "detail",
+    "checkout"
+   ],
+   "product": [
+    "ecommerce",
+    "finance",
+    "saas",
+    "healthcare"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 103
+  },
+  {
+   "id": "cta-contextual-inline",
+   "kind": "pattern",
+   "category": "cta",
+   "concerns": [
+    "interaction",
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "mobile",
+    "desktop"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "home",
+    "list",
+    "detail",
+    "dashboard"
+   ],
+   "product": [
+    "content",
+    "social",
+    "saas",
+    "education"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 103
+  },
+  {
+   "id": "cta-toolbar-commands",
+   "kind": "pattern",
+   "category": "cta",
+   "concerns": [
+    "data-display",
+    "interaction",
+    "structure"
+   ],
+   "concepts": [
+    "interaction.shortcuts",
+    "table.selection_bulk"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "desktop",
+    "web"
+   ],
+   "input": [
+    "pointer",
+    "keyboard"
+   ],
+   "screen": [
+    "list",
+    "dashboard",
+    "detail"
+   ],
+   "product": [
+    "erp",
+    "devtools",
+    "finance",
+    "saas"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 158
+  },
+  {
+   "id": "cta-focus-selects",
+   "kind": "pattern",
+   "category": "cta",
+   "concerns": [
+    "interaction",
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "tv"
+   ],
+   "input": [
+    "remote"
+   ],
+   "screen": [
+    "home",
+    "list",
+    "detail",
+    "search",
+    "player"
+   ],
+   "product": [
+    "media",
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 131
+  },
+  {
+   "id": "cta-fab",
+   "kind": "pattern",
+   "category": "cta",
+   "concerns": [
+    "interaction",
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "mobile"
+   ],
+   "input": [
+    "touch"
+   ],
+   "screen": [
+    "home",
+    "list"
+   ],
+   "product": [
+    "social",
+    "saas",
+    "education",
+    "healthcare"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 118
+  },
+  {
+   "id": "imagery-none",
+   "kind": "pattern",
+   "category": "imagery",
+   "concerns": [
+    "brand",
+    "content"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "erp",
+    "finance",
+    "devtools",
+    "saas",
+    "government",
+    "healthcare"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 84
+  },
+  {
+   "id": "imagery-hero",
+   "kind": "pattern",
+   "category": "imagery",
+   "concerns": [
+    "brand",
+    "content"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "mobile",
+    "kiosk"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "marketing",
+    "ecommerce",
+    "content",
+    "education"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "high"
+   },
+   "environment": [],
+   "tokens": 137
+  },
+  {
+   "id": "imagery-poster",
+   "kind": "pattern",
+   "category": "imagery",
+   "concerns": [
+    "brand",
+    "content"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "tv",
+    "mobile",
+    "web"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "media",
+    "education",
+    "ecommerce"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "high"
+   },
+   "environment": [],
+   "tokens": 128
+  },
+  {
+   "id": "imagery-immersive-backdrop",
+   "kind": "pattern",
+   "category": "imagery",
+   "concerns": [
+    "brand",
+    "content"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "tv",
+    "web"
+   ],
+   "input": [
+    "remote",
+    "pointer"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "media"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "high"
+   },
+   "environment": [],
+   "tokens": 115
+  },
+  {
+   "id": "imagery-thumbnails",
+   "kind": "pattern",
+   "category": "imagery",
+   "concerns": [
+    "brand",
+    "content"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "ecommerce",
+    "social",
+    "content",
+    "saas",
+    "education"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 91
+  },
+  {
+   "id": "imagery-data-graphics",
+   "kind": "pattern",
+   "category": "imagery",
+   "concerns": [
+    "brand",
+    "content"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "desktop"
+   ],
+   "input": [
+    "pointer",
+    "keyboard"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "finance",
+    "saas",
+    "devtools",
+    "iot",
+    "healthcare"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 90
+  },
+  {
+   "id": "imagery-illustration",
+   "kind": "pattern",
+   "category": "imagery",
+   "concerns": [
+    "brand",
+    "content"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "mobile",
+    "kiosk"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "education",
+    "healthcare",
+    "government",
+    "social",
+    "saas"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 121
+  },
+  {
+   "id": "icon-outline-system",
+   "kind": "pattern",
+   "category": "icon",
+   "concerns": [
+    "brand",
+    "content"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "desktop"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 109
+  },
+  {
+   "id": "icon-filled-system",
+   "kind": "pattern",
+   "category": "icon",
+   "concerns": [
+    "brand",
+    "content"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "tv",
+    "mobile",
+    "kiosk"
+   ],
+   "input": [
+    "remote",
+    "touch"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 81
+  },
+  {
+   "id": "icon-platform-native",
+   "kind": "pattern",
+   "category": "icon",
+   "concerns": [
+    "brand",
+    "content"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "mobile",
+    "desktop",
+    "tv"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 98
+  },
+  {
+   "id": "icon-duotone",
+   "kind": "pattern",
+   "category": "icon",
+   "concerns": [
+    "brand",
+    "content"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "mobile"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "education",
+    "social",
+    "marketing",
+    "ecommerce"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 95
+  },
+  {
+   "id": "icon-text-only",
+   "kind": "pattern",
+   "category": "icon",
+   "concerns": [
+    "brand",
+    "content"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "content",
+    "marketing",
+    "ecommerce"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 92
+  },
+  {
+   "id": "icon-custom-glyphs",
+   "kind": "pattern",
+   "category": "icon",
+   "concerns": [
+    "brand",
+    "content"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "media",
+    "ecommerce",
+    "marketing"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 118
+  },
+  {
+   "id": "metadata-minimal",
+   "kind": "pattern",
+   "category": "metadata",
+   "concerns": [
+    "content",
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "marketing",
+    "content",
+    "media",
+    "social"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 83
+  },
+  {
+   "id": "metadata-moderate",
+   "kind": "pattern",
+   "category": "metadata",
+   "concerns": [
+    "content",
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 84
+  },
+  {
+   "id": "metadata-rich",
+   "kind": "pattern",
+   "category": "metadata",
+   "concerns": [
+    "content",
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "desktop"
+   ],
+   "input": [
+    "pointer",
+    "keyboard"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "erp",
+    "finance",
+    "devtools",
+    "saas",
+    "healthcare"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 89
+  },
+  {
+   "id": "metadata-focus-reveal",
+   "kind": "pattern",
+   "category": "metadata",
+   "concerns": [
+    "content",
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "tv"
+   ],
+   "input": [
+    "remote"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "media",
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 118
+  },
+  {
+   "id": "metadata-inline-badges",
+   "kind": "pattern",
+   "category": "metadata",
+   "concerns": [
+    "content",
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "desktop",
+    "mobile"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "saas",
+    "erp",
+    "ecommerce",
+    "finance",
+    "devtools"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 92
+  },
+  {
+   "id": "card-none",
+   "kind": "pattern",
+   "category": "cards",
+   "concerns": [
+    "structure"
+   ],
+   "concepts": [
+    "layout.no_nested_cards"
+   ],
+   "concepts_before": [
+    "layout.no_nested_cards"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 123
+  },
+  {
+   "id": "card-flat-tile",
+   "kind": "pattern",
+   "category": "cards",
+   "concerns": [
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 89
+  },
+  {
+   "id": "card-list-row",
+   "kind": "pattern",
+   "category": "cards",
+   "concerns": [
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "mobile",
+    "web",
+    "desktop"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 94
+  },
+  {
+   "id": "card-poster-portrait",
+   "kind": "pattern",
+   "category": "cards",
+   "concerns": [
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "tv",
+    "mobile",
+    "web"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "media",
+    "education"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 102
+  },
+  {
+   "id": "card-poster-landscape",
+   "kind": "pattern",
+   "category": "cards",
+   "concerns": [
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "tv",
+    "mobile",
+    "web"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "media",
+    "education"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 85
+  },
+  {
+   "id": "card-bordered",
+   "kind": "pattern",
+   "category": "cards",
+   "concerns": [
+    "structure"
+   ],
+   "concepts": [],
+   "concepts_before": [],
+   "platform": [
+    "web",
+    "desktop"
+   ],
+   "input": [
+    "pointer",
+    "keyboard"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "saas",
+    "devtools",
+    "finance",
+    "erp"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 107
+  },
+  {
+   "id": "a11y-contrast-text",
+   "kind": "rule",
+   "category": "accessibility",
+   "concerns": [
+    "accessibility"
+   ],
+   "concepts": [
+    "a11y.contrast"
+   ],
+   "concepts_before": [
+    "a11y.contrast"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 92
+  },
+  {
+   "id": "a11y-nontext-contrast",
+   "kind": "rule",
+   "category": "accessibility",
+   "concerns": [
+    "accessibility",
+    "interaction"
+   ],
+   "concepts": [
+    "a11y.contrast",
+    "interaction.focus_visible"
+   ],
+   "concepts_before": [
+    "a11y.contrast",
+    "interaction.focus_visible"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 103
+  },
+  {
+   "id": "a11y-color-not-only",
+   "kind": "rule",
+   "category": "accessibility",
+   "concerns": [
+    "accessibility"
+   ],
+   "concepts": [
+    "a11y.color_not_only"
+   ],
+   "concepts_before": [
+    "a11y.color_not_only"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 83
+  },
+  {
+   "id": "a11y-keyboard-operable",
+   "kind": "rule",
+   "category": "accessibility",
+   "concerns": [
+    "accessibility",
+    "interaction"
+   ],
+   "concepts": [
+    "interaction.keyboard_navigation",
+    "interaction.hover_independence"
+   ],
+   "concepts_before": [
+    "interaction.keyboard_navigation",
+    "interaction.hover_independence"
+   ],
+   "platform": [
+    "web",
+    "desktop"
+   ],
+   "input": [
+    "keyboard"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 116
+  },
+  {
+   "id": "a11y-focus-visible",
+   "kind": "rule",
+   "category": "focus",
+   "concerns": [
+    "accessibility",
+    "interaction"
+   ],
+   "concepts": [
+    "interaction.focus_visible"
+   ],
+   "concepts_before": [
+    "interaction.focus_visible"
+   ],
+   "platform": [
+    "web",
+    "desktop",
+    "tv"
+   ],
+   "input": [
+    "keyboard",
+    "remote"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 112
+  },
+  {
+   "id": "a11y-target-size",
+   "kind": "rule",
+   "category": "input",
+   "concerns": [
+    "accessibility",
+    "interaction"
+   ],
+   "concepts": [
+    "touch.minimum_target"
+   ],
+   "concepts_before": [
+    "touch.minimum_target"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "touch",
+    "pointer",
+    "remote"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 109
+  },
+  {
+   "id": "a11y-labels-names",
+   "kind": "rule",
+   "category": "accessibility",
+   "concerns": [
+    "accessibility"
+   ],
+   "concepts": [
+    "a11y.accessible_names"
+   ],
+   "concepts_before": [
+    "a11y.accessible_names"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 124
+  },
+  {
+   "id": "a11y-semantics-structure",
+   "kind": "rule",
+   "category": "accessibility",
+   "concerns": [
+    "accessibility"
+   ],
+   "concepts": [
+    "a11y.semantics"
+   ],
+   "concepts_before": [
+    "a11y.semantics"
+   ],
+   "platform": [
+    "web"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 106
+  },
+  {
+   "id": "a11y-native-semantics",
+   "kind": "rule",
+   "category": "accessibility",
+   "concerns": [
+    "accessibility"
+   ],
+   "concepts": [
+    "a11y.semantics",
+    "a11y.accessible_names"
+   ],
+   "concepts_before": [
+    "a11y.semantics",
+    "a11y.accessible_names"
+   ],
+   "platform": [
+    "mobile",
+    "desktop",
+    "tv"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 145
+  },
+  {
+   "id": "a11y-reduced-motion",
+   "kind": "rule",
+   "category": "motion",
+   "concerns": [
+    "accessibility",
+    "motion"
+   ],
+   "concepts": [
+    "a11y.reduced_motion"
+   ],
+   "concepts_before": [
+    "a11y.reduced_motion"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 118
+  },
+  {
+   "id": "a11y-text-scaling",
+   "kind": "rule",
+   "category": "typography",
+   "concerns": [
+    "accessibility",
+    "content"
+   ],
+   "concepts": [
+    "a11y.text_scaling"
+   ],
+   "concepts_before": [
+    "a11y.text_scaling"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 102
+  },
+  {
+   "id": "a11y-forms-errors",
+   "kind": "rule",
+   "category": "forms",
+   "concerns": [
+    "accessibility",
+    "feedback"
+   ],
+   "concepts": [
+    "feedback.validation_errors"
+   ],
+   "concepts_before": [
+    "feedback.validation_errors"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 153
+  },
+  {
+   "id": "a11y-live-status",
+   "kind": "rule",
+   "category": "feedback",
+   "concerns": [
+    "accessibility",
+    "feedback"
+   ],
+   "concepts": [
+    "a11y.live_status"
+   ],
+   "concepts_before": [
+    "a11y.live_status"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 109
+  },
+  {
+   "id": "a11y-modal-dialog",
+   "kind": "rule",
+   "category": "dialog",
+   "concerns": [
+    "accessibility",
+    "interaction"
+   ],
+   "concepts": [
+    "a11y.dialog_focus",
+    "interaction.focus_restore"
+   ],
+   "concepts_before": [
+    "a11y.dialog_focus",
+    "interaction.focus_restore"
+   ],
+   "platform": [
+    "web",
+    "desktop",
+    "mobile"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 122
+  },
+  {
+   "id": "a11y-hover-not-required",
+   "kind": "rule",
+   "category": "input",
+   "concerns": [
+    "accessibility",
+    "interaction"
+   ],
+   "concepts": [
+    "interaction.hover_independence"
+   ],
+   "concepts_before": [
+    "interaction.hover_independence"
+   ],
+   "platform": [
+    "web",
+    "desktop"
+   ],
+   "input": [
+    "pointer",
+    "touch",
+    "keyboard"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 91
+  },
+  {
+   "id": "a11y-time-and-auto",
+   "kind": "rule",
+   "category": "motion",
+   "concerns": [
+    "accessibility",
+    "motion",
+    "states"
+   ],
+   "concepts": [
+    "state.session_expiry",
+    "a11y.reduced_motion"
+   ],
+   "concepts_before": [
+    "state.session_expiry",
+    "a11y.reduced_motion"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "marketing",
+    "media",
+    "ecommerce"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 80
+  },
+  {
+   "id": "a11y-tv-focus-always",
+   "kind": "rule",
+   "category": "focus",
+   "concerns": [
+    "accessibility",
+    "component",
+    "interaction"
+   ],
+   "concepts": [
+    "interaction.focus_restore",
+    "interaction.focus_visible",
+    "media.details_play_first"
+   ],
+   "concepts_before": [
+    "interaction.focus_restore",
+    "interaction.focus_visible"
+   ],
+   "platform": [
+    "tv"
+   ],
+   "input": [
+    "remote"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 127
+  },
+  {
+   "id": "tv-dpad-axes",
+   "kind": "rule",
+   "category": "navigation",
+   "concerns": [
+    "interaction",
+    "navigation"
+   ],
+   "concepts": [
+    "interaction.dpad_reachability"
+   ],
+   "concepts_before": [
+    "interaction.dpad_reachability"
+   ],
+   "platform": [
+    "tv"
+   ],
+   "input": [
+    "remote"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 118
+  },
+  {
+   "id": "tv-back-behavior",
+   "kind": "rule",
+   "category": "navigation",
+   "concerns": [
+    "interaction",
+    "navigation"
+   ],
+   "concepts": [
+    "interaction.back_semantics"
+   ],
+   "concepts_before": [
+    "interaction.back_semantics"
+   ],
+   "platform": [
+    "tv"
+   ],
+   "input": [
+    "remote"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 110
+  },
+  {
+   "id": "tv-safe-area",
+   "kind": "rule",
+   "category": "layout",
+   "concerns": [
+    "interaction",
+    "structure"
+   ],
+   "concepts": [
+    "tv.safe_margins"
+   ],
+   "concepts_before": [
+    "tv.safe_margins"
+   ],
+   "platform": [
+    "tv"
+   ],
+   "input": [
+    "remote"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 119
+  },
+  {
+   "id": "tv-typography-distance",
+   "kind": "rule",
+   "category": "typography",
+   "concerns": [
+    "accessibility",
+    "content"
+   ],
+   "concepts": [
+    "tv.ten_foot_typography"
+   ],
+   "concepts_before": [
+    "tv.ten_foot_typography"
+   ],
+   "platform": [
+    "tv"
+   ],
+   "input": [
+    "remote"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 103
+  },
+  {
+   "id": "tv-focus-performance",
+   "kind": "rule",
+   "category": "performance",
+   "concerns": [
+    "interaction",
+    "performance"
+   ],
+   "concepts": [
+    "perf.focus_latency",
+    "table.virtualization",
+    "perf.image_sizing"
+   ],
+   "concepts_before": [
+    "perf.focus_latency",
+    "table.virtualization",
+    "perf.image_sizing"
+   ],
+   "platform": [
+    "tv"
+   ],
+   "input": [
+    "remote"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "media",
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "high"
+   },
+   "environment": [],
+   "tokens": 122
+  },
+  {
+   "id": "tv-no-touch-hover",
+   "kind": "rule",
+   "category": "input",
+   "concerns": [
+    "interaction"
+   ],
+   "concepts": [
+    "tv.no_touch_hover",
+    "interaction.hover_independence"
+   ],
+   "concepts_before": [
+    "tv.no_touch_hover",
+    "interaction.hover_independence"
+   ],
+   "platform": [
+    "tv"
+   ],
+   "input": [
+    "remote"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 109
+  },
+  {
+   "id": "tv-player-controls",
+   "kind": "rule",
+   "category": "player",
+   "concerns": [
+    "component",
+    "interaction"
+   ],
+   "concepts": [
+    "tv.player_autohide",
+    "interaction.back_semantics",
+    "media.live_channel_switching"
+   ],
+   "concepts_before": [
+    "tv.player_autohide",
+    "interaction.back_semantics"
+   ],
+   "platform": [
+    "tv"
+   ],
+   "input": [
+    "remote"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "media"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 148
+  },
+  {
+   "id": "tv-dark-first",
+   "kind": "rule",
+   "category": "color",
+   "concerns": [
+    "accessibility",
+    "brand",
+    "content"
+   ],
+   "concepts": [
+    "tv.dark_first",
+    "a11y.contrast"
+   ],
+   "concepts_before": [
+    "tv.dark_first",
+    "a11y.contrast"
+   ],
+   "platform": [
+    "tv"
+   ],
+   "input": [
+    "remote"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 98
+  },
+  {
+   "id": "mobile-safe-areas",
+   "kind": "rule",
+   "category": "layout",
+   "concerns": [
+    "adaptive",
+    "structure"
+   ],
+   "concepts": [
+    "touch.safe_areas"
+   ],
+   "concepts_before": [
+    "touch.safe_areas"
+   ],
+   "platform": [
+    "mobile",
+    "tablet"
+   ],
+   "input": [
+    "touch"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 106
+  },
+  {
+   "id": "mobile-thumb-reach",
+   "kind": "rule",
+   "category": "layout",
+   "concerns": [
+    "interaction",
+    "structure"
+   ],
+   "concepts": [
+    "touch.thumb_reach"
+   ],
+   "concepts_before": [
+    "touch.thumb_reach"
+   ],
+   "platform": [
+    "mobile"
+   ],
+   "input": [
+    "touch"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 95
+  },
+  {
+   "id": "mobile-gestures-discoverable",
+   "kind": "rule",
+   "category": "input",
+   "concerns": [
+    "interaction"
+   ],
+   "concepts": [
+    "touch.gestures_discoverable"
+   ],
+   "concepts_before": [
+    "touch.gestures_discoverable"
+   ],
+   "platform": [
+    "mobile",
+    "tablet"
+   ],
+   "input": [
+    "touch"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 112
+  },
+  {
+   "id": "mobile-keyboard-ime",
+   "kind": "rule",
+   "category": "forms",
+   "concerns": [
+    "component",
+    "feedback",
+    "interaction"
+   ],
+   "concepts": [
+    "touch.ime_keyboard"
+   ],
+   "concepts_before": [
+    "touch.ime_keyboard"
+   ],
+   "platform": [
+    "mobile",
+    "tablet"
+   ],
+   "input": [
+    "touch"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 111
+  },
+  {
+   "id": "mobile-platform-navigation",
+   "kind": "rule",
+   "category": "navigation",
+   "concerns": [
+    "navigation"
+   ],
+   "concepts": [
+    "navigation.platform_grammar"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "mobile",
+    "tablet"
+   ],
+   "input": [
+    "touch"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 136
+  },
+  {
+   "id": "mobile-density-touch",
+   "kind": "rule",
+   "category": "layout",
+   "concerns": [
+    "adaptive",
+    "data-display",
+    "interaction"
+   ],
+   "concepts": [
+    "table.column_priority",
+    "touch.minimum_target"
+   ],
+   "concepts_before": [
+    "table.column_priority",
+    "touch.minimum_target"
+   ],
+   "platform": [
+    "mobile"
+   ],
+   "input": [
+    "touch"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "erp",
+    "finance",
+    "saas",
+    "healthcare"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 104
+  },
+  {
+   "id": "desktop-keyboard-first",
+   "kind": "rule",
+   "category": "input",
+   "concerns": [
+    "interaction"
+   ],
+   "concepts": [
+    "interaction.keyboard_navigation",
+    "interaction.shortcuts",
+    "interaction.focus_visible"
+   ],
+   "concepts_before": [
+    "interaction.keyboard_navigation",
+    "interaction.shortcuts",
+    "interaction.focus_visible"
+   ],
+   "platform": [
+    "desktop"
+   ],
+   "input": [
+    "keyboard",
+    "pointer"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 130
+  },
+  {
+   "id": "desktop-window-resizing",
+   "kind": "rule",
+   "category": "layout",
+   "concerns": [
+    "adaptive",
+    "data-display",
+    "structure"
+   ],
+   "concepts": [
+    "adaptive.breakpoint_matrix",
+    "table.column_priority"
+   ],
+   "concepts_before": [
+    "adaptive.breakpoint_matrix",
+    "table.column_priority"
+   ],
+   "platform": [
+    "desktop"
+   ],
+   "input": [
+    "pointer",
+    "keyboard"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 110
+  },
+  {
+   "id": "desktop-density-spacing",
+   "kind": "rule",
+   "category": "layout",
+   "concerns": [
+    "structure"
+   ],
+   "concepts": [
+    "desktop.spacing_grid"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "desktop"
+   ],
+   "input": [
+    "pointer",
+    "keyboard"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 103
+  },
+  {
+   "id": "desktop-state-persistence",
+   "kind": "rule",
+   "category": "navigation",
+   "concerns": [
+    "navigation",
+    "states"
+   ],
+   "concepts": [
+    "desktop.persist_workspace"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "desktop"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "erp",
+    "devtools",
+    "finance",
+    "saas"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 87
+  },
+  {
+   "id": "desktop-fluent-materials",
+   "kind": "rule",
+   "category": "surface",
+   "concerns": [
+    "brand",
+    "structure"
+   ],
+   "concepts": [
+    "desktop.fluent_materials"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "desktop"
+   ],
+   "input": [
+    "pointer",
+    "keyboard"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 133
+  },
+  {
+   "id": "web-responsive-breakpoints",
+   "kind": "rule",
+   "category": "responsive",
+   "concerns": [
+    "adaptive"
+   ],
+   "concepts": [
+    "adaptive.breakpoint_matrix",
+    "adaptive.navigation_transform"
+   ],
+   "concepts_before": [
+    "adaptive.breakpoint_matrix",
+    "adaptive.navigation_transform"
+   ],
+   "platform": [
+    "web"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 149
+  },
+  {
+   "id": "web-cls-and-lcp",
+   "kind": "rule",
+   "category": "performance",
+   "concerns": [
+    "performance"
+   ],
+   "concepts": [
+    "perf.layout_shift",
+    "perf.image_sizing"
+   ],
+   "concepts_before": [
+    "perf.layout_shift",
+    "perf.image_sizing"
+   ],
+   "platform": [
+    "web"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "high"
+   },
+   "environment": [],
+   "tokens": 107
+  },
+  {
+   "id": "web-hydration-js-budget",
+   "kind": "rule",
+   "category": "performance",
+   "concerns": [
+    "performance"
+   ],
+   "concepts": [
+    "perf.js_budget"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "web"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "high"
+   },
+   "environment": [],
+   "tokens": 123
+  },
+  {
+   "id": "web-virtualize-long-lists",
+   "kind": "rule",
+   "category": "performance",
+   "concerns": [
+    "data-display",
+    "performance"
+   ],
+   "concepts": [
+    "table.virtualization"
+   ],
+   "concepts_before": [
+    "table.virtualization"
+   ],
+   "platform": [
+    "web",
+    "desktop",
+    "mobile",
+    "tv"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "erp",
+    "finance",
+    "saas",
+    "media",
+    "social",
+    "devtools"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "high"
+   },
+   "environment": [],
+   "tokens": 120
+  },
+  {
+   "id": "mobile-perf-images-overdraw",
+   "kind": "rule",
+   "category": "performance",
+   "concerns": [
+    "performance"
+   ],
+   "concepts": [
+    "perf.image_sizing"
+   ],
+   "concepts_before": [
+    "perf.image_sizing"
+   ],
+   "platform": [
+    "mobile",
+    "tablet"
+   ],
+   "input": [
+    "touch"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "high"
+   },
+   "environment": [],
+   "tokens": 119
+  },
+  {
+   "id": "typo-scale-and-roles",
+   "kind": "rule",
+   "category": "typography",
+   "concerns": [
+    "content",
+    "data-display"
+   ],
+   "concepts": [
+    "table.tabular_figures",
+    "brand.type_roles"
+   ],
+   "concepts_before": [
+    "table.tabular_figures"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 115
+  },
+  {
+   "id": "typo-measure-and-rhythm",
+   "kind": "rule",
+   "category": "typography",
+   "concerns": [
+    "content",
+    "structure"
+   ],
+   "concepts": [
+    "content.readable_measure",
+    "layout.focal_hierarchy"
+   ],
+   "concepts_before": [
+    "content.readable_measure",
+    "layout.focal_hierarchy"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 93
+  },
+  {
+   "id": "typo-font-loading-coverage",
+   "kind": "rule",
+   "category": "typography",
+   "concerns": [
+    "brand",
+    "content",
+    "performance"
+   ],
+   "concepts": [
+    "brand.font_loading"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "web"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 109
+  },
+  {
+   "id": "color-semantic-tokens",
+   "kind": "rule",
+   "category": "color",
+   "concerns": [
+    "brand",
+    "structure"
+   ],
+   "concepts": [
+    "brand.token_layers"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 110
+  },
+  {
+   "id": "color-states-complete",
+   "kind": "rule",
+   "category": "color",
+   "concerns": [
+    "brand",
+    "interaction"
+   ],
+   "concepts": [
+    "interaction.focus_visible"
+   ],
+   "concepts_before": [
+    "interaction.focus_visible"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 109
+  },
+  {
+   "id": "color-dark-mode-rules",
+   "kind": "rule",
+   "category": "color",
+   "concerns": [
+    "accessibility",
+    "brand"
+   ],
+   "concepts": [
+    "brand.dark_mode_redesign"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 95
+  },
+  {
+   "id": "layout-spacing-scale",
+   "kind": "rule",
+   "category": "layout",
+   "concerns": [
+    "structure"
+   ],
+   "concepts": [
+    "layout.spacing_scale"
+   ],
+   "concepts_before": [
+    "layout.spacing_scale"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 110
+  },
+  {
+   "id": "layout-hierarchy-one-thing",
+   "kind": "rule",
+   "category": "layout",
+   "concerns": [
+    "data-display",
+    "structure"
+   ],
+   "concepts": [
+    "layout.focal_hierarchy",
+    "layout.one_primary_action",
+    "data.exception_first"
+   ],
+   "concepts_before": [
+    "layout.focal_hierarchy",
+    "layout.one_primary_action"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 113
+  },
+  {
+   "id": "layout-states-empty-loading-error",
+   "kind": "rule",
+   "category": "feedback",
+   "concerns": [
+    "states"
+   ],
+   "concepts": [
+    "state.loading_empty_error"
+   ],
+   "concepts_before": [
+    "state.loading_empty_error"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 123
+  },
+  {
+   "id": "nav-orientation-and-back",
+   "kind": "rule",
+   "category": "navigation",
+   "concerns": [
+    "navigation"
+   ],
+   "concepts": [
+    "navigation.orientation_and_back",
+    "navigation.deep_link_state"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 104
+  },
+  {
+   "id": "kiosk-public-use",
+   "kind": "rule",
+   "category": "input",
+   "concerns": [
+    "environment",
+    "interaction",
+    "privacy"
+   ],
+   "concepts": [
+    "touch.minimum_target",
+    "privacy.shared_device",
+    "state.session_expiry"
+   ],
+   "concepts_before": [
+    "touch.minimum_target",
+    "privacy.shared_device",
+    "state.session_expiry"
+   ],
+   "platform": [
+    "kiosk"
+   ],
+   "input": [
+    "touch"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 132
+  },
+  {
+   "id": "i18n-text-expansion-rtl",
+   "kind": "rule",
+   "category": "content",
+   "concerns": [
+    "adaptive",
+    "content"
+   ],
+   "concepts": [
+    "content.i18n_expansion"
+   ],
+   "concepts_before": [
+    "content.i18n_expansion"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 133
+  },
+  {
+   "id": "impl-reuse-before-new",
+   "kind": "rule",
+   "category": "implementation",
+   "concerns": [
+    "structure"
+   ],
+   "concepts": [
+    "process.reuse_first"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 131
+  },
+  {
+   "id": "impl-safe-modification",
+   "kind": "rule",
+   "category": "implementation",
+   "concerns": [
+    "structure"
+   ],
+   "concepts": [
+    "process.safe_modification"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 104
+  },
+  {
+   "id": "verify-render-and-inspect",
+   "kind": "rule",
+   "category": "verification",
+   "concerns": [
+    "structure"
+   ],
+   "concepts": [
+    "process.render_verify"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 118
+  },
+  {
+   "id": "data-tables-numeric",
+   "kind": "rule",
+   "category": "table",
+   "concerns": [
+    "content",
+    "data-display"
+   ],
+   "concepts": [
+    "table.tabular_figures"
+   ],
+   "concepts_before": [
+    "table.tabular_figures"
+   ],
+   "platform": [
+    "web",
+    "desktop"
+   ],
+   "input": [
+    "pointer",
+    "keyboard"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "finance",
+    "erp",
+    "saas",
+    "devtools",
+    "healthcare"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 117
+  },
+  {
+   "id": "search-filter-feedback",
+   "kind": "rule",
+   "category": "search",
+   "concerns": [
+    "accessibility",
+    "component",
+    "data-display",
+    "feedback"
+   ],
+   "concepts": [
+    "a11y.live_status",
+    "data.filter_chips",
+    "data.search_results"
+   ],
+   "concepts_before": [
+    "a11y.live_status"
+   ],
+   "platform": [
+    "any"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "search",
+    "list",
+    "dashboard"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 118
+  },
+  {
+   "id": "states-offline-and-sync",
+   "kind": "rule",
+   "category": "states",
+   "concerns": [
+    "environment",
+    "feedback",
+    "states"
+   ],
+   "concepts": [
+    "state.offline_sync",
+    "state.saving_conflict"
+   ],
+   "concepts_before": [
+    "state.offline_sync",
+    "state.saving_conflict"
+   ],
+   "platform": [
+    "mobile",
+    "tablet",
+    "web",
+    "kiosk"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "medium"
+   },
+   "environment": [],
+   "tokens": 177
+  },
+  {
+   "id": "states-persistence-and-session",
+   "kind": "rule",
+   "category": "states",
+   "concerns": [
+    "feedback",
+    "states"
+   ],
+   "concepts": [
+    "state.saving_conflict",
+    "state.session_expiry",
+    "feedback.confirmation_destructive"
+   ],
+   "concepts_before": [
+    "state.saving_conflict",
+    "state.session_expiry",
+    "feedback.confirmation_destructive"
+   ],
+   "platform": [
+    "web",
+    "mobile",
+    "desktop",
+    "tablet"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 195
+  },
+  {
+   "id": "shared-device-privacy",
+   "kind": "rule",
+   "category": "privacy",
+   "concerns": [
+    "environment",
+    "privacy"
+   ],
+   "concepts": [
+    "privacy.shared_device",
+    "state.session_expiry",
+    "privacy.sensitive_masking"
+   ],
+   "concepts_before": [
+    "privacy.shared_device",
+    "state.session_expiry",
+    "privacy.sensitive_masking"
+   ],
+   "platform": [
+    "tv",
+    "kiosk",
+    "tablet",
+    "desktop"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "media",
+    "finance",
+    "healthcare",
+    "government",
+    "education",
+    "any"
+   ],
+   "risk": {
+    "a11y": "low",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 170
+  },
+  {
+   "id": "mobile-field-use",
+   "kind": "rule",
+   "category": "environment",
+   "concerns": [
+    "accessibility",
+    "environment",
+    "interaction"
+   ],
+   "concepts": [
+    "env.outdoor_readability",
+    "env.glanceable_status",
+    "touch.minimum_target"
+   ],
+   "concepts_before": [
+    "env.outdoor_readability",
+    "env.glanceable_status",
+    "touch.minimum_target"
+   ],
+   "platform": [
+    "mobile",
+    "tablet",
+    "kiosk"
+   ],
+   "input": [
+    "touch"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "iot",
+    "government",
+    "healthcare",
+    "erp",
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [
+    "outdoor",
+    "gloves"
+   ],
+   "tokens": 170
+  },
+  {
+   "id": "grid-single-tab-stop",
+   "kind": "rule",
+   "category": "table",
+   "concerns": [
+    "accessibility",
+    "data-display",
+    "interaction"
+   ],
+   "concepts": [
+    "interaction.keyboard_navigation",
+    "interaction.focus_visible",
+    "table.selection_bulk"
+   ],
+   "concepts_before": [
+    "interaction.keyboard_navigation",
+    "interaction.focus_visible",
+    "table.selection_bulk"
+   ],
+   "platform": [
+    "web",
+    "desktop"
+   ],
+   "input": [
+    "keyboard",
+    "pointer"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "high",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 315
+  },
+  {
+   "id": "onboarding-first-run",
+   "kind": "rule",
+   "category": "feedback",
+   "concerns": [
+    "accessibility",
+    "feedback",
+    "states"
+   ],
+   "concepts": [
+    "onboarding.permission_priming",
+    "onboarding.feature_education",
+    "a11y.reduced_motion"
+   ],
+   "concepts_before": [],
+   "platform": [
+    "mobile",
+    "web",
+    "desktop",
+    "tablet"
+   ],
+   "input": [
+    "any"
+   ],
+   "screen": [
+    "any"
+   ],
+   "product": [
+    "any"
+   ],
+   "risk": {
+    "a11y": "medium",
+    "perf": "low"
+   },
+   "environment": [],
+   "tokens": 222
+  }
+ ],
+ "concepts_before": 57,
+ "concepts_after": 109,
+ "labelled_before": 87,
+ "labelled_after": 145,
+ "unlabelled_after": [
+  "dir-operational-workbench",
+  "dir-analytical-console",
+  "dir-cinematic-media-tv",
+  "dir-broadcast-guide-tv",
+  "dir-editorial-storefront",
+  "dir-utility-commerce",
+  "dir-service-app-mobile",
+  "dir-social-feed-mobile",
+  "dir-windows-native-tool",
+  "dir-developer-tool",
+  "dir-learning-platform",
+  "dir-public-kiosk",
+  "dir-clinical-workstation",
+  "dir-industrial-hmi",
+  "dir-product-marketing-site",
+  "nav-top-bar",
+  "nav-left-rail",
+  "nav-hub-spoke",
+  "nav-tv-side",
+  "nav-tv-top-tabs",
+  "nav-menu-bar-desktop",
+  "layout-single-column",
+  "layout-master-detail",
+  "layout-three-pane",
+  "layout-dashboard-grid",
+  "layout-form-stack",
+  "layout-grid-catalog",
+  "layout-feed",
+  "layout-editorial",
+  "density-high",
+  "density-medium",
+  "density-low",
+  "surface-flat-tonal",
+  "surface-bordered-panes",
+  "surface-elevated-cards",
+  "surface-imagery-backed",
+  "surface-glass",
+  "typography-neutral-sans",
+  "typography-system-native",
+  "typography-humanist-sans",
+  "typography-geometric-sans",
+  "typography-grotesk-display",
+  "typography-serif-editorial",
+  "typography-serif-display",
+  "typography-monospace-technical",
+  "typography-condensed-display",
+  "typography-rounded-friendly",
+  "color-neutral-accent",
+  "color-dark-accent",
+  "color-dominant-brand",
+  "color-duotone",
+  "color-multicolour-semantic",
+  "color-monochrome-light",
+  "color-material-tonal",
+  "motion-functional-minimal",
+  "motion-spring",
+  "motion-focus-scale",
+  "motion-crossfade",
+  "motion-cinematic",
+  "motion-expressive",
+  "focus-underline",
+  "focus-none-touch-only",
+  "cta-sticky-bar",
+  "cta-contextual-inline",
+  "cta-focus-selects",
+  "cta-fab",
+  "imagery-none",
+  "imagery-hero",
+  "imagery-poster",
+  "imagery-immersive-backdrop",
+  "imagery-thumbnails",
+  "imagery-data-graphics",
+  "imagery-illustration",
+  "icon-outline-system",
+  "icon-filled-system",
+  "icon-platform-native",
+  "icon-duotone",
+  "icon-text-only",
+  "icon-custom-glyphs",
+  "metadata-minimal",
+  "metadata-moderate",
+  "metadata-rich",
+  "metadata-focus-reveal",
+  "metadata-inline-badges",
+  "card-flat-tile",
+  "card-list-row",
+  "card-poster-portrait",
+  "card-poster-landscape",
+  "card-bordered"
+ ],
+ "orphans": [],
+ "concept_record_counts": {
+  "layout.no_nested_cards": 2,
+  "anti.decorative_gradient": 2,
+  "brand.corner_language": 1,
+  "brand.imagery_purpose": 1,
+  "anti.template_landing": 2,
+  "layout.hero_thesis": 2,
+  "anti.oversized_display": 1,
+  "layout.focal_hierarchy": 3,
+  "data.exception_first": 4,
+  "process.decision_order": 3,
+  "a11y.contrast": 4,
+  "anti.scroll_animation": 1,
+  "a11y.reduced_motion": 4,
+  "anti.platform_scaling": 2,
+  "tv.safe_margins": 3,
+  "touch.thumb_reach": 2,
+  "brand.structural_differentiation": 1,
+  "layout.spacing_scale": 2,
+  "anti.default_fonts": 1,
+  "brand.dark_mode_redesign": 2,
+  "interaction.hover_independence": 4,
+  "feedback.validation_errors": 4,
+  "state.loading_empty_error": 5,
+  "anti.interruptive_upsell": 1,
+  "perf.layout_shift": 3,
+  "data.chart_by_question": 13,
+  "data.accessible_chart_alternative": 5,
+  "data.kpi_comparison": 3,
+  "a11y.color_not_only": 8,
+  "data.realtime_window": 1,
+  "data.refresh_timestamp": 1,
+  "table.selection_bulk": 4,
+  "table.inline_edit": 2,
+  "table.virtualization": 7,
+  "table.tabular_figures": 6,
+  "data.pagination_strategy": 3,
+  "touch.ime_keyboard": 3,
+  "form.autofill_attributes": 1,
+  "state.unsaved_changes_guard": 1,
+  "a11y.dialog_focus": 2,
+  "feedback.confirmation_destructive": 5,
+  "interaction.drawer_focus": 1,
+  "interaction.menu_semantics": 1,
+  "interaction.tabs_roving": 1,
+  "navigation.deep_link_state": 4,
+  "navigation.rail_semantics": 1,
+  "navigation.orientation_and_back": 3,
+  "interaction.command_palette": 2,
+  "data.search_results": 2,
+  "media.search_tv": 1,
+  "data.filter_chips": 2,
+  "data.drilldown": 1,
+  "layout.media_card": 3,
+  "a11y.accessible_names": 5,
+  "tv.player_autohide": 3,
+  "interaction.focus_restore": 7,
+  "perf.focus_latency": 2,
+  "tv.epg_pinned_channels": 2,
+  "interaction.dpad_reachability": 2,
+  "media.live_channel_switching": 2,
+  "touch.minimum_target": 6,
+  "touch.gestures_discoverable": 2,
+  "layout.settings_grouping": 1,
+  "a11y.live_status": 3,
+  "feedback.progress_indicator": 3,
+  "state.saving_conflict": 4,
+  "onboarding.linear_wizard": 2,
+  "interaction.tree_semantics": 2,
+  "interaction.keyboard_navigation": 4,
+  "layout.one_primary_action": 6,
+  "perf.image_sizing": 4,
+  "tv.sign_in_code": 1,
+  "privacy.shared_device": 3,
+  "onboarding.setup_checklist": 1,
+  "interaction.back_semantics": 4,
+  "media.details_play_first": 2,
+  "media.resume_playback": 1,
+  "media.watchlist": 1,
+  "navigation.platform_grammar": 2,
+  "interaction.focus_visible": 8,
+  "interaction.shortcuts": 2,
+  "a11y.semantics": 2,
+  "a11y.text_scaling": 1,
+  "state.session_expiry": 4,
+  "tv.ten_foot_typography": 1,
+  "tv.no_touch_hover": 1,
+  "tv.dark_first": 1,
+  "touch.safe_areas": 1,
+  "table.column_priority": 2,
+  "adaptive.breakpoint_matrix": 2,
+  "desktop.spacing_grid": 1,
+  "desktop.persist_workspace": 1,
+  "desktop.fluent_materials": 1,
+  "adaptive.navigation_transform": 1,
+  "perf.js_budget": 1,
+  "brand.type_roles": 1,
+  "content.readable_measure": 1,
+  "brand.font_loading": 1,
+  "brand.token_layers": 1,
+  "content.i18n_expansion": 1,
+  "process.reuse_first": 1,
+  "process.safe_modification": 1,
+  "process.render_verify": 1,
+  "state.offline_sync": 1,
+  "privacy.sensitive_masking": 1,
+  "env.outdoor_readability": 1,
+  "env.glanceable_status": 1,
+  "onboarding.permission_priming": 1,
+  "onboarding.feature_education": 1
+ },
+ "broad_records_ge4_concepts": [
+  [
+   "chart-realtime",
+   [
+    "data.realtime_window",
+    "data.refresh_timestamp",
+    "data.exception_first",
+    "a11y.color_not_only"
+   ]
+  ],
+  [
+   "comp-data-table",
+   [
+    "table.selection_bulk",
+    "table.inline_edit",
+    "table.virtualization",
+    "table.tabular_figures",
+    "data.pagination_strategy"
+   ]
+  ],
+  [
+   "comp-form",
+   [
+    "feedback.validation_errors",
+    "touch.ime_keyboard",
+    "form.autofill_attributes",
+    "state.unsaved_changes_guard"
+   ]
+  ],
+  [
+   "comp-chart-container",
+   [
+    "a11y.color_not_only",
+    "data.chart_by_question",
+    "data.accessible_chart_alternative",
+    "state.loading_empty_error"
+   ]
+  ],
+  [
+   "comp-epg",
+   [
+    "tv.epg_pinned_channels",
+    "table.virtualization",
+    "interaction.dpad_reachability",
+    "media.live_channel_switching"
+   ]
+  ],
+  [
+   "comp-product-detail-page",
+   [
+    "layout.one_primary_action",
+    "perf.layout_shift",
+    "a11y.accessible_names",
+    "touch.minimum_target"
+   ]
+  ],
+  [
+   "comp-checkout-one-page",
+   [
+    "feedback.validation_errors",
+    "touch.ime_keyboard",
+    "feedback.confirmation_destructive",
+    "state.saving_conflict",
+    "layout.one_primary_action"
+   ]
+  ],
+  [
+   "comp-plan-comparison",
+   [
+    "table.tabular_figures",
+    "layout.one_primary_action",
+    "a11y.color_not_only",
+    "feedback.confirmation_destructive",
+    "table.selection_bulk"
+   ]
+  ],
+  [
+   "comp-mini-player",
+   [
+    "interaction.focus_restore",
+    "interaction.back_semantics",
+    "state.loading_empty_error",
+    "tv.safe_margins"
+   ]
+  ],
+  [
+   "media-resume-and-details",
+   [
+    "media.details_play_first",
+    "media.resume_playback",
+    "media.watchlist",
+    "interaction.focus_restore",
+    "interaction.back_semantics",
+    "a11y.color_not_only"
+   ]
+  ]
+ ],
+ "relations": 22,
+ "requires_edges": 15
+}

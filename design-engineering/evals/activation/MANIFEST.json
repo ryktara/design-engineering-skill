@@ -1,0 +1,8 @@
+{
+ "file": "cases.json",
+ "sha256": "6ab6629dbf28394c7e723d772474c953cf7297701ecc919c72e41a369192c679",
+ "count": 180,
+ "generated": "2026-09-08",
+ "method": "independent-subagent-from-boundary-statement",
+ "immutable": true
+}

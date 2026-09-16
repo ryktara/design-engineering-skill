@@ -1,0 +1,1158 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "Typing an amount on the transfer screen brings up the letters keyboard and the Send button disappears under it.",
+  "status": "PARTIAL",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "mobile"
+    ],
+    "input": [
+      "keyboard",
+      "touch"
+    ],
+    "product": [
+      "finance"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "compose"
+    ],
+    "density": "medium",
+    "components": [
+      "button"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "audit button"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_INTERACTION",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "interaction"
+      ],
+      "change_scope": "local",
+      "utterance": "observation",
+      "existing": true,
+      "problem": true,
+      "facet": "interaction",
+      "diagnose_only": false,
+      "creation": false,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "low"
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "audit: interaction defect on existing UI",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "top-bar",
+        "status": "KNOWN",
+        "evidence": [
+          "top-bar: 30 matches in AccountDetailScreen.kt, AccountsScreen.kt, CardsScreen.kt (shell/layout file)"
+        ]
+      },
+      "theme": {
+        "value": "dual-theme",
+        "status": "KNOWN",
+        "evidence": [
+          "dark theme configuration signals: 3",
+          "light theme configuration signals: 2",
+          "hex palette: 0 near-white, 1 near-black"
+        ],
+        "default": "light"
+      },
+      "surfaces": {
+        "value": "bordered-flat",
+        "status": "INFERRED",
+        "evidence": [
+          "borders in 2 files, shadow/elevation in 0"
+        ]
+      },
+      "radius": {
+        "value": "small",
+        "status": "INFERRED",
+        "evidence": [
+          "most common radius 4 (2×); others [12.0, 8.0]"
+        ]
+      },
+      "spacing": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": []
+      },
+      "typography": {
+        "value": "custom",
+        "status": "KNOWN",
+        "evidence": [
+          "font family System (8 refs)",
+          "weights medium, normal, bold",
+          "encoded type scale in 2 files"
+        ]
+      },
+      "components": {
+        "value": "compose, material3",
+        "status": "KNOWN",
+        "evidence": [
+          "compose",
+          "material3"
+        ]
+      }
+    },
+    "known": [
+      "platform=mobile (project inspection)",
+      "input=keyboard (request: keyboard)",
+      "product=finance (project inspection (README))",
+      "stack=compose (project inspection)",
+      "project_navigation=top-bar (repository: top-bar: 30 matches in AccountDetailScreen.kt, AccountsScreen.kt, CardsScreen.kt (shell/layout file))",
+      "project_theme=dual-theme (repository: dark theme configuration signals: 3; light theme configuration signals: 2)",
+      "project_typography=custom (repository: font family System (8 refs); weights medium, normal, bold)",
+      "project_components=compose, material3 (repository: compose; material3)"
+    ],
+    "inferred": [
+      "input=touch (implied by platform mobile)",
+      "density=medium (implied by product finance (capped for touch/remote platform))",
+      "mode=audit (interaction defect on existing UI)",
+      "mode=refactor (fix follows the diagnosis)",
+      "project_surfaces=bordered-flat (repository: borders in 2 files, shadow/elevation in 0)",
+      "project_radius=small (repository: most common radius 4 (2×); others [12.0, 8.0])"
+    ],
+    "missing": [],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [
+        "keyboard"
+      ],
+      "project": [
+        "app\\build.gradle.kts: androidx.compose",
+        "app\\build.gradle.kts: androidx.compose.material3"
+      ]
+    },
+    "activation": {
+      "decision": "activate",
+      "ui_score": 3.0,
+      "non_ui_score": 0,
+      "ui_terms": [
+        "screen",
+        "button"
+      ],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "the transfer screen"
+      ],
+      "new": [],
+      "defect": [
+        "disappears"
+      ],
+      "operations": {},
+      "domains": {
+        "interaction": [
+          "keyboard",
+          "button",
+          "typing"
+        ]
+      },
+      "no_change": [],
+      "scope": {
+        "screen": [
+          "screen"
+        ],
+        "local": [
+          "button"
+        ]
+      },
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "screen",
+        "button",
+        "keyboard"
+      ],
+      "ux_symptoms": [
+        "keyboard"
+      ],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_INTERACTION",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "accessibility",
+        "reason": "audit mode"
+      },
+      {
+        "concern": "interaction",
+        "reason": "audit mode: operability is part of the review"
+      },
+      {
+        "concern": "component",
+        "reason": "the reviewed component/screen"
+      },
+      {
+        "concern": "data-display",
+        "reason": "numbers, tables or charts are the content"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "states",
+        "reason": "audits check empty/loading/error handling"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "audits name generic-design defects"
+      },
+      {
+        "concern": "feedback",
+        "reason": "audits check that actions are discoverable and confirmed"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "device sizes and orientation"
+      }
+    ],
+    "optional": [
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "state.loading_empty_error",
+        "reason": "asynchronous or remote data on this screen",
+        "priority": 2,
+        "critical": false
+      },
+      {
+        "concept": "touch.ime_keyboard",
+        "reason": "on-screen keyboard behaviour",
+        "priority": 2,
+        "critical": false
+      },
+      {
+        "concept": "touch.minimum_target",
+        "reason": "touch platform",
+        "priority": 3,
+        "critical": false
+      },
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "keyboard stated",
+        "priority": 3,
+        "critical": false
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "keyboard stated",
+        "priority": 3,
+        "critical": false
+      },
+      {
+        "concept": "table.tabular_figures",
+        "reason": "numeric data",
+        "priority": 1,
+        "critical": true
+      }
+    ],
+    "recommended_concepts": [
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "touch.safe_areas",
+      "process.reuse_first",
+      "touch.gestures_discoverable",
+      "touch.thumb_reach",
+      "navigation.platform_grammar",
+      "a11y.live_status",
+      "feedback.confirmation_destructive",
+      "interaction.shortcuts"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [],
+  "guardrails": [
+    {
+      "id": "typo-scale-and-roles",
+      "kind": "rule",
+      "category": "typography",
+      "title": "One type scale with named roles",
+      "facets": [
+        "visual"
+      ],
+      "concerns": [
+        "content",
+        "data-display"
+      ],
+      "concepts": [
+        "table.tabular_figures",
+        "brand.type_roles"
+      ],
+      "covers": [
+        "tabular figures and numeric alignment",
+        "type roles and scale"
+      ],
+      "score": 0.261,
+      "guidance": "Roles display/heading/title/body/label/caption/numeric with size, line height, weight, and letter spacing per role; body ≥16 px web/mobile, 14 desktop, 24 TV; numeric role uses tabular lining figures; headings use tighter line height (1.1–1.25) and body 1.4–1.6. Generate with tokens.py scale and map the roles to the framework's text styles.",
+      "use_when": "Any screen with more than two text sizes; any design system.",
+      "avoid_when": "Never pick sizes per screen; never use more than ~7 sizes.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.034,
+        "structural": 0.54,
+        "matched": [
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "critical concept (GENERIC): tabular figures and numeric alignment"
+    },
+    {
+      "id": "mobile-keyboard-ime",
+      "kind": "rule",
+      "category": "forms",
+      "title": "Mobile: keyboard and input types",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "feedback",
+        "interaction"
+      ],
+      "concepts": [
+        "touch.ime_keyboard"
+      ],
+      "covers": [
+        "on-screen keyboard (IME) aware layout"
+      ],
+      "score": 0.559,
+      "guidance": "Set keyboard type and autocomplete/textContentType/autofillHints per field, return key action (Next/Done), scroll the focused field above the keyboard, keep the primary action reachable while the keyboard is open (or on the keyboard toolbar), and dismiss on tap outside for non-modal forms.",
+      "use_when": "Every text field.",
+      "avoid_when": "Never leave the default keyboard for emails, numbers, phone, or URLs; never let the keyboard cover the focused field or the submit button.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.426,
+        "structural": 0.72,
+        "matched": [
+          "platform mobile",
+          "input touch",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "most relevant record for the request wording"
+    },
+    {
+      "id": "mobile-density-touch",
+      "kind": "rule",
+      "category": "layout",
+      "title": "Mobile: density is bounded by touch",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "adaptive",
+        "data-display",
+        "interaction"
+      ],
+      "concepts": [
+        "table.column_priority",
+        "touch.minimum_target"
+      ],
+      "covers": [
+        "column priority on narrow widths",
+        "large touch targets (≥44–48 px)"
+      ],
+      "score": 0.324,
+      "guidance": "Convert tables to list rows with the 2–3 deciding columns, put the rest in a detail screen; filters in a sheet with applied-filter chips; bulk actions via selection mode; numbers stay tabular; row height ≥48 dp. Dense on phone means fewer things, not smaller things.",
+      "use_when": "Porting dense desktop tools (ERP, tables, dashboards) to phones.",
+      "avoid_when": "Never shrink a desktop table to fit; never rely on horizontal scroll for primary data.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "incompatible": [
+        "layout-table-first",
+        "density-high"
+      ],
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.72,
+        "matched": [
+          "platform mobile",
+          "input touch",
+          "mode audit",
+          "product finance"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage (SPECIFIC): large touch targets (≥44–48 px)"
+    },
+    {
+      "id": "color-states-complete",
+      "kind": "rule",
+      "category": "color",
+      "title": "Every interactive colour has hover/pressed/focus/disabled/selected",
+      "facets": [
+        "visual"
+      ],
+      "concerns": [
+        "brand",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.focus_visible",
+        "interaction.selection_visible"
+      ],
+      "covers": [
+        "visible focus",
+        "selected state visible and distinct from focus and hover"
+      ],
+      "score": 0.262,
+      "guidance": "Define state tokens per role (action.primary-hover/-pressed, bg.selected, text.disabled), keep label contrast on every state, make disabled visibly weaker but readable (≥3:1 recommended even though exempt), selected ≠ focused ≠ hovered. Dark theme redefines all of them.",
+      "use_when": "Buttons, links, list rows, tabs, chips, inputs, cards that are tappable, focus on TV.",
+      "avoid_when": "Never leave a state to the framework default on one platform and custom on another.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.035,
+        "structural": 0.54,
+        "matched": [
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage (GENERIC): visible focus"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "data-display"
+    ],
+    "covered_required_concerns": [
+      "interaction",
+      "component",
+      "data-display"
+    ],
+    "uncovered_required_concerns": [
+      "accessibility"
+    ],
+    "recommended_concerns": [
+      "states",
+      "anti-pattern",
+      "feedback",
+      "adaptive"
+    ],
+    "covered_recommended_concerns": [
+      "feedback",
+      "adaptive"
+    ],
+    "coverage_ratio": 0.75,
+    "required_concepts": [
+      "state.loading_empty_error",
+      "touch.ime_keyboard",
+      "touch.minimum_target",
+      "interaction.keyboard_navigation",
+      "interaction.focus_visible",
+      "table.tabular_figures"
+    ],
+    "covered_required_concepts": [
+      "touch.ime_keyboard",
+      "touch.minimum_target",
+      "interaction.focus_visible",
+      "table.tabular_figures"
+    ],
+    "uncovered_required_concepts": [
+      "state.loading_empty_error",
+      "interaction.keyboard_navigation"
+    ],
+    "critical_concepts": [
+      "table.tabular_figures"
+    ],
+    "uncovered_critical_concepts": [],
+    "critical_coverage_ratio": 1.0,
+    "concept_coverage_ratio": 0.67,
+    "recommended_concept_coverage": 0.0,
+    "not_surfaced": [
+      {
+        "concept": "a11y.accessible_names",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "a11y.contrast",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "touch.safe_areas",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "process.reuse_first",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "touch.gestures_discoverable",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "touch.thumb_reach",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "navigation.platform_grammar",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "a11y.live_status",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "feedback.confirmation_destructive",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "interaction.shortcuts",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "states",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      }
+    ],
+    "bundle_size": 4,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 0,
+    "guardrail_size": 4,
+    "bundle_tokens": 439,
+    "coverage_per_1k_tokens": 9.11,
+    "mean_purity": 0.62,
+    "mean_specificity": 0.75,
+    "quality_counts": {
+      "SPECIFIC": 2,
+      "GENERIC": 2
+    },
+    "contaminated": [],
+    "category_diversity": 1.0,
+    "duplicate_pressure": 0.25,
+    "facet_coverage": 0.4,
+    "redundancy": 0.3,
+    "critical_trace": {
+      "covered": [
+        "table.tabular_figures"
+      ],
+      "uncovered": [],
+      "carrier_quality": {
+        "table.tabular_figures": "GENERIC"
+      }
+    }
+  },
+  "token_coverage": 0.82,
+  "omitted": [
+    {
+      "id": "cta-sticky-bar",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "cta-single-primary",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "cta-fab",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "cta-contextual-inline",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "nav-bottom-tabs",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "comp-kpi-tile",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "comp-filters",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "metadata-inline-badges",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "nav-hub-spoke",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "comp-player-controls",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    }
+  ],
+  "marginal": {
+    "typo-scale-and-roles": {
+      "new_critical": [
+        "table.tabular_figures"
+      ],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [
+        "content",
+        "data-display"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "explicit_demand"
+      ],
+      "quality": "GENERIC",
+      "contamination": 0.0,
+      "tokens": 115
+    },
+    "mobile-keyboard-ime": {
+      "new_critical": [],
+      "new_required": [
+        "touch.ime_keyboard"
+      ],
+      "new_recommended": [],
+      "new_concerns": [
+        "component",
+        "feedback",
+        "interaction"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "lexical_strong",
+        "lexical"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 111
+    },
+    "mobile-density-touch": {
+      "new_critical": [],
+      "new_required": [
+        "touch.minimum_target"
+      ],
+      "new_recommended": [],
+      "new_concerns": [
+        "adaptive"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "platform_specific"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 104
+    },
+    "color-states-complete": {
+      "new_critical": [],
+      "new_required": [
+        "interaction.focus_visible"
+      ],
+      "new_recommended": [],
+      "new_concerns": [
+        "brand"
+      ],
+      "specificity": 0,
+      "evidence": [],
+      "quality": "GENERIC",
+      "contamination": 0.0,
+      "tokens": 109
+    }
+  },
+  "rejected": [
+    {
+      "id": "anti-hero-template",
+      "reason": "platform ['web'] not in request ['mobile']"
+    },
+    {
+      "id": "anti-desktop-scaled-to-tv",
+      "reason": "platform ['tv'] not in request ['mobile']"
+    },
+    {
+      "id": "anti-hover-only-actions",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "chart-relationship",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-data-table",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-sidebar-nav",
+      "reason": "platform ['desktop', 'tablet', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-command-palette",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-tree-view",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "state.loading_empty_error",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 2,
+      "reason": "asynchronous or remote data on this screen",
+      "candidate_records": [
+        [
+          "comp-chart-container",
+          0.305
+        ],
+        [
+          "anti-no-states",
+          0.258
+        ],
+        [
+          "layout-states-empty-loading-error",
+          0.243
+        ],
+        [
+          "comp-mini-player",
+          0.207
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.ime_keyboard",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 2,
+      "reason": "on-screen keyboard behaviour",
+      "candidate_records": [
+        [
+          "mobile-keyboard-ime",
+          0.559
+        ],
+        [
+          "comp-checkout-one-page",
+          0.283
+        ],
+        [
+          "comp-form",
+          0.188
+        ]
+      ],
+      "selected_record": "mobile-keyboard-ime",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "touch.minimum_target",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 3,
+      "reason": "touch platform",
+      "candidate_records": [
+        [
+          "a11y-target-size",
+          0.342
+        ],
+        [
+          "mobile-density-touch",
+          0.324
+        ],
+        [
+          "comp-list-row-mobile",
+          0.307
+        ],
+        [
+          "media-photo-viewer",
+          0.271
+        ]
+      ],
+      "selected_record": "mobile-density-touch",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.keyboard_navigation",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 3,
+      "reason": "keyboard stated",
+      "candidate_records": [
+        [
+          "interaction-drag-drop",
+          0.486
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates rejected as contaminated: record-specific subject absent from the request"
+    },
+    {
+      "concept": "interaction.focus_visible",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 3,
+      "reason": "keyboard stated",
+      "candidate_records": [
+        [
+          "color-states-complete",
+          0.262
+        ],
+        [
+          "a11y-nontext-contrast",
+          0.243
+        ]
+      ],
+      "selected_record": "color-states-complete",
+      "carrier_quality": "GENERIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "table.tabular_figures",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 1,
+      "reason": "numeric data",
+      "candidate_records": [
+        [
+          "comp-kpi-tile",
+          0.297
+        ],
+        [
+          "typo-scale-and-roles",
+          0.261
+        ],
+        [
+          "data-exceptions-first",
+          0.243
+        ]
+      ],
+      "selected_record": "typo-scale-and-roles",
+      "carrier_quality": "GENERIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.accessible_names",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "comp-player-controls",
+          0.321
+        ],
+        [
+          "a11y-labels-names",
+          0.303
+        ],
+        [
+          "a11y-native-semantics",
+          0.297
+        ],
+        [
+          "comp-photo-capture-field",
+          0.261
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "a11y.contrast",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "anti-fashion-over-usability",
+          0.243
+        ],
+        [
+          "a11y-contrast-text",
+          0.243
+        ],
+        [
+          "a11y-nontext-contrast",
+          0.243
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.safe_areas",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "keyboard inset",
+      "candidate_records": [
+        [
+          "cta-sticky-bar",
+          0.344
+        ],
+        [
+          "mobile-safe-areas",
+          0.333
+        ],
+        [
+          "mobile-orientation-size-classes",
+          0.332
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.207
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.gestures_discoverable",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "touch platform",
+      "candidate_records": [
+        [
+          "interaction-drag-drop",
+          0.486
+        ],
+        [
+          "mobile-gestures-discoverable",
+          0.339
+        ],
+        [
+          "comp-list-row-mobile",
+          0.307
+        ],
+        [
+          "media-photo-viewer",
+          0.271
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.thumb_reach",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "one-handed use",
+      "candidate_records": [
+        [
+          "mobile-thumb-reach",
+          0.356
+        ],
+        [
+          "cta-sticky-bar",
+          0.344
+        ],
+        [
+          "anti-mobile-desktop-shrunk",
+          0.324
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "navigation.platform_grammar",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "mobile navigation grammar",
+      "candidate_records": [
+        [
+          "nav-bottom-tabs",
+          0.341
+        ],
+        [
+          "mobile-platform-navigation",
+          0.338
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "a11y.live_status",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "status messages",
+      "candidate_records": [
+        [
+          "interaction-drag-drop",
+          0.486
+        ],
+        [
+          "feedback-progress-async",
+          0.331
+        ],
+        [
+          "search-filter-feedback",
+          0.252
+        ],
+        [
+          "a11y-live-status",
+          0.243
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "feedback.confirmation_destructive",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "sensitive domain",
+      "candidate_records": [
+        [
+          "states-persistence-and-session",
+          0.297
+        ],
+        [
+          "comp-checkout-one-page",
+          0.283
+        ],
+        [
+          "comp-dialog",
+          0.19
+        ],
+        [
+          "comp-settings-screen",
+          0.19
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.shortcuts",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "related to interaction.keyboard_navigation",
+      "candidate_records": [],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "carriers filtered before ranking: platform ['desktop', 'web'] not in request ['mobile']"
+    }
+  ]
+}

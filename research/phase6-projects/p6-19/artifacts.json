@@ -1,0 +1,152 @@
+{
+  "task": "p6-19",
+  "project": "p3-erp-desktop-dotnet",
+  "platform_expected": "desktop",
+  "platform_resolved": "desktop",
+  "platform_correct": "yes",
+  "stack": "wpf (.NET 10, MVVM)",
+  "existing_ui": true,
+  "new_screen": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "new",
+  "artifact_state_correct": false,
+  "mode_expected": ["create", "refactor", "polish"],
+  "mode_resolved": ["create"],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "moderate",
+  "render_mode": "native",
+  "screenshots": [
+    "render/first-ready-1440x900.png",
+    "render/final-ready-1440x900.png",
+    "render/final-narrow-ready-1024x700.png",
+    "render/final-error-1440x900.png"
+  ],
+  "context_detection": {
+    "navigation": "yes",
+    "theme": "yes",
+    "typography": "yes",
+    "surfaces": "yes",
+    "spacing": "yes"
+  },
+  "preservation": {
+    "navigation": true,
+    "theme": true,
+    "typography": true,
+    "component_reuse": true,
+    "unjustified_structural_change": 0
+  },
+  "expected_concepts": [
+    "data.refresh_timestamp",
+    "state.offline_sync",
+    "process.reuse_first",
+    "a11y.color_not_only",
+    "a11y.live_status",
+    "data.exception_first",
+    "desktop.spacing_grid"
+  ],
+  "critical_concepts": ["data.refresh_timestamp", "state.offline_sync", "process.reuse_first"],
+  "delivered_concepts": [
+    "a11y.color_not_only",
+    "a11y.contrast",
+    "a11y.live_status",
+    "brand.type_roles",
+    "data.exception_first",
+    "desktop.persist_workspace",
+    "env.glanceable_status",
+    "feedback.validation_errors",
+    "interaction.focus_visible",
+    "interaction.keyboard_navigation",
+    "interaction.shortcuts",
+    "layout.focal_hierarchy",
+    "process.reuse_first",
+    "table.tabular_figures"
+  ],
+  "concept_recall": 0.571,
+  "critical_recall": 0.333,
+  "concept_misses": [
+    {"concept": "data.refresh_timestamp", "layer": "expected-concepts"},
+    {"concept": "state.offline_sync", "layer": "expected-concepts"},
+    {"concept": "desktop.spacing_grid", "layer": "expected-concepts"}
+  ],
+  "first_render_defects": {
+    "visual": 1,
+    "interaction": 0,
+    "accessibility": 0,
+    "platform": 0,
+    "existing-system-mismatch": 0,
+    "implementation-bug": 0
+  },
+  "final_defects": {
+    "visual": 0,
+    "interaction": 0,
+    "accessibility": 0,
+    "platform": 0,
+    "existing-system-mismatch": 0,
+    "implementation-bug": 0
+  },
+  "iterations": 3,
+  "guidance_relevant": 4,
+  "guidance_partial": 3,
+  "guidance_offtarget": 0,
+  "bad_guidance": [
+    {"record": "<bundle>", "category": "missing-critical", "why": "data.refresh_timestamp and state.offline_sync (pre-registered critical) are absent from the bundle; they were never demanded, so states-offline-and-sync never became a candidate despite being the #1 search hit (0.574) for the same sentence"},
+    {"record": "metadata-rich", "category": "wrong-screen", "why": "guidance for the data grid's columns; the task is about the bottom status bar. Only its 'status as text+colour' line applied"},
+    {"record": "desktop-keyboard-first", "category": "generic", "why": "true for the app but the task adds no keyboard surface; nothing in it changed the implementation"},
+    {"record": "typo-scale-and-roles", "category": "generic", "why": "the project already defines Text.Body/Caption/Subtitle roles; generating a new scale would violate preservation"}
+  ],
+  "layer_review": {
+    "core": ["metadata-rich", "dir-operational-workbench"],
+    "critical": [
+      "impl-reuse-before-new",
+      "desktop-status-bar-and-error-navigation",
+      "desktop-keyboard-first",
+      "data-exceptions-first",
+      "typo-scale-and-roles"
+    ],
+    "optional": [],
+    "optional_useful": 0,
+    "optional_noise": 0
+  },
+  "guidance_used": [
+    "impl-reuse-before-new",
+    "desktop-status-bar-and-error-navigation",
+    "data-exceptions-first",
+    "dir-operational-workbench",
+    "metadata-rich"
+  ],
+  "guidance_ignored": [
+    {"id": "typo-scale-and-roles", "why": "project already has named text roles; a new scale would break preservation"},
+    {"id": "desktop-keyboard-first", "why": "no new keyboard surface; existing accelerators untouched and verified by the harness mouseless scenario"}
+  ],
+  "unjustified_direction_slots": 5,
+  "process_records_needed": true,
+  "skill_effect": "helped",
+  "guidance_tokens": 1063,
+  "misses": [
+    {"layer": "expected-concepts", "what": "'last sync time' is half the sentence but no sync/refresh-timestamp concept was ever demanded; states-offline-and-sync ranks #1 in search and never became a candidate"},
+    {"layer": "requirements", "what": "intent.artifact_state='new' on an existing codebase with an existing status bar; intent.preserve empty; change_scope unknown"},
+    {"layer": "project-context", "what": "inspect reports no layout/cta/cards/metadata evidence although the window has one data table, a command bar, a status bar and inline status text"},
+    {"layer": "direction", "what": "5 slots invented as 'new'; layout:master-detail and cards:card-bordered contradict the codebase and the direction's own surface slot, yet Validation reported OK"}
+  ],
+  "knowledge_gaps": [],
+  "regressions": [
+    {"query": "Add a status bar with the last sync time and any failed postings.", "expect": "data.refresh_timestamp and state.offline_sync demanded (critical) and states-offline-and-sync in the bundle"},
+    {"query": "Add a status bar with the last sync time and any failed postings. --project <existing WPF repo>", "expect": "intent.artifact_state == 'existing' and a non-empty intent.preserve"},
+    {"query": "direction: Add a status bar with the last sync time and any failed postings. --project p3-erp-desktop-dotnet", "expect": "0 slots marked 'new'; no layout:master-detail and no card-bordered against a single-table WPF window"},
+    {"query": "Add a status bar ... on a project that already contains a StatusBar", "expect": "guidance that says extend the existing bar, not only the generic impl-reuse-before-new"}
+  ],
+  "tags": [
+    "concept-miss",
+    "requirements-miss",
+    "direction-mismatch",
+    "context-detection-miss",
+    "render-defect-fixed",
+    "preservation-ok",
+    "skill-helped"
+  ],
+  "build_hash_start": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947",
+  "build_hash_end": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947"
+}

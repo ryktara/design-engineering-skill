@@ -1,0 +1,893 @@
+{
+  "gates": {
+    "validator": {
+      "ok": true,
+      "summary": "validate_skill: OK — 237 records, 0 errors, 0 warnings; cases {'development': 269, 'regression': 40, 'heldout': 145, 'heldout-v2': 212, 'heldout-v3': 311, 'activation': 180}"
+    },
+    "development+regression": {
+      "ok": true,
+      "passed": 309,
+      "total": 309,
+      "failing": []
+    },
+    "activation_proxy": {
+      "ok": true,
+      "precision": 0.987,
+      "recall": 1.0,
+      "fpr": 0.014,
+      "fnr": 0.0
+    },
+    "performance_sanity": {
+      "ok": true,
+      "load_ms": 7,
+      "search_ms": 246,
+      "direction_ms": 65
+    }
+  },
+  "heldout": {
+    "passed": 38,
+    "total": 145,
+    "summary": {
+      "heldout/cases": {
+        "cases": 145,
+        "acceptable": 38,
+        "platform_correct": 132,
+        "platform_precise": 137,
+        "mode_correct": 119,
+        "input_correct": 138,
+        "negatives_correct": 138,
+        "missing_correct": 86,
+        "mean_concept_recall": 0.359,
+        "mean_offtarget_rate": 0.167,
+        "concept_recall_ge_half": 52,
+        "concept_recall_ge_third": 55,
+        "offtarget_within_third": 131,
+        "facet_coverage_full": 16,
+        "mean_concern_coverage": 0.917,
+        "mean_bundle_size": 6.3,
+        "mean_bundle_bytes": 6906,
+        "mean_concept_recall_search_k5": 0.277,
+        "required_concerns_all_covered": 0,
+        "forbidden_violations": 0,
+        "mean_derived_required_agreement": null,
+        "empty_results": 7,
+        "status_counts": {
+          "CONFIDENT": 91,
+          "PARTIAL": 38,
+          "AMBIGUOUS": 9,
+          "ABSTAIN": 7
+        },
+        "abstain_correct": 5,
+        "abstain_cases": 6,
+        "by_category": {
+          "web": {
+            "n": 4,
+            "ok": 0
+          },
+          "mobile": {
+            "n": 4,
+            "ok": 3
+          },
+          "android-tv": {
+            "n": 4,
+            "ok": 3
+          },
+          "tvos": {
+            "n": 4,
+            "ok": 2
+          },
+          "kiosk": {
+            "n": 4,
+            "ok": 0
+          },
+          "winui": {
+            "n": 4,
+            "ok": 1
+          },
+          "wpf": {
+            "n": 4,
+            "ok": 1
+          },
+          "avalonia": {
+            "n": 4,
+            "ok": 2
+          },
+          "react": {
+            "n": 4,
+            "ok": 1
+          },
+          "nextjs": {
+            "n": 4,
+            "ok": 1
+          },
+          "compose": {
+            "n": 4,
+            "ok": 2
+          },
+          "swiftui": {
+            "n": 4,
+            "ok": 0
+          },
+          "flutter": {
+            "n": 4,
+            "ok": 1
+          },
+          "erp": {
+            "n": 4,
+            "ok": 1
+          },
+          "saas": {
+            "n": 4,
+            "ok": 1
+          },
+          "finance": {
+            "n": 4,
+            "ok": 1
+          },
+          "healthcare": {
+            "n": 4,
+            "ok": 1
+          },
+          "ecommerce": {
+            "n": 4,
+            "ok": 0
+          },
+          "media": {
+            "n": 4,
+            "ok": 0
+          },
+          "settings": {
+            "n": 4,
+            "ok": 1
+          },
+          "forms": {
+            "n": 4,
+            "ok": 0
+          },
+          "tables": {
+            "n": 4,
+            "ok": 2
+          },
+          "search": {
+            "n": 4,
+            "ok": 2
+          },
+          "dashboards": {
+            "n": 4,
+            "ok": 0
+          },
+          "onboarding": {
+            "n": 4,
+            "ok": 1
+          },
+          "accessibility": {
+            "n": 4,
+            "ok": 2
+          },
+          "brand": {
+            "n": 4,
+            "ok": 1
+          },
+          "responsive": {
+            "n": 4,
+            "ok": 0
+          },
+          "screenshot": {
+            "n": 4,
+            "ok": 1
+          },
+          "polish": {
+            "n": 4,
+            "ok": 0
+          },
+          "negative-constraint": {
+            "n": 4,
+            "ok": 0
+          },
+          "adversarial": {
+            "n": 15,
+            "ok": 2
+          },
+          "abstain": {
+            "n": 6,
+            "ok": 5
+          }
+        }
+      }
+    }
+  },
+  "heldout_v2": {
+    "passed": 30,
+    "total": 212,
+    "summary": {
+      "cases": 212,
+      "acceptable": 30,
+      "platform_correct": 201,
+      "platform_precise": 190,
+      "mode_correct": 139,
+      "input_correct": 207,
+      "negatives_correct": 203,
+      "missing_correct": 157,
+      "mean_concept_recall": 0.234,
+      "mean_offtarget_rate": 0.177,
+      "concept_recall_ge_half": 32,
+      "concept_recall_ge_third": 60,
+      "offtarget_within_third": 193,
+      "facet_coverage_full": 31,
+      "mean_concern_coverage": 0.808,
+      "mean_bundle_size": 6.08,
+      "mean_bundle_bytes": 6605,
+      "mean_concept_recall_search_k5": null,
+      "required_concerns_all_covered": 122,
+      "forbidden_violations": 4,
+      "mean_derived_required_agreement": 0.572,
+      "empty_results": 19,
+      "status_counts": {
+        "CONFIDENT": 125,
+        "PARTIAL": 56,
+        "AMBIGUOUS": 12,
+        "ABSTAIN": 19
+      },
+      "abstain_correct": 17,
+      "abstain_cases": 20,
+      "by_category": {
+        "ecommerce": {
+          "n": 8,
+          "ok": 1
+        },
+        "web": {
+          "n": 23,
+          "ok": 1
+        },
+        "tables": {
+          "n": 5,
+          "ok": 0
+        },
+        "accessibility": {
+          "n": 7,
+          "ok": 1
+        },
+        "responsive": {
+          "n": 5,
+          "ok": 0
+        },
+        "dashboards": {
+          "n": 4,
+          "ok": 1
+        },
+        "forms": {
+          "n": 2,
+          "ok": 0
+        },
+        "saas": {
+          "n": 12,
+          "ok": 2
+        },
+        "onboarding": {
+          "n": 6,
+          "ok": 0
+        },
+        "brand": {
+          "n": 6,
+          "ok": 1
+        },
+        "finance": {
+          "n": 7,
+          "ok": 1
+        },
+        "healthcare": {
+          "n": 11,
+          "ok": 1
+        },
+        "media": {
+          "n": 6,
+          "ok": 0
+        },
+        "polish": {
+          "n": 4,
+          "ok": 0
+        },
+        "mobile": {
+          "n": 14,
+          "ok": 0
+        },
+        "tv": {
+          "n": 30,
+          "ok": 2
+        },
+        "erp": {
+          "n": 3,
+          "ok": 0
+        },
+        "desktop": {
+          "n": 15,
+          "ok": 1
+        },
+        "kiosk": {
+          "n": 10,
+          "ok": 0
+        },
+        "abstain": {
+          "n": 20,
+          "ok": 17
+        },
+        "adversarial": {
+          "n": 14,
+          "ok": 1
+        }
+      }
+    },
+    "thresholds": {
+      "acceptable_ge_40pct": false,
+      "mean_concept_recall_ge_0.40": false,
+      "required_concern_coverage_ge_0.85": false,
+      "mean_offtarget_le_0.20": true,
+      "abstain_correct_ge_80pct": true,
+      "platform_correct_ge_85pct": true,
+      "mode_correct_ge_75pct": false,
+      "empty_le_2pct": false
+    },
+    "thresholds_met": false
+  },
+  "heldout_v3": {
+    "passed": 125,
+    "total": 311,
+    "summary": {
+      "cases": 311,
+      "abstain_cases": 30,
+      "acceptable": 125,
+      "scope_correct": 287,
+      "abstain_correct": 25,
+      "platform_correct": 223,
+      "mode_correct": 181,
+      "mean_concept_recall": 0.498,
+      "concept_recall_ge_half": 182,
+      "mean_recommended_recall": 0.297,
+      "forbidden_violation_cases": 8,
+      "preservation_correct": 271,
+      "mean_required_concern_coverage": 0.914,
+      "mean_bundle_size": 5.918,
+      "mean_bundle_tokens": 830.94,
+      "empty_results": 0,
+      "status_counts": {
+        "CONFIDENT": 91,
+        "PARTIAL": 166,
+        "AMBIGUOUS": 10,
+        "ABSTAIN": 44
+      },
+      "by_category": {
+        "abstain": {
+          "n": 30,
+          "ok": 25
+        },
+        "accessibility": {
+          "n": 31,
+          "ok": 12
+        },
+        "adversarial": {
+          "n": 32,
+          "ok": 4
+        },
+        "brand": {
+          "n": 18,
+          "ok": 8
+        },
+        "dashboards": {
+          "n": 13,
+          "ok": 3
+        },
+        "design-system": {
+          "n": 21,
+          "ok": 4
+        },
+        "desktop": {
+          "n": 14,
+          "ok": 6
+        },
+        "ecommerce": {
+          "n": 7,
+          "ok": 1
+        },
+        "erp": {
+          "n": 5,
+          "ok": 1
+        },
+        "finance": {
+          "n": 7,
+          "ok": 4
+        },
+        "forms": {
+          "n": 4,
+          "ok": 1
+        },
+        "healthcare": {
+          "n": 5,
+          "ok": 4
+        },
+        "kiosk": {
+          "n": 10,
+          "ok": 5
+        },
+        "media": {
+          "n": 1,
+          "ok": 0
+        },
+        "mobile": {
+          "n": 21,
+          "ok": 8
+        },
+        "onboarding": {
+          "n": 8,
+          "ok": 4
+        },
+        "polish": {
+          "n": 12,
+          "ok": 1
+        },
+        "responsive": {
+          "n": 1,
+          "ok": 0
+        },
+        "saas": {
+          "n": 27,
+          "ok": 15
+        },
+        "tables": {
+          "n": 6,
+          "ok": 2
+        },
+        "tablet": {
+          "n": 4,
+          "ok": 1
+        },
+        "tv": {
+          "n": 22,
+          "ok": 14
+        },
+        "web": {
+          "n": 12,
+          "ok": 2
+        }
+      }
+    },
+    "human_review": {
+      "n": 311,
+      "good": 118,
+      "partial": 99,
+      "bad": 50,
+      "abstain_correct": 25,
+      "good_plus_partial_rate": 0.813,
+      "bad_rate": 0.187
+    },
+    "thresholds": {
+      "platform_ge_0.92": false,
+      "mode_ge_0.80": false,
+      "scope_ge_0.90": true,
+      "concern_coverage_ge_0.90": true,
+      "concept_recall_ge_0.60": false,
+      "forbidden_rate_le_0.08": true,
+      "empty_le_0.02": true,
+      "human_good_plus_partial_ge_0.80": true,
+      "human_bad_le_0.20": true,
+      "acceptable_ge_0.50 (secondary)": false
+    },
+    "primary_met": 6,
+    "primary_total": 9,
+    "thresholds_met": false
+  },
+  "projects_phase4": {
+    "tasks": 15,
+    "applications": 9,
+    "existing_ui_tasks": 15,
+    "first_render_defects": {
+      "visual": 11,
+      "interaction": 3,
+      "accessibility": 2,
+      "platform": 4,
+      "existing-system-mismatch": 3,
+      "implementation-bug": 7
+    },
+    "final_defects": {
+      "visual": 6,
+      "interaction": 0,
+      "accessibility": 0,
+      "platform": 2,
+      "existing-system-mismatch": 2,
+      "implementation-bug": 0
+    },
+    "iterations": 32,
+    "guidance": {
+      "relevant": 55,
+      "partial": 27,
+      "offtarget": 27
+    },
+    "context_detection": {
+      "navigation": {
+        "yes": 7,
+        "partial": 8,
+        "no": 0,
+        "n": 15
+      },
+      "theme": {
+        "yes": 13,
+        "partial": 1,
+        "no": 1,
+        "n": 15
+      },
+      "typography": {
+        "yes": 1,
+        "partial": 5,
+        "no": 9,
+        "n": 15
+      },
+      "surfaces": {
+        "yes": 5,
+        "partial": 2,
+        "no": 8,
+        "n": 15
+      },
+      "spacing": {
+        "yes": 6,
+        "partial": 3,
+        "no": 6,
+        "n": 15
+      }
+    },
+    "preservation": {
+      "navigation": {
+        "yes": 15,
+        "partial": 0,
+        "no": 0,
+        "n": 15
+      },
+      "theme": {
+        "yes": 15,
+        "partial": 0,
+        "no": 0,
+        "n": 15
+      },
+      "typography": {
+        "yes": 15,
+        "partial": 0,
+        "no": 0,
+        "n": 15
+      },
+      "component_reuse": {
+        "yes": 15,
+        "partial": 0,
+        "no": 0,
+        "n": 15
+      }
+    },
+    "unjustified_structural_change": 0,
+    "misses_by_layer": {
+      "scope": 1,
+      "mode": 2,
+      "requirements": 18,
+      "concerns": 3,
+      "expected-concepts": 16,
+      "candidate-retrieval": 5,
+      "bundle-selection": 17,
+      "direction": 15,
+      "project-adaptation": 15
+    },
+    "tags": {
+      "concept-miss": 4,
+      "context-detection-miss": 15,
+      "direction-mismatch": 15,
+      "knowledge-gap": 15,
+      "mode-miss": 2,
+      "preservation-ok": 15,
+      "ranking-miss": 14,
+      "render-defect-fixed": 14,
+      "render-defect-remaining": 6,
+      "requirements-miss": 14,
+      "scope-miss": 1,
+      "skill-helped": 15,
+      "tooling-limit": 7
+    },
+    "per_task": [
+      {
+        "task": "p4-01",
+        "project": "p3-nextjs-saas",
+        "mode": "polish (+refactor, spurious)",
+        "change_budget": "low",
+        "render_mode": "native",
+        "iterations": 2
+      },
+      {
+        "task": "p4-02",
+        "project": "p3-nextjs-saas",
+        "mode": "accessibility+audit",
+        "change_budget": "low",
+        "render_mode": "native",
+        "iterations": 1
+      },
+      {
+        "task": "p4-03",
+        "project": "p3-winui-erp-audit",
+        "mode": "create (should be extend/refactor)",
+        "change_budget": "moderate",
+        "render_mode": "html-twin",
+        "iterations": 2
+      },
+      {
+        "task": "p4-04",
+        "project": "p3-react-dashboard-polish",
+        "mode": "create",
+        "change_budget": "moderate",
+        "render_mode": "native",
+        "iterations": 2
+      },
+      {
+        "task": "p4-05",
+        "project": "p3-react-dashboard-polish",
+        "mode": "audit+refactor",
+        "change_budget": "low",
+        "render_mode": "native",
+        "iterations": 2
+      },
+      {
+        "task": "p4-06",
+        "project": "p3-ecommerce-web",
+        "mode": "create",
+        "change_budget": "moderate",
+        "render_mode": "html",
+        "iterations": 2
+      },
+      {
+        "task": "p4-07",
+        "project": "p3-erp-desktop-dotnet",
+        "mode": "polish+audit",
+        "change_budget": "low",
+        "render_mode": "native",
+        "iterations": 2
+      },
+      {
+        "task": "p4-08",
+        "project": "p3-erp-desktop-dotnet",
+        "mode": "create (new dialog in an existing window)",
+        "change_budget": "moderate",
+        "render_mode": "native",
+        "iterations": 3
+      },
+      {
+        "task": "p4-09",
+        "project": "p3-kiosk-pharmacy",
+        "mode": "audit+accessibility",
+        "change_budget": "low",
+        "render_mode": "html",
+        "iterations": 2
+      },
+      {
+        "task": "p4-10",
+        "project": "p3-android-tv-compose",
+        "mode": "audit+refactor",
+        "change_budget": "moderate (reported) / minimal (actual)",
+        "render_mode": "html-twin",
+        "iterations": 2
+      },
+      {
+        "task": "p4-11",
+        "project": "p3-android-tv-compose",
+        "mode": "create",
+        "change_budget": "moderate",
+        "render_mode": "html-twin",
+        "iterations": 3
+      },
+      {
+        "task": "p4-12",
+        "project": "p3-tvos-swiftui",
+        "mode": "create",
+        "change_budget": "moderate",
+        "render_mode": "html-twin",
+        "iterations": 3
+      },
+      {
+        "task": "p4-13",
+        "project": "p3-mobile-flutter-field",
+        "mode": "refactor",
+        "change_budget": "moderate",
+        "render_mode": "html-twin",
+        "iterations": 2
+      },
+      {
+        "task": "p4-14",
+        "project": "p3-mobile-flutter-field",
+        "mode": "create",
+        "change_budget": "moderate",
+        "render_mode": "html-twin",
+        "iterations": 2
+      },
+      {
+        "task": "p4-15",
+        "project": "p3-kiosk-pharmacy",
+        "mode": "accessibility+create",
+        "change_budget": "low",
+        "render_mode": "html",
+        "iterations": 2
+      }
+    ]
+  },
+  "projects": {
+    "cases": 9,
+    "rendered": 9,
+    "first_render_defects": 74,
+    "final_defects": 36,
+    "iterations": 23,
+    "guidance_relevant": 40,
+    "guidance_partial": 18,
+    "guidance_offtarget": 6,
+    "knowledge_gaps": [
+      "NavigationDrawer (push/reflow) vs ModalNavigationDrawer (overlay) recommendation for a rails home",
+      "QR code sizing / quiet zone / contrast for 3 m viewing",
+      "Siri Remote gesture model (click vs swipe vs long-press; Menu vs Back on 2nd-gen remote) — 'swipe' routes to mobile records",
+      "WPF DataGrid pitfalls absent from stacks/wpf.md: IsSynchronizedWithCurrentItem with ICollectionView collapses multi-selection; Tab out of an editing cell keeps edit mode on the next cell (ComboBox columns swallow arrows); Validation.HasError lives on the column element, not the DataGridCell",
+      "WinUI recipes: Typography.NumeralAlignment=Tabular, icon+text status cell with one AutomationProperties.Name and AccessibilityView=Raw glyph, DataGridColumn.Visibility",
+      "accessible-mode toggle for kiosks: large text + high contrast + relocating controls into the lower reach zone",
+      "activation-code specifics: which glyphs to exclude, chunking, TTL, polling cadence",
+      "cart-add feedback (polite live region + toast with checkout link)",
+      "column priority / progressive column hiding for narrow desktop windows (which columns hide first, how to notify and restore)",
+      "column-width budget for the target window; default visible column set and persisted column chooser",
+      "confirmation summary before hand-over (kiosk)",
+      "cross-screen focus restoration on lazy lists: scrollToItem column + rail, wait a frame, guarded requestFocus",
+      "data-grid empty/loading/error state specifics (keep real header, state in body, Retry as default button)",
+      "desktop status bar pattern (message, counts, error/unsaved indicators, totals; what drops first when narrow)",
+      "fixed-height hero band so rails never jump when the hero follows focus",
+      "focus-lift overflow at the screen edge vs the 60 pt guide and the overscan hard limit",
+      "grid with per-row buttons: single Tab stop / roving tabindex, arrows reach the row actions",
+      "help / call staff action for unattended kiosks",
+      "invoice history / download list (status vocabulary, download link naming, past-due alert)",
+      "kiosk on-screen keypad / QWERTY keyboard pattern (key size, delete/clear placement, DOB entry)",
+      "layer exclusivity: transport row must not remain visible under side sheets or prompts",
+      "live-sports card content: score + match clock + broadcast progress on a 16:9 card; long score strings",
+      "mini player / PiP-while-browsing as a home component (focus-graph position, states, BACK from full player)",
+      "nested BackHandler ordering (innermost enabled wins) for drawer-exit vs rails-to-hero",
+      "next-episode / autoplay prompt (placement, countdown, cancel, Menu behaviour)",
+      "numeric editing caret behaviour (F2 on formatted values)",
+      "one-page checkout pattern (order summary placement desktop vs phone, autocomplete map for address forms, shipping radio cards, place-order shows total, secure header)",
+      "payment method summary block",
+      "photo/camera capture field in a form (thumbnails, remove/retake, offline storage)",
+      "plan/pricing comparison component (current plan, upgrade vs downgrade, seat-limit block, billing cycle toggle)",
+      "product vocabulary for field service / inspection / utilities (README 'utility technicians' mapped to erp)",
+      "product-detail-page pattern (variant radios, out-of-stock chip, low-stock note, size-required error on add-to-cart, quantity stepper, price anchoring, reviews summary/histogram, size-guide dialog)",
+      "scanner (keyboard-wedge / QR) input handling and on-screen scan instruction",
+      "seat/member management table (inline role change, owner protection, invited/deactivated states, seat meter)",
+      "settings sub-navigation (tabs in content header)",
+      "short visible status label vs full accessible name in narrow columns",
+      "side navigation icon strip must itself carry the overscan margin (nav-tv-side vs tv-safe-area unreconciled)",
+      "single-select severity chooser as large toggle buttons / radio group at phone width",
+      "tokens.py scale --platform tv does not know tvOS floors (emits body 28 / caption 18 from base 29)",
+      "tri-state (pass/fail/skip) result selection for inspection checklist items"
+    ],
+    "ranking_misses": [
+      "a11y-color-not-only",
+      "a11y-color-not-only (search rank 9, not in bundle)",
+      "a11y-focus-visible",
+      "a11y-live-status",
+      "a11y-reduced-motion",
+      "a11y-semantics-structure (in search, not in bundle)",
+      "a11y-target-size",
+      "a11y-target-size (rank 8, absent from bundle)",
+      "a11y-time-and-auto (session timeouts controllable; only found by targeted search)",
+      "anti-card-everything",
+      "anti-hover-only-actions (search rank 2, not in guidance bundle)",
+      "anti-placeholder-labels (not in k=12)",
+      "card-bordered (top search hit, mentions selectable plan cards; not in guidance bundle)",
+      "card-poster-landscape (search rank 9, progress bar) not in guidance",
+      "chart-small-multiples selected as core with lexical 0.076 although no chart was requested",
+      "comp-chart-container (omitted as redundant with comp-kpi-tile)",
+      "comp-data-entry-grid (score 0.694, most specific record for keyboard batch entry) pruned as redundant with comp-data-table",
+      "comp-data-table (dropped as redundant with off-target comp-data-entry-grid)",
+      "comp-dialog (destructive confirm never surfaced)",
+      "comp-empty-state",
+      "comp-list-row-mobile",
+      "comp-setup-checklist",
+      "comp-toast-notification",
+      "cta-single-primary",
+      "cta-sticky-bar (in search top 3 and direction slot, absent from guidance bundle)",
+      "data-tables-numeric",
+      "data-tables-numeric (not in k=12 for the task; only via targeted query)",
+      "data-tables-numeric present in the base but not selected although the numeric rule is referenced by comp-data-table",
+      "dir-product-marketing-site selected as core over transactional PDP guidance",
+      "dir-windows-native-tool omitted as redundant with dir-operational-workbench",
+      "imagery-thumbnails / imagery-hero (width/height + CLS rule; absent from guidance)",
+      "layout-immersive-rails (search rank 5) not in guidance core; direction picked layout-rails for an immersive-hero request",
+      "layout-master-detail ranked first for a 'detail' screen that is a PDP",
+      "layout-spacing-scale",
+      "layout-split-player (in direction layout slot, not in guidance bundle)",
+      "layout-states-empty-loading-error",
+      "layout-states-empty-loading-error / comp-empty-state (states concern satisfied by states-persistence-and-session instead)",
+      "layout-states-empty-loading-error / comp-empty-state / anti-no-states",
+      "metadata-rich / metadata-inline-badges (status as text+colour; search rank 1/3, absent from guidance)",
+      "mobile-gestures-discoverable"
+    ],
+    "tags": {
+      "direction-invariant": 9,
+      "knowledge-gap": 8,
+      "ranking-miss": 9,
+      "render-defect-fixed": 9,
+      "render-defect-remaining": 9,
+      "requirements-miss": 9,
+      "skill-helped": 9,
+      "tooling-limit": 8,
+      "vocabulary-gap": 7
+    },
+    "per_case": [
+      {
+        "case": "p3-android-tv-compose",
+        "platform": "tv",
+        "render_mode": "html-twin",
+        "first_render_defects": 10,
+        "final_defects": 5,
+        "iterations": 3
+      },
+      {
+        "case": "p3-ecommerce-web",
+        "platform": "web (mobile web target)",
+        "render_mode": "html",
+        "first_render_defects": 11,
+        "final_defects": 4,
+        "iterations": 2
+      },
+      {
+        "case": "p3-erp-desktop-dotnet",
+        "platform": "desktop-windows",
+        "render_mode": "native",
+        "first_render_defects": 10,
+        "final_defects": 6,
+        "iterations": 4
+      },
+      {
+        "case": "p3-kiosk-pharmacy",
+        "platform": "kiosk (public touch, portrait 1080x1920)",
+        "render_mode": "html",
+        "first_render_defects": 5,
+        "final_defects": 5,
+        "iterations": 3
+      },
+      {
+        "case": "p3-mobile-flutter-field",
+        "platform": "mobile",
+        "render_mode": "html-twin",
+        "first_render_defects": 7,
+        "final_defects": 1,
+        "iterations": 2
+      },
+      {
+        "case": "p3-nextjs-saas",
+        "platform": "web",
+        "render_mode": "native",
+        "first_render_defects": 9,
+        "final_defects": 4,
+        "iterations": 2
+      },
+      {
+        "case": "p3-react-dashboard-polish",
+        "platform": "web",
+        "render_mode": "native",
+        "first_render_defects": 6,
+        "final_defects": 3,
+        "iterations": 2
+      },
+      {
+        "case": "p3-tvos-swiftui",
+        "platform": "tv",
+        "render_mode": "html-twin",
+        "first_render_defects": 9,
+        "final_defects": 4,
+        "iterations": 3
+      },
+      {
+        "case": "p3-winui-erp-audit",
+        "platform": "desktop",
+        "render_mode": "html-twin",
+        "first_render_defects": 7,
+        "final_defects": 4,
+        "iterations": 2
+      }
+    ]
+  },
+  "real_activation": "SKIPPED — claude CLI not authenticated for non-interactive use",
+  "ok": true
+}

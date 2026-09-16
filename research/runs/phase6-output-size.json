@@ -1,0 +1,44 @@
+{
+ "note": "token estimate = chars/4; development guidance + purity + held-out v1 queries; frozen Phase 6 build c4",
+ "build": "32e67640c9b8ef1d519ef9695016fb396116b92412e63c324da090aecf1df385",
+ "stats": {
+  "guidance_md_tokens": {
+   "n": 273,
+   "mean": 702.1,
+   "median": 628.2,
+   "p95": 1305.0,
+   "max": 1510.75
+  },
+  "guidance_json_tokens": {
+   "n": 273,
+   "mean": 2270.5,
+   "median": 2078.5,
+   "p95": 3870.75,
+   "max": 4478.5
+  },
+  "direction_md_tokens": {
+   "n": 273,
+   "mean": 1814.6,
+   "median": 1805.8,
+   "p95": 2509.75,
+   "max": 2732.0
+  },
+  "bundle_size": {
+   "n": 273,
+   "mean": 3.7,
+   "median": 3,
+   "p95": 8,
+   "max": 8
+  },
+  "bundle_tokens": {
+   "n": 273,
+   "mean": 584.8,
+   "median": 505,
+   "p95": 1273,
+   "max": 1517
+  },
+  "empty_bundles": 12,
+  "queries": 273
+ },
+ "elapsed_s": 241.3
+}

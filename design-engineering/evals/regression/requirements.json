@@ -1,0 +1,57 @@
+{
+  "description": "Regression cases for the requirements contract.",
+  "suite": "requirements",
+  "cases": [
+    {
+      "id": "reg-polish-vocabulary",
+      "query": "Refresh the visual style of the dashboard but do not change navigation",
+      "expect_known": [
+        "mode=polish"
+      ],
+      "expect_negatives": [
+        "navigation-change"
+      ],
+      "note": "2026-09-08 Phase 2: 'refresh the visual style' was classified as create; polish vocabulary gap (lexicon)."
+    },
+    {
+      "id": "reg-epg-is-list-screen",
+      "query": "Build an Android TV EPG in Compose.",
+      "expect_known": [
+        "screen=list"
+      ],
+      "note": "2026-09-08 Phase 2: EPG was not recognised as a list/grid screen type (lexicon)."
+    },
+    {
+      "id": "reg-stack-word-not-platform",
+      "query": "Build an Android TV EPG in Compose.",
+      "forbid_known": [
+        "platform=mobile"
+      ],
+      "forbid_inferred": [
+        "platform=mobile",
+        "input=touch"
+      ],
+      "expect_status": "CONFIDENT",
+      "note": "2026-09-08 Phase 2: 'compose' was platform evidence for mobile, producing two explicit platforms and an AMBIGUOUS status for a clear TV request. Stack words now only imply a platform when the request names none."
+    },
+    {
+      "id": "reg-react-implies-web-only-inferred",
+      "query": "implement this screenshot in React",
+      "expect_inferred": [
+        "platform=web"
+      ],
+      "forbid_known": [
+        "platform=web"
+      ],
+      "note": "2026-09-08 Phase 2: React is a stack; web is an inference from it, not a stated fact (React Native/TV exist)."
+    },
+    {
+      "id": "reg-site-is-web",
+      "query": "our city council site has a report a pothole page that is a mess, redo it",
+      "expect_known": [
+        "platform=web"
+      ],
+      "note": "2026-09-08 Phase 2 held-out run 1 (ho-002): 'site' was not web platform evidence, so a plain website request had no platform and retrieved a TV anti-pattern. Lexicon gap; see research/LEXICON-GAPS.md."
+    }
+  ]
+}

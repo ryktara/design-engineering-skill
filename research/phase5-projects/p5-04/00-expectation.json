@@ -1,0 +1,24 @@
+{
+  "platform": "web",
+  "artifact_state": "existing",
+  "acceptable_modes": ["polish", "refactor", "create"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "feedback.trust_signals",
+    "layout.focal_hierarchy",
+    "layout.one_primary_action",
+    "process.reuse_first",
+    "a11y.semantics"
+  ],
+  "critical_concepts": ["feedback.trust_signals"],
+  "forbidden_concepts": [
+    "onboarding.linear_wizard",
+    "feedback.confirmation_destructive",
+    "tv.safe_margins",
+    "interaction.dpad_reachability",
+    "desktop.fluent_materials",
+    "media.details_play_first"
+  ],
+  "preservation": ["navigation", "theme", "typography"],
+  "notes": "Reviewer reading of product.html before any advise call. The page already has a .trust list under the Add-to-cart row with 'Free shipping over $99 · arrives in 2–4 days' and '60-day returns, no questions asked', a stock note that says 'ships today if ordered by 2 pm' only after a size is chosen, and a collapsed 'Shipping & returns' accordion ('Returns accepted within 60 days in original condition'). So the sentence is literally right on two points: nothing states an arrival DATE (only a relative range, and the order-by cut-off is hidden until a size is picked) and nothing says returns are FREE (60-day is stated, cost is not). Expected fix: a delivery promise with a concrete arrival date window computed from the 2 pm cut-off ('Order in the next 3 h 12 min for delivery by Thu 11 Sep', business-day maths, updates with time) and an explicit 'Free 60-day returns' line, placed where the buyer decides (near price / CTA, above the fold on phones, not only inside the accordion), reusing the existing .trust list, tokens, outline icons and small-caps secondary text; the accordion copy and the sticky bar meta made consistent; the live-updating countdown must not be a layout-shifting or noisy live region. Must not add a second primary CTA, a modal, a wizard or a promotional banner; no new colour or font; top bar, breadcrumb, gallery, buybox structure stay."
+}

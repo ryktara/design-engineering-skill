@@ -1,0 +1,904 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "The player controls stay on screen for the whole film.",
+  "status": "PARTIAL",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [
+      "media"
+    ],
+    "screen": [
+      "player"
+    ],
+    "screen_subtype": [],
+    "stack": [
+      "html-css"
+    ],
+    "density": "medium",
+    "components": [
+      "media"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "audit player"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "interaction"
+      ],
+      "change_scope": "local",
+      "utterance": "observation",
+      "existing": true,
+      "problem": true,
+      "facet": "interaction",
+      "diagnose_only": false,
+      "creation": false,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "low"
+    },
+    "platform_evidence": [
+      {
+        "platform": "tv",
+        "strength": "WEAK_INFERENCE",
+        "evidence": [
+          "player controls"
+        ]
+      }
+    ],
+    "mode_evidence": [
+      "audit: interaction defect on existing UI",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "top-bar",
+        "status": "KNOWN",
+        "evidence": [
+          "top-bar: 6 matches in app.js, index.html, tv.css (shell/layout file)"
+        ]
+      },
+      "theme": {
+        "value": "dark-first",
+        "status": "INFERRED",
+        "evidence": [
+          "root/canvas backgrounds: 0 light, 1 dark",
+          "hex palette: 1 near-white, 14 near-black"
+        ]
+      },
+      "surfaces": {
+        "value": "bordered-flat",
+        "status": "INFERRED",
+        "evidence": [
+          "weak signal: shadow 0, border 1"
+        ]
+      },
+      "radius": {
+        "value": "small",
+        "status": "INFERRED",
+        "evidence": [
+          "most common radius 4 (2×); others [999.0, 5.0]"
+        ]
+      },
+      "spacing": {
+        "value": 4,
+        "status": "INFERRED",
+        "evidence": [
+          "most used spacing values [16, 12, 8, 20, 24]"
+        ]
+      },
+      "typography": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": [
+          "no font family declaration found"
+        ]
+      },
+      "components": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": []
+      }
+    },
+    "known": [
+      "platform=web (project inspection)",
+      "product=media (request: player)",
+      "stack=html-css (project inspection)",
+      "screen=player (request: player)",
+      "project_navigation=top-bar (repository: top-bar: 6 matches in app.js, index.html, tv.css (shell/layout file))"
+    ],
+    "inferred": [
+      "input=pointer (implied by platform web)",
+      "input=keyboard (implied by platform web)",
+      "input=touch (implied by platform web)",
+      "density=medium (implied by product media)",
+      "mode=audit (interaction defect on existing UI)",
+      "mode=refactor (fix follows the diagnosis)",
+      "project_theme=dark-first (repository: root/canvas backgrounds: 0 light, 1 dark; hex palette: 1 near-white, 14 near-black)",
+      "project_surfaces=bordered-flat (repository: weak signal: shadow 0, border 1)",
+      "project_radius=small (repository: most common radius 4 (2×); others [999.0, 5.0])",
+      "project_spacing=4 (repository: most used spacing values [16, 12, 8, 20, 24])"
+    ],
+    "missing": [],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [
+        "player"
+      ],
+      "project": [
+        "*.html without a framework manifest: plain HTML/CSS site"
+      ]
+    },
+    "activation": {
+      "decision": "activate",
+      "ui_score": 3.0,
+      "non_ui_score": 0,
+      "ui_terms": [
+        "screen",
+        "film"
+      ],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "the player"
+      ],
+      "new": [],
+      "defect": [
+        "implicit problem"
+      ],
+      "operations": {},
+      "domains": {
+        "interaction": [
+          "controls"
+        ]
+      },
+      "no_change": [],
+      "scope": {
+        "screen": [
+          "screen",
+          "player"
+        ],
+        "local": [
+          "control"
+        ]
+      },
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "screen",
+        "player",
+        "control"
+      ],
+      "ux_symptoms": [],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "accessibility",
+        "reason": "audit mode"
+      },
+      {
+        "concern": "interaction",
+        "reason": "audit mode: operability is part of the review"
+      },
+      {
+        "concern": "component",
+        "reason": "the reviewed component/screen"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "states",
+        "reason": "audits check empty/loading/error handling"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "audits name generic-design defects"
+      },
+      {
+        "concern": "feedback",
+        "reason": "audits check that actions are discoverable and confirmed"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "viewport range"
+      }
+    ],
+    "optional": [
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "state.loading_empty_error",
+        "reason": "asynchronous or remote data on this screen",
+        "priority": 2,
+        "critical": false
+      },
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "web content must be keyboard operable",
+        "priority": 3,
+        "critical": false
+      },
+      {
+        "concept": "interaction.hover_independence",
+        "reason": "web is used with touch as well as pointer",
+        "priority": 3,
+        "critical": false
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "web keyboard focus",
+        "priority": 3,
+        "critical": false
+      }
+    ],
+    "recommended_concepts": [
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "process.reuse_first",
+      "touch.minimum_target",
+      "adaptive.breakpoint_matrix",
+      "a11y.reduced_motion",
+      "interaction.shortcuts"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "comp-player-controls",
+      "kind": "component",
+      "category": "player",
+      "title": "Player transport controls",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "component",
+        "interaction",
+        "structure"
+      ],
+      "concepts": [
+        "tv.player_autohide",
+        "a11y.accessible_names",
+        "media.track_selection"
+      ],
+      "covers": [
+        "auto-hide timing of player controls",
+        "accessible names and labels",
+        "subtitle and audio track selection reachable from the player"
+      ],
+      "score": 0.726,
+      "guidance": "Play/pause, seek slider with time readout and keyboard/remote stepping, skip ±10 s, next/previous where relevant, captions and audio track selectors, quality only if user-facing, live indicator and go-to-live for live streams, volume on web/desktop only (TV uses the remote), controls overlay auto-hides except while focused/hovered; every control labelled; captions styling respects system preferences.",
+      "use_when": "Video/audio playback surfaces.",
+      "avoid_when": "Never custom-build when the platform control set already meets the need and the brand allows it.",
+      "risk": {
+        "a11y": "high",
+        "perf": "medium"
+      },
+      "provenance": "platform-standard",
+      "implementation": {
+        "html-css": "<video> + custom controls with role=slider for seek; media-chrome web components are a solid base."
+      },
+      "why": {
+        "lexical": 0.632,
+        "structural": 0.84,
+        "matched": [
+          "platform web",
+          "input keyboard,pointer,touch",
+          "mode audit",
+          "product media",
+          "screen player"
+        ]
+      },
+      "role": "core",
+      "selected_for": "task evidence: screen, component, product, lexical_strong"
+    },
+    {
+      "id": "comp-mini-player",
+      "kind": "component",
+      "category": "player",
+      "title": "Mini player / picture-in-picture state",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "interaction",
+        "navigation",
+        "states"
+      ],
+      "concepts": [
+        "interaction.focus_restore",
+        "interaction.back_semantics",
+        "state.loading_empty_error",
+        "tv.safe_margins"
+      ],
+      "covers": [
+        "focus restoration",
+        "BACK behaviour",
+        "loading, empty and error states",
+        "TV safe margins"
+      ],
+      "score": 0.525,
+      "guidance": "The mini player is a single focusable/tappable region anchored to a corner (TV: bottom-right inside the safe margin, never over the focused rail; mobile: bottom above the tab bar; web: bottom-right) with the title (one line, truncated with a full title on focus), live/progress indicator and exactly two actions (expand, close); on TV, SELECT expands to the full player and BACK from the full player returns to the mini state with focus restored to the element that was focused before; playback state (playing/paused/buffering/error) is shown with an icon plus text, and the audio keeps playing while the UI is navigated; the region is excluded from the rail's D-pad focus loop except through an explicit UP/RIGHT move; never autoplay audio from a mini player on page load on web.",
+      "use_when": "Playback continues while the user browses (home rails, EPG, queue) on TV, or while navigating a mobile/web app.",
+      "avoid_when": "Content that must not play in the background (paid live events with strict windows) or when the platform provides system PiP that the app should adopt instead.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.268,
+        "structural": 0.84,
+        "matched": [
+          "platform web",
+          "input pointer,touch",
+          "mode audit",
+          "product media",
+          "screen player"
+        ]
+      },
+      "role": "core",
+      "selected_for": "required coverage (SPECIFIC): loading, empty and error states"
+    }
+  ],
+  "guardrails": [],
+  "metrics": {
+    "required_concerns": [
+      "accessibility",
+      "interaction",
+      "component"
+    ],
+    "covered_required_concerns": [
+      "accessibility",
+      "interaction",
+      "component"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "states",
+      "anti-pattern",
+      "feedback",
+      "adaptive"
+    ],
+    "covered_recommended_concerns": [
+      "states"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "state.loading_empty_error",
+      "interaction.keyboard_navigation",
+      "interaction.hover_independence",
+      "interaction.focus_visible"
+    ],
+    "covered_required_concepts": [
+      "state.loading_empty_error"
+    ],
+    "uncovered_required_concepts": [
+      "interaction.keyboard_navigation",
+      "interaction.hover_independence",
+      "interaction.focus_visible"
+    ],
+    "critical_concepts": [],
+    "uncovered_critical_concepts": [],
+    "critical_coverage_ratio": 1.0,
+    "concept_coverage_ratio": 0.25,
+    "recommended_concept_coverage": 0.14,
+    "not_surfaced": [
+      {
+        "concept": "a11y.contrast",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "process.reuse_first",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "touch.minimum_target",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "adaptive.breakpoint_matrix",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "a11y.reduced_motion",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "interaction.shortcuts",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "feedback",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      }
+    ],
+    "bundle_size": 2,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 2,
+    "guardrail_size": 0,
+    "bundle_tokens": 581,
+    "coverage_per_1k_tokens": 1.72,
+    "mean_purity": 0.29,
+    "mean_specificity": 4.0,
+    "quality_counts": {
+      "SPECIFIC": 2
+    },
+    "contaminated": [],
+    "category_diversity": 0.5,
+    "duplicate_pressure": 1.0,
+    "facet_coverage": 0.4,
+    "redundancy": 0.25,
+    "critical_trace": {
+      "covered": [],
+      "uncovered": [],
+      "carrier_quality": {}
+    }
+  },
+  "token_coverage": 1.0,
+  "omitted": [
+    {
+      "id": "comp-mini-player",
+      "reason": "same category as a core pick (adds no new concept) or incompatible with one"
+    },
+    {
+      "id": "layout-split-player",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "comp-media-card",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "imagery-poster",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "card-poster-portrait",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "card-poster-landscape",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "motion-spring",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "density-low",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "color-dark-accent",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "surface-imagery-backed",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    }
+  ],
+  "marginal": {
+    "comp-player-controls": {
+      "new_critical": [],
+      "new_required": [],
+      "new_recommended": [
+        "a11y.accessible_names"
+      ],
+      "new_concerns": [
+        "accessibility",
+        "component",
+        "interaction",
+        "structure"
+      ],
+      "specificity": 4,
+      "evidence": [
+        "lexical_strong",
+        "lexical",
+        "screen",
+        "component",
+        "product"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.4,
+      "tokens": 225
+    },
+    "comp-mini-player": {
+      "new_critical": [],
+      "new_required": [
+        "state.loading_empty_error"
+      ],
+      "new_recommended": [],
+      "new_concerns": [
+        "navigation",
+        "states"
+      ],
+      "specificity": 4,
+      "evidence": [
+        "lexical_strong",
+        "lexical",
+        "screen",
+        "component",
+        "product"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.4,
+      "tokens": 356
+    }
+  },
+  "rejected": [
+    {
+      "id": "anti-desktop-scaled-to-tv",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "comp-tv-side-sheet",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "dir-cinematic-media-tv",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "dir-broadcast-guide-tv",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "dir-windows-native-tool",
+      "reason": "platform ['desktop'] not in request ['web']"
+    },
+    {
+      "id": "dir-industrial-hmi",
+      "reason": "platform ['desktop', 'kiosk', 'tablet'] not in request ['web']"
+    },
+    {
+      "id": "nav-tv-top-tabs",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "focus-scale-glow",
+      "reason": "platform ['tv'] not in request ['web']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "state.loading_empty_error",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 2,
+      "reason": "asynchronous or remote data on this screen",
+      "candidate_records": [
+        [
+          "comp-mini-player",
+          0.525
+        ],
+        [
+          "anti-no-states",
+          0.261
+        ],
+        [
+          "layout-states-empty-loading-error",
+          0.261
+        ],
+        [
+          "comp-empty-state",
+          0.198
+        ]
+      ],
+      "selected_record": "comp-mini-player",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.keyboard_navigation",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 3,
+      "reason": "web content must be keyboard operable",
+      "candidate_records": [
+        [
+          "a11y-skip-link",
+          0.369
+        ],
+        [
+          "a11y-keyboard-operable",
+          0.351
+        ],
+        [
+          "grid-single-tab-stop",
+          0.342
+        ],
+        [
+          "interaction-drag-drop",
+          0.342
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.hover_independence",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 3,
+      "reason": "web is used with touch as well as pointer",
+      "candidate_records": [
+        [
+          "a11y-keyboard-operable",
+          0.351
+        ],
+        [
+          "anti-hover-only-actions",
+          0.342
+        ],
+        [
+          "a11y-hover-not-required",
+          0.342
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.focus_visible",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 3,
+      "reason": "web keyboard focus",
+      "candidate_records": [
+        [
+          "a11y-focus-visible",
+          0.349
+        ],
+        [
+          "grid-single-tab-stop",
+          0.342
+        ],
+        [
+          "focus-ring-standard",
+          0.323
+        ],
+        [
+          "a11y-nontext-contrast",
+          0.31
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "a11y.accessible_names",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "comp-player-controls",
+          0.726
+        ],
+        [
+          "a11y-labels-names",
+          0.332
+        ],
+        [
+          "comp-media-card",
+          0.256
+        ],
+        [
+          "comp-product-detail-page",
+          0.122
+        ]
+      ],
+      "selected_record": "comp-player-controls",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.contrast",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "a11y-nontext-contrast",
+          0.31
+        ],
+        [
+          "anti-fashion-over-usability",
+          0.276
+        ],
+        [
+          "a11y-contrast-text",
+          0.261
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.225
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.minimum_target",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "touch on web",
+      "candidate_records": [
+        [
+          "a11y-target-size",
+          0.288
+        ],
+        [
+          "media-photo-viewer",
+          0.287
+        ],
+        [
+          "comp-product-detail-page",
+          0.122
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "adaptive.breakpoint_matrix",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "web viewport range",
+      "candidate_records": [
+        [
+          "web-responsive-breakpoints",
+          0.315
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "a11y.reduced_motion",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "player motion",
+      "candidate_records": [
+        [
+          "onboarding-first-run",
+          0.321
+        ],
+        [
+          "a11y-time-and-auto",
+          0.272
+        ],
+        [
+          "a11y-reduced-motion",
+          0.261
+        ],
+        [
+          "anti-scroll-animation-everything",
+          0.189
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.shortcuts",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "related to interaction.keyboard_navigation",
+      "candidate_records": [],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "carriers were not admissible for this platform/input/environment"
+    }
+  ]
+}

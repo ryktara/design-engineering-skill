@@ -1,0 +1,144 @@
+{
+ "task": "p5-15",
+ "build": "50966e8e6184f31722a7b3c7f270a241dd0f7b68187492d0c971f7c79734e680",
+ "c1_recorded": {
+  "platform_expected": "desktop",
+  "platform_resolved": [
+   "desktop"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "accessibility",
+   "audit",
+   "review"
+  ],
+  "mode_resolved": [
+   "accessibility",
+   "audit"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "CONFIDENT",
+  "bundle_ids": [
+   "comp-setup-checklist",
+   "imagery-none",
+   "a11y-nontext-contrast",
+   "a11y-native-semantics",
+   "typo-scale-and-roles",
+   "a11y-keyboard-operable",
+   "layout-states-empty-loading-error"
+  ],
+  "bundle_tokens": 848,
+  "expected_concepts": [
+   "a11y.accessible_names",
+   "a11y.color_not_only",
+   "a11y.contrast",
+   "interaction.keyboard_navigation",
+   "interaction.focus_visible",
+   "interaction.hover_independence",
+   "a11y.live_status"
+  ],
+  "critical_concepts": [
+   "a11y.accessible_names",
+   "a11y.color_not_only",
+   "a11y.contrast",
+   "interaction.keyboard_navigation"
+  ],
+  "delivered_concepts": [
+   "a11y.accessible_names",
+   "a11y.contrast",
+   "a11y.semantics",
+   "brand.type_roles",
+   "feedback.progress_indicator",
+   "interaction.focus_visible",
+   "interaction.hover_independence",
+   "interaction.keyboard_navigation",
+   "onboarding.setup_checklist",
+   "state.loading_empty_error",
+   "table.tabular_figures"
+  ],
+  "concept_recall": 0.714,
+  "critical_recall": 0.75,
+  "forbidden_delivered": [],
+  "change_budget": "low"
+ },
+ "c2": {
+  "platform_expected": "desktop",
+  "platform_resolved": [
+   "desktop"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "accessibility",
+   "audit",
+   "review"
+  ],
+  "mode_resolved": [
+   "audit",
+   "review"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "CONFIDENT",
+  "bundle_ids": [
+   "imagery-none",
+   "comp-wizard-stepper",
+   "a11y-skip-link",
+   "data-exceptions-first",
+   "desktop-status-bar-and-error-navigation",
+   "a11y-native-semantics",
+   "a11y-hover-not-required"
+  ],
+  "bundle_tokens": 1035,
+  "expected_concepts": [
+   "a11y.accessible_names",
+   "a11y.color_not_only",
+   "a11y.contrast",
+   "interaction.keyboard_navigation",
+   "interaction.focus_visible",
+   "interaction.hover_independence",
+   "a11y.live_status"
+  ],
+  "critical_concepts": [
+   "a11y.accessible_names",
+   "a11y.color_not_only",
+   "a11y.contrast",
+   "interaction.keyboard_navigation"
+  ],
+  "delivered_concepts": [
+   "a11y.accessible_names",
+   "a11y.color_not_only",
+   "a11y.contrast",
+   "a11y.live_status",
+   "a11y.semantics",
+   "data.exception_first",
+   "desktop.persist_workspace",
+   "env.glanceable_status",
+   "feedback.progress_indicator",
+   "feedback.validation_errors",
+   "interaction.focus_visible",
+   "interaction.hover_independence",
+   "interaction.keyboard_navigation",
+   "interaction.shortcuts",
+   "onboarding.linear_wizard",
+   "state.saving_conflict",
+   "table.tabular_figures"
+  ],
+  "concept_recall": 1.0,
+  "critical_recall": 1.0,
+  "forbidden_delivered": [],
+  "change_budget": "low"
+ }
+}

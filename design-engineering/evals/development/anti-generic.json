@@ -1,0 +1,17 @@
+{
+  "description": "Prompts likely to trigger AI-design clichés must surface the justification-demanding anti-pattern or the structural alternative.",
+  "cases": [
+    {"id": "saas-dashboard-cliche", "query": "make a modern SaaS dashboard with KPI cards and a sidebar", "expect_any_ids": ["anti-generic-sidebar-dashboard", "anti-card-everything", "comp-kpi-tile"]},
+    {"id": "glassmorphism-request", "query": "use glassmorphism cards for the analytics page", "expect_any_ids": ["anti-glass-everywhere", "surface-glass"], "expect_categories": ["generic-ai"]},
+    {"id": "gradient-hero", "query": "landing page with a purple gradient hero and floating screenshot", "expect_any_ids": ["anti-gradient-default", "anti-hero-template", "comp-hero-section"]},
+    {"id": "icons-everywhere", "query": "add an icon next to each feature heading in the features grid", "expect_any_ids": ["anti-icon-per-heading"]},
+    {"id": "pills-everywhere", "query": "make all the buttons and tags pill shaped", "expect_any_ids": ["anti-pill-everything"]},
+    {"id": "big-hero-text", "query": "make the headline 96px and bold everything", "expect_any_ids": ["anti-oversized-hero-text", "typo-scale-and-roles"]},
+    {"id": "style-first", "query": "pick a trendy visual style for our new app", "expect_any_ids": ["anti-style-before-product", "anti-fashion-over-usability"], "expect_missing": true},
+    {"id": "scroll-animate", "query": "add fade-up animations to every section on scroll", "expect_any_ids": ["anti-scroll-animation-everything", "a11y-reduced-motion"]},
+    {"id": "default-fonts", "query": "use Inter and Space Grotesk for the startup landing page", "expect_any_ids": ["anti-default-fonts", "typography-geometric-sans", "typography-grotesk-display"]},
+    {"id": "cards-in-cards", "query": "wrap each form section in a card inside the settings card", "expect_any_ids": ["anti-card-everything", "card-none"]},
+    {"id": "brand-skin-only", "query": "create three white label themes by swapping the logo and primary colour", "expect_any_ids": ["anti-brand-cosmetic-only"], "expect_modes": ["brand"]},
+    {"id": "tv-desktop-port", "query": "just scale up the desktop dashboard for the TV version", "expect_platforms": ["tv"], "expect_any_ids": ["anti-desktop-scaled-to-tv", "tv-no-touch-hover"]}
+  ]
+}

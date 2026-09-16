@@ -1,0 +1,116 @@
+{
+ "task": "p5-06",
+ "build": "50966e8e6184f31722a7b3c7f270a241dd0f7b68187492d0c971f7c79734e680",
+ "c1_recorded": {
+  "platform_expected": "web",
+  "platform_resolved": [
+   "web"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "create",
+   "polish",
+   "refactor"
+  ],
+  "mode_resolved": [
+   "audit",
+   "refactor"
+  ],
+  "mode_correct": "acceptable",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "abstain",
+  "scope_correct": false,
+  "status": "ABSTAIN",
+  "bundle_ids": [],
+  "bundle_tokens": 0,
+  "expected_concepts": [
+   "env.glanceable_status",
+   "data.realtime_window",
+   "a11y.color_not_only",
+   "table.tabular_figures",
+   "data.exception_first",
+   "process.reuse_first",
+   "perf.layout_shift"
+  ],
+  "critical_concepts": [
+   "env.glanceable_status",
+   "a11y.color_not_only",
+   "data.realtime_window"
+  ],
+  "delivered_concepts": [],
+  "concept_recall": 0.0,
+  "critical_recall": 0.0,
+  "forbidden_delivered": [],
+  "change_budget": "low"
+ },
+ "c2": {
+  "platform_expected": "web",
+  "platform_resolved": [
+   "web"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "create",
+   "polish",
+   "refactor"
+  ],
+  "mode_resolved": [
+   "audit",
+   "refactor"
+  ],
+  "mode_correct": "acceptable",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "PARTIAL",
+  "bundle_ids": [
+   "dir-clinical-workstation",
+   "comp-toast-notification",
+   "a11y-keyboard-operable",
+   "data-exceptions-first",
+   "a11y-skip-link",
+   "states-offline-and-sync"
+  ],
+  "bundle_tokens": 951,
+  "expected_concepts": [
+   "env.glanceable_status",
+   "data.realtime_window",
+   "a11y.color_not_only",
+   "table.tabular_figures",
+   "data.exception_first",
+   "process.reuse_first",
+   "perf.layout_shift"
+  ],
+  "critical_concepts": [
+   "env.glanceable_status",
+   "a11y.color_not_only",
+   "data.realtime_window"
+  ],
+  "delivered_concepts": [
+   "a11y.color_not_only",
+   "a11y.live_status",
+   "a11y.semantics",
+   "data.exception_first",
+   "data.refresh_timestamp",
+   "env.glanceable_status",
+   "interaction.focus_visible",
+   "interaction.hover_independence",
+   "interaction.keyboard_navigation",
+   "state.offline_sync",
+   "state.saving_conflict",
+   "table.tabular_figures"
+  ],
+  "concept_recall": 0.571,
+  "critical_recall": 0.667,
+  "forbidden_delivered": [],
+  "change_budget": "low"
+ }
+}

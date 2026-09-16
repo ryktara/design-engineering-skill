@@ -1,0 +1,215 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "polish",
+    "audit"
+  ],
+  "platform": [
+    "web"
+  ],
+  "input": [
+    "keyboard",
+    "pointer",
+    "touch"
+  ],
+  "product": [
+    "healthcare"
+  ],
+  "screen": [
+    "detail"
+  ],
+  "screen_subtype": [],
+  "stack": [
+    "svelte",
+    "tailwind"
+  ],
+  "density": null,
+  "components": [
+    "tabs"
+  ],
+  "environment": [],
+  "jobs": [],
+  "problems": [
+    "visual"
+  ],
+  "risk": "medium",
+  "primary_jobs": [
+    "polish detail"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "focus_handling_present": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "keyboard": true,
+    "screen_reader": true,
+    "focus": true,
+    "touch_targets": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "change_budget": "low",
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "intent": {
+    "artifact_state": "existing",
+    "operations": [
+      "diagnose",
+      "modify"
+    ],
+    "problem_domain": [
+      "visual"
+    ],
+    "change_scope": "screen",
+    "utterance": "observation",
+    "existing": true,
+    "problem": true,
+    "facet": "visual",
+    "diagnose_only": false,
+    "creation": false,
+    "redesign": false,
+    "responsive_cues": false,
+    "preserve": [],
+    "scope": "moderate"
+  },
+  "platform_evidence": [],
+  "mode_evidence": [
+    "polish: visual defect on existing UI",
+    "audit: diagnose first"
+  ],
+  "project_context": {
+    "navigation": {
+      "value": "left-rail",
+      "status": "KNOWN",
+      "evidence": [
+        "left-rail: 1 matches in +layout.svelte (shell/layout file)",
+        "also breadcrumb-tree: 1 matches"
+      ]
+    },
+    "theme": {
+      "value": "light-first",
+      "status": "INFERRED",
+      "evidence": [
+        "hex palette: 13 near-white, 1 near-black"
+      ]
+    },
+    "surfaces": {
+      "value": "bordered-flat",
+      "status": "INFERRED",
+      "evidence": [
+        "borders in 12 files, shadow/elevation in 2"
+      ]
+    },
+    "radius": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "spacing": {
+      "value": 4,
+      "status": "INFERRED",
+      "evidence": [
+        "most used spacing values [16, 8, 12, 4, 24]",
+        "tailwind spacing classes (119)"
+      ]
+    },
+    "typography": {
+      "value": "custom",
+      "status": "INFERRED",
+      "evidence": [
+        "font family theme (1 refs)",
+        "tabular numerals"
+      ]
+    },
+    "components": {
+      "value": "tailwind",
+      "status": "KNOWN",
+      "evidence": [
+        "tailwind"
+      ]
+    }
+  },
+  "known": [
+    "platform=web (project inspection)",
+    "product=healthcare (request: patient)",
+    "stack=svelte (project inspection)",
+    "stack=tailwind (project inspection)",
+    "screen=detail (request: detail)",
+    "project_navigation=left-rail (repository: left-rail: 1 matches in +layout.svelte (shell/layout file); also breadcrumb-tree: 1 matches)",
+    "project_components=tailwind (repository: tailwind)"
+  ],
+  "inferred": [
+    "input=pointer (implied by platform web)",
+    "input=keyboard (implied by platform web)",
+    "input=touch (implied by platform web)",
+    "mode=polish (visual defect on existing UI)",
+    "mode=audit (diagnose first)",
+    "project_theme=light-first (repository: hex palette: 13 near-white, 1 near-black)",
+    "project_surfaces=bordered-flat (repository: borders in 12 files, shadow/elevation in 2)",
+    "project_spacing=4 (repository: most used spacing values [16, 8, 12, 4, 24]; tailwind spacing classes (119))",
+    "project_typography=custom (repository: font family theme (1 refs); tabular numerals)"
+  ],
+  "missing": [
+    "brand: no brand assets, guideline, or character description available"
+  ],
+  "status": "CONFIDENT",
+  "source": {
+    "request": [
+      "detail",
+      "do not line up",
+      "patient"
+    ],
+    "project": [
+      "package.json: svelte@^5.16.0",
+      "package.json: @sveltejs/kit@^2.12.0",
+      "package.json: tailwindcss@^3.4.17"
+    ]
+  },
+  "activation": {
+    "decision": "activate",
+    "ui_score": 2.0,
+    "non_ui_score": 0,
+    "ui_terms": [],
+    "non_ui_terms": []
+  },
+  "intent_evidence": {
+    "existing": [
+      "the patient detail"
+    ],
+    "new": [],
+    "defect": [
+      "do not line up"
+    ],
+    "operations": {},
+    "domains": {
+      "visual": [
+        "line up",
+        "visual problem"
+      ]
+    },
+    "no_change": [],
+    "scope": {
+      "screen": [
+        "detail"
+      ]
+    },
+    "question": false
+  },
+  "scope_evidence": {
+    "ui": [
+      "tab",
+      "billing",
+      "concept:table.tabular_figures"
+    ],
+    "ux_symptoms": [],
+    "technical": {},
+    "non_visual": []
+  }
+}

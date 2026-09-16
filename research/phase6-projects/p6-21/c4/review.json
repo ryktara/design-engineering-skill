@@ -1,0 +1,12 @@
+{"task": "p6-21",
+ "records": [
+   {"id": "chart-geo", "verdict": "off-target", "category": "contradicts-codebase", "why": "Choropleth/symbol-map guidance for a FleetDesk project that contains no map at all."},
+   {"id": "chart-relationship", "verdict": "off-target", "category": "wrong-screen", "why": "Scatter/bubble advice has no bearing on a pane-width contention problem; its own marginal note shows empty task evidence."},
+   {"id": "impl-reuse-before-new", "verdict": "partial", "category": "generic", "why": "True but already covered by SKILL.md; contributed nothing this task needed."},
+   {"id": "desktop-window-resizing", "verdict": "relevant", "category": "", "why": "Breakpoint matrix, documented pane collapse order and star/auto over absolute sizing carried the whole implemented answer."},
+   {"id": "desktop-keyboard-first", "verdict": "partial", "category": "generic", "why": "Correct for the platform but nothing width-related."}
+ ],
+ "missing_critical": [],
+ "unjustified_direction_slots": 1,
+ "layer_review": {"core": ["chart-geo", "chart-relationship"], "critical": ["impl-reuse-before-new", "desktop-window-resizing", "desktop-keyboard-first"], "optional": []},
+ "change_vs_c3": "better - 6 records down to 5 by dropping the off-target layout-states-empty-loading-error, with desktop-window-resizing (the only record used) retained and both critical concepts still covered; the two phantom-map chart cores and the unjustified cards slot are unchanged."}

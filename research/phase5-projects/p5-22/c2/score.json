@@ -1,0 +1,139 @@
+{
+ "task": "p5-22",
+ "build": "50966e8e6184f31722a7b3c7f270a241dd0f7b68187492d0c971f7c79734e680",
+ "c1_recorded": {
+  "platform_expected": "mobile",
+  "platform_resolved": [
+   "mobile"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "new",
+  "artifact_state_correct": false,
+  "mode_expected": [
+   "polish",
+   "refactor",
+   "responsive"
+  ],
+  "mode_resolved": [
+   "create"
+  ],
+  "mode_correct": "no",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "CONFIDENT",
+  "bundle_ids": [
+   "comp-product-detail-page",
+   "comp-drawer-panel",
+   "comp-dialog",
+   "mobile-platform-navigation",
+   "a11y-modal-dialog",
+   "a11y-nontext-contrast"
+  ],
+  "bundle_tokens": 1156,
+  "expected_concepts": [
+   "touch.ime_keyboard",
+   "touch.safe_areas",
+   "layout.one_primary_action",
+   "touch.thumb_reach",
+   "a11y.dialog_focus",
+   "process.safe_modification",
+   "process.reuse_first"
+  ],
+  "critical_concepts": [
+   "touch.ime_keyboard",
+   "touch.safe_areas"
+  ],
+  "delivered_concepts": [
+   "a11y.accessible_names",
+   "a11y.contrast",
+   "a11y.dialog_focus",
+   "feedback.confirmation_destructive",
+   "feedback.trust_signals",
+   "interaction.drawer_focus",
+   "interaction.focus_restore",
+   "interaction.focus_visible",
+   "layout.one_primary_action",
+   "navigation.platform_grammar",
+   "perf.layout_shift",
+   "touch.minimum_target"
+  ],
+  "concept_recall": 0.286,
+  "critical_recall": 0.0,
+  "forbidden_delivered": [],
+  "change_budget": "moderate"
+ },
+ "c2": {
+  "platform_expected": "mobile",
+  "platform_resolved": [
+   "mobile"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "polish",
+   "refactor",
+   "responsive"
+  ],
+  "mode_resolved": [
+   "refactor"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "CONFIDENT",
+  "bundle_ids": [
+   "comp-drawer-panel",
+   "comp-dialog",
+   "media-photo-viewer",
+   "mobile-keyboard-ime",
+   "impl-reuse-before-new",
+   "interaction-drag-drop",
+   "a11y-modal-dialog",
+   "color-states-complete"
+  ],
+  "bundle_tokens": 1289,
+  "expected_concepts": [
+   "touch.ime_keyboard",
+   "touch.safe_areas",
+   "layout.one_primary_action",
+   "touch.thumb_reach",
+   "a11y.dialog_focus",
+   "process.safe_modification",
+   "process.reuse_first"
+  ],
+  "critical_concepts": [
+   "touch.ime_keyboard",
+   "touch.safe_areas"
+  ],
+  "delivered_concepts": [
+   "a11y.dialog_focus",
+   "a11y.live_status",
+   "feedback.confirmation_destructive",
+   "interaction.back_semantics",
+   "interaction.drawer_focus",
+   "interaction.focus_restore",
+   "interaction.focus_visible",
+   "interaction.keyboard_navigation",
+   "interaction.selection_visible",
+   "perf.image_sizing",
+   "perf.layout_shift",
+   "process.reuse_first",
+   "touch.gestures_discoverable",
+   "touch.ime_keyboard",
+   "touch.minimum_target"
+  ],
+  "concept_recall": 0.429,
+  "critical_recall": 0.5,
+  "forbidden_delivered": [
+   "interaction.keyboard_navigation"
+  ],
+  "change_budget": "moderate"
+ }
+}

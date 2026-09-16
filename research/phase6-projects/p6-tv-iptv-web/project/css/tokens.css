@@ -1,0 +1,42 @@
+/* Meridian TV design tokens — dark-first, 10-foot UI */
+:root {
+  /* colour */
+  --bg: #0E1116;
+  --surface: #171C24;
+  --surface-2: #1F2631;
+  --line: #2A323E;
+  --text: #E8ECF1;
+  --text-muted: #8E97A3;
+  --accent: #F2A900;
+  --accent-ink: #1A1200;
+  --live: #E5484D;
+
+  /* TV type scale */
+  --fs-caption: 28px;
+  --fs-body: 32px;
+  --fs-title: 40px;
+  --fs-heading: 56px;
+  --fs-display: 72px;
+  --font: "Roboto", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+
+  /* spacing */
+  --safe-x: 5vw;
+  --safe-y: 5vh;
+  --gap: 24px;
+  --gap-lg: 40px;
+  --radius: 8px;
+
+  /* focus */
+  --focus-ring: 1px solid #F2A900;
+  --focus-scale: 1.02;
+  --focus-ms: 140ms;
+
+  /* cards */
+  --card-w: 384px;
+  --card-h: 216px;
+
+  /* guide */
+  --guide-row-h: 88px;
+  --guide-ch-w: 260px;
+  --guide-slot-w: 240px; /* 30 minutes */
+}

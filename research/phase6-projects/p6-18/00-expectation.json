@@ -1,0 +1,19 @@
+{
+  "platform": "desktop",
+  "artifact_state": "existing",
+  "acceptable_modes": ["refactor", "accessibility", "audit", "polish"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "interaction.keyboard_navigation",
+    "interaction.shortcuts",
+    "interaction.focus_restore",
+    "interaction.focus_visible",
+    "table.inline_edit",
+    "interaction.menu_semantics",
+    "a11y.accessible_names"
+  ],
+  "critical_concepts": ["interaction.keyboard_navigation", "interaction.shortcuts", "table.inline_edit"],
+  "forbidden_concepts": ["touch.minimum_target", "interaction.dpad_reachability", "touch.ime_keyboard", "tv.no_touch_hover", "interaction.command_palette"],
+  "preservation": ["navigation", "theme", "typography"],
+  "notes": "Existing WPF PO-lines grid already keyboard-first (F2/Enter/Tab/Ins/Del/F6/F8, menu access keys, 2px focus ring). Written from the project code before any advise command. Remaining mouse-only paths I expect the change to cover: combo cells (Unit/Warehouse/Status) need F2 + F4/Alt+Down + arrows with no type-to-select; focus is lost after Delete/Undo (arrows stop working until the grid is clicked); the filter box has no Enter-to-grid path; the empty state lands with nothing focused; sorting is header-click only. Budget expectation: low/moderate; navigation (menu+command bar), theme and typography must not change."
+}

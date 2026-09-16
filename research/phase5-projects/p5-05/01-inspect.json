@@ -1,0 +1,118 @@
+{
+  "root": "D:\\indigo pro\\MYownSkills\\research\\phase3-projects\\p3-react-dashboard-polish\\project",
+  "findings": [
+    {
+      "status": "KNOWN",
+      "note": "package.json: react@^18.3.1"
+    },
+    {
+      "status": "KNOWN",
+      "note": "package.json: react-dom@^18.3.1"
+    }
+  ],
+  "stack_groups": [
+    "react"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "ui_libraries": [],
+  "package_manager": "npm",
+  "css_architecture": [
+    "tailwind-classes (1 files)",
+    ".css (1 files)"
+  ],
+  "tokens": [
+    "css custom properties: --color* (29), --sp* (7), --fs* (6), --promo* (2), --exc* (2), --radius* (1), --font* (1), --dur* (1)"
+  ],
+  "fonts": [],
+  "icons": [],
+  "routing": [],
+  "breakpoints": [
+    "1100px (1 rules)",
+    "900px (1 rules)",
+    "640px (1 rules)"
+  ],
+  "accessibility": [
+    "a11y attributes present in 8 files"
+  ],
+  "focus_handling": [
+    "explicit focus handling in 1 files"
+  ],
+  "design_docs": [],
+  "component_dirs": [
+    "src/components/ (7 files)"
+  ],
+  "tests": [],
+  "i18n": [],
+  "product_hints": [],
+  "sample": {
+    "files_scanned": 16
+  },
+  "design_context": {
+    "navigation": {
+      "value": "top-bar",
+      "status": "KNOWN",
+      "evidence": [
+        "top-bar: 5 matches in App.jsx, styles.css (shell/layout file)"
+      ],
+      "candidates": {
+        "top-bar": 5,
+        "hub-spoke": 1
+      }
+    },
+    "theme": {
+      "value": "light-first",
+      "status": "INFERRED",
+      "evidence": [
+        "hex palette: 12 near-white, 1 near-black"
+      ]
+    },
+    "surfaces": {
+      "value": "bordered-flat",
+      "status": "INFERRED",
+      "evidence": [
+        "weak signal: shadow 0, border 1"
+      ]
+    },
+    "radius": {
+      "value": "small",
+      "status": "INFERRED",
+      "evidence": [
+        "most common radius 4 (1\u00d7); others [6.0, 999.0]"
+      ]
+    },
+    "spacing": {
+      "value": "irregular",
+      "status": "UNKNOWN",
+      "evidence": [
+        "most used spacing values [2, 4, 8, 12, 16]",
+        "tailwind spacing classes (5)"
+      ]
+    },
+    "typography": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": [
+        "no font family declaration found"
+      ],
+      "features": {
+        "weights": [
+          "600",
+          "400",
+          "700",
+          "500"
+        ],
+        "type_scale": true,
+        "monospace": false,
+        "tabular_numerals": true
+      }
+    },
+    "components": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "schema": "design-context/v1"
+  }
+}

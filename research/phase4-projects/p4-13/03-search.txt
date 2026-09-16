@@ -1,0 +1,83 @@
+## design-engineering search: refactor the defect report form so it stays usable with the keyboard open and photos can be retaken, keeping the app's existing theme and navigation
+status=CONFIDENT modes=['refactor'] platforms={'mobile': 'KNOWN', 'tv': 'KNOWN'} inputs={'keyboard': 'KNOWN', 'remote': 'KNOWN', 'touch': 'INFERRED'} products={'erp': 'KNOWN', 'iot': 'KNOWN'} density=medium stacks=['flutter'] screens=['form'] negatives=[]
+facets required=['component', 'layout', 'platform', 'interaction', 'navigation', 'anti-pattern'] unmet=[] diversity=0.75
+
+### Mobile: keyboard and input types  `mobile-keyboard-ime`  [rule/forms; component/platform] score 0.542 · platform-standard
+Set keyboard type and autocomplete/textContentType/autofillHints per field, return key action (Next/Done), scroll the focused field above the keyboard, keep the primary action reachable while the keyboard is open (or on the keyboard toolbar), and dismiss on tap outside for non-modal forms.
+- use when: Every text field.
+- avoid when: Never leave the default keyboard for emails, numbers, phone, or URLs; never let the keyboard cover the focused field or the submit button.
+- why: lexical 0.363, structural 0.76 (platform mobile, input touch, mode refactor)
+
+### TV: vertical = sections, horizontal = items  `tv-dpad-axes`  [rule/navigation; navigation/platform] score 0.529 · platform-standard
+Every focusable element must be reachable with straight UP/DOWN/LEFT/RIGHT presses; no diagonal reasoning, no hidden hops. Search and settings live at a predictable edge. Grids: LEFT at the first column may enter side navigation, RIGHT at the last column stays. Forms: one field per row, DOWN advances.
+- use when: Any TV layout: rails, grids, menus, settings, forms.
+- avoid when: Avoid nested horizontal groups inside horizontal groups; avoid controls placed where no straight DPAD path reaches them.
+- why: lexical 0.275, structural 0.84 (platform tv, input remote (stated), mode refactor)
+
+### TV top tabs  `nav-tv-top-tabs`  [pattern/navigation; navigation/platform] score 0.485 · platform-standard
+Tabs sit in the top safe area; Back from any rail jumps focus to the active tab and scrolls to top; focused tab shows the underline/pill with ≥3:1 contrast and the label stays visible. Switching tabs does not move focus into content until the user presses DOWN.
+- use when: Two to five sections, when the left edge must stay free for immersive artwork or when the brand wants a browsing feel closer to a broadcast guide.
+- avoid when: More than five sections, or when rows below are long (UP from deep rows must scroll back to tabs predictably; that gets slow).
+- incompatible with: nav-tv-side, nav-top-bar, nav-left-rail, nav-bottom-tabs
+- why: lexical 0.171, structural 0.78 (platform tv, input remote (stated), mode refactor, density medium)
+
+### Focus-revealed metadata (TV)  `metadata-focus-reveal`  [pattern/metadata; layout/platform] score 0.429 · platform-standard
+Reveal into reserved space (a fixed detail area above the rails or an expanded card whose height is pre-allocated) so rows never jump; keep the reveal text ≥24 sp; delay the reveal ~150 ms so quick scrubbing does not flash text.
+- use when: TV rails: unfocused cards show title only (or nothing over art); the focused card or a fixed detail strip shows synopsis, year, duration, rating.
+- avoid when: Never for touch/pointer; and on TV avoid when the reveal reflows the rail (use a fixed strip instead).
+- incompatible with: metadata-rich, layout-table-first
+- why: lexical 0.015, structural 0.78 (platform tv, input remote (stated), mode refactor, density medium)
+
+### UI changes must not break routes, state, contracts, or tests  `impl-safe-modification`  [rule/implementation; process] score 0.423 · engineering-practice
+Keep routes, state management, API calls, data-testid/automation ids, accessibility semantics, keyboard/remote handling, playback/auth flows unchanged unless the task is about them; run the existing tests; verify each supported input mode still works after the change.
+- use when: Any modification to an existing screen.
+- avoid when: Never rename props/ids/routes/test hooks as part of a visual change; never mix backend changes into a UI commit.
+- why: lexical 0.294, structural 0.58 (mode refactor)
+
+### Scale + glow/border focus (TV)  `focus-scale-glow`  [pattern/focus; interaction/platform] score 0.422 · platform-standard
+Exactly one item focused at all times and it must be on screen; scale must not clip against neighbours (reserve padding = scale overflow); focus state includes a border (2–4 dp) or glow (2–32 dp elevation) plus scale so it survives any artwork; selected ≠ focused (a selected tab still needs a focus treatment); initial focus is deterministic on every screen.
+- use when: All TV UI: focused item scales (1.05–1.1), gains a border or glow with ≥3:1 contrast, and its metadata may expand; unfocused items stay quiet.
+- avoid when: Never elsewhere; and on TV never rely on colour tint alone.
+- incompatible with: focus-ring-standard, focus-none-touch-only, focus-underline
+- why: lexical 0.05, structural 0.7 (platform tv, input remote (stated), mode refactor)
+
+### Form  `comp-form`  [component/form; component] score 0.417 · heuristic
+Labels above, help text below, required marked in text, field widths sized to content, grouped by section with headings, one column, inline validation on blur, error summary on submit with links to fields, primary action last (or sticky), unsaved-changes guard, autosave with status for long forms, autofill attributes. TV: one field per row, DOWN moves to next, system keyboard, minimal fields.
+- use when: Any data entry: settings, checkout, applications, record editing.
+- avoid when: Batch entry of many similar rows (use a data-entry grid); single toggles (inline).
+- why: lexical 0.333, structural 0.52 (mode refactor, screen form)
+
+### Form stack with sections  `layout-form-stack`  [pattern/layout; layout] score 0.414 · heuristic
+Labels above fields (not placeholders), one column except for tightly related pairs (city/postcode), section headings as real headings, inline validation on blur with error text linked via aria-describedby, and the primary action at the end of the form or in a sticky footer. Field width should hint expected length.
+- use when: Data entry and settings: labelled fields in one column, grouped into titled sections, with the save/submit action fixed in a predictable place.
+- avoid when: Spreadsheet-style batch entry (use a data-entry grid), or tiny forms of 1–2 fields (inline them).
+- incompatible with: layout-immersive-rails, layout-rails
+- why: lexical 0.152, structural 0.6 (mode refactor, screen form, density medium)
+
+### Inline badges and status chips  `metadata-inline-badges`  [pattern/metadata; layout/platform] score 0.41 · heuristic
+Pill only for status/category/count; text inside the pill (never colour only); ≤2 per item; consistent colour mapping across the product; not clickable unless it is a filter.
+- use when: Status, category, or count must be scannable in lists and headers (Open/Closed, New, 3 unread).
+- avoid when: As decoration on everything; when more than two badges per item appear, the design has become noisy.
+- incompatible with: metadata-minimal, layout-immersive-rails
+- why: lexical 0.034, structural 0.78 (platform mobile, mode refactor, product erp, density medium)
+
+### Focus visible and not obscured  `a11y-focus-visible`  [rule/focus; interaction/platform] score 0.407 · accessibility-requirement
+Focus indicator ≥2 px with ≥3:1 contrast against adjacent colours and against the unfocused state; sticky UI gets scroll-padding so a focused control scrolls into clear view. On TV the indicator must be obvious at 3 m (scale + border/glow).
+- use when: Every focusable element in every theme; sticky headers, footers, toasts, and cookie banners must never cover the focused element.
+- avoid when: Never remove focus styles; use :focus-visible to hide them for mouse clicks only.
+- why: lexical 0.052, structural 0.84 (platform tv, input keyboard,remote (stated), mode refactor)
+
+### Dark canvas + accent (dark-first)  `color-dark-accent`  [pattern/color; platform/visual] score 0.401 · platform-standard
+Canvas is a dark tinted neutral (not #000 unless OLED black is deliberate), surfaces step lighter with elevation, text primary ≈ 87–92% white not pure white, accent desaturated slightly for dark backgrounds, error/success re-tuned for dark contrast. On TV target ≥7:1 for body text and avoid saturated reds/oranges at large areas (bloom on cheap panels).
+- use when: TV and media (viewing in dim rooms, OLED power), trading/monitoring consoles used for hours, developer tools; when imagery must pop.
+- avoid when: Long-form reading in bright environments, forms-heavy products for the general public, print-adjacent content.
+- incompatible with: color-monochrome-light
+- why: lexical 0.066, structural 0.7 (platform mobile,tv, mode refactor, product iot)
+
+### A desktop or mobile layout enlarged for TV  `anti-desktop-scaled-to-tv`  [antipattern/platform; anti-pattern/platform] score 0.4 · platform-standard
+Rebuild around focus: rails and grids, side/top navigation, one visible focus, 10-foot type scale, safe margins, minimal text entry, transport controls, BACK semantics. Reuse data and business logic, not the layout.
+- use when: TV screens with hover menus, small links, scrollbars, sidebars with 12 items, forms with many fields, hamburger menus, touch gestures, mouse-oriented layouts.
+- avoid when: Never.
+- why: lexical 0.039, structural 0.84 (platform tv, input remote (stated), mode refactor)
+
+Filtered out: anti-generic-sidebar-dashboard (platform ['desktop', 'web'] not in request ['mobile', 'tv']); anti-hover-only-actions (platform ['desktop', 'web'] not in request ['mobile', 'tv']); chart-relationship (platform ['desktop', 'web'] not in request ['mobile', 'tv']); chart-small-multiples (platform ['desktop', 'web'] not in request ['mobile', 'tv']); comp-data-table (platform ['desktop', 'web'] not in request ['mobile', 'tv']); comp-sidebar-nav (platform ['desktop', 'tablet', 'web'] not in request ['mobile', 'tv']); comp-command-palette (platform ['desktop', 'web'] not in request ['mobile', 'tv']); comp-tree-view (platform ['desktop', 'web'] not in request ['mobile', 'tv'])

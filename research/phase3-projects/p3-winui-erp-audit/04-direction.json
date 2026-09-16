@@ -1,0 +1,111 @@
+{
+  "brand": "Warehouse clerks say our WinUI stock adjustments page is confusing and they keep missing rows; the screen reader reads the status column as just text",
+  "fingerprint": {
+    "navigation_model": "breadcrumb-tree",
+    "layout_topology": "rails",
+    "grid_behavior": "horizontal-scroll",
+    "content_density": "medium",
+    "surface_strategy": "bordered",
+    "card_geometry": "list-row",
+    "corner_language": "sharp",
+    "typography_character": "system-native",
+    "color_strategy": "dominant-brand",
+    "motion_character": "focus-scale",
+    "focus_strategy": "ring",
+    "cta_strategy": "focus-selects",
+    "image_strategy": "none",
+    "icon_strategy": "outline",
+    "metadata_density": "inline-badges"
+  },
+  "direction": {
+    "navigation": "nav-breadcrumb-tree",
+    "layout": "layout-rails",
+    "density": "density-medium",
+    "surface": "surface-bordered-panes",
+    "cards": "card-list-row",
+    "typography": "typography-system-native",
+    "color": "color-dominant-brand",
+    "motion": "motion-focus-scale",
+    "focus": "focus-ring-standard",
+    "cta": "cta-focus-selects",
+    "imagery": "imagery-none",
+    "icon": "icon-outline-system",
+    "metadata": "metadata-inline-badges"
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "accessibility",
+      "audit"
+    ],
+    "platform": [
+      "desktop",
+      "tv"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "remote"
+    ],
+    "product": [
+      "erp"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "winui"
+    ],
+    "density": "medium",
+    "components": [],
+    "environment": [
+      "large-display",
+      "shared-device"
+    ],
+    "jobs": [],
+    "problems": [
+      "accessibility",
+      "interaction"
+    ],
+    "risk": "low",
+    "primary_jobs": [
+      "accessibility"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "known": [
+      "platform=desktop",
+      "platform=tv",
+      "input=remote",
+      "product=erp",
+      "stack=winui",
+      "mode=accessibility"
+    ],
+    "inferred": [
+      "input=pointer",
+      "input=keyboard",
+      "density=medium",
+      "mode=audit",
+      "environment=shared-device",
+      "environment=large-display"
+    ],
+    "missing": [],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": false,
+    "violations": [
+      "tv/remote: focus strategy 'ring' is not a 10-foot focus treatment"
+    ]
+  }
+}

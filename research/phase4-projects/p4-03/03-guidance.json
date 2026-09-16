@@ -1,0 +1,434 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "add keyboard shortcuts and a command bar to the existing stock adjustments page without changing its navigation or theme",
+  "status": "PARTIAL",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "desktop"
+    ],
+    "input": [
+      "keyboard",
+      "pointer"
+    ],
+    "product": [
+      "erp"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "winui"
+    ],
+    "density": "high",
+    "components": [
+      "navigation"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "create navigation"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "preserve_navigation": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_INTERACTION",
+      "in_scope": true,
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "mode_evidence": [
+      "create: default (no mode cue)"
+    ],
+    "project_context": {
+      "navigation": "left-rail (KNOWN)",
+      "theme": "dual-theme (INFERRED)",
+      "surfaces": "bordered-flat (INFERRED)",
+      "spacing": "4 (INFERRED)",
+      "components": "winui3, community-toolkit (KNOWN)"
+    },
+    "known": [
+      "platform=desktop",
+      "input=keyboard",
+      "product=erp",
+      "stack=winui",
+      "project_navigation=left-rail",
+      "project_components=winui3, community-toolkit"
+    ],
+    "inferred": [
+      "input=pointer",
+      "density=high",
+      "mode=create",
+      "project_theme=dual-theme",
+      "project_surfaces=bordered-flat",
+      "project_spacing=4"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT"
+  },
+  "scope": {
+    "domain": "UI_INTERACTION",
+    "in_scope": true,
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "component",
+        "reason": "a specific component/screen is requested"
+      },
+      {
+        "concern": "structure",
+        "reason": "layout topology and hierarchy"
+      },
+      {
+        "concern": "navigation",
+        "reason": "entry screen or navigation component"
+      },
+      {
+        "concern": "interaction",
+        "reason": "input model: keyboard,pointer"
+      },
+      {
+        "concern": "accessibility",
+        "reason": "platform accessibility baseline"
+      },
+      {
+        "concern": "data-display",
+        "reason": "numbers, tables or charts are the content"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "states",
+        "reason": "few states; still handle failed media"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "create/refactor requests attract generic defaults"
+      },
+      {
+        "concern": "brand",
+        "reason": "visual identity direction"
+      }
+    ],
+    "optional": [
+      "motion",
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "desktop keyboard-first"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "desktop focus"
+      },
+      {
+        "concept": "table.tabular_figures",
+        "reason": "numeric data"
+      }
+    ],
+    "recommended_concepts": [
+      "interaction.shortcuts",
+      "desktop.persist_workspace",
+      "desktop.fluent_materials",
+      "navigation.orientation_and_back"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "cta-toolbar-commands",
+      "kind": "pattern",
+      "category": "cta",
+      "title": "Toolbar / command bar with selection-driven commands",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "data-display",
+        "interaction",
+        "structure"
+      ],
+      "concepts": [
+        "interaction.shortcuts",
+        "table.selection_bulk"
+      ],
+      "covers": [
+        "keyboard shortcuts / accelerators",
+        "selection state and bulk actions"
+      ],
+      "score": 0.691,
+      "guidance": "Primary commands as labelled buttons, overflow into a menu, disabled (not hidden) when no selection, keyboard accelerators shown in tooltips, and the count of selected items visible near the commands.",
+      "use_when": "Workbenches and tables: commands apply to the current selection, live in a persistent bar, and are mirrored by context menus and shortcuts.",
+      "avoid_when": "Consumer or single-task screens; touch-first products.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "implementation": {
+        "winui": "CommandBar with AppBarButton + KeyboardAccelerator; IsEnabled bound to selection."
+      },
+      "incompatible": [
+        "cta-single-primary",
+        "cta-focus-selects",
+        "cta-sticky-bar"
+      ],
+      "role": "core",
+      "selected_for": "highest-scoring pattern with lexical evidence"
+    },
+    {
+      "id": "imagery-none",
+      "kind": "pattern",
+      "category": "imagery",
+      "title": "No decorative imagery",
+      "facets": [
+        "visual"
+      ],
+      "concerns": [
+        "brand",
+        "content"
+      ],
+      "concepts": [],
+      "covers": [],
+      "score": 0.404,
+      "guidance": "Remove stock photos, abstract blobs, and hero illustrations from working screens; empty states may use a small, meaningful illustration or none. Identity comes from type, colour, and structure.",
+      "use_when": "Operational products: imagery only where it is data (avatars, product thumbnails, charts).",
+      "avoid_when": "Brand or content products where imagery is the content.",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "incompatible": [
+        "imagery-hero",
+        "imagery-immersive-backdrop",
+        "surface-imagery-backed"
+      ],
+      "role": "core",
+      "selected_for": "highest-scoring pattern with lexical evidence"
+    },
+    {
+      "id": "layout-table-first",
+      "kind": "pattern",
+      "category": "layout",
+      "title": "Table-first working screen",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "structure"
+      ],
+      "concepts": [
+        "table.virtualization",
+        "table.tabular_figures"
+      ],
+      "covers": [
+        "virtualization of long collections",
+        "tabular figures and numeric alignment"
+      ],
+      "score": 0.456,
+      "guidance": "Table fills the viewport height with internal scrolling and sticky header, row density selectable, column widths persisted, filters as a row of chips/fields above the table (not a hidden drawer), bulk actions appear in the toolbar on selection. Numeric columns right-aligned with tabular figures. Virtualise beyond a few hundred rows.",
+      "use_when": "The record set is the product (orders, transactions, tickets, inventory): users filter, sort, select, and bulk-act. Screen = toolbar + filters + table + optional side panel.",
+      "avoid_when": "Phone widths (switch to list rows), fewer than ~20 rows, or when each record needs rich media.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "high"
+      },
+      "provenance": "heuristic",
+      "implementation": {
+        "winui": "DataGrid from CommunityToolkit or a virtualised ListView with a header; enable IsItemClickEnabled and keyboard sorting."
+      },
+      "incompatible": [
+        "layout-single-column",
+        "layout-immersive-rails",
+        "layout-feed",
+        "layout-editorial"
+      ],
+      "role": "core",
+      "selected_for": "required coverage: tabular figures and numeric alignment"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "desktop-keyboard-first",
+      "kind": "rule",
+      "category": "input",
+      "title": "Desktop: keyboard is a first-class input",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.keyboard_navigation",
+        "interaction.shortcuts",
+        "interaction.focus_visible"
+      ],
+      "covers": [
+        "keyboard navigation and focus order",
+        "keyboard shortcuts / accelerators",
+        "visible focus"
+      ],
+      "score": 0.402,
+      "guidance": "Document shortcuts in menus and tooltips; F2 edits, Delete deletes with undo, Ctrl+F finds, F6 cycles panes; grids use arrow keys and Ctrl/Shift selection; every dialog has a default and cancel button; access keys shown on Alt (Windows).",
+      "use_when": "Every desktop screen: shortcuts for frequent commands, access keys for menus, Tab/arrow semantics in lists, trees, grids, and toolbars, Enter/Escape in dialogs.",
+      "avoid_when": "Never assign shortcuts that collide with platform or assistive-tech shortcuts; never make Tab stop on every cell of a grid.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "role": "guardrail",
+      "selected_for": "required coverage: visible focus, keyboard navigation and focus order"
+    },
+    {
+      "id": "a11y-hover-not-required",
+      "kind": "rule",
+      "category": "input",
+      "title": "Hover reveals need a non-hover path",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.hover_independence"
+      ],
+      "covers": [
+        "no hover dependence"
+      ],
+      "score": 0.36,
+      "guidance": "Hover-revealed content must also appear on focus and be reachable by touch (persistent affordance, long-press, or an explicit menu). Tooltips: dismissible, hoverable, persistent (WCAG 1.4.13). Never put essential actions only in hover.",
+      "use_when": "Row actions that appear on hover, tooltips, hover cards, mega menus.",
+      "avoid_when": "Never rely on hover alone; touch and keyboard users never hover.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "role": "guardrail",
+      "selected_for": "required coverage: accessibility"
+    },
+    {
+      "id": "desktop-state-persistence",
+      "kind": "rule",
+      "category": "navigation",
+      "title": "Desktop: persist layout and selection state",
+      "facets": [
+        "navigation",
+        "platform"
+      ],
+      "concerns": [
+        "navigation",
+        "states"
+      ],
+      "concepts": [
+        "desktop.persist_workspace"
+      ],
+      "covers": [
+        "persisted workspace and selection"
+      ],
+      "score": 0.344,
+      "guidance": "Restore the workspace on launch (per user, per view), offer 'reset layout', keep undo history per document, and never lose selection on data refresh (re-select by key).",
+      "use_when": "Workbenches used daily: column widths/order, sort, filters, pane sizes, last selected record, open tabs.",
+      "avoid_when": "Do not persist transient errors or half-typed forms without telling the user.",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "role": "guardrail",
+      "selected_for": "required coverage: navigation"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "component",
+      "structure",
+      "navigation",
+      "interaction",
+      "accessibility",
+      "data-display"
+    ],
+    "covered_required_concerns": [
+      "structure",
+      "navigation",
+      "interaction",
+      "accessibility",
+      "data-display"
+    ],
+    "uncovered_required_concerns": [
+      "component"
+    ],
+    "recommended_concerns": [
+      "states",
+      "anti-pattern",
+      "brand"
+    ],
+    "covered_recommended_concerns": [
+      "states",
+      "brand"
+    ],
+    "coverage_ratio": 0.83,
+    "required_concepts": [
+      "interaction.keyboard_navigation",
+      "interaction.focus_visible",
+      "table.tabular_figures"
+    ],
+    "covered_required_concepts": [
+      "interaction.keyboard_navigation",
+      "interaction.focus_visible",
+      "table.tabular_figures"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.5,
+    "bundle_size": 6,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 3,
+    "guardrail_size": 3,
+    "bundle_tokens": 807,
+    "coverage_per_1k_tokens": 3.72,
+    "mean_purity": 0.83,
+    "contaminated": [],
+    "category_diversity": 0.83,
+    "duplicate_pressure": 0.33,
+    "facet_coverage": 0.67,
+    "redundancy": 0.27
+  },
+  "token_coverage": 0.91
+}

@@ -1,0 +1,28 @@
+{"task": "p4-15", "project": "p3-kiosk-pharmacy", "platform": "kiosk (public touch, portrait 1080x1920)", "stack": "html-css (cascade layers, custom-property tokens) + vanilla ES modules, no build", "existing_ui": true, "existing_project_new_flow": true, "mode": "accessibility+create", "change_budget": "low",
+ "render_mode": "html",
+ "render_note": "Playwright 1.63.0 at 1080x1920 against the project served by the Phase 3 render/server.js; Phase 3 interact.js re-run as a regression suite (70/70)",
+ "screenshots": ["render/first-01-attract-chooser.png", "render/first-02-attract-chooser-es.png", "render/first-03-attract-chooser-es-a11y.png", "render/first-04-attract-dismissed-es-a11y.png", "render/first-05-identify-dob-es-a11y.png", "render/first-06-idle-es-a11y.png", "render/first-07-attract-after-reset.png", "render/first-08-attract-dismissed.png", "render/first-09-a11y-attract-chooser.png", "render/final-01-attract-chooser.png", "render/final-02-attract-chooser-es.png", "render/final-03-attract-chooser-es-a11y.png", "render/final-04-attract-dismissed-es-a11y.png", "render/final-05-identify-dob-es-a11y.png", "render/final-06-idle-es-a11y.png", "render/final-07-attract-after-reset.png", "render/final-08-attract-dismissed.png", "render/final-09-a11y-attract-chooser.png"],
+ "context_detection": {"navigation": "yes", "theme": "no", "typography": "partial", "surfaces": "no", "spacing": "no"},
+ "context_detection_notes": ["platforms=['web'] for a fixed 1080x1920 kiosk (README 'kiosk', viewport width=1080) -> requirements platform conflict -> status AMBIGUOUS", "theme UNKNOWN although tokens.css defines a second token set under html[data-a11y='on']", "surfaces elevated from the single attract pulse box-shadow; 3 px borders everywhere", "spacing 'irregular' (6, 10) although --space-1..7 is an 8-based scale", "i18n [] despite js/i18n.js en/es tables", "product government wrong"],
+ "preservation": {"navigation": true, "theme": true, "typography": true, "component_reuse": true, "unjustified_structural_change": 0},
+ "first_render_defects": {"visual": 1, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 1, "implementation-bug": 0},
+ "final_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+ "iterations": 2, "guidance_relevant": 4, "guidance_partial": 1, "guidance_offtarget": 1,
+ "guidance_metrics": {"concept_coverage": "6/7", "coverage_per_1k_tokens": 8.26, "contaminated": [], "purity": 1.0, "tokens": 726, "uncovered_required_concerns": ["component"], "uncovered_required_concepts": ["a11y.semantics"], "status": "AMBIGUOUS"},
+ "direction_validation": {"ok": true, "violations": []},
+ "interaction_test": {"file": "05-interaction.json", "first_run": "05-interaction-first.json", "checks": 25, "passed_first": 24, "passed_final": 25, "phase3_regression": {"before": "05-phase3-interaction-before.json", "after": "05-phase3-interaction-after.json", "passed": 70, "failed": 0}, "min_target_px": 72, "a11y_reach_zone_ok": true, "idle_reset_ok": true, "persist_through_flow_ok": true},
+ "files_changed": ["project/js/i18n.js", "project/js/screens.js", "project/js/app.js", "project/css/kiosk.css", "project/README.md"],
+ "misses": [
+  {"layer": "requirements", "what": "status AMBIGUOUS from the inspector's platform=web on a kiosk project; intent.existing=false / scope greenfield for a change to the existing attract screen; 'without changing the pick-up flow' not captured in negative_constraints/preserve; screen/components empty"},
+  {"layer": "bundle-selection", "what": "comp-empty-state chosen as core on lexical 0.117; impl-safe-modification and a11y-time-and-auto not selected"},
+  {"layer": "candidate-retrieval", "what": "no record for a kiosk language switcher / first-visit chooser; nearest hits are anti-style-before-product and onboarding-first-run (mobile permission priming)"},
+  {"layer": "direction", "what": "imagery-illustration as a new slot for a chooser; colour slot 'new' (neutral + accent) because theme was UNKNOWN, while the repo has a dominant brand-green field"}
+ ],
+ "knowledge_gaps": ["kiosk language switcher / first-visit chooser: each language in its own name, immediate effect, per-visitor reset on idle, never blocks Start", "accessible-mode chooser semantics (state buttons vs action toggle; reach-zone placement)"],
+ "regressions": [
+  {"query": "inspect an HTML project with meta viewport width=1080, README 'kiosk', fixed 1080x1920 body", "expect": "platforms=['kiosk']; no request/project platform conflict"},
+  {"query": "inspect tokens.css with an html[data-a11y='on'] override set", "expect": "theme = dual (attribute-keyed high contrast); surfaces bordered-flat; spacing 8-based; i18n detected"},
+  {"query": "add a chooser to the kiosk attract screen without changing the pick-up flow", "expect": "intent.existing true, preserve/negative_constraints include the flow, impl-safe-modification in guardrails, core not comp-empty-state"},
+  {"query": "language selector on a kiosk attract screen", "expect": "a kiosk language-switcher record in the bundle (once added)"}
+ ],
+ "tags": ["context-detection-miss", "requirements-miss", "concept-miss", "ranking-miss", "knowledge-gap", "direction-mismatch", "render-defect-fixed", "skill-helped", "preservation-ok"]}

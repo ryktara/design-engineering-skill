@@ -1,0 +1,128 @@
+{
+  "task": "p6-21",
+  "project": "p5-avalonia-fleet",
+  "platform_expected": "desktop",
+  "platform_resolved": "desktop",
+  "platform_correct": "yes",
+  "stack": "avalonia",
+  "existing_ui": true,
+  "new_screen": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": ["responsive", "refactor", "polish"],
+  "mode_resolved": ["responsive", "audit"],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "moderate",
+  "render_mode": "html-twin",
+  "screenshots": [
+    "render/first-vehicles-1280x800.png",
+    "render/first-vehicles-1024x700.png",
+    "render/first-vehicles-900x700.png",
+    "render/final-vehicles-1280x800.png",
+    "render/final-vehicles-1100x700.png",
+    "render/final-vehicles-900x700.png"
+  ],
+  "context_detection": {
+    "navigation": "yes",
+    "theme": "yes",
+    "typography": "yes",
+    "surfaces": "yes",
+    "spacing": "partial"
+  },
+  "preservation": {
+    "navigation": true,
+    "theme": true,
+    "typography": true,
+    "component_reuse": true,
+    "unjustified_structural_change": 0
+  },
+  "expected_concepts": [
+    "adaptive.breakpoint_matrix",
+    "table.column_priority",
+    "layout.spacing_scale",
+    "desktop.spacing_grid",
+    "process.safe_modification",
+    "content.readable_measure"
+  ],
+  "critical_concepts": ["adaptive.breakpoint_matrix", "table.column_priority"],
+  "delivered_concepts": [
+    "adaptive.breakpoint_matrix",
+    "table.column_priority",
+    "process.reuse_first",
+    "interaction.keyboard_navigation",
+    "interaction.shortcuts",
+    "interaction.focus_visible",
+    "state.loading_empty_error",
+    "data.chart_by_question",
+    "data.accessible_chart_alternative"
+  ],
+  "concept_recall": 0.33,
+  "critical_recall": 1.0,
+  "concept_misses": [
+    {"concept": "layout.spacing_scale", "layer": "expected-concepts"},
+    {"concept": "desktop.spacing_grid", "layer": "expected-concepts"},
+    {"concept": "process.safe_modification", "layer": "expected-concepts"},
+    {"concept": "content.readable_measure", "layer": "expected-concepts"}
+  ],
+  "first_render_defects": {"visual": 1, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+  "final_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+  "iterations": 2,
+  "guidance_relevant": 1,
+  "guidance_partial": 2,
+  "guidance_offtarget": 3,
+  "bad_guidance": [
+    {"record": "chart-geo", "category": "contradicts-codebase", "why": "choropleth / symbol map guidance selected from the sentence's word 'map'; the project contains no map and no chart of any kind"},
+    {"record": "chart-relationship", "category": "wrong-screen", "why": "scatter / bubble guidance; unrelated to a map-vs-list width contention, and its own marginal record shows empty task evidence"},
+    {"record": "layout-states-empty-loading-error", "category": "generic", "why": "empty / loading / error states were not part of the request and the view has no async data"},
+    {"record": "desktop-keyboard-first", "category": "generic", "why": "correct for the platform but says nothing about narrow widths; existing keyboard behaviour needed no change"},
+    {"record": "impl-reuse-before-new", "category": "generic", "why": "duplicates SKILL.md section 2; added nothing to this task"}
+  ],
+  "layer_review": {
+    "core": ["chart-geo", "chart-relationship"],
+    "critical": ["impl-reuse-before-new", "desktop-window-resizing", "desktop-keyboard-first", "layout-states-empty-loading-error"],
+    "optional": [],
+    "optional_useful": 0,
+    "optional_noise": 0
+  },
+  "guidance_used": ["desktop-window-resizing"],
+  "guidance_ignored": [
+    {"id": "chart-geo", "why": "no map exists anywhere in the project"},
+    {"id": "chart-relationship", "why": "no chart in the project and no relationship to the request"},
+    {"id": "layout-states-empty-loading-error", "why": "no state work in scope; would have been an unjustified change"},
+    {"id": "desktop-keyboard-first", "why": "unrelated to width; existing keyboard behaviour preserved unchanged"},
+    {"id": "impl-reuse-before-new", "why": "already covered by SKILL.md section 2; followed regardless"}
+  ],
+  "unjustified_direction_slots": 1,
+  "process_records_needed": false,
+  "skill_effect": "helped",
+  "guidance_tokens": 715,
+  "misses": [
+    {"layer": "candidate-compatibility", "what": "screen_subtype 'map' taken from the sentence and never reconciled against the inspected project, which has no map; both CORE records are map/chart guidance"},
+    {"layer": "expected-concepts", "what": "spacing-scale, desktop control-grid, safe-modification and readable-measure concepts were never demanded for a narrow-width layout request"},
+    {"layer": "project-context", "what": "inspect_project.py reports tokens [] and spacing 4 for a project whose Styles/Theme.axaml is a full token dictionary declaring an 8px scale"},
+    {"layer": "direction", "what": "cards slot marked 'new' -> card-list-row on an existing DataGrid UI with a moderate budget"}
+  ],
+  "knowledge_gaps": [
+    "no record pairs column priority with where the dropped values go (detail pane / summary row / tooltip); desktop-window-resizing names the collapse but not the recovery"
+  ],
+  "regressions": [
+    {"query": "The vehicle map and the list fight for space when the window is narrow.", "expect": "with an Avalonia/WPF project inspection containing no map or chart evidence, no chart-* record in CORE; desktop-window-resizing present"},
+    {"query": "narrow-width table/grid request on desktop", "expect": "table.column_priority AND a record naming where dropped column values remain visible"},
+    {"query": "inspect an Avalonia Styles/*.axaml resource dictionary", "expect": "tokens non-empty; declared 8px spacing scale preferred over literal-frequency 4"}
+  ],
+  "tags": [
+    "skill-helped",
+    "concept-miss",
+    "context-detection-miss",
+    "direction-mismatch",
+    "render-defect-fixed",
+    "preservation-ok",
+    "tooling-limit"
+  ],
+  "build_hash_start": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947",
+  "build_hash_end": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947"
+}

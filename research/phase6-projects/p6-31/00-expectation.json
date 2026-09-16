@@ -1,0 +1,18 @@
+{
+  "platform": "kiosk",
+  "artifact_state": "existing",
+  "acceptable_modes": ["polish", "refactor", "accessibility"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "touch.minimum_target",
+    "a11y.accessible_names",
+    "a11y.live_status",
+    "layout.spacing_scale",
+    "a11y.contrast",
+    "interaction.selection_visible"
+  ],
+  "critical_concepts": ["touch.minimum_target", "a11y.accessible_names"],
+  "forbidden_concepts": ["tv.ten_foot_typography", "interaction.dpad_reachability", "touch.thumb_reach", "navigation.deep_link_state", "brand.dark_mode_redesign"],
+  "preservation": ["navigation", "theme", "typography"],
+  "reviewer_note": "qty__btn is 40x40px inside a system whose --touch token is 72px and whose README promises a 72px minimum target; the two buttons are stacked vertically with a 12px gap either side of no label, glyphs are 24px (body is 28px), there is no live announcement of the changing count, and disabled-at-bounds state is conveyed only by opacity 0.4 (btn rule does not even apply — .qty__btn has no .btn class, so disabled has NO visual treatment at all). Expected fix: size the steppers to >= --touch (ideally larger for older users), lay them out horizontally flanking the value, give real accessible names, announce the value, and give a visible disabled state. Must not touch idle timeout or i18n strings."
+}

@@ -1,0 +1,84 @@
+## design-engineering search: Add a subtitles and audio language chooser to the player.
+status=CONFIDENT modes=['create'] platforms={} inputs={} products={'media': 'KNOWN'} density=medium stacks=[] screens=['player'] negatives=[]
+facets required=['component', 'layout', 'navigation', 'direction'] unmet=['direction'] diversity=0.75
+MISSING: platform: not stated and not detectable from a repository; brand: no brand assets, guideline, or character description available; stack: implementation stack not stated and no repository evidence
+
+### TV: transport control conventions  `tv-player-controls`  [rule/player; component/platform] score 0.647 · platform-standard
+Media keys work without showing the overlay (PLAY/PAUSE, FF/RW); DPAD_CENTER on the playing video toggles play/pause or shows controls (pick one and be consistent with the platform); LEFT/RIGHT on the progress bar seek in fixed steps with preview; overlay auto-hides after 3–5 s of no input (any key resets the timer; do not hide while a control is receiving input); subtitle/audio pickers are side sheets that keep playback visible; live TV adds channel UP/DOWN and a mini guide.
+- use when: Video/audio playback screens.
+- avoid when: Never hide controls while a control is focused; never require SELECT twice to pause.
+- why: lexical 0.816, structural 0.44 (mode create, product media)
+
+### Player with overlay controls  `layout-split-player`  [pattern/layout; layout/platform] score 0.599 · platform-standard
+Controls overlay with a scrim, show on any key/tap/mouse move, hide after ~3–5 s of inactivity but never while a control has focus or a menu is open; first focus lands on play/pause; LEFT/RIGHT seek with visible thumbnail/time; subtitles and audio selection in a side sheet that pauses the auto-hide; the progress bar is a real slider with keyboard/remote semantics and a text time readout.
+- use when: Full-screen playback with transient controls (scrub, play/pause, next, subtitles, quality) that appear on input and hide on inactivity.
+- avoid when: Never for non-media; for audio-only use a persistent mini-player instead.
+- incompatible with: layout-table-first, layout-dashboard-grid, surface-bordered-panes
+- why: lexical 0.646, structural 0.52 (mode create, product media, screen player)
+
+### Player transport controls  `comp-player-controls`  [component/player; component/platform] score 0.551 · platform-standard
+Play/pause, seek slider with time readout and keyboard/remote stepping, skip ±10 s, next/previous where relevant, captions and audio track selectors, quality only if user-facing, live indicator and go-to-live for live streams, volume on web/desktop only (TV uses the remote), controls overlay auto-hides except while focused/hovered; every control labelled; captions styling respects system preferences.
+- use when: Video/audio playback surfaces.
+- avoid when: Never custom-build when the platform control set already meets the need and the brand allows it.
+- why: lexical 0.577, structural 0.52 (mode create, product media, screen player)
+
+### Web fonts: subset, preload, fallback metrics, language coverage  `typo-font-loading-coverage`  [rule/typography; platform/visual] score 0.363 · engineering-practice
+Self-host, subset by unicode-range, variable font if it saves bytes, preload the above-the-fold face, font-display: swap with size-adjust fallback, ≤2 families, verify glyph coverage and tabular figures, and confirm the licence.
+- use when: Any non-system font on the web; multilingual products; TV web apps.
+- avoid when: Never load six weights when two are used; never pick a display font without checking the product's scripts (Arabic, CJK, Cyrillic, Devanagari).
+- why: lexical 0.251, structural 0.5 (mode create)
+
+### Focus is the action (TV)  `cta-focus-selects`  [pattern/cta; layout/platform] score 0.336 · platform-standard
+No 'button-like' cards with an inner button; the whole card is focusable and selectable. Detail screen: ≤4 actions in one row, first focus on Play/Resume, LEFT/RIGHT between them, DOWN to rails. Long press or a Menu key can open secondary actions. Never require diagonal or multi-key gestures.
+- use when: TV browse/detail screens: the focused card is the call to action, SELECT opens, and detail screens expose a small row of focusable buttons (Play, Resume, Add to list) with a deterministic first focus.
+- avoid when: Never on touch/pointer platforms.
+- incompatible with: cta-single-primary, cta-toolbar-commands, cta-sticky-bar
+- why: lexical 0.041, structural 0.52 (mode create, product media, screen player)
+
+### Landscape media cards (16:9)  `card-poster-landscape`  [pattern/cards; layout/platform] score 0.311 · platform-standard
+Fixed 16:9, progress bar inside the art bottom edge with a scrim, duration/remaining badge with text, channel logo for live, 4 per row on TV at 960 dp with 20 dp gutters, title below.
+- use when: Episodes, live channels, sports, continue-watching rows, video tutorials: landscape thumbnails with a progress bar and duration.
+- avoid when: Portrait-native art collections.
+- incompatible with: card-list-row, card-poster-portrait, layout-table-first
+- why: lexical 0.0, structural 0.58 (mode create, product media, density medium)
+
+### Poster art as primary recognition  `imagery-poster`  [pattern/imagery; platform/visual] score 0.311 · platform-standard
+One aspect ratio per rail (2:3 portrait or 16:9 landscape), title text below or revealed on focus (never over the art without a scrim), placeholders with the title text for missing art, images sized to the rendered card (no 4K posters in 200 px cards), progressive loading with a low-res or colour placeholder.
+- use when: Catalogues where the artwork is how users recognise items (films, shows, albums, courses, products).
+- avoid when: Items without consistent artwork, or when text metadata is the recognition cue (documents, transactions).
+- incompatible with: imagery-none, layout-table-first, surface-bordered-panes
+- why: lexical 0.0, structural 0.58 (mode create, product media, density medium)
+
+### Portrait poster cards (2:3)  `card-poster-portrait`  [pattern/cards; layout/platform] score 0.301 · platform-standard
+Fixed 2:3 ratio, title below the art (not over it) unless the art contains the title reliably, placeholder with title text, scale on focus with reserved margin. On TV about 6 per row at 960 dp width with 20 dp gutters.
+- use when: Films, series, books, courses with portrait key art; rails or grids of 5–7 visible items on TV.
+- avoid when: Landscape-only art (episodes, live channels, sports) or when titles must be read without the art.
+- incompatible with: card-list-row, card-flat-tile, layout-table-first
+- why: lexical 0.0, structural 0.58 (mode create, product media, density medium)
+
+### Multicolour by category  `color-multicolour-semantic`  [pattern/color; visual] score 0.299 · heuristic
+Category colours from a colour-blind-safe categorical palette, always paired with a label or icon, kept out of the action/status roles; neutrals for everything else so the categories stand out.
+- use when: Categories that users must tell apart at a glance (subjects, channels, calendars, wards) and there are ≤8 of them.
+- avoid when: More than ~8 categories, or when colour would also be needed for status (conflict).
+- incompatible with: color-duotone, color-monochrome-light
+- why: lexical 0.0, structural 0.62 (mode create, product media, density medium)
+
+### Condensed display for broadcast/media  `typography-condensed-display`  [pattern/typography; platform/visual] score 0.281 · aesthetic
+Condensed only for titles and channel names (e.g. Barlow Condensed, Oswald, Roboto Condensed, Archivo Narrow) at heavy weights; body and metadata in a normal-width sans with tabular figures for times.
+- use when: Sports, live TV, EPG and news where many titles must fit and a broadcast feel is wanted.
+- avoid when: Body text, small sizes on TV (condensed faces lose legibility below ~24 sp), forms.
+- incompatible with: typography-serif-editorial, typography-humanist-sans, density-low
+- why: lexical 0.0, structural 0.58 (mode create, product media, density medium)
+
+### Bottom tab bar  `nav-bottom-tabs`  [pattern/navigation; navigation/platform] score 0.268 · platform-standard
+3–5 items, icon + label always (no icon-only), safe-area aware, current item indicated by more than tint. Each tab keeps its own navigation stack. Don't put actions (compose, add) in the tab bar unless it is the app's primary action and it is styled as an action, not a destination.
+- use when: Phone apps with 3–5 top-level destinations of similar importance that users switch between often.
+- avoid when: More than five destinations, tablet/desktop widths (use a rail), single-flow apps, or when one destination dominates usage.
+- incompatible with: nav-left-rail, nav-top-bar, nav-tv-side, nav-tv-top-tabs
+- why: lexical 0.031, structural 0.38 (mode create, density medium)
+
+### Pills for everything  `anti-pill-everything`  [antipattern/generic-ai; anti-pattern] score 0.265 · heuristic
+Pick one corner language for controls (small/medium radius) and reserve full-round for chips/badges; ≤2 badges per item; buttons and inputs share a radius; if everything is a pill, nothing reads as a tag.
+- use when: Pill-shaped buttons, inputs, nav items, badges, and tags all at once; pill badges on every list item.
+- avoid when: Pills are right for filters/tags, compact status, segmented controls.
+- why: lexical 0.04, structural 0.54 (mode create)

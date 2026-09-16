@@ -1,0 +1,988 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "Add a team members page with an invite flow, consistent with the rest of the settings area.",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [
+      "finance",
+      "saas"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "nextjs",
+      "react",
+      "shadcn",
+      "tailwind"
+    ],
+    "density": "high",
+    "components": [],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "create"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "preserve_color": true,
+      "preserve_typography": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "create"
+      ],
+      "problem_domain": [],
+      "change_scope": "screen",
+      "utterance": "request",
+      "existing": true,
+      "problem": false,
+      "facet": "general",
+      "diagnose_only": false,
+      "creation": true,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [
+        "system"
+      ],
+      "scope": "moderate"
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "create: build/create request on an existing surface"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "left-rail",
+        "status": "KNOWN",
+        "evidence": [
+          "left-rail: 1 matches in app-shell.tsx (shell/layout file)"
+        ]
+      },
+      "theme": {
+        "value": "dual-theme",
+        "status": "KNOWN",
+        "evidence": [
+          "dark theme configuration signals: 1",
+          "root/canvas backgrounds: 1 light, 0 dark",
+          "hex palette: 15 near-white, 9 near-black"
+        ],
+        "default": "light"
+      },
+      "surfaces": {
+        "value": "bordered-flat",
+        "status": "INFERRED",
+        "evidence": [
+          "borders in 11 files, shadow/elevation in 1"
+        ]
+      },
+      "radius": {
+        "value": "small",
+        "status": "INFERRED",
+        "evidence": [
+          "most common radius 0.5 (1×); others []"
+        ]
+      },
+      "spacing": {
+        "value": 8,
+        "status": "INFERRED",
+        "evidence": [
+          "most used spacing values [8, 16, 12, 4, 24]",
+          "tailwind spacing classes (112)"
+        ]
+      },
+      "typography": {
+        "value": "custom",
+        "status": "KNOWN",
+        "evidence": [
+          "font family Var (2 refs)",
+          "monospace usage",
+          "tabular numerals"
+        ]
+      },
+      "components": {
+        "value": "tailwind, radix, shadcn-style cva, table:tanstack, shadcn",
+        "status": "KNOWN",
+        "evidence": [
+          "tailwind",
+          "radix",
+          "shadcn-style cva"
+        ]
+      }
+    },
+    "known": [
+      "platform=web (project inspection)",
+      "product=finance (project inspection (README))",
+      "product=saas (project inspection (README))",
+      "stack=nextjs (project inspection)",
+      "stack=react (project inspection)",
+      "stack=tailwind (project inspection)",
+      "stack=shadcn (project inspection)",
+      "project_navigation=left-rail (repository: left-rail: 1 matches in app-shell.tsx (shell/layout file))",
+      "project_theme=dual-theme (repository: dark theme configuration signals: 1; root/canvas backgrounds: 1 light, 0 dark)",
+      "project_typography=custom (repository: font family Var (2 refs); monospace usage)",
+      "project_components=tailwind, radix, shadcn-style cva, table:tanstack, shadcn (repository: tailwind; radix)"
+    ],
+    "inferred": [
+      "input=pointer (implied by platform web)",
+      "input=keyboard (implied by platform web)",
+      "input=touch (implied by platform web)",
+      "density=high (implied by product finance)",
+      "mode=create (build/create request on an existing surface)",
+      "project_surfaces=bordered-flat (repository: borders in 11 files, shadow/elevation in 1)",
+      "project_radius=small (repository: most common radius 0.5 (1×); others [])",
+      "project_spacing=8 (repository: most used spacing values [8, 16, 12, 4, 24]; tailwind spacing classes (112))"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [],
+      "project": [
+        "package.json: next@15.3.0",
+        "package.json: react@19.1.0",
+        "package.json: react-dom@19.1.0",
+        "package.json: tailwindcss@4.1.3",
+        "package.json: @radix-ui/react-dialog@1.1.6",
+        "package.json: class-variance-authority@0.7.1",
+        "package.json: lucide-react@0.487.0",
+        "package.json: @tanstack/react-table@8.21.2",
+        "package.json: recharts@2.15.2",
+        "package.json: eslint-plugin-jsx-a11y@6.10.2",
+        "package.json: @playwright/test@1.52.0",
+        "package.json: next-intl@4.0.2"
+      ]
+    },
+    "activation": {
+      "decision": "ambiguous",
+      "ui_score": 1.0,
+      "non_ui_score": 0,
+      "ui_terms": [
+        "page"
+      ],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "consistent with"
+      ],
+      "new": [],
+      "defect": [],
+      "operations": {
+        "create": [
+          "add",
+          "add a"
+        ]
+      },
+      "domains": {},
+      "no_change": [],
+      "scope": {
+        "flow": [
+          "flow"
+        ],
+        "screen": [
+          "page",
+          "settings"
+        ]
+      },
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "page",
+        "settings",
+        "flow"
+      ],
+      "ux_symptoms": [],
+      "technical": {
+        "BACKEND": [
+          "rest"
+        ]
+      },
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "structure",
+        "reason": "layout topology and hierarchy"
+      },
+      {
+        "concern": "interaction",
+        "reason": "input model: keyboard,pointer,touch"
+      },
+      {
+        "concern": "accessibility",
+        "reason": "platform accessibility baseline"
+      },
+      {
+        "concern": "data-display",
+        "reason": "numbers, tables or charts are the content"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "navigation",
+        "reason": "how users arrive and leave"
+      },
+      {
+        "concern": "states",
+        "reason": "few states; still handle failed media"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "create/refactor requests attract generic defaults"
+      },
+      {
+        "concern": "brand",
+        "reason": "visual identity direction"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "viewport range"
+      },
+      {
+        "concern": "feedback",
+        "reason": "sensitive domain: errors must be recoverable"
+      }
+    ],
+    "optional": [
+      "motion",
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "process.reuse_first",
+        "reason": "existing repository: reuse its primitives"
+      },
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "web content must be keyboard operable"
+      },
+      {
+        "concept": "interaction.hover_independence",
+        "reason": "web is used with touch as well as pointer"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "web keyboard focus"
+      },
+      {
+        "concept": "feedback.validation_errors",
+        "reason": "form"
+      },
+      {
+        "concept": "table.tabular_figures",
+        "reason": "numeric data"
+      }
+    ],
+    "recommended_concepts": [
+      "state.loading_empty_error",
+      "touch.minimum_target",
+      "adaptive.breakpoint_matrix",
+      "form.autofill_attributes",
+      "feedback.confirmation_destructive",
+      "interaction.shortcuts",
+      "a11y.live_status"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "comp-plan-comparison",
+      "kind": "component",
+      "category": "settings",
+      "title": "Plan comparison and billing management",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "data-display",
+        "feedback",
+        "structure"
+      ],
+      "concepts": [
+        "table.tabular_figures",
+        "layout.one_primary_action",
+        "a11y.color_not_only",
+        "feedback.confirmation_destructive",
+        "table.selection_bulk",
+        "data.comparison_structure"
+      ],
+      "covers": [
+        "tabular figures and numeric alignment",
+        "one primary action per view",
+        "no colour alone for status",
+        "confirmation of destructive or high-risk actions",
+        "selection state and bulk actions",
+        "aligned comparison structure with one recommended choice"
+      ],
+      "score": 0.365,
+      "guidance": "Plans are a radio group of equal-width cards with the current plan marked in text (not colour only), prices with tabular figures and the billing period stated, a feature list with real text (no bare check marks without labels), and one primary action per state (Upgrade / Downgrade / Current); every card is one Tab stop with a visible focus ring, arrow keys move between plans; seat management is a data table (name, role, status, last active) with row actions reachable from the keyboard and a bulk selection state; invoice history is a table with date, amount (tabular), status text + icon and a real download link (not a hover-only icon); plan changes and seat removals confirm in a dialog that states the billing consequence and returns focus; billing settings sub-navigation is a vertical list with aria-current.",
+      "use_when": "Billing/plan pages: choosing or changing a plan, seat management, invoice history, payment method.",
+      "avoid_when": "Public pricing marketing pages (hero + narrative) or checkout for a one-off purchase.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "implementation": {
+        "nextjs": "Server component for the invoice table; client radio group for plans; shadcn Dialog with returnFocus; Table with <th scope> and numeric cells using tabular-nums.",
+        "react": "role=radiogroup on the plan row; roving tabindex; download as <a download> with the file name in the link text."
+      },
+      "why": {
+        "lexical": 0.124,
+        "structural": 0.66,
+        "matched": [
+          "platform web",
+          "mode create",
+          "product saas"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "a11y-keyboard-operable",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Everything operable by keyboard, no traps",
+      "facets": [
+        "accessibility",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.keyboard_navigation",
+        "interaction.hover_independence"
+      ],
+      "covers": [
+        "keyboard navigation and focus order",
+        "no hover dependence"
+      ],
+      "score": 0.324,
+      "guidance": "Tab reaches every control in visual order; composite widgets use arrow keys with a roving tabindex so Tab is not consumed by every cell; Escape closes layers and returns focus to the invoker; nothing traps focus except a modal, and the modal itself must be escapable. Provide a keyboard alternative for every drag interaction.",
+      "use_when": "Every interactive element, including custom widgets, drag/drop, sliders, menus, date pickers, and anything that appears on hover.",
+      "avoid_when": "Never skip.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.72,
+        "matched": [
+          "platform web",
+          "input keyboard",
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: accessibility, interaction, no hover dependence, keyboard navigation and focus order"
+    },
+    {
+      "id": "a11y-skip-link",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Bypass blocks: skip links and landmark shortcuts",
+      "facets": [
+        "accessibility",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility"
+      ],
+      "concepts": [
+        "interaction.keyboard_navigation",
+        "a11y.semantics",
+        "interaction.focus_visible"
+      ],
+      "covers": [
+        "keyboard navigation and focus order",
+        "semantic structure and roles",
+        "visible focus"
+      ],
+      "score": 0.324,
+      "guidance": "Provide a 'Skip to <region>' link as the first focusable element (visible on focus), targets with tabindex=-1 and a heading; expose landmarks (main, nav, region with aria-label) so screen-reader users can jump; keep the number of tab stops before the first control small (≤ 5) and give composite widgets a single tab stop.",
+      "use_when": "Any page where the keyboard user must tab through navigation, headers or a chart before reaching controls such as filters, forms or the main content.",
+      "avoid_when": "Never make the skip link the only visible-on-focus element without a focus ring; never point it at an element that cannot receive focus.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.72,
+        "matched": [
+          "platform web",
+          "input keyboard",
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: visible focus"
+    },
+    {
+      "id": "impl-reuse-before-new",
+      "kind": "rule",
+      "category": "implementation",
+      "title": "Reuse → extend → compose → new (in that order)",
+      "facets": [
+        "process"
+      ],
+      "concerns": [
+        "structure"
+      ],
+      "concepts": [
+        "process.reuse_first"
+      ],
+      "covers": [
+        "reuse → extend → compose → new"
+      ],
+      "score": 0.243,
+      "guidance": "Inspect the repository first (inspect_project.py): existing components, tokens, fonts, breakpoints, and conventions win. Reuse the existing component; if it lacks a variant, extend it through its API; if the composition is new, compose existing primitives; only create a new primitive when the gap is real, and put it where the others live.",
+      "use_when": "Any UI change in an existing codebase.",
+      "avoid_when": "Never install a second component library or a UI framework to build one screen; never fork a design-system component when a variant prop would do.",
+      "risk": {
+        "a11y": "low",
+        "perf": "medium"
+      },
+      "provenance": "engineering-practice",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.54,
+        "matched": [
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: reuse → extend → compose → new"
+    },
+    {
+      "id": "a11y-forms-errors",
+      "kind": "rule",
+      "category": "forms",
+      "title": "Form labels, errors, and recovery",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "accessibility",
+        "feedback"
+      ],
+      "concepts": [
+        "feedback.validation_errors"
+      ],
+      "covers": [
+        "inline validation messages and error recovery"
+      ],
+      "score": 0.243,
+      "guidance": "Label above or beside, never placeholder-only; error message next to the field, programmatically associated (aria-describedby / accessibilityHint / AutomationProperties.HelpText), with what is wrong and how to fix; move focus to the first error or the error summary on submit; keep entered data; autocomplete attributes for personal data; allow paste and password managers.",
+      "use_when": "Every form: visible labels, required markers in text, inline errors linked to fields, error summary for long forms, no data loss on error.",
+      "avoid_when": "Never validate on every keystroke for fields the user has not finished; validate on blur and on submit.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.54,
+        "matched": [
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: inline validation messages and error recovery"
+    },
+    {
+      "id": "anti-no-states",
+      "kind": "antipattern",
+      "category": "craft",
+      "title": "Only the happy state was designed",
+      "facets": [
+        "anti-pattern"
+      ],
+      "concerns": [
+        "anti-pattern",
+        "states"
+      ],
+      "concepts": [
+        "state.loading_empty_error"
+      ],
+      "covers": [
+        "loading, empty and error states"
+      ],
+      "score": 0.243,
+      "guidance": "Enumerate states per screen and per interactive component before implementation and verify each visually; test with long strings, zero items, 10k items, and slow networks.",
+      "use_when": "Screens with no empty, loading, error, offline, partial, or long-text states; buttons with no pressed/disabled/loading states; TV cards with no focused state.",
+      "avoid_when": "Never.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.54,
+        "matched": [
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "recommended coverage: anti-pattern, states, loading, empty and error states"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "structure",
+      "interaction",
+      "accessibility",
+      "data-display"
+    ],
+    "covered_required_concerns": [
+      "structure",
+      "interaction",
+      "accessibility",
+      "data-display"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "navigation",
+      "states",
+      "anti-pattern",
+      "brand",
+      "adaptive",
+      "feedback"
+    ],
+    "covered_recommended_concerns": [
+      "states",
+      "anti-pattern",
+      "feedback"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "process.reuse_first",
+      "interaction.keyboard_navigation",
+      "interaction.hover_independence",
+      "interaction.focus_visible",
+      "feedback.validation_errors",
+      "table.tabular_figures"
+    ],
+    "covered_required_concepts": [
+      "process.reuse_first",
+      "interaction.keyboard_navigation",
+      "interaction.hover_independence",
+      "interaction.focus_visible",
+      "feedback.validation_errors",
+      "table.tabular_figures"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.29,
+    "bundle_size": 6,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 1,
+    "guardrail_size": 5,
+    "bundle_tokens": 952,
+    "coverage_per_1k_tokens": 6.3,
+    "mean_purity": 0.83,
+    "contaminated": [],
+    "category_diversity": 0.83,
+    "duplicate_pressure": 0.33,
+    "facet_coverage": 0.25,
+    "redundancy": 0.33
+  },
+  "token_coverage": 0.8,
+  "omitted": [
+    {
+      "id": "chart-flow-sankey",
+      "reason": "contamination: low purity 0.00: most of its concepts are off-task; chart record outside a data-visualisation task"
+    },
+    {
+      "id": "comp-setup-checklist",
+      "reason": "contamination: low purity 0.00: most of its concepts are off-task; wizard-specific record with no wizard evidence in the request"
+    },
+    {
+      "id": "comp-product-detail-page",
+      "reason": "contamination: product-specific (ecommerce) vs ['finance', 'saas']; low purity 0.20: most of its concepts are off-task"
+    },
+    {
+      "id": "cta-sticky-bar",
+      "reason": "visual pattern without wording evidence on an existing UI (would restyle what the task does not concern)"
+    }
+  ],
+  "rejected": [
+    {
+      "id": "comp-photo-capture-field",
+      "reason": "platform ['mobile', 'tablet'] not in request ['web']"
+    },
+    {
+      "id": "dir-service-app-mobile",
+      "reason": "platform ['mobile'] not in request ['web']"
+    },
+    {
+      "id": "dir-public-kiosk",
+      "reason": "platform ['kiosk'] not in request ['web']"
+    },
+    {
+      "id": "nav-bottom-tabs",
+      "reason": "platform ['mobile'] not in request ['web']"
+    },
+    {
+      "id": "nav-hub-spoke",
+      "reason": "platform ['kiosk', 'mobile', 'tablet'] not in request ['web']"
+    },
+    {
+      "id": "typography-system-native",
+      "reason": "platform ['desktop', 'mobile', 'tv'] not in request ['web']"
+    },
+    {
+      "id": "cta-focus-selects",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "cta-fab",
+      "reason": "platform ['mobile'] not in request ['web']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "process.reuse_first",
+      "priority": "required",
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.243
+        ]
+      ],
+      "selected_record": "impl-reuse-before-new",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.keyboard_navigation",
+      "priority": "required",
+      "reason": "web content must be keyboard operable",
+      "candidate_records": [
+        [
+          "comp-data-entry-grid",
+          0.38
+        ],
+        [
+          "a11y-keyboard-operable",
+          0.324
+        ],
+        [
+          "grid-single-tab-stop",
+          0.324
+        ],
+        [
+          "a11y-skip-link",
+          0.324
+        ]
+      ],
+      "selected_record": "a11y-keyboard-operable",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.hover_independence",
+      "priority": "required",
+      "reason": "web is used with touch as well as pointer",
+      "candidate_records": [
+        [
+          "anti-hover-only-actions",
+          0.324
+        ],
+        [
+          "a11y-keyboard-operable",
+          0.324
+        ],
+        [
+          "a11y-hover-not-required",
+          0.324
+        ]
+      ],
+      "selected_record": "a11y-keyboard-operable",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.focus_visible",
+      "priority": "required",
+      "reason": "web keyboard focus",
+      "candidate_records": [
+        [
+          "focus-ring-standard",
+          0.341
+        ],
+        [
+          "a11y-focus-visible",
+          0.324
+        ],
+        [
+          "grid-single-tab-stop",
+          0.324
+        ],
+        [
+          "a11y-skip-link",
+          0.324
+        ]
+      ],
+      "selected_record": "a11y-skip-link",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "feedback.validation_errors",
+      "priority": "required",
+      "reason": "form",
+      "candidate_records": [
+        [
+          "table-column-disambiguation",
+          0.324
+        ],
+        [
+          "anti-placeholder-labels",
+          0.243
+        ],
+        [
+          "a11y-forms-errors",
+          0.243
+        ],
+        [
+          "comp-checkout-one-page",
+          0.214
+        ]
+      ],
+      "selected_record": "a11y-forms-errors",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "table.tabular_figures",
+      "priority": "required",
+      "reason": "numeric data",
+      "candidate_records": [
+        [
+          "layout-table-first",
+          0.42
+        ],
+        [
+          "metadata-rich",
+          0.42
+        ],
+        [
+          "comp-plan-comparison",
+          0.365
+        ],
+        [
+          "comp-data-table",
+          0.36
+        ]
+      ],
+      "selected_record": "comp-plan-comparison",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "state.loading_empty_error",
+      "priority": "recommended",
+      "reason": "submission states",
+      "candidate_records": [
+        [
+          "comp-chart-container",
+          0.297
+        ],
+        [
+          "anti-no-states",
+          0.243
+        ],
+        [
+          "layout-states-empty-loading-error",
+          0.243
+        ],
+        [
+          "comp-empty-state",
+          0.18
+        ]
+      ],
+      "selected_record": "anti-no-states",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "touch.minimum_target",
+      "priority": "recommended",
+      "reason": "touch on web",
+      "candidate_records": [
+        [
+          "comp-product-detail-page",
+          0.295
+        ],
+        [
+          "a11y-target-size",
+          0.27
+        ],
+        [
+          "media-photo-viewer",
+          0.225
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "adaptive.breakpoint_matrix",
+      "priority": "recommended",
+      "reason": "web viewport range",
+      "candidate_records": [
+        [
+          "web-responsive-breakpoints",
+          0.297
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "form.autofill_attributes",
+      "priority": "recommended",
+      "reason": "form",
+      "candidate_records": [
+        [
+          "comp-form",
+          0.18
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "feedback.confirmation_destructive",
+      "priority": "recommended",
+      "reason": "sensitive domain",
+      "candidate_records": [
+        [
+          "comp-plan-comparison",
+          0.365
+        ],
+        [
+          "states-persistence-and-session",
+          0.329
+        ],
+        [
+          "comp-checkout-one-page",
+          0.214
+        ],
+        [
+          "comp-dialog",
+          0.18
+        ]
+      ],
+      "selected_record": "comp-plan-comparison",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.shortcuts",
+      "priority": "recommended",
+      "reason": "related to interaction.keyboard_navigation",
+      "candidate_records": [
+        [
+          "cta-toolbar-commands",
+          0.42
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates rejected as contaminated: call-to-action pattern with no action wording or commitment screen in the request"
+    },
+    {
+      "concept": "a11y.live_status",
+      "priority": "recommended",
+      "reason": "related to feedback.validation_errors",
+      "candidate_records": [
+        [
+          "interaction-drag-drop",
+          0.324
+        ],
+        [
+          "a11y-live-status",
+          0.243
+        ],
+        [
+          "search-filter-feedback",
+          0.243
+        ],
+        [
+          "feedback-progress-async",
+          0.243
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    }
+  ]
+}

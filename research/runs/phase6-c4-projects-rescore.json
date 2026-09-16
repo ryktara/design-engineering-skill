@@ -1,0 +1,3921 @@
+{
+ "build": "32e67640c9b8ef1d519ef9695016fb396116b92412e63c324da090aecf1df385",
+ "label": "c4",
+ "method": "same scorer applied to the recorded c1 outputs and to a fresh run of inspect/requirements/guidance/direction on the current build; projects are inspected in their post-round state (the round's implementations are in place)",
+ "aggregate": {
+  "c1_recorded": {
+   "tasks": 32,
+   "platform_correct": {
+    "yes": 28,
+    "wrong": 3,
+    "extra": 1
+   },
+   "artifact_state_correct": {
+    "True": 29,
+    "False": 3
+   },
+   "mode_correct": {
+    "acceptable": 6,
+    "yes": 23,
+    "no": 3
+   },
+   "scope_correct": {
+    "True": 32
+   },
+   "mean_concept_recall": 0.434,
+   "mean_critical_recall": 0.635,
+   "tasks_critical_recall_1": 10,
+   "tasks_with_forbidden": 3,
+   "empty_bundles": 0,
+   "mean_bundle_tokens": 681.2
+  },
+  "c4": {
+   "tasks": 32,
+   "platform_correct": {
+    "yes": 31,
+    "wrong": 1
+   },
+   "artifact_state_correct": {
+    "True": 30,
+    "False": 2
+   },
+   "mode_correct": {
+    "acceptable": 10,
+    "yes": 22
+   },
+   "scope_correct": {
+    "True": 32
+   },
+   "mean_concept_recall": 0.46,
+   "mean_critical_recall": 0.682,
+   "tasks_critical_recall_1": 12,
+   "tasks_with_forbidden": 1,
+   "empty_bundles": 0,
+   "mean_bundle_tokens": 580.8
+  }
+ },
+ "per_task": [
+  {
+   "task": "p6-01",
+   "codebase": "p3-nextjs-saas",
+   "c1": {
+    "platform_expected": "web",
+    "platform_resolved": [
+     "web"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "audit",
+     "refactor"
+    ],
+    "mode_correct": "acceptable",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "comp-settings-screen",
+     "comp-plan-comparison",
+     "layout-states-empty-loading-error",
+     "typo-scale-and-roles"
+    ],
+    "bundle_tokens": 683,
+    "expected_concepts": [
+     "layout.settings_grouping",
+     "navigation.rail_semantics",
+     "navigation.deep_link_state",
+     "layout.focal_hierarchy",
+     "privacy.sensitive_masking",
+     "process.reuse_first",
+     "process.safe_modification"
+    ],
+    "critical_concepts": [
+     "layout.settings_grouping",
+     "process.reuse_first"
+    ],
+    "delivered_concepts": [
+     "a11y.color_not_only",
+     "brand.type_roles",
+     "data.comparison_structure",
+     "feedback.confirmation_destructive",
+     "layout.one_primary_action",
+     "layout.settings_grouping",
+     "state.loading_empty_error",
+     "table.selection_bulk",
+     "table.tabular_figures"
+    ],
+    "concept_recall": 0.143,
+    "critical_recall": 0.5,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   },
+   "c4": {
+    "platform_expected": "web",
+    "platform_resolved": [
+     "web"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "audit",
+     "refactor"
+    ],
+    "mode_correct": "acceptable",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "comp-settings-screen",
+     "layout-hierarchy-one-thing"
+    ],
+    "bundle_tokens": 240,
+    "expected_concepts": [
+     "layout.settings_grouping",
+     "navigation.rail_semantics",
+     "navigation.deep_link_state",
+     "layout.focal_hierarchy",
+     "privacy.sensitive_masking",
+     "process.reuse_first",
+     "process.safe_modification"
+    ],
+    "critical_concepts": [
+     "layout.settings_grouping",
+     "process.reuse_first"
+    ],
+    "delivered_concepts": [
+     "data.exception_first",
+     "feedback.confirmation_destructive",
+     "layout.focal_hierarchy",
+     "layout.one_primary_action",
+     "layout.settings_grouping"
+    ],
+    "concept_recall": 0.286,
+    "critical_recall": 0.5,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   }
+  },
+  {
+   "task": "p6-02",
+   "codebase": "p3-nextjs-saas",
+   "c1": {
+    "platform_expected": "web",
+    "platform_resolved": [
+     "web"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "new",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": false,
+    "mode_expected": [
+     "create"
+    ],
+    "mode_resolved": [
+     "create"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "chart-progress-gauge",
+     "chart-compare-bar",
+     "impl-reuse-before-new",
+     "typo-scale-and-roles"
+    ],
+    "bundle_tokens": 446,
+    "expected_concepts": [
+     "data.kpi_comparison",
+     "navigation.orientation_and_back",
+     "state.loading_empty_error",
+     "a11y.semantics",
+     "table.tabular_figures",
+     "data.refresh_timestamp",
+     "process.reuse_first"
+    ],
+    "critical_concepts": [
+     "data.kpi_comparison",
+     "navigation.orientation_and_back",
+     "state.loading_empty_error"
+    ],
+    "delivered_concepts": [
+     "brand.type_roles",
+     "data.chart_by_question",
+     "data.kpi_comparison",
+     "process.reuse_first",
+     "table.tabular_figures"
+    ],
+    "concept_recall": 0.429,
+    "critical_recall": 0.333,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   },
+   "c4": {
+    "platform_expected": "web",
+    "platform_resolved": [
+     "web"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "new",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": false,
+    "mode_expected": [
+     "create"
+    ],
+    "mode_resolved": [
+     "create"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "chart-progress-gauge",
+     "chart-compare-bar",
+     "impl-reuse-before-new",
+     "typo-scale-and-roles",
+     "a11y-keyboard-operable",
+     "a11y-focus-visible"
+    ],
+    "bundle_tokens": 734,
+    "expected_concepts": [
+     "data.kpi_comparison",
+     "navigation.orientation_and_back",
+     "state.loading_empty_error",
+     "a11y.semantics",
+     "table.tabular_figures",
+     "data.refresh_timestamp",
+     "process.reuse_first"
+    ],
+    "critical_concepts": [
+     "data.kpi_comparison",
+     "navigation.orientation_and_back",
+     "state.loading_empty_error"
+    ],
+    "delivered_concepts": [
+     "brand.type_roles",
+     "data.chart_by_question",
+     "data.kpi_comparison",
+     "interaction.focus_visible",
+     "interaction.hover_independence",
+     "interaction.keyboard_navigation",
+     "process.reuse_first",
+     "table.tabular_figures"
+    ],
+    "concept_recall": 0.429,
+    "critical_recall": 0.333,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   }
+  },
+  {
+   "task": "p6-03",
+   "codebase": "p3-ecommerce-web",
+   "c1": {
+    "platform_expected": "web",
+    "platform_resolved": [
+     "web"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "create",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "responsive",
+     "audit"
+    ],
+    "mode_correct": "no",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "layout-grid-catalog"
+    ],
+    "bundle_tokens": 122,
+    "expected_concepts": [
+     "data.filter_chips",
+     "navigation.deep_link_state",
+     "a11y.live_status",
+     "state.loading_empty_error",
+     "data.pagination_strategy",
+     "interaction.keyboard_navigation",
+     "process.reuse_first"
+    ],
+    "critical_concepts": [
+     "data.filter_chips",
+     "a11y.live_status"
+    ],
+    "delivered_concepts": [
+     "data.filter_chips",
+     "data.pagination_strategy"
+    ],
+    "concept_recall": 0.286,
+    "critical_recall": 0.5,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   },
+   "c4": {
+    "platform_expected": "web",
+    "platform_resolved": [
+     "web"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "create",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "audit",
+     "refactor"
+    ],
+    "mode_correct": "acceptable",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "layout-grid-catalog"
+    ],
+    "bundle_tokens": 122,
+    "expected_concepts": [
+     "data.filter_chips",
+     "navigation.deep_link_state",
+     "a11y.live_status",
+     "state.loading_empty_error",
+     "data.pagination_strategy",
+     "interaction.keyboard_navigation",
+     "process.reuse_first"
+    ],
+    "critical_concepts": [
+     "data.filter_chips",
+     "a11y.live_status"
+    ],
+    "delivered_concepts": [
+     "data.filter_chips",
+     "data.pagination_strategy"
+    ],
+    "concept_recall": 0.286,
+    "critical_recall": 0.5,
+    "forbidden_delivered": [],
+    "change_budget": "low"
+   }
+  },
+  {
+   "task": "p6-04",
+   "codebase": "p3-ecommerce-web",
+   "c1": {
+    "platform_expected": "web",
+    "platform_resolved": [
+     "web"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "audit",
+     "refactor"
+    ],
+    "mode_correct": "acceptable",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "comp-checkout-one-page",
+     "cta-sticky-bar",
+     "layout-states-empty-loading-error",
+     "layout-hierarchy-one-thing",
+     "ecommerce-delivery-promise"
+    ],
+    "bundle_tokens": 778,
+    "expected_concepts": [
+     "feedback.confirmation_destructive",
+     "a11y.live_status",
+     "a11y.accessible_names",
+     "interaction.focus_restore",
+     "touch.minimum_target",
+     "a11y.dialog_focus"
+    ],
+    "critical_concepts": [
+     "feedback.confirmation_destructive",
+     "a11y.live_status"
+    ],
+    "delivered_concepts": [
+     "content.readable_measure",
+     "data.exception_first",
+     "feedback.confirmation_destructive",
+     "feedback.trust_signals",
+     "feedback.validation_errors",
+     "layout.focal_hierarchy",
+     "layout.one_primary_action",
+     "state.loading_empty_error",
+     "state.saving_conflict",
+     "touch.ime_keyboard",
+     "touch.safe_areas",
+     "touch.thumb_reach"
+    ],
+    "concept_recall": 0.167,
+    "critical_recall": 0.5,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   },
+   "c4": {
+    "platform_expected": "web",
+    "platform_resolved": [
+     "web"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "audit",
+     "refactor"
+    ],
+    "mode_correct": "acceptable",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "CONFIDENT",
+    "bundle_ids": [
+     "comp-dialog",
+     "comp-checkout-one-page"
+    ],
+    "bundle_tokens": 557,
+    "expected_concepts": [
+     "feedback.confirmation_destructive",
+     "a11y.live_status",
+     "a11y.accessible_names",
+     "interaction.focus_restore",
+     "touch.minimum_target",
+     "a11y.dialog_focus"
+    ],
+    "critical_concepts": [
+     "feedback.confirmation_destructive",
+     "a11y.live_status"
+    ],
+    "delivered_concepts": [
+     "a11y.dialog_focus",
+     "feedback.confirmation_destructive",
+     "feedback.trust_signals",
+     "feedback.validation_errors",
+     "layout.one_primary_action",
+     "state.saving_conflict",
+     "touch.ime_keyboard"
+    ],
+    "concept_recall": 0.333,
+    "critical_recall": 0.5,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   }
+  },
+  {
+   "task": "p6-05",
+   "codebase": "p3-react-dashboard-polish",
+   "c1": {
+    "platform_expected": "web",
+    "platform_resolved": [
+     "web"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "accessibility",
+     "audit",
+     "review"
+    ],
+    "mode_resolved": [
+     "accessibility",
+     "audit"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "CONFIDENT",
+    "bundle_ids": [
+     "comp-toast-notification",
+     "layout-hierarchy-one-thing",
+     "interaction-drag-drop",
+     "a11y-skip-link",
+     "a11y-color-not-only",
+     "a11y-contrast-text",
+     "a11y-labels-names"
+    ],
+    "bundle_tokens": 931,
+    "expected_concepts": [
+     "a11y.accessible_names",
+     "interaction.focus_restore",
+     "a11y.live_status",
+     "a11y.color_not_only",
+     "a11y.contrast",
+     "a11y.semantics",
+     "interaction.keyboard_navigation",
+     "interaction.focus_visible"
+    ],
+    "critical_concepts": [
+     "a11y.accessible_names",
+     "interaction.focus_restore",
+     "a11y.live_status"
+    ],
+    "delivered_concepts": [
+     "a11y.accessible_names",
+     "a11y.color_not_only",
+     "a11y.contrast",
+     "a11y.live_status",
+     "a11y.semantics",
+     "data.exception_first",
+     "interaction.keyboard_navigation",
+     "interaction.selection_visible",
+     "layout.focal_hierarchy",
+     "layout.one_primary_action",
+     "perf.layout_shift",
+     "touch.gestures_discoverable"
+    ],
+    "concept_recall": 0.75,
+    "critical_recall": 0.667,
+    "forbidden_delivered": [],
+    "change_budget": "low"
+   },
+   "c4": {
+    "platform_expected": "web",
+    "platform_resolved": [
+     "web"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "accessibility",
+     "audit",
+     "review"
+    ],
+    "mode_resolved": [
+     "accessibility",
+     "audit"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "CONFIDENT",
+    "bundle_ids": [
+     "comp-toast-notification",
+     "a11y-skip-link",
+     "data-exceptions-first",
+     "a11y-contrast-text",
+     "a11y-labels-names",
+     "a11y-color-not-only",
+     "layout-hierarchy-one-thing"
+    ],
+    "bundle_tokens": 933,
+    "expected_concepts": [
+     "a11y.accessible_names",
+     "interaction.focus_restore",
+     "a11y.live_status",
+     "a11y.color_not_only",
+     "a11y.contrast",
+     "a11y.semantics",
+     "interaction.keyboard_navigation",
+     "interaction.focus_visible"
+    ],
+    "critical_concepts": [
+     "a11y.accessible_names",
+     "interaction.focus_restore",
+     "a11y.live_status"
+    ],
+    "delivered_concepts": [
+     "a11y.accessible_names",
+     "a11y.color_not_only",
+     "a11y.contrast",
+     "a11y.live_status",
+     "a11y.semantics",
+     "data.exception_first",
+     "env.glanceable_status",
+     "interaction.keyboard_navigation",
+     "interaction.selection_visible",
+     "layout.focal_hierarchy",
+     "layout.one_primary_action",
+     "table.tabular_figures"
+    ],
+    "concept_recall": 0.75,
+    "critical_recall": 0.667,
+    "forbidden_delivered": [],
+    "change_budget": "low"
+   }
+  },
+  {
+   "task": "p6-06",
+   "codebase": "p5-sveltekit-clinic",
+   "c1": {
+    "platform_expected": "web",
+    "platform_resolved": [
+     "web"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "audit",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "polish",
+     "audit"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "layout-master-detail",
+     "comp-tabs",
+     "dir-clinical-workstation",
+     "typo-scale-and-roles"
+    ],
+    "bundle_tokens": 701,
+    "expected_concepts": [
+     "table.tabular_figures",
+     "data.kpi_comparison",
+     "layout.spacing_scale",
+     "a11y.semantics",
+     "a11y.color_not_only",
+     "process.reuse_first",
+     "process.render_verify"
+    ],
+    "critical_concepts": [
+     "table.tabular_figures"
+    ],
+    "delivered_concepts": [
+     "brand.type_roles",
+     "interaction.tabs_roving",
+     "navigation.deep_link_state",
+     "table.tabular_figures"
+    ],
+    "concept_recall": 0.143,
+    "critical_recall": 1.0,
+    "forbidden_delivered": [],
+    "change_budget": "low"
+   },
+   "c4": {
+    "platform_expected": "web",
+    "platform_resolved": [
+     "web"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "audit",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "polish",
+     "audit"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "comp-tabs",
+     "dir-clinical-workstation",
+     "typo-scale-and-roles"
+    ],
+    "bundle_tokens": 475,
+    "expected_concepts": [
+     "table.tabular_figures",
+     "data.kpi_comparison",
+     "layout.spacing_scale",
+     "a11y.semantics",
+     "a11y.color_not_only",
+     "process.reuse_first",
+     "process.render_verify"
+    ],
+    "critical_concepts": [
+     "table.tabular_figures"
+    ],
+    "delivered_concepts": [
+     "brand.type_roles",
+     "interaction.tabs_roving",
+     "navigation.deep_link_state",
+     "table.tabular_figures"
+    ],
+    "concept_recall": 0.143,
+    "critical_recall": 1.0,
+    "forbidden_delivered": [],
+    "change_budget": "low"
+   }
+  },
+  {
+   "task": "p6-07",
+   "codebase": "p5-sveltekit-clinic",
+   "c1": {
+    "platform_expected": "web",
+    "platform_resolved": [],
+    "platform_correct": "wrong",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "accessibility",
+     "polish",
+     "refactor",
+     "responsive"
+    ],
+    "mode_resolved": [
+     "responsive",
+     "audit"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "AMBIGUOUS",
+    "bundle_ids": [
+     "shared-device-privacy",
+     "impl-reuse-before-new",
+     "a11y-target-size",
+     "layout-hierarchy-one-thing",
+     "layout-spacing-scale",
+     "mobile-orientation-size-classes"
+    ],
+    "bundle_tokens": 815,
+    "expected_concepts": [
+     "touch.minimum_target",
+     "interaction.hover_independence",
+     "adaptive.breakpoint_matrix",
+     "layout.spacing_scale",
+     "touch.gestures_discoverable",
+     "interaction.focus_visible"
+    ],
+    "critical_concepts": [
+     "touch.minimum_target"
+    ],
+    "delivered_concepts": [
+     "adaptive.breakpoint_matrix",
+     "adaptive.navigation_transform",
+     "data.exception_first",
+     "layout.focal_hierarchy",
+     "layout.one_primary_action",
+     "layout.spacing_scale",
+     "privacy.sensitive_masking",
+     "privacy.shared_device",
+     "process.reuse_first",
+     "state.session_expiry",
+     "touch.minimum_target",
+     "touch.safe_areas"
+    ],
+    "concept_recall": 0.5,
+    "critical_recall": 1.0,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   },
+   "c4": {
+    "platform_expected": "web",
+    "platform_resolved": [],
+    "platform_correct": "wrong",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "accessibility",
+     "polish",
+     "refactor",
+     "responsive"
+    ],
+    "mode_resolved": [
+     "audit",
+     "responsive"
+    ],
+    "mode_correct": "acceptable",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "AMBIGUOUS",
+    "bundle_ids": [
+     "a11y-target-size",
+     "layout-hierarchy-one-thing",
+     "layout-spacing-scale"
+    ],
+    "bundle_tokens": 332,
+    "expected_concepts": [
+     "touch.minimum_target",
+     "interaction.hover_independence",
+     "adaptive.breakpoint_matrix",
+     "layout.spacing_scale",
+     "touch.gestures_discoverable",
+     "interaction.focus_visible"
+    ],
+    "critical_concepts": [
+     "touch.minimum_target"
+    ],
+    "delivered_concepts": [
+     "data.exception_first",
+     "layout.focal_hierarchy",
+     "layout.one_primary_action",
+     "layout.spacing_scale",
+     "touch.minimum_target"
+    ],
+    "concept_recall": 0.333,
+    "critical_recall": 1.0,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   }
+  },
+  {
+   "task": "p6-08",
+   "codebase": "p6-vue-inventory",
+   "c1": {
+    "platform_expected": "web",
+    "platform_resolved": [
+     "web"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "audit",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "audit",
+     "refactor"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "CONFIDENT",
+    "bundle_ids": [
+     "comp-data-table",
+     "data-tables-numeric",
+     "grid-single-tab-stop",
+     "layout-states-empty-loading-error"
+    ],
+    "bundle_tokens": 883,
+    "expected_concepts": [
+     "data.pagination_strategy",
+     "table.virtualization",
+     "table.tabular_figures",
+     "data.filter_chips",
+     "data.search_results",
+     "state.loading_empty_error"
+    ],
+    "critical_concepts": [
+     "data.pagination_strategy",
+     "table.tabular_figures"
+    ],
+    "delivered_concepts": [
+     "data.pagination_strategy",
+     "interaction.focus_visible",
+     "interaction.keyboard_navigation",
+     "interaction.selection_visible",
+     "state.loading_empty_error",
+     "table.inline_edit",
+     "table.selection_bulk",
+     "table.tabular_figures",
+     "table.virtualization"
+    ],
+    "concept_recall": 0.667,
+    "critical_recall": 1.0,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   },
+   "c4": {
+    "platform_expected": "web",
+    "platform_resolved": [
+     "web"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "audit",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "audit",
+     "refactor"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "CONFIDENT",
+    "bundle_ids": [
+     "comp-data-table",
+     "data-tables-numeric",
+     "grid-single-tab-stop",
+     "a11y-hover-not-required"
+    ],
+    "bundle_tokens": 851,
+    "expected_concepts": [
+     "data.pagination_strategy",
+     "table.virtualization",
+     "table.tabular_figures",
+     "data.filter_chips",
+     "data.search_results",
+     "state.loading_empty_error"
+    ],
+    "critical_concepts": [
+     "data.pagination_strategy",
+     "table.tabular_figures"
+    ],
+    "delivered_concepts": [
+     "data.pagination_strategy",
+     "interaction.focus_visible",
+     "interaction.hover_independence",
+     "interaction.keyboard_navigation",
+     "interaction.selection_visible",
+     "table.inline_edit",
+     "table.selection_bulk",
+     "table.tabular_figures",
+     "table.virtualization"
+    ],
+    "concept_recall": 0.5,
+    "critical_recall": 1.0,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   }
+  },
+  {
+   "task": "p6-09",
+   "codebase": "p6-vue-inventory",
+   "c1": {
+    "platform_expected": "web",
+    "platform_resolved": [
+     "web"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "audit",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "polish",
+     "audit"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "CONFIDENT",
+    "bundle_ids": [
+     "comp-dialog",
+     "comp-form",
+     "layout-form-stack",
+     "anti-brand-cosmetic-only",
+     "layout-states-empty-loading-error",
+     "layout-hierarchy-one-thing"
+    ],
+    "bundle_tokens": 1059,
+    "expected_concepts": [
+     "layout.one_primary_action",
+     "feedback.confirmation_destructive",
+     "a11y.accessible_names",
+     "interaction.focus_visible",
+     "state.unsaved_changes_guard",
+     "process.reuse_first"
+    ],
+    "critical_concepts": [
+     "layout.one_primary_action",
+     "feedback.confirmation_destructive"
+    ],
+    "delivered_concepts": [
+     "a11y.dialog_focus",
+     "brand.structural_differentiation",
+     "data.exception_first",
+     "feedback.confirmation_destructive",
+     "feedback.validation_errors",
+     "form.autofill_attributes",
+     "layout.focal_hierarchy",
+     "layout.one_primary_action",
+     "state.loading_empty_error",
+     "state.unsaved_changes_guard",
+     "touch.ime_keyboard"
+    ],
+    "concept_recall": 0.5,
+    "critical_recall": 1.0,
+    "forbidden_delivered": [],
+    "change_budget": "low"
+   },
+   "c4": {
+    "platform_expected": "web",
+    "platform_resolved": [
+     "web"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "audit",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "polish",
+     "audit"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "comp-dialog",
+     "comp-form",
+     "comp-empty-state",
+     "layout-states-empty-loading-error",
+     "layout-hierarchy-one-thing"
+    ],
+    "bundle_tokens": 889,
+    "expected_concepts": [
+     "layout.one_primary_action",
+     "feedback.confirmation_destructive",
+     "a11y.accessible_names",
+     "interaction.focus_visible",
+     "state.unsaved_changes_guard",
+     "process.reuse_first"
+    ],
+    "critical_concepts": [
+     "layout.one_primary_action",
+     "feedback.confirmation_destructive"
+    ],
+    "delivered_concepts": [
+     "a11y.dialog_focus",
+     "data.exception_first",
+     "feedback.confirmation_destructive",
+     "feedback.validation_errors",
+     "form.autofill_attributes",
+     "layout.focal_hierarchy",
+     "layout.one_primary_action",
+     "state.loading_empty_error",
+     "state.unsaved_changes_guard",
+     "touch.ime_keyboard"
+    ],
+    "concept_recall": 0.5,
+    "critical_recall": 1.0,
+    "forbidden_delivered": [],
+    "change_budget": "low"
+   }
+  },
+  {
+   "task": "p6-10",
+   "codebase": "p6-vue-inventory",
+   "c1": {
+    "platform_expected": "web",
+    "platform_resolved": [
+     "web"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "create",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "refactor"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "comp-chart-container",
+     "layout-dashboard-grid",
+     "chart-relationship",
+     "impl-reuse-before-new",
+     "interaction-drag-drop",
+     "a11y-color-not-only",
+     "data-exceptions-first"
+    ],
+    "bundle_tokens": 989,
+    "expected_concepts": [
+     "data.exception_first",
+     "data.drilldown",
+     "data.kpi_comparison",
+     "layout.focal_hierarchy",
+     "a11y.color_not_only",
+     "data.refresh_timestamp",
+     "table.tabular_figures"
+    ],
+    "critical_concepts": [
+     "data.exception_first",
+     "data.drilldown",
+     "layout.focal_hierarchy"
+    ],
+    "delivered_concepts": [
+     "a11y.color_not_only",
+     "a11y.live_status",
+     "data.accessible_chart_alternative",
+     "data.chart_by_question",
+     "data.exception_first",
+     "env.glanceable_status",
+     "interaction.keyboard_navigation",
+     "interaction.selection_visible",
+     "perf.layout_shift",
+     "process.reuse_first",
+     "state.loading_empty_error",
+     "table.tabular_figures",
+     "touch.gestures_discoverable"
+    ],
+    "concept_recall": 0.429,
+    "critical_recall": 0.333,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   },
+   "c4": {
+    "platform_expected": "web",
+    "platform_resolved": [
+     "web"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "create",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "refactor"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "comp-chart-container",
+     "impl-reuse-before-new",
+     "a11y-keyboard-operable",
+     "a11y-focus-visible",
+     "data-exceptions-first"
+    ],
+    "bundle_tokens": 791,
+    "expected_concepts": [
+     "data.exception_first",
+     "data.drilldown",
+     "data.kpi_comparison",
+     "layout.focal_hierarchy",
+     "a11y.color_not_only",
+     "data.refresh_timestamp",
+     "table.tabular_figures"
+    ],
+    "critical_concepts": [
+     "data.exception_first",
+     "data.drilldown",
+     "layout.focal_hierarchy"
+    ],
+    "delivered_concepts": [
+     "a11y.color_not_only",
+     "data.accessible_chart_alternative",
+     "data.chart_by_question",
+     "data.exception_first",
+     "env.glanceable_status",
+     "interaction.focus_visible",
+     "interaction.hover_independence",
+     "interaction.keyboard_navigation",
+     "process.reuse_first",
+     "state.loading_empty_error",
+     "table.tabular_figures"
+    ],
+    "concept_recall": 0.429,
+    "critical_recall": 0.333,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   }
+  },
+  {
+   "task": "p6-11",
+   "codebase": "p3-mobile-flutter-field",
+   "c1": {
+    "platform_expected": "mobile",
+    "platform_resolved": [
+     "mobile"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "accessibility",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "audit",
+     "responsive"
+    ],
+    "mode_correct": "no",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "CONFIDENT",
+    "bundle_ids": [
+     "media-photo-viewer",
+     "mobile-field-use",
+     "states-offline-and-sync",
+     "layout-hierarchy-one-thing"
+    ],
+    "bundle_tokens": 596,
+    "expected_concepts": [
+     "touch.minimum_target",
+     "a11y.color_not_only",
+     "env.glanceable_status",
+     "a11y.semantics",
+     "interaction.selection_visible",
+     "a11y.accessible_names"
+    ],
+    "critical_concepts": [
+     "touch.minimum_target",
+     "a11y.color_not_only"
+    ],
+    "delivered_concepts": [
+     "data.exception_first",
+     "data.refresh_timestamp",
+     "env.glanceable_status",
+     "env.outdoor_readability",
+     "interaction.back_semantics",
+     "layout.focal_hierarchy",
+     "layout.one_primary_action",
+     "perf.image_sizing",
+     "state.offline_sync",
+     "state.saving_conflict",
+     "touch.gestures_discoverable",
+     "touch.minimum_target"
+    ],
+    "concept_recall": 0.333,
+    "critical_recall": 0.5,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   },
+   "c4": {
+    "platform_expected": "mobile",
+    "platform_resolved": [
+     "mobile"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "accessibility",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "audit",
+     "refactor"
+    ],
+    "mode_correct": "acceptable",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "media-photo-viewer",
+     "mobile-field-use"
+    ],
+    "bundle_tokens": 306,
+    "expected_concepts": [
+     "touch.minimum_target",
+     "a11y.color_not_only",
+     "env.glanceable_status",
+     "a11y.semantics",
+     "interaction.selection_visible",
+     "a11y.accessible_names"
+    ],
+    "critical_concepts": [
+     "touch.minimum_target",
+     "a11y.color_not_only"
+    ],
+    "delivered_concepts": [
+     "env.glanceable_status",
+     "env.outdoor_readability",
+     "interaction.back_semantics",
+     "perf.image_sizing",
+     "touch.gestures_discoverable",
+     "touch.minimum_target"
+    ],
+    "concept_recall": 0.333,
+    "critical_recall": 0.5,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   }
+  },
+  {
+   "task": "p6-12",
+   "codebase": "p3-mobile-flutter-field",
+   "c1": {
+    "platform_expected": "mobile",
+    "platform_resolved": [
+     "web"
+    ],
+    "platform_correct": "wrong",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "create",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "create"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "AMBIGUOUS",
+    "bundle_ids": [
+     "comp-toast-notification",
+     "comp-pagination",
+     "card-list-row",
+     "states-offline-and-sync",
+     "a11y-target-size",
+     "impl-reuse-before-new",
+     "data-exceptions-first",
+     "layout-states-empty-loading-error"
+    ],
+    "bundle_tokens": 1114,
+    "expected_concepts": [
+     "state.offline_sync",
+     "state.loading_empty_error",
+     "a11y.live_status",
+     "touch.minimum_target",
+     "a11y.color_not_only",
+     "process.reuse_first"
+    ],
+    "critical_concepts": [
+     "state.offline_sync",
+     "state.loading_empty_error"
+    ],
+    "delivered_concepts": [
+     "a11y.color_not_only",
+     "a11y.live_status",
+     "data.exception_first",
+     "data.pagination_strategy",
+     "data.refresh_timestamp",
+     "env.glanceable_status",
+     "process.reuse_first",
+     "state.loading_empty_error",
+     "state.offline_sync",
+     "state.saving_conflict",
+     "table.tabular_figures",
+     "touch.minimum_target"
+    ],
+    "concept_recall": 1.0,
+    "critical_recall": 1.0,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   },
+   "c4": {
+    "platform_expected": "mobile",
+    "platform_resolved": [
+     "mobile"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "create",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "create"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "CONFIDENT",
+    "bundle_ids": [
+     "comp-list-row-mobile",
+     "comp-toast-notification",
+     "card-list-row",
+     "states-offline-and-sync",
+     "impl-reuse-before-new",
+     "mobile-field-use",
+     "layout-states-empty-loading-error"
+    ],
+    "bundle_tokens": 1082,
+    "expected_concepts": [
+     "state.offline_sync",
+     "state.loading_empty_error",
+     "a11y.live_status",
+     "touch.minimum_target",
+     "a11y.color_not_only",
+     "process.reuse_first"
+    ],
+    "critical_concepts": [
+     "state.offline_sync",
+     "state.loading_empty_error"
+    ],
+    "delivered_concepts": [
+     "a11y.live_status",
+     "data.pagination_strategy",
+     "data.refresh_timestamp",
+     "env.glanceable_status",
+     "env.outdoor_readability",
+     "process.reuse_first",
+     "state.loading_empty_error",
+     "state.offline_sync",
+     "state.saving_conflict",
+     "touch.gestures_discoverable",
+     "touch.minimum_target"
+    ],
+    "concept_recall": 0.833,
+    "critical_recall": 1.0,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   }
+  },
+  {
+   "task": "p6-13",
+   "codebase": "p5-swiftui-habits",
+   "c1": {
+    "platform_expected": "mobile",
+    "platform_resolved": [
+     "mobile"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "create",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "audit",
+     "refactor"
+    ],
+    "mode_correct": "acceptable",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "comp-list-row-mobile",
+     "comp-empty-state"
+    ],
+    "bundle_tokens": 277,
+    "expected_concepts": [
+     "state.loading_empty_error",
+     "layout.one_primary_action",
+     "a11y.accessible_names",
+     "touch.minimum_target",
+     "process.reuse_first",
+     "layout.focal_hierarchy"
+    ],
+    "critical_concepts": [
+     "state.loading_empty_error",
+     "layout.one_primary_action"
+    ],
+    "delivered_concepts": [
+     "data.pagination_strategy",
+     "state.loading_empty_error",
+     "touch.gestures_discoverable",
+     "touch.minimum_target"
+    ],
+    "concept_recall": 0.333,
+    "critical_recall": 0.5,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   },
+   "c4": {
+    "platform_expected": "mobile",
+    "platform_resolved": [
+     "mobile"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "create",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "audit",
+     "refactor"
+    ],
+    "mode_correct": "acceptable",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "comp-list-row-mobile",
+     "comp-empty-state"
+    ],
+    "bundle_tokens": 277,
+    "expected_concepts": [
+     "state.loading_empty_error",
+     "layout.one_primary_action",
+     "a11y.accessible_names",
+     "touch.minimum_target",
+     "process.reuse_first",
+     "layout.focal_hierarchy"
+    ],
+    "critical_concepts": [
+     "state.loading_empty_error",
+     "layout.one_primary_action"
+    ],
+    "delivered_concepts": [
+     "data.pagination_strategy",
+     "state.loading_empty_error",
+     "touch.gestures_discoverable",
+     "touch.minimum_target"
+    ],
+    "concept_recall": 0.333,
+    "critical_recall": 0.5,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   }
+  },
+  {
+   "task": "p6-14",
+   "codebase": "p5-swiftui-habits",
+   "c1": {
+    "platform_expected": "mobile",
+    "platform_resolved": [
+     "mobile"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "accessibility",
+     "audit",
+     "polish"
+    ],
+    "mode_resolved": [
+     "accessibility",
+     "audit"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "interaction-drag-drop",
+     "a11y-native-semantics",
+     "mobile-density-touch",
+     "a11y-color-not-only",
+     "a11y-contrast-text"
+    ],
+    "bundle_tokens": 583,
+    "expected_concepts": [
+     "a11y.accessible_names",
+     "a11y.semantics",
+     "data.accessible_chart_alternative",
+     "a11y.color_not_only",
+     "a11y.text_scaling",
+     "process.safe_modification"
+    ],
+    "critical_concepts": [
+     "a11y.accessible_names",
+     "a11y.semantics"
+    ],
+    "delivered_concepts": [
+     "a11y.accessible_names",
+     "a11y.color_not_only",
+     "a11y.contrast",
+     "a11y.live_status",
+     "a11y.semantics",
+     "interaction.keyboard_navigation",
+     "interaction.selection_visible",
+     "perf.layout_shift",
+     "table.column_priority",
+     "touch.gestures_discoverable",
+     "touch.minimum_target"
+    ],
+    "concept_recall": 0.5,
+    "critical_recall": 1.0,
+    "forbidden_delivered": [
+     "interaction.keyboard_navigation"
+    ],
+    "change_budget": "low"
+   },
+   "c4": {
+    "platform_expected": "mobile",
+    "platform_resolved": [
+     "mobile"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "accessibility",
+     "audit",
+     "polish"
+    ],
+    "mode_resolved": [
+     "accessibility",
+     "audit"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "CONFIDENT",
+    "bundle_ids": [
+     "comp-toast-notification",
+     "a11y-native-semantics",
+     "a11y-color-not-only",
+     "a11y-contrast-text",
+     "a11y-live-status",
+     "mobile-density-touch"
+    ],
+    "bundle_tokens": 742,
+    "expected_concepts": [
+     "a11y.accessible_names",
+     "a11y.semantics",
+     "data.accessible_chart_alternative",
+     "a11y.color_not_only",
+     "a11y.text_scaling",
+     "process.safe_modification"
+    ],
+    "critical_concepts": [
+     "a11y.accessible_names",
+     "a11y.semantics"
+    ],
+    "delivered_concepts": [
+     "a11y.accessible_names",
+     "a11y.color_not_only",
+     "a11y.contrast",
+     "a11y.live_status",
+     "a11y.semantics",
+     "interaction.selection_visible",
+     "table.column_priority",
+     "touch.minimum_target"
+    ],
+    "concept_recall": 0.5,
+    "critical_recall": 1.0,
+    "forbidden_delivered": [],
+    "change_budget": "low"
+   }
+  },
+  {
+   "task": "p6-15",
+   "codebase": "p6-compose-banking",
+   "c1": {
+    "platform_expected": "mobile",
+    "platform_resolved": [
+     "mobile"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "audit",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "audit",
+     "refactor"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "typo-scale-and-roles",
+     "mobile-keyboard-ime",
+     "mobile-density-touch",
+     "interaction-drag-drop",
+     "layout-states-empty-loading-error"
+    ],
+    "bundle_tokens": 612,
+    "expected_concepts": [
+     "touch.ime_keyboard",
+     "form.autofill_attributes",
+     "touch.minimum_target",
+     "feedback.validation_errors",
+     "interaction.focus_visible"
+    ],
+    "critical_concepts": [
+     "touch.ime_keyboard",
+     "form.autofill_attributes"
+    ],
+    "delivered_concepts": [
+     "a11y.live_status",
+     "brand.type_roles",
+     "interaction.keyboard_navigation",
+     "perf.layout_shift",
+     "state.loading_empty_error",
+     "table.column_priority",
+     "table.tabular_figures",
+     "touch.gestures_discoverable",
+     "touch.ime_keyboard",
+     "touch.minimum_target"
+    ],
+    "concept_recall": 0.4,
+    "critical_recall": 0.5,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   },
+   "c4": {
+    "platform_expected": "mobile",
+    "platform_resolved": [
+     "mobile"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "audit",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "audit",
+     "refactor"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "typo-scale-and-roles",
+     "mobile-keyboard-ime",
+     "mobile-density-touch",
+     "color-states-complete"
+    ],
+    "bundle_tokens": 439,
+    "expected_concepts": [
+     "touch.ime_keyboard",
+     "form.autofill_attributes",
+     "touch.minimum_target",
+     "feedback.validation_errors",
+     "interaction.focus_visible"
+    ],
+    "critical_concepts": [
+     "touch.ime_keyboard",
+     "form.autofill_attributes"
+    ],
+    "delivered_concepts": [
+     "brand.type_roles",
+     "interaction.focus_visible",
+     "interaction.selection_visible",
+     "table.column_priority",
+     "table.tabular_figures",
+     "touch.ime_keyboard",
+     "touch.minimum_target"
+    ],
+    "concept_recall": 0.6,
+    "critical_recall": 0.5,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   }
+  },
+  {
+   "task": "p6-16",
+   "codebase": "p6-compose-banking",
+   "c1": {
+    "platform_expected": "mobile",
+    "platform_resolved": [
+     "mobile"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "unknown",
+    "artifact_state_correct": false,
+    "mode_expected": [
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "create"
+    ],
+    "mode_correct": "no",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "card-none",
+     "focus-none-touch-only",
+     "typo-scale-and-roles",
+     "impl-reuse-before-new",
+     "mobile-density-touch"
+    ],
+    "bundle_tokens": 609,
+    "expected_concepts": [
+     "feedback.confirmation_destructive",
+     "state.saving_conflict",
+     "a11y.live_status",
+     "a11y.accessible_names",
+     "a11y.color_not_only",
+     "state.loading_empty_error"
+    ],
+    "critical_concepts": [
+     "feedback.confirmation_destructive",
+     "state.saving_conflict"
+    ],
+    "delivered_concepts": [
+     "brand.type_roles",
+     "layout.no_nested_cards",
+     "process.reuse_first",
+     "table.column_priority",
+     "table.tabular_figures",
+     "touch.minimum_target"
+    ],
+    "concept_recall": 0.0,
+    "critical_recall": 0.0,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   },
+   "c4": {
+    "platform_expected": "mobile",
+    "platform_resolved": [
+     "mobile"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "audit",
+     "refactor"
+    ],
+    "mode_correct": "acceptable",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "comp-dialog",
+     "a11y-target-size"
+    ],
+    "bundle_tokens": 380,
+    "expected_concepts": [
+     "feedback.confirmation_destructive",
+     "state.saving_conflict",
+     "a11y.live_status",
+     "a11y.accessible_names",
+     "a11y.color_not_only",
+     "state.loading_empty_error"
+    ],
+    "critical_concepts": [
+     "feedback.confirmation_destructive",
+     "state.saving_conflict"
+    ],
+    "delivered_concepts": [
+     "a11y.dialog_focus",
+     "feedback.confirmation_destructive",
+     "touch.minimum_target"
+    ],
+    "concept_recall": 0.167,
+    "critical_recall": 0.5,
+    "forbidden_delivered": [],
+    "change_budget": "low"
+   }
+  },
+  {
+   "task": "p6-17",
+   "codebase": "p6-compose-banking",
+   "c1": {
+    "platform_expected": "mobile",
+    "platform_resolved": [
+     "mobile"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "accessibility",
+     "audit",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "accessibility",
+     "audit"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "a11y-nontext-contrast"
+    ],
+    "bundle_tokens": 103,
+    "expected_concepts": [
+     "a11y.contrast",
+     "brand.token_layers",
+     "brand.dark_mode_redesign",
+     "layout.focal_hierarchy",
+     "process.safe_modification"
+    ],
+    "critical_concepts": [
+     "a11y.contrast",
+     "brand.token_layers"
+    ],
+    "delivered_concepts": [
+     "a11y.contrast",
+     "interaction.focus_visible"
+    ],
+    "concept_recall": 0.2,
+    "critical_recall": 0.5,
+    "forbidden_delivered": [],
+    "change_budget": "low"
+   },
+   "c4": {
+    "platform_expected": "mobile",
+    "platform_resolved": [
+     "mobile"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "accessibility",
+     "audit",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "accessibility",
+     "audit"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "a11y-nontext-contrast"
+    ],
+    "bundle_tokens": 103,
+    "expected_concepts": [
+     "a11y.contrast",
+     "brand.token_layers",
+     "brand.dark_mode_redesign",
+     "layout.focal_hierarchy",
+     "process.safe_modification"
+    ],
+    "critical_concepts": [
+     "a11y.contrast",
+     "brand.token_layers"
+    ],
+    "delivered_concepts": [
+     "a11y.contrast",
+     "interaction.focus_visible"
+    ],
+    "concept_recall": 0.2,
+    "critical_recall": 0.5,
+    "forbidden_delivered": [],
+    "change_budget": "low"
+   }
+  },
+  {
+   "task": "p6-18",
+   "codebase": "p3-erp-desktop-dotnet",
+   "c1": {
+    "platform_expected": "desktop",
+    "platform_resolved": [
+     "desktop"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "accessibility",
+     "audit",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "audit",
+     "refactor"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "typo-scale-and-roles",
+     "desktop-keyboard-first",
+     "a11y-keyboard-operable"
+    ],
+    "bundle_tokens": 361,
+    "expected_concepts": [
+     "interaction.keyboard_navigation",
+     "interaction.shortcuts",
+     "interaction.focus_restore",
+     "interaction.focus_visible",
+     "table.inline_edit",
+     "interaction.menu_semantics",
+     "a11y.accessible_names"
+    ],
+    "critical_concepts": [
+     "interaction.keyboard_navigation",
+     "interaction.shortcuts",
+     "table.inline_edit"
+    ],
+    "delivered_concepts": [
+     "brand.type_roles",
+     "interaction.focus_visible",
+     "interaction.hover_independence",
+     "interaction.keyboard_navigation",
+     "interaction.shortcuts",
+     "table.tabular_figures"
+    ],
+    "concept_recall": 0.429,
+    "critical_recall": 0.667,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   },
+   "c4": {
+    "platform_expected": "desktop",
+    "platform_resolved": [
+     "desktop"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "accessibility",
+     "audit",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "audit",
+     "refactor"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "desktop-keyboard-first"
+    ],
+    "bundle_tokens": 130,
+    "expected_concepts": [
+     "interaction.keyboard_navigation",
+     "interaction.shortcuts",
+     "interaction.focus_restore",
+     "interaction.focus_visible",
+     "table.inline_edit",
+     "interaction.menu_semantics",
+     "a11y.accessible_names"
+    ],
+    "critical_concepts": [
+     "interaction.keyboard_navigation",
+     "interaction.shortcuts",
+     "table.inline_edit"
+    ],
+    "delivered_concepts": [
+     "interaction.focus_visible",
+     "interaction.keyboard_navigation",
+     "interaction.shortcuts"
+    ],
+    "concept_recall": 0.429,
+    "critical_recall": 0.667,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   }
+  },
+  {
+   "task": "p6-19",
+   "codebase": "p3-erp-desktop-dotnet",
+   "c1": {
+    "platform_expected": "desktop",
+    "platform_resolved": [
+     "desktop"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "new",
+    "artifact_state_correct": false,
+    "mode_expected": [
+     "create",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "create"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "CONFIDENT",
+    "bundle_ids": [
+     "metadata-rich",
+     "dir-operational-workbench",
+     "impl-reuse-before-new",
+     "desktop-status-bar-and-error-navigation",
+     "desktop-keyboard-first",
+     "data-exceptions-first",
+     "typo-scale-and-roles"
+    ],
+    "bundle_tokens": 1063,
+    "expected_concepts": [
+     "data.refresh_timestamp",
+     "state.offline_sync",
+     "process.reuse_first",
+     "a11y.color_not_only",
+     "a11y.live_status",
+     "data.exception_first",
+     "desktop.spacing_grid"
+    ],
+    "critical_concepts": [
+     "data.refresh_timestamp",
+     "state.offline_sync",
+     "process.reuse_first"
+    ],
+    "delivered_concepts": [
+     "a11y.color_not_only",
+     "a11y.contrast",
+     "a11y.live_status",
+     "brand.type_roles",
+     "data.exception_first",
+     "desktop.persist_workspace",
+     "env.glanceable_status",
+     "feedback.validation_errors",
+     "interaction.focus_visible",
+     "interaction.keyboard_navigation",
+     "interaction.shortcuts",
+     "layout.focal_hierarchy",
+     "process.reuse_first",
+     "table.tabular_figures"
+    ],
+    "concept_recall": 0.571,
+    "critical_recall": 0.333,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   },
+   "c4": {
+    "platform_expected": "desktop",
+    "platform_resolved": [
+     "desktop"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "new",
+    "artifact_state_correct": false,
+    "mode_expected": [
+     "create",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "create"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "CONFIDENT",
+    "bundle_ids": [
+     "dir-operational-workbench",
+     "impl-reuse-before-new",
+     "desktop-status-bar-and-error-navigation",
+     "desktop-keyboard-first",
+     "data-exceptions-first"
+    ],
+    "bundle_tokens": 859,
+    "expected_concepts": [
+     "data.refresh_timestamp",
+     "state.offline_sync",
+     "process.reuse_first",
+     "a11y.color_not_only",
+     "a11y.live_status",
+     "data.exception_first",
+     "desktop.spacing_grid"
+    ],
+    "critical_concepts": [
+     "data.refresh_timestamp",
+     "state.offline_sync",
+     "process.reuse_first"
+    ],
+    "delivered_concepts": [
+     "a11y.color_not_only",
+     "a11y.contrast",
+     "a11y.live_status",
+     "data.exception_first",
+     "desktop.persist_workspace",
+     "env.glanceable_status",
+     "feedback.validation_errors",
+     "interaction.focus_visible",
+     "interaction.keyboard_navigation",
+     "interaction.shortcuts",
+     "process.reuse_first",
+     "table.tabular_figures"
+    ],
+    "concept_recall": 0.571,
+    "critical_recall": 0.333,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   }
+  },
+  {
+   "task": "p6-20",
+   "codebase": "p3-winui-erp-audit",
+   "c1": {
+    "platform_expected": "desktop",
+    "platform_resolved": [
+     "desktop"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "audit",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "audit",
+     "refactor"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "CONFIDENT",
+    "bundle_ids": [
+     "comp-data-table",
+     "comp-data-entry-grid",
+     "grid-single-tab-stop",
+     "data-exceptions-first",
+     "table-column-disambiguation"
+    ],
+    "bundle_tokens": 1141,
+    "expected_concepts": [
+     "table.virtualization",
+     "perf.layout_shift",
+     "perf.focus_latency",
+     "data.pagination_strategy",
+     "desktop.persist_workspace",
+     "state.loading_empty_error"
+    ],
+    "critical_concepts": [
+     "table.virtualization",
+     "perf.layout_shift"
+    ],
+    "delivered_concepts": [
+     "a11y.color_not_only",
+     "data.exception_first",
+     "data.pagination_strategy",
+     "env.glanceable_status",
+     "feedback.validation_errors",
+     "interaction.focus_visible",
+     "interaction.keyboard_navigation",
+     "interaction.selection_visible",
+     "table.inline_edit",
+     "table.selection_bulk",
+     "table.tabular_figures",
+     "table.virtualization"
+    ],
+    "concept_recall": 0.333,
+    "critical_recall": 0.5,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   },
+   "c4": {
+    "platform_expected": "desktop",
+    "platform_resolved": [
+     "desktop"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "audit",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "audit",
+     "refactor"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "CONFIDENT",
+    "bundle_ids": [
+     "comp-data-table",
+     "comp-data-entry-grid",
+     "web-virtualize-long-lists",
+     "grid-single-tab-stop"
+    ],
+    "bundle_tokens": 941,
+    "expected_concepts": [
+     "table.virtualization",
+     "perf.layout_shift",
+     "perf.focus_latency",
+     "data.pagination_strategy",
+     "desktop.persist_workspace",
+     "state.loading_empty_error"
+    ],
+    "critical_concepts": [
+     "table.virtualization",
+     "perf.layout_shift"
+    ],
+    "delivered_concepts": [
+     "data.pagination_strategy",
+     "interaction.focus_visible",
+     "interaction.keyboard_navigation",
+     "interaction.selection_visible",
+     "table.inline_edit",
+     "table.selection_bulk",
+     "table.tabular_figures",
+     "table.virtualization"
+    ],
+    "concept_recall": 0.333,
+    "critical_recall": 0.5,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   }
+  },
+  {
+   "task": "p6-21",
+   "codebase": "p5-avalonia-fleet",
+   "c1": {
+    "platform_expected": "desktop",
+    "platform_resolved": [
+     "desktop"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "polish",
+     "refactor",
+     "responsive"
+    ],
+    "mode_resolved": [
+     "responsive",
+     "audit"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "chart-geo",
+     "chart-relationship",
+     "impl-reuse-before-new",
+     "desktop-window-resizing",
+     "desktop-keyboard-first",
+     "layout-states-empty-loading-error"
+    ],
+    "bundle_tokens": 715,
+    "expected_concepts": [
+     "adaptive.breakpoint_matrix",
+     "table.column_priority",
+     "layout.spacing_scale",
+     "desktop.spacing_grid",
+     "process.safe_modification",
+     "content.readable_measure"
+    ],
+    "critical_concepts": [
+     "adaptive.breakpoint_matrix",
+     "table.column_priority"
+    ],
+    "delivered_concepts": [
+     "adaptive.breakpoint_matrix",
+     "data.accessible_chart_alternative",
+     "data.chart_by_question",
+     "interaction.focus_visible",
+     "interaction.keyboard_navigation",
+     "interaction.shortcuts",
+     "process.reuse_first",
+     "state.loading_empty_error",
+     "table.column_priority"
+    ],
+    "concept_recall": 0.333,
+    "critical_recall": 1.0,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   },
+   "c4": {
+    "platform_expected": "desktop",
+    "platform_resolved": [
+     "desktop"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "polish",
+     "refactor",
+     "responsive"
+    ],
+    "mode_resolved": [
+     "responsive",
+     "audit"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "chart-geo",
+     "chart-relationship",
+     "impl-reuse-before-new",
+     "desktop-window-resizing",
+     "desktop-keyboard-first"
+    ],
+    "bundle_tokens": 592,
+    "expected_concepts": [
+     "adaptive.breakpoint_matrix",
+     "table.column_priority",
+     "layout.spacing_scale",
+     "desktop.spacing_grid",
+     "process.safe_modification",
+     "content.readable_measure"
+    ],
+    "critical_concepts": [
+     "adaptive.breakpoint_matrix",
+     "table.column_priority"
+    ],
+    "delivered_concepts": [
+     "adaptive.breakpoint_matrix",
+     "data.accessible_chart_alternative",
+     "data.chart_by_question",
+     "interaction.focus_visible",
+     "interaction.keyboard_navigation",
+     "interaction.shortcuts",
+     "process.reuse_first",
+     "table.column_priority"
+    ],
+    "concept_recall": 0.333,
+    "critical_recall": 1.0,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   }
+  },
+  {
+   "task": "p6-22",
+   "codebase": "p5-avalonia-fleet",
+   "c1": {
+    "platform_expected": "desktop",
+    "platform_resolved": [
+     "desktop"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "audit",
+     "polish",
+     "refactor",
+     "review"
+    ],
+    "mode_resolved": [
+     "audit",
+     "refactor"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "comp-form",
+     "layout-master-detail",
+     "desktop-keyboard-first",
+     "layout-states-empty-loading-error"
+    ],
+    "bundle_tokens": 762,
+    "expected_concepts": [
+     "process.reuse_first",
+     "a11y.accessible_names",
+     "state.unsaved_changes_guard",
+     "layout.settings_grouping",
+     "desktop.spacing_grid",
+     "interaction.keyboard_navigation"
+    ],
+    "critical_concepts": [
+     "process.reuse_first",
+     "a11y.accessible_names",
+     "state.unsaved_changes_guard"
+    ],
+    "delivered_concepts": [
+     "feedback.validation_errors",
+     "form.autofill_attributes",
+     "interaction.focus_visible",
+     "interaction.keyboard_navigation",
+     "interaction.shortcuts",
+     "state.loading_empty_error",
+     "state.unsaved_changes_guard",
+     "touch.ime_keyboard"
+    ],
+    "concept_recall": 0.333,
+    "critical_recall": 0.333,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   },
+   "c4": {
+    "platform_expected": "desktop",
+    "platform_resolved": [
+     "desktop"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "audit",
+     "polish",
+     "refactor",
+     "review"
+    ],
+    "mode_resolved": [
+     "audit",
+     "refactor"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "comp-form",
+     "desktop-keyboard-first",
+     "layout-states-empty-loading-error"
+    ],
+    "bundle_tokens": 536,
+    "expected_concepts": [
+     "process.reuse_first",
+     "a11y.accessible_names",
+     "state.unsaved_changes_guard",
+     "layout.settings_grouping",
+     "desktop.spacing_grid",
+     "interaction.keyboard_navigation"
+    ],
+    "critical_concepts": [
+     "process.reuse_first",
+     "a11y.accessible_names",
+     "state.unsaved_changes_guard"
+    ],
+    "delivered_concepts": [
+     "feedback.validation_errors",
+     "form.autofill_attributes",
+     "interaction.focus_visible",
+     "interaction.keyboard_navigation",
+     "interaction.shortcuts",
+     "state.loading_empty_error",
+     "state.unsaved_changes_guard",
+     "touch.ime_keyboard"
+    ],
+    "concept_recall": 0.333,
+    "critical_recall": 0.333,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   }
+  },
+  {
+   "task": "p6-23",
+   "codebase": "p3-winui-erp-audit",
+   "c1": {
+    "platform_expected": "desktop",
+    "platform_resolved": [
+     "desktop"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "accessibility",
+     "audit",
+     "review"
+    ],
+    "mode_resolved": [
+     "audit",
+     "review"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "typo-scale-and-roles",
+     "desktop-keyboard-first"
+    ],
+    "bundle_tokens": 245,
+    "expected_concepts": [
+     "interaction.keyboard_navigation",
+     "interaction.focus_visible",
+     "interaction.shortcuts",
+     "a11y.accessible_names",
+     "interaction.selection_visible",
+     "interaction.menu_semantics",
+     "a11y.dialog_focus"
+    ],
+    "critical_concepts": [
+     "interaction.keyboard_navigation",
+     "interaction.focus_visible",
+     "interaction.shortcuts"
+    ],
+    "delivered_concepts": [
+     "brand.type_roles",
+     "interaction.focus_visible",
+     "interaction.keyboard_navigation",
+     "interaction.shortcuts",
+     "table.tabular_figures"
+    ],
+    "concept_recall": 0.429,
+    "critical_recall": 1.0,
+    "forbidden_delivered": [],
+    "change_budget": "low"
+   },
+   "c4": {
+    "platform_expected": "desktop",
+    "platform_resolved": [
+     "desktop"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "accessibility",
+     "audit",
+     "review"
+    ],
+    "mode_resolved": [
+     "audit",
+     "review"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "typo-scale-and-roles",
+     "desktop-keyboard-first"
+    ],
+    "bundle_tokens": 245,
+    "expected_concepts": [
+     "interaction.keyboard_navigation",
+     "interaction.focus_visible",
+     "interaction.shortcuts",
+     "a11y.accessible_names",
+     "interaction.selection_visible",
+     "interaction.menu_semantics",
+     "a11y.dialog_focus"
+    ],
+    "critical_concepts": [
+     "interaction.keyboard_navigation",
+     "interaction.focus_visible",
+     "interaction.shortcuts"
+    ],
+    "delivered_concepts": [
+     "brand.type_roles",
+     "interaction.focus_visible",
+     "interaction.keyboard_navigation",
+     "interaction.shortcuts",
+     "table.tabular_figures"
+    ],
+    "concept_recall": 0.429,
+    "critical_recall": 1.0,
+    "forbidden_delivered": [],
+    "change_budget": "low"
+   }
+  },
+  {
+   "task": "p6-24",
+   "codebase": "p3-android-tv-compose",
+   "c1": {
+    "platform_expected": "tv",
+    "platform_resolved": [
+     "tv"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "audit",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "audit",
+     "refactor"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "tv-back-behavior",
+     "a11y-tv-focus-always",
+     "tv-typography-distance",
+     "tv-dpad-axes",
+     "tv-safe-area",
+     "layout-states-empty-loading-error"
+    ],
+    "bundle_tokens": 700,
+    "expected_concepts": [
+     "interaction.back_semantics",
+     "navigation.orientation_and_back",
+     "interaction.focus_restore",
+     "media.details_play_first",
+     "interaction.dpad_reachability",
+     "navigation.platform_grammar"
+    ],
+    "critical_concepts": [
+     "interaction.back_semantics",
+     "navigation.orientation_and_back"
+    ],
+    "delivered_concepts": [
+     "interaction.back_semantics",
+     "interaction.dpad_reachability",
+     "interaction.focus_restore",
+     "interaction.focus_visible",
+     "media.details_play_first",
+     "state.loading_empty_error",
+     "tv.safe_margins",
+     "tv.ten_foot_typography"
+    ],
+    "concept_recall": 0.667,
+    "critical_recall": 0.5,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   },
+   "c4": {
+    "platform_expected": "tv",
+    "platform_resolved": [
+     "tv"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "audit",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "audit",
+     "refactor"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "tv-back-behavior",
+     "a11y-tv-focus-always",
+     "tv-typography-distance",
+     "tv-dpad-axes",
+     "tv-safe-area"
+    ],
+    "bundle_tokens": 577,
+    "expected_concepts": [
+     "interaction.back_semantics",
+     "navigation.orientation_and_back",
+     "interaction.focus_restore",
+     "media.details_play_first",
+     "interaction.dpad_reachability",
+     "navigation.platform_grammar"
+    ],
+    "critical_concepts": [
+     "interaction.back_semantics",
+     "navigation.orientation_and_back"
+    ],
+    "delivered_concepts": [
+     "interaction.back_semantics",
+     "interaction.dpad_reachability",
+     "interaction.focus_restore",
+     "interaction.focus_visible",
+     "media.details_play_first",
+     "tv.safe_margins",
+     "tv.ten_foot_typography"
+    ],
+    "concept_recall": 0.667,
+    "critical_recall": 0.5,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   }
+  },
+  {
+   "task": "p6-25",
+   "codebase": "p3-android-tv-compose",
+   "c1": {
+    "platform_expected": "tv",
+    "platform_resolved": [
+     "tv"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "create",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "create"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "CONFIDENT",
+    "bundle_ids": [
+     "comp-media-card",
+     "media-resume-and-details",
+     "dir-cinematic-media-tv",
+     "comp-tv-rail",
+     "impl-reuse-before-new",
+     "tv-typography-distance",
+     "tv-dpad-axes",
+     "a11y-tv-focus-always"
+    ],
+    "bundle_tokens": 1352,
+    "expected_concepts": [
+     "media.resume_playback",
+     "layout.media_card",
+     "interaction.dpad_reachability",
+     "interaction.focus_restore",
+     "state.loading_empty_error",
+     "process.reuse_first",
+     "tv.ten_foot_typography"
+    ],
+    "critical_concepts": [
+     "media.resume_playback",
+     "state.loading_empty_error",
+     "interaction.dpad_reachability"
+    ],
+    "delivered_concepts": [
+     "a11y.accessible_names",
+     "a11y.color_not_only",
+     "interaction.back_semantics",
+     "interaction.dpad_reachability",
+     "interaction.focus_restore",
+     "interaction.focus_visible",
+     "layout.media_card",
+     "media.details_play_first",
+     "media.resume_playback",
+     "media.watchlist",
+     "perf.focus_latency",
+     "process.reuse_first",
+     "tv.ten_foot_typography"
+    ],
+    "concept_recall": 0.857,
+    "critical_recall": 0.667,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   },
+   "c4": {
+    "platform_expected": "tv",
+    "platform_resolved": [
+     "tv"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "create",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "create"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "comp-media-card",
+     "media-resume-and-details",
+     "dir-cinematic-media-tv",
+     "impl-reuse-before-new",
+     "tv-typography-distance",
+     "tv-dpad-axes",
+     "a11y-tv-focus-always",
+     "layout-states-empty-loading-error"
+    ],
+    "bundle_tokens": 1237,
+    "expected_concepts": [
+     "media.resume_playback",
+     "layout.media_card",
+     "interaction.dpad_reachability",
+     "interaction.focus_restore",
+     "state.loading_empty_error",
+     "process.reuse_first",
+     "tv.ten_foot_typography"
+    ],
+    "critical_concepts": [
+     "media.resume_playback",
+     "state.loading_empty_error",
+     "interaction.dpad_reachability"
+    ],
+    "delivered_concepts": [
+     "a11y.accessible_names",
+     "a11y.color_not_only",
+     "interaction.back_semantics",
+     "interaction.dpad_reachability",
+     "interaction.focus_restore",
+     "interaction.focus_visible",
+     "layout.media_card",
+     "media.details_play_first",
+     "media.resume_playback",
+     "media.watchlist",
+     "process.reuse_first",
+     "state.loading_empty_error",
+     "tv.ten_foot_typography"
+    ],
+    "concept_recall": 1.0,
+    "critical_recall": 1.0,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   }
+  },
+  {
+   "task": "p6-26",
+   "codebase": "p3-tvos-swiftui",
+   "c1": {
+    "platform_expected": "tv",
+    "platform_resolved": [
+     "tv"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "accessibility",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "polish",
+     "responsive"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "comp-media-card",
+     "comp-mini-player",
+     "impl-reuse-before-new",
+     "tv-typography-distance",
+     "tv-dpad-axes",
+     "color-states-complete",
+     "layout-spacing-scale",
+     "layout-hierarchy-one-thing"
+    ],
+    "bundle_tokens": 1219,
+    "expected_concepts": [
+     "tv.ten_foot_typography",
+     "layout.media_card",
+     "perf.layout_shift",
+     "content.i18n_expansion",
+     "a11y.accessible_names",
+     "tv.no_touch_hover"
+    ],
+    "critical_concepts": [
+     "tv.ten_foot_typography",
+     "layout.media_card",
+     "perf.layout_shift"
+    ],
+    "delivered_concepts": [
+     "a11y.accessible_names",
+     "data.exception_first",
+     "interaction.back_semantics",
+     "interaction.dpad_reachability",
+     "interaction.focus_restore",
+     "interaction.focus_visible",
+     "interaction.selection_visible",
+     "layout.focal_hierarchy",
+     "layout.media_card",
+     "layout.one_primary_action",
+     "layout.spacing_scale",
+     "process.reuse_first",
+     "state.loading_empty_error",
+     "tv.safe_margins",
+     "tv.ten_foot_typography"
+    ],
+    "concept_recall": 0.5,
+    "critical_recall": 0.667,
+    "forbidden_delivered": [],
+    "change_budget": "low"
+   },
+   "c4": {
+    "platform_expected": "tv",
+    "platform_resolved": [
+     "tv"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "accessibility",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "polish",
+     "audit"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "comp-media-card",
+     "comp-player-controls",
+     "impl-reuse-before-new",
+     "a11y-tv-focus-always",
+     "tv-safe-area",
+     "tv-typography-distance",
+     "tv-dpad-axes",
+     "layout-spacing-scale"
+    ],
+    "bundle_tokens": 1112,
+    "expected_concepts": [
+     "tv.ten_foot_typography",
+     "layout.media_card",
+     "perf.layout_shift",
+     "content.i18n_expansion",
+     "a11y.accessible_names",
+     "tv.no_touch_hover"
+    ],
+    "critical_concepts": [
+     "tv.ten_foot_typography",
+     "layout.media_card",
+     "perf.layout_shift"
+    ],
+    "delivered_concepts": [
+     "a11y.accessible_names",
+     "interaction.dpad_reachability",
+     "interaction.focus_restore",
+     "interaction.focus_visible",
+     "layout.media_card",
+     "layout.spacing_scale",
+     "media.details_play_first",
+     "media.track_selection",
+     "process.reuse_first",
+     "tv.player_autohide",
+     "tv.safe_margins",
+     "tv.ten_foot_typography"
+    ],
+    "concept_recall": 0.5,
+    "critical_recall": 0.667,
+    "forbidden_delivered": [],
+    "change_budget": "low"
+   }
+  },
+  {
+   "task": "p6-27",
+   "codebase": "p6-tv-iptv-web",
+   "c1": {
+    "platform_expected": "tv",
+    "platform_resolved": [
+     "tv",
+     "web"
+    ],
+    "platform_correct": "extra",
+    "missing_platform_entry": true,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "audit",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "audit",
+     "refactor"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "layout-epg-grid",
+     "comp-epg",
+     "a11y-tv-focus-always",
+     "tv-no-touch-hover",
+     "layout-states-empty-loading-error"
+    ],
+    "bundle_tokens": 840,
+    "expected_concepts": [
+     "tv.time_navigation",
+     "tv.epg_pinned_channels",
+     "navigation.orientation_and_back",
+     "interaction.focus_visible",
+     "interaction.dpad_reachability",
+     "perf.focus_latency"
+    ],
+    "critical_concepts": [
+     "tv.time_navigation",
+     "navigation.orientation_and_back",
+     "interaction.focus_visible"
+    ],
+    "delivered_concepts": [
+     "interaction.dpad_reachability",
+     "interaction.focus_restore",
+     "interaction.focus_visible",
+     "interaction.hover_independence",
+     "media.details_play_first",
+     "media.live_channel_switching",
+     "state.loading_empty_error",
+     "table.virtualization",
+     "tv.epg_pinned_channels",
+     "tv.no_touch_hover",
+     "tv.time_navigation"
+    ],
+    "concept_recall": 0.667,
+    "critical_recall": 0.667,
+    "forbidden_delivered": [
+     "media.details_play_first"
+    ],
+    "change_budget": "moderate"
+   },
+   "c4": {
+    "platform_expected": "tv",
+    "platform_resolved": [
+     "tv"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "audit",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "audit",
+     "refactor"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "comp-epg",
+     "dir-broadcast-guide-tv",
+     "nav-orientation-and-back",
+     "a11y-tv-focus-always",
+     "tv-typography-distance",
+     "tv-safe-area"
+    ],
+    "bundle_tokens": 816,
+    "expected_concepts": [
+     "tv.time_navigation",
+     "tv.epg_pinned_channels",
+     "navigation.orientation_and_back",
+     "interaction.focus_visible",
+     "interaction.dpad_reachability",
+     "perf.focus_latency"
+    ],
+    "critical_concepts": [
+     "tv.time_navigation",
+     "navigation.orientation_and_back",
+     "interaction.focus_visible"
+    ],
+    "delivered_concepts": [
+     "interaction.dpad_reachability",
+     "interaction.focus_restore",
+     "interaction.focus_visible",
+     "media.details_play_first",
+     "media.live_channel_switching",
+     "navigation.deep_link_state",
+     "navigation.orientation_and_back",
+     "table.virtualization",
+     "tv.epg_pinned_channels",
+     "tv.safe_margins",
+     "tv.ten_foot_typography",
+     "tv.time_navigation"
+    ],
+    "concept_recall": 0.833,
+    "critical_recall": 1.0,
+    "forbidden_delivered": [
+     "media.details_play_first"
+    ],
+    "change_budget": "moderate"
+   }
+  },
+  {
+   "task": "p6-28",
+   "codebase": "p6-tv-iptv-web",
+   "c1": {
+    "platform_expected": "tv",
+    "platform_resolved": [
+     "web"
+    ],
+    "platform_correct": "wrong",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "audit",
+     "refactor"
+    ],
+    "mode_correct": "acceptable",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "comp-player-controls",
+     "comp-mini-player"
+    ],
+    "bundle_tokens": 581,
+    "expected_concepts": [
+     "tv.player_autohide",
+     "interaction.focus_restore",
+     "interaction.dpad_reachability",
+     "interaction.focus_visible",
+     "a11y.reduced_motion",
+     "tv.no_touch_hover"
+    ],
+    "critical_concepts": [
+     "tv.player_autohide",
+     "interaction.focus_restore"
+    ],
+    "delivered_concepts": [
+     "a11y.accessible_names",
+     "interaction.back_semantics",
+     "interaction.focus_restore",
+     "media.track_selection",
+     "state.loading_empty_error",
+     "tv.player_autohide",
+     "tv.safe_margins"
+    ],
+    "concept_recall": 0.333,
+    "critical_recall": 1.0,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   },
+   "c4": {
+    "platform_expected": "tv",
+    "platform_resolved": [
+     "tv"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "audit",
+     "refactor"
+    ],
+    "mode_correct": "acceptable",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "comp-player-controls",
+     "layout-split-player",
+     "tv-player-controls",
+     "a11y-tv-focus-always",
+     "tv-typography-distance",
+     "tv-dpad-axes",
+     "tv-safe-area",
+     "tv-back-behavior"
+    ],
+    "bundle_tokens": 1174,
+    "expected_concepts": [
+     "tv.player_autohide",
+     "interaction.focus_restore",
+     "interaction.dpad_reachability",
+     "interaction.focus_visible",
+     "a11y.reduced_motion",
+     "tv.no_touch_hover"
+    ],
+    "critical_concepts": [
+     "tv.player_autohide",
+     "interaction.focus_restore"
+    ],
+    "delivered_concepts": [
+     "a11y.accessible_names",
+     "interaction.back_semantics",
+     "interaction.dpad_reachability",
+     "interaction.focus_restore",
+     "interaction.focus_visible",
+     "media.details_play_first",
+     "media.live_channel_switching",
+     "media.track_selection",
+     "tv.player_autohide",
+     "tv.safe_margins",
+     "tv.ten_foot_typography"
+    ],
+    "concept_recall": 0.667,
+    "critical_recall": 1.0,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   }
+  },
+  {
+   "task": "p6-29",
+   "codebase": "p3-kiosk-pharmacy",
+   "c1": {
+    "platform_expected": "kiosk",
+    "platform_resolved": [
+     "kiosk"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "audit",
+     "refactor"
+    ],
+    "mode_correct": "acceptable",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "CONFIDENT",
+    "bundle_ids": [
+     "comp-kiosk-keypad",
+     "nav-wizard",
+     "comp-dialog",
+     "feedback-progress-async",
+     "kiosk-public-use"
+    ],
+    "bundle_tokens": 991,
+    "expected_concepts": [
+     "layout.focal_hierarchy",
+     "a11y.color_not_only",
+     "a11y.live_status",
+     "feedback.progress_indicator",
+     "env.glanceable_status",
+     "state.session_expiry"
+    ],
+    "critical_concepts": [
+     "layout.focal_hierarchy",
+     "a11y.color_not_only",
+     "a11y.live_status"
+    ],
+    "delivered_concepts": [
+     "a11y.accessible_names",
+     "a11y.dialog_focus",
+     "a11y.live_status",
+     "feedback.confirmation_destructive",
+     "feedback.progress_indicator",
+     "feedback.validation_errors",
+     "interaction.focus_restore",
+     "onboarding.linear_wizard",
+     "privacy.sensitive_masking",
+     "privacy.shared_device",
+     "state.offline_sync",
+     "state.session_expiry",
+     "touch.minimum_target"
+    ],
+    "concept_recall": 0.5,
+    "critical_recall": 0.333,
+    "forbidden_delivered": [
+     "feedback.confirmation_destructive",
+     "onboarding.linear_wizard"
+    ],
+    "change_budget": "moderate"
+   },
+   "c4": {
+    "platform_expected": "kiosk",
+    "platform_resolved": [
+     "kiosk"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "audit",
+     "refactor"
+    ],
+    "mode_correct": "acceptable",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "comp-toast-notification",
+     "feedback-progress-async"
+    ],
+    "bundle_tokens": 385,
+    "expected_concepts": [
+     "layout.focal_hierarchy",
+     "a11y.color_not_only",
+     "a11y.live_status",
+     "feedback.progress_indicator",
+     "env.glanceable_status",
+     "state.session_expiry"
+    ],
+    "critical_concepts": [
+     "layout.focal_hierarchy",
+     "a11y.color_not_only",
+     "a11y.live_status"
+    ],
+    "delivered_concepts": [
+     "a11y.live_status",
+     "feedback.progress_indicator",
+     "state.offline_sync"
+    ],
+    "concept_recall": 0.333,
+    "critical_recall": 0.333,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   }
+  },
+  {
+   "task": "p6-30",
+   "codebase": "p6-kiosk-transit",
+   "c1": {
+    "platform_expected": "kiosk",
+    "platform_resolved": [
+     "kiosk"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "audit",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "audit",
+     "refactor"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "kiosk-public-use"
+    ],
+    "bundle_tokens": 132,
+    "expected_concepts": [
+     "state.session_expiry",
+     "privacy.shared_device",
+     "feedback.confirmation_destructive",
+     "feedback.progress_indicator",
+     "touch.minimum_target",
+     "a11y.live_status"
+    ],
+    "critical_concepts": [
+     "state.session_expiry",
+     "privacy.shared_device"
+    ],
+    "delivered_concepts": [
+     "privacy.shared_device",
+     "state.session_expiry",
+     "touch.minimum_target"
+    ],
+    "concept_recall": 0.5,
+    "critical_recall": 1.0,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   },
+   "c4": {
+    "platform_expected": "kiosk",
+    "platform_resolved": [
+     "kiosk"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "audit",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "audit",
+     "refactor"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "kiosk-public-use"
+    ],
+    "bundle_tokens": 132,
+    "expected_concepts": [
+     "state.session_expiry",
+     "privacy.shared_device",
+     "feedback.confirmation_destructive",
+     "feedback.progress_indicator",
+     "touch.minimum_target",
+     "a11y.live_status"
+    ],
+    "critical_concepts": [
+     "state.session_expiry",
+     "privacy.shared_device"
+    ],
+    "delivered_concepts": [
+     "privacy.shared_device",
+     "state.session_expiry",
+     "touch.minimum_target"
+    ],
+    "concept_recall": 0.5,
+    "critical_recall": 1.0,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   }
+  },
+  {
+   "task": "p6-31",
+   "codebase": "p6-kiosk-transit",
+   "c1": {
+    "platform_expected": "kiosk",
+    "platform_resolved": [
+     "kiosk"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "accessibility",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "audit",
+     "refactor"
+    ],
+    "mode_correct": "acceptable",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "kiosk-public-use"
+    ],
+    "bundle_tokens": 132,
+    "expected_concepts": [
+     "touch.minimum_target",
+     "a11y.accessible_names",
+     "a11y.live_status",
+     "layout.spacing_scale",
+     "a11y.contrast",
+     "interaction.selection_visible"
+    ],
+    "critical_concepts": [
+     "touch.minimum_target",
+     "a11y.accessible_names"
+    ],
+    "delivered_concepts": [
+     "privacy.shared_device",
+     "state.session_expiry",
+     "touch.minimum_target"
+    ],
+    "concept_recall": 0.167,
+    "critical_recall": 0.5,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   },
+   "c4": {
+    "platform_expected": "kiosk",
+    "platform_resolved": [
+     "kiosk"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "accessibility",
+     "polish",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "audit",
+     "refactor"
+    ],
+    "mode_correct": "acceptable",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "kiosk-public-use"
+    ],
+    "bundle_tokens": 132,
+    "expected_concepts": [
+     "touch.minimum_target",
+     "a11y.accessible_names",
+     "a11y.live_status",
+     "layout.spacing_scale",
+     "a11y.contrast",
+     "interaction.selection_visible"
+    ],
+    "critical_concepts": [
+     "touch.minimum_target",
+     "a11y.accessible_names"
+    ],
+    "delivered_concepts": [
+     "privacy.shared_device",
+     "state.session_expiry",
+     "touch.minimum_target"
+    ],
+    "concept_recall": 0.167,
+    "critical_recall": 0.5,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   }
+  },
+  {
+   "task": "p6-32",
+   "codebase": "p6-kiosk-transit",
+   "c1": {
+    "platform_expected": "kiosk",
+    "platform_resolved": [
+     "kiosk"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "create",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "create"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "kiosk-public-use",
+     "impl-reuse-before-new"
+    ],
+    "bundle_tokens": 263,
+    "expected_concepts": [
+     "content.i18n_expansion",
+     "touch.minimum_target",
+     "interaction.selection_visible",
+     "a11y.accessible_names",
+     "state.session_expiry",
+     "process.reuse_first"
+    ],
+    "critical_concepts": [
+     "content.i18n_expansion",
+     "touch.minimum_target",
+     "interaction.selection_visible"
+    ],
+    "delivered_concepts": [
+     "privacy.shared_device",
+     "process.reuse_first",
+     "state.session_expiry",
+     "touch.minimum_target"
+    ],
+    "concept_recall": 0.5,
+    "critical_recall": 0.333,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   },
+   "c4": {
+    "platform_expected": "kiosk",
+    "platform_resolved": [
+     "kiosk"
+    ],
+    "platform_correct": "yes",
+    "missing_platform_entry": false,
+    "artifact_state_expected": "existing",
+    "artifact_state_resolved": "existing",
+    "artifact_state_correct": true,
+    "mode_expected": [
+     "create",
+     "refactor"
+    ],
+    "mode_resolved": [
+     "create"
+    ],
+    "mode_correct": "yes",
+    "scope_kind_expected": "in-scope",
+    "scope_kind_resolved": "in-scope",
+    "scope_correct": true,
+    "status": "PARTIAL",
+    "bundle_ids": [
+     "i18n-text-expansion-rtl",
+     "impl-reuse-before-new",
+     "kiosk-public-use"
+    ],
+    "bundle_tokens": 463,
+    "expected_concepts": [
+     "content.i18n_expansion",
+     "touch.minimum_target",
+     "interaction.selection_visible",
+     "a11y.accessible_names",
+     "state.session_expiry",
+     "process.reuse_first"
+    ],
+    "critical_concepts": [
+     "content.i18n_expansion",
+     "touch.minimum_target",
+     "interaction.selection_visible"
+    ],
+    "delivered_concepts": [
+     "content.i18n_expansion",
+     "privacy.shared_device",
+     "process.reuse_first",
+     "state.session_expiry",
+     "touch.minimum_target"
+    ],
+    "concept_recall": 0.667,
+    "critical_recall": 0.667,
+    "forbidden_delivered": [],
+    "change_budget": "moderate"
+   }
+  }
+ ]
+}

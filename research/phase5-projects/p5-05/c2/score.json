@@ -1,0 +1,138 @@
+{
+ "task": "p5-05",
+ "build": "50966e8e6184f31722a7b3c7f270a241dd0f7b68187492d0c971f7c79734e680",
+ "c1_recorded": {
+  "platform_expected": "web",
+  "platform_resolved": [
+   "web"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "accessibility",
+   "audit",
+   "polish"
+  ],
+  "mode_resolved": [
+   "accessibility",
+   "audit"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "CONFIDENT",
+  "bundle_ids": [
+   "comp-chart-container",
+   "comp-filters",
+   "search-filter-feedback",
+   "a11y-keyboard-operable",
+   "a11y-semantics-structure",
+   "a11y-nontext-contrast",
+   "a11y-labels-names",
+   "a11y-color-not-only"
+  ],
+  "bundle_tokens": 1015,
+  "expected_concepts": [
+   "interaction.keyboard_navigation",
+   "interaction.focus_visible",
+   "interaction.selection_visible",
+   "a11y.semantics",
+   "a11y.accessible_names",
+   "process.safe_modification"
+  ],
+  "critical_concepts": [
+   "interaction.keyboard_navigation",
+   "interaction.focus_visible"
+  ],
+  "delivered_concepts": [
+   "a11y.accessible_names",
+   "a11y.color_not_only",
+   "a11y.contrast",
+   "a11y.live_status",
+   "a11y.semantics",
+   "data.accessible_chart_alternative",
+   "data.chart_by_question",
+   "data.filter_chips",
+   "data.search_results",
+   "interaction.focus_visible",
+   "interaction.hover_independence",
+   "interaction.keyboard_navigation",
+   "interaction.selection_visible",
+   "navigation.deep_link_state",
+   "state.loading_empty_error"
+  ],
+  "concept_recall": 0.833,
+  "critical_recall": 1.0,
+  "forbidden_delivered": [],
+  "change_budget": "low"
+ },
+ "c2": {
+  "platform_expected": "web",
+  "platform_resolved": [
+   "web"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "accessibility",
+   "audit",
+   "polish"
+  ],
+  "mode_resolved": [
+   "accessibility",
+   "audit"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "CONFIDENT",
+  "bundle_ids": [
+   "comp-chart-container",
+   "comp-filters",
+   "a11y-skip-link",
+   "a11y-nontext-contrast",
+   "search-filter-feedback",
+   "a11y-labels-names"
+  ],
+  "bundle_tokens": 861,
+  "expected_concepts": [
+   "interaction.keyboard_navigation",
+   "interaction.focus_visible",
+   "interaction.selection_visible",
+   "a11y.semantics",
+   "a11y.accessible_names",
+   "process.safe_modification"
+  ],
+  "critical_concepts": [
+   "interaction.keyboard_navigation",
+   "interaction.focus_visible"
+  ],
+  "delivered_concepts": [
+   "a11y.accessible_names",
+   "a11y.color_not_only",
+   "a11y.contrast",
+   "a11y.live_status",
+   "a11y.semantics",
+   "data.accessible_chart_alternative",
+   "data.chart_by_question",
+   "data.filter_chips",
+   "data.search_results",
+   "interaction.focus_visible",
+   "interaction.keyboard_navigation",
+   "navigation.deep_link_state",
+   "state.loading_empty_error"
+  ],
+  "concept_recall": 0.667,
+  "critical_recall": 1.0,
+  "forbidden_delivered": [],
+  "change_budget": "low"
+ }
+}

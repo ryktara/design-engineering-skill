@@ -1,0 +1,195 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "create"
+  ],
+  "platform": [
+    "desktop"
+  ],
+  "input": [
+    "keyboard",
+    "pointer"
+  ],
+  "product": [
+    "erp"
+  ],
+  "screen": [],
+  "screen_subtype": [],
+  "stack": [
+    "winui"
+  ],
+  "density": "high",
+  "components": [
+    "navigation"
+  ],
+  "environment": [],
+  "jobs": [],
+  "problems": [],
+  "risk": "low",
+  "primary_jobs": [
+    "create navigation"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "preserve_navigation": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "keyboard": true,
+    "screen_reader": true,
+    "focus": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "change_budget": "moderate",
+  "scope": {
+    "domain": "UI_INTERACTION",
+    "in_scope": true,
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "mode_evidence": [
+    "create: default (no mode cue)"
+  ],
+  "project_context": {
+    "navigation": {
+      "value": "left-rail",
+      "status": "KNOWN",
+      "evidence": [
+        "left-rail: 7 matches in MainWindow.xaml, MainWindow.xaml.cs, OrdersPage.xaml (shell/layout file)",
+        "also menu-bar: 9 matches"
+      ]
+    },
+    "theme": {
+      "value": "dual-theme",
+      "status": "INFERRED",
+      "evidence": [
+        "dark theme configuration signals: 1",
+        "hex palette: 0 near-white, 0 near-black"
+      ]
+    },
+    "surfaces": {
+      "value": "bordered-flat",
+      "status": "INFERRED",
+      "evidence": [
+        "weak signal: shadow 0, border 1"
+      ]
+    },
+    "radius": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "spacing": {
+      "value": 4,
+      "status": "INFERRED",
+      "evidence": [
+        "most used spacing values [16, 12, 8, 4, 2]"
+      ]
+    },
+    "typography": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": [
+        "no font family declaration found"
+      ]
+    },
+    "components": {
+      "value": "winui3, community-toolkit",
+      "status": "KNOWN",
+      "evidence": [
+        "winui3",
+        "community-toolkit"
+      ]
+    }
+  },
+  "known": [
+    "platform=desktop (request: keyboard shortcut, keyboard shortcuts)",
+    "input=keyboard (request: keyboard, shortcut, shortcuts)",
+    "product=erp (project inspection (README))",
+    "stack=winui (project inspection)",
+    "project_navigation=left-rail (repository: left-rail: 7 matches in MainWindow.xaml, MainWindow.xaml.cs, OrdersPage.xaml (shell/layout file); also menu-bar: 9 matches)",
+    "project_components=winui3, community-toolkit (repository: winui3; community-toolkit)"
+  ],
+  "inferred": [
+    "input=pointer (implied by platform desktop)",
+    "density=high (implied by product erp)",
+    "mode=create (default (no mode cue))",
+    "project_theme=dual-theme (repository: dark theme configuration signals: 1; hex palette: 0 near-white, 0 near-black)",
+    "project_surfaces=bordered-flat (repository: weak signal: shadow 0, border 1)",
+    "project_spacing=4 (repository: most used spacing values [16, 12, 8, 4, 2])"
+  ],
+  "missing": [
+    "brand: no brand assets, guideline, or character description available"
+  ],
+  "status": "CONFIDENT",
+  "source": {
+    "request": [
+      "keyboard shortcut, keyboard shortcuts",
+      "keyboard, shortcut, shortcuts"
+    ],
+    "project": [
+      "Erp.Client.csproj: Microsoft.WindowsAppSDK",
+      "Erp.Client.csproj: CommunityToolkit.WinUI"
+    ]
+  },
+  "activation": {
+    "decision": "activate",
+    "ui_score": 5.0,
+    "non_ui_score": 0,
+    "ui_terms": [
+      "page",
+      "theme",
+      "navigation"
+    ],
+    "non_ui_terms": []
+  },
+  "intent": {
+    "existing": true,
+    "problem": false,
+    "facet": "general",
+    "diagnose_only": false,
+    "creation": false,
+    "redesign": false,
+    "responsive_cues": false,
+    "preserve": [
+      "navigation"
+    ],
+    "scope": "moderate"
+  },
+  "intent_evidence": {
+    "existing": [
+      "existing"
+    ],
+    "problem": [],
+    "change": [],
+    "create": [],
+    "diagnose": [],
+    "no_change": [],
+    "redesign": [],
+    "look_feel": [],
+    "structural": [
+      "navigation",
+      "shortcuts"
+    ],
+    "responsive": [],
+    "accessibility": [],
+    "interaction": [
+      "keyboard"
+    ]
+  },
+  "scope_evidence": {
+    "ui": [
+      "page",
+      "navigation",
+      "theme",
+      "keyboard"
+    ],
+    "ux_symptoms": [
+      "keyboard"
+    ],
+    "technical": {},
+    "non_visual": []
+  }
+}

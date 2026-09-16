@@ -1,0 +1,11 @@
+{
+  "platform": "tv",
+  "artifact_state": "existing",
+  "acceptable_modes": ["polish", "refactor"],
+  "scope_kind": "in-scope",
+  "expected_concepts": ["perf.focus_latency", "interaction.dpad_reachability", "interaction.focus_visible", "a11y.reduced_motion", "tv.ten_foot_typography"],
+  "critical_concepts": ["perf.focus_latency", "interaction.dpad_reachability"],
+  "forbidden_concepts": ["touch.ime_keyboard", "touch.safe_areas", "tv.sign_in_code", "tv.player_autohide", "media.track_selection", "table.virtualization", "adaptive.breakpoint_matrix", "anti.scroll_animation"],
+  "preservation": ["navigation", "theme", "typography"],
+  "reviewer_note": "Problem is D-pad key-repeat (long-press RIGHT) on a LazyRow: every repeated KEYCODE_DPAD_RIGHT moves focus one card and the 25% pivot BringIntoViewSpec snaps, so the rail streams past. Correct fix: govern the repeat rate (consume repeats faster than ~one card per 150-200 ms, or a sustained-hold pace with the pivot animation completing per step), keep the focused card pinned at the pivot with a bounded per-step animation so titles stay legible, respect reduced motion (instant but still governed), no change to nav/theme/type. The ontology has no id for key-repeat / long-press scroll governance; perf.focus_latency and interaction.dpad_reachability are the nearest carriers, so a knowledge-gap on the core fix is likely."
+}

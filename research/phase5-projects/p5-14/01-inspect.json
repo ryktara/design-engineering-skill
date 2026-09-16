@@ -1,0 +1,113 @@
+{
+  "root": "D:\\indigo pro\\MYownSkills\\research\\phase3-projects\\p3-erp-desktop-dotnet\\project",
+  "findings": [
+    {
+      "status": "KNOWN",
+      "note": "ErpClient.csproj: UseWPF"
+    }
+  ],
+  "stack_groups": [
+    "wpf"
+  ],
+  "platforms": [
+    "desktop"
+  ],
+  "ui_libraries": [
+    "wpf"
+  ],
+  "package_manager": null,
+  "css_architecture": [],
+  "tokens": [
+    "App.xaml"
+  ],
+  "fonts": [],
+  "icons": [],
+  "routing": [
+    "Views/ (views)",
+    "ViewModels/ (mvvm viewmodels)"
+  ],
+  "breakpoints": [],
+  "accessibility": [
+    "a11y attributes present in 3 files"
+  ],
+  "focus_handling": [
+    "explicit focus handling in 3 files"
+  ],
+  "design_docs": [],
+  "component_dirs": [
+    "Themes/ (3 files)"
+  ],
+  "tests": [],
+  "i18n": [],
+  "product_hints": [],
+  "sample": {
+    "files_scanned": 19
+  },
+  "design_context": {
+    "navigation": {
+      "value": "menu-bar",
+      "status": "KNOWN",
+      "evidence": [
+        "menu-bar: 2 matches in App.xaml.cs, PurchaseOrderLinesView.xaml (shell/layout file)"
+      ],
+      "candidates": {
+        "menu-bar": 2
+      }
+    },
+    "theme": {
+      "value": "light-first",
+      "status": "KNOWN",
+      "evidence": [
+        "root/canvas backgrounds: 4 light, 0 dark",
+        "hex palette: 11 near-white, 1 near-black"
+      ]
+    },
+    "surfaces": {
+      "value": "bordered-flat",
+      "status": "INFERRED",
+      "evidence": [
+        "borders in 3 files, shadow/elevation in 0"
+      ]
+    },
+    "radius": {
+      "value": "small",
+      "status": "INFERRED",
+      "evidence": [
+        "most common radius 2 (2\u00d7); others [1.0, 10.0]"
+      ]
+    },
+    "spacing": {
+      "value": 4,
+      "status": "INFERRED",
+      "evidence": [
+        "most used spacing values [16, 8, 2, 12, 9]"
+      ]
+    },
+    "typography": {
+      "value": "monospace",
+      "status": "INFERRED",
+      "evidence": [
+        "font family Cascadia Mono, Consolas (1 refs)",
+        "weights semibold, bold",
+        "tabular numerals"
+      ],
+      "features": {
+        "weights": [
+          "semibold",
+          "bold"
+        ],
+        "type_scale": false,
+        "monospace": false,
+        "tabular_numerals": true
+      }
+    },
+    "components": {
+      "value": "wpf",
+      "status": "KNOWN",
+      "evidence": [
+        "wpf"
+      ]
+    },
+    "schema": "design-context/v1"
+  }
+}

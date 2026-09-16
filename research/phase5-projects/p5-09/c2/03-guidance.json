@@ -1,0 +1,1054 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "When you hold right on the remote the rail flies past too fast to read the titles.",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "tv"
+    ],
+    "input": [
+      "remote"
+    ],
+    "product": [],
+    "screen": [],
+    "screen_subtype": [
+      "rails"
+    ],
+    "stack": [
+      "compose",
+      "compose-tv"
+    ],
+    "density": null,
+    "components": [
+      "media"
+    ],
+    "environment": [
+      "large-display",
+      "shared-device"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "audit media"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_INTERACTION",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "interaction",
+        "visual"
+      ],
+      "change_scope": "unknown",
+      "utterance": "observation",
+      "existing": true,
+      "problem": false,
+      "facet": "interaction",
+      "diagnose_only": false,
+      "creation": false,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "audit: interaction defect on existing UI",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "tv-rails",
+        "status": "KNOWN",
+        "evidence": [
+          "tv-rails: 99 matches in AppState.kt, Cards.kt, EventDetailsScreen.kt (shell/layout file)"
+        ]
+      },
+      "theme": {
+        "value": "dark-first",
+        "status": "KNOWN",
+        "evidence": [
+          "dark theme configuration signals: 1",
+          "root/canvas backgrounds: 0 light, 1 dark",
+          "hex palette: 2 near-white, 4 near-black"
+        ]
+      },
+      "surfaces": {
+        "value": "bordered-flat",
+        "status": "INFERRED",
+        "evidence": [
+          "borders in 8 files, shadow/elevation in 1"
+        ]
+      },
+      "radius": {
+        "value": "pill",
+        "status": "INFERRED",
+        "evidence": [
+          "most common radius 50 (6×); others [8.0, 4.0]"
+        ]
+      },
+      "spacing": {
+        "value": 8,
+        "status": "INFERRED",
+        "evidence": [
+          "most used spacing values [16, 10, 8]"
+        ]
+      },
+      "typography": {
+        "value": "custom",
+        "status": "KNOWN",
+        "evidence": [
+          "font family System (5 refs)",
+          "weights bold, semibold, normal, medium",
+          "encoded type scale in 1 files"
+        ]
+      },
+      "components": {
+        "value": "compose, compose-tv-material, media3, images:coil",
+        "status": "KNOWN",
+        "evidence": [
+          "compose",
+          "compose-tv-material",
+          "media3"
+        ]
+      }
+    },
+    "known": [
+      "platform=tv (project inspection)",
+      "input=remote (request: remote)",
+      "stack=compose (project inspection)",
+      "stack=compose-tv (project inspection)",
+      "project_navigation=tv-rails (repository: tv-rails: 99 matches in AppState.kt, Cards.kt, EventDetailsScreen.kt (shell/layout file))",
+      "project_theme=dark-first (repository: dark theme configuration signals: 1; root/canvas backgrounds: 0 light, 1 dark)",
+      "project_typography=custom (repository: font family System (5 refs); weights bold, semibold, normal, medium)",
+      "project_components=compose, compose-tv-material, media3, images:coil (repository: compose; compose-tv-material)"
+    ],
+    "inferred": [
+      "mode=audit (interaction defect on existing UI)",
+      "mode=refactor (fix follows the diagnosis)",
+      "environment=shared-device (a TV is normally a shared household device)",
+      "environment=large-display (TV platform)",
+      "project_surfaces=bordered-flat (repository: borders in 8 files, shadow/elevation in 1)",
+      "project_radius=pill (repository: most common radius 50 (6×); others [8.0, 4.0])",
+      "project_spacing=8 (repository: most used spacing values [16, 10, 8])"
+    ],
+    "missing": [],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [
+        "fast",
+        "remote"
+      ],
+      "project": [
+        "app\\build.gradle.kts: androidx.compose",
+        "app\\build.gradle.kts: androidx.tv:tv-material",
+        "app\\build.gradle.kts: androidx.media3",
+        "app\\build.gradle.kts: coil",
+        "app\\src\\main\\AndroidManifest.xml: leanback launcher (Android TV)",
+        "touchscreen not required in manifest (TV/set-top)",
+        "DPAD / remote key handling found in source",
+        "Compose dependencies imply mobile but the only launcher is leanback: TV-only app"
+      ]
+    },
+    "activation": {
+      "decision": "ambiguous",
+      "ui_score": 1.0,
+      "non_ui_score": 0,
+      "ui_terms": [],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "the remote the rail"
+      ],
+      "new": [],
+      "defect": [],
+      "operations": {},
+      "domains": {
+        "interaction": [
+          "remote"
+        ],
+        "visual": [
+          "read"
+        ]
+      },
+      "no_change": [],
+      "scope": {},
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "rail",
+        "remote",
+        "concept:perf.focus_latency"
+      ],
+      "ux_symptoms": [
+        "too fast to",
+        "flies past"
+      ],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_INTERACTION",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "accessibility",
+        "reason": "audit mode"
+      },
+      {
+        "concern": "interaction",
+        "reason": "audit mode: operability is part of the review"
+      },
+      {
+        "concern": "component",
+        "reason": "the reviewed component/screen"
+      },
+      {
+        "concern": "performance",
+        "reason": "focus latency and catalog virtualization on TV"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "states",
+        "reason": "audits check empty/loading/error handling"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "audits name generic-design defects"
+      },
+      {
+        "concern": "feedback",
+        "reason": "audits check that actions are discoverable and confirmed"
+      },
+      {
+        "concern": "content",
+        "reason": "10-foot readability"
+      },
+      {
+        "concern": "navigation",
+        "reason": "screen subtype rails"
+      },
+      {
+        "concern": "environment",
+        "reason": "environment large-display (INFERRED)"
+      }
+    ],
+    "optional": [],
+    "required_concepts": [
+      {
+        "concept": "perf.focus_latency",
+        "reason": "named in the request: hold right, fly past"
+      },
+      {
+        "concept": "state.loading_empty_error",
+        "reason": "asynchronous or remote data on this screen"
+      },
+      {
+        "concept": "a11y.reduced_motion",
+        "reason": "held-key scrolling must respect reduced motion"
+      },
+      {
+        "concept": "interaction.dpad_reachability",
+        "reason": "TV / remote input"
+      },
+      {
+        "concept": "interaction.focus_restore",
+        "reason": "TV / remote input"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "TV / remote input"
+      },
+      {
+        "concept": "tv.ten_foot_typography",
+        "reason": "TV / remote input"
+      },
+      {
+        "concept": "layout.media_card",
+        "reason": "screen subtype rails"
+      }
+    ],
+    "recommended_concepts": [
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "process.reuse_first",
+      "interaction.back_semantics",
+      "tv.no_touch_hover",
+      "tv.dark_first",
+      "privacy.shared_device",
+      "tv.safe_margins"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "comp-tv-rail",
+      "kind": "component",
+      "category": "tv-rail",
+      "title": "TV rail (horizontal row of cards)",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "navigation",
+        "performance"
+      ],
+      "concepts": [
+        "interaction.focus_restore",
+        "perf.focus_latency",
+        "layout.media_card"
+      ],
+      "covers": [
+        "focus restoration",
+        "focus latency",
+        "media card with one focus target and one status overlay"
+      ],
+      "score": 0.331,
+      "guidance": "Rail title (≥24 sp) left-aligned in the safe area, cards of one aspect ratio, focused card scrolls to a fixed pivot (~10–30% from left) with LEFT at index 0 going to navigation, focus memory per rail, lazy loading of items and images, 'see all' as the last card if the rail is capped, no wrap-around, consistent card counts per width (Android: ~4 landscape / ~6 portrait at 960 dp).",
+      "use_when": "Categorised browsing on TV home, section, and search screens.",
+      "avoid_when": "Fewer than ~4 items (use a grid row), comparison tasks.",
+      "risk": {
+        "a11y": "high",
+        "perf": "high"
+      },
+      "provenance": "platform-standard",
+      "implementation": {
+        "compose-tv": "LazyRow inside LazyColumn with focusRestorer() and LocalBringIntoViewSpec for pivot; item keys stable; contentPadding = safe margins."
+      },
+      "incompatible": [
+        "layout-table-first"
+      ],
+      "why": {
+        "lexical": 0.112,
+        "structural": 0.6,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode audit"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "tv-dpad-hold-pacing",
+      "kind": "rule",
+      "category": "focus",
+      "title": "TV: pace held D-pad repeats on rails and grids",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "perf.focus_latency",
+        "interaction.dpad_reachability",
+        "a11y.reduced_motion",
+        "interaction.focus_visible"
+      ],
+      "covers": [
+        "focus latency",
+        "D-pad focus reachability",
+        "reduced motion",
+        "visible focus"
+      ],
+      "score": 0.857,
+      "guidance": "First press moves immediately; while the key is held, admit repeats at a fixed pace (about 3–5 cards per second) and finish each scroll step before the next move; keep the focused card inside the viewport with a stable position; show a large title of the focused item; under reduced motion keep the same pace with instant (non-animated) moves; long lists offer a page-jump (channel up/down, letter index).",
+      "use_when": "Rails, grids and guides where holding LEFT/RIGHT/UP/DOWN auto-repeats: titles fly past, focus outruns the scroll, users overshoot.",
+      "avoid_when": "Never coalesce or drop the first press; never let the focused card leave the viewport; never speed up under reduced motion.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.905,
+        "structural": 0.8,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "most relevant record for the request wording"
+    },
+    {
+      "id": "tv-typography-distance",
+      "kind": "rule",
+      "category": "typography",
+      "title": "TV: 10-foot typography",
+      "facets": [
+        "platform",
+        "visual"
+      ],
+      "concerns": [
+        "accessibility",
+        "content"
+      ],
+      "concepts": [
+        "tv.ten_foot_typography"
+      ],
+      "covers": [
+        "10-foot typography, readable at distance"
+      ],
+      "score": 0.364,
+      "guidance": "Body ≥24 sp (Android) / ≥29 pt (tvOS) at 1080p design scale, captions ≥20 sp, titles 32–48, display 57–72; sans with large x-height and open counters; short strings (titles ≤2 lines, synopsis ≤3 lines with expansion); avoid thin weights (<400) and light text on busy imagery; line height ≥1.3.",
+      "use_when": "All text on TV.",
+      "avoid_when": "Never scale a desktop type ramp up by a factor; rebuild the scale for distance and for reduced text volume.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "incompatible": [
+        "typography-serif-editorial"
+      ],
+      "why": {
+        "lexical": 0.007,
+        "structural": 0.8,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: 10-foot typography, readable at distance"
+    },
+    {
+      "id": "layout-states-empty-loading-error",
+      "kind": "rule",
+      "category": "feedback",
+      "title": "Design empty, loading, error, and partial states",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "states"
+      ],
+      "concepts": [
+        "state.loading_empty_error"
+      ],
+      "covers": [
+        "loading, empty and error states"
+      ],
+      "score": 0.243,
+      "guidance": "Empty: what this is, why it is empty, one action. Loading: skeleton with final dimensions, then content; announce completion. Error: what failed, what to do, retry that works; keep entered data. Partial: show what loaded, mark what didn't. On TV, focus must land somewhere valid in each state.",
+      "use_when": "Every list, table, chart, form, and detail screen.",
+      "avoid_when": "Never ship a blank area for empty data; never show a spinner for more than ~1 s without a skeleton or progress; never show an error without a next step.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.54,
+        "matched": [
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: loading, empty and error states"
+    },
+    {
+      "id": "tv-dark-first",
+      "kind": "rule",
+      "category": "color",
+      "title": "TV: dark-first colour with restrained saturation",
+      "facets": [
+        "platform",
+        "visual"
+      ],
+      "concerns": [
+        "accessibility",
+        "brand",
+        "content"
+      ],
+      "concepts": [
+        "tv.dark_first",
+        "a11y.contrast"
+      ],
+      "covers": [
+        "dark-first TV palette",
+        "high contrast"
+      ],
+      "score": 0.36,
+      "guidance": "Dark tinted canvas, text at 87–92% white, accent used for focus and primary only, semantic colours checked at ≥4.5:1 on dark, gradients dithered or avoided (banding on 8-bit panels), test in 'Standard' picture mode on a real panel.",
+      "use_when": "All TV themes.",
+      "avoid_when": "Avoid pure white backgrounds (glare, power), pure #000 canvas unless OLED black is intended, and large saturated red/orange areas (bloom, banding).",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "incompatible": [
+        "color-monochrome-light"
+      ],
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.8,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "recommended coverage: high contrast, dark-first TV palette"
+    },
+    {
+      "id": "shared-device-privacy",
+      "kind": "rule",
+      "category": "privacy",
+      "title": "Privacy on shared and public screens",
+      "facets": [
+        "accessibility",
+        "platform"
+      ],
+      "concerns": [
+        "environment",
+        "privacy"
+      ],
+      "concepts": [
+        "privacy.shared_device",
+        "state.session_expiry",
+        "privacy.sensitive_masking"
+      ],
+      "covers": [
+        "privacy of on-screen data on shared devices",
+        "session expiry and idle reset",
+        "masking of sensitive values with explicit reveal"
+      ],
+      "score": 0.297,
+      "guidance": "Assume onlookers: mask sensitive values by default with an explicit reveal (balances, medication, addresses), gate personal profiles and purchases behind a PIN on shared TVs, keep notifications and previews generic on shared screens, clear the session and screen on idle or sign-out (kiosks, waiting rooms), and never show one user's data while another profile is active. Announce masked values to assistive tech as masked, not as the value.",
+      "use_when": "TVs in a household, waiting-room tablets, kiosks, wall displays, any screen other people can see; personal data, balances, health details, viewing history, messages.",
+      "avoid_when": "Single-user personal devices with a lock screen already protecting the data.",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.66,
+        "matched": [
+          "platform tv",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "recommended coverage: environment, privacy of on-screen data on shared devices"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "performance"
+    ],
+    "covered_required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "performance"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "states",
+      "anti-pattern",
+      "feedback",
+      "content",
+      "navigation",
+      "environment"
+    ],
+    "covered_recommended_concerns": [
+      "states",
+      "content",
+      "navigation",
+      "environment"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "perf.focus_latency",
+      "state.loading_empty_error",
+      "a11y.reduced_motion",
+      "interaction.dpad_reachability",
+      "interaction.focus_restore",
+      "interaction.focus_visible",
+      "tv.ten_foot_typography",
+      "layout.media_card"
+    ],
+    "covered_required_concepts": [
+      "perf.focus_latency",
+      "state.loading_empty_error",
+      "a11y.reduced_motion",
+      "interaction.dpad_reachability",
+      "interaction.focus_restore",
+      "interaction.focus_visible",
+      "tv.ten_foot_typography",
+      "layout.media_card"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.38,
+    "bundle_size": 6,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 1,
+    "guardrail_size": 5,
+    "bundle_tokens": 896,
+    "coverage_per_1k_tokens": 8.93,
+    "mean_purity": 0.89,
+    "contaminated": [],
+    "category_diversity": 1.0,
+    "duplicate_pressure": 0.17,
+    "facet_coverage": 0.8,
+    "redundancy": 0.23
+  },
+  "token_coverage": 1.0,
+  "omitted": [
+    {
+      "id": "nav-tv-side",
+      "reason": "visual pattern without wording evidence on an existing UI (would restyle what the task does not concern)"
+    },
+    {
+      "id": "layout-rails",
+      "reason": "visual pattern without wording evidence on an existing UI (would restyle what the task does not concern)"
+    },
+    {
+      "id": "layout-immersive-rails",
+      "reason": "visual pattern without wording evidence on an existing UI (would restyle what the task does not concern)"
+    }
+  ],
+  "rejected": [
+    {
+      "id": "anti-default-fonts",
+      "reason": "platform ['web'] not in request ['tv']"
+    },
+    {
+      "id": "anti-hover-only-actions",
+      "reason": "platform ['desktop', 'web'] not in request ['tv']"
+    },
+    {
+      "id": "chart-heatmap-matrix",
+      "reason": "platform ['desktop', 'web'] not in request ['tv']"
+    },
+    {
+      "id": "chart-small-multiples",
+      "reason": "platform ['desktop', 'web'] not in request ['tv']"
+    },
+    {
+      "id": "comp-menu",
+      "reason": "platform ['desktop', 'mobile', 'web'] not in request ['tv']"
+    },
+    {
+      "id": "comp-sidebar-nav",
+      "reason": "platform ['desktop', 'tablet', 'web'] not in request ['tv']"
+    },
+    {
+      "id": "comp-chart-container",
+      "reason": "platform ['desktop', 'mobile', 'web'] not in request ['tv']"
+    },
+    {
+      "id": "comp-list-row-mobile",
+      "reason": "platform ['mobile', 'tablet'] not in request ['tv']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "perf.focus_latency",
+      "priority": "required",
+      "reason": "named in the request: hold right, fly past",
+      "candidate_records": [
+        [
+          "tv-dpad-hold-pacing",
+          0.857
+        ],
+        [
+          "tv-focus-performance",
+          0.367
+        ],
+        [
+          "comp-tv-rail",
+          0.331
+        ]
+      ],
+      "selected_record": "tv-dpad-hold-pacing",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "state.loading_empty_error",
+      "priority": "required",
+      "reason": "asynchronous or remote data on this screen",
+      "candidate_records": [
+        [
+          "comp-mini-player",
+          0.297
+        ],
+        [
+          "anti-no-states",
+          0.243
+        ],
+        [
+          "layout-states-empty-loading-error",
+          0.243
+        ],
+        [
+          "comp-empty-state",
+          0.18
+        ]
+      ],
+      "selected_record": "layout-states-empty-loading-error",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.reduced_motion",
+      "priority": "required",
+      "reason": "held-key scrolling must respect reduced motion",
+      "candidate_records": [
+        [
+          "tv-dpad-hold-pacing",
+          0.857
+        ],
+        [
+          "a11y-reduced-motion",
+          0.243
+        ],
+        [
+          "a11y-time-and-auto",
+          0.243
+        ]
+      ],
+      "selected_record": "tv-dpad-hold-pacing",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.dpad_reachability",
+      "priority": "required",
+      "reason": "TV / remote input",
+      "candidate_records": [
+        [
+          "tv-dpad-hold-pacing",
+          0.857
+        ],
+        [
+          "tv-search-input",
+          0.405
+        ],
+        [
+          "tv-dpad-axes",
+          0.402
+        ],
+        [
+          "comp-epg",
+          0.272
+        ]
+      ],
+      "selected_record": "tv-dpad-hold-pacing",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.focus_restore",
+      "priority": "required",
+      "reason": "TV / remote input",
+      "candidate_records": [
+        [
+          "a11y-tv-focus-always",
+          0.365
+        ],
+        [
+          "layout-rails",
+          0.361
+        ],
+        [
+          "layout-immersive-rails",
+          0.337
+        ],
+        [
+          "comp-tv-rail",
+          0.331
+        ]
+      ],
+      "selected_record": "comp-tv-rail",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.focus_visible",
+      "priority": "required",
+      "reason": "TV / remote input",
+      "candidate_records": [
+        [
+          "tv-dpad-hold-pacing",
+          0.857
+        ],
+        [
+          "a11y-tv-focus-always",
+          0.365
+        ],
+        [
+          "a11y-focus-visible",
+          0.36
+        ],
+        [
+          "focus-scale-glow",
+          0.341
+        ]
+      ],
+      "selected_record": "tv-dpad-hold-pacing",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "tv.ten_foot_typography",
+      "priority": "required",
+      "reason": "TV / remote input",
+      "candidate_records": [
+        [
+          "tv-typography-distance",
+          0.364
+        ]
+      ],
+      "selected_record": "tv-typography-distance",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "layout.media_card",
+      "priority": "required",
+      "reason": "screen subtype rails",
+      "candidate_records": [
+        [
+          "layout-immersive-rails",
+          0.337
+        ],
+        [
+          "comp-tv-rail",
+          0.331
+        ],
+        [
+          "comp-media-card",
+          0.222
+        ]
+      ],
+      "selected_record": "comp-tv-rail",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.accessible_names",
+      "priority": "recommended",
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "a11y-native-semantics",
+          0.297
+        ],
+        [
+          "comp-player-controls",
+          0.277
+        ],
+        [
+          "a11y-labels-names",
+          0.252
+        ],
+        [
+          "comp-media-card",
+          0.222
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "a11y.contrast",
+      "priority": "recommended",
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "tv-dark-first",
+          0.36
+        ],
+        [
+          "anti-fashion-over-usability",
+          0.243
+        ],
+        [
+          "a11y-contrast-text",
+          0.243
+        ],
+        [
+          "a11y-nontext-contrast",
+          0.243
+        ]
+      ],
+      "selected_record": "tv-dark-first",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "recommended",
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.21
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.back_semantics",
+      "priority": "recommended",
+      "reason": "remote input",
+      "candidate_records": [
+        [
+          "tv-back-behavior",
+          0.363
+        ],
+        [
+          "comp-mini-player",
+          0.297
+        ],
+        [
+          "media-resume-and-details",
+          0.291
+        ],
+        [
+          "tv-player-controls",
+          0.273
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "tv.no_touch_hover",
+      "priority": "recommended",
+      "reason": "tv",
+      "candidate_records": [
+        [
+          "tv-no-touch-hover",
+          0.373
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "tv.dark_first",
+      "priority": "recommended",
+      "reason": "tv",
+      "candidate_records": [
+        [
+          "tv-dark-first",
+          0.36
+        ]
+      ],
+      "selected_record": "tv-dark-first",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "privacy.shared_device",
+      "priority": "recommended",
+      "reason": "environment shared-device",
+      "candidate_records": [
+        [
+          "comp-tv-sign-in",
+          0.297
+        ],
+        [
+          "shared-device-privacy",
+          0.297
+        ]
+      ],
+      "selected_record": "shared-device-privacy",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "tv.safe_margins",
+      "priority": "recommended",
+      "reason": "TV / remote input (demoted: saturation cap)",
+      "candidate_records": [
+        [
+          "tv-safe-area",
+          0.402
+        ],
+        [
+          "anti-desktop-scaled-to-tv",
+          0.363
+        ],
+        [
+          "comp-mini-player",
+          0.297
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    }
+  ]
+}

@@ -1,0 +1,1084 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "Add a status bar with the last sync time and any failed postings.",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "desktop"
+    ],
+    "input": [
+      "keyboard",
+      "pointer"
+    ],
+    "product": [
+      "erp"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "wpf"
+    ],
+    "density": "high",
+    "components": [],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "create"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "new",
+      "operations": [
+        "create"
+      ],
+      "problem_domain": [],
+      "change_scope": "unknown",
+      "utterance": "request",
+      "existing": false,
+      "problem": false,
+      "facet": "general",
+      "diagnose_only": false,
+      "creation": true,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "create: build/create request"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "menu-bar",
+        "status": "KNOWN",
+        "evidence": [
+          "menu-bar: 2 matches in App.xaml.cs, PurchaseOrderLinesView.xaml (shell/layout file)"
+        ]
+      },
+      "theme": {
+        "value": "light-first",
+        "status": "KNOWN",
+        "evidence": [
+          "root/canvas backgrounds: 4 light, 0 dark",
+          "hex palette: 11 near-white, 1 near-black"
+        ]
+      },
+      "surfaces": {
+        "value": "bordered-flat",
+        "status": "INFERRED",
+        "evidence": [
+          "borders in 5 files, shadow/elevation in 0"
+        ]
+      },
+      "radius": {
+        "value": "small",
+        "status": "INFERRED",
+        "evidence": [
+          "most common radius 2 (4×); others [1.0, 10.0]"
+        ]
+      },
+      "spacing": {
+        "value": 4,
+        "status": "INFERRED",
+        "evidence": [
+          "most used spacing values [16, 8, 6, 2, 12]"
+        ]
+      },
+      "typography": {
+        "value": "humanist-sans",
+        "status": "INFERRED",
+        "evidence": [
+          "font family Segoe UI Variable Text, Segoe UI (1 refs)",
+          "monospace face Cascadia Mono, Consolas used for a code/number role",
+          "weights semibold, bold"
+        ]
+      },
+      "components": {
+        "value": "wpf",
+        "status": "KNOWN",
+        "evidence": [
+          "wpf"
+        ]
+      }
+    },
+    "known": [
+      "platform=desktop (project inspection)",
+      "product=erp (request: posting)",
+      "stack=wpf (project inspection)",
+      "project_navigation=menu-bar (repository: menu-bar: 2 matches in App.xaml.cs, PurchaseOrderLinesView.xaml (shell/layout file))",
+      "project_theme=light-first (repository: root/canvas backgrounds: 4 light, 0 dark; hex palette: 11 near-white, 1 near-black)",
+      "project_components=wpf (repository: wpf)"
+    ],
+    "inferred": [
+      "input=pointer (implied by platform desktop)",
+      "input=keyboard (implied by platform desktop)",
+      "density=high (implied by product erp)",
+      "mode=create (build/create request)",
+      "project_surfaces=bordered-flat (repository: borders in 5 files, shadow/elevation in 0)",
+      "project_radius=small (repository: most common radius 2 (4×); others [1.0, 10.0])",
+      "project_spacing=4 (repository: most used spacing values [16, 8, 6, 2, 12])",
+      "project_typography=humanist-sans (repository: font family Segoe UI Variable Text, Segoe UI (1 refs); monospace face Cascadia Mono, Consolas used for a code/number role)"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [
+        "posting"
+      ],
+      "project": [
+        "ErpClient.csproj: UseWPF"
+      ]
+    },
+    "activation": {
+      "decision": "ambiguous",
+      "ui_score": 1.0,
+      "non_ui_score": 0,
+      "ui_terms": [
+        "status bar"
+      ],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [],
+      "new": [],
+      "defect": [],
+      "operations": {
+        "create": [
+          "add",
+          "add a"
+        ]
+      },
+      "domains": {},
+      "no_change": [],
+      "scope": {},
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "status bar"
+      ],
+      "ux_symptoms": [],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "structure",
+        "reason": "layout topology and hierarchy"
+      },
+      {
+        "concern": "states",
+        "reason": "asynchronous or remote data on this screen"
+      },
+      {
+        "concern": "interaction",
+        "reason": "input model: keyboard,pointer"
+      },
+      {
+        "concern": "accessibility",
+        "reason": "platform accessibility baseline"
+      },
+      {
+        "concern": "data-display",
+        "reason": "numbers, tables or charts are the content"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "navigation",
+        "reason": "how users arrive and leave"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "create/refactor requests attract generic defaults"
+      },
+      {
+        "concern": "brand",
+        "reason": "visual identity direction"
+      }
+    ],
+    "optional": [
+      "motion",
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "process.reuse_first",
+        "reason": "existing repository: reuse its primitives",
+        "priority": 1,
+        "critical": true
+      },
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "desktop keyboard-first",
+        "priority": 3,
+        "critical": false
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "desktop focus",
+        "priority": 3,
+        "critical": false
+      },
+      {
+        "concept": "table.tabular_figures",
+        "reason": "numeric data",
+        "priority": 1,
+        "critical": true
+      }
+    ],
+    "recommended_concepts": [
+      "state.loading_empty_error",
+      "interaction.shortcuts",
+      "desktop.persist_workspace",
+      "desktop.fluent_materials"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "metadata-rich",
+      "kind": "pattern",
+      "category": "metadata",
+      "title": "Rich metadata (operational)",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "content",
+        "structure"
+      ],
+      "concepts": [
+        "layout.focal_hierarchy",
+        "table.tabular_figures"
+      ],
+      "covers": [
+        "visual hierarchy with one focal point",
+        "tabular figures and numeric alignment"
+      ],
+      "score": 0.445,
+      "guidance": "Columns with user-controlled visibility and order, consistent formatting per type (dates, currency, IDs in monospace), status as text+colour, truncation with full value on focus/hover and in the detail pane.",
+      "use_when": "Operations: many attributes per record visible at once (tables, ledgers, tickets), with sorting/filtering on any of them.",
+      "avoid_when": "Consumer browsing, mobile, TV.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "heuristic",
+      "incompatible": [
+        "metadata-minimal",
+        "layout-rails",
+        "layout-immersive-rails",
+        "density-low"
+      ],
+      "why": {
+        "lexical": 0.045,
+        "structural": 0.8,
+        "matched": [
+          "platform desktop",
+          "input keyboard,pointer",
+          "mode create",
+          "product erp",
+          "density high"
+        ]
+      },
+      "role": "core",
+      "selected_for": "critical concept (SPECIFIC): tabular figures and numeric alignment"
+    },
+    {
+      "id": "dir-operational-workbench",
+      "kind": "direction",
+      "category": "direction",
+      "title": "Operational workbench",
+      "facets": [
+        "direction",
+        "platform"
+      ],
+      "concerns": [
+        "brand",
+        "structure"
+      ],
+      "concepts": [],
+      "covers": [],
+      "score": 0.367,
+      "guidance": "Character comes from precision: a tight 4 px grid, tabular figures, hairline borders with real contrast, one accent used only for selection and primary commands, quiet surfaces, dense but aligned. Identity via a distinctive neutral tint, a characterful monospace for IDs/values, and a consistent status colour language. No hero, no cards-in-cards, no gradients.",
+      "use_when": "Daily-use record tools (ERP, ledgers, ticketing, admin) for trained users who value speed and scanning.",
+      "avoid_when": "Consumer, marketing, TV, or first-time-user products.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "internal-preference",
+      "incompatible": [
+        "surface-glass",
+        "motion-cinematic",
+        "imagery-hero",
+        "typography-serif-display"
+      ],
+      "why": {
+        "lexical": 0.012,
+        "structural": 0.8,
+        "matched": [
+          "platform desktop",
+          "input keyboard,pointer",
+          "mode create",
+          "product erp",
+          "density high"
+        ]
+      },
+      "role": "core",
+      "selected_for": "task evidence: product"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "impl-reuse-before-new",
+      "kind": "rule",
+      "category": "implementation",
+      "title": "Reuse → extend → compose → new (in that order)",
+      "facets": [
+        "process"
+      ],
+      "concerns": [
+        "structure"
+      ],
+      "concepts": [
+        "process.reuse_first"
+      ],
+      "covers": [
+        "reuse → extend → compose → new"
+      ],
+      "score": 0.256,
+      "guidance": "Inspect the repository first (inspect_project.py): existing components, tokens, fonts, breakpoints, and conventions win. Reuse the existing component; if it lacks a variant, extend it through its API; if the composition is new, compose existing primitives; only create a new primitive when the gap is real, and put it where the others live.",
+      "use_when": "Any UI change in an existing codebase.",
+      "avoid_when": "Never install a second component library or a UI framework to build one screen; never fork a design-system component when a variant prop would do.",
+      "risk": {
+        "a11y": "low",
+        "perf": "medium"
+      },
+      "provenance": "engineering-practice",
+      "why": {
+        "lexical": 0.023,
+        "structural": 0.54,
+        "matched": [
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "critical concept (GENERIC): reuse → extend → compose → new"
+    },
+    {
+      "id": "desktop-status-bar-and-error-navigation",
+      "kind": "rule",
+      "category": "feedback",
+      "title": "Desktop status bar as the persistent feedback surface, with next-error navigation",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "feedback",
+        "states",
+        "structure"
+      ],
+      "concepts": [
+        "feedback.validation_errors",
+        "a11y.live_status",
+        "a11y.contrast",
+        "interaction.shortcuts",
+        "desktop.persist_workspace"
+      ],
+      "covers": [
+        "inline validation messages and error recovery",
+        "live region status announcements",
+        "high contrast",
+        "keyboard shortcuts / accelerators",
+        "persisted workspace and selection"
+      ],
+      "score": 0.565,
+      "guidance": "One status bar at the bottom of the window with fixed regions (selection summary, sync/save state with timestamp, error count as a link, active filter) separated by real separators, not spaces; validation for the current row/cell is echoed there in words ('Line 50: Quantity must be greater than 0') and the error count opens a list; F8 / Shift+F8 (or the project's convention) walk to the next and previous error and move focus into the cell; error styling never paints over the value text (tint the cell background and keep ≥ 4.5:1 for the text); announce status changes with LiveSetting/UIA so screen readers hear them; the bar keeps its height at every window width.",
+      "use_when": "Data-entry and workbench windows where validation, selection and sync state must be visible without dialogs or toasts.",
+      "avoid_when": "Consumer apps without a persistent window chrome; mobile.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "implementation": {
+        "wpf": "StatusBar with StatusBarItem regions and Separator; Validation.ErrorTemplate sets a Border behind the AdornedElementPlaceholder, not over it; RoutedUICommand for NextError (F8)."
+      },
+      "why": {
+        "lexical": 0.438,
+        "structural": 0.72,
+        "matched": [
+          "platform desktop",
+          "input keyboard,pointer",
+          "mode create",
+          "product erp"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "most relevant record for the request wording"
+    },
+    {
+      "id": "desktop-keyboard-first",
+      "kind": "rule",
+      "category": "input",
+      "title": "Desktop: keyboard is a first-class input",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.keyboard_navigation",
+        "interaction.shortcuts",
+        "interaction.focus_visible"
+      ],
+      "covers": [
+        "keyboard navigation and focus order",
+        "keyboard shortcuts / accelerators",
+        "visible focus"
+      ],
+      "score": 0.324,
+      "guidance": "Document shortcuts in menus and tooltips; F2 edits, Delete deletes with undo, Ctrl+F finds, F6 cycles panes; grids use arrow keys and Ctrl/Shift selection; every dialog has a default and cancel button; access keys shown on Alt (Windows).",
+      "use_when": "Every desktop screen: shortcuts for frequent commands, access keys for menus, Tab/arrow semantics in lists, trees, grids, and toolbars, Enter/Escape in dialogs.",
+      "avoid_when": "Never assign shortcuts that collide with platform or assistive-tech shortcuts; never make Tab stop on every cell of a grid.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.72,
+        "matched": [
+          "platform desktop",
+          "input keyboard,pointer",
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage (SPECIFIC): visible focus, keyboard navigation and focus order, interaction"
+    },
+    {
+      "id": "data-exceptions-first",
+      "kind": "rule",
+      "category": "feedback",
+      "title": "Exceptions first: surface what needs attention in lists and tables",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "accessibility",
+        "data-display",
+        "feedback"
+      ],
+      "concepts": [
+        "data.exception_first",
+        "a11y.color_not_only",
+        "env.glanceable_status",
+        "table.tabular_figures"
+      ],
+      "covers": [
+        "exceptions and anomalies first",
+        "no colour alone for status",
+        "glanceable status",
+        "tabular figures and numeric alignment"
+      ],
+      "score": 0.399,
+      "guidance": "Compute the status in the model and show it as a column or badge with a word plus icon plus colour; sort or group exceptions first (or offer a one-tap 'only overdue' filter); show a count in the header/status bar; keep the row otherwise unchanged so scanning stays fast; state the rule that makes an item an exception (e.g. '> 90 days since service').",
+      "use_when": "Any collection where some items need action (overdue, late, failed, expiring, over budget) and the user should see them without opening each one.",
+      "avoid_when": "Never rely on colour alone for the status; never bury the exception state inside the detail view; never sort exceptions below normal rows by default.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.284,
+        "structural": 0.54,
+        "matched": [
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage (GENERIC): data-display"
+    },
+    {
+      "id": "typo-scale-and-roles",
+      "kind": "rule",
+      "category": "typography",
+      "title": "One type scale with named roles",
+      "facets": [
+        "visual"
+      ],
+      "concerns": [
+        "content",
+        "data-display"
+      ],
+      "concepts": [
+        "table.tabular_figures",
+        "brand.type_roles"
+      ],
+      "covers": [
+        "tabular figures and numeric alignment",
+        "type roles and scale"
+      ],
+      "score": 0.257,
+      "guidance": "Roles display/heading/title/body/label/caption/numeric with size, line height, weight, and letter spacing per role; body ≥16 px web/mobile, 14 desktop, 24 TV; numeric role uses tabular lining figures; headings use tighter line height (1.1–1.25) and body 1.4–1.6. Generate with tokens.py scale and map the roles to the framework's text styles.",
+      "use_when": "Any screen with more than two text sizes; any design system.",
+      "avoid_when": "Never pick sizes per screen; never use more than ~7 sizes.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.025,
+        "structural": 0.54,
+        "matched": [
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "specialist rule for tabular figures and numeric alignment (only covered by a composite record)"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "structure",
+      "states",
+      "interaction",
+      "accessibility",
+      "data-display"
+    ],
+    "covered_required_concerns": [
+      "structure",
+      "states",
+      "interaction",
+      "accessibility",
+      "data-display"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "navigation",
+      "anti-pattern",
+      "brand"
+    ],
+    "covered_recommended_concerns": [
+      "brand"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "process.reuse_first",
+      "interaction.keyboard_navigation",
+      "interaction.focus_visible",
+      "table.tabular_figures"
+    ],
+    "covered_required_concepts": [
+      "process.reuse_first",
+      "interaction.keyboard_navigation",
+      "interaction.focus_visible",
+      "table.tabular_figures"
+    ],
+    "uncovered_required_concepts": [],
+    "critical_concepts": [
+      "process.reuse_first",
+      "table.tabular_figures"
+    ],
+    "uncovered_critical_concepts": [],
+    "critical_coverage_ratio": 1.0,
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.5,
+    "not_surfaced": [
+      {
+        "concept": "state.loading_empty_error",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "desktop.fluent_materials",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "navigation",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      }
+    ],
+    "bundle_size": 7,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 2,
+    "guardrail_size": 5,
+    "bundle_tokens": 1063,
+    "coverage_per_1k_tokens": 3.76,
+    "mean_purity": 0.66,
+    "mean_specificity": 1.29,
+    "quality_counts": {
+      "DIRECT": 1,
+      "SPECIFIC": 4,
+      "GENERIC": 2
+    },
+    "contaminated": [],
+    "category_diversity": 0.86,
+    "duplicate_pressure": 0.29,
+    "facet_coverage": 0.8,
+    "redundancy": 0.47,
+    "critical_trace": {
+      "covered": [
+        "process.reuse_first",
+        "table.tabular_figures"
+      ],
+      "uncovered": [],
+      "carrier_quality": {
+        "process.reuse_first": "GENERIC",
+        "table.tabular_figures": "DIRECT"
+      }
+    }
+  },
+  "token_coverage": 0.89,
+  "omitted": [
+    {
+      "id": "dir-windows-native-tool",
+      "reason": "same category as a core pick (adds no new concept) or incompatible with one"
+    },
+    {
+      "id": "dir-clinical-workstation",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "dir-developer-tool",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "dir-industrial-hmi",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "dir-analytical-console",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "layout-table-first",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "comp-data-table",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "cta-toolbar-commands",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "nav-menu-bar-desktop",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "nav-left-rail",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    }
+  ],
+  "marginal": {
+    "metadata-rich": {
+      "new_critical": [
+        "table.tabular_figures"
+      ],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [
+        "content",
+        "structure"
+      ],
+      "specificity": 2,
+      "evidence": [
+        "product",
+        "explicit_demand"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 89
+    },
+    "impl-reuse-before-new": {
+      "new_critical": [
+        "process.reuse_first"
+      ],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [],
+      "specificity": 1,
+      "evidence": [
+        "explicit_demand",
+        "repository"
+      ],
+      "quality": "GENERIC",
+      "contamination": 0.0,
+      "tokens": 131
+    },
+    "dir-operational-workbench": {
+      "new_critical": [],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [
+        "brand"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "product"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 129
+    },
+    "desktop-status-bar-and-error-navigation": {
+      "new_critical": [],
+      "new_required": [],
+      "new_recommended": [
+        "desktop.persist_workspace",
+        "interaction.shortcuts"
+      ],
+      "new_concerns": [
+        "accessibility",
+        "feedback",
+        "states"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "lexical_strong",
+        "lexical"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 308
+    },
+    "desktop-keyboard-first": {
+      "new_critical": [],
+      "new_required": [
+        "interaction.focus_visible",
+        "interaction.keyboard_navigation"
+      ],
+      "new_recommended": [],
+      "new_concerns": [
+        "interaction"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "platform_specific"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 130
+    },
+    "data-exceptions-first": {
+      "new_critical": [],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [
+        "data-display"
+      ],
+      "specificity": 2,
+      "evidence": [
+        "lexical_strong",
+        "lexical",
+        "explicit_demand"
+      ],
+      "quality": "GENERIC",
+      "contamination": 0.0,
+      "tokens": 161
+    },
+    "typo-scale-and-roles": {
+      "new_critical": [],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [],
+      "specificity": 1,
+      "evidence": [
+        "explicit_demand"
+      ],
+      "quality": "DIRECT",
+      "contamination": 0.0,
+      "tokens": 115
+    }
+  },
+  "rejected": [
+    {
+      "id": "anti-hero-template",
+      "reason": "platform ['web'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-media-card",
+      "reason": "platform ['mobile', 'tv', 'web'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-player-controls",
+      "reason": "platform ['mobile', 'tv', 'web'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-tv-rail",
+      "reason": "platform ['tv'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-epg",
+      "reason": "platform ['tablet', 'tv', 'web'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-tv-sign-in",
+      "reason": "platform ['tv'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-product-detail-page",
+      "reason": "platform ['mobile', 'web'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-checkout-one-page",
+      "reason": "platform ['mobile', 'web'] not in request ['desktop']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "process.reuse_first",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 1,
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.256
+        ]
+      ],
+      "selected_record": "impl-reuse-before-new",
+      "carrier_quality": "GENERIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.keyboard_navigation",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 3,
+      "reason": "desktop keyboard-first",
+      "candidate_records": [
+        [
+          "comp-data-entry-grid",
+          0.385
+        ],
+        [
+          "a11y-skip-link",
+          0.332
+        ],
+        [
+          "interaction-drag-drop",
+          0.331
+        ],
+        [
+          "a11y-keyboard-operable",
+          0.324
+        ]
+      ],
+      "selected_record": "desktop-keyboard-first",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.focus_visible",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 3,
+      "reason": "desktop focus",
+      "candidate_records": [
+        [
+          "focus-ring-standard",
+          0.341
+        ],
+        [
+          "a11y-focus-visible",
+          0.324
+        ],
+        [
+          "desktop-keyboard-first",
+          0.324
+        ],
+        [
+          "grid-single-tab-stop",
+          0.324
+        ]
+      ],
+      "selected_record": "desktop-keyboard-first",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "table.tabular_figures",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 1,
+      "reason": "numeric data",
+      "candidate_records": [
+        [
+          "metadata-rich",
+          0.445
+        ],
+        [
+          "layout-table-first",
+          0.42
+        ],
+        [
+          "data-exceptions-first",
+          0.399
+        ],
+        [
+          "data-tables-numeric",
+          0.371
+        ]
+      ],
+      "selected_record": "metadata-rich",
+      "carrier_quality": "DIRECT",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "state.loading_empty_error",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "asynchronous or remote data on this screen",
+      "candidate_records": [
+        [
+          "comp-chart-container",
+          0.326
+        ],
+        [
+          "layout-states-empty-loading-error",
+          0.256
+        ],
+        [
+          "anti-no-states",
+          0.243
+        ],
+        [
+          "comp-empty-state",
+          0.18
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.shortcuts",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "desktop accelerators",
+      "candidate_records": [
+        [
+          "desktop-status-bar-and-error-navigation",
+          0.565
+        ],
+        [
+          "cta-toolbar-commands",
+          0.487
+        ],
+        [
+          "desktop-keyboard-first",
+          0.324
+        ]
+      ],
+      "selected_record": "desktop-status-bar-and-error-navigation",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "desktop.persist_workspace",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "desktop state persistence",
+      "candidate_records": [
+        [
+          "desktop-status-bar-and-error-navigation",
+          0.565
+        ],
+        [
+          "desktop-state-persistence",
+          0.354
+        ]
+      ],
+      "selected_record": "desktop-status-bar-and-error-navigation",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "desktop.fluent_materials",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "Windows stack",
+      "candidate_records": [
+        [
+          "desktop-fluent-materials",
+          0.324
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    }
+  ]
+}

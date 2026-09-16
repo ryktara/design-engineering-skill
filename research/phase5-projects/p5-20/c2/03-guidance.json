@@ -1,0 +1,1190 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "Stats screen in dark mode: the bars are barely visible.",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "accessibility",
+      "audit"
+    ],
+    "platform": [
+      "mobile"
+    ],
+    "input": [
+      "touch"
+    ],
+    "product": [],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "swiftui"
+    ],
+    "density": null,
+    "components": [],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "accessibility"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "accessibility",
+        "visual",
+        "design-system"
+      ],
+      "change_scope": "screen",
+      "utterance": "observation",
+      "existing": true,
+      "problem": true,
+      "facet": "accessibility",
+      "diagnose_only": false,
+      "creation": false,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "accessibility: accessibility defect on existing UI",
+      "audit: diagnose the reported defect"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "bottom-tabs",
+        "status": "KNOWN",
+        "evidence": [
+          "bottom-tabs: 7 matches in README.md, RootTabView.swift, StreaksApp.swift (shell/layout file)"
+        ]
+      },
+      "theme": {
+        "value": "dual-theme",
+        "status": "KNOWN",
+        "evidence": [
+          "dark theme configuration signals: 2",
+          "root/canvas backgrounds: 2 light, 2 dark",
+          "hex palette: 7 near-white, 6 near-black"
+        ],
+        "default": "light"
+      },
+      "surfaces": {
+        "value": "elevated",
+        "status": "INFERRED",
+        "evidence": [
+          "shadow/elevation in 5 files, borders in 1"
+        ]
+      },
+      "radius": {
+        "value": "small",
+        "status": "INFERRED",
+        "evidence": [
+          "most common radius 5 (4×); others [3.0, 8.0]"
+        ]
+      },
+      "spacing": {
+        "value": "irregular",
+        "status": "UNKNOWN",
+        "evidence": [
+          "most used spacing values [6, 32, 2, 3, 4]"
+        ]
+      },
+      "typography": {
+        "value": "custom",
+        "status": "KNOWN",
+        "evidence": [
+          "font family System (7 refs)",
+          "weights 600, 500, 700, 800",
+          "encoded type scale in 4 files"
+        ]
+      },
+      "components": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": []
+      }
+    },
+    "known": [
+      "platform=mobile (project inspection)",
+      "stack=swiftui (project inspection)",
+      "project_navigation=bottom-tabs (repository: bottom-tabs: 7 matches in README.md, RootTabView.swift, StreaksApp.swift (shell/layout file))",
+      "project_theme=dual-theme (repository: dark theme configuration signals: 2; root/canvas backgrounds: 2 light, 2 dark)",
+      "project_typography=custom (repository: font family System (7 refs); weights 600, 500, 700, 800)"
+    ],
+    "inferred": [
+      "input=touch (implied by platform mobile)",
+      "mode=accessibility (accessibility defect on existing UI)",
+      "mode=audit (diagnose the reported defect)",
+      "project_surfaces=elevated (repository: shadow/elevation in 5 files, borders in 1)",
+      "project_radius=small (repository: most common radius 5 (4×); others [3.0, 8.0])"
+    ],
+    "missing": [],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [],
+      "project": [
+        "Package.swift: Apple project",
+        "Package.swift: iOS target"
+      ]
+    },
+    "activation": {
+      "decision": "activate",
+      "ui_score": 2.0,
+      "non_ui_score": 0,
+      "ui_terms": [
+        "screen",
+        "dark mode"
+      ],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "present-tense observation"
+      ],
+      "new": [],
+      "defect": [
+        "are barely"
+      ],
+      "operations": {},
+      "domains": {
+        "accessibility": [
+          "barely visible"
+        ],
+        "visual": [
+          "visible"
+        ],
+        "design-system": [
+          "dark mode"
+        ]
+      },
+      "no_change": [],
+      "scope": {
+        "screen": [
+          "screen"
+        ]
+      },
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "screen",
+        "dark mode",
+        "concept:a11y.contrast"
+      ],
+      "ux_symptoms": [
+        "barely visible"
+      ],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "accessibility",
+        "reason": "accessibility mode"
+      },
+      {
+        "concern": "interaction",
+        "reason": "accessibility mode: operability is part of the review"
+      },
+      {
+        "concern": "component",
+        "reason": "the reviewed component/screen"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "states",
+        "reason": "audits check empty/loading/error handling"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "audits name generic-design defects"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "device sizes and orientation"
+      }
+    ],
+    "optional": [
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "a11y.contrast",
+        "reason": "named in the request: barely visible, in dark mode"
+      },
+      {
+        "concept": "a11y.accessible_names",
+        "reason": "accessibility review"
+      },
+      {
+        "concept": "a11y.semantics",
+        "reason": "accessibility review"
+      },
+      {
+        "concept": "a11y.color_not_only",
+        "reason": "accessibility review"
+      },
+      {
+        "concept": "a11y.live_status",
+        "reason": "accessibility review"
+      },
+      {
+        "concept": "state.loading_empty_error",
+        "reason": "asynchronous or remote data on this screen"
+      },
+      {
+        "concept": "touch.minimum_target",
+        "reason": "touch platform"
+      },
+      {
+        "concept": "data.chart_by_question",
+        "reason": "charts"
+      },
+      {
+        "concept": "data.accessible_chart_alternative",
+        "reason": "required by data.chart_by_question"
+      }
+    ],
+    "recommended_concepts": [
+      "a11y.text_scaling",
+      "a11y.reduced_motion",
+      "process.reuse_first",
+      "touch.gestures_discoverable",
+      "touch.thumb_reach",
+      "touch.safe_areas",
+      "navigation.platform_grammar",
+      "data.exception_first",
+      "data.drilldown",
+      "data.kpi_comparison",
+      "layout.focal_hierarchy"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "comp-kpi-tile",
+      "kind": "component",
+      "category": "chart",
+      "title": "KPI / stat tile",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "data-display",
+        "navigation"
+      ],
+      "concepts": [
+        "table.tabular_figures",
+        "data.kpi_comparison",
+        "data.drilldown"
+      ],
+      "covers": [
+        "tabular figures and numeric alignment",
+        "KPI with comparison and precision",
+        "drill-down from summary to detail"
+      ],
+      "score": 0.306,
+      "guidance": "Label, value with unit and tabular figures, comparison (vs previous period) with sign + arrow + colour, optional sparkline, consistent decimal precision, the most important KPI larger or first, no icon per tile unless it disambiguates, whole tile links to the detail. Avoid the 'four identical cards with big numbers and a gradient' default.",
+      "use_when": "Headline metrics on dashboards.",
+      "avoid_when": "More than ~6 KPIs in a row (users stop reading); KPIs without context (no comparison, no unit).",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.196,
+        "structural": 0.44,
+        "matched": [
+          "platform mobile",
+          "secondary mode"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "color-dark-accent",
+      "kind": "pattern",
+      "category": "color",
+      "title": "Dark canvas + accent (dark-first)",
+      "facets": [
+        "platform",
+        "visual"
+      ],
+      "concerns": [
+        "accessibility",
+        "brand"
+      ],
+      "concepts": [],
+      "covers": [],
+      "score": 0.388,
+      "guidance": "Canvas is a dark tinted neutral (not #000 unless OLED black is deliberate), surfaces step lighter with elevation, text primary ≈ 87–92% white not pure white, accent desaturated slightly for dark backgrounds, error/success re-tuned for dark contrast. On TV target ≥7:1 for body text and avoid saturated reds/oranges at large areas (bloom on cheap panels).",
+      "use_when": "TV and media (viewing in dim rooms, OLED power), trading/monitoring consoles used for hours, developer tools; when imagery must pop.",
+      "avoid_when": "Long-form reading in bright environments, forms-heavy products for the general public, print-adjacent content.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "incompatible": [
+        "color-monochrome-light"
+      ],
+      "why": {
+        "lexical": 0.37,
+        "structural": 0.3,
+        "matched": [
+          "platform mobile"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring pattern with lexical evidence"
+    },
+    {
+      "id": "comp-chart-container",
+      "kind": "component",
+      "category": "chart",
+      "title": "Chart container and interaction",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "component",
+        "data-display",
+        "states"
+      ],
+      "concepts": [
+        "a11y.color_not_only",
+        "data.chart_by_question",
+        "data.accessible_chart_alternative",
+        "state.loading_empty_error"
+      ],
+      "covers": [
+        "no colour alone for status",
+        "chart form chosen from the analytical question",
+        "accessible chart summary and table alternative",
+        "loading, empty and error states"
+      ],
+      "score": 0.176,
+      "guidance": "Title that states the question, unit and time range visible, legend as direct labels where possible, tooltip also keyboard-reachable (focusable points or a data table toggle), accessible summary text, consistent palette, responsive (reduce ticks, not data), empty/loading/error states, no animation beyond a single load transition and none on data refresh. Provide the data table or CSV.",
+      "use_when": "Any chart in a product.",
+      "avoid_when": "Decorative charts with no question; charts of fewer than ~4 points (use a stat).",
+      "risk": {
+        "a11y": "high",
+        "perf": "medium"
+      },
+      "provenance": "heuristic",
+      "implementation": {
+        "swiftui": "Swift Charts with .accessibilityLabel/.accessibilityValue per mark (built-in audio graph)."
+      },
+      "why": {
+        "lexical": 0.009,
+        "structural": 0.38,
+        "matched": [
+          "platform mobile",
+          "secondary mode"
+        ]
+      },
+      "role": "core",
+      "selected_for": "required coverage: no colour alone for status, accessible chart summary and table alternative, chart form chosen from the analytical question, loading, empty and error states"
+    },
+    {
+      "id": "comp-photo-capture-field",
+      "kind": "component",
+      "category": "form",
+      "title": "Photo capture field (take, retake, replace, remove)",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "feedback",
+        "interaction",
+        "states"
+      ],
+      "concepts": [
+        "touch.minimum_target",
+        "state.offline_sync",
+        "onboarding.permission_priming",
+        "a11y.accessible_names",
+        "state.unsaved_changes_guard",
+        "perf.image_sizing"
+      ],
+      "covers": [
+        "large touch targets (≥44–48 px)",
+        "offline and sync states",
+        "permission priming before the system prompt",
+        "accessible names and labels",
+        "unsaved-changes guard",
+        "image sizing and formats"
+      ],
+      "score": 0.229,
+      "guidance": "The field shows the thumbnails as one row of ≥ 96 dp tiles plus an 'Add photo' tile; each thumbnail is a single target that opens a sheet with Retake (camera, replaces in place), Replace from gallery, Remove (confirm only if it is the last required photo); state per photo (uploading, pending sync, failed with retry) is shown on the tile with icon + text; the camera permission is primed before the first capture and refusal leaves a way to continue; capture never loses other field values (persist the draft before opening the camera); images are downscaled for upload and the original is kept until sync succeeds; the field is announced as 'Photos, 2 of 4 added' and each tile as 'Photo 1, retake or remove'. Tapping a thumbnail opens the photo full-size (zoomable, previous/next, retake/remove) so the capture can be checked before submitting.",
+      "use_when": "Forms that attach one or more photos: inspections, claims, returns, deliveries, ID capture.",
+      "avoid_when": "Desktop-only forms (use a file picker with drag-and-drop) or single decorative avatars.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "heuristic",
+      "implementation": {
+        "swiftui": "PhotosPicker + UIImagePickerController wrapper; confirmationDialog for actions."
+      },
+      "why": {
+        "lexical": 0.008,
+        "structural": 0.5,
+        "matched": [
+          "platform mobile",
+          "input touch",
+          "secondary mode"
+        ]
+      },
+      "role": "core",
+      "selected_for": "required coverage: interaction, accessible names and labels, large touch targets (≥44–48 px)"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "anti-dark-mode-inversion",
+      "kind": "antipattern",
+      "category": "craft",
+      "title": "Dark mode by inversion",
+      "facets": [
+        "anti-pattern"
+      ],
+      "concerns": [
+        "anti-pattern",
+        "brand"
+      ],
+      "concepts": [
+        "brand.dark_mode_redesign"
+      ],
+      "covers": [
+        "dark mode as a surface redesign, not inversion"
+      ],
+      "score": 0.501,
+      "guidance": "Redesign surfaces (elevation = lighter), desaturate accents, use 87/60/38% white text steps, re-validate every pair, define dark chart palettes. See the dark mode rule.",
+      "use_when": "Pure black canvas with pure white text, saturated light-theme accents on dark, shadows that vanish, borders that disappear, images unchanged.",
+      "avoid_when": "Never.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.535,
+        "structural": 0.46,
+        "matched": [
+          "secondary mode"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "most relevant record for the request wording"
+    },
+    {
+      "id": "color-dark-mode-rules",
+      "kind": "rule",
+      "category": "color",
+      "title": "Dark mode is a redesign of surfaces, not an inversion",
+      "facets": [
+        "visual"
+      ],
+      "concerns": [
+        "accessibility",
+        "brand"
+      ],
+      "concepts": [
+        "brand.dark_mode_redesign"
+      ],
+      "covers": [
+        "dark mode as a surface redesign, not inversion"
+      ],
+      "score": 0.483,
+      "guidance": "Elevation = lighter surface (not darker shadow); desaturate accents; text 87/60/38% white steps for primary/secondary/disabled; borders lighten; images may need a slight dim; charts get a dark palette; re-validate every contrast pair.",
+      "use_when": "Adding or auditing dark themes.",
+      "avoid_when": "Never invert colours programmatically; never keep saturated light-theme accents unchanged; never use pure white text.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.501,
+        "structural": 0.46,
+        "matched": [
+          "secondary mode"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "most relevant record for the request wording"
+    },
+    {
+      "id": "a11y-native-semantics",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Native accessibility semantics (mobile/desktop)",
+      "facets": [
+        "accessibility",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility"
+      ],
+      "concepts": [
+        "a11y.semantics",
+        "a11y.accessible_names"
+      ],
+      "covers": [
+        "semantic structure and roles",
+        "accessible names and labels"
+      ],
+      "score": 0.297,
+      "guidance": "Use platform roles and traits (Compose semantics{role, contentDescription, heading()}, SwiftUI accessibilityLabel/.accessibilityAddTraits, RN accessibilityRole, WinUI/WPF AutomationProperties + AutomationPeer for custom controls); merge descendants so a card is one element; announce async status with live regions/announceForAccessibility. Test with TalkBack/VoiceOver/Narrator, not only by reading code.",
+      "use_when": "Custom composables/views/controls, merged semantics for cards, live regions for status, headings in long screens.",
+      "avoid_when": "Never build a tappable Box/View/Border without a role and name.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.66,
+        "matched": [
+          "platform mobile",
+          "mode accessibility"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: semantic structure and roles"
+    },
+    {
+      "id": "interaction-drag-drop",
+      "kind": "rule",
+      "category": "input",
+      "title": "Drag and drop: affordance, feedback, keyboard alternative, no layout thrash",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "interaction"
+      ],
+      "concepts": [
+        "touch.gestures_discoverable",
+        "interaction.keyboard_navigation",
+        "a11y.live_status",
+        "perf.layout_shift"
+      ],
+      "covers": [
+        "discoverable gestures",
+        "keyboard navigation and focus order",
+        "live region status announcements",
+        "no layout shift"
+      ],
+      "score": 0.288,
+      "guidance": "Show a grip or lift affordance; on lift raise the item (shadow/scale) and move it with a transform only; show a snapped drop target with the value it will take (time slot, column); write state once on drop; provide a keyboard/button alternative (arrow keys or a 'Move to…' menu) with focus kept on the moved item; announce the result in a live region; Escape cancels; respect reduced motion.",
+      "use_when": "Reordering, rescheduling, moving cards between columns, dragging chips in a grid.",
+      "avoid_when": "Never make drag the only way (WCAG 2.5.7); never re-render the whole collection on every pointer move; never drop without a visible target and a result announcement.",
+      "risk": {
+        "a11y": "high",
+        "perf": "medium"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.64,
+        "matched": [
+          "platform mobile",
+          "input touch",
+          "secondary mode"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: live region status announcements"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "accessibility",
+      "interaction",
+      "component"
+    ],
+    "covered_required_concerns": [
+      "accessibility",
+      "interaction",
+      "component"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "states",
+      "anti-pattern",
+      "adaptive"
+    ],
+    "covered_recommended_concerns": [
+      "states",
+      "anti-pattern"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "a11y.contrast",
+      "a11y.accessible_names",
+      "a11y.semantics",
+      "a11y.color_not_only",
+      "a11y.live_status",
+      "state.loading_empty_error",
+      "touch.minimum_target",
+      "data.chart_by_question",
+      "data.accessible_chart_alternative"
+    ],
+    "covered_required_concepts": [
+      "a11y.accessible_names",
+      "a11y.semantics",
+      "a11y.color_not_only",
+      "a11y.live_status",
+      "state.loading_empty_error",
+      "touch.minimum_target",
+      "data.chart_by_question",
+      "data.accessible_chart_alternative"
+    ],
+    "uncovered_required_concepts": [
+      "a11y.contrast"
+    ],
+    "concept_coverage_ratio": 0.89,
+    "recommended_concept_coverage": 0.27,
+    "bundle_size": 8,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 4,
+    "guardrail_size": 4,
+    "bundle_tokens": 1294,
+    "coverage_per_1k_tokens": 6.18,
+    "mean_purity": 0.81,
+    "contaminated": [],
+    "category_diversity": 0.75,
+    "duplicate_pressure": 0.25,
+    "facet_coverage": 1.0,
+    "redundancy": 0.53
+  },
+  "token_coverage": 0.86,
+  "omitted": [
+    {
+      "id": "chart-compare-bar",
+      "reason": "same category as a core pick (adds no new concept) or incompatible with one"
+    },
+    {
+      "id": "chart-composition",
+      "reason": "same category as a core pick (adds no new concept) or incompatible with one"
+    }
+  ],
+  "rejected": [
+    {
+      "id": "anti-desktop-scaled-to-tv",
+      "reason": "platform ['tv'] not in request ['mobile']"
+    },
+    {
+      "id": "anti-hover-only-actions",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "chart-heatmap-matrix",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-data-table",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-command-palette",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-data-entry-grid",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-plan-comparison",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-kiosk-keypad",
+      "reason": "platform ['kiosk', 'tablet'] not in request ['mobile']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "a11y.contrast",
+      "priority": "required",
+      "reason": "named in the request: barely visible, in dark mode",
+      "candidate_records": [
+        [
+          "a11y-nontext-contrast",
+          0.251
+        ],
+        [
+          "a11y-contrast-text",
+          0.243
+        ],
+        [
+          "anti-fashion-over-usability",
+          0.207
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "a11y.accessible_names",
+      "priority": "required",
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "a11y-native-semantics",
+          0.297
+        ],
+        [
+          "comp-player-controls",
+          0.258
+        ],
+        [
+          "a11y-labels-names",
+          0.25
+        ],
+        [
+          "comp-photo-capture-field",
+          0.229
+        ]
+      ],
+      "selected_record": "a11y-native-semantics",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.semantics",
+      "priority": "required",
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "a11y-native-semantics",
+          0.297
+        ]
+      ],
+      "selected_record": "a11y-native-semantics",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.color_not_only",
+      "priority": "required",
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "data-exceptions-first",
+          0.266
+        ],
+        [
+          "a11y-color-not-only",
+          0.243
+        ],
+        [
+          "chart-composition",
+          0.203
+        ],
+        [
+          "media-resume-and-details",
+          0.202
+        ]
+      ],
+      "selected_record": "comp-chart-container",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.live_status",
+      "priority": "required",
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "interaction-drag-drop",
+          0.288
+        ],
+        [
+          "a11y-live-status",
+          0.251
+        ],
+        [
+          "search-filter-feedback",
+          0.239
+        ],
+        [
+          "feedback-progress-async",
+          0.213
+        ]
+      ],
+      "selected_record": "interaction-drag-drop",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "state.loading_empty_error",
+      "priority": "required",
+      "reason": "asynchronous or remote data on this screen",
+      "candidate_records": [
+        [
+          "comp-mini-player",
+          0.224
+        ],
+        [
+          "anti-no-states",
+          0.207
+        ],
+        [
+          "layout-states-empty-loading-error",
+          0.207
+        ],
+        [
+          "comp-chart-container",
+          0.176
+        ]
+      ],
+      "selected_record": "comp-chart-container",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "touch.minimum_target",
+      "priority": "required",
+      "reason": "touch platform",
+      "candidate_records": [
+        [
+          "a11y-target-size",
+          0.27
+        ],
+        [
+          "comp-list-row-mobile",
+          0.246
+        ],
+        [
+          "media-photo-viewer",
+          0.246
+        ],
+        [
+          "comp-photo-capture-field",
+          0.229
+        ]
+      ],
+      "selected_record": "comp-photo-capture-field",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "data.chart_by_question",
+      "priority": "required",
+      "reason": "charts",
+      "candidate_records": [
+        [
+          "chart-compare-bar",
+          0.229
+        ],
+        [
+          "chart-composition",
+          0.203
+        ],
+        [
+          "comp-chart-container",
+          0.176
+        ],
+        [
+          "chart-geo",
+          0.171
+        ]
+      ],
+      "selected_record": "comp-chart-container",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "data.accessible_chart_alternative",
+      "priority": "required",
+      "reason": "required by data.chart_by_question",
+      "candidate_records": [
+        [
+          "comp-chart-container",
+          0.176
+        ],
+        [
+          "chart-geo",
+          0.171
+        ]
+      ],
+      "selected_record": "comp-chart-container",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.text_scaling",
+      "priority": "recommended",
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "a11y-text-scaling",
+          0.259
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "a11y.reduced_motion",
+      "priority": "recommended",
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "onboarding-first-run",
+          0.261
+        ],
+        [
+          "a11y-time-and-auto",
+          0.249
+        ],
+        [
+          "a11y-reduced-motion",
+          0.243
+        ],
+        [
+          "anti-scroll-animation-everything",
+          0.171
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "recommended",
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.171
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.gestures_discoverable",
+      "priority": "recommended",
+      "reason": "touch platform",
+      "candidate_records": [
+        [
+          "mobile-gestures-discoverable",
+          0.377
+        ],
+        [
+          "interaction-drag-drop",
+          0.288
+        ],
+        [
+          "comp-list-row-mobile",
+          0.246
+        ],
+        [
+          "media-photo-viewer",
+          0.246
+        ]
+      ],
+      "selected_record": "interaction-drag-drop",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "touch.thumb_reach",
+      "priority": "recommended",
+      "reason": "one-handed use",
+      "candidate_records": [
+        [
+          "mobile-thumb-reach",
+          0.312
+        ],
+        [
+          "cta-sticky-bar",
+          0.266
+        ],
+        [
+          "anti-mobile-desktop-shrunk",
+          0.198
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.safe_areas",
+      "priority": "recommended",
+      "reason": "mobile",
+      "candidate_records": [
+        [
+          "mobile-safe-areas",
+          0.317
+        ],
+        [
+          "cta-sticky-bar",
+          0.266
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "navigation.platform_grammar",
+      "priority": "recommended",
+      "reason": "mobile navigation grammar",
+      "candidate_records": [
+        [
+          "nav-bottom-tabs",
+          0.336
+        ],
+        [
+          "mobile-platform-navigation",
+          0.316
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "data.exception_first",
+      "priority": "recommended",
+      "reason": "dashboard focal point",
+      "candidate_records": [
+        [
+          "data-exceptions-first",
+          0.266
+        ],
+        [
+          "layout-hierarchy-one-thing",
+          0.215
+        ],
+        [
+          "chart-flow-funnel",
+          0.148
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "data.drilldown",
+      "priority": "recommended",
+      "reason": "dashboard to detail",
+      "candidate_records": [
+        [
+          "comp-kpi-tile",
+          0.306
+        ]
+      ],
+      "selected_record": "comp-kpi-tile",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "data.kpi_comparison",
+      "priority": "recommended",
+      "reason": "KPIs",
+      "candidate_records": [
+        [
+          "comp-kpi-tile",
+          0.306
+        ],
+        [
+          "chart-compare-bar",
+          0.229
+        ],
+        [
+          "chart-progress-gauge",
+          0.151
+        ]
+      ],
+      "selected_record": "comp-kpi-tile",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "layout.focal_hierarchy",
+      "priority": "recommended",
+      "reason": "dashboard hierarchy",
+      "candidate_records": [
+        [
+          "layout-hierarchy-one-thing",
+          0.215
+        ],
+        [
+          "anti-oversized-hero-text",
+          0.207
+        ],
+        [
+          "typo-measure-and-rhythm",
+          0.207
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    }
+  ]
+}

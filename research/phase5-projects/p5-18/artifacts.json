@@ -1,0 +1,77 @@
+{
+  "task": "p5-18",
+  "project": "p3-mobile-flutter-field",
+  "platform_expected": "mobile",
+  "platform_resolved": "mobile",
+  "platform_correct": "yes",
+  "stack": "flutter (Material 3, Riverpod, go_router)",
+  "existing_ui": true,
+  "new_screen": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": ["polish", "refactor"],
+  "mode_resolved": ["audit", "refactor"],
+  "mode_correct": "acceptable",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "low",
+  "render_mode": "html-twin",
+  "screenshots": [
+    "render/first-form.png", "render/first-form-dark.png", "render/first-form-hc.png", "render/first-form-keyboard.png",
+    "render/first-viewer.png", "render/first-viewer-2.png", "render/first-viewer-zoomed.png", "render/first-viewer-single.png",
+    "render/first-viewer-hc.png", "render/first-viewer-more.png",
+    "render/final-form.png", "render/final-form-dark.png", "render/final-form-hc.png", "render/final-form-keyboard.png",
+    "render/final-viewer.png", "render/final-viewer-2.png", "render/final-viewer-zoomed.png", "render/final-viewer-single.png",
+    "render/final-viewer-hc.png", "render/final-viewer-more.png"
+  ],
+  "context_detection": {"navigation": "yes", "theme": "yes", "typography": "partial", "surfaces": "partial", "spacing": "partial"},
+  "preservation": {"navigation": true, "theme": true, "typography": true, "component_reuse": true, "unjustified_structural_change": 0},
+  "expected_concepts": ["perf.image_sizing", "touch.minimum_target", "touch.gestures_discoverable", "env.outdoor_readability", "a11y.accessible_names", "interaction.back_semantics", "process.reuse_first"],
+  "critical_concepts": ["perf.image_sizing", "touch.gestures_discoverable", "touch.minimum_target", "env.outdoor_readability"],
+  "delivered_concepts": ["touch.minimum_target", "state.offline_sync", "onboarding.permission_priming", "a11y.accessible_names", "state.unsaved_changes_guard", "feedback.validation_errors", "touch.ime_keyboard", "form.autofill_attributes", "env.outdoor_readability", "env.glanceable_status", "table.tabular_figures", "brand.type_roles", "touch.safe_areas"],
+  "concept_recall": 0.43,
+  "critical_recall": 0.5,
+  "concept_misses": [
+    {"concept": "perf.image_sizing", "layer": "expected-concepts"},
+    {"concept": "touch.gestures_discoverable", "layer": "bundle-selection"},
+    {"concept": "interaction.back_semantics", "layer": "expected-concepts"},
+    {"concept": "process.reuse_first", "layer": "bundle-selection"}
+  ],
+  "first_render_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 1},
+  "final_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+  "iterations": 1,
+  "guidance_relevant": 1,
+  "guidance_partial": 3,
+  "guidance_offtarget": 2,
+  "bad_guidance": [
+    {"record": "comp-photo-capture-field", "category": "missing-critical", "why": "Re-prescribes the status quo (row of >=96 dp tiles, tap -> Retake/Replace/Remove sheet; flutter hint says '104 dp tiles') and has no view-full-size / zoom / verify-before-save step, which is the task."},
+    {"record": "imagery-none", "category": "generic", "why": "'Remove stock photos and hero illustrations from working screens' selected for 'secondary mode, product erp'; the photos are the defect evidence. imagery-thumbnails (functional thumbnails) was considered and lost."},
+    {"record": "typo-scale-and-roles", "category": "generic", "why": "Selected to cover a required 'data-display / table.tabular_figures' concern that does not exist for this task (no numeric content)."}
+  ],
+  "skill_effect": "neutral",
+  "guidance_tokens": 1065,
+  "misses": [
+    {"layer": "project-adaptation", "what": "inspect: product_hints erp/iot for a utility field-inspection README; radius 4 instead of FieldSizes.radius 8; spacing 'irregular' despite an explicit 4/8/12/16/24/32 scale; surfaces UNKNOWN despite BorderSide outlines everywhere; tabular numerals false; tests [] with test/*_test.dart; routing [] with GoRouter in main.dart"},
+    {"layer": "requirements", "what": "problem_domain empty and no photo/media component recognised although the sentence names photos and thumbnails; density medium from product erp; platform ledgered as inferred from wording although the project inspect has mobile KNOWN"},
+    {"layer": "concerns", "what": "data-display required ('numbers, tables or charts are the content') and table.tabular_figures demanded for a photo-size problem"},
+    {"layer": "expected-concepts", "what": "perf.image_sizing never demanded (thumbnails decoded at a fixed 208 px is half the bug); interaction.back_semantics never demanded for a pushed full-screen viewer"},
+    {"layer": "bundle-selection", "what": "mobile-gestures-discoverable (0.348) and impl-reuse-before-new dropped while imagery-none and typo-scale-and-roles were kept"},
+    {"layer": "direction", "what": "imagery slot set to imagery-none for a photo-evidence form; validation flags 'dense product: low density selected' against the correct outdoor/gloves density because product=erp"}
+  ],
+  "knowledge_gaps": [
+    "No record carries a full-size / zoomable photo viewer or a 'verify the capture before submitting' behaviour; comp-photo-capture-field stops at capture + retake sheet.",
+    "interaction.back_semantics has only TV/media carriers; nothing mobile-platform carries it for pushed full-screen routes."
+  ],
+  "regressions": [
+    {"query": "Photos attached to a defect report are tiny thumbnails you can't check in the field. (project p3-mobile-flutter-field)", "expect": "core includes a photo-viewer/zoom-before-save record; bundle includes mobile-gestures-discoverable and mobile-perf-images-overdraw; imagery-none and typo-scale-and-roles absent; data-display not required; perf.image_sizing and touch.gestures_discoverable demanded"},
+    {"query": "photo thumbnails are too small to check (any mobile project)", "expect": "perf.image_sizing required; imagery-none never selected when request nouns are photo/thumbnail/image"},
+    {"query": "direction for an outdoor/gloves mobile project choosing density-low", "expect": "validation.ok true; product hint must not raise a 'dense product' violation against an environment-driven density"},
+    {"query": "inspect_project on p3-mobile-flutter-field", "expect": "radius 8, spacing scale 4/8/12/16/24/32, surfaces flat+outlined KNOWN, tabular numerals true, tests detected, product hint field-service not erp/iot"},
+    {"query": "requirements with a project file whose platforms=[mobile] is KNOWN", "expect": "platform ledgered KNOWN from the project; no MISSING confirm-platform entry"}
+  ],
+  "tags": ["context-detection-miss", "requirements-miss", "concept-miss", "ranking-miss", "knowledge-gap", "direction-mismatch", "render-defect-fixed", "tooling-limit", "skill-neutral", "preservation-ok"],
+  "build_hash_start": "bf034323a2b68202e8c902768e0de78cd93761b1a71670a49ee595648cd5f0d8",
+  "build_hash_end": "bf034323a2b68202e8c902768e0de78cd93761b1a71670a49ee595648cd5f0d8"
+}

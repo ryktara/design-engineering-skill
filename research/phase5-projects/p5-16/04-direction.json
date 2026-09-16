@@ -1,0 +1,119 @@
+{
+  "brand": "Dispatchers want to see which vehicles are overdue for service without opening each one.",
+  "fingerprint": {
+    "navigation_model": "menu-bar",
+    "typography_character": "geometric-sans",
+    "color_strategy": "neutral-plus-accent",
+    "focus_strategy": "ring"
+  },
+  "direction": {
+    "navigation": "nav-menu-bar-desktop",
+    "layout": null,
+    "density": null,
+    "surface": null,
+    "cards": null,
+    "typography": "typography-geometric-sans",
+    "color": "color-neutral-accent",
+    "motion": null,
+    "focus": "focus-ring-standard",
+    "cta": null,
+    "imagery": null,
+    "icon": null,
+    "metadata": null
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "desktop"
+    ],
+    "input": [
+      "keyboard",
+      "pointer"
+    ],
+    "product": [],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "avalonia"
+    ],
+    "density": null,
+    "components": [],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "audit"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "low",
+    "scope": {
+      "domain": "UNKNOWN",
+      "in_scope": false,
+      "kind": "abstain",
+      "reason": "no UI vocabulary found; not a UI design task as written",
+      "nearest_ui_task": "describe the screen, component, or user-facing problem"
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [],
+      "change_scope": "unknown",
+      "utterance": "observation",
+      "preserve": []
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "audit: problem statement on existing UI",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": "menu-bar (KNOWN)",
+      "theme": "light-first (INFERRED)",
+      "spacing": "4 (INFERRED)",
+      "typography": "geometric-sans (KNOWN)",
+      "components": "avalonia (KNOWN)"
+    },
+    "known": [
+      "platform=desktop",
+      "stack=avalonia",
+      "project_navigation=menu-bar",
+      "project_typography=geometric-sans",
+      "project_components=avalonia"
+    ],
+    "inferred": [
+      "input=pointer",
+      "input=keyboard",
+      "mode=audit",
+      "mode=refactor",
+      "project_theme=light-first",
+      "project_spacing=4"
+    ],
+    "missing": [],
+    "status": "ABSTAIN"
+  },
+  "validation": {
+    "ok": false,
+    "violations": [
+      "audit: no accessibility constraints attached"
+    ]
+  }
+}

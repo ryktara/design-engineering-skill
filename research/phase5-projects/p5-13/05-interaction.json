@@ -1,0 +1,904 @@
+{
+  "checks": [
+    {
+      "name": "attract: chooser language buttons present, no utilbar language button",
+      "pass": true
+    },
+    {
+      "name": "attract: utilbar geometry unchanged (Help in the middle column, x=384, w=312)",
+      "pass": true,
+      "detail": [
+        {
+          "t": "Help / call staff",
+          "x": 384,
+          "y": 1755.609375,
+          "w": 312,
+          "h": 116.390625,
+          "right": 696,
+          "textOverflow": false
+        }
+      ]
+    },
+    {
+      "name": "identify-dob: utilbar language button \"Español\" lang=es",
+      "pass": true,
+      "detail": {
+        "text": "Español",
+        "lang": "es",
+        "inNav": true
+      }
+    },
+    {
+      "name": "switch: html lang=es, state.lang=es, screen still identify-dob",
+      "pass": true,
+      "detail": {
+        "lang": "es",
+        "state": {
+          "lang": "es",
+          "a11y": false,
+          "chosen": true
+        },
+        "screen": "identify-dob",
+        "h1": "Escriba su fecha de nacimiento",
+        "live": "Idioma: español"
+      }
+    },
+    {
+      "name": "switch: h1 in Spanish",
+      "pass": true,
+      "detail": "Escriba su fecha de nacimiento"
+    },
+    {
+      "name": "switch: typed DOB kept (04 / 12)",
+      "pass": true,
+      "detail": "04 / 12"
+    },
+    {
+      "name": "switch: session kept",
+      "pass": true
+    },
+    {
+      "name": "switch: button now reads \"English\" lang=en",
+      "pass": true,
+      "detail": {
+        "text": "English",
+        "lang": "en",
+        "inNav": true
+      }
+    },
+    {
+      "name": "switch: focus stays on the language button after the re-render",
+      "pass": true,
+      "detail": "lang"
+    },
+    {
+      "name": "switch: polite live region announces the language in that language",
+      "pass": true,
+      "detail": "Idioma: español"
+    },
+    {
+      "name": "switch: utilbar nav label localised",
+      "pass": true
+    },
+    {
+      "name": "switch: keypad action keys in Spanish (Limpiar)",
+      "pass": true,
+      "detail": [
+        "Limpiar"
+      ]
+    },
+    {
+      "name": "switch: current error message re-rendered in Spanish",
+      "pass": true,
+      "detail": {
+        "errEn": "Enter at least the first 2 letters of your last name.",
+        "errEs": "Escriba al menos las 2 primeras letras de su apellido."
+      }
+    },
+    {
+      "name": "switch: typed name kept on identify-name",
+      "pass": true,
+      "detail": "O"
+    },
+    {
+      "name": "switch back: English again, name kept",
+      "pass": true
+    },
+    {
+      "name": "list: switch keeps the selection",
+      "pass": true,
+      "detail": {
+        "selBefore": [
+          "true",
+          "false",
+          "false"
+        ],
+        "selAfter": [
+          "true",
+          "false",
+          "false"
+        ]
+      }
+    },
+    {
+      "name": "list: Spanish title with masked name",
+      "pass": true,
+      "detail": "Listas para O••••r"
+    },
+    {
+      "name": "help dialog: painted in Spanish after the switch",
+      "pass": true,
+      "detail": "¿Necesita ayuda?\n\nUn miembro del personal puede acudir, o puede ir al mostrador "
+    },
+    {
+      "name": "idle dialog: painted in Spanish after the switch",
+      "pass": true,
+      "detail": "¿Sigue ahí?\n\nPor su privacidad, esta pantalla se borrará y volverá al inicio.\n\n2"
+    },
+    {
+      "name": "confirm: Spanish summary with one item (\"1 receta\")",
+      "pass": true,
+      "detail": "1 receta\nO••••r\nAtor•••••••• 20 mg\n$4.00\nTotal a pagar\n$4.00"
+    },
+    {
+      "name": "done: language button still present on the last screen",
+      "pass": true
+    },
+    {
+      "name": "reset: language back to the default (en) after the session ends",
+      "pass": true,
+      "detail": {
+        "lang": "en",
+        "state": {
+          "lang": "en",
+          "a11y": false,
+          "chosen": true
+        },
+        "screen": "attract",
+        "h1": "Pick up your prescription here",
+        "live": ""
+      }
+    },
+    {
+      "name": "std en identify-dob: utilbar 4 buttons >= 72 px, gaps >= 16, no label overflow",
+      "pass": true,
+      "detail": {
+        "boxes": [
+          "Español 228x116",
+          "Accessible mode 228x116",
+          "Help / call staff 228x116",
+          "Start over 228x116"
+        ],
+        "gaps": [
+          24,
+          24,
+          24
+        ]
+      }
+    },
+    {
+      "name": "std en identify-dob: bar on the panel and primary action fully above it",
+      "pass": true,
+      "detail": {
+        "barTop": 1730,
+        "barBottom": 1920,
+        "primaryBottom": 1698,
+        "appH": 1920
+      }
+    },
+    {
+      "name": "std en identify-dob: keypad labels fit their keys, keys >= 64 px",
+      "pass": true,
+      "detail": {
+        "overflow": [],
+        "small": 0
+      }
+    },
+    {
+      "name": "std en identify-name: utilbar 4 buttons >= 72 px, gaps >= 16, no label overflow",
+      "pass": true,
+      "detail": {
+        "boxes": [
+          "Español 228x116",
+          "Accessible mode 228x116",
+          "Help / call staff 228x116",
+          "Start over 228x116"
+        ],
+        "gaps": [
+          24,
+          24,
+          24
+        ]
+      }
+    },
+    {
+      "name": "std en identify-name: bar on the panel and primary action fully above it",
+      "pass": true,
+      "detail": {
+        "barTop": 1730,
+        "barBottom": 1920,
+        "primaryBottom": 1602,
+        "appH": 1920
+      }
+    },
+    {
+      "name": "std en identify-name: keypad labels fit their keys, keys >= 64 px",
+      "pass": true,
+      "detail": {
+        "overflow": [],
+        "small": 0
+      }
+    },
+    {
+      "name": "std en list: utilbar 4 buttons >= 72 px, gaps >= 16, no label overflow",
+      "pass": true,
+      "detail": {
+        "boxes": [
+          "Español 228x116",
+          "Accessible mode 228x116",
+          "Help / call staff 228x116",
+          "Start over 228x116"
+        ],
+        "gaps": [
+          24,
+          24,
+          24
+        ]
+      }
+    },
+    {
+      "name": "std en list: bar on the panel and primary action fully above it",
+      "pass": true,
+      "detail": {
+        "barTop": 1730,
+        "barBottom": 1920,
+        "primaryBottom": 1698,
+        "appH": 1920
+      }
+    },
+    {
+      "name": "std en confirm: utilbar 4 buttons >= 72 px, gaps >= 16, no label overflow",
+      "pass": true,
+      "detail": {
+        "boxes": [
+          "Español 228x116",
+          "Accessible mode 228x116",
+          "Help / call staff 228x116",
+          "Start over 228x116"
+        ],
+        "gaps": [
+          24,
+          24,
+          24
+        ]
+      }
+    },
+    {
+      "name": "std en confirm: bar on the panel and primary action fully above it",
+      "pass": true,
+      "detail": {
+        "barTop": 1730,
+        "barBottom": 1920,
+        "primaryBottom": 1602,
+        "appH": 1920
+      }
+    },
+    {
+      "name": "std en done: utilbar 4 buttons >= 72 px, gaps >= 16, no label overflow",
+      "pass": true,
+      "detail": {
+        "boxes": [
+          "Español 228x116",
+          "Accessible mode 228x116",
+          "Help / call staff 228x116",
+          "Start over 228x116"
+        ],
+        "gaps": [
+          24,
+          24,
+          24
+        ]
+      }
+    },
+    {
+      "name": "std en done: bar on the panel and primary action fully above it",
+      "pass": true,
+      "detail": {
+        "barTop": 1730,
+        "barBottom": 1920,
+        "primaryBottom": 1698,
+        "appH": 1920
+      }
+    },
+    {
+      "name": "std es identify-dob: utilbar 4 buttons >= 72 px, gaps >= 16, no label overflow",
+      "pass": true,
+      "detail": {
+        "boxes": [
+          "English 228x143",
+          "Modo accesible 228x143",
+          "Ayuda / llamar personal 228x143",
+          "Empezar de nuevo 228x143"
+        ],
+        "gaps": [
+          24,
+          24,
+          24
+        ]
+      }
+    },
+    {
+      "name": "std es identify-dob: bar on the panel and primary action fully above it",
+      "pass": true,
+      "detail": {
+        "barTop": 1703,
+        "barBottom": 1920,
+        "primaryBottom": 1671,
+        "appH": 1920
+      }
+    },
+    {
+      "name": "std es identify-dob: keypad labels fit their keys, keys >= 64 px",
+      "pass": true,
+      "detail": {
+        "overflow": [],
+        "small": 0
+      }
+    },
+    {
+      "name": "std es identify-name: utilbar 4 buttons >= 72 px, gaps >= 16, no label overflow",
+      "pass": true,
+      "detail": {
+        "boxes": [
+          "English 228x143",
+          "Modo accesible 228x143",
+          "Ayuda / llamar personal 228x143",
+          "Empezar de nuevo 228x143"
+        ],
+        "gaps": [
+          24,
+          24,
+          24
+        ]
+      }
+    },
+    {
+      "name": "std es identify-name: bar on the panel and primary action fully above it",
+      "pass": true,
+      "detail": {
+        "barTop": 1703,
+        "barBottom": 1920,
+        "primaryBottom": 1575,
+        "appH": 1920
+      }
+    },
+    {
+      "name": "std es identify-name: keypad labels fit their keys, keys >= 64 px",
+      "pass": true,
+      "detail": {
+        "overflow": [],
+        "small": 0
+      }
+    },
+    {
+      "name": "std es list: utilbar 4 buttons >= 72 px, gaps >= 16, no label overflow",
+      "pass": true,
+      "detail": {
+        "boxes": [
+          "English 228x143",
+          "Modo accesible 228x143",
+          "Ayuda / llamar personal 228x143",
+          "Empezar de nuevo 228x143"
+        ],
+        "gaps": [
+          24,
+          24,
+          24
+        ]
+      }
+    },
+    {
+      "name": "std es list: bar on the panel and primary action fully above it",
+      "pass": true,
+      "detail": {
+        "barTop": 1703,
+        "barBottom": 1920,
+        "primaryBottom": 1671,
+        "appH": 1920
+      }
+    },
+    {
+      "name": "std es confirm: utilbar 4 buttons >= 72 px, gaps >= 16, no label overflow",
+      "pass": true,
+      "detail": {
+        "boxes": [
+          "English 228x143",
+          "Modo accesible 228x143",
+          "Ayuda / llamar personal 228x143",
+          "Empezar de nuevo 228x143"
+        ],
+        "gaps": [
+          24,
+          24,
+          24
+        ]
+      }
+    },
+    {
+      "name": "std es confirm: bar on the panel and primary action fully above it",
+      "pass": true,
+      "detail": {
+        "barTop": 1703,
+        "barBottom": 1920,
+        "primaryBottom": 1575,
+        "appH": 1920
+      }
+    },
+    {
+      "name": "std es done: utilbar 4 buttons >= 72 px, gaps >= 16, no label overflow",
+      "pass": true,
+      "detail": {
+        "boxes": [
+          "English 228x143",
+          "Modo accesible 228x143",
+          "Ayuda / llamar personal 228x143",
+          "Empezar de nuevo 228x143"
+        ],
+        "gaps": [
+          24,
+          24,
+          24
+        ]
+      }
+    },
+    {
+      "name": "std es done: bar on the panel and primary action fully above it",
+      "pass": true,
+      "detail": {
+        "barTop": 1703,
+        "barBottom": 1920,
+        "primaryBottom": 1671,
+        "appH": 1920
+      }
+    },
+    {
+      "name": "a11y en identify-dob: utilbar 4 buttons >= 84 px, gaps >= 16, no label overflow",
+      "pass": true,
+      "detail": {
+        "boxes": [
+          "Español 228x158",
+          "Standard view 228x158",
+          "Help / call staff 228x158",
+          "Start over 228x158"
+        ],
+        "gaps": [
+          24,
+          24,
+          24
+        ]
+      }
+    },
+    {
+      "name": "a11y en identify-dob: bar on the panel and primary action fully above it",
+      "pass": true,
+      "detail": {
+        "barTop": 1688,
+        "barBottom": 1920,
+        "primaryBottom": 1656,
+        "appH": 1920
+      }
+    },
+    {
+      "name": "a11y en identify-dob: utilbar controls within the reach zone (y >= 768)",
+      "pass": true,
+      "detail": [
+        1714,
+        1714,
+        1714,
+        1714
+      ]
+    },
+    {
+      "name": "a11y en identify-dob: keypad labels fit their keys, keys >= 64 px",
+      "pass": true,
+      "detail": {
+        "overflow": [],
+        "small": 0
+      }
+    },
+    {
+      "name": "a11y en identify-name: utilbar 4 buttons >= 84 px, gaps >= 16, no label overflow",
+      "pass": true,
+      "detail": {
+        "boxes": [
+          "Español 228x158",
+          "Standard view 228x158",
+          "Help / call staff 228x158",
+          "Start over 228x158"
+        ],
+        "gaps": [
+          24,
+          24,
+          24
+        ]
+      }
+    },
+    {
+      "name": "a11y en identify-name: bar on the panel and primary action fully above it",
+      "pass": true,
+      "detail": {
+        "barTop": 1688,
+        "barBottom": 1920,
+        "primaryBottom": 1548,
+        "appH": 1920
+      }
+    },
+    {
+      "name": "a11y en identify-name: utilbar controls within the reach zone (y >= 768)",
+      "pass": true,
+      "detail": [
+        1714,
+        1714,
+        1714,
+        1714
+      ]
+    },
+    {
+      "name": "a11y en identify-name: keypad labels fit their keys, keys >= 64 px",
+      "pass": true,
+      "detail": {
+        "overflow": [],
+        "small": 0
+      }
+    },
+    {
+      "name": "a11y en list: utilbar 4 buttons >= 84 px, gaps >= 16, no label overflow",
+      "pass": true,
+      "detail": {
+        "boxes": [
+          "Español 228x158",
+          "Standard view 228x158",
+          "Help / call staff 228x158",
+          "Start over 228x158"
+        ],
+        "gaps": [
+          24,
+          24,
+          24
+        ]
+      }
+    },
+    {
+      "name": "a11y en list: bar on the panel and primary action fully above it",
+      "pass": true,
+      "detail": {
+        "barTop": 1688,
+        "barBottom": 1920,
+        "primaryBottom": 1656,
+        "appH": 1920
+      }
+    },
+    {
+      "name": "a11y en list: utilbar controls within the reach zone (y >= 768)",
+      "pass": true,
+      "detail": [
+        1714,
+        1714,
+        1714,
+        1714
+      ]
+    },
+    {
+      "name": "a11y en confirm: utilbar 4 buttons >= 84 px, gaps >= 16, no label overflow",
+      "pass": true,
+      "detail": {
+        "boxes": [
+          "Español 228x158",
+          "Standard view 228x158",
+          "Help / call staff 228x158",
+          "Start over 228x158"
+        ],
+        "gaps": [
+          24,
+          24,
+          24
+        ]
+      }
+    },
+    {
+      "name": "a11y en confirm: bar on the panel and primary action fully above it",
+      "pass": true,
+      "detail": {
+        "barTop": 1688,
+        "barBottom": 1920,
+        "primaryBottom": 1548,
+        "appH": 1920
+      }
+    },
+    {
+      "name": "a11y en confirm: utilbar controls within the reach zone (y >= 768)",
+      "pass": true,
+      "detail": [
+        1714,
+        1714,
+        1714,
+        1714
+      ]
+    },
+    {
+      "name": "a11y en done: utilbar 4 buttons >= 84 px, gaps >= 16, no label overflow",
+      "pass": true,
+      "detail": {
+        "boxes": [
+          "Español 228x158",
+          "Standard view 228x158",
+          "Help / call staff 228x158",
+          "Start over 228x158"
+        ],
+        "gaps": [
+          24,
+          24,
+          24
+        ]
+      }
+    },
+    {
+      "name": "a11y en done: bar on the panel and primary action fully above it",
+      "pass": true,
+      "detail": {
+        "barTop": 1688,
+        "barBottom": 1920,
+        "primaryBottom": 1656,
+        "appH": 1920
+      }
+    },
+    {
+      "name": "a11y en done: utilbar controls within the reach zone (y >= 768)",
+      "pass": true,
+      "detail": [
+        1714,
+        1714,
+        1714,
+        1714
+      ]
+    },
+    {
+      "name": "a11y es identify-dob: utilbar 4 buttons >= 84 px, gaps >= 16, no label overflow",
+      "pass": true,
+      "detail": {
+        "boxes": [
+          "English 228x191",
+          "Vista estándar 228x191",
+          "Ayuda / llamar personal 228x191",
+          "Empezar de nuevo 228x191"
+        ],
+        "gaps": [
+          24,
+          24,
+          24
+        ]
+      }
+    },
+    {
+      "name": "a11y es identify-dob: bar on the panel and primary action fully above it",
+      "pass": true,
+      "detail": {
+        "barTop": 1655,
+        "barBottom": 1920,
+        "primaryBottom": 1623,
+        "appH": 1920
+      }
+    },
+    {
+      "name": "a11y es identify-dob: utilbar controls within the reach zone (y >= 768)",
+      "pass": true,
+      "detail": [
+        1681,
+        1681,
+        1681,
+        1681
+      ]
+    },
+    {
+      "name": "a11y es identify-dob: keypad labels fit their keys, keys >= 64 px",
+      "pass": true,
+      "detail": {
+        "overflow": [],
+        "small": 0
+      }
+    },
+    {
+      "name": "a11y es identify-name: utilbar 4 buttons >= 84 px, gaps >= 16, no label overflow",
+      "pass": true,
+      "detail": {
+        "boxes": [
+          "English 228x191",
+          "Vista estándar 228x191",
+          "Ayuda / llamar personal 228x191",
+          "Empezar de nuevo 228x191"
+        ],
+        "gaps": [
+          24,
+          24,
+          24
+        ]
+      }
+    },
+    {
+      "name": "a11y es identify-name: bar on the panel and primary action fully above it",
+      "pass": true,
+      "detail": {
+        "barTop": 1655,
+        "barBottom": 1920,
+        "primaryBottom": 1515,
+        "appH": 1920
+      }
+    },
+    {
+      "name": "a11y es identify-name: utilbar controls within the reach zone (y >= 768)",
+      "pass": true,
+      "detail": [
+        1681,
+        1681,
+        1681,
+        1681
+      ]
+    },
+    {
+      "name": "a11y es identify-name: keypad labels fit their keys, keys >= 64 px",
+      "pass": true,
+      "detail": {
+        "overflow": [],
+        "small": 0
+      }
+    },
+    {
+      "name": "a11y es list: utilbar 4 buttons >= 84 px, gaps >= 16, no label overflow",
+      "pass": true,
+      "detail": {
+        "boxes": [
+          "English 228x191",
+          "Vista estándar 228x191",
+          "Ayuda / llamar personal 228x191",
+          "Empezar de nuevo 228x191"
+        ],
+        "gaps": [
+          24,
+          24,
+          24
+        ]
+      }
+    },
+    {
+      "name": "a11y es list: bar on the panel and primary action fully above it",
+      "pass": true,
+      "detail": {
+        "barTop": 1655,
+        "barBottom": 1920,
+        "primaryBottom": 1623,
+        "appH": 1920
+      }
+    },
+    {
+      "name": "a11y es list: utilbar controls within the reach zone (y >= 768)",
+      "pass": true,
+      "detail": [
+        1681,
+        1681,
+        1681,
+        1681
+      ]
+    },
+    {
+      "name": "a11y es confirm: utilbar 4 buttons >= 84 px, gaps >= 16, no label overflow",
+      "pass": true,
+      "detail": {
+        "boxes": [
+          "English 228x191",
+          "Vista estándar 228x191",
+          "Ayuda / llamar personal 228x191",
+          "Empezar de nuevo 228x191"
+        ],
+        "gaps": [
+          24,
+          24,
+          24
+        ]
+      }
+    },
+    {
+      "name": "a11y es confirm: bar on the panel and primary action fully above it",
+      "pass": true,
+      "detail": {
+        "barTop": 1655,
+        "barBottom": 1920,
+        "primaryBottom": 1515,
+        "appH": 1920
+      }
+    },
+    {
+      "name": "a11y es confirm: utilbar controls within the reach zone (y >= 768)",
+      "pass": true,
+      "detail": [
+        1681,
+        1681,
+        1681,
+        1681
+      ]
+    },
+    {
+      "name": "a11y es done: utilbar 4 buttons >= 84 px, gaps >= 16, no label overflow",
+      "pass": true,
+      "detail": {
+        "boxes": [
+          "English 228x191",
+          "Vista estándar 228x191",
+          "Ayuda / llamar personal 228x191",
+          "Empezar de nuevo 228x191"
+        ],
+        "gaps": [
+          24,
+          24,
+          24
+        ]
+      }
+    },
+    {
+      "name": "a11y es done: bar on the panel and primary action fully above it",
+      "pass": true,
+      "detail": {
+        "barTop": 1655,
+        "barBottom": 1920,
+        "primaryBottom": 1623,
+        "appH": 1920
+      }
+    },
+    {
+      "name": "a11y es done: utilbar controls within the reach zone (y >= 768)",
+      "pass": true,
+      "detail": [
+        1681,
+        1681,
+        1681,
+        1681
+      ]
+    },
+    {
+      "name": "keyboard: Tab reaches the utilbar language button",
+      "pass": true
+    },
+    {
+      "name": "keyboard: Enter switches to Spanish and focus stays on the button",
+      "pass": true,
+      "detail": {
+        "s8": "es",
+        "f8": {
+          "action": "lang",
+          "ring": "solid"
+        }
+      }
+    },
+    {
+      "name": "p5-12 preserved: entryWarnMs 90 s / entryCountdownS 30 / idleWarnMs 40 s / idleCountdownS 20",
+      "pass": true,
+      "detail": {
+        "idleWarnMs": 40000,
+        "idleCountdownS": 20,
+        "entryWarnMs": 90000,
+        "entryCountdownS": 30,
+        "doneAutoResetS": 20,
+        "revealS": 10,
+        "steps": 3
+      }
+    },
+    {
+      "name": "no :hover rules",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "summary": {
+    "passed": 84,
+    "failed": 0
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "platform": "tv",
+  "artifact_state": "existing",
+  "acceptable_modes": ["refactor", "polish", "audit"],
+  "scope_kind": "in-scope",
+  "expected_concepts": ["interaction.back_semantics", "navigation.orientation_and_back", "interaction.focus_restore", "media.details_play_first", "interaction.dpad_reachability", "navigation.platform_grammar"],
+  "critical_concepts": ["interaction.back_semantics", "navigation.orientation_and_back"],
+  "forbidden_concepts": ["tv.sign_in_code", "media.search_tv", "tv.epg_pinned_channels", "tv.time_navigation", "adaptive.navigation_transform", "brand.font_loading", "feedback.confirmation_destructive"],
+  "preservation": ["navigation", "theme", "typography", "focus-memory", "route-contract (details -> home, home rails -> hero -> side nav -> exit)"],
+  "notes": "Written from SportsApp.kt / EventDetailsScreen.kt / AppState.kt / MainActivity.kt before any advise command. The code as written already has BackHandler { onBack() } on Details and a Home-only exit handler gated on navHasFocus; static review finds no concrete failing path, but there is no route back stack and no fall-through guard: any screen without an enabled BackHandler hands BACK to Activity default = finish, and navHasFocus is never reset when Home leaves composition. Expected fix shape: explicit back stack (Home root, Details/Player/Guide pushed, BACK pops), exit only from Home root + drawer focus, top-level guard so BACK on a non-root route can never reach Activity.finish. Sentence carries no mode word; scope could reasonably be judged partial (engineering: BackHandler wiring) but the BACK layering on TV is a remote-focus design contract, so in-scope is expected."
+}

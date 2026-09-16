@@ -1,0 +1,104 @@
+{
+ "task": "p6-30",
+ "build": "32e67640c9b8ef1d519ef9695016fb396116b92412e63c324da090aecf1df385",
+ "c1_recorded": {
+  "platform_expected": "kiosk",
+  "platform_resolved": [
+   "kiosk"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "audit",
+   "polish",
+   "refactor"
+  ],
+  "mode_resolved": [
+   "audit",
+   "refactor"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "PARTIAL",
+  "bundle_ids": [
+   "kiosk-public-use"
+  ],
+  "bundle_tokens": 132,
+  "expected_concepts": [
+   "state.session_expiry",
+   "privacy.shared_device",
+   "feedback.confirmation_destructive",
+   "feedback.progress_indicator",
+   "touch.minimum_target",
+   "a11y.live_status"
+  ],
+  "critical_concepts": [
+   "state.session_expiry",
+   "privacy.shared_device"
+  ],
+  "delivered_concepts": [
+   "privacy.shared_device",
+   "state.session_expiry",
+   "touch.minimum_target"
+  ],
+  "concept_recall": 0.5,
+  "critical_recall": 1.0,
+  "forbidden_delivered": [],
+  "change_budget": "moderate"
+ },
+ "c4": {
+  "platform_expected": "kiosk",
+  "platform_resolved": [
+   "kiosk"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "audit",
+   "polish",
+   "refactor"
+  ],
+  "mode_resolved": [
+   "audit",
+   "refactor"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "PARTIAL",
+  "bundle_ids": [
+   "kiosk-public-use"
+  ],
+  "bundle_tokens": 132,
+  "expected_concepts": [
+   "state.session_expiry",
+   "privacy.shared_device",
+   "feedback.confirmation_destructive",
+   "feedback.progress_indicator",
+   "touch.minimum_target",
+   "a11y.live_status"
+  ],
+  "critical_concepts": [
+   "state.session_expiry",
+   "privacy.shared_device"
+  ],
+  "delivered_concepts": [
+   "privacy.shared_device",
+   "state.session_expiry",
+   "touch.minimum_target"
+  ],
+  "concept_recall": 0.5,
+  "critical_recall": 1.0,
+  "forbidden_delivered": [],
+  "change_budget": "moderate"
+ }
+}

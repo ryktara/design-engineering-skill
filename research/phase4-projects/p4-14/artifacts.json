@@ -1,0 +1,28 @@
+{"task": "p4-14", "project": "p3-mobile-flutter-field", "platform": "mobile (Android + iOS phone, outdoor/gloves/offline)", "stack": "flutter (Material 3, Riverpod, go_router)", "existing_ui": true, "existing_project_new_screen": true, "mode": "create", "change_budget": "moderate",
+ "render_mode": "html-twin",
+ "render_note": "No Flutter SDK: new Dart screen/state/theme variant reviewed statically; Phase 3 twin extended with a settings section, high-contrast variable set and picker sheet; shot at 390x844 (Playwright 1.63.0)",
+ "screenshots": ["render/first-settings.png", "render/first-settings-offline.png", "render/first-settings-hc.png", "render/first-settings-freq-sheet.png", "render/first-checklist-hc.png", "render/first-form-hc.png", "render/final-settings.png", "render/final-settings-offline.png", "render/final-settings-hc.png", "render/final-settings-freq-sheet.png", "render/final-checklist-hc.png", "render/final-form-hc.png"],
+ "context_detection": {"navigation": "partial", "theme": "yes", "typography": "partial", "surfaces": "no", "spacing": "yes"},
+ "context_detection_notes": ["same inspect output as p4-13: TV platform from AnimatedPadding, surfaces elevated from elevation: 0, radius unknown, components = libraries"],
+ "preservation": {"navigation": true, "theme": true, "typography": true, "component_reuse": true, "unjustified_structural_change": 0},
+ "first_render_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 1, "implementation-bug": 0},
+ "final_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+ "iterations": 2, "guidance_relevant": 1, "guidance_partial": 3, "guidance_offtarget": 4,
+ "guidance_metrics": {"concept_coverage": "9/11", "coverage_per_1k_tokens": 8.04, "contaminated": [], "purity": 0.8, "tokens": 1120, "uncovered_required_concerns": ["performance"], "uncovered_required_concepts": ["state.loading_empty_error", "table.tabular_figures"], "status": "PARTIAL"},
+ "direction_validation": {"ok": false, "violations": ["non-media product: poster (media) card geometry selected"]},
+ "interaction_test": {"file": "05-interaction.json", "first_run": "05-interaction-first.json", "checks": 17, "passed_first": 15, "passed_final": 17, "groups": 3, "min_target_px": 56, "hc_secondary_text_ratio": 16.9},
+ "files_changed": ["project/lib/state/settings.dart (new)", "project/lib/screens/settings_screen.dart (new)", "project/lib/theme/app_theme.dart", "project/lib/main.dart", "project/lib/screens/checklist_screen.dart", "project/README.md", "render/twin.html (phase 3 dir)"],
+ "misses": [
+  {"layer": "requirements", "what": "platform tv / input remote / env large-display+shared-device (inspector AnimatedPadding false positive); product erp/iot; intent.preserve empty for 'in its existing style'"},
+  {"layer": "concerns", "what": "state.loading_empty_error required for a settings screen with no async content"},
+  {"layer": "bundle-selection", "what": "states-offline-and-sync (rank 1, 0.533), impl-reuse-before-new, color-semantic-tokens not selected; five TV records selected"},
+  {"layer": "direction", "what": "typography rounded-friendly as a new slot although the repo uses the system font and typography was UNKNOWN; motion focus-scale and focus scale-glow (TV); cards poster-landscape"},
+  {"layer": "project-adaptation", "what": "direction density-medium (40-48 dp) vs the repo's 56 dp field convention; repo used"}
+ ],
+ "knowledge_gaps": ["in-app high-contrast mode as a theme variant (stroke widths, outline/secondary-text roles, parity with the OS increase-contrast setting)"],
+ "regressions": [
+  {"query": "add a settings screen (sync frequency, units, high-contrast mode) in its existing style", "expect": "comp-settings-screen core; impl-reuse-before-new and color-semantic-tokens guardrails; preserve includes theme/typography/components; typography slot preserved (system font)"},
+  {"query": "high-contrast mode toggle for a mobile app", "expect": "a record describing the high-contrast theme variant (once added)"},
+  {"query": "settings screen concerns", "expect": "state.loading_empty_error not a required concept"}
+ ],
+ "tags": ["context-detection-miss", "requirements-miss", "concept-miss", "ranking-miss", "knowledge-gap", "direction-mismatch", "render-defect-fixed", "tooling-limit", "skill-helped", "preservation-ok"]}

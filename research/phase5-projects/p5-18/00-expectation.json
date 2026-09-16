@@ -1,0 +1,39 @@
+{
+  "task": "p5-18",
+  "sentence": "Photos attached to a defect report are tiny thumbnails you can't check in the field.",
+  "platform": "mobile",
+  "artifact_state": "existing",
+  "acceptable_modes": ["polish", "refactor"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "perf.image_sizing",
+    "touch.minimum_target",
+    "touch.gestures_discoverable",
+    "env.outdoor_readability",
+    "a11y.accessible_names",
+    "interaction.back_semantics",
+    "process.reuse_first"
+  ],
+  "critical_concepts": [
+    "perf.image_sizing",
+    "touch.gestures_discoverable",
+    "touch.minimum_target",
+    "env.outdoor_readability"
+  ],
+  "forbidden_concepts": [
+    "tv.ten_foot_typography",
+    "tv.safe_margins",
+    "interaction.dpad_reachability",
+    "desktop.spacing_grid",
+    "layout.hero_thesis",
+    "anti.template_landing",
+    "data.pagination_strategy",
+    "table.virtualization"
+  ],
+  "preservation": ["navigation", "theme", "typography", "component_reuse"],
+  "reviewer_notes": {
+    "what_the_code_does": "lib/screens/defect_report_screen.dart: _PhotoThumb is a 104x104 dp Material/InkWell with Image.file(cacheWidth: 208) and an index chip; tapping opens a bottom sheet with Retake / Replace from gallery / Remove. There is no way to view a photo at full size, no zoom, no next/previous. App context: outdoor sunlight, gloves (56 dp controls, 12 dp gaps), offline-first, light+dark ColorScheme hand-tuned, StatusColors ThemeExtension, FieldSizes tokens.",
+    "what_a_good_answer_does": "Keep the strip and its sheet, but make each photo checkable: larger thumbnails (e.g. full-width or 2-up, decoded at display size not 208 px) and a full-screen viewer with pinch-zoom (InteractiveViewer) plus explicit large controls (close, prev/next, zoom, retake) so gestures are not the only path with gloves; dark scrim + high-contrast controls for sunlight; 'Photo N of M' semantics; back gesture/button closes the viewer; reuse the existing bottom-sheet idiom and FieldSizes tokens; both themes.",
+    "what_a_bad_answer_does": "Generic gallery/lightbox advice with hover states, TV/desktop guidance, redesigning the whole form, changing navigation or theme, or only saying 'make thumbnails bigger' without a viewer."
+  }
+}

@@ -1,0 +1,6 @@
+{"platform": "web", "artifact_state": "existing", "acceptable_modes": ["refactor", "polish"], "scope_kind": "in-scope",
+ "expected_concepts": ["feedback.confirmation_destructive", "a11y.live_status", "a11y.accessible_names", "interaction.focus_restore", "touch.minimum_target", "a11y.dialog_focus"],
+ "critical_concepts": ["feedback.confirmation_destructive", "a11y.live_status"],
+ "forbidden_concepts": ["interaction.dpad_reachability", "table.virtualization", "media.resume_playback", "tv.no_touch_hover"],
+ "preservation": ["navigation", "theme", "typography"],
+ "note": "Cart surface in this codebase is the order summary on checkout.html. It currently has NO remove control at all, so the sentence's premise (instant removal) does not exist in the code; the fix is to introduce removal with an undo/confirm-safe pattern."}

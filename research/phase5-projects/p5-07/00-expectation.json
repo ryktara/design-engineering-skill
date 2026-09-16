@@ -1,0 +1,25 @@
+{
+  "platform": "web",
+  "artifact_state": "existing",
+  "acceptable_modes": ["polish", "refactor", "create"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "state.loading_empty_error",
+    "data.search_results",
+    "a11y.live_status",
+    "process.reuse_first",
+    "layout.one_primary_action",
+    "interaction.focus_restore",
+    "perf.layout_shift"
+  ],
+  "critical_concepts": ["state.loading_empty_error", "data.search_results"],
+  "forbidden_concepts": [
+    "tv.ten_foot_typography", "tv.dark_first", "tv.safe_margins", "media.search_tv", "interaction.dpad_reachability",
+    "touch.thumb_reach", "touch.safe_areas", "brand.dark_mode_redesign", "anti.platform_scaling",
+    "data.chart_by_question", "data.pagination_strategy", "table.virtualization", "interaction.command_palette",
+    "navigation.rail_semantics", "adaptive.navigation_transform", "layout.hero_thesis", "anti.template_landing",
+    "onboarding.setup_checklist", "onboarding.linear_wizard"
+  ],
+  "preservation": ["navigation", "theme", "typography", "component_reuse", "search store ($patientSearch), row click -> /patients/[id], Add patient primary action, count line"],
+  "notes": "Reviewer reading before any advise call: /patients is a header row (h2 + 'N of 40 patients' count, search Input bound to the patientSearch store, primary 'Add patient' Button) above a Card containing the shared Table. Table already has an {:else} branch that renders a single centred neutral-500 line ('No patients match your search.') in a colspan cell under the column headers. Baseline render confirms: at 1440px the message is one faint line in an otherwise empty bordered table (reads as blank at a glance); at 390px the line is centred in a table that overflows the card, so the visible area is genuinely blank. Expected design: a real empty state in place of the header-only table — a heading that says nothing matched, the query echoed back, what was searched (name, phone, email), and recovery actions: 'Clear search' (secondary; must return focus to the search field) and a route to 'Add patient' without adding a second primary button (the header already has the one primary). The count line should be a polite live region so the '0 of 40' result is announced. Keep the Card so the region does not collapse (no layout shift); reuse Card/Button/Input, no new nav, no dark mode, no template illustration. Mode: polish of an existing screen; refactor (extend Table's empty prop) or create (small EmptyState component) both acceptable."
+}

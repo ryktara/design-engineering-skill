@@ -1,0 +1,28 @@
+{
+  "platform": "web",
+  "artifact_state": "existing",
+  "acceptable_modes": ["accessibility", "audit", "polish"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "interaction.keyboard_navigation",
+    "interaction.focus_visible",
+    "interaction.selection_visible",
+    "a11y.semantics",
+    "a11y.accessible_names",
+    "process.safe_modification"
+  ],
+  "critical_concepts": ["interaction.keyboard_navigation", "interaction.focus_visible"],
+  "forbidden_concepts": [
+    "interaction.dpad_reachability",
+    "tv.no_touch_hover",
+    "tv.ten_foot_typography",
+    "touch.gestures_discoverable",
+    "brand.structural_differentiation",
+    "brand.dark_mode_redesign",
+    "anti.template_landing",
+    "navigation.rail_semantics",
+    "layout.hero_thesis"
+  ],
+  "preservation": ["navigation", "theme", "typography", "compare-period state in URL hash", "native radiogroup semantics", "chart summary + data table"],
+  "notes": "Reviewer reading of the code before any advise call. The only chart-related filter on the page is the page-level 'Compare with' segmented control (CompareSwitch.jsx: native radios in a role=radiogroup, inputs opacity:0 but position:absolute so still focusable; focus ring via `.seg input:focus-visible + span`). Read as-is the control looks reachable; the sentence claims it is not, so the fix is expected to be a keyboard-navigation/focus-order + visible-focus change on an existing control, not a new feature. Mode should be accessibility (audit/polish acceptable); create or redesign would be wrong. Platform must resolve to web (React + esbuild + index.html)."
+}

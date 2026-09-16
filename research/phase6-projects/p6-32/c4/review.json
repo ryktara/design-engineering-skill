@@ -1,0 +1,10 @@
+{"task": "p6-32",
+ "records": [
+   {"id": "i18n-text-expansion-rtl", "verdict": "relevant", "category": "", "why": "Almost a spec for the task: a language switch labelled in its own language on every screen, 30-50% expansion, switching keeps session and re-renders every label."},
+   {"id": "impl-reuse-before-new", "verdict": "partial", "category": "generic", "why": "True but SKILL.md already says it; inspecting js/i18n.js gave the same answer."},
+   {"id": "kiosk-public-use", "verdict": "relevant", "category": "", "why": "Gave the >=60px target floor, a visible way out at every step, and the idle-clears-session rule used for the language reset."}
+ ],
+ "missing_critical": ["interaction.selection_visible"],
+ "unjustified_direction_slots": 1,
+ "layer_review": {"core": [], "critical": ["i18n-text-expansion-rtl", "impl-reuse-before-new", "kiosk-public-use"], "optional": []},
+ "change_vs_c3": "better - content.i18n_expansion is now demanded and i18n-text-expansion-rtl, the top search hit that c3 identified as the headline miss on an add-a-language task, is in the bundle; both c3 records are kept and only interaction.selection_visible remains uncovered, with cta still the one unjustified slot."}

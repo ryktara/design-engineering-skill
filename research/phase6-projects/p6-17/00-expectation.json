@@ -1,0 +1,17 @@
+{
+  "platform": "mobile",
+  "artifact_state": "existing",
+  "acceptable_modes": ["accessibility", "polish", "refactor", "audit"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "a11y.contrast",
+    "brand.token_layers",
+    "brand.dark_mode_redesign",
+    "layout.focal_hierarchy",
+    "process.safe_modification"
+  ],
+  "critical_concepts": ["a11y.contrast", "brand.token_layers"],
+  "forbidden_concepts": ["tv.dark_first", "media.details_play_first", "data.chart_by_question", "interaction.dpad_reachability"],
+  "preservation": ["navigation", "theme", "typography"],
+  "reviewer_root_cause": "DarkColors.onSurfaceVariant = Grey600 #6B6B6B on background/surface Grey900 #121212 = 3.55:1, below WCAG AA 4.5:1. The transaction date line in AccountDetailScreen.TransactionRow is bodySmall 12sp coloured onSurfaceVariant, so it fails in dark mode only (light mode uses Grey700 on white, ~9:1). Correct fix is one semantic token in Theme.kt, not a per-screen colour override."
+}

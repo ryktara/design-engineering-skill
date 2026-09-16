@@ -1,0 +1,133 @@
+{
+  "brand": "The waiting room board: nothing tells the front desk how long each patient has been sitting there.",
+  "fingerprint": {
+    "navigation_model": "left-rail",
+    "color_strategy": "neutral-plus-accent",
+    "focus_strategy": "ring"
+  },
+  "direction": {
+    "navigation": "nav-left-rail",
+    "layout": null,
+    "density": null,
+    "surface": null,
+    "cards": null,
+    "typography": null,
+    "color": "color-neutral-accent",
+    "motion": null,
+    "focus": "focus-ring-standard",
+    "cta": null,
+    "imagery": null,
+    "icon": null,
+    "metadata": null
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [
+      "ecommerce",
+      "healthcare"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "svelte",
+      "tailwind"
+    ],
+    "density": null,
+    "components": [],
+    "environment": [
+      "shared-device"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "audit"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "low",
+    "scope": {
+      "domain": "UNKNOWN",
+      "in_scope": false,
+      "kind": "abstain",
+      "reason": "no UI vocabulary found; not a UI design task as written",
+      "nearest_ui_task": "describe the screen, component, or user-facing problem"
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "performance-ux"
+      ],
+      "change_scope": "unknown",
+      "utterance": "observation",
+      "preserve": []
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "audit: perceived-performance defect",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": "left-rail (KNOWN)",
+      "theme": "light-first (INFERRED)",
+      "spacing": "4 (INFERRED)",
+      "typography": "custom (INFERRED)",
+      "components": "tailwind (KNOWN)"
+    },
+    "known": [
+      "platform=web",
+      "product=healthcare",
+      "product=ecommerce",
+      "stack=svelte",
+      "stack=tailwind",
+      "environment=shared-device",
+      "project_navigation=left-rail",
+      "project_components=tailwind"
+    ],
+    "inferred": [
+      "input=pointer",
+      "input=keyboard",
+      "input=touch",
+      "mode=audit",
+      "mode=refactor",
+      "project_theme=light-first",
+      "project_spacing=4",
+      "project_typography=custom"
+    ],
+    "missing": [],
+    "status": "ABSTAIN"
+  },
+  "validation": {
+    "ok": false,
+    "violations": [
+      "audit: no accessibility constraints attached"
+    ]
+  }
+}

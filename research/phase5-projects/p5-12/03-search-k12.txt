@@ -1,0 +1,80 @@
+## design-engineering search: Older customers time out on the identify step before they finish typing.
+status=CONFIDENT modes=['audit', 'refactor'] platforms={} inputs={} products={} density=None stacks=[] screens=[] negatives=[]
+facets required=['accessibility', 'interaction', 'component', 'anti-pattern'] unmet=['interaction'] diversity=0.92
+MISSING: platform: audit targets differ by platform; not stated
+
+### Saving, saved, autosave, session expiry, and permission-denied states  `states-persistence-and-session`  [rule/states; component/platform] score 0.481 · heuristic
+Show saving → saved as a quiet inline status with a timestamp (not a toast per keystroke); autosave drafts and say so; warn before a session expires with a way to extend, and never discard entered data on expiry on a personal device (restore the draft after re-authentication; on shared or public screens clear it instead); permission-denied is a designed state that explains what is missing and who can grant it rather than an empty screen; destructive or irreversible saves confirm once with the safe action as default.
+- use when: Forms and editors longer than a minute, multi-step flows, authenticated sessions with timeouts, screens whose data depends on permissions.
+- avoid when: Public kiosks and shared screens: there the session is cleared on idle and nothing is restored (see shared-device-privacy).
+- why: lexical 0.498, structural 0.46 (mode audit)
+
+### Wizard / stepper  `comp-wizard-stepper`  [component/wizard; component] score 0.378 · heuristic
+Step indicator with names and progress (list semantics, aria-current=step), Back never loses data, one primary action per step, review step before submit, resume support, each step a real page/route on web; TV: full-screen steps with default focus on the primary action.
+- use when: Ordered multi-step flows (checkout, applications, setup).
+- avoid when: Independent sections (tabs); flows that fit one screen.
+- why: lexical 0.442, structural 0.3 (mode audit)
+
+### Users always know where they are and how to go back  `nav-orientation-and-back`  [rule/navigation; navigation] score 0.349 · heuristic
+Current location marked (aria-current, selected tab, breadcrumb, page title); URL/route reflects state on web and deep-linkable screens; back returns to the previous screen with its scroll and selection; titles match the navigation label that led there.
+- use when: Every navigation model; deep links; multi-step flows; tabs that hold stacks.
+- avoid when: Never break the browser/system back; never use a single URL for many states on the web.
+- why: lexical 0.225, structural 0.5 (mode audit)
+
+### Choosing a visual style before understanding product, user, and platform  `anti-style-before-product`  [antipattern/process; anti-pattern] score 0.332 · heuristic
+Order of decisions: task and user → environment and input → density and navigation → layout → components → then type, colour, surface, motion. Visual style is downstream of structure. Record the KNOWN/INFERRED/MISSING ledger before choosing a look.
+- use when: Any request answered with 'glassmorphism + purple gradient + Inter' (or any style) before asking who uses it, where, with what input, at what density.
+- avoid when: When the user explicitly specifies the style, follow it, but still check platform fit.
+- why: lexical 0.195, structural 0.5 (mode audit)
+
+### Trend over time → line / area  `chart-trend-line`  [chart/chart; data-viz] score 0.309 · heuristic
+Line per series with distinct style (colour + dash/marker), direct end labels instead of a legend where possible, y-axis from zero unless the domain justifies otherwise (say so), consistent time bucketing, downsample >1–2k points, hover/focus reveals values with a crosshair, area fill only for a single series or true cumulative data.
+- use when: Continuous measure over time; rate of change matters; 1–6 series.
+- avoid when: Fewer than 4 points (use a stat + delta), more than ~6 series (small multiples), discrete categories (bars), cumulative composition (stacked area only if parts sum meaningfully).
+- why: lexical 0.316, structural 0.3 (mode audit)
+
+### Flat surfaces with tonal layers  `surface-flat-tonal`  [pattern/surface; layout] score 0.307 · heuristic
+Define three tonal steps per theme with measured contrast (each step ≥1.1:1 apart and borders ≥3:1 where they mark boundaries). Shadows reserved for transient layers (menus, dialogs, drag). Reads professional at any density and avoids the 'everything is a floating card' look.
+- use when: Most application UI: hierarchy expressed with subtle background tone steps (canvas → surface → elevated) and dividers rather than shadows on everything.
+- avoid when: When physical elevation carries meaning (floating menus, dragged items) it still needs a shadow; don't flatten those.
+- incompatible with: surface-glass, surface-elevated-cards
+- why: lexical 0.183, structural 0.28 (secondary mode)
+
+### Setup / progress checklist  `comp-setup-checklist`  [component/wizard; component/platform] score 0.298 · heuristic
+A persistent checklist with a progress summary ('3 of 6 done'), each item stating outcome, time estimate, and one action; completed items stay visible and collapsed; the list is dismissible once essentials are done and reachable again from help; items deep-link to the exact screen and return to the checklist; never block the product behind it. Announce progress changes to assistive tech; keep it out of the main content's focal position.
+- use when: Multi-session onboarding where tasks can be done in any order over days (connect data, invite team, verify identity, complete profile).
+- avoid when: Strictly ordered dependent steps (use a wizard) or a single setup action.
+- why: lexical 0.28, structural 0.32 (mode audit)
+
+### Functional minimal motion  `motion-functional-minimal`  [pattern/motion; visual] score 0.273 · heuristic
+Animate transform and opacity only; durations from a 3-step token scale (fast/base/slow); no motion on hover beyond colour/underline; respect prefers-reduced-motion by removing non-essential motion, not by making it faster.
+- use when: Default for application UI: motion only for state change, continuity (open/close, expand), and feedback; 120–250 ms, ease-out for entering, ease-in for leaving.
+- avoid when: Brand moments (launch, onboarding) that deliberately need more; then use 'expressive' for those moments only.
+- incompatible with: motion-cinematic, motion-expressive
+- why: lexical 0.122, structural 0.28 (secondary mode)
+
+### Placeholder as the only label  `anti-placeholder-labels`  [antipattern/craft; anti-pattern] score 0.267 · accessibility-requirement
+Visible persistent label (above or floating with a real label element), placeholder only for format hints, placeholder contrast ≥4.5:1.
+- use when: Inputs whose label disappears on typing; low-contrast placeholder text.
+- avoid when: Never.
+- why: lexical 0.077, structural 0.5 (mode audit)
+
+### TV: transport control conventions  `tv-player-controls`  [rule/player; component/platform] score 0.261 · platform-standard
+Media keys work without showing the overlay (PLAY/PAUSE, FF/RW); DPAD_CENTER on the playing video toggles play/pause or shows controls (pick one and be consistent with the platform); LEFT/RIGHT on the progress bar seek in fixed steps with preview; overlay auto-hides after 3–5 s of no input (any key resets the timer; do not hide while a control is receiving input); subtitle/audio pickers are side sheets that keep playback visible; live TV adds channel UP/DOWN and a mini guide.
+- use when: Video/audio playback screens.
+- avoid when: Never hide controls while a control is focused; never require SELECT twice to pause.
+- why: lexical 0.311, structural 0.2 (mode audit)
+
+### Non-text contrast 3:1 for controls and focus  `a11y-nontext-contrast`  [rule/accessibility; accessibility] score 0.256 · accessibility-requirement
+Any visual that identifies a control or its state needs ≥3:1 against adjacent colours. Hairline dividers at 1.2:1 are fine as decoration but an input whose only boundary is that hairline fails.
+- use when: Input borders, checkbox/radio outlines, focus indicators, icons that carry meaning, chart marks, toggle states.
+- avoid when: Purely decorative borders and dividers are exempt, but then they must not be the only boundary of a control.
+- why: lexical 0.056, structural 0.5 (mode audit)
+
+### Render, screenshot, inspect before claiming done  `verify-render-and-inspect`  [rule/verification; process] score 0.25 · engineering-practice
+Run the app, capture the representative viewports/devices, look at the image: overflow, clipping, hierarchy, alignment, contrast, empty/loading states, focus visibility (Tab or DPAD through it), reduced motion. Fix what you see and re-capture. Compilation passing is not visual success.
+- use when: Any substantial UI change where a browser, emulator, simulator, or screenshot tool is available.
+- avoid when: Tiny CSS edits can skip the full loop but still need a render check when they affect layout.
+- why: lexical 0.11, structural 0.42 (secondary mode)
+
+Filtered out: mobile-field-use (environment ['gloves', 'outdoor'] not in request)

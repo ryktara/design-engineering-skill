@@ -1,0 +1,29 @@
+{"task": "p4-03", "project": "p3-winui-erp-audit", "platform": "desktop", "stack": "winui3 + community-toolkit (mvvm, datagrid)", "existing_ui": true, "mode": "create (should be extend/refactor)", "change_budget": "moderate",
+ "render_mode": "html-twin",
+ "screenshots": ["render/before.png", "render/first-after.png", "render/first-after-shortcuts.png", "render/first-after-overflow.png", "render/first-after-createdby.png", "render/first-after-contextmenu.png", "render/first-after-keytips.png", "render/first-after-focus-rowaction.png", "render/final-after.png", "render/final-after-shortcuts.png", "render/final-after-overflow.png", "render/final-after-createdby.png", "render/final-after-contextmenu.png", "render/final-after-keytips.png", "render/final-after-focus-rowaction.png"],
+ "context_detection": {"navigation": "partial", "theme": "yes", "typography": "no", "surfaces": "yes", "spacing": "yes"},
+ "preservation": {"navigation": true, "theme": true, "typography": true, "component_reuse": true, "unjustified_structural_change": 0},
+ "premise_note": "the page already had a CommandBar with 6 accelerators and 5 access keys from the Phase 3 refactor; the skill classified the task as create and did not detect the existing command bar",
+ "first_render_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 1, "existing-system-mismatch": 0, "implementation-bug": 1},
+ "final_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+ "documented_tradeoffs": ["opt-in 'Created by' column makes the grid 1172 px in a 1086 px content area at 1440 wide (86 px horizontal scroll); off by default, persisted per user", "XAML not compiled (XamlCompiler exit 1 before and after the change; Windows App SDK build tooling missing)"],
+ "iterations": 2, "guidance_relevant": 3, "guidance_partial": 2, "guidance_offtarget": 1,
+ "guidance_metrics": {"concept_coverage": 1.0, "concern_coverage": 0.83, "uncovered_required_concerns": ["component"], "coverage_per_1k_tokens": 3.72, "purity": 0.83, "redundancy": 0.27, "tokens": 807, "status": "PARTIAL"},
+ "interaction": {"tab_stops_all_visible_focus": "13/13", "grid_tab_stops": 1, "shortcuts_documented": "4/4 commands, 6/6 menu items, 24/24 row actions, F1 list 13 entries", "f1_reference": true, "f6_cycles_regions": true, "overflow_menu_keyboard": true, "context_menu_shift_f10": true, "esc_clears_search_only": true, "ctrl_shift_l_clears_all": true, "column_toggle_persisted": true, "access_keys": ["n", "a", "j", "r", "s", "c", "l", "k"]},
+ "misses": [
+  {"layer": "mode", "what": "mode=create for 'add ... to the existing page' (intent.existing=true was detected but ignored)"},
+  {"layer": "requirements", "what": "components/primary_jobs = navigation from the negative clause; 'its theme' did not yield preserve_color; negative_constraints empty; screen empty"},
+  {"layer": "project-adaptation", "what": "inspector does not surface the page's existing CommandBar/KeyboardAccelerator/AccessKey usage; radius and typography UNKNOWN although theme resources and text styles are used; 'menu-bar' false candidate from MenuFlyout"},
+  {"layer": "expected-concepts", "what": "no concept for a shortcut reference/help surface or for accelerator text in mirrored menus; uncovered required concern 'component'"},
+  {"layer": "direction", "what": "layout-three-pane for a single table page; typography-system-native proposed as new instead of preserved"},
+  {"layer": "candidate-retrieval", "what": "imagery-none selected as core on lexical 0.1 - no imagery on the page"}
+ ],
+ "knowledge_gaps": ["keyboard shortcut reference dialog (F1 / Ctrl+/) and KeyboardAcceleratorTextOverride for mirrored menu items", "check whether the requested component already exists on the target view before treating the task as create", "winui command bar component record (primary/secondary commands, overflow, Content caption)"],
+ "regressions": [
+  {"query": "add keyboard shortcuts and a command bar to the existing stock adjustments page without changing its navigation or theme", "expect": "mode != create; components include toolbar/command-bar + keyboard-shortcuts; preserve_navigation and preserve_color true; negative_constraints == [navigation-change]"},
+  {"query": "document keyboard shortcuts in a winui desktop app", "expect": "a record about an F1/Ctrl+/ shortcut reference and accelerator text in menus"},
+  {"query": "inspect winui project whose page has CommandBar + KeyboardAccelerator", "expect": "component inventory or keyboard-handling signal that reports the existing command bar and accelerators"},
+  {"query": "inspect winui XAML using TitleTextBlockStyle/BodyTextBlockStyle and OverlayCornerRadius", "expect": "typography KNOWN platform type ramp; radius from theme resources"},
+  {"query": "winui table page + command bar direction", "expect": "layout slot table-first, not three-pane"}
+ ],
+ "tags": ["mode-miss", "requirements-miss", "context-detection-miss", "knowledge-gap", "direction-mismatch", "render-defect-fixed", "render-defect-remaining", "tooling-limit", "skill-helped", "preservation-ok"]}

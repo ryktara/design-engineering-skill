@@ -1,0 +1,149 @@
+{
+ "task": "p4-10",
+ "project": "p3-android-tv-compose",
+ "platform": "tv",
+ "stack": "compose-tv",
+ "existing_ui": true,
+ "mode": "audit+refactor",
+ "change_budget": "moderate (reported) / minimal (actual)",
+ "render_mode": "html-twin",
+ "screenshots": [
+  "render/baseline-live-before-leave.png",
+  "render/baseline-player.png",
+  "render/baseline-home-after-back-immediate.png",
+  "render/baseline-home-after-back-settled.png",
+  "render/baseline-home-after-match-ended.png",
+  "render/baseline-deep-rail-before-leave.png",
+  "render/baseline-deep-rail-after-back.png",
+  "render/first-live-before-leave.png",
+  "render/first-player.png",
+  "render/first-home-after-back-immediate.png",
+  "render/first-home-after-back-settled.png",
+  "render/first-home-after-match-ended.png",
+  "render/first-deep-rail-before-leave.png",
+  "render/first-deep-rail-after-back.png",
+  "render/final-live-before-leave.png",
+  "render/final-player.png",
+  "render/final-home-after-back-immediate.png",
+  "render/final-home-after-back-settled.png",
+  "render/final-home-after-match-ended.png",
+  "render/final-deep-rail-before-leave.png",
+  "render/final-deep-rail-after-back.png"
+ ],
+ "context_detection": {
+  "navigation": "partial",
+  "theme": "yes",
+  "typography": "no",
+  "surfaces": "partial",
+  "spacing": "no"
+ },
+ "preservation": {
+  "navigation": true,
+  "theme": true,
+  "typography": true,
+  "component_reuse": true,
+  "unjustified_structural_change": 0
+ },
+ "first_render_defects": {
+  "visual": 0,
+  "interaction": 0,
+  "accessibility": 0,
+  "platform": 0,
+  "existing-system-mismatch": 0,
+  "implementation-bug": 0
+ },
+ "baseline_defects_reproduced": {
+  "hero_reset_on_return": true,
+  "column_realigned_hides_hero": true,
+  "rail_card_snapped_to_edge": true,
+  "removed_tile_falls_to_hero": true
+ },
+ "final_defects": {
+  "visual": 0,
+  "interaction": 0,
+  "accessibility": 0,
+  "platform": 0,
+  "existing-system-mismatch": 0,
+  "implementation-bug": 0
+ },
+ "iterations": 2,
+ "guidance_relevant": 3,
+ "guidance_partial": 2,
+ "guidance_offtarget": 3,
+ "interaction_test": {
+  "file": "05-interaction-final.json",
+  "pass": 18,
+  "fail": 0,
+  "baseline_pass": 6,
+  "baseline_fail": 12,
+  "phase3_suite": "23/23"
+ },
+ "misses": [
+  {
+   "layer": "requirements",
+   "what": "change_budget=moderate for a fix that must not change the layout (should be minimal); rail/player-return/scroll-position not captured in jobs/components"
+  },
+  {
+   "layer": "project-adaptation",
+   "what": "inspector: spacing 'irregular' although SportsDimens is a named scale; typography 'unknown' although SportsTypography + FontFamily.SansSerif exist; tokens.json not detected; component_dirs empty"
+  },
+  {
+   "layer": "direction",
+   "what": "layout/cards/typography slots proposed as 'new' (layout-rails, card-poster-portrait, typography-system-native) on a preserve-layout task whose repo has immersive rails, 16:9 cards and a condensed type scale; density text in web units"
+  },
+  {
+   "layer": "bundle-selection",
+   "what": "cta-single-primary and a11y-live-status selected for concern coverage on a focus-restoration fix; layout-immersive-rails (search rank 3) not selected"
+  },
+  {
+   "layer": "expected-concepts",
+   "what": "no concept for hoisting place-state above the screen, not re-scrolling a laid-out target, lazy-item compose timing before requestFocus, id-first/index-fallback restoration on time-based rails"
+  }
+ ],
+ "knowledge_gaps": [
+  "hoist scroll/hero/focus state above the screen composable (route switch drops remember/rememberSaveable)",
+  "restore without re-scrolling when the target is already laid out (scrollToItem top-aligns rails and snaps cards)",
+  "compose lazy restoration timing: wait for layoutInfo before requestFocus, bounded frames",
+  "time-based rails: match remembered tile by id first, index second, hero last"
+ ],
+ "regressions": [
+  {
+   "query": "users lose their place in the live-now rail after coming back from a match; fix focus restoration without changing the home layout",
+   "expect": "change_budget minimal; direction layout slot preserved/KNOWN; no new cards/typography proposals; no cta-single-primary or a11y-live-status in the bundle"
+  },
+  {
+   "query": "focus lands on the hero instead of the tile the user left after the list refreshed",
+   "expect": "a11y-tv-focus-always ranked first plus id-first/index-fallback restoration guidance"
+  },
+  {
+   "query": "keep the rail scroll position when returning from the player",
+   "expect": "guidance to hoist scroll and hero state above the screen and not re-scroll a laid-out target"
+  },
+  {
+   "query": "inspect compose project with Typography(...) block and a Dimens object",
+   "expect": "typography KNOWN, spacing KNOWN"
+  }
+ ],
+ "tags": [
+  "preservation-ok",
+  "skill-helped",
+  "requirements-miss",
+  "context-detection-miss",
+  "direction-mismatch",
+  "ranking-miss",
+  "knowledge-gap",
+  "render-defect-fixed",
+  "tooling-limit"
+ ],
+ "kb_drift_during_run": {
+  "skill_data_modified_at": "12:23-12:57 (not by this run)",
+  "analysis_files_at": "12:20-12:21",
+  "rerun_files": [
+   "02-requirements-rerun-1303.json",
+   "03-guidance-rerun-1303.json"
+  ],
+  "guidance_changed": false,
+  "requirements_changed": true,
+  "requirements_delta": "screen [home]->[]; primary_jobs [audit home]->[audit media] (regression)"
+ }
+}

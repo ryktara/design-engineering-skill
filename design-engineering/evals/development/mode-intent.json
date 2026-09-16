@@ -1,0 +1,1633 @@
+{
+ "description": "Phase 5 task-intent cases (written before implementation, 2026-09-09): artifact state, operation, problem domain, change scope and utterance type derive the modes; more than half contain no explicit mode verb.",
+ "suite": "mode",
+ "cases": [
+  {
+   "id": "ti-001",
+   "query": "Customers lose track of which row is selected.",
+   "expect_primary_any": [
+    "audit",
+    "refactor",
+    "polish"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "visual",
+     "interaction"
+    ]
+   }
+  },
+  {
+   "id": "ti-002",
+   "query": "The settings page feels visually noisy.",
+   "expect_primary_any": [
+    "polish"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "visual",
+     "layout"
+    ]
+   }
+  },
+  {
+   "id": "ti-003",
+   "query": "The selected row is barely visible.",
+   "expect_primary_any": [
+    "audit",
+    "polish",
+    "accessibility"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-004",
+   "query": "The checkout becomes confusing on phones.",
+   "expect_primary_any": [
+    "audit",
+    "responsive",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "responsive",
+     "interaction",
+     "navigation"
+    ]
+   }
+  },
+  {
+   "id": "ti-005",
+   "query": "Focus jumps to the top after closing this dialog.",
+   "expect_primary_any": [
+    "audit",
+    "refactor",
+    "accessibility"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "interaction",
+     "accessibility"
+    ]
+   }
+  },
+  {
+   "id": "ti-006",
+   "query": "The mobile version is just the desktop page squeezed down.",
+   "expect_primary_any": [
+    "responsive",
+    "refactor",
+    "audit"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "responsive",
+     "layout"
+    ]
+   }
+  },
+  {
+   "id": "ti-007",
+   "query": "Nothing is technically broken; review the hierarchy.",
+   "expect_primary_any": [
+    "review",
+    "audit"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "operations_any": [
+     "review",
+     "inspect"
+    ],
+    "problem_domain_any": [
+     "layout",
+     "visual"
+    ]
+   }
+  },
+  {
+   "id": "ti-008",
+   "query": "The page feels like every section has equal importance.",
+   "expect_primary_any": [
+    "polish",
+    "audit"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "layout",
+     "visual"
+    ]
+   }
+  },
+  {
+   "id": "ti-009",
+   "query": "Customers don't know what to do next.",
+   "expect_primary_any": [
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "interaction",
+     "navigation",
+     "content"
+    ]
+   }
+  },
+  {
+   "id": "ti-010",
+   "query": "The row selection is almost invisible.",
+   "expect_primary_any": [
+    "audit",
+    "polish",
+    "accessibility"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-011",
+   "query": "Our error messages appear far away from the field.",
+   "expect_primary_any": [
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "interaction",
+     "accessibility",
+     "layout"
+    ]
+   }
+  },
+  {
+   "id": "ti-012",
+   "query": "The hero image pushes everything down after it loads.",
+   "expect_primary_any": [
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "performance-ux",
+     "layout"
+    ]
+   }
+  },
+  {
+   "id": "ti-013",
+   "query": "Screen readers announce the price twice.",
+   "expect_primary_any": [
+    "accessibility",
+    "audit"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "accessibility"
+    ]
+   }
+  },
+  {
+   "id": "ti-014",
+   "query": "The sidebar labels get cut off on smaller laptops.",
+   "expect_primary_any": [
+    "responsive",
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "responsive",
+     "layout"
+    ]
+   }
+  },
+  {
+   "id": "ti-015",
+   "query": "Everything feels cramped.",
+   "expect_primary_any": [
+    "polish"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "layout",
+     "visual"
+    ]
+   }
+  },
+  {
+   "id": "ti-016",
+   "query": "Users tap the wrong button because the two look identical.",
+   "expect_primary_any": [
+    "audit",
+    "polish",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "interaction",
+     "visual"
+    ]
+   }
+  },
+  {
+   "id": "ti-017",
+   "query": "The dashboard has too many colours competing for attention.",
+   "expect_primary_any": [
+    "polish",
+    "audit"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "visual",
+     "layout"
+    ]
+   }
+  },
+  {
+   "id": "ti-018",
+   "query": "The table numbers don't line up.",
+   "expect_primary_any": [
+    "polish",
+    "audit"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "visual",
+     "layout"
+    ]
+   }
+  },
+  {
+   "id": "ti-019",
+   "query": "Keyboard users get stuck inside the date picker.",
+   "expect_primary_any": [
+    "accessibility",
+    "audit"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "accessibility",
+     "interaction"
+    ]
+   }
+  },
+  {
+   "id": "ti-020",
+   "query": "The TV app loses the highlighted tile when you come back from a show.",
+   "expect_primary_any": [
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "interaction"
+    ]
+   }
+  },
+  {
+   "id": "ti-021",
+   "query": "The filters panel covers the results on narrow windows.",
+   "expect_primary_any": [
+    "responsive",
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-022",
+   "query": "Our loading spinners are everywhere and inconsistent.",
+   "expect_primary_any": [
+    "audit",
+    "polish",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-023",
+   "query": "The kiosk times out while people are still reading.",
+   "expect_primary_any": [
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "interaction"
+    ]
+   }
+  },
+  {
+   "id": "ti-024",
+   "query": "The dark theme looks like an inverted light theme.",
+   "expect_primary_any": [
+    "polish",
+    "design-system",
+    "audit"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "visual",
+     "design-system"
+    ]
+   }
+  },
+  {
+   "id": "ti-025",
+   "query": "The onboarding asks for every permission on the first screen.",
+   "expect_primary_any": [
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-026",
+   "query": "Our two brands look identical apart from the logo.",
+   "expect_primary_any": [
+    "brand"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "brand"
+    ]
+   }
+  },
+  {
+   "id": "ti-027",
+   "query": "Icons mean different things on different screens.",
+   "expect_primary_any": [
+    "audit",
+    "design-system",
+    "polish"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-028",
+   "query": "The primary button changes colour on every page.",
+   "expect_primary_any": [
+    "design-system",
+    "audit",
+    "polish"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-029",
+   "query": "People can't find the export option.",
+   "expect_primary_any": [
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "navigation",
+     "interaction"
+    ]
+   }
+  },
+  {
+   "id": "ti-030",
+   "query": "The empty cart page is just a blank white area.",
+   "expect_primary_any": [
+    "audit",
+    "refactor",
+    "polish"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-031",
+   "query": "Long product names break the card grid.",
+   "expect_primary_any": [
+    "audit",
+    "refactor",
+    "responsive"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-032",
+   "query": "The wizard forgets what you typed when you go back.",
+   "expect_primary_any": [
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "interaction"
+    ]
+   }
+  },
+  {
+   "id": "ti-033",
+   "query": "Our tooltips only show on hover.",
+   "expect_primary_any": [
+    "accessibility",
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "accessibility",
+     "interaction"
+    ]
+   }
+  },
+  {
+   "id": "ti-034",
+   "query": "The status colours are indistinguishable for colour-blind users.",
+   "expect_primary_any": [
+    "accessibility",
+    "audit"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "accessibility",
+     "visual"
+    ]
+   }
+  },
+  {
+   "id": "ti-035",
+   "query": "The grid scrolls horizontally on the phone.",
+   "expect_primary_any": [
+    "responsive",
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-036",
+   "query": "The map takes over the whole screen and hides the list.",
+   "expect_primary_any": [
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-037",
+   "query": "Users abandon the form at the address step.",
+   "expect_primary_any": [
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-038",
+   "query": "The notification badge never clears.",
+   "expect_primary_any": [
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-039",
+   "query": "Text is unreadable in sunlight on the field app.",
+   "expect_primary_any": [
+    "audit",
+    "polish",
+    "accessibility"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "visual",
+     "accessibility"
+    ]
+   }
+  },
+  {
+   "id": "ti-040",
+   "query": "The remote's back button exits the app instead of closing the menu.",
+   "expect_primary_any": [
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "interaction",
+     "navigation"
+    ]
+   }
+  },
+  {
+   "id": "ti-041",
+   "query": "Why is this dialog difficult to use with a keyboard?",
+   "expect_primary_any": [
+    "audit",
+    "accessibility"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "utterance": "question",
+    "operations_any": [
+     "diagnose"
+    ]
+   }
+  },
+  {
+   "id": "ti-042",
+   "query": "Why do people miss the save button?",
+   "expect_primary_any": [
+    "audit"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "utterance": "question"
+   }
+  },
+  {
+   "id": "ti-043",
+   "query": "Is our colour contrast good enough for the outdoor version?",
+   "expect_primary_any": [
+    "audit",
+    "accessibility",
+    "review"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "utterance": "question"
+   }
+  },
+  {
+   "id": "ti-044",
+   "query": "Does this layout still work at 200% zoom?",
+   "expect_primary_any": [
+    "review",
+    "audit",
+    "responsive"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "utterance": "question"
+   }
+  },
+  {
+   "id": "ti-045",
+   "query": "What's wrong with our onboarding funnel screens?",
+   "expect_primary_any": [
+    "audit"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "utterance": "question"
+   }
+  },
+  {
+   "id": "ti-046",
+   "query": "How should the settings be grouped?",
+   "expect_primary_any": [
+    "create",
+    "refactor",
+    "audit"
+   ],
+   "expect_intent": {
+    "utterance": "question"
+   },
+   "note": "a design question without an existing-state cue may be create or refactor"
+  },
+  {
+   "id": "ti-047",
+   "query": "Redesign this existing settings screen.",
+   "expect_primary_any": [
+    "refactor"
+   ],
+   "expect_intent": {
+    "artifact_state": "existing",
+    "operations_any": [
+     "redesign"
+    ]
+   },
+   "expect_budget_any": [
+    "high"
+   ]
+  },
+  {
+   "id": "ti-048",
+   "query": "Build keyboard support for this dialog.",
+   "expect_primary_any": [
+    "refactor",
+    "accessibility"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "operations_any": [
+     "modify"
+    ]
+   }
+  },
+  {
+   "id": "ti-049",
+   "query": "Fix the focus order in the checkout.",
+   "expect_primary_any": [
+    "accessibility",
+    "refactor",
+    "audit"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-050",
+   "query": "Tighten the spacing on the invoice list.",
+   "expect_primary_any": [
+    "polish"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-051",
+   "query": "Simplify the navigation of the admin.",
+   "expect_primary_any": [
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "navigation"
+    ]
+   }
+  },
+  {
+   "id": "ti-052",
+   "query": "Review the checkout for accessibility, no changes yet.",
+   "expect_primary_any": [
+    "review",
+    "audit",
+    "accessibility"
+   ],
+   "expect_intent": {
+    "operations_any": [
+     "review",
+     "validate"
+    ]
+   }
+  },
+  {
+   "id": "ti-053",
+   "query": "Audit our TV home screen against the platform guidelines.",
+   "expect_primary_any": [
+    "audit",
+    "review"
+   ],
+   "expect_intent": {
+    "operations_any": [
+     "diagnose",
+     "review",
+     "validate"
+    ]
+   }
+  },
+  {
+   "id": "ti-054",
+   "query": "Restructure the reporting screen so the chart comes first.",
+   "expect_primary_any": [
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "operations_any": [
+     "restructure",
+     "modify"
+    ]
+   }
+  },
+  {
+   "id": "ti-055",
+   "query": "Modernise the look of the legacy inventory tool without touching its workflow.",
+   "expect_primary_any": [
+    "polish",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-056",
+   "query": "Compare our two checkout variants and tell me which hierarchy is stronger.",
+   "expect_primary_any": [
+    "review",
+    "audit"
+   ],
+   "expect_intent": {
+    "operations_any": [
+     "compare",
+     "review"
+    ]
+   }
+  },
+  {
+   "id": "ti-057",
+   "query": "Validate the new design system against WCAG.",
+   "expect_primary_any": [
+    "accessibility",
+    "review",
+    "audit"
+   ],
+   "expect_intent": {
+    "operations_any": [
+     "validate",
+     "review"
+    ]
+   }
+  },
+  {
+   "id": "ti-058",
+   "query": "Polish the empty states.",
+   "expect_primary_any": [
+    "polish"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-059",
+   "query": "Make the onboarding responsive.",
+   "expect_primary_any": [
+    "responsive"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-060",
+   "query": "Refresh the brand across the mobile app.",
+   "expect_primary_any": [
+    "brand",
+    "polish"
+   ],
+   "forbid_primary": "create"
+  },
+  {
+   "id": "ti-061",
+   "query": "Extract the colours into tokens and add a dark mode.",
+   "expect_primary_any": [
+    "design-system"
+   ],
+   "forbid_primary": "create"
+  },
+  {
+   "id": "ti-062",
+   "query": "Rebuild the catalogue page from the ground up.",
+   "expect_primary_any": [
+    "refactor",
+    "create"
+   ],
+   "expect_intent": {
+    "operations_any": [
+     "redesign"
+    ]
+   },
+   "expect_budget_any": [
+    "high",
+    "greenfield"
+   ]
+  },
+  {
+   "id": "ti-063",
+   "query": "We need an entirely new onboarding experience.",
+   "expect_primary_any": [
+    "create",
+    "refactor"
+   ],
+   "expect_intent": {
+    "operations_any": [
+     "create",
+     "redesign"
+    ]
+   },
+   "expect_budget_any": [
+    "greenfield",
+    "high"
+   ]
+  },
+  {
+   "id": "ti-064",
+   "query": "A first version of the driver app's route screen.",
+   "expect_primary_any": [
+    "create"
+   ],
+   "expect_intent": {
+    "artifact_state": "new"
+   }
+  },
+  {
+   "id": "ti-065",
+   "query": "Green-field settings area for the new tenant portal.",
+   "expect_primary_any": [
+    "create"
+   ],
+   "expect_intent": {
+    "artifact_state": "new"
+   }
+  },
+  {
+   "id": "ti-066",
+   "query": "Sketch the layout for a brand-new EPG.",
+   "expect_primary_any": [
+    "create"
+   ],
+   "expect_intent": {
+    "artifact_state": "new"
+   }
+  },
+  {
+   "id": "ti-067",
+   "query": "Add a watchlist screen to the TV app.",
+   "expect_primary_any": [
+    "create"
+   ],
+   "expect_intent": {
+    "artifact_state": "existing"
+   },
+   "expect_budget_any": [
+    "moderate"
+   ]
+  },
+  {
+   "id": "ti-068",
+   "query": "Introduce a comparison table on the pricing page.",
+   "expect_primary_any": [
+    "create",
+    "refactor"
+   ],
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-069",
+   "query": "Prototype a kiosk flow for returns.",
+   "expect_primary_any": [
+    "create"
+   ]
+  },
+  {
+   "id": "ti-070",
+   "query": "Implement the attached screenshot as a Vue page.",
+   "expect_primary_any": [
+    "reconstruct",
+    "create"
+   ]
+  },
+  {
+   "id": "ti-071",
+   "query": "Design a data-entry grid for warehouse counts.",
+   "expect_primary_any": [
+    "create"
+   ]
+  },
+  {
+   "id": "ti-072",
+   "query": "Set up a second brand skin for the reseller edition.",
+   "expect_primary_any": [
+    "brand"
+   ]
+  },
+  {
+   "id": "ti-073",
+   "query": "Give the analytics console its own visual identity.",
+   "expect_primary_any": [
+    "brand",
+    "design-system"
+   ]
+  },
+  {
+   "id": "ti-074",
+   "query": "Type scale and spacing tokens for the mobile app.",
+   "expect_primary_any": [
+    "design-system"
+   ]
+  },
+  {
+   "id": "ti-075",
+   "query": "The dashboard.",
+   "expect_primary_any": [
+    "create",
+    "audit",
+    "polish"
+   ],
+   "note": "too short: any mode acceptable; must not crash"
+  },
+  {
+   "id": "ti-076",
+   "query": "Our onboarding.",
+   "expect_primary_any": [
+    "audit",
+    "polish",
+    "refactor",
+    "create"
+   ]
+  },
+  {
+   "id": "ti-077",
+   "query": "This table on the phone.",
+   "expect_primary_any": [
+    "responsive",
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-078",
+   "query": "The login screen for screen-reader users.",
+   "expect_primary_any": [
+    "accessibility",
+    "audit"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-079",
+   "query": "The old settings page and the new one side by side, which is clearer?",
+   "expect_primary_any": [
+    "review",
+    "audit"
+   ],
+   "expect_intent": {
+    "operations_any": [
+     "compare"
+    ]
+   }
+  },
+  {
+   "id": "ti-080",
+   "query": "Our first-time users and the dashboard.",
+   "expect_primary_any": [
+    "audit",
+    "refactor",
+    "polish"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-081",
+   "query": "The hero section on slow connections.",
+   "expect_primary_any": [
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-082",
+   "query": "The invoice grid for keyboard-only clerks.",
+   "expect_primary_any": [
+    "audit",
+    "refactor",
+    "accessibility"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-083",
+   "query": "Our error page.",
+   "expect_primary_any": [
+    "audit",
+    "polish",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-084",
+   "query": "The sign-in code screen on the TV.",
+   "expect_primary_any": [
+    "audit",
+    "refactor",
+    "polish",
+    "create"
+   ]
+  },
+  {
+   "id": "ti-085",
+   "query": "Fix the button spacing in the toolbar.",
+   "expect_primary_any": [
+    "polish"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "change_scope": "local"
+   }
+  },
+  {
+   "id": "ti-086",
+   "query": "Redesign the navigation architecture of the whole product.",
+   "expect_primary_any": [
+    "refactor"
+   ],
+   "expect_intent": {
+    "change_scope": "system",
+    "operations_any": [
+     "redesign"
+    ]
+   },
+   "expect_budget_any": [
+    "high"
+   ]
+  },
+  {
+   "id": "ti-087",
+   "query": "Rework the checkout flow end to end.",
+   "expect_primary_any": [
+    "refactor"
+   ],
+   "expect_intent": {
+    "change_scope": "flow"
+   },
+   "expect_budget_any": [
+    "moderate",
+    "high"
+   ]
+  },
+  {
+   "id": "ti-088",
+   "query": "Adjust the KPI tile alignment.",
+   "expect_primary_any": [
+    "polish"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "change_scope": "local"
+   }
+  },
+  {
+   "id": "ti-089",
+   "query": "Rethink the settings screen.",
+   "expect_primary_any": [
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "change_scope": "screen"
+   }
+  },
+  {
+   "id": "ti-090",
+   "query": "Re-platform the design tokens for all three apps.",
+   "expect_primary_any": [
+    "design-system"
+   ],
+   "expect_intent": {
+    "change_scope": "system"
+   }
+  },
+  {
+   "id": "ti-091",
+   "query": "Selection state vanishes when the table loses keyboard focus.",
+   "expect_primary_any": [
+    "audit",
+    "refactor",
+    "accessibility"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "interaction",
+     "accessibility"
+    ]
+   }
+  },
+  {
+   "id": "ti-092",
+   "query": "The EPG's current-time line drifts.",
+   "expect_primary_any": [
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-093",
+   "query": "Subtitles picker is three menus deep.",
+   "expect_primary_any": [
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "navigation",
+     "interaction"
+    ]
+   }
+  },
+  {
+   "id": "ti-094",
+   "query": "The KPI cards all shout at the same volume.",
+   "expect_primary_any": [
+    "polish",
+    "audit"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "visual",
+     "layout"
+    ]
+   }
+  },
+  {
+   "id": "ti-095",
+   "query": "Our tables on tablets need two hands.",
+   "expect_primary_any": [
+    "responsive",
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-096",
+   "query": "Save takes three taps.",
+   "expect_primary_any": [
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "interaction"
+    ]
+   }
+  },
+  {
+   "id": "ti-097",
+   "query": "The typography has nine different sizes on one page.",
+   "expect_primary_any": [
+    "polish",
+    "design-system",
+    "audit"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-098",
+   "query": "Thumbs cover the labels on the bottom bar.",
+   "expect_primary_any": [
+    "audit",
+    "refactor",
+    "polish"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-099",
+   "query": "Nobody notices the offline banner.",
+   "expect_primary_any": [
+    "audit",
+    "polish",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-100",
+   "query": "Column headers disappear when scrolling.",
+   "expect_primary_any": [
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-101",
+   "query": "The activation code is hard to read from the sofa.",
+   "expect_primary_any": [
+    "audit",
+    "polish",
+    "accessibility"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "visual",
+     "accessibility"
+    ]
+   }
+  },
+  {
+   "id": "ti-102",
+   "query": "Our modals don't return focus.",
+   "expect_primary_any": [
+    "accessibility",
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-103",
+   "query": "The pricing page reads like a template.",
+   "expect_primary_any": [
+    "polish",
+    "audit",
+    "brand"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-104",
+   "query": "Charts have no legend on the wall display.",
+   "expect_primary_any": [
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-105",
+   "query": "Gloved users keep hitting the wrong key.",
+   "expect_primary_any": [
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-106",
+   "query": "The search results look the same as the categories.",
+   "expect_primary_any": [
+    "polish",
+    "audit"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-107",
+   "query": "There is a 2-second blank before the list appears.",
+   "expect_primary_any": [
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "performance-ux"
+    ]
+   }
+  },
+  {
+   "id": "ti-108",
+   "query": "Nothing on the details page is highlighted when it opens.",
+   "expect_primary_any": [
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-109",
+   "query": "The premium tier and the free tier are impossible to tell apart.",
+   "expect_primary_any": [
+    "audit",
+    "brand",
+    "polish"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-110",
+   "query": "Our breadcrumb shows the wrong section.",
+   "expect_primary_any": [
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-111",
+   "query": "The delete button sits right next to save.",
+   "expect_primary_any": [
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-112",
+   "query": "Product photos load in different sizes and jump around.",
+   "expect_primary_any": [
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing",
+    "problem_domain_any": [
+     "performance-ux",
+     "layout"
+    ]
+   }
+  },
+  {
+   "id": "ti-113",
+   "query": "The form's required markers are invisible.",
+   "expect_primary_any": [
+    "accessibility",
+    "audit",
+    "polish"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-114",
+   "query": "The alerts strip blends into the header.",
+   "expect_primary_any": [
+    "polish",
+    "audit"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-115",
+   "query": "Toasts stack up and cover the actions.",
+   "expect_primary_any": [
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-116",
+   "query": "The first-run tips block the actual buttons.",
+   "expect_primary_any": [
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-117",
+   "query": "Our chart tooltips can't be reached by keyboard.",
+   "expect_primary_any": [
+    "accessibility",
+    "audit"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-118",
+   "query": "The seat table has fifteen Tab stops per row.",
+   "expect_primary_any": [
+    "accessibility",
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-119",
+   "query": "Guests can't tell the kiosk is waiting for them.",
+   "expect_primary_any": [
+    "audit",
+    "refactor",
+    "polish"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-120",
+   "query": "The order summary is buried below the fold on phones.",
+   "expect_primary_any": [
+    "responsive",
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-121",
+   "query": "The player controls never disappear.",
+   "expect_primary_any": [
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  },
+  {
+   "id": "ti-122",
+   "query": "Our app looks fine on light mode but the dark variant is muddy.",
+   "expect_primary_any": [
+    "polish",
+    "design-system",
+    "audit"
+   ],
+   "forbid_primary": "create",
+   "expect_intent": {
+    "artifact_state": "existing"
+   }
+  }
+ ]
+}

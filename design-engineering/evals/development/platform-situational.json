@@ -1,0 +1,2000 @@
+{
+ "description": "Phase 6 situational platform cases (2026-09-10), written before any Phase 6 code change. No canonical platform name in the target groups; single weak clues stay UNKNOWN; compound independent clues resolve; ambiguous wording stays UNKNOWN; negatives cover 'remote' (not a remote control), 'terminal' (shell), 'kiosk mode', 'tablet' (pill), 'windows' (panes). expect_unknown cases pass when no platform is asserted (acceptable lists what may be INFERRED, never required).",
+ "suite": "platform_evidence",
+ "cases": [
+  {
+   "id": "ps-001",
+   "group": "tv",
+   "query": "Used from the couch with arrow keys on a remote.",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile",
+    "web"
+   ]
+  },
+  {
+   "id": "ps-002",
+   "group": "tv",
+   "query": "People watch it from across the room and press the remote to move between rows.",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile"
+   ]
+  },
+  {
+   "id": "ps-003",
+   "group": "tv",
+   "query": "The highlighted tile is hard to see from the sofa when you use the remote.",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "id": "ps-004",
+   "group": "tv",
+   "query": "Text is unreadable at ten feet and the up/down buttons skip rows.",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile"
+   ]
+  },
+  {
+   "id": "ps-005",
+   "group": "tv",
+   "query": "Our set-top experience: pressing back on the remote leaves the guide entirely.",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": []
+  },
+  {
+   "id": "ps-006",
+   "group": "tv",
+   "query": "Viewers hold the right arrow on the remote and the row of episodes flies past.",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile"
+   ]
+  },
+  {
+   "id": "ps-007",
+   "group": "tv",
+   "query": "It runs on the living-room screen and everyone navigates with the remote's direction pad.",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile",
+    "web"
+   ]
+  },
+  {
+   "id": "ps-008",
+   "group": "tv",
+   "query": "The channel guide is read from across the lounge; nobody can tell which programme is selected.",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile"
+   ]
+  },
+  {
+   "id": "ps-009",
+   "group": "tv",
+   "query": "Family members lean back on the couch and browse with the directional buttons.",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": []
+  },
+  {
+   "id": "ps-010",
+   "group": "tv",
+   "query": "From the sofa the captions button is impossible to find with the remote.",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile"
+   ]
+  },
+  {
+   "id": "ps-011",
+   "group": "tv",
+   "query": "The player controls disappear before someone across the room can read them.",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [
+    "web"
+   ],
+   "forbid_platforms": []
+  },
+  {
+   "id": "ps-012",
+   "group": "tv",
+   "query": "The living-room app shows a mouse cursor even though everyone uses the remote.",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile"
+   ]
+  },
+  {
+   "id": "ps-013",
+   "group": "tv",
+   "query": "A ten-foot experience where the focused card scales up on the big screen.",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile"
+   ]
+  },
+  {
+   "id": "ps-014",
+   "group": "tv",
+   "query": "Hotel guests browse room services on the screen at the foot of the bed with the remote.",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile"
+   ]
+  },
+  {
+   "id": "ps-015",
+   "group": "tv",
+   "query": "Sports fans switch camera angles with the remote while the match plays on the big screen.",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile"
+   ]
+  },
+  {
+   "id": "ps-016",
+   "group": "tv",
+   "query": "Pressing OK on the remote plays the trailer instead of opening the details.",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": []
+  },
+  {
+   "id": "ps-017",
+   "group": "tv",
+   "query": "The lean-back experience needs a way to type a search term without a keyboard.",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "desktop"
+   ]
+  },
+  {
+   "id": "ps-018",
+   "group": "tv",
+   "query": "Kids navigate the cartoon rows with the directional pad and lose their place.",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": []
+  },
+  {
+   "id": "ps-019",
+   "group": "tv",
+   "query": "The now-playing bar is tiny when viewed from the armchair across the room.",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile"
+   ]
+  },
+  {
+   "id": "ps-020",
+   "group": "tv",
+   "query": "Streaming box users complain that the sign-in code is too small to read from the couch.",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": []
+  },
+  {
+   "id": "ps-021",
+   "group": "tv",
+   "query": "The big-screen version of the player hides the progress bar.",
+   "expect_platforms": [],
+   "acceptable": [
+    "tv"
+   ],
+   "forbid_platforms": [
+    "mobile"
+   ],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-022",
+   "group": "tv",
+   "query": "The sofa mode of our media app.",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [],
+   "note": "2026-09-10 amended before the fix run: sofa is a STRONG environment clue by the Phase 5 table; with a media app the TV reading is right, the draft was over-cautious"
+  },
+  {
+   "id": "ps-023",
+   "group": "mobile",
+   "query": "Field engineers use it one-handed outdoors while carrying equipment.",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [
+    "tablet"
+   ],
+   "forbid_platforms": [
+    "desktop",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-024",
+   "group": "mobile",
+   "query": "Couriers tap the delivered button with one thumb while holding the parcel.",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "desktop",
+    "web"
+   ]
+  },
+  {
+   "id": "ps-025",
+   "group": "mobile",
+   "query": "Operators carry it between warehouse aisles and scan with the camera.",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [
+    "tablet"
+   ],
+   "forbid_platforms": [
+    "desktop",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-026",
+   "group": "mobile",
+   "query": "The bottom of the screen is hidden behind the home indicator.",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "desktop",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-027",
+   "group": "mobile",
+   "query": "The notch covers the score in the top corner.",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "desktop"
+   ]
+  },
+  {
+   "id": "ps-028",
+   "group": "mobile",
+   "query": "Swiping back from the edge closes the whole flow instead of one step.",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "desktop",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-029",
+   "group": "mobile",
+   "query": "Nurses use it on the ward while walking between beds.",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [
+    "tablet"
+   ],
+   "forbid_platforms": [
+    "desktop",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-030",
+   "group": "mobile",
+   "query": "It lives in people's pockets; they open it in the queue at the shop.",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "desktop",
+    "tv",
+    "kiosk"
+   ]
+  },
+  {
+   "id": "ps-031",
+   "group": "mobile",
+   "query": "The on-screen keyboard covers the save button when you type your name.",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [
+    "tablet"
+   ],
+   "forbid_platforms": [
+    "desktop",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-032",
+   "group": "mobile",
+   "query": "Delivery riders glance at it on the handlebar mount between stops.",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "desktop",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-033",
+   "group": "mobile",
+   "query": "Reaching the top-left menu with your thumb is a stretch.",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [
+    "tablet"
+   ],
+   "forbid_platforms": [
+    "desktop",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-034",
+   "group": "mobile",
+   "query": "The pull-to-refresh gesture fights with the swipe-to-dismiss on the cards.",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [
+    "tablet"
+   ],
+   "forbid_platforms": [
+    "desktop",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-035",
+   "group": "mobile",
+   "query": "Inspectors take photos on site and attach them with gloves on.",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [
+    "tablet"
+   ],
+   "forbid_platforms": [
+    "desktop",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-036",
+   "group": "mobile",
+   "query": "The share sheet opens behind the bottom tab bar.",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "desktop",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-037",
+   "group": "mobile",
+   "query": "The haptic tick fires twice when you toggle the switch.",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "desktop",
+    "tv",
+    "web"
+   ]
+  },
+  {
+   "id": "ps-038",
+   "group": "mobile",
+   "query": "Runners check their pace mid-run and the numbers are too small in sunlight.",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "desktop",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-039",
+   "group": "mobile",
+   "query": "Users on the train lose the form when a call comes in.",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "desktop",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-040",
+   "group": "mobile",
+   "query": "The Face ID prompt appears every time the app comes back from the background.",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "desktop",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-041",
+   "group": "mobile",
+   "query": "Our handheld scanner app for stock counts in the back room.",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [
+    "tablet"
+   ],
+   "forbid_platforms": [
+    "desktop",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-042",
+   "group": "mobile",
+   "query": "The app is used with one hand on a crowded bus.",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "desktop",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-043",
+   "group": "mobile",
+   "query": "Shoppers scan a barcode on the shelf and see the price.",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "desktop",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-044",
+   "group": "mobile",
+   "query": "A widget on the home screen shows today's total.",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "desktop",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-045",
+   "group": "desktop",
+   "query": "Lives in the Windows system tray and opens a small window on click.",
+   "expect_platforms": [
+    "desktop"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile",
+    "web",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-046",
+   "group": "desktop",
+   "query": "Analysts keep it open on a second monitor all day next to the spreadsheet.",
+   "expect_platforms": [
+    "desktop"
+   ],
+   "acceptable": [
+    "web"
+   ],
+   "forbid_platforms": [
+    "mobile",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-047",
+   "group": "desktop",
+   "query": "Right-click on a row should offer duplicate and delete like the rest of the app.",
+   "expect_platforms": [],
+   "acceptable": [
+    "desktop",
+    "web"
+   ],
+   "forbid_platforms": [
+    "mobile",
+    "tv"
+   ],
+   "note": "2026-09-10 amended: right-click alone is a desktop-or-web clue; UNKNOWN or either is acceptable"
+  },
+  {
+   "id": "ps-048",
+   "group": "desktop",
+   "query": "The menu bar has File and Edit but no Window menu.",
+   "expect_platforms": [
+    "desktop"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-049",
+   "group": "desktop",
+   "query": "Ctrl+S saves but Ctrl+Shift+S does nothing.",
+   "expect_platforms": [],
+   "acceptable": [
+    "desktop",
+    "web"
+   ],
+   "forbid_platforms": [
+    "mobile",
+    "tv"
+   ],
+   "note": "2026-09-10 amended: keyboard shortcuts alone do not separate desktop from web"
+  },
+  {
+   "id": "ps-050",
+   "group": "desktop",
+   "query": "Dispatchers use keyboard and mouse at a two-screen workstation.",
+   "expect_platforms": [
+    "desktop"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-051",
+   "group": "desktop",
+   "query": "The app has a dock icon badge that never clears.",
+   "expect_platforms": [
+    "desktop"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-052",
+   "group": "desktop",
+   "query": "When you resize the window narrower the inspector panel disappears.",
+   "expect_platforms": [
+    "desktop"
+   ],
+   "acceptable": [
+    "web"
+   ],
+   "forbid_platforms": [
+    "mobile",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-053",
+   "group": "desktop",
+   "query": "Traders want the detail pane torn off into its own window.",
+   "expect_platforms": [
+    "desktop"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-054",
+   "group": "desktop",
+   "query": "Alt+Tab back to the app and the modal is behind the main window.",
+   "expect_platforms": [
+    "desktop"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile",
+    "tv",
+    "web"
+   ]
+  },
+  {
+   "id": "ps-055",
+   "group": "desktop",
+   "query": "Accountants type into the grid all day with the numeric keypad.",
+   "expect_platforms": [
+    "desktop"
+   ],
+   "acceptable": [
+    "web"
+   ],
+   "forbid_platforms": [
+    "mobile",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-056",
+   "group": "desktop",
+   "query": "The installer puts a shortcut on the desktop but the first launch shows a blank window.",
+   "expect_platforms": [
+    "desktop"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-057",
+   "group": "desktop",
+   "query": "The title bar buttons don't follow the light theme.",
+   "expect_platforms": [
+    "desktop"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-058",
+   "group": "desktop",
+   "query": "Multiple monitors with different scaling make the text blurry on the second one.",
+   "expect_platforms": [
+    "desktop"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-059",
+   "group": "desktop",
+   "query": "It runs as a native window on Windows and Mac for support agents.",
+   "expect_platforms": [
+    "desktop"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-060",
+   "group": "desktop",
+   "query": "Drag a file from Explorer onto the window to import it.",
+   "expect_platforms": [
+    "desktop"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-061",
+   "group": "desktop",
+   "query": "The toolbar under the menu bar has icons with no tooltips.",
+   "expect_platforms": [
+    "desktop"
+   ],
+   "acceptable": [
+    "web"
+   ],
+   "forbid_platforms": [
+    "mobile",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-062",
+   "group": "desktop",
+   "query": "Our order-entry program that clerks use at their desks with a keyboard.",
+   "expect_platforms": [
+    "desktop"
+   ],
+   "acceptable": [
+    "web"
+   ],
+   "forbid_platforms": [
+    "mobile",
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-063",
+   "group": "desktop",
+   "query": "Photographers cull thousands of images with the arrow keys on a laptop.",
+   "expect_platforms": [
+    "desktop"
+   ],
+   "acceptable": [
+    "web"
+   ],
+   "forbid_platforms": [
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-064",
+   "group": "desktop",
+   "query": "Escape closes the dialog but leaves focus nowhere.",
+   "expect_platforms": [],
+   "acceptable": [
+    "desktop",
+    "web"
+   ],
+   "forbid_platforms": [
+    "tv"
+   ],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-065",
+   "group": "kiosk",
+   "query": "Customers use the fixed touch screen at reception to check in.",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "id": "ps-066",
+   "group": "kiosk",
+   "query": "Runs in the browser at checkout counters where shoppers tap their order.",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "acceptable": [
+    "web"
+   ],
+   "forbid_platforms": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "id": "ps-067",
+   "group": "kiosk",
+   "query": "Visitors walk up to the screen in the museum foyer and tap an exhibit.",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "id": "ps-068",
+   "group": "kiosk",
+   "query": "Patients enter their date of birth on the standing terminal by the pharmacy counter.",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile"
+   ]
+  },
+  {
+   "id": "ps-069",
+   "group": "kiosk",
+   "query": "The self-service screen at the car park pay station times out mid-payment.",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "id": "ps-070",
+   "group": "kiosk",
+   "query": "People queue at the ticket terminal and the buttons are too small for gloves.",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile"
+   ]
+  },
+  {
+   "id": "ps-071",
+   "group": "kiosk",
+   "query": "A public sign-in station in the clinic lobby that everyone shares.",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "id": "ps-072",
+   "group": "kiosk",
+   "query": "The wayfinding screen in the shopping centre takes too long to reset for the next person.",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile"
+   ]
+  },
+  {
+   "id": "ps-073",
+   "group": "kiosk",
+   "query": "Diners order at the counter screen while the queue builds behind them.",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "id": "ps-074",
+   "group": "kiosk",
+   "query": "Staff at the factory line tap the wall-mounted panel with gloves on.",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "id": "ps-075",
+   "group": "kiosk",
+   "query": "The customer-facing screen at the till shows the previous customer's total.",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile"
+   ]
+  },
+  {
+   "id": "ps-076",
+   "group": "kiosk",
+   "query": "Guests print their badge at the visitor terminal in the lobby.",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "id": "ps-077",
+   "group": "kiosk",
+   "query": "A vending-style screen for locker pickup in the mail room.",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile"
+   ]
+  },
+  {
+   "id": "ps-078",
+   "group": "kiosk",
+   "query": "The self-checkout asks for a loyalty number on a shared touch screen.",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile"
+   ]
+  },
+  {
+   "id": "ps-079",
+   "group": "kiosk",
+   "query": "Bus passengers buy a ticket on the machine at the stop in bright sun.",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile"
+   ]
+  },
+  {
+   "id": "ps-080",
+   "group": "kiosk",
+   "query": "The library's public catalogue terminal keeps the last search visible.",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile"
+   ]
+  },
+  {
+   "id": "ps-081",
+   "group": "kiosk",
+   "query": "The gym check-in screen by the door needs a bigger keypad.",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "id": "ps-082",
+   "group": "kiosk",
+   "query": "An unattended touch display for hotel check-in at 2 am.",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "id": "ps-083",
+   "group": "web",
+   "query": "People use it from laptops and smaller phone screens.",
+   "expect_platforms": [
+    "web"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "tv",
+    "kiosk"
+   ]
+  },
+  {
+   "id": "ps-084",
+   "group": "web",
+   "query": "The page jumps when the banner loads at the top.",
+   "expect_platforms": [
+    "web"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-085",
+   "group": "web",
+   "query": "Customers open the link from the email and land on a blank white screen.",
+   "expect_platforms": [],
+   "acceptable": [
+    "web",
+    "mobile"
+   ],
+   "forbid_platforms": [
+    "tv",
+    "kiosk"
+   ],
+   "note": "2026-09-10 amended: email links open apps as well as pages"
+  },
+  {
+   "id": "ps-086",
+   "group": "web",
+   "query": "Ctrl+F doesn't find rows because the table is virtualised.",
+   "expect_platforms": [],
+   "acceptable": [
+    "web",
+    "desktop"
+   ],
+   "forbid_platforms": [
+    "tv"
+   ],
+   "note": "2026-09-10 amended: Ctrl+F on a virtualised table is web or desktop"
+  },
+  {
+   "id": "ps-087",
+   "group": "web",
+   "query": "The back button in the browser skips the step you just completed.",
+   "expect_platforms": [
+    "web"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "tv",
+    "kiosk"
+   ]
+  },
+  {
+   "id": "ps-088",
+   "group": "web",
+   "query": "Tabbing through the header takes twenty presses before the search box.",
+   "expect_platforms": [],
+   "acceptable": [
+    "web",
+    "desktop"
+   ],
+   "forbid_platforms": [
+    "tv"
+   ],
+   "note": "2026-09-10 amended: tabbing through a header is web or desktop"
+  },
+  {
+   "id": "ps-089",
+   "group": "web",
+   "query": "On a phone the sidebar squeezes the content into a thin column.",
+   "expect_platforms": [],
+   "acceptable": [
+    "web",
+    "mobile"
+   ],
+   "forbid_platforms": [
+    "tv",
+    "kiosk"
+   ],
+   "note": "2026-09-10 amended: a sidebar on a phone may be a phone app or a responsive site; an explicit phone mention resolving mobile is not wrong"
+  },
+  {
+   "id": "ps-090",
+   "group": "web",
+   "query": "The sticky header covers the anchor target when you follow a link.",
+   "expect_platforms": [
+    "web"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "tv",
+    "kiosk"
+   ]
+  },
+  {
+   "id": "ps-091",
+   "group": "web",
+   "query": "Our customer portal where clients download invoices.",
+   "expect_platforms": [
+    "web"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "tv",
+    "kiosk"
+   ]
+  },
+  {
+   "id": "ps-092",
+   "group": "web",
+   "query": "The cookie banner blocks the sign-in button on small screens.",
+   "expect_platforms": [
+    "web"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "tv",
+    "kiosk"
+   ]
+  },
+  {
+   "id": "ps-093",
+   "group": "web",
+   "query": "Zooming to 200% in the browser hides the primary button.",
+   "expect_platforms": [
+    "web"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "tv",
+    "kiosk"
+   ]
+  },
+  {
+   "id": "ps-094",
+   "group": "web",
+   "query": "The marketing site hero video autoplays with sound.",
+   "expect_platforms": [
+    "web"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "tv",
+    "kiosk"
+   ]
+  },
+  {
+   "id": "ps-095",
+   "group": "web",
+   "query": "Search engines index the modal content as the page.",
+   "expect_platforms": [
+    "web"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "tv",
+    "kiosk"
+   ]
+  },
+  {
+   "id": "ps-096",
+   "group": "web",
+   "query": "The share link opens the report in a new tab without the filters.",
+   "expect_platforms": [
+    "web"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "tv",
+    "kiosk"
+   ]
+  },
+  {
+   "id": "ps-097",
+   "group": "web",
+   "query": "Our storefront's product grid shifts when images load.",
+   "expect_platforms": [
+    "web"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "tv",
+    "kiosk"
+   ]
+  },
+  {
+   "id": "ps-098",
+   "group": "web",
+   "query": "The page can't be printed without the sidebar.",
+   "expect_platforms": [
+    "web"
+   ],
+   "acceptable": [
+    "desktop"
+   ],
+   "forbid_platforms": [
+    "tv",
+    "kiosk"
+   ]
+  },
+  {
+   "id": "ps-099",
+   "group": "web",
+   "query": "The pricing page reads differently on phones and laptops.",
+   "expect_platforms": [
+    "web"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "tv",
+    "kiosk"
+   ]
+  },
+  {
+   "id": "ps-100",
+   "group": "web",
+   "query": "An embeddable widget partners drop into their own sites.",
+   "expect_platforms": [
+    "web"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "tv",
+    "kiosk"
+   ]
+  },
+  {
+   "id": "ps-101",
+   "group": "ambiguous",
+   "query": "A large display in the office shows build status.",
+   "expect_platforms": [],
+   "acceptable": [
+    "tv",
+    "desktop",
+    "kiosk"
+   ],
+   "forbid_platforms": [
+    "mobile"
+   ],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-102",
+   "group": "ambiguous",
+   "query": "The remote office dashboard is slow to load.",
+   "expect_platforms": [],
+   "acceptable": [
+    "web",
+    "desktop"
+   ],
+   "forbid_platforms": [
+    "tv"
+   ],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-103",
+   "group": "ambiguous",
+   "query": "Users need to compare two settings side by side.",
+   "expect_platforms": [],
+   "acceptable": [
+    "web",
+    "desktop",
+    "mobile",
+    "tablet"
+   ],
+   "forbid_platforms": [],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-104",
+   "group": "ambiguous",
+   "query": "The selected row is hard to distinguish from the rest.",
+   "expect_platforms": [],
+   "acceptable": [
+    "web",
+    "desktop",
+    "mobile",
+    "tv",
+    "tablet"
+   ],
+   "forbid_platforms": [],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-105",
+   "group": "ambiguous",
+   "query": "Warehouse pickers with gloves and a handheld device.",
+   "expect_platforms": [],
+   "acceptable": [
+    "mobile",
+    "tablet",
+    "kiosk"
+   ],
+   "forbid_platforms": [
+    "tv"
+   ],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-106",
+   "group": "ambiguous",
+   "query": "A wallboard in the support team's room.",
+   "expect_platforms": [],
+   "acceptable": [
+    "tv",
+    "desktop",
+    "kiosk"
+   ],
+   "forbid_platforms": [
+    "mobile"
+   ],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-107",
+   "group": "ambiguous",
+   "query": "A settings screen for the app.",
+   "expect_platforms": [],
+   "acceptable": [
+    "mobile",
+    "web",
+    "desktop"
+   ],
+   "forbid_platforms": [
+    "tv"
+   ],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-108",
+   "group": "ambiguous",
+   "query": "The remote workers' timesheet form.",
+   "expect_platforms": [],
+   "acceptable": [
+    "web",
+    "desktop"
+   ],
+   "forbid_platforms": [
+    "tv"
+   ],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-109",
+   "group": "ambiguous",
+   "query": "Support agents remote into customers' machines from our console.",
+   "expect_platforms": [],
+   "acceptable": [
+    "web",
+    "desktop"
+   ],
+   "forbid_platforms": [
+    "tv"
+   ],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-110",
+   "group": "ambiguous",
+   "query": "The screen at the nurses' station.",
+   "expect_platforms": [],
+   "acceptable": [
+    "desktop",
+    "kiosk",
+    "web"
+   ],
+   "forbid_platforms": [],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-111",
+   "group": "ambiguous",
+   "query": "Display the schedule in the break room.",
+   "expect_platforms": [],
+   "acceptable": [
+    "tv",
+    "kiosk",
+    "desktop"
+   ],
+   "forbid_platforms": [
+    "mobile"
+   ],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-112",
+   "group": "ambiguous",
+   "query": "The dashboard everyone checks first thing.",
+   "expect_platforms": [],
+   "acceptable": [
+    "web",
+    "desktop",
+    "mobile"
+   ],
+   "forbid_platforms": [],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-113",
+   "group": "ambiguous",
+   "query": "A small display next to the machine shows the count.",
+   "expect_platforms": [],
+   "acceptable": [
+    "kiosk",
+    "desktop",
+    "tv"
+   ],
+   "forbid_platforms": [],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-114",
+   "group": "ambiguous",
+   "query": "Remote teams review designs together.",
+   "expect_platforms": [],
+   "acceptable": [
+    "web",
+    "desktop"
+   ],
+   "forbid_platforms": [
+    "tv"
+   ],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-115",
+   "group": "ambiguous",
+   "query": "The big number on the home screen.",
+   "expect_platforms": [],
+   "acceptable": [
+    "mobile",
+    "web",
+    "desktop",
+    "tv"
+   ],
+   "forbid_platforms": [],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-116",
+   "group": "ambiguous",
+   "query": "Readable in bright light for staff outside.",
+   "expect_platforms": [],
+   "acceptable": [
+    "mobile",
+    "tablet",
+    "kiosk"
+   ],
+   "forbid_platforms": [
+    "desktop"
+   ],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-117",
+   "group": "ambiguous",
+   "query": "An interface for the delivery team.",
+   "expect_platforms": [],
+   "acceptable": [
+    "mobile",
+    "web",
+    "desktop"
+   ],
+   "forbid_platforms": [],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-118",
+   "group": "ambiguous",
+   "query": "The lobby screen.",
+   "expect_platforms": [],
+   "acceptable": [
+    "kiosk",
+    "tv"
+   ],
+   "forbid_platforms": [
+    "mobile"
+   ],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-119",
+   "group": "ambiguous",
+   "query": "Controls that work with gloves.",
+   "expect_platforms": [],
+   "acceptable": [
+    "mobile",
+    "tablet",
+    "kiosk"
+   ],
+   "forbid_platforms": [],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-120",
+   "group": "ambiguous",
+   "query": "The couch co-op lobby in our game.",
+   "expect_platforms": [],
+   "acceptable": [
+    "tv",
+    "desktop"
+   ],
+   "forbid_platforms": [
+    "mobile"
+   ],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-121",
+   "group": "multi",
+   "query": "The same account page on the website and in the phone app.",
+   "expect_platforms": [
+    "web",
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-122",
+   "group": "multi",
+   "query": "Works in the browser on laptops and as a native window for power users.",
+   "expect_platforms": [
+    "web",
+    "desktop"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "tv",
+    "mobile"
+   ]
+  },
+  {
+   "id": "ps-123",
+   "group": "multi",
+   "query": "The player is used on the living-room screen and on phones as a second screen.",
+   "expect_platforms": [
+    "tv",
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": []
+  },
+  {
+   "id": "ps-124",
+   "group": "multi",
+   "query": "Staff use the terminal at the counter and the same app on their phones in the aisles.",
+   "expect_platforms": [
+    "kiosk",
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-125",
+   "group": "multi",
+   "query": "A responsive site that also runs on the lobby touch screen.",
+   "expect_platforms": [
+    "web",
+    "kiosk"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "tv",
+    "mobile"
+   ]
+  },
+  {
+   "id": "ps-126",
+   "group": "multi",
+   "query": "Our React front end wrapped for the desktop with Electron.",
+   "expect_platforms": [
+    "web",
+    "desktop"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "tv",
+    "mobile"
+   ]
+  },
+  {
+   "id": "ps-127",
+   "group": "multi",
+   "query": "The tablet version and the phone version share one code base.",
+   "expect_platforms": [
+    "tablet",
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "tv",
+    "desktop"
+   ]
+  },
+  {
+   "id": "ps-128",
+   "group": "multi",
+   "query": "Customers browse on the website and pick up at the store terminal.",
+   "expect_platforms": [
+    "web",
+    "kiosk"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-129",
+   "group": "multi",
+   "query": "The dashboard runs on the wall screen and on analysts' desktops.",
+   "expect_platforms": [
+    "desktop"
+   ],
+   "acceptable": [
+    "tv",
+    "web"
+   ],
+   "forbid_platforms": [
+    "mobile"
+   ]
+  },
+  {
+   "id": "ps-130",
+   "group": "multi",
+   "query": "Drivers use the phone app; dispatchers use the desktop program.",
+   "expect_platforms": [
+    "mobile",
+    "desktop"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-131",
+   "group": "negatives",
+   "query": "Remote configuration is pushed to devices overnight.",
+   "expect_platforms": [],
+   "acceptable": [
+    "web",
+    "desktop"
+   ],
+   "forbid_platforms": [
+    "tv"
+   ],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-132",
+   "group": "negatives",
+   "query": "The remote branch keeps diverging from main.",
+   "expect_platforms": [],
+   "acceptable": [],
+   "forbid_platforms": [
+    "tv"
+   ],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-133",
+   "group": "negatives",
+   "query": "Big screen or small, the totals never line up.",
+   "expect_platforms": [],
+   "acceptable": [
+    "web",
+    "mobile",
+    "desktop",
+    "tv"
+   ],
+   "forbid_platforms": [],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-134",
+   "group": "negatives",
+   "query": "The couch-to-5k programme page.",
+   "expect_platforms": [],
+   "acceptable": [
+    "web",
+    "mobile"
+   ],
+   "forbid_platforms": [
+    "tv"
+   ],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-135",
+   "group": "negatives",
+   "query": "Terminal output in the log viewer wraps badly.",
+   "expect_platforms": [],
+   "acceptable": [
+    "desktop",
+    "web"
+   ],
+   "forbid_platforms": [
+    "kiosk",
+    "tv"
+   ],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-136",
+   "group": "negatives",
+   "query": "The kiosk mode toggle in browser settings.",
+   "expect_platforms": [
+    "web"
+   ],
+   "acceptable": [
+    "web",
+    "desktop",
+    "kiosk"
+   ],
+   "forbid_platforms": [],
+   "note": "2026-09-10 amended: browser settings names the browser; the sentence is about a web browser feature"
+  },
+  {
+   "id": "ps-137",
+   "group": "negatives",
+   "query": "The phone number field accepts letters.",
+   "expect_platforms": [],
+   "acceptable": [
+    "web",
+    "mobile",
+    "desktop"
+   ],
+   "forbid_platforms": [
+    "tv"
+   ],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-138",
+   "group": "negatives",
+   "query": "The tablet of pills icon looks wrong.",
+   "expect_platforms": [],
+   "acceptable": [
+    "web",
+    "mobile",
+    "desktop"
+   ],
+   "forbid_platforms": [],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-139",
+   "group": "negatives",
+   "query": "Windows in the dashboard resize each other.",
+   "expect_platforms": [],
+   "acceptable": [
+    "web",
+    "desktop"
+   ],
+   "forbid_platforms": [
+    "tv",
+    "mobile"
+   ],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-140",
+   "group": "negatives",
+   "query": "A handheld-sized panel in the desktop layout.",
+   "expect_platforms": [],
+   "acceptable": [
+    "desktop",
+    "web"
+   ],
+   "forbid_platforms": [
+    "tv"
+   ],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-141",
+   "group": "negatives",
+   "query": "Our web team's TV listings page on the site.",
+   "expect_platforms": [
+    "web"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-142",
+   "group": "negatives",
+   "query": "Media browser for the photo library on the site.",
+   "expect_platforms": [
+    "web"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-143",
+   "group": "negatives",
+   "query": "The Android build of our television app.",
+   "expect_platforms": [
+    "tv"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "mobile"
+   ]
+  },
+  {
+   "id": "ps-144",
+   "group": "negatives",
+   "query": "Run the mobile Safari checks in the browser lab.",
+   "expect_platforms": [
+    "web"
+   ],
+   "acceptable": [
+    "mobile"
+   ],
+   "forbid_platforms": [
+    "tv"
+   ]
+  },
+  {
+   "id": "ps-145",
+   "group": "negatives",
+   "query": "Chromebook students use it in class.",
+   "expect_platforms": [
+    "web"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "tv",
+    "mobile"
+   ]
+  },
+  {
+   "id": "ps-146",
+   "group": "negatives",
+   "query": "The tvOS target in the same package as the phone app.",
+   "expect_platforms": [
+    "tv",
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": []
+  },
+  {
+   "id": "ps-147",
+   "group": "negatives",
+   "query": "A car dashboard screen for the driver.",
+   "expect_platforms": [],
+   "acceptable": [
+    "kiosk",
+    "desktop"
+   ],
+   "forbid_platforms": [
+    "tv",
+    "mobile"
+   ],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-148",
+   "group": "negatives",
+   "query": "A watch face complication that shows steps.",
+   "expect_platforms": [
+    "mobile"
+   ],
+   "acceptable": [],
+   "forbid_platforms": [
+    "tv",
+    "desktop"
+   ]
+  },
+  {
+   "id": "ps-149",
+   "group": "negatives",
+   "query": "A smart fridge screen for the shopping list.",
+   "expect_platforms": [],
+   "acceptable": [
+    "kiosk",
+    "tv"
+   ],
+   "forbid_platforms": [
+    "mobile"
+   ],
+   "expect_unknown": true
+  },
+  {
+   "id": "ps-150",
+   "group": "negatives",
+   "query": "The in-flight seatback screen.",
+   "expect_platforms": [],
+   "acceptable": [
+    "tv",
+    "kiosk"
+   ],
+   "forbid_platforms": [
+    "mobile",
+    "desktop"
+   ],
+   "expect_unknown": true
+  }
+ ]
+}

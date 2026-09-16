@@ -1,0 +1,151 @@
+{
+ "task": "p5-08",
+ "build": "50966e8e6184f31722a7b3c7f270a241dd0f7b68187492d0c971f7c79734e680",
+ "c1_recorded": {
+  "platform_expected": "web",
+  "platform_resolved": [
+   "web"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "audit",
+   "polish",
+   "refactor"
+  ],
+  "mode_resolved": [
+   "audit",
+   "refactor"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "partial",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": false,
+  "status": "CONFIDENT",
+  "bundle_ids": [
+   "comp-checkout-one-page",
+   "comp-data-table",
+   "grid-single-tab-stop",
+   "a11y-hover-not-required",
+   "web-responsive-breakpoints",
+   "anti-fashion-over-usability"
+  ],
+  "bundle_tokens": 1279,
+  "expected_concepts": [
+   "perf.js_budget",
+   "touch.gestures_discoverable",
+   "interaction.keyboard_navigation",
+   "interaction.selection_visible",
+   "perf.layout_shift",
+   "a11y.reduced_motion",
+   "a11y.live_status"
+  ],
+  "critical_concepts": [
+   "perf.js_budget",
+   "touch.gestures_discoverable",
+   "interaction.keyboard_navigation"
+  ],
+  "delivered_concepts": [
+   "a11y.contrast",
+   "adaptive.breakpoint_matrix",
+   "adaptive.navigation_transform",
+   "data.pagination_strategy",
+   "feedback.confirmation_destructive",
+   "feedback.trust_signals",
+   "feedback.validation_errors",
+   "interaction.focus_visible",
+   "interaction.hover_independence",
+   "interaction.keyboard_navigation",
+   "interaction.selection_visible",
+   "layout.one_primary_action",
+   "process.decision_order",
+   "state.saving_conflict",
+   "table.inline_edit",
+   "table.selection_bulk",
+   "table.tabular_figures",
+   "table.virtualization",
+   "touch.ime_keyboard"
+  ],
+  "concept_recall": 0.286,
+  "critical_recall": 0.333,
+  "forbidden_delivered": [
+   "adaptive.navigation_transform",
+   "table.virtualization"
+  ],
+  "change_budget": "moderate"
+ },
+ "c2": {
+  "platform_expected": "web",
+  "platform_resolved": [
+   "web"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "audit",
+   "polish",
+   "refactor"
+  ],
+  "mode_resolved": [
+   "audit",
+   "refactor"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "partial",
+  "scope_kind_resolved": "partial",
+  "scope_correct": true,
+  "status": "CONFIDENT",
+  "bundle_ids": [
+   "dir-analytical-console",
+   "comp-data-table",
+   "interaction-drag-drop",
+   "grid-single-tab-stop",
+   "a11y-hover-not-required",
+   "states-persistence-and-session"
+  ],
+  "bundle_tokens": 1211,
+  "expected_concepts": [
+   "perf.js_budget",
+   "touch.gestures_discoverable",
+   "interaction.keyboard_navigation",
+   "interaction.selection_visible",
+   "perf.layout_shift",
+   "a11y.reduced_motion",
+   "a11y.live_status"
+  ],
+  "critical_concepts": [
+   "perf.js_budget",
+   "touch.gestures_discoverable",
+   "interaction.keyboard_navigation"
+  ],
+  "delivered_concepts": [
+   "a11y.live_status",
+   "data.pagination_strategy",
+   "feedback.confirmation_destructive",
+   "interaction.focus_visible",
+   "interaction.hover_independence",
+   "interaction.keyboard_navigation",
+   "interaction.selection_visible",
+   "perf.layout_shift",
+   "state.saving_conflict",
+   "state.session_expiry",
+   "table.inline_edit",
+   "table.selection_bulk",
+   "table.tabular_figures",
+   "table.virtualization",
+   "touch.gestures_discoverable"
+  ],
+  "concept_recall": 0.714,
+  "critical_recall": 0.667,
+  "forbidden_delivered": [
+   "table.virtualization"
+  ],
+  "change_budget": "moderate"
+ }
+}

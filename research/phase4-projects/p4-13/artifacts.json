@@ -1,0 +1,30 @@
+{"task": "p4-13", "project": "p3-mobile-flutter-field", "platform": "mobile (Android + iOS phone, outdoor/gloves/offline)", "stack": "flutter (Material 3, Riverpod, go_router)", "existing_ui": true, "mode": "refactor", "change_budget": "moderate",
+ "render_mode": "html-twin",
+ "render_note": "No Flutter SDK: Dart patched and reviewed statically; Phase 3 twin extended in place and shot at 390x844 (Playwright 1.63.0) with a 300 px simulated IME",
+ "screenshots": ["render/first-form.png", "render/first-form-keyboard.png", "render/first-form-offline-keyboard.png", "render/first-form-photo-sheet.png", "render/first-form-keyboard-hidden.png", "render/final-form.png", "render/final-form-keyboard.png", "render/final-form-offline-keyboard.png", "render/final-form-photo-sheet.png", "render/final-form-keyboard-hidden.png"],
+ "context_detection": {"navigation": "partial", "theme": "yes", "typography": "partial", "surfaces": "no", "spacing": "yes"},
+ "context_detection_notes": ["platform tv + DPAD focus finding are a false positive: DPAD_RE (case-insensitive 'dpad') matches 'AnimatedPadding' in bottom_action_bar.dart", "surfaces=elevated from 'elevation: 0' and the ColorScheme 'shadow:' slot; 10 BorderSide uses not counted", "radius unknown although FieldSizes.radius = 8", "components reported as go_router, riverpod (libraries), lib/widgets not described", "product_hints erp, iot for a utility field-inspection app"],
+ "preservation": {"navigation": true, "theme": true, "typography": true, "component_reuse": true, "unjustified_structural_change": 0},
+ "first_render_defects": {"visual": 0, "interaction": 1, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 1},
+ "final_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+ "iterations": 2, "guidance_relevant": 2, "guidance_partial": 1, "guidance_offtarget": 5,
+ "guidance_metrics": {"concept_coverage": "8/10", "coverage_per_1k_tokens": 6.81, "contaminated": [], "purity": 0.9, "tokens": 1175, "uncovered_required_concerns": ["performance"], "uncovered_required_concepts": ["interaction.keyboard_navigation", "table.tabular_figures"], "status": "PARTIAL"},
+ "direction_validation": {"ok": false, "violations": ["non-media product: poster (media) card geometry selected"]},
+ "interaction_test": {"file": "05-interaction.json", "first_run": "05-interaction-first.json", "checks": 14, "passed_first": 12, "passed_final": 14, "keyboard_inset_px": 300, "save_button_px": "476-532 of 544 visible", "min_target_px": 56, "thumbnail_target_px": 104},
+ "misses": [
+  {"layer": "requirements", "what": "platform ['mobile','tv'], input remote, environment large-display/shared-device — from the inspector's AnimatedPadding/DPAD false positive, ledgered KNOWN"},
+  {"layer": "requirements", "what": "intent.preserve empty although the sentence says 'keeping the app's existing theme and navigation'; 'navigation' listed as a component to build"},
+  {"layer": "requirements", "what": "product erp/iot for a utility field-inspection app"},
+  {"layer": "bundle-selection", "what": "mobile-keyboard-ime is rank 1 in search (0.542) but not in the bundle; nav-tv-top-tabs chosen as core instead; impl-safe-modification (rank 5) not selected"},
+  {"layer": "expected-concepts", "what": "'keyboard' mapped to interaction.keyboard_navigation (hardware/keyboard a11y) instead of the IME concept; reported uncovered"},
+  {"layer": "direction", "what": "cards poster-landscape (flagged by validation), focus scale-glow (TV), surface elevated preserved from a wrong inference"}
+ ],
+ "knowledge_gaps": ["photo/camera field in a form: thumbnail as a single target, retake replaces in place, replace from gallery, remove", "keyboard-dismiss affordance when Return inserts a newline (tap outside, drag, explicit Hide keyboard)"],
+ "regressions": [
+  {"query": "form usable with the keyboard open on a phone (Flutter)", "expect": "mobile-keyboard-ime and mobile-safe-areas in the bundle; no nav-tv-* or tv-* records for a mobile-only project"},
+  {"query": "refactor ... keeping the app's existing theme and navigation", "expect": "intent.preserve includes theme and navigation; components excludes navigation; impl-safe-modification selected"},
+  {"query": "inspect a Flutter project containing AnimatedPadding and no DPAD code", "expect": "platforms = [mobile], no DPAD/remote focus finding"},
+  {"query": "inspect a Flutter theme with elevation: 0 and BorderSide outlines", "expect": "surfaces = flat/bordered, radius = 8"},
+  {"query": "photos can be retaken in a defect report form", "expect": "a photo-capture field record in the bundle (once added to the base)"}
+ ],
+ "tags": ["context-detection-miss", "requirements-miss", "concept-miss", "ranking-miss", "knowledge-gap", "direction-mismatch", "render-defect-fixed", "tooling-limit", "skill-helped", "preservation-ok"]}

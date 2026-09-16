@@ -1,0 +1,82 @@
+## design-engineering search: The dispatch job form lets you lose an unsaved job by clicking another one.
+status=CONFIDENT modes=['audit', 'refactor'] platforms={} inputs={} products={} density=None stacks=[] screens=['form'] negatives=[]
+facets required=['accessibility', 'interaction', 'component', 'anti-pattern'] unmet=['accessibility'] diversity=0.83
+MISSING: platform: audit targets differ by platform; not stated
+
+### Form  `comp-form`  [component/form; component] score 0.534 · heuristic
+Labels above, help text below, required marked in text, field widths sized to content, grouped by section with headings, one column, inline validation on blur, error summary on submit with links to fields, primary action last (or sticky), unsaved-changes guard, autosave with status for long forms, autofill attributes. TV: one field per row, DOWN moves to next, system keyboard, minimal fields.
+- use when: Any data entry: settings, checkout, applications, record editing.
+- avoid when: Batch entry of many similar rows (use a data-entry grid); single toggles (inline).
+- why: lexical 0.577, structural 0.48 (mode audit, screen form)
+
+### One primary action per screen  `cta-single-primary`  [pattern/cta; layout] score 0.462 · heuristic
+Exactly one filled button per view, secondaries as outlined/text, destructive actions separated and confirmed, button label is a verb phrase naming the outcome ('Save changes'), disabled only with an explanation nearby.
+- use when: Task screens (forms, checkout, onboarding, settings) where one action completes the job; the primary is filled, secondaries are quiet.
+- avoid when: Workbenches with many equal commands (toolbar pattern) or browse screens where selection is the action (focus-selects).
+- incompatible with: cta-toolbar-commands, cta-focus-selects
+- why: lexical 0.283, structural 0.48 (mode audit, screen form)
+
+### Form stack with sections  `layout-form-stack`  [pattern/layout; layout] score 0.419 · heuristic
+Labels above fields (not placeholders), one column except for tightly related pairs (city/postcode), section headings as real headings, inline validation on blur with error text linked via aria-describedby, and the primary action at the end of the form or in a sticky footer. Field width should hint expected length.
+- use when: Data entry and settings: labelled fields in one column, grouped into titled sections, with the save/submit action fixed in a predictable place.
+- avoid when: Spreadsheet-style batch entry (use a data-entry grid), or tiny forms of 1–2 fields (inline them).
+- incompatible with: layout-immersive-rails, layout-rails
+- why: lexical 0.326, structural 0.4 (secondary mode, screen form)
+
+### Single column, one task  `layout-single-column`  [pattern/layout; layout/platform] score 0.374 · heuristic
+Content width capped for reading (~60–75 characters per line), vertical rhythm from the spacing scale, primary action reachable without scrolling on the shortest supported viewport, or sticky at the bottom.
+- use when: Phone screens, forms, reading, onboarding, kiosks: one primary thing per screen.
+- avoid when: Comparison tasks, dense data, or wide desktop windows where a single narrow column wastes the viewport and forces scrolling.
+- incompatible with: layout-three-pane, layout-dashboard-grid, layout-table-first
+- why: lexical 0.276, structural 0.36 (secondary mode, screen form)
+
+### Form labels, errors, and recovery  `a11y-forms-errors`  [rule/forms; component] score 0.356 · accessibility-requirement
+Label above or beside, never placeholder-only; error message next to the field, programmatically associated (aria-describedby / accessibilityHint / AutomationProperties.HelpText), with what is wrong and how to fix; move focus to the first error or the error summary on submit; keep entered data; autocomplete attributes for personal data; allow paste and password managers.
+- use when: Every form: visible labels, required markers in text, inline errors linked to fields, error summary for long forms, no data loss on error.
+- avoid when: Never validate on every keystroke for fields the user has not finished; validate on blur and on submit.
+- why: lexical 0.205, structural 0.54 (mode audit)
+
+### Saving, saved, autosave, session expiry, and permission-denied states  `states-persistence-and-session`  [rule/states; component/platform] score 0.33 · heuristic
+Show saving → saved as a quiet inline status with a timestamp (not a toast per keystroke); autosave drafts and say so; warn before a session expires with a way to extend, and never discard entered data on expiry on a personal device (restore the draft after re-authentication; on shared or public screens clear it instead); permission-denied is a designed state that explains what is missing and who can grant it rather than an empty screen; destructive or irreversible saves confirm once with the safe action as default.
+- use when: Forms and editors longer than a minute, multi-step flows, authenticated sessions with timeouts, screens whose data depends on permissions.
+- avoid when: Public kiosks and shared screens: there the session is cleared on idle and nothing is restored (see shared-device-privacy).
+- why: lexical 0.192, structural 0.5 (mode audit)
+
+### One-page checkout  `comp-checkout-one-page`  [component/form; component/platform] score 0.31 · heuristic
+Order summary is visible on desktop (side column) and collapsible-but-present at the top on phones with the total always shown; guest checkout first, account optional; sections in the order contact → shipping → payment → review, each with a visible heading and inline validation on blur plus a focused error summary on submit; address fields use autocomplete attributes and correct input types/IME; the pay button states the amount, is disabled only while processing (with a visible status), and is protected against double submission; trust and cost information (shipping, tax) appears before payment, never as a surprise; progress is saved locally so a reload does not lose entries.
+- use when: Purchase flows with contact, shipping, payment and review on one scrolling page.
+- avoid when: Multi-session or regulated flows that need a stepper with server-side validation per step.
+- incompatible with: nav-wizard
+- why: lexical 0.514, structural 0.06 (mode audit, screen mismatch)
+
+### Placeholder as the only label  `anti-placeholder-labels`  [antipattern/craft; anti-pattern] score 0.289 · accessibility-requirement
+Visible persistent label (above or floating with a real label element), placeholder only for format hints, placeholder contrast ≥4.5:1.
+- use when: Inputs whose label disappears on typing; low-contrast placeholder text.
+- avoid when: Never.
+- why: lexical 0.084, structural 0.54 (mode audit)
+
+### TV: exactly one visible focus at all times  `a11y-tv-focus-always`  [rule/focus; interaction/platform] score 0.289 · platform-standard
+Set initial focus deterministically (first actionable content or Play on detail), restore focus to the previously focused item when returning, keep focus on screen (scroll into view), move focus to a sensible neighbour when the focused item is removed, and never rely on colour tint alone for the focused state.
+- use when: Every TV screen, after every navigation, after data loads, after dialogs close, after list updates.
+- avoid when: Never leave focus on a hidden or off-screen element; never let focus disappear after a list refresh.
+- why: lexical 0.166, structural 0.44 (mode audit)
+
+### One type scale with named roles  `typo-scale-and-roles`  [rule/typography; visual] score 0.276 · heuristic
+Roles display/heading/title/body/label/caption/numeric with size, line height, weight, and letter spacing per role; body ≥16 px web/mobile, 14 desktop, 24 TV; numeric role uses tabular lining figures; headings use tighter line height (1.1–1.25) and body 1.4–1.6. Generate with tokens.py scale and map the roles to the framework's text styles.
+- use when: Any screen with more than two text sizes; any design system.
+- avoid when: Never pick sizes per screen; never use more than ~7 sizes.
+- why: lexical 0.06, structural 0.54 (mode audit)
+
+### Design empty, loading, error, and partial states  `layout-states-empty-loading-error`  [rule/feedback; component] score 0.276 · heuristic
+Empty: what this is, why it is empty, one action. Loading: skeleton with final dimensions, then content; announce completion. Error: what failed, what to do, retry that works; keep entered data. Partial: show what loaded, mark what didn't. On TV, focus must land somewhere valid in each state.
+- use when: Every list, table, chart, form, and detail screen.
+- avoid when: Never ship a blank area for empty data; never show a spinner for more than ~1 s without a skeleton or progress; never show an error without a next step.
+- why: lexical 0.06, structural 0.54 (mode audit)
+
+### Wizard / stepper  `comp-wizard-stepper`  [component/wizard; component] score 0.27 · heuristic
+Step indicator with names and progress (list semantics, aria-current=step), Back never loses data, one primary action per step, review step before submit, resume support, each step a real page/route on web; TV: full-screen steps with default focus on the primary action.
+- use when: Ordered multi-step flows (checkout, applications, setup).
+- avoid when: Independent sections (tabs); flows that fit one screen.
+- why: lexical 0.147, structural 0.42 (mode audit, screen form)
+
+Filtered out: mobile-field-use (environment ['gloves', 'outdoor'] not in request)

@@ -1,0 +1,30 @@
+{
+  "platform": "tv",
+  "artifact_state": "existing",
+  "acceptable_modes": ["create", "refactor"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "media.resume_playback",
+    "layout.media_card",
+    "interaction.dpad_reachability",
+    "interaction.focus_restore",
+    "state.loading_empty_error",
+    "process.reuse_first",
+    "tv.ten_foot_typography"
+  ],
+  "critical_concepts": [
+    "media.resume_playback",
+    "state.loading_empty_error",
+    "interaction.dpad_reachability"
+  ],
+  "forbidden_concepts": [
+    "touch.minimum_target",
+    "touch.gestures_discoverable",
+    "tv.sign_in_code",
+    "tv.epg_pinned_channels",
+    "data.chart_by_question",
+    "media.track_selection"
+  ],
+  "preservation": ["navigation", "theme", "typography"],
+  "notes": "Existing Compose-for-TV sports app. HomeScreen already renders hero + 'Live now' + content.rails via RailRow/EventCard; LibraryState.positions already stores resume minutes and EventCard already draws a resumeFraction progress bar. A correct 'Continue watching' row should (a) be derived from LibraryState resume positions, not a new static catalogue list, (b) reuse RailRow/EventCard rather than a new card, (c) sit high in the vertical order (right after the hero / live rail) because it is the most-wanted row, (d) disappear entirely when nothing is resumable (no empty rail), (e) register in railIndexById/railItemKeys so focus restoration from Details/Player still works, and (f) SELECT should resume at the saved position, not restart. Expected budget: low/moderate; no restyle of the hero, drawer, theme or card. The back-stack work from p6-24 (NavStack, navHasFocus) must not be touched."
+}

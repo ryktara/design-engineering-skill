@@ -1,0 +1,45 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:FleetDesk.ViewModels"
+             x:Class="FleetDesk.Views.SettingsView">
+
+  <Design.DataContext>
+    <vm:SettingsViewModel />
+  </Design.DataContext>
+
+  <DockPanel LastChildFill="True">
+
+    <StackPanel DockPanel.Dock="Top" Spacing="4" Margin="{StaticResource MarginBelow2}">
+      <TextBlock Classes="title" Text="Settings" />
+      <TextBlock Classes="muted" Text="Depot defaults and display preferences." />
+    </StackPanel>
+
+    <Border Classes="surface" Padding="{StaticResource Pad3}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="520">
+      <StackPanel>
+
+        <StackPanel Margin="{StaticResource MarginBelow2}">
+          <TextBlock Classes="label" Text="Depot name" />
+          <TextBox Text="{Binding DepotName, Mode=TwoWay}" />
+        </StackPanel>
+
+        <StackPanel Margin="{StaticResource MarginBelow2}">
+          <TextBlock Classes="label" Text="Units" />
+          <ComboBox ItemsSource="{Binding UnitChoices}" SelectedItem="{Binding Units, Mode=TwoWay}" HorizontalAlignment="Stretch" />
+        </StackPanel>
+
+        <StackPanel Margin="{StaticResource MarginBelow2}">
+          <TextBlock Classes="label" Text="Theme" />
+          <ToggleSwitch IsChecked="{Binding IsDarkTheme, Mode=TwoWay}" OnContent="Dark" OffContent="Light" />
+          <TextBlock Classes="muted" Text="{Binding ThemeHint}" Margin="{StaticResource MarginAbove1}" />
+        </StackPanel>
+
+        <Grid ColumnDefinitions="*,Auto" Margin="{StaticResource MarginAbove1}">
+          <TextBlock Grid.Column="0" Classes="muted" Text="{Binding StatusMessage}" VerticalAlignment="Center" />
+          <Button Grid.Column="1" Classes="accent" Content="Save" Command="{Binding SaveCommand}" MinWidth="96" />
+        </Grid>
+
+      </StackPanel>
+    </Border>
+
+  </DockPanel>
+</UserControl>

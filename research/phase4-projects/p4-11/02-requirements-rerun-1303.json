@@ -1,0 +1,99 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "create"
+  ],
+  "platform": [
+    "tv"
+  ],
+  "input": [
+    "remote"
+  ],
+  "product": [
+    "media"
+  ],
+  "screen": [
+    "detail"
+  ],
+  "screen_subtype": [],
+  "stack": [
+    "compose",
+    "compose-tv"
+  ],
+  "density": "medium",
+  "components": [],
+  "environment": [
+    "large-display",
+    "shared-device"
+  ],
+  "jobs": [
+    "details",
+    "resume",
+    "watchlist"
+  ],
+  "problems": [],
+  "risk": "low",
+  "primary_jobs": [
+    "details",
+    "resume",
+    "watchlist",
+    "create detail"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "preserve_color": true,
+    "preserve_typography": true,
+    "performance_sensitive": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "screen_reader": true,
+    "focus": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "change_budget": "moderate",
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "mode_evidence": [
+    "create: default (no mode cue)"
+  ],
+  "project_context": {
+    "navigation": "tv-rails (KNOWN)",
+    "theme": "dark-first (INFERRED)",
+    "surfaces": "bordered-flat (INFERRED)",
+    "radius": "medium (INFERRED)",
+    "components": "compose, compose-tv-material, media3, images:coil (KNOWN)"
+  },
+  "known": [
+    "platform=tv",
+    "input=remote",
+    "product=media",
+    "stack=compose",
+    "stack=compose-tv",
+    "screen=detail",
+    "job=resume",
+    "job=watchlist",
+    "job=details",
+    "project_navigation=tv-rails",
+    "project_components=compose, compose-tv-material, media3, images:coil"
+  ],
+  "inferred": [
+    "density=medium",
+    "mode=create",
+    "environment=shared-device",
+    "environment=large-display",
+    "project_theme=dark-first",
+    "project_surfaces=bordered-flat",
+    "project_radius=medium"
+  ],
+  "missing": [
+    "brand: no brand assets, guideline, or character description available"
+  ],
+  "status": "CONFIDENT"
+}

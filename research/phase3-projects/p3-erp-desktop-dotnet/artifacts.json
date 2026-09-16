@@ -1,0 +1,71 @@
+{
+  "case": "p3-erp-desktop-dotnet",
+  "platform": "desktop-windows",
+  "stack": "wpf (.NET 10)",
+  "rendered": true,
+  "render_mode": "native",
+  "render_notes": "Native WPF window rendered with RenderTargetBitmap (client area, 96 dpi) from an in-process --capture harness; interaction test driven with real OS keyboard input (keybd_event). No HTML twin.",
+  "screenshots": [
+    "render/first-ready-1440x900.png",
+    "render/first-ready-1100x700.png",
+    "render/first-ready-820x600.png",
+    "render/first-loading-1440x900.png",
+    "render/first-empty-1440x900.png",
+    "render/first-error-1440x900.png",
+    "render/first-focus-cell.png",
+    "render/first-editing.png",
+    "render/first-validation.png",
+    "render/first-selection.png",
+    "render/first-scrolled.png",
+    "render/final-ready-1440x900.png",
+    "render/final-ready-1100x700.png",
+    "render/final-ready-820x600.png",
+    "render/final-loading-1440x900.png",
+    "render/final-empty-1440x900.png",
+    "render/final-error-1440x900.png",
+    "render/final-focus-cell.png",
+    "render/final-editing.png",
+    "render/final-validation.png",
+    "render/final-selection.png",
+    "render/final-scrolled.png"
+  ],
+  "first_render_defects": 10,
+  "final_defects": 6,
+  "iterations": 4,
+  "guidance_relevant": 4,
+  "guidance_partial": 1,
+  "guidance_offtarget": 1,
+  "knowledge_gaps": [
+    "column priority / progressive column hiding for narrow desktop windows (which columns hide first, how to notify and restore)",
+    "desktop status bar pattern (message, counts, error/unsaved indicators, totals; what drops first when narrow)",
+    "data-grid empty/loading/error state specifics (keep real header, state in body, Retry as default button)",
+    "WPF DataGrid pitfalls absent from stacks/wpf.md: IsSynchronizedWithCurrentItem with ICollectionView collapses multi-selection; Tab out of an editing cell keeps edit mode on the next cell (ComboBox columns swallow arrows); Validation.HasError lives on the column element, not the DataGridCell",
+    "numeric editing caret behaviour (F2 on formatted values)"
+  ],
+  "ranking_misses": [
+    "comp-data-entry-grid (score 0.694, most specific record for keyboard batch entry) pruned as redundant with comp-data-table",
+    "data-tables-numeric present in the base but not selected although the numeric rule is referenced by comp-data-table",
+    "nav-menu-bar-desktop not chosen; direction picked nav-command-palette as primary navigation for a WPF ERP screen",
+    "dir-windows-native-tool omitted as redundant with dir-operational-workbench",
+    "chart-small-multiples selected as core with lexical 0.076 although no chart was requested"
+  ],
+  "requirements_errors": [
+    "status=AMBIGUOUS (exit 4) although activation shows ui_score 1.0 and non_ui_score 0; single UI term 'grid' appears to trigger ambiguity",
+    "screen=[]: 'purchase order lines grid' not mapped to a data-entry grid/table screen",
+    "components=[]: 'grid' counted as a UI term but not recorded as a component",
+    "jobs=[]: 'clerks enter 200 lines a day with the keyboard' not mapped to batch data entry",
+    "risk=low for financial keyboard data entry (matching record carries a11y/perf risk high)"
+  ],
+  "interaction_test": "05-interaction.json: 18/18 pass on final build (2 failures on first render: edit-mode trap after Tab, Shift+Down selection not extending)",
+  "contrast_checks": "tokens.py contrast: 14 pairs checked; 3 failing pairs fixed (Border.Strong 1.85→3.59:1, Feedback.Warning 4.26→5.77:1, placeholder 2.55→5.98:1)",
+  "tags": [
+    "requirements-miss",
+    "vocabulary-gap",
+    "ranking-miss",
+    "knowledge-gap",
+    "direction-invariant",
+    "render-defect-fixed",
+    "render-defect-remaining",
+    "skill-helped"
+  ]
+}

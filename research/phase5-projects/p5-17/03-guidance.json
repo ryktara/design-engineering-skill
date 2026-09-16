@@ -1,0 +1,436 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "The dispatch job form lets you lose an unsaved job by clicking another one.",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "desktop"
+    ],
+    "input": [
+      "keyboard",
+      "pointer"
+    ],
+    "product": [],
+    "screen": [
+      "form"
+    ],
+    "screen_subtype": [],
+    "stack": [
+      "avalonia"
+    ],
+    "density": null,
+    "components": [
+      "form"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "audit form"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_INTERACTION",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "interaction"
+      ],
+      "change_scope": "unknown",
+      "utterance": "observation",
+      "preserve": []
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "audit: interaction defect on existing UI",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": "menu-bar (KNOWN)",
+      "theme": "light-first (INFERRED)",
+      "spacing": "4 (INFERRED)",
+      "typography": "geometric-sans (KNOWN)",
+      "components": "avalonia (KNOWN)"
+    },
+    "known": [
+      "platform=desktop",
+      "stack=avalonia",
+      "screen=form",
+      "project_navigation=menu-bar",
+      "project_typography=geometric-sans",
+      "project_components=avalonia"
+    ],
+    "inferred": [
+      "input=pointer",
+      "input=keyboard",
+      "mode=audit",
+      "mode=refactor",
+      "project_theme=light-first",
+      "project_spacing=4"
+    ],
+    "missing": [],
+    "status": "CONFIDENT"
+  },
+  "scope": {
+    "domain": "UI_INTERACTION",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "accessibility",
+        "reason": "audit mode"
+      },
+      {
+        "concern": "interaction",
+        "reason": "audit mode: operability is part of the review"
+      },
+      {
+        "concern": "component",
+        "reason": "the reviewed component/screen"
+      },
+      {
+        "concern": "feedback",
+        "reason": "form validation and submission feedback"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "states",
+        "reason": "audits check empty/loading/error handling"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "audits name generic-design defects"
+      }
+    ],
+    "optional": [
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "desktop keyboard-first"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "desktop focus"
+      },
+      {
+        "concept": "feedback.validation_errors",
+        "reason": "form"
+      }
+    ],
+    "recommended_concepts": [
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "state.loading_empty_error",
+      "state.unsaved_changes_guard",
+      "state.saving_conflict",
+      "process.reuse_first",
+      "interaction.shortcuts",
+      "desktop.persist_workspace",
+      "form.autofill_attributes",
+      "a11y.live_status"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "comp-form",
+      "kind": "component",
+      "category": "form",
+      "title": "Form",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "component",
+        "feedback",
+        "states",
+        "structure"
+      ],
+      "concepts": [
+        "feedback.validation_errors",
+        "touch.ime_keyboard",
+        "form.autofill_attributes",
+        "state.unsaved_changes_guard"
+      ],
+      "covers": [
+        "inline validation messages and error recovery",
+        "on-screen keyboard (IME) aware layout",
+        "autofill / input-type attributes per field",
+        "unsaved-changes guard"
+      ],
+      "score": 0.552,
+      "guidance": "Labels above, help text below, required marked in text, field widths sized to content, grouped by section with headings, one column, inline validation on blur, error summary on submit with links to fields, primary action last (or sticky), unsaved-changes guard, autosave with status for long forms, autofill attributes. TV: one field per row, DOWN moves to next, system keyboard, minimal fields.",
+      "use_when": "Any data entry: settings, checkout, applications, record editing.",
+      "avoid_when": "Batch entry of many similar rows (use a data-entry grid); single toggles (inline).",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "cta-single-primary",
+      "kind": "pattern",
+      "category": "cta",
+      "title": "One primary action per screen",
+      "facets": [
+        "layout"
+      ],
+      "concerns": [
+        "interaction",
+        "structure"
+      ],
+      "concepts": [
+        "layout.one_primary_action"
+      ],
+      "covers": [
+        "one primary action per view"
+      ],
+      "score": 0.48,
+      "guidance": "Exactly one filled button per view, secondaries as outlined/text, destructive actions separated and confirmed, button label is a verb phrase naming the outcome ('Save changes'), disabled only with an explanation nearby.",
+      "use_when": "Task screens (forms, checkout, onboarding, settings) where one action completes the job; the primary is filled, secondaries are quiet.",
+      "avoid_when": "Workbenches with many equal commands (toolbar pattern) or browse screens where selection is the action (focus-selects).",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "incompatible": [
+        "cta-toolbar-commands",
+        "cta-focus-selects"
+      ],
+      "role": "core",
+      "selected_for": "highest-scoring pattern with lexical evidence"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "desktop-keyboard-first",
+      "kind": "rule",
+      "category": "input",
+      "title": "Desktop: keyboard is a first-class input",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.keyboard_navigation",
+        "interaction.shortcuts",
+        "interaction.focus_visible"
+      ],
+      "covers": [
+        "keyboard navigation and focus order",
+        "keyboard shortcuts / accelerators",
+        "visible focus"
+      ],
+      "score": 0.342,
+      "guidance": "Document shortcuts in menus and tooltips; F2 edits, Delete deletes with undo, Ctrl+F finds, F6 cycles panes; grids use arrow keys and Ctrl/Shift selection; every dialog has a default and cancel button; access keys shown on Alt (Windows).",
+      "use_when": "Every desktop screen: shortcuts for frequent commands, access keys for menus, Tab/arrow semantics in lists, trees, grids, and toolbars, Enter/Escape in dialogs.",
+      "avoid_when": "Never assign shortcuts that collide with platform or assistive-tech shortcuts; never make Tab stop on every cell of a grid.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "role": "guardrail",
+      "selected_for": "required coverage: visible focus, keyboard navigation and focus order"
+    },
+    {
+      "id": "a11y-hover-not-required",
+      "kind": "rule",
+      "category": "input",
+      "title": "Hover reveals need a non-hover path",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.hover_independence"
+      ],
+      "covers": [
+        "no hover dependence"
+      ],
+      "score": 0.342,
+      "guidance": "Hover-revealed content must also appear on focus and be reachable by touch (persistent affordance, long-press, or an explicit menu). Tooltips: dismissible, hoverable, persistent (WCAG 1.4.13). Never put essential actions only in hover.",
+      "use_when": "Row actions that appear on hover, tooltips, hover cards, mega menus.",
+      "avoid_when": "Never rely on hover alone; touch and keyboard users never hover.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "role": "guardrail",
+      "selected_for": "required coverage: accessibility"
+    },
+    {
+      "id": "a11y-forms-errors",
+      "kind": "rule",
+      "category": "forms",
+      "title": "Form labels, errors, and recovery",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "accessibility",
+        "feedback"
+      ],
+      "concepts": [
+        "feedback.validation_errors"
+      ],
+      "covers": [
+        "inline validation messages and error recovery"
+      ],
+      "score": 0.374,
+      "guidance": "Label above or beside, never placeholder-only; error message next to the field, programmatically associated (aria-describedby / accessibilityHint / AutomationProperties.HelpText), with what is wrong and how to fix; move focus to the first error or the error summary on submit; keep entered data; autocomplete attributes for personal data; allow paste and password managers.",
+      "use_when": "Every form: visible labels, required markers in text, inline errors linked to fields, error summary for long forms, no data loss on error.",
+      "avoid_when": "Never validate on every keystroke for fields the user has not finished; validate on blur and on submit.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "role": "guardrail",
+      "selected_for": "specialist rule for inline validation messages and error recovery (only covered by a composite record)"
+    },
+    {
+      "id": "desktop-status-bar-and-error-navigation",
+      "kind": "rule",
+      "category": "feedback",
+      "title": "Desktop status bar as the persistent feedback surface, with next-error navigation",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "feedback",
+        "states",
+        "structure"
+      ],
+      "concepts": [
+        "feedback.validation_errors",
+        "a11y.live_status",
+        "a11y.contrast",
+        "interaction.shortcuts",
+        "desktop.persist_workspace"
+      ],
+      "covers": [
+        "inline validation messages and error recovery",
+        "live region status announcements",
+        "high contrast",
+        "keyboard shortcuts / accelerators",
+        "persisted workspace and selection"
+      ],
+      "score": 0.345,
+      "guidance": "One status bar at the bottom of the window with fixed regions (selection summary, sync/save state with timestamp, error count as a link, active filter) separated by real separators, not spaces; validation for the current row/cell is echoed there in words ('Line 50: Quantity must be greater than 0') and the error count opens a list; F8 / Shift+F8 (or the project's convention) walk to the next and previous error and move focus into the cell; error styling never paints over the value text (tint the cell background and keep ≥ 4.5:1 for the text); announce status changes with LiveSetting/UIA so screen readers hear them; the bar keeps its height at every window width.",
+      "use_when": "Data-entry and workbench windows where validation, selection and sync state must be visible without dialogs or toasts.",
+      "avoid_when": "Consumer apps without a persistent window chrome; mobile.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "implementation": {
+        "avalonia": "DockPanel bottom StatusBar; DataValidationErrors template; KeyBindings for F8/Shift+F8."
+      },
+      "role": "guardrail",
+      "selected_for": "recommended coverage: high contrast, live region status announcements, persisted workspace and selection"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "feedback"
+    ],
+    "covered_required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "feedback"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "states",
+      "anti-pattern"
+    ],
+    "covered_recommended_concerns": [
+      "states"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "interaction.keyboard_navigation",
+      "interaction.focus_visible",
+      "feedback.validation_errors"
+    ],
+    "covered_required_concepts": [
+      "interaction.keyboard_navigation",
+      "interaction.focus_visible",
+      "feedback.validation_errors"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.6,
+    "bundle_size": 6,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 2,
+    "guardrail_size": 4,
+    "bundle_tokens": 1083,
+    "coverage_per_1k_tokens": 2.77,
+    "mean_purity": 0.96,
+    "contaminated": [],
+    "category_diversity": 0.83,
+    "duplicate_pressure": 0.33,
+    "facet_coverage": 0.6,
+    "redundancy": 0.6
+  },
+  "token_coverage": 0.78
+}

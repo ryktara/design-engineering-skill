@@ -1,0 +1,230 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "responsive",
+    "audit",
+    "refactor"
+  ],
+  "platform": [
+    "mobile"
+  ],
+  "input": [
+    "touch"
+  ],
+  "product": [
+    "ecommerce"
+  ],
+  "screen": [
+    "checkout"
+  ],
+  "screen_subtype": [],
+  "stack": [
+    "html-css"
+  ],
+  "density": null,
+  "components": [
+    "button"
+  ],
+  "environment": [],
+  "jobs": [],
+  "problems": [],
+  "risk": "medium",
+  "primary_jobs": [
+    "responsive checkout"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "screen_reader": true,
+    "touch_targets": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "change_budget": "moderate",
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "intent": {
+    "artifact_state": "existing",
+    "operations": [
+      "diagnose",
+      "modify"
+    ],
+    "problem_domain": [
+      "layout",
+      "interaction",
+      "responsive"
+    ],
+    "change_scope": "local",
+    "utterance": "observation",
+    "existing": true,
+    "problem": true,
+    "facet": "visual",
+    "diagnose_only": false,
+    "creation": false,
+    "redesign": false,
+    "responsive_cues": true,
+    "preserve": [],
+    "scope": "low"
+  },
+  "platform_evidence": [
+    {
+      "platform": "mobile",
+      "strength": "DIRECT",
+      "evidence": [
+        "phones"
+      ]
+    }
+  ],
+  "mode_evidence": [
+    "responsive: explicit: on phones",
+    "audit: layout/structure defect on existing UI",
+    "refactor: structural fix follows"
+  ],
+  "project_context": {
+    "navigation": {
+      "value": "top-bar",
+      "status": "KNOWN",
+      "evidence": [
+        "top-bar: 4 matches in checkout.html, index.html, product.html (shell/layout file)"
+      ]
+    },
+    "theme": {
+      "value": "light-first",
+      "status": "INFERRED",
+      "evidence": [
+        "hex palette: 6 near-white, 2 near-black"
+      ]
+    },
+    "surfaces": {
+      "value": "elevated",
+      "status": "INFERRED",
+      "evidence": [
+        "weak signal: shadow 1, border 1"
+      ]
+    },
+    "radius": {
+      "value": "pill",
+      "status": "INFERRED",
+      "evidence": [
+        "most common radius 999 (5×); others [5.0, 4.0]"
+      ]
+    },
+    "spacing": {
+      "value": "irregular",
+      "status": "UNKNOWN",
+      "evidence": [
+        "most used spacing values [4, 14, 2]"
+      ]
+    },
+    "typography": {
+      "value": "geometric-sans",
+      "status": "INFERRED",
+      "evidence": [
+        "font family Inter (1 refs)",
+        "weights 600, 500, 400",
+        "encoded type scale in 1 files"
+      ]
+    },
+    "components": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": []
+    }
+  },
+  "known": [
+    "platform=mobile (request: phones)",
+    "product=ecommerce (request: checkout)",
+    "stack=html-css (project inspection)",
+    "screen=checkout (request: checkout)",
+    "mode=responsive (explicit: on phones)",
+    "project_navigation=top-bar (repository: top-bar: 4 matches in checkout.html, index.html, product.html (shell/layout file))"
+  ],
+  "inferred": [
+    "input=touch (implied by platform mobile)",
+    "mode=audit (layout/structure defect on existing UI)",
+    "mode=refactor (structural fix follows)",
+    "project_theme=light-first (repository: hex palette: 6 near-white, 2 near-black)",
+    "project_surfaces=elevated (repository: weak signal: shadow 1, border 1)",
+    "project_radius=pill (repository: most common radius 999 (5×); others [5.0, 4.0])",
+    "project_typography=geometric-sans (repository: font family Inter (1 refs); weights 600, 500, 400)"
+  ],
+  "missing": [],
+  "conflicts": [
+    {
+      "field": "platform",
+      "request": [
+        "mobile"
+      ],
+      "project": "web",
+      "resolution": "request kept; repository platform recorded as context"
+    }
+  ],
+  "status": "AMBIGUOUS",
+  "source": {
+    "request": [
+      "checkout",
+      "on phones",
+      "phones"
+    ],
+    "project": [
+      "*.html without a framework manifest: plain HTML/CSS site"
+    ]
+  },
+  "activation": {
+    "decision": "activate",
+    "ui_score": 4.0,
+    "non_ui_score": 0,
+    "ui_terms": [
+      "button"
+    ],
+    "non_ui_terms": []
+  },
+  "intent_evidence": {
+    "existing": [
+      "present-tense observation"
+    ],
+    "new": [],
+    "defect": [
+      "observed behaviour"
+    ],
+    "operations": {},
+    "domains": {
+      "interaction": [
+        "button"
+      ],
+      "layout": [
+        "below the fold",
+        "pushes"
+      ],
+      "responsive": [
+        "on phones"
+      ]
+    },
+    "no_change": [],
+    "scope": {
+      "flow": [
+        "checkout"
+      ],
+      "local": [
+        "button"
+      ]
+    },
+    "question": false
+  },
+  "scope_evidence": {
+    "ui": [
+      "button",
+      "checkout"
+    ],
+    "ux_symptoms": [],
+    "technical": {},
+    "non_visual": []
+  }
+}

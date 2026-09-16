@@ -1,0 +1,144 @@
+{
+  "brand": "Inspectors in gloves keep missing the small checkbox on each defect row.",
+  "fingerprint": {
+    "card_geometry": "list-row",
+    "color_strategy": "neutral-plus-accent"
+  },
+  "direction": {
+    "navigation": null,
+    "layout": null,
+    "density": null,
+    "surface": null,
+    "cards": "card-list-row",
+    "typography": null,
+    "color": "color-neutral-accent",
+    "motion": null,
+    "focus": null,
+    "cta": null,
+    "imagery": null,
+    "icon": null,
+    "metadata": null
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "mobile"
+    ],
+    "input": [
+      "touch"
+    ],
+    "product": [
+      "iot"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "flutter"
+    ],
+    "density": null,
+    "components": [],
+    "environment": [
+      "gloves",
+      "low-bandwidth",
+      "outdoor"
+    ],
+    "jobs": [],
+    "problems": [
+      "interaction"
+    ],
+    "risk": "low",
+    "primary_jobs": [
+      "audit"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "interaction"
+      ],
+      "change_scope": "unknown",
+      "utterance": "observation",
+      "preserve": []
+    },
+    "platform_evidence": [
+      {
+        "platform": "mobile",
+        "strength": "WEAK_INFERENCE",
+        "evidence": [
+          "inspectors"
+        ]
+      },
+      {
+        "platform": "kiosk",
+        "strength": "WEAK_INFERENCE",
+        "evidence": [
+          "gloves"
+        ]
+      }
+    ],
+    "mode_evidence": [
+      "audit: interaction defect on existing UI",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": "top-bar (KNOWN)",
+      "theme": "dual-theme (KNOWN)",
+      "radius": "small (INFERRED)",
+      "typography": "custom (KNOWN)",
+      "components": "go_router, riverpod (KNOWN)"
+    },
+    "known": [
+      "platform=mobile",
+      "input=touch",
+      "product=iot",
+      "stack=flutter",
+      "environment=outdoor",
+      "environment=gloves",
+      "environment=low-bandwidth",
+      "project_navigation=top-bar",
+      "project_theme=dual-theme",
+      "project_typography=custom",
+      "project_components=go_router, riverpod"
+    ],
+    "inferred": [
+      "mode=audit",
+      "mode=refactor",
+      "project_radius=small"
+    ],
+    "missing": [],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080, height=1920, initial-scale=1, user-scalable=no">
+  <title>MetroLink Ticket Kiosk</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/kiosk.css">
+</head>
+<body>
+  <div id="app" class="kiosk">
+
+    <header class="header">
+      <div class="header__brand">
+        <img src="assets/logo.svg" alt="" class="header__logo" width="56" height="56">
+        <span class="header__title">MetroLink</span>
+      </div>
+      <button type="button" class="btn btn--ghost header__reset" id="btn-start-over">Start over</button>
+    </header>
+
+    <main class="stage" id="stage">
+
+      <!-- Attract -->
+      <section class="screen screen--attract is-active" data-screen="attract">
+        <div class="attract__hero">
+          <img src="assets/logo.svg" alt="" class="attract__logo" width="240" height="240">
+          <h1 class="attract__title" data-i18n="attract.title">Touch to buy a ticket</h1>
+          <p class="attract__sub" data-i18n="attract.sub">Single, day pass, weekly and concession fares</p>
+        </div>
+        <button type="button" class="btn btn--primary btn--xl" id="btn-begin" data-i18n="attract.cta">Start</button>
+      </section>
+
+      <!-- Choose ticket -->
+      <section class="screen" data-screen="choose-ticket">
+        <h2 class="screen__title" data-i18n="choose.title">Choose your ticket</h2>
+        <div class="ticket-grid" id="ticket-grid"></div>
+        <div class="zone-row">
+          <span class="zone-row__label" data-i18n="choose.zones">Zones</span>
+          <div class="zone-row__opts" id="zone-opts"></div>
+        </div>
+        <div class="screen__actions">
+          <button type="button" class="btn btn--primary btn--lg" id="btn-choose-next" disabled data-i18n="common.next">Next</button>
+        </div>
+      </section>
+
+      <!-- Quantity -->
+      <section class="screen" data-screen="quantity">
+        <h2 class="screen__title" data-i18n="qty.title">How many tickets?</h2>
+        <p class="screen__hint" id="qty-summary"></p>
+        <div class="qty">
+          <button type="button" class="qty__btn" id="qty-minus" aria-label="One ticket fewer"><span class="qty__glyph" aria-hidden="true">−</span></button>
+          <span class="qty__value" id="qty-value" role="status" aria-live="polite" aria-atomic="true">1</span>
+          <button type="button" class="qty__btn" id="qty-plus" aria-label="One ticket more"><span class="qty__glyph" aria-hidden="true">+</span></button>
+        </div>
+        <p class="qty__total">Total <strong id="qty-total">£0.00</strong></p>
+        <p class="qty__limit" id="qty-limit" aria-live="polite"></p>
+        <div class="screen__actions">
+          <button type="button" class="btn btn--secondary btn--lg" id="btn-qty-back" data-i18n="common.back">Back</button>
+          <button type="button" class="btn btn--primary btn--lg" id="btn-qty-next" data-i18n="common.next">Next</button>
+        </div>
+      </section>
+
+      <!-- Review -->
+      <section class="screen" data-screen="review">
+        <h2 class="screen__title" data-i18n="review.title">Review your order</h2>
+        <div class="review-card">
+          <div class="review-card__row"><span data-i18n="review.ticket">Ticket</span><span id="rv-ticket"></span></div>
+          <div class="review-card__row"><span data-i18n="review.zones">Zones</span><span id="rv-zones"></span></div>
+          <div class="review-card__row"><span data-i18n="review.qty">Quantity</span><span id="rv-qty"></span></div>
+          <div class="review-card__row review-card__row--price"><span data-i18n="review.total">Total</span><span class="price" id="rv-total"></span></div>
+        </div>
+        <div class="promo">
+          <label for="promo-code" class="promo__label" data-i18n="review.promo">Promo code</label>
+          <div class="promo__row">
+            <input type="text" id="promo-code" class="promo__input" autocomplete="off" placeholder="e.g. METRO10">
+            <button type="button" class="btn btn--secondary" id="btn-promo-apply" data-i18n="review.apply">Apply</button>
+          </div>
+          <p class="promo__msg" id="promo-msg" aria-live="polite"></p>
+        </div>
+        <div class="screen__actions">
+          <button type="button" class="btn btn--secondary btn--lg" id="btn-review-back" data-i18n="common.back">Back</button>
+          <button type="button" class="btn btn--primary btn--lg" id="btn-review-pay" data-i18n="review.pay">Pay</button>
+        </div>
+      </section>
+
+      <!-- Pay -->
+      <section class="screen" data-screen="pay">
+        <h2 class="screen__title" data-i18n="pay.title">Pay by card</h2>
+        <div class="pay">
+          <div class="pay__terminal" id="pay-terminal">
+            <div class="pay__card-icon"></div>
+          </div>
+          <p class="pay__status" id="pay-status" aria-live="polite" data-i18n="pay.waiting">Tap or insert your card on the reader below</p>
+          <p class="pay__amount">Amount due <strong id="pay-amount"></strong></p>
+        </div>
+        <div class="screen__actions screen__actions--pay">
+          <button type="button" class="btn btn--pay" id="btn-pay-cancel" data-i18n="common.cancel">Cancel</button>
+          <button type="button" class="btn btn--pay" id="btn-pay-confirm" data-i18n="pay.confirm">Pay</button>
+        </div>
+      </section>
+
+      <!-- Printing -->
+      <section class="screen screen--center" data-screen="printing">
+        <div class="spinner" role="status"></div>
+      </section>
+
+      <!-- Done -->
+      <section class="screen screen--center" data-screen="done">
+        <div class="done__check">✓</div>
+        <h2 class="screen__title" data-i18n="done.title">Thank you</h2>
+        <p class="screen__hint" data-i18n="done.body">Please take your tickets and receipt from the slot below.</p>
+        <p class="done__ref">Ref <span id="done-ref"></span></p>
+      </section>
+
+    </main>
+
+    <!-- Idle warning: shown over the current screen before the session is cleared. -->
+    <div class="idle" id="idle-warn" role="alertdialog" aria-modal="true" aria-labelledby="idle-title" aria-describedby="idle-body" hidden>
+      <div class="idle__panel">
+        <h2 class="idle__title" id="idle-title">Are you still there?</h2>
+        <p class="idle__body" id="idle-body">
+          This kiosk clears your ticket in <strong class="idle__count" id="idle-count">10</strong> seconds so the next
+          person starts fresh.
+        </p>
+        <p class="idle__status" id="idle-status" role="status" aria-live="assertive"></p>
+        <div class="idle__actions">
+          <button type="button" class="btn btn--secondary btn--lg" id="btn-idle-reset">Start over</button>
+          <button type="button" class="btn btn--primary btn--lg" id="btn-idle-continue">I'm still here</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <span class="footer__lang">EN</span>
+      <span class="footer__help" data-i18n="footer.help">Need help? Press the call button on the right of the kiosk.</span>
+      <span class="footer__kiosk">Kiosk 04 · Central Station</span>
+    </footer>
+  </div>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "audit",
+    "refactor"
+  ],
+  "platform": [
+    "tv"
+  ],
+  "input": [
+    "remote"
+  ],
+  "product": [],
+  "screen": [
+    "detail"
+  ],
+  "screen_subtype": [],
+  "stack": [
+    "compose",
+    "compose-tv"
+  ],
+  "density": null,
+  "components": [],
+  "environment": [
+    "large-display",
+    "shared-device"
+  ],
+  "jobs": [],
+  "problems": [],
+  "risk": "low",
+  "primary_jobs": [
+    "audit detail"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "focus_handling_present": true,
+    "performance_sensitive": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "keyboard": true,
+    "screen_reader": true,
+    "focus": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "change_budget": "moderate",
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "intent": {
+    "artifact_state": "existing",
+    "operations": [
+      "diagnose",
+      "modify"
+    ],
+    "problem_domain": [],
+    "change_scope": "screen",
+    "utterance": "observation",
+    "existing": true,
+    "problem": true,
+    "facet": "general",
+    "diagnose_only": false,
+    "creation": false,
+    "redesign": false,
+    "responsive_cues": false,
+    "preserve": [],
+    "scope": "moderate"
+  },
+  "platform_evidence": [],
+  "mode_evidence": [
+    "audit: problem statement on existing UI",
+    "refactor: fix follows the diagnosis"
+  ],
+  "project_context": {
+    "navigation": {
+      "value": "tv-rails",
+      "status": "KNOWN",
+      "evidence": [
+        "tv-rails: 99 matches in AppState.kt, Cards.kt, EventDetailsScreen.kt (shell/layout file)"
+      ]
+    },
+    "theme": {
+      "value": "dark-first",
+      "status": "KNOWN",
+      "evidence": [
+        "dark theme configuration signals: 1",
+        "root/canvas backgrounds: 0 light, 1 dark",
+        "hex palette: 2 near-white, 4 near-black"
+      ]
+    },
+    "surfaces": {
+      "value": "bordered-flat",
+      "status": "INFERRED",
+      "evidence": [
+        "borders in 8 files, shadow/elevation in 1"
+      ]
+    },
+    "radius": {
+      "value": "pill",
+      "status": "INFERRED",
+      "evidence": [
+        "most common radius 50 (6×); others [8.0, 4.0]"
+      ]
+    },
+    "spacing": {
+      "value": 8,
+      "status": "INFERRED",
+      "evidence": [
+        "most used spacing values [16, 10, 8]"
+      ]
+    },
+    "typography": {
+      "value": "custom",
+      "status": "KNOWN",
+      "evidence": [
+        "font family System (5 refs)",
+        "weights bold, semibold, normal, medium",
+        "encoded type scale in 1 files"
+      ]
+    },
+    "components": {
+      "value": "compose, compose-tv-material, media3, images:coil",
+      "status": "KNOWN",
+      "evidence": [
+        "compose",
+        "compose-tv-material",
+        "media3"
+      ]
+    }
+  },
+  "known": [
+    "platform=tv (project inspection)",
+    "input=remote (project inspection: DPAD/remote handling in source)",
+    "stack=compose (project inspection)",
+    "stack=compose-tv (project inspection)",
+    "screen=detail (request: detail page, detail)",
+    "project_navigation=tv-rails (repository: tv-rails: 99 matches in AppState.kt, Cards.kt, EventDetailsScreen.kt (shell/layout file))",
+    "project_theme=dark-first (repository: dark theme configuration signals: 1; root/canvas backgrounds: 0 light, 1 dark)",
+    "project_typography=custom (repository: font family System (5 refs); weights bold, semibold, normal, medium)",
+    "project_components=compose, compose-tv-material, media3, images:coil (repository: compose; compose-tv-material)"
+  ],
+  "inferred": [
+    "mode=audit (problem statement on existing UI)",
+    "mode=refactor (fix follows the diagnosis)",
+    "environment=shared-device (a TV is normally a shared household device)",
+    "environment=large-display (TV platform)",
+    "project_surfaces=bordered-flat (repository: borders in 8 files, shadow/elevation in 1)",
+    "project_radius=pill (repository: most common radius 50 (6×); others [8.0, 4.0])",
+    "project_spacing=8 (repository: most used spacing values [16, 10, 8])"
+  ],
+  "missing": [],
+  "status": "CONFIDENT",
+  "source": {
+    "request": [
+      "detail page, detail"
+    ],
+    "project": [
+      "app\\build.gradle.kts: androidx.compose",
+      "app\\build.gradle.kts: androidx.tv:tv-material",
+      "app\\build.gradle.kts: androidx.media3",
+      "app\\build.gradle.kts: coil",
+      "app\\src\\main\\AndroidManifest.xml: leanback launcher (Android TV)",
+      "touchscreen not required in manifest (TV/set-top)",
+      "DPAD / remote key handling found in source",
+      "Compose dependencies imply mobile but the only launcher is leanback: TV-only app"
+    ]
+  },
+  "activation": {
+    "decision": "ambiguous",
+    "ui_score": 1.0,
+    "non_ui_score": 1,
+    "ui_terms": [
+      "page"
+    ],
+    "non_ui_terms": [
+      "throws"
+    ]
+  },
+  "intent_evidence": {
+    "existing": [
+      "the app",
+      "the detail page"
+    ],
+    "new": [],
+    "defect": [
+      "observed behaviour"
+    ],
+    "operations": {},
+    "domains": {},
+    "no_change": [],
+    "scope": {
+      "screen": [
+        "page",
+        "detail"
+      ]
+    },
+    "question": false
+  },
+  "scope_evidence": {
+    "ui": [
+      "page",
+      "the app"
+    ],
+    "ux_symptoms": [],
+    "technical": {},
+    "non_visual": []
+  }
+}

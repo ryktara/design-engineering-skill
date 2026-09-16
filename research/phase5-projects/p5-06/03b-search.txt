@@ -1,0 +1,78 @@
+## design-engineering search: The waiting room board: nothing tells the front desk how long each patient has been sitting there.
+status=ABSTAIN modes=['audit', 'refactor'] platforms={} inputs={} products={'healthcare': 'KNOWN'} density=None stacks=[] screens=[] negatives=[]
+facets required=['accessibility', 'interaction', 'component', 'anti-pattern'] unmet=[] diversity=0.83
+MISSING: platform: audit targets differ by platform; not stated
+
+### Privacy on shared and public screens  `shared-device-privacy`  [rule/privacy; accessibility/platform] score 0.408 · heuristic
+Assume onlookers: mask sensitive values by default with an explicit reveal (balances, medication, addresses), gate personal profiles and purchases behind a PIN on shared TVs, keep notifications and previews generic on shared screens, clear the session and screen on idle or sign-out (kiosks, waiting rooms), and never show one user's data while another profile is active. Announce masked values to assistive tech as masked, not as the value.
+- use when: TVs in a household, waiting-room tablets, kiosks, wall displays, any screen other people can see; personal data, balances, health details, viewing history, messages.
+- avoid when: Single-user personal devices with a lock screen already protecting the data.
+- why: lexical 0.365, structural 0.46 (mode audit, product healthcare)
+
+### Users always know where they are and how to go back  `nav-orientation-and-back`  [rule/navigation; navigation] score 0.305 · heuristic
+Current location marked (aria-current, selected tab, breadcrumb, page title); URL/route reflects state on web and deep-linkable screens; back returns to the previous screen with its scroll and selection; titles match the navigation label that led there.
+- use when: Every navigation model; deep links; multi-step flows; tabs that hold stacks.
+- avoid when: Never break the browser/system back; never use a single URL for many states on the web.
+- why: lexical 0.145, structural 0.5 (mode audit)
+
+### Mobile: gestures are shortcuts, not the only way  `mobile-gestures-discoverable`  [rule/input; interaction/platform] score 0.303 · accessibility-requirement
+Every gesture action has a visible equivalent (overflow menu, button); swipe actions reveal labelled buttons; avoid horizontal swipes inside horizontally scrolling content; respect the platform back gesture; long press shows a menu, never a hidden critical action.
+- use when: Swipe-to-delete, swipe between tabs, pull to refresh, long press menus, pinch zoom.
+- avoid when: Never make a gesture the only path to an action; never fight system gestures (back swipe edge, home).
+- why: lexical 0.223, structural 0.4 (mode audit)
+
+### Wizard / stepper  `comp-wizard-stepper`  [component/wizard; component] score 0.288 · heuristic
+Step indicator with names and progress (list semantics, aria-current=step), Back never loses data, one primary action per step, review step before submit, resume support, each step a real page/route on web; TV: full-screen steps with default focus on the primary action.
+- use when: Ordered multi-step flows (checkout, applications, setup).
+- avoid when: Independent sections (tabs); flows that fit one screen.
+- why: lexical 0.114, structural 0.5 (mode audit, product healthcare)
+
+### Linear wizard / stepper  `nav-wizard`  [pattern/navigation; navigation] score 0.284 · heuristic
+Show step count and current step, allow going back without data loss, put one primary action per step, validate per step not at the end, and let completed steps be revisited. Save progress for flows longer than ~3 minutes. On TV, each step is a full screen with a single focused default action.
+- use when: One task with ordered dependent steps (checkout, onboarding, application forms) where finishing matters more than exploring.
+- avoid when: Steps are independent and users need to jump around (use tabs or a form with sections), or the whole thing fits on one screen.
+- incompatible with: nav-left-rail, nav-tv-side
+- why: lexical 0.136, structural 0.42 (secondary mode, product healthcare)
+
+### Grids with row actions are one Tab stop  `grid-single-tab-stop`  [rule/table; component/platform] score 0.281 · accessibility-requirement
+Tab enters the grid once and leaves it once; arrow keys move between cells/rows (roving tabindex or a focus manager), Enter/Space activates the focused cell's action, Escape returns from an edited cell to navigation mode; row actions become reachable when the row or actions cell is focused and are also available from a row context/actions menu; a table with 24 rows must never produce 24 Tab stops per action column. Announce the current row/column (aria-rowindex/colindex or the platform's automation properties) and keep a visible focus indicator on the active cell.
+- use when: Data tables or grids where each row has buttons/links (edit, delete, approve, download) and there are more than a handful of rows.
+- avoid when: Small static tables with no interactive cells.
+- why: lexical 0.183, structural 0.4 (mode audit)
+
+### Choosing a visual style before understanding product, user, and platform  `anti-style-before-product`  [antipattern/process; anti-pattern] score 0.278 · heuristic
+Order of decisions: task and user → environment and input → density and navigation → layout → components → then type, colour, surface, motion. Visual style is downstream of structure. Record the KNOWN/INFERRED/MISSING ledger before choosing a look.
+- use when: Any request answered with 'glassmorphism + purple gradient + Inter' (or any style) before asking who uses it, where, with what input, at what density.
+- avoid when: When the user explicitly specifies the style, follow it, but still check platform fit.
+- why: lexical 0.097, structural 0.5 (mode audit)
+
+### Only the happy state was designed  `anti-no-states`  [antipattern/craft; anti-pattern] score 0.275 · heuristic
+Enumerate states per screen and per interactive component before implementation and verify each visually; test with long strings, zero items, 10k items, and slow networks.
+- use when: Screens with no empty, loading, error, offline, partial, or long-text states; buttons with no pressed/disabled/loading states; TV cards with no focused state.
+- avoid when: Never.
+- why: lexical 0.091, structural 0.5 (mode audit)
+
+### Form labels, errors, and recovery  `a11y-forms-errors`  [rule/forms; component] score 0.266 · accessibility-requirement
+Label above or beside, never placeholder-only; error message next to the field, programmatically associated (aria-describedby / accessibilityHint / AutomationProperties.HelpText), with what is wrong and how to fix; move focus to the first error or the error summary on submit; keep entered data; autocomplete attributes for personal data; allow paste and password managers.
+- use when: Every form: visible labels, required markers in text, inline errors linked to fields, error summary for long forms, no data loss on error.
+- avoid when: Never validate on every keystroke for fields the user has not finished; validate on blur and on submit.
+- why: lexical 0.075, structural 0.5 (mode audit)
+
+### Every interactive colour has hover/pressed/focus/disabled/selected  `color-states-complete`  [rule/color; visual] score 0.262 · heuristic
+Define state tokens per role (action.primary-hover/-pressed, bg.selected, text.disabled), keep label contrast on every state, make disabled visibly weaker but readable (≥3:1 recommended even though exempt), selected ≠ focused ≠ hovered. Dark theme redefines all of them.
+- use when: Buttons, links, list rows, tabs, chips, inputs, cards that are tappable, focus on TV.
+- avoid when: Never leave a state to the framework default on one platform and custom on another.
+- why: lexical 0.067, structural 0.5 (mode audit)
+
+### Decorative icon next to every heading/feature  `anti-icon-per-heading`  [antipattern/generic-ai; anti-pattern] score 0.254 · heuristic
+Remove icons that don't carry meaning; never use emoji as UI icons; if a feature grid needs visuals, use real product imagery or none. Icon count on a screen should track the number of distinct actions/states, not the number of headings.
+- use when: Feature grids with an icon in a tinted circle above each title, list items with a random icon each, headings with emoji.
+- avoid when: Icons that disambiguate (file type, status, action) are fine.
+- why: lexical 0.052, structural 0.5 (mode audit)
+
+### Multicolour by category  `color-multicolour-semantic`  [pattern/color; visual] score 0.243 · heuristic
+Category colours from a colour-blind-safe categorical palette, always paired with a label or icon, kept out of the action/status roles; neutrals for everything else so the categories stand out.
+- use when: Categories that users must tell apart at a glance (subjects, channels, calendars, wards) and there are ≤8 of them.
+- avoid when: More than ~8 categories, or when colour would also be needed for status (conflict).
+- incompatible with: color-duotone, color-monochrome-light
+- why: lexical 0.127, structural 0.34 (product healthcare)

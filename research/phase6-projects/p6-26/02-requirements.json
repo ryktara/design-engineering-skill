@@ -1,0 +1,221 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "polish",
+    "responsive",
+    "audit"
+  ],
+  "platform": [
+    "tv"
+  ],
+  "input": [
+    "remote"
+  ],
+  "product": [
+    "media"
+  ],
+  "screen": [],
+  "screen_subtype": [],
+  "stack": [
+    "swiftui"
+  ],
+  "density": "medium",
+  "components": [
+    "media"
+  ],
+  "environment": [
+    "large-display",
+    "shared-device"
+  ],
+  "jobs": [],
+  "problems": [
+    "visual"
+  ],
+  "risk": "low",
+  "primary_jobs": [
+    "polish media"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "focus_handling_present": true,
+    "performance_sensitive": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "screen_reader": true,
+    "focus": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "change_budget": "low",
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "intent": {
+    "artifact_state": "existing",
+    "operations": [
+      "diagnose",
+      "modify"
+    ],
+    "problem_domain": [
+      "visual",
+      "responsive",
+      "layout"
+    ],
+    "change_scope": "unknown",
+    "utterance": "observation",
+    "existing": true,
+    "problem": true,
+    "facet": "visual",
+    "diagnose_only": false,
+    "creation": false,
+    "redesign": false,
+    "responsive_cues": true,
+    "preserve": [],
+    "scope": "moderate"
+  },
+  "platform_evidence": [],
+  "mode_evidence": [
+    "polish: visual defect on existing UI",
+    "audit: diagnose first",
+    "responsive: size/viewport cues with a defect"
+  ],
+  "project_context": {
+    "navigation": {
+      "value": "tv-rails",
+      "status": "KNOWN",
+      "evidence": [
+        "tv-rails: 29 matches in SearchView.swift, TVButtonStyle.swift, Tokens.swift (shell/layout file)"
+      ]
+    },
+    "theme": {
+      "value": "dark-first",
+      "status": "INFERRED",
+      "evidence": [
+        "dark theme configuration signals: 2",
+        "hex palette: 2 near-white, 4 near-black",
+        "TV platform with a dark-leaning palette"
+      ]
+    },
+    "surfaces": {
+      "value": "elevated",
+      "status": "INFERRED",
+      "evidence": [
+        "shadow/elevation in 2 files, borders in 0"
+      ]
+    },
+    "radius": {
+      "value": "medium",
+      "status": "INFERRED",
+      "evidence": [
+        "most common radius 8 (1×); others [24.0]"
+      ]
+    },
+    "spacing": {
+      "value": "irregular",
+      "status": "UNKNOWN",
+      "evidence": [
+        "most used spacing values [6]"
+      ]
+    },
+    "typography": {
+      "value": "custom",
+      "status": "KNOWN",
+      "evidence": [
+        "font family System (2 refs)",
+        "monospace usage",
+        "tabular numerals"
+      ]
+    },
+    "components": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": []
+    }
+  },
+  "known": [
+    "platform=tv (project inspection)",
+    "input=remote (project inspection: DPAD/remote handling in source)",
+    "product=media (request: poster)",
+    "stack=swiftui (project inspection)",
+    "project_navigation=tv-rails (repository: tv-rails: 29 matches in SearchView.swift, TVButtonStyle.swift, Tokens.swift (shell/layout file))",
+    "project_typography=custom (repository: font family System (2 refs); monospace usage)"
+  ],
+  "inferred": [
+    "density=medium (implied by product media)",
+    "mode=polish (visual defect on existing UI)",
+    "mode=responsive (size/viewport cues with a defect)",
+    "mode=audit (diagnose first)",
+    "environment=shared-device (a TV is normally a shared household device)",
+    "environment=large-display (TV platform)",
+    "project_theme=dark-first (repository: dark theme configuration signals: 2; hex palette: 2 near-white, 4 near-black)",
+    "project_surfaces=elevated (repository: shadow/elevation in 2 files, borders in 0)",
+    "project_radius=medium (repository: most common radius 8 (1×); others [24.0])"
+  ],
+  "missing": [
+    "brand: no brand assets, guideline, or character description available"
+  ],
+  "status": "CONFIDENT",
+  "source": {
+    "request": [
+      "cut off",
+      "poster"
+    ],
+    "project": [
+      "Package.swift: Apple project",
+      "Package.swift: tvOS target",
+      "DPAD / remote key handling found in source"
+    ]
+  },
+  "activation": {
+    "decision": "activate",
+    "ui_score": 2.0,
+    "non_ui_score": 0,
+    "ui_terms": [],
+    "non_ui_terms": []
+  },
+  "intent_evidence": {
+    "existing": [
+      "present-tense observation"
+    ],
+    "new": [],
+    "defect": [
+      "are cut off",
+      "cut off"
+    ],
+    "operations": {},
+    "domains": {
+      "visual": [
+        "read",
+        "visual problem"
+      ],
+      "layout": [
+        "cut off"
+      ],
+      "responsive": [
+        "cut off"
+      ]
+    },
+    "no_change": [],
+    "scope": {},
+    "question": false
+  },
+  "scope_evidence": {
+    "ui": [
+      "row",
+      "rows",
+      "poster"
+    ],
+    "ux_symptoms": [
+      "cut off",
+      "no way to"
+    ],
+    "technical": {},
+    "non_visual": []
+  }
+}

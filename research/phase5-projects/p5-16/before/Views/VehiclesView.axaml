@@ -1,0 +1,58 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:FleetDesk.ViewModels"
+             x:Class="FleetDesk.Views.VehiclesView">
+
+  <Design.DataContext>
+    <vm:VehiclesViewModel />
+  </Design.DataContext>
+
+  <DockPanel LastChildFill="True">
+
+    <!-- Header row: title + filter -->
+    <Grid DockPanel.Dock="Top" ColumnDefinitions="*,Auto" Margin="{StaticResource MarginBelow2}">
+      <StackPanel Grid.Column="0" Spacing="4" VerticalAlignment="Center">
+        <TextBlock Classes="title" Text="Vehicles" />
+        <TextBlock Classes="muted">
+          <Run Text="{Binding ShownCount}" />
+          <Run Text="of" />
+          <Run Text="{Binding TotalCount}" />
+          <Run Text="vehicles shown" />
+        </TextBlock>
+      </StackPanel>
+      <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="{StaticResource Space1}" VerticalAlignment="Center">
+        <TextBox Width="280"
+                 Watermark="Filter by id, plate, driver or status"
+                 Text="{Binding FilterText, Mode=TwoWay}" />
+        <Button Content="Clear" Command="{Binding ClearFilterCommand}" />
+      </StackPanel>
+    </Grid>
+
+    <!-- Selection summary -->
+    <Border DockPanel.Dock="Bottom" Classes="surface" Padding="{StaticResource PadInput}" Margin="{StaticResource MarginAbove1}">
+      <TextBlock Classes="muted" Text="{Binding SelectionSummary}" />
+    </Border>
+
+    <!-- Grid -->
+    <DataGrid ItemsSource="{Binding FilteredVehicles}"
+              SelectedItem="{Binding SelectedVehicle, Mode=TwoWay}"
+              AutoGenerateColumns="False"
+              IsReadOnly="True"
+              CanUserReorderColumns="False"
+              CanUserResizeColumns="True"
+              CanUserSortColumns="True"
+              SelectionMode="Single"
+              GridLinesVisibility="Horizontal"
+              HeadersVisibility="Column">
+      <DataGrid.Columns>
+        <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="90" />
+        <DataGridTextColumn Header="Plate" Binding="{Binding Plate}" Width="110" />
+        <DataGridTextColumn Header="Driver" Binding="{Binding Driver}" Width="*" />
+        <DataGridTextColumn Header="Status" Binding="{Binding StatusLabel}" Width="140" />
+        <DataGridTextColumn Header="Odometer (km)" Binding="{Binding OdometerKm, StringFormat={}{0:N0}}" Width="140" />
+        <DataGridTextColumn Header="Last service" Binding="{Binding LastService, StringFormat={}{0:yyyy-MM-dd}}" Width="130" />
+      </DataGrid.Columns>
+    </DataGrid>
+
+  </DockPanel>
+</UserControl>

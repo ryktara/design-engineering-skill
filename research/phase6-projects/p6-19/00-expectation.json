@@ -1,0 +1,30 @@
+{
+  "platform": "desktop",
+  "artifact_state": "existing",
+  "acceptable_modes": ["create", "refactor", "polish"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "data.refresh_timestamp",
+    "state.offline_sync",
+    "process.reuse_first",
+    "a11y.color_not_only",
+    "a11y.live_status",
+    "data.exception_first",
+    "desktop.spacing_grid"
+  ],
+  "critical_concepts": [
+    "data.refresh_timestamp",
+    "state.offline_sync",
+    "process.reuse_first"
+  ],
+  "forbidden_concepts": [
+    "tv.ten_foot_typography",
+    "tv.safe_margins",
+    "touch.minimum_target",
+    "touch.thumb_reach",
+    "media.resume_playback",
+    "navigation.deep_link_state"
+  ],
+  "preservation": ["navigation", "theme", "typography"],
+  "note": "The project ALREADY has a WPF StatusBar (Views/PurchaseOrderLinesView.xaml lines 175-229) with message/counts/selection/errors/unsaved/hidden-columns + key hints + totals, styled by Bar.Status* in Themes/Controls.xaml. The correct implementation is to EXTEND that bar with two new segments (last sync time, failed postings) reusing Bar.Status.Sep / Bar.Status.Text / Btn.Status.Link, not to build a second bar. process.reuse_first is therefore critical. Failed postings must not be colour-only (a11y.color_not_only) and the sync timestamp must be absolute+relative and never a bare 'synced' (data.refresh_timestamp / state.offline_sync)."
+}

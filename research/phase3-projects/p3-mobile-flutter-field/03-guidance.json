@@ -1,0 +1,560 @@
+{
+  "schema": "guidance-bundle/v1",
+  "query": "Flutter field inspection app for utility technicians working outdoors with gloves and patchy connectivity: checklist, defect report form, offline sync",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "mobile"
+    ],
+    "input": [
+      "touch"
+    ],
+    "product": [
+      "erp"
+    ],
+    "screen": [
+      "form"
+    ],
+    "screen_subtype": [],
+    "stack": [
+      "flutter"
+    ],
+    "density": "medium",
+    "components": [
+      "form"
+    ],
+    "environment": [
+      "gloves",
+      "low-bandwidth",
+      "outdoor"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "create form"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "screen_reader": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "known": [
+      "platform=mobile (project inspection)",
+      "product=erp (project inspection (README))",
+      "stack=flutter (request: flutter)",
+      "screen=form (request: form)",
+      "environment=outdoor (request: outdoor, outdoors)",
+      "environment=low-bandwidth (request: offline)",
+      "environment=gloves (request: gloves)"
+    ],
+    "inferred": [
+      "input=touch (implied by platform mobile)",
+      "density=medium (implied by product erp (capped for touch/remote platform))",
+      "mode=create (default when no mode word is present)"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [
+        "flutter",
+        "form",
+        "gloves",
+        "offline",
+        "outdoor, outdoors"
+      ],
+      "project": [
+        "pubspec.yaml: Flutter"
+      ]
+    },
+    "activation": {
+      "decision": "activate",
+      "ui_score": 2.0,
+      "non_ui_score": 0,
+      "ui_terms": [
+        "form"
+      ],
+      "non_ui_terms": []
+    }
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "component",
+        "reason": "a specific component/screen is requested"
+      },
+      {
+        "concern": "structure",
+        "reason": "layout topology and hierarchy"
+      },
+      {
+        "concern": "states",
+        "reason": "every screen ships empty/loading/error states"
+      },
+      {
+        "concern": "interaction",
+        "reason": "input model: touch"
+      },
+      {
+        "concern": "accessibility",
+        "reason": "platform accessibility baseline"
+      },
+      {
+        "concern": "feedback",
+        "reason": "form validation and submission feedback"
+      },
+      {
+        "concern": "data-display",
+        "reason": "numbers, tables or charts are the content"
+      },
+      {
+        "concern": "environment",
+        "reason": "environment gloves (KNOWN)"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "navigation",
+        "reason": "how users arrive and leave"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "create/refactor requests attract generic defaults"
+      },
+      {
+        "concern": "brand",
+        "reason": "visual identity direction"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "device sizes and orientation"
+      },
+      {
+        "concern": "performance",
+        "reason": "performance-sensitive context"
+      }
+    ],
+    "optional": [
+      "motion",
+      "content"
+    ],
+    "required_concepts": [
+      {
+        "concept": "state.loading_empty_error",
+        "reason": "screen states"
+      },
+      {
+        "concept": "touch.minimum_target",
+        "reason": "touch platform"
+      },
+      {
+        "concept": "feedback.validation_errors",
+        "reason": "form screen"
+      },
+      {
+        "concept": "touch.ime_keyboard",
+        "reason": "form on touch"
+      },
+      {
+        "concept": "table.tabular_figures",
+        "reason": "numeric data"
+      },
+      {
+        "concept": "state.offline_sync",
+        "reason": "environment low-bandwidth"
+      },
+      {
+        "concept": "env.outdoor_readability",
+        "reason": "environment outdoor"
+      },
+      {
+        "concept": "env.glanceable_status",
+        "reason": "environment outdoor"
+      }
+    ],
+    "recommended_concepts": [
+      "touch.gestures_discoverable",
+      "touch.thumb_reach",
+      "touch.safe_areas",
+      "state.saving_conflict"
+    ]
+  },
+  "core": [
+    {
+      "id": "comp-form",
+      "kind": "component",
+      "category": "form",
+      "title": "Form",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "component",
+        "feedback",
+        "structure"
+      ],
+      "concepts": [
+        "feedback.validation_errors",
+        "touch.ime_keyboard"
+      ],
+      "score": 0.341,
+      "guidance": "Labels above, help text below, required marked in text, field widths sized to content, grouped by section with headings, one column, inline validation on blur, error summary on submit with links to fields, primary action last (or sticky), unsaved-changes guard, autosave with status for long forms, autofill attributes. TV: one field per row, DOWN moves to next, system keyboard, minimal fields.",
+      "use_when": "Any data entry: settings, checkout, applications, record editing.",
+      "avoid_when": "Batch entry of many similar rows (use a data-entry grid); single toggles (inline).",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.195,
+        "structural": 0.52,
+        "matched": [
+          "mode create",
+          "screen form"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "layout-form-stack",
+      "kind": "pattern",
+      "category": "layout",
+      "title": "Form stack with sections",
+      "facets": [
+        "layout"
+      ],
+      "concerns": [
+        "structure"
+      ],
+      "concepts": [],
+      "score": 0.42,
+      "guidance": "Labels above fields (not placeholders), one column except for tightly related pairs (city/postcode), section headings as real headings, inline validation on blur with error text linked via aria-describedby, and the primary action at the end of the form or in a sticky footer. Field width should hint expected length.",
+      "use_when": "Data entry and settings: labelled fields in one column, grouped into titled sections, with the save/submit action fixed in a predictable place.",
+      "avoid_when": "Spreadsheet-style batch entry (use a data-entry grid), or tiny forms of 1–2 fields (inline them).",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "incompatible": [
+        "layout-immersive-rails",
+        "layout-rails"
+      ],
+      "why": {
+        "lexical": 0.163,
+        "structural": 0.6,
+        "matched": [
+          "mode create",
+          "screen form",
+          "density medium"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring pattern with lexical evidence"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "states-offline-and-sync",
+      "kind": "rule",
+      "category": "states",
+      "title": "Offline, sync, and connectivity states",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "environment",
+        "feedback",
+        "states"
+      ],
+      "concepts": [
+        "state.offline_sync",
+        "state.saving_conflict"
+      ],
+      "score": 0.599,
+      "guidance": "Design the offline state as a first-class state: show connectivity clearly but calmly (a persistent status strip, not a blocking modal), keep already-loaded content usable, queue writes locally with a visible 'pending sync' marker per item and a 'last synced' timestamp, retry automatically with backoff and let the user retry manually, never lose entered data, and resolve conflicts explicitly (show both versions or last-writer-wins with an undo). Reads: stale data is labelled with its age.",
+      "use_when": "Field, travel, and public-venue apps; anything used with poor connectivity; any screen that writes data.",
+      "avoid_when": "Read-only always-online desktop tools where connectivity loss is exceptional (still show an error, not a blank).",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "engineering-practice",
+      "why": {
+        "lexical": 0.516,
+        "structural": 0.7,
+        "matched": [
+          "platform mobile",
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "most relevant record for the request wording"
+    },
+    {
+      "id": "mobile-field-use",
+      "kind": "rule",
+      "category": "environment",
+      "title": "Field use: sunlight readability and glanceable status",
+      "facets": [
+        "accessibility",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "environment",
+        "interaction"
+      ],
+      "concepts": [
+        "env.outdoor_readability",
+        "env.glanceable_status",
+        "touch.minimum_target"
+      ],
+      "score": 0.598,
+      "guidance": "Target ≥7:1 text contrast and avoid thin weights and pale tints (glare washes them out); prefer light UI on white or very high-contrast dark, not mid-tone surfaces; make the current state glanceable (large status word plus colour plus icon, readable at arm's length in two seconds); ≥48 dp targets with ≥12 dp spacing and no precision gestures when gloves are likely; put the next action in thumb reach; large numerals for counts and readings; keep the screen usable one-handed and interruptible (state survives backgrounding).",
+      "use_when": "Couriers, inspectors, technicians, warehouse and construction workers, outdoor kiosks: bright light, gloves, movement, interruptions.",
+      "avoid_when": "Desk-bound indoor use.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.399,
+        "structural": 0.84,
+        "matched": [
+          "platform mobile",
+          "input touch",
+          "mode create",
+          "product erp",
+          "environment gloves,outdoor"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required concern interaction: input model: touch"
+    },
+    {
+      "id": "mobile-density-touch",
+      "kind": "rule",
+      "category": "layout",
+      "title": "Mobile: density is bounded by touch",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "adaptive",
+        "data-display",
+        "interaction"
+      ],
+      "concepts": [
+        "table.column_priority",
+        "touch.minimum_target"
+      ],
+      "score": 0.342,
+      "guidance": "Convert tables to list rows with the 2–3 deciding columns, put the rest in a detail screen; filters in a sheet with applied-filter chips; bulk actions via selection mode; numbers stay tabular; row height ≥48 dp. Dense on phone means fewer things, not smaller things.",
+      "use_when": "Porting dense desktop tools (ERP, tables, dashboards) to phones.",
+      "avoid_when": "Never shrink a desktop table to fit; never rely on horizontal scroll for primary data.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "incompatible": [
+        "layout-table-first",
+        "density-high"
+      ],
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.76,
+        "matched": [
+          "platform mobile",
+          "input touch",
+          "mode create",
+          "product erp"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required concern data-display: numbers, tables or charts are the content"
+    },
+    {
+      "id": "anti-no-states",
+      "kind": "antipattern",
+      "category": "craft",
+      "title": "Only the happy state was designed",
+      "facets": [
+        "anti-pattern"
+      ],
+      "concerns": [
+        "anti-pattern",
+        "states"
+      ],
+      "concepts": [
+        "state.loading_empty_error"
+      ],
+      "score": 0.268,
+      "guidance": "Enumerate states per screen and per interactive component before implementation and verify each visually; test with long strings, zero items, 10k items, and slow networks.",
+      "use_when": "Screens with no empty, loading, error, offline, partial, or long-text states; buttons with no pressed/disabled/loading states; TV cards with no focused state.",
+      "avoid_when": "Never.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.013,
+        "structural": 0.58,
+        "matched": [
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required concept state.loading_empty_error"
+    },
+    {
+      "id": "typo-scale-and-roles",
+      "kind": "rule",
+      "category": "typography",
+      "title": "One type scale with named roles",
+      "facets": [
+        "visual"
+      ],
+      "concerns": [
+        "content"
+      ],
+      "concepts": [
+        "table.tabular_figures"
+      ],
+      "score": 0.261,
+      "guidance": "Roles display/heading/title/body/label/caption/numeric with size, line height, weight, and letter spacing per role; body ≥16 px web/mobile, 14 desktop, 24 TV; numeric role uses tabular lining figures; headings use tighter line height (1.1–1.25) and body 1.4–1.6. Generate with tokens.py scale and map the roles to the framework's text styles.",
+      "use_when": "Any screen with more than two text sizes; any design system.",
+      "avoid_when": "Never pick sizes per screen; never use more than ~7 sizes.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.58,
+        "matched": [
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required concept table.tabular_figures"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "component",
+      "structure",
+      "states",
+      "interaction",
+      "accessibility",
+      "feedback",
+      "data-display",
+      "environment"
+    ],
+    "covered_required_concerns": [
+      "component",
+      "structure",
+      "states",
+      "interaction",
+      "accessibility",
+      "feedback",
+      "data-display",
+      "environment"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "navigation",
+      "anti-pattern",
+      "brand",
+      "adaptive",
+      "performance"
+    ],
+    "covered_recommended_concerns": [
+      "anti-pattern",
+      "adaptive"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "state.loading_empty_error",
+      "touch.minimum_target",
+      "feedback.validation_errors",
+      "touch.ime_keyboard",
+      "table.tabular_figures",
+      "state.offline_sync",
+      "env.outdoor_readability",
+      "env.glanceable_status"
+    ],
+    "covered_required_concepts": [
+      "state.loading_empty_error",
+      "touch.minimum_target",
+      "feedback.validation_errors",
+      "touch.ime_keyboard",
+      "table.tabular_figures",
+      "state.offline_sync",
+      "env.outdoor_readability",
+      "env.glanceable_status"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "bundle_size": 7,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 2,
+    "guardrail_size": 5,
+    "category_diversity": 0.86,
+    "duplicate_pressure": 0.29,
+    "facet_coverage": 0.6,
+    "redundancy": 0.31
+  },
+  "token_coverage": 0.73,
+  "omitted": [],
+  "rejected": [
+    {
+      "id": "anti-generic-sidebar-dashboard",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "anti-desktop-scaled-to-tv",
+      "reason": "platform ['tv'] not in request ['mobile']"
+    },
+    {
+      "id": "dir-public-kiosk",
+      "reason": "platform ['kiosk'] not in request ['mobile']"
+    },
+    {
+      "id": "dir-industrial-hmi",
+      "reason": "platform ['desktop', 'kiosk', 'tablet'] not in request ['mobile']"
+    },
+    {
+      "id": "layout-table-first",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "tv-dpad-axes",
+      "reason": "platform ['tv'] not in request ['mobile']"
+    }
+  ]
+}

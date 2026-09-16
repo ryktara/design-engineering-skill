@@ -1,0 +1,222 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "audit",
+    "refactor"
+  ],
+  "platform": [
+    "tv"
+  ],
+  "input": [
+    "remote"
+  ],
+  "product": [
+    "media"
+  ],
+  "screen": [
+    "home"
+  ],
+  "screen_subtype": [
+    "rails"
+  ],
+  "stack": [
+    "compose",
+    "compose-tv"
+  ],
+  "density": "medium",
+  "components": [
+    "media"
+  ],
+  "environment": [
+    "large-display",
+    "shared-device"
+  ],
+  "jobs": [],
+  "problems": [
+    "interaction"
+  ],
+  "risk": "low",
+  "primary_jobs": [
+    "audit home"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "performance_sensitive": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "keyboard": true,
+    "screen_reader": true,
+    "focus": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "change_budget": "moderate",
+  "scope": {
+    "domain": "UI_INTERACTION",
+    "in_scope": true,
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "mode_evidence": [
+    "audit: interaction problem on existing UI",
+    "refactor: fix follows the diagnosis"
+  ],
+  "project_context": {
+    "navigation": {
+      "value": "tv-rails",
+      "status": "KNOWN",
+      "evidence": [
+        "tv-rails: 56 matches in AppState.kt, Cards.kt, HomeRail.kt (shell/layout file)"
+      ]
+    },
+    "theme": {
+      "value": "dark-first",
+      "status": "INFERRED",
+      "evidence": [
+        "dark theme configuration signals: 1",
+        "hex palette: 2 near-white, 4 near-black",
+        "TV platform with a dark-leaning palette"
+      ]
+    },
+    "surfaces": {
+      "value": "bordered-flat",
+      "status": "INFERRED",
+      "evidence": [
+        "borders in 3 files, shadow/elevation in 1"
+      ]
+    },
+    "radius": {
+      "value": "medium",
+      "status": "INFERRED",
+      "evidence": [
+        "most common radius 8 (3×); others [50.0, 4.0]"
+      ]
+    },
+    "spacing": {
+      "value": "irregular",
+      "status": "UNKNOWN",
+      "evidence": [
+        "most used spacing values [16, 10, 8, 6]"
+      ]
+    },
+    "typography": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": [
+        "no font family declaration found"
+      ]
+    },
+    "components": {
+      "value": "compose, compose-tv-material, media3, images:coil",
+      "status": "KNOWN",
+      "evidence": [
+        "compose",
+        "compose-tv-material",
+        "media3"
+      ]
+    }
+  },
+  "known": [
+    "platform=tv (project inspection)",
+    "input=remote (project inspection: DPAD/remote handling in source)",
+    "product=media (project inspection (README))",
+    "stack=compose (project inspection)",
+    "stack=compose-tv (project inspection)",
+    "screen=home (request: home)",
+    "project_navigation=tv-rails (repository: tv-rails: 56 matches in AppState.kt, Cards.kt, HomeRail.kt (shell/layout file))",
+    "project_components=compose, compose-tv-material, media3, images:coil (repository: compose; compose-tv-material)"
+  ],
+  "inferred": [
+    "density=medium (implied by product media)",
+    "mode=audit (interaction problem on existing UI)",
+    "mode=refactor (fix follows the diagnosis)",
+    "environment=shared-device (a TV is normally a shared household device)",
+    "environment=large-display (TV platform)",
+    "project_theme=dark-first (repository: dark theme configuration signals: 1; hex palette: 2 near-white, 4 near-black)",
+    "project_surfaces=bordered-flat (repository: borders in 3 files, shadow/elevation in 1)",
+    "project_radius=medium (repository: most common radius 8 (3×); others [50.0, 4.0])"
+  ],
+  "missing": [],
+  "status": "CONFIDENT",
+  "source": {
+    "request": [
+      "home",
+      "lose their"
+    ],
+    "project": [
+      "app\\build.gradle.kts: androidx.compose",
+      "app\\build.gradle.kts: androidx.tv:tv-material",
+      "app\\build.gradle.kts: androidx.media3",
+      "app\\build.gradle.kts: coil",
+      "app\\src\\main\\AndroidManifest.xml: leanback launcher (Android TV)",
+      "touchscreen not required in manifest (TV/set-top)",
+      "DPAD / remote key handling found in source",
+      "Compose dependencies imply mobile but the only launcher is leanback: TV-only app"
+    ]
+  },
+  "activation": {
+    "decision": "activate",
+    "ui_score": 4.0,
+    "non_ui_score": 0,
+    "ui_terms": [
+      "layout",
+      "focus"
+    ],
+    "non_ui_terms": []
+  },
+  "intent": {
+    "existing": true,
+    "problem": true,
+    "facet": "interaction",
+    "diagnose_only": false,
+    "creation": false,
+    "redesign": false,
+    "responsive_cues": false,
+    "preserve": [
+      "layout"
+    ],
+    "scope": "moderate"
+  },
+  "intent_evidence": {
+    "existing": [
+      "after",
+      "users"
+    ],
+    "problem": [
+      "lose",
+      "lose their"
+    ],
+    "change": [
+      "fix"
+    ],
+    "create": [],
+    "diagnose": [],
+    "no_change": [],
+    "redesign": [],
+    "look_feel": [],
+    "structural": [
+      "layout"
+    ],
+    "responsive": [],
+    "accessibility": [],
+    "interaction": [
+      "focus"
+    ]
+  },
+  "scope_evidence": {
+    "ui": [
+      "layout",
+      "focus",
+      "rail"
+    ],
+    "ux_symptoms": [
+      "focus",
+      "lose their",
+      "users"
+    ],
+    "technical": {},
+    "non_visual": []
+  }
+}

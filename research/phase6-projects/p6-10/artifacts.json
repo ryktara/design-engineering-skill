@@ -1,0 +1,146 @@
+{
+  "task": "p6-10",
+  "project": "p6-vue-inventory",
+  "platform_expected": "web",
+  "platform_resolved": "web",
+  "platform_correct": "yes",
+  "stack": "vue3+vite+pinia+vue-router, plain CSS tokens",
+  "existing_ui": true,
+  "new_screen": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": ["refactor", "polish", "create"],
+  "mode_resolved": ["refactor"],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "moderate",
+  "render_mode": "native",
+  "screenshots": [
+    "render/first-desktop.png",
+    "render/first-phone.png",
+    "render/first-desktop-dark.png",
+    "render/final-desktop.png",
+    "render/final-phone.png",
+    "render/final-desktop-dark.png",
+    "render/baseline-phone.png"
+  ],
+  "context_detection": {
+    "navigation": "partial",
+    "theme": "partial",
+    "typography": "yes",
+    "surfaces": "yes",
+    "spacing": "no"
+  },
+  "preservation": {
+    "navigation": true,
+    "theme": true,
+    "typography": true,
+    "component_reuse": true,
+    "unjustified_structural_change": 0
+  },
+  "expected_concepts": [
+    "data.exception_first",
+    "data.drilldown",
+    "data.kpi_comparison",
+    "layout.focal_hierarchy",
+    "a11y.color_not_only",
+    "data.refresh_timestamp",
+    "table.tabular_figures"
+  ],
+  "critical_concepts": ["data.exception_first", "data.drilldown", "layout.focal_hierarchy"],
+  "delivered_concepts": [
+    "a11y.color_not_only",
+    "data.chart_by_question",
+    "data.accessible_chart_alternative",
+    "state.loading_empty_error",
+    "process.reuse_first",
+    "touch.gestures_discoverable",
+    "interaction.keyboard_navigation",
+    "a11y.live_status",
+    "perf.layout_shift",
+    "interaction.selection_visible",
+    "data.exception_first",
+    "env.glanceable_status",
+    "table.tabular_figures"
+  ],
+  "concept_recall": 0.43,
+  "critical_recall": 0.33,
+  "concept_misses": [
+    {"concept": "data.drilldown", "layer": "bundle-selection"},
+    {"concept": "layout.focal_hierarchy", "layer": "bundle-selection"},
+    {"concept": "data.kpi_comparison", "layer": "bundle-selection"},
+    {"concept": "data.refresh_timestamp", "layer": "expected-concepts"}
+  ],
+  "layer_review": {
+    "core": ["comp-chart-container", "layout-dashboard-grid", "chart-relationship"],
+    "critical": ["impl-reuse-before-new", "interaction-drag-drop", "a11y-color-not-only", "data-exceptions-first"],
+    "optional": ["data-exceptions-first"],
+    "optional_useful": 1,
+    "optional_noise": 0
+  },
+  "first_render_defects": {
+    "visual": 1,
+    "interaction": 0,
+    "accessibility": 0,
+    "platform": 0,
+    "existing-system-mismatch": 0,
+    "implementation-bug": 0
+  },
+  "final_defects": {
+    "visual": 0,
+    "interaction": 0,
+    "accessibility": 0,
+    "platform": 0,
+    "existing-system-mismatch": 0,
+    "implementation-bug": 0
+  },
+  "iterations": 1,
+  "guidance_relevant": 3,
+  "guidance_partial": 1,
+  "guidance_offtarget": 3,
+  "bad_guidance": [
+    {"record": "comp-chart-container", "category": "wrong-screen", "why": "the dashboard has no chart and the task needs none; selected only as a carrier for colour/state concepts"},
+    {"record": "chart-relationship", "category": "generic", "why": "scatter/bubble guidance entered CORE with no task evidence (lexical 0.049); answers no question this task asks"},
+    {"record": "interaction-drag-drop", "category": "wrong-screen", "why": "nothing on this dashboard is draggable; chosen only as the keyboard-navigation carrier"},
+    {"record": "impl-reuse-before-new", "category": "generic", "why": "restates SKILL.md §2 and consumed a guardrail slot"},
+    {"record": "<bundle>", "category": "missing-critical", "why": "pre-registered critical concepts data.drilldown and layout.focal_hierarchy absent; comp-kpi-tile omitted as 'no positive task evidence' on a screen=dashboard task"}
+  ],
+  "skill_effect": "helped",
+  "guidance_used": ["data-exceptions-first", "a11y-color-not-only", "layout-dashboard-grid", "impl-reuse-before-new"],
+  "guidance_ignored": [
+    {"id": "comp-chart-container", "why": "no chart on this screen and none warranted by the task"},
+    {"id": "chart-relationship", "why": "a scatter/bubble plot answers no reordering question; adding one would be a defect"},
+    {"id": "interaction-drag-drop", "why": "no drag interaction exists or was requested"}
+  ],
+  "unjustified_direction_slots": 0,
+  "process_records_needed": false,
+  "guidance_tokens": 989,
+  "misses": [
+    {"layer": "bundle-selection", "what": "comp-kpi-tile omitted on a screen=dashboard task, dropping data.drilldown (critical) and data.kpi_comparison"},
+    {"layer": "bundle-selection", "what": "layout.focal_hierarchy (critical) had candidates but none selected"},
+    {"layer": "expected-concepts", "what": "data.refresh_timestamp never demanded despite 'today' and a dashboard screen"},
+    {"layer": "candidate-compatibility", "what": "chart-relationship and interaction-drag-drop admitted with zero task evidence"},
+    {"layer": "project-context", "what": "spacing=irregular on a strict 4-pt token scale; navigation=top-bar on a top-bar+sidenav shell; components=unknown with a 9-file component dir; routing empty with vue-router present"}
+  ],
+  "knowledge_gaps": [],
+  "regressions": [
+    {"query": "Make the dashboard tell the manager which items need reordering today.", "expect": "comp-kpi-tile in the bundle; data.drilldown and data.kpi_comparison delivered when screen=dashboard"},
+    {"query": "any dashboard/overview request", "expect": "data.refresh_timestamp demanded as a required concept"},
+    {"query": "dashboard request with no chart evidence in the project", "expect": "chart-relationship not placed in CORE"},
+    {"query": "inspect_project.py on p6-vue-inventory", "expect": "spacing KNOWN 4-pt from --space-* tokens; theme KNOWN light+dark from [data-theme='dark']; components not UNKNOWN with 9 components"}
+  ],
+  "tags": [
+    "concept-miss",
+    "ranking-miss",
+    "context-detection-miss",
+    "render-defect-fixed",
+    "skill-helped",
+    "preservation-ok",
+    "partial-scope-ok"
+  ],
+  "build_hash_start": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947",
+  "build_hash_end": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947"
+}

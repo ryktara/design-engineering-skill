@@ -1,0 +1,5555 @@
+{
+ "reviewer": "opus",
+ "cases": [
+  {
+   "id": "hv5-g03-001",
+   "prompt": "the focus ring disappears when you tab past the third filter chip on the claims dashboard",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "accessibility",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.focus_visible",
+    "interaction.keyboard_navigation",
+    "data.filter_chips"
+   ],
+   "critical_concepts": [
+    "interaction.focus_visible"
+   ],
+   "recommended_concepts": [
+    "a11y.contrast",
+    "interaction.selection_visible"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-002",
+   "prompt": "screen reader announces the same balance twice on the account summary card, is that the live region duplicating?",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.live_status",
+    "a11y.semantics",
+    "a11y.accessible_names"
+   ],
+   "critical_concepts": [
+    "a11y.live_status"
+   ],
+   "recommended_concepts": [
+    "data.kpi_comparison"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-003",
+   "prompt": "can a nurse using VoiceOver actually tell which vitals row is out of range or does it just read the number",
+   "category": "accessibility",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile",
+     "desktop",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.color_not_only",
+    "a11y.semantics",
+    "a11y.accessible_names"
+   ],
+   "critical_concepts": [
+    "a11y.color_not_only"
+   ],
+   "recommended_concepts": [
+    "data.exception_first",
+    "a11y.live_status"
+   ],
+   "forbidden_concepts": [
+    "data.chart_by_question",
+    "data.accessible_chart_alternative"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-004",
+   "prompt": "contrast on the shipment status pills fails against the warehouse tablet's outdoor glare mode",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility",
+    "polish"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "tablet",
+     "mobile",
+     "kiosk"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.contrast",
+    "env.outdoor_readability",
+    "a11y.color_not_only"
+   ],
+   "critical_concepts": [
+    "a11y.contrast",
+    "env.outdoor_readability"
+   ],
+   "recommended_concepts": [
+    "env.glanceable_status"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour",
+    "navigation"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-005",
+   "prompt": "keyboard trap in the modal that confirms a wire transfer, esc does nothing",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.dialog_focus",
+    "interaction.keyboard_navigation",
+    "interaction.focus_restore"
+   ],
+   "critical_concepts": [
+    "a11y.dialog_focus"
+   ],
+   "recommended_concepts": [
+    "feedback.confirmation_destructive",
+    "interaction.focus_visible"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {
+    "a11y.dialog_focus": [
+     "interaction.drawer_focus"
+    ]
+   }
+  },
+  {
+   "id": "hv5-g03-006",
+   "prompt": "our SwiftUI onboarding flow skips VoiceOver rotor headings entirely, need those added back",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.semantics",
+    "a11y.accessible_names",
+    "onboarding.linear_wizard"
+   ],
+   "critical_concepts": [
+    "a11y.semantics"
+   ],
+   "recommended_concepts": [
+    "a11y.text_scaling"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-007",
+   "prompt": "teacher portal grade cells: color is the only signal for late vs missing",
+   "category": "accessibility",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.color_not_only"
+   ],
+   "critical_concepts": [
+    "a11y.color_not_only"
+   ],
+   "recommended_concepts": [
+    "a11y.accessible_names"
+   ],
+   "forbidden_concepts": [
+    "interaction.keyboard_navigation"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-008",
+   "prompt": "does the ballot review screen at the polling place meet target size for older voters with tremor?",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "touch.minimum_target",
+    "a11y.text_scaling",
+    "layout.one_primary_action"
+   ],
+   "critical_concepts": [
+    "touch.minimum_target"
+   ],
+   "recommended_concepts": [
+    "a11y.contrast",
+    "privacy.shared_device"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-009",
+   "prompt": "reduce motion setting is ignored by the parallax hero on the annual report site, it still spins",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.reduced_motion",
+    "anti.scroll_animation"
+   ],
+   "critical_concepts": [
+    "a11y.reduced_motion"
+   ],
+   "recommended_concepts": [
+    "perf.js_budget"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour",
+    "color"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-010",
+   "prompt": "audit the checkout for anyone who can't use a mouse",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.keyboard_navigation",
+    "interaction.focus_visible",
+    "interaction.hover_independence",
+    "feedback.validation_errors"
+   ],
+   "critical_concepts": [
+    "interaction.keyboard_navigation"
+   ],
+   "recommended_concepts": [
+    "a11y.dialog_focus",
+    "form.autofill_attributes"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour",
+    "navigation"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-011",
+   "prompt": "one label missing on the search input in the recipe app, screen reader just says edit text",
+   "category": "accessibility",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.accessible_names"
+   ],
+   "critical_concepts": [
+    "a11y.accessible_names"
+   ],
+   "recommended_concepts": [
+    "data.search_results"
+   ],
+   "forbidden_concepts": [
+    "a11y.contrast"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-012",
+   "prompt": "the color contrast checker flagged 47 things in our Figma library and I don't know which ones actually matter for the factory floor kiosk",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.contrast",
+    "env.outdoor_readability",
+    "env.glanceable_status"
+   ],
+   "critical_concepts": [
+    "a11y.contrast"
+   ],
+   "recommended_concepts": [
+    "brand.token_layers",
+    "a11y.color_not_only"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "color"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-013",
+   "prompt": "tab order jumps from the search bar straight to the footer, skipping the whole results grid",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.keyboard_navigation",
+    "interaction.focus_visible",
+    "a11y.semantics"
+   ],
+   "critical_concepts": [
+    "interaction.keyboard_navigation"
+   ],
+   "recommended_concepts": [
+    "data.search_results"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-014",
+   "prompt": "someone on the ward asked why the medication alert sound has no visual equivalent",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "accessibility",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "desktop",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "env.glanceable_status",
+    "a11y.color_not_only",
+    "a11y.live_status"
+   ],
+   "critical_concepts": [
+    "env.glanceable_status"
+   ],
+   "recommended_concepts": [
+    "data.exception_first"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-015",
+   "prompt": "is 44px enough for the delete row button on a delivery driver's gloved thumb?",
+   "category": "accessibility",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile",
+     "tablet"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "touch.minimum_target"
+   ],
+   "critical_concepts": [
+    "touch.minimum_target"
+   ],
+   "recommended_concepts": [
+    "feedback.confirmation_destructive",
+    "env.outdoor_readability"
+   ],
+   "forbidden_concepts": [
+    "a11y.contrast"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-016",
+   "prompt": "fix the Avalonia grid so JAWS reads column headers when you arrow down",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.semantics",
+    "a11y.accessible_names",
+    "interaction.keyboard_navigation"
+   ],
+   "critical_concepts": [
+    "a11y.semantics"
+   ],
+   "recommended_concepts": [
+    "table.column_priority"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-017",
+   "prompt": "the toast that confirms a refund vanishes in two seconds and screen readers never catch it",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.live_status",
+    "a11y.semantics"
+   ],
+   "critical_concepts": [
+    "a11y.live_status"
+   ],
+   "recommended_concepts": [
+    "interaction.focus_restore",
+    "state.loading_empty_error"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-018",
+   "prompt": "students using switch access can't reach the submit button on the timed exam, focus loops back to the header",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.keyboard_navigation",
+    "interaction.focus_visible",
+    "interaction.focus_restore",
+    "layout.one_primary_action"
+   ],
+   "critical_concepts": [
+    "interaction.keyboard_navigation"
+   ],
+   "recommended_concepts": [
+    "a11y.semantics"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-019",
+   "prompt": "why does the price drop badge only exist as a red dot with no text",
+   "category": "accessibility",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.color_not_only",
+    "a11y.accessible_names"
+   ],
+   "critical_concepts": [
+    "a11y.color_not_only"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "a11y.contrast"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-020",
+   "prompt": "review the shift-swap form for anyone relying on high contrast mode in Windows",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.contrast",
+    "brand.token_layers",
+    "feedback.validation_errors"
+   ],
+   "critical_concepts": [
+    "a11y.contrast"
+   ],
+   "recommended_concepts": [
+    "a11y.color_not_only",
+    "interaction.focus_visible"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour",
+    "navigation"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-021",
+   "prompt": "the flight status board announces gate changes with a beep only, deaf travelers get nothing",
+   "category": "accessibility",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "accessibility",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "kiosk",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "env.glanceable_status",
+    "a11y.live_status",
+    "a11y.color_not_only"
+   ],
+   "critical_concepts": [
+    "env.glanceable_status"
+   ],
+   "recommended_concepts": [
+    "data.refresh_timestamp"
+   ],
+   "forbidden_concepts": [
+    "media.live_channel_switching"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-022",
+   "prompt": "our React table has aria-sort on the wrong element, NVDA calls every column ascending",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [
+     "web"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.semantics",
+    "a11y.accessible_names",
+    "interaction.keyboard_navigation"
+   ],
+   "critical_concepts": [
+    "a11y.semantics"
+   ],
+   "recommended_concepts": [
+    "table.column_priority"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-023",
+   "prompt": "polish the focus states across the entire admin console, not just the buttons",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.focus_visible",
+    "a11y.contrast",
+    "brand.token_layers",
+    "interaction.selection_visible"
+   ],
+   "critical_concepts": [
+    "interaction.focus_visible"
+   ],
+   "recommended_concepts": [
+    "interaction.keyboard_navigation"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-024",
+   "prompt": "warehouse pick screen text is 11px and nobody asked if that's readable under fluorescent lights",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "accessibility",
+    "polish"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile",
+     "kiosk",
+     "tablet"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "env.outdoor_readability",
+    "brand.type_roles",
+    "a11y.text_scaling",
+    "a11y.contrast"
+   ],
+   "critical_concepts": [
+    "brand.type_roles",
+    "env.outdoor_readability"
+   ],
+   "recommended_concepts": [
+    "env.glanceable_status"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-025",
+   "prompt": "the game's difficulty prompt uses only a color swap between easy and hard, colorblind players can't tell",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.color_not_only",
+    "a11y.accessible_names",
+    "interaction.selection_visible"
+   ],
+   "critical_concepts": [
+    "a11y.color_not_only"
+   ],
+   "recommended_concepts": [
+    "a11y.contrast"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-026",
+   "prompt": "can dyslexic operators actually parse the alarm log or is it a wall of monospace red text",
+   "category": "accessibility",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "accessibility",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "desktop",
+     "web",
+     "kiosk"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "content.readable_measure",
+    "brand.type_roles",
+    "a11y.color_not_only",
+    "data.exception_first"
+   ],
+   "critical_concepts": [
+    "content.readable_measure"
+   ],
+   "recommended_concepts": [
+    "a11y.contrast",
+    "data.filter_chips"
+   ],
+   "forbidden_concepts": [
+    "table.virtualization"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-027",
+   "prompt": "one focus ring color for the whole component library, currently it's blue on blue on the primary button",
+   "category": "accessibility",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "polish",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.focus_visible",
+    "a11y.contrast",
+    "brand.token_layers"
+   ],
+   "critical_concepts": [
+    "interaction.focus_visible"
+   ],
+   "recommended_concepts": [
+    "interaction.selection_visible"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "color"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-028",
+   "prompt": "the invoice PDF preview has no alt text for the chart, finance team flagged it in the WPF app",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "data.accessible_chart_alternative",
+    "a11y.accessible_names"
+   ],
+   "critical_concepts": [
+    "data.accessible_chart_alternative"
+   ],
+   "recommended_concepts": [
+    "data.chart_by_question"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-029",
+   "prompt": "somebody using a screen reader on the pharmacy counter tablet got stuck in the barcode scan step",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "accessibility",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "tablet",
+     "mobile",
+     "kiosk"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.semantics",
+    "a11y.live_status",
+    "interaction.focus_restore",
+    "state.loading_empty_error"
+   ],
+   "critical_concepts": [
+    "a11y.semantics"
+   ],
+   "recommended_concepts": [
+    "a11y.accessible_names"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-030",
+   "prompt": "does the seat map on the booking flow work for keyboard-only travelers or is it mouse-drag only",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.keyboard_navigation",
+    "interaction.hover_independence",
+    "interaction.focus_visible",
+    "interaction.selection_visible"
+   ],
+   "critical_concepts": [
+    "interaction.keyboard_navigation"
+   ],
+   "recommended_concepts": [
+    "a11y.accessible_names"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-031",
+   "prompt": "add skip-to-content on the government benefits portal, screen reader users hit 40 nav links first",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [
+     "web"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.semantics",
+    "interaction.keyboard_navigation",
+    "navigation.orientation_and_back"
+   ],
+   "critical_concepts": [
+    "a11y.semantics"
+   ],
+   "recommended_concepts": [
+    "interaction.focus_visible"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-032",
+   "prompt": "the referee's tablet during the match flashes a red card overlay with no sound cue",
+   "category": "accessibility",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "tablet",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.live_status",
+    "a11y.color_not_only",
+    "env.glanceable_status"
+   ],
+   "critical_concepts": [
+    "a11y.live_status"
+   ],
+   "recommended_concepts": [
+    "feedback.confirmation_destructive"
+   ],
+   "forbidden_concepts": [
+    "tv.player_autohide",
+    "media.details_play_first"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-033",
+   "prompt": "why is the entire settings toggle row unlabeled except for an icon nobody can identify",
+   "category": "accessibility",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.accessible_names",
+    "layout.settings_grouping"
+   ],
+   "critical_concepts": [
+    "a11y.accessible_names"
+   ],
+   "recommended_concepts": [
+    "brand.imagery_purpose"
+   ],
+   "forbidden_concepts": [
+    "a11y.contrast"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-034",
+   "prompt": "line height on the terms and conditions modal is too tight for anyone with low vision zoomed to 200%",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility",
+    "polish"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.text_scaling",
+    "content.readable_measure",
+    "brand.type_roles"
+   ],
+   "critical_concepts": [
+    "a11y.text_scaling"
+   ],
+   "recommended_concepts": [
+    "a11y.dialog_focus"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour",
+    "color"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-035",
+   "prompt": "the lab results table has merged cells that break screen reader navigation entirely, patients can't hear which value is theirs",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.semantics",
+    "a11y.accessible_names",
+    "interaction.keyboard_navigation"
+   ],
+   "critical_concepts": [
+    "a11y.semantics"
+   ],
+   "recommended_concepts": [
+    "table.tabular_figures",
+    "privacy.sensitive_masking"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-036",
+   "prompt": "check whether the checkout error summary actually gets focus after a failed submit",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "feedback.validation_errors",
+    "interaction.focus_restore",
+    "a11y.live_status"
+   ],
+   "critical_concepts": [
+    "feedback.validation_errors"
+   ],
+   "recommended_concepts": [
+    "a11y.semantics"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-037",
+   "prompt": "our Compose app's bottom sheet has no dismiss affordance for talkback, it's trapped",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.drawer_focus",
+    "a11y.dialog_focus",
+    "interaction.back_semantics",
+    "touch.gestures_discoverable"
+   ],
+   "critical_concepts": [
+    "interaction.drawer_focus"
+   ],
+   "recommended_concepts": [
+    "a11y.accessible_names"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {
+    "interaction.drawer_focus": [
+     "a11y.dialog_focus"
+    ]
+   }
+  },
+  {
+   "id": "hv5-g03-038",
+   "prompt": "on the shop floor screen the emergency stop confirmation is a tiny checkbox, that seems wrong for someone in a hurry",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "kiosk",
+     "desktop",
+     "tablet"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "feedback.confirmation_destructive",
+    "touch.minimum_target",
+    "layout.one_primary_action"
+   ],
+   "critical_concepts": [
+    "feedback.confirmation_destructive",
+    "touch.minimum_target"
+   ],
+   "recommended_concepts": [
+    "env.glanceable_status"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-039",
+   "prompt": "one contrast fix on the low-stock badge, that's it",
+   "category": "accessibility",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.contrast"
+   ],
+   "critical_concepts": [
+    "a11y.contrast"
+   ],
+   "recommended_concepts": [
+    "a11y.color_not_only"
+   ],
+   "forbidden_concepts": [
+    "interaction.keyboard_navigation"
+   ],
+   "preservation": [
+    "behaviour",
+    "navigation"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-040",
+   "prompt": "librarian said the catalog search results read out of order with a screen reader, titles come after ratings",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.semantics",
+    "data.search_results",
+    "a11y.accessible_names"
+   ],
+   "critical_concepts": [
+    "a11y.semantics"
+   ],
+   "recommended_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-041",
+   "prompt": "make sure the donation form works for someone using Dragon voice control end to end",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.accessible_names",
+    "interaction.keyboard_navigation",
+    "form.autofill_attributes",
+    "feedback.validation_errors"
+   ],
+   "critical_concepts": [
+    "a11y.accessible_names"
+   ],
+   "recommended_concepts": [
+    "interaction.focus_visible"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-042",
+   "prompt": "does anyone actually test the loan calculator with a screen magnifier at 400%?",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.text_scaling",
+    "adaptive.breakpoint_matrix",
+    "content.readable_measure"
+   ],
+   "critical_concepts": [
+    "a11y.text_scaling"
+   ],
+   "recommended_concepts": [
+    "interaction.focus_visible",
+    "perf.layout_shift"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-043",
+   "prompt": "the drone control app has gesture-only zoom, pilots with limited hand mobility have no alternative",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "touch.gestures_discoverable",
+    "interaction.keyboard_navigation",
+    "touch.minimum_target"
+   ],
+   "critical_concepts": [
+    "touch.gestures_discoverable"
+   ],
+   "recommended_concepts": [
+    "a11y.accessible_names"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-044",
+   "prompt": "audit the whole intake form for cognitive load, not just contrast",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "accessibility",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.one_primary_action",
+    "feedback.validation_errors",
+    "onboarding.linear_wizard",
+    "content.readable_measure"
+   ],
+   "critical_concepts": [
+    "layout.one_primary_action",
+    "feedback.validation_errors"
+   ],
+   "recommended_concepts": [
+    "feedback.progress_indicator",
+    "form.autofill_attributes"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-045",
+   "prompt": "the countdown timer on the exam page has no pause option and no aria-live announcement, students with ADHD panic",
+   "category": "accessibility",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.live_status",
+    "state.session_expiry",
+    "a11y.reduced_motion"
+   ],
+   "critical_concepts": [
+    "a11y.live_status"
+   ],
+   "recommended_concepts": [
+    "feedback.progress_indicator"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-046",
+   "prompt": "the sidebar just vanishes below 1024px, no hamburger, nothing",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.navigation_transform",
+    "adaptive.breakpoint_matrix",
+    "navigation.rail_semantics"
+   ],
+   "critical_concepts": [
+    "adaptive.navigation_transform"
+   ],
+   "recommended_concepts": [
+    "navigation.orientation_and_back"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-047",
+   "prompt": "does the claims table hold up in split view on an iPad or does it just get crushed to two columns",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "responsive"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "tablet",
+     "mobile",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "table.column_priority",
+    "adaptive.breakpoint_matrix",
+    "content.readable_measure"
+   ],
+   "critical_concepts": [
+    "table.column_priority"
+   ],
+   "recommended_concepts": [
+    "data.pagination_strategy",
+    "table.tabular_figures"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-048",
+   "prompt": "rotate the tablet at the check-in counter and the whole layout freezes mid-transition",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "tablet",
+     "mobile",
+     "kiosk"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "perf.layout_shift",
+    "state.loading_empty_error"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix",
+    "perf.layout_shift"
+   ],
+   "recommended_concepts": [
+    "a11y.reduced_motion"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-049",
+   "prompt": "the dashboard cards reflow fine until exactly 834px where two of them overlap",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "layout.spacing_scale",
+    "perf.layout_shift"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "layout.no_nested_cards"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-050",
+   "prompt": "someone on the shop floor screen resized the browser window and the inventory grid just clipped off the right edge",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "kiosk",
+     "desktop",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "table.column_priority",
+    "layout.spacing_scale"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "table.virtualization"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-051",
+   "prompt": "what happens to the chart legend when the window gets narrower than 600px in the Electron build?",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "responsive"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "data.chart_by_question",
+    "layout.spacing_scale"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "data.accessible_chart_alternative"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-052",
+   "prompt": "landscape mode on the gate agent's device shows the boarding list with half the rows cut off",
+   "category": "responsive",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "tablet",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "table.column_priority",
+    "data.pagination_strategy"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "content.readable_measure"
+   ],
+   "forbidden_concepts": [
+    "tv.safe_margins"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-053",
+   "prompt": "our Flutter app's grid doesn't adapt between phone and foldable, it just stretches ugly",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "adaptive.navigation_transform",
+    "layout.spacing_scale"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "touch.minimum_target"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-054",
+   "prompt": "test the patient chart across breakpoints, nurses use everything from a phone to a wall monitor",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "responsive"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [
+     "web",
+     "desktop",
+     "tablet",
+     "kiosk"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "adaptive.navigation_transform",
+    "table.column_priority",
+    "env.glanceable_status"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "content.readable_measure",
+    "privacy.shared_device"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-055",
+   "prompt": "the compare-two-files diff view collapses into a single column on any screen under 1400px and becomes unreadable",
+   "category": "responsive",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "content.readable_measure",
+    "layout.spacing_scale"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "table.column_priority"
+   ],
+   "forbidden_concepts": [
+    "data.chart_by_question",
+    "data.kpi_comparison",
+    "data.comparison_structure"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-056",
+   "prompt": "at the airport check-in kiosk the language selector overlaps the continue button once you pick a longer language name",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "content.i18n_expansion",
+    "layout.spacing_scale",
+    "layout.one_primary_action"
+   ],
+   "critical_concepts": [
+    "content.i18n_expansion"
+   ],
+   "recommended_concepts": [
+    "touch.minimum_target"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-057",
+   "prompt": "why does the map view refuse to shrink below its default size in split screen on the delivery app",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "layout.spacing_scale",
+    "adaptive.navigation_transform"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "touch.safe_areas"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-058",
+   "prompt": "resize the browser slowly on the pricing page and watch the columns fight each other",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "layout.spacing_scale",
+    "perf.layout_shift"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "content.readable_measure"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-059",
+   "prompt": "the WinUI settings pane doesn't collapse when the window is snapped to half the screen",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.navigation_transform",
+    "adaptive.breakpoint_matrix",
+    "layout.settings_grouping"
+   ],
+   "critical_concepts": [
+    "adaptive.navigation_transform"
+   ],
+   "recommended_concepts": [
+    "navigation.rail_semantics"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-060",
+   "prompt": "does the inspection form on the tablet in the van adapt when someone props it up sideways?",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "responsive"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "tablet",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "touch.ime_keyboard",
+    "touch.minimum_target"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "state.unsaved_changes_guard"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-061",
+   "prompt": "one spacing token change on the card grid gutter, nothing else",
+   "category": "responsive",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.spacing_scale"
+   ],
+   "critical_concepts": [
+    "layout.spacing_scale"
+   ],
+   "recommended_concepts": [
+    "layout.no_nested_cards"
+   ],
+   "forbidden_concepts": [
+    "a11y.contrast"
+   ],
+   "preservation": [
+    "navigation",
+    "typography"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-062",
+   "prompt": "the classroom seating chart tool breaks entirely on a Chromebook's smaller viewport, buttons go off screen",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [
+     "web"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "layout.spacing_scale",
+    "adaptive.navigation_transform"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "touch.minimum_target"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-063",
+   "prompt": "check the checkout flow at every standard breakpoint plus the weird 360x640 android devices",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "responsive"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "touch.minimum_target",
+    "touch.ime_keyboard",
+    "form.autofill_attributes"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "layout.one_primary_action"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-064",
+   "prompt": "in the machine in the lobby, the touchscreen menu doesn't rescale when the enclosure ships with a taller panel variant",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "touch.minimum_target",
+    "layout.spacing_scale"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "touch.thumb_reach",
+    "env.glanceable_status"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-065",
+   "prompt": "the Svelte dashboard's charts render at a fixed pixel width regardless of container size",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [
+     "web"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "data.chart_by_question",
+    "perf.layout_shift"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "data.accessible_chart_alternative"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-066",
+   "prompt": "shrinking the window on the trading terminal makes the order book overlap the price ladder",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "desktop",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "layout.spacing_scale",
+    "table.column_priority"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "table.tabular_figures",
+    "data.realtime_window"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-067",
+   "prompt": "how should the timeline component behave between a phone and a projector in the same conference room app?",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "unknown",
+   "acceptable_modes": [
+    "responsive",
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [
+     "web",
+     "desktop",
+     "kiosk",
+     "tv"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "brand.type_roles",
+    "env.glanceable_status"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "adaptive.navigation_transform",
+    "a11y.contrast"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-068",
+   "prompt": "the nurse call log wraps text badly once the window drops under 900px, dates get orphaned",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "content.readable_measure",
+    "table.column_priority"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "table.tabular_figures"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-069",
+   "prompt": "on the ward the medication chart's columns don't reflow, they just get squeezed to unreadable widths",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "tablet",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "table.column_priority",
+    "adaptive.breakpoint_matrix",
+    "content.readable_measure"
+   ],
+   "critical_concepts": [
+    "table.column_priority"
+   ],
+   "recommended_concepts": [
+    "table.tabular_figures"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-070",
+   "prompt": "verify the onboarding wizard survives a window resize mid-step without losing form state",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "responsive"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "onboarding.linear_wizard",
+    "state.unsaved_changes_guard",
+    "state.saving_conflict"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix",
+    "state.unsaved_changes_guard"
+   ],
+   "recommended_concepts": [
+    "feedback.progress_indicator"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-071",
+   "prompt": "the retail POS screen on a smaller register terminal cuts off the tender buttons entirely",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "kiosk",
+     "desktop",
+     "tablet"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "layout.one_primary_action",
+    "touch.minimum_target"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "layout.spacing_scale"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-072",
+   "prompt": "our Vue storefront's filter drawer doesn't account for tablets in portrait, it renders as if it's mobile",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [
+     "web"
+    ],
+    "acceptable_inferred": [
+     "tablet"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "interaction.drawer_focus",
+    "data.filter_chips",
+    "adaptive.navigation_transform"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "touch.minimum_target"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-073",
+   "prompt": "the terminal at the gate has a portrait screen but our UI still assumes landscape",
+   "category": "responsive",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "kiosk"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "layout.spacing_scale",
+    "env.glanceable_status"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "touch.minimum_target",
+    "adaptive.navigation_transform"
+   ],
+   "forbidden_concepts": [
+    "desktop.spacing_grid",
+    "interaction.shortcuts"
+   ],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-074",
+   "prompt": "why does the analytics dashboard need a horizontal scrollbar at 1280px, that's a normal laptop",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "table.column_priority",
+    "layout.spacing_scale"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "data.chart_by_question"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-075",
+   "prompt": "split view on the factory supervisor's tablet leaves the alert panel with barely any room to show text",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "tablet",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "content.readable_measure",
+    "data.exception_first"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "env.glanceable_status"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-076",
+   "prompt": "one column width fix on the export summary table",
+   "category": "responsive",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "table.column_priority"
+   ],
+   "critical_concepts": [
+    "table.column_priority"
+   ],
+   "recommended_concepts": [
+    "table.tabular_figures"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "typography"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-077",
+   "prompt": "the itinerary card breaks its own grid when someone has a longer flight number, does it wrap or overflow?",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "content.i18n_expansion",
+    "layout.spacing_scale",
+    "content.readable_measure"
+   ],
+   "critical_concepts": [
+    "content.i18n_expansion"
+   ],
+   "recommended_concepts": [
+    "perf.layout_shift",
+    "adaptive.breakpoint_matrix"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-078",
+   "prompt": "does the loan application form actually work on a foldable phone half-open?",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "responsive"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "touch.ime_keyboard",
+    "form.autofill_attributes",
+    "state.unsaved_changes_guard"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "touch.thumb_reach"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-079",
+   "prompt": "resizing the video call window shrinks the participant grid but the toolbar stays a fixed width and eats the space",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "layout.spacing_scale",
+    "adaptive.navigation_transform"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "layout.one_primary_action"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-080",
+   "prompt": "field techs on the van's mounted tablet complain the job list truncates every address after 20 characters",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "tablet",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "table.column_priority",
+    "content.readable_measure",
+    "adaptive.breakpoint_matrix"
+   ],
+   "critical_concepts": [
+    "table.column_priority",
+    "content.readable_measure"
+   ],
+   "recommended_concepts": [
+    "content.i18n_expansion"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-081",
+   "prompt": "audit breakpoints across the whole insurance quote flow, we've only ever tested desktop",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "responsive"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "adaptive.navigation_transform",
+    "touch.minimum_target",
+    "form.autofill_attributes"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "touch.ime_keyboard",
+    "layout.one_primary_action"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-082",
+   "prompt": "the museum kiosk's landscape orientation lock doesn't actually lock, rotating the stand flips the whole UI",
+   "category": "responsive",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "layout.spacing_scale",
+    "env.glanceable_status"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "privacy.shared_device"
+   ],
+   "forbidden_concepts": [
+    "touch.safe_areas"
+   ],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-083",
+   "prompt": "does the recipe scaling tool's layout survive a narrow kitchen tablet mounted under a cabinet?",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "responsive"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "tablet",
+     "mobile",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "touch.minimum_target",
+    "content.readable_measure"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "env.glanceable_status"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-084",
+   "prompt": "the two-pane email client collapses to one pane too early, at 1100px instead of something reasonable",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "adaptive.navigation_transform",
+    "navigation.orientation_and_back"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "layout.spacing_scale"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-085",
+   "prompt": "check whether the site's nav bar wraps into two rows on a 13 inch laptop with the sidebar open",
+   "category": "responsive",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "responsive"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.navigation_transform",
+    "adaptive.breakpoint_matrix",
+    "navigation.rail_semantics"
+   ],
+   "critical_concepts": [
+    "adaptive.navigation_transform"
+   ],
+   "recommended_concepts": [
+    "layout.spacing_scale"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-086",
+   "prompt": "from the sofa, the EPG rows scroll fine but the highlighted tile jumps two rows when you press down",
+   "category": "tv-media",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.dpad_reachability",
+    "interaction.focus_visible",
+    "tv.epg_pinned_channels"
+   ],
+   "critical_concepts": [
+    "interaction.dpad_reachability"
+   ],
+   "recommended_concepts": [
+    "perf.focus_latency",
+    "tv.time_navigation"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-087",
+   "prompt": "the player overlay covers the scrubber and you can't tell if you're hovering the seek bar or the volume control",
+   "category": "tv-media",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "tv",
+     "web",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "tv.player_autohide",
+    "interaction.focus_visible",
+    "interaction.selection_visible"
+   ],
+   "critical_concepts": [
+    "interaction.focus_visible"
+   ],
+   "recommended_concepts": [
+    "layout.spacing_scale",
+    "media.track_selection"
+   ],
+   "forbidden_concepts": [
+    "tv.no_touch_hover"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {
+    "interaction.focus_visible": [
+     "interaction.selection_visible"
+    ]
+   }
+  },
+  {
+   "id": "hv5-g03-088",
+   "prompt": "focus gets lost entirely when the recommendation rail finishes loading, remote just does nothing",
+   "category": "tv-media",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.focus_restore",
+    "state.loading_empty_error",
+    "interaction.dpad_reachability",
+    "interaction.focus_visible"
+   ],
+   "critical_concepts": [
+    "interaction.focus_restore",
+    "state.loading_empty_error"
+   ],
+   "recommended_concepts": [
+    "perf.focus_latency"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-089",
+   "prompt": "does the channel guide handle a ten-hour marathon block without the row scrolling forever?",
+   "category": "tv-media",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "tv.time_navigation",
+    "tv.epg_pinned_channels",
+    "interaction.dpad_reachability"
+   ],
+   "critical_concepts": [
+    "tv.time_navigation"
+   ],
+   "recommended_concepts": [
+    "perf.focus_latency"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-090",
+   "prompt": "the Tizen app's live tile thumbnails are blurry from ten feet away, text is unreadable on the couch",
+   "category": "tv-media",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "polish"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "tv.ten_foot_typography",
+    "perf.image_sizing",
+    "layout.media_card"
+   ],
+   "critical_concepts": [
+    "tv.ten_foot_typography"
+   ],
+   "recommended_concepts": [
+    "a11y.contrast",
+    "tv.dark_first"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-091",
+   "prompt": "pressing back on the remote during playback exits the whole app instead of showing controls",
+   "category": "tv-media",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.back_semantics",
+    "tv.player_autohide",
+    "navigation.orientation_and_back"
+   ],
+   "critical_concepts": [
+    "interaction.back_semantics"
+   ],
+   "recommended_concepts": [
+    "interaction.dpad_reachability"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-092",
+   "prompt": "the webOS home screen's focus ring is invisible against the dark hero art",
+   "category": "tv-media",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "polish"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.focus_visible",
+    "a11y.contrast",
+    "tv.dark_first"
+   ],
+   "critical_concepts": [
+    "interaction.focus_visible"
+   ],
+   "recommended_concepts": [
+    "layout.media_card",
+    "interaction.selection_visible"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-093",
+   "prompt": "one spacing fix between the rail tiles, they're touching",
+   "category": "tv-media",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.spacing_scale"
+   ],
+   "critical_concepts": [
+    "layout.spacing_scale"
+   ],
+   "recommended_concepts": [
+    "layout.media_card",
+    "interaction.focus_visible"
+   ],
+   "forbidden_concepts": [
+    "a11y.contrast"
+   ],
+   "preservation": [
+    "navigation",
+    "typography"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-094",
+   "prompt": "in the break room the office remote skips two channels every time someone double presses the arrow key too fast",
+   "category": "tv-media",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "perf.focus_latency",
+    "media.live_channel_switching",
+    "interaction.dpad_reachability"
+   ],
+   "critical_concepts": [
+    "perf.focus_latency"
+   ],
+   "recommended_concepts": [
+    "feedback.progress_indicator"
+   ],
+   "forbidden_concepts": [
+    "interaction.keyboard_navigation",
+    "interaction.shortcuts"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-095",
+   "prompt": "why does the subtitle track selector require six clicks on a d-pad to reach",
+   "category": "tv-media",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "media.track_selection",
+    "interaction.dpad_reachability",
+    "tv.player_autohide"
+   ],
+   "critical_concepts": [
+    "media.track_selection"
+   ],
+   "recommended_concepts": [
+    "navigation.platform_grammar"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-096",
+   "prompt": "the live sports overlay showing the score never updates unless you exit and re-enter the stream",
+   "category": "tv-media",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "tv",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "data.realtime_window",
+    "data.refresh_timestamp",
+    "state.loading_empty_error"
+   ],
+   "critical_concepts": [
+    "data.realtime_window"
+   ],
+   "recommended_concepts": [
+    "env.glanceable_status"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-097",
+   "prompt": "audit the whole rails-and-hero home screen for anyone squinting from across the room",
+   "category": "tv-media",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "tv.ten_foot_typography",
+    "layout.media_card",
+    "tv.safe_margins",
+    "interaction.focus_visible",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "tv.ten_foot_typography"
+   ],
+   "recommended_concepts": [
+    "tv.dark_first",
+    "interaction.dpad_reachability"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-098",
+   "prompt": "does the parental control PIN pad on the set-top box work with a remote that has no numpad?",
+   "category": "tv-media",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.dpad_reachability",
+    "privacy.sensitive_masking",
+    "tv.ten_foot_typography"
+   ],
+   "critical_concepts": [
+    "interaction.dpad_reachability"
+   ],
+   "recommended_concepts": [
+    "tv.sign_in_code",
+    "privacy.shared_device"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-099",
+   "prompt": "our tvOS focus engine keeps snapping to the wrong tile when two rails are close together vertically",
+   "category": "tv-media",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.dpad_reachability",
+    "interaction.focus_visible",
+    "layout.spacing_scale"
+   ],
+   "critical_concepts": [
+    "interaction.dpad_reachability"
+   ],
+   "recommended_concepts": [
+    "perf.focus_latency",
+    "layout.media_card"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-100",
+   "prompt": "the mini player in the corner during a phone call overlay blocks the closed captions entirely",
+   "category": "tv-media",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "media.track_selection",
+    "touch.safe_areas"
+   ],
+   "critical_concepts": [
+    "media.track_selection"
+   ],
+   "recommended_concepts": [
+    "layout.media_card",
+    "layout.spacing_scale"
+   ],
+   "forbidden_concepts": [
+    "tv.player_autohide",
+    "tv.safe_margins"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-101",
+   "prompt": "grandma can't find the exit button on the streaming app menu from the couch, it's tucked in a corner",
+   "category": "tv-media",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.back_semantics",
+    "navigation.platform_grammar",
+    "tv.ten_foot_typography",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "interaction.back_semantics"
+   ],
+   "recommended_concepts": [
+    "interaction.dpad_reachability"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-102",
+   "prompt": "the karaoke lounge's queue screen doesn't scroll with the remote, you have to use the on-screen mouse pointer mode",
+   "category": "tv-media",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.dpad_reachability",
+    "tv.no_touch_hover",
+    "navigation.platform_grammar"
+   ],
+   "critical_concepts": [
+    "interaction.dpad_reachability"
+   ],
+   "recommended_concepts": [
+    "interaction.focus_visible"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-103",
+   "prompt": "one color change on the buffering spinner, that's the whole ask",
+   "category": "tv-media",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "tv"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.contrast"
+   ],
+   "critical_concepts": [
+    "a11y.contrast"
+   ],
+   "recommended_concepts": [
+    "feedback.progress_indicator",
+    "tv.dark_first"
+   ],
+   "forbidden_concepts": [
+    "interaction.dpad_reachability"
+   ],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-104",
+   "prompt": "review the whole media player chrome, buttons, captions, scrubber, everything, for ten-foot legibility",
+   "category": "tv-media",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "tv.ten_foot_typography",
+    "tv.player_autohide",
+    "media.track_selection",
+    "interaction.dpad_reachability",
+    "a11y.contrast"
+   ],
+   "critical_concepts": [
+    "tv.ten_foot_typography"
+   ],
+   "recommended_concepts": [
+    "tv.safe_margins",
+    "interaction.focus_visible"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-105",
+   "prompt": "the news ticker overlay running along the bottom obscures the lower third graphics during breaking segments",
+   "category": "tv-media",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "tv.safe_margins",
+    "layout.spacing_scale",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "tv.safe_margins"
+   ],
+   "recommended_concepts": [
+    "tv.ten_foot_typography"
+   ],
+   "forbidden_concepts": [
+    "data.realtime_window"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-106",
+   "prompt": "why does holding down the remote's fast forward button skip the whole episode instead of scrubbing smoothly",
+   "category": "tv-media",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.dpad_reachability",
+    "tv.player_autohide",
+    "feedback.progress_indicator"
+   ],
+   "critical_concepts": [
+    "interaction.dpad_reachability"
+   ],
+   "recommended_concepts": [
+    "perf.focus_latency",
+    "media.resume_playback"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-107",
+   "prompt": "the gym's wall-mounted display cycles workout stats but nobody can read the small font from the treadmill",
+   "category": "tv-media",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "polish"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "tv",
+     "kiosk"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "tv.ten_foot_typography",
+    "env.glanceable_status",
+    "a11y.contrast"
+   ],
+   "critical_concepts": [
+    "tv.ten_foot_typography"
+   ],
+   "recommended_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-108",
+   "prompt": "does the now-playing rail actually indicate which tile has focus once you scroll past the first row?",
+   "category": "tv-media",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.focus_visible",
+    "interaction.dpad_reachability",
+    "layout.media_card",
+    "interaction.selection_visible"
+   ],
+   "critical_concepts": [
+    "interaction.focus_visible"
+   ],
+   "recommended_concepts": [
+    "perf.focus_latency"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-109",
+   "prompt": "the remote's back button behaves differently on every screen of the app, sometimes it exits, sometimes it goes up a level",
+   "category": "tv-media",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.back_semantics",
+    "navigation.orientation_and_back",
+    "navigation.platform_grammar"
+   ],
+   "critical_concepts": [
+    "interaction.back_semantics"
+   ],
+   "recommended_concepts": [
+    "interaction.dpad_reachability"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-110",
+   "prompt": "fix the closed caption sizing so it doesn't cover the player controls when both are visible",
+   "category": "tv-media",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "polish"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "tv",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "tv.player_autohide",
+    "media.track_selection",
+    "layout.spacing_scale"
+   ],
+   "critical_concepts": [
+    "tv.player_autohide"
+   ],
+   "recommended_concepts": [
+    "tv.ten_foot_typography",
+    "a11y.contrast"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-111",
+   "prompt": "the lobby's digital signage rotates ads but the transition stutters every third slide",
+   "category": "tv-media",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "polish"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "kiosk",
+     "tv"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "perf.js_budget",
+    "perf.image_sizing",
+    "a11y.reduced_motion"
+   ],
+   "critical_concepts": [
+    "perf.js_budget"
+   ],
+   "recommended_concepts": [
+    "env.glanceable_status"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {
+    "perf.js_budget": [
+     "perf.image_sizing"
+    ]
+   }
+  },
+  {
+   "id": "hv5-g03-112",
+   "prompt": "one contrast bump on the live badge, red on red right now",
+   "category": "tv-media",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "tv"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.contrast"
+   ],
+   "critical_concepts": [
+    "a11y.contrast"
+   ],
+   "recommended_concepts": [
+    "a11y.color_not_only",
+    "tv.dark_first"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-113",
+   "prompt": "the airport departure board's font choice makes 3 and 8 nearly identical from thirty feet",
+   "category": "tv-media",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "polish"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "kiosk",
+     "tv"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.type_roles",
+    "tv.ten_foot_typography",
+    "table.tabular_figures",
+    "a11y.contrast"
+   ],
+   "critical_concepts": [
+    "brand.type_roles",
+    "tv.ten_foot_typography"
+   ],
+   "recommended_concepts": [
+    "env.glanceable_status",
+    "anti.default_fonts"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-114",
+   "prompt": "does the profile switcher on the shared living room account require typing on a d-pad keyboard, that's painful",
+   "category": "tv-media",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.dpad_reachability",
+    "tv.sign_in_code",
+    "privacy.shared_device"
+   ],
+   "critical_concepts": [
+    "interaction.dpad_reachability"
+   ],
+   "recommended_concepts": [
+    "media.search_tv",
+    "tv.ten_foot_typography"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-115",
+   "prompt": "audit the whole guide from the couch, both eyesight and remote lag",
+   "category": "tv-media",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "tv.ten_foot_typography",
+    "perf.focus_latency",
+    "interaction.dpad_reachability",
+    "tv.epg_pinned_channels",
+    "tv.safe_margins"
+   ],
+   "critical_concepts": [
+    "tv.ten_foot_typography",
+    "perf.focus_latency"
+   ],
+   "recommended_concepts": [
+    "tv.time_navigation",
+    "a11y.contrast"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-116",
+   "prompt": "the fitness class replay rail loses your scroll position every time you back out and come back",
+   "category": "tv-media",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "tv",
+     "web",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "navigation.orientation_and_back",
+    "media.resume_playback",
+    "interaction.focus_restore"
+   ],
+   "critical_concepts": [
+    "navigation.orientation_and_back"
+   ],
+   "recommended_concepts": [
+    "layout.media_card"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-117",
+   "prompt": "why does pausing during a live broadcast show a frozen frame with no buffering indicator at all",
+   "category": "tv-media",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "tv",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "feedback.progress_indicator",
+    "state.loading_empty_error",
+    "media.live_channel_switching"
+   ],
+   "critical_concepts": [
+    "feedback.progress_indicator"
+   ],
+   "recommended_concepts": [
+    "tv.player_autohide"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-118",
+   "prompt": "the waiting room monitor cycles a queue number list but the current-turn highlight is barely different from the rest",
+   "category": "tv-media",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "polish"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "kiosk",
+     "tv"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "env.glanceable_status",
+    "interaction.selection_visible",
+    "a11y.contrast",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "env.glanceable_status"
+   ],
+   "recommended_concepts": [
+    "tv.ten_foot_typography",
+    "a11y.color_not_only"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-119",
+   "prompt": "check whether voice search on the remote actually surfaces a result you can select with d-pad afterward",
+   "category": "tv-media",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "media.search_tv",
+    "interaction.dpad_reachability",
+    "data.search_results"
+   ],
+   "critical_concepts": [
+    "media.search_tv"
+   ],
+   "recommended_concepts": [
+    "interaction.focus_visible"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-120",
+   "prompt": "the multi-camera angle switcher during the match overlaps the scoreboard graphic when you open it",
+   "category": "tv-media",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "tv"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "tv.player_autohide",
+    "layout.spacing_scale",
+    "tv.safe_margins",
+    "interaction.dpad_reachability"
+   ],
+   "critical_concepts": [
+    "tv.player_autohide"
+   ],
+   "recommended_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "forbidden_concepts": [
+    "data.realtime_window"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-121",
+   "prompt": "right-click context menu on the file browser doesn't match the ribbon's own commands, half of them are missing",
+   "category": "desktop-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.menu_semantics",
+    "navigation.platform_grammar",
+    "interaction.shortcuts"
+   ],
+   "critical_concepts": [
+    "interaction.menu_semantics"
+   ],
+   "recommended_concepts": [
+    "interaction.tree_semantics"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-122",
+   "prompt": "the WPF grid's column resize handles are two pixels wide, impossible to grab reliably",
+   "category": "desktop-native",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "polish"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "desktop.spacing_grid"
+   ],
+   "critical_concepts": [
+    "desktop.spacing_grid"
+   ],
+   "recommended_concepts": [
+    "table.column_priority",
+    "interaction.hover_independence"
+   ],
+   "forbidden_concepts": [
+    "a11y.contrast"
+   ],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-123",
+   "prompt": "does the Avalonia app remember window position across restarts on a multi-monitor setup?",
+   "category": "desktop-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "desktop.persist_workspace",
+    "navigation.platform_grammar"
+   ],
+   "critical_concepts": [
+    "desktop.persist_workspace"
+   ],
+   "recommended_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-124",
+   "prompt": "our Electron app's menu bar looks native on mac but generic on windows, is that intentional",
+   "category": "desktop-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "refactor",
+    "review"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "navigation.platform_grammar",
+    "interaction.menu_semantics",
+    "desktop.fluent_materials"
+   ],
+   "critical_concepts": [
+    "navigation.platform_grammar"
+   ],
+   "recommended_concepts": [
+    "interaction.shortcuts"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-125",
+   "prompt": "keyboard shortcuts conflict between the app's own hotkeys and the OS-level ones, ctrl+n does nothing",
+   "category": "desktop-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.shortcuts",
+    "navigation.platform_grammar",
+    "interaction.keyboard_navigation"
+   ],
+   "critical_concepts": [
+    "interaction.shortcuts"
+   ],
+   "recommended_concepts": [
+    "interaction.menu_semantics"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-126",
+   "prompt": "the WinUI3 title bar doesn't respect the system's dark mode toggle, it stays white",
+   "category": "desktop-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.dark_mode_redesign",
+    "desktop.fluent_materials",
+    "brand.token_layers"
+   ],
+   "critical_concepts": [
+    "brand.dark_mode_redesign",
+    "desktop.fluent_materials"
+   ],
+   "recommended_concepts": [
+    "a11y.contrast"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-127",
+   "prompt": "why does dragging a row in the data grid also select text underneath it",
+   "category": "desktop-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "desktop",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "table.selection_bulk",
+    "interaction.selection_visible",
+    "interaction.hover_independence"
+   ],
+   "critical_concepts": [
+    "table.selection_bulk",
+    "interaction.selection_visible"
+   ],
+   "recommended_concepts": [
+    "table.inline_edit"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-128",
+   "prompt": "one menu item reorder in the File menu, that's it",
+   "category": "desktop-native",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "polish"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.menu_semantics",
+    "navigation.platform_grammar"
+   ],
+   "critical_concepts": [
+    "interaction.menu_semantics"
+   ],
+   "recommended_concepts": [
+    "interaction.shortcuts"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-129",
+   "prompt": "the trading terminal's multi-window layout doesn't snap consistently between two ultrawide monitors",
+   "category": "desktop-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "desktop.persist_workspace",
+    "adaptive.breakpoint_matrix",
+    "navigation.platform_grammar"
+   ],
+   "critical_concepts": [
+    "desktop.persist_workspace"
+   ],
+   "recommended_concepts": [
+    "layout.spacing_scale"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-130",
+   "prompt": "audit every dialog in the app for consistent button ordering, some have OK/Cancel and some have Cancel/OK",
+   "category": "desktop-native",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "navigation.platform_grammar",
+    "layout.one_primary_action"
+   ],
+   "critical_concepts": [
+    "navigation.platform_grammar"
+   ],
+   "recommended_concepts": [
+    "a11y.dialog_focus",
+    "feedback.confirmation_destructive"
+   ],
+   "forbidden_concepts": [
+    "a11y.contrast"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-131",
+   "prompt": "resizing the settings window below its minimum size just clips content instead of enforcing the minimum",
+   "category": "desktop-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "layout.settings_grouping",
+    "desktop.spacing_grid"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "content.readable_measure"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-132",
+   "prompt": "our macOS build's toolbar icons don't scale for retina, they look fuzzy compared to the sidebar",
+   "category": "desktop-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "polish"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "perf.image_sizing",
+    "brand.imagery_purpose",
+    "navigation.platform_grammar"
+   ],
+   "critical_concepts": [
+    "perf.image_sizing"
+   ],
+   "recommended_concepts": [
+    "a11y.text_scaling"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-133",
+   "prompt": "the accounting app's tab key order jumps around the form unpredictably, feels random",
+   "category": "desktop-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "desktop",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.keyboard_navigation",
+    "interaction.focus_visible",
+    "a11y.semantics"
+   ],
+   "critical_concepts": [
+    "interaction.keyboard_navigation"
+   ],
+   "recommended_concepts": [
+    "form.autofill_attributes",
+    "feedback.validation_errors"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-134",
+   "prompt": "does alt+tab preview show a frozen thumbnail of the app or the actual last frame",
+   "category": "desktop-native",
+   "stress": "none",
+   "scope": "partial",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "navigation.platform_grammar",
+    "desktop.persist_workspace"
+   ],
+   "critical_concepts": [
+    "navigation.platform_grammar"
+   ],
+   "recommended_concepts": [
+    "perf.layout_shift",
+    "state.loading_empty_error"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-135",
+   "prompt": "the property inspector panel in the design tool can't be undocked, it's stuck to the side",
+   "category": "desktop-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "desktop.persist_workspace",
+    "navigation.rail_semantics",
+    "interaction.drawer_focus"
+   ],
+   "critical_concepts": [
+    "desktop.persist_workspace"
+   ],
+   "recommended_concepts": [
+    "navigation.platform_grammar"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-136",
+   "prompt": "why does closing the last document window quit the whole app instead of just closing the window",
+   "category": "desktop-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "navigation.platform_grammar",
+    "state.unsaved_changes_guard",
+    "desktop.persist_workspace"
+   ],
+   "critical_concepts": [
+    "navigation.platform_grammar"
+   ],
+   "recommended_concepts": [
+    "feedback.confirmation_destructive"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-137",
+   "prompt": "the CAD tool's context menu for a selected object overlaps the object itself, obscuring what you're editing",
+   "category": "desktop-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.menu_semantics",
+    "layout.spacing_scale",
+    "interaction.selection_visible"
+   ],
+   "critical_concepts": [
+    "interaction.menu_semantics"
+   ],
+   "recommended_concepts": [
+    "interaction.focus_restore"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-138",
+   "prompt": "review the entire preferences window for consistency, some tabs use sliders and some use text fields for the same kind of value",
+   "category": "desktop-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.settings_grouping",
+    "navigation.platform_grammar",
+    "layout.spacing_scale"
+   ],
+   "critical_concepts": [
+    "layout.settings_grouping"
+   ],
+   "recommended_concepts": [
+    "desktop.spacing_grid",
+    "brand.corner_language"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-139",
+   "prompt": "the print dialog's default paper size resets every session even after the user changes it",
+   "category": "desktop-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "desktop.persist_workspace",
+    "layout.settings_grouping"
+   ],
+   "critical_concepts": [
+    "desktop.persist_workspace"
+   ],
+   "recommended_concepts": [
+    "navigation.platform_grammar"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-140",
+   "prompt": "one label rename on the export button, currently it just says Go",
+   "category": "desktop-native",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "polish"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.accessible_names",
+    "layout.one_primary_action"
+   ],
+   "critical_concepts": [
+    "a11y.accessible_names"
+   ],
+   "recommended_concepts": [
+    "brand.imagery_purpose"
+   ],
+   "forbidden_concepts": [
+    "a11y.contrast"
+   ],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-141",
+   "prompt": "the Avalonia data grid doesn't show a loading state during a long filter operation, app just looks frozen",
+   "category": "desktop-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.loading_empty_error",
+    "feedback.progress_indicator",
+    "data.filter_chips"
+   ],
+   "critical_concepts": [
+    "state.loading_empty_error"
+   ],
+   "recommended_concepts": [
+    "table.virtualization"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-142",
+   "prompt": "does the app respect Windows high-DPI scaling on a 4K external monitor plugged into a laptop",
+   "category": "desktop-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "responsive"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.text_scaling",
+    "perf.image_sizing",
+    "desktop.spacing_grid"
+   ],
+   "critical_concepts": [
+    "a11y.text_scaling"
+   ],
+   "recommended_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-143",
+   "prompt": "the inventory tool's toolbar buttons don't have tooltips, new hires have no idea what half of them do",
+   "category": "desktop-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.accessible_names",
+    "brand.imagery_purpose",
+    "interaction.hover_independence"
+   ],
+   "critical_concepts": [
+    "a11y.accessible_names"
+   ],
+   "recommended_concepts": [
+    "onboarding.feature_education"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-144",
+   "prompt": "our Electron packaging ships a completely different font stack than the design spec used, everything looks off",
+   "category": "desktop-native",
+   "stress": "none",
+   "scope": "partial",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "brand"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.font_loading",
+    "brand.type_roles",
+    "anti.default_fonts"
+   ],
+   "critical_concepts": [
+    "brand.font_loading"
+   ],
+   "recommended_concepts": [
+    "brand.token_layers"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "typography",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-145",
+   "prompt": "why does the app's own scrollbar style clash with the OS scrollbar in the same window",
+   "category": "desktop-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "polish"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "navigation.platform_grammar",
+    "desktop.fluent_materials",
+    "brand.token_layers"
+   ],
+   "critical_concepts": [
+    "navigation.platform_grammar"
+   ],
+   "recommended_concepts": [
+    "a11y.contrast"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-146",
+   "prompt": "the WPF app's splash screen blocks input for three seconds after the window is already interactive",
+   "category": "desktop-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.loading_empty_error",
+    "feedback.progress_indicator",
+    "perf.layout_shift"
+   ],
+   "critical_concepts": [
+    "state.loading_empty_error"
+   ],
+   "recommended_concepts": [
+    "desktop.persist_workspace"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-147",
+   "prompt": "check whether right-click on the taxonomy tree in the CMS admin tool offers move-here as an option or only copy",
+   "category": "desktop-native",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "web",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.tree_semantics",
+    "interaction.menu_semantics",
+    "interaction.keyboard_navigation"
+   ],
+   "critical_concepts": [
+    "interaction.tree_semantics",
+    "interaction.menu_semantics"
+   ],
+   "recommended_concepts": [
+    "interaction.selection_visible"
+   ],
+   "forbidden_concepts": [
+    "desktop.persist_workspace",
+    "desktop.fluent_materials"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-148",
+   "prompt": "the multi-select in the asset manager loses selection state if you scroll too far",
+   "category": "desktop-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "desktop",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "table.virtualization",
+    "table.selection_bulk",
+    "interaction.selection_visible"
+   ],
+   "critical_concepts": [
+    "table.virtualization",
+    "table.selection_bulk"
+   ],
+   "recommended_concepts": [
+    "data.pagination_strategy"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-149",
+   "prompt": "does the native notification for a completed export actually link back to the file location on click",
+   "category": "desktop-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "navigation.platform_grammar",
+    "feedback.progress_indicator",
+    "navigation.deep_link_state"
+   ],
+   "critical_concepts": [
+    "navigation.platform_grammar"
+   ],
+   "recommended_concepts": [
+    "state.loading_empty_error"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g03-150",
+   "prompt": "audit the whole app's window chrome, menus, dialogs, and shortcuts against the platform's own HIG",
+   "category": "desktop-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "navigation.platform_grammar",
+    "interaction.menu_semantics",
+    "interaction.shortcuts",
+    "a11y.dialog_focus",
+    "desktop.fluent_materials"
+   ],
+   "critical_concepts": [
+    "navigation.platform_grammar"
+   ],
+   "recommended_concepts": [
+    "desktop.spacing_grid",
+    "brand.corner_language"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  }
+ ]
+}

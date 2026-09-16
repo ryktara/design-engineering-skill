@@ -1,0 +1,142 @@
+{
+  "brand": "The appointments grid re-renders the whole day when one chip is dragged, so dragging stutters.",
+  "fingerprint": {
+    "navigation_model": "left-rail",
+    "layout_topology": "dashboard-grid",
+    "grid_behavior": "responsive-columns",
+    "content_density": "high",
+    "surface_strategy": "elevated",
+    "card_geometry": "poster-portrait",
+    "corner_language": "small",
+    "color_strategy": "neutral-plus-accent",
+    "motion_character": "functional-minimal",
+    "focus_strategy": "ring",
+    "cta_strategy": "single-primary",
+    "image_strategy": "thumbnails",
+    "icon_strategy": "outline",
+    "metadata_density": "inline-badges"
+  },
+  "direction": {
+    "navigation": "nav-left-rail",
+    "layout": "layout-dashboard-grid",
+    "density": "density-high",
+    "surface": "surface-elevated-cards",
+    "cards": "card-poster-portrait",
+    "typography": null,
+    "color": "color-neutral-accent",
+    "motion": "motion-functional-minimal",
+    "focus": "focus-ring-standard",
+    "cta": "cta-single-primary",
+    "imagery": "imagery-thumbnails",
+    "icon": "icon-outline-system",
+    "metadata": "metadata-inline-badges"
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [
+      "ecommerce",
+      "healthcare"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "svelte",
+      "tailwind"
+    ],
+    "density": null,
+    "components": [],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "audit"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "interaction",
+        "performance-ux"
+      ],
+      "change_scope": "screen",
+      "utterance": "observation",
+      "preserve": []
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "audit: interaction defect on existing UI",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": "left-rail (KNOWN)",
+      "theme": "light-first (INFERRED)",
+      "spacing": "4 (INFERRED)",
+      "typography": "custom (INFERRED)",
+      "components": "tailwind (KNOWN)"
+    },
+    "known": [
+      "platform=web",
+      "product=healthcare",
+      "product=ecommerce",
+      "stack=svelte",
+      "stack=tailwind",
+      "project_navigation=left-rail",
+      "project_components=tailwind"
+    ],
+    "inferred": [
+      "input=pointer",
+      "input=keyboard",
+      "input=touch",
+      "mode=audit",
+      "mode=refactor",
+      "project_theme=light-first",
+      "project_spacing=4",
+      "project_typography=custom"
+    ],
+    "missing": [],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": false,
+    "violations": [
+      "non-media product: poster (media) card geometry selected"
+    ]
+  }
+}

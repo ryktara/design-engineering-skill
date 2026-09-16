@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NorthBank</string>
+
+    <!-- Navigation -->
+    <string name="tab_accounts">Accounts</string>
+    <string name="tab_pay">Pay</string>
+    <string name="tab_cards">Cards</string>
+    <string name="tab_more">More</string>
+    <string name="action_back">Back</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_undo">Undo</string>
+
+    <!-- Accounts -->
+    <string name="accounts_title">Your accounts</string>
+    <string name="accounts_total_balance">Total balance</string>
+    <string name="account_available">Available</string>
+    <string name="account_transactions">Transactions</string>
+    <string name="account_pending">Pending</string>
+
+    <!-- Transfer -->
+    <string name="transfer_title">Send money</string>
+    <string name="transfer_from">From account</string>
+    <string name="transfer_to">Payee</string>
+    <string name="transfer_choose_payee">Choose a payee</string>
+    <string name="transfer_amount">Amount</string>
+    <string name="transfer_reference">Reference</string>
+    <string name="transfer_reference_hint">What is this for?</string>
+    <string name="transfer_send">Send</string>
+    <string name="transfer_error_payee">Please choose a payee</string>
+    <string name="transfer_error_amount">Enter a valid amount</string>
+    <string name="transfer_error_funds">Insufficient funds</string>
+    <string name="transfer_sent">Transfer sent</string>
+
+    <!-- Cards -->
+    <string name="cards_title">Cards</string>
+    <string name="card_freeze">Freeze card</string>
+    <string name="card_frozen">Frozen</string>
+    <string name="card_active">Active</string>
+    <string name="card_expires">Expires</string>
+    <string name="card_freezing">Freezing…</string>
+    <string name="card_unfreezing">Unfreezing…</string>
+    <string name="card_freeze_confirm_title">Freeze this card?</string>
+    <string name="card_freeze_confirm_body">Card ending %1$s will stop working straight away. Payments and cash withdrawals will be declined until you unfreeze it. Standing orders and Direct Debits are not affected.</string>
+    <string name="card_freeze_confirm_action">Freeze card</string>
+    <string name="card_freeze_done">Card frozen</string>
+    <string name="card_unfreeze_done">Card unfrozen</string>
+    <string name="card_show_pin">Show PIN</string>
+    <string name="card_report_lost">Report lost or stolen</string>
+
+    <!-- More -->
+    <string name="more_title">More</string>
+    <string name="more_profile">Profile</string>
+    <string name="more_security">Security</string>
+    <string name="more_notifications">Notifications</string>
+    <string name="more_statements">Statements</string>
+    <string name="more_help">Help &amp; support</string>
+    <string name="more_about">About NorthBank</string>
+    <string name="more_sign_out">Sign out</string>
+    <string name="more_version">Version %1$s</string>
+</resources>

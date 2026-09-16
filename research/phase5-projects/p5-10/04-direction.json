@@ -1,0 +1,140 @@
+{
+  "brand": "Add a subtitles and audio language chooser to the player.",
+  "fingerprint": {
+    "navigation_model": "tv-side-nav",
+    "layout_topology": "canvas",
+    "cta_strategy": "focus-selects",
+    "content_density": "medium",
+    "card_geometry": "poster-landscape",
+    "corner_language": "small",
+    "typography_character": "system-native",
+    "color_strategy": "dark-with-accent",
+    "motion_character": "focus-scale",
+    "focus_strategy": "border-plus-scale",
+    "image_strategy": "immersive-backdrop",
+    "icon_strategy": "custom-glyphs",
+    "metadata_density": "focus-reveal"
+  },
+  "direction": {
+    "navigation": "nav-tv-side",
+    "layout": "layout-split-player",
+    "density": "density-medium",
+    "surface": null,
+    "cards": "card-poster-landscape",
+    "typography": "typography-system-native",
+    "color": "color-dark-accent",
+    "motion": "motion-focus-scale",
+    "focus": "focus-scale-glow",
+    "cta": "cta-focus-selects",
+    "imagery": "imagery-immersive-backdrop",
+    "icon": "icon-custom-glyphs",
+    "metadata": "metadata-focus-reveal"
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "tv"
+    ],
+    "input": [
+      "remote"
+    ],
+    "product": [
+      "media"
+    ],
+    "screen": [
+      "player"
+    ],
+    "screen_subtype": [],
+    "stack": [
+      "compose",
+      "compose-tv"
+    ],
+    "density": "medium",
+    "components": [
+      "media"
+    ],
+    "environment": [
+      "large-display",
+      "shared-device"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "create player"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "create"
+      ],
+      "problem_domain": [],
+      "change_scope": "screen",
+      "utterance": "request",
+      "preserve": []
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "create: build/create request on an existing surface"
+    ],
+    "project_context": {
+      "navigation": "tv-rails (KNOWN)",
+      "theme": "dark-first (KNOWN)",
+      "surfaces": "bordered-flat (INFERRED)",
+      "radius": "medium (INFERRED)",
+      "spacing": "8 (INFERRED)",
+      "components": "compose, compose-tv-material, media3, images:coil (KNOWN)"
+    },
+    "known": [
+      "platform=tv",
+      "input=remote",
+      "product=media",
+      "stack=compose",
+      "stack=compose-tv",
+      "screen=player",
+      "project_navigation=tv-rails",
+      "project_theme=dark-first",
+      "project_components=compose, compose-tv-material, media3, images:coil"
+    ],
+    "inferred": [
+      "density=medium",
+      "mode=create",
+      "environment=shared-device",
+      "environment=large-display",
+      "project_surfaces=bordered-flat",
+      "project_radius=medium",
+      "project_spacing=8"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

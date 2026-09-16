@@ -1,0 +1,12 @@
+{"task": "p6-05", "records": [
+{"id": "comp-toast-notification", "verdict": "partial", "category": "wrong-screen", "why": "Toast/snackbar record for an inline alerts list; only its live-region line applies (as in c3)."},
+{"id": "a11y-skip-link", "verdict": "partial", "category": "wrong-screen", "why": "Page-level bypass guidance and the skip link already exists; only its semantics line backed role=list."},
+{"id": "data-exceptions-first", "verdict": "off-target", "category": "generic", "why": "Data-display heuristic about exception sorting/badges, not an accessibility-checklist item for this panel."},
+{"id": "a11y-contrast-text", "verdict": "relevant", "category": "", "why": "Real checklist item; contrast was verified against it."},
+{"id": "a11y-labels-names", "verdict": "relevant", "category": "", "why": "Drove the per-alert accessible-name fix."},
+{"id": "a11y-color-not-only", "verdict": "relevant", "category": "", "why": "Real checklist item; severity glyph+label+tint verified against it."},
+{"id": "layout-hierarchy-one-thing", "verdict": "off-target", "category": "generic", "why": "Dashboard focal-point advice, nothing actionable in an a11y review (off-target in c3)."}],
+ "missing_critical": ["interaction.focus_restore"],
+ "unjustified_direction_slots": 0,
+ "layer_review": {"core": ["comp-toast-notification"], "critical": ["a11y-skip-link", "data-exceptions-first", "a11y-contrast-text", "a11y-labels-names", "a11y-color-not-only", "layout-hierarchy-one-thing"], "optional": []},
+ "change_vs_c3": "Same: interaction-drag-drop (off-target) was dropped but data-exceptions-first (off-target) replaced it, bundle stays 7 records with the same 3/2/2 split and focus_restore still missing."}

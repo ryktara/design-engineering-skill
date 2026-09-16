@@ -1,0 +1,1215 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "From the sofa nobody can tell which row is selected on the living-room screen.",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "accessibility",
+      "audit"
+    ],
+    "platform": [
+      "tv"
+    ],
+    "input": [
+      "remote"
+    ],
+    "product": [
+      "media"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "swiftui"
+    ],
+    "density": "medium",
+    "components": [],
+    "environment": [
+      "large-display",
+      "shared-device"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "accessibility"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "accessibility",
+        "interaction"
+      ],
+      "change_scope": "screen",
+      "utterance": "observation",
+      "existing": true,
+      "problem": true,
+      "facet": "accessibility",
+      "diagnose_only": false,
+      "creation": false,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [
+      {
+        "platform": "tv",
+        "strength": "STRONG_INFERENCE",
+        "evidence": [
+          "living-room",
+          "from the sofa",
+          "sofa"
+        ]
+      }
+    ],
+    "mode_evidence": [
+      "accessibility: accessibility defect on existing UI",
+      "audit: diagnose the reported defect"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "tv-rails",
+        "status": "KNOWN",
+        "evidence": [
+          "tv-rails: 29 matches in SearchView.swift, TVButtonStyle.swift, Tokens.swift (shell/layout file)"
+        ]
+      },
+      "theme": {
+        "value": "dark-first",
+        "status": "INFERRED",
+        "evidence": [
+          "dark theme configuration signals: 2",
+          "hex palette: 2 near-white, 4 near-black",
+          "TV platform with a dark-leaning palette"
+        ]
+      },
+      "surfaces": {
+        "value": "elevated",
+        "status": "INFERRED",
+        "evidence": [
+          "shadow/elevation in 2 files, borders in 0"
+        ]
+      },
+      "radius": {
+        "value": "medium",
+        "status": "INFERRED",
+        "evidence": [
+          "most common radius 8 (1×); others [24.0]"
+        ]
+      },
+      "spacing": {
+        "value": "irregular",
+        "status": "UNKNOWN",
+        "evidence": [
+          "most used spacing values [6]"
+        ]
+      },
+      "typography": {
+        "value": "custom",
+        "status": "KNOWN",
+        "evidence": [
+          "font family System (2 refs)",
+          "monospace usage",
+          "tabular numerals"
+        ]
+      },
+      "components": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": []
+      }
+    },
+    "known": [
+      "platform=tv (request wording (living-room, from the sofa, sofa) confirmed by project inspection)",
+      "input=remote (project inspection: DPAD/remote handling in source)",
+      "product=media (project inspection (README))",
+      "stack=swiftui (project inspection)",
+      "project_navigation=tv-rails (repository: tv-rails: 29 matches in SearchView.swift, TVButtonStyle.swift, Tokens.swift (shell/layout file))",
+      "project_typography=custom (repository: font family System (2 refs); monospace usage)"
+    ],
+    "inferred": [
+      "density=medium (implied by product media)",
+      "mode=accessibility (accessibility defect on existing UI)",
+      "mode=audit (diagnose the reported defect)",
+      "environment=shared-device (a TV is normally a shared household device)",
+      "environment=large-display (TV platform)",
+      "project_theme=dark-first (repository: dark theme configuration signals: 2; hex palette: 2 near-white, 4 near-black)",
+      "project_surfaces=elevated (repository: shadow/elevation in 2 files, borders in 0)",
+      "project_radius=medium (repository: most common radius 8 (1×); others [24.0])"
+    ],
+    "missing": [],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [],
+      "project": [
+        "Package.swift: Apple project",
+        "Package.swift: tvOS target",
+        "DPAD / remote key handling found in source"
+      ]
+    },
+    "activation": {
+      "decision": "activate",
+      "ui_score": 2.0,
+      "non_ui_score": 0,
+      "ui_terms": [
+        "screen"
+      ],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "nobody",
+        "the living-room screen"
+      ],
+      "new": [],
+      "defect": [
+        "nobody"
+      ],
+      "operations": {},
+      "domains": {
+        "accessibility": [
+          "from the sofa"
+        ],
+        "interaction": [
+          "select"
+        ]
+      },
+      "no_change": [],
+      "scope": {
+        "screen": [
+          "screen"
+        ]
+      },
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "screen",
+        "row",
+        "selected",
+        "concept:interaction.selection_visible",
+        "concept:tv.ten_foot_typography"
+      ],
+      "ux_symptoms": [],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "accessibility",
+        "reason": "accessibility mode"
+      },
+      {
+        "concern": "interaction",
+        "reason": "accessibility mode: operability is part of the review"
+      },
+      {
+        "concern": "component",
+        "reason": "the reviewed component/screen"
+      },
+      {
+        "concern": "performance",
+        "reason": "focus latency and catalog virtualization on TV"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "states",
+        "reason": "audits check empty/loading/error handling"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "audits name generic-design defects"
+      },
+      {
+        "concern": "content",
+        "reason": "10-foot readability"
+      },
+      {
+        "concern": "environment",
+        "reason": "environment large-display (INFERRED)"
+      }
+    ],
+    "optional": [],
+    "required_concepts": [
+      {
+        "concept": "interaction.selection_visible",
+        "reason": "named in the request: tell which, which row is selected"
+      },
+      {
+        "concept": "tv.ten_foot_typography",
+        "reason": "named in the request: from the sofa"
+      },
+      {
+        "concept": "a11y.accessible_names",
+        "reason": "accessibility review"
+      },
+      {
+        "concept": "a11y.contrast",
+        "reason": "accessibility review"
+      },
+      {
+        "concept": "a11y.semantics",
+        "reason": "accessibility review"
+      },
+      {
+        "concept": "a11y.color_not_only",
+        "reason": "accessibility review"
+      },
+      {
+        "concept": "a11y.live_status",
+        "reason": "accessibility review"
+      },
+      {
+        "concept": "interaction.dpad_reachability",
+        "reason": "TV / remote input"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "required by interaction.dpad_reachability"
+      }
+    ],
+    "recommended_concepts": [
+      "a11y.text_scaling",
+      "a11y.reduced_motion",
+      "state.loading_empty_error",
+      "process.reuse_first",
+      "interaction.back_semantics",
+      "tv.no_touch_hover",
+      "perf.focus_latency",
+      "tv.dark_first",
+      "privacy.shared_device",
+      "interaction.focus_restore",
+      "tv.safe_margins"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "comp-tv-side-sheet",
+      "kind": "component",
+      "category": "dialog",
+      "title": "TV side sheet / chooser",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component"
+      ],
+      "concepts": [
+        "a11y.dialog_focus",
+        "interaction.selection_visible",
+        "interaction.focus_restore",
+        "media.track_selection"
+      ],
+      "covers": [
+        "dialog focus management",
+        "selected state visible and distinct from focus and hover",
+        "focus restoration",
+        "subtitle and audio track selection reachable from the player"
+      ],
+      "score": 0.419,
+      "guidance": "A right-hand sheet (~600 dp) over a scrim; columns of radio rows; first focus lands on the current value; selected state is a fill + check + semantics distinct from the focus ring; SELECT applies immediately; BACK closes and returns focus to the button that opened it; show the current choice next to the button when closed; include an Off row and a 'no tracks' text state; player controls stay hidden while the sheet is open.",
+      "use_when": "Choosing subtitles, audio tracks, quality, playback speed or a profile from inside the player or a rail screen.",
+      "avoid_when": "More than two levels deep; more than ~8 options per column without grouping; opening it must not pause auto-hide logic incorrectly.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.172,
+        "structural": 0.72,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "secondary mode",
+          "product media"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "media-resume-and-details",
+      "kind": "component",
+      "category": "detail",
+      "title": "Media details screen, resume playback and watchlist",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "interaction",
+        "navigation",
+        "states"
+      ],
+      "concepts": [
+        "media.details_play_first",
+        "media.resume_playback",
+        "media.watchlist",
+        "interaction.focus_restore",
+        "interaction.back_semantics",
+        "a11y.color_not_only"
+      ],
+      "covers": [
+        "details screen with Play as default focus",
+        "continue watching / resume playback",
+        "watchlist / save for later",
+        "focus restoration",
+        "BACK behaviour",
+        "no colour alone for status"
+      ],
+      "score": 0.383,
+      "guidance": "Details: the primary action is Play (or Resume with the remaining time and a Start over alternative) and it takes default focus; metadata is a short scannable block (duration, year, rating, badges as text not colour), synopsis ≤3 lines with an expander, episodes as a rail or list with progress bars and the next unwatched episode preselected; secondary actions (watchlist, trailer, more like this) sit after Play in one row. Resume: a continue-watching row shows progress on each card, resumes at the saved position, and removes finished items; entering a title from the row returns focus to that card. Watchlist: one toggle with a clear on/off state and text label, works from cards and details, and is reflected immediately in the watchlist row. Everything is reachable with D-pad UP/DOWN/LEFT/RIGHT and BACK returns to the row that launched the details.",
+      "use_when": "Title/episode details, continue-watching rows, watchlist actions in a streaming or catch-up app.",
+      "avoid_when": "Live-only channels without on-demand content (use the guide and player rules).",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "platform-standard",
+      "implementation": {
+        "swiftui": "tvOS: .prefersDefaultFocus on Play inside a focusScope; NavigationStack path keeps the row/card identity for restoration."
+      },
+      "why": {
+        "lexical": 0.106,
+        "structural": 0.72,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "secondary mode",
+          "product media"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "tv-dpad-hold-pacing",
+      "kind": "rule",
+      "category": "focus",
+      "title": "TV: pace held D-pad repeats on rails and grids",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "perf.focus_latency",
+        "interaction.dpad_reachability",
+        "a11y.reduced_motion",
+        "interaction.focus_visible"
+      ],
+      "covers": [
+        "focus latency",
+        "D-pad focus reachability",
+        "reduced motion",
+        "visible focus"
+      ],
+      "score": 0.324,
+      "guidance": "First press moves immediately; while the key is held, admit repeats at a fixed pace (about 3–5 cards per second) and finish each scroll step before the next move; keep the focused card inside the viewport with a stable position; show a large title of the focused item; under reduced motion keep the same pace with instant (non-animated) moves; long lists offer a page-jump (channel up/down, letter index).",
+      "use_when": "Rails, grids and guides where holding LEFT/RIGHT/UP/DOWN auto-repeats: titles fly past, focus outruns the scroll, users overshoot.",
+      "avoid_when": "Never coalesce or drop the first press; never let the focused card leave the viewport; never speed up under reduced motion.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.72,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "secondary mode",
+          "product media"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: accessibility, D-pad focus reachability, visible focus"
+    },
+    {
+      "id": "a11y-native-semantics",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Native accessibility semantics (mobile/desktop)",
+      "facets": [
+        "accessibility",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility"
+      ],
+      "concepts": [
+        "a11y.semantics",
+        "a11y.accessible_names"
+      ],
+      "covers": [
+        "semantic structure and roles",
+        "accessible names and labels"
+      ],
+      "score": 0.297,
+      "guidance": "Use platform roles and traits (Compose semantics{role, contentDescription, heading()}, SwiftUI accessibilityLabel/.accessibilityAddTraits, RN accessibilityRole, WinUI/WPF AutomationProperties + AutomationPeer for custom controls); merge descendants so a card is one element; announce async status with live regions/announceForAccessibility. Test with TalkBack/VoiceOver/Narrator, not only by reading code.",
+      "use_when": "Custom composables/views/controls, merged semantics for cards, live regions for status, headings in long screens.",
+      "avoid_when": "Never build a tappable Box/View/Border without a role and name.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.66,
+        "matched": [
+          "platform tv",
+          "mode accessibility"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: accessible names and labels, semantic structure and roles"
+    },
+    {
+      "id": "tv-typography-distance",
+      "kind": "rule",
+      "category": "typography",
+      "title": "TV: 10-foot typography",
+      "facets": [
+        "platform",
+        "visual"
+      ],
+      "concerns": [
+        "accessibility",
+        "content"
+      ],
+      "concepts": [
+        "tv.ten_foot_typography"
+      ],
+      "covers": [
+        "10-foot typography, readable at distance"
+      ],
+      "score": 0.368,
+      "guidance": "Body ≥24 sp (Android) / ≥29 pt (tvOS) at 1080p design scale, captions ≥20 sp, titles 32–48, display 57–72; sans with large x-height and open counters; short strings (titles ≤2 lines, synopsis ≤3 lines with expansion); avoid thin weights (<400) and light text on busy imagery; line height ≥1.3.",
+      "use_when": "All text on TV.",
+      "avoid_when": "Never scale a desktop type ramp up by a factor; rebuild the scale for distance and for reduced text volume.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "incompatible": [
+        "typography-serif-editorial"
+      ],
+      "why": {
+        "lexical": 0.08,
+        "structural": 0.72,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "secondary mode"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: 10-foot typography, readable at distance"
+    },
+    {
+      "id": "tv-dark-first",
+      "kind": "rule",
+      "category": "color",
+      "title": "TV: dark-first colour with restrained saturation",
+      "facets": [
+        "platform",
+        "visual"
+      ],
+      "concerns": [
+        "accessibility",
+        "brand",
+        "content"
+      ],
+      "concepts": [
+        "tv.dark_first",
+        "a11y.contrast"
+      ],
+      "covers": [
+        "dark-first TV palette",
+        "high contrast"
+      ],
+      "score": 0.324,
+      "guidance": "Dark tinted canvas, text at 87–92% white, accent used for focus and primary only, semantic colours checked at ≥4.5:1 on dark, gradients dithered or avoided (banding on 8-bit panels), test in 'Standard' picture mode on a real panel.",
+      "use_when": "All TV themes.",
+      "avoid_when": "Avoid pure white backgrounds (glare, power), pure #000 canvas unless OLED black is intended, and large saturated red/orange areas (bloom, banding).",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "incompatible": [
+        "color-monochrome-light"
+      ],
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.72,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "secondary mode"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: high contrast"
+    },
+    {
+      "id": "a11y-live-status",
+      "kind": "rule",
+      "category": "feedback",
+      "title": "Announce dynamic status changes",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "accessibility",
+        "feedback"
+      ],
+      "concepts": [
+        "a11y.live_status"
+      ],
+      "covers": [
+        "live region status announcements"
+      ],
+      "score": 0.243,
+      "guidance": "Use a polite live region (role=status / accessibilityLiveRegion=polite / LiveSetting) with a complete phrase ('12 results for shoes'), assertive only for blocking errors; toasts stay ≥5 s or until dismissed and are also logged somewhere reachable.",
+      "use_when": "Toasts, saving/saved indicators, cart counts, filter result counts, chat messages, async loading completion.",
+      "avoid_when": "Do not announce every keystroke result; do not move focus for non-blocking status.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.54,
+        "matched": [
+          "mode accessibility"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: live region status announcements"
+    },
+    {
+      "id": "web-virtualize-long-lists",
+      "kind": "rule",
+      "category": "performance",
+      "title": "Virtualise long lists and tables",
+      "facets": [
+        "performance",
+        "platform"
+      ],
+      "concerns": [
+        "data-display",
+        "performance"
+      ],
+      "concepts": [
+        "table.virtualization"
+      ],
+      "covers": [
+        "virtualization of long collections"
+      ],
+      "score": 0.334,
+      "guidance": "Windowed rendering with stable row heights or measured heights, keyboard focus preserved when rows unmount (roving focus by key), aria-rowcount/aria-setsize so assistive tech knows the real size, scroll restoration on back navigation. Native: LazyColumn/List/FlatList/VirtualizingStackPanel already virtualise; keep keys stable.",
+      "use_when": "Lists/tables beyond a few hundred rows, grids of images, infinite feeds, EPGs.",
+      "avoid_when": "Small lists (<100) where virtualisation adds focus and find-in-page problems.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "high"
+      },
+      "provenance": "engineering-practice",
+      "why": {
+        "lexical": 0.132,
+        "structural": 0.58,
+        "matched": [
+          "platform tv",
+          "secondary mode",
+          "product media"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: performance"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "performance"
+    ],
+    "covered_required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "performance"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "states",
+      "anti-pattern",
+      "content",
+      "environment"
+    ],
+    "covered_recommended_concerns": [
+      "states",
+      "content"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "interaction.selection_visible",
+      "tv.ten_foot_typography",
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "a11y.semantics",
+      "a11y.color_not_only",
+      "a11y.live_status",
+      "interaction.dpad_reachability",
+      "interaction.focus_visible"
+    ],
+    "covered_required_concepts": [
+      "interaction.selection_visible",
+      "tv.ten_foot_typography",
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "a11y.semantics",
+      "a11y.color_not_only",
+      "a11y.live_status",
+      "interaction.dpad_reachability",
+      "interaction.focus_visible"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.45,
+    "bundle_size": 8,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 2,
+    "guardrail_size": 6,
+    "bundle_tokens": 1232,
+    "coverage_per_1k_tokens": 7.31,
+    "mean_purity": 0.88,
+    "contaminated": [],
+    "category_diversity": 1.0,
+    "duplicate_pressure": 0.12,
+    "facet_coverage": 0.8,
+    "redundancy": 0.41
+  },
+  "token_coverage": 0.6,
+  "omitted": [
+    {
+      "id": "comp-tv-rail",
+      "reason": "contamination: tv-rail-specific record with no tv-rail evidence in the request"
+    }
+  ],
+  "rejected": [
+    {
+      "id": "anti-hero-template",
+      "reason": "platform ['web'] not in request ['tv']"
+    },
+    {
+      "id": "anti-generic-sidebar-dashboard",
+      "reason": "platform ['desktop', 'web'] not in request ['tv']"
+    },
+    {
+      "id": "anti-mobile-desktop-shrunk",
+      "reason": "platform ['mobile'] not in request ['tv']"
+    },
+    {
+      "id": "anti-default-fonts",
+      "reason": "platform ['web'] not in request ['tv']"
+    },
+    {
+      "id": "anti-hover-only-actions",
+      "reason": "platform ['desktop', 'web'] not in request ['tv']"
+    },
+    {
+      "id": "chart-heatmap-matrix",
+      "reason": "platform ['desktop', 'web'] not in request ['tv']"
+    },
+    {
+      "id": "comp-data-table",
+      "reason": "platform ['desktop', 'web'] not in request ['tv']"
+    },
+    {
+      "id": "comp-filters",
+      "reason": "platform ['desktop', 'mobile', 'web'] not in request ['tv']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "interaction.selection_visible",
+      "priority": "required",
+      "reason": "named in the request: tell which, which row is selected",
+      "candidate_records": [
+        [
+          "color-states-complete",
+          0.425
+        ],
+        [
+          "comp-tv-side-sheet",
+          0.419
+        ],
+        [
+          "a11y-color-not-only",
+          0.315
+        ]
+      ],
+      "selected_record": "comp-tv-side-sheet",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "tv.ten_foot_typography",
+      "priority": "required",
+      "reason": "named in the request: from the sofa",
+      "candidate_records": [
+        [
+          "tv-typography-distance",
+          0.368
+        ]
+      ],
+      "selected_record": "tv-typography-distance",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.accessible_names",
+      "priority": "required",
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "comp-player-controls",
+          0.36
+        ],
+        [
+          "comp-media-card",
+          0.32
+        ],
+        [
+          "a11y-native-semantics",
+          0.297
+        ],
+        [
+          "a11y-labels-names",
+          0.243
+        ]
+      ],
+      "selected_record": "a11y-native-semantics",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.contrast",
+      "priority": "required",
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "tv-dark-first",
+          0.324
+        ],
+        [
+          "a11y-contrast-text",
+          0.269
+        ],
+        [
+          "a11y-nontext-contrast",
+          0.243
+        ],
+        [
+          "anti-fashion-over-usability",
+          0.219
+        ]
+      ],
+      "selected_record": "tv-dark-first",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.semantics",
+      "priority": "required",
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "a11y-native-semantics",
+          0.297
+        ]
+      ],
+      "selected_record": "a11y-native-semantics",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.color_not_only",
+      "priority": "required",
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "media-resume-and-details",
+          0.383
+        ],
+        [
+          "data-exceptions-first",
+          0.342
+        ],
+        [
+          "a11y-color-not-only",
+          0.315
+        ],
+        [
+          "chart-accessible-colour",
+          0.18
+        ]
+      ],
+      "selected_record": "media-resume-and-details",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.live_status",
+      "priority": "required",
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "a11y-live-status",
+          0.243
+        ],
+        [
+          "search-filter-feedback",
+          0.207
+        ],
+        [
+          "feedback-progress-async",
+          0.207
+        ],
+        [
+          "comp-toast-notification",
+          0.18
+        ]
+      ],
+      "selected_record": "a11y-live-status",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.dpad_reachability",
+      "priority": "required",
+      "reason": "TV / remote input",
+      "candidate_records": [
+        [
+          "tv-dpad-axes",
+          0.333
+        ],
+        [
+          "tv-search-input",
+          0.333
+        ],
+        [
+          "comp-epg",
+          0.324
+        ],
+        [
+          "tv-dpad-hold-pacing",
+          0.324
+        ]
+      ],
+      "selected_record": "tv-dpad-hold-pacing",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.focus_visible",
+      "priority": "required",
+      "reason": "required by interaction.dpad_reachability",
+      "candidate_records": [
+        [
+          "color-states-complete",
+          0.425
+        ],
+        [
+          "focus-scale-glow",
+          0.395
+        ],
+        [
+          "a11y-focus-visible",
+          0.36
+        ],
+        [
+          "a11y-tv-focus-always",
+          0.36
+        ]
+      ],
+      "selected_record": "tv-dpad-hold-pacing",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.text_scaling",
+      "priority": "recommended",
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "a11y-text-scaling",
+          0.243
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "a11y.reduced_motion",
+      "priority": "recommended",
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "tv-dpad-hold-pacing",
+          0.324
+        ],
+        [
+          "a11y-reduced-motion",
+          0.243
+        ],
+        [
+          "a11y-time-and-auto",
+          0.243
+        ]
+      ],
+      "selected_record": "tv-dpad-hold-pacing",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "state.loading_empty_error",
+      "priority": "recommended",
+      "reason": "asynchronous or remote data on this screen",
+      "candidate_records": [
+        [
+          "comp-mini-player",
+          0.333
+        ],
+        [
+          "anti-no-states",
+          0.207
+        ],
+        [
+          "layout-states-empty-loading-error",
+          0.207
+        ],
+        [
+          "comp-empty-state",
+          0.144
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "recommended",
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.171
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.back_semantics",
+      "priority": "recommended",
+      "reason": "remote input",
+      "candidate_records": [
+        [
+          "media-resume-and-details",
+          0.383
+        ],
+        [
+          "comp-mini-player",
+          0.333
+        ],
+        [
+          "tv-back-behavior",
+          0.332
+        ],
+        [
+          "tv-player-controls",
+          0.324
+        ]
+      ],
+      "selected_record": "media-resume-and-details",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "tv.no_touch_hover",
+      "priority": "recommended",
+      "reason": "tv",
+      "candidate_records": [
+        [
+          "tv-no-touch-hover",
+          0.324
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "perf.focus_latency",
+      "priority": "recommended",
+      "reason": "tv",
+      "candidate_records": [
+        [
+          "comp-tv-rail",
+          0.508
+        ],
+        [
+          "tv-focus-performance",
+          0.332
+        ],
+        [
+          "tv-dpad-hold-pacing",
+          0.324
+        ]
+      ],
+      "selected_record": "tv-dpad-hold-pacing",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "tv.dark_first",
+      "priority": "recommended",
+      "reason": "tv",
+      "candidate_records": [
+        [
+          "tv-dark-first",
+          0.324
+        ]
+      ],
+      "selected_record": "tv-dark-first",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "privacy.shared_device",
+      "priority": "recommended",
+      "reason": "environment shared-device",
+      "candidate_records": [
+        [
+          "shared-device-privacy",
+          0.355
+        ],
+        [
+          "comp-tv-sign-in",
+          0.324
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.focus_restore",
+      "priority": "recommended",
+      "reason": "TV / remote input (demoted: saturation cap)",
+      "candidate_records": [
+        [
+          "layout-rails",
+          0.541
+        ],
+        [
+          "comp-tv-rail",
+          0.508
+        ],
+        [
+          "comp-tv-side-sheet",
+          0.419
+        ],
+        [
+          "media-resume-and-details",
+          0.383
+        ]
+      ],
+      "selected_record": "comp-tv-side-sheet",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "tv.safe_margins",
+      "priority": "recommended",
+      "reason": "TV / remote input (demoted: saturation cap)",
+      "candidate_records": [
+        [
+          "comp-mini-player",
+          0.333
+        ],
+        [
+          "tv-safe-area",
+          0.331
+        ],
+        [
+          "anti-desktop-scaled-to-tv",
+          0.324
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    }
+  ]
+}

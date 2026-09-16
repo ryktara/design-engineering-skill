@@ -1,0 +1,15 @@
+{"task": "p6-26",
+ "records": [
+   {"id": "comp-media-card", "verdict": "relevant", "category": "", "why": "Title below 1-2 lines with ellipsis and one focusable element with an accessible name is exactly the component under repair."},
+   {"id": "comp-player-controls", "verdict": "off-target", "category": "wrong-screen", "why": "Player transport, seek slider and track selectors have nothing to do with truncated poster-row titles."},
+   {"id": "impl-reuse-before-new", "verdict": "partial", "category": "generic", "why": "SKILL.md already says it; consumed a bundle slot without changing the work."},
+   {"id": "a11y-tv-focus-always", "verdict": "partial", "category": "generic", "why": "Focus determinism and restoration are already satisfied; nothing about revealing a truncated title."},
+   {"id": "tv-safe-area", "verdict": "partial", "category": "generic", "why": "Overscan margins are unrelated to a caption truncation fix."},
+   {"id": "tv-typography-distance", "verdict": "relevant", "category": "", "why": "Titles <=2 lines set the expansion cap and confirmed 29pt body stays."},
+   {"id": "tv-dpad-axes", "verdict": "partial", "category": "generic", "why": "Already satisfied by .focusSection() per rail; nothing to change."},
+   {"id": "layout-spacing-scale", "verdict": "partial", "category": "generic", "why": "LumenSpace already is that scale."}
+ ],
+ "missing_critical": ["perf.layout_shift"],
+ "unjustified_direction_slots": 2,
+ "layer_review": {"core": ["comp-media-card", "comp-player-controls"], "critical": ["impl-reuse-before-new", "a11y-tv-focus-always", "tv-safe-area", "tv-typography-distance", "tv-dpad-axes", "layout-spacing-scale"], "optional": []},
+ "change_vs_c3": "worse - still 8 records; it drops comp-mini-player, the record the c3 implementer explicitly borrowed the full-title-on-focus mechanism from, and replaces it with the off-target comp-player-controls plus two more TV boilerplate guardrails, while perf.layout_shift is still never demanded."}

@@ -1,0 +1,25 @@
+{
+  "platform": "desktop",
+  "artifact_state": "existing",
+  "acceptable_modes": ["refactor", "polish", "audit"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "state.unsaved_changes_guard",
+    "feedback.confirmation_destructive",
+    "a11y.dialog_focus",
+    "interaction.focus_restore",
+    "state.saving_conflict",
+    "process.reuse_first"
+  ],
+  "critical_concepts": ["state.unsaved_changes_guard", "feedback.confirmation_destructive"],
+  "forbidden_concepts": [
+    "touch.minimum_target",
+    "adaptive.navigation_transform",
+    "tv.ten_foot_typography",
+    "brand.dark_mode_redesign",
+    "layout.hero_thesis",
+    "anti.platform_scaling"
+  ],
+  "preservation": ["navigation", "theme", "typography", "component_reuse"],
+  "notes": "Existing Avalonia 11 desktop Dispatch screen: ListBox of 8 pending jobs on the left, job detail form (Title/Customer/Priority/Pickup/Drop-off/Vehicle/Notes) with Save/Cancel on the right. DispatchViewModel already tracks HasChanges (dirty), but SelectedJob's setter calls LoadEditor() unconditionally, so selecting another row silently discards edits. The Save/Cancel/Ctrl+S commands in the menu bar and toolbar already exist and must stay. Expected fix: an unsaved-changes guard on selection change (and ideally on Vehicles/Settings navigation and window close) that keeps the dirty job selected and asks Save / Discard / Keep editing before switching; a visible dirty indicator in the heading (e.g. 'Unsaved changes' text, not colour alone); the prompt must be a modal, focus-trapped dialog styled with the existing flat bordered surfaces (white panel, 1px LineBrush border, 4px radius, no shadow), default button = the safe option, Esc = keep editing, focus returns to the form afterwards. Reuse Button/Button.accent/Border.surface; no new visual language. Keep menu bar + toolbar + status bar, light theme, Segoe UI/Inter."
+}

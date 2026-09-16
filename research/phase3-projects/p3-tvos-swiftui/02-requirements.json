@@ -1,0 +1,105 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "create"
+  ],
+  "platform": [
+    "tv"
+  ],
+  "input": [
+    "remote"
+  ],
+  "product": [
+    "media"
+  ],
+  "screen": [
+    "auth",
+    "player"
+  ],
+  "screen_subtype": [
+    "sign-in"
+  ],
+  "stack": [
+    "swiftui"
+  ],
+  "density": "medium",
+  "components": [
+    "media"
+  ],
+  "environment": [
+    "large-display",
+    "shared-device"
+  ],
+  "jobs": [
+    "authentication"
+  ],
+  "problems": [],
+  "risk": "medium",
+  "primary_jobs": [
+    "authentication",
+    "create auth",
+    "create player"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "performance_sensitive": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "screen_reader": true,
+    "focus": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "known": [
+    "platform=tv (request: tvos)",
+    "input=remote (project inspection: DPAD/remote handling in source)",
+    "product=media (request: streaming, player)",
+    "stack=swiftui (project inspection)",
+    "screen=player (request: player)",
+    "screen=auth (request: sign in)",
+    "job=authentication (request: sign in, sign-in)"
+  ],
+  "inferred": [
+    "density=medium (implied by product media)",
+    "mode=create (default when no mode word is present)",
+    "environment=shared-device (a TV is normally a shared household device)",
+    "environment=large-display (TV platform)"
+  ],
+  "missing": [
+    "brand: no brand assets, guideline, or character description available"
+  ],
+  "conflicts": [
+    {
+      "field": "platform",
+      "request": [
+        "tv"
+      ],
+      "project": "mobile",
+      "resolution": "request kept; repository platform recorded as context"
+    }
+  ],
+  "status": "AMBIGUOUS",
+  "source": {
+    "request": [
+      "player",
+      "sign in",
+      "sign in, sign-in",
+      "streaming, player",
+      "tvos"
+    ],
+    "project": [
+      "Package.swift: Apple project",
+      "Package.swift: tvOS target",
+      "DPAD / remote key handling found in source"
+    ]
+  },
+  "activation": {
+    "decision": "activate",
+    "ui_score": 2.0,
+    "non_ui_score": 0,
+    "ui_terms": [],
+    "non_ui_terms": []
+  }
+}

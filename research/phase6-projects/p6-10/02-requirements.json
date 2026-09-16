@@ -1,0 +1,189 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "refactor"
+  ],
+  "platform": [
+    "web"
+  ],
+  "input": [
+    "keyboard",
+    "pointer",
+    "touch"
+  ],
+  "product": [],
+  "screen": [
+    "dashboard"
+  ],
+  "screen_subtype": [],
+  "stack": [
+    "vue"
+  ],
+  "density": null,
+  "components": [],
+  "environment": [],
+  "jobs": [],
+  "problems": [],
+  "risk": "low",
+  "primary_jobs": [
+    "refactor dashboard"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "focus_handling_present": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "keyboard": true,
+    "screen_reader": true,
+    "focus": true,
+    "touch_targets": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "change_budget": "moderate",
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "intent": {
+    "artifact_state": "existing",
+    "operations": [
+      "modify"
+    ],
+    "problem_domain": [],
+    "change_scope": "screen",
+    "utterance": "request",
+    "existing": true,
+    "problem": false,
+    "facet": "general",
+    "diagnose_only": false,
+    "creation": false,
+    "redesign": false,
+    "responsive_cues": false,
+    "preserve": [],
+    "scope": "moderate"
+  },
+  "platform_evidence": [],
+  "mode_evidence": [
+    "refactor: modification of existing UI: make"
+  ],
+  "project_context": {
+    "navigation": {
+      "value": "top-bar",
+      "status": "KNOWN",
+      "evidence": [
+        "top-bar: 8 matches in App.vue, TopBar.vue, tokens.css (shell/layout file)"
+      ]
+    },
+    "theme": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": [
+        "hex palette: 11 near-white, 6 near-black"
+      ]
+    },
+    "surfaces": {
+      "value": "bordered-flat",
+      "status": "INFERRED",
+      "evidence": [
+        "borders in 11 files, shadow/elevation in 2"
+      ]
+    },
+    "radius": {
+      "value": "small",
+      "status": "INFERRED",
+      "evidence": [
+        "most common radius 5 (1×); others [6.0]"
+      ]
+    },
+    "spacing": {
+      "value": "irregular",
+      "status": "UNKNOWN",
+      "evidence": [
+        "most used spacing values [6, 4, 2]"
+      ]
+    },
+    "typography": {
+      "value": "humanist-sans",
+      "status": "KNOWN",
+      "evidence": [
+        "font family IBM Plex Sans (2 refs)",
+        "weights 600, 500",
+        "encoded type scale in 1 files"
+      ]
+    },
+    "components": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": []
+    }
+  },
+  "known": [
+    "platform=web (project inspection)",
+    "stack=vue (project inspection)",
+    "screen=dashboard (request: dashboard)",
+    "project_navigation=top-bar (repository: top-bar: 8 matches in App.vue, TopBar.vue, tokens.css (shell/layout file))",
+    "project_typography=humanist-sans (repository: font family IBM Plex Sans (2 refs); weights 600, 500)"
+  ],
+  "inferred": [
+    "input=pointer (implied by platform web)",
+    "input=keyboard (implied by platform web)",
+    "input=touch (implied by platform web)",
+    "mode=refactor (modification of existing UI: make)",
+    "project_surfaces=bordered-flat (repository: borders in 11 files, shadow/elevation in 2)",
+    "project_radius=small (repository: most common radius 5 (1×); others [6.0])"
+  ],
+  "missing": [],
+  "status": "CONFIDENT",
+  "source": {
+    "request": [
+      "dashboard",
+      "make the"
+    ],
+    "project": [
+      "package.json: vue@^3.5.13"
+    ]
+  },
+  "activation": {
+    "decision": "activate",
+    "ui_score": 2.0,
+    "non_ui_score": 0,
+    "ui_terms": [
+      "dashboard"
+    ],
+    "non_ui_terms": []
+  },
+  "intent_evidence": {
+    "existing": [
+      "the dashboard",
+      "today"
+    ],
+    "new": [],
+    "defect": [],
+    "operations": {
+      "modify": [
+        "make"
+      ]
+    },
+    "domains": {},
+    "no_change": [],
+    "scope": {
+      "screen": [
+        "dashboard"
+      ]
+    },
+    "question": false
+  },
+  "scope_evidence": {
+    "ui": [
+      "dashboard"
+    ],
+    "ux_symptoms": [],
+    "technical": {},
+    "non_visual": []
+  }
+}

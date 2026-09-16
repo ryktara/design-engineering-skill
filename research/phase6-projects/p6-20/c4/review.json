@@ -1,0 +1,11 @@
+{"task": "p6-20",
+ "records": [
+   {"id": "comp-data-table", "verdict": "relevant", "category": "", "why": "Carries the virtualised-rows clause plus fixed row height by density token and persisted column state."},
+   {"id": "comp-data-entry-grid", "verdict": "off-target", "category": "wrong-screen", "why": "Spreadsheet batch-entry guidance (F2/F4 editors, paste, totals row) for a grid declared IsReadOnly=True; adds per-row cost on a scroll-cost complaint."},
+   {"id": "web-virtualize-long-lists", "verdict": "relevant", "category": "", "why": "The performance record c3 identified as the headline miss; windowed rendering with stable row heights is the fix for 3,000-row jank."},
+   {"id": "grid-single-tab-stop", "verdict": "relevant", "category": "", "why": "The N-rows-must-not-be-N-Tab-stops rule drove the change the c3 implementer actually shipped."}
+ ],
+ "missing_critical": ["perf.layout_shift"],
+ "unjustified_direction_slots": 2,
+ "layer_review": {"core": ["comp-data-table", "comp-data-entry-grid"], "critical": ["web-virtualize-long-lists", "grid-single-tab-stop"], "optional": []},
+ "change_vs_c3": "better - web-virtualize-long-lists, the record c3 named as the single biggest retrieval miss, is now in the bundle; both records the implementer used are retained and two weak records (data-exceptions-first, table-column-disambiguation) are gone, though comp-data-entry-grid and the missing perf.layout_shift persist."}

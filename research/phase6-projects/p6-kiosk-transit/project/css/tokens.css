@@ -1,0 +1,59 @@
+/* MetroLink kiosk — design tokens
+   Screen: 1080 x 1920 portrait, viewed from ~60 cm standing. */
+
+:root {
+  /* Brand */
+  --c-primary: #0B4F9C;
+  --c-primary-dark: #083C77;
+  --c-primary-light: #E3EEF9;
+  --c-on-primary: #FFFFFF;
+
+  /* Warm neutrals */
+  --c-bg: #F7F4EF;
+  --c-surface: #FFFFFF;
+  --c-surface-alt: #EFEAE2;
+  --c-border: #D9D2C7;
+  --c-text: #1F1B16;
+  --c-text-muted: #6B635A;
+  --c-text-faint: #9C948A;
+
+  /* Semantic */
+  --c-success: #1E7F4F;
+  --c-success-bg: #E2F3EA;
+  --c-warning: #B8730A;
+  --c-warning-bg: #FBEFD9;
+  --c-danger: #B3261E;
+  --c-danger-bg: #F9E1DF;
+
+  /* Spacing (8-pt) */
+  --sp-1: 8px;
+  --sp-2: 16px;
+  --sp-3: 24px;
+  --sp-4: 32px;
+  --sp-6: 48px;
+  --sp-8: 64px;
+
+  /* Shape */
+  --radius: 16px;
+  --radius-sm: 8px;
+
+  /* Type */
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --fs-body: 28px;
+  --fs-lg: 36px;
+  --fs-xl: 48px;
+  --fs-display: 64px;
+  --lh-tight: 1.15;
+  --lh-body: 1.4;
+
+  /* Touch */
+  --touch: 72px;
+
+  /* Elevation */
+  --shadow-1: 0 2px 6px rgba(31, 27, 22, 0.08);
+  --shadow-2: 0 8px 24px rgba(31, 27, 22, 0.12);
+
+  /* Motion */
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --dur: 180ms;
+}

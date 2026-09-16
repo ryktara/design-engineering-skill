@@ -1,0 +1,359 @@
+{
+  "schema": "guidance-bundle/v1",
+  "query": "Purchase order lines grid for our WPF ERP client; clerks enter 200 lines a day with the keyboard",
+  "status": "AMBIGUOUS",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "desktop"
+    ],
+    "input": [
+      "keyboard",
+      "pointer"
+    ],
+    "product": [
+      "erp"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "wpf"
+    ],
+    "density": "high",
+    "components": [],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "create"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "known": [
+      "platform=desktop",
+      "input=keyboard",
+      "product=erp",
+      "stack=wpf"
+    ],
+    "inferred": [
+      "input=pointer",
+      "density=high",
+      "mode=create"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "AMBIGUOUS"
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "structure",
+        "reason": "layout topology and hierarchy"
+      },
+      {
+        "concern": "states",
+        "reason": "every screen ships empty/loading/error states"
+      },
+      {
+        "concern": "interaction",
+        "reason": "input model: keyboard,pointer"
+      },
+      {
+        "concern": "accessibility",
+        "reason": "platform accessibility baseline"
+      },
+      {
+        "concern": "data-display",
+        "reason": "numbers, tables or charts are the content"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "navigation",
+        "reason": "how users arrive and leave"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "create/refactor requests attract generic defaults"
+      },
+      {
+        "concern": "brand",
+        "reason": "visual identity direction"
+      }
+    ],
+    "optional": [
+      "motion",
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "desktop keyboard-first"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "desktop focus"
+      },
+      {
+        "concept": "table.tabular_figures",
+        "reason": "numeric data"
+      }
+    ],
+    "recommended_concepts": [
+      "state.loading_empty_error",
+      "interaction.shortcuts"
+    ]
+  },
+  "core": [
+    {
+      "id": "comp-data-table",
+      "kind": "component",
+      "category": "table",
+      "title": "Data table / grid",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "data-display",
+        "structure"
+      ],
+      "concepts": [
+        "table.selection_bulk",
+        "table.inline_edit",
+        "table.virtualization",
+        "table.tabular_figures"
+      ],
+      "score": 0.711,
+      "guidance": "Sticky header, row height by density token, zebra striping optional (prefer hover/selection highlight), column resize/reorder/visibility persisted, sort indicator with aria-sort, selection checkbox column with header select-all and a count, row actions visible on focus as well as hover, inline edit with Enter/Escape, keyboard grid navigation (arrows, Home/End, PageUp/Down), virtualised rows, loading skeleton rows, empty state inside the table body. Financial tables: see numeric rule.",
+      "use_when": "Homogeneous records with several comparable attributes; sorting, filtering, selection, bulk actions, inline editing.",
+      "avoid_when": "Fewer than ~10 rows (use a list), heterogeneous items (use cards/list), phone widths (convert to rows).",
+      "risk": {
+        "a11y": "high",
+        "perf": "high"
+      },
+      "provenance": "heuristic",
+      "implementation": {
+        "wpf": "DataGrid with virtualisation flags; DevExpress GridControl if present in the project."
+      },
+      "incompatible": [
+        "layout-rails",
+        "surface-elevated-cards"
+      ],
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "dir-operational-workbench",
+      "kind": "direction",
+      "category": "direction",
+      "title": "Operational workbench",
+      "facets": [
+        "direction",
+        "platform"
+      ],
+      "concerns": [
+        "brand",
+        "structure"
+      ],
+      "concepts": [],
+      "score": 0.513,
+      "guidance": "Character comes from precision: a tight 4 px grid, tabular figures, hairline borders with real contrast, one accent used only for selection and primary commands, quiet surfaces, dense but aligned. Identity via a distinctive neutral tint, a characterful monospace for IDs/values, and a consistent status colour language. No hero, no cards-in-cards, no gradients.",
+      "use_when": "Daily-use record tools (ERP, ledgers, ticketing, admin) for trained users who value speed and scanning.",
+      "avoid_when": "Consumer, marketing, TV, or first-time-user products.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "internal-preference",
+      "incompatible": [
+        "surface-glass",
+        "motion-cinematic",
+        "imagery-hero",
+        "typography-serif-display"
+      ],
+      "role": "core",
+      "selected_for": "highest-scoring direction with lexical evidence"
+    },
+    {
+      "id": "chart-small-multiples",
+      "kind": "chart",
+      "category": "chart",
+      "title": "Many series or groups → small multiples",
+      "facets": [
+        "data-viz",
+        "platform"
+      ],
+      "concerns": [
+        "data-display"
+      ],
+      "concepts": [],
+      "score": 0.312,
+      "guidance": "Identical axes across panels (state if not), consistent ordering, panel titles as data labels, shared legend/colour meaning, grid sized so each panel keeps a readable aspect; lazy-render offscreen panels.",
+      "use_when": "More than ~6 series, or comparing the same chart across regions/products/devices.",
+      "avoid_when": "When one combined chart with ≤4 series is readable.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "heuristic",
+      "role": "core",
+      "selected_for": "highest-scoring chart with lexical evidence"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "desktop-keyboard-first",
+      "kind": "rule",
+      "category": "input",
+      "title": "Desktop: keyboard is a first-class input",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.keyboard_navigation",
+        "interaction.shortcuts",
+        "interaction.focus_visible"
+      ],
+      "score": 0.647,
+      "guidance": "Document shortcuts in menus and tooltips; F2 edits, Delete deletes with undo, Ctrl+F finds, F6 cycles panes; grids use arrow keys and Ctrl/Shift selection; every dialog has a default and cancel button; access keys shown on Alt (Windows).",
+      "use_when": "Every desktop screen: shortcuts for frequent commands, access keys for menus, Tab/arrow semantics in lists, trees, grids, and toolbars, Enter/Escape in dialogs.",
+      "avoid_when": "Never assign shortcuts that collide with platform or assistive-tech shortcuts; never make Tab stop on every cell of a grid.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "role": "guardrail",
+      "selected_for": "most relevant record for the request wording"
+    },
+    {
+      "id": "search-filter-feedback",
+      "kind": "rule",
+      "category": "search",
+      "title": "Search and filters: visible state and instant feedback",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "component",
+        "feedback",
+        "states"
+      ],
+      "concepts": [
+        "a11y.live_status"
+      ],
+      "score": 0.251,
+      "guidance": "Applied filters as removable chips with a 'clear all', result count announced, debounced query (≈300 ms) with a loading indicator, empty results suggest next steps, filter state in the URL/route, and on TV a search screen with a system keyboard/voice plus results as rails.",
+      "use_when": "Catalogues, tables, media libraries, admin lists.",
+      "avoid_when": "Never hide applied filters; never reset filters on navigation without asking; never search on every keystroke against a slow backend without debounce.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "heuristic",
+      "role": "guardrail",
+      "selected_for": "required concern states: every screen ships empty/loading/error states"
+    },
+    {
+      "id": "a11y-keyboard-operable",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Everything operable by keyboard, no traps",
+      "facets": [
+        "accessibility",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.keyboard_navigation",
+        "interaction.hover_independence"
+      ],
+      "score": 0.558,
+      "guidance": "Tab reaches every control in visual order; composite widgets use arrow keys with a roving tabindex so Tab is not consumed by every cell; Escape closes layers and returns focus to the invoker; nothing traps focus except a modal, and the modal itself must be escapable. Provide a keyboard alternative for every drag interaction.",
+      "use_when": "Every interactive element, including custom widgets, drag/drop, sliders, menus, date pickers, and anything that appears on hover.",
+      "avoid_when": "Never skip.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "role": "guardrail",
+      "selected_for": "required concern accessibility: platform accessibility baseline"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "structure",
+      "states",
+      "interaction",
+      "accessibility",
+      "data-display"
+    ],
+    "covered_required_concerns": [
+      "structure",
+      "states",
+      "interaction",
+      "accessibility",
+      "data-display"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "navigation",
+      "anti-pattern",
+      "brand"
+    ],
+    "covered_recommended_concerns": [
+      "brand"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "interaction.keyboard_navigation",
+      "interaction.focus_visible",
+      "table.tabular_figures"
+    ],
+    "covered_required_concepts": [
+      "interaction.keyboard_navigation",
+      "interaction.focus_visible",
+      "table.tabular_figures"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "bundle_size": 6,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 3,
+    "guardrail_size": 3,
+    "category_diversity": 1.0,
+    "duplicate_pressure": 0.17,
+    "facet_coverage": 0.6,
+    "redundancy": 0.33
+  },
+  "token_coverage": 0.91
+}

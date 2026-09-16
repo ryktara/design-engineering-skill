@@ -1,0 +1,152 @@
+{
+  "label": "p4-11-suite",
+  "viewport": "1920x1080",
+  "checks": [
+    {
+      "name": "initial focus = hero primary",
+      "pass": true,
+      "detail": "hero:primary"
+    },
+    {
+      "name": "all home focusables reachable by D-pad",
+      "pass": true,
+      "detail": {
+        "total": 35,
+        "reached": 35,
+        "unreached": []
+      }
+    },
+    {
+      "name": "focus always visible (ring/glow/scale) while walking",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "focused element always on screen",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "RIGHT from nav restores last content focus",
+      "pass": true,
+      "detail": "rail:motorsport:e2"
+    },
+    {
+      "name": "SELECT on a tile opens details with first focus on Watch",
+      "pass": true,
+      "detail": {
+        "detailsRoute": "details",
+        "detailsFocus": "details:play"
+      }
+    },
+    {
+      "name": "details action row: RIGHT stays on last action",
+      "pass": true,
+      "detail": "details:watchlist"
+    },
+    {
+      "name": "BACK from details restores focus to the opening tile",
+      "pass": true,
+      "detail": {
+        "before": "rail:motorsport:r2",
+        "after": "rail:motorsport:r2"
+      }
+    },
+    {
+      "name": "rail focus memory (UP/DOWN returns to remembered tile)",
+      "pass": true,
+      "detail": "rail:motorsport:r2"
+    },
+    {
+      "name": "BACK from a rail returns focus to hero primary and scrolls to top",
+      "pass": true,
+      "detail": {
+        "key": "hero:primary",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      }
+    },
+    {
+      "name": "BACK from hero moves focus to side nav",
+      "pass": true,
+      "detail": "nav:0"
+    },
+    {
+      "name": "BACK from nav exits (Activity.finish)",
+      "pass": true,
+      "detail": "BACK on navigation → Activity.finish() (app exits, no confirmation)"
+    },
+    {
+      "name": "RIGHT from Details button reaches mini player",
+      "pass": true,
+      "detail": "mini-player"
+    },
+    {
+      "name": "SELECT on mini player expands to player",
+      "pass": true
+    },
+    {
+      "name": "BACK from player returns home with focus on mini player",
+      "pass": true,
+      "detail": "mini-player"
+    },
+    {
+      "name": "DOWN from mini player lands in Live rail",
+      "pass": true,
+      "detail": "rail:live:e1"
+    },
+    {
+      "name": "EPG tile opens guide; BACK restores focus to the tile",
+      "pass": true,
+      "detail": {
+        "guideRoute": "guide",
+        "key": "epg:tile"
+      }
+    },
+    {
+      "name": "no hover-only affordances (:hover rules)",
+      "pass": true,
+      "detail": {
+        "hoverRules": 0
+      }
+    },
+    {
+      "name": "all visible text >= 24 px (12 sp x2 floor is 24 sp = 48 px; 20 sp captions = 40 px)",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "smallest visible text is >= 40 px (20 sp caption floor at 2x)",
+      "pass": true,
+      "detail": {
+        "minFontPx": 40
+      }
+    },
+    {
+      "name": "persistent UI inside 5% safe margin (96/54 px)",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "reduced motion: no scale animation but focus ring still visible",
+      "pass": true,
+      "detail": {
+        "transition": "0s",
+        "transform": "none",
+        "border": "rgb(255, 255, 255)"
+      }
+    },
+    {
+      "name": "focus scale stays within reserved padding (no neighbour clipping)",
+      "pass": true,
+      "detail": {
+        "boxLeft": 224,
+        "slotLeft": 212,
+        "boxRight": 724,
+        "slotRight": 736,
+        "ok": true
+      }
+    }
+  ],
+  "pass": 23,
+  "fail": 0
+}

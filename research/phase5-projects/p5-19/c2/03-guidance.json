@@ -1,0 +1,1006 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "Sync status is a spinner that never says what is happening.",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "mobile"
+    ],
+    "input": [
+      "touch"
+    ],
+    "product": [
+      "iot"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "flutter"
+    ],
+    "density": null,
+    "components": [],
+    "environment": [
+      "gloves",
+      "low-bandwidth",
+      "outdoor"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "audit"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "low",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "performance-ux"
+      ],
+      "change_scope": "unknown",
+      "utterance": "observation",
+      "existing": true,
+      "problem": true,
+      "facet": "general",
+      "diagnose_only": false,
+      "creation": false,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "audit: perceived-performance defect",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "top-bar",
+        "status": "KNOWN",
+        "evidence": [
+          "top-bar: 6 matches in checklist_screen.dart, defect_report_screen.dart, settings_screen.dart (shell/layout file)"
+        ]
+      },
+      "theme": {
+        "value": "dual-theme",
+        "status": "KNOWN",
+        "evidence": [
+          "dark theme configuration signals: 5",
+          "light theme configuration signals: 2",
+          "hex palette: 13 near-white, 6 near-black"
+        ],
+        "default": "light"
+      },
+      "surfaces": {
+        "value": "flat-tonal",
+        "status": "UNKNOWN",
+        "evidence": [
+          "no shadow or border declarations found"
+        ]
+      },
+      "radius": {
+        "value": "small",
+        "status": "INFERRED",
+        "evidence": [
+          "most common radius 4 (1×); others []"
+        ]
+      },
+      "spacing": {
+        "value": "irregular",
+        "status": "UNKNOWN",
+        "evidence": [
+          "most used spacing values [2, 12]"
+        ]
+      },
+      "typography": {
+        "value": "custom",
+        "status": "KNOWN",
+        "evidence": [
+          "font family System (7 refs)",
+          "weights w600, w700, w400",
+          "encoded type scale in 2 files"
+        ]
+      },
+      "components": {
+        "value": "go_router, riverpod",
+        "status": "KNOWN",
+        "evidence": [
+          "go_router",
+          "riverpod"
+        ]
+      }
+    },
+    "known": [
+      "platform=mobile (project inspection)",
+      "product=iot (project inspection (README))",
+      "stack=flutter (project inspection)",
+      "environment=outdoor (project inspection (README))",
+      "environment=gloves (project inspection (README))",
+      "environment=low-bandwidth (project inspection (README))",
+      "project_navigation=top-bar (repository: top-bar: 6 matches in checklist_screen.dart, defect_report_screen.dart, settings_screen.dart (shell/layout file))",
+      "project_theme=dual-theme (repository: dark theme configuration signals: 5; light theme configuration signals: 2)",
+      "project_typography=custom (repository: font family System (7 refs); weights w600, w700, w400)",
+      "project_components=go_router, riverpod (repository: go_router; riverpod)"
+    ],
+    "inferred": [
+      "input=touch (implied by platform mobile)",
+      "mode=audit (perceived-performance defect)",
+      "mode=refactor (fix follows the diagnosis)",
+      "project_radius=small (repository: most common radius 4 (1×); others [])"
+    ],
+    "missing": [],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [],
+      "project": [
+        "pubspec.yaml: Flutter"
+      ]
+    },
+    "activation": {
+      "decision": "activate",
+      "ui_score": 2.0,
+      "non_ui_score": 0,
+      "ui_terms": [
+        "spinner",
+        "sync status"
+      ],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "present-tense observation"
+      ],
+      "new": [],
+      "defect": [
+        "is a spinner that never",
+        "never"
+      ],
+      "operations": {},
+      "domains": {
+        "performance-ux": [
+          "spinner"
+        ]
+      },
+      "no_change": [],
+      "scope": {},
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "spinner",
+        "sync status",
+        "concept:feedback.progress_indicator",
+        "concept:a11y.live_status"
+      ],
+      "ux_symptoms": [
+        "spinner",
+        "never says",
+        "what is happening"
+      ],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "accessibility",
+        "reason": "audit mode"
+      },
+      {
+        "concern": "interaction",
+        "reason": "audit mode: operability is part of the review"
+      },
+      {
+        "concern": "component",
+        "reason": "the reviewed component/screen"
+      },
+      {
+        "concern": "environment",
+        "reason": "environment gloves (KNOWN)"
+      },
+      {
+        "concern": "states",
+        "reason": "offline/sync states"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "anti-pattern",
+        "reason": "audits name generic-design defects"
+      },
+      {
+        "concern": "feedback",
+        "reason": "audits check that actions are discoverable and confirmed"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "device sizes and orientation"
+      },
+      {
+        "concern": "performance",
+        "reason": "performance-sensitive context"
+      }
+    ],
+    "optional": [
+      "content"
+    ],
+    "required_concepts": [
+      {
+        "concept": "feedback.progress_indicator",
+        "reason": "named in the request: spinner, what is happening"
+      },
+      {
+        "concept": "a11y.live_status",
+        "reason": "named in the request: never say, statu is a spinner"
+      },
+      {
+        "concept": "state.offline_sync",
+        "reason": "offline / low bandwidth"
+      },
+      {
+        "concept": "touch.minimum_target",
+        "reason": "touch platform"
+      },
+      {
+        "concept": "env.outdoor_readability",
+        "reason": "environment outdoor"
+      },
+      {
+        "concept": "env.glanceable_status",
+        "reason": "environment outdoor"
+      }
+    ],
+    "recommended_concepts": [
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "state.loading_empty_error",
+      "process.reuse_first",
+      "touch.gestures_discoverable",
+      "touch.thumb_reach",
+      "touch.safe_areas",
+      "navigation.platform_grammar",
+      "data.refresh_timestamp",
+      "state.saving_conflict"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "dir-service-app-mobile",
+      "kind": "direction",
+      "category": "direction",
+      "title": "Service app (mobile hub-and-spoke)",
+      "facets": [
+        "direction",
+        "platform"
+      ],
+      "concerns": [
+        "brand",
+        "structure"
+      ],
+      "concepts": [],
+      "covers": [],
+      "score": 0.292,
+      "guidance": "Home as a task hub with large labelled entries and the account balance/status as the single focal element, spokes as linear flows with one primary action each, list rows for history, system type styles for Dynamic Type/font scale, calm neutral palette with one trustworthy accent, illustration only in onboarding/empty states. Identity via the hub's tile geometry, illustration style, and accent.",
+      "use_when": "Banking, insurance, health, utilities, public services on phones: infrequent distinct tasks, trust and clarity over delight.",
+      "avoid_when": "Social/media apps (feed-first), games.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "internal-preference",
+      "incompatible": [
+        "layout-table-first",
+        "nav-left-rail",
+        "surface-glass",
+        "motion-expressive",
+        "metadata-rich"
+      ],
+      "why": {
+        "lexical": 0.008,
+        "structural": 0.64,
+        "matched": [
+          "platform mobile",
+          "input touch",
+          "secondary mode",
+          "product iot"
+        ]
+      },
+      "role": "core",
+      "selected_for": "no record matched the wording; best structural fit for platform/product"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "feedback-progress-async",
+      "kind": "rule",
+      "category": "feedback",
+      "title": "Progress for background work: what, how far, what went wrong",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "feedback",
+        "states"
+      ],
+      "concepts": [
+        "feedback.progress_indicator",
+        "a11y.live_status",
+        "state.offline_sync"
+      ],
+      "covers": [
+        "progress indicator",
+        "live region status announcements",
+        "offline and sync states"
+      ],
+      "score": 0.793,
+      "guidance": "State what is happening in words ('Sending 2 of 3 · Photo …'), a determinate bar when the total is known, the current item, elapsed/remaining when useful; on failure name the item and the reason with a Retry action; on completion confirm briefly ('All sent · just now'); keep a stable-phrase live region that announces start, failure and completion once per run; keep the layout stable while the state changes.",
+      "use_when": "Sync, upload, export, import, batch send, long saves: anything that takes more than a second and can partially fail.",
+      "avoid_when": "Never show an indeterminate spinner with no words for more than a moment; never hide failures behind a generic 'something went wrong'; never announce every tick to screen readers.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 1.0,
+        "structural": 0.54,
+        "matched": [
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "most relevant record for the request wording"
+    },
+    {
+      "id": "mobile-field-use",
+      "kind": "rule",
+      "category": "environment",
+      "title": "Field use: sunlight readability and glanceable status",
+      "facets": [
+        "accessibility",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "environment",
+        "interaction"
+      ],
+      "concepts": [
+        "env.outdoor_readability",
+        "env.glanceable_status",
+        "touch.minimum_target"
+      ],
+      "covers": [
+        "high contrast outdoors / sunlight readability",
+        "glanceable status",
+        "large touch targets (≥44–48 px)"
+      ],
+      "score": 0.384,
+      "guidance": "Target ≥7:1 text contrast and avoid thin weights and pale tints (glare washes them out); prefer light UI on white or very high-contrast dark, not mid-tone surfaces; make the current state glanceable (large status word plus colour plus icon, readable at arm's length in two seconds); ≥48 dp targets with ≥12 dp spacing and no precision gestures when gloves are likely; put the next action in thumb reach; large numerals for counts and readings; keep the screen usable one-handed and interruptible (state survives backgrounding).",
+      "use_when": "Couriers, inspectors, technicians, warehouse and construction workers, outdoor kiosks: bright light, gloves, movement, interruptions.",
+      "avoid_when": "Desk-bound indoor use.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.044,
+        "structural": 0.8,
+        "matched": [
+          "platform mobile",
+          "input touch",
+          "mode audit",
+          "product iot",
+          "environment gloves,outdoor"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: accessibility, environment, interaction, glanceable status, high contrast outdoors / sunlight readability, large touch targets (≥44–48 px)"
+    },
+    {
+      "id": "mobile-keyboard-ime",
+      "kind": "rule",
+      "category": "forms",
+      "title": "Mobile: keyboard and input types",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "feedback",
+        "interaction"
+      ],
+      "concepts": [
+        "touch.ime_keyboard"
+      ],
+      "covers": [
+        "on-screen keyboard (IME) aware layout"
+      ],
+      "score": 0.324,
+      "guidance": "Set keyboard type and autocomplete/textContentType/autofillHints per field, return key action (Next/Done), scroll the focused field above the keyboard, keep the primary action reachable while the keyboard is open (or on the keyboard toolbar), and dismiss on tap outside for non-modal forms.",
+      "use_when": "Every text field.",
+      "avoid_when": "Never leave the default keyboard for emails, numbers, phone, or URLs; never let the keyboard cover the focused field or the submit button.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.72,
+        "matched": [
+          "platform mobile",
+          "input touch",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: component"
+    },
+    {
+      "id": "states-offline-and-sync",
+      "kind": "rule",
+      "category": "states",
+      "title": "Offline, sync, and connectivity states",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "environment",
+        "feedback",
+        "states"
+      ],
+      "concepts": [
+        "state.offline_sync",
+        "state.saving_conflict",
+        "data.refresh_timestamp"
+      ],
+      "covers": [
+        "offline and sync states",
+        "saving, saved and conflict states",
+        "last-updated / refresh state"
+      ],
+      "score": 0.512,
+      "guidance": "Design the offline state as a first-class state: show connectivity clearly but calmly (a persistent status strip, not a blocking modal), keep already-loaded content usable, queue writes locally with a visible 'pending sync' marker per item and a 'last synced' timestamp, retry automatically with backoff and let the user retry manually, never lose entered data, and resolve conflicts explicitly (show both versions or last-writer-wins with an undo). Reads: stale data is labelled with its age.",
+      "use_when": "Field, travel, and public-venue apps; anything used with poor connectivity; any screen that writes data.",
+      "avoid_when": "Read-only always-online desktop tools where connectivity loss is exceptional (still show an error, not a blank).",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "engineering-practice",
+      "why": {
+        "lexical": 0.392,
+        "structural": 0.66,
+        "matched": [
+          "platform mobile",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "recommended coverage: last-updated / refresh state, saving, saved and conflict states"
+    },
+    {
+      "id": "mobile-safe-areas",
+      "kind": "rule",
+      "category": "layout",
+      "title": "Mobile: safe areas and system insets",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "adaptive",
+        "structure"
+      ],
+      "concepts": [
+        "touch.safe_areas"
+      ],
+      "covers": [
+        "safe areas and notches"
+      ],
+      "score": 0.324,
+      "guidance": "Content respects safe-area insets (SwiftUI safeAreaInset / .ignoresSafeArea only for backgrounds, Compose WindowInsets + edge-to-edge, RN SafeAreaView/useSafeAreaInsets, web env(safe-area-inset-*)); bottom actions sit above the home indicator/gesture bar; keyboard (IME) insets push the focused field into view.",
+      "use_when": "Bottom bars, sticky CTAs, full-bleed backgrounds, top app bars, landscape.",
+      "avoid_when": "Never hard-code status/nav bar heights.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.72,
+        "matched": [
+          "platform mobile",
+          "input touch",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "recommended coverage: adaptive, safe areas and notches"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "environment",
+      "states"
+    ],
+    "covered_required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "environment",
+      "states"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "anti-pattern",
+      "feedback",
+      "adaptive",
+      "performance"
+    ],
+    "covered_recommended_concerns": [
+      "feedback",
+      "adaptive"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "feedback.progress_indicator",
+      "a11y.live_status",
+      "state.offline_sync",
+      "touch.minimum_target",
+      "env.outdoor_readability",
+      "env.glanceable_status"
+    ],
+    "covered_required_concepts": [
+      "feedback.progress_indicator",
+      "a11y.live_status",
+      "state.offline_sync",
+      "touch.minimum_target",
+      "env.outdoor_readability",
+      "env.glanceable_status"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.3,
+    "bundle_size": 6,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 1,
+    "guardrail_size": 5,
+    "bundle_tokens": 879,
+    "coverage_per_1k_tokens": 6.83,
+    "mean_purity": 1.0,
+    "contaminated": [],
+    "category_diversity": 1.0,
+    "duplicate_pressure": 0.17,
+    "facet_coverage": 0.6,
+    "redundancy": 0.4
+  },
+  "token_coverage": 1.0,
+  "omitted": [],
+  "rejected": [
+    {
+      "id": "anti-hero-template",
+      "reason": "platform ['web'] not in request ['mobile']"
+    },
+    {
+      "id": "anti-generic-sidebar-dashboard",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "anti-hover-only-actions",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-sidebar-nav",
+      "reason": "platform ['desktop', 'tablet', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-tv-sign-in",
+      "reason": "platform ['tv'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-plan-comparison",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-kiosk-keypad",
+      "reason": "platform ['kiosk', 'tablet'] not in request ['mobile']"
+    },
+    {
+      "id": "dir-operational-workbench",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "feedback.progress_indicator",
+      "priority": "required",
+      "reason": "named in the request: spinner, what is happening",
+      "candidate_records": [
+        [
+          "feedback-progress-async",
+          0.793
+        ],
+        [
+          "comp-setup-checklist",
+          0.237
+        ],
+        [
+          "comp-wizard-stepper",
+          0.12
+        ]
+      ],
+      "selected_record": "feedback-progress-async",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.live_status",
+      "priority": "required",
+      "reason": "named in the request: never say, statu is a spinner",
+      "candidate_records": [
+        [
+          "feedback-progress-async",
+          0.793
+        ],
+        [
+          "interaction-drag-drop",
+          0.324
+        ],
+        [
+          "a11y-live-status",
+          0.295
+        ],
+        [
+          "search-filter-feedback",
+          0.243
+        ]
+      ],
+      "selected_record": "feedback-progress-async",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "state.offline_sync",
+      "priority": "required",
+      "reason": "offline / low bandwidth",
+      "candidate_records": [
+        [
+          "feedback-progress-async",
+          0.793
+        ],
+        [
+          "states-offline-and-sync",
+          0.512
+        ],
+        [
+          "comp-photo-capture-field",
+          0.338
+        ]
+      ],
+      "selected_record": "feedback-progress-async",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "touch.minimum_target",
+      "priority": "required",
+      "reason": "touch platform",
+      "candidate_records": [
+        [
+          "mobile-field-use",
+          0.384
+        ],
+        [
+          "comp-photo-capture-field",
+          0.338
+        ],
+        [
+          "a11y-target-size",
+          0.27
+        ],
+        [
+          "comp-list-row-mobile",
+          0.261
+        ]
+      ],
+      "selected_record": "mobile-field-use",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "env.outdoor_readability",
+      "priority": "required",
+      "reason": "environment outdoor",
+      "candidate_records": [
+        [
+          "mobile-field-use",
+          0.384
+        ]
+      ],
+      "selected_record": "mobile-field-use",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "env.glanceable_status",
+      "priority": "required",
+      "reason": "environment outdoor",
+      "candidate_records": [
+        [
+          "mobile-field-use",
+          0.384
+        ],
+        [
+          "data-exceptions-first",
+          0.281
+        ]
+      ],
+      "selected_record": "mobile-field-use",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.accessible_names",
+      "priority": "recommended",
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "comp-photo-capture-field",
+          0.338
+        ],
+        [
+          "a11y-native-semantics",
+          0.313
+        ],
+        [
+          "a11y-labels-names",
+          0.243
+        ],
+        [
+          "comp-player-controls",
+          0.198
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "a11y.contrast",
+      "priority": "recommended",
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "a11y-contrast-text",
+          0.247
+        ],
+        [
+          "anti-fashion-over-usability",
+          0.243
+        ],
+        [
+          "a11y-nontext-contrast",
+          0.243
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "state.loading_empty_error",
+      "priority": "recommended",
+      "reason": "asynchronous or remote data on this screen",
+      "candidate_records": [
+        [
+          "comp-chart-container",
+          0.297
+        ],
+        [
+          "layout-states-empty-loading-error",
+          0.254
+        ],
+        [
+          "anti-no-states",
+          0.243
+        ],
+        [
+          "comp-mini-player",
+          0.201
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "recommended",
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.207
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.gestures_discoverable",
+      "priority": "recommended",
+      "reason": "touch platform",
+      "candidate_records": [
+        [
+          "mobile-gestures-discoverable",
+          0.327
+        ],
+        [
+          "interaction-drag-drop",
+          0.324
+        ],
+        [
+          "comp-list-row-mobile",
+          0.261
+        ],
+        [
+          "media-photo-viewer",
+          0.261
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.thumb_reach",
+      "priority": "recommended",
+      "reason": "one-handed use",
+      "candidate_records": [
+        [
+          "mobile-thumb-reach",
+          0.324
+        ],
+        [
+          "anti-mobile-desktop-shrunk",
+          0.198
+        ],
+        [
+          "cta-sticky-bar",
+          0.182
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.safe_areas",
+      "priority": "recommended",
+      "reason": "mobile",
+      "candidate_records": [
+        [
+          "mobile-safe-areas",
+          0.324
+        ],
+        [
+          "cta-sticky-bar",
+          0.182
+        ]
+      ],
+      "selected_record": "mobile-safe-areas",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "navigation.platform_grammar",
+      "priority": "recommended",
+      "reason": "mobile navigation grammar",
+      "candidate_records": [
+        [
+          "mobile-platform-navigation",
+          0.324
+        ],
+        [
+          "nav-bottom-tabs",
+          0.305
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "data.refresh_timestamp",
+      "priority": "recommended",
+      "reason": "related to state.offline_sync",
+      "candidate_records": [
+        [
+          "states-offline-and-sync",
+          0.512
+        ]
+      ],
+      "selected_record": "states-offline-and-sync",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "state.saving_conflict",
+      "priority": "recommended",
+      "reason": "related to state.offline_sync",
+      "candidate_records": [
+        [
+          "states-offline-and-sync",
+          0.512
+        ],
+        [
+          "states-persistence-and-session",
+          0.333
+        ],
+        [
+          "comp-checkout-one-page",
+          0.179
+        ],
+        [
+          "comp-wizard-stepper",
+          0.12
+        ]
+      ],
+      "selected_record": "states-offline-and-sync",
+      "status": "covered",
+      "why": ""
+    }
+  ]
+}

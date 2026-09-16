@@ -1,0 +1,26 @@
+{
+  "task": "p5-12",
+  "sentence": "Older customers time out on the identify step before they finish typing.",
+  "platform": "kiosk",
+  "artifact_state": "existing",
+  "acceptable_modes": ["refactor", "polish", "accessibility"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "state.session_expiry",
+    "privacy.shared_device",
+    "a11y.live_status",
+    "a11y.dialog_focus",
+    "interaction.focus_restore",
+    "touch.minimum_target",
+    "process.safe_modification"
+  ],
+  "critical_concepts": ["state.session_expiry", "privacy.shared_device"],
+  "forbidden_concepts": [
+    "tv.ten_foot_typography", "tv.safe_margins", "tv.dark_first", "tv.no_touch_hover", "interaction.dpad_reachability",
+    "adaptive.breakpoint_matrix", "adaptive.navigation_transform", "anti.platform_scaling",
+    "touch.thumb_reach", "touch.safe_areas", "navigation.deep_link_state", "form.autofill_attributes",
+    "media.resume_playback", "media.search_tv", "desktop.fluent_materials"
+  ],
+  "preservation": ["navigation", "theme", "typography", "keypad component", "privacy wipe on reset", "accessible mode layout"],
+  "reviewer_notes": "Code facts read before running the skill: js/app.js idleWarnMs = 40 s of no tap, then #idle-dialog (modal, Escape blocked) with a 20 s countdown that calls resetSession() and wipes the DOM. Every on-screen tap and every physical key resets the 40 s timer (touch()). So the failure is per-keystroke gaps > 40 s on the DOB/name keypads, and a 20 s modal countdown that an older person must find and dismiss with 'I'm still here' — otherwise their partial input is lost. Expected fix: longer idle window on the identify screens (partial DOB / last name is the visitor's own typing, not fetched PHI), longer/dismiss-anywhere warning, keep the typed value on 'still here' (already kept), and a visible cue that the entry was kept. Should NOT weaken the privacy wipe on list/confirm where fetched prescription data is on screen. Keypad, tokens, typography and utilbar stay as-is."
+}

@@ -1,0 +1,147 @@
+{
+  "task": "p6-20",
+  "project": "p3-winui-erp-audit",
+  "platform_expected": "desktop",
+  "platform_resolved": "desktop",
+  "platform_correct": "yes",
+  "stack": "winui3 + CommunityToolkit DataGrid 7.1.2 + CommunityToolkit.Mvvm",
+  "existing_ui": true,
+  "new_screen": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": ["refactor", "polish", "audit"],
+  "mode_resolved": ["audit", "refactor"],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "moderate",
+  "render_mode": "html-twin",
+  "screenshots": [
+    "render/first-grid-top.png",
+    "render/first-grid-scrolled.png",
+    "render/first-before-variant.png",
+    "render/final-grid-top.png",
+    "render/final-grid-scrolled.png",
+    "render/final-before-variant.png"
+  ],
+  "context_detection": {
+    "navigation": "yes",
+    "theme": "yes",
+    "typography": "partial",
+    "surfaces": "yes",
+    "spacing": "yes"
+  },
+  "preservation": {
+    "navigation": true,
+    "theme": true,
+    "typography": true,
+    "component_reuse": true,
+    "unjustified_structural_change": 0
+  },
+  "expected_concepts": [
+    "table.virtualization",
+    "perf.layout_shift",
+    "perf.focus_latency",
+    "data.pagination_strategy",
+    "desktop.persist_workspace",
+    "state.loading_empty_error"
+  ],
+  "critical_concepts": ["table.virtualization", "perf.layout_shift"],
+  "delivered_concepts": [
+    "table.selection_bulk",
+    "table.inline_edit",
+    "table.virtualization",
+    "table.tabular_figures",
+    "data.pagination_strategy",
+    "interaction.selection_visible",
+    "interaction.keyboard_navigation",
+    "interaction.focus_visible",
+    "data.exception_first",
+    "a11y.color_not_only",
+    "env.glanceable_status",
+    "feedback.validation_errors"
+  ],
+  "concept_recall": 0.33,
+  "critical_recall": 0.5,
+  "concept_misses": [
+    {"concept": "perf.layout_shift", "layer": "expected-concepts"},
+    {"concept": "perf.focus_latency", "layer": "expected-concepts"},
+    {"concept": "state.loading_empty_error", "layer": "expected-concepts"},
+    {"concept": "desktop.persist_workspace", "layer": "bundle-selection"},
+    {"concept": "table.virtualization", "layer": "candidate-retrieval"}
+  ],
+  "first_render_defects": {
+    "visual": 1,
+    "interaction": 0,
+    "accessibility": 0,
+    "platform": 0,
+    "existing-system-mismatch": 2,
+    "implementation-bug": 2
+  },
+  "final_defects": {
+    "visual": 0,
+    "interaction": 0,
+    "accessibility": 0,
+    "platform": 0,
+    "existing-system-mismatch": 0,
+    "implementation-bug": 0
+  },
+  "iterations": 2,
+  "guidance_relevant": 2,
+  "guidance_partial": 1,
+  "guidance_offtarget": 2,
+  "bad_guidance": [
+    {"record": "comp-data-entry-grid", "category": "wrong-screen", "why": "spreadsheet batch-entry guidance (F2/F4 editors, paste, totals row) for a grid declared IsReadOnly=True; following it adds per-cell editors to the screen whose complaint is per-row cost"},
+    {"record": "table-column-disambiguation", "category": "wrong-screen", "why": "explicitly 'Editable grids'; the grid is read-only and the numeric formatting it asks for is already implemented"},
+    {"record": "data-exceptions-first", "category": "generic", "why": "already fully implemented on this page (glyph + word + theme brush status column, pending count in the header); says nothing about scroll jank"},
+    {"record": "<bundle>", "category": "missing-critical", "why": "pre-registered critical concept perf.layout_shift (stable row geometry while scrolling) is absent from the bundle; and web-virtualize-long-lists, the one performance record in the base and platform-compatible with desktop, never became a candidate"}
+  ],
+  "layer_review": {
+    "core": ["comp-data-table", "comp-data-entry-grid"],
+    "critical": ["grid-single-tab-stop", "data-exceptions-first", "table-column-disambiguation"],
+    "optional": [],
+    "optional_useful": 0,
+    "optional_noise": 0
+  },
+  "guidance_used": ["grid-single-tab-stop", "comp-data-table"],
+  "guidance_ignored": [
+    {"id": "comp-data-entry-grid", "why": "grid is IsReadOnly=True; inline editing would increase per-row realisation cost"},
+    {"id": "table-column-disambiguation", "why": "editable-grid record; formatting already in place"},
+    {"id": "data-exceptions-first", "why": "already implemented and unrelated to the reported problem"},
+    {"id": "direction:cards=card-list-row", "why": "48-72 dp row height contradicts a 36 epx desktop DataGrid and would reduce visible rows on the screen the task says is too heavy"}
+  ],
+  "unjustified_direction_slots": 2,
+  "process_records_needed": false,
+  "skill_effect": "helped",
+  "guidance_tokens": 1141,
+  "misses": [
+    {"layer": "candidate-retrieval", "what": "web-virtualize-long-lists never surfaced for a scroll-jank sentence although it is platform-compatible with desktop and ranks first (0.593) on a virtualisation-worded search"},
+    {"layer": "expected-concepts", "what": "no performance concept (perf.layout_shift, perf.focus_latency) demanded for a performance complaint"},
+    {"layer": "bundle-selection", "what": "desktop.persist_workspace demanded, candidate desktop-state-persistence existed, dropped"},
+    {"layer": "candidate-compatibility", "what": "two editable-grid records selected for a grid declared IsReadOnly=True"},
+    {"layer": "direction", "what": "cards slot set to card-list-row (48-72 dp rows) on a 36 epx desktop grid"},
+    {"layer": "requirements", "what": "intent.preserve empty on an existing, previously audited screen"}
+  ],
+  "knowledge_gaps": [],
+  "regressions": [
+    {"query": "The stock adjustments grid shows 3,000 rows and scrolling is janky.", "expect": "web-virtualize-long-lists present in the bundle, not only the 'virtualised rows' sub-clause of comp-data-table"},
+    {"query": "the invoice list stutters when I scroll through 8,000 lines", "expect": "at least one record whose subject is list/table performance; perf.layout_shift among the demanded concepts"},
+    {"query": "the read-only approvals grid is slow", "expect": "comp-data-entry-grid and table-column-disambiguation NOT selected when the project's grid is IsReadOnly"},
+    {"query": "inspect_project.py on a WinUI page setting Typography.NumeralAlignment=Tabular", "expect": "typography.features.tabular_numerals true"}
+  ],
+  "tags": [
+    "concept-miss",
+    "ranking-miss",
+    "direction-mismatch",
+    "context-detection-miss",
+    "requirements-miss",
+    "render-defect-fixed",
+    "tooling-limit",
+    "skill-helped",
+    "preservation-ok"
+  ],
+  "build_hash_start": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947",
+  "build_hash_end": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947"
+}

@@ -1,0 +1,228 @@
+{
+ "records": 232,
+ "by_kind": {
+  "antipattern": 21,
+  "chart": 14,
+  "component": 31,
+  "direction": 15,
+  "pattern": 88,
+  "rule": 63
+ },
+ "by_provenance": {
+  "heuristic": 98,
+  "platform-standard": 63,
+  "accessibility-requirement": 23,
+  "engineering-practice": 14,
+  "internal-preference": 13,
+  "aesthetic": 21
+ },
+ "with_concepts": 87,
+ "with_explicit_concerns": 42,
+ "with_implementation": 46,
+ "platform_specific": 158,
+ "short_guidance": [
+  "anti-hover-only-actions"
+ ],
+ "few_keywords": [
+  "density-medium",
+  "focus-underline",
+  "cta-contextual-inline",
+  "imagery-none",
+  "imagery-illustration",
+  "icon-duotone",
+  "icon-text-only",
+  "icon-custom-glyphs",
+  "metadata-minimal",
+  "metadata-moderate",
+  "card-flat-tile"
+ ],
+ "no_concern": [
+  "impl-reuse-before-new",
+  "impl-safe-modification",
+  "verify-render-and-inspect"
+ ],
+ "near_duplicates": [
+  [
+   "comp-form",
+   "layout-form-stack",
+   0.67
+  ],
+  [
+   "comp-sidebar-nav",
+   "nav-left-rail",
+   0.56
+  ],
+  [
+   "comp-player-controls",
+   "tv-player-controls",
+   0.55
+  ],
+  [
+   "comp-epg",
+   "layout-epg-grid",
+   0.75
+  ],
+  [
+   "comp-wizard-stepper",
+   "nav-wizard",
+   0.57
+  ]
+ ],
+ "queries_probed": 230,
+ "never_selected": [
+  "anti-hero-template",
+  "anti-mobile-desktop-shrunk",
+  "card-flat-tile",
+  "card-poster-landscape",
+  "chart-compare-bar",
+  "chart-composition",
+  "chart-progress-gauge",
+  "chart-relationship",
+  "color-monochrome-light",
+  "cta-contextual-inline",
+  "cta-toolbar-commands",
+  "density-medium",
+  "desktop-density-spacing",
+  "desktop-fluent-materials",
+  "focus-underline",
+  "icon-text-only",
+  "imagery-illustration",
+  "imagery-immersive-backdrop",
+  "impl-safe-modification",
+  "layout-editorial",
+  "layout-feed",
+  "metadata-focus-reveal",
+  "metadata-minimal",
+  "metadata-rich",
+  "mobile-perf-images-overdraw",
+  "motion-cinematic",
+  "motion-crossfade",
+  "motion-spring",
+  "typography-humanist-sans",
+  "typography-neutral-sans",
+  "typography-rounded-friendly",
+  "web-hydration-js-budget"
+ ],
+ "most_selected": [
+  [
+   "layout-states-empty-loading-error",
+   96
+  ],
+  [
+   "grid-single-tab-stop",
+   61
+  ],
+  [
+   "a11y-keyboard-operable",
+   44
+  ],
+  [
+   "a11y-target-size",
+   42
+  ],
+  [
+   "a11y-focus-visible",
+   41
+  ],
+  [
+   "tv-typography-distance",
+   30
+  ],
+  [
+   "tv-dpad-axes",
+   29
+  ],
+  [
+   "a11y-tv-focus-always",
+   27
+  ],
+  [
+   "tv-safe-area",
+   27
+  ],
+  [
+   "a11y-hover-not-required",
+   25
+  ],
+  [
+   "anti-no-states",
+   24
+  ],
+  [
+   "layout-hierarchy-one-thing",
+   23
+  ],
+  [
+   "dir-analytical-console",
+   21
+  ],
+  [
+   "comp-form",
+   20
+  ],
+  [
+   "web-responsive-breakpoints",
+   20
+  ]
+ ],
+ "concepts_without_record": [],
+ "concept_record_counts": {
+  "layout.no_nested_cards": 2,
+  "brand.structural_differentiation": 1,
+  "layout.spacing_scale": 2,
+  "interaction.hover_independence": 4,
+  "feedback.validation_errors": 4,
+  "state.loading_empty_error": 4,
+  "anti.interruptive_upsell": 1,
+  "perf.layout_shift": 3,
+  "a11y.color_not_only": 4,
+  "table.selection_bulk": 3,
+  "table.inline_edit": 2,
+  "table.virtualization": 6,
+  "table.tabular_figures": 6,
+  "touch.ime_keyboard": 3,
+  "a11y.dialog_focus": 2,
+  "feedback.confirmation_destructive": 4,
+  "tv.player_autohide": 3,
+  "interaction.focus_restore": 5,
+  "perf.focus_latency": 2,
+  "tv.epg_pinned_channels": 2,
+  "interaction.dpad_reachability": 2,
+  "touch.minimum_target": 6,
+  "touch.gestures_discoverable": 2,
+  "a11y.live_status": 3,
+  "feedback.progress_indicator": 3,
+  "state.saving_conflict": 4,
+  "interaction.keyboard_navigation": 4,
+  "tv.sign_in_code": 1,
+  "privacy.shared_device": 3,
+  "onboarding.setup_checklist": 1,
+  "layout.one_primary_action": 5,
+  "a11y.accessible_names": 3,
+  "interaction.back_semantics": 3,
+  "tv.safe_margins": 2,
+  "interaction.focus_visible": 8,
+  "a11y.contrast": 3,
+  "a11y.semantics": 2,
+  "a11y.reduced_motion": 2,
+  "a11y.text_scaling": 1,
+  "state.session_expiry": 4,
+  "tv.ten_foot_typography": 1,
+  "perf.image_sizing": 3,
+  "tv.no_touch_hover": 1,
+  "tv.dark_first": 1,
+  "touch.safe_areas": 1,
+  "touch.thumb_reach": 1,
+  "table.column_priority": 2,
+  "interaction.shortcuts": 1,
+  "adaptive.breakpoint_matrix": 2,
+  "adaptive.navigation_transform": 1,
+  "content.readable_measure": 1,
+  "layout.focal_hierarchy": 2,
+  "content.i18n_expansion": 1,
+  "state.offline_sync": 1,
+  "privacy.sensitive_masking": 1,
+  "env.outdoor_readability": 1,
+  "env.glanceable_status": 1
+ }
+}

@@ -1,0 +1,135 @@
+{
+  "brand": "Photos attached to a defect report are tiny thumbnails you can't check in the field.",
+  "fingerprint": {
+    "color_strategy": "neutral-plus-accent",
+    "image_strategy": "none"
+  },
+  "direction": {
+    "navigation": null,
+    "layout": null,
+    "density": null,
+    "surface": null,
+    "cards": null,
+    "typography": null,
+    "color": "color-neutral-accent",
+    "motion": null,
+    "focus": null,
+    "cta": null,
+    "imagery": "imagery-none",
+    "icon": null,
+    "metadata": null
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "mobile"
+    ],
+    "input": [
+      "touch"
+    ],
+    "product": [
+      "iot"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "flutter"
+    ],
+    "density": null,
+    "components": [
+      "form"
+    ],
+    "environment": [
+      "gloves",
+      "low-bandwidth",
+      "outdoor"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "audit form"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "low",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [],
+      "change_scope": "unknown",
+      "utterance": "observation",
+      "preserve": []
+    },
+    "platform_evidence": [
+      {
+        "platform": "mobile",
+        "strength": "STRONG_INFERENCE",
+        "evidence": [
+          "in the field"
+        ]
+      }
+    ],
+    "mode_evidence": [
+      "audit: problem statement on existing UI",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": "top-bar (KNOWN)",
+      "theme": "dual-theme (KNOWN)",
+      "radius": "small (INFERRED)",
+      "typography": "custom (KNOWN)",
+      "components": "go_router, riverpod (KNOWN)"
+    },
+    "known": [
+      "platform=mobile",
+      "product=iot",
+      "stack=flutter",
+      "environment=outdoor",
+      "environment=gloves",
+      "environment=low-bandwidth",
+      "project_navigation=top-bar",
+      "project_theme=dual-theme",
+      "project_typography=custom",
+      "project_components=go_router, riverpod"
+    ],
+    "inferred": [
+      "input=touch",
+      "mode=audit",
+      "mode=refactor",
+      "project_radius=small"
+    ],
+    "missing": [],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

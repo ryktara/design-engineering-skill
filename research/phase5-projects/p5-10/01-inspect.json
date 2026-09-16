@@ -1,0 +1,146 @@
+{
+  "root": "D:\\indigo pro\\MYownSkills\\research\\phase3-projects\\p3-android-tv-compose\\project",
+  "findings": [
+    {
+      "status": "KNOWN",
+      "note": "app\\build.gradle.kts: androidx.compose"
+    },
+    {
+      "status": "KNOWN",
+      "note": "app\\build.gradle.kts: androidx.tv:tv-material"
+    },
+    {
+      "status": "KNOWN",
+      "note": "app\\build.gradle.kts: androidx.media3"
+    },
+    {
+      "status": "KNOWN",
+      "note": "app\\build.gradle.kts: coil"
+    },
+    {
+      "status": "KNOWN",
+      "note": "app\\src\\main\\AndroidManifest.xml: leanback launcher (Android TV)"
+    },
+    {
+      "status": "INFERRED",
+      "note": "touchscreen not required in manifest (TV/set-top)"
+    },
+    {
+      "status": "INFERRED",
+      "note": "DPAD / remote key handling found in source"
+    },
+    {
+      "status": "INFERRED",
+      "note": "Compose dependencies imply mobile but the only launcher is leanback: TV-only app"
+    }
+  ],
+  "stack_groups": [
+    "compose",
+    "compose-tv"
+  ],
+  "platforms": [
+    "tv"
+  ],
+  "ui_libraries": [
+    "compose",
+    "compose-tv-material",
+    "media3",
+    "images:coil"
+  ],
+  "package_manager": null,
+  "css_architecture": [],
+  "tokens": [],
+  "fonts": [],
+  "icons": [],
+  "routing": [],
+  "breakpoints": [],
+  "accessibility": [
+    "a11y attributes present in 4 files"
+  ],
+  "focus_handling": [
+    "explicit focus handling in 5 files",
+    "DPAD/remote/TV-focus handling in 9 files"
+  ],
+  "design_docs": [],
+  "component_dirs": [],
+  "tests": [],
+  "i18n": [],
+  "product_hints": [
+    "media"
+  ],
+  "sample": {
+    "files_scanned": 13
+  },
+  "design_context": {
+    "navigation": {
+      "value": "tv-rails",
+      "status": "KNOWN",
+      "evidence": [
+        "tv-rails: 95 matches in AppState.kt, Cards.kt, EventDetailsScreen.kt (shell/layout file)"
+      ],
+      "candidates": {
+        "tv-rails": 95,
+        "left-rail": 6
+      }
+    },
+    "theme": {
+      "value": "dark-first",
+      "status": "KNOWN",
+      "evidence": [
+        "dark theme configuration signals: 1",
+        "root/canvas backgrounds: 0 light, 1 dark",
+        "hex palette: 2 near-white, 4 near-black"
+      ]
+    },
+    "surfaces": {
+      "value": "bordered-flat",
+      "status": "INFERRED",
+      "evidence": [
+        "borders in 6 files, shadow/elevation in 1"
+      ]
+    },
+    "radius": {
+      "value": "medium",
+      "status": "INFERRED",
+      "evidence": [
+        "most common radius 8 (3\u00d7); others [50.0, 4.0]"
+      ]
+    },
+    "spacing": {
+      "value": 8,
+      "status": "INFERRED",
+      "evidence": [
+        "most used spacing values [16, 10, 8]"
+      ]
+    },
+    "typography": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": [
+        "no font family declaration found"
+      ],
+      "features": {
+        "weights": [
+          "bold",
+          "semibold",
+          "normal",
+          "medium"
+        ],
+        "type_scale": true,
+        "monospace": false,
+        "tabular_numerals": false
+      }
+    },
+    "components": {
+      "value": "compose, compose-tv-material, media3, images:coil",
+      "status": "KNOWN",
+      "evidence": [
+        "compose",
+        "compose-tv-material",
+        "media3",
+        "images:coil"
+      ]
+    },
+    "schema": "design-context/v1"
+  }
+}

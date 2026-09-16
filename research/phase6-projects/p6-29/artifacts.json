@@ -1,0 +1,132 @@
+{
+  "task": "p6-29",
+  "project": "p3-kiosk-pharmacy",
+  "platform_expected": "kiosk",
+  "platform_resolved": "kiosk",
+  "platform_correct": "yes",
+  "stack": "html-css",
+  "existing_ui": true,
+  "new_screen": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": ["polish", "refactor"],
+  "mode_resolved": ["audit", "refactor"],
+  "mode_correct": "acceptable",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "moderate",
+  "render_mode": "native",
+  "screenshots": [
+    "render/first-done-en-a11yoff.png",
+    "render/first-done-es-a11yoff.png",
+    "render/first-done-en-a11yon.png",
+    "render/first-done-es-a11yon.png",
+    "render/final-done-en-a11yoff.png",
+    "render/final-done-es-a11yoff.png",
+    "render/final-done-en-a11yon.png",
+    "render/final-done-es-a11yon.png"
+  ],
+  "context_detection": {
+    "navigation": "partial",
+    "theme": "no",
+    "typography": "yes",
+    "surfaces": "no",
+    "spacing": "no"
+  },
+  "preservation": {
+    "navigation": true,
+    "theme": true,
+    "typography": true,
+    "component_reuse": true,
+    "unjustified_structural_change": 0
+  },
+  "expected_concepts": [
+    "layout.focal_hierarchy",
+    "a11y.color_not_only",
+    "a11y.live_status",
+    "feedback.progress_indicator",
+    "env.glanceable_status",
+    "state.session_expiry"
+  ],
+  "critical_concepts": ["layout.focal_hierarchy", "a11y.color_not_only", "a11y.live_status"],
+  "delivered_concepts": [
+    "a11y.accessible_names",
+    "a11y.dialog_focus",
+    "a11y.live_status",
+    "feedback.confirmation_destructive",
+    "feedback.progress_indicator",
+    "feedback.validation_errors",
+    "interaction.focus_restore",
+    "onboarding.linear_wizard",
+    "privacy.sensitive_masking",
+    "privacy.shared_device",
+    "state.offline_sync",
+    "state.session_expiry",
+    "touch.minimum_target"
+  ],
+  "concept_recall": 0.5,
+  "critical_recall": 0.33,
+  "concept_misses": [
+    {"concept": "layout.focal_hierarchy", "layer": "expected-concepts"},
+    {"concept": "a11y.color_not_only", "layer": "expected-concepts"},
+    {"concept": "env.glanceable_status", "layer": "bundle-selection"}
+  ],
+  "first_render_defects": {"visual": 1, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+  "final_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+  "iterations": 1,
+  "guidance_relevant": 2,
+  "guidance_partial": 1,
+  "guidance_offtarget": 2,
+  "bad_guidance": [
+    {"record": "comp-kiosk-keypad", "category": "wrong-screen", "why": "Keypad/text-entry guidance (key sizes, masking, scanner wedge, format hints) for a screen with no input at all; selected after 'confirmation screen' was classified screen=form. Also the longest record in the bundle."},
+    {"record": "comp-dialog", "category": "wrong-screen", "why": "Selected for 'confirmation of destructive or high-risk actions' on the word 'confirmation'; there is no dialog and nothing destructive on the done screen. Delivers a pre-registered forbidden concept."},
+    {"record": "kiosk-public-use", "category": "generic", "why": "Every clause (>=60px targets, >=20px body, idle timeout with countdown, cancel at every step) is already implemented in this codebase; useful only as a preservation reminder."},
+    {"record": "<bundle>", "category": "missing-critical", "why": "Two of three pre-registered critical concepts absent: layout.focal_hierarchy and a11y.color_not_only. The only completion cue on the screen was a green tick, and no record in the bundle says colour must not carry meaning alone."}
+  ],
+  "layer_review": {
+    "core": ["comp-kiosk-keypad", "nav-wizard", "comp-dialog"],
+    "critical": ["feedback-progress-async", "kiosk-public-use"],
+    "optional": [],
+    "optional_useful": 0,
+    "optional_noise": 0
+  },
+  "guidance_used": ["feedback-progress-async", "nav-wizard", "kiosk-public-use"],
+  "guidance_ignored": [
+    {"id": "comp-kiosk-keypad", "why": "The done screen has no input; nothing in the record applies."},
+    {"id": "comp-dialog", "why": "No dialog and no destructive action on this screen; following it would have added a modal the task did not ask for."}
+  ],
+  "unjustified_direction_slots": 1,
+  "process_records_needed": false,
+  "skill_effect": "helped",
+  "guidance_tokens": 991,
+  "misses": [
+    {"layer": "requirements", "what": "'confirmation screen' classified as screen=form, which pulled comp-kiosk-keypad and comp-dialog into the bundle"},
+    {"layer": "requirements", "what": "intent.problem_domain empty for an explicit content/status defect ('never says the pick-up is complete')"},
+    {"layer": "expected-concepts", "what": "layout.focal_hierarchy never demanded although layout-hierarchy-one-thing (platform any) carries it"},
+    {"layer": "expected-concepts", "what": "a11y.color_not_only never demanded although a11y-color-not-only carries it and ranks 3rd in search on this exact sentence"},
+    {"layer": "bundle-selection", "what": "env.glanceable_status demanded but its candidate data-exceptions-first lost on utility/cap"},
+    {"layer": "project-context", "what": "theme UNKNOWN, spacing 'irregular', surfaces 'elevated' although tokens.css declares a light+high-contrast palette, an 8px space scale and border-first surfaces"},
+    {"layer": "direction", "what": "cta slot marked 'new' (cta-single-primary) on an untouched slot at moderate budget on an existing UI"}
+  ],
+  "knowledge_gaps": [],
+  "regressions": [
+    {"query": "The confirmation screen prints the receipt but never says the pick-up is complete.", "expect": "a11y.color_not_only is demanded as critical and a never-colour-alone record is in the bundle whenever a sentence says a screen fails to say/state/tell something"},
+    {"query": "any 'the screen never says / does not tell the user X' sentence", "expect": "intent.problem_domain names a content/status-legibility domain and layout.focal_hierarchy is demanded"},
+    {"query": "'confirmation screen' on an existing kiosk or web flow", "expect": "screen resolves to a confirmation/success screen, not form; comp-dialog is not selected on feedback.confirmation_destructive unless the sentence names a destructive action"},
+    {"query": "inspect a project whose tokens.css defines --space-1..7 on an 8px scale and an explicit light palette plus a high-contrast variant", "expect": "spacing KNOWN (8pt scale) and theme KNOWN (light, with high-contrast variant), not UNKNOWN"}
+  ],
+  "tags": [
+    "requirements-miss",
+    "concept-miss",
+    "ranking-miss",
+    "context-detection-miss",
+    "direction-mismatch",
+    "render-defect-fixed",
+    "skill-helped",
+    "preservation-ok"
+  ],
+  "build_hash_start": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947",
+  "build_hash_end": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947"
+}

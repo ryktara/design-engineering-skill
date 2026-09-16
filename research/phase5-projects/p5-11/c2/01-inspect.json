@@ -1,0 +1,113 @@
+{
+  "root": "D:\\indigo pro\\MYownSkills\\research\\phase3-projects\\p3-tvos-swiftui\\project",
+  "findings": [
+    {
+      "status": "KNOWN",
+      "note": "Package.swift: Apple project"
+    },
+    {
+      "status": "KNOWN",
+      "note": "Package.swift: tvOS target"
+    },
+    {
+      "status": "INFERRED",
+      "note": "DPAD / remote key handling found in source"
+    }
+  ],
+  "stack_groups": [
+    "swiftui"
+  ],
+  "platforms": [
+    "tv"
+  ],
+  "ui_libraries": [],
+  "package_manager": null,
+  "css_architecture": [],
+  "tokens": [],
+  "fonts": [],
+  "icons": [],
+  "routing": [],
+  "breakpoints": [],
+  "accessibility": [
+    "a11y attributes present in 5 files"
+  ],
+  "focus_handling": [
+    "explicit focus handling in 8 files",
+    "DPAD/remote/TV-focus handling in 6 files"
+  ],
+  "design_docs": [],
+  "component_dirs": [],
+  "tests": [],
+  "i18n": [],
+  "product_hints": [
+    "media"
+  ],
+  "environment_hints": [],
+  "sample": {
+    "files_scanned": 19
+  },
+  "design_context": {
+    "navigation": {
+      "value": "tv-rails",
+      "status": "KNOWN",
+      "evidence": [
+        "tv-rails: 29 matches in SearchView.swift, TVButtonStyle.swift, Tokens.swift (shell/layout file)"
+      ],
+      "candidates": {
+        "tv-rails": 29,
+        "bottom-tabs": 1
+      }
+    },
+    "theme": {
+      "value": "dark-first",
+      "status": "INFERRED",
+      "evidence": [
+        "dark theme configuration signals: 2",
+        "hex palette: 2 near-white, 4 near-black",
+        "TV platform with a dark-leaning palette"
+      ]
+    },
+    "surfaces": {
+      "value": "elevated",
+      "status": "INFERRED",
+      "evidence": [
+        "shadow/elevation in 2 files, borders in 0"
+      ]
+    },
+    "radius": {
+      "value": "medium",
+      "status": "INFERRED",
+      "evidence": [
+        "most common radius 8 (1\u00d7); others [24.0]"
+      ]
+    },
+    "spacing": {
+      "value": "irregular",
+      "status": "UNKNOWN",
+      "evidence": [
+        "most used spacing values [6]"
+      ]
+    },
+    "typography": {
+      "value": "custom",
+      "status": "KNOWN",
+      "evidence": [
+        "font family System (2 refs)",
+        "monospace usage",
+        "tabular numerals"
+      ],
+      "features": {
+        "weights": [],
+        "type_scale": false,
+        "monospace": true,
+        "tabular_numerals": true
+      }
+    },
+    "components": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "schema": "design-context/v1"
+  }
+}

@@ -1,0 +1,5 @@
+{"platform": "tv", "artifact_state": "existing", "acceptable_modes": ["polish", "refactor", "accessibility"], "scope_kind": "in-scope",
+ "expected_concepts": ["tv.ten_foot_typography", "layout.media_card", "perf.layout_shift", "content.i18n_expansion", "a11y.accessible_names", "tv.no_touch_hover"],
+ "critical_concepts": ["tv.ten_foot_typography", "layout.media_card", "perf.layout_shift"],
+ "forbidden_concepts": ["tv.sign_in_code", "tv.epg_pinned_channels", "media.live_channel_switching", "data.pagination_strategy"],
+ "preservation": ["navigation", "theme", "typography"]}

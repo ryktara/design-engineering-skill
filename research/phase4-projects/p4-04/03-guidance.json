@@ -1,0 +1,528 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "add a compare-to-last-week view to the energy dashboard KPIs and the hourly chart, keeping the existing top bar and light theme",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [
+      "finance",
+      "iot"
+    ],
+    "screen": [
+      "dashboard"
+    ],
+    "screen_subtype": [
+      "calendar"
+    ],
+    "stack": [
+      "react"
+    ],
+    "density": "high",
+    "components": [
+      "chart"
+    ],
+    "environment": [],
+    "jobs": [
+      "compare"
+    ],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "compare",
+      "create dashboard"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "mode_evidence": [
+      "create: default (no mode cue)"
+    ],
+    "project_context": {
+      "navigation": "top-bar (KNOWN)",
+      "theme": "light-first (INFERRED)",
+      "surfaces": "bordered-flat (INFERRED)",
+      "radius": "small (INFERRED)",
+      "spacing": "4 (INFERRED)"
+    },
+    "known": [
+      "platform=web",
+      "product=finance",
+      "product=iot",
+      "stack=react",
+      "screen=dashboard",
+      "job=compare",
+      "project_navigation=top-bar"
+    ],
+    "inferred": [
+      "input=pointer",
+      "input=keyboard",
+      "input=touch",
+      "density=high",
+      "mode=create",
+      "project_theme=light-first",
+      "project_surfaces=bordered-flat",
+      "project_radius=small",
+      "project_spacing=4"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT"
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "component",
+        "reason": "a specific component/screen is requested"
+      },
+      {
+        "concern": "structure",
+        "reason": "layout topology and hierarchy"
+      },
+      {
+        "concern": "navigation",
+        "reason": "entry screen or navigation component"
+      },
+      {
+        "concern": "states",
+        "reason": "asynchronous or remote data on this screen"
+      },
+      {
+        "concern": "interaction",
+        "reason": "input model: keyboard,pointer,touch"
+      },
+      {
+        "concern": "accessibility",
+        "reason": "platform accessibility baseline"
+      },
+      {
+        "concern": "data-display",
+        "reason": "numbers, tables or charts are the content"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "anti-pattern",
+        "reason": "create/refactor requests attract generic defaults"
+      },
+      {
+        "concern": "brand",
+        "reason": "visual identity direction"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "viewport range"
+      },
+      {
+        "concern": "feedback",
+        "reason": "sensitive domain: errors must be recoverable"
+      }
+    ],
+    "optional": [
+      "motion",
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "state.loading_empty_error",
+        "reason": "asynchronous or remote data on this screen"
+      },
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "web content must be keyboard operable"
+      },
+      {
+        "concept": "interaction.hover_independence",
+        "reason": "web is used with touch as well as pointer"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "web keyboard focus"
+      },
+      {
+        "concept": "table.tabular_figures",
+        "reason": "numeric data"
+      },
+      {
+        "concept": "data.chart_by_question",
+        "reason": "charts"
+      },
+      {
+        "concept": "a11y.color_not_only",
+        "reason": "status and series colour"
+      },
+      {
+        "concept": "data.kpi_comparison",
+        "reason": "job compare"
+      },
+      {
+        "concept": "data.accessible_chart_alternative",
+        "reason": "required by data.chart_by_question"
+      }
+    ],
+    "recommended_concepts": [
+      "touch.minimum_target",
+      "adaptive.breakpoint_matrix",
+      "data.exception_first",
+      "data.drilldown",
+      "layout.focal_hierarchy",
+      "feedback.confirmation_destructive",
+      "interaction.shortcuts"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "dir-analytical-console",
+      "kind": "direction",
+      "category": "direction",
+      "title": "Analytical console",
+      "facets": [
+        "direction",
+        "platform"
+      ],
+      "concerns": [
+        "brand",
+        "structure"
+      ],
+      "concepts": [],
+      "covers": [],
+      "score": 0.504,
+      "guidance": "Charts are the imagery; one chart palette; modules sized by importance not by a uniform card grid; dark-first tonal surfaces with the accent reserved for alerts and selection; large readable numerics; small multiples over spaghetti charts. Distinctiveness via chart mark style and a signature numeric typeface.",
+      "use_when": "Monitoring and analysis: dashboards with real questions, alerting, drill-down, often on dark themes for long sessions or wall displays.",
+      "avoid_when": "Task-entry tools (workbench), consumer products.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "internal-preference",
+      "incompatible": [
+        "surface-glass",
+        "imagery-hero",
+        "motion-cinematic",
+        "typography-serif-editorial"
+      ],
+      "role": "core",
+      "selected_for": "highest-scoring direction with lexical evidence"
+    },
+    {
+      "id": "comp-chart-container",
+      "kind": "component",
+      "category": "chart",
+      "title": "Chart container and interaction",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "component",
+        "data-display",
+        "states"
+      ],
+      "concepts": [
+        "a11y.color_not_only",
+        "data.chart_by_question",
+        "data.accessible_chart_alternative",
+        "state.loading_empty_error"
+      ],
+      "covers": [
+        "no colour alone for status",
+        "chart form chosen from the analytical question",
+        "accessible chart summary and table alternative",
+        "loading, empty and error states"
+      ],
+      "score": 0.489,
+      "guidance": "Title that states the question, unit and time range visible, legend as direct labels where possible, tooltip also keyboard-reachable (focusable points or a data table toggle), accessible summary text, consistent palette, responsive (reduce ticks, not data), empty/loading/error states, no animation beyond a single load transition and none on data refresh. Provide the data table or CSV.",
+      "use_when": "Any chart in a product.",
+      "avoid_when": "Decorative charts with no question; charts of fewer than ~4 points (use a stat).",
+      "risk": {
+        "a11y": "high",
+        "perf": "medium"
+      },
+      "provenance": "heuristic",
+      "implementation": {
+        "react": "Recharts/Visx/ECharts already in the project; add role=img + aria-label summary and a table fallback."
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "layout-dashboard-grid",
+      "kind": "pattern",
+      "category": "layout",
+      "title": "Dashboard grid of modules",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "structure"
+      ],
+      "concepts": [],
+      "covers": [],
+      "score": 0.684,
+      "guidance": "12-column responsive grid, modules sized by importance (the primary KPI or chart spans wider), reading order = importance order (top-left first), each module a region with a heading and its own loading/empty/error states. Cards are optional: a divider grid with headings is often clearer than nested boxes.",
+      "use_when": "Monitoring/overview screens where several independent modules (KPIs, charts, lists) are scanned together and ranked by importance.",
+      "avoid_when": "Task screens (forms, editors), narrow widths (stack instead), or when modules have no ordering logic and would be a wall of equal boxes.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "heuristic",
+      "incompatible": [
+        "layout-single-column",
+        "layout-immersive-rails",
+        "layout-rails",
+        "layout-editorial"
+      ],
+      "role": "core",
+      "selected_for": "highest-scoring pattern with lexical evidence"
+    },
+    {
+      "id": "comp-kpi-tile",
+      "kind": "component",
+      "category": "chart",
+      "title": "KPI / stat tile",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "data-display",
+        "navigation"
+      ],
+      "concepts": [
+        "table.tabular_figures",
+        "data.kpi_comparison",
+        "data.drilldown"
+      ],
+      "covers": [
+        "tabular figures and numeric alignment",
+        "KPI with comparison and precision",
+        "drill-down from summary to detail"
+      ],
+      "score": 0.488,
+      "guidance": "Label, value with unit and tabular figures, comparison (vs previous period) with sign + arrow + colour, optional sparkline, consistent decimal precision, the most important KPI larger or first, no icon per tile unless it disambiguates, whole tile links to the detail. Avoid the 'four identical cards with big numbers and a gradient' default.",
+      "use_when": "Headline metrics on dashboards.",
+      "avoid_when": "More than ~6 KPIs in a row (users stop reading); KPIs without context (no comparison, no unit).",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "role": "core",
+      "selected_for": "required coverage: navigation, KPI with comparison and precision, tabular figures and numeric alignment"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "anti-generic-sidebar-dashboard",
+      "kind": "antipattern",
+      "category": "generic-ai",
+      "title": "The default SaaS dashboard (sidebar + 4 KPI cards + chart + table)",
+      "facets": [
+        "anti-pattern",
+        "platform"
+      ],
+      "concerns": [
+        "anti-pattern",
+        "data-display"
+      ],
+      "concepts": [
+        "anti.template_landing",
+        "data.exception_first",
+        "process.decision_order"
+      ],
+      "covers": [
+        "no template skeleton pages",
+        "exceptions and anomalies first",
+        "structure before style decision order"
+      ],
+      "score": 0.546,
+      "guidance": "Start from the user's job: what decision or action happens here, how often, and what must be noticed first. Many 'dashboards' should be a table-first working screen, a queue, or a single chart with alerts. Choose navigation by section count, KPIs by decisions, charts by questions. If the result is a sidebar and four KPIs, be able to say why.",
+      "use_when": "Any 'dashboard' request answered with the same skeleton regardless of what the user monitors or does.",
+      "avoid_when": "Each element can be right; the failure is choosing them before knowing the task.",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "role": "guardrail",
+      "selected_for": "most relevant record for the request wording"
+    },
+    {
+      "id": "a11y-keyboard-operable",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Everything operable by keyboard, no traps",
+      "facets": [
+        "accessibility",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.keyboard_navigation",
+        "interaction.hover_independence"
+      ],
+      "covers": [
+        "keyboard navigation and focus order",
+        "no hover dependence"
+      ],
+      "score": 0.342,
+      "guidance": "Tab reaches every control in visual order; composite widgets use arrow keys with a roving tabindex so Tab is not consumed by every cell; Escape closes layers and returns focus to the invoker; nothing traps focus except a modal, and the modal itself must be escapable. Provide a keyboard alternative for every drag interaction.",
+      "use_when": "Every interactive element, including custom widgets, drag/drop, sliders, menus, date pickers, and anything that appears on hover.",
+      "avoid_when": "Never skip.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "role": "guardrail",
+      "selected_for": "required coverage: interaction, no hover dependence, keyboard navigation and focus order"
+    },
+    {
+      "id": "a11y-focus-visible",
+      "kind": "rule",
+      "category": "focus",
+      "title": "Focus visible and not obscured",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.focus_visible"
+      ],
+      "covers": [
+        "visible focus"
+      ],
+      "score": 0.364,
+      "guidance": "Focus indicator ≥2 px with ≥3:1 contrast against adjacent colours and against the unfocused state; sticky UI gets scroll-padding so a focused control scrolls into clear view. On TV the indicator must be obvious at 3 m (scale + border/glow).",
+      "use_when": "Every focusable element in every theme; sticky headers, footers, toasts, and cookie banners must never cover the focused element.",
+      "avoid_when": "Never remove focus styles; use :focus-visible to hide them for mouse clicks only.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "role": "guardrail",
+      "selected_for": "required coverage: visible focus"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "component",
+      "structure",
+      "navigation",
+      "states",
+      "interaction",
+      "accessibility",
+      "data-display"
+    ],
+    "covered_required_concerns": [
+      "component",
+      "structure",
+      "navigation",
+      "states",
+      "interaction",
+      "accessibility",
+      "data-display"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "anti-pattern",
+      "brand",
+      "adaptive",
+      "feedback"
+    ],
+    "covered_recommended_concerns": [
+      "anti-pattern",
+      "brand"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "state.loading_empty_error",
+      "interaction.keyboard_navigation",
+      "interaction.hover_independence",
+      "interaction.focus_visible",
+      "table.tabular_figures",
+      "data.chart_by_question",
+      "a11y.color_not_only",
+      "data.kpi_comparison",
+      "data.accessible_chart_alternative"
+    ],
+    "covered_required_concepts": [
+      "state.loading_empty_error",
+      "interaction.keyboard_navigation",
+      "interaction.hover_independence",
+      "interaction.focus_visible",
+      "table.tabular_figures",
+      "data.chart_by_question",
+      "a11y.color_not_only",
+      "data.kpi_comparison",
+      "data.accessible_chart_alternative"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.29,
+    "bundle_size": 7,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 4,
+    "guardrail_size": 3,
+    "bundle_tokens": 952,
+    "coverage_per_1k_tokens": 9.45,
+    "mean_purity": 0.9,
+    "contaminated": [],
+    "category_diversity": 0.86,
+    "duplicate_pressure": 0.29,
+    "facet_coverage": 0.67,
+    "redundancy": 0.44
+  },
+  "token_coverage": 0.82
+}

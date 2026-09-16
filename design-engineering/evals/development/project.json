@@ -1,0 +1,10 @@
+{
+  "description": "Existing-project workflow: inspect_project.py must detect the stack/platform/conventions from fixtures, and the detected hints must steer retrieval (KNOWN platform, stack-specific implementation notes).",
+  "cases": [
+    {"id": "nextjs-shadcn", "fixture": "fixtures/nextjs-shadcn", "expect": {"stack_groups": ["nextjs", "react", "shadcn", "tailwind"], "platforms": ["web"], "ui_libraries": ["shadcn", "radix"], "icons": ["lucide"], "tests": ["playwright"], "i18n": ["next-intl"], "accessibility": ["jsx-a11y"], "css_architecture": ["tailwind"], "product_hints": ["saas"], "routing": ["app/"], "breakpoints": ["768px", "1280px"]}, "then_query": "add a data table for invoices", "then_expect_ids": ["comp-data-table"], "then_expect_platforms": ["web"]},
+    {"id": "compose-tv", "fixture": "fixtures/compose-tv", "expect": {"stack_groups": ["compose-tv"], "platforms": ["tv"], "ui_libraries": ["compose-tv-material", "media3", "coil"], "product_hints": ["media"], "focus_handling": ["DPAD"]}, "expect_absent": {"platforms": ["web"]}, "then_query": "add a continue watching row on the home screen", "then_expect_ids": ["comp-tv-rail"], "then_expect_platforms": ["tv"]},
+    {"id": "winui-erp", "fixture": "fixtures/winui-erp", "expect": {"stack_groups": ["winui"], "platforms": ["desktop"], "ui_libraries": ["winui3"], "product_hints": ["erp"], "routing": ["Views/"]}, "then_query": "add a purchase order list", "then_expect_ids": ["comp-data-table"], "then_expect_platforms": ["desktop"]},
+    {"id": "flutter-app", "fixture": "fixtures/flutter-app", "expect": {"stack_groups": ["flutter"], "platforms": ["mobile"], "product_hints": ["healthcare"]}, "then_query": "appointment booking screen", "then_expect_platforms": ["mobile"]},
+    {"id": "empty-project", "fixture": "fixtures/empty-project", "expect": {}, "expect_absent": {"stack_groups": ["react"], "platforms": ["web"]}}
+  ]
+}

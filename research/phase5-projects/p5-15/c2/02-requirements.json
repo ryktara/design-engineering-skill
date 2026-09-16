@@ -1,0 +1,208 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "audit",
+    "review",
+    "accessibility"
+  ],
+  "platform": [
+    "desktop"
+  ],
+  "input": [
+    "keyboard",
+    "pointer"
+  ],
+  "product": [
+    "erp",
+    "finance"
+  ],
+  "screen": [],
+  "screen_subtype": [],
+  "stack": [
+    "winui"
+  ],
+  "density": "high",
+  "components": [],
+  "environment": [],
+  "jobs": [],
+  "problems": [],
+  "risk": "medium",
+  "primary_jobs": [
+    "audit"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "focus_handling_present": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "keyboard": true,
+    "screen_reader": true,
+    "focus": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "change_budget": "low",
+  "scope": {
+    "domain": "UI_ACCESSIBILITY",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "intent": {
+    "artifact_state": "existing",
+    "operations": [
+      "review"
+    ],
+    "problem_domain": [
+      "accessibility"
+    ],
+    "change_scope": "screen",
+    "utterance": "request",
+    "existing": true,
+    "problem": false,
+    "facet": "accessibility",
+    "diagnose_only": true,
+    "creation": false,
+    "redesign": false,
+    "responsive_cues": false,
+    "preserve": [],
+    "scope": "moderate"
+  },
+  "platform_evidence": [],
+  "mode_evidence": [
+    "audit: explicit: review the",
+    "review: assessment without changes (review)",
+    "audit: diagnosis is part of the review",
+    "accessibility: accessibility problem domain"
+  ],
+  "project_context": {
+    "navigation": {
+      "value": "left-rail",
+      "status": "KNOWN",
+      "evidence": [
+        "left-rail: 3 matches in MainWindow.xaml, OrdersPage.xaml (shell/layout file)",
+        "also menu-bar: 11 matches"
+      ]
+    },
+    "theme": {
+      "value": "dual-theme",
+      "status": "INFERRED",
+      "evidence": [
+        "dark theme configuration signals: 1",
+        "hex palette: 0 near-white, 0 near-black"
+      ]
+    },
+    "surfaces": {
+      "value": "bordered-flat",
+      "status": "INFERRED",
+      "evidence": [
+        "borders in 2 files, shadow/elevation in 0"
+      ]
+    },
+    "radius": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "spacing": {
+      "value": 4,
+      "status": "INFERRED",
+      "evidence": [
+        "most used spacing values [16, 8, 12, 4, 2]"
+      ]
+    },
+    "typography": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": [
+        "no font family declaration found"
+      ]
+    },
+    "components": {
+      "value": "winui3, community-toolkit",
+      "status": "KNOWN",
+      "evidence": [
+        "winui3",
+        "community-toolkit"
+      ]
+    }
+  },
+  "known": [
+    "platform=desktop (project inspection)",
+    "product=erp (project inspection (README))",
+    "product=finance (project inspection (README))",
+    "stack=winui (project inspection)",
+    "mode=audit (explicit: review the; diagnosis is part of the review)",
+    "project_navigation=left-rail (repository: left-rail: 3 matches in MainWindow.xaml, OrdersPage.xaml (shell/layout file); also menu-bar: 11 matches)",
+    "project_components=winui3, community-toolkit (repository: winui3; community-toolkit)"
+  ],
+  "inferred": [
+    "input=pointer (implied by platform desktop)",
+    "input=keyboard (implied by platform desktop)",
+    "density=high (implied by product erp)",
+    "mode=review (assessment without changes (review))",
+    "mode=accessibility (accessibility problem domain)",
+    "project_theme=dual-theme (repository: dark theme configuration signals: 1; hex palette: 0 near-white, 0 near-black)",
+    "project_surfaces=bordered-flat (repository: borders in 2 files, shadow/elevation in 0)",
+    "project_spacing=4 (repository: most used spacing values [16, 8, 12, 4, 2])"
+  ],
+  "missing": [],
+  "status": "CONFIDENT",
+  "source": {
+    "request": [
+      "review the"
+    ],
+    "project": [
+      "Erp.Client.csproj: Microsoft.WindowsAppSDK",
+      "Erp.Client.csproj: CommunityToolkit.WinUI"
+    ]
+  },
+  "activation": {
+    "decision": "activate",
+    "ui_score": 3.0,
+    "non_ui_score": 0,
+    "ui_terms": [
+      "page",
+      "accessibility"
+    ],
+    "non_ui_terms": []
+  },
+  "intent_evidence": {
+    "existing": [
+      "our",
+      "the stock adjustments page"
+    ],
+    "new": [],
+    "defect": [],
+    "operations": {
+      "review": [
+        "review"
+      ]
+    },
+    "domains": {
+      "accessibility": [
+        "accessib",
+        "a11y facet"
+      ]
+    },
+    "no_change": [],
+    "scope": {
+      "screen": [
+        "page"
+      ]
+    },
+    "question": false
+  },
+  "scope_evidence": {
+    "ui": [
+      "page",
+      "accessib"
+    ],
+    "ux_symptoms": [],
+    "technical": {},
+    "non_visual": []
+  }
+}

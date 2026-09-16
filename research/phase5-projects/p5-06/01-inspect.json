@@ -1,0 +1,126 @@
+{
+  "root": "D:\\indigo pro\\MYownSkills\\research\\phase5-projects\\p5-sveltekit-clinic\\project",
+  "findings": [
+    {
+      "status": "KNOWN",
+      "note": "package.json: svelte@^5.16.0"
+    },
+    {
+      "status": "KNOWN",
+      "note": "package.json: @sveltejs/kit@^2.12.0"
+    },
+    {
+      "status": "KNOWN",
+      "note": "package.json: tailwindcss@^3.4.17"
+    }
+  ],
+  "stack_groups": [
+    "svelte",
+    "tailwind"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "ui_libraries": [
+    "tailwind"
+  ],
+  "package_manager": "npm",
+  "css_architecture": [
+    "tailwind-config",
+    ".css (1 files)"
+  ],
+  "tokens": [
+    "tailwind.config theme.extend.colors",
+    "css custom properties: --cb* (8)"
+  ],
+  "fonts": [
+    "theme (1)",
+    "Source Sans 3 (1)"
+  ],
+  "icons": [],
+  "routing": [
+    "src/routes/ (sveltekit/solid routes)"
+  ],
+  "breakpoints": [],
+  "accessibility": [
+    "a11y attributes present in 7 files"
+  ],
+  "focus_handling": [
+    "explicit focus handling in 3 files"
+  ],
+  "design_docs": [],
+  "component_dirs": [
+    "src/lib/components/ (8 files)"
+  ],
+  "tests": [],
+  "i18n": [],
+  "product_hints": [
+    "healthcare",
+    "ecommerce"
+  ],
+  "sample": {
+    "files_scanned": 31
+  },
+  "design_context": {
+    "navigation": {
+      "value": "left-rail",
+      "status": "KNOWN",
+      "evidence": [
+        "left-rail: 1 matches in +layout.svelte (shell/layout file)",
+        "also breadcrumb-tree: 1 matches"
+      ],
+      "candidates": {
+        "left-rail": 1,
+        "breadcrumb-tree": 1
+      }
+    },
+    "theme": {
+      "value": "light-first",
+      "status": "INFERRED",
+      "evidence": [
+        "hex palette: 13 near-white, 1 near-black"
+      ]
+    },
+    "surfaces": {
+      "value": "flat-tonal",
+      "status": "UNKNOWN",
+      "evidence": [
+        "no shadow or border declarations found"
+      ]
+    },
+    "radius": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "spacing": {
+      "value": 4,
+      "status": "INFERRED",
+      "evidence": [
+        "most used spacing values [4, 8, 12, 16]",
+        "tailwind spacing classes (4)"
+      ]
+    },
+    "typography": {
+      "value": "custom",
+      "status": "INFERRED",
+      "evidence": [
+        "font family theme (1 refs)"
+      ],
+      "features": {
+        "weights": [],
+        "type_scale": false,
+        "monospace": false,
+        "tabular_numerals": false
+      }
+    },
+    "components": {
+      "value": "tailwind",
+      "status": "KNOWN",
+      "evidence": [
+        "tailwind"
+      ]
+    },
+    "schema": "design-context/v1"
+  }
+}

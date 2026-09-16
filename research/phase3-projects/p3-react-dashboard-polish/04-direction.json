@@ -1,0 +1,105 @@
+{
+  "brand": "our React energy dashboard looks cramped and inconsistent, facility managers complain the numbers are hard to read and they don't know which button to press",
+  "fingerprint": {
+    "navigation_model": "left-rail",
+    "layout_topology": "dashboard-grid",
+    "grid_behavior": "responsive-columns",
+    "content_density": "low",
+    "surface_strategy": "tonal-layers",
+    "card_geometry": "none",
+    "corner_language": "small",
+    "typography_character": "serif-editorial",
+    "color_strategy": "multicolour-semantic",
+    "motion_character": "functional-minimal",
+    "focus_strategy": "underline",
+    "cta_strategy": "contextual-inline",
+    "image_strategy": "data-graphics",
+    "icon_strategy": "outline",
+    "metadata_density": "moderate"
+  },
+  "direction": {
+    "navigation": "nav-left-rail",
+    "layout": "layout-dashboard-grid",
+    "density": "density-low",
+    "surface": "surface-flat-tonal",
+    "cards": "card-none",
+    "typography": "typography-serif-editorial",
+    "color": "color-multicolour-semantic",
+    "motion": "motion-functional-minimal",
+    "focus": "focus-underline",
+    "cta": "cta-contextual-inline",
+    "imagery": "imagery-data-graphics",
+    "icon": "icon-outline-system",
+    "metadata": "metadata-moderate"
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "polish",
+      "audit"
+    ],
+    "platform": [
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [],
+    "screen": [
+      "dashboard"
+    ],
+    "screen_subtype": [],
+    "stack": [
+      "react"
+    ],
+    "density": null,
+    "components": [
+      "button"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [
+      "general",
+      "visual"
+    ],
+    "risk": "low",
+    "primary_jobs": [
+      "polish dashboard"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "known": [
+      "platform=web",
+      "stack=react",
+      "screen=dashboard"
+    ],
+    "inferred": [
+      "input=pointer",
+      "input=keyboard",
+      "input=touch",
+      "mode=polish",
+      "mode=audit"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "platform": "mobile",
+  "artifact_state": "existing",
+  "acceptable_modes": ["polish", "accessibility", "refactor"],
+  "scope_kind": "in-scope",
+  "expected_concepts": ["touch.minimum_target", "a11y.color_not_only", "env.glanceable_status", "a11y.semantics", "interaction.selection_visible", "a11y.accessible_names"],
+  "critical_concepts": ["touch.minimum_target", "a11y.color_not_only"],
+  "forbidden_concepts": ["table.selection_bulk", "interaction.keyboard_navigation", "interaction.dpad_reachability", "tv.no_touch_hover", "desktop.spacing_grid", "brand.structural_differentiation", "anti.platform_scaling"],
+  "preservation": ["navigation", "theme", "typography", "row layout (72 dp tile rows, 8 dp gap)", "Pass/Fail/Skip bottom sheet"],
+  "premise_note": "The code has NO checkbox on any row. Checklist rows (lib/screens/checklist_screen.dart _ItemRow) are 72 dp full-width InkWell targets with an 80x56 dp StatusBadge that is ExcludeSemantics/visual only. Reading of the sentence: the per-row check affordance must become a >=56 dp explicit control with a visible checked state and word+icon (not colour alone), keeping the whole-row target and the sheet.",
+  "written_before_advise": true
+}

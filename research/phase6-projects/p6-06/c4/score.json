@@ -1,0 +1,111 @@
+{
+ "task": "p6-06",
+ "build": "32e67640c9b8ef1d519ef9695016fb396116b92412e63c324da090aecf1df385",
+ "c1_recorded": {
+  "platform_expected": "web",
+  "platform_resolved": [
+   "web"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "audit",
+   "polish",
+   "refactor"
+  ],
+  "mode_resolved": [
+   "polish",
+   "audit"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "PARTIAL",
+  "bundle_ids": [
+   "layout-master-detail",
+   "comp-tabs",
+   "dir-clinical-workstation",
+   "typo-scale-and-roles"
+  ],
+  "bundle_tokens": 701,
+  "expected_concepts": [
+   "table.tabular_figures",
+   "data.kpi_comparison",
+   "layout.spacing_scale",
+   "a11y.semantics",
+   "a11y.color_not_only",
+   "process.reuse_first",
+   "process.render_verify"
+  ],
+  "critical_concepts": [
+   "table.tabular_figures"
+  ],
+  "delivered_concepts": [
+   "brand.type_roles",
+   "interaction.tabs_roving",
+   "navigation.deep_link_state",
+   "table.tabular_figures"
+  ],
+  "concept_recall": 0.143,
+  "critical_recall": 1.0,
+  "forbidden_delivered": [],
+  "change_budget": "low"
+ },
+ "c4": {
+  "platform_expected": "web",
+  "platform_resolved": [
+   "web"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "audit",
+   "polish",
+   "refactor"
+  ],
+  "mode_resolved": [
+   "polish",
+   "audit"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "PARTIAL",
+  "bundle_ids": [
+   "comp-tabs",
+   "dir-clinical-workstation",
+   "typo-scale-and-roles"
+  ],
+  "bundle_tokens": 475,
+  "expected_concepts": [
+   "table.tabular_figures",
+   "data.kpi_comparison",
+   "layout.spacing_scale",
+   "a11y.semantics",
+   "a11y.color_not_only",
+   "process.reuse_first",
+   "process.render_verify"
+  ],
+  "critical_concepts": [
+   "table.tabular_figures"
+  ],
+  "delivered_concepts": [
+   "brand.type_roles",
+   "interaction.tabs_roving",
+   "navigation.deep_link_state",
+   "table.tabular_figures"
+  ],
+  "concept_recall": 0.143,
+  "critical_recall": 1.0,
+  "forbidden_delivered": [],
+  "change_budget": "low"
+ }
+}

@@ -1,0 +1,907 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "The dispatch job form lets you lose an unsaved job by clicking another one.",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "desktop"
+    ],
+    "input": [
+      "keyboard",
+      "pointer"
+    ],
+    "product": [],
+    "screen": [
+      "form"
+    ],
+    "screen_subtype": [],
+    "stack": [
+      "avalonia"
+    ],
+    "density": null,
+    "components": [
+      "form"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "audit form"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_INTERACTION",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "interaction"
+      ],
+      "change_scope": "unknown",
+      "utterance": "observation",
+      "existing": true,
+      "problem": true,
+      "facet": "interaction",
+      "diagnose_only": false,
+      "creation": false,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "audit: interaction defect on existing UI",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "menu-bar",
+        "status": "KNOWN",
+        "evidence": [
+          "menu-bar: 1 matches in MainWindow.axaml (shell/layout file)",
+          "also left-rail: 1 matches"
+        ]
+      },
+      "theme": {
+        "value": "light-first",
+        "status": "INFERRED",
+        "evidence": [
+          "root/canvas backgrounds: 1 light, 0 dark",
+          "hex palette: 18 near-white, 0 near-black"
+        ]
+      },
+      "surfaces": {
+        "value": "bordered-flat",
+        "status": "INFERRED",
+        "evidence": [
+          "borders in 3 files, shadow/elevation in 1"
+        ]
+      },
+      "radius": {
+        "value": "small",
+        "status": "INFERRED",
+        "evidence": [
+          "most common radius 4 (3×); others []"
+        ]
+      },
+      "spacing": {
+        "value": 4,
+        "status": "INFERRED",
+        "evidence": [
+          "most used spacing values [6, 4, 8, 2, 16]"
+        ]
+      },
+      "typography": {
+        "value": "humanist-sans",
+        "status": "KNOWN",
+        "evidence": [
+          "font family Segoe UI, avares://Avalonia.Fonts.Inter/Assets#Inter (2 refs)",
+          "weights 600, semibold",
+          "encoded type scale in 1 files"
+        ]
+      },
+      "components": {
+        "value": "avalonia",
+        "status": "KNOWN",
+        "evidence": [
+          "avalonia"
+        ]
+      }
+    },
+    "known": [
+      "platform=desktop (project inspection)",
+      "stack=avalonia (project inspection)",
+      "screen=form (request: form)",
+      "project_navigation=menu-bar (repository: menu-bar: 1 matches in MainWindow.axaml (shell/layout file); also left-rail: 1 matches)",
+      "project_typography=humanist-sans (repository: font family Segoe UI, avares://Avalonia.Fonts.Inter/Assets#Inter (2 refs); weights 600, semibold)",
+      "project_components=avalonia (repository: avalonia)"
+    ],
+    "inferred": [
+      "input=pointer (implied by platform desktop)",
+      "input=keyboard (implied by platform desktop)",
+      "mode=audit (interaction defect on existing UI)",
+      "mode=refactor (fix follows the diagnosis)",
+      "project_theme=light-first (repository: root/canvas backgrounds: 1 light, 0 dark; hex palette: 18 near-white, 0 near-black)",
+      "project_surfaces=bordered-flat (repository: borders in 3 files, shadow/elevation in 1)",
+      "project_radius=small (repository: most common radius 4 (3×); others [])",
+      "project_spacing=4 (repository: most used spacing values [6, 4, 8, 2, 16])"
+    ],
+    "missing": [],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [
+        "form"
+      ],
+      "project": [
+        "FleetDesk.csproj: Avalonia"
+      ]
+    },
+    "activation": {
+      "decision": "activate",
+      "ui_score": 2.0,
+      "non_ui_score": 0,
+      "ui_terms": [
+        "form"
+      ],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "the dispatch job form"
+      ],
+      "new": [],
+      "defect": [
+        "lose"
+      ],
+      "operations": {},
+      "domains": {
+        "interaction": [
+          "click",
+          "unsaved",
+          "lose an unsaved"
+        ]
+      },
+      "no_change": [],
+      "scope": {},
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "form",
+        "concept:state.unsaved_changes_guard"
+      ],
+      "ux_symptoms": [
+        "lose an unsaved",
+        "unsaved"
+      ],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_INTERACTION",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "accessibility",
+        "reason": "audit mode"
+      },
+      {
+        "concern": "interaction",
+        "reason": "audit mode: operability is part of the review"
+      },
+      {
+        "concern": "component",
+        "reason": "the reviewed component/screen"
+      },
+      {
+        "concern": "feedback",
+        "reason": "form validation and submission feedback"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "states",
+        "reason": "audits check empty/loading/error handling"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "audits name generic-design defects"
+      }
+    ],
+    "optional": [
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "state.unsaved_changes_guard",
+        "reason": "named in the request: unsaved, lose an unsaved"
+      },
+      {
+        "concept": "feedback.confirmation_destructive",
+        "reason": "discarding unsaved work needs a confirmation with a safe default"
+      },
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "desktop keyboard-first"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "desktop focus"
+      }
+    ],
+    "recommended_concepts": [
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "state.loading_empty_error",
+      "state.saving_conflict",
+      "process.reuse_first",
+      "interaction.shortcuts",
+      "desktop.persist_workspace",
+      "feedback.validation_errors",
+      "form.autofill_attributes"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "comp-form",
+      "kind": "component",
+      "category": "form",
+      "title": "Form",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "component",
+        "feedback",
+        "states",
+        "structure"
+      ],
+      "concepts": [
+        "feedback.validation_errors",
+        "touch.ime_keyboard",
+        "form.autofill_attributes",
+        "state.unsaved_changes_guard"
+      ],
+      "covers": [
+        "inline validation messages and error recovery",
+        "on-screen keyboard (IME) aware layout",
+        "autofill / input-type attributes per field",
+        "unsaved-changes guard"
+      ],
+      "score": 0.552,
+      "guidance": "Labels above, help text below, required marked in text, field widths sized to content, grouped by section with headings, one column, inline validation on blur, error summary on submit with links to fields, primary action last (or sticky), unsaved-changes guard, autosave with status for long forms, autofill attributes. TV: one field per row, DOWN moves to next, system keyboard, minimal fields.",
+      "use_when": "Any data entry: settings, checkout, applications, record editing.",
+      "avoid_when": "Batch entry of many similar rows (use a data-entry grid); single toggles (inline).",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.577,
+        "structural": 0.52,
+        "matched": [
+          "mode audit",
+          "screen form"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "cta-single-primary",
+      "kind": "pattern",
+      "category": "cta",
+      "title": "One primary action per screen",
+      "facets": [
+        "layout"
+      ],
+      "concerns": [
+        "interaction",
+        "structure"
+      ],
+      "concepts": [
+        "layout.one_primary_action"
+      ],
+      "covers": [
+        "one primary action per view"
+      ],
+      "score": 0.479,
+      "guidance": "Exactly one filled button per view, secondaries as outlined/text, destructive actions separated and confirmed, button label is a verb phrase naming the outcome ('Save changes'), disabled only with an explanation nearby.",
+      "use_when": "Task screens (forms, checkout, onboarding, settings) where one action completes the job; the primary is filled, secondaries are quiet.",
+      "avoid_when": "Workbenches with many equal commands (toolbar pattern) or browse screens where selection is the action (focus-selects).",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "incompatible": [
+        "cta-toolbar-commands",
+        "cta-focus-selects"
+      ],
+      "why": {
+        "lexical": 0.281,
+        "structural": 0.52,
+        "matched": [
+          "mode audit",
+          "screen form"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring pattern with lexical evidence"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "a11y-skip-link",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Bypass blocks: skip links and landmark shortcuts",
+      "facets": [
+        "accessibility",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility"
+      ],
+      "concepts": [
+        "interaction.keyboard_navigation",
+        "a11y.semantics",
+        "interaction.focus_visible"
+      ],
+      "covers": [
+        "keyboard navigation and focus order",
+        "semantic structure and roles",
+        "visible focus"
+      ],
+      "score": 0.355,
+      "guidance": "Provide a 'Skip to <region>' link as the first focusable element (visible on focus), targets with tabindex=-1 and a heading; expose landmarks (main, nav, region with aria-label) so screen-reader users can jump; keep the number of tab stops before the first control small (≤ 5) and give composite widgets a single tab stop.",
+      "use_when": "Any page where the keyboard user must tab through navigation, headers or a chart before reaching controls such as filters, forms or the main content.",
+      "avoid_when": "Never make the skip link the only visible-on-focus element without a focus ring; never point it at an element that cannot receive focus.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.023,
+        "structural": 0.76,
+        "matched": [
+          "platform desktop",
+          "input keyboard",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: accessibility, visible focus, keyboard navigation and focus order"
+    },
+    {
+      "id": "states-persistence-and-session",
+      "kind": "rule",
+      "category": "states",
+      "title": "Saving, saved, autosave, session expiry, and permission-denied states",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "feedback",
+        "states"
+      ],
+      "concepts": [
+        "state.saving_conflict",
+        "state.session_expiry",
+        "feedback.confirmation_destructive"
+      ],
+      "covers": [
+        "saving, saved and conflict states",
+        "session expiry and idle reset",
+        "confirmation of destructive or high-risk actions"
+      ],
+      "score": 0.422,
+      "guidance": "Show saving → saved as a quiet inline status with a timestamp (not a toast per keystroke); autosave drafts and say so; warn before a session expires with a way to extend, and never discard entered data on expiry on a personal device (restore the draft after re-authentication; on shared or public screens clear it instead); permission-denied is a designed state that explains what is missing and who can grant it rather than an empty screen; destructive or irreversible saves confirm once with the safe action as default.",
+      "use_when": "Forms and editors longer than a minute, multi-step flows, authenticated sessions with timeouts, screens whose data depends on permissions.",
+      "avoid_when": "Public kiosks and shared screens: there the session is cleared on idle and nothing is restored (see shared-device-privacy).",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.194,
+        "structural": 0.7,
+        "matched": [
+          "platform desktop",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: confirmation of destructive or high-risk actions"
+    },
+    {
+      "id": "desktop-status-bar-and-error-navigation",
+      "kind": "rule",
+      "category": "feedback",
+      "title": "Desktop status bar as the persistent feedback surface, with next-error navigation",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "feedback",
+        "states",
+        "structure"
+      ],
+      "concepts": [
+        "feedback.validation_errors",
+        "a11y.live_status",
+        "a11y.contrast",
+        "interaction.shortcuts",
+        "desktop.persist_workspace"
+      ],
+      "covers": [
+        "inline validation messages and error recovery",
+        "live region status announcements",
+        "high contrast",
+        "keyboard shortcuts / accelerators",
+        "persisted workspace and selection"
+      ],
+      "score": 0.345,
+      "guidance": "One status bar at the bottom of the window with fixed regions (selection summary, sync/save state with timestamp, error count as a link, active filter) separated by real separators, not spaces; validation for the current row/cell is echoed there in words ('Line 50: Quantity must be greater than 0') and the error count opens a list; F8 / Shift+F8 (or the project's convention) walk to the next and previous error and move focus into the cell; error styling never paints over the value text (tint the cell background and keep ≥ 4.5:1 for the text); announce status changes with LiveSetting/UIA so screen readers hear them; the bar keeps its height at every window width.",
+      "use_when": "Data-entry and workbench windows where validation, selection and sync state must be visible without dialogs or toasts.",
+      "avoid_when": "Consumer apps without a persistent window chrome; mobile.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "implementation": {
+        "avalonia": "DockPanel bottom StatusBar; DataValidationErrors template; KeyBindings for F8/Shift+F8."
+      },
+      "why": {
+        "lexical": 0.005,
+        "structural": 0.76,
+        "matched": [
+          "platform desktop",
+          "input keyboard,pointer",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "recommended coverage: high contrast, persisted workspace and selection, keyboard shortcuts / accelerators"
+    },
+    {
+      "id": "anti-no-states",
+      "kind": "antipattern",
+      "category": "craft",
+      "title": "Only the happy state was designed",
+      "facets": [
+        "anti-pattern"
+      ],
+      "concerns": [
+        "anti-pattern",
+        "states"
+      ],
+      "concepts": [
+        "state.loading_empty_error"
+      ],
+      "covers": [
+        "loading, empty and error states"
+      ],
+      "score": 0.261,
+      "guidance": "Enumerate states per screen and per interactive component before implementation and verify each visually; test with long strings, zero items, 10k items, and slow networks.",
+      "use_when": "Screens with no empty, loading, error, offline, partial, or long-text states; buttons with no pressed/disabled/loading states; TV cards with no focused state.",
+      "avoid_when": "Never.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.58,
+        "matched": [
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "recommended coverage: anti-pattern, loading, empty and error states"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "feedback"
+    ],
+    "covered_required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "feedback"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "states",
+      "anti-pattern"
+    ],
+    "covered_recommended_concerns": [
+      "states",
+      "anti-pattern"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "state.unsaved_changes_guard",
+      "feedback.confirmation_destructive",
+      "interaction.keyboard_navigation",
+      "interaction.focus_visible"
+    ],
+    "covered_required_concepts": [
+      "state.unsaved_changes_guard",
+      "feedback.confirmation_destructive",
+      "interaction.keyboard_navigation",
+      "interaction.focus_visible"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.78,
+    "bundle_size": 6,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 2,
+    "guardrail_size": 4,
+    "bundle_tokens": 1138,
+    "coverage_per_1k_tokens": 3.51,
+    "mean_purity": 0.81,
+    "contaminated": [],
+    "category_diversity": 1.0,
+    "duplicate_pressure": 0.17,
+    "facet_coverage": 0.8,
+    "redundancy": 0.53
+  },
+  "token_coverage": 0.89,
+  "omitted": [
+    {
+      "id": "comp-wizard-stepper",
+      "reason": "contamination: product-specific with product unknown; low purity 0.33: most of its concepts are off-task; wizard-specific record with no wizard evidence in the request"
+    }
+  ],
+  "rejected": [
+    {
+      "id": "anti-scroll-animation-everything",
+      "reason": "platform ['mobile', 'web'] not in request ['desktop']"
+    },
+    {
+      "id": "anti-desktop-scaled-to-tv",
+      "reason": "platform ['tv'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-media-card",
+      "reason": "platform ['mobile', 'tv', 'web'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-tv-rail",
+      "reason": "platform ['tv'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-hero-section",
+      "reason": "platform ['mobile', 'web'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-tv-sign-in",
+      "reason": "platform ['tv'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-product-detail-page",
+      "reason": "platform ['mobile', 'web'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-checkout-one-page",
+      "reason": "platform ['mobile', 'web'] not in request ['desktop']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "state.unsaved_changes_guard",
+      "priority": "required",
+      "reason": "named in the request: unsaved, lose an unsaved",
+      "candidate_records": [
+        [
+          "comp-form",
+          0.552
+        ]
+      ],
+      "selected_record": "comp-form",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "feedback.confirmation_destructive",
+      "priority": "required",
+      "reason": "discarding unsaved work needs a confirmation with a safe default",
+      "candidate_records": [
+        [
+          "states-persistence-and-session",
+          0.422
+        ],
+        [
+          "comp-dialog",
+          0.202
+        ],
+        [
+          "comp-plan-comparison",
+          0.121
+        ]
+      ],
+      "selected_record": "states-persistence-and-session",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.keyboard_navigation",
+      "priority": "required",
+      "reason": "desktop keyboard-first",
+      "candidate_records": [
+        [
+          "grid-single-tab-stop",
+          0.37
+        ],
+        [
+          "a11y-skip-link",
+          0.355
+        ],
+        [
+          "a11y-keyboard-operable",
+          0.342
+        ],
+        [
+          "desktop-keyboard-first",
+          0.342
+        ]
+      ],
+      "selected_record": "a11y-skip-link",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.focus_visible",
+      "priority": "required",
+      "reason": "desktop focus",
+      "candidate_records": [
+        [
+          "grid-single-tab-stop",
+          0.37
+        ],
+        [
+          "a11y-skip-link",
+          0.355
+        ],
+        [
+          "a11y-focus-visible",
+          0.342
+        ],
+        [
+          "desktop-keyboard-first",
+          0.342
+        ]
+      ],
+      "selected_record": "a11y-skip-link",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.accessible_names",
+      "priority": "recommended",
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "a11y-native-semantics",
+          0.319
+        ],
+        [
+          "a11y-labels-names",
+          0.265
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "a11y.contrast",
+      "priority": "recommended",
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "desktop-status-bar-and-error-navigation",
+          0.345
+        ],
+        [
+          "anti-fashion-over-usability",
+          0.272
+        ],
+        [
+          "a11y-contrast-text",
+          0.261
+        ],
+        [
+          "a11y-nontext-contrast",
+          0.261
+        ]
+      ],
+      "selected_record": "desktop-status-bar-and-error-navigation",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "state.loading_empty_error",
+      "priority": "recommended",
+      "reason": "submission states",
+      "candidate_records": [
+        [
+          "layout-states-empty-loading-error",
+          0.293
+        ],
+        [
+          "anti-no-states",
+          0.261
+        ],
+        [
+          "comp-empty-state",
+          0.204
+        ]
+      ],
+      "selected_record": "anti-no-states",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "state.saving_conflict",
+      "priority": "recommended",
+      "reason": "long form",
+      "candidate_records": [
+        [
+          "states-persistence-and-session",
+          0.422
+        ],
+        [
+          "comp-wizard-stepper",
+          0.289
+        ]
+      ],
+      "selected_record": "states-persistence-and-session",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "recommended",
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.225
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.shortcuts",
+      "priority": "recommended",
+      "reason": "desktop accelerators",
+      "candidate_records": [
+        [
+          "desktop-status-bar-and-error-navigation",
+          0.345
+        ],
+        [
+          "desktop-keyboard-first",
+          0.342
+        ]
+      ],
+      "selected_record": "desktop-status-bar-and-error-navigation",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "desktop.persist_workspace",
+      "priority": "recommended",
+      "reason": "desktop state persistence",
+      "candidate_records": [
+        [
+          "desktop-status-bar-and-error-navigation",
+          0.345
+        ],
+        [
+          "desktop-state-persistence",
+          0.242
+        ]
+      ],
+      "selected_record": "desktop-status-bar-and-error-navigation",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "feedback.validation_errors",
+      "priority": "recommended",
+      "reason": "form",
+      "candidate_records": [
+        [
+          "comp-form",
+          0.552
+        ],
+        [
+          "a11y-forms-errors",
+          0.374
+        ],
+        [
+          "table-column-disambiguation",
+          0.352
+        ],
+        [
+          "desktop-status-bar-and-error-navigation",
+          0.345
+        ]
+      ],
+      "selected_record": "comp-form",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "form.autofill_attributes",
+      "priority": "recommended",
+      "reason": "form",
+      "candidate_records": [
+        [
+          "comp-form",
+          0.552
+        ]
+      ],
+      "selected_record": "comp-form",
+      "status": "covered",
+      "why": ""
+    }
+  ]
+}

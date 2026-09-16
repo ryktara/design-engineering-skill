@@ -1,0 +1,76 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "create"
+  ],
+  "platform": [
+    "desktop"
+  ],
+  "input": [
+    "keyboard",
+    "pointer"
+  ],
+  "product": [
+    "erp"
+  ],
+  "screen": [],
+  "screen_subtype": [],
+  "stack": [
+    "wpf"
+  ],
+  "density": "high",
+  "components": [],
+  "environment": [],
+  "jobs": [],
+  "problems": [],
+  "risk": "low",
+  "primary_jobs": [
+    "create"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "keyboard": true,
+    "screen_reader": true,
+    "focus": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "known": [
+    "platform=desktop (project inspection)",
+    "input=keyboard (request: keyboard)",
+    "product=erp (request: erp, purchase order)",
+    "stack=wpf (request: wpf)"
+  ],
+  "inferred": [
+    "input=pointer (implied by platform desktop)",
+    "density=high (implied by product erp)",
+    "mode=create (default when no mode word is present)"
+  ],
+  "missing": [
+    "brand: no brand assets, guideline, or character description available"
+  ],
+  "status": "AMBIGUOUS",
+  "source": {
+    "request": [
+      "erp, purchase order",
+      "keyboard",
+      "wpf"
+    ],
+    "project": [
+      "ErpClient.csproj: UseWPF"
+    ]
+  },
+  "activation": {
+    "decision": "ambiguous",
+    "ui_score": 1.0,
+    "non_ui_score": 0,
+    "ui_terms": [
+      "grid"
+    ],
+    "non_ui_terms": []
+  }
+}

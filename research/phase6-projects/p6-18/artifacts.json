@@ -1,0 +1,124 @@
+{
+  "task": "p6-18",
+  "project": "p3-erp-desktop-dotnet",
+  "platform_expected": "desktop",
+  "platform_resolved": "desktop",
+  "platform_correct": "yes",
+  "stack": "wpf/.net10",
+  "existing_ui": true,
+  "new_screen": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": ["refactor", "accessibility", "audit", "polish"],
+  "mode_resolved": ["audit", "refactor"],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "moderate",
+  "render_mode": "native",
+  "screenshots": [
+    "render/first-ready-1440x900.png",
+    "render/first-filter-enter.png",
+    "render/first-combo-open.png",
+    "render/first-sorted.png",
+    "render/first-after-undo.png",
+    "render/first-empty-focus.png",
+    "render/final-ready-1440x900.png",
+    "render/final-ready-1100x760.png",
+    "render/final-filter-enter.png",
+    "render/final-combo-open.png",
+    "render/final-sorted.png",
+    "render/final-after-undo.png",
+    "render/final-empty-focus.png"
+  ],
+  "context_detection": {
+    "navigation": "yes",
+    "theme": "yes",
+    "typography": "yes",
+    "surfaces": "yes",
+    "spacing": "yes"
+  },
+  "preservation": {
+    "navigation": true,
+    "theme": true,
+    "typography": true,
+    "component_reuse": true,
+    "unjustified_structural_change": 0
+  },
+  "expected_concepts": [
+    "interaction.keyboard_navigation",
+    "interaction.shortcuts",
+    "interaction.focus_restore",
+    "interaction.focus_visible",
+    "table.inline_edit",
+    "interaction.menu_semantics",
+    "a11y.accessible_names"
+  ],
+  "critical_concepts": ["interaction.keyboard_navigation", "interaction.shortcuts", "table.inline_edit"],
+  "delivered_concepts": [
+    "interaction.keyboard_navigation",
+    "interaction.focus_visible",
+    "interaction.hover_independence",
+    "table.tabular_figures",
+    "interaction.shortcuts"
+  ],
+  "concept_recall": 0.43,
+  "critical_recall": 0.67,
+  "concept_misses": [
+    {"concept": "interaction.focus_restore", "layer": "expected-concepts"},
+    {"concept": "table.inline_edit", "layer": "expected-concepts"},
+    {"concept": "interaction.menu_semantics", "layer": "expected-concepts"},
+    {"concept": "a11y.accessible_names", "layer": "bundle-selection"}
+  ],
+  "first_render_defects": {"visual": 2, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 2},
+  "final_defects": {"visual": 1, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+  "iterations": 3,
+  "guidance_relevant": 2,
+  "guidance_partial": 0,
+  "guidance_offtarget": 1,
+  "bad_guidance": [
+    {"record": "typo-scale-and-roles", "category": "generic", "why": "Selected as the carrier for the only CRITICAL concept (table.tabular_figures) on a task about completing data entry without a mouse. The screen already applies the type roles and tabular figures it prescribes; it spent 1 of 3 bundle slots and delivered nothing actionable."},
+    {"record": "<bundle>", "category": "missing-critical", "why": "table.inline_edit (grid cell editing / F4 lookup pickers) is absent from the bundle. comp-data-entry-grid was the top candidate (0.606) and carries the F4-picker line verbatim, but was omitted as 'no positive task evidence for a core record'."}
+  ],
+  "layer_review": {
+    "core": [],
+    "critical": ["typo-scale-and-roles", "desktop-keyboard-first", "a11y-keyboard-operable"],
+    "optional": [],
+    "optional_useful": 0,
+    "optional_noise": 0
+  },
+  "guidance_used": ["a11y-keyboard-operable", "desktop-keyboard-first"],
+  "guidance_ignored": [
+    {"id": "typo-scale-and-roles", "why": "Not a typographic task; the screen already has the roles and tabular figures. Acting on it would have been an unjustified change at a moderate budget on an existing UI."}
+  ],
+  "unjustified_direction_slots": 0,
+  "process_records_needed": false,
+  "skill_effect": "neutral",
+  "guidance_tokens": 361,
+  "misses": [
+    {"layer": "requirements", "what": "platform_evidence read the word 'mouse' as a positive pointer-input signal, though the sentence negates it ('without touching the mouse'); input resolved to ['keyboard','pointer'] and later drove the concept interaction.hover_independence with reason 'pointer stated'. intent.problem_domain stayed empty on a sentence that names the input device."},
+    {"layer": "expected-concepts", "what": "table.inline_edit, interaction.focus_restore and interaction.menu_semantics were never demanded for an ERP data-entry grid in audit/refactor mode — the three concepts the task is actually about."},
+    {"layer": "bundle-selection", "what": "comp-data-entry-grid (top candidate, 0.606, body specifies F2 edit / type-to-edit / F4 lookup pickers / undo / Enter-adds-row) was pruned by the core-record evidence gate, together with comp-data-table, layout-table-first and metadata-rich. The bundle shipped with concern 'component' uncovered while a compatible component record sat at the top of the candidate list."}
+  ],
+  "knowledge_gaps": [],
+  "regressions": [
+    {"query": "Purchase order screen: operators want to do the whole entry without touching the mouse.", "expect": "comp-data-entry-grid in the bundle as a core record; typo-scale-and-roles not selected."},
+    {"query": "Purchase order screen: operators want to do the whole entry without touching the mouse.", "expect": "expected_concepts demands table.inline_edit and interaction.focus_restore."},
+    {"query": "users say the invoice line grid is mouse-only", "expect": "'mouse' in a negated or complaint framing must not resolve input to pointer:KNOWN."},
+    {"query": "any desktop grid task with concern 'component' uncovered", "expect": "no bundle ships with an uncovered required concern while a compatible candidate record is ranked first."}
+  ],
+  "tags": [
+    "concept-miss",
+    "ranking-miss",
+    "requirements-miss",
+    "render-defect-fixed",
+    "render-defect-remaining",
+    "tooling-limit",
+    "skill-neutral",
+    "preservation-ok"
+  ],
+  "build_hash_start": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947",
+  "build_hash_end": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947"
+}

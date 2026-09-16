@@ -1,0 +1,403 @@
+{
+ "description": "Regression cases for the guidance bundle: real defects found while building Phase 3 (each note records the failure and the fix). Never remove a valid case because the implementation changed.",
+ "suite": "guidance",
+ "cases": [
+  {
+   "id": "reg-top-rule-becomes-guardrail",
+   "query": "tvOS documentary player: transport controls and subtitle picker",
+   "expect_ids": [
+    "tv-player-controls"
+   ],
+   "expect_concepts": [
+    "tv.player_autohide",
+    "interaction.back_semantics"
+   ],
+   "note": "2026-09-09 Phase 3: tv-player-controls was the single most relevant record (score equal to the top) but never entered the bundle because the interaction concern was already covered by a weak core pattern and the cap was reached before its concept ids were processed. Fixed: a rule/anti-pattern scoring >= 0.9 x top with lexical evidence >= 0.5 is always taken as a guardrail."
+  },
+  {
+   "id": "reg-component-concern-prefers-core-kind",
+   "query": "landing page for a compliance automation product, web",
+   "forbid_ids": [
+    "search-filter-feedback"
+   ],
+   "expect_ids_any": [
+    "comp-hero-section",
+    "anti-hero-template"
+   ],
+   "note": "2026-09-09 Phase 3: the 'component' concern was satisfied by search-filter-feedback (a rule tagged component) because rules were preferred for every concern. Fixed: build concerns (component/structure/navigation/brand/data-display) prefer core kinds and require lexical evidence."
+  },
+  {
+   "id": "reg-landing-no-states-dump",
+   "query": "marketing landing page for a bakery, web",
+   "max_guardrails": 4,
+   "max_bundle": 8,
+   "note": "2026-09-09 Phase 3: a marketing page received five guardrails including generic states rules. Fixed: states is recommended (not required) for marketing pages without data/forms, and recommended coverage only fills the bundle to 6."
+  },
+  {
+   "id": "reg-problem-statement-not-create",
+   "query": "the streaming app shows an upgrade pop-up on every launch, users hate it",
+   "forbid_primary_mode": "create",
+   "expect_ids_any": [
+    "anti-interruptive-upsell"
+   ],
+   "note": "2026-09-09 Phase 3: 'users hate it' / 'on every launch' were not recognised as problem statements, so the request defaulted to create and the anti-pattern was never surfaced. Fixed in lexicon problems.general and anti-interruptive-upsell keywords."
+  },
+  {
+   "id": "reg-android-wording-infers-mobile",
+   "query": "Build the parcel pickup confirmation screen for our Android courier app",
+   "expect_required_concerns": [
+    "interaction",
+    "accessibility"
+   ],
+   "expect_concepts": [
+    "touch.minimum_target"
+   ],
+   "note": "2026-09-09 Phase 3: 'Android' alone produced no platform, so no input matrix concepts were required. Fixed: platforms_inferred lexicon group gives mobile as INFERRED (not KNOWN) unless the wording says Android TV / Fire TV / Google TV."
+  },
+  {
+   "id": "reg-web-universal-operability",
+   "query": "web project board with cards you can drag between columns",
+   "expect_concepts": [
+    "interaction.keyboard_navigation",
+    "interaction.hover_independence",
+    "interaction.focus_visible"
+   ],
+   "note": "2026-09-09 Phase 3: on web all inputs are INFERRED, so no operability concept was required and drag-only boards shipped without keyboard alternatives. Fixed: the web platform always requires keyboard navigation, hover independence and visible focus."
+  },
+  {
+   "id": "reg-settings-not-form-feedback",
+   "query": "add a confirmation toast after saving on the web settings page",
+   "max_bundle": 7,
+   "note": "2026-09-09 Phase 3: the settings screen was treated like a form (validation errors + IME required), inflating a simple toast task to 8 records. Fixed: settings/notification/dialog make feedback recommended, not required; screen-level components carry the structure concern. 2026-09-09: max_bundle raised 6 -> 7. With high-relevance rules admitted as guardrails, states-persistence-and-session (saving -> saved as quiet inline status, not a toast per keystroke) joins this bundle and is directly on task; the case's 6 was a guess about compactness, 7 keeps the compactness intent (soft cap 6 for recommended coverage still holds)."
+  },
+  {
+   "id": "reg-offline-covers-environment",
+   "query": "mobile app for rural health workers that must work offline and sync later",
+   "expect_required_concerns": [
+    "environment",
+    "states"
+   ],
+   "expect_ids_any": [
+    "states-offline-and-sync"
+   ],
+   "note": "2026-09-09 Phase 3: low-bandwidth made 'environment' required but no admissible record carried the concern on mobile (the field-use rule is tagged outdoor/gloves). Fixed: states-offline-and-sync declares environment as well as states."
+  },
+  {
+   "id": "reg-listview-is-not-tv",
+   "query": "review the accessibility of the stock adjustments page",
+   "fixture": "fixtures/winui-erp",
+   "forbid_platforms": [
+    "tv"
+   ],
+   "expect_platforms": [
+    "desktop"
+   ],
+   "note": "2026-09-09 torture test p3-winui-erp-audit: inspect_project DPAD_RE ended in '|isTV' under re.I, so 'ListView' marked every WinUI/WPF/Avalonia project as a TV with a remote (TV rails, safe-area guardrails, capped density, direction violations). Fixed with a word boundary."
+  },
+  {
+   "id": "reg-web-plus-phones-not-ambiguous",
+   "query": "product page and checkout for our web store; must convert well on phones",
+   "expect_requirements_status": "CONFIDENT",
+   "expect_platforms": [
+    "web",
+    "mobile"
+   ],
+   "expect_modes_any": [
+    "create",
+    "responsive"
+   ],
+   "note": "2026-09-09 torture test p3-ecommerce-web: web + 'on phones' was reported AMBIGUOUS as two competing platforms. It is one responsive web UI; requirements_status now accepts web with mobile/tablet and adds responsive as a secondary mode."
+  },
+  {
+   "id": "reg-outdoor-gear-not-environment",
+   "query": "product detail page for our outdoor gear web store",
+   "forbid_environment": [
+    "outdoor"
+   ],
+   "forbid_ids": [
+    "mobile-field-use"
+   ],
+   "note": "2026-09-09 torture test p3-ecommerce-web: the bare word 'outdoor' (a product adjective) created an outdoor environment and pulled the sunlight/gloves guardrail into a PDP bundle. Environment phrases now need usage wording (outdoors, outdoor use, bright sunlight...)."
+  },
+  {
+   "id": "reg-store-location-not-ecommerce",
+   "query": "prescription pick-up kiosk for a pharmacy, public touch screen in the store",
+   "forbid_products": [
+    "ecommerce"
+   ],
+   "note": "2026-09-09 torture test p3-kiosk-pharmacy: 'in the store' (a location) made product=ecommerce and drove hero imagery and cross-fade motion into a kiosk direction. Bare 'store' removed from the ecommerce lexicon; store phrases kept."
+  },
+  {
+   "id": "reg-task-specific-rule-not-starved",
+   "query": "Flutter defect report form must stay usable with the on-screen keyboard open",
+   "expect_ids_any": [
+    "mobile-keyboard-ime"
+   ],
+   "note": "2026-09-09 torture test p3-mobile-flutter-field: the most task-specific rule scored well in search but never entered the bundle because generic platform concepts filled the cap first. Fixed: high-relevance rules (>= 0.75 x top, lexical >= 0.4) become guardrails before coverage picks, and coverage is a global greedy set cover."
+  },
+  {
+   "id": "reg-kiosk-privacy-in-bundle",
+   "query": "pharmacy prescription pick-up kiosk: identify the patient and show ready prescriptions",
+   "expect_ids_any": [
+    "shared-device-privacy",
+    "comp-kiosk-keypad",
+    "kiosk-public-use"
+   ],
+   "expect_required_concerns": [
+    "privacy"
+   ],
+   "note": "2026-09-09 torture test p3-kiosk-pharmacy: shared-device-privacy was rank 7 in search yet absent from the bundle while privacy was a required concern on a healthcare kiosk. 2026-09-09 (Phase 4): widened to any record carrying the shared-device and masking concepts; comp-kiosk-keypad (masked PIN entry) and kiosk-public-use now legitimately cover them for an identify step, so the assertion is on concepts, not one record.",
+   "expect_concepts": [
+    "privacy.shared_device",
+    "privacy.sensitive_masking"
+   ]
+  },
+  {
+   "id": "reg-tvos-project-not-mobile",
+   "query": "sign-in screen with an activation code",
+   "fixture": "fixtures/compose-tv",
+   "expect_platforms": [
+    "tv"
+   ],
+   "forbid_platforms": [
+    "mobile"
+   ],
+   "note": "2026-09-09 torture tests p3-tvos-swiftui and p3-android-tv-compose: every Apple project was tagged mobile and a leanback-only Android app kept mobile from its Compose dependency, so clear TV requests became AMBIGUOUS. Inspector now reads Apple targets (tvOS/iOS/macOS) and drops mobile when the only launcher is leanback."
+  },
+  {
+   "id": "reg-same-category-core-adds-concepts",
+   "query": "WPF purchase order lines grid, clerks enter 200 lines a day with the keyboard",
+   "expect_ids_any": [
+    "comp-data-entry-grid"
+   ],
+   "note": "2026-09-09 torture test p3-erp-desktop-dotnet: comp-data-entry-grid (the most specific record) was pruned as 'same category' as comp-data-table. A second core record of the same category is now allowed when it scores >= 0.85 x top and carries concept ids the bundle does not yet cover."
+  },
+  {
+   "id": "reg-animatedpadding-is-not-dpad",
+   "query": "refactor the defect report form so it works with the keyboard open",
+   "fixture": "fixtures/flutter-app",
+   "forbid_platforms": [
+    "tv"
+   ],
+   "expect_platforms": [
+    "mobile"
+   ],
+   "forbid_ids": [
+    "tv-dpad-axes",
+    "tv-safe-area",
+    "a11y-tv-focus-always"
+   ],
+   "note": "2026-09-09 real project p4-13/p4-14: DPAD_RE matched 'dPad' inside AnimatedPadding (case-insensitive substring), tagging a Flutter app as TV and filling five of eight bundle slots with TV records. Fixed with a word boundary; fixture carries the real widget."
+  },
+  {
+   "id": "reg-kiosk-on-web-not-conflict",
+   "query": "accessibility audit and fix of the identify step of the pick-up kiosk",
+   "fixture": "research/phase3-projects/p3-kiosk-pharmacy/project",
+   "expect_requirements_status": "CONFIDENT",
+   "expect_platforms": [
+    "kiosk"
+   ],
+   "note": "2026-09-09 real project p4-09: the inspector reports 'web' for an HTML kiosk and the request said kiosk, producing a platform conflict and AMBIGUOUS. Web technology is the normal substrate of kiosk and TV apps; no conflict is recorded."
+  },
+  {
+   "id": "reg-negative-clause-not-target",
+   "query": "add keyboard shortcuts and a command bar to the existing stock adjustments page without changing its navigation or theme",
+   "forbid_components": [
+    "navigation"
+   ],
+   "expect_preserve": [
+    "navigation",
+    "color"
+   ],
+   "forbid_ids": [
+    "nav-command-palette",
+    "comp-sidebar-nav"
+   ],
+   "note": "2026-09-09 real project p4-03: 'without changing its navigation' made navigation a component target and refactor a mode; 'its theme' was not a preserve target. Reference clauses are stripped before target detection; preserve targets accept possessives and up to four intervening words."
+  },
+  {
+   "id": "reg-keeping-existing-is-preserve",
+   "query": "add a compare-to-last-week view to the energy dashboard KPIs, keeping the existing top bar and light theme",
+   "expect_preserve": [
+    "navigation",
+    "color"
+   ],
+   "forbid_products": [
+    "finance"
+   ],
+   "note": "2026-09-09 real project p4-04: 'keeping the existing top bar and light theme' left intent.preserve empty and 'KPI' mapped to a finance product. Fixed in the preserve grammar and the lexicon."
+  },
+  {
+   "id": "reg-matching-existing-pages-not-targets",
+   "query": "add a product listing page with filters to our outdoor gear web store, matching the existing product and checkout pages",
+   "forbid_screens": [
+    "checkout"
+   ],
+   "forbid_ids": [
+    "comp-checkout-one-page"
+   ],
+   "expect_ids_any": [
+    "layout-grid-catalog",
+    "comp-filters"
+   ],
+   "note": "2026-09-09 real project p4-06: 'matching the existing product and checkout pages' made checkout a target screen and pulled the checkout record into a listing-page bundle."
+  },
+  {
+   "id": "reg-alerts-need-live-status",
+   "query": "facility managers don't notice new alerts; make exceptions the first thing they see on the dashboard without redesigning it",
+   "expect_concepts": [
+    "a11y.live_status",
+    "data.exception_first",
+    "layout.one_primary_action"
+   ],
+   "expect_preserve": [
+    "navigation"
+   ],
+   "forbid_primary_mode": "create",
+   "note": "2026-09-09 real project p4-05: an alerts task had feedback only recommended, so live-region and one-action guidance were absent; 'without redesigning it' was not a preservation. Alerts are a job with required concepts; 'without redesigning it' preserves navigation/layout/system."
+  },
+  {
+   "id": "reg-polish-validation-readability",
+   "query": "polish this existing light-theme WPF purchase-order screen: inconsistent spacing in the toolbar and status bar, and validation errors are hard to read",
+   "expect_concepts": [
+    "feedback.validation_errors",
+    "a11y.contrast",
+    "layout.spacing_scale"
+   ],
+   "expect_ids_any": [
+    "a11y-forms-errors",
+    "desktop-status-bar-and-error-navigation"
+   ],
+   "direction_ok": true,
+   "forbid_direction_slots": {
+    "layout": [
+     "layout-dashboard-grid"
+    ],
+    "imagery": [
+     "imagery-data-graphics"
+    ]
+   },
+   "note": "2026-09-09 real project p4-07: 'validation errors are hard to read' demanded no validation or contrast concept, and the low-budget direction proposed a dashboard grid with data graphics for a polish task. Validation/readability wording now demands the concepts; low-budget slots the task does not mention stay as implemented."
+  },
+  {
+   "id": "reg-polish-in-existing-reuses-primitives",
+   "query": "polish the billing settings page so plan cards, seat table and invoice history feel consistent with the rest of the admin, without changing navigation or theme",
+   "fixture": "research/phase3-projects/p3-nextjs-saas/project",
+   "expect_concepts": [
+    "process.reuse_first"
+   ],
+   "expect_preserve": [
+    "navigation",
+    "color"
+   ],
+   "forbid_ids": [
+    "layout-table-first",
+    "cta-toolbar-commands"
+   ],
+   "note": "2026-09-09 real project p4-01: no guidance said 'reuse the project's own primitives' for a consistency polish, and the direction proposed table-first layout and toolbar commands for a settings page. In an existing repository polish/refactor now demand process.reuse_first, and low-budget slots stay as implemented."
+  },
+  {
+   "id": "reg-p6-freeze-card-is-existing-defect",
+   "query": "Freezing a card happens the instant you touch the switch.",
+   "expect_concepts": [
+    "feedback.confirmation_destructive"
+   ],
+   "forbid_ids": [
+    "card-none",
+    "card-bordered",
+    "card-flat-tile",
+    "typo-scale-and-roles"
+   ],
+   "note": "2026-09-16 Phase 6 implemented project round (research/phase6-projects, frozen c3 → fix in c4): p6-16: mode fell to create on a present-tense defect report, the payment card was read as a card component and card-none entered the bundle (contradicts-codebase); critical recall 0. Routed: mode (present tense 'happens'), candidate compatibility (paymentcard trap already existed but mode/create path bypassed it), expected concepts ('instant' → confirmation)."
+  },
+  {
+   "id": "reg-p6-confirmation-screen-is-completion",
+   "query": "The confirmation screen prints the receipt but never says the pick-up is complete.",
+   "expect_concepts": [
+    "a11y.live_status"
+   ],
+   "forbid_ids": [
+    "comp-kiosk-keypad",
+    "comp-dialog",
+    "nav-wizard"
+   ],
+   "note": "2026-09-16 Phase 6 implemented project round (research/phase6-projects, frozen c3 → fix in c4): p6-29: 'confirmation screen' resolved to a form screen and pulled a keypad, a wizard and a dialog (wrong-screen); critical recall 0.33. Routed: requirements (screen sense) → completion-screen trap; expected concepts ('never says' → live status)."
+  },
+  {
+   "id": "reg-p6-keyboard-entry-not-typography",
+   "query": "Purchase order screen: operators want to do the whole entry without touching the mouse.",
+   "expect_concepts": [
+    "interaction.keyboard_navigation"
+   ],
+   "forbid_ids": [
+    "typo-scale-and-roles"
+   ],
+   "note": "2026-09-16 Phase 6 implemented project round (research/phase6-projects, frozen c3 → fix in c4): p6-18 / p6-23 / p6-15: table.tabular_figures was critical from the ERP / finance product alone, so the typography rule entered as a critical carrier on keyboard and IME tasks (generic ×7 across the round). Routed: criticality (product baseline is priority 2 unless the request names numbers or a grid)."
+  },
+  {
+   "id": "reg-p6-voiceover-ring-no-drag-drop",
+   "query": "VoiceOver reads the streak ring as \"image\".",
+   "expect_concepts": [
+    "a11y.semantics"
+   ],
+   "forbid_ids": [
+    "interaction-drag-drop",
+    "mobile-density-touch"
+   ],
+   "note": "2026-09-16 Phase 6 implemented project round (research/phase6-projects, frozen c3 → fix in c4): p6-14: keyboard operability was demanded as critical on a touch-only VoiceOver task and interaction-drag-drop entered as its GENERIC carrier (wrong-screen ×4 across the round). Routed: criticality (accessibility review demands keyboard only where a keyboard exists); candidate compatibility (record word gate: drag-drop needs drag wording)."
+  },
+  {
+   "id": "reg-p6-last-sync-time",
+   "query": "Add a status bar with the last sync time and any failed postings.",
+   "expect_concepts": [
+    "data.refresh_timestamp",
+    "state.offline_sync"
+   ],
+   "note": "2026-09-16 Phase 6 implemented project round (research/phase6-projects, frozen c3 → fix in c4): p6-19: 'last sync time' produced no concept although states-offline-and-sync was the top search hit; critical recall 0.33. Routed: expected concepts (aliases)."
+  },
+  {
+   "id": "reg-p6-welsh-language-option",
+   "query": "Add a Welsh language option to the ticket machine.",
+   "expect_concepts": [
+    "content.i18n_expansion"
+   ],
+   "note": "2026-09-16 Phase 6 implemented project round (research/phase6-projects, frozen c3 → fix in c4): p6-32: 'language option' was not an i18n alias, so the i18n record (top search hit) never became a candidate. Routed: expected concepts."
+  },
+  {
+   "id": "reg-p6-buried-settings-section",
+   "query": "Nobody can find the API keys section; it is buried at the bottom of the settings page.",
+   "expect_concepts": [
+    "layout.focal_hierarchy",
+    "layout.settings_grouping"
+   ],
+   "forbid_ids": [
+    "comp-plan-comparison"
+   ],
+   "note": "2026-09-16 Phase 6 implemented project round (research/phase6-projects, frozen c3 → fix in c4): p6-01: comp-plan-comparison entered on SaaS product evidence alone (wrong-screen) and 'buried' was not a hierarchy alias. Routed: candidate compatibility (product-only fit is GENERIC for composites; plan-comparison word gate); expected concepts."
+  },
+  {
+   "id": "reg-p6-cart-remove-undo",
+   "query": "The cart page: removing an item happens instantly and people do it by accident.",
+   "expect_concepts": [
+    "feedback.confirmation_destructive"
+   ],
+   "forbid_ids": [
+    "cta-sticky-bar",
+    "ecommerce-delivery-promise"
+   ],
+   "note": "2026-09-16 Phase 6 implemented project round (research/phase6-projects, frozen c3 → fix in c4): p6-04: the named defect (accidental destructive action) produced no concept while checkout-screen baselines pulled a sticky bar and a delivery-promise rule (wrong-screen). Routed: expected concepts ('by accident' / 'instantly'); criticality (narrow task demotion once the concept is named)."
+  },
+  {
+   "id": "reg-p6-dashboard-reorder-exceptions",
+   "query": "Make the dashboard tell the manager which items need reordering today.",
+   "expect_ids_any": [
+    "data-exceptions-first",
+    "comp-kpi-tile"
+   ],
+   "forbid_ids": [
+    "interaction-drag-drop"
+   ],
+   "note": "2026-09-16 Phase 6 implemented project round (research/phase6-projects, frozen c3 → fix in c4): p6-10: two chart records took the core while data-exceptions-first sat in the optional layer and interaction-drag-drop entered as a GENERIC carrier. Routed: criticality (dashboard chart-form demand is a baseline unless charts are named); bundle selection (GENERIC admission needs the record's primary concept)."
+  }
+ ]
+}

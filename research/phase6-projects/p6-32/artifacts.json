@@ -1,0 +1,115 @@
+{
+  "task": "p6-32",
+  "project": "p6-kiosk-transit",
+  "platform_expected": "kiosk",
+  "platform_resolved": "kiosk",
+  "platform_correct": "yes",
+  "stack": "html-css (dependency-free ES5 single-page kiosk app)",
+  "existing_ui": true,
+  "new_screen": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": ["create", "refactor"],
+  "mode_resolved": ["create"],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "moderate",
+  "render_mode": "native",
+  "screenshots": [
+    "render/first-01-attract-en.png", "render/first-02-attract-cy.png", "render/first-03-choose-cy.png",
+    "render/first-04-choose-selected-cy.png", "render/first-05-qty-cy.png", "render/first-06-qty-en-after-switch.png",
+    "render/first-07-review-cy.png", "render/first-08-pay-cy.png",
+    "render/final-01-attract-en.png", "render/final-02-attract-cy.png", "render/final-03-choose-cy.png",
+    "render/final-04-choose-selected-cy.png", "render/final-05-qty-cy.png", "render/final-06-qty-en-after-switch.png",
+    "render/final-07-review-cy.png", "render/final-08-pay-cy.png", "render/final-09-idle-cy.png",
+    "render/final-10-attract-after-reset.png"
+  ],
+  "context_detection": {
+    "navigation": "no",
+    "theme": "yes",
+    "typography": "partial",
+    "surfaces": "yes",
+    "spacing": "no"
+  },
+  "preservation": {
+    "navigation": true,
+    "theme": true,
+    "typography": true,
+    "component_reuse": true,
+    "unjustified_structural_change": 0
+  },
+  "expected_concepts": [
+    "content.i18n_expansion",
+    "touch.minimum_target",
+    "interaction.selection_visible",
+    "a11y.accessible_names",
+    "state.session_expiry",
+    "process.reuse_first"
+  ],
+  "critical_concepts": ["content.i18n_expansion", "touch.minimum_target", "interaction.selection_visible"],
+  "delivered_concepts": [
+    "touch.minimum_target",
+    "privacy.shared_device",
+    "state.session_expiry",
+    "process.reuse_first"
+  ],
+  "concept_recall": 0.5,
+  "critical_recall": 0.33,
+  "concept_misses": [
+    {"concept": "content.i18n_expansion", "layer": "expected-concepts"},
+    {"concept": "interaction.selection_visible", "layer": "expected-concepts"},
+    {"concept": "a11y.accessible_names", "layer": "expected-concepts"}
+  ],
+  "first_render_defects": {"visual": 1, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 1, "implementation-bug": 0},
+  "final_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+  "iterations": 1,
+  "guidance_relevant": 1,
+  "guidance_partial": 1,
+  "guidance_offtarget": 0,
+  "bad_guidance": [
+    {"record": "impl-reuse-before-new", "category": "generic", "why": "restates SKILL.md 2 (reuse before new) and contributed nothing this task needed; it consumed half a two-record bundle"},
+    {"record": "<bundle>", "category": "missing-critical", "why": "content.i18n_expansion absent from a task whose whole subject is adding a second language; the carrier i18n-text-expansion-rtl is the top search hit at 0.483 but was never demanded, so it never became a bundle candidate (absent from concept_trace, omitted and rejected)"}
+  ],
+  "layer_review": {
+    "core": [],
+    "critical": ["kiosk-public-use", "impl-reuse-before-new"],
+    "optional": [],
+    "optional_useful": 0,
+    "optional_noise": 0
+  },
+  "guidance_used": ["kiosk-public-use"],
+  "guidance_ignored": [
+    {"id": "impl-reuse-before-new", "why": "generic; SKILL.md 2 already covers it and inspecting js/i18n.js settled the reuse question"},
+    {"id": "cta-single-primary (direction slot)", "why": "the task adds a footer control and strings; the project already documents one-primary-action and the slot should have been preserved"}
+  ],
+  "unjustified_direction_slots": 1,
+  "process_records_needed": false,
+  "skill_effect": "helped",
+  "guidance_tokens": 263,
+  "misses": [
+    {"layer": "expected-concepts", "what": "content.i18n_expansion never demanded on a language-addition task; #1-ranked carrier never entered the candidate set"},
+    {"layer": "expected-concepts", "what": "interaction.selection_visible never demanded for a new selectable control on a touch surface"},
+    {"layer": "concerns", "what": "accessibility listed as a required concern and left uncovered; no accessible-name guidance for a new labelled control"},
+    {"layer": "project-context", "what": "navigation read as hub-spoke from README prose where the markup is a linear wizard"},
+    {"layer": "project-context", "what": "radius small/5px and spacing 4 where tokens.css declares 16px radius and an 8-pt scale; typography UNKNOWN where --font: Inter is declared"},
+    {"layer": "project-context", "what": "i18n reported as empty on a project with js/i18n.js and 30 data-i18n attributes"},
+    {"layer": "direction", "what": "cta slot marked new on an existing UI with a moderate budget"}
+  ],
+  "knowledge_gaps": [],
+  "regressions": [
+    {"query": "Add a Welsh language option to the ticket machine.", "expect": "content.i18n_expansion in required_concepts and i18n-text-expansion-rtl in the bundle"},
+    {"query": "Add a second language to the checkout flow.", "expect": "same i18n concept demanded with no platform word present, proving the trigger is the language token"},
+    {"query": "Add a Welsh language option to the ticket machine.", "expect": "interaction.selection_visible demanded: a new option on a touch surface needs a selected state distinct from focus"},
+    {"query": "inspect_project.py on p6-kiosk-transit", "expect": "i18n detected (js/i18n.js + data-i18n), radius 16px, spacing 8, typography Inter, navigation not hub-spoke"},
+    {"query": "guidance metrics when core_size == 0 and a required concern is uncovered", "expect": "status weaker than a critical_coverage_ratio of 1.0"}
+  ],
+  "tags": [
+    "concept-miss", "ranking-miss", "context-detection-miss", "direction-mismatch",
+    "render-defect-fixed", "skill-helped", "preservation-ok", "partial-scope-ok"
+  ],
+  "build_hash_start": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947",
+  "build_hash_end": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947"
+}

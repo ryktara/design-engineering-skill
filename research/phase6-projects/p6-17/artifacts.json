@@ -1,0 +1,104 @@
+{
+  "task": "p6-17",
+  "project": "p6-compose-banking",
+  "platform_expected": "mobile",
+  "platform_resolved": "mobile",
+  "platform_correct": "yes",
+  "stack": "kotlin / jetpack compose / material3",
+  "existing_ui": true,
+  "new_screen": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": ["accessibility", "polish", "refactor", "audit"],
+  "mode_resolved": ["accessibility", "audit"],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "low",
+  "render_mode": "html-twin",
+  "screenshots": [
+    "render/before-dark-390x844.png",
+    "render/first-dark-390x844.png",
+    "render/final-dark-390x844.png",
+    "render/crop-before.png",
+    "render/final-crop-dark.png"
+  ],
+  "context_detection": {
+    "navigation": "partial",
+    "theme": "yes",
+    "typography": "yes",
+    "surfaces": "yes",
+    "spacing": "no"
+  },
+  "preservation": {
+    "navigation": true,
+    "theme": true,
+    "typography": true,
+    "component_reuse": true,
+    "unjustified_structural_change": 0
+  },
+  "expected_concepts": [
+    "a11y.contrast",
+    "brand.token_layers",
+    "brand.dark_mode_redesign",
+    "layout.focal_hierarchy",
+    "process.safe_modification"
+  ],
+  "critical_concepts": ["a11y.contrast", "brand.token_layers"],
+  "delivered_concepts": ["a11y.contrast", "interaction.focus_visible"],
+  "concept_recall": 0.2,
+  "critical_recall": 0.5,
+  "concept_misses": [
+    {"concept": "brand.token_layers", "layer": "expected-concepts"},
+    {"concept": "brand.dark_mode_redesign", "layer": "expected-concepts"},
+    {"concept": "layout.focal_hierarchy", "layer": "expected-concepts"},
+    {"concept": "process.safe_modification", "layer": "expected-concepts"}
+  ],
+  "first_render_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+  "final_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+  "iterations": 1,
+  "guidance_relevant": 0,
+  "guidance_partial": 1,
+  "guidance_offtarget": 0,
+  "layer_review": {
+    "core": [],
+    "critical": ["a11y-nontext-contrast"],
+    "optional": [],
+    "optional_useful": 0,
+    "optional_noise": 0
+  },
+  "bad_guidance": [
+    {"record": "a11y-nontext-contrast", "category": "generic", "why": "The task is a TEXT contrast failure (12sp bodySmall date at 3.55:1). This record is explicitly about NON-text contrast: 3:1 for controls, borders and focus indicators, and it states hairline dividers at 1.2:1 are acceptable. It never names the 4.5:1 text threshold the task needs. a11y-contrast-text was a candidate for the same concept (0.243 vs 0.251) and lost."},
+    {"record": "<bundle>", "category": "missing-critical", "why": "Pre-registered critical concept brand.token_layers is absent from the bundle, as is brand.dark_mode_redesign. The base contains color-semantic-tokens and color-dark-mode-rules (the latter states the 87/60/38% white text steps that is exactly the fix), and `search` ranks them #1-#3 for this sentence, but neither concept was ever demanded, so neither record could enter."}
+  ],
+  "skill_effect": "neutral",
+  "guidance_used": [],
+  "guidance_ignored": [
+    {"id": "a11y-nontext-contrast", "why": "Non-text/control contrast at 3:1 is not the failing requirement here; the failing pair is 12sp body text at 3.55:1 against a 4.5:1 AA requirement. Following its 3:1 bar literally would have left the defect shipped."}
+  ],
+  "guidance_tokens": 103,
+  "unjustified_direction_slots": 0,
+  "process_records_needed": false,
+  "misses": [
+    {"layer": "bundle-selection", "what": "a11y.contrast was carried by a11y-nontext-contrast instead of a11y-contrast-text. Both are platform 'any' and both were candidates; the non-text record scored 0.251 vs 0.243, plausibly because it carries a second concept (interaction.focus_visible) and so shows a larger marginal gain. For a text-contrast task the selected carrier is the wrong one."},
+    {"layer": "expected-concepts", "what": "The sentence says 'in dark mode' and the project is a KNOWN dual-theme Compose app, yet neither brand.dark_mode_redesign nor brand.token_layers was demanded. The whole design answer (fix the semantic token in DarkColors, not the screen) came from reading the code, not from the skill."},
+    {"layer": "project-context", "what": "inspect_project reported navigation=top-bar KNOWN although the shell is a Material3 NavigationBar (BottomBar.kt, bottom-tabs scored 5); radius=small from 'most common radius 4' although the product's stated card language is CardCornerRadius = 12.dp; spacing=UNKNOWN although Spacing.kt is an explicit 4pt grid; tokens=[] although Color.kt + Theme.kt are a full two-layer token system. On a task whose correct fix lives in the token layer, reporting tokens=[] is the costly one."}
+  ],
+  "knowledge_gaps": [],
+  "regressions": [
+    {"query": "In dark mode the transaction dates are barely visible.", "expect": "a11y.contrast is carried by a11y-contrast-text (4.5:1 body text), not a11y-nontext-contrast; brand.dark_mode_redesign and brand.token_layers are demanded and carried by color-dark-mode-rules and color-semantic-tokens."},
+    {"query": "the secondary labels in the dark theme are too dim to read", "expect": "bundle contains color-dark-mode-rules; a text-contrast record rather than a control/focus-contrast record."},
+    {"query": "inspect a Jetpack Compose app whose theme package defines a Color.kt primitive palette and a Theme.kt lightColorScheme/darkColorScheme", "expect": "design_context reports a token layer (tokens non-empty) and navigation=bottom-tabs when a NavigationBar is the app shell."}
+  ],
+  "tags": [
+    "concept-miss",
+    "ranking-miss",
+    "context-detection-miss",
+    "skill-neutral",
+    "preservation-ok"
+  ],
+  "build_hash_start": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947",
+  "build_hash_end": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947"
+}

@@ -1,0 +1,358 @@
+{
+ "description": "Phase 4 codebase-aware direction cases written before implementation (2026-09-09). Fixtures are the real Phase 3 torture-test projects (research/phase3-projects/*/project) plus eval fixtures. Assertions: detected design context (KNOWN/INFERRED values), change budget by mode, and direction preservation (slot ids that must not be proposed, preserved slots).",
+ "suite": "context",
+ "cases": [
+  {
+   "id": "c-nextjs-saas-context",
+   "fixture": "research/phase3-projects/p3-nextjs-saas/project",
+   "query": "polish the billing settings page",
+   "expect_context": {
+    "navigation": "left-rail",
+    "theme": "light-first"
+   },
+   "expect_context_status": {
+    "navigation": [
+     "KNOWN",
+     "INFERRED"
+    ]
+   },
+   "expect_budget": "low",
+   "expect_preserved": [
+    "navigation",
+    "typography",
+    "color"
+   ],
+   "forbid_direction_slots": {
+    "navigation": [
+     "nav-top-bar",
+     "nav-bottom-tabs",
+     "nav-command-palette"
+    ],
+    "color": [
+     "color-dark-accent"
+    ]
+   }
+  },
+  {
+   "id": "c-react-dashboard-topbar",
+   "fixture": "research/phase3-projects/p3-react-dashboard-polish/project",
+   "query": "make the energy dashboard easier to scan",
+   "expect_context": {
+    "navigation": "top-bar",
+    "theme": "light-first"
+   },
+   "expect_budget": "low",
+   "forbid_direction_slots": {
+    "navigation": [
+     "nav-left-rail",
+     "nav-command-palette"
+    ],
+    "typography": [
+     "typography-serif-editorial",
+     "typography-serif-display"
+    ],
+    "color": [
+     "color-dark-accent"
+    ]
+   }
+  },
+  {
+   "id": "c-wpf-erp-light",
+   "fixture": "research/phase3-projects/p3-erp-desktop-dotnet/project",
+   "query": "polish this existing light-theme WPF purchase-order screen",
+   "expect_context": {
+    "theme": "light-first",
+    "navigation": "menu-bar"
+   },
+   "expect_budget": "low",
+   "forbid_direction_slots": {
+    "navigation": [
+     "nav-command-palette",
+     "nav-left-rail",
+     "nav-bottom-tabs"
+    ],
+    "color": [
+     "color-dark-accent"
+    ],
+    "cards": [
+     "card-list-row",
+     "card-poster-landscape"
+    ]
+   }
+  },
+  {
+   "id": "c-android-tv-rails-dark",
+   "fixture": "research/phase3-projects/p3-android-tv-compose/project",
+   "query": "improve the live-now rail so focus is never lost",
+   "expect_context": {
+    "navigation": "tv-rails",
+    "theme": "dark-first"
+   },
+   "expect_budget": "moderate",
+   "forbid_direction_slots": {
+    "navigation": [
+     "nav-top-bar",
+     "nav-left-rail",
+     "nav-bottom-tabs"
+    ],
+    "color": [
+     "color-neutral-accent",
+     "color-monochrome-light"
+    ]
+   }
+  },
+  {
+   "id": "c-kiosk-context",
+   "fixture": "research/phase3-projects/p3-kiosk-pharmacy/project",
+   "query": "audit the identify step of the pick-up kiosk",
+   "expect_context": {
+    "navigation": "hub-spoke"
+   },
+   "expect_budget": "low",
+   "forbid_direction_slots": {
+    "navigation": [
+     "nav-left-rail",
+     "nav-top-bar",
+     "nav-command-palette"
+    ]
+   }
+  },
+  {
+   "id": "c-flutter-field-context",
+   "fixture": "research/phase3-projects/p3-mobile-flutter-field/project",
+   "query": "refactor the defect report form so it works with the keyboard open",
+   "expect_context": {
+    "theme": "dual-theme"
+   },
+   "expect_budget": "moderate",
+   "forbid_direction_slots": {
+    "navigation": [
+     "nav-left-rail",
+     "nav-top-bar",
+     "nav-command-palette",
+     "nav-tv-side"
+    ]
+   }
+  },
+  {
+   "id": "c-shadcn-fixture-known-tokens",
+   "fixture": "fixtures/nextjs-shadcn",
+   "query": "add an invoices list screen",
+   "expect_context_any_of": {
+    "theme": [
+     "light-first",
+     "dual-theme",
+     "unknown"
+    ]
+   },
+   "expect_budget": "moderate",
+   "expect_preserved": [
+    "typography"
+   ]
+  },
+  {
+   "id": "c-redesign-lifts-budget",
+   "fixture": "research/phase3-projects/p3-react-dashboard-polish/project",
+   "query": "redesign the energy dashboard navigation and layout from scratch",
+   "expect_budget_any": [
+    "high",
+    "greenfield"
+   ],
+   "expect_changed_allowed": [
+    "navigation"
+   ]
+  },
+  {
+   "id": "c-brand-keeps-workflow",
+   "fixture": "research/phase3-projects/p3-nextjs-saas/project",
+   "query": "create a second brand skin for a premium tier that looks distinct",
+   "expect_budget_any": [
+    "high",
+    "brand"
+   ],
+   "expect_preserved": [
+    "navigation"
+   ],
+   "expect_changed_allowed": [
+    "typography",
+    "color",
+    "surface"
+   ]
+  },
+  {
+   "id": "c-empty-project-greenfield",
+   "fixture": "fixtures/empty-project",
+   "query": "build a settings page for a web app",
+   "expect_budget": "greenfield",
+   "expect_context": {
+    "navigation": "unknown",
+    "theme": "unknown"
+   }
+  },
+  {
+   "id": "c-a11y-conflict-overrides-preservation",
+   "fixture": "research/phase3-projects/p3-android-tv-compose/project",
+   "query": "the focus ring on the rails is invisible on the TV, fix it",
+   "expect_budget_any": [
+    "low",
+    "moderate"
+   ],
+   "expect_changed_allowed": [
+    "focus"
+   ],
+   "expect_preserved": [
+    "navigation",
+    "color"
+   ]
+  },
+  {
+   "id": "c-winui-fixture-desktop",
+   "fixture": "fixtures/winui-erp",
+   "query": "polish the stock adjustments page",
+   "expect_context": {
+    "theme": "unknown"
+   },
+   "expect_budget": "low",
+   "forbid_direction_slots": {
+    "navigation": [
+     "nav-tv-side",
+     "nav-tv-top-tabs",
+     "nav-bottom-tabs"
+    ]
+   }
+  },
+  {
+   "id": "c5-misleading-strings",
+   "fixture": "fixtures/misleading-strings",
+   "query": "polish the settings list",
+   "expect_context": {
+    "navigation": "top-bar",
+    "theme": "light-first"
+   },
+   "expect_platforms_ctx": [
+    "web"
+   ],
+   "forbid_platforms_ctx": [
+    "tv",
+    "mobile"
+   ],
+   "expect_context_any_of": {
+    "surfaces": [
+     "bordered-flat",
+     "flat-tonal"
+    ],
+    "typography": [
+     "geometric-sans",
+     "custom"
+    ]
+   },
+   "note": "ListView, NavigationView, isTVEnabled, darkText, MobileSettings appear as identifiers/comments only"
+  },
+  {
+   "id": "c5-native-compose-typography",
+   "fixture": "fixtures/native-compose",
+   "query": "add a profile screen",
+   "expect_context": {
+    "navigation": "bottom-tabs",
+    "theme": "dual-theme"
+   },
+   "expect_context_any_of": {
+    "typography": [
+     "geometric-sans",
+     "custom"
+    ],
+    "surfaces": [
+     "flat-tonal",
+     "elevated"
+    ]
+   },
+   "forbid_platforms_ctx": [
+    "tv"
+   ]
+  },
+  {
+   "id": "c5-native-swiftui-typography",
+   "fixture": "fixtures/native-swiftui",
+   "query": "add an orders detail screen",
+   "expect_context": {
+    "navigation": "bottom-tabs"
+   },
+   "expect_context_any_of": {
+    "typography": [
+     "humanist-sans",
+     "custom"
+    ],
+    "surfaces": [
+     "elevated"
+    ],
+    "theme": [
+     "light-first",
+     "unknown"
+    ]
+   },
+   "forbid_platforms_ctx": [
+    "tv"
+   ]
+  },
+  {
+   "id": "c5-native-wpf-resources",
+   "fixture": "fixtures/native-wpf",
+   "query": "polish the main window toolbar",
+   "expect_context": {
+    "navigation": "menu-bar",
+    "theme": "light-first"
+   },
+   "expect_context_any_of": {
+    "typography": [
+     "humanist-sans",
+     "system"
+    ],
+    "surfaces": [
+     "bordered-flat"
+    ]
+   },
+   "forbid_platforms_ctx": [
+    "tv"
+   ]
+  },
+  {
+   "id": "c5-native-flutter-theme",
+   "fixture": "fixtures/native-flutter",
+   "query": "add a settings screen",
+   "expect_context": {
+    "navigation": "bottom-tabs",
+    "theme": "light-first"
+   },
+   "expect_context_any_of": {
+    "typography": [
+     "rounded",
+     "humanist-sans",
+     "custom"
+    ],
+    "surfaces": [
+     "flat-tonal",
+     "bordered-flat"
+    ]
+   },
+   "forbid_platforms_ctx": [
+    "tv"
+   ]
+  },
+  {
+   "id": "c6-tizen-webos-tv-web-app",
+   "fixture": "research/phase6-projects/p6-tv-iptv-web/project",
+   "query": "The player controls stay on screen for the whole film.",
+   "expect_platforms_ctx": [
+    "tv"
+   ],
+   "forbid_platforms_ctx": [
+    "web"
+   ],
+   "expect_modes_any_ctx": [
+    "audit",
+    "refactor"
+   ],
+   "note": "2026-09-16 Phase 6 implemented project round (research/phase6-projects, frozen c3 → fix in c4): p6-27 / p6-28: a Tizen / webOS TV web app (config.xml, appinfo.json) was inspected as web, which filtered out the TV player record. Routed: project context (inspector reads the TV package manifests; web is the substrate)."
+  }
+ ]
+}

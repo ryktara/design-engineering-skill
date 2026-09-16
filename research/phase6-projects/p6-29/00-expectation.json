@@ -1,0 +1,11 @@
+{
+  "platform": "kiosk",
+  "artifact_state": "existing",
+  "acceptable_modes": ["polish", "refactor"],
+  "scope_kind": "in-scope",
+  "expected_concepts": ["layout.focal_hierarchy", "a11y.color_not_only", "a11y.live_status", "feedback.progress_indicator", "env.glanceable_status", "state.session_expiry"],
+  "critical_concepts": ["layout.focal_hierarchy", "a11y.color_not_only", "a11y.live_status"],
+  "forbidden_concepts": ["tv.ten_foot_typography", "tv.dark_first", "interaction.dpad_reachability", "layout.hero_thesis", "onboarding.linear_wizard", "anti.template_landing", "feedback.confirmation_destructive"],
+  "preservation": ["navigation", "theme", "typography", "utilbar", "ticket block", "auto-reset countdown", "i18n en/es", "a11y view"],
+  "notes": "Done screen (screens.js `done`, i18n doneTitle/doneLede) shows the ticket but the only completion cue is a green icon + 'You are all set'; topbar step is null so 3-of-3 never reads complete. Fix = explicit completion statement as the focal point, in text not colour, announced to AT, in both languages; keep ticket, countdown, utilbar."
+}

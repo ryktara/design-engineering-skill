@@ -1,0 +1,128 @@
+{
+ "task": "p6-09",
+ "build": "32e67640c9b8ef1d519ef9695016fb396116b92412e63c324da090aecf1df385",
+ "c1_recorded": {
+  "platform_expected": "web",
+  "platform_resolved": [
+   "web"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "audit",
+   "polish",
+   "refactor"
+  ],
+  "mode_resolved": [
+   "polish",
+   "audit"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "CONFIDENT",
+  "bundle_ids": [
+   "comp-dialog",
+   "comp-form",
+   "layout-form-stack",
+   "anti-brand-cosmetic-only",
+   "layout-states-empty-loading-error",
+   "layout-hierarchy-one-thing"
+  ],
+  "bundle_tokens": 1059,
+  "expected_concepts": [
+   "layout.one_primary_action",
+   "feedback.confirmation_destructive",
+   "a11y.accessible_names",
+   "interaction.focus_visible",
+   "state.unsaved_changes_guard",
+   "process.reuse_first"
+  ],
+  "critical_concepts": [
+   "layout.one_primary_action",
+   "feedback.confirmation_destructive"
+  ],
+  "delivered_concepts": [
+   "a11y.dialog_focus",
+   "brand.structural_differentiation",
+   "data.exception_first",
+   "feedback.confirmation_destructive",
+   "feedback.validation_errors",
+   "form.autofill_attributes",
+   "layout.focal_hierarchy",
+   "layout.one_primary_action",
+   "state.loading_empty_error",
+   "state.unsaved_changes_guard",
+   "touch.ime_keyboard"
+  ],
+  "concept_recall": 0.5,
+  "critical_recall": 1.0,
+  "forbidden_delivered": [],
+  "change_budget": "low"
+ },
+ "c4": {
+  "platform_expected": "web",
+  "platform_resolved": [
+   "web"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "audit",
+   "polish",
+   "refactor"
+  ],
+  "mode_resolved": [
+   "polish",
+   "audit"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "PARTIAL",
+  "bundle_ids": [
+   "comp-dialog",
+   "comp-form",
+   "comp-empty-state",
+   "layout-states-empty-loading-error",
+   "layout-hierarchy-one-thing"
+  ],
+  "bundle_tokens": 889,
+  "expected_concepts": [
+   "layout.one_primary_action",
+   "feedback.confirmation_destructive",
+   "a11y.accessible_names",
+   "interaction.focus_visible",
+   "state.unsaved_changes_guard",
+   "process.reuse_first"
+  ],
+  "critical_concepts": [
+   "layout.one_primary_action",
+   "feedback.confirmation_destructive"
+  ],
+  "delivered_concepts": [
+   "a11y.dialog_focus",
+   "data.exception_first",
+   "feedback.confirmation_destructive",
+   "feedback.validation_errors",
+   "form.autofill_attributes",
+   "layout.focal_hierarchy",
+   "layout.one_primary_action",
+   "state.loading_empty_error",
+   "state.unsaved_changes_guard",
+   "touch.ime_keyboard"
+  ],
+  "concept_recall": 0.5,
+  "critical_recall": 1.0,
+  "forbidden_delivered": [],
+  "change_budget": "low"
+ }
+}

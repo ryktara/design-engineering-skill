@@ -1,0 +1,147 @@
+{
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "tag": "first",
+  "after": {
+    "tabOrder": [
+      "A: Orders",
+      "A: Invoices",
+      "A: Inventory",
+      "A: Stock adjustments",
+      "BUTTON: New adjustment (Ctrl+N)",
+      "BUTTON: Approve selected (Ctrl+Shift+A)",
+      "BUTTON: Reject selected (Ctrl+Shift+R)",
+      "BUTTON: Refresh (F5)",
+      "BUTTON: More commands",
+      "INPUT: Search (Ctrl+F). Esc clears.",
+      "INPUT: ",
+      "SELECT: Any statusDraftPending approvalPostedRej",
+      "TR[row]: Pending\n      ADJ-10421PLT-0032Euro pall"
+    ],
+    "focusVisible": {
+      "stops": 13,
+      "withIndicator": 13,
+      "pass": true
+    },
+    "gridTabStops": 1,
+    "documented": {
+      "commandBarButtons": 4,
+      "commandBarWithShortcutInTooltip": 4,
+      "menuItems": 6,
+      "menuItemsWithShortcutText": 6,
+      "rowActions": 24,
+      "rowActionsWithShortcutInTooltip": 24,
+      "accessKeys": [
+        "n",
+        "a",
+        "j",
+        "r",
+        "c",
+        "l",
+        "k",
+        "s"
+      ],
+      "pass": true
+    },
+    "f1Reference": {
+      "opened": true,
+      "focusMovedIn": true,
+      "entries": 13,
+      "listed": [
+        "Ctrl+N",
+        "Ctrl+Shift+A",
+        "Ctrl+Shift+R",
+        "F2 / Enter",
+        "F5",
+        "Ctrl+F",
+        "Esc",
+        "Ctrl+Shift+L",
+        "F6 / Shift+F6",
+        "↑ ↓ Home End",
+        "Shift+F10",
+        "Alt",
+        "F1"
+      ],
+      "missing": [],
+      "escapeCloses": true,
+      "focusReturned": true,
+      "pass": true
+    },
+    "f6": {
+      "forward": [
+        "BUTTON:cmdNew",
+        "INPUT:search",
+        "TR:Pending\n      ADJ-10421PLT-0032Euro pall"
+      ],
+      "shiftBack": "INPUT:search",
+      "pass": true
+    },
+    "overflowMenu": {
+      "opensOnEnter": true,
+      "firstItem": "Show 'Created by' column",
+      "arrowDown": "Clear filters (Ctrl+Shift+L)",
+      "end": "Keyboard shortcuts (F1)",
+      "escapeReturnsToButton": true,
+      "allWithFocusRing": true,
+      "pass": true
+    },
+    "createdByToggle": {
+      "shownAfterToggle": true,
+      "horizontalOverflowWhenShown": {
+        "scrollWidth": 1086,
+        "clientWidth": 1086
+      },
+      "persistedAfterReload": true,
+      "pass": true
+    },
+    "filterShortcuts": {
+      "rowsWhileFiltered": 2,
+      "escClearsOnlySearch": true,
+      "ctrlShiftLClearsAll": true,
+      "ctrlFFocusesSearch": true,
+      "pass": true
+    },
+    "contextMenu": {
+      "opensOnShiftF10": true,
+      "firstItem": "EditF2",
+      "accelerators": [
+        "F2",
+        "Ctrl+Shift+A",
+        "Ctrl+Shift+R"
+      ],
+      "escapeReturnsToRow": true,
+      "pass": true
+    },
+    "selectionCaption": {
+      "onActionable": {
+        "caption": "Selected: ADJ-10421",
+        "approveDisabled": false
+      },
+      "onPosted": {
+        "caption": "Selected: ADJ-10419",
+        "approveDisabled": true
+      },
+      "pass": true
+    },
+    "rowActionsByArrow": {
+      "focused": "BUTTON: Edit ADJ-10421",
+      "visible": true,
+      "pass": true
+    },
+    "accessKeyTips": {
+      "visibleWhileAltHeld": 5,
+      "pass": true
+    },
+    "horizontalOverflow": {
+      "scrollWidth": 1086,
+      "clientWidth": 1086,
+      "pass": true
+    },
+    "reducedMotion": {
+      "transitionDuration": "0s",
+      "pass": true
+    }
+  }
+}

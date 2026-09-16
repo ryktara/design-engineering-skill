@@ -1,0 +1,38 @@
+{"task": "p5-05", "project": "p3-react-dashboard-polish", "platform_expected": "web", "platform_resolved": "web", "platform_correct": "yes",
+ "stack": "react18 + esbuild, plain CSS custom-property tokens, static index.html", "existing_ui": true, "new_screen": false,
+ "artifact_state_expected": "existing", "artifact_state_resolved": "existing", "artifact_state_correct": true,
+ "mode_expected": ["accessibility", "audit", "polish"], "mode_resolved": ["accessibility", "audit"], "mode_correct": "yes",
+ "scope_kind_expected": "in-scope", "scope_kind_resolved": "in-scope", "scope_correct": true,
+ "change_budget": "low", "render_mode": "native",
+ "screenshots": ["render/first-1440x900.png", "render/first-1440x900-skiplink.png", "render/first-1440x900-filter.png", "render/first-390x844.png", "render/first-390x844-skiplink.png", "render/first-390x844-filter.png", "render/final-1440x900.png", "render/final-1440x900-skiplink.png", "render/final-1440x900-filter.png", "render/final-390x844.png", "render/final-390x844-skiplink.png", "render/final-390x844-filter.png", "render/keyboard-before-1440x900-filter-focus.png", "render/keyboard-before-1440x900-after-arrow.png", "render/keyboard-before-390x844-filter-focus.png", "render/keyboard-before-390x844-after-arrow.png", "render/keyboard-final-1440x900-filter-focus.png", "render/keyboard-final-1440x900-after-arrow.png", "render/keyboard-final-390x844-filter-focus.png", "render/keyboard-final-390x844-after-arrow.png"],
+ "context_detection": {"navigation": "yes", "theme": "yes", "typography": "partial", "surfaces": "yes", "spacing": "partial"},
+ "preservation": {"navigation": true, "theme": true, "typography": true, "component_reuse": true, "unjustified_structural_change": 0},
+ "expected_concepts": ["interaction.keyboard_navigation", "interaction.focus_visible", "interaction.selection_visible", "a11y.semantics", "a11y.accessible_names", "process.safe_modification"],
+ "critical_concepts": ["interaction.keyboard_navigation", "interaction.focus_visible"],
+ "delivered_concepts": ["a11y.color_not_only", "data.chart_by_question", "data.accessible_chart_alternative", "state.loading_empty_error", "data.filter_chips", "navigation.deep_link_state", "a11y.live_status", "data.search_results", "interaction.keyboard_navigation", "interaction.hover_independence", "a11y.semantics", "a11y.contrast", "interaction.focus_visible", "a11y.accessible_names", "interaction.selection_visible"],
+ "concept_recall": 0.83, "critical_recall": 1.0,
+ "concept_misses": [{"concept": "process.safe_modification", "layer": "expected-concepts"}],
+ "first_render_defects": {"visual": 0, "interaction": 0, "accessibility": 1, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+ "final_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+ "iterations": 1, "guidance_relevant": 2, "guidance_partial": 4, "guidance_offtarget": 2,
+ "bad_guidance": [
+  {"record": "comp-filters", "category": "contradicts-codebase", "why": "Prescribes a faceted filter row with chips, popovers and a mobile sheet for a two-option segmented radio control; the record's own avoid_when ('one or two filters') applies; following it would be a redesign under a low change budget."},
+  {"record": "search-filter-feedback", "category": "generic", "why": "Search debounce, result counts and a TV search screen for a page with no search; selected because requirements mapped 'filters' to the search component."}
+ ],
+ "skill_effect": "neutral", "guidance_tokens": 1015,
+ "misses": [
+  {"layer": "requirements", "what": "'filters' mapped to components=[search] and primary_jobs 'accessibility search' on a page with no search; seeded comp-filters and search-filter-feedback."},
+  {"layer": "expected-concepts", "what": "process.safe_modification not demanded for a low-budget modify task on an existing UI although the base carries it."},
+  {"layer": "knowledge-gap", "what": "No ontology id or record for skip links / bypass blocks / reach distance to a control (WCAG 2.4.1), which is the actual fix for 'can't get to'."},
+  {"layer": "direction", "what": "Focus slot marked new with 'no repository evidence' although a global :focus-visible ring token exists; design_context has no focus slot so inspect's focus_handling finding is not consumed."},
+  {"layer": "project-adaptation", "what": "Typography UNKNOWN despite --font-ui declared; spacing 'irregular'/UNKNOWN despite an explicit --sp-1..--sp-12 scale; radius evidence cites a 4px value not present in the CSS."}
+ ],
+ "knowledge_gaps": ["skip link / bypass blocks (WCAG 2.4.1): reaching a control past repeated header chrome with few keystrokes"],
+ "regressions": [
+  {"query": "Keyboard users can't get to the chart filters.", "expect": "web/react project: components must not include search; comp-filters and search-filter-feedback must not be selected for a project whose only filter is a <=2-option segmented control; a11y-keyboard-operable and a focus-visible/non-text-contrast guardrail required."},
+  {"query": "Keyboard users have to tab through the whole header before reaching the page", "expect": "a bypass-blocks / skip-link record once it exists; meanwhile keyboard-operable and focus records, not desktop-shortcut or mobile-IME records."},
+  {"query": "inspect + direction on a project with a global :focus-visible ring token", "expect": "direction focus slot status preserved (repository evidence), not new."},
+  {"query": "inspect on a project declaring --font-ui and --sp-* custom properties", "expect": "typography KNOWN with the family list; spacing KNOWN with the scale."}
+ ],
+ "tags": ["requirements-miss", "concept-miss", "knowledge-gap", "direction-mismatch", "context-detection-miss", "render-defect-fixed", "skill-neutral", "preservation-ok"],
+ "build_hash_start": "bf034323a2b68202e8c902768e0de78cd93761b1a71670a49ee595648cd5f0d8", "build_hash_end": "bf034323a2b68202e8c902768e0de78cd93761b1a71670a49ee595648cd5f0d8"}

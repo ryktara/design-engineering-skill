@@ -1,0 +1,865 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "Dispatchers want to see which vehicles are overdue for service without opening each one.",
+  "status": "PARTIAL",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "desktop"
+    ],
+    "input": [
+      "keyboard",
+      "pointer"
+    ],
+    "product": [],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "avalonia"
+    ],
+    "density": null,
+    "components": [],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "audit"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "low",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [],
+      "change_scope": "unknown",
+      "utterance": "observation",
+      "existing": true,
+      "problem": true,
+      "facet": "general",
+      "diagnose_only": false,
+      "creation": false,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "audit: problem statement on existing UI",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "menu-bar",
+        "status": "KNOWN",
+        "evidence": [
+          "menu-bar: 1 matches in MainWindow.axaml (shell/layout file)",
+          "also left-rail: 1 matches"
+        ]
+      },
+      "theme": {
+        "value": "light-first",
+        "status": "INFERRED",
+        "evidence": [
+          "root/canvas backgrounds: 1 light, 0 dark",
+          "hex palette: 18 near-white, 0 near-black"
+        ]
+      },
+      "surfaces": {
+        "value": "bordered-flat",
+        "status": "INFERRED",
+        "evidence": [
+          "borders in 3 files, shadow/elevation in 1"
+        ]
+      },
+      "radius": {
+        "value": "small",
+        "status": "INFERRED",
+        "evidence": [
+          "most common radius 4 (3×); others []"
+        ]
+      },
+      "spacing": {
+        "value": 4,
+        "status": "INFERRED",
+        "evidence": [
+          "most used spacing values [6, 4, 8, 2, 16]"
+        ]
+      },
+      "typography": {
+        "value": "humanist-sans",
+        "status": "KNOWN",
+        "evidence": [
+          "font family Segoe UI, avares://Avalonia.Fonts.Inter/Assets#Inter (2 refs)",
+          "weights 600, semibold",
+          "encoded type scale in 1 files"
+        ]
+      },
+      "components": {
+        "value": "avalonia",
+        "status": "KNOWN",
+        "evidence": [
+          "avalonia"
+        ]
+      }
+    },
+    "known": [
+      "platform=desktop (project inspection)",
+      "stack=avalonia (project inspection)",
+      "project_navigation=menu-bar (repository: menu-bar: 1 matches in MainWindow.axaml (shell/layout file); also left-rail: 1 matches)",
+      "project_typography=humanist-sans (repository: font family Segoe UI, avares://Avalonia.Fonts.Inter/Assets#Inter (2 refs); weights 600, semibold)",
+      "project_components=avalonia (repository: avalonia)"
+    ],
+    "inferred": [
+      "input=pointer (implied by platform desktop)",
+      "input=keyboard (implied by platform desktop)",
+      "mode=audit (problem statement on existing UI)",
+      "mode=refactor (fix follows the diagnosis)",
+      "project_theme=light-first (repository: root/canvas backgrounds: 1 light, 0 dark; hex palette: 18 near-white, 0 near-black)",
+      "project_surfaces=bordered-flat (repository: borders in 3 files, shadow/elevation in 1)",
+      "project_radius=small (repository: most common radius 4 (3×); others [])",
+      "project_spacing=4 (repository: most used spacing values [6, 4, 8, 2, 16])"
+    ],
+    "missing": [],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [],
+      "project": [
+        "FleetDesk.csproj: Avalonia"
+      ]
+    },
+    "activation": {
+      "decision": "skip",
+      "ui_score": 0,
+      "non_ui_score": 0,
+      "ui_terms": [],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "present-tense observation"
+      ],
+      "new": [],
+      "defect": [
+        "observed behaviour"
+      ],
+      "operations": {},
+      "domains": {},
+      "no_change": [],
+      "scope": {},
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "concept:data.exception_first"
+      ],
+      "ux_symptoms": [
+        "see which",
+        "without opening each"
+      ],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "accessibility",
+        "reason": "audit mode"
+      },
+      {
+        "concern": "interaction",
+        "reason": "audit mode: operability is part of the review"
+      },
+      {
+        "concern": "component",
+        "reason": "the reviewed component/screen"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "states",
+        "reason": "audits check empty/loading/error handling"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "audits name generic-design defects"
+      },
+      {
+        "concern": "feedback",
+        "reason": "audits check that actions are discoverable and confirmed"
+      }
+    ],
+    "optional": [
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "data.exception_first",
+        "reason": "named in the request: overdue, without opening each"
+      },
+      {
+        "concept": "a11y.color_not_only",
+        "reason": "exception status must not rely on colour alone"
+      },
+      {
+        "concept": "env.glanceable_status",
+        "reason": "status readable without opening each item"
+      },
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "desktop keyboard-first"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "desktop focus"
+      }
+    ],
+    "recommended_concepts": [
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "process.reuse_first",
+      "interaction.shortcuts",
+      "desktop.persist_workspace",
+      "layout.focal_hierarchy"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "dir-analytical-console",
+      "kind": "direction",
+      "category": "direction",
+      "title": "Analytical console",
+      "facets": [
+        "direction",
+        "platform"
+      ],
+      "concerns": [
+        "brand",
+        "structure"
+      ],
+      "concepts": [],
+      "covers": [],
+      "score": 0.206,
+      "guidance": "Charts are the imagery; one chart palette; modules sized by importance not by a uniform card grid; dark-first tonal surfaces with the accent reserved for alerts and selection; large readable numerics; small multiples over spaghetti charts. Distinctiveness via chart mark style and a signature numeric typeface.",
+      "use_when": "Monitoring and analysis: dashboards with real questions, alerting, drill-down, often on dark themes for long sessions or wall displays.",
+      "avoid_when": "Task-entry tools (workbench), consumer products.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "internal-preference",
+      "incompatible": [
+        "surface-glass",
+        "imagery-hero",
+        "motion-cinematic",
+        "typography-serif-editorial"
+      ],
+      "why": {
+        "lexical": 0.014,
+        "structural": 0.44,
+        "matched": [
+          "platform desktop",
+          "input keyboard,pointer",
+          "secondary mode"
+        ]
+      },
+      "role": "core",
+      "selected_for": "no record matched the wording; best structural fit for platform/product"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "data-exceptions-first",
+      "kind": "rule",
+      "category": "feedback",
+      "title": "Exceptions first: surface what needs attention in lists and tables",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "accessibility",
+        "data-display",
+        "feedback"
+      ],
+      "concepts": [
+        "data.exception_first",
+        "a11y.color_not_only",
+        "env.glanceable_status",
+        "table.tabular_figures"
+      ],
+      "covers": [
+        "exceptions and anomalies first",
+        "no colour alone for status",
+        "glanceable status",
+        "tabular figures and numeric alignment"
+      ],
+      "score": 0.735,
+      "guidance": "Compute the status in the model and show it as a column or badge with a word plus icon plus colour; sort or group exceptions first (or offer a one-tap 'only overdue' filter); show a count in the header/status bar; keep the row otherwise unchanged so scanning stays fast; state the rule that makes an item an exception (e.g. '> 90 days since service').",
+      "use_when": "Any collection where some items need action (overdue, late, failed, expiring, over budget) and the user should see them without opening each one.",
+      "avoid_when": "Never rely on colour alone for the status; never bury the exception state inside the detail view; never sort exceptions below normal rows by default.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.894,
+        "structural": 0.54,
+        "matched": [
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "most relevant record for the request wording"
+    },
+    {
+      "id": "desktop-keyboard-first",
+      "kind": "rule",
+      "category": "input",
+      "title": "Desktop: keyboard is a first-class input",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.keyboard_navigation",
+        "interaction.shortcuts",
+        "interaction.focus_visible"
+      ],
+      "covers": [
+        "keyboard navigation and focus order",
+        "keyboard shortcuts / accelerators",
+        "visible focus"
+      ],
+      "score": 0.324,
+      "guidance": "Document shortcuts in menus and tooltips; F2 edits, Delete deletes with undo, Ctrl+F finds, F6 cycles panes; grids use arrow keys and Ctrl/Shift selection; every dialog has a default and cancel button; access keys shown on Alt (Windows).",
+      "use_when": "Every desktop screen: shortcuts for frequent commands, access keys for menus, Tab/arrow semantics in lists, trees, grids, and toolbars, Enter/Escape in dialogs.",
+      "avoid_when": "Never assign shortcuts that collide with platform or assistive-tech shortcuts; never make Tab stop on every cell of a grid.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.72,
+        "matched": [
+          "platform desktop",
+          "input keyboard,pointer",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: interaction, visible focus, keyboard navigation and focus order"
+    },
+    {
+      "id": "desktop-status-bar-and-error-navigation",
+      "kind": "rule",
+      "category": "feedback",
+      "title": "Desktop status bar as the persistent feedback surface, with next-error navigation",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "feedback",
+        "states",
+        "structure"
+      ],
+      "concepts": [
+        "feedback.validation_errors",
+        "a11y.live_status",
+        "a11y.contrast",
+        "interaction.shortcuts",
+        "desktop.persist_workspace"
+      ],
+      "covers": [
+        "inline validation messages and error recovery",
+        "live region status announcements",
+        "high contrast",
+        "keyboard shortcuts / accelerators",
+        "persisted workspace and selection"
+      ],
+      "score": 0.338,
+      "guidance": "One status bar at the bottom of the window with fixed regions (selection summary, sync/save state with timestamp, error count as a link, active filter) separated by real separators, not spaces; validation for the current row/cell is echoed there in words ('Line 50: Quantity must be greater than 0') and the error count opens a list; F8 / Shift+F8 (or the project's convention) walk to the next and previous error and move focus into the cell; error styling never paints over the value text (tint the cell background and keep ≥ 4.5:1 for the text); announce status changes with LiveSetting/UIA so screen readers hear them; the bar keeps its height at every window width.",
+      "use_when": "Data-entry and workbench windows where validation, selection and sync state must be visible without dialogs or toasts.",
+      "avoid_when": "Consumer apps without a persistent window chrome; mobile.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "implementation": {
+        "avalonia": "DockPanel bottom StatusBar; DataValidationErrors template; KeyBindings for F8/Shift+F8."
+      },
+      "why": {
+        "lexical": 0.025,
+        "structural": 0.72,
+        "matched": [
+          "platform desktop",
+          "input keyboard,pointer",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "recommended coverage: states, high contrast, persisted workspace and selection"
+    },
+    {
+      "id": "anti-oversized-hero-text",
+      "kind": "antipattern",
+      "category": "generic-ai",
+      "title": "Oversized display text and 'big number' KPIs everywhere",
+      "facets": [
+        "anti-pattern"
+      ],
+      "concerns": [
+        "anti-pattern",
+        "structure"
+      ],
+      "concepts": [
+        "anti.oversized_display",
+        "layout.focal_hierarchy"
+      ],
+      "covers": [
+        "no oversized display text everywhere",
+        "visual hierarchy with one focal point"
+      ],
+      "score": 0.245,
+      "guidance": "Reserve display sizes for one element per screen; app headings 20–28 px; KPI value 24–32 px with a readable label; hierarchy comes from contrast between roles, not from making everything large. TV is the exception with its own scale.",
+      "use_when": "72–96 px headlines on app screens, KPI tiles with 48 px numbers and tiny labels, everything bold.",
+      "avoid_when": "A single large focal number is fine when it is the screen's one thing.",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.003,
+        "structural": 0.54,
+        "matched": [
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "recommended coverage: anti-pattern, visual hierarchy with one focal point"
+    },
+    {
+      "id": "a11y-native-semantics",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Native accessibility semantics (mobile/desktop)",
+      "facets": [
+        "accessibility",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility"
+      ],
+      "concepts": [
+        "a11y.semantics",
+        "a11y.accessible_names"
+      ],
+      "covers": [
+        "semantic structure and roles",
+        "accessible names and labels"
+      ],
+      "score": 0.299,
+      "guidance": "Use platform roles and traits (Compose semantics{role, contentDescription, heading()}, SwiftUI accessibilityLabel/.accessibilityAddTraits, RN accessibilityRole, WinUI/WPF AutomationProperties + AutomationPeer for custom controls); merge descendants so a card is one element; announce async status with live regions/announceForAccessibility. Test with TalkBack/VoiceOver/Narrator, not only by reading code.",
+      "use_when": "Custom composables/views/controls, merged semantics for cards, live regions for status, headings in long screens.",
+      "avoid_when": "Never build a tappable Box/View/Border without a role and name.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.003,
+        "structural": 0.66,
+        "matched": [
+          "platform desktop",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "recommended coverage: accessible names and labels"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "accessibility",
+      "interaction",
+      "component"
+    ],
+    "covered_required_concerns": [
+      "accessibility",
+      "interaction"
+    ],
+    "uncovered_required_concerns": [
+      "component"
+    ],
+    "recommended_concerns": [
+      "states",
+      "anti-pattern",
+      "feedback"
+    ],
+    "covered_recommended_concerns": [
+      "states",
+      "anti-pattern",
+      "feedback"
+    ],
+    "coverage_ratio": 0.67,
+    "required_concepts": [
+      "data.exception_first",
+      "a11y.color_not_only",
+      "env.glanceable_status",
+      "interaction.keyboard_navigation",
+      "interaction.focus_visible"
+    ],
+    "covered_required_concepts": [
+      "data.exception_first",
+      "a11y.color_not_only",
+      "env.glanceable_status",
+      "interaction.keyboard_navigation",
+      "interaction.focus_visible"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.83,
+    "bundle_size": 6,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 1,
+    "guardrail_size": 5,
+    "bundle_tokens": 967,
+    "coverage_per_1k_tokens": 5.17,
+    "mean_purity": 0.72,
+    "contaminated": [],
+    "category_diversity": 0.83,
+    "duplicate_pressure": 0.33,
+    "facet_coverage": 1.0,
+    "redundancy": 0.38
+  },
+  "token_coverage": 0.8,
+  "omitted": [],
+  "rejected": [
+    {
+      "id": "anti-scroll-animation-everything",
+      "reason": "platform ['mobile', 'web'] not in request ['desktop']"
+    },
+    {
+      "id": "anti-desktop-scaled-to-tv",
+      "reason": "platform ['tv'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-media-card",
+      "reason": "platform ['mobile', 'tv', 'web'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-tv-rail",
+      "reason": "platform ['tv'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-epg",
+      "reason": "platform ['tablet', 'tv', 'web'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-hero-section",
+      "reason": "platform ['mobile', 'web'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-tv-sign-in",
+      "reason": "platform ['tv'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-product-detail-page",
+      "reason": "platform ['mobile', 'web'] not in request ['desktop']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "data.exception_first",
+      "priority": "required",
+      "reason": "named in the request: overdue, without opening each",
+      "candidate_records": [
+        [
+          "data-exceptions-first",
+          0.735
+        ],
+        [
+          "layout-hierarchy-one-thing",
+          0.272
+        ],
+        [
+          "anti-generic-sidebar-dashboard",
+          0.207
+        ],
+        [
+          "chart-realtime",
+          0.207
+        ]
+      ],
+      "selected_record": "data-exceptions-first",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.color_not_only",
+      "priority": "required",
+      "reason": "exception status must not rely on colour alone",
+      "candidate_records": [
+        [
+          "data-exceptions-first",
+          0.735
+        ],
+        [
+          "a11y-color-not-only",
+          0.243
+        ],
+        [
+          "chart-heatmap-matrix",
+          0.238
+        ],
+        [
+          "comp-plan-comparison",
+          0.218
+        ]
+      ],
+      "selected_record": "data-exceptions-first",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "env.glanceable_status",
+      "priority": "required",
+      "reason": "status readable without opening each item",
+      "candidate_records": [
+        [
+          "data-exceptions-first",
+          0.735
+        ]
+      ],
+      "selected_record": "data-exceptions-first",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.keyboard_navigation",
+      "priority": "required",
+      "reason": "desktop keyboard-first",
+      "candidate_records": [
+        [
+          "grid-single-tab-stop",
+          0.401
+        ],
+        [
+          "a11y-keyboard-operable",
+          0.324
+        ],
+        [
+          "desktop-keyboard-first",
+          0.324
+        ],
+        [
+          "a11y-skip-link",
+          0.324
+        ]
+      ],
+      "selected_record": "desktop-keyboard-first",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.focus_visible",
+      "priority": "required",
+      "reason": "desktop focus",
+      "candidate_records": [
+        [
+          "grid-single-tab-stop",
+          0.401
+        ],
+        [
+          "a11y-focus-visible",
+          0.324
+        ],
+        [
+          "desktop-keyboard-first",
+          0.324
+        ],
+        [
+          "a11y-skip-link",
+          0.324
+        ]
+      ],
+      "selected_record": "desktop-keyboard-first",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.accessible_names",
+      "priority": "recommended",
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "a11y-native-semantics",
+          0.299
+        ],
+        [
+          "a11y-labels-names",
+          0.245
+        ]
+      ],
+      "selected_record": "a11y-native-semantics",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.contrast",
+      "priority": "recommended",
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "desktop-status-bar-and-error-navigation",
+          0.338
+        ],
+        [
+          "a11y-nontext-contrast",
+          0.247
+        ],
+        [
+          "anti-fashion-over-usability",
+          0.243
+        ],
+        [
+          "a11y-contrast-text",
+          0.243
+        ]
+      ],
+      "selected_record": "desktop-status-bar-and-error-navigation",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "recommended",
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.207
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.shortcuts",
+      "priority": "recommended",
+      "reason": "desktop accelerators",
+      "candidate_records": [
+        [
+          "desktop-status-bar-and-error-navigation",
+          0.338
+        ],
+        [
+          "desktop-keyboard-first",
+          0.324
+        ],
+        [
+          "cta-toolbar-commands",
+          0.265
+        ]
+      ],
+      "selected_record": "desktop-status-bar-and-error-navigation",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "desktop.persist_workspace",
+      "priority": "recommended",
+      "reason": "desktop state persistence",
+      "candidate_records": [
+        [
+          "desktop-status-bar-and-error-navigation",
+          0.338
+        ],
+        [
+          "desktop-state-persistence",
+          0.207
+        ]
+      ],
+      "selected_record": "desktop-status-bar-and-error-navigation",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "layout.focal_hierarchy",
+      "priority": "recommended",
+      "reason": "related to data.exception_first",
+      "candidate_records": [
+        [
+          "layout-hierarchy-one-thing",
+          0.272
+        ],
+        [
+          "metadata-rich",
+          0.258
+        ],
+        [
+          "anti-oversized-hero-text",
+          0.245
+        ],
+        [
+          "typo-measure-and-rhythm",
+          0.243
+        ]
+      ],
+      "selected_record": "anti-oversized-hero-text",
+      "status": "covered",
+      "why": ""
+    }
+  ]
+}

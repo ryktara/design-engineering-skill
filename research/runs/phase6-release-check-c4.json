@@ -1,0 +1,215 @@
+{
+  "gates": {
+    "validator": {
+      "ok": false,
+      "summary": "validate_skill: FAIL — 248 records, 2 errors, 0 warnings; cases {'development': 885, 'regression': 54, 'heldout': 145, 'heldout-v2': 212, 'heldout-v3': 311, 'heldout-v4': 434, 'activation': 180}"
+    },
+    "development+regression": {
+      "ok": false,
+      "passed": 938,
+      "total": 939,
+      "failing": [
+        "validate-skill"
+      ]
+    },
+    "activation_proxy": {
+      "ok": true,
+      "precision": 1.0,
+      "recall": 1.0,
+      "fpr": 0.0,
+      "fnr": 0.0
+    },
+    "performance_sanity": {
+      "ok": true,
+      "load_ms": 10,
+      "search_ms": 391,
+      "direction_ms": 363
+    }
+  },
+  "heldout_v5": {
+    "passed": 73,
+    "total": 525,
+    "summary": {
+      "cases": 525,
+      "abstain_cases": 37,
+      "acceptable": 73,
+      "scope_correct": 440,
+      "abstain_correct": 30,
+      "scope_kinds": {
+        "in-scope": 466,
+        "partial": 10,
+        "abstain": 49
+      },
+      "platform_claims": 355,
+      "platform_correct": 274,
+      "platform_false_assignment": 9,
+      "platform_unknown": 72,
+      "mode_correct": 447,
+      "mode_fundamental_miss": 14,
+      "artifact_state_correct": 443,
+      "artifact_state_claims": 486,
+      "mean_concept_recall": 0.346,
+      "concept_recall_ge_half": 195,
+      "mean_critical_recall": 0.448,
+      "critical_cases": 488,
+      "mean_recommended_recall": 0.249,
+      "forbidden_violation_cases": 24,
+      "preservation_correct": 146,
+      "mean_required_concern_coverage": 0.562,
+      "mean_bundle_size": 2.768,
+      "mean_bundle_tokens": 424.068,
+      "empty_results": 0,
+      "status_counts": {
+        "CONFIDENT": 20,
+        "PARTIAL": 397,
+        "AMBIGUOUS": 0,
+        "ABSTAIN": 108
+      },
+      "by_category": {
+        "accessibility": {
+          "n": 45,
+          "ok": 0
+        },
+        "adversarial": {
+          "n": 40,
+          "ok": 30
+        },
+        "audit-review": {
+          "n": 50,
+          "ok": 10
+        },
+        "create": {
+          "n": 70,
+          "ok": 16
+        },
+        "desktop-native": {
+          "n": 30,
+          "ok": 0
+        },
+        "kiosk-public": {
+          "n": 25,
+          "ok": 0
+        },
+        "mobile-native": {
+          "n": 30,
+          "ok": 0
+        },
+        "polish": {
+          "n": 60,
+          "ok": 16
+        },
+        "refactor-fix": {
+          "n": 100,
+          "ok": 1
+        },
+        "responsive": {
+          "n": 40,
+          "ok": 0
+        },
+        "tv-media": {
+          "n": 35,
+          "ok": 0
+        }
+      },
+      "platform_resolved_correct": 274,
+      "platform_unresolved": 72,
+      "platform_resolved_wrong": 9,
+      "platform_resolution_rate": 0.797,
+      "expect_unknown_cases": 9,
+      "expect_unknown_correct": 8,
+      "critical_uncovered_cases": 26,
+      "quality_totals": {
+        "DIRECT": 312,
+        "SPECIFIC": 816,
+        "GENERIC": 223,
+        "INCIDENTAL": 0
+      },
+      "by_stress": {
+        "generic-guardrail": {
+          "n": 66,
+          "ok": 6
+        },
+        "none": {
+          "n": 397,
+          "ok": 65
+        },
+        "wrong-screen": {
+          "n": 62,
+          "ok": 2
+        }
+      }
+    },
+    "human_review": {
+      "n": 525,
+      "good": 190,
+      "partial": 111,
+      "bad": 116,
+      "correct_abstain": 45,
+      "wrong_abstain": 63,
+      "good_plus_partial_rate": 0.722,
+      "bad_rate": 0.278,
+      "defects": {
+        "contradicts-request": 2,
+        "generic": 57,
+        "missing-critical": 120,
+        "off-platform": 1,
+        "overlong": 7,
+        "should-abstain": 6,
+        "should-not-abstain": 35,
+        "wrong-product": 4,
+        "wrong-screen": 30
+      },
+      "generic_rate": 0.137,
+      "wrong_screen_rate": 0.072,
+      "wrong_product_rate": 0.01,
+      "missing_critical_rate": 0.288
+    },
+    "thresholds": {
+      "1_scope_ge_0.93": false,
+      "2_false_platform_le_0.05": true,
+      "3_platform_correct_ge_0.75": true,
+      "4_mode_ge_0.85": true,
+      "5_critical_recall_ge_0.80": false,
+      "6_concept_recall_ge_0.62": false,
+      "7_forbidden_le_0.05": true,
+      "8_human_good_plus_partial_ge_0.85": false,
+      "9_human_bad_le_0.15": false,
+      "10_generic_defect_le_0.12": false,
+      "11_wrong_screen_defect_le_0.08": true
+    },
+    "secondary": {
+      "resolution_rate": 0.797,
+      "unresolved_rate": 0.203,
+      "fundamental_mode_miss_le_0.10": true,
+      "empty_rate": 0.0,
+      "mean_bundle_size": 2.768,
+      "mean_bundle_tokens": 424.068,
+      "quality_totals": {
+        "DIRECT": 312,
+        "SPECIFIC": 816,
+        "GENERIC": 223,
+        "INCIDENTAL": 0
+      },
+      "by_stress": {
+        "generic-guardrail": {
+          "n": 66,
+          "ok": 6
+        },
+        "none": {
+          "n": 397,
+          "ok": 65
+        },
+        "wrong-screen": {
+          "n": 62,
+          "ok": 2
+        }
+      }
+    },
+    "primary_met": 5,
+    "primary_total": 11,
+    "mandatory_met": false,
+    "stable_candidate_blind_policy": false
+  },
+  "real_activation": "NOT RUN (pass --real-activation)",
+  "ok": false
+}

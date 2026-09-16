@@ -1,0 +1,147 @@
+{
+ "task": "p5-10",
+ "build": "50966e8e6184f31722a7b3c7f270a241dd0f7b68187492d0c971f7c79734e680",
+ "c1_recorded": {
+  "platform_expected": "tv",
+  "platform_resolved": [
+   "tv"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "create",
+   "refactor"
+  ],
+  "mode_resolved": [
+   "create"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "CONFIDENT",
+  "bundle_ids": [
+   "comp-player-controls",
+   "layout-split-player",
+   "comp-mini-player",
+   "tv-player-controls",
+   "tv-typography-distance",
+   "a11y-focus-visible",
+   "tv-dpad-axes",
+   "tv-focus-performance"
+  ],
+  "bundle_tokens": 1408,
+  "expected_concepts": [
+   "media.track_selection",
+   "interaction.selection_visible",
+   "a11y.dialog_focus",
+   "interaction.back_semantics",
+   "interaction.dpad_reachability",
+   "tv.player_autohide",
+   "interaction.focus_visible"
+  ],
+  "critical_concepts": [
+   "media.track_selection",
+   "interaction.selection_visible",
+   "interaction.back_semantics"
+  ],
+  "delivered_concepts": [
+   "a11y.accessible_names",
+   "interaction.back_semantics",
+   "interaction.dpad_reachability",
+   "interaction.focus_restore",
+   "interaction.focus_visible",
+   "media.live_channel_switching",
+   "media.track_selection",
+   "perf.focus_latency",
+   "perf.image_sizing",
+   "state.loading_empty_error",
+   "table.virtualization",
+   "tv.player_autohide",
+   "tv.safe_margins",
+   "tv.ten_foot_typography"
+  ],
+  "concept_recall": 0.714,
+  "critical_recall": 0.667,
+  "forbidden_delivered": [
+   "table.virtualization"
+  ],
+  "change_budget": "moderate"
+ },
+ "c2": {
+  "platform_expected": "tv",
+  "platform_resolved": [
+   "tv"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "create",
+   "refactor"
+  ],
+  "mode_resolved": [
+   "create"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "CONFIDENT",
+  "bundle_ids": [
+   "comp-tv-side-sheet",
+   "comp-player-controls",
+   "layout-split-player",
+   "comp-mini-player",
+   "tv-dpad-hold-pacing",
+   "a11y-color-not-only",
+   "impl-reuse-before-new",
+   "tv-focus-performance"
+  ],
+  "bundle_tokens": 1472,
+  "expected_concepts": [
+   "media.track_selection",
+   "interaction.selection_visible",
+   "a11y.dialog_focus",
+   "interaction.back_semantics",
+   "interaction.dpad_reachability",
+   "tv.player_autohide",
+   "interaction.focus_visible"
+  ],
+  "critical_concepts": [
+   "media.track_selection",
+   "interaction.selection_visible",
+   "interaction.back_semantics"
+  ],
+  "delivered_concepts": [
+   "a11y.accessible_names",
+   "a11y.color_not_only",
+   "a11y.dialog_focus",
+   "a11y.reduced_motion",
+   "interaction.back_semantics",
+   "interaction.dpad_reachability",
+   "interaction.focus_restore",
+   "interaction.focus_visible",
+   "interaction.selection_visible",
+   "media.track_selection",
+   "perf.focus_latency",
+   "perf.image_sizing",
+   "process.reuse_first",
+   "state.loading_empty_error",
+   "table.virtualization",
+   "tv.player_autohide",
+   "tv.safe_margins"
+  ],
+  "concept_recall": 1.0,
+  "critical_recall": 1.0,
+  "forbidden_delivered": [
+   "table.virtualization"
+  ],
+  "change_budget": "moderate"
+ }
+}

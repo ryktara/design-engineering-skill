@@ -1,0 +1,107 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:FleetDesk.ViewModels"
+        x:Class="FleetDesk.Views.MainWindow"
+        Title="FleetDesk"
+        Width="1440" Height="900"
+        MinWidth="960" MinHeight="600"
+        WindowStartupLocation="CenterScreen">
+
+  <Design.DataContext>
+    <vm:MainWindowViewModel />
+  </Design.DataContext>
+
+  <!-- Shell, and above it the window-wide unsaved-changes prompt (hidden unless a dispatch job is dirty and the user tries to leave it). -->
+  <Panel>
+
+  <!-- Navigation = classic menu bar + toolbar under it; status bar at the bottom. -->
+  <DockPanel LastChildFill="True" IsEnabled="{Binding !Dispatch.IsPromptOpen}">
+
+    <!-- Menu bar -->
+    <Border DockPanel.Dock="Top"
+            Background="{StaticResource SurfaceBrush}"
+            BorderBrush="{StaticResource LineBrush}"
+            BorderThickness="{StaticResource AppBorderBottom}">
+      <Menu>
+        <MenuItem Header="_File">
+          <MenuItem Header="_Refresh" Command="{Binding RefreshCommand}" InputGesture="F5" />
+          <MenuItem Header="_Settings..." Command="{Binding ShowSettingsCommand}" />
+          <Separator />
+          <MenuItem Header="E_xit" Command="{Binding ExitCommand}" InputGesture="Alt+F4" />
+        </MenuItem>
+        <MenuItem Header="_Vehicles">
+          <MenuItem Header="Vehicle _list" Command="{Binding ShowVehiclesCommand}" InputGesture="Ctrl+1" />
+          <MenuItem Header="Show _overdue for service only" ToggleType="CheckBox"
+                    IsChecked="{Binding Vehicles.OverdueOnly, Mode=TwoWay}" />
+          <MenuItem Header="_Clear filter" Command="{Binding Vehicles.ClearFilterCommand}" />
+        </MenuItem>
+        <MenuItem Header="_Dispatch">
+          <MenuItem Header="Dispatch _board" Command="{Binding ShowDispatchCommand}" InputGesture="Ctrl+2" />
+          <MenuItem Header="_Save job" Command="{Binding Dispatch.SaveCommand}" InputGesture="Ctrl+S" />
+          <MenuItem Header="_Discard changes" Command="{Binding Dispatch.CancelCommand}" />
+        </MenuItem>
+        <MenuItem Header="_Help">
+          <MenuItem Header="_About FleetDesk" Command="{Binding AboutCommand}" />
+        </MenuItem>
+      </Menu>
+    </Border>
+
+    <!-- Toolbar -->
+    <Border DockPanel.Dock="Top" Classes="bar" BorderThickness="{StaticResource AppBorderBottom}">
+      <StackPanel Orientation="Horizontal" Spacing="{StaticResource Space1}">
+        <Button Classes="toolbar" Content="Vehicles" Command="{Binding ShowVehiclesCommand}" />
+        <Button Classes="toolbar" Content="Dispatch" Command="{Binding ShowDispatchCommand}" />
+        <Button Classes="toolbar" Content="Settings" Command="{Binding ShowSettingsCommand}" />
+        <Border Width="1" Margin="4,4" Background="{StaticResource LineBrush}" />
+        <Button Classes="toolbar" Content="Refresh" Command="{Binding RefreshCommand}" />
+        <Button Classes="toolbar" Content="Save job" Command="{Binding Dispatch.SaveCommand}" />
+      </StackPanel>
+    </Border>
+
+    <!-- Status bar -->
+    <Border DockPanel.Dock="Bottom" Classes="bar" BorderThickness="{StaticResource AppBorderTop}">
+      <DockPanel LastChildFill="True">
+        <TextBlock DockPanel.Dock="Right" Classes="muted" Text="{Binding DepotLabel}" VerticalAlignment="Center" />
+        <TextBlock DockPanel.Dock="Right" Classes="muted" Text="{Binding FleetSummary}" VerticalAlignment="Center"
+                   Margin="{StaticResource Pad2}" />
+        <TextBlock Classes="muted" Text="{Binding StatusText}" VerticalAlignment="Center" />
+        <!-- Save state region: blank when nothing is dirty. -->
+        <TextBlock Classes="muted" Text="{Binding UnsavedLabel}" VerticalAlignment="Center"
+                   Margin="{StaticResource Pad2}" />
+      </DockPanel>
+    </Border>
+
+    <!-- Content -->
+    <ContentControl Content="{Binding CurrentView}" Margin="{StaticResource Pad2}" />
+
+  </DockPanel>
+
+  <!--
+    Unsaved-changes prompt (modal). The shell behind is disabled so Tab cannot leave the
+    prompt; Enter = Save (default, non-destructive), Esc = Keep editing. Focus moves into
+    the prompt and is restored afterwards in MainWindow.axaml.cs.
+  -->
+  <Border IsVisible="{Binding Dispatch.IsPromptOpen}" Background="{StaticResource ScrimBrush}">
+    <Border.KeyBindings>
+      <KeyBinding Gesture="Enter" Command="{Binding Dispatch.PromptSaveCommand}" />
+      <KeyBinding Gesture="Escape" Command="{Binding Dispatch.PromptKeepEditingCommand}" />
+    </Border.KeyBindings>
+    <Border Classes="surface" Width="480" Padding="{StaticResource Pad3}"
+            HorizontalAlignment="Center" VerticalAlignment="Center"
+            AutomationProperties.Name="{Binding Dispatch.PromptTitle}"
+            AutomationProperties.HelpText="{Binding Dispatch.PromptMessage}">
+      <StackPanel Spacing="{StaticResource Space2}">
+        <TextBlock Classes="section" Text="{Binding Dispatch.PromptTitle}" />
+        <TextBlock Text="{Binding Dispatch.PromptMessage}" TextWrapping="Wrap" />
+        <TextBlock Classes="muted" Text="Discard cannot be undone." />
+        <Grid ColumnDefinitions="*,Auto,Auto,Auto">
+          <Button Grid.Column="1" Content="Keep editing" Command="{Binding Dispatch.PromptKeepEditingCommand}" MinWidth="96" Margin="{StaticResource MarginRight1}" />
+          <Button Grid.Column="2" Content="Discard" Command="{Binding Dispatch.PromptDiscardCommand}" MinWidth="96" Margin="{StaticResource MarginRight1}" />
+          <Button x:Name="PromptSaveButton" Grid.Column="3" Classes="accent" Content="Save" Command="{Binding Dispatch.PromptSaveCommand}" MinWidth="96" />
+        </Grid>
+      </StackPanel>
+    </Border>
+  </Border>
+
+  </Panel>
+</Window>

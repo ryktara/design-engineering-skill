@@ -1,0 +1,131 @@
+{
+  "task": "p6-05",
+  "project": "p3-react-dashboard-polish",
+  "platform_expected": "web",
+  "platform_resolved": "web",
+  "platform_correct": "yes",
+  "stack": "react 18 + esbuild, hand-rolled CSS tokens",
+  "existing_ui": true,
+  "new_screen": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": ["review", "accessibility", "audit"],
+  "mode_resolved": ["accessibility", "audit", "review"],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "low",
+  "render_mode": "html",
+  "screenshots": [
+    "render/first-1280x800.png",
+    "render/first-390x844.png",
+    "render/first-after-ack-1280x800.png",
+    "render/final-1280x800.png",
+    "render/final-390x844.png",
+    "render/final-after-ack-1280x800.png",
+    "render/kbd-focus-alerts.png"
+  ],
+  "context_detection": {
+    "navigation": "yes",
+    "theme": "yes",
+    "typography": "partial",
+    "surfaces": "yes",
+    "spacing": "partial"
+  },
+  "preservation": {
+    "navigation": true,
+    "theme": true,
+    "typography": true,
+    "component_reuse": true,
+    "unjustified_structural_change": 0
+  },
+  "expected_concepts": [
+    "a11y.accessible_names",
+    "interaction.focus_restore",
+    "a11y.live_status",
+    "a11y.color_not_only",
+    "a11y.contrast",
+    "a11y.semantics",
+    "interaction.keyboard_navigation",
+    "interaction.focus_visible"
+  ],
+  "critical_concepts": ["a11y.accessible_names", "interaction.focus_restore", "a11y.live_status"],
+  "delivered_concepts": [
+    "a11y.accessible_names",
+    "a11y.color_not_only",
+    "a11y.contrast",
+    "a11y.live_status",
+    "a11y.semantics",
+    "data.exception_first",
+    "interaction.keyboard_navigation",
+    "interaction.selection_visible",
+    "layout.focal_hierarchy",
+    "layout.one_primary_action",
+    "perf.layout_shift",
+    "touch.gestures_discoverable"
+  ],
+  "concept_recall": 0.75,
+  "critical_recall": 0.667,
+  "concept_misses": [
+    {"concept": "interaction.focus_restore", "layer": "expected-concepts"},
+    {"concept": "interaction.focus_visible", "layer": "bundle-selection"}
+  ],
+  "first_render_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+  "final_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+  "iterations": 0,
+  "guidance_relevant": 3,
+  "guidance_partial": 2,
+  "guidance_offtarget": 2,
+  "bad_guidance": [
+    {"record": "comp-toast-notification", "category": "wrong-screen", "why": "only core record; toast/snackbar/banner placement and duration guidance for an inline alerts list. Its live-region line was the single useful part."},
+    {"record": "layout-hierarchy-one-thing", "category": "generic", "why": "dashboard focal-point advice; nothing actionable in an accessibility review of one panel."},
+    {"record": "interaction-drag-drop", "category": "wrong-screen", "why": "no drag and drop in the alerts panel; entered only as a GENERIC carrier for a11y.live_status and interaction.keyboard_navigation while SPECIFIC candidates a11y-live-status and a11y-keyboard-operable existed."},
+    {"record": "a11y-skip-link", "category": "wrong-screen", "why": "page-level bypass guidance; the skip link already exists in App.jsx. Carried a11y.semantics, which backed role=list."},
+    {"record": "<bundle>", "category": "missing-critical", "why": "interaction.focus_restore (the panel's worst defect: the activated Acknowledge button disappears and focus falls to body) is absent from the bundle; interaction.focus_visible was demanded and dropped."}
+  ],
+  "layer_review": {
+    "core": ["comp-toast-notification"],
+    "critical": ["layout-hierarchy-one-thing", "interaction-drag-drop", "a11y-skip-link", "a11y-color-not-only", "a11y-contrast-text", "a11y-labels-names"],
+    "optional": [],
+    "optional_useful": 0,
+    "optional_noise": 0
+  },
+  "guidance_used": ["a11y-labels-names", "comp-toast-notification", "a11y-skip-link", "a11y-color-not-only", "a11y-contrast-text"],
+  "guidance_ignored": [
+    {"id": "layout-hierarchy-one-thing", "why": "dashboard focal-point/hierarchy advice; the task is an accessibility review of one existing panel at budget low"},
+    {"id": "interaction-drag-drop", "why": "the alerts panel has no drag and drop; the two concepts it carried were implemented from the codebase, not from the record"}
+  ],
+  "unjustified_direction_slots": 1,
+  "process_records_needed": false,
+  "skill_effect": "helped",
+  "guidance_tokens": 931,
+  "misses": [
+    {"layer": "expected-concepts", "what": "interaction.focus_restore never demanded for a web accessibility review of a list whose action control disappears on activation"},
+    {"layer": "candidate-compatibility", "what": "interaction-drag-drop and comp-toast-notification accepted as GENERIC carriers for a11y.live_status / interaction.keyboard_navigation while SPECIFIC candidates a11y-live-status and a11y-keyboard-operable were available"},
+    {"layer": "bundle-selection", "what": "interaction.focus_visible demanded (recommended) with candidates focus-ring-standard / a11y-focus-visible present, dropped by the cap"},
+    {"layer": "project-context", "what": "typography UNKNOWN with evidence 'no font family declaration found' although --font-ui is declared and applied; spacing UNKNOWN with a false 'tailwind spacing classes (5)' signal against an explicit 4/8/12/16/24/32/48 token scale"},
+    {"layer": "direction", "what": "layout slot emitted as new (table-first, virtualised) on an existing UI at budget low for a review task"}
+  ],
+  "knowledge_gaps": [
+    "interaction.focus_restore is carried only by TV / kiosk / modal records (comp-tv-rail, comp-mini-player, media-resume-and-details, comp-kiosk-keypad, comp-tv-side-sheet, layout-rails, layout-immersive-rails, a11y-modal-dialog, a11y-tv-focus-always). No web, non-modal record covers 'the control you activated disappears or the row re-sorts - where does focus go'; advise.py search -k 12 on this sentence returns none of them."
+  ],
+  "regressions": [
+    {"query": "Review the alerts panel against our accessibility checklist.", "expect": "bundle delivers interaction.focus_restore and interaction.focus_visible, and prefers a11y-live-status / a11y-keyboard-operable over interaction-drag-drop as carriers"},
+    {"query": "The Acknowledge button disappears when you press it and the row moves - check the keyboard experience.", "expect": "focus-management guidance for a web list (where focus goes when the activated control is removed), not only modal/TV focus records"},
+    {"query": "any web accessibility review at budget low on an existing UI", "expect": "unjustified_direction_slots == 0; no layout slot emitted as 'new'"},
+    {"query": "inspect_project on p3-react-dashboard-polish", "expect": "typography KNOWN (--font-ui / Inter stack) and spacing KNOWN (4/8/12/16/24/32/48), no Tailwind signal"}
+  ],
+  "tags": [
+    "concept-miss",
+    "ranking-miss",
+    "knowledge-gap",
+    "direction-mismatch",
+    "context-detection-miss",
+    "skill-helped",
+    "preservation-ok"
+  ],
+  "build_hash_start": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947",
+  "build_hash_end": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947"
+}

@@ -1,0 +1,122 @@
+{
+  "brand": "VoiceOver reads the streak ring as \"image\".",
+  "fingerprint": {
+    "navigation_model": "bottom-tabs",
+    "surface_strategy": "elevated",
+    "card_geometry": "elevated",
+    "corner_language": "medium",
+    "color_strategy": "neutral-plus-accent",
+    "image_strategy": "thumbnails"
+  },
+  "direction": {
+    "navigation": "nav-bottom-tabs",
+    "layout": null,
+    "density": null,
+    "surface": "surface-elevated-cards",
+    "cards": null,
+    "typography": null,
+    "color": "color-neutral-accent",
+    "motion": null,
+    "focus": null,
+    "cta": null,
+    "imagery": "imagery-thumbnails",
+    "icon": null,
+    "metadata": null
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "accessibility",
+      "audit"
+    ],
+    "platform": [
+      "mobile"
+    ],
+    "input": [
+      "touch"
+    ],
+    "product": [],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "swiftui"
+    ],
+    "density": null,
+    "components": [],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "accessibility"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "low",
+    "scope": {
+      "domain": "UI_ACCESSIBILITY",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "accessibility",
+        "visual"
+      ],
+      "change_scope": "unknown",
+      "utterance": "observation",
+      "preserve": []
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "accessibility: explicit: voiceover",
+      "accessibility: accessibility defect on existing UI",
+      "audit: diagnose the reported defect"
+    ],
+    "project_context": {
+      "navigation": "bottom-tabs (KNOWN)",
+      "theme": "dual-theme (KNOWN)",
+      "surfaces": "elevated (INFERRED)",
+      "radius": "small (INFERRED)",
+      "typography": "custom (KNOWN)"
+    },
+    "known": [
+      "platform=mobile",
+      "stack=swiftui",
+      "mode=accessibility",
+      "project_navigation=bottom-tabs",
+      "project_theme=dual-theme",
+      "project_typography=custom"
+    ],
+    "inferred": [
+      "input=touch",
+      "mode=audit",
+      "project_surfaces=elevated",
+      "project_radius=small"
+    ],
+    "missing": [],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

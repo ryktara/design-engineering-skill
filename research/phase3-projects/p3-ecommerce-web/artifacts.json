@@ -1,0 +1,82 @@
+{
+  "case": "p3-ecommerce-web",
+  "platform": "web (mobile web target)",
+  "stack": "html-css + vanilla js",
+  "rendered": true,
+  "render_mode": "html",
+  "viewports": ["1440x900", "390x844"],
+  "screenshots": [
+    "render/first-product-desktop.png",
+    "render/first-product-desktop-full.png",
+    "render/first-product-desktop-error.png",
+    "render/first-product-phone.png",
+    "render/first-product-phone-full.png",
+    "render/first-product-phone-error.png",
+    "render/first-checkout-desktop.png",
+    "render/first-checkout-desktop-full.png",
+    "render/first-checkout-desktop-error.png",
+    "render/first-checkout-phone.png",
+    "render/first-checkout-phone-full.png",
+    "render/first-checkout-phone-error.png",
+    "render/final-product-desktop.png",
+    "render/final-product-desktop-full.png",
+    "render/final-product-desktop-error.png",
+    "render/final-product-phone.png",
+    "render/final-product-phone-full.png",
+    "render/final-product-phone-error.png",
+    "render/final-checkout-desktop.png",
+    "render/final-checkout-desktop-full.png",
+    "render/final-checkout-desktop-error.png",
+    "render/final-checkout-phone.png",
+    "render/final-checkout-phone-full.png",
+    "render/final-checkout-phone-error.png"
+  ],
+  "first_render_defects": 11,
+  "final_defects": 4,
+  "iterations": 2,
+  "guidance_relevant": 3,
+  "guidance_partial": 2,
+  "guidance_offtarget": 2,
+  "knowledge_gaps": [
+    "product-detail-page pattern (variant radios, out-of-stock chip, low-stock note, size-required error on add-to-cart, quantity stepper, price anchoring, reviews summary/histogram, size-guide dialog)",
+    "one-page checkout pattern (order summary placement desktop vs phone, autocomplete map for address forms, shipping radio cards, place-order shows total, secure header)",
+    "cart-add feedback (polite live region + toast with checkout link)"
+  ],
+  "ranking_misses": [
+    "cta-sticky-bar (in search top 3 and direction slot, absent from guidance bundle)",
+    "nav-top-bar (menu-button collapse rule; absent from guidance)",
+    "imagery-thumbnails / imagery-hero (width/height + CLS rule; absent from guidance)",
+    "dir-product-marketing-site selected as core over transactional PDP guidance",
+    "layout-master-detail ranked first for a 'detail' screen that is a PDP"
+  ],
+  "requirements_errors": [
+    "platform: 'phones' mapped to a second platform (mobile) -> status AMBIGUOUS; should be mobile web",
+    "environment: 'outdoor gear' (product category) mapped to environment=outdoor",
+    "stack: MISSING although project has html/css/js files (inspect_project does not detect plain html-css)"
+  ],
+  "inspection_misses": ["stack html-css", "platform web", "product hints ecommerce", "fonts", "inline svg icons"],
+  "interaction": {
+    "file": "05-interaction.json",
+    "first_run": "05-interaction-first.json",
+    "all_pass": true,
+    "keyboard_add_to_cart": true,
+    "keyboard_checkout_submit": true,
+    "aria_live_errors_announced": true,
+    "focus_visible_all_stops": true,
+    "touch_targets_ge_44_phone": true,
+    "cls_phone": 0,
+    "images_have_width_height": true,
+    "reduced_motion_respected": true
+  },
+  "tags": [
+    "requirements-miss",
+    "vocabulary-gap",
+    "ranking-miss",
+    "knowledge-gap",
+    "direction-invariant",
+    "render-defect-fixed",
+    "render-defect-remaining",
+    "tooling-limit",
+    "skill-helped"
+  ]
+}

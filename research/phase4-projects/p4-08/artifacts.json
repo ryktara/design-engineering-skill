@@ -1,0 +1,24 @@
+{"task": "p4-08", "project": "p3-erp-desktop-dotnet", "platform": "desktop", "stack": "wpf", "existing_ui": true, "mode": "create (new dialog in an existing window)", "change_budget": "moderate",
+ "render_mode": "native",
+ "screenshots": ["render/before-ready-1440x900.png", "render/first-ready-1440x900.png", "render/first-dialog.png", "render/first-dialog-edited.png", "render/first-after-ok.png",
+   "render/final-ready-1440x900.png", "render/final-dialog.png", "render/final-dialog-crop.png", "render/final-dialog-edited.png", "render/final-dialog-edited-crop.png", "render/final-after-ok.png"],
+ "context_detection": {"navigation": "yes", "theme": "yes", "typography": "no", "surfaces": "yes", "spacing": "yes"},
+ "preservation": {"navigation": true, "theme": true, "typography": true, "component_reuse": true, "unjustified_structural_change": 0},
+ "first_render_defects": {"visual": 1, "interaction": 1, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+ "final_defects": {"visual": 1, "interaction": 0, "accessibility": 0, "platform": 1, "existing-system-mismatch": 1, "implementation-bug": 0},
+ "iterations": 3, "guidance_relevant": 3, "guidance_partial": 1, "guidance_offtarget": 3,
+ "misses": [
+   {"layer": "bundle-selection", "what": "desktop-keyboard-first (every dialog has a default and cancel button) not selected for a dialog task; a11y-keyboard-operable and focus-ring-standard (ranks 8-9) not selected"},
+   {"layer": "concerns", "what": "data-display and states marked required for a settings dialog → three off-target guardrails (grid-single-tab-stop, data-tables-numeric, layout-states)"},
+   {"layer": "expected-concepts", "what": "no column-chooser concept (hideable vs essential columns, restore defaults, relation to width-based column priority)"},
+   {"layer": "project-adaptation", "what": "stacks/wpf.md lacks focus return after ShowDialog (re-resolve the grid cell) and FocusVisualStyle for stock controls inside a retemplated app"},
+   {"layer": "direction", "what": "cards = bordered cards while the preserved surface is bordered panes ('no rounded card containers inside panes')"},
+   {"layer": "project-adaptation", "what": "inspect_project: typography UNKNOWN on a WPF project with FontFamily resources"}
+ ],
+ "knowledge_gaps": ["column chooser / hidden-columns settings pattern", "WPF modal dialog focus return and FocusVisualStyle for stock controls"],
+ "regressions": [
+   {"query": "add a settings dialog to a WPF window", "expect": "desktop-keyboard-first and a11y-modal-dialog in the bundle; no numeric-table or empty/loading guardrails"},
+   {"query": "let users choose which grid columns are hidden by default", "expect": "a column-chooser record: essentials locked and labelled, restore defaults, interaction with responsive column priority"},
+   {"query": "dialog in a bordered-panes desktop app", "expect": "direction cards slot = none"}
+ ],
+ "tags": ["context-detection-miss", "ranking-miss", "knowledge-gap", "direction-mismatch", "render-defect-fixed", "render-defect-remaining", "tooling-limit", "skill-helped", "preservation-ok"]}

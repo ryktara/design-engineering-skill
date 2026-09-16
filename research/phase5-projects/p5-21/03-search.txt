@@ -1,0 +1,85 @@
+## design-engineering search: Add a weekly summary card to the top of the Today screen.
+status=PARTIAL modes=['create'] platforms={} inputs={} products={} density=None stacks=[] screens=[] negatives=[]
+facets required=['component', 'layout', 'navigation', 'direction'] unmet=['direction'] diversity=0.75
+MISSING: platform: not stated and not detectable from a repository; product: product family / primary user task not stated; brand: no brand assets, guideline, or character description available; stack: implementation stack not stated and no repository evidence
+
+### No card containers (dividers and spacing)  `card-none`  [pattern/cards; layout] score 0.428 · heuristic
+Remove nested rounded rectangles; group with whitespace and a heading; use a single hairline between rows; only wrap something in a card when it needs its own boundary for tapping, dragging, or elevation. This is the biggest single lever against generic AI layouts.
+- use when: Most screens: sections separated by headings, spacing, and hairline dividers; cards reserved for genuinely tappable objects.
+- avoid when: When the item boundary is itself the target and items are visually heterogeneous (then a card is right).
+- incompatible with: surface-elevated-cards
+- why: lexical 0.357, structural 0.36 (mode create)
+
+### Cards inside cards, everything in a rounded box  `anti-card-everything`  [antipattern/generic-ai; anti-pattern] score 0.413 · heuristic
+Justify each container: does the boundary mean something (tappable object, elevation, grouping that spacing cannot express)? If not, replace with headings, spacing, and hairline dividers. Never nest a card in a card; never wrap a single KPI number in a card just to make a grid.
+- use when: Reviewing any layout where sections, lists, forms, and even single lines are wrapped in bordered/elevated containers.
+- avoid when: A card is fine when the item is a discrete tappable object or needs elevation (drag, overlay).
+- why: lexical 0.342, structural 0.5 (mode create)
+
+### Top bar navigation  `nav-top-bar`  [pattern/navigation; navigation/platform] score 0.381 · heuristic
+Put primary destinations in a single horizontal bar; collapse to a menu button below the container width rather than hiding destinations one by one. The active item must be marked by more than colour (underline, weight, or aria-current). On narrow widths, the bar keeps the brand mark and one primary action visible.
+- use when: Five or fewer top-level destinations, content-first pages, public or marketing surfaces where a persistent side rail would steal width.
+- avoid when: Deep hierarchies with many peer sections, admin tools that need permanent wayfinding, or anything on TV.
+- incompatible with: nav-left-rail, nav-tv-side, nav-tv-top-tabs, nav-bottom-tabs
+- why: lexical 0.383, structural 0.2 (mode create)
+
+### TV top tabs  `nav-tv-top-tabs`  [pattern/navigation; navigation/platform] score 0.375 · platform-standard
+Tabs sit in the top safe area; Back from any rail jumps focus to the active tab and scrolls to top; focused tab shows the underline/pill with ≥3:1 contrast and the label stays visible. Switching tabs does not move focus into content until the user presses DOWN.
+- use when: Two to five sections, when the left edge must stay free for immersive artwork or when the brand wants a browsing feel closer to a broadcast guide.
+- avoid when: More than five sections, or when rows below are long (UP from deep rows must scroll back to tabs predictably; that gets slow).
+- incompatible with: nav-tv-side, nav-top-bar, nav-left-rail, nav-bottom-tabs
+- why: lexical 0.397, structural 0.26 (mode create)
+
+### Product detail page (PDP)  `comp-product-detail-page`  [component/detail; component/platform] score 0.372 · heuristic
+Above the fold on every viewport: product name, price (with tabular figures and any discount stated in words), primary image, variant selectors and one add-to-cart action; variant choice is a radio group with visible labels and a disabled-but-visible state for out-of-stock options; the add-to-cart button is sticky on phones without covering focused controls; shipping, returns and stock are stated next to the price, not in a tab; the gallery has fixed aspect boxes (no layout shift), keyboard-operable thumbnails and alt text per image; reviews show the distribution and a count, and stars always have a text value; secondary actions (wishlist, share, size guide) never compete visually with add-to-cart; the size guide opens as a dialog that returns focus.
+- use when: Selling a physical or digital product: gallery, variants, price, availability, add-to-cart, trust and shipping information, reviews.
+- avoid when: Catalog/listing pages (use list + filters) or marketing landing pages (hero + narrative).
+- why: lexical 0.464, structural 0.26 (mode create)
+
+### Bordered cards  `card-bordered`  [pattern/cards; layout/platform] score 0.355 · heuristic
+Border token with measured contrast, 6–8 px radius, header row with title and one action, body with a clear hierarchy; selectable cards (plans) use a stronger border + check mark, never colour alone.
+- use when: Settings pages, integration lists, plan pickers: discrete objects on a light canvas where a 1 px border (≥3:1) delineates without elevation.
+- avoid when: Nested inside other cards or panels; on dark themes where borders vanish (use tonal steps).
+- incompatible with: surface-elevated-cards, surface-imagery-backed, card-none
+- why: lexical 0.408, structural 0.2 (mode create)
+
+### Moderate metadata with a hierarchy  `metadata-moderate`  [pattern/metadata; layout] score 0.327 · heuristic
+Rank facts: title, then the deciding fact (price/status), then supporting facts in a muted style; status via badge + text; align numbers; no icon per fact.
+- use when: Lists and cards where 3–4 facts help the choice (price, rating, date, status) and can be typographically ranked.
+- avoid when: When facts exceed four (use a table or detail) or when only one matters.
+- incompatible with: metadata-minimal, metadata-rich
+- why: lexical 0.173, structural 0.36 (mode create)
+
+### Elevated cards as the primary container  `surface-elevated-cards`  [pattern/surface; layout/platform] score 0.311 · platform-standard
+One elevation level for resting cards, one for pressed/dragged; the whole card is the target with a single accessible name; never nest a card inside a card; cards in a grid share aspect ratio and padding. If more than ~30% of a screen is card borders, switch to dividers.
+- use when: Each item is a self-contained, tappable object (a product, a post, a course) and the card boundary is also the touch target.
+- avoid when: Dashboards and tables (cards inside cards), text-heavy content, dense desktop tools, or when the card contains a single line of text.
+- incompatible with: surface-flat-tonal, surface-bordered-panes, layout-table-first, layout-three-pane
+- why: lexical 0.329, structural 0.2 (mode create)
+
+### Media card (poster/thumbnail)  `comp-media-card`  [component/media-card; component/platform] score 0.302 · platform-standard
+Fixed aspect, image with placeholder + title fallback, title below (1–2 lines, ellipsis), one status overlay max (progress bar, live badge, new), whole card is one focusable/tappable element with an accessible name (title + status), TV focus = scale + border/glow, hover on web = subtle lift, touch = pressed state; no inner buttons on TV.
+- use when: Items recognised by artwork in rails, grids, and continue-watching rows.
+- avoid when: Text-recognised items; dense lists.
+- incompatible with: layout-table-first
+- why: lexical 0.337, structural 0.26 (mode create)
+
+### Focus is the action (TV)  `cta-focus-selects`  [pattern/cta; layout/platform] score 0.288 · platform-standard
+No 'button-like' cards with an inner button; the whole card is focusable and selectable. Detail screen: ≤4 actions in one row, first focus on Play/Resume, LEFT/RIGHT between them, DOWN to rails. Long press or a Menu key can open secondary actions. Never require diagonal or multi-key gestures.
+- use when: TV browse/detail screens: the focused card is the call to action, SELECT opens, and detail screens expose a small row of focusable buttons (Play, Resume, Add to list) with a deterministic first focus.
+- avoid when: Never on touch/pointer platforms.
+- incompatible with: cta-single-primary, cta-toolbar-commands, cta-sticky-bar
+- why: lexical 0.165, structural 0.26 (mode create)
+
+### Form labels, errors, and recovery  `a11y-forms-errors`  [rule/forms; component] score 0.285 · accessibility-requirement
+Label above or beside, never placeholder-only; error message next to the field, programmatically associated (aria-describedby / accessibilityHint / AutomationProperties.HelpText), with what is wrong and how to fix; move focus to the first error or the error summary on submit; keep entered data; autocomplete attributes for personal data; allow paste and password managers.
+- use when: Every form: visible labels, required markers in text, inline errors linked to fields, error summary for long forms, no data loss on error.
+- avoid when: Never validate on every keystroke for fields the user has not finished; validate on blur and on submit.
+- why: lexical 0.109, structural 0.5 (mode create)
+
+### Windows: Fluent layering and materials, sparingly  `desktop-fluent-materials`  [rule/surface; layout/platform] score 0.271 · platform-standard
+Use the system resources (SystemControl*, Layer/Card brushes, ControlCornerRadius) so light/dark/high-contrast themes work; Mica for the window, Acrylic only for transient surfaces; verify high-contrast mode renders every state.
+- use when: WinUI/WPF apps aiming for Windows 11 fit: Mica on the window backdrop, layer/card surfaces, 8 px corner radius on top-level, 4 px on nested.
+- avoid when: Acrylic on large content areas (performance, readability), custom title bars without full keyboard/accessibility support, non-Fluent controls mixed with Fluent ones.
+- incompatible with: surface-glass
+- why: lexical 0.165, structural 0.4 (mode create)

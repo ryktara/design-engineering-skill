@@ -1,0 +1,28 @@
+{
+  "platform": "tv",
+  "artifact_state": "existing",
+  "acceptable_modes": ["refactor", "polish", "audit"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "tv.time_navigation",
+    "tv.epg_pinned_channels",
+    "navigation.orientation_and_back",
+    "interaction.focus_visible",
+    "interaction.dpad_reachability",
+    "perf.focus_latency"
+  ],
+  "critical_concepts": [
+    "tv.time_navigation",
+    "navigation.orientation_and_back",
+    "interaction.focus_visible"
+  ],
+  "forbidden_concepts": [
+    "media.track_selection",
+    "tv.player_autohide",
+    "touch.minimum_target",
+    "touch.gestures_discoverable",
+    "media.details_play_first"
+  ],
+  "preservation": ["navigation", "theme", "typography"],
+  "reviewer_reading": "GuideScreen in js/app.js scrolls the time header and all cell tracks by whole 30-minute slots (headerSlot * 240px) and re-snaps headerSlot to the slot containing the focused programme's start. Consequences: (a) the timeline lurches a full half-hour column per focus move instead of scrolling the minimum needed to keep the focused cell in view; (b) the clamp headerSlot = slots - 6 breaks the invariant so the focused cell can end up off-screen at the right edge; (c) there is no time context that survives the jump (no visible 'now' anchor when scrolled away, no marker of where focus sits on the timeline), which is the 'you lose where you were' part. Fix should be continuous pixel scrolling with keep-in-view margins plus a persistent time/orientation anchor, preserving the pinned channel column, tokens, type scale and d-pad model."
+}

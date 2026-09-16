@@ -1,0 +1,9271 @@
+[
+{
+"id": "anti-card-everything",
+"kind": "antipattern",
+"category": "generic-ai",
+"concerns": [
+"anti-pattern"
+],
+"concepts": [
+"layout.no_nested_cards"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 278,
+"keywords": [
+"cards",
+"nested cards",
+"rounded boxes",
+"card grid",
+"generic"
+],
+"title": "Cards inside cards, everything in a rounded box"
+},
+{
+"id": "anti-gradient-default",
+"kind": "antipattern",
+"category": "generic-ai",
+"concerns": [
+"anti-pattern"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 266,
+"keywords": [
+"gradient",
+"purple",
+"blob",
+"glow",
+"gradient text"
+],
+"title": "Purple/blue gradients and gradient blobs by default"
+},
+{
+"id": "anti-glass-everywhere",
+"kind": "antipattern",
+"category": "generic-ai",
+"concerns": [
+"anti-pattern"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "high"
+},
+"environment": [],
+"guidance_chars": 214,
+"keywords": [
+"glassmorphism",
+"frosted",
+"blur",
+"translucent"
+],
+"title": "Glassmorphism without a reason"
+},
+{
+"id": "anti-pill-everything",
+"kind": "antipattern",
+"category": "generic-ai",
+"concerns": [
+"anti-pattern"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 204,
+"keywords": [
+"pills",
+"chips",
+"badges",
+"rounded-full",
+"corner radius"
+],
+"title": "Pills for everything"
+},
+{
+"id": "anti-icon-per-heading",
+"kind": "antipattern",
+"category": "generic-ai",
+"concerns": [
+"anti-pattern"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 237,
+"keywords": [
+"icons",
+"decorative icons",
+"emoji icons",
+"feature grid",
+"icon circle"
+],
+"title": "Decorative icon next to every heading/feature"
+},
+{
+"id": "anti-hero-template",
+"kind": "antipattern",
+"category": "generic-ai",
+"concerns": [
+"anti-pattern"
+],
+"concepts": [],
+"platform": [
+"web"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"marketing",
+"ecommerce",
+"saas"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 291,
+"keywords": [
+"landing template",
+"hero",
+"features grid",
+"testimonials",
+"generic landing",
+"landing page",
+"landing"
+],
+"title": "Identical landing skeleton (hero + 3 features + testimonials + CTA)"
+},
+{
+"id": "anti-oversized-hero-text",
+"kind": "antipattern",
+"category": "generic-ai",
+"concerns": [
+"anti-pattern"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 233,
+"keywords": [
+"huge text",
+"display size",
+"big numbers",
+"bold everything"
+],
+"title": "Oversized display text and 'big number' KPIs everywhere"
+},
+{
+"id": "anti-generic-sidebar-dashboard",
+"kind": "antipattern",
+"category": "generic-ai",
+"concerns": [
+"anti-pattern"
+],
+"concepts": [],
+"platform": [
+"web",
+"desktop"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"saas",
+"erp",
+"finance"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 343,
+"keywords": [
+"dashboard",
+"sidebar",
+"kpi cards",
+"generic saas",
+"admin template"
+],
+"title": "The default SaaS dashboard (sidebar + 4 KPI cards + chart + table)"
+},
+{
+"id": "anti-style-before-product",
+"kind": "antipattern",
+"category": "process",
+"concerns": [
+"anti-pattern"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 248,
+"keywords": [
+"style first",
+"process",
+"context first",
+"mood board"
+],
+"title": "Choosing a visual style before understanding product, user, and platform"
+},
+{
+"id": "anti-fashion-over-usability",
+"kind": "antipattern",
+"category": "process",
+"concerns": [
+"anti-pattern"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 211,
+"keywords": [
+"neumorphism",
+"brutalism",
+"low contrast",
+"thin fonts",
+"trend",
+"grey on grey",
+"gray on gray",
+"light grey text"
+],
+"title": "Trend aesthetics at the cost of usability"
+},
+{
+"id": "anti-scroll-animation-everything",
+"kind": "antipattern",
+"category": "generic-ai",
+"concerns": [
+"anti-pattern"
+],
+"concepts": [],
+"platform": [
+"web",
+"mobile"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"marketing",
+"content",
+"ecommerce"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 235,
+"keywords": [
+"scroll animation",
+"fade up",
+"parallax",
+"stagger",
+"aos"
+],
+"title": "Scroll-triggered reveals on every section, parallax by default"
+},
+{
+"id": "anti-desktop-scaled-to-tv",
+"kind": "antipattern",
+"category": "platform",
+"concerns": [
+"anti-pattern"
+],
+"concepts": [],
+"platform": [
+"tv"
+],
+"input": [
+"remote"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 215,
+"keywords": [
+"tv port",
+"scaled desktop",
+"tv layout",
+"leanback",
+"scale up",
+"enlarge",
+"enlarged",
+"same layout"
+],
+"title": "A desktop or mobile layout enlarged for TV"
+},
+{
+"id": "anti-mobile-desktop-shrunk",
+"kind": "antipattern",
+"category": "platform",
+"concerns": [
+"anti-pattern"
+],
+"concepts": [],
+"platform": [
+"mobile"
+],
+"input": [
+"touch"
+],
+"screen": [
+"any"
+],
+"product": [
+"erp",
+"finance",
+"saas"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 180,
+"keywords": [
+"responsive fail",
+"mobile table",
+"hamburger",
+"shrunk desktop"
+],
+"title": "Desktop screen shrunk to a phone"
+},
+{
+"id": "anti-brand-cosmetic-only",
+"kind": "antipattern",
+"category": "brand",
+"concerns": [
+"anti-pattern"
+],
+"concepts": [
+"brand.structural_differentiation"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 277,
+"keywords": [
+"white label",
+"multi-brand",
+"skin",
+"theme swap",
+"cosmetic"
+],
+"title": "Brands that differ only by logo, primary colour, and font"
+},
+{
+"id": "anti-inconsistent-spacing",
+"kind": "antipattern",
+"category": "craft",
+"concerns": [
+"anti-pattern"
+],
+"concepts": [
+"layout.spacing_scale"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 269,
+"keywords": [
+"spacing",
+"alignment",
+"padding",
+"misaligned",
+"unprofessional",
+"cramped",
+"inconsistent",
+"looks off"
+],
+"title": "Arbitrary spacing and misaligned edges"
+},
+{
+"id": "anti-default-fonts",
+"kind": "antipattern",
+"category": "generic-ai",
+"concerns": [
+"anti-pattern"
+],
+"concepts": [],
+"platform": [
+"web"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"marketing",
+"saas",
+"ecommerce",
+"content"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 237,
+"keywords": [
+"inter",
+"roboto",
+"space grotesk",
+"default font",
+"font choice"
+],
+"title": "Default type choices (Inter/Roboto everywhere, Space Grotesk on every startup)"
+},
+{
+"id": "anti-dark-mode-inversion",
+"kind": "antipattern",
+"category": "craft",
+"concerns": [
+"anti-pattern"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 168,
+"keywords": [
+"dark mode",
+"inversion",
+"pure black",
+"white text"
+],
+"title": "Dark mode by inversion"
+},
+{
+"id": "anti-hover-only-actions",
+"kind": "antipattern",
+"category": "craft",
+"concerns": [
+"anti-pattern"
+],
+"concepts": [
+"interaction.hover_independence"
+],
+"platform": [
+"web",
+"desktop"
+],
+"input": [
+"pointer",
+"touch",
+"keyboard"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 88,
+"keywords": [
+"hover only",
+"row actions",
+"touch",
+"keyboard"
+],
+"title": "Actions only on hover"
+},
+{
+"id": "anti-placeholder-labels",
+"kind": "antipattern",
+"category": "craft",
+"concerns": [
+"anti-pattern"
+],
+"concepts": [
+"feedback.validation_errors"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 135,
+"keywords": [
+"placeholder",
+"label",
+"floating label",
+"form"
+],
+"title": "Placeholder as the only label"
+},
+{
+"id": "anti-no-states",
+"kind": "antipattern",
+"category": "craft",
+"concerns": [
+"anti-pattern",
+"states"
+],
+"concepts": [
+"state.loading_empty_error"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 171,
+"keywords": [
+"states",
+"empty",
+"loading",
+"error",
+"edge cases"
+],
+"title": "Only the happy state was designed"
+},
+{
+"id": "anti-interruptive-upsell",
+"kind": "antipattern",
+"category": "generic-ai",
+"concerns": [
+"anti-pattern",
+"feedback"
+],
+"concepts": [
+"anti.interruptive_upsell",
+"perf.layout_shift"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"media",
+"ecommerce",
+"saas",
+"finance"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 364,
+"keywords": [
+"upsell",
+"promo banner",
+"interstitial",
+"dismissable",
+"dismissible",
+"nag",
+"upgrade prompt",
+"pop-up promotion"
+],
+"title": "Interruptive upsells and promo banners"
+},
+{
+"id": "chart-trend-line",
+"kind": "chart",
+"category": "chart",
+"concerns": [
+"data-display"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"finance",
+"saas",
+"iot",
+"healthcare",
+"devtools"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 335,
+"keywords": [
+"line chart",
+"time series",
+"trend",
+"area chart",
+"sparkline"
+],
+"title": "Trend over time \u2192 line / area"
+},
+{
+"id": "chart-compare-bar",
+"kind": "chart",
+"category": "chart",
+"concerns": [
+"data-display"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 265,
+"keywords": [
+"bar chart",
+"column chart",
+"comparison",
+"ranking",
+"grouped bar"
+],
+"title": "Compare categories \u2192 bar"
+},
+{
+"id": "chart-composition",
+"kind": "chart",
+"category": "chart",
+"concerns": [
+"data-display"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 226,
+"keywords": [
+"pie chart",
+"donut",
+"stacked bar",
+"waffle",
+"composition",
+"share"
+],
+"title": "Part-to-whole \u2192 stacked bar, waffle, or (rarely) donut"
+},
+{
+"id": "chart-distribution",
+"kind": "chart",
+"category": "chart",
+"concerns": [
+"data-display"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"finance",
+"healthcare",
+"devtools",
+"saas"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 186,
+"keywords": [
+"histogram",
+"box plot",
+"distribution",
+"violin",
+"spread"
+],
+"title": "Distribution \u2192 histogram, box plot, violin, strip"
+},
+{
+"id": "chart-relationship",
+"kind": "chart",
+"category": "chart",
+"concerns": [
+"data-display"
+],
+"concepts": [],
+"platform": [
+"web",
+"desktop"
+],
+"input": [
+"pointer",
+"keyboard"
+],
+"screen": [
+"any"
+],
+"product": [
+"finance",
+"saas",
+"healthcare",
+"devtools"
+],
+"risk": {
+"a11y": "high",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 254,
+"keywords": [
+"scatter",
+"bubble",
+"correlation",
+"clusters",
+"outliers"
+],
+"title": "Relationship \u2192 scatter / bubble"
+},
+{
+"id": "chart-heatmap-matrix",
+"kind": "chart",
+"category": "chart",
+"concerns": [
+"data-display"
+],
+"concepts": [],
+"platform": [
+"web",
+"desktop"
+],
+"input": [
+"pointer",
+"keyboard"
+],
+"screen": [
+"any"
+],
+"product": [
+"devtools",
+"finance",
+"iot",
+"saas"
+],
+"risk": {
+"a11y": "high",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 282,
+"keywords": [
+"heatmap",
+"matrix",
+"calendar heatmap",
+"correlation matrix",
+"conditional formatting"
+],
+"title": "Two categorical axes \u00d7 value \u2192 heatmap / matrix"
+},
+{
+"id": "chart-flow-funnel",
+"kind": "chart",
+"category": "chart",
+"concerns": [
+"data-display"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"saas",
+"ecommerce",
+"marketing"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 203,
+"keywords": [
+"funnel",
+"conversion",
+"drop-off",
+"stages"
+],
+"title": "Sequential drop-off \u2192 funnel or step bars"
+},
+{
+"id": "chart-flow-sankey",
+"kind": "chart",
+"category": "chart",
+"concerns": [
+"data-display"
+],
+"concepts": [],
+"platform": [
+"web",
+"desktop"
+],
+"input": [
+"pointer",
+"keyboard"
+],
+"screen": [
+"any"
+],
+"product": [
+"finance",
+"saas",
+"iot"
+],
+"risk": {
+"a11y": "high",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 173,
+"keywords": [
+"sankey",
+"alluvial",
+"flow",
+"paths",
+"allocation"
+],
+"title": "Flows between states \u2192 Sankey / alluvial"
+},
+{
+"id": "chart-progress-gauge",
+"kind": "chart",
+"category": "chart",
+"concerns": [
+"data-display"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"saas",
+"finance",
+"iot",
+"erp"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 203,
+"keywords": [
+"gauge",
+"bullet graph",
+"progress",
+"target",
+"kpi"
+],
+"title": "Progress to target \u2192 bullet / progress bar, not gauge"
+},
+{
+"id": "chart-small-multiples",
+"kind": "chart",
+"category": "chart",
+"concerns": [
+"data-display"
+],
+"concepts": [],
+"platform": [
+"web",
+"desktop"
+],
+"input": [
+"pointer",
+"keyboard"
+],
+"screen": [
+"any"
+],
+"product": [
+"finance",
+"saas",
+"iot",
+"healthcare",
+"devtools"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 204,
+"keywords": [
+"small multiples",
+"facets",
+"grid of charts",
+"many series"
+],
+"title": "Many series or groups \u2192 small multiples"
+},
+{
+"id": "chart-geo",
+"kind": "chart",
+"category": "chart",
+"concerns": [
+"data-display"
+],
+"concepts": [],
+"platform": [
+"web",
+"desktop",
+"mobile"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"saas",
+"finance",
+"government",
+"iot"
+],
+"risk": {
+"a11y": "high",
+"perf": "high"
+},
+"environment": [],
+"guidance_chars": 246,
+"keywords": [
+"map",
+"choropleth",
+"geo",
+"regions",
+"symbol map"
+],
+"title": "Geographic values \u2192 choropleth or symbol map"
+},
+{
+"id": "chart-uncertainty",
+"kind": "chart",
+"category": "chart",
+"concerns": [
+"data-display"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"finance",
+"healthcare",
+"iot",
+"saas"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 202,
+"keywords": [
+"forecast",
+"confidence interval",
+"uncertainty",
+"band",
+"error bars"
+],
+"title": "Uncertainty and forecasts \u2192 bands and fans"
+},
+{
+"id": "chart-realtime",
+"kind": "chart",
+"category": "chart",
+"concerns": [
+"data-display"
+],
+"concepts": [],
+"platform": [
+"web",
+"desktop",
+"tv"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"iot",
+"devtools",
+"finance"
+],
+"risk": {
+"a11y": "medium",
+"perf": "high"
+},
+"environment": [],
+"guidance_chars": 349,
+"keywords": [
+"real-time",
+"streaming chart",
+"telemetry",
+"monitoring",
+"wall display"
+],
+"title": "Real-time streams \u2192 rolling window charts"
+},
+{
+"id": "chart-accessible-colour",
+"kind": "chart",
+"category": "chart",
+"concerns": [
+"data-display"
+],
+"concepts": [
+"a11y.color_not_only"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 280,
+"keywords": [
+"chart colours",
+"categorical palette",
+"colour blind",
+"sequential",
+"diverging"
+],
+"title": "Chart colour: categorical \u22648, colour-blind safe, plus shape/label"
+},
+{
+"id": "comp-data-table",
+"kind": "component",
+"category": "table",
+"concerns": [
+"component",
+"data-display",
+"structure"
+],
+"concepts": [
+"table.selection_bulk",
+"table.inline_edit",
+"table.virtualization",
+"table.tabular_figures"
+],
+"platform": [
+"web",
+"desktop"
+],
+"input": [
+"pointer",
+"keyboard"
+],
+"screen": [
+"list",
+"dashboard"
+],
+"product": [
+"erp",
+"finance",
+"saas",
+"devtools",
+"healthcare"
+],
+"risk": {
+"a11y": "high",
+"perf": "high"
+},
+"environment": [],
+"guidance_chars": 488,
+"keywords": [
+"table",
+"data grid",
+"datagrid",
+"rows",
+"columns",
+"sorting",
+"bulk actions",
+"inline edit"
+],
+"title": "Data table / grid"
+},
+{
+"id": "comp-form",
+"kind": "component",
+"category": "form",
+"concerns": [
+"component",
+"feedback",
+"structure"
+],
+"concepts": [
+"feedback.validation_errors",
+"touch.ime_keyboard"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"form",
+"settings",
+"auth",
+"checkout",
+"onboarding"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 395,
+"keywords": [
+"form",
+"fields",
+"validation",
+"settings form",
+"checkout form",
+"data entry"
+],
+"title": "Form"
+},
+{
+"id": "comp-dialog",
+"kind": "component",
+"category": "dialog",
+"concerns": [
+"component"
+],
+"concepts": [
+"a11y.dialog_focus",
+"feedback.confirmation_destructive"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 356,
+"keywords": [
+"dialog",
+"modal",
+"alert",
+"confirmation",
+"sheet"
+],
+"title": "Dialog / modal"
+},
+{
+"id": "comp-drawer-panel",
+"kind": "component",
+"category": "drawer",
+"concerns": [
+"component",
+"navigation"
+],
+"concepts": [],
+"platform": [
+"web",
+"desktop",
+"mobile",
+"tv"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 271,
+"keywords": [
+"drawer",
+"side panel",
+"inspector",
+"flyout",
+"side sheet"
+],
+"title": "Drawer / side panel"
+},
+{
+"id": "comp-menu",
+"kind": "component",
+"category": "menu",
+"concerns": [
+"component",
+"interaction"
+],
+"concepts": [],
+"platform": [
+"web",
+"desktop",
+"mobile"
+],
+"input": [
+"pointer",
+"keyboard",
+"touch"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 350,
+"keywords": [
+"menu",
+"dropdown",
+"context menu",
+"overflow",
+"kebab"
+],
+"title": "Menu / dropdown / context menu"
+},
+{
+"id": "comp-tabs",
+"kind": "component",
+"category": "tabs",
+"concerns": [
+"component",
+"navigation"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 302,
+"keywords": [
+"tabs",
+"tablist",
+"segmented control",
+"section switcher"
+],
+"title": "Tabs"
+},
+{
+"id": "comp-sidebar-nav",
+"kind": "component",
+"category": "navigation",
+"concerns": [
+"navigation"
+],
+"concepts": [],
+"platform": [
+"web",
+"desktop",
+"tablet"
+],
+"input": [
+"pointer",
+"keyboard",
+"touch"
+],
+"screen": [
+"any"
+],
+"product": [
+"saas",
+"erp",
+"finance",
+"devtools",
+"healthcare"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 335,
+"keywords": [
+"sidebar",
+"nav rail",
+"left navigation",
+"collapsible sidebar"
+],
+"title": "Sidebar / navigation rail"
+},
+{
+"id": "comp-command-palette",
+"kind": "component",
+"category": "command-palette",
+"concerns": [
+"component",
+"interaction"
+],
+"concepts": [],
+"platform": [
+"web",
+"desktop"
+],
+"input": [
+"keyboard",
+"pointer"
+],
+"screen": [
+"any"
+],
+"product": [
+"devtools",
+"saas",
+"erp",
+"finance"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 285,
+"keywords": [
+"command palette",
+"cmdk",
+"quick actions",
+"spotlight"
+],
+"title": "Command palette"
+},
+{
+"id": "comp-search",
+"kind": "component",
+"category": "search",
+"concerns": [
+"component",
+"feedback"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"search",
+"list",
+"home"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 371,
+"keywords": [
+"search",
+"autocomplete",
+"typeahead",
+"results",
+"tv search"
+],
+"title": "Search field and results"
+},
+{
+"id": "comp-filters",
+"kind": "component",
+"category": "search",
+"concerns": [
+"component",
+"feedback"
+],
+"concepts": [],
+"platform": [
+"web",
+"desktop",
+"mobile"
+],
+"input": [
+"any"
+],
+"screen": [
+"list",
+"search"
+],
+"product": [
+"ecommerce",
+"erp",
+"saas",
+"finance",
+"media"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 280,
+"keywords": [
+"filters",
+"facets",
+"chips",
+"filter sheet",
+"applied filters"
+],
+"title": "Filter bar / faceted filters"
+},
+{
+"id": "comp-pagination",
+"kind": "component",
+"category": "list",
+"concerns": [
+"component",
+"structure"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 279,
+"keywords": [
+"pagination",
+"infinite scroll",
+"load more",
+"page size"
+],
+"title": "Pagination vs infinite scroll vs load more"
+},
+{
+"id": "comp-chart-container",
+"kind": "component",
+"category": "chart",
+"concerns": [
+"data-display"
+],
+"concepts": [
+"a11y.color_not_only"
+],
+"platform": [
+"web",
+"desktop",
+"mobile"
+],
+"input": [
+"any"
+],
+"screen": [
+"dashboard",
+"detail"
+],
+"product": [
+"finance",
+"saas",
+"devtools",
+"iot",
+"healthcare",
+"erp"
+],
+"risk": {
+"a11y": "high",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 387,
+"keywords": [
+"chart",
+"tooltip",
+"legend",
+"chart accessibility",
+"dashboard chart"
+],
+"title": "Chart container and interaction"
+},
+{
+"id": "comp-kpi-tile",
+"kind": "component",
+"category": "chart",
+"concerns": [
+"data-display"
+],
+"concepts": [
+"table.tabular_figures"
+],
+"platform": [
+"web",
+"desktop",
+"mobile"
+],
+"input": [
+"any"
+],
+"screen": [
+"dashboard",
+"home"
+],
+"product": [
+"finance",
+"saas",
+"erp",
+"iot",
+"healthcare"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 341,
+"keywords": [
+"kpi",
+"stat",
+"metric tile",
+"big number",
+"sparkline"
+],
+"title": "KPI / stat tile"
+},
+{
+"id": "comp-media-card",
+"kind": "component",
+"category": "media-card",
+"concerns": [
+"component",
+"content"
+],
+"concepts": [],
+"platform": [
+"tv",
+"mobile",
+"web"
+],
+"input": [
+"any"
+],
+"screen": [
+"home",
+"list",
+"search",
+"detail"
+],
+"product": [
+"media",
+"education",
+"ecommerce"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 339,
+"keywords": [
+"media card",
+"poster card",
+"thumbnail card",
+"continue watching"
+],
+"title": "Media card (poster/thumbnail)"
+},
+{
+"id": "comp-player-controls",
+"kind": "component",
+"category": "player",
+"concerns": [
+"component",
+"interaction",
+"structure"
+],
+"concepts": [
+"tv.player_autohide"
+],
+"platform": [
+"tv",
+"mobile",
+"web"
+],
+"input": [
+"remote",
+"touch",
+"pointer",
+"keyboard"
+],
+"screen": [
+"player"
+],
+"product": [
+"media"
+],
+"risk": {
+"a11y": "high",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 403,
+"keywords": [
+"player controls",
+"transport",
+"seek bar",
+"captions",
+"play pause",
+"auto hide",
+"auto-hide timing",
+"controls disappear"
+],
+"title": "Player transport controls"
+},
+{
+"id": "comp-tv-rail",
+"kind": "component",
+"category": "tv-rail",
+"concerns": [
+"component",
+"navigation"
+],
+"concepts": [
+"interaction.focus_restore",
+"perf.focus_latency"
+],
+"platform": [
+"tv"
+],
+"input": [
+"remote"
+],
+"screen": [
+"home",
+"list",
+"search",
+"detail"
+],
+"product": [
+"media",
+"education",
+"ecommerce"
+],
+"risk": {
+"a11y": "high",
+"perf": "high"
+},
+"environment": [],
+"guidance_chars": 382,
+"keywords": [
+"rail",
+"row",
+"lane",
+"shelf",
+"tv carousel",
+"horizontal list"
+],
+"title": "TV rail (horizontal row of cards)"
+},
+{
+"id": "comp-epg",
+"kind": "component",
+"category": "epg",
+"concerns": [
+"component",
+"data-display",
+"navigation",
+"structure"
+],
+"concepts": [
+"tv.epg_pinned_channels",
+"table.virtualization",
+"interaction.dpad_reachability"
+],
+"platform": [
+"tv",
+"web",
+"tablet"
+],
+"input": [
+"remote",
+"pointer",
+"touch"
+],
+"screen": [
+"list",
+"home"
+],
+"product": [
+"media"
+],
+"risk": {
+"a11y": "high",
+"perf": "high"
+},
+"environment": [],
+"guidance_chars": 504,
+"keywords": [
+"epg",
+"programme guide",
+"channel grid",
+"live tv guide",
+"schedule",
+"pinned channel column",
+"pinned",
+"now marker"
+],
+"title": "EPG / programme guide"
+},
+{
+"id": "comp-list-row-mobile",
+"kind": "component",
+"category": "list",
+"concerns": [
+"component",
+"structure"
+],
+"concepts": [
+"touch.minimum_target",
+"touch.gestures_discoverable"
+],
+"platform": [
+"mobile",
+"tablet"
+],
+"input": [
+"touch"
+],
+"screen": [
+"list",
+"home",
+"settings"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 340,
+"keywords": [
+"mobile list",
+"swipe actions",
+"list tile",
+"section headers"
+],
+"title": "Mobile list and swipe actions"
+},
+{
+"id": "comp-settings-screen",
+"kind": "component",
+"category": "settings",
+"concerns": [
+"component",
+"structure"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"settings"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 372,
+"keywords": [
+"settings",
+"preferences",
+"account settings",
+"toggles",
+"two pane settings",
+"settings sections",
+"grouping"
+],
+"title": "Settings screen"
+},
+{
+"id": "comp-empty-state",
+"kind": "component",
+"category": "empty-state",
+"concerns": [
+"states"
+],
+"concepts": [
+"state.loading_empty_error"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 260,
+"keywords": [
+"empty state",
+"zero state",
+"no results",
+"first use"
+],
+"title": "Empty / zero state"
+},
+{
+"id": "comp-toast-notification",
+"kind": "component",
+"category": "notification",
+"concerns": [
+"component",
+"feedback",
+"states"
+],
+"concepts": [
+"a11y.live_status"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 288,
+"keywords": [
+"toast",
+"snackbar",
+"banner",
+"notification",
+"undo",
+"dismissable",
+"dismissible",
+"dismiss"
+],
+"title": "Toast / snackbar / banner"
+},
+{
+"id": "comp-wizard-stepper",
+"kind": "component",
+"category": "wizard",
+"concerns": [
+"component",
+"feedback",
+"structure"
+],
+"concepts": [
+"feedback.progress_indicator",
+"state.saving_conflict"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"form",
+"checkout",
+"onboarding"
+],
+"product": [
+"finance",
+"ecommerce",
+"government",
+"healthcare",
+"saas"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 270,
+"keywords": [
+"wizard",
+"stepper",
+"checkout steps",
+"multi-step form",
+"progress indicator",
+"progress checklist",
+"step indicator",
+"how far along"
+],
+"title": "Wizard / stepper"
+},
+{
+"id": "comp-tree-view",
+"kind": "component",
+"category": "tree",
+"concerns": [
+"component",
+"navigation"
+],
+"concepts": [],
+"platform": [
+"desktop",
+"web"
+],
+"input": [
+"keyboard",
+"pointer"
+],
+"screen": [
+"any"
+],
+"product": [
+"erp",
+"devtools",
+"finance",
+"content"
+],
+"risk": {
+"a11y": "high",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 318,
+"keywords": [
+"tree",
+"tree view",
+"hierarchy",
+"folders",
+"expand collapse"
+],
+"title": "Tree view"
+},
+{
+"id": "comp-data-entry-grid",
+"kind": "component",
+"category": "table",
+"concerns": [
+"component",
+"data-display",
+"structure"
+],
+"concepts": [
+"table.inline_edit",
+"interaction.keyboard_navigation"
+],
+"platform": [
+"desktop",
+"web"
+],
+"input": [
+"keyboard",
+"pointer"
+],
+"screen": [
+"form",
+"list"
+],
+"product": [
+"erp",
+"finance"
+],
+"risk": {
+"a11y": "high",
+"perf": "high"
+},
+"environment": [],
+"guidance_chars": 339,
+"keywords": [
+"data entry",
+"grid entry",
+"invoice lines",
+"journal",
+"spreadsheet-like",
+"batch entry"
+],
+"title": "Data-entry grid (spreadsheet-like)"
+},
+{
+"id": "comp-hero-section",
+"kind": "component",
+"category": "hero",
+"concerns": [
+"component",
+"content",
+"structure"
+],
+"concepts": [],
+"platform": [
+"web",
+"mobile"
+],
+"input": [
+"any"
+],
+"screen": [
+"landing"
+],
+"product": [
+"marketing",
+"ecommerce"
+],
+"risk": {
+"a11y": "medium",
+"perf": "high"
+},
+"environment": [],
+"guidance_chars": 434,
+"keywords": [
+"hero",
+"landing",
+"above the fold",
+"headline",
+"cta",
+"information architecture",
+"hierarchy first",
+"landing page"
+],
+"title": "Landing hero"
+},
+{
+"id": "comp-tv-sign-in",
+"kind": "component",
+"category": "sign-in",
+"concerns": [
+"component",
+"feedback",
+"privacy"
+],
+"concepts": [
+"tv.sign_in_code",
+"privacy.shared_device"
+],
+"platform": [
+"tv"
+],
+"input": [
+"remote"
+],
+"screen": [
+"auth",
+"onboarding"
+],
+"product": [
+"media",
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 534,
+"keywords": [
+"tv sign in",
+"activation code",
+"pair device",
+"companion device",
+"qr code sign in",
+"device code",
+"enter code at",
+"sign in on your phone"
+],
+"title": "TV sign-in: code on screen and companion device"
+},
+{
+"id": "comp-setup-checklist",
+"kind": "component",
+"category": "wizard",
+"concerns": [
+"component",
+"feedback",
+"states"
+],
+"concepts": [
+"onboarding.setup_checklist",
+"feedback.progress_indicator"
+],
+"platform": [
+"web",
+"mobile",
+"desktop"
+],
+"input": [
+"any"
+],
+"screen": [
+"onboarding",
+"home"
+],
+"product": [
+"saas",
+"education",
+"finance",
+"healthcare",
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 440,
+"keywords": [
+"setup checklist",
+"getting started",
+"onboarding checklist",
+"progress checklist",
+"complete your profile",
+"tasks to finish",
+"first-run"
+],
+"title": "Setup / progress checklist"
+},
+{
+"id": "comp-product-detail-page",
+"kind": "component",
+"category": "detail",
+"concerns": [
+"component",
+"content",
+"feedback",
+"structure"
+],
+"concepts": [
+"layout.one_primary_action",
+"perf.layout_shift",
+"a11y.accessible_names",
+"touch.minimum_target"
+],
+"platform": [
+"web",
+"mobile"
+],
+"input": [
+"any"
+],
+"screen": [
+"detail"
+],
+"product": [
+"ecommerce"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 760,
+"keywords": [
+"product detail page",
+"pdp",
+"product page",
+"variant selector",
+"add to cart",
+"size guide",
+"gallery",
+"price"
+],
+"title": "Product detail page (PDP)"
+},
+{
+"id": "comp-checkout-one-page",
+"kind": "component",
+"category": "form",
+"concerns": [
+"component",
+"feedback",
+"states",
+"structure"
+],
+"concepts": [
+"feedback.validation_errors",
+"touch.ime_keyboard",
+"feedback.confirmation_destructive",
+"state.saving_conflict",
+"layout.one_primary_action"
+],
+"platform": [
+"web",
+"mobile"
+],
+"input": [
+"any"
+],
+"screen": [
+"checkout"
+],
+"product": [
+"ecommerce"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 684,
+"keywords": [
+"checkout",
+"one-page checkout",
+"order summary",
+"guest checkout",
+"address form",
+"payment form",
+"place order",
+"pay button"
+],
+"title": "One-page checkout"
+},
+{
+"id": "comp-plan-comparison",
+"kind": "component",
+"category": "settings",
+"concerns": [
+"component",
+"data-display",
+"feedback",
+"structure"
+],
+"concepts": [
+"table.tabular_figures",
+"layout.one_primary_action",
+"a11y.color_not_only",
+"feedback.confirmation_destructive",
+"table.selection_bulk"
+],
+"platform": [
+"web",
+"desktop"
+],
+"input": [
+"any"
+],
+"screen": [
+"settings"
+],
+"product": [
+"saas"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 818,
+"keywords": [
+"billing",
+"plan comparison",
+"pricing plans",
+"plan cards",
+"seats",
+"seat management",
+"invoice history",
+"invoices"
+],
+"title": "Plan comparison and billing management"
+},
+{
+"id": "comp-mini-player",
+"kind": "component",
+"category": "player",
+"concerns": [
+"component",
+"interaction",
+"navigation",
+"states"
+],
+"concepts": [
+"interaction.focus_restore",
+"interaction.back_semantics",
+"state.loading_empty_error",
+"tv.safe_margins"
+],
+"platform": [
+"tv",
+"mobile",
+"web"
+],
+"input": [
+"remote",
+"touch",
+"pointer"
+],
+"screen": [
+"home",
+"player",
+"list"
+],
+"product": [
+"media"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 780,
+"keywords": [
+"mini player",
+"miniplayer",
+"picture in picture",
+"pip",
+"now playing bar",
+"keep playing while browsing",
+"background playback",
+"expand player"
+],
+"title": "Mini player / picture-in-picture state"
+},
+{
+"id": "dir-operational-workbench",
+"kind": "direction",
+"category": "direction",
+"concerns": [
+"brand",
+"structure"
+],
+"concepts": [],
+"platform": [
+"desktop",
+"web"
+],
+"input": [
+"pointer",
+"keyboard"
+],
+"screen": [
+"any"
+],
+"product": [
+"erp",
+"finance",
+"devtools",
+"saas"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 361,
+"keywords": [
+"erp",
+"workbench",
+"operational",
+"dense",
+"records",
+"admin"
+],
+"title": "Operational workbench"
+},
+{
+"id": "dir-analytical-console",
+"kind": "direction",
+"category": "direction",
+"concerns": [
+"brand",
+"structure"
+],
+"concepts": [],
+"platform": [
+"web",
+"desktop"
+],
+"input": [
+"pointer",
+"keyboard"
+],
+"screen": [
+"any"
+],
+"product": [
+"finance",
+"saas",
+"iot",
+"devtools",
+"healthcare"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 310,
+"keywords": [
+"dashboard",
+"analytics",
+"monitoring",
+"console",
+"dark",
+"charts"
+],
+"title": "Analytical console"
+},
+{
+"id": "dir-cinematic-media-tv",
+"kind": "direction",
+"category": "direction",
+"concerns": [
+"brand",
+"structure"
+],
+"concepts": [],
+"platform": [
+"tv"
+],
+"input": [
+"remote"
+],
+"screen": [
+"any"
+],
+"product": [
+"media"
+],
+"risk": {
+"a11y": "medium",
+"perf": "high"
+},
+"environment": [],
+"guidance_chars": 350,
+"keywords": [
+"tv",
+"streaming",
+"iptv",
+"vod",
+"cinematic",
+"immersive",
+"rails"
+],
+"title": "Cinematic media (TV)"
+},
+{
+"id": "dir-broadcast-guide-tv",
+"kind": "direction",
+"category": "direction",
+"concerns": [
+"brand",
+"structure"
+],
+"concepts": [],
+"platform": [
+"tv"
+],
+"input": [
+"remote"
+],
+"screen": [
+"any"
+],
+"product": [
+"media"
+],
+"risk": {
+"a11y": "high",
+"perf": "high"
+},
+"environment": [],
+"guidance_chars": 380,
+"keywords": [
+"live tv",
+"epg",
+"broadcast",
+"channels",
+"guide",
+"sports"
+],
+"title": "Broadcast guide (TV)"
+},
+{
+"id": "dir-editorial-storefront",
+"kind": "direction",
+"category": "direction",
+"concerns": [
+"brand",
+"structure"
+],
+"concepts": [],
+"platform": [
+"web",
+"mobile"
+],
+"input": [
+"touch",
+"pointer"
+],
+"screen": [
+"any"
+],
+"product": [
+"ecommerce",
+"content",
+"marketing"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 353,
+"keywords": [
+"editorial",
+"fashion",
+"luxury",
+"storefront",
+"photography",
+"magazine"
+],
+"title": "Editorial storefront"
+},
+{
+"id": "dir-utility-commerce",
+"kind": "direction",
+"category": "direction",
+"concerns": [
+"brand",
+"structure"
+],
+"concepts": [],
+"platform": [
+"web",
+"mobile"
+],
+"input": [
+"touch",
+"pointer"
+],
+"screen": [
+"any"
+],
+"product": [
+"ecommerce"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 326,
+"keywords": [
+"retail",
+"catalogue",
+"shop",
+"plp",
+"pdp",
+"comparison"
+],
+"title": "Utility commerce"
+},
+{
+"id": "dir-service-app-mobile",
+"kind": "direction",
+"category": "direction",
+"concerns": [
+"brand",
+"structure"
+],
+"concepts": [],
+"platform": [
+"mobile"
+],
+"input": [
+"touch"
+],
+"screen": [
+"any"
+],
+"product": [
+"finance",
+"healthcare",
+"government",
+"iot",
+"education"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 396,
+"keywords": [
+"banking app",
+"service app",
+"hub",
+"tasks",
+"trust",
+"mobile",
+"bank",
+"account overview"
+],
+"title": "Service app (mobile hub-and-spoke)"
+},
+{
+"id": "dir-social-feed-mobile",
+"kind": "direction",
+"category": "direction",
+"concerns": [
+"brand",
+"structure"
+],
+"concepts": [],
+"platform": [
+"mobile"
+],
+"input": [
+"touch"
+],
+"screen": [
+"any"
+],
+"product": [
+"social",
+"content",
+"education",
+"media"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 311,
+"keywords": [
+"social",
+"feed",
+"consumer",
+"community",
+"mobile app"
+],
+"title": "Feed-first consumer app"
+},
+{
+"id": "dir-windows-native-tool",
+"kind": "direction",
+"category": "direction",
+"concerns": [
+"brand",
+"structure"
+],
+"concepts": [],
+"platform": [
+"desktop"
+],
+"input": [
+"pointer",
+"keyboard"
+],
+"screen": [
+"any"
+],
+"product": [
+"erp",
+"devtools",
+"finance",
+"saas",
+"iot"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 405,
+"keywords": [
+"windows",
+"winui",
+"wpf",
+"fluent",
+"native desktop",
+"mica"
+],
+"title": "Windows-native tool (Fluent)"
+},
+{
+"id": "dir-developer-tool",
+"kind": "direction",
+"category": "direction",
+"concerns": [
+"brand",
+"structure"
+],
+"concepts": [],
+"platform": [
+"web",
+"desktop"
+],
+"input": [
+"keyboard",
+"pointer"
+],
+"screen": [
+"any"
+],
+"product": [
+"devtools"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 345,
+"keywords": [
+"developer tool",
+"console",
+"ide",
+"logs",
+"api"
+],
+"title": "Developer tool"
+},
+{
+"id": "dir-learning-platform",
+"kind": "direction",
+"category": "direction",
+"concerns": [
+"brand",
+"structure"
+],
+"concepts": [],
+"platform": [
+"web",
+"mobile",
+"tv"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"education"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 359,
+"keywords": [
+"learning",
+"courses",
+"lms",
+"education",
+"progress"
+],
+"title": "Learning platform"
+},
+{
+"id": "dir-public-kiosk",
+"kind": "direction",
+"category": "direction",
+"concerns": [
+"brand",
+"structure"
+],
+"concepts": [],
+"platform": [
+"kiosk"
+],
+"input": [
+"touch"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 371,
+"keywords": [
+"kiosk",
+"self-service",
+"terminal",
+"public",
+"touch"
+],
+"title": "Public kiosk"
+},
+{
+"id": "dir-clinical-workstation",
+"kind": "direction",
+"category": "direction",
+"concerns": [
+"brand",
+"structure"
+],
+"concepts": [],
+"platform": [
+"desktop",
+"web",
+"tablet"
+],
+"input": [
+"pointer",
+"keyboard",
+"touch"
+],
+"screen": [
+"any"
+],
+"product": [
+"healthcare"
+],
+"risk": {
+"a11y": "high",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 421,
+"keywords": [
+"clinical",
+"ehr",
+"emr",
+"hospital",
+"patient",
+"safety"
+],
+"title": "Clinical workstation"
+},
+{
+"id": "dir-industrial-hmi",
+"kind": "direction",
+"category": "direction",
+"concerns": [
+"brand",
+"structure"
+],
+"concepts": [],
+"platform": [
+"desktop",
+"kiosk",
+"tablet"
+],
+"input": [
+"touch",
+"pointer"
+],
+"screen": [
+"any"
+],
+"product": [
+"iot"
+],
+"risk": {
+"a11y": "high",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 326,
+"keywords": [
+"hmi",
+"scada",
+"industrial",
+"control panel",
+"alarms"
+],
+"title": "Industrial HMI / control panel"
+},
+{
+"id": "dir-product-marketing-site",
+"kind": "direction",
+"category": "direction",
+"concerns": [
+"brand",
+"structure"
+],
+"concepts": [],
+"platform": [
+"web"
+],
+"input": [
+"pointer",
+"touch"
+],
+"screen": [
+"any"
+],
+"product": [
+"marketing",
+"saas",
+"devtools"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 376,
+"keywords": [
+"marketing site",
+"landing",
+"product site",
+"conversion"
+],
+"title": "Product marketing site"
+},
+{
+"id": "nav-top-bar",
+"kind": "pattern",
+"category": "navigation",
+"concerns": [
+"navigation"
+],
+"concepts": [],
+"platform": [
+"web"
+],
+"input": [
+"pointer",
+"touch",
+"keyboard"
+],
+"screen": [
+"any"
+],
+"product": [
+"marketing",
+"content",
+"ecommerce",
+"social",
+"education"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 316,
+"keywords": [
+"top bar",
+"header nav",
+"horizontal nav",
+"marketing",
+"public site"
+],
+"title": "Top bar navigation"
+},
+{
+"id": "nav-left-rail",
+"kind": "pattern",
+"category": "navigation",
+"concerns": [
+"navigation"
+],
+"concepts": [],
+"platform": [
+"web",
+"desktop"
+],
+"input": [
+"pointer",
+"keyboard",
+"touch"
+],
+"screen": [
+"any"
+],
+"product": [
+"saas",
+"erp",
+"finance",
+"devtools",
+"healthcare"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 335,
+"keywords": [
+"sidebar",
+"left nav",
+"rail",
+"admin",
+"dashboard nav",
+"collapsible"
+],
+"title": "Persistent left rail / sidebar"
+},
+{
+"id": "nav-bottom-tabs",
+"kind": "pattern",
+"category": "navigation",
+"concerns": [
+"navigation"
+],
+"concepts": [],
+"platform": [
+"mobile"
+],
+"input": [
+"touch"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 282,
+"keywords": [
+"bottom nav",
+"tab bar",
+"mobile navigation",
+"phone",
+"streaming app",
+"consumer app",
+"home"
+],
+"title": "Bottom tab bar"
+},
+{
+"id": "nav-hub-spoke",
+"kind": "pattern",
+"category": "navigation",
+"concerns": [
+"navigation"
+],
+"concepts": [],
+"platform": [
+"mobile",
+"kiosk",
+"tablet"
+],
+"input": [
+"touch"
+],
+"screen": [
+"any"
+],
+"product": [
+"finance",
+"healthcare",
+"government",
+"iot",
+"education"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 277,
+"keywords": [
+"hub",
+"spoke",
+"task-based",
+"kiosk home",
+"service app"
+],
+"title": "Hub and spoke"
+},
+{
+"id": "nav-tv-side",
+"kind": "pattern",
+"category": "navigation",
+"concerns": [
+"navigation"
+],
+"concepts": [],
+"platform": [
+"tv"
+],
+"input": [
+"remote"
+],
+"screen": [
+"any"
+],
+"product": [
+"media",
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 379,
+"keywords": [
+"tv",
+"side nav",
+"drawer",
+"dpad",
+"remote",
+"rails",
+"leanback"
+],
+"title": "TV side navigation (collapsible drawer)"
+},
+{
+"id": "nav-tv-top-tabs",
+"kind": "pattern",
+"category": "navigation",
+"concerns": [
+"navigation"
+],
+"concepts": [],
+"platform": [
+"tv"
+],
+"input": [
+"remote"
+],
+"screen": [
+"any"
+],
+"product": [
+"media",
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 261,
+"keywords": [
+"tv",
+"tabs",
+"top navigation",
+"dpad",
+"broadcast"
+],
+"title": "TV top tabs"
+},
+{
+"id": "nav-command-palette",
+"kind": "pattern",
+"category": "navigation",
+"concerns": [
+"navigation"
+],
+"concepts": [],
+"platform": [
+"web",
+"desktop"
+],
+"input": [
+"keyboard",
+"pointer"
+],
+"screen": [
+"any"
+],
+"product": [
+"devtools",
+"saas",
+"erp",
+"finance"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 236,
+"keywords": [
+"command palette",
+"cmd+k",
+"quick open",
+"keyboard first",
+"power user"
+],
+"title": "Command palette as primary navigation accelerator"
+},
+{
+"id": "nav-breadcrumb-tree",
+"kind": "pattern",
+"category": "navigation",
+"concerns": [
+"navigation"
+],
+"concepts": [],
+"platform": [
+"desktop",
+"web"
+],
+"input": [
+"keyboard",
+"pointer"
+],
+"screen": [
+"any"
+],
+"product": [
+"erp",
+"devtools",
+"finance",
+"content"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 248,
+"keywords": [
+"tree",
+"breadcrumb",
+"hierarchy",
+"folders",
+"explorer"
+],
+"title": "Tree + breadcrumb for deep hierarchies"
+},
+{
+"id": "nav-wizard",
+"kind": "pattern",
+"category": "navigation",
+"concerns": [
+"navigation"
+],
+"concepts": [
+"feedback.progress_indicator"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"form",
+"checkout",
+"onboarding"
+],
+"product": [
+"finance",
+"ecommerce",
+"government",
+"healthcare",
+"saas"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 294,
+"keywords": [
+"wizard",
+"stepper",
+"multi-step",
+"checkout",
+"onboarding",
+"application",
+"how far along",
+"progress"
+],
+"title": "Linear wizard / stepper"
+},
+{
+"id": "nav-menu-bar-desktop",
+"kind": "pattern",
+"category": "navigation",
+"concerns": [
+"navigation"
+],
+"concepts": [],
+"platform": [
+"desktop"
+],
+"input": [
+"pointer",
+"keyboard"
+],
+"screen": [
+"any"
+],
+"product": [
+"erp",
+"devtools",
+"finance",
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 273,
+"keywords": [
+"menu bar",
+"toolbar",
+"accelerator",
+"desktop commands",
+"access key"
+],
+"title": "Desktop menu bar + toolbar commands"
+},
+{
+"id": "layout-single-column",
+"kind": "pattern",
+"category": "layout",
+"concerns": [
+"structure"
+],
+"concepts": [],
+"platform": [
+"mobile",
+"web",
+"kiosk"
+],
+"input": [
+"any"
+],
+"screen": [
+"home",
+"form",
+"auth",
+"onboarding",
+"checkout",
+"detail",
+"settings"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 206,
+"keywords": [
+"single column",
+"stack",
+"phone layout",
+"form layout",
+"reading"
+],
+"title": "Single column, one task"
+},
+{
+"id": "layout-master-detail",
+"kind": "pattern",
+"category": "layout",
+"concerns": [
+"structure"
+],
+"concepts": [],
+"platform": [
+"desktop",
+"web",
+"tablet"
+],
+"input": [
+"pointer",
+"keyboard",
+"touch"
+],
+"screen": [
+"list",
+"detail",
+"home"
+],
+"product": [
+"erp",
+"saas",
+"finance",
+"healthcare",
+"devtools",
+"social"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 282,
+"keywords": [
+"master detail",
+"list detail",
+"split view",
+"two pane",
+"records",
+"inbox"
+],
+"title": "Master\u2013detail (list + detail pane)"
+},
+{
+"id": "layout-three-pane",
+"kind": "pattern",
+"category": "layout",
+"concerns": [
+"structure"
+],
+"concepts": [],
+"platform": [
+"desktop",
+"web"
+],
+"input": [
+"pointer",
+"keyboard"
+],
+"screen": [
+"list",
+"detail",
+"home"
+],
+"product": [
+"devtools",
+"erp",
+"finance",
+"content"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 257,
+"keywords": [
+"three pane",
+"workbench",
+"ide layout",
+"inspector",
+"panes"
+],
+"title": "Three-pane workbench"
+},
+{
+"id": "layout-dashboard-grid",
+"kind": "pattern",
+"category": "layout",
+"concerns": [
+"structure"
+],
+"concepts": [],
+"platform": [
+"web",
+"desktop",
+"tablet"
+],
+"input": [
+"pointer",
+"keyboard",
+"touch"
+],
+"screen": [
+"dashboard",
+"home"
+],
+"product": [
+"saas",
+"finance",
+"erp",
+"devtools",
+"iot",
+"healthcare"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 306,
+"keywords": [
+"dashboard",
+"grid",
+"kpi",
+"modules",
+"overview",
+"monitoring",
+"account overview"
+],
+"title": "Dashboard grid of modules"
+},
+{
+"id": "layout-table-first",
+"kind": "pattern",
+"category": "layout",
+"concerns": [
+"structure"
+],
+"concepts": [
+"table.virtualization",
+"table.tabular_figures"
+],
+"platform": [
+"web",
+"desktop"
+],
+"input": [
+"pointer",
+"keyboard"
+],
+"screen": [
+"list",
+"dashboard"
+],
+"product": [
+"erp",
+"finance",
+"saas",
+"devtools"
+],
+"risk": {
+"a11y": "medium",
+"perf": "high"
+},
+"environment": [],
+"guidance_chars": 334,
+"keywords": [
+"table",
+"data grid",
+"records",
+"erp screen",
+"list view",
+"bulk actions"
+],
+"title": "Table-first working screen"
+},
+{
+"id": "layout-form-stack",
+"kind": "pattern",
+"category": "layout",
+"concerns": [
+"structure"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"form",
+"settings",
+"auth",
+"checkout",
+"onboarding"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 316,
+"keywords": [
+"form",
+"fields",
+"settings",
+"data entry",
+"sections",
+"validation"
+],
+"title": "Form stack with sections"
+},
+{
+"id": "layout-grid-catalog",
+"kind": "pattern",
+"category": "layout",
+"concerns": [
+"structure"
+],
+"concepts": [],
+"platform": [
+"web",
+"mobile",
+"tablet"
+],
+"input": [
+"touch",
+"pointer",
+"keyboard"
+],
+"screen": [
+"list",
+"home",
+"search"
+],
+"product": [
+"ecommerce",
+"media",
+"content",
+"education",
+"social"
+],
+"risk": {
+"a11y": "low",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 276,
+"keywords": [
+"catalog",
+"product grid",
+"plp",
+"gallery",
+"tiles"
+],
+"title": "Catalog grid"
+},
+{
+"id": "layout-feed",
+"kind": "pattern",
+"category": "layout",
+"concerns": [
+"structure"
+],
+"concepts": [],
+"platform": [
+"mobile",
+"web"
+],
+"input": [
+"touch",
+"pointer"
+],
+"screen": [
+"home",
+"list"
+],
+"product": [
+"social",
+"content",
+"media",
+"education"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 251,
+"keywords": [
+"feed",
+"timeline",
+"stream",
+"activity",
+"posts",
+"infinite scroll"
+],
+"title": "Vertical feed"
+},
+{
+"id": "layout-editorial",
+"kind": "pattern",
+"category": "layout",
+"concerns": [
+"structure"
+],
+"concepts": [],
+"platform": [
+"web",
+"tablet"
+],
+"input": [
+"pointer",
+"touch"
+],
+"screen": [
+"detail",
+"landing",
+"home"
+],
+"product": [
+"content",
+"marketing",
+"education"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 267,
+"keywords": [
+"editorial",
+"article",
+"reading",
+"documentation",
+"long-form",
+"columns"
+],
+"title": "Editorial columns"
+},
+{
+"id": "layout-rails",
+"kind": "pattern",
+"category": "layout",
+"concerns": [
+"structure"
+],
+"concepts": [
+"interaction.focus_restore"
+],
+"platform": [
+"tv"
+],
+"input": [
+"remote"
+],
+"screen": [
+"home",
+"list",
+"search",
+"detail"
+],
+"product": [
+"media",
+"education",
+"ecommerce"
+],
+"risk": {
+"a11y": "medium",
+"perf": "high"
+},
+"environment": [],
+"guidance_chars": 429,
+"keywords": [
+"rails",
+"rows",
+"carousel",
+"tv home",
+"browse",
+"lanes",
+"shelves",
+"home screen"
+],
+"title": "Horizontal rails (rows of content)"
+},
+{
+"id": "layout-immersive-rails",
+"kind": "pattern",
+"category": "layout",
+"concerns": [
+"structure"
+],
+"concepts": [],
+"platform": [
+"tv"
+],
+"input": [
+"remote"
+],
+"screen": [
+"home",
+"detail"
+],
+"product": [
+"media"
+],
+"risk": {
+"a11y": "medium",
+"perf": "high"
+},
+"environment": [],
+"guidance_chars": 387,
+"keywords": [
+"immersive",
+"hero",
+"backdrop",
+"featured",
+"tv home",
+"cinematic",
+"home screen",
+"home"
+],
+"title": "Immersive hero + rails"
+},
+{
+"id": "layout-split-player",
+"kind": "pattern",
+"category": "layout",
+"concerns": [
+"structure"
+],
+"concepts": [
+"tv.player_autohide"
+],
+"platform": [
+"tv",
+"mobile",
+"web"
+],
+"input": [
+"remote",
+"touch",
+"pointer"
+],
+"screen": [
+"player"
+],
+"product": [
+"media"
+],
+"risk": {
+"a11y": "high",
+"perf": "high"
+},
+"environment": [],
+"guidance_chars": 390,
+"keywords": [
+"player",
+"playback",
+"controls",
+"scrub",
+"overlay",
+"transport",
+"auto hide",
+"auto-hide"
+],
+"title": "Player with overlay controls"
+},
+{
+"id": "layout-epg-grid",
+"kind": "pattern",
+"category": "layout",
+"concerns": [
+"structure"
+],
+"concepts": [
+"tv.epg_pinned_channels",
+"table.virtualization"
+],
+"platform": [
+"tv",
+"web",
+"tablet"
+],
+"input": [
+"remote",
+"pointer",
+"touch"
+],
+"screen": [
+"list",
+"home"
+],
+"product": [
+"media"
+],
+"risk": {
+"a11y": "high",
+"perf": "high"
+},
+"environment": [],
+"guidance_chars": 461,
+"keywords": [
+"epg",
+"program guide",
+"channel guide",
+"live tv",
+"schedule grid",
+"timeline",
+"pinned channel column",
+"pinned"
+],
+"title": "EPG / program guide grid"
+},
+{
+"id": "density-high",
+"kind": "pattern",
+"category": "density",
+"concerns": [
+"structure"
+],
+"concepts": [],
+"platform": [
+"web",
+"desktop"
+],
+"input": [
+"pointer",
+"keyboard"
+],
+"screen": [
+"any"
+],
+"product": [
+"erp",
+"finance",
+"devtools",
+"saas",
+"healthcare"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 288,
+"keywords": [
+"dense",
+"compact",
+"expert",
+"data heavy",
+"spreadsheet"
+],
+"title": "High density"
+},
+{
+"id": "density-medium",
+"kind": "pattern",
+"category": "density",
+"concerns": [
+"structure"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 199,
+"keywords": [
+"balanced",
+"default density",
+"comfortable"
+],
+"title": "Medium density"
+},
+{
+"id": "density-low",
+"kind": "pattern",
+"category": "density",
+"concerns": [
+"structure"
+],
+"concepts": [],
+"platform": [
+"web",
+"mobile",
+"tv",
+"kiosk"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"marketing",
+"content",
+"media",
+"education"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 220,
+"keywords": [
+"spacious",
+"airy",
+"whitespace",
+"editorial",
+"brand"
+],
+"title": "Low density / spacious"
+},
+{
+"id": "surface-flat-tonal",
+"kind": "pattern",
+"category": "surface",
+"concerns": [
+"brand",
+"structure"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 276,
+"keywords": [
+"flat",
+"tonal",
+"layers",
+"no shadows",
+"surfaces"
+],
+"title": "Flat surfaces with tonal layers"
+},
+{
+"id": "surface-bordered-panes",
+"kind": "pattern",
+"category": "surface",
+"concerns": [
+"brand",
+"structure"
+],
+"concepts": [],
+"platform": [
+"desktop",
+"web"
+],
+"input": [
+"pointer",
+"keyboard"
+],
+"screen": [
+"any"
+],
+"product": [
+"erp",
+"devtools",
+"finance",
+"saas"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 210,
+"keywords": [
+"bordered",
+"panes",
+"workbench",
+"ide",
+"sharp"
+],
+"title": "Bordered panes"
+},
+{
+"id": "surface-elevated-cards",
+"kind": "pattern",
+"category": "surface",
+"concerns": [
+"brand",
+"structure"
+],
+"concepts": [],
+"platform": [
+"mobile",
+"web",
+"tablet"
+],
+"input": [
+"touch",
+"pointer"
+],
+"screen": [
+"any"
+],
+"product": [
+"ecommerce",
+"social",
+"education",
+"healthcare"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 271,
+"keywords": [
+"cards",
+"elevation",
+"shadow",
+"tiles",
+"tappable"
+],
+"title": "Elevated cards as the primary container"
+},
+{
+"id": "surface-imagery-backed",
+"kind": "pattern",
+"category": "surface",
+"concerns": [
+"brand",
+"structure"
+],
+"concepts": [],
+"platform": [
+"tv",
+"mobile",
+"web"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"media",
+"ecommerce",
+"marketing"
+],
+"risk": {
+"a11y": "high",
+"perf": "high"
+},
+"environment": [],
+"guidance_chars": 285,
+"keywords": [
+"imagery",
+"artwork",
+"backdrop",
+"scrim",
+"poster"
+],
+"title": "Imagery-backed surfaces"
+},
+{
+"id": "surface-glass",
+"kind": "pattern",
+"category": "surface",
+"concerns": [
+"brand",
+"structure"
+],
+"concepts": [],
+"platform": [
+"mobile",
+"desktop",
+"web"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"media",
+"marketing",
+"iot"
+],
+"risk": {
+"a11y": "high",
+"perf": "high"
+},
+"environment": [],
+"guidance_chars": 309,
+"keywords": [
+"glass",
+"glassmorphism",
+"blur",
+"translucent",
+"acrylic",
+"mica"
+],
+"title": "Translucent (glass) layers, justified"
+},
+{
+"id": "typography-neutral-sans",
+"kind": "pattern",
+"category": "typography",
+"concerns": [
+"brand",
+"content"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"erp",
+"finance",
+"saas",
+"devtools",
+"healthcare",
+"government"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 310,
+"keywords": [
+"sans",
+"neutral",
+"system font",
+"tabular figures",
+"functional"
+],
+"title": "Neutral workhorse sans"
+},
+{
+"id": "typography-system-native",
+"kind": "pattern",
+"category": "typography",
+"concerns": [
+"brand",
+"content"
+],
+"concepts": [],
+"platform": [
+"mobile",
+"desktop",
+"tv"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 219,
+"keywords": [
+"system font",
+"san francisco",
+"roboto",
+"segoe",
+"dynamic type",
+"native"
+],
+"title": "Platform system font"
+},
+{
+"id": "typography-humanist-sans",
+"kind": "pattern",
+"category": "typography",
+"concerns": [
+"brand",
+"content"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"healthcare",
+"education",
+"government",
+"social",
+"ecommerce"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 219,
+"keywords": [
+"humanist",
+"friendly",
+"legible",
+"public service",
+"warm"
+],
+"title": "Humanist sans for approachable products"
+},
+{
+"id": "typography-geometric-sans",
+"kind": "pattern",
+"category": "typography",
+"concerns": [
+"brand",
+"content"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"saas",
+"devtools",
+"marketing",
+"iot"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 229,
+"keywords": [
+"geometric",
+"modern",
+"startup",
+"tech brand"
+],
+"title": "Geometric sans for product/tech brands"
+},
+{
+"id": "typography-grotesk-display",
+"kind": "pattern",
+"category": "typography",
+"concerns": [
+"brand",
+"content"
+],
+"concepts": [],
+"platform": [
+"web",
+"mobile",
+"tv"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"marketing",
+"media",
+"content",
+"ecommerce"
+],
+"risk": {
+"a11y": "low",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 306,
+"keywords": [
+"grotesk",
+"display",
+"headline",
+"brand type",
+"character"
+],
+"title": "Grotesk display + quiet body"
+},
+{
+"id": "typography-serif-editorial",
+"kind": "pattern",
+"category": "typography",
+"concerns": [
+"brand",
+"content"
+],
+"concepts": [],
+"platform": [
+"web",
+"tablet",
+"mobile"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"content",
+"education",
+"marketing",
+"finance"
+],
+"risk": {
+"a11y": "low",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 218,
+"keywords": [
+"serif",
+"editorial",
+"reading",
+"authority",
+"premium"
+],
+"title": "Serif editorial text"
+},
+{
+"id": "typography-serif-display",
+"kind": "pattern",
+"category": "typography",
+"concerns": [
+"brand",
+"content"
+],
+"concepts": [],
+"platform": [
+"web",
+"mobile"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"ecommerce",
+"marketing",
+"content"
+],
+"risk": {
+"a11y": "low",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 202,
+"keywords": [
+"serif display",
+"luxury",
+"fashion",
+"editorial headline"
+],
+"title": "Serif display accent"
+},
+{
+"id": "typography-monospace-technical",
+"kind": "pattern",
+"category": "typography",
+"concerns": [
+"brand",
+"content"
+],
+"concepts": [],
+"platform": [
+"web",
+"desktop"
+],
+"input": [
+"pointer",
+"keyboard"
+],
+"screen": [
+"any"
+],
+"product": [
+"devtools"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 187,
+"keywords": [
+"monospace",
+"code",
+"terminal",
+"developer",
+"technical"
+],
+"title": "Monospace as identity for technical products"
+},
+{
+"id": "typography-condensed-display",
+"kind": "pattern",
+"category": "typography",
+"concerns": [
+"brand",
+"content"
+],
+"concepts": [],
+"platform": [
+"tv",
+"web",
+"mobile"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"media",
+"ecommerce"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 200,
+"keywords": [
+"condensed",
+"broadcast",
+"sports",
+"epg",
+"titles"
+],
+"title": "Condensed display for broadcast/media"
+},
+{
+"id": "typography-rounded-friendly",
+"kind": "pattern",
+"category": "typography",
+"concerns": [
+"brand",
+"content"
+],
+"concepts": [],
+"platform": [
+"mobile",
+"web",
+"kiosk"
+],
+"input": [
+"touch"
+],
+"screen": [
+"any"
+],
+"product": [
+"education",
+"healthcare",
+"social",
+"iot"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 205,
+"keywords": [
+"rounded",
+"friendly",
+"playful",
+"kids",
+"wellness"
+],
+"title": "Rounded friendly sans"
+},
+{
+"id": "color-neutral-accent",
+"kind": "pattern",
+"category": "color",
+"concerns": [
+"accessibility",
+"brand"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"saas",
+"erp",
+"finance",
+"devtools",
+"healthcare",
+"government"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 267,
+"keywords": [
+"neutral",
+"accent",
+"semantic colour",
+"application palette"
+],
+"title": "Neutral canvas + one accent"
+},
+{
+"id": "color-dark-accent",
+"kind": "pattern",
+"category": "color",
+"concerns": [
+"accessibility",
+"brand"
+],
+"concepts": [],
+"platform": [
+"tv",
+"desktop",
+"web",
+"mobile"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"media",
+"devtools",
+"finance",
+"iot"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 354,
+"keywords": [
+"dark mode",
+"dark theme",
+"oled",
+"tv colour",
+"console"
+],
+"title": "Dark canvas + accent (dark-first)"
+},
+{
+"id": "color-dominant-brand",
+"kind": "pattern",
+"category": "color",
+"concerns": [
+"accessibility",
+"brand"
+],
+"concepts": [],
+"platform": [
+"web",
+"mobile",
+"kiosk",
+"tv"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"marketing",
+"ecommerce",
+"media",
+"social"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 242,
+"keywords": [
+"brand colour",
+"dominant",
+"bold",
+"consumer"
+],
+"title": "Dominant brand colour"
+},
+{
+"id": "color-duotone",
+"kind": "pattern",
+"category": "color",
+"concerns": [
+"accessibility",
+"brand"
+],
+"concepts": [],
+"platform": [
+"web",
+"mobile",
+"tv"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"media",
+"marketing",
+"education",
+"social"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 283,
+"keywords": [
+"duotone",
+"two colour",
+"identity",
+"brand pair"
+],
+"title": "Duotone identity"
+},
+{
+"id": "color-multicolour-semantic",
+"kind": "pattern",
+"category": "color",
+"concerns": [
+"accessibility",
+"brand"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"education",
+"media",
+"saas",
+"healthcare"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 193,
+"keywords": [
+"categorical",
+"multicolour",
+"calendar colours",
+"channels"
+],
+"title": "Multicolour by category"
+},
+{
+"id": "color-monochrome-light",
+"kind": "pattern",
+"category": "color",
+"concerns": [
+"accessibility",
+"brand"
+],
+"concepts": [],
+"platform": [
+"web",
+"mobile",
+"desktop"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"content",
+"marketing",
+"devtools",
+"ecommerce"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 249,
+"keywords": [
+"monochrome",
+"black and white",
+"minimal",
+"typographic"
+],
+"title": "Monochrome with typographic hierarchy"
+},
+{
+"id": "color-material-tonal",
+"kind": "pattern",
+"category": "color",
+"concerns": [
+"accessibility",
+"brand"
+],
+"concepts": [],
+"platform": [
+"mobile",
+"tv"
+],
+"input": [
+"touch",
+"remote"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 237,
+"keywords": [
+"material",
+"tonal",
+"seed colour",
+"android colour",
+"dynamic colour"
+],
+"title": "Material tonal palette (Android)"
+},
+{
+"id": "motion-functional-minimal",
+"kind": "pattern",
+"category": "motion",
+"concerns": [
+"motion"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 223,
+"keywords": [
+"motion",
+"transitions",
+"micro-interactions",
+"minimal",
+"functional"
+],
+"title": "Functional minimal motion"
+},
+{
+"id": "motion-spring",
+"kind": "pattern",
+"category": "motion",
+"concerns": [
+"motion"
+],
+"concepts": [],
+"platform": [
+"mobile",
+"web"
+],
+"input": [
+"touch",
+"pointer"
+],
+"screen": [
+"any"
+],
+"product": [
+"social",
+"ecommerce",
+"education",
+"media"
+],
+"risk": {
+"a11y": "low",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 211,
+"keywords": [
+"spring",
+"physics",
+"gesture",
+"bouncy",
+"interruptible"
+],
+"title": "Spring-based physical motion"
+},
+{
+"id": "motion-focus-scale",
+"kind": "pattern",
+"category": "motion",
+"concerns": [
+"motion"
+],
+"concepts": [],
+"platform": [
+"tv"
+],
+"input": [
+"remote"
+],
+"screen": [
+"any"
+],
+"product": [
+"media",
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 204,
+"keywords": [
+"focus",
+"scale",
+"tv motion",
+"rail scroll",
+"crossfade"
+],
+"title": "Focus-driven motion (TV)"
+},
+{
+"id": "motion-crossfade",
+"kind": "pattern",
+"category": "motion",
+"concerns": [
+"motion"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"media",
+"ecommerce",
+"content",
+"social"
+],
+"risk": {
+"a11y": "low",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 237,
+"keywords": [
+"crossfade",
+"shared element",
+"continuity",
+"transition"
+],
+"title": "Crossfade and shared-element continuity"
+},
+{
+"id": "motion-cinematic",
+"kind": "pattern",
+"category": "motion",
+"concerns": [
+"motion"
+],
+"concepts": [],
+"platform": [
+"web",
+"tv",
+"mobile"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"marketing",
+"media"
+],
+"risk": {
+"a11y": "medium",
+"perf": "high"
+},
+"environment": [],
+"guidance_chars": 201,
+"keywords": [
+"cinematic",
+"reveal",
+"stagger",
+"launch",
+"hero animation"
+],
+"title": "Cinematic reveals (brand moments only)"
+},
+{
+"id": "motion-expressive",
+"kind": "pattern",
+"category": "motion",
+"concerns": [
+"motion"
+],
+"concepts": [],
+"platform": [
+"mobile",
+"web"
+],
+"input": [
+"touch",
+"pointer"
+],
+"screen": [
+"any"
+],
+"product": [
+"social",
+"education",
+"ecommerce"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 190,
+"keywords": [
+"expressive",
+"playful",
+"brand motion",
+"personality"
+],
+"title": "Expressive brand motion"
+},
+{
+"id": "focus-ring-standard",
+"kind": "pattern",
+"category": "focus",
+"concerns": [
+"accessibility",
+"interaction"
+],
+"concepts": [
+"interaction.focus_visible"
+],
+"platform": [
+"web",
+"desktop"
+],
+"input": [
+"keyboard",
+"pointer"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 276,
+"keywords": [
+"focus ring",
+"focus visible",
+"keyboard",
+"outline"
+],
+"title": "Visible focus ring (web/desktop)"
+},
+{
+"id": "focus-scale-glow",
+"kind": "pattern",
+"category": "focus",
+"concerns": [
+"accessibility",
+"interaction"
+],
+"concepts": [
+"interaction.focus_visible"
+],
+"platform": [
+"tv"
+],
+"input": [
+"remote"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 359,
+"keywords": [
+"tv focus",
+"scale",
+"glow",
+"border",
+"dpad focus"
+],
+"title": "Scale + glow/border focus (TV)"
+},
+{
+"id": "focus-underline",
+"kind": "pattern",
+"category": "focus",
+"concerns": [
+"accessibility",
+"interaction"
+],
+"concepts": [],
+"platform": [
+"web"
+],
+"input": [
+"keyboard",
+"pointer"
+],
+"screen": [
+"any"
+],
+"product": [
+"content",
+"marketing"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 162,
+"keywords": [
+"underline focus",
+"links",
+"editorial focus"
+],
+"title": "Underline / weight focus for text-first UI"
+},
+{
+"id": "focus-none-touch-only",
+"kind": "pattern",
+"category": "focus",
+"concerns": [
+"accessibility",
+"interaction"
+],
+"concepts": [],
+"platform": [
+"mobile",
+"kiosk"
+],
+"input": [
+"touch"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 269,
+"keywords": [
+"touch feedback",
+"pressed state",
+"mobile focus",
+"kiosk targets"
+],
+"title": "Touch-only focus handling (mobile)"
+},
+{
+"id": "cta-single-primary",
+"kind": "pattern",
+"category": "cta",
+"concerns": [
+"interaction",
+"structure"
+],
+"concepts": [
+"layout.one_primary_action"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"form",
+"settings",
+"onboarding",
+"checkout",
+"auth",
+"home",
+"detail"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 219,
+"keywords": [
+"primary button",
+"cta",
+"call to action",
+"action hierarchy"
+],
+"title": "One primary action per screen"
+},
+{
+"id": "cta-sticky-bar",
+"kind": "pattern",
+"category": "cta",
+"concerns": [
+"interaction",
+"structure"
+],
+"concepts": [],
+"platform": [
+"mobile",
+"web",
+"tablet"
+],
+"input": [
+"touch",
+"pointer"
+],
+"screen": [
+"form",
+"detail",
+"checkout"
+],
+"product": [
+"ecommerce",
+"finance",
+"saas",
+"healthcare"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 218,
+"keywords": [
+"sticky",
+"bottom bar",
+"action bar",
+"add to cart"
+],
+"title": "Sticky action bar"
+},
+{
+"id": "cta-contextual-inline",
+"kind": "pattern",
+"category": "cta",
+"concerns": [
+"interaction",
+"structure"
+],
+"concepts": [],
+"platform": [
+"web",
+"mobile",
+"desktop"
+],
+"input": [
+"any"
+],
+"screen": [
+"home",
+"list",
+"detail",
+"dashboard"
+],
+"product": [
+"content",
+"social",
+"saas",
+"education"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 209,
+"keywords": [
+"inline actions",
+"contextual",
+"per item actions"
+],
+"title": "Contextual inline actions"
+},
+{
+"id": "cta-toolbar-commands",
+"kind": "pattern",
+"category": "cta",
+"concerns": [
+"interaction",
+"structure"
+],
+"concepts": [],
+"platform": [
+"desktop",
+"web"
+],
+"input": [
+"pointer",
+"keyboard"
+],
+"screen": [
+"list",
+"dashboard",
+"detail"
+],
+"product": [
+"erp",
+"devtools",
+"finance",
+"saas"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 200,
+"keywords": [
+"toolbar",
+"command bar",
+"bulk actions",
+"selection commands"
+],
+"title": "Toolbar / command bar with selection-driven commands"
+},
+{
+"id": "cta-focus-selects",
+"kind": "pattern",
+"category": "cta",
+"concerns": [
+"interaction",
+"structure"
+],
+"concepts": [],
+"platform": [
+"tv"
+],
+"input": [
+"remote"
+],
+"screen": [
+"home",
+"list",
+"detail",
+"search",
+"player"
+],
+"product": [
+"media",
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 293,
+"keywords": [
+"tv actions",
+"select",
+"play button",
+"detail screen",
+"focus selects"
+],
+"title": "Focus is the action (TV)"
+},
+{
+"id": "cta-fab",
+"kind": "pattern",
+"category": "cta",
+"concerns": [
+"interaction",
+"structure"
+],
+"concepts": [],
+"platform": [
+"mobile"
+],
+"input": [
+"touch"
+],
+"screen": [
+"home",
+"list"
+],
+"product": [
+"social",
+"saas",
+"education",
+"healthcare"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 208,
+"keywords": [
+"fab",
+"floating action",
+"material",
+"compose action"
+],
+"title": "Floating action button (Material)"
+},
+{
+"id": "imagery-none",
+"kind": "pattern",
+"category": "imagery",
+"concerns": [
+"brand",
+"content"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"erp",
+"finance",
+"devtools",
+"saas",
+"government",
+"healthcare"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 193,
+"keywords": [
+"no imagery",
+"functional",
+"no stock photos"
+],
+"title": "No decorative imagery"
+},
+{
+"id": "imagery-hero",
+"kind": "pattern",
+"category": "imagery",
+"concerns": [
+"brand",
+"content"
+],
+"concepts": [],
+"platform": [
+"web",
+"mobile",
+"kiosk"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"marketing",
+"ecommerce",
+"content",
+"education"
+],
+"risk": {
+"a11y": "medium",
+"perf": "high"
+},
+"environment": [],
+"guidance_chars": 294,
+"keywords": [
+"hero",
+"landing image",
+"product shot",
+"campaign"
+],
+"title": "Hero imagery on landing/brand pages"
+},
+{
+"id": "imagery-poster",
+"kind": "pattern",
+"category": "imagery",
+"concerns": [
+"brand",
+"content"
+],
+"concepts": [],
+"platform": [
+"tv",
+"mobile",
+"web"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"media",
+"education",
+"ecommerce"
+],
+"risk": {
+"a11y": "medium",
+"perf": "high"
+},
+"environment": [],
+"guidance_chars": 310,
+"keywords": [
+"poster",
+"artwork",
+"thumbnail",
+"cover art",
+"catalog image"
+],
+"title": "Poster art as primary recognition"
+},
+{
+"id": "imagery-immersive-backdrop",
+"kind": "pattern",
+"category": "imagery",
+"concerns": [
+"brand",
+"content"
+],
+"concepts": [],
+"platform": [
+"tv",
+"web"
+],
+"input": [
+"remote",
+"pointer"
+],
+"screen": [
+"any"
+],
+"product": [
+"media"
+],
+"risk": {
+"a11y": "high",
+"perf": "high"
+},
+"environment": [],
+"guidance_chars": 253,
+"keywords": [
+"backdrop",
+"immersive",
+"hero art",
+"fullscreen image"
+],
+"title": "Immersive backdrop"
+},
+{
+"id": "imagery-thumbnails",
+"kind": "pattern",
+"category": "imagery",
+"concerns": [
+"brand",
+"content"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"ecommerce",
+"social",
+"content",
+"saas",
+"education"
+],
+"risk": {
+"a11y": "low",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 192,
+"keywords": [
+"thumbnail",
+"avatar",
+"list image",
+"product image"
+],
+"title": "Functional thumbnails"
+},
+{
+"id": "imagery-data-graphics",
+"kind": "pattern",
+"category": "imagery",
+"concerns": [
+"brand",
+"content"
+],
+"concepts": [],
+"platform": [
+"web",
+"desktop"
+],
+"input": [
+"pointer",
+"keyboard"
+],
+"screen": [
+"any"
+],
+"product": [
+"finance",
+"saas",
+"devtools",
+"iot",
+"healthcare"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 203,
+"keywords": [
+"charts",
+"sparkline",
+"data graphics",
+"analytics visuals"
+],
+"title": "Data graphics as the visual layer"
+},
+{
+"id": "imagery-illustration",
+"kind": "pattern",
+"category": "imagery",
+"concerns": [
+"brand",
+"content"
+],
+"concepts": [],
+"platform": [
+"web",
+"mobile",
+"kiosk"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"education",
+"healthcare",
+"government",
+"social",
+"saas"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 185,
+"keywords": [
+"illustration",
+"empty state art",
+"onboarding art"
+],
+"title": "Illustration system"
+},
+{
+"id": "icon-outline-system",
+"kind": "pattern",
+"category": "icon",
+"concerns": [
+"brand",
+"content"
+],
+"concepts": [],
+"platform": [
+"web",
+"desktop"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 200,
+"keywords": [
+"icons",
+"outline",
+"lucide",
+"phosphor",
+"stroke"
+],
+"title": "Outline icon set, one weight"
+},
+{
+"id": "icon-filled-system",
+"kind": "pattern",
+"category": "icon",
+"concerns": [
+"brand",
+"content"
+],
+"concepts": [],
+"platform": [
+"tv",
+"mobile",
+"kiosk"
+],
+"input": [
+"remote",
+"touch"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 146,
+"keywords": [
+"filled icons",
+"tv icons",
+"bold icons",
+"tab icons"
+],
+"title": "Filled icons for distance and touch"
+},
+{
+"id": "icon-platform-native",
+"kind": "pattern",
+"category": "icon",
+"concerns": [
+"brand",
+"content"
+],
+"concepts": [],
+"platform": [
+"mobile",
+"desktop",
+"tv"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 173,
+"keywords": [
+"sf symbols",
+"material symbols",
+"fluent icons",
+"native icons"
+],
+"title": "Platform icon set"
+},
+{
+"id": "icon-duotone",
+"kind": "pattern",
+"category": "icon",
+"concerns": [
+"brand",
+"content"
+],
+"concepts": [],
+"platform": [
+"web",
+"mobile"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"education",
+"social",
+"marketing",
+"ecommerce"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 208,
+"keywords": [
+"duotone icons",
+"brand icons",
+"two-tone"
+],
+"title": "Duotone icons as brand accent"
+},
+{
+"id": "icon-text-only",
+"kind": "pattern",
+"category": "icon",
+"concerns": [
+"brand",
+"content"
+],
+"concepts": [],
+"platform": [
+"web"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"content",
+"marketing",
+"ecommerce"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 194,
+"keywords": [
+"text only",
+"no icons",
+"typographic navigation"
+],
+"title": "Text-only, no icon system"
+},
+{
+"id": "icon-custom-glyphs",
+"kind": "pattern",
+"category": "icon",
+"concerns": [
+"brand",
+"content"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"media",
+"ecommerce",
+"marketing"
+],
+"risk": {
+"a11y": "low",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 206,
+"keywords": [
+"custom icons",
+"glyph set",
+"brand iconography"
+],
+"title": "Custom glyph set"
+},
+{
+"id": "metadata-minimal",
+"kind": "pattern",
+"category": "metadata",
+"concerns": [
+"content",
+"structure"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"marketing",
+"content",
+"media",
+"social"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 144,
+"keywords": [
+"minimal metadata",
+"title only",
+"clean cards"
+],
+"title": "Minimal metadata"
+},
+{
+"id": "metadata-moderate",
+"kind": "pattern",
+"category": "metadata",
+"concerns": [
+"content",
+"structure"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 155,
+"keywords": [
+"metadata",
+"card facts",
+"list details"
+],
+"title": "Moderate metadata with a hierarchy"
+},
+{
+"id": "metadata-rich",
+"kind": "pattern",
+"category": "metadata",
+"concerns": [
+"content",
+"structure"
+],
+"concepts": [],
+"platform": [
+"web",
+"desktop"
+],
+"input": [
+"pointer",
+"keyboard"
+],
+"screen": [
+"any"
+],
+"product": [
+"erp",
+"finance",
+"devtools",
+"saas",
+"healthcare"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 207,
+"keywords": [
+"rich metadata",
+"columns",
+"attributes",
+"records"
+],
+"title": "Rich metadata (operational)"
+},
+{
+"id": "metadata-focus-reveal",
+"kind": "pattern",
+"category": "metadata",
+"concerns": [
+"content",
+"structure"
+],
+"concepts": [],
+"platform": [
+"tv"
+],
+"input": [
+"remote"
+],
+"screen": [
+"any"
+],
+"product": [
+"media",
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 228,
+"keywords": [
+"focus reveal",
+"tv metadata",
+"synopsis",
+"detail strip"
+],
+"title": "Focus-revealed metadata (TV)"
+},
+{
+"id": "metadata-inline-badges",
+"kind": "pattern",
+"category": "metadata",
+"concerns": [
+"content",
+"structure"
+],
+"concepts": [],
+"platform": [
+"web",
+"desktop",
+"mobile"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"saas",
+"erp",
+"ecommerce",
+"finance",
+"devtools"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 174,
+"keywords": [
+"badge",
+"chip",
+"pill",
+"status",
+"tag"
+],
+"title": "Inline badges and status chips"
+},
+{
+"id": "card-none",
+"kind": "pattern",
+"category": "cards",
+"concerns": [
+"structure"
+],
+"concepts": [
+"layout.no_nested_cards"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 265,
+"keywords": [
+"no cards",
+"dividers",
+"sections",
+"flat layout"
+],
+"title": "No card containers (dividers and spacing)"
+},
+{
+"id": "card-flat-tile",
+"kind": "pattern",
+"category": "cards",
+"concerns": [
+"structure"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 166,
+"keywords": [
+"tile",
+"flat card",
+"tonal card"
+],
+"title": "Flat tiles"
+},
+{
+"id": "card-list-row",
+"kind": "pattern",
+"category": "cards",
+"concerns": [
+"structure"
+],
+"concepts": [],
+"platform": [
+"mobile",
+"web",
+"desktop"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 173,
+"keywords": [
+"list row",
+"list item",
+"rows",
+"mobile list"
+],
+"title": "List rows"
+},
+{
+"id": "card-poster-portrait",
+"kind": "pattern",
+"category": "cards",
+"concerns": [
+"structure"
+],
+"concepts": [],
+"platform": [
+"tv",
+"mobile",
+"web"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"media",
+"education"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 218,
+"keywords": [
+"poster",
+"portrait card",
+"2:3",
+"key art"
+],
+"title": "Portrait poster cards (2:3)"
+},
+{
+"id": "card-poster-landscape",
+"kind": "pattern",
+"category": "cards",
+"concerns": [
+"structure"
+],
+"concepts": [],
+"platform": [
+"tv",
+"mobile",
+"web"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"media",
+"education"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 183,
+"keywords": [
+"landscape card",
+"16:9",
+"episode card",
+"continue watching",
+"channel card"
+],
+"title": "Landscape media cards (16:9)"
+},
+{
+"id": "card-bordered",
+"kind": "pattern",
+"category": "cards",
+"concerns": [
+"structure"
+],
+"concepts": [],
+"platform": [
+"web",
+"desktop"
+],
+"input": [
+"pointer",
+"keyboard"
+],
+"screen": [
+"any"
+],
+"product": [
+"saas",
+"devtools",
+"finance",
+"erp"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 199,
+"keywords": [
+"bordered card",
+"outline card",
+"settings card",
+"plan card"
+],
+"title": "Bordered cards"
+},
+{
+"id": "a11y-contrast-text",
+"kind": "rule",
+"category": "accessibility",
+"concerns": [
+"accessibility"
+],
+"concepts": [
+"a11y.contrast"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 201,
+"keywords": [
+"contrast",
+"text colour",
+"wcag",
+"readability",
+"placeholder",
+"grey text",
+"gray text",
+"light grey"
+],
+"title": "Text contrast 4.5:1 (3:1 large)"
+},
+{
+"id": "a11y-nontext-contrast",
+"kind": "rule",
+"category": "accessibility",
+"concerns": [
+"accessibility"
+],
+"concepts": [
+"a11y.contrast",
+"interaction.focus_visible"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 193,
+"keywords": [
+"non-text contrast",
+"border contrast",
+"icon contrast",
+"focus contrast"
+],
+"title": "Non-text contrast 3:1 for controls and focus"
+},
+{
+"id": "a11y-color-not-only",
+"kind": "rule",
+"category": "accessibility",
+"concerns": [
+"accessibility"
+],
+"concepts": [
+"a11y.color_not_only"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 224,
+"keywords": [
+"colour alone",
+"status colour",
+"colour blind",
+"error colour",
+"links",
+"red green",
+"red and green",
+"status dot"
+],
+"title": "Never colour alone"
+},
+{
+"id": "a11y-keyboard-operable",
+"kind": "rule",
+"category": "accessibility",
+"concerns": [
+"accessibility",
+"interaction"
+],
+"concepts": [
+"interaction.keyboard_navigation",
+"interaction.hover_independence"
+],
+"platform": [
+"web",
+"desktop"
+],
+"input": [
+"keyboard"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 326,
+"keywords": [
+"keyboard",
+"tab order",
+"focus trap",
+"escape",
+"roving tabindex",
+"drag alternative",
+"keyboard navigation",
+"keyboard operable"
+],
+"title": "Everything operable by keyboard, no traps"
+},
+{
+"id": "a11y-focus-visible",
+"kind": "rule",
+"category": "focus",
+"concerns": [
+"accessibility",
+"interaction"
+],
+"concepts": [
+"interaction.focus_visible"
+],
+"platform": [
+"web",
+"desktop",
+"tv"
+],
+"input": [
+"keyboard",
+"remote"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 240,
+"keywords": [
+"focus visible",
+"focus obscured",
+"sticky header focus",
+"focus indicator",
+"focus order",
+"visible focus",
+"focus ring"
+],
+"title": "Focus visible and not obscured"
+},
+{
+"id": "a11y-target-size",
+"kind": "rule",
+"category": "input",
+"concerns": [
+"accessibility",
+"interaction"
+],
+"concepts": [
+"touch.minimum_target"
+],
+"platform": [
+"any"
+],
+"input": [
+"touch",
+"pointer",
+"remote"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 232,
+"keywords": [
+"target size",
+"touch target",
+"hit area",
+"44pt",
+"48dp",
+"icon button",
+"large touch targets",
+"touch targets"
+],
+"title": "Target size by platform"
+},
+{
+"id": "a11y-labels-names",
+"kind": "rule",
+"category": "accessibility",
+"concerns": [
+"accessibility"
+],
+"concepts": [
+"a11y.accessible_names"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 326,
+"keywords": [
+"aria-label",
+"accessible name",
+"alt text",
+"contentDescription",
+"accessibilityLabel",
+"icon button label"
+],
+"title": "Accessible names for every control and image"
+},
+{
+"id": "a11y-semantics-structure",
+"kind": "rule",
+"category": "accessibility",
+"concerns": [
+"accessibility"
+],
+"concepts": [
+"a11y.semantics"
+],
+"platform": [
+"web"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 226,
+"keywords": [
+"semantic html",
+"headings",
+"landmarks",
+"button element",
+"table semantics"
+],
+"title": "Semantic structure: headings, landmarks, lists, tables"
+},
+{
+"id": "a11y-native-semantics",
+"kind": "rule",
+"category": "accessibility",
+"concerns": [
+"accessibility"
+],
+"concepts": [
+"a11y.semantics",
+"a11y.accessible_names"
+],
+"platform": [
+"mobile",
+"desktop",
+"tv"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 405,
+"keywords": [
+"talkback",
+"voiceover",
+"narrator",
+"semantics",
+"automation peer",
+"accessibilityRole",
+"live region"
+],
+"title": "Native accessibility semantics (mobile/desktop)"
+},
+{
+"id": "a11y-reduced-motion",
+"kind": "rule",
+"category": "motion",
+"concerns": [
+"accessibility",
+"motion"
+],
+"concepts": [
+"a11y.reduced_motion"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 259,
+"keywords": [
+"reduced motion",
+"prefers-reduced-motion",
+"animation",
+"parallax",
+"autoplay"
+],
+"title": "Respect reduced motion"
+},
+{
+"id": "a11y-text-scaling",
+"kind": "rule",
+"category": "typography",
+"concerns": [
+"content"
+],
+"concepts": [
+"a11y.text_scaling"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 286,
+"keywords": [
+"text scaling",
+"dynamic type",
+"font scale",
+"zoom",
+"reflow",
+"rem",
+"sp"
+],
+"title": "Support text scaling and reflow"
+},
+{
+"id": "a11y-forms-errors",
+"kind": "rule",
+"category": "forms",
+"concerns": [
+"accessibility",
+"feedback"
+],
+"concepts": [
+"feedback.validation_errors"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 373,
+"keywords": [
+"form labels",
+"validation",
+"error message",
+"inline error",
+"autocomplete",
+"redundant entry",
+"accessible authentication",
+"error recovery"
+],
+"title": "Form labels, errors, and recovery"
+},
+{
+"id": "a11y-live-status",
+"kind": "rule",
+"category": "feedback",
+"concerns": [
+"accessibility",
+"feedback"
+],
+"concepts": [
+"a11y.live_status"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 247,
+"keywords": [
+"live region",
+"status",
+"toast",
+"announce",
+"aria-live"
+],
+"title": "Announce dynamic status changes"
+},
+{
+"id": "a11y-modal-dialog",
+"kind": "rule",
+"category": "dialog",
+"concerns": [
+"accessibility",
+"interaction"
+],
+"concepts": [
+"a11y.dialog_focus",
+"interaction.focus_restore"
+],
+"platform": [
+"web",
+"desktop",
+"mobile"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 367,
+"keywords": [
+"modal",
+"dialog",
+"focus trap",
+"return focus",
+"sheet",
+"drawer"
+],
+"title": "Dialog focus management"
+},
+{
+"id": "a11y-hover-not-required",
+"kind": "rule",
+"category": "input",
+"concerns": [
+"accessibility",
+"interaction"
+],
+"concepts": [
+"interaction.hover_independence"
+],
+"platform": [
+"web",
+"desktop"
+],
+"input": [
+"pointer",
+"touch",
+"keyboard"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 235,
+"keywords": [
+"hover",
+"tooltip",
+"row actions",
+"hover reveal",
+"touch"
+],
+"title": "Hover reveals need a non-hover path"
+},
+{
+"id": "a11y-time-and-auto",
+"kind": "rule",
+"category": "motion",
+"concerns": [
+"accessibility",
+"motion",
+"states"
+],
+"concepts": [
+"state.session_expiry",
+"a11y.reduced_motion"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"marketing",
+"media",
+"ecommerce"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 174,
+"keywords": [
+"carousel",
+"auto rotate",
+"timeout",
+"pause",
+"kiosk idle"
+],
+"title": "Auto-rotating and timed content is controllable"
+},
+{
+"id": "a11y-tv-focus-always",
+"kind": "rule",
+"category": "focus",
+"concerns": [
+"accessibility",
+"interaction"
+],
+"concepts": [
+"interaction.focus_restore",
+"interaction.focus_visible"
+],
+"platform": [
+"tv"
+],
+"input": [
+"remote"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 311,
+"keywords": [
+"tv focus",
+"initial focus",
+"focus restoration",
+"dpad",
+"lost focus",
+"restore focus",
+"focus engine",
+"dpad focus"
+],
+"title": "TV: exactly one visible focus at all times"
+},
+{
+"id": "tv-dpad-axes",
+"kind": "rule",
+"category": "navigation",
+"concerns": [
+"navigation"
+],
+"concepts": [
+"interaction.dpad_reachability"
+],
+"platform": [
+"tv"
+],
+"input": [
+"remote"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 302,
+"keywords": [
+"dpad",
+"axis",
+"reachability",
+"tv navigation",
+"straight path",
+"dpad focus",
+"dpad navigation",
+"focus engine"
+],
+"title": "TV: vertical = sections, horizontal = items"
+},
+{
+"id": "tv-back-behavior",
+"kind": "rule",
+"category": "navigation",
+"concerns": [
+"navigation"
+],
+"concepts": [
+"interaction.back_semantics"
+],
+"platform": [
+"tv"
+],
+"input": [
+"remote"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 311,
+"keywords": [
+"back button",
+"tv back",
+"back stack",
+"exit",
+"deep link"
+],
+"title": "TV: predictable BACK"
+},
+{
+"id": "tv-safe-area",
+"kind": "rule",
+"category": "layout",
+"concerns": [
+"interaction",
+"structure"
+],
+"concepts": [
+"tv.safe_margins"
+],
+"platform": [
+"tv"
+],
+"input": [
+"remote"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 312,
+"keywords": [
+"overscan",
+"safe area",
+"tv margins",
+"title safe"
+],
+"title": "TV: overscan-safe margins"
+},
+{
+"id": "tv-typography-distance",
+"kind": "rule",
+"category": "typography",
+"concerns": [
+"accessibility",
+"content"
+],
+"concepts": [
+"tv.ten_foot_typography"
+],
+"platform": [
+"tv"
+],
+"input": [
+"remote"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 293,
+"keywords": [
+"tv typography",
+"10-foot",
+"viewing distance",
+"large text",
+"legibility",
+"10-foot typography",
+"10 foot",
+"ten-foot"
+],
+"title": "TV: 10-foot typography"
+},
+{
+"id": "tv-focus-performance",
+"kind": "rule",
+"category": "performance",
+"concerns": [
+"interaction",
+"performance"
+],
+"concepts": [
+"perf.focus_latency",
+"table.virtualization",
+"perf.image_sizing"
+],
+"platform": [
+"tv"
+],
+"input": [
+"remote"
+],
+"screen": [
+"any"
+],
+"product": [
+"media",
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "high"
+},
+"environment": [],
+"guidance_chars": 355,
+"keywords": [
+"tv performance",
+"focus lag",
+"image cache",
+"virtualization",
+"low-end device"
+],
+"title": "TV: focus response and list performance"
+},
+{
+"id": "tv-no-touch-hover",
+"kind": "rule",
+"category": "input",
+"concerns": [
+"interaction"
+],
+"concepts": [
+"tv.no_touch_hover",
+"interaction.hover_independence"
+],
+"platform": [
+"tv"
+],
+"input": [
+"remote"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 255,
+"keywords": [
+"no touch",
+"tv input",
+"remote only",
+"porting to tv",
+"hover on tv",
+"port",
+"porting",
+"version"
+],
+"title": "TV: no touch, no hover, no scrollbars"
+},
+{
+"id": "tv-player-controls",
+"kind": "rule",
+"category": "player",
+"concerns": [
+"component",
+"interaction"
+],
+"concepts": [
+"tv.player_autohide",
+"interaction.back_semantics"
+],
+"platform": [
+"tv"
+],
+"input": [
+"remote"
+],
+"screen": [
+"any"
+],
+"product": [
+"media"
+],
+"risk": {
+"a11y": "high",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 480,
+"keywords": [
+"player controls",
+"transport",
+"seek",
+"play pause",
+"media keys",
+"subtitles",
+"auto hide",
+"auto-hide timing"
+],
+"title": "TV: transport control conventions"
+},
+{
+"id": "tv-dark-first",
+"kind": "rule",
+"category": "color",
+"concerns": [
+"accessibility",
+"brand",
+"content"
+],
+"concepts": [
+"tv.dark_first",
+"a11y.contrast"
+],
+"platform": [
+"tv"
+],
+"input": [
+"remote"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 231,
+"keywords": [
+"tv colour",
+"dark theme tv",
+"banding",
+"saturation",
+"picture mode"
+],
+"title": "TV: dark-first colour with restrained saturation"
+},
+{
+"id": "mobile-safe-areas",
+"kind": "rule",
+"category": "layout",
+"concerns": [
+"structure"
+],
+"concepts": [
+"touch.safe_areas"
+],
+"platform": [
+"mobile",
+"tablet"
+],
+"input": [
+"touch"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 311,
+"keywords": [
+"safe area",
+"insets",
+"notch",
+"home indicator",
+"edge to edge",
+"ime"
+],
+"title": "Mobile: safe areas and system insets"
+},
+{
+"id": "mobile-thumb-reach",
+"kind": "rule",
+"category": "layout",
+"concerns": [
+"structure"
+],
+"concepts": [
+"touch.thumb_reach"
+],
+"platform": [
+"mobile"
+],
+"input": [
+"touch"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 238,
+"keywords": [
+"thumb zone",
+"reachability",
+"bottom sheet",
+"one-handed",
+"hard to reach",
+"reach",
+"one hand",
+"one-hand"
+],
+"title": "Mobile: primary actions in thumb reach"
+},
+{
+"id": "mobile-gestures-discoverable",
+"kind": "rule",
+"category": "input",
+"concerns": [
+"interaction"
+],
+"concepts": [
+"touch.gestures_discoverable"
+],
+"platform": [
+"mobile",
+"tablet"
+],
+"input": [
+"touch"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 264,
+"keywords": [
+"gesture",
+"swipe",
+"long press",
+"pull to refresh",
+"system gesture"
+],
+"title": "Mobile: gestures are shortcuts, not the only way"
+},
+{
+"id": "mobile-keyboard-ime",
+"kind": "rule",
+"category": "forms",
+"concerns": [
+"component",
+"feedback"
+],
+"concepts": [
+"touch.ime_keyboard"
+],
+"platform": [
+"mobile",
+"tablet"
+],
+"input": [
+"touch"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 290,
+"keywords": [
+"keyboard type",
+"ime",
+"autofill",
+"return key",
+"field scroll"
+],
+"title": "Mobile: keyboard and input types"
+},
+{
+"id": "mobile-platform-navigation",
+"kind": "rule",
+"category": "navigation",
+"concerns": [
+"navigation"
+],
+"concepts": [],
+"platform": [
+"mobile",
+"tablet"
+],
+"input": [
+"touch"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 277,
+"keywords": [
+"ios navigation",
+"android navigation",
+"predictive back",
+"navigation stack",
+"sheets"
+],
+"title": "Mobile: follow the platform navigation grammar"
+},
+{
+"id": "mobile-density-touch",
+"kind": "rule",
+"category": "layout",
+"concerns": [
+"adaptive",
+"data-display",
+"interaction"
+],
+"concepts": [
+"table.column_priority",
+"touch.minimum_target"
+],
+"platform": [
+"mobile"
+],
+"input": [
+"touch"
+],
+"screen": [
+"any"
+],
+"product": [
+"erp",
+"finance",
+"saas",
+"healthcare"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 266,
+"keywords": [
+"mobile table",
+"dense mobile",
+"erp mobile",
+"responsive table",
+"list conversion",
+"column priority",
+"which columns",
+"hide columns"
+],
+"title": "Mobile: density is bounded by touch"
+},
+{
+"id": "desktop-keyboard-first",
+"kind": "rule",
+"category": "input",
+"concerns": [
+"interaction"
+],
+"concepts": [
+"interaction.keyboard_navigation",
+"interaction.shortcuts",
+"interaction.focus_visible"
+],
+"platform": [
+"desktop"
+],
+"input": [
+"keyboard",
+"pointer"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 237,
+"keywords": [
+"shortcuts",
+"accelerators",
+"access keys",
+"keyboard desktop",
+"grid navigation",
+"keyboard shortcuts",
+"shortcut keys",
+"hotkeys"
+],
+"title": "Desktop: keyboard is a first-class input"
+},
+{
+"id": "desktop-window-resizing",
+"kind": "rule",
+"category": "layout",
+"concerns": [
+"adaptive",
+"structure"
+],
+"concepts": [
+"adaptive.breakpoint_matrix",
+"table.column_priority"
+],
+"platform": [
+"desktop"
+],
+"input": [
+"pointer",
+"keyboard"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 282,
+"keywords": [
+"window size",
+"resize",
+"dpi scaling",
+"breakpoints desktop",
+"panes",
+"column priority",
+"hide columns when narrow",
+"narrow window"
+],
+"title": "Desktop: layouts survive window resizing and DPI"
+},
+{
+"id": "desktop-density-spacing",
+"kind": "rule",
+"category": "layout",
+"concerns": [
+"structure"
+],
+"concepts": [],
+"platform": [
+"desktop"
+],
+"input": [
+"pointer",
+"keyboard"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 260,
+"keywords": [
+"desktop spacing",
+"4px grid",
+"control height",
+"context menu",
+"tooltips"
+],
+"title": "Desktop: 4 px grid, compact heights, right-click everywhere"
+},
+{
+"id": "desktop-state-persistence",
+"kind": "rule",
+"category": "navigation",
+"concerns": [
+"navigation"
+],
+"concepts": [],
+"platform": [
+"desktop"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"erp",
+"devtools",
+"finance",
+"saas"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 168,
+"keywords": [
+"persist layout",
+"column widths",
+"restore selection",
+"workspace"
+],
+"title": "Desktop: persist layout and selection state"
+},
+{
+"id": "desktop-fluent-materials",
+"kind": "rule",
+"category": "surface",
+"concerns": [
+"structure"
+],
+"concepts": [],
+"platform": [
+"desktop"
+],
+"input": [
+"pointer",
+"keyboard"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 228,
+"keywords": [
+"fluent",
+"mica",
+"acrylic",
+"windows 11",
+"layering",
+"high contrast mode"
+],
+"title": "Windows: Fluent layering and materials, sparingly"
+},
+{
+"id": "web-responsive-breakpoints",
+"kind": "rule",
+"category": "responsive",
+"concerns": [
+"adaptive"
+],
+"concepts": [
+"adaptive.breakpoint_matrix",
+"adaptive.navigation_transform"
+],
+"platform": [
+"web"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 353,
+"keywords": [
+"breakpoints",
+"viewport matrix",
+"responsive test",
+"container query",
+"overflow"
+],
+"title": "Web: content-driven breakpoints and a test matrix"
+},
+{
+"id": "web-cls-and-lcp",
+"kind": "rule",
+"category": "performance",
+"concerns": [
+"performance"
+],
+"concepts": [
+"perf.layout_shift",
+"perf.image_sizing"
+],
+"platform": [
+"web"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "high"
+},
+"environment": [],
+"guidance_chars": 262,
+"keywords": [
+"cls",
+"layout shift",
+"lcp",
+"font loading",
+"aspect ratio",
+"skeleton"
+],
+"title": "Web: reserve space, load fonts and images without shift"
+},
+{
+"id": "web-hydration-js-budget",
+"kind": "rule",
+"category": "performance",
+"concerns": [
+"performance"
+],
+"concepts": [],
+"platform": [
+"web"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "high"
+},
+"environment": [],
+"guidance_chars": 256,
+"keywords": [
+"hydration",
+"bundle size",
+"islands",
+"icon imports",
+"lazy load",
+"js budget"
+],
+"title": "Web: UI decisions have a JS cost"
+},
+{
+"id": "web-virtualize-long-lists",
+"kind": "rule",
+"category": "performance",
+"concerns": [
+"data-display",
+"performance"
+],
+"concepts": [
+"table.virtualization"
+],
+"platform": [
+"web",
+"desktop",
+"mobile",
+"tv"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"erp",
+"finance",
+"saas",
+"media",
+"social",
+"devtools"
+],
+"risk": {
+"a11y": "medium",
+"perf": "high"
+},
+"environment": [],
+"guidance_chars": 328,
+"keywords": [
+"virtualization",
+"windowing",
+"long list",
+"infinite scroll",
+"aria-rowcount",
+"collection rows",
+"virtualized"
+],
+"title": "Virtualise long lists and tables"
+},
+{
+"id": "mobile-perf-images-overdraw",
+"kind": "rule",
+"category": "performance",
+"concerns": [
+"performance"
+],
+"concepts": [
+"perf.image_sizing"
+],
+"platform": [
+"mobile",
+"tablet"
+],
+"input": [
+"touch"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "high"
+},
+"environment": [],
+"guidance_chars": 287,
+"keywords": [
+"image sizing",
+"overdraw",
+"list performance",
+"animation cost",
+"profiler"
+],
+"title": "Mobile: image sizing, overdraw, and effect cost"
+},
+{
+"id": "typo-scale-and-roles",
+"kind": "rule",
+"category": "typography",
+"concerns": [
+"content"
+],
+"concepts": [
+"table.tabular_figures"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 342,
+"keywords": [
+"type scale",
+"text roles",
+"line height",
+"font size",
+"tabular figures",
+"large code typography",
+"type roles"
+],
+"title": "One type scale with named roles"
+},
+{
+"id": "typo-measure-and-rhythm",
+"kind": "rule",
+"category": "typography",
+"concerns": [
+"content"
+],
+"concepts": [
+"content.readable_measure",
+"layout.focal_hierarchy"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 252,
+"keywords": [
+"measure",
+"line length",
+"vertical rhythm",
+"hierarchy",
+"weight"
+],
+"title": "Measure, rhythm, and hierarchy by contrast of size and weight"
+},
+{
+"id": "typo-font-loading-coverage",
+"kind": "rule",
+"category": "typography",
+"concerns": [
+"content",
+"performance"
+],
+"concepts": [],
+"platform": [
+"web"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 228,
+"keywords": [
+"font loading",
+"subset",
+"preload",
+"fallback",
+"language coverage",
+"variable font"
+],
+"title": "Web fonts: subset, preload, fallback metrics, language coverage"
+},
+{
+"id": "color-semantic-tokens",
+"kind": "rule",
+"category": "color",
+"concerns": [
+"brand",
+"structure"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 290,
+"keywords": [
+"semantic tokens",
+"design tokens",
+"theming",
+"dark mode tokens",
+"css variables"
+],
+"title": "Semantic colour tokens, not raw hex in components"
+},
+{
+"id": "color-states-complete",
+"kind": "rule",
+"category": "color",
+"concerns": [
+"brand",
+"interaction"
+],
+"concepts": [
+"interaction.focus_visible"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 270,
+"keywords": [
+"hover state",
+"pressed",
+"disabled",
+"selected",
+"state colours"
+],
+"title": "Every interactive colour has hover/pressed/focus/disabled/selected"
+},
+{
+"id": "color-dark-mode-rules",
+"kind": "rule",
+"category": "color",
+"concerns": [
+"accessibility",
+"brand"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 234,
+"keywords": [
+"dark mode",
+"dark theme",
+"elevation dark",
+"desaturate",
+"surface"
+],
+"title": "Dark mode is a redesign of surfaces, not an inversion"
+},
+{
+"id": "layout-spacing-scale",
+"kind": "rule",
+"category": "layout",
+"concerns": [
+"structure"
+],
+"concepts": [
+"layout.spacing_scale"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 288,
+"keywords": [
+"spacing",
+"scale",
+"proximity",
+"grouping",
+"alignment",
+"rhythm",
+"cramped",
+"inconsistent spacing"
+],
+"title": "Spacing from one scale, grouping by proximity"
+},
+{
+"id": "layout-hierarchy-one-thing",
+"kind": "rule",
+"category": "layout",
+"concerns": [
+"structure"
+],
+"concepts": [
+"layout.focal_hierarchy",
+"layout.one_primary_action"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 302,
+"keywords": [
+"hierarchy",
+"focal point",
+"emphasis",
+"busy",
+"visual weight",
+"visual hierarchy",
+"what matters most"
+],
+"title": "One clear focal point per screen"
+},
+{
+"id": "layout-states-empty-loading-error",
+"kind": "rule",
+"category": "feedback",
+"concerns": [
+"states"
+],
+"concepts": [
+"state.loading_empty_error"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 293,
+"keywords": [
+"empty state",
+"loading state",
+"error state",
+"skeleton",
+"retry",
+"states"
+],
+"title": "Design empty, loading, error, and partial states"
+},
+{
+"id": "nav-orientation-and-back",
+"kind": "rule",
+"category": "navigation",
+"concerns": [
+"navigation"
+],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 253,
+"keywords": [
+"orientation",
+"current page",
+"back",
+"deep link",
+"breadcrumb",
+"url state"
+],
+"title": "Users always know where they are and how to go back"
+},
+{
+"id": "kiosk-public-use",
+"kind": "rule",
+"category": "input",
+"concerns": [
+"environment",
+"interaction",
+"privacy"
+],
+"concepts": [
+"touch.minimum_target",
+"privacy.shared_device",
+"state.session_expiry"
+],
+"platform": [
+"kiosk"
+],
+"input": [
+"touch"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 325,
+"keywords": [
+"kiosk",
+"self-service",
+"public display",
+"idle timeout",
+"reach range",
+"glare",
+"privacy of on-screen data",
+"clear the session"
+],
+"title": "Kiosk: public, hurried, standing users"
+},
+{
+"id": "i18n-text-expansion-rtl",
+"kind": "rule",
+"category": "content",
+"concerns": [
+"adaptive",
+"content"
+],
+"concepts": [
+"content.i18n_expansion"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 277,
+"keywords": [
+"i18n",
+"rtl",
+"text expansion",
+"localisation",
+"pseudo-localisation",
+"logical properties"
+],
+"title": "Internationalisation: expansion, RTL, formats"
+},
+{
+"id": "impl-reuse-before-new",
+"kind": "rule",
+"category": "implementation",
+"concerns": [],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 340,
+"keywords": [
+"reuse",
+"existing components",
+"conventions",
+"extend",
+"don't install"
+],
+"title": "Reuse \u2192 extend \u2192 compose \u2192 new (in that order)"
+},
+{
+"id": "impl-safe-modification",
+"kind": "rule",
+"category": "implementation",
+"concerns": [],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 268,
+"keywords": [
+"safe refactor",
+"don't break",
+"test ids",
+"routes",
+"state"
+],
+"title": "UI changes must not break routes, state, contracts, or tests"
+},
+{
+"id": "verify-render-and-inspect",
+"kind": "rule",
+"category": "verification",
+"concerns": [],
+"concepts": [],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 286,
+"keywords": [
+"screenshot",
+"visual verification",
+"render",
+"inspect",
+"browser",
+"emulator"
+],
+"title": "Render, screenshot, inspect before claiming done"
+},
+{
+"id": "data-tables-numeric",
+"kind": "rule",
+"category": "table",
+"concerns": [
+"content",
+"data-display"
+],
+"concepts": [
+"table.tabular_figures"
+],
+"platform": [
+"web",
+"desktop"
+],
+"input": [
+"pointer",
+"keyboard"
+],
+"screen": [
+"any"
+],
+"product": [
+"finance",
+"erp",
+"saas",
+"devtools",
+"healthcare"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 298,
+"keywords": [
+"numeric table",
+"tabular figures",
+"alignment",
+"precision",
+"currency",
+"totals",
+"numeric alignment",
+"align numbers"
+],
+"title": "Numeric tables: alignment, figures, units, precision"
+},
+{
+"id": "search-filter-feedback",
+"kind": "rule",
+"category": "search",
+"concerns": [
+"component",
+"feedback"
+],
+"concepts": [
+"a11y.live_status"
+],
+"platform": [
+"any"
+],
+"input": [
+"any"
+],
+"screen": [
+"search",
+"list",
+"dashboard"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 273,
+"keywords": [
+"search",
+"filters",
+"chips",
+"result count",
+"debounce",
+"faceted",
+"auto refresh",
+"autosuggest"
+],
+"title": "Search and filters: visible state and instant feedback"
+},
+{
+"id": "states-offline-and-sync",
+"kind": "rule",
+"category": "states",
+"concerns": [
+"environment",
+"feedback",
+"states"
+],
+"concepts": [
+"state.offline_sync",
+"state.saving_conflict"
+],
+"platform": [
+"mobile",
+"tablet",
+"web",
+"kiosk"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "medium"
+},
+"environment": [],
+"guidance_chars": 493,
+"keywords": [
+"offline",
+"offline first",
+"sync",
+"sync status",
+"pending sync",
+"last synced",
+"connectivity",
+"poor connection"
+],
+"title": "Offline, sync, and connectivity states"
+},
+{
+"id": "states-persistence-and-session",
+"kind": "rule",
+"category": "states",
+"concerns": [
+"feedback",
+"states"
+],
+"concepts": [
+"state.saving_conflict",
+"state.session_expiry",
+"feedback.confirmation_destructive"
+],
+"platform": [
+"web",
+"mobile",
+"desktop",
+"tablet"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 521,
+"keywords": [
+"saving",
+"saved",
+"autosave",
+"draft",
+"session expiry",
+"session timeout",
+"timeout warning",
+"permission denied"
+],
+"title": "Saving, saved, autosave, session expiry, and permission-denied states"
+},
+{
+"id": "shared-device-privacy",
+"kind": "rule",
+"category": "privacy",
+"concerns": [
+"environment",
+"privacy"
+],
+"concepts": [
+"privacy.shared_device",
+"state.session_expiry",
+"privacy.sensitive_masking"
+],
+"platform": [
+"tv",
+"kiosk",
+"tablet",
+"desktop"
+],
+"input": [
+"any"
+],
+"screen": [
+"any"
+],
+"product": [
+"media",
+"finance",
+"healthcare",
+"government",
+"education",
+"any"
+],
+"risk": {
+"a11y": "low",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 441,
+"keywords": [
+"privacy",
+"shared device",
+"shared tv",
+"onlookers",
+"shoulder surfing",
+"mask balance",
+"hide balance",
+"profile pin"
+],
+"title": "Privacy on shared and public screens"
+},
+{
+"id": "mobile-field-use",
+"kind": "rule",
+"category": "environment",
+"concerns": [
+"accessibility",
+"environment",
+"interaction"
+],
+"concepts": [
+"env.outdoor_readability",
+"env.glanceable_status",
+"touch.minimum_target"
+],
+"platform": [
+"mobile",
+"tablet",
+"kiosk"
+],
+"input": [
+"touch"
+],
+"screen": [
+"any"
+],
+"product": [
+"iot",
+"government",
+"healthcare",
+"erp",
+"any"
+],
+"risk": {
+"a11y": "medium",
+"perf": "low"
+},
+"environment": [
+"outdoor",
+"gloves"
+],
+"guidance_chars": 527,
+"keywords": [
+"outdoor",
+"sunlight",
+"glare",
+"field workers",
+"field inspectors",
+"gloves",
+"glanceable",
+"at a glance"
+],
+"title": "Field use: sunlight readability and glanceable status"
+},
+{
+"id": "grid-single-tab-stop",
+"kind": "rule",
+"category": "table",
+"concerns": [
+"accessibility",
+"data-display",
+"interaction"
+],
+"concepts": [
+"interaction.keyboard_navigation",
+"interaction.focus_visible",
+"table.selection_bulk"
+],
+"platform": [
+"web",
+"desktop"
+],
+"input": [
+"keyboard",
+"pointer"
+],
+"screen": [
+"any"
+],
+"product": [
+"any"
+],
+"risk": {
+"a11y": "high",
+"perf": "low"
+},
+"environment": [],
+"guidance_chars": 570,
+"keywords": [
+"roving tabindex",
+"single tab stop",
+"tab order",
+"grid keyboard navigation",
+"row actions",
+"arrow keys",
+"aria grid",
+"24 tab stops"
+],
+"title": "Grids with row actions are one Tab stop"
+}
+]

@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>All gear — Trailhead Supply</title>
+  <meta name="description" content="Shells, packs, boots and shelters. Filter by category, price and feature.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="index.html">Trailhead Supply</a>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="products.html?category=jackets" data-category="jackets">Jackets</a>
+        <a href="products.html?category=packs" data-category="packs">Packs</a>
+        <a href="products.html?category=footwear" data-category="footwear">Footwear</a>
+        <a href="products.html?category=camp" data-category="camp">Camp</a>
+      </nav>
+      <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" id="menu-btn">Menu</button>
+      <a class="icon-btn" href="checkout.html" aria-label="Cart, 1 item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h8.4a2 2 0 0 0 2-1.5L22 8H6"/><circle cx="10" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>
+        <span class="cart-count" id="cart-count" aria-hidden="true">1</span>
+      </a>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li aria-current="page" id="crumb-current">All gear</li>
+    </ol>
+  </nav>
+
+  <main id="main" class="plp">
+    <div class="plp-head">
+      <h1 class="plp-title" id="plp-title">All gear</h1>
+      <p class="muted">Tested on the ridgelines behind the shop. Free shipping over $99, 60-day returns.</p>
+    </div>
+
+    <!-- Filters: toggle buttons (aria-pressed) so Tab + Space/Enter work without custom key handling.
+         On phones the facet groups collapse into a disclosure; the count, applied chips and sort stay visible. -->
+    <form class="filters" id="filters" aria-label="Filter and sort products" novalidate>
+      <details class="facets" id="facets">
+        <summary class="facets__summary">
+          <span>Filters</span>
+          <span class="facets__badge" id="facets-badge" hidden></span>
+        </summary>
+        <div class="facets__groups">
+          <fieldset class="facet">
+            <legend>Category</legend>
+            <div class="chips">
+              <button type="button" class="chip" aria-pressed="false" data-facet="category" data-value="jackets">Jackets <span class="chip__count" data-count></span></button>
+              <button type="button" class="chip" aria-pressed="false" data-facet="category" data-value="packs">Packs <span class="chip__count" data-count></span></button>
+              <button type="button" class="chip" aria-pressed="false" data-facet="category" data-value="footwear">Footwear <span class="chip__count" data-count></span></button>
+              <button type="button" class="chip" aria-pressed="false" data-facet="category" data-value="camp">Camp <span class="chip__count" data-count></span></button>
+            </div>
+          </fieldset>
+          <fieldset class="facet">
+            <legend>Price</legend>
+            <div class="chips">
+              <button type="button" class="chip" aria-pressed="false" data-facet="price" data-value="under150" data-single>Under $150</button>
+              <button type="button" class="chip" aria-pressed="false" data-facet="price" data-value="150to300" data-single>$150–$300</button>
+              <button type="button" class="chip" aria-pressed="false" data-facet="price" data-value="over300" data-single>Over $300</button>
+            </div>
+          </fieldset>
+          <fieldset class="facet">
+            <legend>Features</legend>
+            <div class="chips">
+              <button type="button" class="chip" aria-pressed="false" data-facet="feature" data-value="waterproof">Waterproof <span class="chip__count" data-count></span></button>
+              <button type="button" class="chip" aria-pressed="false" data-facet="feature" data-value="lightweight">Lightweight <span class="chip__count" data-count></span></button>
+              <button type="button" class="chip" aria-pressed="false" data-facet="feature" data-value="sale">On sale <span class="chip__count" data-count></span></button>
+            </div>
+          </fieldset>
+        </div>
+      </details>
+
+      <div class="filters__bar">
+        <p class="results-count" id="results-count" role="status" aria-live="polite">12 products</p>
+        <div class="applied" id="applied" aria-label="Applied filters"></div>
+        <label class="sort">
+          <span>Sort by</span>
+          <select id="sort" name="sort">
+            <option value="featured">Featured</option>
+            <option value="price-asc">Price: low to high</option>
+            <option value="price-desc">Price: high to low</option>
+            <option value="rating">Customer rating</option>
+          </select>
+        </label>
+      </div>
+    </form>
+
+    <section class="catalog" id="catalog" aria-label="Products">
+      <a class="product-card" href="product.html" data-category="jackets" data-price="329" data-was="389" data-rating="4.6" data-features="waterproof sale">
+        <img src="img/jacket-1.svg" width="400" height="500" alt="Ridgeline 3L Shell Jacket, Moss" loading="lazy">
+        <span class="name">Ridgeline 3L Shell Jacket</span>
+        <span class="meta"><span class="price-cell"><span class="price-now">$329</span> <span class="price--was"><span class="visually-hidden">Was </span>$389</span></span><span>★ 4.6 (128)</span></span>
+        <span class="tag">Sale</span>
+      </a>
+      <a class="product-card" href="product.html" data-category="jackets" data-price="259" data-rating="4.5" data-features="lightweight">
+        <img src="img/jacket-2.svg" width="400" height="500" alt="Ember Insulated Jacket, Ember" loading="lazy">
+        <span class="name">Ember Insulated Jacket</span>
+        <span class="meta"><span class="price-cell"><span class="price-now">$259</span></span><span>★ 4.5 (86)</span></span>
+      </a>
+      <a class="product-card" href="product.html" data-category="jackets" data-price="149" data-rating="4.3" data-features="lightweight">
+        <img src="img/jacket-3.svg" width="400" height="500" alt="Slate Wind Shell, Slate" loading="lazy">
+        <span class="name">Slate Wind Shell</span>
+        <span class="meta"><span class="price-cell"><span class="price-now">$149</span></span><span>★ 4.3 (54)</span></span>
+      </a>
+      <a class="product-card" href="product.html" data-category="packs" data-price="179" data-rating="4.8" data-features="lightweight">
+        <img src="img/thumb-pack.svg" width="400" height="500" alt="Cairn 38 daypack, Tan" loading="lazy">
+        <span class="name">Cairn 38 Daypack</span>
+        <span class="meta"><span class="price-cell"><span class="price-now">$179</span></span><span>★ 4.8 (64)</span></span>
+      </a>
+      <a class="product-card" href="product.html" data-category="packs" data-price="289" data-rating="4.6" data-features="waterproof">
+        <img src="img/thumb-pack.svg" width="400" height="500" alt="Ridge 55 backpacking pack, Tan" loading="lazy">
+        <span class="name">Ridge 55 Pack</span>
+        <span class="meta"><span class="price-cell"><span class="price-now">$289</span></span><span>★ 4.6 (41)</span></span>
+      </a>
+      <a class="product-card" href="product.html" data-category="packs" data-price="119" data-was="139" data-rating="4.4" data-features="lightweight sale">
+        <img src="img/thumb-pack.svg" width="400" height="500" alt="Summit 20 daypack, Tan" loading="lazy">
+        <span class="name">Summit 20 Daypack</span>
+        <span class="meta"><span class="price-cell"><span class="price-now">$119</span> <span class="price--was"><span class="visually-hidden">Was </span>$139</span></span><span>★ 4.4 (97)</span></span>
+        <span class="tag">Sale</span>
+      </a>
+      <a class="product-card" href="product.html" data-category="footwear" data-price="219" data-rating="4.4" data-features="waterproof">
+        <img src="img/thumb-boot.svg" width="400" height="500" alt="Talus Mid hiking boot, Charcoal" loading="lazy">
+        <span class="name">Talus Mid Boot</span>
+        <span class="meta"><span class="price-cell"><span class="price-now">$219</span></span><span>★ 4.4 (211)</span></span>
+      </a>
+      <a class="product-card" href="product.html" data-category="footwear" data-price="159" data-rating="4.7" data-features="lightweight">
+        <img src="img/thumb-boot.svg" width="400" height="500" alt="Scree trail runner, Charcoal" loading="lazy">
+        <span class="name">Scree Trail Runner</span>
+        <span class="meta"><span class="price-cell"><span class="price-now">$159</span></span><span>★ 4.7 (143)</span></span>
+      </a>
+      <a class="product-card" href="product.html" data-category="footwear" data-price="189" data-rating="4.2" data-features="">
+        <img src="img/thumb-boot.svg" width="400" height="500" alt="Tarn approach shoe, Charcoal" loading="lazy">
+        <span class="name">Tarn Approach Shoe</span>
+        <span class="meta"><span class="price-cell"><span class="price-now">$189</span></span><span>★ 4.2 (38)</span></span>
+      </a>
+      <a class="product-card" href="product.html" data-category="camp" data-price="449" data-rating="4.7" data-features="waterproof">
+        <img src="img/thumb-tent.svg" width="400" height="500" alt="Basin 2-person tent, Ember" loading="lazy">
+        <span class="name">Basin 2P Tent</span>
+        <span class="meta"><span class="price-cell"><span class="price-now">$449</span></span><span>★ 4.7 (39)</span></span>
+      </a>
+      <a class="product-card" href="product.html" data-category="camp" data-price="379" data-rating="4.5" data-features="waterproof lightweight">
+        <img src="img/thumb-tent.svg" width="400" height="500" alt="Cirque 1-person tent, Ember" loading="lazy">
+        <span class="name">Cirque 1P Tent</span>
+        <span class="meta"><span class="price-cell"><span class="price-now">$379</span></span><span>★ 4.5 (22)</span></span>
+      </a>
+      <a class="product-card" href="product.html" data-category="camp" data-price="129" data-was="149" data-rating="4.6" data-features="lightweight sale">
+        <img src="img/thumb-tent.svg" width="400" height="500" alt="Hollow sleeping pad, Ember" loading="lazy">
+        <span class="name">Hollow Sleeping Pad</span>
+        <span class="meta"><span class="price-cell"><span class="price-now">$129</span> <span class="price--was"><span class="visually-hidden">Was </span>$149</span></span><span>★ 4.6 (77)</span></span>
+        <span class="tag">Sale</span>
+      </a>
+    </section>
+
+    <div class="plp-empty" id="plp-empty" hidden>
+      <h2>No gear matches those filters</h2>
+      <p>Try removing a filter, or clear them all to see the full range.</p>
+      <button class="btn btn--secondary" type="button" id="empty-clear">Clear all filters</button>
+    </div>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

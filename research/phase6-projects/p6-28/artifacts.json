@@ -1,0 +1,124 @@
+{
+  "task": "p6-28",
+  "project": "p6-tv-iptv-web",
+  "platform_expected": "tv",
+  "platform_resolved": "web",
+  "platform_correct": "wrong",
+  "stack": "html-css (plain HTML/CSS/JS, Tizen + webOS packaging)",
+  "existing_ui": true,
+  "new_screen": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": ["refactor", "polish"],
+  "mode_resolved": ["audit", "refactor"],
+  "mode_correct": "acceptable",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "moderate",
+  "render_mode": "native",
+  "screenshots": [
+    "render/first-01-detail.png",
+    "render/first-02-player-controls-visible.png",
+    "render/first-03-player-idle-hidden.png",
+    "render/first-04-player-rewoken.png",
+    "render/first-05-player-paused-controls-stay.png",
+    "render/final-01-detail.png",
+    "render/final-02-player-controls-visible.png",
+    "render/final-03-player-idle-hidden.png",
+    "render/final-04-player-rewoken.png",
+    "render/final-05-player-paused-controls-stay.png"
+  ],
+  "context_detection": {
+    "navigation": "yes",
+    "theme": "yes",
+    "typography": "partial",
+    "surfaces": "yes",
+    "spacing": "partial"
+  },
+  "preservation": {
+    "navigation": true,
+    "theme": true,
+    "typography": true,
+    "component_reuse": true,
+    "unjustified_structural_change": 0
+  },
+  "expected_concepts": [
+    "tv.player_autohide",
+    "interaction.focus_restore",
+    "interaction.dpad_reachability",
+    "interaction.focus_visible",
+    "a11y.reduced_motion",
+    "tv.no_touch_hover"
+  ],
+  "critical_concepts": ["tv.player_autohide", "interaction.focus_restore"],
+  "delivered_concepts": [
+    "tv.player_autohide",
+    "a11y.accessible_names",
+    "media.track_selection",
+    "interaction.focus_restore",
+    "interaction.back_semantics",
+    "state.loading_empty_error",
+    "tv.safe_margins"
+  ],
+  "concept_recall": 0.33,
+  "critical_recall": 1.0,
+  "concept_misses": [
+    {"concept": "interaction.dpad_reachability", "layer": "expected-concepts"},
+    {"concept": "interaction.focus_visible", "layer": "bundle-selection"},
+    {"concept": "a11y.reduced_motion", "layer": "bundle-selection"},
+    {"concept": "tv.no_touch_hover", "layer": "expected-concepts"}
+  ],
+  "first_render_defects": {"visual": 0, "interaction": 0, "accessibility": 1, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+  "final_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+  "iterations": 1,
+  "guidance_relevant": 1,
+  "guidance_partial": 0,
+  "guidance_offtarget": 1,
+  "bad_guidance": [
+    {"record": "comp-mini-player", "category": "wrong-screen", "why": "picture-in-picture / mini-player state; the task is a full-screen player overlay that never hides. It entered the bundle only to cover state.loading_empty_error, a concept the task did not need; its focus-restoration sentence was incidentally useful."}
+  ],
+  "layer_review": {
+    "core": ["comp-player-controls", "comp-mini-player"],
+    "critical": [],
+    "optional": [],
+    "optional_useful": 0,
+    "optional_noise": 0
+  },
+  "guidance_used": ["comp-player-controls", "comp-mini-player"],
+  "guidance_ignored": [
+    {"id": "comp-mini-player", "why": "mini-player / PiP construction is not this task; only its focus-restoration line applied"},
+    {"id": "comp-player-controls", "why": "its 'auto-hides except while focused/hovered' clause taken literally makes auto-hide impossible on TV, where a control is always focused; used 'any key resets the timer' instead"}
+  ],
+  "unjustified_direction_slots": 0,
+  "process_records_needed": false,
+  "skill_effect": "helped",
+  "guidance_tokens": 581,
+  "misses": [
+    {"layer": "platform-evidence", "what": "TV project resolved as platform=web with status CONFIDENT and no MISSING confirm, although platform_evidence listed tv (WEAK_INFERENCE); input then wrongly included touch and pointer"},
+    {"layer": "project-context", "what": "inspect_project.py reports platforms=['web'] for a project whose root holds a Tizen config.xml and a webOS appinfo.json and whose JS calls tizen.tvinputdevice; typography reported UNKNOWN although tokens.css declares --font"},
+    {"layer": "bundle-selection", "what": "layout-split-player (search rank 2, 0.546, screen=player and product=media matching, and the single best record for this sentence) omitted as 'no positive task evidence for a core record'; interaction.focus_visible and a11y.reduced_motion candidates also dropped"},
+    {"layer": "candidate-compatibility", "what": "all TV records filtered out by 'platform tv not in request web', so tv-player-controls (auto-hide after 3-5 s, any key resets the timer) never reached selection"}
+  ],
+  "knowledge_gaps": [],
+  "regressions": [
+    {"query": "The player controls stay on screen for the whole film. (project with Tizen config.xml + webOS appinfo.json)", "expect": "platform tv, or unknown with a MISSING confirm; never a CONFIDENT web; input must not include touch"},
+    {"query": "inspect_project.py on a plain-HTML project containing a Tizen config.xml or webOS appinfo.json", "expect": "platforms includes tv"},
+    {"query": "any player-overlay sentence with screen=player and product=media", "expect": "layout-split-player in the core bundle; not omitted for 'no positive task evidence'"},
+    {"query": "The player controls stay on screen for the whole film. (tv platform)", "expect": "tv-player-controls in the bundle and interaction.dpad_reachability in required concepts"},
+    {"query": "any TV task", "expect": "adaptive.breakpoint_matrix and touch.minimum_target absent from required/recommended concepts"}
+  ],
+  "tags": [
+    "platform-miss",
+    "context-detection-miss",
+    "concept-miss",
+    "ranking-miss",
+    "render-defect-fixed",
+    "preservation-ok",
+    "skill-helped",
+    "partial-scope-ok"
+  ],
+  "build_hash_start": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947",
+  "build_hash_end": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947"
+}

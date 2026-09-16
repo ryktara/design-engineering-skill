@@ -1,0 +1,8 @@
+{"task": "p6-17",
+ "records": [
+   {"id": "a11y-nontext-contrast", "verdict": "partial", "category": "generic", "why": "Task is a 12sp text-contrast failure; this record's 3:1 non-text bar would under-fix it and never names 4.5:1."}
+ ],
+ "missing_critical": ["brand.token_layers"],
+ "unjustified_direction_slots": 0,
+ "layer_review": {"core": [], "critical": ["a11y-nontext-contrast"], "optional": []},
+ "change_vs_c3": "same — identical single-record bundle, same near-miss carrier for a11y.contrast, brand.token_layers still absent, direction still 13/13 preserved."}

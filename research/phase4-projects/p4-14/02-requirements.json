@@ -1,0 +1,202 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "create"
+  ],
+  "platform": [
+    "mobile",
+    "tv"
+  ],
+  "input": [
+    "remote",
+    "touch"
+  ],
+  "product": [
+    "erp",
+    "iot"
+  ],
+  "screen": [
+    "settings"
+  ],
+  "screen_subtype": [],
+  "stack": [
+    "flutter"
+  ],
+  "density": "medium",
+  "components": [
+    "form",
+    "settings"
+  ],
+  "environment": [
+    "large-display",
+    "shared-device"
+  ],
+  "jobs": [],
+  "problems": [],
+  "risk": "low",
+  "primary_jobs": [
+    "create settings"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "performance_sensitive": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "screen_reader": true,
+    "focus": true,
+    "touch_targets": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "change_budget": "moderate",
+  "scope": {
+    "domain": "UI_ACCESSIBILITY",
+    "in_scope": true,
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "mode_evidence": [
+    "create: default (no mode cue)"
+  ],
+  "project_context": {
+    "navigation": {
+      "value": "top-bar",
+      "status": "KNOWN",
+      "evidence": [
+        "top-bar: 2 matches in checklist_screen.dart, defect_report_screen.dart (shell/layout file)"
+      ]
+    },
+    "theme": {
+      "value": "dual-theme",
+      "status": "KNOWN",
+      "evidence": [
+        "dark theme configuration signals: 4",
+        "light theme configuration signals: 1",
+        "hex palette: 13 near-white, 6 near-black"
+      ],
+      "default": "light"
+    },
+    "surfaces": {
+      "value": "elevated",
+      "status": "INFERRED",
+      "evidence": [
+        "weak signal: shadow 1, border 0"
+      ]
+    },
+    "radius": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "spacing": {
+      "value": 4,
+      "status": "INFERRED",
+      "evidence": [
+        "most used spacing values [12]"
+      ]
+    },
+    "typography": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": [
+        "no font family declaration found"
+      ]
+    },
+    "components": {
+      "value": "go_router, riverpod",
+      "status": "KNOWN",
+      "evidence": [
+        "go_router",
+        "riverpod"
+      ]
+    }
+  },
+  "known": [
+    "platform=mobile (project inspection)",
+    "platform=tv (project inspection)",
+    "input=remote (project inspection: DPAD/remote handling in source)",
+    "product=erp (project inspection (README))",
+    "product=iot (project inspection (README))",
+    "stack=flutter (project inspection)",
+    "screen=settings (request: settings)",
+    "project_navigation=top-bar (repository: top-bar: 2 matches in checklist_screen.dart, defect_report_screen.dart (shell/layout file))",
+    "project_theme=dual-theme (repository: dark theme configuration signals: 4; light theme configuration signals: 1)",
+    "project_components=go_router, riverpod (repository: go_router; riverpod)"
+  ],
+  "inferred": [
+    "input=touch (implied by platform mobile)",
+    "density=medium (implied by product erp (capped for touch/remote platform))",
+    "mode=create (default (no mode cue))",
+    "environment=shared-device (a TV is normally a shared household device)",
+    "environment=large-display (TV platform)",
+    "project_surfaces=elevated (repository: weak signal: shadow 1, border 0)",
+    "project_spacing=4 (repository: most used spacing values [12])"
+  ],
+  "missing": [
+    "brand: no brand assets, guideline, or character description available"
+  ],
+  "status": "CONFIDENT",
+  "source": {
+    "request": [
+      "settings"
+    ],
+    "project": [
+      "pubspec.yaml: Flutter",
+      "DPAD / remote key handling found in source"
+    ]
+  },
+  "activation": {
+    "decision": "activate",
+    "ui_score": 4.0,
+    "non_ui_score": 0,
+    "ui_terms": [
+      "screen",
+      "style",
+      "contrast"
+    ],
+    "non_ui_terms": []
+  },
+  "intent": {
+    "existing": true,
+    "problem": false,
+    "facet": "accessibility",
+    "diagnose_only": false,
+    "creation": false,
+    "redesign": false,
+    "responsive_cues": false,
+    "preserve": [],
+    "scope": "moderate"
+  },
+  "intent_evidence": {
+    "existing": [
+      "existing"
+    ],
+    "problem": [],
+    "change": [],
+    "create": [
+      "add a"
+    ],
+    "diagnose": [],
+    "no_change": [],
+    "redesign": [],
+    "look_feel": [],
+    "structural": [],
+    "responsive": [],
+    "accessibility": [
+      "contrast"
+    ],
+    "interaction": []
+  },
+  "scope_evidence": {
+    "ui": [
+      "screen",
+      "contrast",
+      "settings"
+    ],
+    "ux_symptoms": [],
+    "technical": {},
+    "non_visual": []
+  }
+}

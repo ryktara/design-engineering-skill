@@ -1,0 +1,304 @@
+{
+  "viewport": "390x844",
+  "generated": "2026-09-08T20:40:12.182Z",
+  "checks": {
+    "checklist_targets": {
+      "screen": "checklist",
+      "targets": 8,
+      "min_size_ok": true,
+      "too_small": [],
+      "spacing_ok": false,
+      "too_close": [
+        {
+          "a": "Pole condition. PASS. Item 1 of 6.",
+          "b": "Crossarm and insulators. FAIL. Item 2 of",
+          "gap": 1,
+          "nested": false
+        },
+        {
+          "a": "Crossarm and insulators. FAIL. Item 2 of",
+          "b": "Conductor clearance. TO DO. Item 3 of 6.",
+          "gap": 1,
+          "nested": false
+        },
+        {
+          "a": "Conductor clearance. TO DO. Item 3 of 6.",
+          "b": "Guy wires and anchors. TO DO. Item 4 of ",
+          "gap": 1,
+          "nested": false
+        },
+        {
+          "a": "Guy wires and anchors. TO DO. Item 4 of ",
+          "b": "Grounding. TO DO. Item 5 of 6.",
+          "gap": 1,
+          "nested": false
+        },
+        {
+          "a": "Grounding. TO DO. Item 5 of 6.",
+          "b": "Signage and tags. SKIP. Item 6 of 6.",
+          "gap": 1,
+          "nested": false
+        }
+      ]
+    },
+    "checklist_contrast": {
+      "screen": "checklist",
+      "sampled": 25,
+      "all_ge_7": true,
+      "failing": [],
+      "min_ratio": 7.82
+    },
+    "checklist_primary_in_bottom_40": {
+      "top": 742,
+      "threshold": 506.4,
+      "ok": true,
+      "note": "Complete button (disabled until all items done)"
+    },
+    "offline_targets": {
+      "screen": "offline",
+      "targets": 9,
+      "min_size_ok": true,
+      "too_small": [],
+      "spacing_ok": false,
+      "too_close": [
+        {
+          "a": "Pole condition. PASS. Item 1 of 6.",
+          "b": "Crossarm and insulators. FAIL. Item 2 of",
+          "gap": 1,
+          "nested": false
+        },
+        {
+          "a": "Crossarm and insulators. FAIL. Item 2 of",
+          "b": "Conductor clearance. TO DO. Item 3 of 6.",
+          "gap": 1,
+          "nested": false
+        },
+        {
+          "a": "Conductor clearance. TO DO. Item 3 of 6.",
+          "b": "Guy wires and anchors. TO DO. Item 4 of ",
+          "gap": 1,
+          "nested": false
+        },
+        {
+          "a": "Guy wires and anchors. TO DO. Item 4 of ",
+          "b": "Grounding. TO DO. Item 5 of 6.",
+          "gap": 1,
+          "nested": false
+        },
+        {
+          "a": "Grounding. TO DO. Item 5 of 6.",
+          "b": "Signage and tags. SKIP. Item 6 of 6.",
+          "gap": 1,
+          "nested": false
+        }
+      ]
+    },
+    "offline_contrast": {
+      "screen": "offline",
+      "sampled": 28,
+      "all_ge_7": true,
+      "failing": [],
+      "min_ratio": 7.82
+    },
+    "offline_banner_not_blocking": {
+      "banner_height": 84.171875,
+      "banner_bottom": 195.171875,
+      "content_top": 195.171875,
+      "content_height": 533.828125,
+      "first_row_top": 357.53125,
+      "rows_fully_visible": 4,
+      "position": "static",
+      "role": "status",
+      "live": "polite",
+      "ok": true,
+      "note": "banner is in-flow above the scroll region; content starts below it and stays scrollable"
+    },
+    "queue_sheet_targets": {
+      "screen": "queue-sheet",
+      "targets": 9,
+      "min_size_ok": true,
+      "too_small": [],
+      "spacing_ok": false,
+      "too_close": [
+        {
+          "a": "Pole condition. PASS. Item 1 of 6.",
+          "b": "Crossarm and insulators. FAIL. Item 2 of",
+          "gap": 1,
+          "nested": false
+        },
+        {
+          "a": "Crossarm and insulators. FAIL. Item 2 of",
+          "b": "Conductor clearance. TO DO. Item 3 of 6.",
+          "gap": 1,
+          "nested": false
+        },
+        {
+          "a": "Conductor clearance. TO DO. Item 3 of 6.",
+          "b": "Guy wires and anchors. TO DO. Item 4 of ",
+          "gap": 1,
+          "nested": false
+        },
+        {
+          "a": "Guy wires and anchors. TO DO. Item 4 of ",
+          "b": "Grounding. TO DO. Item 5 of 6.",
+          "gap": 1,
+          "nested": false
+        },
+        {
+          "a": "Grounding. TO DO. Item 5 of 6.",
+          "b": "Signage and tags. SKIP. Item 6 of 6.",
+          "gap": 1,
+          "nested": false
+        }
+      ]
+    },
+    "form_targets": {
+      "screen": "form",
+      "targets": 11,
+      "min_size_ok": true,
+      "too_small": [],
+      "spacing_ok": false,
+      "too_close": [
+        {
+          "a": "Crack",
+          "b": "Cancel",
+          "gap": 0,
+          "nested": true
+        },
+        {
+          "a": "Crack",
+          "b": "Save defect",
+          "gap": 0,
+          "nested": true
+        }
+      ]
+    },
+    "form_contrast": {
+      "screen": "form",
+      "sampled": 18,
+      "all_ge_7": true,
+      "failing": [],
+      "min_ratio": 7.82
+    },
+    "form_primary_in_bottom_40": {
+      "top": 742,
+      "threshold": 506.4,
+      "ok": true
+    },
+    "form_validation_association": {
+      "aria_invalid": "true",
+      "describedby": [
+        "notes-error",
+        "notes-help"
+      ],
+      "error_id_in_describedby": true,
+      "error_role": "alert",
+      "error_text": "Add a little more detail (at least 12 characters).",
+      "label_for_matches": true,
+      "radiogroup_labelled": true,
+      "photo_group_labelled": true,
+      "ok": true
+    },
+    "form_keyboard_300": {
+      "visible_height": 544,
+      "save_top": 476,
+      "save_bottom": 532,
+      "save_reachable": true,
+      "cancel_reachable": true,
+      "bar_bottom": 544,
+      "keyboard_top": 544,
+      "bar_above_keyboard": true,
+      "notes_top": 226.9375,
+      "notes_bottom": 346.9375,
+      "notes_visible_above_bar": true,
+      "focused": "notes",
+      "ok": true
+    },
+    "form_keyboard_targets": {
+      "screen": "form-keyboard",
+      "targets": 11,
+      "min_size_ok": true,
+      "too_small": [],
+      "spacing_ok": false,
+      "too_close": [
+        {
+          "a": "Back to checklist",
+          "b": "Low",
+          "gap": 0,
+          "nested": false
+        },
+        {
+          "a": "Back to checklist",
+          "b": "High",
+          "gap": 0,
+          "nested": false
+        }
+      ]
+    },
+    "form_keyboard_scroll_to_top": {
+      "photo_button_bottom": 434.765625,
+      "ok": true
+    },
+    "focus_visible_textarea": {
+      "outline": "none",
+      "outlineWidth": "0px",
+      "border": "3px rgb(163, 21, 31)",
+      "boxShadow": "none",
+      "ok": true
+    },
+    "focus_visible_button": {
+      "el": "cancel-btn",
+      "outline": "auto",
+      "outlineWidth": "1px",
+      "boxShadow": "none",
+      "ok": true
+    },
+    "reduced_motion": {
+      "matches": true,
+      "row_transition": "0s",
+      "ok": true
+    },
+    "states": {
+      "empty": {
+        "visible": true,
+        "text": "No checklist items This transformer has no inspection templa",
+        "buttons": 1
+      },
+      "loading": {
+        "visible": true,
+        "text": "",
+        "buttons": 0
+      },
+      "error": {
+        "visible": true,
+        "text": "Could not load this inspection Bad state: Could not load ins",
+        "buttons": 2
+      },
+      "ok": true
+    }
+  },
+  "summary": {
+    "passed": [
+      "checklist_contrast",
+      "checklist_primary_in_bottom_40",
+      "offline_contrast",
+      "offline_banner_not_blocking",
+      "form_contrast",
+      "form_primary_in_bottom_40",
+      "form_validation_association",
+      "form_keyboard_300",
+      "form_keyboard_scroll_to_top",
+      "focus_visible_textarea",
+      "focus_visible_button",
+      "reduced_motion",
+      "states"
+    ],
+    "failed": [
+      "checklist_targets",
+      "offline_targets",
+      "queue_sheet_targets",
+      "form_targets",
+      "form_keyboard_targets"
+    ]
+  }
+}

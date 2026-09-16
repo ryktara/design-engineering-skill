@@ -1,0 +1,135 @@
+{
+  "brand": "The appointments grid re-renders the whole day when one chip is dragged, so dragging stutters.",
+  "fingerprint": {
+    "navigation_model": "left-rail",
+    "layout_topology": "dashboard-grid",
+    "grid_behavior": "responsive-columns",
+    "surface_strategy": "bordered",
+    "card_geometry": "none",
+    "corner_language": "sharp",
+    "color_strategy": "neutral-plus-accent",
+    "metadata_density": "rich"
+  },
+  "direction": {
+    "navigation": "nav-left-rail",
+    "layout": "layout-dashboard-grid",
+    "density": null,
+    "surface": "surface-bordered-panes",
+    "cards": null,
+    "typography": null,
+    "color": "color-neutral-accent",
+    "motion": null,
+    "focus": null,
+    "cta": null,
+    "imagery": null,
+    "icon": null,
+    "metadata": "metadata-rich"
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [
+      "healthcare"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "svelte",
+      "tailwind"
+    ],
+    "density": null,
+    "components": [],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "audit"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_IMPLEMENTATION",
+      "in_scope": true,
+      "kind": "partial",
+      "reason": "technical cause (re-render) with a user-visible symptom (stutter); design-engineering contributes the UX side",
+      "nearest_ui_task": "design-engineering contribution: the user-facing states, responsiveness and feedback around 'stutter'; non-design portion: frontend runtime work (re-render) belongs to the engineering side"
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "interaction",
+        "performance-ux"
+      ],
+      "change_scope": "screen",
+      "utterance": "observation",
+      "preserve": []
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "audit: interaction defect on existing UI",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": "left-rail (KNOWN)",
+      "theme": "light-first (INFERRED)",
+      "surfaces": "bordered-flat (INFERRED)",
+      "spacing": "4 (INFERRED)",
+      "typography": "custom (INFERRED)",
+      "components": "tailwind (KNOWN)"
+    },
+    "known": [
+      "platform=web",
+      "product=healthcare",
+      "stack=svelte",
+      "stack=tailwind",
+      "project_navigation=left-rail",
+      "project_components=tailwind"
+    ],
+    "inferred": [
+      "input=pointer",
+      "input=keyboard",
+      "input=touch",
+      "mode=audit",
+      "mode=refactor",
+      "project_theme=light-first",
+      "project_surfaces=bordered-flat",
+      "project_spacing=4",
+      "project_typography=custom"
+    ],
+    "missing": [],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

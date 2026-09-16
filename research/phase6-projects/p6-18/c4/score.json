@@ -1,0 +1,115 @@
+{
+ "task": "p6-18",
+ "build": "32e67640c9b8ef1d519ef9695016fb396116b92412e63c324da090aecf1df385",
+ "c1_recorded": {
+  "platform_expected": "desktop",
+  "platform_resolved": [
+   "desktop"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "accessibility",
+   "audit",
+   "polish",
+   "refactor"
+  ],
+  "mode_resolved": [
+   "audit",
+   "refactor"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "PARTIAL",
+  "bundle_ids": [
+   "typo-scale-and-roles",
+   "desktop-keyboard-first",
+   "a11y-keyboard-operable"
+  ],
+  "bundle_tokens": 361,
+  "expected_concepts": [
+   "interaction.keyboard_navigation",
+   "interaction.shortcuts",
+   "interaction.focus_restore",
+   "interaction.focus_visible",
+   "table.inline_edit",
+   "interaction.menu_semantics",
+   "a11y.accessible_names"
+  ],
+  "critical_concepts": [
+   "interaction.keyboard_navigation",
+   "interaction.shortcuts",
+   "table.inline_edit"
+  ],
+  "delivered_concepts": [
+   "brand.type_roles",
+   "interaction.focus_visible",
+   "interaction.hover_independence",
+   "interaction.keyboard_navigation",
+   "interaction.shortcuts",
+   "table.tabular_figures"
+  ],
+  "concept_recall": 0.429,
+  "critical_recall": 0.667,
+  "forbidden_delivered": [],
+  "change_budget": "moderate"
+ },
+ "c4": {
+  "platform_expected": "desktop",
+  "platform_resolved": [
+   "desktop"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "accessibility",
+   "audit",
+   "polish",
+   "refactor"
+  ],
+  "mode_resolved": [
+   "audit",
+   "refactor"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "PARTIAL",
+  "bundle_ids": [
+   "desktop-keyboard-first"
+  ],
+  "bundle_tokens": 130,
+  "expected_concepts": [
+   "interaction.keyboard_navigation",
+   "interaction.shortcuts",
+   "interaction.focus_restore",
+   "interaction.focus_visible",
+   "table.inline_edit",
+   "interaction.menu_semantics",
+   "a11y.accessible_names"
+  ],
+  "critical_concepts": [
+   "interaction.keyboard_navigation",
+   "interaction.shortcuts",
+   "table.inline_edit"
+  ],
+  "delivered_concepts": [
+   "interaction.focus_visible",
+   "interaction.keyboard_navigation",
+   "interaction.shortcuts"
+  ],
+  "concept_recall": 0.429,
+  "critical_recall": 0.667,
+  "forbidden_delivered": [],
+  "change_budget": "moderate"
+ }
+}

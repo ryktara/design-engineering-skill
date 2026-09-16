@@ -1,0 +1,211 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "refactor"
+  ],
+  "platform": [
+    "mobile",
+    "tv"
+  ],
+  "input": [
+    "keyboard",
+    "remote",
+    "touch"
+  ],
+  "product": [
+    "erp",
+    "iot"
+  ],
+  "screen": [
+    "form"
+  ],
+  "screen_subtype": [],
+  "stack": [
+    "flutter"
+  ],
+  "density": "medium",
+  "components": [
+    "form",
+    "navigation"
+  ],
+  "environment": [
+    "large-display",
+    "shared-device"
+  ],
+  "jobs": [],
+  "problems": [],
+  "risk": "low",
+  "primary_jobs": [
+    "refactor form"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "performance_sensitive": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "keyboard": true,
+    "screen_reader": true,
+    "focus": true,
+    "touch_targets": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "change_budget": "moderate",
+  "scope": {
+    "domain": "UI_INTERACTION",
+    "in_scope": true,
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "mode_evidence": [
+    "refactor: explicit: refactor",
+    "refactor: change request with structural words: refactor, navigation"
+  ],
+  "project_context": {
+    "navigation": {
+      "value": "top-bar",
+      "status": "KNOWN",
+      "evidence": [
+        "top-bar: 2 matches in checklist_screen.dart, defect_report_screen.dart (shell/layout file)"
+      ]
+    },
+    "theme": {
+      "value": "dual-theme",
+      "status": "KNOWN",
+      "evidence": [
+        "dark theme configuration signals: 4",
+        "light theme configuration signals: 1",
+        "hex palette: 13 near-white, 6 near-black"
+      ],
+      "default": "light"
+    },
+    "surfaces": {
+      "value": "elevated",
+      "status": "INFERRED",
+      "evidence": [
+        "weak signal: shadow 1, border 0"
+      ]
+    },
+    "radius": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "spacing": {
+      "value": 4,
+      "status": "INFERRED",
+      "evidence": [
+        "most used spacing values [12]"
+      ]
+    },
+    "typography": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": [
+        "no font family declaration found"
+      ]
+    },
+    "components": {
+      "value": "go_router, riverpod",
+      "status": "KNOWN",
+      "evidence": [
+        "go_router",
+        "riverpod"
+      ]
+    }
+  },
+  "known": [
+    "platform=mobile (project inspection)",
+    "platform=tv (project inspection)",
+    "input=keyboard (request: keyboard)",
+    "input=remote (project inspection: DPAD/remote handling in source)",
+    "product=erp (project inspection (README))",
+    "product=iot (project inspection (README))",
+    "stack=flutter (project inspection)",
+    "screen=form (request: form)",
+    "mode=refactor (explicit: refactor; change request with structural words: refactor, navigation)",
+    "project_navigation=top-bar (repository: top-bar: 2 matches in checklist_screen.dart, defect_report_screen.dart (shell/layout file))",
+    "project_theme=dual-theme (repository: dark theme configuration signals: 4; light theme configuration signals: 1)",
+    "project_components=go_router, riverpod (repository: go_router; riverpod)"
+  ],
+  "inferred": [
+    "input=touch (implied by platform mobile)",
+    "density=medium (implied by product erp (capped for touch/remote platform))",
+    "environment=shared-device (a TV is normally a shared household device)",
+    "environment=large-display (TV platform)",
+    "project_surfaces=elevated (repository: weak signal: shadow 1, border 0)",
+    "project_spacing=4 (repository: most used spacing values [12])"
+  ],
+  "missing": [],
+  "status": "CONFIDENT",
+  "source": {
+    "request": [
+      "form",
+      "keyboard",
+      "refactor"
+    ],
+    "project": [
+      "pubspec.yaml: Flutter",
+      "DPAD / remote key handling found in source"
+    ]
+  },
+  "activation": {
+    "decision": "activate",
+    "ui_score": 5.0,
+    "non_ui_score": 0,
+    "ui_terms": [
+      "theme",
+      "navigation",
+      "form"
+    ],
+    "non_ui_terms": []
+  },
+  "intent": {
+    "existing": true,
+    "problem": false,
+    "facet": "interaction",
+    "diagnose_only": false,
+    "creation": false,
+    "redesign": false,
+    "responsive_cues": false,
+    "preserve": [],
+    "scope": "moderate"
+  },
+  "intent_evidence": {
+    "existing": [
+      "existing"
+    ],
+    "problem": [],
+    "change": [
+      "refactor"
+    ],
+    "create": [],
+    "diagnose": [],
+    "no_change": [],
+    "redesign": [],
+    "look_feel": [],
+    "structural": [
+      "refactor",
+      "navigation"
+    ],
+    "responsive": [],
+    "accessibility": [],
+    "interaction": [
+      "keyboard"
+    ]
+  },
+  "scope_evidence": {
+    "ui": [
+      "form",
+      "navigation",
+      "theme",
+      "keyboard"
+    ],
+    "ux_symptoms": [
+      "keyboard"
+    ],
+    "technical": {},
+    "non_visual": []
+  }
+}

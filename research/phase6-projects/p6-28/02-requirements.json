@@ -1,0 +1,217 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "audit",
+    "refactor"
+  ],
+  "platform": [
+    "web"
+  ],
+  "input": [
+    "keyboard",
+    "pointer",
+    "touch"
+  ],
+  "product": [
+    "media"
+  ],
+  "screen": [
+    "player"
+  ],
+  "screen_subtype": [],
+  "stack": [
+    "html-css"
+  ],
+  "density": "medium",
+  "components": [
+    "media"
+  ],
+  "environment": [],
+  "jobs": [],
+  "problems": [],
+  "risk": "low",
+  "primary_jobs": [
+    "audit player"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "focus_handling_present": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "keyboard": true,
+    "screen_reader": true,
+    "focus": true,
+    "touch_targets": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "change_budget": "moderate",
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "intent": {
+    "artifact_state": "existing",
+    "operations": [
+      "diagnose",
+      "modify"
+    ],
+    "problem_domain": [
+      "interaction"
+    ],
+    "change_scope": "local",
+    "utterance": "observation",
+    "existing": true,
+    "problem": true,
+    "facet": "interaction",
+    "diagnose_only": false,
+    "creation": false,
+    "redesign": false,
+    "responsive_cues": false,
+    "preserve": [],
+    "scope": "low"
+  },
+  "platform_evidence": [
+    {
+      "platform": "tv",
+      "strength": "WEAK_INFERENCE",
+      "evidence": [
+        "player controls"
+      ]
+    }
+  ],
+  "mode_evidence": [
+    "audit: interaction defect on existing UI",
+    "refactor: fix follows the diagnosis"
+  ],
+  "project_context": {
+    "navigation": {
+      "value": "top-bar",
+      "status": "KNOWN",
+      "evidence": [
+        "top-bar: 6 matches in app.js, index.html, tv.css (shell/layout file)"
+      ]
+    },
+    "theme": {
+      "value": "dark-first",
+      "status": "INFERRED",
+      "evidence": [
+        "root/canvas backgrounds: 0 light, 1 dark",
+        "hex palette: 1 near-white, 14 near-black"
+      ]
+    },
+    "surfaces": {
+      "value": "bordered-flat",
+      "status": "INFERRED",
+      "evidence": [
+        "weak signal: shadow 0, border 1"
+      ]
+    },
+    "radius": {
+      "value": "small",
+      "status": "INFERRED",
+      "evidence": [
+        "most common radius 4 (2×); others [999.0, 5.0]"
+      ]
+    },
+    "spacing": {
+      "value": 4,
+      "status": "INFERRED",
+      "evidence": [
+        "most used spacing values [16, 12, 8, 20, 24]"
+      ]
+    },
+    "typography": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": [
+        "no font family declaration found"
+      ]
+    },
+    "components": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": []
+    }
+  },
+  "known": [
+    "platform=web (project inspection)",
+    "product=media (request: player)",
+    "stack=html-css (project inspection)",
+    "screen=player (request: player)",
+    "project_navigation=top-bar (repository: top-bar: 6 matches in app.js, index.html, tv.css (shell/layout file))"
+  ],
+  "inferred": [
+    "input=pointer (implied by platform web)",
+    "input=keyboard (implied by platform web)",
+    "input=touch (implied by platform web)",
+    "density=medium (implied by product media)",
+    "mode=audit (interaction defect on existing UI)",
+    "mode=refactor (fix follows the diagnosis)",
+    "project_theme=dark-first (repository: root/canvas backgrounds: 0 light, 1 dark; hex palette: 1 near-white, 14 near-black)",
+    "project_surfaces=bordered-flat (repository: weak signal: shadow 0, border 1)",
+    "project_radius=small (repository: most common radius 4 (2×); others [999.0, 5.0])",
+    "project_spacing=4 (repository: most used spacing values [16, 12, 8, 20, 24])"
+  ],
+  "missing": [],
+  "status": "CONFIDENT",
+  "source": {
+    "request": [
+      "player"
+    ],
+    "project": [
+      "*.html without a framework manifest: plain HTML/CSS site"
+    ]
+  },
+  "activation": {
+    "decision": "activate",
+    "ui_score": 3.0,
+    "non_ui_score": 0,
+    "ui_terms": [
+      "screen",
+      "film"
+    ],
+    "non_ui_terms": []
+  },
+  "intent_evidence": {
+    "existing": [
+      "the player"
+    ],
+    "new": [],
+    "defect": [
+      "implicit problem"
+    ],
+    "operations": {},
+    "domains": {
+      "interaction": [
+        "controls"
+      ]
+    },
+    "no_change": [],
+    "scope": {
+      "screen": [
+        "screen",
+        "player"
+      ],
+      "local": [
+        "control"
+      ]
+    },
+    "question": false
+  },
+  "scope_evidence": {
+    "ui": [
+      "screen",
+      "player",
+      "control"
+    ],
+    "ux_symptoms": [],
+    "technical": {},
+    "non_visual": []
+  }
+}

@@ -1,0 +1,52 @@
+{
+ "phase": 5,
+ "candidate": "c2",
+ "frozen": "2026-09-09T18:26:44",
+ "build_sha256": "50966e8e6184f31722a7b3c7f270a241dd0f7b68187492d0c971f7c79734e680",
+ "previous_candidate": {
+  "candidate": "c1",
+  "build_sha256": "bf034323a2b68202e8c902768e0de78cd93761b1a71670a49ee595648cd5f0d8",
+  "frozen": "2026-09-09T14:39:24",
+  "reason_superseded": "real-project round c1 (22 tasks) found systemic defects: scope abstain on UI sentences without lexicon nouns (3/22), kiosk project read as web (2/22), 'on phones' overriding a web project, proper-noun 'Add X sheet' read as create, README product leaks (ecommerce/erp) driving media/checkout records, expected-concept gaps (61 misses), direction 'new' slots on existing systems"
+ },
+ "scripts": {
+  "scripts/advise.py": "8a411b9bb43acd54789353150d7a6eddf20bb6188fa95e3a4b981c41bc174c6c",
+  "scripts/de_core.py": "434d1ed20479cd3ab84456c50e07b6b14cef225eb5e038e81e0f3ac5f3c21069",
+  "scripts/de_semantic.py": "b5b2144aafa2770e327dcb2e1bdbbcdcad3ea2a7920569d75c863c810f7bfdad",
+  "scripts/fingerprint.py": "a74b549a832b83aab0f6e7c76b8f4c2c50db3741ea81afb118eebb79bdcb9cdb",
+  "scripts/inspect_project.py": "b90816717612b5b8b2b93f8a73ce41e288702a9eccc782a5e3115e30bc24d8f0",
+  "scripts/tokens.py": "16a0ecf407c56138ae9c2e00422ed89253ab668ed7d9b0450f8e840f50e799a2",
+  "scripts/validate_skill.py": "df8bee9d36a5209be34659a440dc7395ff456e07cab8c65629e2d7d6edd7ad9b"
+ },
+ "data_files": {
+  "data/antipatterns.jsonl": "ede5ef14651b028b88cdf21c71fa59a92fda1dbfffa044dfedc1fd8f5284d1f7",
+  "data/charts.jsonl": "a5c034dbc54bb79f267a05c58117dafa4fc296197ca18c9a09f033c8410e2392",
+  "data/components.jsonl": "6f4e7fae9d1c12d12aa918e9acaf5050d6a83b5f9f46b5d0b868a9dd511ca717",
+  "data/directions.jsonl": "9f3047aef8fb896e625653358a3cfbb06872a20c676b5742ff12325e2918dcd0",
+  "data/lexicon.json": "59c0b7e6d65e68d2b318a60b7178f9831e127c5bbe95737ad9d2a1e82de6bdf4",
+  "data/patterns.jsonl": "7cc1a312c144017140f8d0d8efce95e8a2bd5aff7c1d3c1ea242a575cefa3353",
+  "data/rules.jsonl": "3dfb86be31e4414725a044b70e0909ef5deac0be370413b96ec7d12d4a0e85c7"
+ },
+ "lexicon_sha256": "59c0b7e6d65e68d2b318a60b7178f9831e127c5bbe95737ad9d2a1e82de6bdf4",
+ "records": 247,
+ "concepts": 114,
+ "concerns": 16,
+ "aliases": 60,
+ "concept_policy_sha256": "3cc47832702038f62830544f44d4e9379f0da726753920c63a873151f7cb353d",
+ "thresholds_sha256": "e880c59e4c4b70ef50dd75eaa72c23ae8d9c5e4d585b22289ca617398982c3f6",
+ "thresholds_sha256_file": "e880c59e4c4b70ef50dd75eaa72c23ae8d9c5e4d585b22289ca617398982c3f6",
+ "ontology_sha256": "ef95ecbadf05004c3fbc51c5565082f68e25ee47c7c873eb311e4b288a508cf7",
+ "ontology_unchanged_since_c1": true,
+ "dev_cases": 575,
+ "regression_cases": 40,
+ "dev_regression_result": "614/615 (only the doc-count check fails until PHASE5-RESULTS.md exists)",
+ "activation_proxy": {
+  "precision": 1.0,
+  "recall": 1.0,
+  "fpr": 0.0,
+  "fnr": 0.0
+ },
+ "mode_confusion": "145 mode cases: primary 145, incorrect 0, fundamental create-misses 0",
+ "concept_diagnostics": "expected 144, hit 144, misses by layer {}",
+ "note": "Candidate c2: c1 plus the fixes routed from the real-project round (63 new development cases written first). Held-out v4 is run once on this build. Frozen after adding the concept-trace lines to the markdown explain output (agents in round c1 could not see the trace without --json)."
+}

@@ -1,0 +1,78 @@
+## design-engineering search: accessibility audit and fix of the identify step of the pick-up kiosk: the date-of-birth keypad and name entry
+status=CONFIDENT modes=['audit', 'accessibility', 'polish'] platforms={'kiosk': 'KNOWN'} inputs={'touch': 'INFERRED'} products={} density=None stacks=[] screens=[] negatives=[]
+facets required=['accessibility', 'interaction', 'component', 'platform', 'anti-pattern'] unmet=[] diversity=0.83
+
+### Accessible names for every control and image  `a11y-labels-names`  [rule/accessibility; accessibility] score 0.453 · accessibility-requirement
+Visible label for inputs (not placeholder-only), aria-label/accessibilityLabel/contentDescription/AutomationProperties.Name for icon-only controls, alt text for meaningful images and alt="" for decorative ones, link text that makes sense out of context. The accessible name must contain the visible label text (label in name).
+- use when: Icon-only buttons, inputs, images, custom controls, links whose text is 'Read more'.
+- avoid when: Decorative images and icons beside visible text are hidden from assistive tech instead.
+- why: lexical 0.381, structural 0.54 (mode audit)
+
+### Wizard / stepper  `comp-wizard-stepper`  [component/wizard; component] score 0.34 · heuristic
+Step indicator with names and progress (list semantics, aria-current=step), Back never loses data, one primary action per step, review step before submit, resume support, each step a real page/route on web; TV: full-screen steps with default focus on the primary action.
+- use when: Ordered multi-step flows (checkout, applications, setup).
+- avoid when: Independent sections (tabs); flows that fit one screen.
+- why: lexical 0.34, structural 0.34 (mode audit)
+
+### Kiosk: public, hurried, standing users  `kiosk-public-use`  [rule/input; interaction/platform] score 0.335 · platform-standard
+Targets ≥60 px, body text ≥20 px, high contrast for glare, one task per screen, reachable-height controls (ADA reach ranges: interactive elements within 380–1220 mm), idle timeout with countdown that clears the session, attract screen as the hub, audio/visual feedback on every tap, and a visible way to cancel at every step.
+- use when: Self-service, POS, check-in, ticketing, signage with touch.
+- avoid when: Never require hover, precise dragging, small text, or scrolling to find the primary action; never keep personal data on screen after inactivity.
+- incompatible with: layout-table-first, density-high, nav-menu-bar-desktop
+- why: lexical 0.02, structural 0.72 (platform kiosk, input touch, mode audit)
+
+### Form labels, errors, and recovery  `a11y-forms-errors`  [rule/forms; component] score 0.311 · accessibility-requirement
+Label above or beside, never placeholder-only; error message next to the field, programmatically associated (aria-describedby / accessibilityHint / AutomationProperties.HelpText), with what is wrong and how to fix; move focus to the first error or the error summary on submit; keep entered data; autocomplete attributes for personal data; allow paste and password managers.
+- use when: Every form: visible labels, required markers in text, inline errors linked to fields, error summary for long forms, no data loss on error.
+- avoid when: Never validate on every keystroke for fields the user has not finished; validate on blur and on submit.
+- why: lexical 0.123, structural 0.54 (mode audit)
+
+### Non-text contrast 3:1 for controls and focus  `a11y-nontext-contrast`  [rule/accessibility; accessibility] score 0.307 · accessibility-requirement
+Any visual that identifies a control or its state needs ≥3:1 against adjacent colours. Hairline dividers at 1.2:1 are fine as decoration but an input whose only boundary is that hairline fails.
+- use when: Input borders, checkbox/radio outlines, focus indicators, icons that carry meaning, chart marks, toggle states.
+- avoid when: Purely decorative borders and dividers are exempt, but then they must not be the only boundary of a control.
+- why: lexical 0.116, structural 0.54 (mode audit)
+
+### Privacy on shared and public screens  `shared-device-privacy`  [rule/privacy; accessibility/platform] score 0.297 · heuristic
+Assume onlookers: mask sensitive values by default with an explicit reveal (balances, medication, addresses), gate personal profiles and purchases behind a PIN on shared TVs, keep notifications and previews generic on shared screens, clear the session and screen on idle or sign-out (kiosks, waiting rooms), and never show one user's data while another profile is active. Announce masked values to assistive tech as masked, not as the value.
+- use when: TVs in a household, waiting-room tablets, kiosks, wall displays, any screen other people can see; personal data, balances, health details, viewing history, messages.
+- avoid when: Single-user personal devices with a lock screen already protecting the data.
+- why: lexical 0.0, structural 0.66 (platform kiosk, mode audit)
+
+### Offline, sync, and connectivity states  `states-offline-and-sync`  [rule/states; component/platform] score 0.297 · engineering-practice
+Design the offline state as a first-class state: show connectivity clearly but calmly (a persistent status strip, not a blocking modal), keep already-loaded content usable, queue writes locally with a visible 'pending sync' marker per item and a 'last synced' timestamp, retry automatically with backoff and let the user retry manually, never lose entered data, and resolve conflicts explicitly (show both versions or last-writer-wins with an undo). Reads: stale data is labelled with its age.
+- use when: Field, travel, and public-venue apps; anything used with poor connectivity; any screen that writes data.
+- avoid when: Read-only always-online desktop tools where connectivity loss is exceptional (still show an error, not a blank).
+- why: lexical 0.0, structural 0.66 (platform kiosk, mode audit)
+
+### Target size by platform  `a11y-target-size`  [rule/input; interaction] score 0.27 · accessibility-requirement
+Web: ≥24×24 CSS px minimum (WCAG 2.5.8), 44×44 recommended for touch. iOS ≥44 pt, Android ≥48 dp, kiosk ≥60 px, desktop pointer ≥24 epx with 4–8 px spacing. Extend the hit area beyond the visual glyph rather than enlarging the icon.
+- use when: Every tappable/clickable element; especially icon buttons, table row actions, chips, close buttons, and pagination.
+- avoid when: Inline text links inside a sentence are exempt from the size rule but still need spacing.
+- why: lexical 0.0, structural 0.6 (input touch, mode audit)
+
+### Users always know where they are and how to go back  `nav-orientation-and-back`  [rule/navigation; navigation] score 0.266 · heuristic
+Current location marked (aria-current, selected tab, breadcrumb, page title); URL/route reflects state on web and deep-linkable screens; back returns to the previous screen with its scroll and selection; titles match the navigation label that led there.
+- use when: Every navigation model; deep links; multi-step flows; tabs that hold stacks.
+- avoid when: Never break the browser/system back; never use a single URL for many states on the web.
+- why: lexical 0.042, structural 0.54 (mode audit)
+
+### Pills for everything  `anti-pill-everything`  [antipattern/generic-ai; anti-pattern] score 0.262 · heuristic
+Pick one corner language for controls (small/medium radius) and reserve full-round for chips/badges; ≤2 badges per item; buttons and inputs share a radius; if everything is a pill, nothing reads as a tag.
+- use when: Pill-shaped buttons, inputs, nav items, badges, and tags all at once; pill badges on every list item.
+- avoid when: Pills are right for filters/tags, compact status, segmented controls.
+- why: lexical 0.034, structural 0.54 (mode audit)
+
+### Arbitrary spacing and misaligned edges  `anti-inconsistent-spacing`  [antipattern/craft; anti-pattern] score 0.26 · heuristic
+Snap every value to the spacing scale, align left edges of text across components, use one inset per container type, check icon/text baseline alignment, and equalise gaps in repeated structures. This single fix does more for 'looks professional' than any colour change.
+- use when: Paddings like 13/18/22 px, cards with different inner padding, text not aligned to the grid, icons off-baseline, unequal gaps between equal items.
+- avoid when: Never.
+- why: lexical 0.031, structural 0.54 (mode audit)
+
+### Internationalisation: expansion, RTL, formats  `i18n-text-expansion-rtl`  [rule/content; visual] score 0.26 · engineering-practice
+Allow 30–50% text expansion (German, Finnish), test with pseudo-localisation, use logical CSS properties / start-end alignment, mirror navigation and progress in RTL, format dates/numbers/currency by locale, verify font coverage per script, keep tabular figures across locales.
+- use when: Any product with more than one locale; fixed-width buttons, tab labels, truncated titles, mirrored layouts.
+- avoid when: Never hard-code widths around English strings; never concatenate translated fragments; never flip icons that indicate physical direction (play) in RTL.
+- why: lexical 0.03, structural 0.54 (mode audit)
+
+Filtered out: anti-desktop-scaled-to-tv (platform ['tv'] not in request ['kiosk']); chart-geo (platform ['desktop', 'mobile', 'web'] not in request ['kiosk']); comp-sidebar-nav (platform ['desktop', 'tablet', 'web'] not in request ['kiosk']); comp-chart-container (platform ['desktop', 'mobile', 'web'] not in request ['kiosk']); comp-media-card (platform ['mobile', 'tv', 'web'] not in request ['kiosk']); comp-data-entry-grid (platform ['desktop', 'web'] not in request ['kiosk']); comp-product-detail-page (platform ['mobile', 'web'] not in request ['kiosk']); comp-checkout-one-page (platform ['mobile', 'web'] not in request ['kiosk'])

@@ -1,0 +1,156 @@
+{
+  "brand": "In the channel guide the time header jumps every half hour and you lose where you were.",
+  "fingerprint": {
+    "navigation_model": "top-bar",
+    "surface_strategy": "bordered",
+    "card_geometry": "none",
+    "corner_language": "sharp",
+    "color_strategy": "dark-with-accent"
+  },
+  "direction": {
+    "navigation": "nav-top-bar",
+    "layout": null,
+    "density": null,
+    "surface": "surface-bordered-panes",
+    "cards": null,
+    "typography": null,
+    "color": "color-dark-accent",
+    "motion": null,
+    "focus": null,
+    "cta": null,
+    "imagery": null,
+    "icon": null,
+    "metadata": null
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "tv",
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "remote",
+      "touch"
+    ],
+    "product": [
+      "media"
+    ],
+    "screen": [
+      "list"
+    ],
+    "screen_subtype": [
+      "epg"
+    ],
+    "stack": [
+      "html-css"
+    ],
+    "density": "medium",
+    "components": [],
+    "environment": [
+      "large-display",
+      "shared-device"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "audit list"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_INTERACTION",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "performance-ux"
+      ],
+      "change_scope": "screen",
+      "utterance": "observation",
+      "preserve": []
+    },
+    "platform_evidence": [
+      {
+        "platform": "tv",
+        "strength": "STRONG_INFERENCE",
+        "evidence": [
+          "channel guide",
+          "channel"
+        ]
+      }
+    ],
+    "mode_evidence": [
+      "audit: perceived-performance defect",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": "top-bar (KNOWN)",
+      "theme": "dark-first (INFERRED)",
+      "surfaces": "bordered-flat (INFERRED)",
+      "radius": "small (INFERRED)",
+      "spacing": "4 (INFERRED)"
+    },
+    "known": [
+      "platform=web",
+      "product=media",
+      "stack=html-css",
+      "screen=list",
+      "project_navigation=top-bar"
+    ],
+    "inferred": [
+      "platform=tv",
+      "input=remote",
+      "input=pointer",
+      "input=keyboard",
+      "input=touch",
+      "density=medium",
+      "mode=audit",
+      "mode=refactor",
+      "environment=shared-device",
+      "environment=large-display",
+      "project_theme=dark-first",
+      "project_surfaces=bordered-flat",
+      "project_radius=small",
+      "project_spacing=4"
+    ],
+    "missing": [
+      "platform: only inferred from wording (tv); confirm before committing"
+    ],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": false,
+    "violations": [
+      "tv/remote: navigation 'top-bar' is a pointer/touch model"
+    ]
+  }
+}

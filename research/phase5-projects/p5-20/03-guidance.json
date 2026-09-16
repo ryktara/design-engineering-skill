@@ -1,0 +1,878 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "Stats screen in dark mode: the bars are barely visible.",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "polish",
+      "audit"
+    ],
+    "platform": [
+      "mobile"
+    ],
+    "input": [
+      "touch"
+    ],
+    "product": [
+      "ecommerce"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "swiftui"
+    ],
+    "density": null,
+    "components": [],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "polish"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "screen_reader": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "low",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "visual",
+        "design-system"
+      ],
+      "change_scope": "screen",
+      "utterance": "observation",
+      "existing": true,
+      "problem": true,
+      "facet": "visual",
+      "diagnose_only": false,
+      "creation": false,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "polish: visual defect on existing UI",
+      "audit: diagnose first"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "bottom-tabs",
+        "status": "KNOWN",
+        "evidence": [
+          "bottom-tabs: 7 matches in README.md, RootTabView.swift, StreaksApp.swift (shell/layout file)"
+        ]
+      },
+      "theme": {
+        "value": "dual-theme",
+        "status": "INFERRED",
+        "evidence": [
+          "dark theme configuration signals: 2",
+          "hex palette: 0 near-white, 0 near-black"
+        ]
+      },
+      "surfaces": {
+        "value": "elevated",
+        "status": "INFERRED",
+        "evidence": [
+          "shadow/elevation in 4 files, borders in 0"
+        ]
+      },
+      "radius": {
+        "value": "medium",
+        "status": "INFERRED",
+        "evidence": [
+          "most common radius 8 (1×); others []"
+        ]
+      },
+      "spacing": {
+        "value": 4,
+        "status": "INFERRED",
+        "evidence": [
+          "most used spacing values [2, 4, 12, 16]"
+        ]
+      },
+      "typography": {
+        "value": "humanist-sans",
+        "status": "INFERRED",
+        "evidence": [
+          "font family Nunito (1 refs)",
+          "encoded type scale in 3 files"
+        ]
+      },
+      "components": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": []
+      }
+    },
+    "known": [
+      "platform=mobile (project inspection)",
+      "product=ecommerce (project inspection (README))",
+      "stack=swiftui (project inspection)",
+      "project_navigation=bottom-tabs (repository: bottom-tabs: 7 matches in README.md, RootTabView.swift, StreaksApp.swift (shell/layout file))"
+    ],
+    "inferred": [
+      "input=touch (implied by platform mobile)",
+      "mode=polish (visual defect on existing UI)",
+      "mode=audit (diagnose first)",
+      "project_theme=dual-theme (repository: dark theme configuration signals: 2; hex palette: 0 near-white, 0 near-black)",
+      "project_surfaces=elevated (repository: shadow/elevation in 4 files, borders in 0)",
+      "project_radius=medium (repository: most common radius 8 (1×); others [])",
+      "project_spacing=4 (repository: most used spacing values [2, 4, 12, 16])",
+      "project_typography=humanist-sans (repository: font family Nunito (1 refs); encoded type scale in 3 files)"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [],
+      "project": [
+        "Package.swift: Apple project",
+        "Package.swift: iOS target"
+      ]
+    },
+    "activation": {
+      "decision": "activate",
+      "ui_score": 2.0,
+      "non_ui_score": 0,
+      "ui_terms": [
+        "screen",
+        "dark mode"
+      ],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "present-tense observation"
+      ],
+      "new": [],
+      "defect": [
+        "are barely"
+      ],
+      "operations": {},
+      "domains": {
+        "visual": [
+          "visible"
+        ],
+        "design-system": [
+          "dark mode"
+        ]
+      },
+      "no_change": [],
+      "scope": {
+        "screen": [
+          "screen"
+        ]
+      },
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "screen",
+        "dark mode"
+      ],
+      "ux_symptoms": [],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "structure",
+        "reason": "hierarchy and spacing are the usual polish defects"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "polish removes generic devices"
+      },
+      {
+        "concern": "interaction",
+        "reason": "input model: touch"
+      },
+      {
+        "concern": "accessibility",
+        "reason": "platform accessibility baseline"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "content",
+        "reason": "typography"
+      },
+      {
+        "concern": "component",
+        "reason": "the component being polished"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "device sizes and orientation"
+      }
+    ],
+    "optional": [
+      "motion",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "layout.spacing_scale",
+        "reason": "visual problem / polish"
+      },
+      {
+        "concept": "layout.focal_hierarchy",
+        "reason": "visual problem / polish"
+      },
+      {
+        "concept": "process.reuse_first",
+        "reason": "existing repository: reuse its primitives"
+      },
+      {
+        "concept": "touch.minimum_target",
+        "reason": "touch platform"
+      }
+    ],
+    "recommended_concepts": [
+      "layout.no_nested_cards",
+      "process.safe_modification",
+      "touch.gestures_discoverable",
+      "touch.thumb_reach",
+      "touch.safe_areas",
+      "navigation.platform_grammar"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "cta-sticky-bar",
+      "kind": "pattern",
+      "category": "cta",
+      "title": "Sticky action bar",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "interaction",
+        "structure"
+      ],
+      "concepts": [],
+      "covers": [],
+      "score": 0.357,
+      "guidance": "Bottom-fixed on mobile inside the safe area, sticky footer on desktop; content gets bottom padding equal to the bar height; the bar must not obscure a focused field (WCAG 2.4.11) so scroll the field into view above it.",
+      "use_when": "Long forms or detail pages where the primary action must stay reachable (Add to cart, Save, Continue).",
+      "avoid_when": "Short screens, TV, or when the bar would cover content without a scroll padding compensation.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "incompatible": [
+        "cta-focus-selects",
+        "layout-rails"
+      ],
+      "why": {
+        "lexical": 0.154,
+        "structural": 0.56,
+        "matched": [
+          "platform mobile",
+          "input touch",
+          "product ecommerce"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring pattern with lexical evidence"
+    },
+    {
+      "id": "nav-bottom-tabs",
+      "kind": "pattern",
+      "category": "navigation",
+      "title": "Bottom tab bar",
+      "facets": [
+        "navigation",
+        "platform"
+      ],
+      "concerns": [
+        "navigation"
+      ],
+      "concepts": [
+        "navigation.platform_grammar"
+      ],
+      "covers": [
+        "platform navigation grammar"
+      ],
+      "score": 0.336,
+      "guidance": "3–5 items, icon + label always (no icon-only), safe-area aware, current item indicated by more than tint. Each tab keeps its own navigation stack. Don't put actions (compose, add) in the tab bar unless it is the app's primary action and it is styled as an action, not a destination.",
+      "use_when": "Phone apps with 3–5 top-level destinations of similar importance that users switch between often.",
+      "avoid_when": "More than five destinations, tablet/desktop widths (use a rail), single-flow apps, or when one destination dominates usage.",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "implementation": {
+        "swiftui": "TabView with Label(text, systemImage); avoid custom bars unless brand requires, since the system bar handles Dynamic Type and VoiceOver."
+      },
+      "incompatible": [
+        "nav-left-rail",
+        "nav-top-bar",
+        "nav-tv-side",
+        "nav-tv-top-tabs"
+      ],
+      "why": {
+        "lexical": 0.122,
+        "structural": 0.42,
+        "matched": [
+          "platform mobile",
+          "input touch"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring pattern with lexical evidence"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "anti-dark-mode-inversion",
+      "kind": "antipattern",
+      "category": "craft",
+      "title": "Dark mode by inversion",
+      "facets": [
+        "anti-pattern"
+      ],
+      "concerns": [
+        "anti-pattern",
+        "brand"
+      ],
+      "concepts": [
+        "brand.dark_mode_redesign"
+      ],
+      "covers": [
+        "dark mode as a surface redesign, not inversion"
+      ],
+      "score": 0.501,
+      "guidance": "Redesign surfaces (elevation = lighter), desaturate accents, use 87/60/38% white text steps, re-validate every pair, define dark chart palettes. See the dark mode rule.",
+      "use_when": "Pure black canvas with pure white text, saturated light-theme accents on dark, shadows that vanish, borders that disappear, images unchanged.",
+      "avoid_when": "Never.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.535,
+        "structural": 0.46,
+        "matched": [
+          "secondary mode"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "most relevant record for the request wording"
+    },
+    {
+      "id": "color-dark-mode-rules",
+      "kind": "rule",
+      "category": "color",
+      "title": "Dark mode is a redesign of surfaces, not an inversion",
+      "facets": [
+        "visual"
+      ],
+      "concerns": [
+        "accessibility",
+        "brand"
+      ],
+      "concepts": [
+        "brand.dark_mode_redesign"
+      ],
+      "covers": [
+        "dark mode as a surface redesign, not inversion"
+      ],
+      "score": 0.483,
+      "guidance": "Elevation = lighter surface (not darker shadow); desaturate accents; text 87/60/38% white steps for primary/secondary/disabled; borders lighten; images may need a slight dim; charts get a dark palette; re-validate every contrast pair.",
+      "use_when": "Adding or auditing dark themes.",
+      "avoid_when": "Never invert colours programmatically; never keep saturated light-theme accents unchanged; never use pure white text.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.501,
+        "structural": 0.46,
+        "matched": [
+          "secondary mode"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "most relevant record for the request wording"
+    },
+    {
+      "id": "typo-measure-and-rhythm",
+      "kind": "rule",
+      "category": "typography",
+      "title": "Measure, rhythm, and hierarchy by contrast of size and weight",
+      "facets": [
+        "visual"
+      ],
+      "concerns": [
+        "content",
+        "structure"
+      ],
+      "concepts": [
+        "content.readable_measure",
+        "layout.focal_hierarchy"
+      ],
+      "covers": [
+        "readable line length",
+        "visual hierarchy with one focal point"
+      ],
+      "score": 0.243,
+      "guidance": "45–75 characters per line for prose; vertical spacing from the spacing scale tied to line height; hierarchy from clear jumps (≥1.25×) in size or weight, not from five near-identical sizes; headings closer to the content below than to the content above.",
+      "use_when": "Reading content, forms, dashboards with mixed text.",
+      "avoid_when": "Never make everything bold; never use more than two weights per role.",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.54,
+        "matched": [
+          "mode polish"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: visual hierarchy with one focal point"
+    },
+    {
+      "id": "layout-spacing-scale",
+      "kind": "rule",
+      "category": "layout",
+      "title": "Spacing from one scale, grouping by proximity",
+      "facets": [
+        "layout"
+      ],
+      "concerns": [
+        "structure"
+      ],
+      "concepts": [
+        "layout.spacing_scale"
+      ],
+      "covers": [
+        "consistent spacing scale"
+      ],
+      "score": 0.243,
+      "guidance": "A geometric-ish scale (4/8/12/16/24/32/48/64), inside-group spacing smaller than between-group spacing (ratio ≥1.5×), alignment to a grid, consistent inset per container type, optical alignment for icons and text baselines. Inconsistent spacing is the most common 'unprofessional' signal.",
+      "use_when": "Every layout decision; every 'spacing feels off' complaint.",
+      "avoid_when": "Never use arbitrary values (13px, 22px); never use equal spacing everywhere (kills grouping).",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.54,
+        "matched": [
+          "mode polish"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: consistent spacing scale"
+    },
+    {
+      "id": "a11y-target-size",
+      "kind": "rule",
+      "category": "input",
+      "title": "Target size by platform",
+      "facets": [
+        "interaction"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "touch.minimum_target"
+      ],
+      "covers": [
+        "large touch targets (≥44–48 px)"
+      ],
+      "score": 0.234,
+      "guidance": "Web: ≥24×24 CSS px minimum (WCAG 2.5.8), 44×44 recommended for touch. iOS ≥44 pt, Android ≥48 dp, kiosk ≥60 px, desktop pointer ≥24 epx with 4–8 px spacing. Extend the hit area beyond the visual glyph rather than enlarging the icon.",
+      "use_when": "Every tappable/clickable element; especially icon buttons, table row actions, chips, close buttons, and pagination.",
+      "avoid_when": "Inline text links inside a sentence are exempt from the size rule but still need spacing.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.52,
+        "matched": [
+          "input touch",
+          "secondary mode"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: large touch targets (≥44–48 px)"
+    },
+    {
+      "id": "impl-reuse-before-new",
+      "kind": "rule",
+      "category": "implementation",
+      "title": "Reuse → extend → compose → new (in that order)",
+      "facets": [
+        "process"
+      ],
+      "concerns": [
+        "structure"
+      ],
+      "concepts": [
+        "process.reuse_first"
+      ],
+      "covers": [
+        "reuse → extend → compose → new"
+      ],
+      "score": 0.243,
+      "guidance": "Inspect the repository first (inspect_project.py): existing components, tokens, fonts, breakpoints, and conventions win. Reuse the existing component; if it lacks a variant, extend it through its API; if the composition is new, compose existing primitives; only create a new primitive when the gap is real, and put it where the others live.",
+      "use_when": "Any UI change in an existing codebase.",
+      "avoid_when": "Never install a second component library or a UI framework to build one screen; never fork a design-system component when a variant prop would do.",
+      "risk": {
+        "a11y": "low",
+        "perf": "medium"
+      },
+      "provenance": "engineering-practice",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.54,
+        "matched": [
+          "mode polish"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: reuse → extend → compose → new"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "structure",
+      "anti-pattern",
+      "interaction",
+      "accessibility"
+    ],
+    "covered_required_concerns": [
+      "structure",
+      "anti-pattern",
+      "interaction",
+      "accessibility"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "content",
+      "component",
+      "adaptive"
+    ],
+    "covered_recommended_concerns": [
+      "content"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "layout.spacing_scale",
+      "layout.focal_hierarchy",
+      "process.reuse_first",
+      "touch.minimum_target"
+    ],
+    "covered_required_concepts": [
+      "layout.spacing_scale",
+      "layout.focal_hierarchy",
+      "process.reuse_first",
+      "touch.minimum_target"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.17,
+    "bundle_size": 8,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 2,
+    "guardrail_size": 6,
+    "bundle_tokens": 952,
+    "coverage_per_1k_tokens": 4.2,
+    "mean_purity": 0.94,
+    "contaminated": [],
+    "category_diversity": 1.0,
+    "duplicate_pressure": 0.12,
+    "facet_coverage": 0.75,
+    "redundancy": 0.46
+  },
+  "token_coverage": 0.86,
+  "omitted": [
+    {
+      "id": "comp-kpi-tile",
+      "reason": "contamination: product-specific (erp,finance,healthcare,iot,saas) vs ['ecommerce']; low purity 0.00: most of its concepts are off-task; chart-specific record with no chart evidence in the request"
+    },
+    {
+      "id": "chart-compare-bar",
+      "reason": "contamination: low purity 0.00: most of its concepts are off-task; chart record outside a data-visualisation task"
+    },
+    {
+      "id": "chart-composition",
+      "reason": "contamination: low purity 0.00: most of its concepts are off-task; chart record outside a data-visualisation task"
+    },
+    {
+      "id": "color-dark-accent",
+      "reason": "contamination: product-specific (devtools,finance,iot,media) vs ['ecommerce']"
+    }
+  ],
+  "rejected": [
+    {
+      "id": "anti-desktop-scaled-to-tv",
+      "reason": "platform ['tv'] not in request ['mobile']"
+    },
+    {
+      "id": "anti-hover-only-actions",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "chart-heatmap-matrix",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-data-table",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-command-palette",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-data-entry-grid",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-plan-comparison",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-kiosk-keypad",
+      "reason": "platform ['kiosk', 'tablet'] not in request ['mobile']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "layout.spacing_scale",
+      "priority": "required",
+      "reason": "visual problem / polish",
+      "candidate_records": [
+        [
+          "anti-inconsistent-spacing",
+          0.243
+        ],
+        [
+          "layout-spacing-scale",
+          0.243
+        ]
+      ],
+      "selected_record": "layout-spacing-scale",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "layout.focal_hierarchy",
+      "priority": "required",
+      "reason": "visual problem / polish",
+      "candidate_records": [
+        [
+          "layout-hierarchy-one-thing",
+          0.251
+        ],
+        [
+          "anti-oversized-hero-text",
+          0.243
+        ],
+        [
+          "typo-measure-and-rhythm",
+          0.243
+        ]
+      ],
+      "selected_record": "typo-measure-and-rhythm",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "required",
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.243
+        ]
+      ],
+      "selected_record": "impl-reuse-before-new",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "touch.minimum_target",
+      "priority": "required",
+      "reason": "touch platform",
+      "candidate_records": [
+        [
+          "comp-product-detail-page",
+          0.31
+        ],
+        [
+          "comp-photo-capture-field",
+          0.293
+        ],
+        [
+          "comp-list-row-mobile",
+          0.246
+        ],
+        [
+          "a11y-target-size",
+          0.234
+        ]
+      ],
+      "selected_record": "a11y-target-size",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "layout.no_nested_cards",
+      "priority": "recommended",
+      "reason": "polish removes container noise",
+      "candidate_records": [
+        [
+          "anti-card-everything",
+          0.256
+        ],
+        [
+          "card-none",
+          0.25
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "process.safe_modification",
+      "priority": "recommended",
+      "reason": "modifying an existing system",
+      "candidate_records": [
+        [
+          "impl-safe-modification",
+          0.254
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.gestures_discoverable",
+      "priority": "recommended",
+      "reason": "touch platform",
+      "candidate_records": [
+        [
+          "mobile-gestures-discoverable",
+          0.341
+        ],
+        [
+          "comp-list-row-mobile",
+          0.246
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.thumb_reach",
+      "priority": "recommended",
+      "reason": "one-handed use",
+      "candidate_records": [
+        [
+          "mobile-thumb-reach",
+          0.312
+        ],
+        [
+          "anti-mobile-desktop-shrunk",
+          0.162
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.safe_areas",
+      "priority": "recommended",
+      "reason": "mobile",
+      "candidate_records": [
+        [
+          "mobile-safe-areas",
+          0.318
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "navigation.platform_grammar",
+      "priority": "recommended",
+      "reason": "mobile navigation grammar",
+      "candidate_records": [
+        [
+          "nav-bottom-tabs",
+          0.336
+        ],
+        [
+          "mobile-platform-navigation",
+          0.317
+        ]
+      ],
+      "selected_record": "nav-bottom-tabs",
+      "status": "covered",
+      "why": ""
+    }
+  ]
+}

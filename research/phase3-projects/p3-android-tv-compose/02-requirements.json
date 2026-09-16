@@ -1,0 +1,115 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "create"
+  ],
+  "platform": [
+    "tv"
+  ],
+  "input": [
+    "remote"
+  ],
+  "product": [
+    "media"
+  ],
+  "screen": [
+    "home",
+    "list",
+    "player"
+  ],
+  "screen_subtype": [
+    "epg",
+    "rails"
+  ],
+  "stack": [
+    "compose",
+    "compose-tv"
+  ],
+  "density": "medium",
+  "components": [
+    "media"
+  ],
+  "environment": [
+    "large-display",
+    "shared-device"
+  ],
+  "jobs": [],
+  "problems": [],
+  "risk": "low",
+  "primary_jobs": [
+    "create home",
+    "create list",
+    "create player"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "performance_sensitive": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "screen_reader": true,
+    "focus": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "known": [
+    "platform=tv (request: tv, android tv, epg, rails)",
+    "input=remote (project inspection: DPAD/remote handling in source)",
+    "product=media (request: player, epg)",
+    "stack=compose (request: compose)",
+    "stack=compose-tv (project inspection)",
+    "screen=home (request: home)",
+    "screen=list (request: epg)",
+    "screen=player (request: player)"
+  ],
+  "inferred": [
+    "density=medium (implied by product media)",
+    "mode=create (default when no mode word is present)",
+    "environment=shared-device (a TV is normally a shared household device)",
+    "environment=large-display (TV platform)"
+  ],
+  "missing": [
+    "brand: no brand assets, guideline, or character description available"
+  ],
+  "conflicts": [
+    {
+      "field": "platform",
+      "request": [
+        "tv"
+      ],
+      "project": "mobile",
+      "resolution": "request kept; repository platform recorded as context"
+    }
+  ],
+  "status": "AMBIGUOUS",
+  "source": {
+    "request": [
+      "compose",
+      "epg",
+      "home",
+      "player",
+      "player, epg",
+      "tv, android tv, epg, rails"
+    ],
+    "project": [
+      "app\\build.gradle.kts: androidx.compose",
+      "app\\build.gradle.kts: androidx.tv:tv-material",
+      "app\\build.gradle.kts: androidx.media3",
+      "app\\build.gradle.kts: coil",
+      "app\\src\\main\\AndroidManifest.xml: leanback launcher (Android TV)",
+      "touchscreen not required in manifest (TV/set-top)",
+      "DPAD / remote key handling found in source",
+      "both mobile and TV Android targets; check product flavors before assuming one UI"
+    ]
+  },
+  "activation": {
+    "decision": "activate",
+    "ui_score": 3.0,
+    "non_ui_score": 0,
+    "ui_terms": [
+      "epg"
+    ],
+    "non_ui_terms": []
+  }
+}

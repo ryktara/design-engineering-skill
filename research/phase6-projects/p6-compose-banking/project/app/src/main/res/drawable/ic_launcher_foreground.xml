@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Simple "N" mark on the brand green background -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M34,74 L34,34 L42,34 L66,62 L66,34 L74,34 L74,74 L66,74 L42,46 L42,74 Z" />
+    <path
+        android:fillColor="#C9A227"
+        android:pathData="M30,80 L78,80 L78,84 L30,84 Z" />
+</vector>

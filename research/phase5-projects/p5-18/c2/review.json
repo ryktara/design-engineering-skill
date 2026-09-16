@@ -1,0 +1,25 @@
+{
+  "task": "p5-18",
+  "reviewer_model": "claude-opus-5[1m]",
+  "c2_records": [
+    {"id": "media-photo-viewer", "verdict": "relevant", "bad_category": null},
+    {"id": "comp-photo-capture-field", "verdict": "relevant", "bad_category": null},
+    {"id": "mobile-field-use", "verdict": "relevant", "bad_category": null},
+    {"id": "mobile-keyboard-ime", "verdict": "off-target", "bad_category": "generic"},
+    {"id": "layout-states-empty-loading-error", "verdict": "partial", "bad_category": null},
+    {"id": "states-offline-and-sync", "verdict": "partial", "bad_category": null}
+  ],
+  "c2_relevant": 3,
+  "c2_partial": 2,
+  "c2_offtarget": 1,
+  "c2_bad": [
+    {"record": "mobile-keyboard-ime", "category": "generic", "why": "Keyboard type, autofill hints, return-key action and scrolling the focused field above the IME have nothing to do with viewing attached photos. It was pulled in only because 'on-screen keyboard (IME) aware layout' was listed as a required concern for a photo-viewing task."}
+  ],
+  "c2_direction_unjustified": [
+    {"slot": "imagery", "why": "imagery-none ('remove stock photos, abstract blobs and hero illustrations') on a task whose entire subject is making user-captured defect photos large enough to inspect. Harmless if read carefully, misleading if followed literally; the c1 run explicitly recorded it as ignored because it contradicts the task."}
+  ],
+  "platform_mode_scope_ok": true,
+  "verdict_vs_c1": "better",
+  "why": "c2 leads with media-photo-viewer, which states almost exactly the implementation that was actually built (2-up thumbnails decoded at display size x DPR, full-screen route closed by system back, pinch/double-tap zoom plus an explicit zoom button, labelled prev/next, dark chrome with 48dp high-contrast controls, report state preserved), and it drops c1's off-task comp-form and typo-scale-and-roles; imagery-none survives only as a low-harm direction slot instead of a core record.",
+  "would_have_helped": "helped"
+}

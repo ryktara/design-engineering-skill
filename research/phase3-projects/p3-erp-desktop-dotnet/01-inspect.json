@@ -1,0 +1,44 @@
+{
+  "root": "D:\\indigo pro\\MYownSkills\\research\\phase3-projects\\p3-erp-desktop-dotnet\\project",
+  "findings": [
+    {
+      "status": "KNOWN",
+      "note": "ErpClient.csproj: UseWPF"
+    }
+  ],
+  "stack_groups": [
+    "wpf"
+  ],
+  "platforms": [
+    "desktop"
+  ],
+  "ui_libraries": [
+    "wpf"
+  ],
+  "package_manager": null,
+  "css_architecture": [],
+  "tokens": [
+    "App.xaml"
+  ],
+  "fonts": [],
+  "icons": [],
+  "routing": [
+    "Views/ (views)",
+    "ViewModels/ (mvvm viewmodels)"
+  ],
+  "breakpoints": [],
+  "accessibility": [],
+  "focus_handling": [
+    "explicit focus handling in 0 files"
+  ],
+  "design_docs": [],
+  "component_dirs": [
+    "Themes/ (2 files)"
+  ],
+  "tests": [],
+  "i18n": [],
+  "product_hints": [],
+  "sample": {
+    "files_scanned": 9
+  }
+}

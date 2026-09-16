@@ -1,0 +1,198 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "create"
+  ],
+  "platform": [
+    "desktop"
+  ],
+  "input": [
+    "keyboard",
+    "pointer"
+  ],
+  "product": [
+    "erp"
+  ],
+  "screen": [
+    "settings"
+  ],
+  "screen_subtype": [],
+  "stack": [
+    "wpf"
+  ],
+  "density": "high",
+  "components": [
+    "dialog",
+    "settings",
+    "table"
+  ],
+  "environment": [],
+  "jobs": [],
+  "problems": [],
+  "risk": "low",
+  "primary_jobs": [
+    "create settings"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "keyboard": true,
+    "screen_reader": true,
+    "focus": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "change_budget": "moderate",
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "mode_evidence": [
+    "create: default (no mode cue)"
+  ],
+  "project_context": {
+    "navigation": {
+      "value": "menu-bar",
+      "status": "INFERRED",
+      "evidence": [
+        "menu-bar: 1 matches in PurchaseOrderLinesView.xaml"
+      ]
+    },
+    "theme": {
+      "value": "light-first",
+      "status": "INFERRED",
+      "evidence": [
+        "hex palette: 11 near-white, 1 near-black"
+      ]
+    },
+    "surfaces": {
+      "value": "bordered-flat",
+      "status": "INFERRED",
+      "evidence": [
+        "weak signal: shadow 0, border 1"
+      ]
+    },
+    "radius": {
+      "value": "small",
+      "status": "INFERRED",
+      "evidence": [
+        "most common radius 2 (2×); others [1.0, 10.0]"
+      ]
+    },
+    "spacing": {
+      "value": 4,
+      "status": "INFERRED",
+      "evidence": [
+        "most used spacing values [16, 4, 12, 10, 6]"
+      ]
+    },
+    "typography": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": [
+        "no font family declaration found"
+      ]
+    },
+    "components": {
+      "value": "wpf",
+      "status": "KNOWN",
+      "evidence": [
+        "wpf"
+      ]
+    }
+  },
+  "known": [
+    "platform=desktop (request: window)",
+    "product=erp (request: warehouse, purchase order)",
+    "stack=wpf (project inspection)",
+    "screen=settings (request: settings)",
+    "project_components=wpf (repository: wpf)"
+  ],
+  "inferred": [
+    "input=pointer (implied by platform desktop)",
+    "input=keyboard (implied by platform desktop)",
+    "density=high (implied by product erp)",
+    "mode=create (default (no mode cue))",
+    "project_navigation=menu-bar (repository: menu-bar: 1 matches in PurchaseOrderLinesView.xaml)",
+    "project_theme=light-first (repository: hex palette: 11 near-white, 1 near-black)",
+    "project_surfaces=bordered-flat (repository: weak signal: shadow 0, border 1)",
+    "project_radius=small (repository: most common radius 2 (2×); others [1.0, 10.0])",
+    "project_spacing=4 (repository: most used spacing values [16, 4, 12, 10, 6])"
+  ],
+  "missing": [
+    "brand: no brand assets, guideline, or character description available"
+  ],
+  "status": "CONFIDENT",
+  "source": {
+    "request": [
+      "settings",
+      "warehouse, purchase order",
+      "window"
+    ],
+    "project": [
+      "ErpClient.csproj: UseWPF"
+    ]
+  },
+  "activation": {
+    "decision": "activate",
+    "ui_score": 3.0,
+    "non_ui_score": 1,
+    "ui_terms": [
+      "dialog"
+    ],
+    "non_ui_terms": [
+      "add a column"
+    ]
+  },
+  "intent": {
+    "existing": true,
+    "problem": false,
+    "facet": "general",
+    "diagnose_only": false,
+    "creation": false,
+    "redesign": false,
+    "responsive_cues": [],
+    "preserve": [],
+    "scope": "moderate"
+  },
+  "intent_evidence": {
+    "existing": [
+      "clerks"
+    ],
+    "problem": [],
+    "change": [],
+    "create": [
+      "add a"
+    ],
+    "diagnose": [],
+    "no_change": [],
+    "redesign": [],
+    "look_feel": [],
+    "structural": [],
+    "responsive": [
+      "window"
+    ],
+    "accessibility": [],
+    "interaction": [
+      "dialog"
+    ]
+  },
+  "scope_evidence": {
+    "ui": [
+      "dialog",
+      "settings"
+    ],
+    "ux_symptoms": [],
+    "technical": {
+      "DATA": [
+        "warehouse"
+      ]
+    },
+    "non_visual": []
+  }
+}

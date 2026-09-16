@@ -1,0 +1,19 @@
+{
+  "platform": "web",
+  "artifact_state": "existing",
+  "acceptable_modes": ["responsive", "refactor", "polish"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "touch.thumb_reach",
+    "layout.one_primary_action",
+    "adaptive.breakpoint_matrix",
+    "touch.safe_areas",
+    "feedback.trust_signals",
+    "process.reuse_first",
+    "touch.minimum_target"
+  ],
+  "critical_concepts": ["touch.thumb_reach", "layout.one_primary_action", "adaptive.breakpoint_matrix"],
+  "forbidden_concepts": ["onboarding.linear_wizard", "tv.safe_margins", "interaction.dpad_reachability", "desktop.fluent_materials"],
+  "preservation": ["navigation", "theme", "typography"],
+  "notes": "Reviewer reading of the code before any advise call: checkout.html is a one-page form (4 sections) + a <details class=order-summary> that CSS moves to the top on <=900px (order:-1) and app.js collapses by default on phones. The Place order button sits at the bottom of a ~1900px page at 390 wide, so it is below the fold whether or not the summary is open; opening the summary pushes it further. Expected fix: keep the summary collapsed/compact on phones and give the pay action a sticky bottom bar on phones that reuses the project's existing .sticky-atc pattern (IntersectionObserver hide when the in-form button is visible, safe-area inset, body padding, scroll-padding-bottom), showing the total next to the button. Must not become a wizard; desktop two-column layout with sticky aside must stay."
+}

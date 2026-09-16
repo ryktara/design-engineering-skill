@@ -1,0 +1,9 @@
+{"task": "p6-15", "records": [
+{"id": "typo-scale-and-roles", "verdict": "partial", "category": "generic", "why": "Entered as carrier for table.tabular_figures; the project type system is already complete and untouched by this fix."},
+{"id": "mobile-keyboard-ime", "verdict": "relevant", "category": "", "why": "Names both halves of the defect: per-field keyboard type/autofill and keeping the primary action reachable above the IME."},
+{"id": "mobile-density-touch", "verdict": "partial", "category": "generic", "why": "Only its touch-target clause applies; the table/filter/bulk-selection body is about a different screen."},
+{"id": "color-states-complete", "verdict": "partial", "category": "generic", "why": "Covers the demanded focus_visible concept but interactive colour-state tokens are not what the IME bug needs."}
+],
+"missing_critical": ["form.autofill_attributes"], "unjustified_direction_slots": 0,
+"layer_review": {"core": [], "critical": ["typo-scale-and-roles", "mobile-keyboard-ime", "mobile-density-touch", "color-states-complete"], "optional": []},
+"change_vs_c3": "Better: dropped the off-target interaction-drag-drop and layout-states-empty-loading-error while keeping mobile-keyboard-ime, the record the c3 implementer used."}

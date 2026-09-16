@@ -1,0 +1,83 @@
+{
+  "case": "p3-react-dashboard-polish",
+  "platform": "web",
+  "stack": "react (18.3.1, esbuild bundle, plain CSS)",
+  "mode_detected": ["polish", "audit"],
+  "rendered": true,
+  "render_mode": "native",
+  "viewports": ["1440x900", "390x844"],
+  "screenshots": [
+    "render/first-1440x900.png",
+    "render/first-1440x900-t0.png",
+    "render/first-390x844.png",
+    "render/first-390x844-t0.png",
+    "render/fix1-1440x900.png",
+    "render/fix1-1440x900-t0.png",
+    "render/fix1-390x844.png",
+    "render/fix1-390x844-t0.png",
+    "render/final-1440x900.png",
+    "render/final-1440x900-t0.png",
+    "render/final-390x844.png",
+    "render/final-390x844-t0.png"
+  ],
+  "baseline_checks_failed": 9,
+  "baseline_checks_total": 12,
+  "first_render_defects": 6,
+  "final_defects": 3,
+  "iterations": 2,
+  "guidance_relevant": 4,
+  "guidance_partial": 3,
+  "guidance_offtarget": 0,
+  "knowledge_gaps": [],
+  "ranking_misses": [
+    "cta-single-primary",
+    "layout-spacing-scale",
+    "data-tables-numeric",
+    "a11y-color-not-only",
+    "anti-card-everything",
+    "layout-states-empty-loading-error / comp-empty-state / anti-no-states",
+    "comp-chart-container (omitted as redundant with comp-kpi-tile)",
+    "web-cls-and-lcp"
+  ],
+  "requirements_errors": [
+    "product=[] (energy / facility management not recognised)",
+    "jobs=[] (read numbers, choose action not captured)",
+    "problems=[general, visual] (readability and action-hierarchy collapsed to visual)",
+    "components=[button] (numeric display / KPI implied by 'numbers' not captured)"
+  ],
+  "direction_errors": [
+    "navigation=nav-left-rail contradicts existing 4-item top bar (platform-only reason)",
+    "typography=serif-editorial for an ops dashboard (platform-only reason)",
+    "focus=focus-underline for a button-heavy UI",
+    "cta=cta-contextual-inline chosen over cta-single-primary despite 'which button to press'",
+    "density=low for an operations dashboard"
+  ],
+  "interaction_final": {
+    "layoutShift": "PASS",
+    "onePrimaryPerView": "PASS",
+    "statusNotColourOnly": "PASS",
+    "numbers": "PASS",
+    "chart": "PASS",
+    "alertsEmptyState": "PASS",
+    "targets": "PASS",
+    "headings": "PASS",
+    "reducedMotion": "PASS",
+    "spacing": "PASS",
+    "nestedCards": "PASS",
+    "keyboard": "PASS"
+  },
+  "tokens_check": "tokens.py validate --platform web: OK (0 errors, 1 advisory: border.default 1.25:1)",
+  "notes": [
+    "Skill files (de_core.py, rules.jsonl, lexicon.json, evals) were modified by another process at 00:33-00:37 during this run; advise outputs re-run after the change select identical records/slots (only '(covers: ...)' annotations added). This run wrote nothing under design-engineering/."
+  ],
+  "tags": [
+    "requirements-miss",
+    "vocabulary-gap",
+    "ranking-miss",
+    "direction-invariant",
+    "render-defect-fixed",
+    "render-defect-remaining",
+    "tooling-limit",
+    "skill-helped"
+  ]
+}

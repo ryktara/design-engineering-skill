@@ -1,0 +1,158 @@
+{
+  "brand": "Checkout on phones: the order summary pushes the pay button below the fold.",
+  "fingerprint": {
+    "layout_topology": "single-column",
+    "grid_behavior": "fluid",
+    "content_density": "medium",
+    "surface_strategy": "elevated",
+    "card_geometry": "poster-landscape",
+    "corner_language": "small",
+    "typography_character": "geometric-sans",
+    "color_strategy": "neutral-plus-accent",
+    "motion_character": "spring",
+    "focus_strategy": "none-touch-only",
+    "cta_strategy": "single-primary",
+    "image_strategy": "thumbnails",
+    "icon_strategy": "filled",
+    "metadata_density": "inline-badges"
+  },
+  "direction": {
+    "navigation": null,
+    "layout": "layout-single-column",
+    "density": "density-medium",
+    "surface": "surface-elevated-cards",
+    "cards": "card-poster-landscape",
+    "typography": "typography-geometric-sans",
+    "color": "color-neutral-accent",
+    "motion": "motion-spring",
+    "focus": "focus-none-touch-only",
+    "cta": "cta-single-primary",
+    "imagery": "imagery-thumbnails",
+    "icon": "icon-filled-system",
+    "metadata": "metadata-inline-badges"
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "responsive",
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "mobile"
+    ],
+    "input": [
+      "touch"
+    ],
+    "product": [
+      "ecommerce"
+    ],
+    "screen": [
+      "checkout"
+    ],
+    "screen_subtype": [],
+    "stack": [
+      "html-css"
+    ],
+    "density": null,
+    "components": [
+      "button"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "responsive checkout"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "screen_reader": true,
+      "touch_targets": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "layout",
+        "interaction",
+        "responsive"
+      ],
+      "change_scope": "local",
+      "utterance": "observation",
+      "preserve": []
+    },
+    "platform_evidence": [
+      {
+        "platform": "mobile",
+        "strength": "DIRECT",
+        "evidence": [
+          "phones"
+        ]
+      }
+    ],
+    "mode_evidence": [
+      "responsive: explicit: on phones",
+      "audit: layout/structure defect on existing UI",
+      "refactor: structural fix follows"
+    ],
+    "project_context": {
+      "navigation": "top-bar (KNOWN)",
+      "theme": "light-first (INFERRED)",
+      "surfaces": "elevated (INFERRED)",
+      "radius": "pill (INFERRED)",
+      "typography": "geometric-sans (INFERRED)"
+    },
+    "known": [
+      "platform=mobile",
+      "product=ecommerce",
+      "stack=html-css",
+      "screen=checkout",
+      "mode=responsive",
+      "project_navigation=top-bar"
+    ],
+    "inferred": [
+      "input=touch",
+      "mode=audit",
+      "mode=refactor",
+      "project_theme=light-first",
+      "project_surfaces=elevated",
+      "project_radius=pill",
+      "project_typography=geometric-sans"
+    ],
+    "missing": [],
+    "conflicts": [
+      {
+        "field": "platform",
+        "request": [
+          "mobile"
+        ],
+        "project": "web",
+        "resolution": "request kept; repository platform recorded as context"
+      }
+    ],
+    "status": "AMBIGUOUS"
+  },
+  "validation": {
+    "ok": false,
+    "violations": [
+      "non-media product: poster (media) card geometry selected"
+    ]
+  }
+}

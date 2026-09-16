@@ -1,0 +1,60 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "accessibility",
+    "audit"
+  ],
+  "platform": [
+    "desktop"
+  ],
+  "input": [
+    "keyboard",
+    "pointer"
+  ],
+  "product": [
+    "erp"
+  ],
+  "screen": [],
+  "screen_subtype": [],
+  "stack": [
+    "winui"
+  ],
+  "density": "high",
+  "components": [],
+  "environment": [],
+  "jobs": [],
+  "problems": [
+    "accessibility",
+    "interaction"
+  ],
+  "risk": "low",
+  "primary_jobs": [
+    "accessibility"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "keyboard": true,
+    "screen_reader": true,
+    "focus": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "known": [
+    "platform=desktop",
+    "product=erp",
+    "stack=winui",
+    "mode=accessibility"
+  ],
+  "inferred": [
+    "input=pointer",
+    "input=keyboard",
+    "density=high",
+    "mode=audit"
+  ],
+  "missing": [],
+  "status": "CONFIDENT"
+}

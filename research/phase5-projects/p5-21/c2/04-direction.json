@@ -1,0 +1,117 @@
+{
+  "brand": "Add a weekly summary card to the top of the Today screen.",
+  "fingerprint": {
+    "navigation_model": "bottom-tabs",
+    "surface_strategy": "elevated",
+    "card_geometry": "elevated",
+    "corner_language": "medium",
+    "color_strategy": "neutral-plus-accent"
+  },
+  "direction": {
+    "navigation": "nav-bottom-tabs",
+    "layout": null,
+    "density": null,
+    "surface": "surface-elevated-cards",
+    "cards": null,
+    "typography": null,
+    "color": "color-neutral-accent",
+    "motion": null,
+    "focus": null,
+    "cta": null,
+    "imagery": null,
+    "icon": null,
+    "metadata": null
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "mobile"
+    ],
+    "input": [
+      "touch"
+    ],
+    "product": [],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "swiftui"
+    ],
+    "density": null,
+    "components": [
+      "card"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "create card"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "screen_reader": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "create"
+      ],
+      "problem_domain": [],
+      "change_scope": "screen",
+      "utterance": "request",
+      "preserve": []
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "create: build/create request on an existing surface"
+    ],
+    "project_context": {
+      "navigation": "bottom-tabs (KNOWN)",
+      "theme": "dual-theme (KNOWN)",
+      "surfaces": "elevated (INFERRED)",
+      "radius": "small (INFERRED)",
+      "typography": "custom (KNOWN)"
+    },
+    "known": [
+      "platform=mobile",
+      "stack=swiftui",
+      "project_navigation=bottom-tabs",
+      "project_theme=dual-theme",
+      "project_typography=custom"
+    ],
+    "inferred": [
+      "input=touch",
+      "mode=create",
+      "project_surfaces=elevated",
+      "project_radius=small"
+    ],
+    "missing": [
+      "product: product family / primary user task not stated",
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

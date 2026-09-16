@@ -1,0 +1,10 @@
+{"task": "p6-08", "records": [
+{"id": "comp-data-table", "verdict": "relevant", "category": "", "why": "Names sticky header, aria-sort, virtualization and pagination — exactly the missing structure."},
+{"id": "data-tables-numeric", "verdict": "relevant", "category": "", "why": "DIRECT on the unaligned proportional-font numeric columns."},
+{"id": "grid-single-tab-stop", "verdict": "relevant", "category": "", "why": "Converts mouse-only rows into a one-Tab-stop roving grid design."},
+{"id": "a11y-hover-not-required", "verdict": "relevant", "category": "", "why": "Pre-change rows were hover/click-only; c3 flagged hover_independence as wanted but dropped."}
+],
+"missing_critical": [],
+"unjustified_direction_slots": 0,
+"layer_review": {"core": ["comp-data-table"], "critical": ["data-tables-numeric", "grid-single-tab-stop", "a11y-hover-not-required"], "optional": []},
+"change_vs_c3": "better — same 4-record size but the generic layout-states-empty-loading-error is replaced by the hover-independence guardrail c3 wanted, both criticals still covered."}

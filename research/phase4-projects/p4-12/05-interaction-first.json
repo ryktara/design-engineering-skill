@@ -1,0 +1,370 @@
+{
+  "case": "p4-12",
+  "mode": "html-twin",
+  "viewport": "1920x1080",
+  "remote_mapping": {
+    "arrows": "swipe/DPAD",
+    "Enter": "select",
+    "Escape": "Menu"
+  },
+  "passed": 29,
+  "failed": 2,
+  "checks": [
+    {
+      "name": "initial focus on the search field, ring visible",
+      "pass": true,
+      "detail": {
+        "id": "field",
+        "row": "field",
+        "ring": "rgb(255, 255, 255) 0px 0px 0px 4px, rgba(0, 0, 0, 0.45) 0px 12px 24px 0px",
+        "transform": "matrix(1.04, 0, 0, 1.04, 0, 0)",
+        "rect": [
+          38,
+          170,
+          1165,
+          92
+        ],
+        "onScreen": true
+      }
+    },
+    {
+      "name": "field explains both entry paths (select to type, Siri to dictate)",
+      "pass": true
+    },
+    {
+      "name": "SELECT on the field opens the system keyboard; first key focused",
+      "pass": true,
+      "detail": {
+        "keyboard": true,
+        "f": {
+          "id": "a",
+          "row": "keys",
+          "ring": "rgb(255, 255, 255) 0px 0px 0px 4px, rgba(0, 0, 0, 0.45) 0px 12px 24px 0px",
+          "transform": "matrix(1.08, 0, 0, 1.08, 0, 0)",
+          "rect": [
+            58,
+            293,
+            56,
+            78
+          ],
+          "onScreen": true
+        }
+      }
+    },
+    {
+      "name": "LEFT/RIGHT move along the keyboard row",
+      "pass": true,
+      "detail": [
+        "b",
+        "c",
+        "d"
+      ]
+    },
+    {
+      "name": "typing updates the field and (debounced) the results",
+      "pass": true,
+      "detail": {
+        "fieldText": "deep",
+        "phase": "results"
+      }
+    },
+    {
+      "name": "result count announced in a polite live region",
+      "pass": true,
+      "detail": "8 results for deep"
+    },
+    {
+      "name": "results are rails: Series / Episodes / Topics",
+      "pass": true,
+      "detail": [
+        "Series",
+        "Episodes",
+        "Topics"
+      ]
+    },
+    {
+      "name": "episode/series results are 16:9 cards with title below",
+      "pass": true,
+      "detail": 7
+    },
+    {
+      "name": "DOWN from the keyboard enters the first result rail with a visible ring",
+      "pass": true,
+      "detail": {
+        "id": "blue-frontier",
+        "row": "series",
+        "ring": "rgb(255, 255, 255) 0px 0px 0px 4px, rgba(0, 0, 0, 0.45) 0px 12px 24px 0px",
+        "transform": "matrix(1.04, 0, 0, 1.04, 0, 0)",
+        "rect": [
+          52,
+          549,
+          416,
+          324
+        ],
+        "onScreen": true
+      }
+    },
+    {
+      "name": "arrows reach every result (RIGHT across each rail, DOWN between rails)",
+      "pass": true,
+      "detail": {
+        "total": 8,
+        "reached": 8,
+        "missing": 0
+      }
+    },
+    {
+      "name": "focus ring visible on every result",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "focused result always fully on screen (rail pivot + vertical scroll)",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "lifted focused item stays inside the 48 px overscan hard limit",
+      "pass": true,
+      "detail": {
+        "l": 55.91687774658203,
+        "r": 268.23938751220703,
+        "b": 1021.744384765625
+      }
+    },
+    {
+      "name": "UP from the rails returns to the keyboard",
+      "pass": true,
+      "detail": {
+        "id": "a",
+        "row": "keys",
+        "ring": "rgb(255, 255, 255) 0px 0px 0px 4px, rgba(0, 0, 0, 0.45) 0px 12px 24px 0px",
+        "transform": "matrix(1.08, 0, 0, 1.08, 0, 0)",
+        "rect": [
+          58,
+          293,
+          56,
+          78
+        ],
+        "onScreen": true
+      }
+    },
+    {
+      "name": "Menu in the results returns focus to the keyboard (not out of search)",
+      "pass": true,
+      "detail": {
+        "id": "a",
+        "row": "keys",
+        "ring": "rgb(255, 255, 255) 0px 0px 0px 4px, rgba(0, 0, 0, 0.45) 0px 12px 24px 0px",
+        "transform": "matrix(1.08, 0, 0, 1.08, 0, 0)",
+        "rect": [
+          58,
+          293,
+          56,
+          78
+        ],
+        "onScreen": true
+      }
+    },
+    {
+      "name": "Menu on the keyboard closes it and focuses the field",
+      "pass": true,
+      "detail": {
+        "keyboard": false,
+        "f": {
+          "id": "field",
+          "row": "field",
+          "ring": "rgb(255, 255, 255) 0px 0px 0px 4px, rgba(0, 0, 0, 0.45) 0px 12px 24px 0px",
+          "transform": "matrix(1.04, 0, 0, 1.04, 0, 0)",
+          "rect": [
+            38,
+            170,
+            1165,
+            92
+          ],
+          "onScreen": true
+        }
+      }
+    },
+    {
+      "name": "DOWN from the field enters the results (keyboard closed)",
+      "pass": true,
+      "detail": {
+        "id": "blue-frontier",
+        "row": "series",
+        "ring": "rgb(255, 255, 255) 0px 0px 0px 4px, rgba(0, 0, 0, 0.45) 0px 12px 24px 0px",
+        "transform": "matrix(1.04, 0, 0, 1.04, 0, 0)",
+        "rect": [
+          52,
+          445,
+          416,
+          324
+        ],
+        "onScreen": true
+      }
+    },
+    {
+      "name": "Menu in the results (keyboard closed) returns to the field",
+      "pass": true,
+      "detail": {
+        "id": "field",
+        "row": "field",
+        "ring": "rgb(255, 255, 255) 0px 0px 0px 4px, rgba(0, 0, 0, 0.45) 0px 12px 24px 0px",
+        "transform": "matrix(1.04, 0, 0, 1.04, 0, 0)",
+        "rect": [
+          38,
+          170,
+          1165,
+          92
+        ],
+        "onScreen": true
+      }
+    },
+    {
+      "name": "Menu on the field leaves the search screen",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "name": "UP from the field reaches the tab bar on the Search tab",
+      "pass": false,
+      "detail": {
+        "id": "tab-watch",
+        "row": "tabs",
+        "ring": "rgb(255, 255, 255) 0px 0px 0px 4px, rgba(0, 0, 0, 0.45) 0px 12px 24px 0px",
+        "transform": "matrix(1.04, 0, 0, 1.04, 0, 0)",
+        "rect": [
+          782,
+          59,
+          168,
+          75
+        ],
+        "onScreen": true
+      }
+    },
+    {
+      "name": "selected tab state is distinct from focus (aria-selected)",
+      "pass": true
+    },
+    {
+      "name": "LEFT reaches the Watch tab",
+      "pass": true,
+      "detail": {
+        "id": "tab-watch",
+        "row": "tabs",
+        "ring": "rgb(255, 255, 255) 0px 0px 0px 4px, rgba(0, 0, 0, 0.45) 0px 12px 24px 0px",
+        "transform": "matrix(1.04, 0, 0, 1.04, 0, 0)",
+        "rect": [
+          782,
+          59,
+          168,
+          75
+        ],
+        "onScreen": true
+      }
+    },
+    {
+      "name": "SELECT on an episode plays it and remembers the query",
+      "pass": true,
+      "detail": {
+        "playing": "white-silence-s1e1",
+        "recent": [
+          "arctic"
+        ]
+      }
+    },
+    {
+      "name": "empty result: guidance text + a focusable Browse topics rail (no dead end)",
+      "pass": true,
+      "detail": {
+        "phase": "empty",
+        "f": {
+          "id": "deep-sea",
+          "row": "browse",
+          "ring": "rgb(255, 255, 255) 0px 0px 0px 4px, rgba(0, 0, 0, 0.45) 0px 12px 24px 0px",
+          "transform": "matrix(1.04, 0, 0, 1.04, 0, 0)",
+          "rect": [
+            56,
+            510,
+            212,
+            92
+          ],
+          "onScreen": true
+        }
+      }
+    },
+    {
+      "name": "SELECT on a topic tile runs that search",
+      "pass": true,
+      "detail": {
+        "phase": "results",
+        "query": "Deep sea"
+      }
+    },
+    {
+      "name": "idle: recent searches and browse topics rails",
+      "pass": true,
+      "detail": [
+        "Recent searches",
+        "Browse topics"
+      ]
+    },
+    {
+      "name": "smallest visible text >= 23 px (tvOS caption floor)",
+      "pass": true,
+      "detail": 23
+    },
+    {
+      "name": "persistent UI (tabs, field, hint, rail titles) inside the 60 px safe area",
+      "pass": false,
+      "detail": [
+        {
+          "el": "status t-caption mut",
+          "rect": [
+            0,
+            296,
+            1920,
+            327
+          ]
+        },
+        {
+          "el": "h-series",
+          "rect": [
+            0,
+            391,
+            1920,
+            435
+          ]
+        },
+        {
+          "el": "h-episodes",
+          "rect": [
+            0,
+            826,
+            1920,
+            871
+          ]
+        }
+      ]
+    },
+    {
+      "name": "first card of a rail starts at the safe margin",
+      "pass": true,
+      "detail": 60
+    },
+    {
+      "name": "reduced motion: card lift dropped, ring kept",
+      "pass": true,
+      "detail": {
+        "transition": "0s",
+        "transform": "none",
+        "ring": "rgb(255, 255, 255) 0px 0px 0px 4px, rgba(0, 0, 0, 0.45) 0px 12px 24px 0px"
+      }
+    },
+    {
+      "name": "no :hover rules",
+      "pass": true,
+      "detail": 0
+    }
+  ]
+}

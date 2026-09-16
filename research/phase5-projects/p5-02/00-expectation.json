@@ -1,0 +1,38 @@
+{
+  "task": "p5-02",
+  "sentence": "Add a team members page with an invite flow, consistent with the rest of the settings area.",
+  "platform": "web",
+  "artifact_state": "new",
+  "artifact_state_note": "New route /settings/members inside an existing settings area. 'new' is the expected value; 'existing' is acceptable if the skill anchors on the existing settings shell, as long as preservation of that shell is demanded. Any other value is wrong.",
+  "acceptable_modes": ["create"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "process.reuse_first",
+    "feedback.validation_errors",
+    "a11y.dialog_focus",
+    "layout.one_primary_action",
+    "state.loading_empty_error",
+    "a11y.live_status",
+    "form.autofill_attributes"
+  ],
+  "critical_concepts": ["process.reuse_first", "feedback.validation_errors", "a11y.dialog_focus"],
+  "forbidden_concepts": [
+    "onboarding.linear_wizard",
+    "layout.hero_thesis",
+    "anti.template_landing",
+    "brand.dark_mode_redesign",
+    "brand.structural_differentiation",
+    "adaptive.navigation_transform",
+    "table.virtualization",
+    "table.inline_edit",
+    "tv.ten_foot_typography",
+    "interaction.dpad_reachability"
+  ],
+  "preservation": ["navigation", "theme", "typography", "component-reuse (ui/table, ui/dialog, ui/button, StatusBadge, settings layout + SettingsNav)"],
+  "reviewer_notes": {
+    "codebase_facts": "Next.js 15.3 app router, React 19, Tailwind v4 CSS-first @theme inline, shadcn new-york/zinc primitives (Table/Badge/Button/Card/Dialog/Skeleton), Geist Sans + Geist Mono via next/font, light-first :root with .dark opt-in, left rail (hidden <md) + top header, settings layout with h1 + tab-style SettingsNav (General / Members / Billing / Security); only /settings/billing exists. Radius 0.5rem. Lucide icons. Radix Dialog already wrapped in components/ui/dialog.tsx.",
+    "existing_related_ui": "components/billing/seat-table.tsx already renders a seats grid (Member / Role / Status / Last active / Actions) with a no-op 'Invite member' button, a remove confirm alertdialog, a live status region, and roving-tabindex grid keys. components/settings-nav.tsx already links /settings/members (currently 404). lib/billing.ts exports Seat/SeatRole/SeatStatus and getSeats(). Billing files are being edited by p5-01 concurrently and must not be touched.",
+    "what_a_good_answer_does": "Create app/settings/members/page.tsx (+ loading.tsx, error.tsx mirroring billing) under the existing settings layout so the Members tab becomes active; header with one primary action 'Invite member'; a members table using ui/table + StatusBadge language; an invite Dialog (ui/dialog) with a labelled email input (type=email, autocomplete=email, inputMode), role select, inline validation for empty/invalid email tied via aria-describedby + aria-invalid, focus moved into the dialog and restored to the trigger on close, live-region announcement on success, pending invite appearing in the list with Resend/Revoke; no new theme tokens, no new fonts, no new nav pattern. Do not edit billing files; do not duplicate lib data by mutation - a separate members data module or read-only reuse of Seat types is fine.",
+    "mode_note": "'create' is the only right mode: the page does not exist. 'polish' or 'audit' would be wrong. 'design-system' as a secondary tag is tolerable because of 'consistent with the rest of the settings area'."
+  }
+}

@@ -1,0 +1,13 @@
+{"task": "p6-27",
+ "records": [
+   {"id": "comp-epg", "verdict": "relevant", "category": "", "why": "Focus moves by programme not by pixel, jump-to-now shortcut and a now line that updates every minute are the fix."},
+   {"id": "dir-broadcast-guide-tv", "verdict": "partial", "category": "generic", "why": "Brand/identity restatement of a guide the app already is; carries nothing actionable for the scroll-jump defect."},
+   {"id": "nav-orientation-and-back", "verdict": "relevant", "category": "", "why": "Current location marked and back restores state is the 'you lose where you were' half of the sentence, missing in c3."},
+   {"id": "a11y-tv-focus-always", "verdict": "relevant", "category": "", "why": "Keep focus on screen (scroll into view) is the exact invariant the half-hour snap violated."},
+   {"id": "tv-typography-distance", "verdict": "partial", "category": "generic", "why": "On-platform but the guide's type scale is not what the task is about."},
+   {"id": "tv-safe-area", "verdict": "partial", "category": "generic", "why": "Overscan margins are unrelated to time-header scrolling."}
+ ],
+ "missing_critical": [],
+ "unjustified_direction_slots": 0,
+ "layer_review": {"core": ["comp-epg", "dir-broadcast-guide-tv"], "critical": ["nav-orientation-and-back", "a11y-tv-focus-always", "tv-typography-distance", "tv-safe-area"], "optional": []},
+ "change_vs_c3": "same - it closes the c3 critical miss by finally demanding navigation.orientation_and_back and drops the off-target layout-states-empty-loading-error, but pays by dropping layout-epg-grid (the record c3 said carried the whole fix) and adding two TV boilerplate guardrails, so the bundle grew 5 to 6."}

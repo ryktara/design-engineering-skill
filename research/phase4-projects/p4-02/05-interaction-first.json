@@ -1,0 +1,119 @@
+{
+  "url": "http://localhost:3111/settings/billing",
+  "viewports": {
+    "1440x900": {
+      "tab": {
+        "totalStopsUntilAfterGrid": 18,
+        "gridTabStops": 1,
+        "gridEntryStop": "tr row=u_01 focusVisible=true indicator=true",
+        "leavesGridTo": "a Download invoice INV-2026-0042 (PDF)",
+        "pass": true
+      },
+      "escapeReturnsToRow": true,
+      "arrows": {
+        "expectedControls": 14,
+        "reachedControls": 14,
+        "missing": [],
+        "allReachedHaveIndicator": true,
+        "allRowsHaveIndicator": true,
+        "rowsVisited": [
+          "u_01",
+          "u_02",
+          "u_03",
+          "u_04",
+          "u_05",
+          "u_06",
+          "u_07",
+          "u_08"
+        ],
+        "minTarget": 32,
+        "pass": true
+      },
+      "status": {
+        "rows": 8,
+        "withVisibleBadge": 8,
+        "withText": 8,
+        "withIcon": 8,
+        "distinctIconShapes": [
+          "lucide-circle-check",
+          "lucide-clock",
+          "lucide-circle-minus"
+        ],
+        "pass": true
+      },
+      "dialog": {
+        "trigger": "Remove Marcus Ellery",
+        "opened": true,
+        "focusInDialog": true,
+        "focusReturned": true,
+        "pass": true
+      },
+      "semantics": {
+        "labelledby": "seats-heading",
+        "describedby": true,
+        "rowcount": "9",
+        "thScope": true,
+        "rowsWithLabel": 8,
+        "rowsWithTabindex0": 1,
+        "controlsTabindexMinus1": true
+      }
+    },
+    "390x844": {
+      "tab": {
+        "totalStopsUntilAfterGrid": 14,
+        "gridTabStops": 1,
+        "gridEntryStop": "tr row=u_01 focusVisible=true indicator=true",
+        "leavesGridTo": "a Download invoice INV-2026-0042 (PDF)",
+        "pass": true
+      },
+      "escapeReturnsToRow": true,
+      "arrows": {
+        "expectedControls": 14,
+        "reachedControls": 14,
+        "missing": [],
+        "allReachedHaveIndicator": true,
+        "allRowsHaveIndicator": true,
+        "rowsVisited": [
+          "u_01",
+          "u_02",
+          "u_03",
+          "u_04",
+          "u_05",
+          "u_06",
+          "u_07",
+          "u_08"
+        ],
+        "minTarget": 44,
+        "pass": true
+      },
+      "status": {
+        "rows": 8,
+        "withVisibleBadge": 8,
+        "withText": 8,
+        "withIcon": 8,
+        "distinctIconShapes": [
+          "lucide-circle-check",
+          "lucide-clock",
+          "lucide-circle-minus"
+        ],
+        "pass": true
+      },
+      "dialog": {
+        "trigger": "Remove Marcus Ellery",
+        "opened": true,
+        "focusInDialog": true,
+        "focusReturned": true,
+        "pass": true
+      },
+      "semantics": {
+        "labelledby": "seats-heading",
+        "describedby": true,
+        "rowcount": "9",
+        "thScope": true,
+        "rowsWithLabel": 8,
+        "rowsWithTabindex0": 1,
+        "controlsTabindexMinus1": true
+      }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "create"
+  ],
+  "platform": [
+    "mobile",
+    "web"
+  ],
+  "input": [
+    "keyboard",
+    "pointer",
+    "touch"
+  ],
+  "product": [
+    "ecommerce"
+  ],
+  "screen": [
+    "checkout",
+    "detail"
+  ],
+  "screen_subtype": [],
+  "stack": [],
+  "density": null,
+  "components": [],
+  "environment": [
+    "outdoor"
+  ],
+  "jobs": [],
+  "problems": [],
+  "risk": "medium",
+  "primary_jobs": [
+    "create checkout",
+    "create detail"
+  ],
+  "constraints": {},
+  "accessibility": {
+    "keyboard": true,
+    "screen_reader": true,
+    "focus": true,
+    "touch_targets": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "known": [
+    "platform=web (request: web)",
+    "platform=mobile (request: phone)",
+    "product=ecommerce (request: store, checkout)",
+    "screen=detail (request: detail page, detail)",
+    "screen=checkout (request: checkout)",
+    "mode=create (request: design the)",
+    "environment=outdoor (request: outdoor)"
+  ],
+  "inferred": [
+    "input=pointer (implied by platform web)",
+    "input=keyboard (implied by platform web)",
+    "input=touch (implied by platform web)"
+  ],
+  "missing": [
+    "brand: no brand assets, guideline, or character description available",
+    "stack: implementation stack not stated and no repository evidence"
+  ],
+  "status": "AMBIGUOUS",
+  "source": {
+    "request": [
+      "checkout",
+      "design the",
+      "detail page, detail",
+      "outdoor",
+      "phone",
+      "store, checkout",
+      "web"
+    ],
+    "project": [
+      "no recognised UI stack; treat stack as MISSING and ask or inspect further"
+    ]
+  },
+  "activation": {
+    "decision": "activate",
+    "ui_score": 4.0,
+    "non_ui_score": 0,
+    "ui_terms": [
+      "page",
+      "design"
+    ],
+    "non_ui_terms": []
+  }
+}

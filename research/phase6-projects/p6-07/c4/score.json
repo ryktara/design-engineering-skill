@@ -1,0 +1,118 @@
+{
+ "task": "p6-07",
+ "build": "32e67640c9b8ef1d519ef9695016fb396116b92412e63c324da090aecf1df385",
+ "c1_recorded": {
+  "platform_expected": "web",
+  "platform_resolved": [],
+  "platform_correct": "wrong",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "accessibility",
+   "polish",
+   "refactor",
+   "responsive"
+  ],
+  "mode_resolved": [
+   "responsive",
+   "audit"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "AMBIGUOUS",
+  "bundle_ids": [
+   "shared-device-privacy",
+   "impl-reuse-before-new",
+   "a11y-target-size",
+   "layout-hierarchy-one-thing",
+   "layout-spacing-scale",
+   "mobile-orientation-size-classes"
+  ],
+  "bundle_tokens": 815,
+  "expected_concepts": [
+   "touch.minimum_target",
+   "interaction.hover_independence",
+   "adaptive.breakpoint_matrix",
+   "layout.spacing_scale",
+   "touch.gestures_discoverable",
+   "interaction.focus_visible"
+  ],
+  "critical_concepts": [
+   "touch.minimum_target"
+  ],
+  "delivered_concepts": [
+   "adaptive.breakpoint_matrix",
+   "adaptive.navigation_transform",
+   "data.exception_first",
+   "layout.focal_hierarchy",
+   "layout.one_primary_action",
+   "layout.spacing_scale",
+   "privacy.sensitive_masking",
+   "privacy.shared_device",
+   "process.reuse_first",
+   "state.session_expiry",
+   "touch.minimum_target",
+   "touch.safe_areas"
+  ],
+  "concept_recall": 0.5,
+  "critical_recall": 1.0,
+  "forbidden_delivered": [],
+  "change_budget": "moderate"
+ },
+ "c4": {
+  "platform_expected": "web",
+  "platform_resolved": [],
+  "platform_correct": "wrong",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "accessibility",
+   "polish",
+   "refactor",
+   "responsive"
+  ],
+  "mode_resolved": [
+   "audit",
+   "responsive"
+  ],
+  "mode_correct": "acceptable",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "AMBIGUOUS",
+  "bundle_ids": [
+   "a11y-target-size",
+   "layout-hierarchy-one-thing",
+   "layout-spacing-scale"
+  ],
+  "bundle_tokens": 332,
+  "expected_concepts": [
+   "touch.minimum_target",
+   "interaction.hover_independence",
+   "adaptive.breakpoint_matrix",
+   "layout.spacing_scale",
+   "touch.gestures_discoverable",
+   "interaction.focus_visible"
+  ],
+  "critical_concepts": [
+   "touch.minimum_target"
+  ],
+  "delivered_concepts": [
+   "data.exception_first",
+   "layout.focal_hierarchy",
+   "layout.one_primary_action",
+   "layout.spacing_scale",
+   "touch.minimum_target"
+  ],
+  "concept_recall": 0.333,
+  "critical_recall": 1.0,
+  "forbidden_delivered": [],
+  "change_budget": "moderate"
+ }
+}

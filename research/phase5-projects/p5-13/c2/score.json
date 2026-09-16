@@ -1,0 +1,131 @@
+{
+ "task": "p5-13",
+ "build": "50966e8e6184f31722a7b3c7f270a241dd0f7b68187492d0c971f7c79734e680",
+ "c1_recorded": {
+  "platform_expected": "kiosk",
+  "platform_resolved": [
+   "web"
+  ],
+  "platform_correct": "wrong",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "accessibility",
+   "create",
+   "refactor"
+  ],
+  "mode_resolved": [
+   "create"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "CONFIDENT",
+  "bundle_ids": [
+   "cta-sticky-bar",
+   "a11y-keyboard-operable",
+   "a11y-focus-visible",
+   "states-persistence-and-session",
+   "web-responsive-breakpoints",
+   "anti-no-states"
+  ],
+  "bundle_tokens": 758,
+  "expected_concepts": [
+   "content.i18n_expansion",
+   "process.reuse_first",
+   "touch.minimum_target",
+   "a11y.live_status",
+   "interaction.focus_restore",
+   "a11y.accessible_names",
+   "privacy.shared_device"
+  ],
+  "critical_concepts": [
+   "content.i18n_expansion",
+   "process.reuse_first"
+  ],
+  "delivered_concepts": [
+   "adaptive.breakpoint_matrix",
+   "adaptive.navigation_transform",
+   "feedback.confirmation_destructive",
+   "interaction.focus_visible",
+   "interaction.hover_independence",
+   "interaction.keyboard_navigation",
+   "state.loading_empty_error",
+   "state.saving_conflict",
+   "state.session_expiry"
+  ],
+  "concept_recall": 0.0,
+  "critical_recall": 0.0,
+  "forbidden_delivered": [
+   "adaptive.breakpoint_matrix",
+   "adaptive.navigation_transform"
+  ],
+  "change_budget": "moderate"
+ },
+ "c2": {
+  "platform_expected": "kiosk",
+  "platform_resolved": [
+   "kiosk"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "accessibility",
+   "create",
+   "refactor"
+  ],
+  "mode_resolved": [
+   "create"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "CONFIDENT",
+  "bundle_ids": [
+   "dir-industrial-hmi",
+   "comp-kiosk-keypad",
+   "i18n-text-expansion-rtl",
+   "kiosk-public-use",
+   "impl-reuse-before-new",
+   "a11y-time-and-auto"
+  ],
+  "bundle_tokens": 939,
+  "expected_concepts": [
+   "content.i18n_expansion",
+   "process.reuse_first",
+   "touch.minimum_target",
+   "a11y.live_status",
+   "interaction.focus_restore",
+   "a11y.accessible_names",
+   "privacy.shared_device"
+  ],
+  "critical_concepts": [
+   "content.i18n_expansion",
+   "process.reuse_first"
+  ],
+  "delivered_concepts": [
+   "a11y.accessible_names",
+   "a11y.live_status",
+   "a11y.reduced_motion",
+   "content.i18n_expansion",
+   "feedback.validation_errors",
+   "interaction.focus_restore",
+   "privacy.sensitive_masking",
+   "privacy.shared_device",
+   "process.reuse_first",
+   "state.session_expiry",
+   "touch.minimum_target"
+  ],
+  "concept_recall": 1.0,
+  "critical_recall": 1.0,
+  "forbidden_delivered": [],
+  "change_budget": "moderate"
+ }
+}

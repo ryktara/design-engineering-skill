@@ -1,0 +1,16 @@
+{
+  "description": "Conflict-resolution and direction-invariant cases. Each case builds requirements with an optional project fixture, runs direction, and asserts constraints/validation outcomes.",
+  "cases": [
+    {"id": "conflict-touch-tv-kiosk", "query": "Use touch-first controls for this Android TV kiosk", "fixture": "fixtures/compose-tv", "expect_known": ["input=touch", "platform=tv"], "expect_conflict_fields": ["input"], "expect_constraint": {"input_only": "touch"}},
+    {"id": "conflict-web-request-mobile-repo", "query": "Make this existing web admin more compact.", "fixture": "fixtures/flutter-app", "expect_known": ["platform=web"], "expect_conflict_fields": ["platform"], "forbid_known": ["platform=mobile"]},
+    {"id": "invariant-keep-navigation", "query": "refresh the look of the ERP dashboard but do not change navigation", "fixture": "fixtures/winui-erp", "expect_direction_slot_preserved": ["navigation"], "expect_validation_ok": true},
+    {"id": "invariant-no-rails-netflix", "query": "make our Android TV home like Netflix but don't use rails", "expect_negatives": ["rails"], "forbid_direction_ids": ["layout-rails", "layout-immersive-rails"], "expect_validation_ok": true, "forbid_fingerprint": {"layout_topology": ["rails", "immersive-hero-rails"]}},
+    {"id": "invariant-tv-focus", "query": "IPTV home screen for Android TV", "expect_direction_slots": ["focus"], "expect_fingerprint": {"focus_strategy": "border-plus-scale"}, "expect_validation_ok": true},
+    {"id": "invariant-kiosk", "query": "hospital self-service check-in kiosk", "expect_fingerprint": {"focus_strategy": "none-touch-only"}, "forbid_fingerprint": {"content_density": ["high"]}, "expect_validation_ok": true},
+    {"id": "invariant-erp-not-spacious", "query": "WinUI purchase order entry screen for an ERP", "forbid_fingerprint": {"content_density": ["low"]}, "expect_validation_ok": true},
+    {"id": "invariant-brand-fingerprint", "query": "create a distinct brand system for our second IPTV brand on Android TV", "expect_fingerprint_complete": true, "expect_validation_ok": true},
+    {"id": "invariant-no-cards-dashboard", "query": "redesign the web analytics dashboard without cards", "forbid_fingerprint": {"card_geometry": ["elevated", "bordered", "flat-tile", "poster-portrait", "poster-landscape"]}, "expect_validation_ok": true},
+    {"id": "existing-project-preserves", "query": "add a settings page", "fixture": "fixtures/nextjs-shadcn", "expect_constraint": {"preserve_existing_system": true}, "expect_known": ["stack=nextjs", "stack=shadcn", "platform=web"]},
+    {"id": "greenfield-no-preserve", "query": "add a settings page for a web app", "forbid_constraint": ["preserve_existing_system"], "expect_missing": ["stack"]}
+  ]
+}

@@ -1,0 +1,9 @@
+{"task": "p6-29",
+ "records": [
+   {"id": "comp-toast-notification", "verdict": "partial", "category": "generic", "why": "Only its 'live region polite' line applies; toast placement, duration and dismissal are not this done screen, and it entered on empty task evidence."},
+   {"id": "feedback-progress-async", "verdict": "relevant", "category": "", "why": "On completion confirm briefly plus a stable-phrase live region announcing completion is the record that produced the shipped announcement."}
+ ],
+ "missing_critical": ["layout.focal_hierarchy", "a11y.color_not_only"],
+ "unjustified_direction_slots": 1,
+ "layer_review": {"core": ["comp-toast-notification"], "critical": ["feedback-progress-async"], "optional": []},
+ "change_vs_c3": "worse - 5 records down to 2 removes both off-targets (comp-kiosk-keypad, comp-dialog) and the forbidden confirmation-destructive concept, but it also drops nav-wizard, whose step-count line the c3 implementer used for the 3-of-3 fix, and replaces it with a generic toast record; the same two critical concepts are still never demanded."}

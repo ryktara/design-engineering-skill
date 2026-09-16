@@ -1,0 +1,1022 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "The patient detail billing tab shows amounts that do not line up.",
+  "status": "PARTIAL",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "polish",
+      "audit"
+    ],
+    "platform": [
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [
+      "healthcare"
+    ],
+    "screen": [
+      "detail"
+    ],
+    "screen_subtype": [],
+    "stack": [
+      "svelte",
+      "tailwind"
+    ],
+    "density": null,
+    "components": [
+      "tabs"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [
+      "visual"
+    ],
+    "risk": "medium",
+    "primary_jobs": [
+      "polish detail"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "low",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "visual"
+      ],
+      "change_scope": "screen",
+      "utterance": "observation",
+      "existing": true,
+      "problem": true,
+      "facet": "visual",
+      "diagnose_only": false,
+      "creation": false,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "polish: visual defect on existing UI",
+      "audit: diagnose first"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "left-rail",
+        "status": "KNOWN",
+        "evidence": [
+          "left-rail: 1 matches in +layout.svelte (shell/layout file)",
+          "also breadcrumb-tree: 1 matches"
+        ]
+      },
+      "theme": {
+        "value": "light-first",
+        "status": "INFERRED",
+        "evidence": [
+          "hex palette: 13 near-white, 1 near-black"
+        ]
+      },
+      "surfaces": {
+        "value": "bordered-flat",
+        "status": "INFERRED",
+        "evidence": [
+          "borders in 12 files, shadow/elevation in 2"
+        ]
+      },
+      "radius": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": []
+      },
+      "spacing": {
+        "value": 4,
+        "status": "INFERRED",
+        "evidence": [
+          "most used spacing values [16, 8, 12, 4, 24]",
+          "tailwind spacing classes (119)"
+        ]
+      },
+      "typography": {
+        "value": "custom",
+        "status": "INFERRED",
+        "evidence": [
+          "font family theme (1 refs)",
+          "tabular numerals"
+        ]
+      },
+      "components": {
+        "value": "tailwind",
+        "status": "KNOWN",
+        "evidence": [
+          "tailwind"
+        ]
+      }
+    },
+    "known": [
+      "platform=web (project inspection)",
+      "product=healthcare (request: patient)",
+      "stack=svelte (project inspection)",
+      "stack=tailwind (project inspection)",
+      "screen=detail (request: detail)",
+      "project_navigation=left-rail (repository: left-rail: 1 matches in +layout.svelte (shell/layout file); also breadcrumb-tree: 1 matches)",
+      "project_components=tailwind (repository: tailwind)"
+    ],
+    "inferred": [
+      "input=pointer (implied by platform web)",
+      "input=keyboard (implied by platform web)",
+      "input=touch (implied by platform web)",
+      "mode=polish (visual defect on existing UI)",
+      "mode=audit (diagnose first)",
+      "project_theme=light-first (repository: hex palette: 13 near-white, 1 near-black)",
+      "project_surfaces=bordered-flat (repository: borders in 12 files, shadow/elevation in 2)",
+      "project_spacing=4 (repository: most used spacing values [16, 8, 12, 4, 24]; tailwind spacing classes (119))",
+      "project_typography=custom (repository: font family theme (1 refs); tabular numerals)"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [
+        "detail",
+        "do not line up",
+        "patient"
+      ],
+      "project": [
+        "package.json: svelte@^5.16.0",
+        "package.json: @sveltejs/kit@^2.12.0",
+        "package.json: tailwindcss@^3.4.17"
+      ]
+    },
+    "activation": {
+      "decision": "activate",
+      "ui_score": 2.0,
+      "non_ui_score": 0,
+      "ui_terms": [],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "the patient detail"
+      ],
+      "new": [],
+      "defect": [
+        "do not line up"
+      ],
+      "operations": {},
+      "domains": {
+        "visual": [
+          "line up",
+          "visual problem"
+        ]
+      },
+      "no_change": [],
+      "scope": {
+        "screen": [
+          "detail"
+        ]
+      },
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "tab",
+        "billing",
+        "concept:table.tabular_figures"
+      ],
+      "ux_symptoms": [],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "structure",
+        "reason": "hierarchy and spacing are the usual polish defects"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "polish removes generic devices"
+      },
+      {
+        "concern": "interaction",
+        "reason": "input model: keyboard,pointer,touch"
+      },
+      {
+        "concern": "accessibility",
+        "reason": "platform accessibility baseline"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "content",
+        "reason": "typography"
+      },
+      {
+        "concern": "component",
+        "reason": "the component being polished"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "viewport range"
+      },
+      {
+        "concern": "feedback",
+        "reason": "sensitive domain: errors must be recoverable"
+      }
+    ],
+    "optional": [
+      "motion",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "table.tabular_figures",
+        "reason": "named in the request: do not line up, line up",
+        "priority": 0,
+        "critical": true
+      }
+    ],
+    "recommended_concepts": [
+      "layout.no_nested_cards",
+      "process.safe_modification",
+      "touch.minimum_target",
+      "adaptive.breakpoint_matrix",
+      "feedback.confirmation_destructive",
+      "layout.spacing_scale",
+      "layout.focal_hierarchy",
+      "process.reuse_first",
+      "interaction.keyboard_navigation",
+      "interaction.hover_independence",
+      "interaction.focus_visible"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "layout-master-detail",
+      "kind": "pattern",
+      "category": "layout",
+      "title": "Master–detail (list + detail pane)",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "structure"
+      ],
+      "concepts": [],
+      "covers": [],
+      "score": 0.528,
+      "guidance": "List pane with selection state that is keyboard-navigable (arrow keys change selection, Enter opens), detail pane that updates in place and announces its title to assistive tech. Persist the selected item across navigation. On narrow widths collapse to a two-screen stack with Back.",
+      "use_when": "Users scan a list of records and act on one at a time (tickets, orders, patients, mail); wide enough for two panes (≥ ~900 px / 641 epx).",
+      "avoid_when": "Phone widths (collapse to list → push detail), records that need the full width (large tables, editors), or when the list has only a handful of items.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "platform-standard",
+      "incompatible": [
+        "layout-single-column",
+        "layout-immersive-rails",
+        "layout-rails"
+      ],
+      "why": {
+        "lexical": 0.294,
+        "structural": 0.68,
+        "matched": [
+          "platform web",
+          "input keyboard,pointer,touch",
+          "product healthcare",
+          "screen detail"
+        ]
+      },
+      "role": "core",
+      "selected_for": "task evidence: screen, product, lexical_strong"
+    },
+    {
+      "id": "comp-tabs",
+      "kind": "component",
+      "category": "tabs",
+      "title": "Tabs",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "component",
+        "interaction",
+        "navigation"
+      ],
+      "concepts": [
+        "interaction.tabs_roving",
+        "navigation.deep_link_state"
+      ],
+      "covers": [
+        "tabs with roving focus",
+        "URL / route reflects state"
+      ],
+      "score": 0.347,
+      "guidance": "Tablist with roving tabindex (arrow keys switch, Tab moves into the panel), selected tab marked by more than colour, tab labels short, panel content lazy but state preserved, URL reflects the tab on web; TV: selection on focus with a delay or on SELECT (choose one, be consistent), DOWN enters content.",
+      "use_when": "Peer views of the same object (Details / Activity / Files) at the same level.",
+      "avoid_when": "Sequential steps (wizard), primary navigation on web (use nav), more than ~6 tabs (use a select or side nav), tabs that hide required form fields.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.337,
+        "structural": 0.36,
+        "matched": [
+          "secondary mode"
+        ]
+      },
+      "role": "core",
+      "selected_for": "task evidence: component, lexical_strong"
+    },
+    {
+      "id": "dir-clinical-workstation",
+      "kind": "direction",
+      "category": "direction",
+      "title": "Clinical workstation",
+      "facets": [
+        "direction",
+        "platform"
+      ],
+      "concerns": [
+        "brand",
+        "structure"
+      ],
+      "concepts": [],
+      "covers": [],
+      "score": 0.377,
+      "guidance": "Patient banner always visible (identity, allergies, alerts) as the focal element, master-detail for patient lists and records, strict status colour language with text and icons (never colour alone), large legible numerics with units, quiet neutral surfaces, confirmation for critical actions with the safe default, interruption-safe autosave. Identity via the banner treatment and status language; restraint is the brand.",
+      "use_when": "EHR/EMR, lab, pharmacy, ward tools for clinicians under time pressure and interruption.",
+      "avoid_when": "Patient-facing apps (use 'Service app').",
+      "risk": {
+        "a11y": "high",
+        "perf": "medium"
+      },
+      "provenance": "internal-preference",
+      "incompatible": [
+        "surface-glass",
+        "imagery-hero",
+        "motion-expressive",
+        "color-dominant-brand"
+      ],
+      "why": {
+        "lexical": 0.195,
+        "structural": 0.6,
+        "matched": [
+          "platform web",
+          "input keyboard,pointer,touch",
+          "product healthcare"
+        ]
+      },
+      "role": "core",
+      "selected_for": "task evidence: product"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "typo-scale-and-roles",
+      "kind": "rule",
+      "category": "typography",
+      "title": "One type scale with named roles",
+      "facets": [
+        "visual"
+      ],
+      "concerns": [
+        "content",
+        "data-display"
+      ],
+      "concepts": [
+        "table.tabular_figures",
+        "brand.type_roles"
+      ],
+      "covers": [
+        "tabular figures and numeric alignment",
+        "type roles and scale"
+      ],
+      "score": 0.293,
+      "guidance": "Roles display/heading/title/body/label/caption/numeric with size, line height, weight, and letter spacing per role; body ≥16 px web/mobile, 14 desktop, 24 TV; numeric role uses tabular lining figures; headings use tighter line height (1.1–1.25) and body 1.4–1.6. Generate with tokens.py scale and map the roles to the framework's text styles.",
+      "use_when": "Any screen with more than two text sizes; any design system.",
+      "avoid_when": "Never pick sizes per screen; never use more than ~7 sizes.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.058,
+        "structural": 0.58,
+        "matched": [
+          "mode polish"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "critical concept (SPECIFIC): tabular figures and numeric alignment"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "structure",
+      "anti-pattern",
+      "interaction",
+      "accessibility"
+    ],
+    "covered_required_concerns": [
+      "structure",
+      "interaction"
+    ],
+    "uncovered_required_concerns": [
+      "anti-pattern",
+      "accessibility"
+    ],
+    "recommended_concerns": [
+      "content",
+      "component",
+      "adaptive",
+      "feedback"
+    ],
+    "covered_recommended_concerns": [
+      "content",
+      "component"
+    ],
+    "coverage_ratio": 0.5,
+    "required_concepts": [
+      "table.tabular_figures"
+    ],
+    "covered_required_concepts": [
+      "table.tabular_figures"
+    ],
+    "uncovered_required_concepts": [],
+    "critical_concepts": [
+      "table.tabular_figures"
+    ],
+    "uncovered_critical_concepts": [],
+    "critical_coverage_ratio": 1.0,
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.0,
+    "not_surfaced": [
+      {
+        "concept": "layout.no_nested_cards",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "process.safe_modification",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "touch.minimum_target",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "adaptive.breakpoint_matrix",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "feedback.confirmation_destructive",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "layout.spacing_scale",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "layout.focal_hierarchy",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "process.reuse_first",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "interaction.hover_independence",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "feedback",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      }
+    ],
+    "bundle_size": 4,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 3,
+    "guardrail_size": 1,
+    "bundle_tokens": 701,
+    "coverage_per_1k_tokens": 1.43,
+    "mean_purity": 0.62,
+    "mean_specificity": 2.25,
+    "quality_counts": {
+      "SPECIFIC": 4
+    },
+    "contaminated": [],
+    "category_diversity": 1.0,
+    "duplicate_pressure": 0.25,
+    "facet_coverage": 0.75,
+    "redundancy": 0.12,
+    "critical_trace": {
+      "covered": [
+        "table.tabular_figures"
+      ],
+      "uncovered": [],
+      "carrier_quality": {
+        "table.tabular_figures": "SPECIFIC"
+      }
+    }
+  },
+  "token_coverage": 1.0,
+  "omitted": [
+    {
+      "id": "layout-editorial",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "comp-product-detail-page",
+      "reason": "contamination: product-specific (ecommerce) vs ['healthcare']; low purity 0.20: most of its concepts are off-task"
+    },
+    {
+      "id": "media-resume-and-details",
+      "reason": "contamination: product-specific (media) vs ['healthcare']; low purity 0.00: most of its concepts are off-task"
+    },
+    {
+      "id": "comp-chart-container",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "cta-sticky-bar",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "layout-single-column",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "metadata-rich",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "surface-elevated-cards",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "typography-rounded-friendly",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "color-neutral-accent",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    }
+  ],
+  "marginal": {
+    "typo-scale-and-roles": {
+      "new_critical": [
+        "table.tabular_figures"
+      ],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [
+        "content",
+        "data-display"
+      ],
+      "specificity": 2,
+      "evidence": [
+        "problem",
+        "explicit_demand"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 115
+    },
+    "layout-master-detail": {
+      "new_critical": [],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [
+        "structure"
+      ],
+      "specificity": 4,
+      "evidence": [
+        "lexical_strong",
+        "lexical",
+        "screen",
+        "product",
+        "problem"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 226
+    },
+    "comp-tabs": {
+      "new_critical": [],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [
+        "component",
+        "interaction",
+        "navigation"
+      ],
+      "specificity": 2,
+      "evidence": [
+        "lexical_strong",
+        "lexical",
+        "component"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.4,
+      "tokens": 223
+    },
+    "dir-clinical-workstation": {
+      "new_critical": [],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [
+        "brand"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "lexical",
+        "product"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 137
+    }
+  },
+  "rejected": [
+    {
+      "id": "anti-desktop-scaled-to-tv",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "comp-list-row-mobile",
+      "reason": "platform ['mobile', 'tablet'] not in request ['web']"
+    },
+    {
+      "id": "comp-tv-sign-in",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "comp-kiosk-keypad",
+      "reason": "platform ['kiosk', 'tablet'] not in request ['web']"
+    },
+    {
+      "id": "comp-photo-capture-field",
+      "reason": "platform ['mobile', 'tablet'] not in request ['web']"
+    },
+    {
+      "id": "comp-tv-side-sheet",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "dir-broadcast-guide-tv",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "dir-social-feed-mobile",
+      "reason": "platform ['mobile'] not in request ['web']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "table.tabular_figures",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 0,
+      "reason": "named in the request: do not line up, line up",
+      "candidate_records": [
+        [
+          "table-column-disambiguation",
+          0.378
+        ],
+        [
+          "data-tables-numeric",
+          0.346
+        ],
+        [
+          "metadata-rich",
+          0.339
+        ],
+        [
+          "typo-scale-and-roles",
+          0.293
+        ]
+      ],
+      "selected_record": "typo-scale-and-roles",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "layout.no_nested_cards",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "polish removes container noise",
+      "candidate_records": [
+        [
+          "anti-card-everything",
+          0.287
+        ],
+        [
+          "card-none",
+          0.268
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "process.safe_modification",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "modifying an existing system",
+      "candidate_records": [
+        [
+          "impl-safe-modification",
+          0.284
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.minimum_target",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "touch on web",
+      "candidate_records": [
+        [
+          "comp-product-detail-page",
+          0.409
+        ],
+        [
+          "media-photo-viewer",
+          0.297
+        ],
+        [
+          "a11y-target-size",
+          0.252
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "adaptive.breakpoint_matrix",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "web viewport range",
+      "candidate_records": [
+        [
+          "web-responsive-breakpoints",
+          0.279
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "feedback.confirmation_destructive",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "sensitive domain",
+      "candidate_records": [
+        [
+          "states-persistence-and-session",
+          0.29
+        ],
+        [
+          "comp-plan-comparison",
+          0.236
+        ],
+        [
+          "comp-dialog",
+          0.165
+        ],
+        [
+          "comp-settings-screen",
+          0.084
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "layout.spacing_scale",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "visual problem / polish (narrow task: kept as a recommendation)",
+      "candidate_records": [
+        [
+          "anti-inconsistent-spacing",
+          0.273
+        ],
+        [
+          "layout-spacing-scale",
+          0.261
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "layout.focal_hierarchy",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "visual problem / polish (narrow task: kept as a recommendation)",
+      "candidate_records": [
+        [
+          "metadata-rich",
+          0.339
+        ],
+        [
+          "typo-measure-and-rhythm",
+          0.325
+        ],
+        [
+          "anti-oversized-hero-text",
+          0.265
+        ],
+        [
+          "layout-hierarchy-one-thing",
+          0.265
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "existing repository: reuse its primitives (narrow task: kept as a recommendation)",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.261
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.keyboard_navigation",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "web content must be keyboard operable (narrow task: kept as a recommendation)",
+      "candidate_records": [
+        [
+          "grid-single-tab-stop",
+          0.377
+        ],
+        [
+          "a11y-keyboard-operable",
+          0.364
+        ],
+        [
+          "interaction-drag-drop",
+          0.35
+        ],
+        [
+          "a11y-skip-link",
+          0.349
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.hover_independence",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "web is used with touch as well as pointer (narrow task: kept as a recommendation)",
+      "candidate_records": [
+        [
+          "a11y-keyboard-operable",
+          0.364
+        ],
+        [
+          "anti-hover-only-actions",
+          0.314
+        ],
+        [
+          "a11y-hover-not-required",
+          0.306
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.focus_visible",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "web keyboard focus (narrow task: kept as a recommendation)",
+      "candidate_records": [
+        [
+          "grid-single-tab-stop",
+          0.377
+        ],
+        [
+          "a11y-focus-visible",
+          0.373
+        ],
+        [
+          "focus-ring-standard",
+          0.301
+        ],
+        [
+          "color-states-complete",
+          0.274
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    }
+  ]
+}

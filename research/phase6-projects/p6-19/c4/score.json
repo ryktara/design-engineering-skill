@@ -1,0 +1,136 @@
+{
+ "task": "p6-19",
+ "build": "32e67640c9b8ef1d519ef9695016fb396116b92412e63c324da090aecf1df385",
+ "c1_recorded": {
+  "platform_expected": "desktop",
+  "platform_resolved": [
+   "desktop"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "new",
+  "artifact_state_correct": false,
+  "mode_expected": [
+   "create",
+   "polish",
+   "refactor"
+  ],
+  "mode_resolved": [
+   "create"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "CONFIDENT",
+  "bundle_ids": [
+   "metadata-rich",
+   "dir-operational-workbench",
+   "impl-reuse-before-new",
+   "desktop-status-bar-and-error-navigation",
+   "desktop-keyboard-first",
+   "data-exceptions-first",
+   "typo-scale-and-roles"
+  ],
+  "bundle_tokens": 1063,
+  "expected_concepts": [
+   "data.refresh_timestamp",
+   "state.offline_sync",
+   "process.reuse_first",
+   "a11y.color_not_only",
+   "a11y.live_status",
+   "data.exception_first",
+   "desktop.spacing_grid"
+  ],
+  "critical_concepts": [
+   "data.refresh_timestamp",
+   "state.offline_sync",
+   "process.reuse_first"
+  ],
+  "delivered_concepts": [
+   "a11y.color_not_only",
+   "a11y.contrast",
+   "a11y.live_status",
+   "brand.type_roles",
+   "data.exception_first",
+   "desktop.persist_workspace",
+   "env.glanceable_status",
+   "feedback.validation_errors",
+   "interaction.focus_visible",
+   "interaction.keyboard_navigation",
+   "interaction.shortcuts",
+   "layout.focal_hierarchy",
+   "process.reuse_first",
+   "table.tabular_figures"
+  ],
+  "concept_recall": 0.571,
+  "critical_recall": 0.333,
+  "forbidden_delivered": [],
+  "change_budget": "moderate"
+ },
+ "c4": {
+  "platform_expected": "desktop",
+  "platform_resolved": [
+   "desktop"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "new",
+  "artifact_state_correct": false,
+  "mode_expected": [
+   "create",
+   "polish",
+   "refactor"
+  ],
+  "mode_resolved": [
+   "create"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "CONFIDENT",
+  "bundle_ids": [
+   "dir-operational-workbench",
+   "impl-reuse-before-new",
+   "desktop-status-bar-and-error-navigation",
+   "desktop-keyboard-first",
+   "data-exceptions-first"
+  ],
+  "bundle_tokens": 859,
+  "expected_concepts": [
+   "data.refresh_timestamp",
+   "state.offline_sync",
+   "process.reuse_first",
+   "a11y.color_not_only",
+   "a11y.live_status",
+   "data.exception_first",
+   "desktop.spacing_grid"
+  ],
+  "critical_concepts": [
+   "data.refresh_timestamp",
+   "state.offline_sync",
+   "process.reuse_first"
+  ],
+  "delivered_concepts": [
+   "a11y.color_not_only",
+   "a11y.contrast",
+   "a11y.live_status",
+   "data.exception_first",
+   "desktop.persist_workspace",
+   "env.glanceable_status",
+   "feedback.validation_errors",
+   "interaction.focus_visible",
+   "interaction.keyboard_navigation",
+   "interaction.shortcuts",
+   "process.reuse_first",
+   "table.tabular_figures"
+  ],
+  "concept_recall": 0.571,
+  "critical_recall": 0.333,
+  "forbidden_delivered": [],
+  "change_budget": "moderate"
+ }
+}

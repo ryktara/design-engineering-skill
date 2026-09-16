@@ -1,0 +1,8 @@
+{"task": "p6-06", "records": [
+{"id": "comp-tabs", "verdict": "partial", "category": "generic", "why": "Correct component on the screen but roving tabindex/URL state is not the alignment defect (partial in c3)."},
+{"id": "dir-clinical-workstation", "verdict": "partial", "category": "generic", "why": "Only the status-language / legible-numerics clause touches the task; banner, autosave and confirmation are off-task."},
+{"id": "typo-scale-and-roles", "verdict": "relevant", "category": "", "why": "Carries the critical concept table.tabular_figures and was the one record used in the diff."}],
+ "missing_critical": [],
+ "unjustified_direction_slots": 0,
+ "layer_review": {"core": ["comp-tabs", "dir-clinical-workstation"], "critical": ["typo-scale-and-roles"], "optional": []},
+ "change_vs_c3": "Better: layout-master-detail (the c3 off-target record) is dropped and the record the implementer used (typo-scale-and-roles) is kept, in a smaller 3-record bundle."}

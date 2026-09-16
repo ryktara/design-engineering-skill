@@ -1,0 +1,116 @@
+{
+  "root": "D:\\indigo pro\\MYownSkills\\research\\phase5-projects\\p5-swiftui-habits\\project",
+  "findings": [
+    {
+      "status": "KNOWN",
+      "note": "Package.swift: Apple project"
+    },
+    {
+      "status": "KNOWN",
+      "note": "Package.swift: iOS target"
+    }
+  ],
+  "stack_groups": [
+    "swiftui"
+  ],
+  "platforms": [
+    "mobile"
+  ],
+  "ui_libraries": [],
+  "package_manager": null,
+  "css_architecture": [],
+  "tokens": [],
+  "fonts": [
+    "Nunito (1)"
+  ],
+  "icons": [],
+  "routing": [],
+  "breakpoints": [],
+  "accessibility": [
+    "a11y attributes present in 6 files"
+  ],
+  "focus_handling": [
+    "explicit focus handling in 1 files"
+  ],
+  "design_docs": [],
+  "component_dirs": [],
+  "tests": [],
+  "i18n": [],
+  "product_hints": [],
+  "environment_hints": [],
+  "sample": {
+    "files_scanned": 31
+  },
+  "design_context": {
+    "navigation": {
+      "value": "bottom-tabs",
+      "status": "KNOWN",
+      "evidence": [
+        "bottom-tabs: 7 matches in README.md, RootTabView.swift, StreaksApp.swift (shell/layout file)"
+      ],
+      "candidates": {
+        "bottom-tabs": 7
+      }
+    },
+    "theme": {
+      "value": "dual-theme",
+      "default": "light",
+      "status": "KNOWN",
+      "evidence": [
+        "dark theme configuration signals: 2",
+        "root/canvas backgrounds: 2 light, 2 dark",
+        "hex palette: 7 near-white, 6 near-black",
+        "default polarity light (root canvas)"
+      ]
+    },
+    "surfaces": {
+      "value": "elevated",
+      "status": "INFERRED",
+      "evidence": [
+        "shadow/elevation in 5 files, borders in 1"
+      ]
+    },
+    "radius": {
+      "value": "small",
+      "status": "INFERRED",
+      "evidence": [
+        "most common radius 5 (4\u00d7); others [3.0, 8.0]"
+      ]
+    },
+    "spacing": {
+      "value": "irregular",
+      "status": "UNKNOWN",
+      "evidence": [
+        "most used spacing values [6, 32, 2, 3, 4]"
+      ]
+    },
+    "typography": {
+      "value": "custom",
+      "status": "KNOWN",
+      "evidence": [
+        "font family System (8 refs)",
+        "weights 600, 500, 700, 800",
+        "encoded type scale in 4 files",
+        "monospace usage",
+        "tabular numerals"
+      ],
+      "features": {
+        "weights": [
+          "600",
+          "500",
+          "700",
+          "800"
+        ],
+        "type_scale": true,
+        "monospace": true,
+        "tabular_numerals": true
+      }
+    },
+    "components": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "schema": "design-context/v1"
+  }
+}

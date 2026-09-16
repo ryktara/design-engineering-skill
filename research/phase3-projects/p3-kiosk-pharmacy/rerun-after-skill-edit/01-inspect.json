@@ -1,0 +1,40 @@
+{
+  "root": "D:\\indigo pro\\MYownSkills\\research\\phase3-projects\\p3-kiosk-pharmacy\\project",
+  "findings": [
+    {
+      "status": "INFERRED",
+      "note": "no recognised UI stack; treat stack as MISSING and ask or inspect further"
+    }
+  ],
+  "stack_groups": [],
+  "platforms": [],
+  "ui_libraries": [],
+  "package_manager": null,
+  "css_architecture": [
+    ".css (2 files)"
+  ],
+  "tokens": [
+    "tokens.json",
+    "css custom properties: --color* (36), --font* (13), --space* (7), --target* (3), --radius* (2), --primary* (1), --secondary* (1), --util* (1)"
+  ],
+  "fonts": [
+    "Nunito (1)"
+  ],
+  "icons": [],
+  "routing": [],
+  "breakpoints": [],
+  "accessibility": [
+    "a11y attributes present in 5 files"
+  ],
+  "focus_handling": [
+    "explicit focus handling in 2 files"
+  ],
+  "design_docs": [],
+  "component_dirs": [],
+  "tests": [],
+  "i18n": [],
+  "product_hints": [],
+  "sample": {
+    "files_scanned": 11
+  }
+}

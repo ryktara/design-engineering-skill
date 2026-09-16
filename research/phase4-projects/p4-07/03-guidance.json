@@ -1,0 +1,537 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "polish this existing light-theme WPF purchase-order screen: inconsistent spacing in the toolbar and status bar, and validation errors are hard to read",
+  "status": "PARTIAL",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "polish",
+      "audit"
+    ],
+    "platform": [
+      "desktop"
+    ],
+    "input": [
+      "keyboard",
+      "pointer"
+    ],
+    "product": [
+      "erp"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "wpf"
+    ],
+    "density": "high",
+    "components": [
+      "form",
+      "navigation"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [
+      "visual"
+    ],
+    "risk": "low",
+    "primary_jobs": [
+      "polish form",
+      "polish navigation"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "low",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "mode_evidence": [
+      "polish: explicit: polish",
+      "polish: visual problem on existing UI",
+      "audit: diagnose first"
+    ],
+    "project_context": {
+      "navigation": "menu-bar (INFERRED)",
+      "theme": "light-first (INFERRED)",
+      "surfaces": "bordered-flat (INFERRED)",
+      "radius": "small (INFERRED)",
+      "spacing": "4 (INFERRED)",
+      "components": "wpf (KNOWN)"
+    },
+    "known": [
+      "platform=desktop",
+      "product=erp",
+      "stack=wpf",
+      "mode=polish",
+      "project_components=wpf"
+    ],
+    "inferred": [
+      "input=pointer",
+      "input=keyboard",
+      "density=high",
+      "mode=audit",
+      "project_navigation=menu-bar",
+      "project_theme=light-first",
+      "project_surfaces=bordered-flat",
+      "project_radius=small",
+      "project_spacing=4"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT"
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "structure",
+        "reason": "hierarchy and spacing are the usual polish defects"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "polish removes generic devices"
+      },
+      {
+        "concern": "interaction",
+        "reason": "input model: keyboard,pointer"
+      },
+      {
+        "concern": "accessibility",
+        "reason": "platform accessibility baseline"
+      },
+      {
+        "concern": "feedback",
+        "reason": "form validation and submission feedback"
+      },
+      {
+        "concern": "data-display",
+        "reason": "numbers, tables or charts are the content"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "content",
+        "reason": "typography"
+      },
+      {
+        "concern": "component",
+        "reason": "the component being polished"
+      }
+    ],
+    "optional": [
+      "motion",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "layout.spacing_scale",
+        "reason": "visual problem / polish"
+      },
+      {
+        "concept": "layout.focal_hierarchy",
+        "reason": "visual problem / polish"
+      },
+      {
+        "concept": "state.loading_empty_error",
+        "reason": "asynchronous or remote data on this screen"
+      },
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "desktop keyboard-first"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "desktop focus"
+      },
+      {
+        "concept": "feedback.validation_errors",
+        "reason": "form"
+      },
+      {
+        "concept": "table.tabular_figures",
+        "reason": "numeric data"
+      }
+    ],
+    "recommended_concepts": [
+      "layout.no_nested_cards",
+      "process.safe_modification",
+      "interaction.shortcuts",
+      "desktop.persist_workspace",
+      "desktop.fluent_materials",
+      "form.autofill_attributes",
+      "navigation.orientation_and_back",
+      "a11y.live_status"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "comp-form",
+      "kind": "component",
+      "category": "form",
+      "title": "Form",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "component",
+        "feedback",
+        "states",
+        "structure"
+      ],
+      "concepts": [
+        "feedback.validation_errors",
+        "touch.ime_keyboard",
+        "form.autofill_attributes",
+        "state.unsaved_changes_guard"
+      ],
+      "covers": [
+        "inline validation messages and error recovery",
+        "on-screen keyboard (IME) aware layout",
+        "autofill / input-type attributes per field",
+        "unsaved-changes guard"
+      ],
+      "score": 0.224,
+      "guidance": "Labels above, help text below, required marked in text, field widths sized to content, grouped by section with headings, one column, inline validation on blur, error summary on submit with links to fields, primary action last (or sticky), unsaved-changes guard, autosave with status for long forms, autofill attributes. TV: one field per row, DOWN moves to next, system keyboard, minimal fields.",
+      "use_when": "Any data entry: settings, checkout, applications, record editing.",
+      "avoid_when": "Batch entry of many similar rows (use a data-entry grid); single toggles (inline).",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "implementation": {
+        "wpf": "Binding with ValidatesOnNotifyDataErrors and an ErrorTemplate that shows text, not only a red border."
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "cta-toolbar-commands",
+      "kind": "pattern",
+      "category": "cta",
+      "title": "Toolbar / command bar with selection-driven commands",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "data-display",
+        "interaction",
+        "structure"
+      ],
+      "concepts": [
+        "interaction.shortcuts",
+        "table.selection_bulk"
+      ],
+      "covers": [
+        "keyboard shortcuts / accelerators",
+        "selection state and bulk actions"
+      ],
+      "score": 0.55,
+      "guidance": "Primary commands as labelled buttons, overflow into a menu, disabled (not hidden) when no selection, keyboard accelerators shown in tooltips, and the count of selected items visible near the commands.",
+      "use_when": "Workbenches and tables: commands apply to the current selection, live in a persistent bar, and are mirrored by context menus and shortcuts.",
+      "avoid_when": "Consumer or single-task screens; touch-first products.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "implementation": {
+        "wpf": "ToolBar with ICommand.CanExecute driving IsEnabled."
+      },
+      "incompatible": [
+        "cta-single-primary",
+        "cta-focus-selects",
+        "cta-sticky-bar"
+      ],
+      "role": "core",
+      "selected_for": "highest-scoring pattern with lexical evidence"
+    },
+    {
+      "id": "nav-menu-bar-desktop",
+      "kind": "pattern",
+      "category": "navigation",
+      "title": "Desktop menu bar + toolbar commands",
+      "facets": [
+        "navigation",
+        "platform"
+      ],
+      "concerns": [
+        "navigation"
+      ],
+      "concepts": [],
+      "covers": [],
+      "score": 0.5,
+      "guidance": "Menu bar for the complete command set with access keys and accelerators shown; toolbar/command bar for the frequent subset; context menus mirror the toolbar for the selected object. Commands must be enabled/disabled by state, never hidden, so users learn where things live.",
+      "use_when": "Document-centric or record-centric desktop apps with many commands, where discoverability through menus and accelerators matters (Alt+F, Ctrl+S).",
+      "avoid_when": "Consumer apps with a handful of actions (use a command bar), touch-first devices, or web apps pretending to be native.",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "implementation": {
+        "wpf": "Menu/ToolBar bound to ICommand with InputGestureText; RoutedUICommand gives free accelerators."
+      },
+      "incompatible": [
+        "nav-bottom-tabs",
+        "nav-tv-side",
+        "nav-hub-spoke"
+      ],
+      "role": "core",
+      "selected_for": "highest-scoring pattern with lexical evidence"
+    },
+    {
+      "id": "layout-table-first",
+      "kind": "pattern",
+      "category": "layout",
+      "title": "Table-first working screen",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "structure"
+      ],
+      "concepts": [
+        "table.virtualization",
+        "table.tabular_figures"
+      ],
+      "covers": [
+        "virtualization of long collections",
+        "tabular figures and numeric alignment"
+      ],
+      "score": 0.39,
+      "guidance": "Table fills the viewport height with internal scrolling and sticky header, row density selectable, column widths persisted, filters as a row of chips/fields above the table (not a hidden drawer), bulk actions appear in the toolbar on selection. Numeric columns right-aligned with tabular figures. Virtualise beyond a few hundred rows.",
+      "use_when": "The record set is the product (orders, transactions, tickets, inventory): users filter, sort, select, and bulk-act. Screen = toolbar + filters + table + optional side panel.",
+      "avoid_when": "Phone widths (switch to list rows), fewer than ~20 rows, or when each record needs rich media.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "high"
+      },
+      "provenance": "heuristic",
+      "implementation": {
+        "wpf": "DataGrid with EnableRowVirtualization and VirtualizingPanel.IsVirtualizingWhenGrouping; DevExpress GridControl if already present."
+      },
+      "incompatible": [
+        "layout-single-column",
+        "layout-immersive-rails",
+        "layout-feed",
+        "layout-editorial"
+      ],
+      "role": "core",
+      "selected_for": "required coverage: tabular figures and numeric alignment"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "desktop-keyboard-first",
+      "kind": "rule",
+      "category": "input",
+      "title": "Desktop: keyboard is a first-class input",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.keyboard_navigation",
+        "interaction.shortcuts",
+        "interaction.focus_visible"
+      ],
+      "covers": [
+        "keyboard navigation and focus order",
+        "keyboard shortcuts / accelerators",
+        "visible focus"
+      ],
+      "score": 0.3,
+      "guidance": "Document shortcuts in menus and tooltips; F2 edits, Delete deletes with undo, Ctrl+F finds, F6 cycles panes; grids use arrow keys and Ctrl/Shift selection; every dialog has a default and cancel button; access keys shown on Alt (Windows).",
+      "use_when": "Every desktop screen: shortcuts for frequent commands, access keys for menus, Tab/arrow semantics in lists, trees, grids, and toolbars, Enter/Escape in dialogs.",
+      "avoid_when": "Never assign shortcuts that collide with platform or assistive-tech shortcuts; never make Tab stop on every cell of a grid.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "role": "guardrail",
+      "selected_for": "required coverage: visible focus, keyboard navigation and focus order"
+    },
+    {
+      "id": "anti-inconsistent-spacing",
+      "kind": "antipattern",
+      "category": "craft",
+      "title": "Arbitrary spacing and misaligned edges",
+      "facets": [
+        "anti-pattern"
+      ],
+      "concerns": [
+        "anti-pattern"
+      ],
+      "concepts": [
+        "layout.spacing_scale"
+      ],
+      "covers": [
+        "consistent spacing scale"
+      ],
+      "score": 0.373,
+      "guidance": "Snap every value to the spacing scale, align left edges of text across components, use one inset per container type, check icon/text baseline alignment, and equalise gaps in repeated structures. This single fix does more for 'looks professional' than any colour change.",
+      "use_when": "Paddings like 13/18/22 px, cards with different inner padding, text not aligned to the grid, icons off-baseline, unequal gaps between equal items.",
+      "avoid_when": "Never.",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "role": "guardrail",
+      "selected_for": "required coverage: anti-pattern, consistent spacing scale"
+    },
+    {
+      "id": "typo-measure-and-rhythm",
+      "kind": "rule",
+      "category": "typography",
+      "title": "Measure, rhythm, and hierarchy by contrast of size and weight",
+      "facets": [
+        "visual"
+      ],
+      "concerns": [
+        "content",
+        "structure"
+      ],
+      "concepts": [
+        "content.readable_measure",
+        "layout.focal_hierarchy"
+      ],
+      "covers": [
+        "readable line length",
+        "visual hierarchy with one focal point"
+      ],
+      "score": 0.252,
+      "guidance": "45–75 characters per line for prose; vertical spacing from the spacing scale tied to line height; hierarchy from clear jumps (≥1.25×) in size or weight, not from five near-identical sizes; headings closer to the content below than to the content above.",
+      "use_when": "Reading content, forms, dashboards with mixed text.",
+      "avoid_when": "Never make everything bold; never use more than two weights per role.",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "role": "guardrail",
+      "selected_for": "required coverage: visual hierarchy with one focal point"
+    },
+    {
+      "id": "layout-states-empty-loading-error",
+      "kind": "rule",
+      "category": "feedback",
+      "title": "Design empty, loading, error, and partial states",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "states"
+      ],
+      "concepts": [
+        "state.loading_empty_error"
+      ],
+      "covers": [
+        "loading, empty and error states"
+      ],
+      "score": 0.267,
+      "guidance": "Empty: what this is, why it is empty, one action. Loading: skeleton with final dimensions, then content; announce completion. Error: what failed, what to do, retry that works; keep entered data. Partial: show what loaded, mark what didn't. On TV, focus must land somewhere valid in each state.",
+      "use_when": "Every list, table, chart, form, and detail screen.",
+      "avoid_when": "Never ship a blank area for empty data; never show a spinner for more than ~1 s without a skeleton or progress; never show an error without a next step.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "role": "guardrail",
+      "selected_for": "required coverage: loading, empty and error states"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "structure",
+      "anti-pattern",
+      "interaction",
+      "accessibility",
+      "feedback",
+      "data-display"
+    ],
+    "covered_required_concerns": [
+      "structure",
+      "anti-pattern",
+      "interaction",
+      "feedback",
+      "data-display"
+    ],
+    "uncovered_required_concerns": [
+      "accessibility"
+    ],
+    "recommended_concerns": [
+      "content",
+      "component"
+    ],
+    "covered_recommended_concerns": [
+      "content",
+      "component"
+    ],
+    "coverage_ratio": 0.83,
+    "required_concepts": [
+      "layout.spacing_scale",
+      "layout.focal_hierarchy",
+      "state.loading_empty_error",
+      "interaction.keyboard_navigation",
+      "interaction.focus_visible",
+      "feedback.validation_errors",
+      "table.tabular_figures"
+    ],
+    "covered_required_concepts": [
+      "layout.spacing_scale",
+      "layout.focal_hierarchy",
+      "state.loading_empty_error",
+      "interaction.keyboard_navigation",
+      "interaction.focus_visible",
+      "feedback.validation_errors",
+      "table.tabular_figures"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.25,
+    "bundle_size": 8,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 4,
+    "guardrail_size": 4,
+    "bundle_tokens": 1344,
+    "coverage_per_1k_tokens": 5.21,
+    "mean_purity": 0.75,
+    "contaminated": [],
+    "category_diversity": 1.0,
+    "duplicate_pressure": 0.12,
+    "facet_coverage": 1.0,
+    "redundancy": 0.36
+  },
+  "token_coverage": 0.89
+}

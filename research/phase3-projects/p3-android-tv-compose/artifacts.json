@@ -1,0 +1,85 @@
+{
+  "case": "p3-android-tv-compose",
+  "platform": "tv",
+  "stack": "compose-tv (androidx.tv tv-material 1.0.0, Compose 1.8.0, Media3, Coil)",
+  "rendered": true,
+  "render_mode": "html-twin",
+  "native_build": false,
+  "static_review": true,
+  "screenshots": [
+    "render/first-home-initial.png",
+    "render/first-home-live-rail.png",
+    "render/first-home-epg-tile.png",
+    "render/first-home-deep-rail.png",
+    "render/first-details.png",
+    "render/first-home-after-back.png",
+    "render/first-home-nav-open.png",
+    "render/first-home-safe-overlay.png",
+    "render/first-home-mini-paused.png",
+    "render/first-home-reduced-motion.png",
+    "render/final-home-initial.png",
+    "render/final-home-live-rail.png",
+    "render/final-home-epg-tile.png",
+    "render/final-home-deep-rail.png",
+    "render/final-details.png",
+    "render/final-home-after-back.png",
+    "render/final-home-nav-open.png",
+    "render/final-home-safe-overlay.png",
+    "render/final-home-mini-paused.png",
+    "render/final-home-reduced-motion.png"
+  ],
+  "first_render_defects": 10,
+  "final_defects": 5,
+  "iterations": 3,
+  "interaction_checks": { "total": 23, "first_pass": 21, "final_pass": 23 },
+  "guidance_relevant": 5,
+  "guidance_partial": 3,
+  "guidance_offtarget": 0,
+  "knowledge_gaps": [
+    "mini player / PiP-while-browsing as a home component (focus-graph position, states, BACK from full player)",
+    "live-sports card content: score + match clock + broadcast progress on a 16:9 card; long score strings",
+    "fixed-height hero band so rails never jump when the hero follows focus",
+    "side navigation icon strip must itself carry the overscan margin (nav-tv-side vs tv-safe-area unreconciled)",
+    "NavigationDrawer (push/reflow) vs ModalNavigationDrawer (overlay) recommendation for a rails home",
+    "cross-screen focus restoration on lazy lists: scrollToItem column + rail, wait a frame, guarded requestFocus",
+    "nested BackHandler ordering (innermost enabled wins) for drawer-exit vs rails-to-hero"
+  ],
+  "ranking_misses": [
+    "tv-back-behavior in base (search rank 10) but guidance reported interaction.back_semantics uncovered",
+    "layout-immersive-rails (search rank 5) not in guidance core; direction picked layout-rails for an immersive-hero request",
+    "card-poster-landscape (search rank 9, progress bar) not in guidance",
+    "nav-tv-side selected by direction but absent from guidance",
+    "tv-no-touch-hover (search rank 12) not selected as a guardrail"
+  ],
+  "requirements_errors": [
+    "platform conflict tv vs mobile from inspector false positive (leanback-required manifest) -> status AMBIGUOUS (exit 4) on a TV-only project",
+    "mini player / PiP not represented in any field",
+    "live sports not captured (product=media only)",
+    "components=[media] only; rails, hero, epg tile, mini player, side nav absent",
+    "screen=list for EPG is a stretch (screen_subtype=epg is the useful signal)"
+  ],
+  "inspection_errors": [
+    "platforms includes mobile although manifest requires leanback and not touchscreen; no flavors",
+    "routing 'app/ (next-app-router or nuxt app dir)' from the Android app/ module",
+    "design/tokens.json not detected as tokens; component_dirs empty",
+    "DPAD handling counted in 3 files on a fixture with one Kotlin file"
+  ],
+  "direction_issues": [
+    "layout slot layout-rails instead of layout-immersive-rails for an immersive-hero request",
+    "density slot text in web units (8 px base, 16 px body) on TV",
+    "color slot neutral-accent ('product mismatch') instead of dark-first on TV",
+    "guidance core dir-broadcast-guide-tv declared incompatible with the direction's own surface/layout slots"
+  ],
+  "tokens_validate": "OK after one fix (strong border 2.74:1 -> 4.25:1); 1 advisory warning",
+  "tags": [
+    "requirements-miss",
+    "vocabulary-gap",
+    "ranking-miss",
+    "knowledge-gap",
+    "direction-invariant",
+    "render-defect-fixed",
+    "render-defect-remaining",
+    "tooling-limit",
+    "skill-helped"
+  ]
+}

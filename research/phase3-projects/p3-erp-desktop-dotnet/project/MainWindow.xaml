@@ -1,0 +1,11 @@
+<Window x:Class="ErpClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:v="clr-namespace:ErpClient.Views"
+        Title="PO-2026-004417 — Purchase order lines — ERP Client"
+        Width="1440" Height="900" MinWidth="820" MinHeight="520"
+        Background="{DynamicResource Brush.Bg.Canvas}"
+        UseLayoutRounding="True" SnapsToDevicePixels="True"
+        TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType">
+    <v:PurchaseOrderLinesView x:Name="LinesView"/>
+</Window>

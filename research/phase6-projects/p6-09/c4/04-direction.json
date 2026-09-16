@@ -1,0 +1,130 @@
+{
+  "brand": "Stock adjustment form: Save and Discard look identical and people click the wrong one.",
+  "fingerprint": {
+    "navigation_model": "top-bar",
+    "surface_strategy": "bordered",
+    "card_geometry": "list-row",
+    "corner_language": "sharp",
+    "typography_character": "humanist-sans"
+  },
+  "direction": {
+    "navigation": "nav-top-bar",
+    "layout": null,
+    "density": null,
+    "surface": "surface-bordered-panes",
+    "cards": "card-list-row",
+    "typography": "typography-humanist-sans",
+    "color": null,
+    "motion": null,
+    "focus": null,
+    "cta": null,
+    "imagery": null,
+    "icon": null,
+    "metadata": null
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "polish",
+      "audit"
+    ],
+    "platform": [
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [],
+    "screen": [
+      "form"
+    ],
+    "screen_subtype": [],
+    "stack": [
+      "vue"
+    ],
+    "density": null,
+    "components": [
+      "form"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "polish form"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "low",
+    "scope": {
+      "domain": "UI_INTERACTION",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "visual",
+        "interaction"
+      ],
+      "change_scope": "unknown",
+      "utterance": "observation",
+      "preserve": []
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "polish: visual defect on existing UI",
+      "audit: diagnose first"
+    ],
+    "project_context": {
+      "navigation": "top-bar (KNOWN)",
+      "surfaces": "bordered-flat (INFERRED)",
+      "radius": "small (INFERRED)",
+      "typography": "humanist-sans (KNOWN)"
+    },
+    "known": [
+      "platform=web",
+      "stack=vue",
+      "screen=form",
+      "project_navigation=top-bar",
+      "project_typography=humanist-sans"
+    ],
+    "inferred": [
+      "input=pointer",
+      "input=keyboard",
+      "input=touch",
+      "mode=polish",
+      "mode=audit",
+      "project_surfaces=bordered-flat",
+      "project_radius=small"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

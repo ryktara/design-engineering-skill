@@ -1,0 +1,191 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "create"
+  ],
+  "platform": [
+    "mobile"
+  ],
+  "input": [
+    "touch"
+  ],
+  "product": [
+    "ecommerce"
+  ],
+  "screen": [],
+  "screen_subtype": [],
+  "stack": [
+    "swiftui"
+  ],
+  "density": null,
+  "components": [
+    "card"
+  ],
+  "environment": [],
+  "jobs": [],
+  "problems": [],
+  "risk": "low",
+  "primary_jobs": [
+    "create card"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "screen_reader": true,
+    "touch_targets": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "change_budget": "moderate",
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "intent": {
+    "artifact_state": "existing",
+    "operations": [
+      "create"
+    ],
+    "problem_domain": [],
+    "change_scope": "screen",
+    "utterance": "request",
+    "existing": true,
+    "problem": false,
+    "facet": "general",
+    "diagnose_only": false,
+    "creation": true,
+    "redesign": false,
+    "responsive_cues": false,
+    "preserve": [],
+    "scope": "moderate"
+  },
+  "platform_evidence": [],
+  "mode_evidence": [
+    "create: build/create request on an existing surface"
+  ],
+  "project_context": {
+    "navigation": {
+      "value": "bottom-tabs",
+      "status": "KNOWN",
+      "evidence": [
+        "bottom-tabs: 7 matches in README.md, RootTabView.swift, StreaksApp.swift (shell/layout file)"
+      ]
+    },
+    "theme": {
+      "value": "dual-theme",
+      "status": "INFERRED",
+      "evidence": [
+        "dark theme configuration signals: 2",
+        "hex palette: 0 near-white, 0 near-black"
+      ]
+    },
+    "surfaces": {
+      "value": "elevated",
+      "status": "INFERRED",
+      "evidence": [
+        "shadow/elevation in 4 files, borders in 0"
+      ]
+    },
+    "radius": {
+      "value": "medium",
+      "status": "INFERRED",
+      "evidence": [
+        "most common radius 8 (1×); others []"
+      ]
+    },
+    "spacing": {
+      "value": 4,
+      "status": "INFERRED",
+      "evidence": [
+        "most used spacing values [2, 4, 12, 16]"
+      ]
+    },
+    "typography": {
+      "value": "humanist-sans",
+      "status": "INFERRED",
+      "evidence": [
+        "font family Nunito (1 refs)",
+        "encoded type scale in 3 files"
+      ]
+    },
+    "components": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": []
+    }
+  },
+  "known": [
+    "platform=mobile (project inspection)",
+    "product=ecommerce (project inspection (README))",
+    "stack=swiftui (project inspection)",
+    "project_navigation=bottom-tabs (repository: bottom-tabs: 7 matches in README.md, RootTabView.swift, StreaksApp.swift (shell/layout file))"
+  ],
+  "inferred": [
+    "input=touch (implied by platform mobile)",
+    "mode=create (build/create request on an existing surface)",
+    "project_theme=dual-theme (repository: dark theme configuration signals: 2; hex palette: 0 near-white, 0 near-black)",
+    "project_surfaces=elevated (repository: shadow/elevation in 4 files, borders in 0)",
+    "project_radius=medium (repository: most common radius 8 (1×); others [])",
+    "project_spacing=4 (repository: most used spacing values [2, 4, 12, 16])",
+    "project_typography=humanist-sans (repository: font family Nunito (1 refs); encoded type scale in 3 files)"
+  ],
+  "missing": [
+    "brand: no brand assets, guideline, or character description available"
+  ],
+  "status": "CONFIDENT",
+  "source": {
+    "request": [],
+    "project": [
+      "Package.swift: Apple project",
+      "Package.swift: iOS target"
+    ]
+  },
+  "activation": {
+    "decision": "activate",
+    "ui_score": 3.0,
+    "non_ui_score": 0,
+    "ui_terms": [
+      "screen",
+      "card"
+    ],
+    "non_ui_terms": []
+  },
+  "intent_evidence": {
+    "existing": [
+      "to the",
+      "today",
+      "the today screen"
+    ],
+    "new": [],
+    "defect": [],
+    "operations": {
+      "create": [
+        "add",
+        "add a"
+      ]
+    },
+    "domains": {},
+    "no_change": [],
+    "scope": {
+      "screen": [
+        "screen"
+      ]
+    },
+    "question": false
+  },
+  "scope_evidence": {
+    "ui": [
+      "screen",
+      "card"
+    ],
+    "ux_symptoms": [],
+    "technical": {},
+    "non_visual": []
+  }
+}

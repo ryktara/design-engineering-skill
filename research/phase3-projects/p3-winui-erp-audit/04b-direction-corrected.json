@@ -1,0 +1,99 @@
+{
+  "brand": "Warehouse clerks say our WinUI stock adjustments page is confusing and they keep missing rows; the screen reader reads the status column as just text",
+  "fingerprint": {
+    "navigation_model": "breadcrumb-tree",
+    "layout_topology": "table-first",
+    "grid_behavior": "virtualized",
+    "content_density": "high",
+    "surface_strategy": "bordered",
+    "card_geometry": "list-row",
+    "corner_language": "sharp",
+    "typography_character": "neutral-sans",
+    "color_strategy": "neutral-plus-accent",
+    "motion_character": "functional-minimal",
+    "focus_strategy": "ring",
+    "cta_strategy": "toolbar-commands",
+    "image_strategy": "none",
+    "icon_strategy": "outline",
+    "metadata_density": "rich"
+  },
+  "direction": {
+    "navigation": "nav-breadcrumb-tree",
+    "layout": "layout-table-first",
+    "density": "density-high",
+    "surface": "surface-bordered-panes",
+    "cards": "card-list-row",
+    "typography": "typography-neutral-sans",
+    "color": "color-neutral-accent",
+    "motion": "motion-functional-minimal",
+    "focus": "focus-ring-standard",
+    "cta": "cta-toolbar-commands",
+    "imagery": "imagery-none",
+    "icon": "icon-outline-system",
+    "metadata": "metadata-rich"
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "accessibility",
+      "audit"
+    ],
+    "platform": [
+      "desktop"
+    ],
+    "input": [
+      "keyboard",
+      "pointer"
+    ],
+    "product": [
+      "erp"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "winui"
+    ],
+    "density": "high",
+    "components": [],
+    "environment": [],
+    "jobs": [],
+    "problems": [
+      "accessibility",
+      "interaction"
+    ],
+    "risk": "low",
+    "primary_jobs": [
+      "accessibility"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "known": [
+      "platform=desktop",
+      "product=erp",
+      "stack=winui",
+      "mode=accessibility"
+    ],
+    "inferred": [
+      "input=pointer",
+      "input=keyboard",
+      "density=high",
+      "mode=audit"
+    ],
+    "missing": [],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "task": "p5-04",
+  "reviewer_model": "claude-opus-5[1m]",
+  "c2_records": [
+    {"id": "comp-product-detail-page", "verdict": "relevant", "bad_category": null},
+    {"id": "ecommerce-delivery-promise", "verdict": "relevant", "bad_category": null},
+    {"id": "a11y-keyboard-operable", "verdict": "partial", "bad_category": null},
+    {"id": "a11y-skip-link", "verdict": "off-target", "bad_category": "generic"},
+    {"id": "layout-states-empty-loading-error", "verdict": "off-target", "bad_category": "generic"},
+    {"id": "web-responsive-breakpoints", "verdict": "relevant", "bad_category": null}
+  ],
+  "c2_relevant": 3,
+  "c2_partial": 1,
+  "c2_offtarget": 2,
+  "c2_bad": [
+    {"record": "a11y-skip-link", "category": "generic", "why": "The task adds two lines of static copy to an existing buybox; skip links and landmark bypass are a shell concern the page already satisfies and the change does not touch. It was selected 'for required coverage: visible focus', a concept it barely carries, and it displaced a11y-focus-visible, which at least names the scroll-padding rule the sticky bar depends on."},
+    {"record": "layout-states-empty-loading-error", "category": "generic", "why": "Repeats the c1 false demand: product.html is static with local state, no asynchronous or remote data, so empty/loading/error/partial has nothing to attach to. It costs the slot that impl-reuse-before-new (process.reuse_first, still UNCOVERED) should hold on an existing-UI fix whose whole method was reusing the .trust row grammar."}
+  ],
+  "c2_direction_unjustified": [],
+  "platform_mode_scope_ok": true,
+  "verdict_vs_c1": "better",
+  "why": "c2 closes the knowledge gap c1's RESULTS named: ecommerce-delivery-promise states the delivery window as dates with <time>, 'Free delivery', an order-deadline countdown that updates without a live region, and 'Free 60-day returns - prepaid label' - which is almost exactly the implementation the reviewer had to derive unaided - while the wasted imagery-thumbnails core slot and the four contradicting direction slots (layout-grid-catalog, card-poster-landscape, motion-crossfade, icon-text-only) are gone.",
+  "would_have_helped": "helped"
+}

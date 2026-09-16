@@ -1,0 +1,147 @@
+{
+ "queries": 275,
+ "most_selected": [
+  [
+   "layout-states-empty-loading-error",
+   88,
+   56
+  ],
+  [
+   "a11y-keyboard-operable",
+   85,
+   41
+  ],
+  [
+   "a11y-focus-visible",
+   80,
+   36
+  ],
+  [
+   "a11y-target-size",
+   47,
+   39
+  ],
+  [
+   "tv-typography-distance",
+   41,
+   20
+  ],
+  [
+   "tv-dpad-axes",
+   34,
+   20
+  ],
+  [
+   "a11y-tv-focus-always",
+   34,
+   22
+  ],
+  [
+   "comp-form",
+   33,
+   24
+  ],
+  [
+   "desktop-keyboard-first",
+   32,
+   19
+  ],
+  [
+   "comp-empty-state",
+   26,
+   21
+  ],
+  [
+   "dir-analytical-console",
+   26,
+   16
+  ],
+  [
+   "web-responsive-breakpoints",
+   26,
+   14
+  ],
+  [
+   "comp-chart-container",
+   26,
+   15
+  ],
+  [
+   "cta-single-primary",
+   25,
+   21
+  ],
+  [
+   "typo-scale-and-roles",
+   23,
+   18
+  ],
+  [
+   "mobile-safe-areas",
+   22,
+   16
+  ],
+  [
+   "layout-dashboard-grid",
+   22,
+   12
+  ],
+  [
+   "typo-measure-and-rhythm",
+   22,
+   14
+  ],
+  [
+   "layout-spacing-scale",
+   21,
+   14
+  ],
+  [
+   "comp-settings-screen",
+   20,
+   13
+  ],
+  [
+   "mobile-platform-navigation",
+   19,
+   13
+  ],
+  [
+   "layout-hierarchy-one-thing",
+   19,
+   16
+  ],
+  [
+   "tv-safe-area",
+   18,
+   11
+  ],
+  [
+   "a11y-live-status",
+   18,
+   11
+  ],
+  [
+   "a11y-nontext-contrast",
+   18,
+   14
+  ]
+ ],
+ "contaminated_counts": [],
+ "grid_rule_queries": [
+  "WPF purchase order lines grid, clerks enter 200 lines a day with the keyboard, each row has edit and delete buttons",
+  "desktop order lines grid with edit and delete per row",
+  "Refactor this dense WinUI financial grid so keyboard users can edit quickly without changing the existing navigation.",
+  "WinUI desktop ERP data grid with keyboard shortcuts",
+  "Virtualize this grid because scrolling freezes.",
+  "the CSS grid breaks at 900px",
+  "Add keyboard shortcuts to the existing grid.",
+  "Refactor this dense WinUI financial grid so keyboard users can edit quickly without changing the existing navigation.",
+  "Our WinUI app is unusable with Narrator, the datagrid especially. Please fix accessibility.",
+  "WPF app for a hospital lab: results entry grid, techs use keyboard only all day",
+  "our erp's inventory grid in the browser has 60 columns, users hate it, audit and propose fixes",
+  "data table for a utility's meter readings, 200k rows, needs to work in the browser",
+  "desktop-style mobile inventory table for our retail stores"
+ ],
+ "grid_rule_count": 13
+}

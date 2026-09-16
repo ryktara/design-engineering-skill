@@ -1,0 +1,139 @@
+{
+  "brand": "Make the Add Habit sheet work when the keyboard is up.",
+  "fingerprint": {
+    "navigation_model": "bottom-tabs",
+    "layout_topology": "grid-catalog",
+    "grid_behavior": "responsive-columns",
+    "content_density": "medium",
+    "surface_strategy": "elevated",
+    "card_geometry": "poster-landscape",
+    "corner_language": "small",
+    "typography_character": "humanist-sans",
+    "color_strategy": "neutral-plus-accent",
+    "motion_character": "spring",
+    "focus_strategy": "none-touch-only",
+    "cta_strategy": "sticky-bar",
+    "image_strategy": "thumbnails",
+    "icon_strategy": "filled",
+    "metadata_density": "inline-badges"
+  },
+  "direction": {
+    "navigation": "nav-bottom-tabs",
+    "layout": "layout-grid-catalog",
+    "density": "density-medium",
+    "surface": "surface-elevated-cards",
+    "cards": "card-poster-landscape",
+    "typography": "typography-humanist-sans",
+    "color": "color-neutral-accent",
+    "motion": "motion-spring",
+    "focus": "focus-none-touch-only",
+    "cta": "cta-sticky-bar",
+    "imagery": "imagery-thumbnails",
+    "icon": "icon-filled-system",
+    "metadata": "metadata-inline-badges"
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "mobile"
+    ],
+    "input": [
+      "keyboard",
+      "touch"
+    ],
+    "product": [
+      "ecommerce"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "swiftui"
+    ],
+    "density": null,
+    "components": [
+      "dialog"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "create dialog"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_INTERACTION",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "new",
+      "operations": [
+        "create",
+        "modify"
+      ],
+      "problem_domain": [
+        "interaction"
+      ],
+      "change_scope": "unknown",
+      "utterance": "request",
+      "preserve": []
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "create: build/create request"
+    ],
+    "project_context": {
+      "navigation": "bottom-tabs (KNOWN)",
+      "theme": "dual-theme (INFERRED)",
+      "surfaces": "elevated (INFERRED)",
+      "radius": "medium (INFERRED)",
+      "spacing": "4 (INFERRED)",
+      "typography": "humanist-sans (INFERRED)"
+    },
+    "known": [
+      "platform=mobile",
+      "input=keyboard",
+      "product=ecommerce",
+      "stack=swiftui",
+      "mode=create",
+      "project_navigation=bottom-tabs"
+    ],
+    "inferred": [
+      "input=touch",
+      "project_theme=dual-theme",
+      "project_surfaces=elevated",
+      "project_radius=medium",
+      "project_spacing=4",
+      "project_typography=humanist-sans"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": false,
+    "violations": [
+      "non-media product: poster (media) card geometry selected"
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+## design-engineering search: Stats screen in dark mode: the bars are barely visible.
+status=CONFIDENT modes=['polish', 'audit'] platforms={} inputs={} products={} density=None stacks=[] screens=[] negatives=[]
+facets required=['anti-pattern', 'layout', 'visual', 'component'] unmet=[] diversity=0.75
+MISSING: brand: no brand assets, guideline, or character description available; platform: audit targets differ by platform; not stated
+
+### Dark mode by inversion  `anti-dark-mode-inversion`  [antipattern/craft; anti-pattern] score 0.483 · platform-standard
+Redesign surfaces (elevation = lighter), desaturate accents, use 87/60/38% white text steps, re-validate every pair, define dark chart palettes. See the dark mode rule.
+- use when: Pure black canvas with pure white text, saturated light-theme accents on dark, shadows that vanish, borders that disappear, images unchanged.
+- avoid when: Never.
+- why: lexical 0.535, structural 0.42 (secondary mode)
+
+### Dark mode is a redesign of surfaces, not an inversion  `color-dark-mode-rules`  [rule/color; visual] score 0.465 · platform-standard
+Elevation = lighter surface (not darker shadow); desaturate accents; text 87/60/38% white steps for primary/secondary/disabled; borders lighten; images may need a slight dim; charts get a dark palette; re-validate every contrast pair.
+- use when: Adding or auditing dark themes.
+- avoid when: Never invert colours programmatically; never keep saturated light-theme accents unchanged; never use pure white text.
+- why: lexical 0.501, structural 0.42 (secondary mode)
+
+### Semantic colour tokens, not raw hex in components  `color-semantic-tokens`  [rule/color; visual] score 0.363 · engineering-practice
+Three layers: primitive palette → semantic roles (bg.canvas, text.primary, action.primary, border.default, focus.ring, feedback.error…) → component tokens where needed. Every theme (light, dark, high-contrast, each brand) redefines only the semantic layer. Validate with tokens.py validate.
+- use when: Any component styling; theming; dark mode; multi-brand.
+- avoid when: Never write hex values in components; never name tokens by hue (blue-500) at the semantic layer.
+- why: lexical 0.317, structural 0.42 (secondary mode)
+
+### Focus visible and not obscured  `a11y-focus-visible`  [rule/focus; interaction/platform] score 0.269 · accessibility-requirement
+Focus indicator ≥2 px with ≥3:1 contrast against adjacent colours and against the unfocused state; sticky UI gets scroll-padding so a focused control scrolls into clear view. On TV the indicator must be obvious at 3 m (scale + border/glow).
+- use when: Every focusable element in every theme; sticky headers, footers, toasts, and cookie banners must never cover the focused element.
+- avoid when: Never remove focus styles; use :focus-visible to hide them for mouse clicks only.
+- why: lexical 0.162, structural 0.4 (mode polish)
+
+### Desktop status bar as the persistent feedback surface, with next-error navigation  `desktop-status-bar-and-error-navigation`  [rule/feedback; component/platform] score 0.268 · platform-standard
+One status bar at the bottom of the window with fixed regions (selection summary, sync/save state with timestamp, error count as a link, active filter) separated by real separators, not spaces; validation for the current row/cell is echoed there in words ('Line 50: Quantity must be greater than 0') and the error count opens a list; F8 / Shift+F8 (or the project's convention) walk to the next and previous error and move focus into the cell; error styling never paints over the value text (tint the cell background and keep ≥ 4.5:1 for the text); announce status changes with LiveSetting/UIA so screen readers hear them; the bar keeps its height at every window width.
+- use when: Data-entry and workbench windows where validation, selection and sync state must be visible without dialogs or toasts.
+- avoid when: Consumer apps without a persistent window chrome; mobile.
+- why: lexical 0.161, structural 0.4 (mode polish)
+
+### Grids with row actions are one Tab stop  `grid-single-tab-stop`  [rule/table; component/platform] score 0.247 · accessibility-requirement
+Tab enters the grid once and leaves it once; arrow keys move between cells/rows (roving tabindex or a focus manager), Enter/Space activates the focused cell's action, Escape returns from an edited cell to navigation mode; row actions become reachable when the row or actions cell is focused and are also available from a row context/actions menu; a table with 24 rows must never produce 24 Tab stops per action column. Announce the current row/column (aria-rowindex/colindex or the platform's automation properties) and keep a visible focus indicator on the active cell.
+- use when: Data tables or grids where each row has buttons/links (edit, delete, approve, download) and there are more than a handful of rows.
+- avoid when: Small static tables with no interactive cells.
+- why: lexical 0.186, structural 0.32 (secondary mode)
+
+### Glassmorphism without a reason  `anti-glass-everywhere`  [antipattern/generic-ai; anti-pattern] score 0.244 · heuristic
+Replace with solid tonal surfaces unless the layer must reveal content beneath it; if kept, use the platform material, verify contrast against worst-case backgrounds, and measure GPU cost on low-end devices and TV.
+- use when: Frosted panels, blurred cards, translucent nav bars in application UI.
+- avoid when: Platform materials for transient layers (sheets, menus) are legitimate.
+- incompatible with: surface-glass
+- why: lexical 0.035, structural 0.5 (mode polish)
+
+### Cards inside cards, everything in a rounded box  `anti-card-everything`  [antipattern/generic-ai; anti-pattern] score 0.238 · heuristic
+Justify each container: does the boundary mean something (tappable object, elevation, grouping that spacing cannot express)? If not, replace with headings, spacing, and hairline dividers. Never nest a card in a card; never wrap a single KPI number in a card just to make a grid.
+- use when: Reviewing any layout where sections, lists, forms, and even single lines are wrapped in bordered/elevated containers.
+- avoid when: A card is fine when the item is a discrete tappable object or needs elevation (drag, overlay).
+- why: lexical 0.023, structural 0.5 (mode polish)
+
+### UI changes must not break routes, state, contracts, or tests  `impl-safe-modification`  [rule/implementation; process] score 0.236 · engineering-practice
+Keep routes, state management, API calls, data-testid/automation ids, accessibility semantics, keyboard/remote handling, playback/auth flows unchanged unless the task is about them; run the existing tests; verify each supported input mode still works after the change.
+- use when: Any modification to an existing screen.
+- avoid when: Never rename props/ids/routes/test hooks as part of a visual change; never mix backend changes into a UI commit.
+- why: lexical 0.019, structural 0.5 (mode polish)
+
+### One clear focal point per screen  `layout-hierarchy-one-thing`  [rule/layout; layout] score 0.233 · heuristic
+Decide the screen's job and the one element that serves it; give that element the strongest size/contrast/position; demote everything else by one or two steps; navigation and chrome are quieter than content. On dashboards the focal point is the most important metric or the anomaly, not the page title.
+- use when: Designing any screen; reviewing 'it looks busy'.
+- avoid when: Never give three elements the same maximum emphasis; never make the primary content compete with chrome.
+- why: lexical 0.014, structural 0.5 (mode polish)
+
+### Toolbar / command bar with selection-driven commands  `cta-toolbar-commands`  [pattern/cta; layout/platform] score 0.231 · platform-standard
+Primary commands as labelled buttons, overflow into a menu, disabled (not hidden) when no selection, keyboard accelerators shown in tooltips, and the count of selected items visible near the commands.
+- use when: Workbenches and tables: commands apply to the current selection, live in a persistent bar, and are mirrored by context menus and shortcuts.
+- avoid when: Consumer or single-task screens; touch-first products.
+- incompatible with: cta-single-primary, cta-focus-selects, cta-sticky-bar
+- why: lexical 0.277, structural 0.04 (generic)
+
+### Visible focus ring (web/desktop)  `focus-ring-standard`  [pattern/focus; interaction/platform] score 0.23 · accessibility-requirement
+One focus token (colour + width + offset) applied globally; never outline:none without a replacement; ring must remain visible on the accent surface (use a two-tone ring or offset); composite focus in tables/lists uses a cell/row highlight plus the ring on the active element.
+- use when: All pointer+keyboard UI: a 2–3 px ring with ≥3:1 contrast against adjacent colours, offset so it is not hidden by borders, shown for :focus-visible.
+- avoid when: TV (needs scale/glow because the ring is too subtle at 3 m).
+- incompatible with: focus-scale-glow, focus-none-touch-only
+- why: lexical 0.191, structural 0.1 (generic)
+
+Filtered out: mobile-field-use (environment ['gloves', 'outdoor'] not in request)

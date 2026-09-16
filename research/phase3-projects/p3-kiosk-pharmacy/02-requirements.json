@@ -1,0 +1,80 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "create"
+  ],
+  "platform": [
+    "kiosk"
+  ],
+  "input": [
+    "touch"
+  ],
+  "product": [
+    "ecommerce",
+    "healthcare"
+  ],
+  "screen": [],
+  "screen_subtype": [],
+  "stack": [],
+  "density": null,
+  "components": [],
+  "environment": [
+    "public"
+  ],
+  "jobs": [
+    "high-risk-action"
+  ],
+  "problems": [],
+  "risk": "high",
+  "primary_jobs": [
+    "high-risk-action",
+    "create"
+  ],
+  "constraints": {
+    "performance_sensitive": true
+  },
+  "accessibility": {
+    "screen_reader": true,
+    "touch_targets": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "known": [
+    "platform=kiosk (request: kiosk)",
+    "input=touch (request: touch)",
+    "product=ecommerce (request: store)",
+    "product=healthcare (request: patient, pharmacy)",
+    "job=high-risk-action (request: prescription)"
+  ],
+  "inferred": [
+    "mode=create (default when no mode word is present)",
+    "environment=public (kiosk platform implies public use)"
+  ],
+  "missing": [
+    "brand: no brand assets, guideline, or character description available",
+    "stack: implementation stack not stated and no repository evidence"
+  ],
+  "status": "CONFIDENT",
+  "source": {
+    "request": [
+      "kiosk",
+      "patient, pharmacy",
+      "prescription",
+      "store",
+      "touch"
+    ],
+    "project": [
+      "no recognised UI stack; treat stack as MISSING and ask or inspect further"
+    ]
+  },
+  "activation": {
+    "decision": "activate",
+    "ui_score": 2.0,
+    "non_ui_score": 0,
+    "ui_terms": [
+      "screen"
+    ],
+    "non_ui_terms": []
+  }
+}

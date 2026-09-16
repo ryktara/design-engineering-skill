@@ -1,0 +1,894 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "Make the Add Habit sheet work when the keyboard is up.",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "mobile"
+    ],
+    "input": [
+      "keyboard",
+      "touch"
+    ],
+    "product": [
+      "ecommerce"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "swiftui"
+    ],
+    "density": null,
+    "components": [
+      "dialog"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "create dialog"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_INTERACTION",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "new",
+      "operations": [
+        "create",
+        "modify"
+      ],
+      "problem_domain": [
+        "interaction"
+      ],
+      "change_scope": "unknown",
+      "utterance": "request",
+      "existing": false,
+      "problem": false,
+      "facet": "interaction",
+      "diagnose_only": false,
+      "creation": true,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "create: build/create request"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "bottom-tabs",
+        "status": "KNOWN",
+        "evidence": [
+          "bottom-tabs: 7 matches in README.md, RootTabView.swift, StreaksApp.swift (shell/layout file)"
+        ]
+      },
+      "theme": {
+        "value": "dual-theme",
+        "status": "INFERRED",
+        "evidence": [
+          "dark theme configuration signals: 2",
+          "hex palette: 0 near-white, 0 near-black"
+        ]
+      },
+      "surfaces": {
+        "value": "elevated",
+        "status": "INFERRED",
+        "evidence": [
+          "shadow/elevation in 4 files, borders in 0"
+        ]
+      },
+      "radius": {
+        "value": "medium",
+        "status": "INFERRED",
+        "evidence": [
+          "most common radius 8 (1×); others []"
+        ]
+      },
+      "spacing": {
+        "value": 4,
+        "status": "INFERRED",
+        "evidence": [
+          "most used spacing values [2, 4, 12, 16]"
+        ]
+      },
+      "typography": {
+        "value": "humanist-sans",
+        "status": "INFERRED",
+        "evidence": [
+          "font family Nunito (1 refs)",
+          "encoded type scale in 3 files",
+          "monospace usage"
+        ]
+      },
+      "components": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": []
+      }
+    },
+    "known": [
+      "platform=mobile (project inspection)",
+      "input=keyboard (request: keyboard)",
+      "product=ecommerce (project inspection (README))",
+      "stack=swiftui (project inspection)",
+      "mode=create (build/create request)",
+      "project_navigation=bottom-tabs (repository: bottom-tabs: 7 matches in README.md, RootTabView.swift, StreaksApp.swift (shell/layout file))"
+    ],
+    "inferred": [
+      "input=touch (implied by platform mobile)",
+      "project_theme=dual-theme (repository: dark theme configuration signals: 2; hex palette: 0 near-white, 0 near-black)",
+      "project_surfaces=elevated (repository: shadow/elevation in 4 files, borders in 0)",
+      "project_radius=medium (repository: most common radius 8 (1×); others [])",
+      "project_spacing=4 (repository: most used spacing values [2, 4, 12, 16])",
+      "project_typography=humanist-sans (repository: font family Nunito (1 refs); encoded type scale in 3 files)"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [
+        "keyboard",
+        "make the"
+      ],
+      "project": [
+        "Package.swift: Apple project",
+        "Package.swift: iOS target"
+      ]
+    },
+    "activation": {
+      "decision": "activate",
+      "ui_score": 2.0,
+      "non_ui_score": 0,
+      "ui_terms": [],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [],
+      "new": [],
+      "defect": [],
+      "operations": {
+        "create": [
+          "add"
+        ],
+        "modify": [
+          "make"
+        ]
+      },
+      "domains": {
+        "interaction": [
+          "keyboard"
+        ]
+      },
+      "no_change": [],
+      "scope": {},
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "keyboard"
+      ],
+      "ux_symptoms": [
+        "keyboard"
+      ],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_INTERACTION",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "component",
+        "reason": "a specific component/screen is requested"
+      },
+      {
+        "concern": "structure",
+        "reason": "layout topology and hierarchy"
+      },
+      {
+        "concern": "interaction",
+        "reason": "input model: keyboard,touch"
+      },
+      {
+        "concern": "accessibility",
+        "reason": "platform accessibility baseline"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "navigation",
+        "reason": "how users arrive and leave"
+      },
+      {
+        "concern": "states",
+        "reason": "few states; still handle failed media"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "create/refactor requests attract generic defaults"
+      },
+      {
+        "concern": "brand",
+        "reason": "visual identity direction"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "device sizes and orientation"
+      },
+      {
+        "concern": "feedback",
+        "reason": "actions need confirmation and status"
+      }
+    ],
+    "optional": [
+      "motion",
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "touch.minimum_target",
+        "reason": "touch platform"
+      },
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "keyboard stated"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "keyboard stated"
+      },
+      {
+        "concept": "a11y.dialog_focus",
+        "reason": "dialog"
+      },
+      {
+        "concept": "interaction.focus_restore",
+        "reason": "required by a11y.dialog_focus"
+      }
+    ],
+    "recommended_concepts": [
+      "process.reuse_first",
+      "touch.gestures_discoverable",
+      "touch.thumb_reach",
+      "touch.safe_areas",
+      "navigation.platform_grammar",
+      "a11y.live_status",
+      "feedback.confirmation_destructive",
+      "interaction.shortcuts"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "comp-product-detail-page",
+      "kind": "component",
+      "category": "detail",
+      "title": "Product detail page (PDP)",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "content",
+        "feedback",
+        "structure"
+      ],
+      "concepts": [
+        "layout.one_primary_action",
+        "perf.layout_shift",
+        "a11y.accessible_names",
+        "touch.minimum_target",
+        "feedback.trust_signals"
+      ],
+      "covers": [
+        "one primary action per view",
+        "no layout shift",
+        "accessible names and labels",
+        "large touch targets (≥44–48 px)",
+        "trust and cost transparency before commitment"
+      ],
+      "score": 0.521,
+      "guidance": "Above the fold on every viewport: product name, price (with tabular figures and any discount stated in words), primary image, variant selectors and one add-to-cart action; variant choice is a radio group with visible labels and a disabled-but-visible state for out-of-stock options; the add-to-cart button is sticky on phones without covering focused controls; shipping, returns and stock are stated next to the price, not in a tab; the gallery has fixed aspect boxes (no layout shift), keyboard-operable thumbnails and alt text per image; reviews show the distribution and a count, and stars always have a text value; secondary actions (wishlist, share, size guide) never compete visually with add-to-cart; the size guide opens as a dialog that returns focus.",
+      "use_when": "Selling a physical or digital product: gallery, variants, price, availability, add-to-cart, trust and shipping information, reviews.",
+      "avoid_when": "Catalog/listing pages (use list + filters) or marketing landing pages (hero + narrative).",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.408,
+        "structural": 0.66,
+        "matched": [
+          "platform mobile",
+          "mode create",
+          "product ecommerce"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "comp-drawer-panel",
+      "kind": "component",
+      "category": "drawer",
+      "title": "Drawer / side panel",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "interaction",
+        "navigation"
+      ],
+      "concepts": [
+        "interaction.drawer_focus"
+      ],
+      "covers": [
+        "drawer / side panel focus in and out"
+      ],
+      "score": 0.352,
+      "guidance": "Inline (pushes content) on wide screens, overlay on narrow; width from tokens (320–480 px); heading + close; focus moves in on open and returns on close; content scrolls independently; TV: side sheet that keeps the player/content visible and traps DPAD inside until BACK.",
+      "use_when": "Secondary detail or editing beside the main content (record details, filters, settings), non-blocking on wide screens.",
+      "avoid_when": "As the primary navigation on desktop (use a rail), or for blocking confirmations.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "implementation": {
+        "swiftui": "NavigationSplitView inspector / .inspector(isPresented:); tvOS: custom side sheet with .focusSection()."
+      },
+      "why": {
+        "lexical": 0.214,
+        "structural": 0.52,
+        "matched": [
+          "platform mobile",
+          "mode create"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "comp-dialog",
+      "kind": "component",
+      "category": "dialog",
+      "title": "Dialog / modal",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "accessibility",
+        "component",
+        "feedback",
+        "interaction"
+      ],
+      "concepts": [
+        "a11y.dialog_focus",
+        "feedback.confirmation_destructive"
+      ],
+      "covers": [
+        "dialog focus management",
+        "confirmation of destructive or high-risk actions"
+      ],
+      "score": 0.306,
+      "guidance": "Title as heading, one primary action, safe default for destructive confirmations, focus management per dialog rule, sized to content with max width, scroll inside the body not the page, Escape and close button, backdrop click closes only for non-destructive dialogs. Mobile: bottom sheet or full-screen; TV: full-screen with first focus on the safe action.",
+      "use_when": "Confirmation, short focused task, blocking decision.",
+      "avoid_when": "Long forms, content that users need to reference while working (use a panel), stacking dialogs, mobile (prefer sheets or full-screen), TV (prefer full-screen or side sheet with clear focus).",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "implementation": {
+        "swiftui": ".alert / .confirmationDialog / .sheet; tvOS uses full-screen presentation."
+      },
+      "why": {
+        "lexical": 0.228,
+        "structural": 0.4,
+        "matched": [
+          "mode create"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "mobile-platform-navigation",
+      "kind": "rule",
+      "category": "navigation",
+      "title": "Mobile: follow the platform navigation grammar",
+      "facets": [
+        "navigation",
+        "platform"
+      ],
+      "concerns": [
+        "navigation"
+      ],
+      "concepts": [
+        "navigation.platform_grammar"
+      ],
+      "covers": [
+        "platform navigation grammar"
+      ],
+      "score": 0.595,
+      "guidance": "iOS: tab bar + navigation stack with large titles where idiomatic, sheets for secondary tasks, swipe back. Android: navigation bar, predictive back, top app bar, modal bottom sheets, up vs back. Cross-platform frameworks still map to these; state deviations as brand decisions.",
+      "use_when": "Choosing tab bars, drawers, stacks, sheets, and back behaviour on iOS vs Android.",
+      "avoid_when": "Do not port an iOS tab bar with iOS icons to Android unchanged or vice versa unless the product is deliberately brand-uniform; do not build custom back handling that breaks the system back.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.492,
+        "structural": 0.72,
+        "matched": [
+          "platform mobile",
+          "input touch",
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "most relevant record for the request wording"
+    },
+    {
+      "id": "a11y-modal-dialog",
+      "kind": "rule",
+      "category": "dialog",
+      "title": "Dialog focus management",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "a11y.dialog_focus",
+        "interaction.focus_restore"
+      ],
+      "covers": [
+        "dialog focus management",
+        "focus restoration"
+      ],
+      "score": 0.471,
+      "guidance": "On open: focus the first meaningful control (or the heading), trap Tab inside, inert the background, label the dialog by its title. On close: return focus to the invoker. Escape and the visible close button both close; destructive confirmations put the safe action as default. Use <dialog>/showModal, ContentDialog, .sheet, ModalBottomSheet rather than a div overlay.",
+      "use_when": "Modals, sheets, drawers, popovers, confirmations.",
+      "avoid_when": "Do not use modals for content that could be inline; do not stack modals.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.316,
+        "structural": 0.66,
+        "matched": [
+          "platform mobile",
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: focus restoration"
+    },
+    {
+      "id": "a11y-nontext-contrast",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Non-text contrast 3:1 for controls and focus",
+      "facets": [
+        "accessibility"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "a11y.contrast",
+        "interaction.focus_visible"
+      ],
+      "covers": [
+        "high contrast",
+        "visible focus"
+      ],
+      "score": 0.243,
+      "guidance": "Any visual that identifies a control or its state needs ≥3:1 against adjacent colours. Hairline dividers at 1.2:1 are fine as decoration but an input whose only boundary is that hairline fails.",
+      "use_when": "Input borders, checkbox/radio outlines, focus indicators, icons that carry meaning, chart marks, toggle states.",
+      "avoid_when": "Purely decorative borders and dividers are exempt, but then they must not be the only boundary of a control.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.54,
+        "matched": [
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: visible focus"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "component",
+      "structure",
+      "interaction",
+      "accessibility"
+    ],
+    "covered_required_concerns": [
+      "component",
+      "structure",
+      "interaction",
+      "accessibility"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "navigation",
+      "states",
+      "anti-pattern",
+      "brand",
+      "adaptive",
+      "feedback"
+    ],
+    "covered_recommended_concerns": [
+      "navigation",
+      "feedback"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "touch.minimum_target",
+      "interaction.keyboard_navigation",
+      "interaction.focus_visible",
+      "a11y.dialog_focus",
+      "interaction.focus_restore"
+    ],
+    "covered_required_concepts": [
+      "touch.minimum_target",
+      "interaction.focus_visible",
+      "a11y.dialog_focus",
+      "interaction.focus_restore"
+    ],
+    "uncovered_required_concepts": [
+      "interaction.keyboard_navigation"
+    ],
+    "concept_coverage_ratio": 0.8,
+    "recommended_concept_coverage": 0.25,
+    "bundle_size": 6,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 3,
+    "guardrail_size": 3,
+    "bundle_tokens": 1156,
+    "coverage_per_1k_tokens": 3.46,
+    "mean_purity": 0.78,
+    "contaminated": [],
+    "category_diversity": 0.83,
+    "duplicate_pressure": 0.33,
+    "facet_coverage": 0.5,
+    "redundancy": 0.56
+  },
+  "token_coverage": 1.0,
+  "omitted": [
+    {
+      "id": "media-resume-and-details",
+      "reason": "contamination: product-specific (media) vs ['ecommerce']; low purity 0.17: most of its concepts are off-task"
+    },
+    {
+      "id": "comp-filters",
+      "reason": "contamination: low purity 0.00: most of its concepts are off-task; search-specific record with no search evidence in the request"
+    }
+  ],
+  "rejected": [
+    {
+      "id": "anti-desktop-scaled-to-tv",
+      "reason": "platform ['tv'] not in request ['mobile']"
+    },
+    {
+      "id": "anti-default-fonts",
+      "reason": "platform ['web'] not in request ['mobile']"
+    },
+    {
+      "id": "anti-hover-only-actions",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "chart-relationship",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "chart-heatmap-matrix",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-data-table",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-sidebar-nav",
+      "reason": "platform ['desktop', 'tablet', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-command-palette",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "touch.minimum_target",
+      "priority": "required",
+      "reason": "touch platform",
+      "candidate_records": [
+        [
+          "comp-product-detail-page",
+          0.521
+        ],
+        [
+          "comp-photo-capture-field",
+          0.37
+        ],
+        [
+          "a11y-target-size",
+          0.27
+        ],
+        [
+          "comp-list-row-mobile",
+          0.261
+        ]
+      ],
+      "selected_record": "comp-product-detail-page",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.keyboard_navigation",
+      "priority": "required",
+      "reason": "keyboard stated",
+      "candidate_records": [],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "carriers filtered before ranking: platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "concept": "interaction.focus_visible",
+      "priority": "required",
+      "reason": "keyboard stated",
+      "candidate_records": [
+        [
+          "a11y-nontext-contrast",
+          0.243
+        ],
+        [
+          "color-states-complete",
+          0.243
+        ]
+      ],
+      "selected_record": "a11y-nontext-contrast",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.dialog_focus",
+      "priority": "required",
+      "reason": "dialog",
+      "candidate_records": [
+        [
+          "a11y-modal-dialog",
+          0.471
+        ],
+        [
+          "comp-dialog",
+          0.306
+        ]
+      ],
+      "selected_record": "a11y-modal-dialog",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.focus_restore",
+      "priority": "required",
+      "reason": "required by a11y.dialog_focus",
+      "candidate_records": [
+        [
+          "a11y-modal-dialog",
+          0.471
+        ],
+        [
+          "media-resume-and-details",
+          0.461
+        ],
+        [
+          "comp-mini-player",
+          0.213
+        ]
+      ],
+      "selected_record": "a11y-modal-dialog",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "recommended",
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.264
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.gestures_discoverable",
+      "priority": "recommended",
+      "reason": "touch platform",
+      "candidate_records": [
+        [
+          "mobile-gestures-discoverable",
+          0.324
+        ],
+        [
+          "comp-list-row-mobile",
+          0.261
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.thumb_reach",
+      "priority": "recommended",
+      "reason": "one-handed use",
+      "candidate_records": [
+        [
+          "mobile-thumb-reach",
+          0.405
+        ],
+        [
+          "anti-mobile-desktop-shrunk",
+          0.224
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.safe_areas",
+      "priority": "recommended",
+      "reason": "mobile",
+      "candidate_records": [
+        [
+          "mobile-safe-areas",
+          0.339
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "navigation.platform_grammar",
+      "priority": "recommended",
+      "reason": "mobile navigation grammar",
+      "candidate_records": [
+        [
+          "mobile-platform-navigation",
+          0.595
+        ],
+        [
+          "nav-bottom-tabs",
+          0.367
+        ]
+      ],
+      "selected_record": "mobile-platform-navigation",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.live_status",
+      "priority": "recommended",
+      "reason": "status messages",
+      "candidate_records": [
+        [
+          "search-filter-feedback",
+          0.26
+        ],
+        [
+          "a11y-live-status",
+          0.243
+        ],
+        [
+          "comp-toast-notification",
+          0.18
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "feedback.confirmation_destructive",
+      "priority": "recommended",
+      "reason": "dialog",
+      "candidate_records": [
+        [
+          "states-persistence-and-session",
+          0.344
+        ],
+        [
+          "comp-dialog",
+          0.306
+        ],
+        [
+          "comp-checkout-one-page",
+          0.297
+        ],
+        [
+          "comp-settings-screen",
+          0.18
+        ]
+      ],
+      "selected_record": "comp-dialog",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.shortcuts",
+      "priority": "recommended",
+      "reason": "related to interaction.keyboard_navigation",
+      "candidate_records": [],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "carriers filtered before ranking: platform ['desktop', 'web'] not in request ['mobile']"
+    }
+  ]
+}

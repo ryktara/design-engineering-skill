@@ -1,0 +1,370 @@
+{
+  "case": "p3-tvos-swiftui",
+  "mode": "html-twin",
+  "viewport": "1920x1080",
+  "remote_mapping": {
+    "arrows": "swipe/DPAD",
+    "Enter": "select",
+    "Escape": "Menu",
+    "Space": "Play/Pause"
+  },
+  "passed": 51,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "signin: initial focus on primary action",
+      "pass": true,
+      "detail": "fallback"
+    },
+    {
+      "name": "signin: initial focus visible (ring)",
+      "pass": true,
+      "detail": {
+        "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 4px, rgba(0, 0, 0, 0.45) 0px 12px 24px 0px"
+      }
+    },
+    {
+      "name": "signin: code has no ambiguous glyphs (0/O/1/I/L/2/Z/5/S/8/B)",
+      "pass": true,
+      "detail": "76CCMT"
+    },
+    {
+      "name": "signin: code glyphs large (>= 100 px)",
+      "pass": true,
+      "detail": 132
+    },
+    {
+      "name": "signin: RIGHT moves to secondary action",
+      "pass": true,
+      "detail": "newCode"
+    },
+    {
+      "name": "signin: secondary focus visible",
+      "pass": true,
+      "detail": {
+        "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 4px, rgba(0, 0, 0, 0.45) 0px 12px 24px 0px"
+      }
+    },
+    {
+      "name": "signin: RIGHT at last item stays (no focus loss)",
+      "pass": true,
+      "detail": "newCode"
+    },
+    {
+      "name": "signin: LEFT returns to primary",
+      "pass": true,
+      "detail": "fallback"
+    },
+    {
+      "name": "signin: DOWN with nothing below keeps focus",
+      "pass": true,
+      "detail": "fallback"
+    },
+    {
+      "name": "signin: smallest text >= 23 px (tvOS caption floor)",
+      "pass": true,
+      "detail": 23
+    },
+    {
+      "name": "signin: persistent UI inside 60 px safe area",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "signin: focus targets >= 88 px tall",
+      "pass": true,
+      "detail": [
+        {
+          "id": "fallback",
+          "w": 497,
+          "h": 89
+        },
+        {
+          "id": "newCode",
+          "w": 283,
+          "h": 88
+        }
+      ]
+    },
+    {
+      "name": "signin: lifted primary button stays inside the 48 px overscan hard limit",
+      "pass": true,
+      "detail": {
+        "l": 50.657196044921875,
+        "b": 905.040771484375
+      }
+    },
+    {
+      "name": "signin: reduced motion drops scale/transition but keeps ring",
+      "pass": true,
+      "detail": {
+        "transition": "0s",
+        "transform": "none",
+        "shadow": "rgb(255, 255, 255) 0px 0px 0px 4px, rgba(0, 0, 0, 0.45) 0px 12px 24px 0px"
+      }
+    },
+    {
+      "name": "player: starts with controls hidden and the surface focused",
+      "pass": true,
+      "detail": {
+        "overlay": "none",
+        "focus": "surface"
+      }
+    },
+    {
+      "name": "player: any key shows controls",
+      "pass": true,
+      "detail": "controls"
+    },
+    {
+      "name": "player: first focus lands on play/pause",
+      "pass": true,
+      "detail": "playPause"
+    },
+    {
+      "name": "player: play/pause focus visible",
+      "pass": true,
+      "detail": {
+        "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 4px, rgba(0, 0, 0, 0.45) 0px 12px 24px 0px",
+        "transform": "matrix(1.08, 0, 0, 1.08, 0, 0)"
+      }
+    },
+    {
+      "name": "player: controls inside 60 px safe area",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "player: RIGHT walks skipForward → tracks → next and stays at the end",
+      "pass": true,
+      "detail": [
+        {
+          "id": "skipForward",
+          "ring": true
+        },
+        {
+          "id": "tracks",
+          "ring": true
+        },
+        {
+          "id": "next",
+          "ring": true
+        },
+        {
+          "id": "next",
+          "ring": true
+        }
+      ]
+    },
+    {
+      "name": "player: focus visible on every transport control",
+      "pass": true,
+      "detail": [
+        {
+          "id": "skipForward",
+          "ring": true
+        },
+        {
+          "id": "tracks",
+          "ring": true
+        },
+        {
+          "id": "next",
+          "ring": true
+        },
+        {
+          "id": "next",
+          "ring": true
+        }
+      ]
+    },
+    {
+      "name": "player: UP reaches the scrubber",
+      "pass": true,
+      "detail": "scrubber"
+    },
+    {
+      "name": "player: scrubber focus visible",
+      "pass": true
+    },
+    {
+      "name": "player: LEFT/RIGHT on scrubber seek in 10 s steps",
+      "pass": true,
+      "detail": {
+        "t0": 1462,
+        "t1": 1472
+      }
+    },
+    {
+      "name": "player: DOWN from scrubber restores the last transport control",
+      "pass": true,
+      "detail": "next"
+    },
+    {
+      "name": "player: Menu with controls visible hides them (stays in player)",
+      "pass": true,
+      "detail": {
+        "overlay": "none",
+        "left": false,
+        "focus": "surface"
+      }
+    },
+    {
+      "name": "player: select on the surface shows controls",
+      "pass": true,
+      "detail": "controls"
+    },
+    {
+      "name": "player: controls still visible at 4 s",
+      "pass": true,
+      "detail": "controls"
+    },
+    {
+      "name": "player: controls hidden after 5 s of inactivity",
+      "pass": true,
+      "detail": "none"
+    },
+    {
+      "name": "player: input within 5 s resets the auto-hide timer",
+      "pass": true,
+      "detail": "controls"
+    },
+    {
+      "name": "player: reappearing controls restore focus to the last control",
+      "pass": true,
+      "detail": {
+        "before": "tracks",
+        "after": "tracks"
+      }
+    },
+    {
+      "name": "player: lifted focus stays inside the 48 px overscan hard limit",
+      "pass": true,
+      "detail": {
+        "l": 386.3018798828125,
+        "r": 890.6043701171875,
+        "b": 1021.760009765625
+      }
+    },
+    {
+      "name": "player: select on 'Subtitles and audio' opens the picker",
+      "pass": true,
+      "detail": "picker"
+    },
+    {
+      "name": "player: picker focus starts on the current subtitle (Off)",
+      "pass": true,
+      "detail": "sub-off"
+    },
+    {
+      "name": "player: picker focus visible",
+      "pass": true,
+      "detail": {
+        "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 4px, rgba(0, 0, 0, 0.45) 0px 12px 24px 0px"
+      }
+    },
+    {
+      "name": "player: DOWN moves within the subtitle list",
+      "pass": true,
+      "detail": "sub-en-sdh"
+    },
+    {
+      "name": "player: RIGHT moves to the audio column",
+      "pass": true,
+      "detail": "aud-es"
+    },
+    {
+      "name": "player: select picks the subtitle track",
+      "pass": true,
+      "detail": "sub-en"
+    },
+    {
+      "name": "player: auto-hide paused while the picker is open",
+      "pass": true,
+      "detail": "picker"
+    },
+    {
+      "name": "player: Menu closes the picker and returns to controls with focus on the tracks button",
+      "pass": true,
+      "detail": {
+        "st": "controls",
+        "focus": "tracks"
+      }
+    },
+    {
+      "name": "player: tracks button reflects the selection",
+      "pass": true,
+      "detail": "English subtitles · English audio"
+    },
+    {
+      "name": "player: picker content inside 60 px safe area",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "player: Menu with nothing on screen leaves the player",
+      "pass": true,
+      "detail": {
+        "overlay": "none",
+        "left": true
+      }
+    },
+    {
+      "name": "player: next-episode prompt focuses 'Play next'",
+      "pass": true,
+      "detail": "playNext"
+    },
+    {
+      "name": "player: Menu dismisses the prompt only (controls remain, countdown cancelled)",
+      "pass": true,
+      "detail": {
+        "overlay": "controls",
+        "left": false,
+        "cd": null
+      }
+    },
+    {
+      "name": "player: transport row hidden while the picker is open",
+      "pass": true,
+      "detail": {
+        "controls": false,
+        "sheet": true
+      }
+    },
+    {
+      "name": "player: picker rows are single-line and the two columns align",
+      "pass": true
+    },
+    {
+      "name": "player: lifted picker row at the right edge stays inside the 48 px overscan hard limit",
+      "pass": true,
+      "detail": {
+        "id": "aud-en",
+        "r": 1870.800048828125,
+        "t": 126.42750549316406
+      }
+    },
+    {
+      "name": "player: transport row hidden while the next-episode prompt is shown",
+      "pass": true,
+      "detail": {
+        "controls": false,
+        "prompt": true
+      }
+    },
+    {
+      "name": "player: next prompt inside 60 px safe area",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "player: reduced motion drops scale/transition but keeps the ring",
+      "pass": true,
+      "detail": {
+        "transition": "0s",
+        "transform": "none",
+        "shadow": "rgb(255, 255, 255) 0px 0px 0px 4px, rgba(0, 0, 0, 0.45) 0px 12px 24px 0px"
+      }
+    }
+  ]
+}

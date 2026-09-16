@@ -1,0 +1,1302 @@
+{
+  "url": "http://localhost:3111/settings/billing",
+  "viewports": {
+    "1440x900": {
+      "tabStops": 36,
+      "stopsWithoutFocusIndicator": [],
+      "allStopsHaveVisibleFocus": true,
+      "minTargetPx": 24,
+      "targetsBelowMin": [],
+      "planCardStops": [
+        "Monthly",
+        "Annual-15%",
+        "Downgrade to Starter",
+        "Upgrade to Business"
+      ],
+      "seatTableStops": 15,
+      "seatTableStopLabels": [
+        "Invite member",
+        "Role for Marcus Ellery",
+        "Remove Marcus Ellery",
+        "Role for Sofía Reyes",
+        "Remove Sofía Reyes",
+        "Role for Tomasz Wierzbicki",
+        "Remove Tomasz Wierzbicki",
+        "Role for Amara Okafor",
+        "Remove Amara Okafor",
+        "Role for Jun Sato",
+        "Remove Jun Sato",
+        "Role for finance-contractor@partner.example",
+        "Resend invite to finance-contractor@partner.example",
+        "Remove finance-contractor@partner.example",
+        "Reactivate Lena Hoffmann"
+      ],
+      "invoiceStops": [
+        "Download invoice INV-2026-0042 (PDF)",
+        "Download invoice INV-2026-0037 (PDF)",
+        "Download invoice INV-2026-0031 (PDF)",
+        "Download invoice INV-2026-0026 (PDF)",
+        "Download invoice INV-2026-0019 (PDF)",
+        "Download invoice INV-2026-0012 (PDF)"
+      ],
+      "hoverOnlyActions": [],
+      "seatRowVisibleActionCounts": [
+        0,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        1
+      ],
+      "downloadLinks": [
+        {
+          "name": "Download invoice INV-2026-0042 (PDF)",
+          "href": "/invoices/INV-2026-0042.pdf",
+          "h": 32,
+          "w": 71
+        },
+        {
+          "name": "Download invoice INV-2026-0037 (PDF)",
+          "href": "/invoices/INV-2026-0037.pdf",
+          "h": 32,
+          "w": 71
+        },
+        {
+          "name": "Download invoice INV-2026-0031 (PDF)",
+          "href": "/invoices/INV-2026-0031.pdf",
+          "h": 32,
+          "w": 71
+        },
+        {
+          "name": "Download invoice INV-2026-0026 (PDF)",
+          "href": "/invoices/INV-2026-0026.pdf",
+          "h": 32,
+          "w": 71
+        },
+        {
+          "name": "Download invoice INV-2026-0019 (PDF)",
+          "href": "/invoices/INV-2026-0019.pdf",
+          "h": 32,
+          "w": 71
+        },
+        {
+          "name": "Download invoice INV-2026-0012 (PDF)",
+          "href": "/invoices/INV-2026-0012.pdf",
+          "h": 32,
+          "w": 71
+        }
+      ],
+      "removeDialog": {
+        "openedWithEnter": true,
+        "focusMovedIntoDialog": true,
+        "escapeCloses": true,
+        "focusReturnedToTrigger": true
+      },
+      "reducedMotion": {
+        "prefersReduced": true,
+        "animatedElements": 0
+      },
+      "stops": [
+        {
+          "tag": "a",
+          "role": null,
+          "label": "Skip to content",
+          "section": "page",
+          "focusVisible": true,
+          "outline": "1px auto rgb(16, 16, 16)",
+          "boxShadow": null,
+          "hasIndicator": true,
+          "size": {
+            "w": 136,
+            "h": 40
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "label": "Dashboard",
+          "section": "Primary",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(24, 24, 27) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 207,
+            "h": 36
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "label": "Invoices",
+          "section": "Primary",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(24, 24, 27) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 207,
+            "h": 36
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "label": "Inventory",
+          "section": "Primary",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(24, 24, 27) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 207,
+            "h": 36
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "label": "Settings",
+          "section": "Primary",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(24, 24, 27) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 207,
+            "h": 36
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "label": "General",
+          "section": "Settings sections",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(24, 24, 27) 0px 0px 0px 2px inset",
+          "hasIndicator": true,
+          "size": {
+            "w": 73,
+            "h": 40
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "label": "Members",
+          "section": "Settings sections",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(24, 24, 27) 0px 0px 0px 2px inset",
+          "hasIndicator": true,
+          "size": {
+            "w": 84,
+            "h": 40
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "label": "Billing",
+          "section": "Settings sections",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(24, 24, 27) 0px 0px 0px 2px inset",
+          "hasIndicator": true,
+          "size": {
+            "w": 65,
+            "h": 40
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "label": "Security",
+          "section": "Settings sections",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(24, 24, 27) 0px 0px 0px 2px inset",
+          "hasIndicator": true,
+          "size": {
+            "w": 77,
+            "h": 40
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "label": "Update",
+          "section": "summary-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 67,
+            "h": 32
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "label": "Download invoice",
+          "section": "summary-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 147,
+            "h": 32
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "label": "Monthly",
+          "section": "plans-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(24, 24, 27) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 76,
+            "h": 32
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "label": "Annual-15%",
+          "section": "plans-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(24, 24, 27) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 100,
+            "h": 32
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "label": "Downgrade to Starter",
+          "section": "plans-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 281,
+            "h": 36
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "label": "Upgrade to Business",
+          "section": "plans-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 281,
+            "h": 36
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "label": "Invite member",
+          "section": "seats-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 128,
+            "h": 32
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "select",
+          "role": null,
+          "label": "Role for Marcus Ellery",
+          "section": "seats-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(24, 24, 27) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 92,
+            "h": 32
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "label": "Remove Marcus Ellery",
+          "section": "seats-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 93,
+            "h": 32
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "select",
+          "role": null,
+          "label": "Role for Sofía Reyes",
+          "section": "seats-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(24, 24, 27) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 92,
+            "h": 32
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "label": "Remove Sofía Reyes",
+          "section": "seats-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 93,
+            "h": 32
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "select",
+          "role": null,
+          "label": "Role for Tomasz Wierzbicki",
+          "section": "seats-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(24, 24, 27) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 92,
+            "h": 32
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "label": "Remove Tomasz Wierzbicki",
+          "section": "seats-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 93,
+            "h": 32
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "select",
+          "role": null,
+          "label": "Role for Amara Okafor",
+          "section": "seats-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(24, 24, 27) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 92,
+            "h": 32
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "label": "Remove Amara Okafor",
+          "section": "seats-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 93,
+            "h": 32
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "select",
+          "role": null,
+          "label": "Role for Jun Sato",
+          "section": "seats-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(24, 24, 27) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 92,
+            "h": 32
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "label": "Remove Jun Sato",
+          "section": "seats-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 93,
+            "h": 32
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "select",
+          "role": null,
+          "label": "Role for finance-contractor@partner.example",
+          "section": "seats-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(24, 24, 27) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 92,
+            "h": 32
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "label": "Resend invite to finance-contractor@partner.example",
+          "section": "seats-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 90,
+            "h": 32
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "label": "Remove finance-contractor@partner.example",
+          "section": "seats-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 93,
+            "h": 32
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "label": "Reactivate Lena Hoffmann",
+          "section": "seats-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 108,
+            "h": 32
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "label": "Download invoice INV-2026-0042 (PDF)",
+          "section": "invoices-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 71,
+            "h": 32
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "label": "Download invoice INV-2026-0037 (PDF)",
+          "section": "invoices-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 71,
+            "h": 32
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "label": "Download invoice INV-2026-0031 (PDF)",
+          "section": "invoices-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 71,
+            "h": 32
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "label": "Download invoice INV-2026-0026 (PDF)",
+          "section": "invoices-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 71,
+            "h": 32
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "label": "Download invoice INV-2026-0019 (PDF)",
+          "section": "invoices-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 71,
+            "h": 32
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "label": "Download invoice INV-2026-0012 (PDF)",
+          "section": "invoices-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 71,
+            "h": 32
+          },
+          "inViewport": true,
+          "disabled": false
+        }
+      ]
+    },
+    "390x844": {
+      "tabStops": 32,
+      "stopsWithoutFocusIndicator": [],
+      "allStopsHaveVisibleFocus": true,
+      "minTargetPx": 44,
+      "targetsBelowMin": [
+        "a \"Skip to content\" 136x40",
+        "button \"Update\" 67x32",
+        "a \"Download invoice\" 147x32",
+        "button \"Monthly\" 76x32",
+        "button \"Annual-15%\" 100x32",
+        "button \"Downgrade to Starter\" 308x36",
+        "button \"Upgrade to Business\" 308x36",
+        "button \"Invite member\" 128x32"
+      ],
+      "planCardStops": [
+        "Monthly",
+        "Annual-15%",
+        "Downgrade to Starter",
+        "Upgrade to Business"
+      ],
+      "seatTableStops": 15,
+      "seatTableStopLabels": [
+        "Invite member",
+        "Role for Marcus Ellery",
+        "Remove Marcus Ellery",
+        "Role for Sofía Reyes",
+        "Remove Sofía Reyes",
+        "Role for Tomasz Wierzbicki",
+        "Remove Tomasz Wierzbicki",
+        "Role for Amara Okafor",
+        "Remove Amara Okafor",
+        "Role for Jun Sato",
+        "Remove Jun Sato",
+        "Role for finance-contractor@partner.example",
+        "Resend invite to finance-contractor@partner.example",
+        "Remove finance-contractor@partner.example",
+        "Reactivate Lena Hoffmann"
+      ],
+      "invoiceStops": [
+        "Download invoice INV-2026-0042 (PDF)",
+        "Download invoice INV-2026-0037 (PDF)",
+        "Download invoice INV-2026-0031 (PDF)",
+        "Download invoice INV-2026-0026 (PDF)",
+        "Download invoice INV-2026-0019 (PDF)",
+        "Download invoice INV-2026-0012 (PDF)"
+      ],
+      "hoverOnlyActions": [],
+      "seatRowVisibleActionCounts": [
+        0,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        1
+      ],
+      "downloadLinks": [
+        {
+          "name": "Download invoice INV-2026-0042 (PDF)",
+          "href": "/invoices/INV-2026-0042.pdf",
+          "h": 44,
+          "w": 44
+        },
+        {
+          "name": "Download invoice INV-2026-0037 (PDF)",
+          "href": "/invoices/INV-2026-0037.pdf",
+          "h": 44,
+          "w": 44
+        },
+        {
+          "name": "Download invoice INV-2026-0031 (PDF)",
+          "href": "/invoices/INV-2026-0031.pdf",
+          "h": 44,
+          "w": 44
+        },
+        {
+          "name": "Download invoice INV-2026-0026 (PDF)",
+          "href": "/invoices/INV-2026-0026.pdf",
+          "h": 44,
+          "w": 44
+        },
+        {
+          "name": "Download invoice INV-2026-0019 (PDF)",
+          "href": "/invoices/INV-2026-0019.pdf",
+          "h": 44,
+          "w": 44
+        },
+        {
+          "name": "Download invoice INV-2026-0012 (PDF)",
+          "href": "/invoices/INV-2026-0012.pdf",
+          "h": 44,
+          "w": 44
+        }
+      ],
+      "removeDialog": {
+        "openedWithEnter": true,
+        "focusMovedIntoDialog": true,
+        "escapeCloses": true,
+        "focusReturnedToTrigger": true
+      },
+      "reducedMotion": {
+        "prefersReduced": true,
+        "animatedElements": 0
+      },
+      "stops": [
+        {
+          "tag": "a",
+          "role": null,
+          "label": "Skip to content",
+          "section": "page",
+          "focusVisible": true,
+          "outline": "1px auto rgb(16, 16, 16)",
+          "boxShadow": null,
+          "hasIndicator": true,
+          "size": {
+            "w": 136,
+            "h": 40
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "label": "General",
+          "section": "Settings sections",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(24, 24, 27) 0px 0px 0px 2px inset",
+          "hasIndicator": true,
+          "size": {
+            "w": 73,
+            "h": 44
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "label": "Members",
+          "section": "Settings sections",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(24, 24, 27) 0px 0px 0px 2px inset",
+          "hasIndicator": true,
+          "size": {
+            "w": 84,
+            "h": 44
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "label": "Billing",
+          "section": "Settings sections",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(24, 24, 27) 0px 0px 0px 2px inset",
+          "hasIndicator": true,
+          "size": {
+            "w": 65,
+            "h": 44
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "label": "Security",
+          "section": "Settings sections",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(24, 24, 27) 0px 0px 0px 2px inset",
+          "hasIndicator": true,
+          "size": {
+            "w": 77,
+            "h": 44
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "label": "Update",
+          "section": "summary-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 67,
+            "h": 32
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "label": "Download invoice",
+          "section": "summary-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 147,
+            "h": 32
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "label": "Monthly",
+          "section": "plans-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(24, 24, 27) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 76,
+            "h": 32
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "label": "Annual-15%",
+          "section": "plans-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(24, 24, 27) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 100,
+            "h": 32
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "label": "Downgrade to Starter",
+          "section": "plans-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 308,
+            "h": 36
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "label": "Upgrade to Business",
+          "section": "plans-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 308,
+            "h": 36
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "label": "Invite member",
+          "section": "seats-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 128,
+            "h": 32
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "select",
+          "role": null,
+          "label": "Role for Marcus Ellery",
+          "section": "seats-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(24, 24, 27) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 92,
+            "h": 44
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "label": "Remove Marcus Ellery",
+          "section": "seats-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 44,
+            "h": 44
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "select",
+          "role": null,
+          "label": "Role for Sofía Reyes",
+          "section": "seats-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(24, 24, 27) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 92,
+            "h": 44
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "label": "Remove Sofía Reyes",
+          "section": "seats-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 44,
+            "h": 44
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "select",
+          "role": null,
+          "label": "Role for Tomasz Wierzbicki",
+          "section": "seats-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(24, 24, 27) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 92,
+            "h": 44
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "label": "Remove Tomasz Wierzbicki",
+          "section": "seats-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 44,
+            "h": 44
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "select",
+          "role": null,
+          "label": "Role for Amara Okafor",
+          "section": "seats-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(24, 24, 27) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 92,
+            "h": 44
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "label": "Remove Amara Okafor",
+          "section": "seats-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 44,
+            "h": 44
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "select",
+          "role": null,
+          "label": "Role for Jun Sato",
+          "section": "seats-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(24, 24, 27) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 92,
+            "h": 44
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "label": "Remove Jun Sato",
+          "section": "seats-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 44,
+            "h": 44
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "select",
+          "role": null,
+          "label": "Role for finance-contractor@partner.example",
+          "section": "seats-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(24, 24, 27) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 92,
+            "h": 44
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "label": "Resend invite to finance-contractor@partner.example",
+          "section": "seats-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 44,
+            "h": 44
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "label": "Remove finance-contractor@partner.example",
+          "section": "seats-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 44,
+            "h": 44
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "role": null,
+          "label": "Reactivate Lena Hoffmann",
+          "section": "seats-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 44,
+            "h": 44
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "label": "Download invoice INV-2026-0042 (PDF)",
+          "section": "invoices-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 44,
+            "h": 44
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "label": "Download invoice INV-2026-0037 (PDF)",
+          "section": "invoices-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 44,
+            "h": 44
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "label": "Download invoice INV-2026-0031 (PDF)",
+          "section": "invoices-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 44,
+            "h": 44
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "label": "Download invoice INV-2026-0026 (PDF)",
+          "section": "invoices-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 44,
+            "h": 44
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "label": "Download invoice INV-2026-0019 (PDF)",
+          "section": "invoices-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 44,
+            "h": 44
+          },
+          "inViewport": true,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "role": null,
+          "label": "Download invoice INV-2026-0012 (PDF)",
+          "section": "invoices-heading",
+          "focusVisible": true,
+          "outline": null,
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+          "hasIndicator": true,
+          "size": {
+            "w": 44,
+            "h": 44
+          },
+          "inViewport": true,
+          "disabled": false
+        }
+      ]
+    }
+  }
+}

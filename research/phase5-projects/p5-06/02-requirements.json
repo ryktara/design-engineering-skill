@@ -1,0 +1,198 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "audit",
+    "refactor"
+  ],
+  "platform": [
+    "web"
+  ],
+  "input": [
+    "keyboard",
+    "pointer",
+    "touch"
+  ],
+  "product": [
+    "ecommerce",
+    "healthcare"
+  ],
+  "screen": [],
+  "screen_subtype": [],
+  "stack": [
+    "svelte",
+    "tailwind"
+  ],
+  "density": null,
+  "components": [],
+  "environment": [
+    "shared-device"
+  ],
+  "jobs": [],
+  "problems": [],
+  "risk": "medium",
+  "primary_jobs": [
+    "audit"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "keyboard": true,
+    "screen_reader": true,
+    "focus": true,
+    "touch_targets": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "change_budget": "low",
+  "scope": {
+    "domain": "UNKNOWN",
+    "in_scope": false,
+    "kind": "abstain",
+    "reason": "no UI vocabulary found; not a UI design task as written",
+    "nearest_ui_task": "describe the screen, component, or user-facing problem"
+  },
+  "intent": {
+    "artifact_state": "existing",
+    "operations": [
+      "diagnose",
+      "modify"
+    ],
+    "problem_domain": [
+      "performance-ux"
+    ],
+    "change_scope": "unknown",
+    "utterance": "observation",
+    "existing": true,
+    "problem": true,
+    "facet": "general",
+    "diagnose_only": false,
+    "creation": false,
+    "redesign": false,
+    "responsive_cues": false,
+    "preserve": [],
+    "scope": "moderate"
+  },
+  "platform_evidence": [],
+  "mode_evidence": [
+    "audit: perceived-performance defect",
+    "refactor: fix follows the diagnosis"
+  ],
+  "project_context": {
+    "navigation": {
+      "value": "left-rail",
+      "status": "KNOWN",
+      "evidence": [
+        "left-rail: 1 matches in +layout.svelte (shell/layout file)",
+        "also breadcrumb-tree: 1 matches"
+      ]
+    },
+    "theme": {
+      "value": "light-first",
+      "status": "INFERRED",
+      "evidence": [
+        "hex palette: 13 near-white, 1 near-black"
+      ]
+    },
+    "surfaces": {
+      "value": "flat-tonal",
+      "status": "UNKNOWN",
+      "evidence": [
+        "no shadow or border declarations found"
+      ]
+    },
+    "radius": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "spacing": {
+      "value": 4,
+      "status": "INFERRED",
+      "evidence": [
+        "most used spacing values [4, 8, 12, 16]",
+        "tailwind spacing classes (4)"
+      ]
+    },
+    "typography": {
+      "value": "custom",
+      "status": "INFERRED",
+      "evidence": [
+        "font family theme (1 refs)"
+      ]
+    },
+    "components": {
+      "value": "tailwind",
+      "status": "KNOWN",
+      "evidence": [
+        "tailwind"
+      ]
+    }
+  },
+  "known": [
+    "platform=web (project inspection)",
+    "product=healthcare (request: patient)",
+    "product=ecommerce (project inspection (README))",
+    "stack=svelte (project inspection)",
+    "stack=tailwind (project inspection)",
+    "environment=shared-device (request: waiting room)",
+    "project_navigation=left-rail (repository: left-rail: 1 matches in +layout.svelte (shell/layout file); also breadcrumb-tree: 1 matches)",
+    "project_components=tailwind (repository: tailwind)"
+  ],
+  "inferred": [
+    "input=pointer (implied by platform web)",
+    "input=keyboard (implied by platform web)",
+    "input=touch (implied by platform web)",
+    "mode=audit (perceived-performance defect)",
+    "mode=refactor (fix follows the diagnosis)",
+    "project_theme=light-first (repository: hex palette: 13 near-white, 1 near-black)",
+    "project_spacing=4 (repository: most used spacing values [4, 8, 12, 16]; tailwind spacing classes (4))",
+    "project_typography=custom (repository: font family theme (1 refs))"
+  ],
+  "missing": [],
+  "status": "ABSTAIN",
+  "source": {
+    "request": [
+      "patient",
+      "waiting room"
+    ],
+    "project": [
+      "package.json: svelte@^5.16.0",
+      "package.json: @sveltejs/kit@^2.12.0",
+      "package.json: tailwindcss@^3.4.17"
+    ]
+  },
+  "activation": {
+    "decision": "skip",
+    "ui_score": 0,
+    "non_ui_score": 0,
+    "ui_terms": [],
+    "non_ui_terms": []
+  },
+  "intent_evidence": {
+    "existing": [
+      "present-tense observation"
+    ],
+    "new": [],
+    "defect": [
+      "observed behaviour"
+    ],
+    "operations": {},
+    "domains": {
+      "performance-ux": [
+        "wait"
+      ]
+    },
+    "no_change": [],
+    "scope": {},
+    "question": false
+  },
+  "scope_evidence": {
+    "ui": [],
+    "ux_symptoms": [],
+    "technical": {},
+    "non_visual": []
+  }
+}

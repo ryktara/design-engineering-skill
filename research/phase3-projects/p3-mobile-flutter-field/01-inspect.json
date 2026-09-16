@@ -1,0 +1,40 @@
+{
+  "root": "D:\\indigo pro\\MYownSkills\\research\\phase3-projects\\p3-mobile-flutter-field\\project",
+  "findings": [
+    {
+      "status": "KNOWN",
+      "note": "pubspec.yaml: Flutter"
+    }
+  ],
+  "stack_groups": [
+    "flutter"
+  ],
+  "platforms": [
+    "mobile"
+  ],
+  "ui_libraries": [
+    "go_router",
+    "riverpod"
+  ],
+  "package_manager": null,
+  "css_architecture": [],
+  "tokens": [],
+  "fonts": [],
+  "icons": [],
+  "routing": [],
+  "breakpoints": [],
+  "accessibility": [],
+  "focus_handling": [
+    "explicit focus handling in 0 files"
+  ],
+  "design_docs": [],
+  "component_dirs": [],
+  "tests": [],
+  "i18n": [],
+  "product_hints": [
+    "erp"
+  ],
+  "sample": {
+    "files_scanned": 7
+  }
+}

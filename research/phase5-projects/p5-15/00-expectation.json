@@ -1,0 +1,34 @@
+{
+  "task": "p5-15",
+  "sentence": "Review the stock adjustments page against our accessibility checklist.",
+  "platform": "desktop",
+  "artifact_state": "existing",
+  "acceptable_modes": ["audit", "accessibility", "review"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "a11y.accessible_names",
+    "a11y.color_not_only",
+    "a11y.contrast",
+    "interaction.keyboard_navigation",
+    "interaction.focus_visible",
+    "interaction.hover_independence",
+    "a11y.live_status"
+  ],
+  "critical_concepts": [
+    "a11y.accessible_names",
+    "a11y.color_not_only",
+    "a11y.contrast",
+    "interaction.keyboard_navigation"
+  ],
+  "forbidden_concepts": [
+    "tv.safe_margins",
+    "tv.ten_foot_typography",
+    "interaction.dpad_reachability",
+    "touch.thumb_reach",
+    "anti.template_landing",
+    "brand.structural_differentiation",
+    "layout.hero_thesis"
+  ],
+  "preservation": ["navigation", "theme", "typography", "components", "state", "routes"],
+  "notes": "WinUI 3 desktop ERP (Windows App SDK 1.7, CommunityToolkit DataGrid 7.1.2, CommunityToolkit.Mvvm). Shell: MainWindow NavigationView (left pane, Auto) + Frame; Mica backdrop; App.xaml overrides SystemAccentColor only, all other brushes are WinUI theme resources. The page was already refactored in Phase 3 (baseline in ../phase3-projects/p3-winui-erp-audit/baseline). Task verb 'Review ... against our accessibility checklist' = audit in accessibility mode on an existing screen; no new screen, no visual redesign; the skill should not produce a create/refactor direction that changes navigation, theme or typography. Written before any advise.py run."
+}

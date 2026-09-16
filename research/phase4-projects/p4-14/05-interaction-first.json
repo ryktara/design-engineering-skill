@@ -1,0 +1,234 @@
+{
+  "task": "p4-14",
+  "viewport": "390x844",
+  "generated": "2026-09-09T08:31:18.079Z",
+  "checks": {
+    "grouped_rows": {
+      "groups": [
+        {
+          "heading": "Sync",
+          "rows": 2,
+          "values": [
+            "As soon as connected",
+            "3 pending · synced 42 min ago"
+          ]
+        },
+        {
+          "heading": "Units",
+          "rows": 1,
+          "values": [
+            "Metric: metres, °C"
+          ]
+        },
+        {
+          "heading": "Display",
+          "rows": 2,
+          "values": [
+            "Off: standard sunlight theme",
+            "Follows the phone setting, up to 160%"
+          ]
+        }
+      ],
+      "ok": true
+    },
+    "settings_targets": {
+      "screen": "settings",
+      "targets": 6,
+      "names": [
+        "Back 56x56",
+        "Sync frequencyAs soon as connected 356x72",
+        "Sync queue3 pending · synced 42 min ago 356x72",
+        "Metric 163x56",
+        "Imperial 165x56",
+        "High-contrast modeOff: standard sunlight 356x72"
+      ],
+      "min_size_ok": true,
+      "too_small": [],
+      "spacing_ok": false,
+      "too_close": [
+        {
+          "a": "Metric",
+          "b": "Imperial",
+          "gap": 0
+        }
+      ],
+      "ok": false
+    },
+    "settings_contrast": {
+      "screen": "settings",
+      "sampled": 17,
+      "min_ratio": 8.08,
+      "failing": [],
+      "ok": true
+    },
+    "existing_topbar_back": {
+      "label": "Back",
+      "h": 56,
+      "ok": true
+    },
+    "save_behaviour_stated": {
+      "note": "Changes apply immediately.",
+      "ok": true
+    },
+    "toggle_immediate_effect": {
+      "before": {
+        "checked": "false",
+        "tileBorder": "rgb(196, 199, 204)",
+        "tileWidth": "1px",
+        "val": "Off: standard sunlight theme",
+        "secondary": "rgb(58, 64, 72)"
+      },
+      "after": {
+        "checked": "true",
+        "tileBorder": "rgb(92, 99, 109)",
+        "tileWidth": "2px",
+        "val": "On: stronger borders and darker secondary text",
+        "secondary": "rgb(27, 31, 36)",
+        "hcClass": true
+      },
+      "ok": true
+    },
+    "settings_targets_hc": {
+      "screen": "settings-hc",
+      "targets": 6,
+      "names": [
+        "Back 56x56",
+        "Sync frequencyAs soon as connected 354x72",
+        "Sync queue3 pending · synced 42 min ago 354x72",
+        "Metric 161x56",
+        "Imperial 164x56",
+        "High-contrast modeOn: stronger borders a 354x86"
+      ],
+      "min_size_ok": true,
+      "too_small": [],
+      "spacing_ok": false,
+      "too_close": [
+        {
+          "a": "Metric",
+          "b": "Imperial",
+          "gap": 0
+        }
+      ],
+      "ok": false
+    },
+    "settings_contrast_hc": {
+      "screen": "settings-hc",
+      "sampled": 17,
+      "min_ratio": 8.08,
+      "failing": [],
+      "ok": true
+    },
+    "hc_secondary_text_ratio": {
+      "hex": "#1B1F24",
+      "ratio": 16.56,
+      "ok": true
+    },
+    "toggle_off_again": {
+      "checked": "false",
+      "hcClass": false,
+      "ok": true
+    },
+    "units_segment_updates_value": {
+      "val": "Imperial: feet, °F",
+      "checked": [
+        "false",
+        "true"
+      ],
+      "ok": true
+    },
+    "frequency_sheet": {
+      "open": true,
+      "rows": [
+        {
+          "t": "As soon as connected",
+          "h": 86.171875,
+          "top": 462.09375,
+          "checked": "true"
+        },
+        {
+          "t": "Every 15 minutes",
+          "h": 86.171875,
+          "top": 556.265625,
+          "checked": "false"
+        },
+        {
+          "t": "Every hour",
+          "h": 63.78125,
+          "top": 650.4375,
+          "checked": "false"
+        },
+        {
+          "t": "Manual only",
+          "h": 63.78125,
+          "top": 722.21875,
+          "checked": "false"
+        }
+      ],
+      "bgInert": true,
+      "ok": true
+    },
+    "frequency_sheet_targets": {
+      "screen": "freq-sheet",
+      "targets": 4,
+      "names": [
+        "As soon as connectedSends queued items t 390x86",
+        "Every 15 minutesBatches uploads to save  390x86",
+        "Every hourFor long rural routes with lit 390x64",
+        "Manual onlyNothing is sent until you tap 390x64"
+      ],
+      "min_size_ok": true,
+      "too_small": [],
+      "spacing_ok": true,
+      "too_close": [],
+      "ok": true
+    },
+    "frequency_sheet_contrast": {
+      "screen": "freq-sheet",
+      "sampled": 26,
+      "min_ratio": 8.08,
+      "failing": [],
+      "ok": true
+    },
+    "frequency_pick_updates_value": {
+      "val": "Every hour",
+      "closed": true,
+      "ok": true
+    },
+    "offline_strip_on_settings": {
+      "role": "status",
+      "text": "Offline3 pending · synced 42 min ago Que",
+      "h": 84.171875,
+      "ok": true
+    },
+    "focus_visible": {
+      "el": "iconbtn",
+      "outline": "auto",
+      "outlineWidth": "1px",
+      "ok": true
+    }
+  },
+  "summary": {
+    "checks": 17,
+    "passed": [
+      "grouped_rows",
+      "settings_contrast",
+      "existing_topbar_back",
+      "save_behaviour_stated",
+      "toggle_immediate_effect",
+      "settings_contrast_hc",
+      "hc_secondary_text_ratio",
+      "toggle_off_again",
+      "units_segment_updates_value",
+      "frequency_sheet",
+      "frequency_sheet_targets",
+      "frequency_sheet_contrast",
+      "frequency_pick_updates_value",
+      "offline_strip_on_settings",
+      "focus_visible"
+    ],
+    "failed": [
+      "settings_targets",
+      "settings_targets_hc"
+    ]
+  }
+}

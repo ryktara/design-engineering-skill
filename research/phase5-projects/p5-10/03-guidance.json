@@ -1,0 +1,1080 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "Add a subtitles and audio language chooser to the player.",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "tv"
+    ],
+    "input": [
+      "remote"
+    ],
+    "product": [
+      "media"
+    ],
+    "screen": [
+      "player"
+    ],
+    "screen_subtype": [],
+    "stack": [
+      "compose",
+      "compose-tv"
+    ],
+    "density": "medium",
+    "components": [
+      "media"
+    ],
+    "environment": [
+      "large-display",
+      "shared-device"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "create player"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "create"
+      ],
+      "problem_domain": [],
+      "change_scope": "screen",
+      "utterance": "request",
+      "existing": true,
+      "problem": false,
+      "facet": "general",
+      "diagnose_only": false,
+      "creation": true,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "create: build/create request on an existing surface"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "tv-rails",
+        "status": "KNOWN",
+        "evidence": [
+          "tv-rails: 95 matches in AppState.kt, Cards.kt, EventDetailsScreen.kt (shell/layout file)"
+        ]
+      },
+      "theme": {
+        "value": "dark-first",
+        "status": "KNOWN",
+        "evidence": [
+          "dark theme configuration signals: 1",
+          "root/canvas backgrounds: 0 light, 1 dark",
+          "hex palette: 2 near-white, 4 near-black"
+        ]
+      },
+      "surfaces": {
+        "value": "bordered-flat",
+        "status": "INFERRED",
+        "evidence": [
+          "borders in 6 files, shadow/elevation in 1"
+        ]
+      },
+      "radius": {
+        "value": "medium",
+        "status": "INFERRED",
+        "evidence": [
+          "most common radius 8 (3×); others [50.0, 4.0]"
+        ]
+      },
+      "spacing": {
+        "value": 8,
+        "status": "INFERRED",
+        "evidence": [
+          "most used spacing values [16, 10, 8]"
+        ]
+      },
+      "typography": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": [
+          "no font family declaration found"
+        ]
+      },
+      "components": {
+        "value": "compose, compose-tv-material, media3, images:coil",
+        "status": "KNOWN",
+        "evidence": [
+          "compose",
+          "compose-tv-material",
+          "media3"
+        ]
+      }
+    },
+    "known": [
+      "platform=tv (project inspection)",
+      "input=remote (project inspection: DPAD/remote handling in source)",
+      "product=media (request: player)",
+      "stack=compose (project inspection)",
+      "stack=compose-tv (project inspection)",
+      "screen=player (request: player)",
+      "project_navigation=tv-rails (repository: tv-rails: 95 matches in AppState.kt, Cards.kt, EventDetailsScreen.kt (shell/layout file))",
+      "project_theme=dark-first (repository: dark theme configuration signals: 1; root/canvas backgrounds: 0 light, 1 dark)",
+      "project_components=compose, compose-tv-material, media3, images:coil (repository: compose; compose-tv-material)"
+    ],
+    "inferred": [
+      "density=medium (implied by product media)",
+      "mode=create (build/create request on an existing surface)",
+      "environment=shared-device (a TV is normally a shared household device)",
+      "environment=large-display (TV platform)",
+      "project_surfaces=bordered-flat (repository: borders in 6 files, shadow/elevation in 1)",
+      "project_radius=medium (repository: most common radius 8 (3×); others [50.0, 4.0])",
+      "project_spacing=8 (repository: most used spacing values [16, 10, 8])"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [
+        "player"
+      ],
+      "project": [
+        "app\\build.gradle.kts: androidx.compose",
+        "app\\build.gradle.kts: androidx.tv:tv-material",
+        "app\\build.gradle.kts: androidx.media3",
+        "app\\build.gradle.kts: coil",
+        "app\\src\\main\\AndroidManifest.xml: leanback launcher (Android TV)",
+        "touchscreen not required in manifest (TV/set-top)",
+        "DPAD / remote key handling found in source",
+        "Compose dependencies imply mobile but the only launcher is leanback: TV-only app"
+      ]
+    },
+    "activation": {
+      "decision": "ambiguous",
+      "ui_score": 1.0,
+      "non_ui_score": 0,
+      "ui_terms": [],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "to the",
+        "the player"
+      ],
+      "new": [],
+      "defect": [],
+      "operations": {
+        "create": [
+          "add",
+          "add a"
+        ]
+      },
+      "domains": {},
+      "no_change": [],
+      "scope": {
+        "screen": [
+          "player"
+        ]
+      },
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "player",
+        "concept:media.track_selection"
+      ],
+      "ux_symptoms": [],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "component",
+        "reason": "a specific component/screen is requested"
+      },
+      {
+        "concern": "structure",
+        "reason": "layout topology and hierarchy"
+      },
+      {
+        "concern": "states",
+        "reason": "asynchronous or remote data on this screen"
+      },
+      {
+        "concern": "interaction",
+        "reason": "input model: remote"
+      },
+      {
+        "concern": "accessibility",
+        "reason": "platform accessibility baseline"
+      },
+      {
+        "concern": "performance",
+        "reason": "focus latency and catalog virtualization on TV"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "navigation",
+        "reason": "how users arrive and leave"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "create/refactor requests attract generic defaults"
+      },
+      {
+        "concern": "brand",
+        "reason": "visual identity direction"
+      },
+      {
+        "concern": "content",
+        "reason": "10-foot readability"
+      },
+      {
+        "concern": "environment",
+        "reason": "environment large-display (INFERRED)"
+      }
+    ],
+    "optional": [
+      "motion"
+    ],
+    "required_concepts": [
+      {
+        "concept": "media.track_selection",
+        "reason": "named in the request: subtitle and audio"
+      },
+      {
+        "concept": "state.loading_empty_error",
+        "reason": "asynchronous or remote data on this screen"
+      },
+      {
+        "concept": "interaction.dpad_reachability",
+        "reason": "TV / remote input"
+      },
+      {
+        "concept": "interaction.focus_restore",
+        "reason": "TV / remote input"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "TV / remote input"
+      },
+      {
+        "concept": "tv.ten_foot_typography",
+        "reason": "TV / remote input"
+      },
+      {
+        "concept": "tv.player_autohide",
+        "reason": "player on remote"
+      },
+      {
+        "concept": "interaction.back_semantics",
+        "reason": "player on remote"
+      }
+    ],
+    "recommended_concepts": [
+      "process.reuse_first",
+      "tv.no_touch_hover",
+      "perf.focus_latency",
+      "tv.dark_first",
+      "privacy.shared_device",
+      "tv.safe_margins"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "comp-player-controls",
+      "kind": "component",
+      "category": "player",
+      "title": "Player transport controls",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "component",
+        "interaction",
+        "structure"
+      ],
+      "concepts": [
+        "tv.player_autohide",
+        "a11y.accessible_names",
+        "media.track_selection"
+      ],
+      "covers": [
+        "auto-hide timing of player controls",
+        "accessible names and labels",
+        "subtitle and audio track selection reachable from the player"
+      ],
+      "score": 0.731,
+      "guidance": "Play/pause, seek slider with time readout and keyboard/remote stepping, skip ±10 s, next/previous where relevant, captions and audio track selectors, quality only if user-facing, live indicator and go-to-live for live streams, volume on web/desktop only (TV uses the remote), controls overlay auto-hides except while focused/hovered; every control labelled; captions styling respects system preferences.",
+      "use_when": "Video/audio playback surfaces.",
+      "avoid_when": "Never custom-build when the platform control set already meets the need and the brand allows it.",
+      "risk": {
+        "a11y": "high",
+        "perf": "medium"
+      },
+      "provenance": "platform-standard",
+      "implementation": {
+        "compose-tv": "Media3 with a Compose overlay; KEYCODE handling for media keys; focusRequester on play/pause."
+      },
+      "why": {
+        "lexical": 0.577,
+        "structural": 0.92,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode create",
+          "product media",
+          "screen player"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "layout-split-player",
+      "kind": "pattern",
+      "category": "layout",
+      "title": "Player with overlay controls",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "structure"
+      ],
+      "concepts": [
+        "tv.player_autohide"
+      ],
+      "covers": [
+        "auto-hide timing of player controls"
+      ],
+      "score": 0.779,
+      "guidance": "Controls overlay with a scrim, show on any key/tap/mouse move, hide after ~3–5 s of inactivity but never while a control has focus or a menu is open; first focus lands on play/pause; LEFT/RIGHT seek with visible thumbnail/time; subtitles and audio selection in a side sheet that pauses the auto-hide; the progress bar is a real slider with keyboard/remote semantics and a text time readout.",
+      "use_when": "Full-screen playback with transient controls (scrub, play/pause, next, subtitles, quality) that appear on input and hide on inactivity.",
+      "avoid_when": "Never for non-media; for audio-only use a persistent mini-player instead.",
+      "risk": {
+        "a11y": "high",
+        "perf": "high"
+      },
+      "provenance": "platform-standard",
+      "implementation": {
+        "compose-tv": "Media3 PlayerView or a custom Compose overlay; handle KEYCODE_MEDIA_* and DPAD_CENTER; use focusRequester to land on play/pause."
+      },
+      "incompatible": [
+        "layout-table-first",
+        "layout-dashboard-grid",
+        "surface-bordered-panes"
+      ],
+      "why": {
+        "lexical": 0.646,
+        "structural": 0.92,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode create",
+          "product media",
+          "screen player"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring pattern with lexical evidence"
+    },
+    {
+      "id": "comp-mini-player",
+      "kind": "component",
+      "category": "player",
+      "title": "Mini player / picture-in-picture state",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "interaction",
+        "navigation",
+        "states"
+      ],
+      "concepts": [
+        "interaction.focus_restore",
+        "interaction.back_semantics",
+        "state.loading_empty_error",
+        "tv.safe_margins"
+      ],
+      "covers": [
+        "focus restoration",
+        "BACK behaviour",
+        "loading, empty and error states",
+        "TV safe margins"
+      ],
+      "score": 0.698,
+      "guidance": "The mini player is a single focusable/tappable region anchored to a corner (TV: bottom-right inside the safe margin, never over the focused rail; mobile: bottom above the tab bar; web: bottom-right) with the title (one line, truncated with a full title on focus), live/progress indicator and exactly two actions (expand, close); on TV, SELECT expands to the full player and BACK from the full player returns to the mini state with focus restored to the element that was focused before; playback state (playing/paused/buffering/error) is shown with an icon plus text, and the audio keeps playing while the UI is navigated; the region is excluded from the rail's D-pad focus loop except through an explicit UP/RIGHT move; never autoplay audio from a mini player on page load on web.",
+      "use_when": "Playback continues while the user browses (home rails, EPG, queue) on TV, or while navigating a mobile/web app.",
+      "avoid_when": "Content that must not play in the background (paid live events with strict windows) or when the platform provides system PiP that the app should adopt instead.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "platform-standard",
+      "implementation": {
+        "compose-tv": "Box aligned BottomEnd with padding 48.dp; focusProperties { up/left = FocusRequester.Default }; BackHandler ordering: full player → mini → home.",
+        "compose": "Use PictureInPicture params when the app is backgrounded; in-app mini via a Scaffold bottom slot above the NavigationBar."
+      },
+      "why": {
+        "lexical": 0.517,
+        "structural": 0.92,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode create",
+          "product media",
+          "screen player"
+        ]
+      },
+      "role": "core",
+      "selected_for": "required coverage: states, focus restoration, loading, empty and error states"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "tv-player-controls",
+      "kind": "rule",
+      "category": "player",
+      "title": "TV: transport control conventions",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "interaction"
+      ],
+      "concepts": [
+        "tv.player_autohide",
+        "interaction.back_semantics",
+        "media.live_channel_switching",
+        "media.track_selection"
+      ],
+      "covers": [
+        "auto-hide timing of player controls",
+        "BACK behaviour",
+        "live channel switching and mini guide",
+        "subtitle and audio track selection reachable from the player"
+      ],
+      "score": 0.827,
+      "guidance": "Media keys work without showing the overlay (PLAY/PAUSE, FF/RW); DPAD_CENTER on the playing video toggles play/pause or shows controls (pick one and be consistent with the platform); LEFT/RIGHT on the progress bar seek in fixed steps with preview; overlay auto-hides after 3–5 s of no input (any key resets the timer; do not hide while a control is receiving input); subtitle/audio pickers are side sheets that keep playback visible; live TV adds channel UP/DOWN and a mini guide.",
+      "use_when": "Video/audio playback screens.",
+      "avoid_when": "Never hide controls while a control is focused; never require SELECT twice to pause.",
+      "risk": {
+        "a11y": "high",
+        "perf": "medium"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.816,
+        "structural": 0.84,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode create",
+          "product media"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "most relevant record for the request wording"
+    },
+    {
+      "id": "tv-typography-distance",
+      "kind": "rule",
+      "category": "typography",
+      "title": "TV: 10-foot typography",
+      "facets": [
+        "platform",
+        "visual"
+      ],
+      "concerns": [
+        "accessibility",
+        "content"
+      ],
+      "concepts": [
+        "tv.ten_foot_typography"
+      ],
+      "covers": [
+        "10-foot typography, readable at distance"
+      ],
+      "score": 0.378,
+      "guidance": "Body ≥24 sp (Android) / ≥29 pt (tvOS) at 1080p design scale, captions ≥20 sp, titles 32–48, display 57–72; sans with large x-height and open counters; short strings (titles ≤2 lines, synopsis ≤3 lines with expansion); avoid thin weights (<400) and light text on busy imagery; line height ≥1.3.",
+      "use_when": "All text on TV.",
+      "avoid_when": "Never scale a desktop type ramp up by a factor; rebuild the scale for distance and for reduced text volume.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "incompatible": [
+        "typography-serif-editorial"
+      ],
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.84,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: 10-foot typography, readable at distance"
+    },
+    {
+      "id": "a11y-focus-visible",
+      "kind": "rule",
+      "category": "focus",
+      "title": "Focus visible and not obscured",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.focus_visible"
+      ],
+      "covers": [
+        "visible focus"
+      ],
+      "score": 0.378,
+      "guidance": "Focus indicator ≥2 px with ≥3:1 contrast against adjacent colours and against the unfocused state; sticky UI gets scroll-padding so a focused control scrolls into clear view. On TV the indicator must be obvious at 3 m (scale + border/glow).",
+      "use_when": "Every focusable element in every theme; sticky headers, footers, toasts, and cookie banners must never cover the focused element.",
+      "avoid_when": "Never remove focus styles; use :focus-visible to hide them for mouse clicks only.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.84,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: visible focus"
+    },
+    {
+      "id": "tv-dpad-axes",
+      "kind": "rule",
+      "category": "navigation",
+      "title": "TV: vertical = sections, horizontal = items",
+      "facets": [
+        "navigation",
+        "platform"
+      ],
+      "concerns": [
+        "interaction",
+        "navigation"
+      ],
+      "concepts": [
+        "interaction.dpad_reachability"
+      ],
+      "covers": [
+        "D-pad focus reachability"
+      ],
+      "score": 0.378,
+      "guidance": "Every focusable element must be reachable with straight UP/DOWN/LEFT/RIGHT presses; no diagonal reasoning, no hidden hops. Search and settings live at a predictable edge. Grids: LEFT at the first column may enter side navigation, RIGHT at the last column stays. Forms: one field per row, DOWN advances.",
+      "use_when": "Any TV layout: rails, grids, menus, settings, forms.",
+      "avoid_when": "Avoid nested horizontal groups inside horizontal groups; avoid controls placed where no straight DPAD path reaches them.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.84,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: D-pad focus reachability"
+    },
+    {
+      "id": "tv-focus-performance",
+      "kind": "rule",
+      "category": "performance",
+      "title": "TV: focus response and list performance",
+      "facets": [
+        "performance",
+        "platform"
+      ],
+      "concerns": [
+        "interaction",
+        "performance"
+      ],
+      "concepts": [
+        "perf.focus_latency",
+        "table.virtualization",
+        "perf.image_sizing"
+      ],
+      "covers": [
+        "focus latency",
+        "virtualization of long collections",
+        "image sizing and formats"
+      ],
+      "score": 0.378,
+      "guidance": "Focus moves must render within one frame (≤16 ms at 60 Hz) even while images load; key events are never dropped or coalesced into jumps; images sized to card, cached, and loaded with placeholders; rows virtualised vertically and horizontally; heavy backdrops debounced; test on the cheapest target device (e.g. 1–2 GB RAM set-top boxes), not the emulator.",
+      "use_when": "Rails, grids, EPG, any list on TV; especially with images.",
+      "avoid_when": "Never decode full-size artwork for thumbnails; never render all rails at once.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "high"
+      },
+      "provenance": "engineering-practice",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.84,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode create",
+          "product media"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: performance"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "component",
+      "structure",
+      "states",
+      "interaction",
+      "accessibility",
+      "performance"
+    ],
+    "covered_required_concerns": [
+      "component",
+      "structure",
+      "states",
+      "interaction",
+      "accessibility",
+      "performance"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "navigation",
+      "anti-pattern",
+      "brand",
+      "content",
+      "environment"
+    ],
+    "covered_recommended_concerns": [
+      "navigation",
+      "content"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "media.track_selection",
+      "state.loading_empty_error",
+      "interaction.dpad_reachability",
+      "interaction.focus_restore",
+      "interaction.focus_visible",
+      "tv.ten_foot_typography",
+      "tv.player_autohide",
+      "interaction.back_semantics"
+    ],
+    "covered_required_concepts": [
+      "media.track_selection",
+      "state.loading_empty_error",
+      "interaction.dpad_reachability",
+      "interaction.focus_restore",
+      "interaction.focus_visible",
+      "tv.ten_foot_typography",
+      "tv.player_autohide",
+      "interaction.back_semantics"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.33,
+    "bundle_size": 8,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 3,
+    "guardrail_size": 5,
+    "bundle_tokens": 1408,
+    "coverage_per_1k_tokens": 5.68,
+    "mean_purity": 0.84,
+    "contaminated": [],
+    "category_diversity": 0.75,
+    "duplicate_pressure": 0.38,
+    "facet_coverage": 0.83,
+    "redundancy": 0.58
+  },
+  "token_coverage": 0.83,
+  "omitted": [
+    {
+      "id": "comp-mini-player",
+      "reason": "same category as a core pick (adds no new concept) or incompatible with one"
+    }
+  ],
+  "rejected": [
+    {
+      "id": "anti-hero-template",
+      "reason": "platform ['web'] not in request ['tv']"
+    },
+    {
+      "id": "comp-data-entry-grid",
+      "reason": "platform ['desktop', 'web'] not in request ['tv']"
+    },
+    {
+      "id": "comp-product-detail-page",
+      "reason": "platform ['mobile', 'web'] not in request ['tv']"
+    },
+    {
+      "id": "comp-photo-capture-field",
+      "reason": "platform ['mobile', 'tablet'] not in request ['tv']"
+    },
+    {
+      "id": "dir-operational-workbench",
+      "reason": "platform ['desktop', 'web'] not in request ['tv']"
+    },
+    {
+      "id": "dir-editorial-storefront",
+      "reason": "platform ['mobile', 'web'] not in request ['tv']"
+    },
+    {
+      "id": "dir-utility-commerce",
+      "reason": "platform ['mobile', 'web'] not in request ['tv']"
+    },
+    {
+      "id": "dir-public-kiosk",
+      "reason": "platform ['kiosk'] not in request ['tv']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "media.track_selection",
+      "priority": "required",
+      "reason": "named in the request: subtitle and audio",
+      "candidate_records": [
+        [
+          "tv-player-controls",
+          0.827
+        ],
+        [
+          "comp-player-controls",
+          0.731
+        ]
+      ],
+      "selected_record": "tv-player-controls",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "state.loading_empty_error",
+      "priority": "required",
+      "reason": "asynchronous or remote data on this screen",
+      "candidate_records": [
+        [
+          "comp-mini-player",
+          0.698
+        ],
+        [
+          "anti-no-states",
+          0.261
+        ],
+        [
+          "layout-states-empty-loading-error",
+          0.261
+        ],
+        [
+          "comp-empty-state",
+          0.198
+        ]
+      ],
+      "selected_record": "comp-mini-player",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.dpad_reachability",
+      "priority": "required",
+      "reason": "TV / remote input",
+      "candidate_records": [
+        [
+          "tv-dpad-axes",
+          0.378
+        ],
+        [
+          "comp-epg",
+          0.27
+        ]
+      ],
+      "selected_record": "tv-dpad-axes",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.focus_restore",
+      "priority": "required",
+      "reason": "TV / remote input",
+      "candidate_records": [
+        [
+          "comp-mini-player",
+          0.698
+        ],
+        [
+          "a11y-tv-focus-always",
+          0.378
+        ],
+        [
+          "layout-rails",
+          0.366
+        ],
+        [
+          "layout-immersive-rails",
+          0.346
+        ]
+      ],
+      "selected_record": "comp-mini-player",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.focus_visible",
+      "priority": "required",
+      "reason": "TV / remote input",
+      "candidate_records": [
+        [
+          "focus-scale-glow",
+          0.395
+        ],
+        [
+          "a11y-focus-visible",
+          0.378
+        ],
+        [
+          "a11y-tv-focus-always",
+          0.378
+        ],
+        [
+          "a11y-nontext-contrast",
+          0.261
+        ]
+      ],
+      "selected_record": "a11y-focus-visible",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "tv.ten_foot_typography",
+      "priority": "required",
+      "reason": "TV / remote input",
+      "candidate_records": [
+        [
+          "tv-typography-distance",
+          0.378
+        ]
+      ],
+      "selected_record": "tv-typography-distance",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "tv.player_autohide",
+      "priority": "required",
+      "reason": "player on remote",
+      "candidate_records": [
+        [
+          "tv-player-controls",
+          0.827
+        ],
+        [
+          "layout-split-player",
+          0.779
+        ],
+        [
+          "comp-player-controls",
+          0.731
+        ]
+      ],
+      "selected_record": "tv-player-controls",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.back_semantics",
+      "priority": "required",
+      "reason": "player on remote",
+      "candidate_records": [
+        [
+          "tv-player-controls",
+          0.827
+        ],
+        [
+          "comp-mini-player",
+          0.698
+        ],
+        [
+          "tv-back-behavior",
+          0.402
+        ],
+        [
+          "media-resume-and-details",
+          0.311
+        ]
+      ],
+      "selected_record": "tv-player-controls",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "recommended",
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.261
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "tv.no_touch_hover",
+      "priority": "recommended",
+      "reason": "tv",
+      "candidate_records": [
+        [
+          "tv-no-touch-hover",
+          0.378
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "perf.focus_latency",
+      "priority": "recommended",
+      "reason": "tv",
+      "candidate_records": [
+        [
+          "tv-focus-performance",
+          0.378
+        ],
+        [
+          "comp-tv-rail",
+          0.306
+        ]
+      ],
+      "selected_record": "tv-focus-performance",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "tv.dark_first",
+      "priority": "recommended",
+      "reason": "tv",
+      "candidate_records": [
+        [
+          "tv-dark-first",
+          0.378
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "privacy.shared_device",
+      "priority": "recommended",
+      "reason": "environment shared-device",
+      "candidate_records": [
+        [
+          "shared-device-privacy",
+          0.315
+        ],
+        [
+          "comp-tv-sign-in",
+          0.27
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "tv.safe_margins",
+      "priority": "recommended",
+      "reason": "TV / remote input (demoted: saturation cap)",
+      "candidate_records": [
+        [
+          "comp-mini-player",
+          0.698
+        ],
+        [
+          "tv-safe-area",
+          0.414
+        ],
+        [
+          "anti-desktop-scaled-to-tv",
+          0.378
+        ]
+      ],
+      "selected_record": "comp-mini-player",
+      "status": "covered",
+      "why": ""
+    }
+  ]
+}

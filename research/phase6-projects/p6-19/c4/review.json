@@ -1,0 +1,12 @@
+{"task": "p6-19",
+ "records": [
+   {"id": "dir-operational-workbench", "verdict": "relevant", "category": "", "why": "4px grid, tabular figures, hairline borders and a consistent status colour language match the ERP status bar being added."},
+   {"id": "impl-reuse-before-new", "verdict": "relevant", "category": "", "why": "The project already has a StatusBar; reuse-before-new is the critical guardrail for this task."},
+   {"id": "desktop-status-bar-and-error-navigation", "verdict": "relevant", "category": "", "why": "Names sync/save state with timestamp, real separators, error count as link and UIA announcements - the best-fit record."},
+   {"id": "desktop-keyboard-first", "verdict": "partial", "category": "generic", "why": "True for the app but the task adds no new keyboard surface; same verdict as c3."},
+   {"id": "data-exceptions-first", "verdict": "relevant", "category": "", "why": "Word+icon+colour status, count in the status bar and stating the exception rule is exactly the failed-postings segment."}
+ ],
+ "missing_critical": ["data.refresh_timestamp", "state.offline_sync"],
+ "unjustified_direction_slots": 1,
+ "layer_review": {"core": ["dir-operational-workbench"], "critical": ["impl-reuse-before-new", "desktop-status-bar-and-error-navigation", "desktop-keyboard-first", "data-exceptions-first"], "optional": []},
+ "change_vs_c3": "better - 7 records down to 5, dropping both partial records (metadata-rich wrong-screen, typo-scale-and-roles generic) while keeping every record the c3 implementer used, and direction unjustified slots fell 5 to 1; the two critical sync concepts are still never demanded."}

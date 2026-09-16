@@ -1,0 +1,27 @@
+{
+  "task": "p5-20",
+  "reviewer_model": "claude-opus-5[1m]",
+  "c2_records": [
+    {"id": "comp-kpi-tile", "verdict": "partial", "bad_category": null},
+    {"id": "color-dark-accent", "verdict": "relevant", "bad_category": null},
+    {"id": "comp-chart-container", "verdict": "relevant", "bad_category": null},
+    {"id": "comp-photo-capture-field", "verdict": "off-target", "bad_category": "generic"},
+    {"id": "anti-dark-mode-inversion", "verdict": "relevant", "bad_category": null},
+    {"id": "color-dark-mode-rules", "verdict": "relevant", "bad_category": null},
+    {"id": "a11y-native-semantics", "verdict": "partial", "bad_category": null},
+    {"id": "interaction-drag-drop", "verdict": "off-target", "bad_category": "generic"}
+  ],
+  "c2_relevant": 4,
+  "c2_partial": 2,
+  "c2_offtarget": 2,
+  "c2_bad": [
+    {"record": "comp-photo-capture-field", "category": "generic", "why": "Streaks has no camera, no photos and no capture field anywhere; the screen under repair is a Swift Charts bar chart plus four stat tiles. Pulled in at lexical 0.008 purely to satisfy 'required coverage: interaction, accessible names, large touch targets'."},
+    {"record": "interaction-drag-drop", "category": "generic", "why": "Nothing on the Stats screen is draggable. Selected only for 'required coverage: live region status announcements', a concern that is not part of a dark-mode contrast defect."},
+    {"record": "bundle", "category": "missing-critical", "why": "The header itself says 'uncovered required concepts (no record carries them for this context): a11y.contrast', and the trace shows a11y-contrast-text and a11y-nontext-contrast were dropped by the bundle cap. The entire defect is a 1.33:1 non-text contrast failure (accentSoft #4A2A22 on surface #1E1C1A); the WCAG 1.4.11 3:1 threshold - the one number needed to size the fix - still never reaches the implementer. process.reuse_first was also dropped, and impl-reuse-before-new was a record c1 actually used."}
+  ],
+  "c2_direction_unjustified": [],
+  "platform_mode_scope_ok": true,
+  "verdict_vs_c1": "better",
+  "why": "c2 gets the mode right (accessibility) and replaces c1's four ignored fillers (sticky bar, type measure, spacing scale, target size) with chart- and dark-palette-specific records (comp-chart-container, color-dark-accent) that c1 had wrongly suppressed as 'chart record outside a data-visualisation task'; but it still omits the 3:1 non-text contrast rule and the token-layer guidance, and it imports two new irrelevant records (photo capture, drag and drop).",
+  "would_have_helped": "neutral"
+}

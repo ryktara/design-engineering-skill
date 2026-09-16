@@ -1,0 +1,130 @@
+{
+  "brand": "People walk away mid-purchase and the next person finds the previous ticket half bought.",
+  "fingerprint": {
+    "navigation_model": "hub-and-spoke",
+    "color_strategy": "neutral-plus-accent",
+    "cta_strategy": "single-primary"
+  },
+  "direction": {
+    "navigation": "nav-hub-spoke",
+    "layout": null,
+    "density": null,
+    "surface": null,
+    "cards": null,
+    "typography": null,
+    "color": "color-neutral-accent",
+    "motion": null,
+    "focus": null,
+    "cta": "cta-single-primary",
+    "imagery": null,
+    "icon": null,
+    "metadata": null
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "kiosk"
+    ],
+    "input": [
+      "touch"
+    ],
+    "product": [],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "html-css"
+    ],
+    "density": null,
+    "components": [],
+    "environment": [
+      "public"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "audit"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "repository context: no technical vocabulary, so the request concerns the project's user interface",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "navigation"
+      ],
+      "change_scope": "unknown",
+      "utterance": "observation",
+      "preserve": []
+    },
+    "platform_evidence": [
+      {
+        "platform": "kiosk",
+        "strength": "WEAK_INFERENCE",
+        "evidence": [
+          "ticket",
+          "next person"
+        ]
+      }
+    ],
+    "mode_evidence": [
+      "audit: navigation defect on existing UI",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": "hub-spoke (KNOWN)",
+      "theme": "light-first (INFERRED)",
+      "surfaces": "elevated (INFERRED)",
+      "radius": "small (INFERRED)",
+      "spacing": "8 (INFERRED)"
+    },
+    "known": [
+      "platform=kiosk",
+      "stack=html-css",
+      "environment=public",
+      "project_navigation=hub-spoke"
+    ],
+    "inferred": [
+      "input=touch",
+      "mode=audit",
+      "mode=refactor",
+      "project_theme=light-first",
+      "project_surfaces=elevated",
+      "project_radius=small",
+      "project_spacing=8"
+    ],
+    "missing": [],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

@@ -1,0 +1,3217 @@
+{
+  "groups": [
+    "heldout"
+  ],
+  "suites": {
+    "heldout/cases": [
+      {
+        "id": "ho-001",
+        "ok": false,
+        "category": "web",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "AMBIGUOUS",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['mobile', 'web'] modes ['create'] recall 0.0 off 0.0 hit=[] off=[] status=AMBIGUOUS"
+      },
+      {
+        "id": "ho-002",
+        "ok": false,
+        "category": "web",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.5,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['web'] modes ['create'] recall 0.17 off 0.0 hit=['single column form'] off=[] status=PARTIAL"
+      },
+      {
+        "id": "ho-003",
+        "ok": false,
+        "category": "web",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": false,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['web'] modes ['create'] recall 0.0 off 0.33 hit=[] off=['tv rails'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-004",
+        "ok": false,
+        "category": "web",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['web'] modes ['create'] recall 0.17 off 0.0 hit=['keyboard operable menu'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-005",
+        "ok": false,
+        "category": "mobile",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['mobile'] modes ['create'] recall 0.0 off 0.33 hit=[] off=['dense desktop grid'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-006",
+        "ok": false,
+        "category": "mobile",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.33,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": false,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['mobile'] modes ['audit'] recall 0.33 off 0.33 hit=['back stack behaviour', 'bottom sheet'] off=['keyboard shortcuts'] status=PARTIAL"
+      },
+      {
+        "id": "ho-007",
+        "ok": false,
+        "category": "mobile",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": false,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": false,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['mobile', 'web'] modes ['refactor'] recall 0.0 off 0.0 hit=[] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-008",
+        "ok": false,
+        "category": "mobile",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": false,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['mobile'] modes ['create'] recall 0.0 off 0.0 hit=[] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-009",
+        "ok": false,
+        "category": "android-tv",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.33,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['tv'] modes ['create'] recall 0.33 off 0.0 hit=['safe margins', 'live badge'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-010",
+        "ok": false,
+        "category": "android-tv",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['tv'] modes ['create'] recall 0.0 off 0.33 hit=[] off=['hover'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-011",
+        "ok": false,
+        "category": "android-tv",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.33,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['tv'] modes ['create'] recall 0.33 off 0.0 hit=['long press fast scroll', 'safe margins'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-012",
+        "ok": false,
+        "category": "android-tv",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.33,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['tv'] modes ['create'] recall 0.33 off 0.0 hit=['dpad focus', 'safe margins'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-013",
+        "ok": false,
+        "category": "tvos",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['tv'] modes ['create'] recall 0.17 off 0.0 hit=['safe margins'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-014",
+        "ok": false,
+        "category": "tvos",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.33,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['tv'] modes ['create'] recall 0.33 off 0.0 hit=['transport bar', 'focus on play button'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-015",
+        "ok": false,
+        "category": "tvos",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['tv'] modes ['create'] recall 0.0 off 0.0 hit=[] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-016",
+        "ok": false,
+        "category": "tvos",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.33,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['tv'] modes ['accessibility'] recall 0.33 off 0.0 hit=['voiceover labels', 'reduced motion'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-017",
+        "ok": false,
+        "category": "kiosk",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.5,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 0.5,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": false,
+          "recall_at_least_half": true
+        },
+        "detail": "plat ['kiosk'] modes ['responsive'] recall 0.5 off 0.33 hit=['large touch targets', 'one primary action', 'attract screen'] off=['hover'] status=PARTIAL"
+      },
+      {
+        "id": "ho-018",
+        "ok": false,
+        "category": "kiosk",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.33,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['kiosk'] modes ['audit'] recall 0.33 off 0.33 hit=['large touch targets', 'high contrast'] off=['hover'] status=PARTIAL"
+      },
+      {
+        "id": "ho-019",
+        "ok": false,
+        "category": "kiosk",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.33,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['kiosk'] modes ['create'] recall 0.33 off 0.33 hit=['one primary action', 'idle timeout'] off=['hover'] status=PARTIAL"
+      },
+      {
+        "id": "ho-020",
+        "ok": false,
+        "category": "kiosk",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.5,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": false,
+          "recall_at_least_half": true
+        },
+        "detail": "plat ['kiosk'] modes ['responsive'] recall 0.5 off 0.33 hit=['large type', 'high contrast', 'idle reset'] off=['hover'] status=PARTIAL"
+      },
+      {
+        "id": "ho-021",
+        "ok": false,
+        "category": "winui",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": false,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['desktop'] modes ['reconstruct'] recall 0.0 off 0.33 hit=[] off=['dpad'] status=PARTIAL"
+      },
+      {
+        "id": "ho-022",
+        "ok": false,
+        "category": "winui",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['desktop'] modes ['create'] recall 0.0 off 0.0 hit=[] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-023",
+        "ok": false,
+        "category": "winui",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['desktop'] modes ['accessibility'] recall 0.17 off 0.0 hit=['focus visuals'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-024",
+        "ok": false,
+        "category": "winui",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": false,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['desktop'] modes ['audit'] recall 0.0 off 0.0 hit=[] off=[] status=PARTIAL"
+      },
+      {
+        "id": "ho-025",
+        "ok": false,
+        "category": "wpf",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['desktop'] modes ['create'] recall 0.17 off 0.0 hit=['tab order'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-026",
+        "ok": false,
+        "category": "wpf",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": false,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['desktop'] modes ['refactor'] recall 0.0 off 0.0 hit=[] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-027",
+        "ok": false,
+        "category": "wpf",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['desktop'] modes ['create'] recall 0.17 off 0.0 hit=['dark theme contrast'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-028",
+        "ok": false,
+        "category": "wpf",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.33,
+          "offtarget_rate": 0.67,
+          "facet_coverage": 0.5,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['desktop'] modes ['brand'] recall 0.33 off 0.67 hit=['default and cancel buttons', 'escape to cancel'] off=['hover card', 'material dialog'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-029",
+        "ok": false,
+        "category": "avalonia",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['desktop'] modes ['create'] recall 0.17 off 0.0 hit=['keyboard navigation'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-030",
+        "ok": false,
+        "category": "avalonia",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.33,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['desktop'] modes ['audit', 'design-system'] recall 0.33 off 0.0 hit=['control themes', 'semantic tokens'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-031",
+        "ok": false,
+        "category": "avalonia",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.33,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['desktop'] modes ['create'] recall 0.33 off 0.0 hit=['grouped sections', 'search settings'] off=[] status=PARTIAL"
+      },
+      {
+        "id": "ho-032",
+        "ok": false,
+        "category": "avalonia",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['desktop'] modes ['create'] recall 0.0 off 0.33 hit=[] off=['touch'] status=PARTIAL"
+      },
+      {
+        "id": "ho-033",
+        "ok": false,
+        "category": "react",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": false,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['web'] modes ['create'] recall 0.17 off 0.0 hit=['inspect existing component library'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-034",
+        "ok": true,
+        "category": "react",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.67,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": true
+        },
+        "detail": "plat ['web'] modes ['refactor'] recall 0.67 off 0.0 hit=['column widths', 'row height density', 'sticky header', 'tabular figures'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-035",
+        "ok": false,
+        "category": "react",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['web'] modes ['brand'] recall 0.17 off 0.0 hit=['semantic tokens'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-036",
+        "ok": false,
+        "category": "react",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.5,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": true
+        },
+        "detail": "plat ['web'] modes ['create'] recall 0.5 off 0.33 hit=['focus trap', 'escape to close', 'inert background'] off=['hover'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-037",
+        "ok": false,
+        "category": "nextjs",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['web'] modes ['create'] recall 0.0 off 0.0 hit=[] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-038",
+        "ok": false,
+        "category": "nextjs",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.33,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 0.5,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['web'] modes ['create'] recall 0.33 off 0.33 hit=['image dimensions', 'reserved space'] off=['animation library'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-039",
+        "ok": false,
+        "category": "nextjs",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.33,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['web'] modes ['create'] recall 0.33 off 0.0 hit=['sticky add to cart', 'responsive'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-040",
+        "ok": false,
+        "category": "nextjs",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['web'] modes ['create'] recall 0.17 off 0.0 hit=['dark theme contrast'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-041",
+        "ok": false,
+        "category": "compose",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['mobile'] modes ['create'] recall 0.17 off 0.0 hit=['large touch targets'] off=[] status=PARTIAL"
+      },
+      {
+        "id": "ho-042",
+        "ok": false,
+        "category": "compose",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['mobile'] modes ['refactor'] recall 0.17 off 0.0 hit=['lazycolumn keys'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-043",
+        "ok": true,
+        "category": "compose",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.5,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": true
+        },
+        "detail": "plat ['tv'] modes ['create'] recall 0.5 off 0.0 hit=['focus restoration', 'safe margins', 'lazy rows'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-044",
+        "ok": false,
+        "category": "compose",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": false,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['mobile'] modes ['accessibility'] recall 0.0 off 0.0 hit=[] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-045",
+        "ok": false,
+        "category": "swiftui",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['mobile'] modes ['create', 'reconstruct'] recall 0.0 off 0.33 hit=[] off=['hover'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-046",
+        "ok": false,
+        "category": "swiftui",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": false,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.5,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": true
+        },
+        "detail": "plat ['tablet'] modes ['audit'] recall 0.5 off 0.33 hit=['navigationsplitview', 'size classes', 'keyboard shortcuts'] off=['bottom tabs only'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-047",
+        "ok": false,
+        "category": "swiftui",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['mobile'] modes ['create'] recall 0.17 off 0.33 hit=['dynamic type'] off=['css rem'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-048",
+        "ok": false,
+        "category": "swiftui",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": false,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "AMBIGUOUS",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['desktop', 'mobile'] modes ['create'] recall 0.0 off 0.33 hit=[] off=['bottom tab bar'] status=AMBIGUOUS"
+      },
+      {
+        "id": "ho-049",
+        "ok": false,
+        "category": "flutter",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['mobile'] modes ['create'] recall 0.17 off 0.0 hit=['safe area'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-050",
+        "ok": false,
+        "category": "flutter",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "AMBIGUOUS",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['mobile', 'web'] modes ['create'] recall 0.0 off 0.0 hit=[] off=[] status=AMBIGUOUS"
+      },
+      {
+        "id": "ho-051",
+        "ok": false,
+        "category": "flutter",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 1.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['mobile'] modes ['accessibility'] recall 0.17 off 1.0 hit=['talkback and voiceover testing'] off=['aria', 'hover', 'keyboard shortcuts'] status=PARTIAL"
+      },
+      {
+        "id": "ho-052",
+        "ok": false,
+        "category": "flutter",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['mobile'] modes ['create'] recall 0.0 off 0.0 hit=[] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-053",
+        "ok": false,
+        "category": "erp",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": false,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat [] modes ['create'] recall 0.17 off 0.33 hit=['inline validation'] off=['one field per screen'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-054",
+        "ok": false,
+        "category": "erp",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 0.5,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": false,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['web'] modes ['audit'] recall 0.17 off 0.33 hit=['row density'] off=['hero'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-055",
+        "ok": false,
+        "category": "erp",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "AMBIGUOUS",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['desktop', 'tablet'] modes ['create'] recall 0.0 off 0.33 hit=[] off=['hover'] status=AMBIGUOUS"
+      },
+      {
+        "id": "ho-056",
+        "ok": false,
+        "category": "erp",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": false,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.67,
+          "facet_coverage": 0.5,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat [] modes ['create'] recall 0.17 off 0.67 hit=['tabular figures'] off=['cards', 'hero'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-057",
+        "ok": false,
+        "category": "saas",
+        "metrics": {
+          "platform_ok": false,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": false,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat [] modes ['refactor'] recall 0.17 off 0.0 hit=['keyboard navigation'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-058",
+        "ok": false,
+        "category": "saas",
+        "metrics": {
+          "platform_ok": false,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": false,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat [] modes ['create'] recall 0.17 off 0.33 hit=['clear labels'] off=['dpad'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-059",
+        "ok": false,
+        "category": "saas",
+        "metrics": {
+          "platform_ok": false,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": false,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 0.5,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat [] modes ['create'] recall 0.17 off 0.33 hit=['one primary action'] off=['dpad'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-060",
+        "ok": false,
+        "category": "saas",
+        "metrics": {
+          "platform_ok": false,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.5,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": false,
+          "recall_at_least_half": false
+        },
+        "detail": "plat [] modes ['brand'] recall 0.0 off 0.0 hit=[] off=[] status=PARTIAL"
+      },
+      {
+        "id": "ho-061",
+        "ok": false,
+        "category": "finance",
+        "metrics": {
+          "platform_ok": false,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['web'] modes ['create'] recall 0.17 off 0.0 hit=['tabular figures'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-062",
+        "ok": false,
+        "category": "finance",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": false,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['mobile'] modes ['create'] recall 0.17 off 0.0 hit=['tabular figures'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-063",
+        "ok": false,
+        "category": "finance",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.33,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": false,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['web'] modes ['accessibility', 'create'] recall 0.33 off 0.0 hit=['step indicator', 'save and resume'] off=[] status=PARTIAL"
+      },
+      {
+        "id": "ho-064",
+        "ok": false,
+        "category": "finance",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['web'] modes ['create'] recall 0.0 off 0.0 hit=[] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-065",
+        "ok": false,
+        "category": "healthcare",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": false,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['tablet'] modes ['create'] recall 0.0 off 0.33 hit=[] off=['dense grid'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-066",
+        "ok": false,
+        "category": "healthcare",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.33,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": false,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['web'] modes ['audit'] recall 0.33 off 0.0 hit=['allergy alerts', 'confirmation for critical actions'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-067",
+        "ok": false,
+        "category": "healthcare",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['tv'] modes ['create'] recall 0.17 off 0.33 hit=['high contrast'] off=['hover'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-068",
+        "ok": true,
+        "category": "healthcare",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.5,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": false,
+          "recall_at_least_half": true
+        },
+        "detail": "plat ['mobile'] modes ['create'] recall 0.5 off 0.33 hit=['large type', 'dynamic type', 'large touch targets'] off=['dense grid'] status=PARTIAL"
+      },
+      {
+        "id": "ho-069",
+        "ok": false,
+        "category": "ecommerce",
+        "metrics": {
+          "platform_ok": false,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['mobile'] modes ['create'] recall 0.17 off 0.0 hit=['one primary action'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-070",
+        "ok": false,
+        "category": "ecommerce",
+        "metrics": {
+          "platform_ok": false,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": false,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.5,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 0.5,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": true,
+          "recall_at_least_half": true
+        },
+        "detail": "plat [] modes ['create', 'reconstruct'] recall 0.5 off 0.33 hit=['faceted filters', 'applied filter chips', 'image aspect ratio'] off=['dpad'] status=PARTIAL"
+      },
+      {
+        "id": "ho-071",
+        "ok": false,
+        "category": "ecommerce",
+        "metrics": {
+          "platform_ok": false,
+          "platform_precision_ok": false,
+          "mode_ok": false,
+          "input_ok": false,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['mobile'] modes ['create'] recall 0.0 off 0.0 hit=[] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-072",
+        "ok": false,
+        "category": "ecommerce",
+        "metrics": {
+          "platform_ok": false,
+          "platform_precision_ok": false,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.5,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "AMBIGUOUS",
+          "missing_ok": true,
+          "recall_at_least_half": true
+        },
+        "detail": "plat ['desktop', 'mobile'] modes ['create'] recall 0.5 off 0.0 hit=['bottom sheet on mobile', 'focus trap', 'escape to close'] off=[] status=AMBIGUOUS"
+      },
+      {
+        "id": "ho-073",
+        "ok": false,
+        "category": "media",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.33,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['web'] modes ['create'] recall 0.33 off 0.33 hit=['transport controls', 'live indicator'] off=['epg'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-074",
+        "ok": false,
+        "category": "media",
+        "metrics": {
+          "platform_ok": false,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": false,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": false,
+          "recall_at_least_half": false
+        },
+        "detail": "plat [] modes ['refactor'] recall 0.0 off 0.0 hit=[] off=[] status=PARTIAL"
+      },
+      {
+        "id": "ho-075",
+        "ok": false,
+        "category": "media",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.67,
+          "offtarget_rate": 0.67,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": true
+        },
+        "detail": "plat ['tv'] modes ['create'] recall 0.67 off 0.67 hit=['transport bar', 'dpad focus', 'focus on play pause', 'up next'] off=['hover', 'touch scrub'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-076",
+        "ok": false,
+        "category": "media",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['web'] modes ['create'] recall 0.17 off 0.33 hit=['one primary action'] off=['epg grid'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-077",
+        "ok": false,
+        "category": "settings",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['mobile'] modes ['create'] recall 0.0 off 0.33 hit=[] off=['dpad'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-078",
+        "ok": false,
+        "category": "settings",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['web'] modes ['create'] recall 0.0 off 0.33 hit=[] off=['dpad'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-079",
+        "ok": false,
+        "category": "settings",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['tv'] modes ['create'] recall 0.0 off 0.33 hit=[] off=['hover'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-080",
+        "ok": false,
+        "category": "settings",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['desktop'] modes ['refactor'] recall 0.17 off 0.33 hit=['search settings'] off=['dpad'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-081",
+        "ok": false,
+        "category": "forms",
+        "metrics": {
+          "platform_ok": false,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['mobile'] modes ['create'] recall 0.17 off 0.33 hit=['inline validation'] off=['dense grid'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-082",
+        "ok": false,
+        "category": "forms",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.67,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": true
+        },
+        "detail": "plat ['web'] modes ['create'] recall 0.67 off 0.33 hit=['error summary', 'aria-describedby', 'focus first error', 'persistent error text'] off=['hover'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-083",
+        "ok": false,
+        "category": "forms",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['web'] modes ['create'] recall 0.0 off 0.0 hit=[] off=[] status=PARTIAL"
+      },
+      {
+        "id": "ho-084",
+        "ok": false,
+        "category": "forms",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.5,
+          "empty": false,
+          "status": "AMBIGUOUS",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat [] modes ['create'] recall 0.0 off 0.0 hit=[] off=[] status=AMBIGUOUS"
+      },
+      {
+        "id": "ho-085",
+        "ok": false,
+        "category": "tables",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.33,
+          "offtarget_rate": 0.67,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['web'] modes ['create'] recall 0.33 off 0.67 hit=['sticky header', 'keyboard row navigation'] off=['card layout', 'hero'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-086",
+        "ok": false,
+        "category": "tables",
+        "metrics": {
+          "platform_ok": false,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['mobile'] modes ['create'] recall 0.0 off 0.0 hit=[] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-087",
+        "ok": false,
+        "category": "tables",
+        "metrics": {
+          "platform_ok": false,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": false,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat [] modes ['create'] recall 0.17 off 0.0 hit=['bulk action bar'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-088",
+        "ok": false,
+        "category": "tables",
+        "metrics": {
+          "platform_ok": false,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": false,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.33,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat [] modes ['create'] recall 0.33 off 0.33 hit=['tabular figures', 'row striping or rules'] off=['cards'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-089",
+        "ok": false,
+        "category": "search",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.33,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['web'] modes ['create'] recall 0.33 off 0.0 hit=['prominent search field', 'keyboard navigation of results'] off=[] status=PARTIAL"
+      },
+      {
+        "id": "ho-090",
+        "ok": false,
+        "category": "search",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.5,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": true
+        },
+        "detail": "plat ['tv'] modes ['create'] recall 0.5 off 0.33 hit=['voice search', 'search as you type', 'recent searches'] off=['touch keyboard'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-091",
+        "ok": true,
+        "category": "search",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.5,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": false,
+          "recall_at_least_half": true
+        },
+        "detail": "plat ['mobile'] modes ['create'] recall 0.5 off 0.0 hit=['recent searches', 'applied filter chips', 'empty results state'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-092",
+        "ok": false,
+        "category": "search",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['desktop'] modes ['create'] recall 0.17 off 0.33 hit=['grouped results'] off=['touch'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-093",
+        "ok": false,
+        "category": "dashboards",
+        "metrics": {
+          "platform_ok": false,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": false,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.33,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat [] modes ['create'] recall 0.33 off 0.0 hit=['large type for wall', 'status colour semantics'] off=[] status=PARTIAL"
+      },
+      {
+        "id": "ho-094",
+        "ok": false,
+        "category": "dashboards",
+        "metrics": {
+          "platform_ok": false,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": false,
+          "screen_ok": true,
+          "negatives_ok": false,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat [] modes ['create'] recall 0.17 off 0.0 hit=['reduce chart count'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-095",
+        "ok": false,
+        "category": "dashboards",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.33,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": false,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['tablet'] modes ['create'] recall 0.33 off 0.0 hit=['large touch targets', 'no colour alone'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-096",
+        "ok": false,
+        "category": "dashboards",
+        "metrics": {
+          "platform_ok": false,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": false,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": false,
+          "recall_at_least_half": false
+        },
+        "detail": "plat [] modes ['accessibility'] recall 0.17 off 0.0 hit=['accessible names for metrics'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-097",
+        "ok": false,
+        "category": "onboarding",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": false,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['mobile'] modes ['create'] recall 0.17 off 0.0 hit=['one task per screen'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-098",
+        "ok": false,
+        "category": "onboarding",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": false,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "AMBIGUOUS",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['mobile', 'tv'] modes ['create'] recall 0.0 off 0.33 hit=[] off=['touch'] status=AMBIGUOUS"
+      },
+      {
+        "id": "ho-099",
+        "ok": false,
+        "category": "onboarding",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['desktop'] modes ['create'] recall 0.0 off 0.0 hit=[] off=[] status=PARTIAL"
+      },
+      {
+        "id": "ho-100",
+        "ok": false,
+        "category": "onboarding",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['web'] modes ['create'] recall 0.17 off 0.33 hit=['one primary action'] off=['dense grid'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-101",
+        "ok": false,
+        "category": "accessibility",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.33,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": false,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['web'] modes ['accessibility', 'audit'] recall 0.33 off 0.0 hit=['focus visible', 'contrast'] off=[] status=PARTIAL"
+      },
+      {
+        "id": "ho-102",
+        "ok": false,
+        "category": "accessibility",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": false,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['tv'] modes ['accessibility'] recall 0.17 off 0.0 hit=['focus visible'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-103",
+        "ok": false,
+        "category": "accessibility",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.33,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "AMBIGUOUS",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['mobile', 'web'] modes ['create'] recall 0.33 off 0.0 hit=['no colour alone', 'text labels'] off=[] status=AMBIGUOUS"
+      },
+      {
+        "id": "ho-104",
+        "ok": false,
+        "category": "accessibility",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.67,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['desktop'] modes ['accessibility'] recall 0.17 off 0.67 hit=['focus visuals'] off=['aria', 'hover'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-105",
+        "ok": false,
+        "category": "brand",
+        "metrics": {
+          "platform_ok": false,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": false,
+          "recall_at_least_half": false
+        },
+        "detail": "plat [] modes ['brand', 'create'] recall 0.17 off 0.0 hit=['density per brand'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-106",
+        "ok": false,
+        "category": "brand",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": false,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['tv'] modes ['brand'] recall 0.0 off 0.0 hit=[] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-107",
+        "ok": false,
+        "category": "brand",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.5,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['web'] modes ['brand'] recall 0.0 off 0.0 hit=[] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-108",
+        "ok": false,
+        "category": "brand",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.33,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['mobile'] modes ['brand'] recall 0.33 off 0.0 hit=['density per brand', 'typography per brand'] off=[] status=PARTIAL"
+      },
+      {
+        "id": "ho-109",
+        "ok": false,
+        "category": "responsive",
+        "metrics": {
+          "platform_ok": false,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.5,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['web'] modes ['create'] recall 0.17 off 0.0 hit=['container queries'] off=[] status=PARTIAL"
+      },
+      {
+        "id": "ho-110",
+        "ok": false,
+        "category": "responsive",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.33,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['desktop'] modes ['create'] recall 0.33 off 0.0 hit=['minimum window size', 'dpi scaling'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-111",
+        "ok": false,
+        "category": "responsive",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.5,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": false,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['mobile', 'tablet'] modes ['responsive'] recall 0.17 off 0.0 hit=['two pane on wide'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-112",
+        "ok": false,
+        "category": "responsive",
+        "metrics": {
+          "platform_ok": false,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['mobile'] modes ['create'] recall 0.17 off 0.0 hit=['single column on mobile'] off=[] status=PARTIAL"
+      },
+      {
+        "id": "ho-113",
+        "ok": false,
+        "category": "screenshot",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": false,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['web'] modes ['reconstruct'] recall 0.0 off 0.33 hit=[] off=['dpad'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-114",
+        "ok": false,
+        "category": "screenshot",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['tv'] modes ['create'] recall 0.17 off 0.0 hit=['safe margins'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-115",
+        "ok": false,
+        "category": "screenshot",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": false,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['tablet'] modes ['create'] recall 0.0 off 0.33 hit=[] off=['dense grid'] status=PARTIAL"
+      },
+      {
+        "id": "ho-116",
+        "ok": false,
+        "category": "screenshot",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['desktop'] modes ['reconstruct'] recall 0.17 off 0.33 hit=['tab order'] off=['dpad'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-117",
+        "ok": false,
+        "category": "polish",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.5,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 0.5,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": true,
+          "recall_at_least_half": true
+        },
+        "detail": "plat [] modes ['create'] recall 0.5 off 0.33 hit=['spacing scale', 'alignment grid', 'consistent gaps'] off=['dpad'] status=PARTIAL"
+      },
+      {
+        "id": "ho-118",
+        "ok": false,
+        "category": "polish",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": false,
+          "concept_recall": 0.33,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['web'] modes ['create'] recall 0.33 off 0.33 hit=['line height', 'keep existing font families'] off=['hero'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-119",
+        "ok": false,
+        "category": "polish",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 0.5,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['mobile'] modes ['create'] recall 0.0 off 0.33 hit=[] off=['hover'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-120",
+        "ok": false,
+        "category": "polish",
+        "metrics": {
+          "platform_ok": false,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat [] modes ['create'] recall 0.0 off 0.0 hit=[] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-121",
+        "ok": false,
+        "category": "negative-constraint",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": false,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat [] modes ['refactor'] recall 0.0 off 0.33 hit=[] off=['gradient hero'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-122",
+        "ok": false,
+        "category": "negative-constraint",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.33,
+          "offtarget_rate": 0.67,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['tv'] modes ['create'] recall 0.33 off 0.67 hit=['dpad focus', 'safe margins'] off=['hero banner', 'hover'] status=PARTIAL"
+      },
+      {
+        "id": "ho-123",
+        "ok": false,
+        "category": "negative-constraint",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": false,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": false,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['mobile'] modes ['create'] recall 0.17 off 0.0 hit=['sticky add to cart'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-124",
+        "ok": false,
+        "category": "negative-constraint",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": false,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.67,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['desktop'] modes ['create'] recall 0.0 off 0.67 hit=[] off=['pill buttons', 'hover reveal'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-125",
+        "ok": false,
+        "category": "adversarial",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.2,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "AMBIGUOUS",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat [] modes ['create'] recall 0.2 off 0.0 hit=['material 3'] off=[] status=AMBIGUOUS"
+      },
+      {
+        "id": "ho-126",
+        "ok": false,
+        "category": "adversarial",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": false,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "AMBIGUOUS",
+          "missing_ok": false,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['desktop', 'mobile'] modes ['create'] recall 0.17 off 0.33 hit=['horizontal scroll'] off=['hover'] status=AMBIGUOUS"
+      },
+      {
+        "id": "ho-127",
+        "ok": false,
+        "category": "adversarial",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.33,
+          "offtarget_rate": 0.67,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": false,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['tv'] modes ['create'] recall 0.33 off 0.67 hit=['remote as primary', 'dpad focus'] off=['hover', 'swipe gestures on screen'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-128",
+        "ok": false,
+        "category": "adversarial",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": false,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.6,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": true,
+          "recall_at_least_half": true
+        },
+        "detail": "plat ['desktop'] modes ['responsive'] recall 0.6 off 0.0 hit=['window size not viewport', 'minimum window size', 'dpi scaling'] off=[] status=PARTIAL"
+      },
+      {
+        "id": "ho-129",
+        "ok": false,
+        "category": "adversarial",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": false,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['tv'] modes ['create'] recall 0.0 off 0.0 hit=[] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-130",
+        "ok": false,
+        "category": "adversarial",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.0,
+          "empty": false,
+          "status": "AMBIGUOUS",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat [] modes ['create'] recall 0.0 off 0.0 hit=[] off=[] status=AMBIGUOUS"
+      },
+      {
+        "id": "ho-131",
+        "ok": false,
+        "category": "adversarial",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.2,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['mobile'] modes ['create'] recall 0.2 off 0.0 hit=['focus state'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-132",
+        "ok": false,
+        "category": "adversarial",
+        "metrics": {
+          "platform_ok": false,
+          "platform_precision_ok": false,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "AMBIGUOUS",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['kiosk', 'web'] modes ['create'] recall 0.0 off 0.33 hit=[] off=['attract screen'] status=AMBIGUOUS"
+      },
+      {
+        "id": "ho-133",
+        "ok": false,
+        "category": "adversarial",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.67,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['tv'] modes ['create'] recall 0.0 off 0.67 hit=[] off=['hamburger menu', 'hover'] status=PARTIAL"
+      },
+      {
+        "id": "ho-134",
+        "ok": false,
+        "category": "adversarial",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.2,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['desktop'] modes ['create'] recall 0.2 off 0.0 hit=['keyboard accelerators'] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-135",
+        "ok": false,
+        "category": "adversarial",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": false,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['web'] modes ['create'] recall 0.0 off 0.0 hit=[] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-136",
+        "ok": false,
+        "category": "adversarial",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": false,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.17,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "AMBIGUOUS",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['mobile', 'tv'] modes ['create'] recall 0.17 off 0.0 hit=['safe margins'] off=[] status=AMBIGUOUS"
+      },
+      {
+        "id": "ho-137",
+        "ok": false,
+        "category": "adversarial",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "AMBIGUOUS",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat [] modes ['create'] recall 0.0 off 0.0 hit=[] off=[] status=AMBIGUOUS"
+      },
+      {
+        "id": "ho-138",
+        "ok": false,
+        "category": "adversarial",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": false,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat ['desktop', 'kiosk', 'tablet'] modes ['create'] recall 0.0 off 0.0 hit=[] off=[] status=CONFIDENT"
+      },
+      {
+        "id": "ho-139",
+        "ok": false,
+        "category": "adversarial",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": false,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": 0.0,
+          "offtarget_rate": 0.67,
+          "facet_coverage": 1.0,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": true,
+          "recall_at_least_half": false
+        },
+        "detail": "plat [] modes ['create'] recall 0.0 off 0.67 hit=[] off=['decorative gradients', 'hero'] status=PARTIAL"
+      },
+      {
+        "id": "ho-140",
+        "ok": true,
+        "category": "abstain",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": null,
+          "offtarget_rate": 0.67,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": true,
+          "abstain_ok": true
+        },
+        "detail": "plat [] modes ['create'] recall None off 0.67 hit=[] off=['ui layout', 'focus'] status=PARTIAL"
+      },
+      {
+        "id": "ho-141",
+        "ok": true,
+        "category": "abstain",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": null,
+          "offtarget_rate": 0.67,
+          "facet_coverage": 0.33,
+          "empty": false,
+          "status": "AMBIGUOUS",
+          "missing_ok": true,
+          "abstain_ok": true
+        },
+        "detail": "plat [] modes ['create'] recall None off 0.67 hit=[] off=['ui', 'design tokens'] status=AMBIGUOUS"
+      },
+      {
+        "id": "ho-142",
+        "ok": true,
+        "category": "abstain",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": null,
+          "offtarget_rate": 0.0,
+          "facet_coverage": 0.0,
+          "empty": true,
+          "status": "ABSTAIN",
+          "missing_ok": true,
+          "abstain_ok": true
+        },
+        "detail": "plat [] modes ['create'] recall None off 0.0 hit=[] off=[] status=ABSTAIN"
+      },
+      {
+        "id": "ho-143",
+        "ok": true,
+        "category": "abstain",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": null,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 0.67,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "abstain_ok": true
+        },
+        "detail": "plat [] modes ['create'] recall None off 0.33 hit=[] off=['ui'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-144",
+        "ok": true,
+        "category": "abstain",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": null,
+          "offtarget_rate": 0.33,
+          "facet_coverage": 0.75,
+          "empty": false,
+          "status": "CONFIDENT",
+          "missing_ok": true,
+          "abstain_ok": true
+        },
+        "detail": "plat [] modes ['create'] recall None off 0.33 hit=[] off=['ui'] status=CONFIDENT"
+      },
+      {
+        "id": "ho-145",
+        "ok": true,
+        "category": "abstain",
+        "metrics": {
+          "platform_ok": true,
+          "platform_precision_ok": true,
+          "mode_ok": true,
+          "input_ok": true,
+          "screen_ok": true,
+          "negatives_ok": true,
+          "concept_recall": null,
+          "offtarget_rate": 0.67,
+          "facet_coverage": 0.67,
+          "empty": false,
+          "status": "PARTIAL",
+          "missing_ok": true,
+          "abstain_ok": true
+        },
+        "detail": "plat [] modes ['create'] recall None off 0.67 hit=[] off=['ui', 'layout'] status=PARTIAL"
+      }
+    ]
+  },
+  "passed": 10,
+  "total": 145,
+  "heldout_summary": {
+    "heldout/cases": {
+      "cases": 145,
+      "acceptable": 10,
+      "platform_correct": 123,
+      "platform_precise": 137,
+      "mode_correct": 98,
+      "input_correct": 130,
+      "negatives_correct": 138,
+      "missing_correct": 112,
+      "mean_concept_recall": 0.184,
+      "mean_offtarget_rate": 0.178,
+      "concept_recall_ge_half": 15,
+      "concept_recall_ge_third": 15,
+      "offtarget_within_third": 131,
+      "facet_coverage_full": 72,
+      "empty_results": 1,
+      "status_counts": {
+        "CONFIDENT": 96,
+        "PARTIAL": 33,
+        "AMBIGUOUS": 15,
+        "ABSTAIN": 1
+      },
+      "abstain_correct": 6,
+      "abstain_cases": 6,
+      "by_category": {
+        "web": {
+          "n": 4,
+          "ok": 0
+        },
+        "mobile": {
+          "n": 4,
+          "ok": 0
+        },
+        "android-tv": {
+          "n": 4,
+          "ok": 0
+        },
+        "tvos": {
+          "n": 4,
+          "ok": 0
+        },
+        "kiosk": {
+          "n": 4,
+          "ok": 0
+        },
+        "winui": {
+          "n": 4,
+          "ok": 0
+        },
+        "wpf": {
+          "n": 4,
+          "ok": 0
+        },
+        "avalonia": {
+          "n": 4,
+          "ok": 0
+        },
+        "react": {
+          "n": 4,
+          "ok": 1
+        },
+        "nextjs": {
+          "n": 4,
+          "ok": 0
+        },
+        "compose": {
+          "n": 4,
+          "ok": 1
+        },
+        "swiftui": {
+          "n": 4,
+          "ok": 0
+        },
+        "flutter": {
+          "n": 4,
+          "ok": 0
+        },
+        "erp": {
+          "n": 4,
+          "ok": 0
+        },
+        "saas": {
+          "n": 4,
+          "ok": 0
+        },
+        "finance": {
+          "n": 4,
+          "ok": 0
+        },
+        "healthcare": {
+          "n": 4,
+          "ok": 1
+        },
+        "ecommerce": {
+          "n": 4,
+          "ok": 0
+        },
+        "media": {
+          "n": 4,
+          "ok": 0
+        },
+        "settings": {
+          "n": 4,
+          "ok": 0
+        },
+        "forms": {
+          "n": 4,
+          "ok": 0
+        },
+        "tables": {
+          "n": 4,
+          "ok": 0
+        },
+        "search": {
+          "n": 4,
+          "ok": 1
+        },
+        "dashboards": {
+          "n": 4,
+          "ok": 0
+        },
+        "onboarding": {
+          "n": 4,
+          "ok": 0
+        },
+        "accessibility": {
+          "n": 4,
+          "ok": 0
+        },
+        "brand": {
+          "n": 4,
+          "ok": 0
+        },
+        "responsive": {
+          "n": 4,
+          "ok": 0
+        },
+        "screenshot": {
+          "n": 4,
+          "ok": 0
+        },
+        "polish": {
+          "n": 4,
+          "ok": 0
+        },
+        "negative-constraint": {
+          "n": 4,
+          "ok": 0
+        },
+        "adversarial": {
+          "n": 15,
+          "ok": 0
+        },
+        "abstain": {
+          "n": 6,
+          "ok": 6
+        }
+      }
+    }
+  }
+}

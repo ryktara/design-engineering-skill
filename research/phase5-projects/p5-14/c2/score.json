@@ -1,0 +1,145 @@
+{
+ "task": "p5-14",
+ "build": "50966e8e6184f31722a7b3c7f270a241dd0f7b68187492d0c971f7c79734e680",
+ "c1_recorded": {
+  "platform_expected": "desktop",
+  "platform_resolved": [
+   "desktop"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "polish",
+   "refactor"
+  ],
+  "mode_resolved": [
+   "audit",
+   "refactor"
+  ],
+  "mode_correct": "acceptable",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "CONFIDENT",
+  "bundle_ids": [
+   "comp-data-table",
+   "metadata-rich",
+   "grid-single-tab-stop",
+   "desktop-status-bar-and-error-navigation",
+   "anti-no-states",
+   "a11y-native-semantics"
+  ],
+  "bundle_tokens": 1268,
+  "expected_concepts": [
+   "table.inline_edit",
+   "table.tabular_figures",
+   "interaction.focus_visible",
+   "interaction.keyboard_navigation",
+   "a11y.accessible_names",
+   "feedback.validation_errors",
+   "process.reuse_first"
+  ],
+  "critical_concepts": [
+   "table.inline_edit",
+   "interaction.focus_visible",
+   "table.tabular_figures"
+  ],
+  "delivered_concepts": [
+   "a11y.accessible_names",
+   "a11y.contrast",
+   "a11y.live_status",
+   "a11y.semantics",
+   "data.pagination_strategy",
+   "desktop.persist_workspace",
+   "feedback.validation_errors",
+   "interaction.focus_visible",
+   "interaction.keyboard_navigation",
+   "interaction.selection_visible",
+   "interaction.shortcuts",
+   "state.loading_empty_error",
+   "table.inline_edit",
+   "table.selection_bulk",
+   "table.tabular_figures",
+   "table.virtualization"
+  ],
+  "concept_recall": 0.857,
+  "critical_recall": 1.0,
+  "forbidden_delivered": [
+   "data.pagination_strategy"
+  ],
+  "change_budget": "low"
+ },
+ "c2": {
+  "platform_expected": "desktop",
+  "platform_resolved": [
+   "desktop"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "polish",
+   "refactor"
+  ],
+  "mode_resolved": [
+   "audit",
+   "refactor"
+  ],
+  "mode_correct": "acceptable",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "CONFIDENT",
+  "bundle_ids": [
+   "comp-data-table",
+   "table-column-disambiguation",
+   "grid-single-tab-stop",
+   "desktop-status-bar-and-error-navigation",
+   "anti-no-states",
+   "desktop-fluent-materials"
+  ],
+  "bundle_tokens": 1326,
+  "expected_concepts": [
+   "table.inline_edit",
+   "table.tabular_figures",
+   "interaction.focus_visible",
+   "interaction.keyboard_navigation",
+   "a11y.accessible_names",
+   "feedback.validation_errors",
+   "process.reuse_first"
+  ],
+  "critical_concepts": [
+   "table.inline_edit",
+   "interaction.focus_visible",
+   "table.tabular_figures"
+  ],
+  "delivered_concepts": [
+   "a11y.contrast",
+   "a11y.live_status",
+   "data.pagination_strategy",
+   "desktop.fluent_materials",
+   "desktop.persist_workspace",
+   "feedback.validation_errors",
+   "interaction.focus_visible",
+   "interaction.keyboard_navigation",
+   "interaction.selection_visible",
+   "interaction.shortcuts",
+   "state.loading_empty_error",
+   "table.inline_edit",
+   "table.selection_bulk",
+   "table.tabular_figures",
+   "table.virtualization"
+  ],
+  "concept_recall": 0.714,
+  "critical_recall": 1.0,
+  "forbidden_delivered": [
+   "data.pagination_strategy"
+  ],
+  "change_budget": "moderate"
+ }
+}

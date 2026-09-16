@@ -1,0 +1,126 @@
+{
+  "brand": "Stats screen in dark mode: the bars are barely visible.",
+  "fingerprint": {
+    "navigation_model": "bottom-tabs",
+    "surface_strategy": "elevated",
+    "card_geometry": "elevated",
+    "corner_language": "medium",
+    "typography_character": "humanist-sans",
+    "color_strategy": "neutral-plus-accent"
+  },
+  "direction": {
+    "navigation": "nav-bottom-tabs",
+    "layout": null,
+    "density": null,
+    "surface": "surface-elevated-cards",
+    "cards": null,
+    "typography": "typography-humanist-sans",
+    "color": "color-neutral-accent",
+    "motion": null,
+    "focus": null,
+    "cta": null,
+    "imagery": null,
+    "icon": null,
+    "metadata": null
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "polish",
+      "audit"
+    ],
+    "platform": [
+      "mobile"
+    ],
+    "input": [
+      "touch"
+    ],
+    "product": [
+      "ecommerce"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "swiftui"
+    ],
+    "density": null,
+    "components": [],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "polish"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "screen_reader": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "low",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "visual",
+        "design-system"
+      ],
+      "change_scope": "screen",
+      "utterance": "observation",
+      "preserve": []
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "polish: visual defect on existing UI",
+      "audit: diagnose first"
+    ],
+    "project_context": {
+      "navigation": "bottom-tabs (KNOWN)",
+      "theme": "dual-theme (INFERRED)",
+      "surfaces": "elevated (INFERRED)",
+      "radius": "medium (INFERRED)",
+      "spacing": "4 (INFERRED)",
+      "typography": "humanist-sans (INFERRED)"
+    },
+    "known": [
+      "platform=mobile",
+      "product=ecommerce",
+      "stack=swiftui",
+      "project_navigation=bottom-tabs"
+    ],
+    "inferred": [
+      "input=touch",
+      "mode=polish",
+      "mode=audit",
+      "project_theme=dual-theme",
+      "project_surfaces=elevated",
+      "project_radius=medium",
+      "project_spacing=4",
+      "project_typography=humanist-sans"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

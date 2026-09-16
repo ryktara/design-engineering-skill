@@ -1,0 +1,223 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "create"
+  ],
+  "platform": [
+    "mobile"
+  ],
+  "input": [
+    "touch"
+  ],
+  "product": [
+    "iot"
+  ],
+  "screen": [],
+  "screen_subtype": [],
+  "stack": [
+    "flutter"
+  ],
+  "density": null,
+  "components": [
+    "list",
+    "notification"
+  ],
+  "environment": [
+    "gloves",
+    "low-bandwidth",
+    "outdoor"
+  ],
+  "jobs": [],
+  "problems": [],
+  "risk": "low",
+  "primary_jobs": [
+    "create list",
+    "create notification"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "focus_handling_present": true,
+    "performance_sensitive": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "screen_reader": true,
+    "touch_targets": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "change_budget": "moderate",
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "intent": {
+    "artifact_state": "existing",
+    "operations": [
+      "create"
+    ],
+    "problem_domain": [],
+    "change_scope": "local",
+    "utterance": "request",
+    "existing": true,
+    "problem": false,
+    "facet": "general",
+    "diagnose_only": false,
+    "creation": true,
+    "redesign": false,
+    "responsive_cues": false,
+    "preserve": [],
+    "scope": "low"
+  },
+  "platform_evidence": [
+    {
+      "platform": "web",
+      "strength": "WEAK_INFERENCE",
+      "evidence": [
+        "banner"
+      ]
+    }
+  ],
+  "mode_evidence": [
+    "create: build/create request on an existing surface"
+  ],
+  "project_context": {
+    "navigation": {
+      "value": "top-bar",
+      "status": "KNOWN",
+      "evidence": [
+        "top-bar: 6 matches in checklist_screen.dart, defect_report_screen.dart, settings_screen.dart (shell/layout file)"
+      ]
+    },
+    "theme": {
+      "value": "dual-theme",
+      "status": "KNOWN",
+      "evidence": [
+        "dark theme configuration signals: 5",
+        "light theme configuration signals: 2",
+        "hex palette: 13 near-white, 6 near-black"
+      ],
+      "default": "light"
+    },
+    "surfaces": {
+      "value": "flat-tonal",
+      "status": "UNKNOWN",
+      "evidence": [
+        "no shadow or border declarations found"
+      ]
+    },
+    "radius": {
+      "value": "small",
+      "status": "INFERRED",
+      "evidence": [
+        "most common radius 4 (1×); others []"
+      ]
+    },
+    "spacing": {
+      "value": "irregular",
+      "status": "UNKNOWN",
+      "evidence": [
+        "most used spacing values [2, 88, 12]"
+      ]
+    },
+    "typography": {
+      "value": "custom",
+      "status": "KNOWN",
+      "evidence": [
+        "font family System (7 refs)",
+        "weights w600, w700, w400",
+        "encoded type scale in 2 files"
+      ]
+    },
+    "components": {
+      "value": "go_router, riverpod",
+      "status": "KNOWN",
+      "evidence": [
+        "go_router",
+        "riverpod"
+      ]
+    }
+  },
+  "known": [
+    "platform=mobile (project inspection)",
+    "product=iot (project inspection (README))",
+    "stack=flutter (project inspection)",
+    "environment=outdoor (project inspection (README))",
+    "environment=gloves (project inspection (README))",
+    "environment=low-bandwidth (request: offline, no signal)",
+    "project_navigation=top-bar (repository: top-bar: 6 matches in checklist_screen.dart, defect_report_screen.dart, settings_screen.dart (shell/layout file))",
+    "project_theme=dual-theme (repository: dark theme configuration signals: 5; light theme configuration signals: 2)",
+    "project_typography=custom (repository: font family System (7 refs); weights w600, w700, w400)",
+    "project_components=go_router, riverpod (repository: go_router; riverpod)"
+  ],
+  "inferred": [
+    "input=touch (implied by platform mobile)",
+    "mode=create (build/create request on an existing surface)",
+    "project_radius=small (repository: most common radius 4 (1×); others [])"
+  ],
+  "missing": [
+    "brand: no brand assets, guideline, or character description available"
+  ],
+  "status": "CONFIDENT",
+  "source": {
+    "request": [
+      "offline, no signal"
+    ],
+    "project": [
+      "pubspec.yaml: Flutter"
+    ]
+  },
+  "activation": {
+    "decision": "ambiguous",
+    "ui_score": 1.0,
+    "non_ui_score": 0,
+    "ui_terms": [],
+    "non_ui_terms": []
+  },
+  "intent_evidence": {
+    "existing": [
+      "to the",
+      "the site",
+      "the report list"
+    ],
+    "new": [],
+    "defect": [],
+    "operations": {
+      "create": [
+        "add",
+        "add an"
+      ]
+    },
+    "domains": {},
+    "no_change": [],
+    "scope": {
+      "screen": [
+        "list"
+      ],
+      "local": [
+        "banner"
+      ]
+    },
+    "question": false
+  },
+  "scope_evidence": {
+    "ui": [
+      "list",
+      "banner",
+      "the site",
+      "report",
+      "concept:state.offline_sync"
+    ],
+    "ux_symptoms": [],
+    "technical": {
+      "FRONTEND_RUNTIME": [
+        "signal"
+      ]
+    },
+    "non_visual": []
+  }
+}

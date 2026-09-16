@@ -1,0 +1,125 @@
+{
+  "brand": "Older customers time out on the identify step before they finish typing.",
+  "fingerprint": {
+    "navigation_model": "hub-and-spoke",
+    "typography_character": "humanist-sans",
+    "cta_strategy": "single-primary"
+  },
+  "direction": {
+    "navigation": "nav-hub-spoke",
+    "layout": null,
+    "density": null,
+    "surface": null,
+    "cards": null,
+    "typography": "typography-humanist-sans",
+    "color": null,
+    "motion": null,
+    "focus": null,
+    "cta": "cta-single-primary",
+    "imagery": null,
+    "icon": null,
+    "metadata": null
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "accessibility",
+      "audit"
+    ],
+    "platform": [
+      "kiosk"
+    ],
+    "input": [
+      "touch"
+    ],
+    "product": [
+      "healthcare",
+      "iot"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "html-css"
+    ],
+    "density": null,
+    "components": [],
+    "environment": [
+      "public"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "accessibility"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "low",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "accessibility",
+        "interaction"
+      ],
+      "change_scope": "unknown",
+      "utterance": "observation",
+      "preserve": []
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "accessibility: accessibility defect on existing UI",
+      "audit: diagnose the reported defect"
+    ],
+    "project_context": {
+      "navigation": "hub-spoke (KNOWN)",
+      "surfaces": "elevated (INFERRED)",
+      "radius": "medium (INFERRED)",
+      "typography": "humanist-sans (KNOWN)"
+    },
+    "known": [
+      "platform=kiosk",
+      "product=healthcare",
+      "product=iot",
+      "stack=html-css",
+      "environment=public",
+      "project_navigation=hub-spoke",
+      "project_typography=humanist-sans"
+    ],
+    "inferred": [
+      "input=touch",
+      "mode=accessibility",
+      "mode=audit",
+      "project_surfaces=elevated",
+      "project_radius=medium"
+    ],
+    "missing": [],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

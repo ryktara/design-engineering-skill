@@ -1,0 +1,159 @@
+{
+  "label": "final",
+  "legacy": false,
+  "viewport": "1920x1080",
+  "checks": [
+    {
+      "name": "SELECT on live card opens details with focus on the primary action (Watch live)",
+      "pass": true,
+      "detail": "details:play"
+    },
+    {
+      "name": "Watch live opens the player",
+      "pass": true
+    },
+    {
+      "name": "BACK from player returns home (not details): semantics unchanged",
+      "pass": true
+    },
+    {
+      "name": "focus returns to the launching card",
+      "pass": true,
+      "detail": {
+        "before": "rail:live:e3",
+        "after": "rail:live:e3"
+      }
+    },
+    {
+      "name": "hero/backdrop unchanged immediately on return (no jump to first live event)",
+      "pass": true,
+      "detail": {
+        "before": [
+          "e3",
+          "Basketball"
+        ],
+        "after": [
+          "e3",
+          "Basketball"
+        ]
+      }
+    },
+    {
+      "name": "vertical position unchanged (hero as visible as before leaving)",
+      "pass": true,
+      "detail": {
+        "before": "translateY(-273px)",
+        "after": "translateY(-273px)",
+        "heroTop": -219
+      }
+    },
+    {
+      "name": "live rail horizontal position unchanged (card at the same pivot)",
+      "pass": true,
+      "detail": {
+        "before": [
+          "translateX(-698px)",
+          [
+            618,
+            502,
+            524,
+            446
+          ]
+        ],
+        "after": [
+          "translateX(-698px)",
+          [
+            618,
+            502,
+            524,
+            446
+          ]
+        ]
+      }
+    },
+    {
+      "name": "after the 300 ms debounce the hero still shows the launching card",
+      "pass": true,
+      "detail": "e3"
+    },
+    {
+      "name": "restored focus is visible (ring) and on screen",
+      "pass": true
+    },
+    {
+      "name": "match ended: focus lands on the neighbour at the same index in Live now (not the hero)",
+      "pass": true,
+      "detail": {
+        "liveBefore": [
+          "e1",
+          "e2",
+          "e3",
+          "e4",
+          "e5"
+        ],
+        "liveAfter": [
+          "e1",
+          "e2",
+          "e4",
+          "e5"
+        ],
+        "key": "rail:live:e4",
+        "expected": "rail:live:e4"
+      }
+    },
+    {
+      "name": "resolver reports an inexact (neighbour) restore",
+      "pass": true,
+      "detail": {
+        "key": "rail:live:e4",
+        "rail": "live",
+        "index": 2,
+        "exact": false
+      }
+    },
+    {
+      "name": "focus memory now points at the neighbour (next return is stable)",
+      "pass": true
+    },
+    {
+      "name": "rail re-ordered while away: the same event is found by id (index changed)",
+      "pass": true,
+      "detail": {
+        "catchKey": "rail:replays:e3",
+        "after": "rail:replays:e3"
+      }
+    },
+    {
+      "name": "rail emptied while away: focus falls back to hero primary",
+      "pass": true,
+      "detail": {
+        "liveKey": "rail:live:e4",
+        "after": "hero:primary"
+      }
+    },
+    {
+      "name": "BACK from hero → side nav",
+      "pass": true,
+      "detail": "nav:0"
+    },
+    {
+      "name": "BACK from nav → exit",
+      "pass": true
+    },
+    {
+      "name": "BACK from a rail → hero primary and column at top",
+      "pass": true,
+      "detail": {
+        "deep": "rail:upcoming:u1",
+        "after": "hero:primary"
+      }
+    },
+    {
+      "name": "BACK from details → home, focus on the launching hero control",
+      "pass": true,
+      "detail": "hero:secondary"
+    }
+  ],
+  "pass": 18,
+  "fail": 0
+}

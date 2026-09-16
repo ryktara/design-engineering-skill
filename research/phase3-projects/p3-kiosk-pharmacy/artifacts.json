@@ -1,0 +1,46 @@
+{
+  "case": "p3-kiosk-pharmacy",
+  "platform": "kiosk (public touch, portrait 1080x1920)",
+  "stack": "plain HTML + CSS (cascade layers, custom-property tokens) + vanilla ES modules, no build, no CDN",
+  "rendered": true,
+  "render_mode": "html",
+  "screenshots": [
+    "render/first-01-attract.png", "render/first-02-identify-dob.png", "render/first-03-identify-name.png", "render/first-03b-identify-error.png", "render/first-04-list.png", "render/first-05-confirm.png", "render/first-06-done.png", "render/first-07-help.png", "render/first-08-idle.png",
+    "render/first-a11y-01-attract.png", "render/first-a11y-02-identify-dob.png", "render/first-a11y-03-identify-name.png", "render/first-a11y-03b-identify-error.png", "render/first-a11y-04-list.png", "render/first-a11y-05-confirm.png", "render/first-a11y-06-done.png", "render/first-a11y-07-help.png", "render/first-a11y-08-idle.png",
+    "render/iter1-01-attract.png", "render/iter1-02-identify-dob.png", "render/iter1-03-identify-name.png", "render/iter1-03b-identify-error.png", "render/iter1-04-list.png", "render/iter1-05-confirm.png", "render/iter1-06-done.png", "render/iter1-07-help.png", "render/iter1-08-idle.png",
+    "render/iter1-a11y-01-attract.png", "render/iter1-a11y-02-identify-dob.png", "render/iter1-a11y-03-identify-name.png", "render/iter1-a11y-03b-identify-error.png", "render/iter1-a11y-04-list.png", "render/iter1-a11y-05-confirm.png", "render/iter1-a11y-06-done.png", "render/iter1-a11y-07-help.png", "render/iter1-a11y-08-idle.png",
+    "render/final-01-attract.png", "render/final-02-identify-dob.png", "render/final-03-identify-name.png", "render/final-03b-identify-error.png", "render/final-04-list.png", "render/final-05-confirm.png", "render/final-06-done.png", "render/final-07-help.png", "render/final-08-idle.png",
+    "render/final-a11y-01-attract.png", "render/final-a11y-02-identify-dob.png", "render/final-a11y-03-identify-name.png", "render/final-a11y-03b-identify-error.png", "render/final-a11y-04-list.png", "render/final-a11y-05-confirm.png", "render/final-a11y-06-done.png", "render/final-a11y-07-help.png", "render/final-a11y-08-idle.png"
+  ],
+  "first_render_defects": 5,
+  "final_defects": 5,
+  "iterations": 3,
+  "guidance_relevant": 3,
+  "guidance_partial": 3,
+  "guidance_offtarget": 0,
+  "knowledge_gaps": [
+    "kiosk on-screen keypad / QWERTY keyboard pattern (key size, delete/clear placement, DOB entry)",
+    "accessible-mode toggle for kiosks: large text + high contrast + relocating controls into the lower reach zone",
+    "help / call staff action for unattended kiosks",
+    "scanner (keyboard-wedge / QR) input handling and on-screen scan instruction",
+    "confirmation summary before hand-over (kiosk)"
+  ],
+  "ranking_misses": [
+    "shared-device-privacy (rank 7 in search, kiosk+healthcare tagged, absent from guidance bundle)",
+    "a11y-target-size (rank 8, absent from bundle)",
+    "a11y-time-and-auto (session timeouts controllable; only found by targeted search)"
+  ],
+  "requirements_errors": [
+    "product=ecommerce inferred from 'store' (location, not a shop); drove imagery-hero, motion-crossfade, color-dominant-brand",
+    "stack MISSING although index.html + .css + module .js were in the repo (inspector vocabulary gap)",
+    "screen types empty although the sentence names identify / list / confirm screens",
+    "accessibility set lacks large-text mode, reach range, adjustable timeout for a public kiosk"
+  ],
+  "interaction_test": { "checks": 70, "passed_first": 70, "passed_final": 70, "file": "05-interaction.json" },
+  "tokens_check": "tokens.py validate --platform kiosk: OK, 0 errors, 2 warnings (primary-hover == primary; hover is irrelevant on touch)",
+  "skill_version_note": "12 files under design-engineering/ (SKILL.md, data/lexicon.json, data/rules.jsonl, scripts/de_core.py, evals/*, docs/*) were modified by another process between 00:28 and 00:39 while this case ran; this session wrote nothing there. Scripts re-run afterwards into rerun-after-skill-edit/: requirements identical; guidance and direction select the same records (only new '(covers: ...)' annotations added), so the verdicts hold for the post-edit skill.",
+  "tags": [
+    "requirements-miss", "vocabulary-gap", "ranking-miss", "knowledge-gap", "direction-invariant",
+    "render-defect-fixed", "render-defect-remaining", "tooling-limit", "skill-helped"
+  ]
+}

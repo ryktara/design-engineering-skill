@@ -1,0 +1,17 @@
+{
+  "platform": "web",
+  "artifact_state": "existing",
+  "acceptable_modes": ["refactor", "responsive", "polish", "accessibility"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "touch.minimum_target",
+    "interaction.hover_independence",
+    "adaptive.breakpoint_matrix",
+    "layout.spacing_scale",
+    "touch.gestures_discoverable",
+    "interaction.focus_visible"
+  ],
+  "critical_concepts": ["touch.minimum_target"],
+  "forbidden_concepts": ["tv.ten_foot_typography", "interaction.dpad_reachability", "brand.dark_mode_redesign", "media.resume_playback"],
+  "preservation": ["navigation", "theme", "typography"]
+}

@@ -1,0 +1,1001 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "Nobody can find the API keys section; it is buried at the bottom of the settings page.",
+  "status": "PARTIAL",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [
+      "finance",
+      "saas"
+    ],
+    "screen": [
+      "settings"
+    ],
+    "screen_subtype": [],
+    "stack": [
+      "nextjs",
+      "react",
+      "shadcn",
+      "tailwind"
+    ],
+    "density": "high",
+    "components": [
+      "settings"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "audit settings"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "navigation",
+        "layout"
+      ],
+      "change_scope": "screen",
+      "utterance": "observation",
+      "existing": true,
+      "problem": true,
+      "facet": "interaction",
+      "diagnose_only": false,
+      "creation": false,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "audit: navigation defect on existing UI",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "left-rail",
+        "status": "KNOWN",
+        "evidence": [
+          "left-rail: 1 matches in app-shell.tsx (shell/layout file)"
+        ]
+      },
+      "theme": {
+        "value": "dual-theme",
+        "status": "KNOWN",
+        "evidence": [
+          "dark theme configuration signals: 1",
+          "root/canvas backgrounds: 1 light, 0 dark",
+          "hex palette: 15 near-white, 9 near-black"
+        ],
+        "default": "light"
+      },
+      "surfaces": {
+        "value": "bordered-flat",
+        "status": "INFERRED",
+        "evidence": [
+          "borders in 18 files, shadow/elevation in 1"
+        ]
+      },
+      "radius": {
+        "value": "small",
+        "status": "INFERRED",
+        "evidence": [
+          "most common radius 0.5 (1×); others []"
+        ]
+      },
+      "spacing": {
+        "value": 8,
+        "status": "INFERRED",
+        "evidence": [
+          "most used spacing values [8, 16, 12, 4, 24]",
+          "tailwind spacing classes (165)"
+        ]
+      },
+      "typography": {
+        "value": "custom",
+        "status": "KNOWN",
+        "evidence": [
+          "font family Var (2 refs)",
+          "monospace usage",
+          "tabular numerals"
+        ]
+      },
+      "components": {
+        "value": "tailwind, radix, shadcn-style cva, table:tanstack, shadcn",
+        "status": "KNOWN",
+        "evidence": [
+          "tailwind",
+          "radix",
+          "shadcn-style cva"
+        ]
+      }
+    },
+    "known": [
+      "platform=web (project inspection)",
+      "product=saas (request: settings page)",
+      "product=finance (project inspection (README))",
+      "stack=nextjs (project inspection)",
+      "stack=react (project inspection)",
+      "stack=tailwind (project inspection)",
+      "stack=shadcn (project inspection)",
+      "screen=settings (request: settings)",
+      "project_navigation=left-rail (repository: left-rail: 1 matches in app-shell.tsx (shell/layout file))",
+      "project_theme=dual-theme (repository: dark theme configuration signals: 1; root/canvas backgrounds: 1 light, 0 dark)",
+      "project_typography=custom (repository: font family Var (2 refs); monospace usage)",
+      "project_components=tailwind, radix, shadcn-style cva, table:tanstack, shadcn (repository: tailwind; radix)"
+    ],
+    "inferred": [
+      "input=pointer (implied by platform web)",
+      "input=keyboard (implied by platform web)",
+      "input=touch (implied by platform web)",
+      "density=high (implied by product finance)",
+      "mode=audit (navigation defect on existing UI)",
+      "mode=refactor (fix follows the diagnosis)",
+      "project_surfaces=bordered-flat (repository: borders in 18 files, shadow/elevation in 1)",
+      "project_radius=small (repository: most common radius 0.5 (1×); others [])",
+      "project_spacing=8 (repository: most used spacing values [8, 16, 12, 4, 24]; tailwind spacing classes (165))"
+    ],
+    "missing": [],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [
+        "settings",
+        "settings page"
+      ],
+      "project": [
+        "package.json: next@15.3.0",
+        "package.json: react@19.1.0",
+        "package.json: react-dom@19.1.0",
+        "package.json: tailwindcss@4.1.3",
+        "package.json: @radix-ui/react-dialog@1.1.6",
+        "package.json: class-variance-authority@0.7.1",
+        "package.json: lucide-react@0.487.0",
+        "package.json: @tanstack/react-table@8.21.2",
+        "package.json: recharts@2.15.2",
+        "package.json: eslint-plugin-jsx-a11y@6.10.2",
+        "package.json: @playwright/test@1.52.0",
+        "package.json: next-intl@4.0.2"
+      ]
+    },
+    "activation": {
+      "decision": "activate",
+      "ui_score": 2.0,
+      "non_ui_score": 0,
+      "ui_terms": [
+        "page"
+      ],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "nobody",
+        "the api keys section"
+      ],
+      "new": [],
+      "defect": [
+        "is buried",
+        "nobody"
+      ],
+      "operations": {},
+      "domains": {
+        "navigation": [
+          "find"
+        ],
+        "layout": [
+          "buried"
+        ]
+      },
+      "no_change": [],
+      "scope": {
+        "screen": [
+          "page",
+          "settings"
+        ]
+      },
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "page",
+        "settings",
+        "section",
+        "concept:layout.focal_hierarchy"
+      ],
+      "ux_symptoms": [],
+      "technical": {
+        "BACKEND": [
+          "api",
+          "api keys"
+        ]
+      },
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "accessibility",
+        "reason": "audit mode"
+      },
+      {
+        "concern": "interaction",
+        "reason": "audit mode: operability is part of the review"
+      },
+      {
+        "concern": "component",
+        "reason": "the reviewed component/screen"
+      },
+      {
+        "concern": "data-display",
+        "reason": "numbers, tables or charts are the content"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "states",
+        "reason": "audits check empty/loading/error handling"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "audits name generic-design defects"
+      },
+      {
+        "concern": "feedback",
+        "reason": "audits check that actions are discoverable and confirmed"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "viewport range"
+      }
+    ],
+    "optional": [
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "layout.focal_hierarchy",
+        "reason": "named in the request: nobody can find, buried",
+        "priority": 0,
+        "critical": true
+      }
+    ],
+    "recommended_concepts": [
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "process.reuse_first",
+      "touch.minimum_target",
+      "adaptive.breakpoint_matrix",
+      "a11y.live_status",
+      "feedback.confirmation_destructive",
+      "state.loading_empty_error",
+      "interaction.keyboard_navigation",
+      "interaction.hover_independence",
+      "interaction.focus_visible",
+      "layout.settings_grouping",
+      "table.tabular_figures"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "comp-settings-screen",
+      "kind": "component",
+      "category": "settings",
+      "title": "Settings screen",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "component",
+        "feedback",
+        "structure"
+      ],
+      "concepts": [
+        "layout.settings_grouping",
+        "feedback.confirmation_destructive"
+      ],
+      "covers": [
+        "settings grouped with visible current values",
+        "confirmation of destructive or high-risk actions"
+      ],
+      "score": 0.623,
+      "guidance": "Grouped rows with clear labels and current values visible, toggles for booleans with immediate effect, pickers for enums, destructive actions at the end with confirmation, search for long settings, platform idiom (grouped lists on mobile, sections/panes on desktop, TV: vertical list with DPAD and a right-side value column). Save behaviour explicit (auto vs Save button).",
+      "use_when": "Preferences, account, notifications, appearance.",
+      "avoid_when": "Never bury frequently changed settings three levels deep; never use toggles for actions.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.707,
+        "structural": 0.52,
+        "matched": [
+          "mode audit",
+          "screen settings"
+        ]
+      },
+      "role": "core",
+      "selected_for": "task evidence: screen, lexical_strong"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "layout-hierarchy-one-thing",
+      "kind": "rule",
+      "category": "layout",
+      "title": "One clear focal point per screen",
+      "facets": [
+        "layout"
+      ],
+      "concerns": [
+        "data-display",
+        "structure"
+      ],
+      "concepts": [
+        "layout.focal_hierarchy",
+        "layout.one_primary_action",
+        "data.exception_first"
+      ],
+      "covers": [
+        "visual hierarchy with one focal point",
+        "one primary action per view",
+        "exceptions and anomalies first"
+      ],
+      "score": 0.261,
+      "guidance": "Decide the screen's job and the one element that serves it; give that element the strongest size/contrast/position; demote everything else by one or two steps; navigation and chrome are quieter than content. On dashboards the focal point is the most important metric or the anomaly, not the page title.",
+      "use_when": "Designing any screen; reviewing 'it looks busy'.",
+      "avoid_when": "Never give three elements the same maximum emphasis; never make the primary content compete with chrome.",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.58,
+        "matched": [
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "critical concept (GENERIC): visual hierarchy with one focal point"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "data-display"
+    ],
+    "covered_required_concerns": [
+      "component",
+      "data-display"
+    ],
+    "uncovered_required_concerns": [
+      "accessibility",
+      "interaction"
+    ],
+    "recommended_concerns": [
+      "states",
+      "anti-pattern",
+      "feedback",
+      "adaptive"
+    ],
+    "covered_recommended_concerns": [
+      "feedback"
+    ],
+    "coverage_ratio": 0.5,
+    "required_concepts": [
+      "layout.focal_hierarchy"
+    ],
+    "covered_required_concepts": [
+      "layout.focal_hierarchy"
+    ],
+    "uncovered_required_concepts": [],
+    "critical_concepts": [
+      "layout.focal_hierarchy"
+    ],
+    "uncovered_critical_concepts": [],
+    "critical_coverage_ratio": 1.0,
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.15,
+    "not_surfaced": [
+      {
+        "concept": "a11y.accessible_names",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "a11y.contrast",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "process.reuse_first",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "touch.minimum_target",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "adaptive.breakpoint_matrix",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "a11y.live_status",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "state.loading_empty_error",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "interaction.hover_independence",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "table.tabular_figures",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "states",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      }
+    ],
+    "bundle_size": 2,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 1,
+    "guardrail_size": 1,
+    "bundle_tokens": 240,
+    "coverage_per_1k_tokens": 4.17,
+    "mean_purity": 0.67,
+    "mean_specificity": 1.5,
+    "quality_counts": {
+      "SPECIFIC": 1,
+      "GENERIC": 1
+    },
+    "contaminated": [],
+    "category_diversity": 1.0,
+    "duplicate_pressure": 0.5,
+    "facet_coverage": 0.2,
+    "redundancy": 0.2,
+    "critical_trace": {
+      "covered": [
+        "layout.focal_hierarchy"
+      ],
+      "uncovered": [],
+      "carrier_quality": {
+        "layout.focal_hierarchy": "GENERIC"
+      }
+    }
+  },
+  "token_coverage": 0.75,
+  "omitted": [
+    {
+      "id": "comp-plan-comparison",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "layout-form-stack",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "metadata-rich",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "comp-form",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "cta-single-primary",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "layout-single-column",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "nav-left-rail",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "comp-sidebar-nav",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "density-high",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "surface-bordered-panes",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    }
+  ],
+  "marginal": {
+    "layout-hierarchy-one-thing": {
+      "new_critical": [
+        "layout.focal_hierarchy"
+      ],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [
+        "data-display",
+        "structure"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "explicit_demand"
+      ],
+      "quality": "GENERIC",
+      "contamination": 0.0,
+      "tokens": 113
+    },
+    "comp-settings-screen": {
+      "new_critical": [],
+      "new_required": [],
+      "new_recommended": [
+        "feedback.confirmation_destructive",
+        "layout.settings_grouping"
+      ],
+      "new_concerns": [
+        "component",
+        "feedback"
+      ],
+      "specificity": 2,
+      "evidence": [
+        "lexical_strong",
+        "lexical",
+        "screen"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 127
+    }
+  },
+  "rejected": [
+    {
+      "id": "anti-mobile-desktop-shrunk",
+      "reason": "platform ['mobile'] not in request ['web']"
+    },
+    {
+      "id": "comp-tv-rail",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "comp-list-row-mobile",
+      "reason": "platform ['mobile', 'tablet'] not in request ['web']"
+    },
+    {
+      "id": "comp-kiosk-keypad",
+      "reason": "platform ['kiosk', 'tablet'] not in request ['web']"
+    },
+    {
+      "id": "comp-tv-side-sheet",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "dir-social-feed-mobile",
+      "reason": "platform ['mobile'] not in request ['web']"
+    },
+    {
+      "id": "dir-windows-native-tool",
+      "reason": "platform ['desktop'] not in request ['web']"
+    },
+    {
+      "id": "nav-bottom-tabs",
+      "reason": "platform ['mobile'] not in request ['web']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "layout.focal_hierarchy",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 0,
+      "reason": "named in the request: nobody can find, buried",
+      "candidate_records": [
+        [
+          "metadata-rich",
+          0.402
+        ],
+        [
+          "anti-oversized-hero-text",
+          0.261
+        ],
+        [
+          "typo-measure-and-rhythm",
+          0.261
+        ],
+        [
+          "layout-hierarchy-one-thing",
+          0.261
+        ]
+      ],
+      "selected_record": "layout-hierarchy-one-thing",
+      "carrier_quality": "GENERIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.accessible_names",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "a11y-labels-names",
+          0.261
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "a11y.contrast",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "anti-fashion-over-usability",
+          0.261
+        ],
+        [
+          "a11y-contrast-text",
+          0.261
+        ],
+        [
+          "a11y-nontext-contrast",
+          0.261
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.234
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.minimum_target",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "touch on web",
+      "candidate_records": [
+        [
+          "a11y-target-size",
+          0.288
+        ],
+        [
+          "media-photo-viewer",
+          0.243
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "adaptive.breakpoint_matrix",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "web viewport range",
+      "candidate_records": [
+        [
+          "web-responsive-breakpoints",
+          0.315
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "a11y.live_status",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "status messages",
+      "candidate_records": [
+        [
+          "interaction-drag-drop",
+          0.347
+        ],
+        [
+          "a11y-live-status",
+          0.261
+        ],
+        [
+          "feedback-progress-async",
+          0.261
+        ],
+        [
+          "comp-toast-notification",
+          0.207
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "feedback.confirmation_destructive",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "sensitive domain",
+      "candidate_records": [
+        [
+          "comp-settings-screen",
+          0.623
+        ],
+        [
+          "comp-plan-comparison",
+          0.387
+        ],
+        [
+          "states-persistence-and-session",
+          0.315
+        ],
+        [
+          "comp-dialog",
+          0.204
+        ]
+      ],
+      "selected_record": "comp-settings-screen",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "state.loading_empty_error",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "asynchronous or remote data on this screen (narrow task: kept as a recommendation)",
+      "candidate_records": [
+        [
+          "anti-no-states",
+          0.261
+        ],
+        [
+          "layout-states-empty-loading-error",
+          0.261
+        ],
+        [
+          "comp-chart-container",
+          0.207
+        ],
+        [
+          "comp-empty-state",
+          0.198
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.keyboard_navigation",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "web content must be keyboard operable (narrow task: kept as a recommendation)",
+      "candidate_records": [
+        [
+          "grid-single-tab-stop",
+          0.363
+        ],
+        [
+          "a11y-keyboard-operable",
+          0.347
+        ],
+        [
+          "interaction-drag-drop",
+          0.347
+        ],
+        [
+          "a11y-skip-link",
+          0.342
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.hover_independence",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "web is used with touch as well as pointer (narrow task: kept as a recommendation)",
+      "candidate_records": [
+        [
+          "a11y-keyboard-operable",
+          0.347
+        ],
+        [
+          "anti-hover-only-actions",
+          0.342
+        ],
+        [
+          "a11y-hover-not-required",
+          0.342
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.focus_visible",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "web keyboard focus (narrow task: kept as a recommendation)",
+      "candidate_records": [
+        [
+          "grid-single-tab-stop",
+          0.363
+        ],
+        [
+          "a11y-focus-visible",
+          0.342
+        ],
+        [
+          "focus-ring-standard",
+          0.323
+        ],
+        [
+          "a11y-nontext-contrast",
+          0.261
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "layout.settings_grouping",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "settings screen (narrow task: kept as a recommendation)",
+      "candidate_records": [
+        [
+          "comp-settings-screen",
+          0.623
+        ]
+      ],
+      "selected_record": "comp-settings-screen",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "table.tabular_figures",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "numeric product (baseline) (narrow task: kept as a recommendation)",
+      "candidate_records": [
+        [
+          "metadata-rich",
+          0.402
+        ],
+        [
+          "comp-plan-comparison",
+          0.387
+        ],
+        [
+          "data-tables-numeric",
+          0.378
+        ],
+        [
+          "table-column-disambiguation",
+          0.342
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    }
+  ]
+}

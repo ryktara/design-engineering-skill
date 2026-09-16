@@ -1,0 +1,1267 @@
+{
+ "description": "Activation evaluation set (180 prompts) generated 2026-09-08 by an independent Claude subagent that saw only the skill's ownership boundary, not its description, lexicon, or records. Frozen: edits require a new file and a MANIFEST update.",
+ "generated": "2026-09-08",
+ "method": "independent-subagent-from-boundary-statement",
+ "cases": [
+  {
+   "id": "act-001",
+   "prompt": "Redesign the checkout page so the primary CTA stands out and the steps are clearer",
+   "group": "positive",
+   "expect": "activate",
+   "note": "web visual hierarchy"
+  },
+  {
+   "id": "act-002",
+   "prompt": "The mobile nav bar overlaps content on iPhone SE, fix the layout",
+   "group": "positive",
+   "expect": "activate",
+   "note": "mobile layout"
+  },
+  {
+   "id": "act-003",
+   "prompt": "DPAD focus jumps to the wrong tile on our Android TV home screen",
+   "group": "positive",
+   "expect": "activate",
+   "note": "TV focus/remote"
+  },
+  {
+   "id": "act-004",
+   "prompt": "Make the WinUI settings window feel native, its spacing is all over the place",
+   "group": "positive",
+   "expect": "activate",
+   "note": "desktop native UX"
+  },
+  {
+   "id": "act-005",
+   "prompt": "kiosk touch targets are too small for the ticket machine, ppl keep mis-tapping",
+   "group": "positive",
+   "expect": "activate",
+   "note": "kiosk touch ergonomics"
+  },
+  {
+   "id": "act-006",
+   "prompt": "Set up a design token system for colors, spacing and radii in our React app",
+   "group": "positive",
+   "expect": "activate",
+   "note": "design tokens"
+  },
+  {
+   "id": "act-007",
+   "prompt": "Add dark mode support across the whole dashboard without hardcoding colors",
+   "group": "positive",
+   "expect": "activate",
+   "note": "dark mode"
+  },
+  {
+   "id": "act-008",
+   "prompt": "the typography scale is inconsistent, headings look random sizes",
+   "group": "positive",
+   "expect": "activate",
+   "note": "typography"
+  },
+  {
+   "id": "act-009",
+   "prompt": "Normalise spacing across cards, way too much padding on some, none on others",
+   "group": "positive",
+   "expect": "activate",
+   "note": "spacing"
+  },
+  {
+   "id": "act-010",
+   "prompt": "Our buttons fail colour contrast, fix to WCAG AA",
+   "group": "positive",
+   "expect": "activate",
+   "note": "UI accessibility"
+  },
+  {
+   "id": "act-011",
+   "prompt": "Make the pricing table responsive, it breaks between 768 and 1024",
+   "group": "positive",
+   "expect": "activate",
+   "note": "responsive"
+  },
+  {
+   "id": "act-012",
+   "prompt": "We white-label this app for 3 brands but they all look the same, make them distinct",
+   "group": "positive",
+   "expect": "activate",
+   "note": "multi-brand"
+  },
+  {
+   "id": "act-013",
+   "prompt": "Here is a screenshot of a dashboard, implement it in Tailwind",
+   "group": "positive",
+   "expect": "activate",
+   "note": "screenshot to code"
+  },
+  {
+   "id": "act-014",
+   "prompt": "The signup form is 14 fields long on one screen, improve the form UX",
+   "group": "positive",
+   "expect": "activate",
+   "note": "forms UX"
+  },
+  {
+   "id": "act-015",
+   "prompt": "Data grid with 40 columns is unreadable, help with column priority and density",
+   "group": "positive",
+   "expect": "activate",
+   "note": "tables UX"
+  },
+  {
+   "id": "act-016",
+   "prompt": "Which chart type should we use for weekly churn vs cohort size on the analytics page?",
+   "group": "positive",
+   "expect": "activate",
+   "note": "chart choice for UI"
+  },
+  {
+   "id": "act-017",
+   "prompt": "design empty states for the inbox, favourites and search results screens",
+   "group": "positive",
+   "expect": "activate",
+   "note": "empty states"
+  },
+  {
+   "id": "act-018",
+   "prompt": "Video player controls disappear too fast and the seek bar is hard to grab on TV",
+   "group": "positive",
+   "expect": "activate",
+   "note": "player controls"
+  },
+  {
+   "id": "act-019",
+   "prompt": "Build an EPG grid for our IPTV app that works with a remote",
+   "group": "positive",
+   "expect": "activate",
+   "note": "EPG"
+  },
+  {
+   "id": "act-020",
+   "prompt": "Reorganise the settings screen, 60 toggles in a flat list is awful",
+   "group": "positive",
+   "expect": "activate",
+   "note": "settings screen"
+  },
+  {
+   "id": "act-021",
+   "prompt": "Create a 3-step onboarding flow for first-time users of the mobile app",
+   "group": "positive",
+   "expect": "activate",
+   "note": "onboarding"
+  },
+  {
+   "id": "act-022",
+   "prompt": "tvOS app: focus ring is invisible on the dark poster rows",
+   "group": "positive",
+   "expect": "activate",
+   "note": "tvOS focus visibility"
+  },
+  {
+   "id": "act-023",
+   "prompt": "Convert this Figma export screenshot into a SwiftUI view",
+   "group": "positive",
+   "expect": "activate",
+   "note": "screenshot to mobile UI"
+  },
+  {
+   "id": "act-024",
+   "prompt": "WPF app looks like Windows 7, modernise the visual layer with Fluent styles",
+   "group": "positive",
+   "expect": "activate",
+   "note": "desktop restyle"
+  },
+  {
+   "id": "act-025",
+   "prompt": "Avalonia sidebar should collapse to icons under 900px width",
+   "group": "positive",
+   "expect": "activate",
+   "note": "adaptive desktop layout"
+  },
+  {
+   "id": "act-026",
+   "prompt": "screen reader reads our icon buttons as 'button button button', fix labels",
+   "group": "positive",
+   "expect": "activate",
+   "note": "a11y labels"
+  },
+  {
+   "id": "act-027",
+   "prompt": "Reduce motion for users with the OS setting on, our animations are heavy",
+   "group": "positive",
+   "expect": "activate",
+   "note": "motion accessibility"
+  },
+  {
+   "id": "act-028",
+   "prompt": "Design a component library: buttons, inputs, cards, badges with variants",
+   "group": "positive",
+   "expect": "activate",
+   "note": "design system components"
+  },
+  {
+   "id": "act-029",
+   "prompt": "The landing page hero has no visual hierarchy, everything is the same weight",
+   "group": "positive",
+   "expect": "activate",
+   "note": "hierarchy"
+  },
+  {
+   "id": "act-030",
+   "prompt": "Make the hover, focus, active and disabled states consistent across all controls",
+   "group": "positive",
+   "expect": "activate",
+   "note": "interaction states"
+  },
+  {
+   "id": "act-031",
+   "prompt": "Tablet layout for our Compose app should use two panes not a phone list",
+   "group": "positive",
+   "expect": "activate",
+   "note": "adaptive mobile layout"
+  },
+  {
+   "id": "act-032",
+   "prompt": "Loading skeletons instead of spinners for the feed, design them pls",
+   "group": "positive",
+   "expect": "activate",
+   "note": "loading states"
+  },
+  {
+   "id": "act-033",
+   "prompt": "Our toasts, banners and modals all fight for attention, define a notification hierarchy",
+   "group": "positive",
+   "expect": "activate",
+   "note": "feedback hierarchy"
+  },
+  {
+   "id": "act-034",
+   "prompt": "Kiosk idle screen needs an attract loop and a clear 'touch to start'",
+   "group": "positive",
+   "expect": "activate",
+   "note": "kiosk UX"
+  },
+  {
+   "id": "act-035",
+   "prompt": "Add a semantic color layer (success, warning, danger) on top of our palette tokens",
+   "group": "positive",
+   "expect": "activate",
+   "note": "semantic tokens"
+  },
+  {
+   "id": "act-036",
+   "prompt": "date picker is unusable on mobile, redesign the interaction",
+   "group": "positive",
+   "expect": "activate",
+   "note": "mobile interaction"
+  },
+  {
+   "id": "act-037",
+   "prompt": "Sticky table header plus frozen first column for the finance grid",
+   "group": "positive",
+   "expect": "activate",
+   "note": "data grid UX"
+  },
+  {
+   "id": "act-038",
+   "prompt": "Dark theme makes the charts unreadable, pick a palette that works in both",
+   "group": "positive",
+   "expect": "activate",
+   "note": "chart theming"
+  },
+  {
+   "id": "act-039",
+   "prompt": "Turn this hand-drawn wireframe photo into a working HTML page",
+   "group": "positive",
+   "expect": "activate",
+   "note": "sketch to UI"
+  },
+  {
+   "id": "act-040",
+   "prompt": "Android TV: long lists scroll past the focused item so you lose your place",
+   "group": "positive",
+   "expect": "activate",
+   "note": "TV scroll behaviour"
+  },
+  {
+   "id": "act-041",
+   "prompt": "Give each of our 5 client brands its own layout rhythm, not just a logo swap",
+   "group": "positive",
+   "expect": "activate",
+   "note": "brand differentiation"
+  },
+  {
+   "id": "act-042",
+   "prompt": "Improve line length and readability of the article view on wide monitors",
+   "group": "positive",
+   "expect": "activate",
+   "note": "typography/readability"
+  },
+  {
+   "id": "act-043",
+   "prompt": "The modal traps focus incorrectly and Esc doesn't close it",
+   "group": "positive",
+   "expect": "activate",
+   "note": "keyboard a11y"
+  },
+  {
+   "id": "act-044",
+   "prompt": "Design a mini player that persists across screens in the music app",
+   "group": "positive",
+   "expect": "activate",
+   "note": "player UX"
+  },
+  {
+   "id": "act-045",
+   "prompt": "Channel list in the IPTV app needs favourites, categories and now-playing at a glance",
+   "group": "positive",
+   "expect": "activate",
+   "note": "IPTV UX"
+  },
+  {
+   "id": "act-046",
+   "prompt": "Redo the profile settings page with sections, descriptions and sane grouping",
+   "group": "positive",
+   "expect": "activate",
+   "note": "settings IA"
+  },
+  {
+   "id": "act-047",
+   "prompt": "Our inline form validation shows errors before the user finishes typing, fix the UX",
+   "group": "positive",
+   "expect": "activate",
+   "note": "form validation UX"
+  },
+  {
+   "id": "act-048",
+   "prompt": "Layout breaks with RTL languages, make the UI mirror properly",
+   "group": "positive",
+   "expect": "activate",
+   "note": "RTL layout"
+  },
+  {
+   "id": "act-049",
+   "prompt": "Make the text scale when the user bumps system font size on Android",
+   "group": "positive",
+   "expect": "activate",
+   "note": "dynamic type"
+  },
+  {
+   "id": "act-050",
+   "prompt": "Homepage feels cluttered, reduce visual noise and establish a grid",
+   "group": "positive",
+   "expect": "activate",
+   "note": "layout grid"
+  },
+  {
+   "id": "act-051",
+   "prompt": "Desktop app toolbar: too many icons, no labels, users cant find export",
+   "group": "positive",
+   "expect": "activate",
+   "note": "desktop toolbar UX"
+  },
+  {
+   "id": "act-052",
+   "prompt": "Design the 10-foot UI for the sports section with big posters and clear focus",
+   "group": "positive",
+   "expect": "activate",
+   "note": "10-foot UI"
+  },
+  {
+   "id": "act-053",
+   "prompt": "Implement this dribbble shot as a responsive React component",
+   "group": "positive",
+   "expect": "activate",
+   "note": "screenshot to code"
+  },
+  {
+   "id": "act-054",
+   "prompt": "Elevation and shadows are inconsistent between cards, sheets and menus",
+   "group": "positive",
+   "expect": "activate",
+   "note": "elevation system"
+  },
+  {
+   "id": "act-055",
+   "prompt": "Add a high-contrast theme variant for the accessibility settings",
+   "group": "positive",
+   "expect": "activate",
+   "note": "a11y theme"
+  },
+  {
+   "id": "act-056",
+   "prompt": "Wizard flow for device setup on the set-top box, remote only",
+   "group": "positive",
+   "expect": "activate",
+   "note": "TV onboarding"
+  },
+  {
+   "id": "act-057",
+   "prompt": "Search results page: improve scannability with better grouping and hierarchy",
+   "group": "positive",
+   "expect": "activate",
+   "note": "scannability"
+  },
+  {
+   "id": "act-058",
+   "prompt": "Bottom sheet vs modal vs new screen for filters on mobile — decide and implement",
+   "group": "positive",
+   "expect": "activate",
+   "note": "mobile pattern choice"
+  },
+  {
+   "id": "act-059",
+   "prompt": "Progress indicator for the 5-step kiosk checkout, users don't know how far along they are",
+   "group": "positive",
+   "expect": "activate",
+   "note": "progress UX"
+  },
+  {
+   "id": "act-060",
+   "prompt": "Audit our UI against the design system and list every off-token colour",
+   "group": "positive",
+   "expect": "activate",
+   "note": "design system audit"
+  },
+  {
+   "id": "act-061",
+   "prompt": "Optimise this Postgres query, it takes 12s on the orders table",
+   "group": "negative",
+   "expect": "skip",
+   "note": "SQL"
+  },
+  {
+   "id": "act-062",
+   "prompt": "JWT refresh token rotation keeps invalidating sessions early",
+   "group": "negative",
+   "expect": "skip",
+   "note": "auth backend"
+  },
+  {
+   "id": "act-063",
+   "prompt": "Dockerfile builds fine locally but fails in CI with permission denied",
+   "group": "negative",
+   "expect": "skip",
+   "note": "Docker/CI"
+  },
+  {
+   "id": "act-064",
+   "prompt": "Write a Kubernetes HPA config for the worker deployment",
+   "group": "negative",
+   "expect": "skip",
+   "note": "K8s"
+  },
+  {
+   "id": "act-065",
+   "prompt": "GitHub Actions cache isn't restoring node_modules",
+   "group": "negative",
+   "expect": "skip",
+   "note": "CI"
+  },
+  {
+   "id": "act-066",
+   "prompt": "Airflow DAG skips the dedupe task randomly",
+   "group": "negative",
+   "expect": "skip",
+   "note": "data pipeline"
+  },
+  {
+   "id": "act-067",
+   "prompt": "Add structured logging with correlation IDs to the Go service",
+   "group": "negative",
+   "expect": "skip",
+   "note": "logging"
+  },
+  {
+   "id": "act-068",
+   "prompt": "Memory leak in the Node process after a few hours, heap grows forever",
+   "group": "negative",
+   "expect": "skip",
+   "note": "memory leak"
+  },
+  {
+   "id": "act-069",
+   "prompt": "how do i squash the last 5 commits and force push safely",
+   "group": "negative",
+   "expect": "skip",
+   "note": "git"
+  },
+  {
+   "id": "act-070",
+   "prompt": "pnpm install fails with peer dependency conflict on eslint",
+   "group": "negative",
+   "expect": "skip",
+   "note": "package manager"
+  },
+  {
+   "id": "act-071",
+   "prompt": "The API returns 500 when the payload has a null email",
+   "group": "negative",
+   "expect": "skip",
+   "note": "API error"
+  },
+  {
+   "id": "act-072",
+   "prompt": "Implement Dijkstra for the route planner service",
+   "group": "negative",
+   "expect": "skip",
+   "note": "algorithm"
+  },
+  {
+   "id": "act-073",
+   "prompt": "Write unit tests for the payment reconciliation service",
+   "group": "negative",
+   "expect": "skip",
+   "note": "service tests"
+  },
+  {
+   "id": "act-074",
+   "prompt": "Our AWS bill doubled, find what's costing so much",
+   "group": "negative",
+   "expect": "skip",
+   "note": "infra cost"
+  },
+  {
+   "id": "act-075",
+   "prompt": "Run a dependency vulnerability scan and fix criticals",
+   "group": "negative",
+   "expect": "skip",
+   "note": "security scanning"
+  },
+  {
+   "id": "act-076",
+   "prompt": "Set up Redis caching for the product catalogue endpoint",
+   "group": "negative",
+   "expect": "skip",
+   "note": "backend caching"
+  },
+  {
+   "id": "act-077",
+   "prompt": "Migrate the users table to add a soft-delete column",
+   "group": "negative",
+   "expect": "skip",
+   "note": "DB migration"
+  },
+  {
+   "id": "act-078",
+   "prompt": "Rate limiter lets bursts through, fix the token bucket",
+   "group": "negative",
+   "expect": "skip",
+   "note": "backend logic"
+  },
+  {
+   "id": "act-079",
+   "prompt": "Terraform plan wants to destroy the RDS instance, why",
+   "group": "negative",
+   "expect": "skip",
+   "note": "infra"
+  },
+  {
+   "id": "act-080",
+   "prompt": "Parse this CSV with 3M rows faster in Python",
+   "group": "negative",
+   "expect": "skip",
+   "note": "data processing"
+  },
+  {
+   "id": "act-081",
+   "prompt": "gRPC stream closes with RST_STREAM after 60 seconds",
+   "group": "negative",
+   "expect": "skip",
+   "note": "networking"
+  },
+  {
+   "id": "act-082",
+   "prompt": "Configure nginx as a reverse proxy with websocket support",
+   "group": "negative",
+   "expect": "skip",
+   "note": "DevOps"
+  },
+  {
+   "id": "act-083",
+   "prompt": "Kafka consumer lag keeps climbing on partition 3",
+   "group": "negative",
+   "expect": "skip",
+   "note": "messaging"
+  },
+  {
+   "id": "act-084",
+   "prompt": "Write a cron job that rotates logs weekly",
+   "group": "negative",
+   "expect": "skip",
+   "note": "ops scripting"
+  },
+  {
+   "id": "act-085",
+   "prompt": "Explain the difference between mutex and semaphore in Rust",
+   "group": "negative",
+   "expect": "skip",
+   "note": "generic programming"
+  },
+  {
+   "id": "act-086",
+   "prompt": "OAuth callback gives invalid_grant on the second attempt",
+   "group": "negative",
+   "expect": "skip",
+   "note": "auth"
+  },
+  {
+   "id": "act-087",
+   "prompt": "Set up Sentry for the backend and alert on error rate",
+   "group": "negative",
+   "expect": "skip",
+   "note": "observability"
+  },
+  {
+   "id": "act-088",
+   "prompt": "Deduplicate events in the ingestion lambda by idempotency key",
+   "group": "negative",
+   "expect": "skip",
+   "note": "backend logic"
+  },
+  {
+   "id": "act-089",
+   "prompt": "S3 presigned URLs expire before the upload finishes",
+   "group": "negative",
+   "expect": "skip",
+   "note": "cloud storage"
+  },
+  {
+   "id": "act-090",
+   "prompt": "Elasticsearch relevance is bad for partial product names",
+   "group": "negative",
+   "expect": "skip",
+   "note": "search backend"
+  },
+  {
+   "id": "act-091",
+   "prompt": "write a regex to validate ISO 8601 durations",
+   "group": "negative",
+   "expect": "skip",
+   "note": "generic coding"
+  },
+  {
+   "id": "act-092",
+   "prompt": "Stripe webhook signature verification fails in staging",
+   "group": "negative",
+   "expect": "skip",
+   "note": "payments backend"
+  },
+  {
+   "id": "act-093",
+   "prompt": "Reduce cold start on the .NET Azure Function",
+   "group": "negative",
+   "expect": "skip",
+   "note": "serverless perf"
+  },
+  {
+   "id": "act-094",
+   "prompt": "Our Prisma schema relation is wrong, orders don't link to customers",
+   "group": "negative",
+   "expect": "skip",
+   "note": "ORM/DB"
+  },
+  {
+   "id": "act-095",
+   "prompt": "GraphQL N+1 problem on the posts resolver",
+   "group": "negative",
+   "expect": "skip",
+   "note": "API perf"
+  },
+  {
+   "id": "act-096",
+   "prompt": "why does my React Query refetch twice on mount",
+   "group": "negative",
+   "expect": "skip",
+   "note": "frontend data fetching, not UI design"
+  },
+  {
+   "id": "act-097",
+   "prompt": "Next.js middleware redirect loop between /login and /dashboard",
+   "group": "negative",
+   "expect": "skip",
+   "note": "framework routing runtime"
+  },
+  {
+   "id": "act-098",
+   "prompt": "Compose recomposition performance in a ViewModel unit test",
+   "group": "negative",
+   "expect": "skip",
+   "note": "framework perf/testing"
+  },
+  {
+   "id": "act-099",
+   "prompt": "SwiftUI @State not updating when set from a background thread",
+   "group": "negative",
+   "expect": "skip",
+   "note": "framework runtime bug"
+  },
+  {
+   "id": "act-100",
+   "prompt": "Vite HMR stopped working after upgrading to v6",
+   "group": "negative",
+   "expect": "skip",
+   "note": "build tooling"
+  },
+  {
+   "id": "act-101",
+   "prompt": "Redux Toolkit slice mutates state outside createSlice, getting warnings",
+   "group": "negative",
+   "expect": "skip",
+   "note": "state management"
+  },
+  {
+   "id": "act-102",
+   "prompt": "Angular change detection runs on every keystroke in the parent, how to isolate",
+   "group": "negative",
+   "expect": "skip",
+   "note": "framework perf"
+  },
+  {
+   "id": "act-103",
+   "prompt": "TypeScript generic for a typed event emitter in our React hooks package",
+   "group": "negative",
+   "expect": "skip",
+   "note": "typing"
+  },
+  {
+   "id": "act-104",
+   "prompt": "Webpack bundle is 4MB, set up code splitting",
+   "group": "negative",
+   "expect": "skip",
+   "note": "bundling"
+  },
+  {
+   "id": "act-105",
+   "prompt": "Flutter app crashes on startup with a null check operator error",
+   "group": "negative",
+   "expect": "skip",
+   "note": "runtime crash"
+  },
+  {
+   "id": "act-106",
+   "prompt": "React Native Android build fails, duplicate class in Gradle",
+   "group": "negative",
+   "expect": "skip",
+   "note": "mobile build"
+  },
+  {
+   "id": "act-107",
+   "prompt": "Playwright test flakes because the fetch mock resolves late",
+   "group": "negative",
+   "expect": "skip",
+   "note": "test infra"
+  },
+  {
+   "id": "act-108",
+   "prompt": "Service worker caches stale JS after deploy",
+   "group": "negative",
+   "expect": "skip",
+   "note": "PWA caching"
+  },
+  {
+   "id": "act-109",
+   "prompt": "Kotlin coroutine cancelled exception in the repository layer of the Android app",
+   "group": "negative",
+   "expect": "skip",
+   "note": "mobile data layer"
+  },
+  {
+   "id": "act-110",
+   "prompt": "WPF MVVM: ICommand CanExecute never re-evaluates after async call",
+   "group": "negative",
+   "expect": "skip",
+   "note": "desktop framework binding logic"
+  },
+  {
+   "id": "act-111",
+   "prompt": "Zustand store loses state on hot reload",
+   "group": "negative",
+   "expect": "skip",
+   "note": "state mgmt tooling"
+  },
+  {
+   "id": "act-112",
+   "prompt": "Storybook fails to start, cannot resolve @storybook/addon-essentials",
+   "group": "negative",
+   "expect": "skip",
+   "note": "tooling"
+  },
+  {
+   "id": "act-113",
+   "prompt": "ExoPlayer buffering stalls on HLS streams with discontinuities",
+   "group": "negative",
+   "expect": "skip",
+   "note": "media runtime, not UI"
+  },
+  {
+   "id": "act-114",
+   "prompt": "Set up i18n message extraction pipeline for the Vue app",
+   "group": "negative",
+   "expect": "skip",
+   "note": "tooling pipeline"
+  },
+  {
+   "id": "act-115",
+   "prompt": "Electron IPC handler leaks listeners between windows",
+   "group": "negative",
+   "expect": "skip",
+   "note": "desktop runtime bug"
+  },
+  {
+   "id": "act-116",
+   "prompt": "CORS error calling the API from localhost:3000",
+   "group": "negative",
+   "expect": "skip",
+   "note": "API/networking"
+  },
+  {
+   "id": "act-117",
+   "prompt": "Write a bash script to bulk rename files by date",
+   "group": "negative",
+   "expect": "skip",
+   "note": "scripting"
+  },
+  {
+   "id": "act-118",
+   "prompt": "Benchmark two JSON parsers for our C# backend",
+   "group": "negative",
+   "expect": "skip",
+   "note": "backend perf"
+  },
+  {
+   "id": "act-119",
+   "prompt": "How should we shard the tenants table for multi-tenancy",
+   "group": "negative",
+   "expect": "skip",
+   "note": "DB architecture"
+  },
+  {
+   "id": "act-120",
+   "prompt": "Set up feature flags with LaunchDarkly in the API layer",
+   "group": "negative",
+   "expect": "skip",
+   "note": "backend config"
+  },
+  {
+   "id": "act-121",
+   "prompt": "fix the dashboard",
+   "group": "ambiguous",
+   "expect": "ambiguous",
+   "note": "unclear if visual or data"
+  },
+  {
+   "id": "act-122",
+   "prompt": "improve this app",
+   "group": "ambiguous",
+   "expect": "ambiguous",
+   "note": "no scope"
+  },
+  {
+   "id": "act-123",
+   "prompt": "make it cleaner",
+   "group": "ambiguous",
+   "expect": "ambiguous",
+   "note": "code or UI unclear"
+  },
+  {
+   "id": "act-124",
+   "prompt": "the page is broken",
+   "group": "ambiguous",
+   "expect": "ambiguous",
+   "note": "could be runtime or layout"
+  },
+  {
+   "id": "act-125",
+   "prompt": "clean up the settings",
+   "group": "ambiguous",
+   "expect": "ambiguous",
+   "note": "settings screen or config file"
+  },
+  {
+   "id": "act-126",
+   "prompt": "modernize this",
+   "group": "ambiguous",
+   "expect": "ambiguous",
+   "note": "stack or visuals"
+  },
+  {
+   "id": "act-127",
+   "prompt": "the login doesnt work right",
+   "group": "ambiguous",
+   "expect": "ambiguous",
+   "note": "auth or UI"
+  },
+  {
+   "id": "act-128",
+   "prompt": "make the table better",
+   "group": "ambiguous",
+   "expect": "ambiguous",
+   "note": "DB table or UI table"
+  },
+  {
+   "id": "act-129",
+   "prompt": "can you polish the player",
+   "group": "ambiguous",
+   "expect": "ambiguous",
+   "note": "playback engine or controls"
+  },
+  {
+   "id": "act-130",
+   "prompt": "the TV app is slow",
+   "group": "ambiguous",
+   "expect": "ambiguous",
+   "note": "perf vs perceived UX"
+  },
+  {
+   "id": "act-131",
+   "prompt": "refactor the header",
+   "group": "ambiguous",
+   "expect": "ambiguous",
+   "note": "HTTP header or UI header"
+  },
+  {
+   "id": "act-132",
+   "prompt": "sort out the forms",
+   "group": "ambiguous",
+   "expect": "ambiguous",
+   "note": "validation logic or UX"
+  },
+  {
+   "id": "act-133",
+   "prompt": "the theme is wrong",
+   "group": "ambiguous",
+   "expect": "ambiguous",
+   "note": "could be config or visual"
+  },
+  {
+   "id": "act-134",
+   "prompt": "users are confused",
+   "group": "ambiguous",
+   "expect": "ambiguous",
+   "note": "no target"
+  },
+  {
+   "id": "act-135",
+   "prompt": "make the kiosk more robust",
+   "group": "ambiguous",
+   "expect": "ambiguous",
+   "note": "hardware/runtime or UX"
+  },
+  {
+   "id": "act-136",
+   "prompt": "tidy the components folder",
+   "group": "ambiguous",
+   "expect": "ambiguous",
+   "note": "code organisation likely"
+  },
+  {
+   "id": "act-137",
+   "prompt": "the mobile version needs work",
+   "group": "ambiguous",
+   "expect": "ambiguous",
+   "note": "vague"
+  },
+  {
+   "id": "act-138",
+   "prompt": "fix the brand stuff",
+   "group": "ambiguous",
+   "expect": "ambiguous",
+   "note": "assets, config or design"
+  },
+  {
+   "id": "act-139",
+   "prompt": "the grid is off",
+   "group": "ambiguous",
+   "expect": "ambiguous",
+   "note": "data grid or layout grid"
+  },
+  {
+   "id": "act-140",
+   "prompt": "something's wrong with the colours",
+   "group": "ambiguous",
+   "expect": "ambiguous",
+   "note": "could be rendering bug or design"
+  },
+  {
+   "id": "act-141",
+   "prompt": "review the frontend",
+   "group": "ambiguous",
+   "expect": "ambiguous",
+   "note": "code review or design review"
+  },
+  {
+   "id": "act-142",
+   "prompt": "make onboarding work",
+   "group": "ambiguous",
+   "expect": "ambiguous",
+   "note": "broken flow or design"
+  },
+  {
+   "id": "act-143",
+   "prompt": "improve the EPG",
+   "group": "ambiguous",
+   "expect": "ambiguous",
+   "note": "data feed or UI"
+  },
+  {
+   "id": "act-144",
+   "prompt": "the desktop app looks weird on my laptop",
+   "group": "ambiguous",
+   "expect": "ambiguous",
+   "note": "DPI bug or design"
+  },
+  {
+   "id": "act-145",
+   "prompt": "redo the homepage",
+   "group": "ambiguous",
+   "expect": "ambiguous",
+   "note": "content, code or design"
+  },
+  {
+   "id": "act-146",
+   "prompt": "update the design",
+   "group": "ambiguous",
+   "expect": "ambiguous",
+   "note": "architecture design or visual"
+  },
+  {
+   "id": "act-147",
+   "prompt": "the buttons dont do anything",
+   "group": "ambiguous",
+   "expect": "ambiguous",
+   "note": "likely handler bug, maybe affordance"
+  },
+  {
+   "id": "act-148",
+   "prompt": "make the charts nicer",
+   "group": "ambiguous",
+   "expect": "ambiguous",
+   "note": "data or visual"
+  },
+  {
+   "id": "act-149",
+   "prompt": "the app needs a facelift and a cleanup",
+   "group": "ambiguous",
+   "expect": "ambiguous",
+   "note": "mixed scope"
+  },
+  {
+   "id": "act-150",
+   "prompt": "fix navigation",
+   "group": "ambiguous",
+   "expect": "ambiguous",
+   "note": "router or nav UI"
+  },
+  {
+   "id": "act-151",
+   "prompt": "Make this React form visually easier to scan",
+   "group": "competing",
+   "expect": "activate",
+   "note": "visual hierarchy despite React"
+  },
+  {
+   "id": "act-152",
+   "prompt": "Fix keyboard navigation in this React modal",
+   "group": "competing",
+   "expect": "activate",
+   "note": "interaction a11y"
+  },
+  {
+   "id": "act-153",
+   "prompt": "the Compose list looks cramped on tablets",
+   "group": "competing",
+   "expect": "activate",
+   "note": "adaptive layout"
+  },
+  {
+   "id": "act-154",
+   "prompt": "Why is useEffect firing twice in dev?",
+   "group": "competing",
+   "expect": "skip",
+   "note": "framework runtime"
+  },
+  {
+   "id": "act-155",
+   "prompt": "Implement API caching in Next.js with revalidate",
+   "group": "competing",
+   "expect": "skip",
+   "note": "data layer"
+  },
+  {
+   "id": "act-156",
+   "prompt": "SwiftUI NavigationStack: back button label is wrong and the toolbar is crowded",
+   "group": "competing",
+   "expect": "activate",
+   "note": "platform UX"
+  },
+  {
+   "id": "act-157",
+   "prompt": "SwiftUI view doesn't re-render when the @Published array changes",
+   "group": "competing",
+   "expect": "skip",
+   "note": "state runtime bug"
+  },
+  {
+   "id": "act-158",
+   "prompt": "Our Tailwind config has 40 random colours, consolidate into tokens",
+   "group": "competing",
+   "expect": "activate",
+   "note": "design tokens"
+  },
+  {
+   "id": "act-159",
+   "prompt": "Tailwind classes aren't being purged in production build",
+   "group": "competing",
+   "expect": "skip",
+   "note": "build tooling"
+  },
+  {
+   "id": "act-160",
+   "prompt": "Vue table component: make rows denser and add zebra striping for readability",
+   "group": "competing",
+   "expect": "activate",
+   "note": "table UX"
+  },
+  {
+   "id": "act-161",
+   "prompt": "Vue computed property not updating when the nested object changes",
+   "group": "competing",
+   "expect": "skip",
+   "note": "reactivity runtime"
+  },
+  {
+   "id": "act-162",
+   "prompt": "Android TV Leanback: focused card should scale and show metadata",
+   "group": "competing",
+   "expect": "activate",
+   "note": "TV interaction"
+  },
+  {
+   "id": "act-163",
+   "prompt": "Android TV app: ExoPlayer DRM license request fails with 403",
+   "group": "competing",
+   "expect": "skip",
+   "note": "media/network"
+  },
+  {
+   "id": "act-164",
+   "prompt": "WinUI 3 ListView items need better spacing and a clearer selected state",
+   "group": "competing",
+   "expect": "activate",
+   "note": "desktop visual"
+  },
+  {
+   "id": "act-165",
+   "prompt": "WinUI 3 x:Bind throws at runtime because the property isn't public",
+   "group": "competing",
+   "expect": "skip",
+   "note": "binding runtime error"
+  },
+  {
+   "id": "act-166",
+   "prompt": "Storybook: define our button variants and document the visual states",
+   "group": "competing",
+   "expect": "activate",
+   "note": "design system"
+  },
+  {
+   "id": "act-167",
+   "prompt": "Chart.js tooltip shows wrong values after data update",
+   "group": "competing",
+   "expect": "skip",
+   "note": "library data bug"
+  },
+  {
+   "id": "act-168",
+   "prompt": "Choose between bar and line for this Recharts dashboard and fix the legend clutter",
+   "group": "competing",
+   "expect": "activate",
+   "note": "chart UX choice"
+  },
+  {
+   "id": "act-169",
+   "prompt": "Flutter ListView.builder rebuilds every item on scroll, perf issue",
+   "group": "competing",
+   "expect": "skip",
+   "note": "framework perf"
+  },
+  {
+   "id": "act-170",
+   "prompt": "Flutter bottom nav bar: icons unclear, no active state, fix it",
+   "group": "competing",
+   "expect": "activate",
+   "note": "mobile nav UX"
+  },
+  {
+   "id": "act-171",
+   "prompt": "React Native FlatList: cards overflow on small screens and text truncates badly",
+   "group": "competing",
+   "expect": "activate",
+   "note": "responsive mobile layout"
+  },
+  {
+   "id": "act-172",
+   "prompt": "React Native fetch fails on Android with network request failed",
+   "group": "competing",
+   "expect": "skip",
+   "note": "networking"
+  },
+  {
+   "id": "act-173",
+   "prompt": "Angular Material form: labels float weirdly and error messages shift layout",
+   "group": "competing",
+   "expect": "activate",
+   "note": "form visual behaviour"
+  },
+  {
+   "id": "act-174",
+   "prompt": "Angular route guard returns before the auth observable resolves",
+   "group": "competing",
+   "expect": "skip",
+   "note": "routing/auth logic"
+  },
+  {
+   "id": "act-175",
+   "prompt": "Electron app: menu bar and window chrome should match macOS and Windows conventions",
+   "group": "competing",
+   "expect": "activate",
+   "note": "platform UX"
+  },
+  {
+   "id": "act-176",
+   "prompt": "Electron auto-updater fails signature check on Windows",
+   "group": "competing",
+   "expect": "skip",
+   "note": "packaging/security"
+  },
+  {
+   "id": "act-177",
+   "prompt": "Add aria-live region so screen readers announce cart updates in our React app",
+   "group": "competing",
+   "expect": "activate",
+   "note": "UI accessibility"
+  },
+  {
+   "id": "act-178",
+   "prompt": "CSS grid layout collapses to one column on Safari but not Chrome",
+   "group": "competing",
+   "expect": "activate",
+   "note": "layout behaviour is interface behaviour"
+  },
+  {
+   "id": "act-179",
+   "prompt": "Next.js Image component throws because the remote domain isn't configured",
+   "group": "competing",
+   "expect": "skip",
+   "note": "framework config"
+  },
+  {
+   "id": "act-180",
+   "prompt": "Avalonia DataGrid binding throws on null collection at startup",
+   "group": "competing",
+   "expect": "skip",
+   "note": "binding runtime error"
+  }
+ ]
+}

@@ -1,0 +1,121 @@
+{
+  "brand": "add keyboard shortcuts and a command bar to the existing stock adjustments page without changing its navigation or theme",
+  "fingerprint": {
+    "navigation_model": "left-rail",
+    "layout_topology": "three-pane",
+    "grid_behavior": "fixed",
+    "content_density": "high",
+    "surface_strategy": "bordered",
+    "card_geometry": "bordered",
+    "corner_language": "small",
+    "typography_character": "system-native",
+    "color_strategy": "neutral-plus-accent",
+    "motion_character": "functional-minimal",
+    "focus_strategy": "ring",
+    "cta_strategy": "toolbar-commands",
+    "image_strategy": "none",
+    "icon_strategy": "system",
+    "metadata_density": "rich"
+  },
+  "direction": {
+    "navigation": "nav-left-rail",
+    "layout": "layout-three-pane",
+    "density": "density-high",
+    "surface": "surface-bordered-panes",
+    "cards": "card-bordered",
+    "typography": "typography-system-native",
+    "color": "color-neutral-accent",
+    "motion": "motion-functional-minimal",
+    "focus": "focus-ring-standard",
+    "cta": "cta-toolbar-commands",
+    "imagery": "imagery-none",
+    "icon": "icon-platform-native",
+    "metadata": "metadata-rich"
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "desktop"
+    ],
+    "input": [
+      "keyboard",
+      "pointer"
+    ],
+    "product": [
+      "erp"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "winui"
+    ],
+    "density": "high",
+    "components": [
+      "navigation"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "create navigation"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "preserve_navigation": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_INTERACTION",
+      "in_scope": true,
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "mode_evidence": [
+      "create: default (no mode cue)"
+    ],
+    "project_context": {
+      "navigation": "left-rail (KNOWN)",
+      "theme": "dual-theme (INFERRED)",
+      "surfaces": "bordered-flat (INFERRED)",
+      "spacing": "4 (INFERRED)",
+      "components": "winui3, community-toolkit (KNOWN)"
+    },
+    "known": [
+      "platform=desktop",
+      "input=keyboard",
+      "product=erp",
+      "stack=winui",
+      "project_navigation=left-rail",
+      "project_components=winui3, community-toolkit"
+    ],
+    "inferred": [
+      "input=pointer",
+      "density=high",
+      "mode=create",
+      "project_theme=dual-theme",
+      "project_surfaces=bordered-flat",
+      "project_spacing=4"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

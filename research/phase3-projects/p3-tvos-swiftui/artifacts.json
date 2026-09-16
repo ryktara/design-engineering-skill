@@ -1,0 +1,85 @@
+{
+  "case": "p3-tvos-swiftui",
+  "platform": "tv",
+  "stack": "swiftui",
+  "rendered": true,
+  "render_mode": "html-twin",
+  "native_build": false,
+  "static_review": true,
+  "viewport": "1920x1080",
+  "screenshots": [
+    "render/first-signin.png",
+    "render/first-signin-expired.png",
+    "render/first-player-controls.png",
+    "render/first-player-picker.png",
+    "render/first-player-next.png",
+    "render/first-player-hidden.png",
+    "render/final-signin.png",
+    "render/final-signin-expired.png",
+    "render/final-player-controls.png",
+    "render/final-player-picker.png",
+    "render/final-player-next.png",
+    "render/final-player-hidden.png"
+  ],
+  "first_render_defects": 9,
+  "final_defects": 4,
+  "iterations": 3,
+  "interaction_checks": { "total": 51, "passed": 51, "failed": 0, "file": "05-interaction.json" },
+  "guidance_relevant": 6,
+  "guidance_partial": 2,
+  "guidance_offtarget": 0,
+  "requirements_status": "AMBIGUOUS (exit 4) — false platform conflict tv vs project 'mobile' from inspector",
+  "knowledge_gaps": [
+    "next-episode / autoplay prompt (placement, countdown, cancel, Menu behaviour)",
+    "Siri Remote gesture model (click vs swipe vs long-press; Menu vs Back on 2nd-gen remote) — 'swipe' routes to mobile records",
+    "activation-code specifics: which glyphs to exclude, chunking, TTL, polling cadence",
+    "QR code sizing / quiet zone / contrast for 3 m viewing",
+    "layer exclusivity: transport row must not remain visible under side sheets or prompts",
+    "focus-lift overflow at the screen edge vs the 60 pt guide and the overscan hard limit",
+    "tvOS API availability footguns (e.g. .controlSize unavailable on tvOS)",
+    "tokens.py scale --platform tv does not know tvOS floors (emits body 28 / caption 18 from base 29)",
+    "tv-player-controls wording 'never hide while a control is focused' is unimplementable on tvOS as written (something is always focused)"
+  ],
+  "ranking_misses": [
+    "tv-back-behavior",
+    "tv-safe-area",
+    "tv-typography-distance",
+    "a11y-reduced-motion",
+    "a11y-focus-visible",
+    "layout-split-player (in direction layout slot, not in guidance bundle)"
+  ],
+  "requirements_errors": [
+    "platform conflict tv vs 'mobile' inherited from inspect_project (Apple project => mobile unconditionally) -> AMBIGUOUS on a clear tvOS request",
+    "components=['media'] — 'transport controls' and 'subtitle picker' not recognised as components",
+    "'auto-hiding' behavioural constraint not captured",
+    "density=medium inferred from product; sign-in and player screens are low density",
+    "jobs lacks watch/consume for the player half"
+  ],
+  "inspection_misses": [
+    "platforms includes 'mobile' for a tvOS-only Package.swift",
+    "tokens: Theme/Tokens.swift not detected",
+    "icons: SF Symbols (systemName:) not detected",
+    "component_dirs: Components/ not detected",
+    "tests: Tests/LumenTVTests not detected",
+    "i18n: Localizable.xcstrings not detected",
+    "package_manager: SwiftPM not reported"
+  ],
+  "direction_slot_fit": {
+    "fit": ["layout", "color", "motion", "focus", "icon", "cta"],
+    "not_applicable_to_task": ["navigation", "cards", "metadata", "imagery"],
+    "conflicts_with_stack_file": ["typography (condensed display vs tvOS system font)"],
+    "wrong_platform_text": ["density (web/mobile px values)"],
+    "validation": { "ok": true, "violations": [] }
+  },
+  "tags": [
+    "requirements-miss",
+    "vocabulary-gap",
+    "ranking-miss",
+    "knowledge-gap",
+    "direction-invariant",
+    "render-defect-fixed",
+    "render-defect-remaining",
+    "tooling-limit",
+    "skill-helped"
+  ]
+}

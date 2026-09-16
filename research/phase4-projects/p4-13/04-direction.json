@@ -1,0 +1,136 @@
+{
+  "brand": "refactor the defect report form so it stays usable with the keyboard open and photos can be retaken, keeping the app's existing theme and navigation",
+  "fingerprint": {
+    "layout_topology": "form-stack",
+    "grid_behavior": "fluid",
+    "content_density": "medium",
+    "surface_strategy": "elevated",
+    "card_geometry": "poster-landscape",
+    "corner_language": "small",
+    "typography_character": "neutral-sans",
+    "color_strategy": "neutral-plus-accent",
+    "motion_character": "functional-minimal",
+    "focus_strategy": "border-plus-scale",
+    "cta_strategy": "sticky-bar",
+    "image_strategy": "none",
+    "icon_strategy": "filled",
+    "metadata_density": "inline-badges"
+  },
+  "direction": {
+    "navigation": null,
+    "layout": "layout-form-stack",
+    "density": "density-medium",
+    "surface": "surface-elevated-cards",
+    "cards": "card-poster-landscape",
+    "typography": "typography-neutral-sans",
+    "color": "color-neutral-accent",
+    "motion": "motion-functional-minimal",
+    "focus": "focus-scale-glow",
+    "cta": "cta-sticky-bar",
+    "imagery": "imagery-none",
+    "icon": "icon-filled-system",
+    "metadata": "metadata-inline-badges"
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "refactor"
+    ],
+    "platform": [
+      "mobile",
+      "tv"
+    ],
+    "input": [
+      "keyboard",
+      "remote",
+      "touch"
+    ],
+    "product": [
+      "erp",
+      "iot"
+    ],
+    "screen": [
+      "form"
+    ],
+    "screen_subtype": [],
+    "stack": [
+      "flutter"
+    ],
+    "density": "medium",
+    "components": [
+      "form",
+      "navigation"
+    ],
+    "environment": [
+      "large-display",
+      "shared-device"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "refactor form"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_INTERACTION",
+      "in_scope": true,
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "mode_evidence": [
+      "refactor: explicit: refactor",
+      "refactor: change request with structural words: refactor, navigation"
+    ],
+    "project_context": {
+      "navigation": "top-bar (KNOWN)",
+      "theme": "dual-theme (KNOWN)",
+      "surfaces": "elevated (INFERRED)",
+      "spacing": "4 (INFERRED)",
+      "components": "go_router, riverpod (KNOWN)"
+    },
+    "known": [
+      "platform=mobile",
+      "platform=tv",
+      "input=keyboard",
+      "input=remote",
+      "product=erp",
+      "product=iot",
+      "stack=flutter",
+      "screen=form",
+      "mode=refactor",
+      "project_navigation=top-bar",
+      "project_theme=dual-theme",
+      "project_components=go_router, riverpod"
+    ],
+    "inferred": [
+      "input=touch",
+      "density=medium",
+      "environment=shared-device",
+      "environment=large-display",
+      "project_surfaces=elevated",
+      "project_spacing=4"
+    ],
+    "missing": [],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": false,
+    "violations": [
+      "non-media product: poster (media) card geometry selected"
+    ]
+  }
+}

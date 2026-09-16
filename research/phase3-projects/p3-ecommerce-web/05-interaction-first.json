@@ -1,0 +1,208 @@
+{
+  "generated": "2026-09-08T20:33:25.942Z",
+  "tests": {
+    "keyboard_add_to_cart_desktop": {
+      "tab_stops": 25,
+      "tab_stop_names": [
+        "Skip to content",
+        "Trailhead Supply",
+        "Jackets",
+        "Packs",
+        "Footwear",
+        "Camp",
+        "Search",
+        "Cart, 1 item",
+        "Home",
+        "Jackets",
+        "Image 1 of 4: Moss colour, front",
+        "Image 2 of 4: hood detail",
+        "Image 3 of 4: Ember colour, front",
+        "Image 4 of 4: Slate colour, front",
+        "★★★★½\n        Rated 4.6 out of 5 · 128 r",
+        "color",
+        "Size guide",
+        "size",
+        "Decrease quantity",
+        "Quantity",
+        "Increase quantity",
+        "Add to cart — $329",
+        "Description",
+        "Specs",
+        "Shipping & returns"
+      ],
+      "stops_without_visible_focus": [],
+      "empty_size_error_text": "Please choose a size before adding to cart.",
+      "empty_size_error_role": "alert",
+      "focus_moved_to_size_group": {
+        "name": "size",
+        "value": "XS"
+      },
+      "size_chosen_by_arrows": "M",
+      "error_cleared_after_choice": true,
+      "live_status_after_add": "Added 1 × Ridgeline 3L Shell, Moss, size M to cart.",
+      "toast_visible": true,
+      "cart_count": "2",
+      "size_guide": {
+        "opens": true,
+        "focus_inside": true,
+        "escape_closes": true,
+        "focus_returns_to_invoker": true
+      },
+      "pass": true
+    },
+    "keyboard_checkout_desktop": {
+      "tab_stops": 20,
+      "stops_without_visible_focus": [],
+      "empty_submit": {
+        "summary_visible": true,
+        "summary_role": "alert",
+        "summary_focused": true,
+        "summary_text": "8 fields need your attentionEmail: Enter your email.First name: Enter your first name.Last name: Enter your last name.Street address: Enter your street address.City: Enter your city.State / province: Enter your state / province.ZIP / postal code: Enter your zip / postal code.Phone: Enter your phone.",
+        "live_region_text": "8 fields need your attention.",
+        "field_errors": [
+          {
+            "id": "email-error",
+            "text": "Enter your email."
+          },
+          {
+            "id": "first-error",
+            "text": "Enter your first name."
+          },
+          {
+            "id": "last-error",
+            "text": "Enter your last name."
+          },
+          {
+            "id": "addr1-error",
+            "text": "Enter your street address."
+          },
+          {
+            "id": "city-error",
+            "text": "Enter your city."
+          },
+          {
+            "id": "region-error",
+            "text": "Enter your state / province."
+          },
+          {
+            "id": "postal-error",
+            "text": "Enter your zip / postal code."
+          },
+          {
+            "id": "phone-error",
+            "text": "Enter your phone."
+          }
+        ],
+        "aria_invalid_fields": [
+          "email",
+          "first",
+          "last",
+          "addr1",
+          "city",
+          "region",
+          "postal",
+          "phone"
+        ],
+        "errors_linked_via_describedby": true,
+        "first_summary_link_focuses_field": "email"
+      },
+      "after_fill": {
+        "still_invalid": [],
+        "success_visible": true,
+        "success_focused": true,
+        "live_region_text": "Order placed. Confirmation sent to kai@example.com"
+      },
+      "pass": true
+    },
+    "phone_product": {
+      "layout_shift_score": 0,
+      "images_missing_width_height": [],
+      "targets_measured": 29,
+      "targets_under_44px": [
+        {
+          "name": "Skip to content",
+          "tag": "a",
+          "w": 139,
+          "h": 40,
+          "ok": false
+        },
+        {
+          "name": "Trailhead Supply",
+          "tag": "a",
+          "w": 139,
+          "h": 27,
+          "ok": false
+        },
+        {
+          "name": "Home",
+          "tag": "a",
+          "w": 38,
+          "h": 19,
+          "ok": false
+        },
+        {
+          "name": "Jackets",
+          "tag": "a",
+          "w": 44,
+          "h": 19,
+          "ok": false
+        }
+      ],
+      "sticky_bar": {
+        "visible": true,
+        "height": 72,
+        "bottom_aligned": true,
+        "body_padding_bottom": 88,
+        "padding_covers_bar": true,
+        "focused_control_obscured_when_scrolled_to_end": true
+      },
+      "reduced_motion": {
+        "btn_transition_duration": "1e-05s",
+        "matches": true
+      },
+      "pass": false
+    },
+    "phone_checkout": {
+      "layout_shift_score": 0,
+      "images_missing_width_height": [],
+      "targets_measured": 21,
+      "targets_under_44px": [
+        {
+          "name": "Skip to content",
+          "tag": "a",
+          "w": 139,
+          "h": 40,
+          "ok": false
+        },
+        {
+          "name": "Trailhead Supply",
+          "tag": "a",
+          "w": 139,
+          "h": 27,
+          "ok": false
+        },
+        {
+          "name": "terms",
+          "tag": "a",
+          "w": 30,
+          "h": 16,
+          "ok": false
+        },
+        {
+          "name": "returns policy",
+          "tag": "a",
+          "w": 72,
+          "h": 16,
+          "ok": false
+        }
+      ],
+      "sticky_bar": null,
+      "reduced_motion": {
+        "btn_transition_duration": "1e-05s",
+        "matches": true
+      },
+      "pass": false
+    }
+  },
+  "all_pass": false
+}

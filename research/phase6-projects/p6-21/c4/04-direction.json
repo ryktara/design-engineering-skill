@@ -1,0 +1,138 @@
+{
+  "brand": "The vehicle map and the list fight for space when the window is narrow.",
+  "fingerprint": {
+    "navigation_model": "menu-bar",
+    "surface_strategy": "bordered",
+    "card_geometry": "list-row",
+    "corner_language": "sharp",
+    "typography_character": "humanist-sans",
+    "color_strategy": "neutral-plus-accent"
+  },
+  "direction": {
+    "navigation": "nav-menu-bar-desktop",
+    "layout": null,
+    "density": null,
+    "surface": "surface-bordered-panes",
+    "cards": "card-list-row",
+    "typography": "typography-humanist-sans",
+    "color": "color-neutral-accent",
+    "motion": null,
+    "focus": null,
+    "cta": null,
+    "imagery": null,
+    "icon": null,
+    "metadata": null
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "responsive",
+      "audit"
+    ],
+    "platform": [
+      "desktop"
+    ],
+    "input": [
+      "keyboard",
+      "pointer"
+    ],
+    "product": [],
+    "screen": [],
+    "screen_subtype": [
+      "map"
+    ],
+    "stack": [
+      "avalonia"
+    ],
+    "density": null,
+    "components": [
+      "list"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "responsive list"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "responsive"
+      ],
+      "change_scope": "screen",
+      "utterance": "observation",
+      "preserve": []
+    },
+    "platform_evidence": [
+      {
+        "platform": "desktop",
+        "strength": "WEAK_INFERENCE",
+        "evidence": [
+          "window",
+          "the window"
+        ]
+      }
+    ],
+    "mode_evidence": [
+      "responsive: responsive defect",
+      "audit: diagnose first"
+    ],
+    "project_context": {
+      "navigation": "menu-bar (KNOWN)",
+      "theme": "light-first (INFERRED)",
+      "surfaces": "bordered-flat (INFERRED)",
+      "radius": "small (INFERRED)",
+      "spacing": "4 (INFERRED)",
+      "typography": "humanist-sans (KNOWN)",
+      "components": "avalonia (KNOWN)"
+    },
+    "known": [
+      "platform=desktop",
+      "stack=avalonia",
+      "project_navigation=menu-bar",
+      "project_typography=humanist-sans",
+      "project_components=avalonia"
+    ],
+    "inferred": [
+      "input=pointer",
+      "input=keyboard",
+      "mode=responsive",
+      "mode=audit",
+      "project_theme=light-first",
+      "project_surfaces=bordered-flat",
+      "project_radius=small",
+      "project_spacing=4"
+    ],
+    "missing": [],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

@@ -1,0 +1,29 @@
+{
+ "frozen": "2026-09-09T13:01:06",
+ "de_core_sha256": "4ecbca0ecca2e676f45fb408b50cf9ab14996bcadedd25bfebd9a3f2929e0f24",
+ "de_semantic_sha256": "2bbee02f0959f68ecfa28324968ca9b37a93bf1738af5c8deef7cdec96bd7f91",
+ "inspect_project_sha256": "6e77763f547f2301b0ef2ee7cf645b4eb1aba08ee60d973d773440659d0bb9b7",
+ "lexicon_sha256": "55341c3c720e75fe5db922136072fd15ee4756345306fa1d8d585247d332db3b",
+ "data_files": {
+  "antipatterns.jsonl": "ede5ef14651b028b88cdf21c71fa59a92fda1dbfffa044dfedc1fd8f5284d1f7",
+  "charts.jsonl": "a5c034dbc54bb79f267a05c58117dafa4fc296197ca18c9a09f033c8410e2392",
+  "components.jsonl": "01318f8f838c64651a6220a4ce344661b2ca8bf21e2f76d1ee2a9e7342e1870c",
+  "directions.jsonl": "9f3047aef8fb896e625653358a3cfbb06872a20c676b5742ff12325e2918dcd0",
+  "patterns.jsonl": "af8dd9c09ef7f9fa9fe970f2696bde09d17f8c4fdf8a64a354531f6dcab3dc8b",
+  "rules.jsonl": "f33a53499f17b5d9f83471b654862b8af996c832f93ee8b8b5272b0a57ffba53"
+ },
+ "records": 237,
+ "concepts": 109,
+ "concerns": 16,
+ "thresholds_sha256": "da5990676f1f265b7f693dc792308c5eb4b9bcc86555ba8f888f0ab02b861358",
+ "ontology_sha256": "3fdb0618947ad7e69a577dd0300182bb47f7ed1a76514a352b6c9cff4357e783",
+ "scripts": {
+  "advise.py": "8a411b9bb43acd54789353150d7a6eddf20bb6188fa95e3a4b981c41bc174c6c",
+  "de_core.py": "4ecbca0ecca2e676f45fb408b50cf9ab14996bcadedd25bfebd9a3f2929e0f24",
+  "de_semantic.py": "2bbee02f0959f68ecfa28324968ca9b37a93bf1738af5c8deef7cdec96bd7f91",
+  "fingerprint.py": "a74b549a832b83aab0f6e7c76b8f4c2c50db3741ea81afb118eebb79bdcb9cdb",
+  "inspect_project.py": "6e77763f547f2301b0ef2ee7cf645b4eb1aba08ee60d973d773440659d0bb9b7",
+  "tokens.py": "16a0ecf407c56138ae9c2e00422ed89253ab668ed7d9b0450f8e840f50e799a2",
+  "validate_skill.py": "2348aed00e1302011a63f26be5e697a1008b55ee9104efdd62dc06bc06c9e135"
+ }
+}

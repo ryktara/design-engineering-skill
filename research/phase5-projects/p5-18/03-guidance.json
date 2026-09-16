@@ -1,0 +1,987 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "Photos attached to a defect report are tiny thumbnails you can't check in the field.",
+  "status": "PARTIAL",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "mobile"
+    ],
+    "input": [
+      "touch"
+    ],
+    "product": [
+      "erp",
+      "iot"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "flutter"
+    ],
+    "density": "medium",
+    "components": [
+      "form"
+    ],
+    "environment": [
+      "outdoor"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "audit form"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "low",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [],
+      "change_scope": "unknown",
+      "utterance": "observation",
+      "existing": true,
+      "problem": true,
+      "facet": "general",
+      "diagnose_only": false,
+      "creation": false,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [
+      {
+        "platform": "mobile",
+        "strength": "STRONG_INFERENCE",
+        "evidence": [
+          "in the field"
+        ]
+      }
+    ],
+    "mode_evidence": [
+      "audit: problem statement on existing UI",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "top-bar",
+        "status": "KNOWN",
+        "evidence": [
+          "top-bar: 3 matches in checklist_screen.dart, defect_report_screen.dart, settings_screen.dart (shell/layout file)"
+        ]
+      },
+      "theme": {
+        "value": "dual-theme",
+        "status": "KNOWN",
+        "evidence": [
+          "dark theme configuration signals: 4",
+          "light theme configuration signals: 2",
+          "hex palette: 13 near-white, 6 near-black"
+        ],
+        "default": "light"
+      },
+      "surfaces": {
+        "value": "flat-tonal",
+        "status": "UNKNOWN",
+        "evidence": [
+          "no shadow or border declarations found"
+        ]
+      },
+      "radius": {
+        "value": "small",
+        "status": "INFERRED",
+        "evidence": [
+          "most common radius 4 (1×); others []"
+        ]
+      },
+      "spacing": {
+        "value": "irregular",
+        "status": "UNKNOWN",
+        "evidence": [
+          "most used spacing values [2, 12]"
+        ]
+      },
+      "typography": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": [
+          "no font family declaration found"
+        ]
+      },
+      "components": {
+        "value": "go_router, riverpod",
+        "status": "KNOWN",
+        "evidence": [
+          "go_router",
+          "riverpod"
+        ]
+      }
+    },
+    "known": [
+      "product=erp (project inspection (README))",
+      "product=iot (project inspection (README))",
+      "stack=flutter (project inspection)",
+      "environment=outdoor (request: in the field)",
+      "project_navigation=top-bar (repository: top-bar: 3 matches in checklist_screen.dart, defect_report_screen.dart, settings_screen.dart (shell/layout file))",
+      "project_theme=dual-theme (repository: dark theme configuration signals: 4; light theme configuration signals: 2)",
+      "project_components=go_router, riverpod (repository: go_router; riverpod)"
+    ],
+    "inferred": [
+      "platform=mobile (wording suggests mobile: in the field)",
+      "input=touch (implied by platform mobile)",
+      "density=medium (implied by product erp (capped for touch/remote platform))",
+      "mode=audit (problem statement on existing UI)",
+      "mode=refactor (fix follows the diagnosis)",
+      "project_radius=small (repository: most common radius 4 (1×); others [])"
+    ],
+    "missing": [
+      "platform: only inferred from wording (mobile); confirm before committing"
+    ],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [
+        "in the field"
+      ],
+      "project": [
+        "pubspec.yaml: Flutter"
+      ]
+    },
+    "activation": {
+      "decision": "ambiguous",
+      "ui_score": 1.0,
+      "non_ui_score": 0,
+      "ui_terms": [],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "present-tense observation"
+      ],
+      "new": [],
+      "defect": [
+        "are tiny",
+        "can't"
+      ],
+      "operations": {},
+      "domains": {},
+      "no_change": [],
+      "scope": {},
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "report",
+        "field",
+        "photo",
+        "thumbnail"
+      ],
+      "ux_symptoms": [],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "accessibility",
+        "reason": "audit mode"
+      },
+      {
+        "concern": "interaction",
+        "reason": "audit mode: operability is part of the review"
+      },
+      {
+        "concern": "component",
+        "reason": "the reviewed component/screen"
+      },
+      {
+        "concern": "feedback",
+        "reason": "form validation and submission feedback"
+      },
+      {
+        "concern": "data-display",
+        "reason": "numbers, tables or charts are the content"
+      },
+      {
+        "concern": "environment",
+        "reason": "environment outdoor (KNOWN)"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "states",
+        "reason": "audits check empty/loading/error handling"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "audits name generic-design defects"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "device sizes and orientation"
+      }
+    ],
+    "optional": [
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "touch.minimum_target",
+        "reason": "touch platform"
+      },
+      {
+        "concept": "feedback.validation_errors",
+        "reason": "form"
+      },
+      {
+        "concept": "touch.ime_keyboard",
+        "reason": "form on touch"
+      },
+      {
+        "concept": "table.tabular_figures",
+        "reason": "numeric data"
+      },
+      {
+        "concept": "env.outdoor_readability",
+        "reason": "environment outdoor"
+      },
+      {
+        "concept": "env.glanceable_status",
+        "reason": "environment outdoor"
+      }
+    ],
+    "recommended_concepts": [
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "state.loading_empty_error",
+      "process.reuse_first",
+      "touch.gestures_discoverable",
+      "touch.thumb_reach",
+      "touch.safe_areas",
+      "navigation.platform_grammar",
+      "form.autofill_attributes",
+      "a11y.live_status"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "comp-photo-capture-field",
+      "kind": "component",
+      "category": "form",
+      "title": "Photo capture field (take, retake, replace, remove)",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "feedback",
+        "interaction",
+        "states"
+      ],
+      "concepts": [
+        "touch.minimum_target",
+        "state.offline_sync",
+        "onboarding.permission_priming",
+        "a11y.accessible_names",
+        "state.unsaved_changes_guard"
+      ],
+      "covers": [
+        "large touch targets (≥44–48 px)",
+        "offline and sync states",
+        "permission priming before the system prompt",
+        "accessible names and labels",
+        "unsaved-changes guard"
+      ],
+      "score": 0.691,
+      "guidance": "The field shows the thumbnails as one row of ≥ 96 dp tiles plus an 'Add photo' tile; each thumbnail is a single target that opens a sheet with Retake (camera, replaces in place), Replace from gallery, Remove (confirm only if it is the last required photo); state per photo (uploading, pending sync, failed with retry) is shown on the tile with icon + text; the camera permission is primed before the first capture and refusal leaves a way to continue; capture never loses other field values (persist the draft before opening the camera); images are downscaled for upload and the original is kept until sync succeeds; the field is announced as 'Photos, 2 of 4 added' and each tile as 'Photo 1, retake or remove'.",
+      "use_when": "Forms that attach one or more photos: inspections, claims, returns, deliveries, ID capture.",
+      "avoid_when": "Desktop-only forms (use a file picker with drag-and-drop) or single decorative avatars.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "heuristic",
+      "implementation": {
+        "flutter": "image_picker with maxWidth; a ListView of 104 dp tiles; showModalBottomSheet for actions; persist the form state in the notifier before launching the camera."
+      },
+      "why": {
+        "lexical": 0.667,
+        "structural": 0.72,
+        "matched": [
+          "platform mobile",
+          "input touch",
+          "mode audit",
+          "product iot"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "imagery-none",
+      "kind": "pattern",
+      "category": "imagery",
+      "title": "No decorative imagery",
+      "facets": [
+        "visual"
+      ],
+      "concerns": [
+        "brand",
+        "content"
+      ],
+      "concepts": [],
+      "covers": [],
+      "score": 0.373,
+      "guidance": "Remove stock photos, abstract blobs, and hero illustrations from working screens; empty states may use a small, meaningful illustration or none. Identity comes from type, colour, and structure.",
+      "use_when": "Operational products: imagery only where it is data (avatars, product thumbnails, charts).",
+      "avoid_when": "Brand or content products where imagery is the content.",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "incompatible": [
+        "imagery-hero",
+        "imagery-immersive-backdrop",
+        "surface-imagery-backed"
+      ],
+      "why": {
+        "lexical": 0.175,
+        "structural": 0.46,
+        "matched": [
+          "secondary mode",
+          "product erp"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring pattern with lexical evidence"
+    },
+    {
+      "id": "comp-form",
+      "kind": "component",
+      "category": "form",
+      "title": "Form",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "component",
+        "feedback",
+        "states",
+        "structure"
+      ],
+      "concepts": [
+        "feedback.validation_errors",
+        "touch.ime_keyboard",
+        "form.autofill_attributes",
+        "state.unsaved_changes_guard"
+      ],
+      "covers": [
+        "inline validation messages and error recovery",
+        "on-screen keyboard (IME) aware layout",
+        "autofill / input-type attributes per field",
+        "unsaved-changes guard"
+      ],
+      "score": 0.219,
+      "guidance": "Labels above, help text below, required marked in text, field widths sized to content, grouped by section with headings, one column, inline validation on blur, error summary on submit with links to fields, primary action last (or sticky), unsaved-changes guard, autosave with status for long forms, autofill attributes. TV: one field per row, DOWN moves to next, system keyboard, minimal fields.",
+      "use_when": "Any data entry: settings, checkout, applications, record editing.",
+      "avoid_when": "Batch entry of many similar rows (use a data-entry grid); single toggles (inline).",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.071,
+        "structural": 0.4,
+        "matched": [
+          "mode audit"
+        ]
+      },
+      "role": "core",
+      "selected_for": "required coverage: inline validation messages and error recovery, on-screen keyboard (IME) aware layout"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "mobile-field-use",
+      "kind": "rule",
+      "category": "environment",
+      "title": "Field use: sunlight readability and glanceable status",
+      "facets": [
+        "accessibility",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "environment",
+        "interaction"
+      ],
+      "concepts": [
+        "env.outdoor_readability",
+        "env.glanceable_status",
+        "touch.minimum_target"
+      ],
+      "covers": [
+        "high contrast outdoors / sunlight readability",
+        "glanceable status",
+        "large touch targets (≥44–48 px)"
+      ],
+      "score": 0.447,
+      "guidance": "Target ≥7:1 text contrast and avoid thin weights and pale tints (glare washes them out); prefer light UI on white or very high-contrast dark, not mid-tone surfaces; make the current state glanceable (large status word plus colour plus icon, readable at arm's length in two seconds); ≥48 dp targets with ≥12 dp spacing and no precision gestures when gloves are likely; put the next action in thumb reach; large numerals for counts and readings; keep the screen usable one-handed and interruptible (state survives backgrounding).",
+      "use_when": "Couriers, inspectors, technicians, warehouse and construction workers, outdoor kiosks: bright light, gloves, movement, interruptions.",
+      "avoid_when": "Desk-bound indoor use.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.157,
+        "structural": 0.8,
+        "matched": [
+          "platform mobile",
+          "input touch",
+          "mode audit",
+          "product erp,iot",
+          "environment outdoor"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: accessibility, environment, glanceable status, high contrast outdoors / sunlight readability"
+    },
+    {
+      "id": "typo-scale-and-roles",
+      "kind": "rule",
+      "category": "typography",
+      "title": "One type scale with named roles",
+      "facets": [
+        "visual"
+      ],
+      "concerns": [
+        "content",
+        "data-display"
+      ],
+      "concepts": [
+        "table.tabular_figures",
+        "brand.type_roles"
+      ],
+      "covers": [
+        "tabular figures and numeric alignment",
+        "type roles and scale"
+      ],
+      "score": 0.243,
+      "guidance": "Roles display/heading/title/body/label/caption/numeric with size, line height, weight, and letter spacing per role; body ≥16 px web/mobile, 14 desktop, 24 TV; numeric role uses tabular lining figures; headings use tighter line height (1.1–1.25) and body 1.4–1.6. Generate with tokens.py scale and map the roles to the framework's text styles.",
+      "use_when": "Any screen with more than two text sizes; any design system.",
+      "avoid_when": "Never pick sizes per screen; never use more than ~7 sizes.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.54,
+        "matched": [
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: data-display, tabular figures and numeric alignment"
+    },
+    {
+      "id": "mobile-safe-areas",
+      "kind": "rule",
+      "category": "layout",
+      "title": "Mobile: safe areas and system insets",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "adaptive",
+        "structure"
+      ],
+      "concepts": [
+        "touch.safe_areas"
+      ],
+      "covers": [
+        "safe areas and notches"
+      ],
+      "score": 0.33,
+      "guidance": "Content respects safe-area insets (SwiftUI safeAreaInset / .ignoresSafeArea only for backgrounds, Compose WindowInsets + edge-to-edge, RN SafeAreaView/useSafeAreaInsets, web env(safe-area-inset-*)); bottom actions sit above the home indicator/gesture bar; keyboard (IME) insets push the focused field into view.",
+      "use_when": "Bottom bars, sticky CTAs, full-bleed backgrounds, top app bars, landscape.",
+      "avoid_when": "Never hard-code status/nav bar heights.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.011,
+        "structural": 0.72,
+        "matched": [
+          "platform mobile",
+          "input touch",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "recommended coverage: adaptive, safe areas and notches"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "feedback",
+      "data-display",
+      "environment"
+    ],
+    "covered_required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "feedback",
+      "data-display",
+      "environment"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "states",
+      "anti-pattern",
+      "adaptive"
+    ],
+    "covered_recommended_concerns": [
+      "states",
+      "adaptive"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "touch.minimum_target",
+      "feedback.validation_errors",
+      "touch.ime_keyboard",
+      "table.tabular_figures",
+      "env.outdoor_readability",
+      "env.glanceable_status"
+    ],
+    "covered_required_concepts": [
+      "touch.minimum_target",
+      "feedback.validation_errors",
+      "touch.ime_keyboard",
+      "table.tabular_figures",
+      "env.outdoor_readability",
+      "env.glanceable_status"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.3,
+    "bundle_size": 6,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 3,
+    "guardrail_size": 3,
+    "bundle_tokens": 1065,
+    "coverage_per_1k_tokens": 5.63,
+    "mean_purity": 0.78,
+    "contaminated": [],
+    "category_diversity": 0.83,
+    "duplicate_pressure": 0.33,
+    "facet_coverage": 0.6,
+    "redundancy": 0.35
+  },
+  "token_coverage": 0.67,
+  "omitted": [
+    {
+      "id": "comp-media-card",
+      "reason": "contamination: product-specific (ecommerce,education,media) vs ['erp', 'iot']; media-card-specific record with no media-card evidence in the request"
+    }
+  ],
+  "rejected": [
+    {
+      "id": "anti-desktop-scaled-to-tv",
+      "reason": "platform ['tv'] not in request ['mobile']"
+    },
+    {
+      "id": "chart-heatmap-matrix",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-plan-comparison",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-kiosk-keypad",
+      "reason": "platform ['kiosk', 'tablet'] not in request ['mobile']"
+    },
+    {
+      "id": "dir-analytical-console",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "dir-public-kiosk",
+      "reason": "platform ['kiosk'] not in request ['mobile']"
+    },
+    {
+      "id": "dir-industrial-hmi",
+      "reason": "platform ['desktop', 'kiosk', 'tablet'] not in request ['mobile']"
+    },
+    {
+      "id": "dir-product-marketing-site",
+      "reason": "platform ['web'] not in request ['mobile']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "touch.minimum_target",
+      "priority": "required",
+      "reason": "touch platform",
+      "candidate_records": [
+        [
+          "comp-photo-capture-field",
+          0.691
+        ],
+        [
+          "mobile-field-use",
+          0.447
+        ],
+        [
+          "mobile-density-touch",
+          0.324
+        ],
+        [
+          "comp-list-row-mobile",
+          0.297
+        ]
+      ],
+      "selected_record": "comp-photo-capture-field",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "feedback.validation_errors",
+      "priority": "required",
+      "reason": "form",
+      "candidate_records": [
+        [
+          "a11y-forms-errors",
+          0.259
+        ],
+        [
+          "anti-placeholder-labels",
+          0.243
+        ],
+        [
+          "comp-form",
+          0.219
+        ],
+        [
+          "comp-checkout-one-page",
+          0.211
+        ]
+      ],
+      "selected_record": "comp-form",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "touch.ime_keyboard",
+      "priority": "required",
+      "reason": "form on touch",
+      "candidate_records": [
+        [
+          "mobile-keyboard-ime",
+          0.381
+        ],
+        [
+          "comp-form",
+          0.219
+        ],
+        [
+          "comp-checkout-one-page",
+          0.211
+        ]
+      ],
+      "selected_record": "comp-form",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "table.tabular_figures",
+      "priority": "required",
+      "reason": "numeric data",
+      "candidate_records": [
+        [
+          "comp-kpi-tile",
+          0.297
+        ],
+        [
+          "typo-scale-and-roles",
+          0.243
+        ]
+      ],
+      "selected_record": "typo-scale-and-roles",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "env.outdoor_readability",
+      "priority": "required",
+      "reason": "environment outdoor",
+      "candidate_records": [
+        [
+          "mobile-field-use",
+          0.447
+        ]
+      ],
+      "selected_record": "mobile-field-use",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "env.glanceable_status",
+      "priority": "required",
+      "reason": "environment outdoor",
+      "candidate_records": [
+        [
+          "mobile-field-use",
+          0.447
+        ]
+      ],
+      "selected_record": "mobile-field-use",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.accessible_names",
+      "priority": "recommended",
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "comp-photo-capture-field",
+          0.691
+        ],
+        [
+          "a11y-native-semantics",
+          0.297
+        ],
+        [
+          "comp-media-card",
+          0.27
+        ],
+        [
+          "a11y-labels-names",
+          0.243
+        ]
+      ],
+      "selected_record": "comp-photo-capture-field",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.contrast",
+      "priority": "recommended",
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "a11y-nontext-contrast",
+          0.249
+        ],
+        [
+          "anti-fashion-over-usability",
+          0.243
+        ],
+        [
+          "a11y-contrast-text",
+          0.243
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "state.loading_empty_error",
+      "priority": "recommended",
+      "reason": "submission states",
+      "candidate_records": [
+        [
+          "comp-chart-container",
+          0.297
+        ],
+        [
+          "anti-no-states",
+          0.243
+        ],
+        [
+          "layout-states-empty-loading-error",
+          0.243
+        ],
+        [
+          "comp-mini-player",
+          0.198
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "recommended",
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.207
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.gestures_discoverable",
+      "priority": "recommended",
+      "reason": "touch platform",
+      "candidate_records": [
+        [
+          "mobile-gestures-discoverable",
+          0.348
+        ],
+        [
+          "comp-list-row-mobile",
+          0.297
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.thumb_reach",
+      "priority": "recommended",
+      "reason": "one-handed use",
+      "candidate_records": [
+        [
+          "anti-mobile-desktop-shrunk",
+          0.324
+        ],
+        [
+          "mobile-thumb-reach",
+          0.324
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.safe_areas",
+      "priority": "recommended",
+      "reason": "mobile",
+      "candidate_records": [
+        [
+          "mobile-safe-areas",
+          0.33
+        ]
+      ],
+      "selected_record": "mobile-safe-areas",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "navigation.platform_grammar",
+      "priority": "recommended",
+      "reason": "mobile navigation grammar",
+      "candidate_records": [
+        [
+          "nav-bottom-tabs",
+          0.341
+        ],
+        [
+          "mobile-platform-navigation",
+          0.324
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "form.autofill_attributes",
+      "priority": "recommended",
+      "reason": "form",
+      "candidate_records": [
+        [
+          "comp-form",
+          0.219
+        ]
+      ],
+      "selected_record": "comp-form",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.live_status",
+      "priority": "recommended",
+      "reason": "related to feedback.validation_errors",
+      "candidate_records": [
+        [
+          "a11y-live-status",
+          0.249
+        ],
+        [
+          "search-filter-feedback",
+          0.243
+        ],
+        [
+          "comp-toast-notification",
+          0.18
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    }
+  ]
+}

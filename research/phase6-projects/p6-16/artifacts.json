@@ -1,0 +1,144 @@
+{
+  "task": "p6-16",
+  "project": "p6-compose-banking",
+  "platform_expected": "mobile",
+  "platform_resolved": "mobile",
+  "platform_correct": "yes",
+  "stack": "Kotlin / Jetpack Compose / Material 3 (androidx.navigation, in-memory repository)",
+  "existing_ui": true,
+  "new_screen": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "unknown",
+  "artifact_state_correct": false,
+  "mode_expected": ["refactor", "polish"],
+  "mode_resolved": ["create"],
+  "mode_correct": "no",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "moderate",
+  "render_mode": "html-twin",
+  "screenshots": [
+    "render/first-390x844-instant.png",
+    "render/first-390x844-confirm.png",
+    "render/first-390x844-pending.png",
+    "render/first-390x844-frozen.png",
+    "render/first-390x844-idle.png",
+    "render/final-390x844-instant.png",
+    "render/final-390x844-confirm.png",
+    "render/final-390x844-pending.png",
+    "render/final-390x844-frozen.png",
+    "render/final-390x844-idle.png"
+  ],
+  "context_detection": {
+    "navigation": "partial",
+    "theme": "yes",
+    "typography": "yes",
+    "surfaces": "yes",
+    "spacing": "no"
+  },
+  "preservation": {
+    "navigation": true,
+    "theme": true,
+    "typography": true,
+    "component_reuse": true,
+    "unjustified_structural_change": 0
+  },
+  "expected_concepts": [
+    "feedback.confirmation_destructive",
+    "state.saving_conflict",
+    "a11y.live_status",
+    "a11y.accessible_names",
+    "a11y.color_not_only",
+    "state.loading_empty_error"
+  ],
+  "critical_concepts": ["feedback.confirmation_destructive", "state.saving_conflict"],
+  "delivered_concepts": [
+    "layout.no_nested_cards",
+    "table.tabular_figures",
+    "brand.type_roles",
+    "process.reuse_first",
+    "table.column_priority",
+    "touch.minimum_target"
+  ],
+  "concept_recall": 0.0,
+  "critical_recall": 0.0,
+  "concept_misses": [
+    {"concept": "feedback.confirmation_destructive", "layer": "expected-concepts"},
+    {"concept": "state.saving_conflict", "layer": "expected-concepts"},
+    {"concept": "a11y.live_status", "layer": "expected-concepts"},
+    {"concept": "a11y.accessible_names", "layer": "expected-concepts"},
+    {"concept": "a11y.color_not_only", "layer": "expected-concepts"},
+    {"concept": "state.loading_empty_error", "layer": "expected-concepts"}
+  ],
+  "first_render_defects": {
+    "visual": 1,
+    "interaction": 0,
+    "accessibility": 1,
+    "platform": 0,
+    "existing-system-mismatch": 0,
+    "implementation-bug": 1
+  },
+  "final_defects": {
+    "visual": 0,
+    "interaction": 0,
+    "accessibility": 0,
+    "platform": 0,
+    "existing-system-mismatch": 0,
+    "implementation-bug": 0
+  },
+  "iterations": 2,
+  "guidance_relevant": 1,
+  "guidance_partial": 1,
+  "guidance_offtarget": 3,
+  "layer_review": {
+    "core": ["card-none", "focus-none-touch-only"],
+    "critical": ["typo-scale-and-roles", "impl-reuse-before-new", "mobile-density-touch"],
+    "optional": [],
+    "optional_useful": 0,
+    "optional_noise": 0
+  },
+  "bad_guidance": [
+    {"record": "card-none", "category": "contradicts-codebase", "why": "Core pick tells you to remove card containers. The project's whole surface system is NbCard (OutlinedCard, 12dp, 1dp outline) and the freeze row lives inside one; 'card' in the sentence is a payment card, not a UI container. Following it would have deleted the settings group."},
+    {"record": "focus-none-touch-only", "category": "generic", "why": "Correct mobile focus advice, but the screen already satisfies it (Material3 Switch + NbListRow). Says nothing about the instant, unconfirmed, unannounced state change the sentence is about."},
+    {"record": "typo-scale-and-roles", "category": "generic", "why": "Selected as a critical concept carrier for table.tabular_figures; the task touches no numerals and the project already has a full type scale in Type.kt."},
+    {"record": "mobile-density-touch", "category": "wrong-screen", "why": "Table-to-list-row conversion, filter sheets and bulk selection. There is no table on the cards screen."},
+    {"record": "bundle", "category": "missing-critical", "why": "Both pre-registered critical concepts (feedback.confirmation_destructive, state.saving_conflict) are absent. confirmation_destructive was demanded only as recommended and then dropped; carriers exist in the base (comp-dialog, states-persistence-and-session, feedback-progress-async)."}
+  ],
+  "skill_effect": "neutral",
+  "guidance_used": ["impl-reuse-before-new"],
+  "guidance_ignored": [
+    {"id": "card-none", "why": "Contradicts the project's NbCard surface system and misreads 'card' as a UI container."},
+    {"id": "mobile-density-touch", "why": "No table, no filters, no bulk selection on this screen."},
+    {"id": "typo-scale-and-roles", "why": "No numeric or type-scale work in this change; Type.kt already defines the roles."},
+    {"id": "focus-none-touch-only", "why": "Already satisfied by the existing Material3 controls; adds nothing to the task."}
+  ],
+  "guidance_tokens": 609,
+  "unjustified_direction_slots": 1,
+  "process_records_needed": false,
+  "misses": [
+    {"layer": "mode", "what": "mode=create on an existing-UI defect report ('mode evidence: create: default (no cue at all)'). The screen exists; expected refactor/polish. This is the root of the whole off-target bundle."},
+    {"layer": "requirements", "what": "intent.artifact_state=unknown, existing=false, problem=false; problem_domain=['performance-ux'] inferred from the stem 'freez' (freeze = jank), which is the opposite of the real domain; primary_jobs=['create card'] and components=['card'] from the payment-card noun."},
+    {"layer": "direction", "what": "cards slot set to card-none / status 'new' on a moderate-budget existing UI whose surfaces slot was correctly preserved as bordered-flat. The two are inconsistent with each other."},
+    {"layer": "project-context", "what": "navigation detected as 'top-bar' although the shell is NorthBankBottomBar (4 bottom tabs) with a per-screen TopAppBar; spacing UNKNOWN although Spacing.kt is an explicit 4-pt object used by every screen; radius 'small' (4dp, from the 2 chip corners) although CardCornerRadius=12dp is the documented surface radius."}
+  ],
+  "knowledge_gaps": [],
+  "regressions": [
+    {"query": "Freezing a card happens the instant you touch the switch.", "expect": "mode refactor/polish (not create); feedback.confirmation_destructive and state.saving_conflict in the bundle as critical; no card-container pattern in the cards slot."},
+    {"query": "The delete toggle applies immediately with no confirmation.", "expect": "feedback.confirmation_destructive carried by a DIRECT record; undo/reversibility mentioned."},
+    {"query": "Freezing a card happens the instant you touch the switch.", "expect": "'card' as a payment-card noun must not set components=['card'] / primary_jobs=['create card'], and 'freez*' must not route problem_domain to performance-ux."}
+  ],
+  "tags": [
+    "mode-miss",
+    "requirements-miss",
+    "concept-miss",
+    "ranking-miss",
+    "direction-mismatch",
+    "context-detection-miss",
+    "render-defect-fixed",
+    "skill-neutral",
+    "preservation-ok"
+  ],
+  "build_hash_start": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947",
+  "build_hash_end": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947"
+}

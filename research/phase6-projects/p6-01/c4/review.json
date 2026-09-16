@@ -1,0 +1,15 @@
+{
+  "task": "p6-01",
+  "records": [
+    {"id": "comp-settings-screen", "verdict": "relevant", "category": "", "why": "Directly addresses settings grouping and not burying frequently used settings; the record the c3 implementer actually used."},
+    {"id": "layout-hierarchy-one-thing", "verdict": "partial", "category": "generic", "why": "Generic heuristic, but it does carry the pre-registered expected concept layout.focal_hierarchy and does not contradict the preserved direction."}
+  ],
+  "missing_critical": ["process.reuse_first"],
+  "unjustified_direction_slots": 0,
+  "layer_review": {
+    "core": ["comp-settings-screen"],
+    "critical": ["layout-hierarchy-one-thing"],
+    "optional": []
+  },
+  "change_vs_c3": "better: bundle shrank 4 to 2, dropping the wrong-screen comp-plan-comparison and the off-target typo-scale-and-roles that contradicted preserved typography, while keeping comp-settings-screen (the record the c3 implementer used); the still-missing critical process.reuse_first and privacy.sensitive_masking are unchanged, and the loading/error guardrail lost was only lightly used."
+}

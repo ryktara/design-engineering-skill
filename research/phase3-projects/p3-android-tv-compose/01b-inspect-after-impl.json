@@ -1,0 +1,77 @@
+{
+  "root": "D:\\indigo pro\\MYownSkills\\research\\phase3-projects\\p3-android-tv-compose\\project",
+  "findings": [
+    {
+      "status": "KNOWN",
+      "note": "app\\build.gradle.kts: androidx.compose"
+    },
+    {
+      "status": "KNOWN",
+      "note": "app\\build.gradle.kts: androidx.tv:tv-material"
+    },
+    {
+      "status": "KNOWN",
+      "note": "app\\build.gradle.kts: androidx.media3"
+    },
+    {
+      "status": "KNOWN",
+      "note": "app\\build.gradle.kts: coil"
+    },
+    {
+      "status": "KNOWN",
+      "note": "app\\src\\main\\AndroidManifest.xml: leanback launcher (Android TV)"
+    },
+    {
+      "status": "INFERRED",
+      "note": "touchscreen not required in manifest (TV/set-top)"
+    },
+    {
+      "status": "INFERRED",
+      "note": "DPAD / remote key handling found in source"
+    },
+    {
+      "status": "INFERRED",
+      "note": "both mobile and TV Android targets; check product flavors before assuming one UI"
+    }
+  ],
+  "stack_groups": [
+    "compose",
+    "compose-tv"
+  ],
+  "platforms": [
+    "mobile",
+    "tv"
+  ],
+  "ui_libraries": [
+    "compose",
+    "compose-tv-material",
+    "media3",
+    "images:coil"
+  ],
+  "package_manager": null,
+  "css_architecture": [],
+  "tokens": [],
+  "fonts": [],
+  "icons": [],
+  "routing": [
+    "app/ (next-app-router or nuxt app dir)"
+  ],
+  "breakpoints": [],
+  "accessibility": [
+    "a11y attributes present in 4 files"
+  ],
+  "focus_handling": [
+    "explicit focus handling in 5 files",
+    "DPAD/remote/TV-focus handling in 9 files"
+  ],
+  "design_docs": [],
+  "component_dirs": [],
+  "tests": [],
+  "i18n": [],
+  "product_hints": [
+    "media"
+  ],
+  "sample": {
+    "files_scanned": 13
+  }
+}

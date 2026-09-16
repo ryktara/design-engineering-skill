@@ -1,0 +1,19 @@
+{
+  "description": "Known accessibility traps must surface the governing rule, on the right platform.",
+  "cases": [
+    {"id": "placeholder-only-labels", "query": "our inputs only have placeholders, is that fine", "expect_any_ids": ["anti-placeholder-labels", "a11y-forms-errors", "a11y-labels-names"]},
+    {"id": "remove-focus-outline", "query": "remove the ugly focus outline on buttons", "expect_any_ids": ["a11y-focus-visible", "focus-ring-standard"], "forbid_ids": ["focus-scale-glow"]},
+    {"id": "hover-only-row-actions", "query": "show the row actions only when the mouse hovers the table row", "expect_any_ids": ["a11y-hover-not-required", "anti-hover-only-actions"]},
+    {"id": "colour-only-status", "query": "use red and green dots to show order status", "expect_any_ids": ["a11y-color-not-only"]},
+    {"id": "grey-on-grey", "query": "light grey secondary text on a white card looks elegant", "expect_any_ids": ["a11y-contrast-text", "anti-fashion-over-usability"]},
+    {"id": "tv-focus-lost", "query": "after the list refreshes on Android TV the focus disappears", "expect_platforms": ["tv"], "expect_any_ids": ["a11y-tv-focus-always"], "forbid_ids": ["focus-ring-standard"]},
+    {"id": "tv-hover-menu", "query": "port the web hover mega menu to the TV app", "expect_platforms": ["tv"], "expect_any_ids": ["tv-no-touch-hover", "anti-desktop-scaled-to-tv"]},
+    {"id": "reduced-motion", "query": "the hero has parallax and auto-playing carousel", "expect_any_ids": ["a11y-reduced-motion", "a11y-time-and-auto", "anti-scroll-animation-everything"]},
+    {"id": "target-size-mobile", "query": "icon buttons in the iOS toolbar are 28pt", "expect_platforms": ["mobile"], "expect_any_ids": ["a11y-target-size"]},
+    {"id": "modal-focus", "query": "the confirmation modal opens but keyboard users are still tabbing the page behind it", "expect_any_ids": ["a11y-modal-dialog", "a11y-keyboard-operable"]},
+    {"id": "dynamic-type", "query": "text gets cut off when users enable larger text on iPhone", "expect_platforms": ["mobile"], "expect_any_ids": ["a11y-text-scaling"]},
+    {"id": "winui-custom-control", "query": "our custom WinUI card control is invisible to Narrator", "expect_platforms": ["desktop"], "expect_any_ids": ["a11y-native-semantics", "a11y-labels-names"]},
+    {"id": "live-status", "query": "the cart count updates but screen reader users don't hear it", "expect_any_ids": ["a11y-live-status"]},
+    {"id": "dark-mode-contrast", "query": "the dark theme just inverts the light colours", "expect_any_ids": ["anti-dark-mode-inversion", "color-dark-mode-rules"]}
+  ]
+}

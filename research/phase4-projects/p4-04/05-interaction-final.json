@@ -1,0 +1,103 @@
+{
+  "label": "final",
+  "viewport": "1440x900",
+  "compareSwitch": {
+    "tabStopsToReach": 7,
+    "focusRingOnOption": {
+      "onSpan": true,
+      "outline": "solid 2px rgb(29, 78, 216)"
+    },
+    "checkedBefore": "yesterday",
+    "checkedAfterArrowRight": "lastweek",
+    "checkedAfterArrowLeft": "yesterday",
+    "hashAfter": "#compare=lastweek",
+    "pass": true
+  },
+  "kpisFollowPeriod": {
+    "before": [
+      "▼ -4.2% vs yesterday",
+      "▲ +1.8% vs yesterday",
+      "▲ +3.1% vs yesterday",
+      "▼ -0.5% vs yesterday"
+    ],
+    "after": [
+      "▲ +4.2% vs last week",
+      "▼ -3.8% vs last week",
+      "▲ +15.0% vs last week",
+      "▼ -9.5% vs last week"
+    ],
+    "refsAfter": [
+      "Same day last week: 17,690.2 kWh",
+      "Same day last week: 948.0 kW",
+      "Same day last week: £24,012.90",
+      "Same day last week: 0.21 kgCO2e/kWh"
+    ],
+    "headingAfter": "Today vs last week",
+    "pass": true
+  },
+  "chartFollowsPeriod": {
+    "seriesPaths": 2,
+    "endLabels": [
+      "Today",
+      "Last week"
+    ],
+    "tableColumns": 4,
+    "summaryAfter": "Demand peaked at 912 kW at 10:00 and was lowest at 355 kW at 03:00; the 24-hour average was 642 kW. Same day last week: peak 948 kW at 10:00, average 655 kW; today's average is 2.0% lower.",
+    "svgTitle": "Demand in kW, last 24 hours, today against same day last week",
+    "pass": true
+  },
+  "statusAnnouncement": {
+    "text": "Comparing today with same day last week.",
+    "pass": true
+  },
+  "layoutShiftOnSwitch": {
+    "px": {
+      "main": 0,
+      "kpis": 0,
+      "chart": 0,
+      "meters": 0,
+      "alerts": 0
+    },
+    "pass": true
+  },
+  "onePrimaryPerView": {
+    "labels": [
+      "Export report"
+    ],
+    "pass": true
+  },
+  "targets": {
+    "small": [],
+    "pass": true
+  },
+  "tabular": {
+    "pass": true
+  },
+  "preserved": {
+    "nav": [
+      "Overview",
+      "Meters",
+      "Reports",
+      "Settings"
+    ],
+    "topbarBg": "rgb(15, 23, 42)",
+    "bodyBg": "rgb(244, 246, 248)",
+    "font": "Inter, \"Segoe UI Variable\", \"Segoe UI\", system-ui, sans-serif",
+    "radiogroupLabelled": true,
+    "pass": true
+  },
+  "keyboard": {
+    "tabOrder": [
+      "Run optimisation",
+      "Export report",
+      "Show hourly data",
+      "Add meter",
+      "Alert rules"
+    ],
+    "ringOnEveryStop": true,
+    "pass": true
+  },
+  "h1Count": 1,
+  "passCount": 10,
+  "total": 10
+}

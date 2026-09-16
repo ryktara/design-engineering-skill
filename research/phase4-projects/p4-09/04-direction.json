@@ -1,0 +1,133 @@
+{
+  "brand": "accessibility audit and fix of the identify step of the pick-up kiosk: the date-of-birth keypad and name entry",
+  "fingerprint": {
+    "navigation_model": "hub-and-spoke",
+    "layout_topology": "form-stack",
+    "grid_behavior": "fluid",
+    "content_density": "low",
+    "card_geometry": "flat-tile",
+    "corner_language": "small",
+    "typography_character": "humanist-sans",
+    "color_strategy": "neutral-plus-accent",
+    "motion_character": "functional-minimal",
+    "focus_strategy": "none-touch-only",
+    "cta_strategy": "single-primary",
+    "image_strategy": "illustration",
+    "icon_strategy": "filled",
+    "metadata_density": "moderate"
+  },
+  "direction": {
+    "navigation": "nav-hub-spoke",
+    "layout": "layout-form-stack",
+    "density": "density-low",
+    "surface": null,
+    "cards": "card-flat-tile",
+    "typography": "typography-humanist-sans",
+    "color": "color-neutral-accent",
+    "motion": "motion-functional-minimal",
+    "focus": "focus-none-touch-only",
+    "cta": "cta-single-primary",
+    "imagery": "imagery-illustration",
+    "icon": "icon-filled-system",
+    "metadata": "metadata-moderate"
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "accessibility",
+      "polish"
+    ],
+    "platform": [
+      "kiosk"
+    ],
+    "input": [
+      "touch"
+    ],
+    "product": [
+      "government",
+      "healthcare"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "html-css"
+    ],
+    "density": null,
+    "components": [],
+    "environment": [
+      "public"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "audit"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "low",
+    "scope": {
+      "domain": "UI_ACCESSIBILITY",
+      "in_scope": true,
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "mode_evidence": [
+      "audit: explicit: audit",
+      "accessibility: explicit: accessibility",
+      "polish: change request about look/feel",
+      "audit: diagnose first"
+    ],
+    "project_context": {
+      "navigation": "hub-spoke (KNOWN)",
+      "surfaces": "elevated (INFERRED)",
+      "radius": "medium (INFERRED)",
+      "typography": "humanist-sans (INFERRED)"
+    },
+    "known": [
+      "platform=kiosk",
+      "product=healthcare",
+      "product=government",
+      "stack=html-css",
+      "mode=audit",
+      "mode=accessibility",
+      "project_navigation=hub-spoke"
+    ],
+    "inferred": [
+      "input=touch",
+      "mode=polish",
+      "environment=public",
+      "project_surfaces=elevated",
+      "project_radius=medium",
+      "project_typography=humanist-sans"
+    ],
+    "missing": [],
+    "conflicts": [
+      {
+        "field": "platform",
+        "request": [
+          "kiosk"
+        ],
+        "project": "web",
+        "resolution": "request kept; repository platform recorded as context"
+      }
+    ],
+    "status": "AMBIGUOUS"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "brand": "add a compare-to-last-week view to the energy dashboard KPIs and the hourly chart, keeping the existing top bar and light theme",
+  "fingerprint": {
+    "navigation_model": "top-bar",
+    "layout_topology": "dashboard-grid",
+    "grid_behavior": "responsive-columns",
+    "content_density": "high",
+    "surface_strategy": "bordered",
+    "card_geometry": "bordered",
+    "corner_language": "small",
+    "typography_character": "neutral-sans",
+    "color_strategy": "neutral-plus-accent",
+    "motion_character": "functional-minimal",
+    "focus_strategy": "ring",
+    "cta_strategy": "toolbar-commands",
+    "image_strategy": "data-graphics",
+    "icon_strategy": "outline",
+    "metadata_density": "rich"
+  },
+  "direction": {
+    "navigation": "nav-top-bar",
+    "layout": "layout-dashboard-grid",
+    "density": "density-high",
+    "surface": "surface-bordered-panes",
+    "cards": "card-bordered",
+    "typography": "typography-neutral-sans",
+    "color": "color-neutral-accent",
+    "motion": "motion-functional-minimal",
+    "focus": "focus-ring-standard",
+    "cta": "cta-toolbar-commands",
+    "imagery": "imagery-data-graphics",
+    "icon": "icon-outline-system",
+    "metadata": "metadata-rich"
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [
+      "finance",
+      "iot"
+    ],
+    "screen": [
+      "dashboard"
+    ],
+    "screen_subtype": [
+      "calendar"
+    ],
+    "stack": [
+      "react"
+    ],
+    "density": "high",
+    "components": [
+      "chart"
+    ],
+    "environment": [],
+    "jobs": [
+      "compare"
+    ],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "compare",
+      "create dashboard"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "mode_evidence": [
+      "create: default (no mode cue)"
+    ],
+    "project_context": {
+      "navigation": "top-bar (KNOWN)",
+      "theme": "light-first (INFERRED)",
+      "surfaces": "bordered-flat (INFERRED)",
+      "radius": "small (INFERRED)",
+      "spacing": "4 (INFERRED)"
+    },
+    "known": [
+      "platform=web",
+      "product=finance",
+      "product=iot",
+      "stack=react",
+      "screen=dashboard",
+      "job=compare",
+      "project_navigation=top-bar"
+    ],
+    "inferred": [
+      "input=pointer",
+      "input=keyboard",
+      "input=touch",
+      "density=high",
+      "mode=create",
+      "project_theme=light-first",
+      "project_surfaces=bordered-flat",
+      "project_radius=small",
+      "project_spacing=4"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "task": "p6-24",
+  "project": "p3-android-tv-compose",
+  "platform_expected": "tv",
+  "platform_resolved": "tv",
+  "platform_correct": "yes",
+  "stack": "kotlin, jetpack-compose, androidx.tv:tv-material, media3, coil",
+  "existing_ui": true,
+  "new_screen": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": ["refactor", "polish", "audit"],
+  "mode_resolved": ["audit", "refactor"],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "moderate",
+  "render_mode": "html-twin",
+  "screenshots": [
+    "render/first-01-details.png",
+    "render/first-02-back-from-details.png",
+    "render/first-03-player-back-to-home.png",
+    "render/first-04-guide-fallback-pop.png",
+    "render/first-05-stale-navfocus-cleared.png",
+    "render/first-06-root-exit.png",
+    "render/final-01-details.png",
+    "render/final-02-back-from-details.png",
+    "render/final-03-player-back-to-home.png",
+    "render/final-04-guide-fallback-pop.png",
+    "render/final-05-stale-navfocus-cleared.png",
+    "render/final-06-root-exit.png",
+    "render/evidence-before-details-exit.png",
+    "render/evidence-before-stale-exit.png"
+  ],
+  "context_detection": {
+    "navigation": "yes",
+    "theme": "yes",
+    "typography": "yes",
+    "surfaces": "yes",
+    "spacing": "yes"
+  },
+  "preservation": {
+    "navigation": true,
+    "theme": true,
+    "typography": true,
+    "component_reuse": true,
+    "unjustified_structural_change": 0
+  },
+  "expected_concepts": [
+    "interaction.back_semantics",
+    "navigation.orientation_and_back",
+    "interaction.focus_restore",
+    "media.details_play_first",
+    "interaction.dpad_reachability",
+    "navigation.platform_grammar"
+  ],
+  "critical_concepts": ["interaction.back_semantics", "navigation.orientation_and_back"],
+  "delivered_concepts": [
+    "interaction.back_semantics",
+    "interaction.focus_restore",
+    "interaction.focus_visible",
+    "media.details_play_first",
+    "interaction.dpad_reachability",
+    "tv.ten_foot_typography",
+    "tv.safe_margins",
+    "state.loading_empty_error"
+  ],
+  "concept_recall": 0.67,
+  "critical_recall": 0.5,
+  "concept_misses": [
+    {"concept": "navigation.orientation_and_back", "layer": "expected-concepts"},
+    {"concept": "navigation.platform_grammar", "layer": "knowledge-gap"}
+  ],
+  "first_render_defects": {
+    "visual": 2,
+    "interaction": 1,
+    "accessibility": 1,
+    "platform": 1,
+    "existing-system-mismatch": 0,
+    "implementation-bug": 0
+  },
+  "final_defects": {
+    "visual": 1,
+    "interaction": 0,
+    "accessibility": 0,
+    "platform": 0,
+    "existing-system-mismatch": 0,
+    "implementation-bug": 0
+  },
+  "iterations": 2,
+  "guidance_relevant": 2,
+  "guidance_partial": 2,
+  "guidance_offtarget": 2,
+  "bad_guidance": [
+    {"record": "tv-typography-distance", "category": "generic", "why": "10-foot type scale has no bearing on a BACK fall-through; admitted on platform=tv alone, not on any task evidence"},
+    {"record": "layout-states-empty-loading-error", "category": "generic", "why": "loading/empty/error states are not what 'back throws you out' is about, and HomeUiState already enumerates them"},
+    {"record": "tv-dpad-axes", "category": "generic", "why": "true for the app and already satisfied; contributed nothing the request needed"},
+    {"record": "tv-safe-area", "category": "generic", "why": "overscan margins are unrelated to the request; only used to grade the twin render"},
+    {"record": "(bundle)", "category": "missing-critical", "why": "pre-registered critical concept navigation.orientation_and_back is absent; its carrier nav-orientation-and-back ranks 5th in search -k 12 on this sentence but the concept was never demanded"}
+  ],
+  "layer_review": {
+    "core": [],
+    "critical": [
+      "tv-back-behavior",
+      "a11y-tv-focus-always",
+      "tv-typography-distance",
+      "tv-dpad-axes",
+      "tv-safe-area",
+      "layout-states-empty-loading-error"
+    ],
+    "optional": [],
+    "optional_useful": 0,
+    "optional_noise": 0
+  },
+  "guidance_used": ["tv-back-behavior", "a11y-tv-focus-always", "tv-safe-area"],
+  "guidance_ignored": [
+    {"id": "tv-typography-distance", "why": "unrelated to BACK handling; no typography was touched"},
+    {"id": "layout-states-empty-loading-error", "why": "unrelated; the codebase already models Loading/Error/Empty in HomeUiState"},
+    {"id": "tv-dpad-axes", "why": "already satisfied by the existing rails and action row; no change needed"},
+    {"id": "tv-back-behavior (player -> detail clause)", "why": "the codebase deliberately does player -> Home so the stream lands in the mini player; the documented existing contract wins under a moderate budget"}
+  ],
+  "unjustified_direction_slots": 1,
+  "process_records_needed": false,
+  "skill_effect": "neutral",
+  "guidance_tokens": 700,
+  "misses": [
+    {"layer": "requirements", "what": "intent.problem_domain and intent.preserve are both empty on a sentence stating a concrete navigation defect on an existing system with preserve_existing_system: true"},
+    {"layer": "expected-concepts", "what": "navigation.orientation_and_back (critical) never demanded; it does not appear in the concept trace at all, although nav-orientation-and-back ranks 5th in search -k 12"},
+    {"layer": "bundle-selection", "what": "4 of 6 guardrails are TV platform boilerplate admitted on platform=tv against a single-concept request; the soft cap of 6 was filled rather than reached"},
+    {"layer": "direction", "what": "cards slot returned 'new' (card-none, 'no repository evidence') on an existing UI at moderate budget despite Cards.kt and surfaces=bordered-flat"}
+  ],
+  "knowledge_gaps": [
+    "No record carries navigation.platform_grammar for platform=tv; the only carriers (nav-bottom-tabs, mobile-platform-navigation) are mobile."
+  ],
+  "regressions": [
+    {"query": "Pressing back on the detail page throws you out of the app.", "expect": "with a TV project context the bundle delivers navigation.orientation_and_back (via nav-orientation-and-back) and contains neither tv-typography-distance nor layout-states-empty-loading-error"},
+    {"query": "back button on the TV details screen closes the app", "expect": "bundle of at most 4 records, all interaction/navigation/accessibility; no typography, safe-area or empty-state filler"},
+    {"query": "how should back work on this TV app", "expect": "at least one selected record carrying navigation.platform_grammar that applies to platform=tv"},
+    {"query": "direction for an existing tv UI at moderate budget with bordered-flat surfaces and a Cards file", "expect": "the cards slot resolves 'preserved', not 'new'"}
+  ],
+  "tags": [
+    "concept-miss",
+    "ranking-miss",
+    "knowledge-gap",
+    "requirements-miss",
+    "direction-mismatch",
+    "render-defect-fixed",
+    "render-defect-remaining",
+    "skill-neutral",
+    "preservation-ok"
+  ],
+  "build_hash_start": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947",
+  "build_hash_end": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947"
+}

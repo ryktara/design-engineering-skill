@@ -1,0 +1,566 @@
+{
+  "schema": "guidance-bundle/v1",
+  "query": "Design the product detail page and checkout for our outdoor gear web store; must convert well on phones",
+  "status": "AMBIGUOUS",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "mobile",
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [
+      "ecommerce"
+    ],
+    "screen": [
+      "checkout",
+      "detail"
+    ],
+    "screen_subtype": [],
+    "stack": [],
+    "density": null,
+    "components": [],
+    "environment": [
+      "outdoor"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "create checkout",
+      "create detail"
+    ],
+    "constraints": {},
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "known": [
+      "platform=web (request: web)",
+      "platform=mobile (request: phone)",
+      "product=ecommerce (request: store, checkout)",
+      "screen=detail (request: detail page, detail)",
+      "screen=checkout (request: checkout)",
+      "mode=create (request: design the)",
+      "environment=outdoor (request: outdoor)"
+    ],
+    "inferred": [
+      "input=pointer (implied by platform web)",
+      "input=keyboard (implied by platform web)",
+      "input=touch (implied by platform web)"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available",
+      "stack: implementation stack not stated and no repository evidence"
+    ],
+    "status": "AMBIGUOUS",
+    "source": {
+      "request": [
+        "checkout",
+        "design the",
+        "detail page, detail",
+        "outdoor",
+        "phone",
+        "store, checkout",
+        "web"
+      ],
+      "project": [
+        "no recognised UI stack; treat stack as MISSING and ask or inspect further"
+      ]
+    },
+    "activation": {
+      "decision": "activate",
+      "ui_score": 4.0,
+      "non_ui_score": 0,
+      "ui_terms": [
+        "page",
+        "design"
+      ],
+      "non_ui_terms": []
+    }
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "component",
+        "reason": "a specific component/screen is requested"
+      },
+      {
+        "concern": "structure",
+        "reason": "layout topology and hierarchy"
+      },
+      {
+        "concern": "states",
+        "reason": "every screen ships empty/loading/error states"
+      },
+      {
+        "concern": "interaction",
+        "reason": "input model: keyboard,pointer,touch"
+      },
+      {
+        "concern": "accessibility",
+        "reason": "platform accessibility baseline"
+      },
+      {
+        "concern": "feedback",
+        "reason": "form validation and submission feedback"
+      },
+      {
+        "concern": "environment",
+        "reason": "environment outdoor (KNOWN)"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "navigation",
+        "reason": "how users arrive and leave"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "create/refactor requests attract generic defaults"
+      },
+      {
+        "concern": "brand",
+        "reason": "visual identity direction"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "viewport range"
+      }
+    ],
+    "optional": [
+      "motion",
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "state.loading_empty_error",
+        "reason": "screen states"
+      },
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "web content must be keyboard operable"
+      },
+      {
+        "concept": "interaction.hover_independence",
+        "reason": "web is used with touch as well as pointer"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "web keyboard focus"
+      },
+      {
+        "concept": "touch.minimum_target",
+        "reason": "touch platform"
+      },
+      {
+        "concept": "feedback.validation_errors",
+        "reason": "form screen"
+      },
+      {
+        "concept": "touch.ime_keyboard",
+        "reason": "form on touch"
+      },
+      {
+        "concept": "env.outdoor_readability",
+        "reason": "environment outdoor"
+      },
+      {
+        "concept": "env.glanceable_status",
+        "reason": "environment outdoor"
+      }
+    ],
+    "recommended_concepts": [
+      "adaptive.breakpoint_matrix",
+      "touch.gestures_discoverable",
+      "touch.thumb_reach",
+      "touch.safe_areas",
+      "feedback.confirmation_destructive"
+    ]
+  },
+  "core": [
+    {
+      "id": "comp-wizard-stepper",
+      "kind": "component",
+      "category": "wizard",
+      "title": "Wizard / stepper",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "component",
+        "feedback",
+        "structure"
+      ],
+      "concepts": [
+        "feedback.progress_indicator",
+        "state.saving_conflict"
+      ],
+      "score": 0.38,
+      "guidance": "Step indicator with names and progress (list semantics, aria-current=step), Back never loses data, one primary action per step, review step before submit, resume support, each step a real page/route on web; TV: full-screen steps with default focus on the primary action.",
+      "use_when": "Ordered multi-step flows (checkout, applications, setup).",
+      "avoid_when": "Independent sections (tabs); flows that fit one screen.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.15,
+        "structural": 0.66,
+        "matched": [
+          "mode create",
+          "product ecommerce",
+          "screen checkout"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "dir-product-marketing-site",
+      "kind": "direction",
+      "category": "direction",
+      "title": "Product marketing site",
+      "facets": [
+        "direction",
+        "platform"
+      ],
+      "concerns": [
+        "brand",
+        "structure"
+      ],
+      "concepts": [],
+      "score": 0.372,
+      "guidance": "Structure derived from the buyer's questions (what is it, does it work for me, proof, price), a hero that shows the real product, one display face with character, one accent, one orchestrated motion moment, everything else quiet; no icon-feature grids, no gradient blobs, no testimonial carousel by default. Identity via the hero concept and type; run the anti-template check.",
+      "use_when": "Landing/marketing sites for software products; the goal is comprehension and one conversion.",
+      "avoid_when": "App screens; docs.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "internal-preference",
+      "incompatible": [
+        "layout-table-first",
+        "nav-left-rail",
+        "metadata-rich",
+        "surface-glass"
+      ],
+      "why": {
+        "lexical": 0.285,
+        "structural": 0.48,
+        "matched": [
+          "platform web",
+          "input pointer,touch",
+          "mode create",
+          "product mismatch"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring direction with lexical evidence"
+    },
+    {
+      "id": "comp-form",
+      "kind": "component",
+      "category": "form",
+      "title": "Form",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "component",
+        "feedback",
+        "structure"
+      ],
+      "concepts": [
+        "feedback.validation_errors",
+        "touch.ime_keyboard"
+      ],
+      "score": 0.327,
+      "guidance": "Labels above, help text below, required marked in text, field widths sized to content, grouped by section with headings, one column, inline validation on blur, error summary on submit with links to fields, primary action last (or sticky), unsaved-changes guard, autosave with status for long forms, autofill attributes. TV: one field per row, DOWN moves to next, system keyboard, minimal fields.",
+      "use_when": "Any data entry: settings, checkout, applications, record editing.",
+      "avoid_when": "Batch entry of many similar rows (use a data-entry grid); single toggles (inline).",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.169,
+        "structural": 0.52,
+        "matched": [
+          "mode create",
+          "screen checkout"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "layout-states-empty-loading-error",
+      "kind": "rule",
+      "category": "feedback",
+      "title": "Design empty, loading, error, and partial states",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "states"
+      ],
+      "concepts": [
+        "state.loading_empty_error"
+      ],
+      "score": 0.315,
+      "guidance": "Empty: what this is, why it is empty, one action. Loading: skeleton with final dimensions, then content; announce completion. Error: what failed, what to do, retry that works; keep entered data. Partial: show what loaded, mark what didn't. On TV, focus must land somewhere valid in each state.",
+      "use_when": "Every list, table, chart, form, and detail screen.",
+      "avoid_when": "Never ship a blank area for empty data; never show a spinner for more than ~1 s without a skeleton or progress; never show an error without a next step.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.098,
+        "structural": 0.58,
+        "matched": [
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required concern states: every screen ships empty/loading/error states"
+    },
+    {
+      "id": "mobile-field-use",
+      "kind": "rule",
+      "category": "environment",
+      "title": "Field use: sunlight readability and glanceable status",
+      "facets": [
+        "accessibility",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "environment",
+        "interaction"
+      ],
+      "concepts": [
+        "env.outdoor_readability",
+        "env.glanceable_status",
+        "touch.minimum_target"
+      ],
+      "score": 0.492,
+      "guidance": "Target ≥7:1 text contrast and avoid thin weights and pale tints (glare washes them out); prefer light UI on white or very high-contrast dark, not mid-tone surfaces; make the current state glanceable (large status word plus colour plus icon, readable at arm's length in two seconds); ≥48 dp targets with ≥12 dp spacing and no precision gestures when gloves are likely; put the next action in thumb reach; large numerals for counts and readings; keep the screen usable one-handed and interruptible (state survives backgrounding).",
+      "use_when": "Couriers, inspectors, technicians, warehouse and construction workers, outdoor kiosks: bright light, gloves, movement, interruptions.",
+      "avoid_when": "Desk-bound indoor use.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.208,
+        "structural": 0.84,
+        "matched": [
+          "platform mobile",
+          "input touch",
+          "mode create",
+          "environment outdoor"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required concern interaction: input model: keyboard,pointer,touch"
+    },
+    {
+      "id": "a11y-keyboard-operable",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Everything operable by keyboard, no traps",
+      "facets": [
+        "accessibility",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.keyboard_navigation",
+        "interaction.hover_independence"
+      ],
+      "score": 0.351,
+      "guidance": "Tab reaches every control in visual order; composite widgets use arrow keys with a roving tabindex so Tab is not consumed by every cell; Escape closes layers and returns focus to the invoker; nothing traps focus except a modal, and the modal itself must be escapable. Provide a keyboard alternative for every drag interaction.",
+      "use_when": "Every interactive element, including custom widgets, drag/drop, sliders, menus, date pickers, and anything that appears on hover.",
+      "avoid_when": "Never skip.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.017,
+        "structural": 0.76,
+        "matched": [
+          "platform web",
+          "input keyboard",
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required concept interaction.keyboard_navigation"
+    },
+    {
+      "id": "a11y-focus-visible",
+      "kind": "rule",
+      "category": "focus",
+      "title": "Focus visible and not obscured",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.focus_visible"
+      ],
+      "score": 0.371,
+      "guidance": "Focus indicator ≥2 px with ≥3:1 contrast against adjacent colours and against the unfocused state; sticky UI gets scroll-padding so a focused control scrolls into clear view. On TV the indicator must be obvious at 3 m (scale + border/glow).",
+      "use_when": "Every focusable element in every theme; sticky headers, footers, toasts, and cookie banners must never cover the focused element.",
+      "avoid_when": "Never remove focus styles; use :focus-visible to hide them for mouse clicks only.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.054,
+        "structural": 0.76,
+        "matched": [
+          "platform web",
+          "input keyboard",
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required concept interaction.focus_visible"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "component",
+      "structure",
+      "states",
+      "interaction",
+      "accessibility",
+      "feedback",
+      "environment"
+    ],
+    "covered_required_concerns": [
+      "component",
+      "structure",
+      "states",
+      "interaction",
+      "accessibility",
+      "feedback",
+      "environment"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "navigation",
+      "anti-pattern",
+      "brand",
+      "adaptive"
+    ],
+    "covered_recommended_concerns": [
+      "brand"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "state.loading_empty_error",
+      "interaction.keyboard_navigation",
+      "interaction.hover_independence",
+      "interaction.focus_visible",
+      "touch.minimum_target",
+      "feedback.validation_errors",
+      "touch.ime_keyboard",
+      "env.outdoor_readability",
+      "env.glanceable_status"
+    ],
+    "covered_required_concepts": [
+      "state.loading_empty_error",
+      "interaction.keyboard_navigation",
+      "interaction.hover_independence",
+      "interaction.focus_visible",
+      "touch.minimum_target",
+      "feedback.validation_errors",
+      "touch.ime_keyboard",
+      "env.outdoor_readability",
+      "env.glanceable_status"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "bundle_size": 7,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 3,
+    "guardrail_size": 4,
+    "category_diversity": 1.0,
+    "duplicate_pressure": 0.14,
+    "facet_coverage": 0.6,
+    "redundancy": 0.5
+  },
+  "token_coverage": 0.78,
+  "omitted": [],
+  "rejected": [
+    {
+      "id": "dir-broadcast-guide-tv",
+      "reason": "platform ['tv'] not in request ['mobile', 'web']"
+    },
+    {
+      "id": "nav-tv-top-tabs",
+      "reason": "platform ['tv'] not in request ['mobile', 'web']"
+    },
+    {
+      "id": "nav-menu-bar-desktop",
+      "reason": "platform ['desktop'] not in request ['mobile', 'web']"
+    },
+    {
+      "id": "motion-focus-scale",
+      "reason": "platform ['tv'] not in request ['mobile', 'web']"
+    },
+    {
+      "id": "focus-scale-glow",
+      "reason": "platform ['tv'] not in request ['mobile', 'web']"
+    },
+    {
+      "id": "cta-focus-selects",
+      "reason": "platform ['tv'] not in request ['mobile', 'web']"
+    },
+    {
+      "id": "metadata-focus-reveal",
+      "reason": "platform ['tv'] not in request ['mobile', 'web']"
+    },
+    {
+      "id": "a11y-tv-focus-always",
+      "reason": "platform ['tv'] not in request ['mobile', 'web']"
+    }
+  ]
+}

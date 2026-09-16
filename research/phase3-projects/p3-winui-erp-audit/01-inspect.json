@@ -1,0 +1,57 @@
+{
+  "root": "D:\\indigo pro\\MYownSkills\\research\\phase3-projects\\p3-winui-erp-audit\\project",
+  "findings": [
+    {
+      "status": "KNOWN",
+      "note": "Erp.Client.csproj: Microsoft.WindowsAppSDK"
+    },
+    {
+      "status": "KNOWN",
+      "note": "Erp.Client.csproj: CommunityToolkit.WinUI"
+    },
+    {
+      "status": "INFERRED",
+      "note": "DPAD / remote key handling found in source"
+    }
+  ],
+  "stack_groups": [
+    "winui"
+  ],
+  "platforms": [
+    "desktop",
+    "tv"
+  ],
+  "ui_libraries": [
+    "winui3",
+    "community-toolkit"
+  ],
+  "package_manager": null,
+  "css_architecture": [],
+  "tokens": [
+    "App.xaml"
+  ],
+  "fonts": [],
+  "icons": [],
+  "routing": [
+    "Views/ (views)",
+    "ViewModels/ (mvvm viewmodels)"
+  ],
+  "breakpoints": [],
+  "accessibility": [
+    "a11y attributes present in 1 files"
+  ],
+  "focus_handling": [
+    "explicit focus handling in 2 files",
+    "DPAD/remote/TV-focus handling in 1 files"
+  ],
+  "design_docs": [],
+  "component_dirs": [],
+  "tests": [],
+  "i18n": [],
+  "product_hints": [
+    "erp"
+  ],
+  "sample": {
+    "files_scanned": 12
+  }
+}

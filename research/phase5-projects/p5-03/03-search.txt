@@ -1,0 +1,85 @@
+## design-engineering search: Checkout on phones: the order summary pushes the pay button below the fold.
+status=CONFIDENT modes=['responsive', 'audit', 'refactor'] platforms={'mobile': 'KNOWN'} inputs={'touch': 'INFERRED'} products={'ecommerce': 'KNOWN'} density=None stacks=[] screens=['checkout'] negatives=[]
+facets required=['layout', 'component', 'navigation', 'platform'] unmet=[] diversity=0.75
+
+### One-page checkout  `comp-checkout-one-page`  [component/form; component/platform] score 0.75 · heuristic
+Order summary is visible on desktop (side column) and collapsible-but-present at the top on phones with the total always shown; guest checkout first, account optional; sections in the order contact → shipping → payment → review, each with a visible heading and inline validation on blur plus a focused error summary on submit; address fields use autocomplete attributes and correct input types/IME; the pay button states the amount, is disabled only while processing (with a visible status), and is protected against double submission; trust and cost information (shipping, tax) appears before payment, never as a surprise; progress is saved locally so a reload does not lose entries.
+- use when: Purchase flows with contact, shipping, payment and review on one scrolling page.
+- avoid when: Multi-session or regulated flows that need a stepper with server-side validation per step.
+- incompatible with: nav-wizard
+- why: lexical 0.791, structural 0.7 (platform mobile, secondary mode, product ecommerce, screen checkout)
+
+### Sticky action bar  `cta-sticky-bar`  [pattern/cta; layout/platform] score 0.362 · heuristic
+Bottom-fixed on mobile inside the safe area, sticky footer on desktop; content gets bottom padding equal to the bar height; the bar must not obscure a focused field (WCAG 2.4.11) so scroll the field into view above it.
+- use when: Long forms or detail pages where the primary action must stay reachable (Add to cart, Save, Continue).
+- avoid when: Short screens, TV, or when the bar would cover content without a scroll padding compensation.
+- incompatible with: cta-focus-selects, layout-rails
+- why: lexical 0.0, structural 0.76 (platform mobile, input touch, secondary mode, product ecommerce, screen checkout)
+
+### One primary action per screen  `cta-single-primary`  [pattern/cta; layout] score 0.351 · heuristic
+Exactly one filled button per view, secondaries as outlined/text, destructive actions separated and confirmed, button label is a verb phrase naming the outcome ('Save changes'), disabled only with an explanation nearby.
+- use when: Task screens (forms, checkout, onboarding, settings) where one action completes the job; the primary is filled, secondaries are quiet.
+- avoid when: Workbenches with many equal commands (toolbar pattern) or browse screens where selection is the action (focus-selects).
+- incompatible with: cta-toolbar-commands, cta-focus-selects
+- why: lexical 0.114, structural 0.44 (secondary mode, screen checkout)
+
+### Elevated cards as the primary container  `surface-elevated-cards`  [pattern/surface; layout/platform] score 0.346 · platform-standard
+One elevation level for resting cards, one for pressed/dragged; the whole card is the target with a single accessible name; never nest a card inside a card; cards in a grid share aspect ratio and padding. If more than ~30% of a screen is card borders, switch to dividers.
+- use when: Each item is a self-contained, tappable object (a product, a post, a course) and the card boundary is also the touch target.
+- avoid when: Dashboards and tables (cards inside cards), text-heavy content, dense desktop tools, or when the card contains a single line of text.
+- incompatible with: surface-flat-tonal, surface-bordered-panes, layout-table-first, layout-three-pane
+- why: lexical 0.0, structural 0.68 (platform mobile, input touch, secondary mode, product ecommerce)
+
+### Mobile: safe areas and system insets  `mobile-safe-areas`  [rule/layout; layout/platform] score 0.342 · platform-standard
+Content respects safe-area insets (SwiftUI safeAreaInset / .ignoresSafeArea only for backgrounds, Compose WindowInsets + edge-to-edge, RN SafeAreaView/useSafeAreaInsets, web env(safe-area-inset-*)); bottom actions sit above the home indicator/gesture bar; keyboard (IME) insets push the focused field into view.
+- use when: Bottom bars, sticky CTAs, full-bleed backgrounds, top app bars, landscape.
+- avoid when: Never hard-code status/nav bar heights.
+- why: lexical 0.0, structural 0.76 (platform mobile, input touch, mode responsive)
+
+### Poster art as primary recognition  `imagery-poster`  [pattern/imagery; platform/visual] score 0.336 · platform-standard
+One aspect ratio per rail (2:3 portrait or 16:9 landscape), title text below or revealed on focus (never over the art without a scrim), placeholders with the title text for missing art, images sized to the rendered card (no 4K posters in 200 px cards), progressive loading with a low-res or colour placeholder.
+- use when: Catalogues where the artwork is how users recognise items (films, shows, albums, courses, products).
+- avoid when: Items without consistent artwork, or when text metadata is the recognition cue (documents, transactions).
+- incompatible with: imagery-none, layout-table-first, surface-bordered-panes
+- why: lexical 0.012, structural 0.62 (platform mobile, secondary mode, product ecommerce)
+
+### Target size by platform  `a11y-target-size`  [rule/input; interaction] score 0.323 · accessibility-requirement
+Web: ≥24×24 CSS px minimum (WCAG 2.5.8), 44×44 recommended for touch. iOS ≥44 pt, Android ≥48 dp, kiosk ≥60 px, desktop pointer ≥24 epx with 4–8 px spacing. Extend the hit area beyond the visual glyph rather than enlarging the icon.
+- use when: Every tappable/clickable element; especially icon buttons, table row actions, chips, close buttons, and pagination.
+- avoid when: Inline text links inside a sentence are exempt from the size rule but still need spacing.
+- why: lexical 0.063, structural 0.64 (input touch, mode responsive)
+
+### Mobile: primary actions in thumb reach  `mobile-thumb-reach`  [rule/layout; layout/platform] score 0.321 · heuristic
+Frequent actions in the bottom third; top-left/right for rare actions (back, settings); large phones make top targets a two-handed reach so provide bottom alternatives (bottom search bar, pull-down). Sheets and menus open from the bottom.
+- use when: Deciding where the primary action, tab bar, search, and frequent controls go on phones.
+- avoid when: Do not put destructive actions in the easiest-to-hit zone.
+- why: lexical 0.027, structural 0.68 (platform mobile, input touch, secondary mode)
+
+### Inline badges and status chips  `metadata-inline-badges`  [pattern/metadata; layout/platform] score 0.319 · heuristic
+Pill only for status/category/count; text inside the pill (never colour only); ≤2 per item; consistent colour mapping across the product; not clickable unless it is a filter.
+- use when: Status, category, or count must be scannable in lists and headers (Open/Closed, New, 3 unread).
+- avoid when: As decoration on everything; when more than two badges per item appear, the design has become noisy.
+- incompatible with: metadata-minimal, layout-immersive-rails
+- why: lexical 0.0, structural 0.62 (platform mobile, secondary mode, product ecommerce)
+
+### Linear wizard / stepper  `nav-wizard`  [pattern/navigation; navigation] score 0.319 · heuristic
+Show step count and current step, allow going back without data loss, put one primary action per step, validate per step not at the end, and let completed steps be revisited. Save progress for flows longer than ~3 minutes. On TV, each step is a full screen with a single focused default action.
+- use when: One task with ordered dependent steps (checkout, onboarding, application forms) where finishing matters more than exploring.
+- avoid when: Steps are independent and users need to jump around (use tabs or a form with sections), or the whole thing fits on one screen.
+- incompatible with: nav-left-rail, nav-tv-side
+- why: lexical 0.069, structural 0.58 (secondary mode, product ecommerce, screen checkout)
+
+### Mobile: gestures are shortcuts, not the only way  `mobile-gestures-discoverable`  [rule/input; interaction/platform] score 0.314 · accessibility-requirement
+Every gesture action has a visible equivalent (overflow menu, button); swipe actions reveal labelled buttons; avoid horizontal swipes inside horizontally scrolling content; respect the platform back gesture; long press shows a menu, never a hidden critical action.
+- use when: Swipe-to-delete, swipe between tabs, pull to refresh, long press menus, pinch zoom.
+- avoid when: Never make a gesture the only path to an action; never fight system gestures (back swipe edge, home).
+- why: lexical 0.014, structural 0.68 (platform mobile, input touch, secondary mode)
+
+### Touch-only focus handling (mobile)  `focus-none-touch-only`  [pattern/focus; interaction/platform] score 0.312 · platform-standard
+Pressed state within 100 ms (ripple/opacity/scale), 44 pt / 48 dp targets, screen-reader focus order = visual order, and platform focus visuals left enabled for keyboard/switch users (do not disable). Kiosks: larger targets (≥ 60 px) and no hover-dependent affordances.
+- use when: Native mobile and kiosk apps where there is no persistent keyboard focus; feedback is pressed state + screen-reader focus provided by the platform.
+- avoid when: Any app that supports hardware keyboards, external pointers (iPadOS, Android desktop mode), or switch access without testing them.
+- incompatible with: focus-ring-standard, focus-scale-glow
+- why: lexical 0.017, structural 0.54 (platform mobile, input touch, secondary mode)
+
+Filtered out: anti-hero-template (platform ['web'] not in request ['mobile']); anti-hover-only-actions (platform ['desktop', 'web'] not in request ['mobile']); comp-data-table (platform ['desktop', 'web'] not in request ['mobile']); comp-data-entry-grid (platform ['desktop', 'web'] not in request ['mobile']); comp-tv-sign-in (platform ['tv'] not in request ['mobile']); nav-top-bar (platform ['web'] not in request ['mobile']); layout-master-detail (platform ['desktop', 'tablet', 'web'] not in request ['mobile']); layout-three-pane (platform ['desktop', 'web'] not in request ['mobile'])

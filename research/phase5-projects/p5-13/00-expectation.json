@@ -1,0 +1,26 @@
+{
+  "task": "p5-13",
+  "sentence": "Add a Spanish language switch to the pick-up flow.",
+  "platform": "kiosk",
+  "artifact_state": "existing",
+  "acceptable_modes": ["create", "refactor", "accessibility"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "content.i18n_expansion",
+    "process.reuse_first",
+    "touch.minimum_target",
+    "a11y.live_status",
+    "interaction.focus_restore",
+    "a11y.accessible_names",
+    "privacy.shared_device"
+  ],
+  "critical_concepts": ["content.i18n_expansion", "process.reuse_first"],
+  "forbidden_concepts": [
+    "tv.ten_foot_typography", "tv.safe_margins", "tv.dark_first", "tv.no_touch_hover", "interaction.dpad_reachability",
+    "adaptive.breakpoint_matrix", "adaptive.navigation_transform", "anti.platform_scaling",
+    "touch.thumb_reach", "touch.safe_areas", "navigation.deep_link_state", "desktop.fluent_materials", "desktop.spacing_grid",
+    "media.track_selection", "layout.settings_grouping", "brand.dark_mode_redesign"
+  ],
+  "preservation": ["navigation", "theme", "typography", "utilbar component", "keypad component", "typed entry and session on switch", "privacy reset of language with the session", "accessible mode reach-zone layout"],
+  "reviewer_notes": "Code facts read before running the skill: js/i18n.js already holds complete EN and ES string tables for every screen and dialog; app.js already has state.lang, applyLang(), a 'lang' action and a 'set-lang' chooser action; index.html <html lang> is updated on switch; resetSession() restores the default language for the next visitor. BUT the comment in i18n.js says 'the switcher lives on the attract screen only' and screens.js confirms it: the language toggle is rendered only in the attract foot / first-visit chooser. The utilbar (`utilbar()` in screens.js, present on every flow screen: accessible-mode toggle, Help, Start over; 3-column grid, 104 px tonal buttons, bottom reach zone) has no language control, so a visitor who touched Start in English cannot switch to Spanish on identify/list/confirm/done. Expected fix: reuse the existing 'lang' action and add a language control to the utilbar (4 columns, or a dedicated slot) on every flow screen; label it in the target language with a lang attribute ('Español' / 'English'); keep session, typed DOB/name, selection and error state across the switch (render() re-renders from session, so this should hold if the switch does not reset the session); keep keyboard/switch focus on the toggle after the full re-render (focusKeyOf covers data-action buttons); announce the change in a live region; keep every target >= 72 px (a11y >= 84 px) and >= 16 px gaps with four buttons in a 984 px row; Spanish labels are longer, so the 104 px util buttons must wrap or size without overflow in both standard and accessible mode; do not touch the idle/privacy timing from p5-12; language must still reset with the session. Should NOT add a settings page, a dropdown, flags, a route/URL change, or a TV/responsive treatment. Attract chooser and its behaviour stay as-is."
+}

@@ -1,0 +1,18 @@
+{
+  "platform": "tv",
+  "artifact_state": "existing",
+  "acceptable_modes": ["refactor", "polish"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "tv.player_autohide",
+    "interaction.focus_restore",
+    "interaction.dpad_reachability",
+    "interaction.focus_visible",
+    "a11y.reduced_motion",
+    "tv.no_touch_hover"
+  ],
+  "critical_concepts": ["tv.player_autohide", "interaction.focus_restore"],
+  "forbidden_concepts": ["media.search_tv", "tv.sign_in_code", "tv.epg_pinned_channels", "adaptive.breakpoint_matrix"],
+  "preservation": ["navigation", "theme", "typography"],
+  "note": "Sentence is a complaint with no mode word: the player overlay in js/app.js PlayerScreen is built once and never hidden, so controls burn in over the whole programme. Expected change: idle auto-hide timer (~4-5s), re-show on any remote key / d-pad input, restore focus to the play control when the overlay returns, fade rather than display:none so focus and progress stay coherent, honour prefers-reduced-motion. Guide screen is being changed by another task - player code only."
+}

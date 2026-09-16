@@ -1,0 +1,136 @@
+{
+  "brand": "accessibility review and fix of the seat management table: keyboard users can't reach row actions and the status column is colour only",
+  "fingerprint": {
+    "navigation_model": "left-rail",
+    "layout_topology": "table-first",
+    "grid_behavior": "virtualized",
+    "content_density": "high",
+    "surface_strategy": "bordered",
+    "card_geometry": "list-row",
+    "corner_language": "sharp",
+    "color_strategy": "neutral-plus-accent",
+    "motion_character": "functional-minimal",
+    "focus_strategy": "ring",
+    "cta_strategy": "toolbar-commands",
+    "image_strategy": "data-graphics",
+    "icon_strategy": "outline",
+    "metadata_density": "rich"
+  },
+  "direction": {
+    "navigation": "nav-left-rail",
+    "layout": "layout-table-first",
+    "density": null,
+    "surface": "surface-bordered-panes",
+    "cards": "card-list-row",
+    "typography": null,
+    "color": "color-neutral-accent",
+    "motion": "motion-functional-minimal",
+    "focus": "focus-ring-standard",
+    "cta": "cta-toolbar-commands",
+    "imagery": "imagery-data-graphics",
+    "icon": "icon-outline-system",
+    "metadata": "metadata-rich"
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "accessibility",
+      "audit"
+    ],
+    "platform": [
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [
+      "finance",
+      "saas"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "nextjs",
+      "react",
+      "shadcn",
+      "tailwind"
+    ],
+    "density": "high",
+    "components": [
+      "table"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [
+      "accessibility"
+    ],
+    "risk": "medium",
+    "primary_jobs": [
+      "accessibility table"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "low",
+    "scope": {
+      "domain": "UI_ACCESSIBILITY",
+      "in_scope": true,
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "mode_evidence": [
+      "accessibility: explicit: accessibility",
+      "accessibility: problem statement about assistive tech / accessibility",
+      "audit: diagnose the reported defect"
+    ],
+    "project_context": {
+      "navigation": "left-rail (KNOWN)",
+      "theme": "dual-theme (KNOWN)",
+      "radius": "small (INFERRED)",
+      "spacing": "8 (INFERRED)",
+      "typography": "custom (INFERRED)",
+      "components": "tailwind, radix, shadcn-style cva, table:tanstack, shadcn (KNOWN)"
+    },
+    "known": [
+      "platform=web",
+      "input=keyboard",
+      "product=finance",
+      "product=saas",
+      "stack=nextjs",
+      "stack=react",
+      "stack=tailwind",
+      "stack=shadcn",
+      "mode=accessibility",
+      "project_navigation=left-rail",
+      "project_theme=dual-theme",
+      "project_components=tailwind, radix, shadcn-style cva, table:tanstack, shadcn"
+    ],
+    "inferred": [
+      "input=pointer",
+      "input=touch",
+      "density=high",
+      "mode=audit",
+      "project_radius=small",
+      "project_spacing=8",
+      "project_typography=custom"
+    ],
+    "missing": [],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

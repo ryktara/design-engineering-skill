@@ -1,0 +1,2891 @@
+{
+ "reviewer": "opus",
+ "cases": [
+  {
+   "id": "hv5-g04-001",
+   "prompt": "checkout button disappears behind the keyboard on the reorder screen",
+   "category": "mobile-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "touch.ime_keyboard",
+    "layout.one_primary_action",
+    "touch.thumb_reach"
+   ],
+   "critical_concepts": [
+    "touch.ime_keyboard"
+   ],
+   "recommended_concepts": [
+    "touch.safe_areas",
+    "touch.minimum_target"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-002",
+   "prompt": "SwiftUI list scroll stutters when the offline banner is visible",
+   "category": "mobile-native",
+   "stress": "none",
+   "scope": "partial",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.offline_sync",
+    "perf.layout_shift"
+   ],
+   "critical_concepts": [
+    "state.offline_sync"
+   ],
+   "recommended_concepts": [
+    "state.loading_empty_error"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-003",
+   "prompt": "users on the ward keep fat-fingering the med dose stepper",
+   "category": "mobile-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "touch.minimum_target",
+    "feedback.confirmation_destructive",
+    "feedback.validation_errors"
+   ],
+   "critical_concepts": [
+    "touch.minimum_target"
+   ],
+   "recommended_concepts": [
+    "layout.spacing_scale",
+    "table.tabular_figures"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-004",
+   "prompt": "add a pull-to-refresh to the shipment tracker",
+   "category": "mobile-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "touch.gestures_discoverable",
+    "data.refresh_timestamp",
+    "state.loading_empty_error"
+   ],
+   "critical_concepts": [
+    "touch.gestures_discoverable",
+    "data.refresh_timestamp"
+   ],
+   "recommended_concepts": [
+    "a11y.live_status",
+    "state.offline_sync"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-005",
+   "prompt": "the safe area padding is wrong on notch phones in landscape",
+   "category": "mobile-native",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "touch.safe_areas",
+    "layout.spacing_scale"
+   ],
+   "critical_concepts": [
+    "touch.safe_areas"
+   ],
+   "recommended_concepts": [
+    "adaptive.navigation_transform"
+   ],
+   "forbidden_concepts": [
+    "tv.safe_margins",
+    "adaptive.breakpoint_matrix"
+   ],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-006",
+   "prompt": "Compose recomposition tanks fps when the cart badge updates",
+   "category": "mobile-native",
+   "stress": "generic-guardrail",
+   "scope": "partial",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "perf.layout_shift"
+   ],
+   "critical_concepts": [
+    "perf.layout_shift"
+   ],
+   "recommended_concepts": [
+    "a11y.live_status"
+   ],
+   "forbidden_concepts": [
+    "a11y.contrast",
+    "interaction.keyboard_navigation",
+    "touch.minimum_target"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-007",
+   "prompt": "gesture to dismiss the bottom sheet fights with the back swipe",
+   "category": "mobile-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "touch.gestures_discoverable",
+    "interaction.back_semantics"
+   ],
+   "critical_concepts": [
+    "touch.gestures_discoverable",
+    "interaction.back_semantics"
+   ],
+   "recommended_concepts": [
+    "interaction.drawer_focus",
+    "navigation.platform_grammar"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-008",
+   "prompt": "fix the tab bar overlap with the home indicator on iPhone",
+   "category": "mobile-native",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "polish"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "touch.safe_areas",
+    "navigation.platform_grammar"
+   ],
+   "critical_concepts": [
+    "touch.safe_areas"
+   ],
+   "recommended_concepts": [
+    "layout.spacing_scale"
+   ],
+   "forbidden_concepts": [
+    "interaction.tabs_roving",
+    "navigation.rail_semantics"
+   ],
+   "preservation": [
+    "navigation"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-009",
+   "prompt": "onboarding carousel loses swipe position after backgrounding the app",
+   "category": "mobile-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "navigation.orientation_and_back",
+    "onboarding.feature_education",
+    "touch.gestures_discoverable"
+   ],
+   "critical_concepts": [
+    "navigation.orientation_and_back"
+   ],
+   "recommended_concepts": [
+    "state.session_expiry",
+    "feedback.progress_indicator"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-010",
+   "prompt": "the loyalty card screen renders tiny text under the max Dynamic Type setting",
+   "category": "mobile-native",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "accessibility",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.text_scaling",
+    "content.readable_measure",
+    "layout.spacing_scale"
+   ],
+   "critical_concepts": [
+    "a11y.text_scaling"
+   ],
+   "recommended_concepts": [
+    "a11y.contrast"
+   ],
+   "forbidden_concepts": [
+    "layout.media_card",
+    "layout.no_nested_cards"
+   ],
+   "preservation": [
+    "typography"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-011",
+   "prompt": "biometric unlock prompt appears before the splash finishes loading",
+   "category": "mobile-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "onboarding.permission_priming",
+    "state.loading_empty_error",
+    "feedback.progress_indicator"
+   ],
+   "critical_concepts": [
+    "onboarding.permission_priming"
+   ],
+   "recommended_concepts": [
+    "state.session_expiry"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-012",
+   "prompt": "build a one-handed reachability mode for the transfer amount pad",
+   "category": "mobile-native",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "touch.thumb_reach",
+    "touch.minimum_target"
+   ],
+   "critical_concepts": [
+    "touch.thumb_reach"
+   ],
+   "recommended_concepts": [
+    "layout.one_primary_action",
+    "touch.safe_areas"
+   ],
+   "forbidden_concepts": [
+    "a11y.contrast"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-013",
+   "prompt": "Flutter hot reload keeps resetting my scroll offset in the feed",
+   "category": "mobile-native",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-014",
+   "prompt": "the barcode scanner view doesn't rotate when I flip the phone",
+   "category": "mobile-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "touch.safe_areas"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "state.loading_empty_error"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {
+    "adaptive.breakpoint_matrix": [
+     "adaptive.navigation_transform"
+    ]
+   }
+  },
+  {
+   "id": "hv5-g04-015",
+   "prompt": "offline mode banner covers the send button on the chat screen",
+   "category": "mobile-native",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.one_primary_action",
+    "touch.ime_keyboard",
+    "state.offline_sync"
+   ],
+   "critical_concepts": [
+    "layout.one_primary_action"
+   ],
+   "recommended_concepts": [
+    "touch.safe_areas",
+    "a11y.live_status"
+   ],
+   "forbidden_concepts": [
+    "data.realtime_window",
+    "state.saving_conflict"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-016",
+   "prompt": "typing a coupon code the keyboard covers the apply button",
+   "category": "mobile-native",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "touch.ime_keyboard",
+    "layout.one_primary_action"
+   ],
+   "critical_concepts": [
+    "touch.ime_keyboard"
+   ],
+   "recommended_concepts": [
+    "feedback.validation_errors",
+    "touch.thumb_reach"
+   ],
+   "forbidden_concepts": [
+    "feedback.trust_signals",
+    "anti.interruptive_upsell"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-017",
+   "prompt": "redesign the bottom nav for thumb reach on bigger phones",
+   "category": "mobile-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "touch.thumb_reach",
+    "navigation.platform_grammar",
+    "touch.minimum_target",
+    "navigation.orientation_and_back"
+   ],
+   "critical_concepts": [
+    "touch.thumb_reach",
+    "navigation.platform_grammar"
+   ],
+   "recommended_concepts": [
+    "touch.safe_areas",
+    "adaptive.navigation_transform"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-018",
+   "prompt": "the swipe-to-approve gesture in the review app conflicts with the delete swipe",
+   "category": "mobile-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "touch.gestures_discoverable",
+    "feedback.confirmation_destructive"
+   ],
+   "critical_concepts": [
+    "touch.gestures_discoverable"
+   ],
+   "recommended_concepts": [
+    "touch.minimum_target",
+    "interaction.selection_visible"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-019",
+   "prompt": "audit the checkout flow for one-thumb usability on tall phones",
+   "category": "mobile-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "touch.thumb_reach",
+    "touch.minimum_target",
+    "layout.one_primary_action",
+    "touch.safe_areas"
+   ],
+   "critical_concepts": [
+    "touch.thumb_reach"
+   ],
+   "recommended_concepts": [
+    "touch.ime_keyboard",
+    "form.autofill_attributes"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-020",
+   "prompt": "picker wheel for delivery time jumps two rows on release",
+   "category": "mobile-native",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "polish"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.selection_visible",
+    "touch.gestures_discoverable"
+   ],
+   "critical_concepts": [
+    "interaction.selection_visible"
+   ],
+   "recommended_concepts": [
+    "touch.minimum_target"
+   ],
+   "forbidden_concepts": [
+    "a11y.contrast",
+    "interaction.keyboard_navigation"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-021",
+   "prompt": "the loading spinner never stops on the nurse's handoff screen",
+   "category": "mobile-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.loading_empty_error",
+    "feedback.progress_indicator"
+   ],
+   "critical_concepts": [
+    "state.loading_empty_error"
+   ],
+   "recommended_concepts": [
+    "state.offline_sync",
+    "a11y.live_status"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-022",
+   "prompt": "widget on the lock screen shows a stale balance after refresh",
+   "category": "mobile-native",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "data.refresh_timestamp",
+    "env.glanceable_status",
+    "privacy.sensitive_masking"
+   ],
+   "critical_concepts": [
+    "data.refresh_timestamp"
+   ],
+   "recommended_concepts": [
+    "state.offline_sync"
+   ],
+   "forbidden_concepts": [
+    "touch.gestures_discoverable",
+    "data.realtime_window"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-023",
+   "prompt": "the map pin cluster overlaps the search bar in portrait",
+   "category": "mobile-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "polish"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.focal_hierarchy",
+    "data.search_results",
+    "touch.safe_areas"
+   ],
+   "critical_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "recommended_concepts": [
+    "layout.spacing_scale",
+    "touch.minimum_target"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-024",
+   "prompt": "polish the spacing between order rows on the tracking tab",
+   "category": "mobile-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.spacing_scale",
+    "content.readable_measure"
+   ],
+   "critical_concepts": [
+    "layout.spacing_scale"
+   ],
+   "recommended_concepts": [
+    "table.tabular_figures",
+    "layout.no_nested_cards"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "typography",
+    "color"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-025",
+   "prompt": "haptic feedback fires twice when confirming the payment",
+   "category": "mobile-native",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "feedback.confirmation_destructive",
+    "layout.one_primary_action"
+   ],
+   "critical_concepts": [
+    "feedback.confirmation_destructive"
+   ],
+   "recommended_concepts": [
+    "feedback.progress_indicator"
+   ],
+   "forbidden_concepts": [
+    "a11y.contrast",
+    "touch.minimum_target"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-026",
+   "prompt": "the app freezes on rotate during the video call screen",
+   "category": "mobile-native",
+   "stress": "none",
+   "scope": "partial",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "state.loading_empty_error"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "touch.safe_areas",
+    "perf.layout_shift"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {
+    "adaptive.breakpoint_matrix": [
+     "adaptive.navigation_transform"
+    ]
+   }
+  },
+  {
+   "id": "hv5-g04-027",
+   "prompt": "improve contrast on the low battery warning toast",
+   "category": "mobile-native",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "accessibility",
+    "polish"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.contrast",
+    "a11y.color_not_only"
+   ],
+   "critical_concepts": [
+    "a11y.contrast"
+   ],
+   "recommended_concepts": [
+    "a11y.live_status",
+    "env.glanceable_status"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-028",
+   "prompt": "the drag-to-reorder for playlist items snaps back randomly on Android",
+   "category": "mobile-native",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "touch.gestures_discoverable",
+    "interaction.selection_visible"
+   ],
+   "critical_concepts": [
+    "touch.gestures_discoverable"
+   ],
+   "recommended_concepts": [
+    "touch.minimum_target",
+    "a11y.live_status"
+   ],
+   "forbidden_concepts": [
+    "a11y.contrast",
+    "media.resume_playback"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-029",
+   "prompt": "why does the delivery app ask for location permission twice on first launch",
+   "category": "mobile-native",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "onboarding.permission_priming",
+    "onboarding.feature_education"
+   ],
+   "critical_concepts": [
+    "onboarding.permission_priming"
+   ],
+   "recommended_concepts": [
+    "onboarding.linear_wizard",
+    "state.loading_empty_error"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-030",
+   "prompt": "the split-bill screen rounds the last person's share wrong on small phones",
+   "category": "mobile-native",
+   "stress": "none",
+   "scope": "partial",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "mobile"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "table.tabular_figures",
+    "adaptive.breakpoint_matrix"
+   ],
+   "critical_concepts": [
+    "table.tabular_figures"
+   ],
+   "recommended_concepts": [
+    "content.readable_measure",
+    "a11y.text_scaling"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-031",
+   "prompt": "self-checkout screen times out mid-payment when a customer steps away",
+   "category": "kiosk-public",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.session_expiry",
+    "feedback.progress_indicator",
+    "feedback.trust_signals"
+   ],
+   "critical_concepts": [
+    "state.session_expiry"
+   ],
+   "recommended_concepts": [
+    "privacy.shared_device",
+    "feedback.confirmation_destructive"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-032",
+   "prompt": "gloves make the signature pad totally unresponsive at the loading dock kiosk",
+   "category": "kiosk-public",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "touch.minimum_target",
+    "feedback.validation_errors"
+   ],
+   "critical_concepts": [
+    "touch.minimum_target"
+   ],
+   "recommended_concepts": [
+    "state.loading_empty_error",
+    "touch.gestures_discoverable"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-033",
+   "prompt": "the machine in the lobby shows English only after a language reset",
+   "category": "kiosk-public",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "content.i18n_expansion",
+    "state.session_expiry",
+    "layout.settings_grouping"
+   ],
+   "critical_concepts": [
+    "content.i18n_expansion"
+   ],
+   "recommended_concepts": [
+    "a11y.accessible_names"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-034",
+   "prompt": "build a walk-up directory kiosk for the hospital atrium",
+   "category": "kiosk-public",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "design-system"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "navigation.orientation_and_back",
+    "touch.minimum_target",
+    "data.search_results",
+    "state.session_expiry",
+    "env.glanceable_status"
+   ],
+   "critical_concepts": [
+    "navigation.orientation_and_back",
+    "touch.minimum_target"
+   ],
+   "recommended_concepts": [
+    "a11y.contrast",
+    "content.i18n_expansion",
+    "privacy.shared_device"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-035",
+   "prompt": "sunlight glare washes out the queue number on the terminal in the yard",
+   "category": "kiosk-public",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "polish"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "env.outdoor_readability",
+    "a11y.contrast",
+    "env.glanceable_status"
+   ],
+   "critical_concepts": [
+    "env.outdoor_readability"
+   ],
+   "recommended_concepts": [
+    "tv.ten_foot_typography"
+   ],
+   "forbidden_concepts": [
+    "brand.dark_mode_redesign",
+    "tv.dark_first"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-036",
+   "prompt": "add a countdown before the session resets on the ticket machine",
+   "category": "kiosk-public",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.session_expiry",
+    "feedback.progress_indicator"
+   ],
+   "critical_concepts": [
+    "state.session_expiry"
+   ],
+   "recommended_concepts": [
+    "a11y.live_status",
+    "privacy.shared_device"
+   ],
+   "forbidden_concepts": [
+    "a11y.contrast",
+    "touch.minimum_target"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-037",
+   "prompt": "the parking payment kiosk keeps double-charging on slow taps",
+   "category": "kiosk-public",
+   "stress": "none",
+   "scope": "partial",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "feedback.confirmation_destructive",
+    "feedback.progress_indicator",
+    "touch.minimum_target"
+   ],
+   "critical_concepts": [
+    "feedback.confirmation_destructive"
+   ],
+   "recommended_concepts": [
+    "state.loading_empty_error",
+    "feedback.trust_signals"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-038",
+   "prompt": "redesign the self-service check-in for wheelchair users at the counter height",
+   "category": "kiosk-public",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "touch.minimum_target",
+    "layout.focal_hierarchy",
+    "a11y.contrast"
+   ],
+   "critical_concepts": [
+    "touch.minimum_target",
+    "layout.focal_hierarchy"
+   ],
+   "recommended_concepts": [
+    "a11y.text_scaling",
+    "a11y.accessible_names"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {
+    "touch.minimum_target": [
+     "touch.thumb_reach"
+    ]
+   }
+  },
+  {
+   "id": "hv5-g04-039",
+   "prompt": "audit the museum info kiosk for language switching clarity",
+   "category": "kiosk-public",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "content.i18n_expansion",
+    "layout.settings_grouping",
+    "a11y.accessible_names"
+   ],
+   "critical_concepts": [
+    "content.i18n_expansion"
+   ],
+   "recommended_concepts": [
+    "touch.minimum_target",
+    "state.session_expiry"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-040",
+   "prompt": "the fare machine's card slot LED never lights up for return trips",
+   "category": "kiosk-public",
+   "stress": "wrong-screen",
+   "scope": "partial",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "feedback.progress_indicator",
+    "state.loading_empty_error",
+    "env.glanceable_status"
+   ],
+   "critical_concepts": [
+    "feedback.progress_indicator"
+   ],
+   "recommended_concepts": [
+    "a11y.color_not_only"
+   ],
+   "forbidden_concepts": [
+    "brand.imagery_purpose",
+    "anti.decorative_gradient"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-041",
+   "prompt": "polish the idle screen animation on the lobby directory",
+   "category": "kiosk-public",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.reduced_motion",
+    "env.glanceable_status"
+   ],
+   "critical_concepts": [
+    "a11y.reduced_motion"
+   ],
+   "recommended_concepts": [
+    "state.session_expiry",
+    "anti.scroll_animation"
+   ],
+   "forbidden_concepts": [
+    "a11y.contrast",
+    "touch.minimum_target"
+   ],
+   "preservation": [
+    "navigation",
+    "color"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-042",
+   "prompt": "multi-language toggle on the check-in kiosk resets to default every timeout",
+   "category": "kiosk-public",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "content.i18n_expansion",
+    "state.session_expiry",
+    "layout.settings_grouping"
+   ],
+   "critical_concepts": [
+    "content.i18n_expansion",
+    "state.session_expiry"
+   ],
+   "recommended_concepts": [
+    "a11y.accessible_names"
+   ],
+   "forbidden_concepts": [
+    "a11y.contrast"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-043",
+   "prompt": "the order kiosk touch targets are too small for gloved warehouse hands",
+   "category": "kiosk-public",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "touch.minimum_target",
+    "layout.spacing_scale"
+   ],
+   "critical_concepts": [
+    "touch.minimum_target"
+   ],
+   "recommended_concepts": [
+    "feedback.validation_errors",
+    "a11y.contrast"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-044",
+   "prompt": "fix the receipt printer jam message that never clears from the screen",
+   "category": "kiosk-public",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.loading_empty_error",
+    "feedback.validation_errors"
+   ],
+   "critical_concepts": [
+    "state.loading_empty_error"
+   ],
+   "recommended_concepts": [
+    "a11y.live_status",
+    "state.session_expiry"
+   ],
+   "forbidden_concepts": [
+    "a11y.contrast",
+    "touch.minimum_target"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-045",
+   "prompt": "the self-service scale at the returns counter freezes after a weight reading",
+   "category": "kiosk-public",
+   "stress": "none",
+   "scope": "partial",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.loading_empty_error",
+    "feedback.progress_indicator"
+   ],
+   "critical_concepts": [
+    "state.loading_empty_error"
+   ],
+   "recommended_concepts": [
+    "feedback.validation_errors",
+    "state.session_expiry"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-046",
+   "prompt": "build a low-glare mode for outdoor payment terminals",
+   "category": "kiosk-public",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "new",
+   "acceptable_modes": [
+    "create",
+    "brand"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "env.outdoor_readability",
+    "a11y.contrast",
+    "brand.token_layers"
+   ],
+   "critical_concepts": [
+    "env.outdoor_readability"
+   ],
+   "recommended_concepts": [
+    "env.glanceable_status",
+    "brand.dark_mode_redesign"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-047",
+   "prompt": "the visitor badge kiosk print queue backs up during rush hour",
+   "category": "kiosk-public",
+   "stress": "wrong-screen",
+   "scope": "partial",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "feedback.progress_indicator",
+    "state.loading_empty_error"
+   ],
+   "critical_concepts": [
+    "feedback.progress_indicator"
+   ],
+   "recommended_concepts": [
+    "a11y.live_status",
+    "state.session_expiry"
+   ],
+   "forbidden_concepts": [
+    "data.pagination_strategy",
+    "table.virtualization"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-048",
+   "prompt": "accessibility audit for the voting terminal's screen reader support",
+   "category": "kiosk-public",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "accessibility",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.semantics",
+    "a11y.accessible_names",
+    "a11y.live_status",
+    "interaction.focus_visible"
+   ],
+   "critical_concepts": [
+    "a11y.semantics",
+    "a11y.accessible_names"
+   ],
+   "recommended_concepts": [
+    "interaction.keyboard_navigation",
+    "privacy.shared_device",
+    "a11y.contrast"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-049",
+   "prompt": "the drive-through order screen font is unreadable from the car",
+   "category": "kiosk-public",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "polish"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "tv.ten_foot_typography",
+    "env.outdoor_readability",
+    "a11y.contrast"
+   ],
+   "critical_concepts": [
+    "tv.ten_foot_typography"
+   ],
+   "recommended_concepts": [
+    "env.glanceable_status",
+    "layout.focal_hierarchy"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "color"
+   ],
+   "acceptable_alternatives": {
+    "tv.ten_foot_typography": [
+     "a11y.text_scaling",
+     "brand.type_roles"
+    ]
+   }
+  },
+  {
+   "id": "hv5-g04-050",
+   "prompt": "add a Braille-labeled keypad flow to the ATM screen",
+   "category": "kiosk-public",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "accessibility",
+    "create"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.accessible_names",
+    "a11y.semantics",
+    "privacy.shared_device"
+   ],
+   "critical_concepts": [
+    "a11y.accessible_names",
+    "a11y.semantics"
+   ],
+   "recommended_concepts": [
+    "a11y.live_status",
+    "interaction.keyboard_navigation"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-051",
+   "prompt": "the shop floor screen loses touch calibration after a shift change",
+   "category": "kiosk-public",
+   "stress": "none",
+   "scope": "partial",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "touch.minimum_target",
+    "state.session_expiry"
+   ],
+   "critical_concepts": [
+    "touch.minimum_target"
+   ],
+   "recommended_concepts": [
+    "feedback.validation_errors",
+    "env.glanceable_status"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-052",
+   "prompt": "review the timeout warning copy on the self-checkout for clarity",
+   "category": "kiosk-public",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "review",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.session_expiry",
+    "feedback.validation_errors",
+    "a11y.live_status"
+   ],
+   "critical_concepts": [
+    "state.session_expiry"
+   ],
+   "recommended_concepts": [
+    "feedback.progress_indicator",
+    "content.i18n_expansion"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-053",
+   "prompt": "the airport terminal wayfinding map pinch-zoom doesn't work with gloves on",
+   "category": "kiosk-public",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "touch.gestures_discoverable",
+    "touch.minimum_target",
+    "navigation.orientation_and_back"
+   ],
+   "critical_concepts": [
+    "touch.gestures_discoverable",
+    "touch.minimum_target"
+   ],
+   "recommended_concepts": [
+    "a11y.contrast",
+    "env.glanceable_status"
+   ],
+   "forbidden_concepts": [
+    "touch.thumb_reach",
+    "perf.image_sizing"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-054",
+   "prompt": "the clinic check-in kiosk's insurance card scan step confuses walk-ins",
+   "category": "kiosk-public",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "onboarding.linear_wizard",
+    "state.loading_empty_error",
+    "feedback.validation_errors"
+   ],
+   "critical_concepts": [
+    "onboarding.linear_wizard"
+   ],
+   "recommended_concepts": [
+    "a11y.accessible_names",
+    "privacy.shared_device"
+   ],
+   "forbidden_concepts": [
+    "layout.media_card",
+    "layout.no_nested_cards"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-055",
+   "prompt": "polish the button order on the vending machine's payment confirmation",
+   "category": "kiosk-public",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.one_primary_action",
+    "feedback.confirmation_destructive"
+   ],
+   "critical_concepts": [
+    "layout.one_primary_action"
+   ],
+   "recommended_concepts": [
+    "feedback.trust_signals"
+   ],
+   "forbidden_concepts": [
+    "a11y.contrast",
+    "touch.minimum_target"
+   ],
+   "preservation": [
+    "navigation",
+    "color"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-056",
+   "prompt": "why does our CI pipeline take 12 minutes to run the test suite",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-057",
+   "prompt": "the database migration for the orders table keeps timing out in staging",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-058",
+   "prompt": "optimize the SQL query behind the dashboard's monthly report",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-059",
+   "prompt": "our webpack build size ballooned after the last dependency bump",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-060",
+   "prompt": "set up rate limiting on the checkout API",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-061",
+   "prompt": "make the UI faster and also completely redesign it but don't change anything visible",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "partial",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": true
+   },
+   "required_concepts": [
+    "process.decision_order",
+    "process.safe_modification",
+    "perf.js_budget"
+   ],
+   "critical_concepts": [
+    "process.decision_order"
+   ],
+   "recommended_concepts": [
+    "perf.layout_shift",
+    "process.render_verify"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour",
+    "navigation"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-062",
+   "prompt": "the load balancer keeps dropping websocket connections during deploys",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-063",
+   "prompt": "is React or Vue better for our team long term",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-064",
+   "prompt": "the Kubernetes pods for the reporting service keep restarting",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-065",
+   "prompt": "write a migration script to backfill the missing user emails",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-066",
+   "prompt": "the redis cache invalidation logic is stale after five minutes",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-067",
+   "prompt": "audit our npm dependencies for known vulnerabilities",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-068",
+   "prompt": "the payment webhook from Stripe sometimes arrives out of order",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-069",
+   "prompt": "can you make the login screen both minimal and packed with more options",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": true
+   },
+   "required_concepts": [
+    "layout.one_primary_action",
+    "layout.focal_hierarchy",
+    "process.decision_order"
+   ],
+   "critical_concepts": [
+    "layout.one_primary_action",
+    "layout.focal_hierarchy"
+   ],
+   "recommended_concepts": [
+    "form.autofill_attributes",
+    "feedback.validation_errors"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-070",
+   "prompt": "the S3 bucket permissions are too open for the upload service",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-071",
+   "prompt": "review our git branching strategy for the mobile team",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-072",
+   "prompt": "the GraphQL resolver for orders returns stale data intermittently",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-073",
+   "prompt": "set up blue-green deployment for the checkout service",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-074",
+   "prompt": "the cron job that emails weekly reports silently failed last week",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-075",
+   "prompt": "investigate why our Terraform apply keeps drifting from state",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-076",
+   "prompt": "the analytics events aren't firing in the right order",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-077",
+   "prompt": "make the settings page snappy without touching any code",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "partial",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": true
+   },
+   "required_concepts": [
+    "layout.settings_grouping",
+    "perf.layout_shift"
+   ],
+   "critical_concepts": [
+    "layout.settings_grouping"
+   ],
+   "recommended_concepts": [
+    "process.decision_order",
+    "perf.js_budget"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour",
+    "navigation",
+    "typography",
+    "color"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-078",
+   "prompt": "our OAuth token refresh logic sometimes loops forever",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-079",
+   "prompt": "the build pipeline caches an old bundle after a hotfix",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-080",
+   "prompt": "is it better to use microservices or a monolith for this feature",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-081",
+   "prompt": "the message queue backs up when the worker pool is small",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-082",
+   "prompt": "fix the bug",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-083",
+   "prompt": "tighten the CORS policy on the internal admin API",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-084",
+   "prompt": "the feature flag service returns different values per region",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-085",
+   "prompt": "rewrite the auth middleware to support multi-tenant orgs",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-086",
+   "prompt": "why is our Docker image so much bigger than last quarter",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-087",
+   "prompt": "the search index falls out of sync with the product catalog",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-088",
+   "prompt": "review our on-call rotation and alerting thresholds",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-089",
+   "prompt": "the same test flaked twice this week on the same assertion",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-090",
+   "prompt": "make it feel more premium",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "partial",
+   "artifact_state": "unknown",
+   "acceptable_modes": [
+    "polish",
+    "brand"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": true
+   },
+   "required_concepts": [
+    "brand.type_roles",
+    "layout.spacing_scale",
+    "process.decision_order",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "brand.type_roles",
+    "layout.spacing_scale"
+   ],
+   "recommended_concepts": [
+    "anti.decorative_gradient",
+    "brand.corner_language",
+    "anti.oversized_display"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-091",
+   "prompt": "the API rate limiter throttles legitimate retries too aggressively",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-092",
+   "prompt": "our logging pipeline drops half the events under load",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-093",
+   "prompt": "should we use REST or gRPC for the internal service mesh",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-094",
+   "prompt": "the deploy script hardcodes a staging URL that broke prod",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g04-095",
+   "prompt": "do the thing we talked about last time",
+   "category": "adversarial",
+   "stress": "none",
+   "scope": "abstain",
+   "artifact_state": "unknown",
+   "acceptable_modes": [],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [],
+   "critical_concepts": [],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  }
+ ]
+}

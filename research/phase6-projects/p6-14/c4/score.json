@@ -1,0 +1,128 @@
+{
+ "task": "p6-14",
+ "build": "32e67640c9b8ef1d519ef9695016fb396116b92412e63c324da090aecf1df385",
+ "c1_recorded": {
+  "platform_expected": "mobile",
+  "platform_resolved": [
+   "mobile"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "accessibility",
+   "audit",
+   "polish"
+  ],
+  "mode_resolved": [
+   "accessibility",
+   "audit"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "PARTIAL",
+  "bundle_ids": [
+   "interaction-drag-drop",
+   "a11y-native-semantics",
+   "mobile-density-touch",
+   "a11y-color-not-only",
+   "a11y-contrast-text"
+  ],
+  "bundle_tokens": 583,
+  "expected_concepts": [
+   "a11y.accessible_names",
+   "a11y.semantics",
+   "data.accessible_chart_alternative",
+   "a11y.color_not_only",
+   "a11y.text_scaling",
+   "process.safe_modification"
+  ],
+  "critical_concepts": [
+   "a11y.accessible_names",
+   "a11y.semantics"
+  ],
+  "delivered_concepts": [
+   "a11y.accessible_names",
+   "a11y.color_not_only",
+   "a11y.contrast",
+   "a11y.live_status",
+   "a11y.semantics",
+   "interaction.keyboard_navigation",
+   "interaction.selection_visible",
+   "perf.layout_shift",
+   "table.column_priority",
+   "touch.gestures_discoverable",
+   "touch.minimum_target"
+  ],
+  "concept_recall": 0.5,
+  "critical_recall": 1.0,
+  "forbidden_delivered": [
+   "interaction.keyboard_navigation"
+  ],
+  "change_budget": "low"
+ },
+ "c4": {
+  "platform_expected": "mobile",
+  "platform_resolved": [
+   "mobile"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "accessibility",
+   "audit",
+   "polish"
+  ],
+  "mode_resolved": [
+   "accessibility",
+   "audit"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "CONFIDENT",
+  "bundle_ids": [
+   "comp-toast-notification",
+   "a11y-native-semantics",
+   "a11y-color-not-only",
+   "a11y-contrast-text",
+   "a11y-live-status",
+   "mobile-density-touch"
+  ],
+  "bundle_tokens": 742,
+  "expected_concepts": [
+   "a11y.accessible_names",
+   "a11y.semantics",
+   "data.accessible_chart_alternative",
+   "a11y.color_not_only",
+   "a11y.text_scaling",
+   "process.safe_modification"
+  ],
+  "critical_concepts": [
+   "a11y.accessible_names",
+   "a11y.semantics"
+  ],
+  "delivered_concepts": [
+   "a11y.accessible_names",
+   "a11y.color_not_only",
+   "a11y.contrast",
+   "a11y.live_status",
+   "a11y.semantics",
+   "interaction.selection_visible",
+   "table.column_priority",
+   "touch.minimum_target"
+  ],
+  "concept_recall": 0.5,
+  "critical_recall": 1.0,
+  "forbidden_delivered": [],
+  "change_budget": "low"
+ }
+}

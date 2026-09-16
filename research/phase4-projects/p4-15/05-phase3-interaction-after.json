@@ -1,0 +1,482 @@
+{
+  "screens": {
+    "attract": {
+      "targets": 7,
+      "minTarget": 72,
+      "small": [],
+      "hasHelp": true,
+      "lowContrast": [],
+      "hoverRules": []
+    },
+    "identify-dob": {
+      "targets": 16,
+      "minTarget": 104,
+      "small": [],
+      "hasHelp": true,
+      "lowContrast": [],
+      "hoverRules": []
+    },
+    "identify-name": {
+      "targets": 35,
+      "minTarget": 72,
+      "small": [],
+      "hasHelp": true,
+      "lowContrast": [],
+      "hoverRules": []
+    },
+    "list": {
+      "targets": 8,
+      "minTarget": 72,
+      "small": [],
+      "hasHelp": true,
+      "lowContrast": [],
+      "hoverRules": []
+    },
+    "confirm": {
+      "targets": 5,
+      "minTarget": 72,
+      "small": [],
+      "hasHelp": true,
+      "lowContrast": [],
+      "hoverRules": []
+    },
+    "done": {
+      "targets": 4,
+      "minTarget": 112,
+      "small": [],
+      "hasHelp": true,
+      "lowContrast": [],
+      "hoverRules": []
+    },
+    "a11y:attract": {
+      "targets": 7,
+      "minTarget": 84,
+      "small": [],
+      "hasHelp": true,
+      "aboveReachZone": [],
+      "lowContrast": [],
+      "hoverRules": []
+    },
+    "a11y:identify-dob": {
+      "targets": 16,
+      "minTarget": 104,
+      "small": [],
+      "hasHelp": true,
+      "aboveReachZone": [],
+      "lowContrast": [],
+      "hoverRules": []
+    },
+    "a11y:identify-name": {
+      "targets": 35,
+      "minTarget": 84,
+      "small": [],
+      "hasHelp": true,
+      "aboveReachZone": [],
+      "lowContrast": [],
+      "hoverRules": []
+    },
+    "a11y:list": {
+      "targets": 8,
+      "minTarget": 84,
+      "small": [],
+      "hasHelp": true,
+      "aboveReachZone": [],
+      "lowContrast": [],
+      "hoverRules": []
+    },
+    "a11y:confirm": {
+      "targets": 5,
+      "minTarget": 84,
+      "small": [],
+      "hasHelp": true,
+      "aboveReachZone": [],
+      "lowContrast": [],
+      "hoverRules": []
+    },
+    "a11y:done": {
+      "targets": 4,
+      "minTarget": 112,
+      "small": [],
+      "hasHelp": true,
+      "aboveReachZone": [],
+      "lowContrast": [],
+      "hoverRules": []
+    }
+  },
+  "checks": [
+    {
+      "name": "attract: all targets >= 64px",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "attract: help action present",
+      "pass": true
+    },
+    {
+      "name": "attract: text contrast >= 4.5:1",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "attract: no :hover-only rules",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "identify-dob: all targets >= 64px",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "identify-dob: help action present",
+      "pass": true
+    },
+    {
+      "name": "identify-dob: text contrast >= 4.5:1",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "identify-dob: no :hover-only rules",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "identify-name: all targets >= 64px",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "identify-name: help action present",
+      "pass": true
+    },
+    {
+      "name": "identify-name: text contrast >= 4.5:1",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "identify-name: no :hover-only rules",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "list: all targets >= 64px",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "list: help action present",
+      "pass": true
+    },
+    {
+      "name": "list: text contrast >= 4.5:1",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "list: no :hover-only rules",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "confirm: all targets >= 64px",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "confirm: help action present",
+      "pass": true
+    },
+    {
+      "name": "confirm: text contrast >= 4.5:1",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "confirm: no :hover-only rules",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "done: all targets >= 64px",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "done: help action present",
+      "pass": true
+    },
+    {
+      "name": "done: text contrast >= 4.5:1",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "done: no :hover-only rules",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "done: no personal data on done screen",
+      "pass": true
+    },
+    {
+      "name": "a11y:attract: all targets >= 64px",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:attract: help action present",
+      "pass": true
+    },
+    {
+      "name": "a11y:attract: text contrast >= 4.5:1",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:attract: no :hover-only rules",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:attract: interactive controls within lower 60% (y >= 768)",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:identify-dob: all targets >= 64px",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:identify-dob: help action present",
+      "pass": true
+    },
+    {
+      "name": "a11y:identify-dob: text contrast >= 4.5:1",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:identify-dob: no :hover-only rules",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:identify-dob: interactive controls within lower 60% (y >= 768)",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:identify-name: all targets >= 64px",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:identify-name: help action present",
+      "pass": true
+    },
+    {
+      "name": "a11y:identify-name: text contrast >= 4.5:1",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:identify-name: no :hover-only rules",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:identify-name: interactive controls within lower 60% (y >= 768)",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:list: all targets >= 64px",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:list: help action present",
+      "pass": true
+    },
+    {
+      "name": "a11y:list: text contrast >= 4.5:1",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:list: no :hover-only rules",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:list: interactive controls within lower 60% (y >= 768)",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:confirm: all targets >= 64px",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:confirm: help action present",
+      "pass": true
+    },
+    {
+      "name": "a11y:confirm: text contrast >= 4.5:1",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:confirm: no :hover-only rules",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:confirm: interactive controls within lower 60% (y >= 768)",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:done: all targets >= 64px",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:done: help action present",
+      "pass": true
+    },
+    {
+      "name": "a11y:done: text contrast >= 4.5:1",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:done: no :hover-only rules",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:done: interactive controls within lower 60% (y >= 768)",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:done: no personal data on done screen",
+      "pass": true
+    },
+    {
+      "name": "idle: personal data present before reset (sanity)",
+      "pass": true
+    },
+    {
+      "name": "idle: warning dialog with countdown shown",
+      "pass": true
+    },
+    {
+      "name": "idle: returns to attract and clears session",
+      "pass": true
+    },
+    {
+      "name": "idle: no personal data left in DOM",
+      "pass": true
+    },
+    {
+      "name": "idle: \"still here\" extends the session (WCAG 2.2.1)",
+      "pass": true
+    },
+    {
+      "name": "scan: pick-up code reaches the list",
+      "pass": true
+    },
+    {
+      "name": "privacy: medication names masked by default",
+      "pass": true,
+      "detail": [
+        "Ator•••••••• 20 mg",
+        "Lisi•••••• 10 mg",
+        "Metf••••• 500 mg"
+      ]
+    },
+    {
+      "name": "privacy: explicit reveal shows full names",
+      "pass": true,
+      "detail": [
+        "Atorvastatin 20 mg",
+        "Lisinopril 10 mg",
+        "Metformin 500 mg"
+      ]
+    },
+    {
+      "name": "focus: tap does not show a focus ring",
+      "pass": true,
+      "detail": {
+        "tag": "BODY",
+        "outline": "none",
+        "width": "3px",
+        "fv": false
+      }
+    },
+    {
+      "name": "focus: keyboard Tab shows a visible ring",
+      "pass": true,
+      "detail": {
+        "tag": "BUTTON",
+        "label": "1",
+        "outline": "solid",
+        "width": "6px",
+        "color": "rgb(11, 79, 168)",
+        "fv": true
+      }
+    },
+    {
+      "name": "focus: Tab traverses the screen controls",
+      "pass": true,
+      "detail": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "Clear",
+        "0",
+        "Delete",
+        "Continue",
+        "Accessible m",
+        "Help / call ",
+        "Start over",
+        "RxPoint Phar",
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "name": "motion: attract animation disabled under prefers-reduced-motion",
+      "pass": true,
+      "detail": "none"
+    },
+    {
+      "name": "motion: attract animation runs normally",
+      "pass": true,
+      "detail": "attract-pulse"
+    },
+    {
+      "name": "motion: attract animation stops on touch",
+      "pass": true
+    }
+  ],
+  "summary": {
+    "passed": 70,
+    "failed": 0
+  }
+}

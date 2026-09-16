@@ -1,0 +1,52 @@
+{
+ "candidate": "c4",
+ "frozen_at": "2026-09-16T00:35:04",
+ "build_sha256": "32e67640c9b8ef1d519ef9695016fb396116b92412e63c324da090aecf1df385",
+ "files": {
+  "data/antipatterns.jsonl": "ede5ef14651b028b88cdf21c71fa59a92fda1dbfffa044dfedc1fd8f5284d1f7",
+  "data/charts.jsonl": "a68845d031c11026a836060e93308aef86ac1f8c83afd25f5e6be6baaa25d980",
+  "data/components.jsonl": "f485fe4ebe4c8d9275400419b42159f662ea4ef7c5afa1544da6887873ff01c4",
+  "data/directions.jsonl": "9f3047aef8fb896e625653358a3cfbb06872a20c676b5742ff12325e2918dcd0",
+  "data/lexicon.json": "12b0334a946a4087811a97690712fc820b9e6c2a8c3b8b8d2313c9c8cf339746",
+  "data/patterns.jsonl": "e55d5480c8a785f50c1cb8bed2d4e41157a777622c5b920ca54bbcdafbdd9322",
+  "data/rules.jsonl": "69577507a1747a667a5e54f349476a89f4d38a0f63ea0fdb268e6326118ec3c9",
+  "evals/heldout-v4/ONTOLOGY.md": "ef95ecbadf05004c3fbc51c5565082f68e25ee47c7c873eb311e4b288a508cf7",
+  "evals/heldout-v4/THRESHOLDS.md": "e880c59e4c4b70ef50dd75eaa72c23ae8d9c5e4d585b22289ca617398982c3f6",
+  "scripts/advise.py": "8a411b9bb43acd54789353150d7a6eddf20bb6188fa95e3a4b981c41bc174c6c",
+  "scripts/de_core.py": "c99a09ea30567cc06e48d8b2ce5cef3e8f9861e2320cf0ab206daf50869b2042",
+  "scripts/de_semantic.py": "dcf850a632e4f6d93918007b29dd278feb28645b34990f62aabaca886d4e74d1",
+  "scripts/fingerprint.py": "a74b549a832b83aab0f6e7c76b8f4c2c50db3741ea81afb118eebb79bdcb9cdb",
+  "scripts/inspect_project.py": "b15e6b9c5aa7b914ed22644621dbdd92b3807a84ea2ef95c3eddb97945db270a",
+  "scripts/tokens.py": "16a0ecf407c56138ae9c2e00422ed89253ab668ed7d9b0450f8e840f50e799a2",
+  "scripts/validate_skill.py": "df8bee9d36a5209be34659a440dc7395ff456e07cab8c65629e2d7d6edd7ad9b",
+  "SKILL.md": "5c942d9c83f11338bc16611c2c5f5af740a9e74dd0e2e266620c71c953e82b5f"
+ },
+ "records": 248,
+ "concepts": 114,
+ "alias_groups": 75,
+ "development_cases": 903,
+ "regression_cases": 54,
+ "policy": {
+  "thresholds_file": "evals/heldout-v5/THRESHOLDS.md",
+  "thresholds_sha256": "3d0452abb7446ad908160163938fa8c6dbc3fffe674af12e5608c9aed8ed00f3",
+  "pre_registered_sha256_file": "3d0452abb7446ad908160163938fa8c6dbc3fffe674af12e5608c9aed8ed00f3"
+ },
+ "heldout_v5": {
+  "cases_file": "evals/heldout-v5/cases.json",
+  "cases_sha256": "0d8126d0ad96af8dd943e19de49485ae11fc0931464e9fe36bf54f9c838c884d",
+  "cases": 525,
+  "run_before_freeze": false
+ },
+ "gates": {
+  "development": "884/885 (only the doc-count check, which needs PHASE6-RESULTS.md)",
+  "regression": "54/54",
+  "validator": "1 error: doc count only"
+ },
+ "previous_candidate": {
+  "c3": "research/runs/phase6-freeze-c3.json",
+  "implemented_round": "research/runs/phase6-projects-c3.json",
+  "c4_rescore": "research/runs/phase6-c4-projects-rescore.json"
+ },
+ "rule": "NO CODE CHANGES between this freeze and the completion + review of the single held-out v5 run.",
+ "disclosure": "scripts/de_core.py was truncated during Phase 6 and rebuilt from the Phase 4 backup plus every recorded patch; the Phase 5 c2 hash is not reproducible byte-for-byte."
+}

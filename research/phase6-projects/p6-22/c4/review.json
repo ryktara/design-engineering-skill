@@ -1,0 +1,10 @@
+{"task": "p6-22",
+ "records": [
+   {"id": "comp-form", "verdict": "relevant", "category": "", "why": "Labels above, field widths to content, unsaved-changes guard and primary-action-last match what the job form does and what had to be preserved."},
+   {"id": "desktop-keyboard-first", "verdict": "partial", "category": "generic", "why": "Platform-correct but F2/Delete/Ctrl+F/grid selection has no bearing on a duplicated-field complaint."},
+   {"id": "layout-states-empty-loading-error", "verdict": "off-target", "category": "generic", "why": "No async or remote data on this screen (deterministic in-memory SampleData); entered only as required GENERIC coverage."}
+ ],
+ "missing_critical": ["process.reuse_first", "a11y.accessible_names"],
+ "unjustified_direction_slots": 0,
+ "layer_review": {"core": ["comp-form"], "critical": ["desktop-keyboard-first", "layout-states-empty-loading-error"], "optional": []},
+ "change_vs_c3": "better - 4 records down to 3 by dropping the partial layout-master-detail while keeping comp-form, the only record the c3 implementer used; the two missing critical concepts and the underlying knowledge gap (derive, do not re-ask) are unchanged."}

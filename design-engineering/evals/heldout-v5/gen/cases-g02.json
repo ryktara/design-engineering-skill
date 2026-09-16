@@ -1,0 +1,5042 @@
+{
+ "reviewer": "opus",
+ "cases": [
+  {
+   "id": "hv5-g02-001",
+   "prompt": "the totals never line up once you scroll past ten rows",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "table.tabular_figures",
+    "table.virtualization"
+   ],
+   "critical_concepts": [
+    "table.tabular_figures"
+   ],
+   "recommended_concepts": [
+    "perf.layout_shift"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-002",
+   "prompt": "tapping the tab twice sometimes opens two button row",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.tabs_roving",
+    "navigation.orientation_and_back"
+   ],
+   "critical_concepts": [
+    "interaction.tabs_roving"
+   ],
+   "recommended_concepts": [
+    "navigation.deep_link_state"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-003",
+   "prompt": "the tab key skips over the tab labeled recent",
+   "category": "refactor-fix",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.keyboard_navigation",
+    "interaction.focus_visible"
+   ],
+   "critical_concepts": [
+    "interaction.keyboard_navigation"
+   ],
+   "recommended_concepts": [
+    "interaction.tabs_roving",
+    "a11y.semantics"
+   ],
+   "forbidden_concepts": [
+    "navigation.rail_semantics",
+    "navigation.platform_grammar"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-004",
+   "prompt": "should this single label be bold or regular",
+   "category": "refactor-fix",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.type_roles",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "brand.type_roles"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "interaction.keyboard_navigation",
+    "state.loading_empty_error"
+   ],
+   "preservation": [
+    "typography"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-005",
+   "prompt": "the confirm dialog is unreadable behind the counter",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.contrast",
+    "feedback.confirmation_destructive",
+    "env.outdoor_readability"
+   ],
+   "critical_concepts": [
+    "a11y.contrast"
+   ],
+   "recommended_concepts": [
+    "env.glanceable_status"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {
+    "env.outdoor_readability": [
+     "env.glanceable_status"
+    ]
+   }
+  },
+  {
+   "id": "hv5-g02-006",
+   "prompt": "our tab bar keeps showing stale data after the sync finishes",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.offline_sync",
+    "state.loading_empty_error",
+    "data.refresh_timestamp"
+   ],
+   "critical_concepts": [
+    "state.offline_sync"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-007",
+   "prompt": "the search box eats the first keystroke, users are complaining",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "data.search_results",
+    "interaction.keyboard_navigation"
+   ],
+   "critical_concepts": [
+    "data.search_results"
+   ],
+   "recommended_concepts": [
+    "state.loading_empty_error"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-008",
+   "prompt": "the landscape view in React freezes when the list has more than a few hundred rows",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "partial",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "web"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "table.virtualization",
+    "perf.js_budget"
+   ],
+   "critical_concepts": [
+    "table.virtualization"
+   ],
+   "recommended_concepts": [
+    "data.pagination_strategy"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-009",
+   "prompt": "the back button sometimes lands on the wrong tab",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "navigation.orientation_and_back",
+    "interaction.back_semantics"
+   ],
+   "critical_concepts": [
+    "navigation.orientation_and_back"
+   ],
+   "recommended_concepts": [
+    "navigation.deep_link_state"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-010",
+   "prompt": "the settings screen doesn't collapse right after you delete the last row",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.loading_empty_error",
+    "layout.settings_grouping"
+   ],
+   "critical_concepts": [
+    "state.loading_empty_error"
+   ],
+   "recommended_concepts": [
+    "feedback.confirmation_destructive"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-011",
+   "prompt": "the price updates but the total below it doesn't, until you tap away",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "partial",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "table.inline_edit",
+    "a11y.live_status"
+   ],
+   "critical_concepts": [
+    "table.inline_edit"
+   ],
+   "recommended_concepts": [
+    "state.saving_conflict",
+    "feedback.validation_errors"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {
+    "table.inline_edit": [
+     "state.saving_conflict"
+    ]
+   }
+  },
+  {
+   "id": "hv5-g02-012",
+   "prompt": "the card overlaps the legend on some builds and not others",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "perf.layout_shift",
+    "layout.spacing_scale",
+    "adaptive.breakpoint_matrix"
+   ],
+   "critical_concepts": [
+    "perf.layout_shift"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-013",
+   "prompt": "the loading overlay stays up even after the player overlay closes",
+   "category": "refactor-fix",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.loading_empty_error",
+    "feedback.progress_indicator"
+   ],
+   "critical_concepts": [
+    "state.loading_empty_error"
+   ],
+   "recommended_concepts": [
+    "a11y.dialog_focus"
+   ],
+   "forbidden_concepts": [
+    "tv.player_autohide",
+    "media.resume_playback"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-014",
+   "prompt": "the sort order resets itself after you filter",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "data.filter_chips",
+    "navigation.deep_link_state"
+   ],
+   "critical_concepts": [
+    "data.filter_chips"
+   ],
+   "recommended_concepts": [
+    "table.column_priority"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-015",
+   "prompt": "the notification badge count is off by one, always one",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "partial",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.live_status",
+    "env.glanceable_status"
+   ],
+   "critical_concepts": [
+    "a11y.live_status"
+   ],
+   "recommended_concepts": [
+    "state.offline_sync"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-016",
+   "prompt": "the modal traps focus but the close button is unreachable at the bedside",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "kiosk",
+     "mobile",
+     "tablet"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.dialog_focus",
+    "interaction.keyboard_navigation",
+    "touch.minimum_target"
+   ],
+   "critical_concepts": [
+    "a11y.dialog_focus"
+   ],
+   "recommended_concepts": [
+    "interaction.focus_restore",
+    "touch.thumb_reach"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-017",
+   "prompt": "the card component flickers before settling into place",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "perf.layout_shift",
+    "state.loading_empty_error"
+   ],
+   "critical_concepts": [
+    "perf.layout_shift"
+   ],
+   "recommended_concepts": [
+    "a11y.reduced_motion"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-018",
+   "prompt": "the pagination breaks when there's exactly one page of results",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "data.pagination_strategy",
+    "state.loading_empty_error"
+   ],
+   "critical_concepts": [
+    "data.pagination_strategy"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-019",
+   "prompt": "the drag handle only works on the second try",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile",
+     "tablet"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "touch.gestures_discoverable",
+    "touch.minimum_target"
+   ],
+   "critical_concepts": [
+    "touch.gestures_discoverable"
+   ],
+   "recommended_concepts": [
+    "interaction.keyboard_navigation"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-020",
+   "prompt": "the timestamp shows the wrong timezone for half our users",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "partial",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "data.refresh_timestamp",
+    "content.i18n_expansion"
+   ],
+   "critical_concepts": [
+    "data.refresh_timestamp"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-021",
+   "prompt": "the header silently drops the last edit if you navigate away too fast",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.unsaved_changes_guard",
+    "state.saving_conflict"
+   ],
+   "critical_concepts": [
+    "state.unsaved_changes_guard"
+   ],
+   "recommended_concepts": [
+    "navigation.orientation_and_back"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-022",
+   "prompt": "our React list view re-renders the whole screen on every keystroke",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "partial",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "web"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "perf.js_budget",
+    "table.virtualization",
+    "data.search_results"
+   ],
+   "critical_concepts": [
+    "perf.js_budget"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-023",
+   "prompt": "the empty state shows even when there's data, just for a flash",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.loading_empty_error",
+    "perf.layout_shift"
+   ],
+   "critical_concepts": [
+    "state.loading_empty_error"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-024",
+   "prompt": "the form keeps its old label after the underlying record is renamed",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.saving_conflict",
+    "a11y.accessible_names"
+   ],
+   "critical_concepts": [
+    "state.saving_conflict"
+   ],
+   "recommended_concepts": [
+    "data.refresh_timestamp"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-025",
+   "prompt": "the airport terminal map and the terminal window layout use the same green",
+   "category": "refactor-fix",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.token_layers",
+    "brand.structural_differentiation",
+    "a11y.color_not_only"
+   ],
+   "critical_concepts": [
+    "brand.token_layers"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "interaction.command_palette",
+    "interaction.shortcuts"
+   ],
+   "preservation": [
+    "color"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-026",
+   "prompt": "what's the right corner radius for just this one card",
+   "category": "refactor-fix",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.corner_language",
+    "process.reuse_first"
+   ],
+   "critical_concepts": [
+    "brand.corner_language"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "a11y.contrast",
+    "interaction.keyboard_navigation"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-027",
+   "prompt": "the card layout needs to show the payment card number masked",
+   "category": "refactor-fix",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "privacy.sensitive_masking",
+    "feedback.trust_signals",
+    "a11y.accessible_names"
+   ],
+   "critical_concepts": [
+    "privacy.sensitive_masking"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "layout.media_card",
+    "layout.no_nested_cards"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-028",
+   "prompt": "should the modal text be left or center aligned",
+   "category": "refactor-fix",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "content.readable_measure",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "content.readable_measure"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "a11y.dialog_focus",
+    "interaction.focus_restore"
+   ],
+   "preservation": [
+    "typography"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-029",
+   "prompt": "the landscape orientation cuts off the landscape photo thumbnail",
+   "category": "refactor-fix",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile",
+     "tablet"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "perf.image_sizing",
+    "adaptive.breakpoint_matrix"
+   ],
+   "critical_concepts": [
+    "perf.image_sizing"
+   ],
+   "recommended_concepts": [
+    "layout.media_card"
+   ],
+   "forbidden_concepts": [
+    "media.details_play_first",
+    "layout.hero_thesis"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-030",
+   "prompt": "the status indicator in the profile page scrolls independently and it's disorienting",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "navigation.orientation_and_back",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "navigation.orientation_and_back"
+   ],
+   "recommended_concepts": [
+    "env.glanceable_status"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-031",
+   "prompt": "the member profile card doesn't match the gym membership card design",
+   "category": "refactor-fix",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.token_layers",
+    "brand.imagery_purpose",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "brand.token_layers"
+   ],
+   "recommended_concepts": [
+    "brand.structural_differentiation"
+   ],
+   "forbidden_concepts": [
+    "layout.media_card",
+    "privacy.sensitive_masking"
+   ],
+   "preservation": [
+    "color"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-032",
+   "prompt": "the toggle looks on but the setting underneath says off",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.settings_grouping",
+    "state.saving_conflict"
+   ],
+   "critical_concepts": [
+    "layout.settings_grouping"
+   ],
+   "recommended_concepts": [
+    "a11y.color_not_only"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-033",
+   "prompt": "the tab bar state gets shared between two unrelated tabs somehow",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "navigation.deep_link_state",
+    "interaction.tabs_roving",
+    "navigation.orientation_and_back"
+   ],
+   "critical_concepts": [
+    "navigation.deep_link_state"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation",
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-034",
+   "prompt": "the row height jumps around as data streams in",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "perf.layout_shift",
+    "data.realtime_window"
+   ],
+   "critical_concepts": [
+    "perf.layout_shift"
+   ],
+   "recommended_concepts": [
+    "table.virtualization"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-035",
+   "prompt": "the terminal display ignores the last character typed before submit",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "partial",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "kiosk",
+     "desktop"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "feedback.validation_errors",
+    "state.saving_conflict"
+   ],
+   "critical_concepts": [
+    "feedback.validation_errors"
+   ],
+   "recommended_concepts": [
+    "touch.ime_keyboard"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-036",
+   "prompt": "resizing the window breaks the terminal display layout permanently until reload",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "responsive"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "desktop",
+     "web",
+     "kiosk"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "perf.layout_shift"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [
+    "desktop.spacing_grid"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-037",
+   "prompt": "the event log shows the previous user's data for a split second after switching accounts",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "privacy.shared_device",
+    "state.loading_empty_error",
+    "state.session_expiry"
+   ],
+   "critical_concepts": [
+    "privacy.shared_device"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-038",
+   "prompt": "the progress bar reaches 100% and then jumps back to 40%",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "feedback.progress_indicator",
+    "state.loading_empty_error"
+   ],
+   "critical_concepts": [
+    "feedback.progress_indicator"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-039",
+   "prompt": "the comparison chart label truncates mid-word instead of at a space",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "content.readable_measure",
+    "content.i18n_expansion"
+   ],
+   "critical_concepts": [
+    "content.readable_measure"
+   ],
+   "recommended_concepts": [
+    "data.accessible_chart_alternative"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "typography"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-040",
+   "prompt": "what should the focus ring look like on the card",
+   "category": "refactor-fix",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.focus_visible",
+    "a11y.contrast"
+   ],
+   "critical_concepts": [
+    "interaction.focus_visible"
+   ],
+   "recommended_concepts": [
+    "interaction.selection_visible"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "color"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-041",
+   "prompt": "the filter panel doesn't remember the last selected filter between sessions",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "data.filter_chips",
+    "desktop.persist_workspace",
+    "navigation.deep_link_state"
+   ],
+   "critical_concepts": [
+    "data.filter_chips"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {
+    "desktop.persist_workspace": [
+     "navigation.deep_link_state"
+    ]
+   }
+  },
+  {
+   "id": "hv5-g02-042",
+   "prompt": "what color should the error label be",
+   "category": "refactor-fix",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "feedback.validation_errors",
+    "a11y.contrast",
+    "a11y.color_not_only"
+   ],
+   "critical_concepts": [
+    "feedback.validation_errors"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [
+    "color"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-043",
+   "prompt": "the dropdown on the settings screen sometimes shows two decimal points, sometimes none",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "table.tabular_figures",
+    "layout.settings_grouping"
+   ],
+   "critical_concepts": [
+    "table.tabular_figures"
+   ],
+   "recommended_concepts": [
+    "content.i18n_expansion"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-044",
+   "prompt": "the swipe-to-delete gesture triggers on a plain scroll in the control room",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "kiosk",
+     "tablet",
+     "mobile"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "touch.gestures_discoverable",
+    "feedback.confirmation_destructive"
+   ],
+   "critical_concepts": [
+    "touch.gestures_discoverable"
+   ],
+   "recommended_concepts": [
+    "touch.minimum_target"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-045",
+   "prompt": "the user guide link is buried under the on-screen channel guide",
+   "category": "refactor-fix",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "tv"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "onboarding.feature_education",
+    "navigation.orientation_and_back"
+   ],
+   "critical_concepts": [
+    "onboarding.feature_education"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "tv.epg_pinned_channels",
+    "tv.time_navigation",
+    "media.live_channel_switching"
+   ],
+   "preservation": [
+    "navigation"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-046",
+   "prompt": "why does closing the sidebar sometimes also close the checkout page behind it",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.drawer_focus",
+    "navigation.rail_semantics",
+    "interaction.focus_restore"
+   ],
+   "critical_concepts": [
+    "interaction.drawer_focus"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-047",
+   "prompt": "the input field accepts letters in a field that should be numeric only",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "form.autofill_attributes",
+    "feedback.validation_errors"
+   ],
+   "critical_concepts": [
+    "form.autofill_attributes"
+   ],
+   "recommended_concepts": [
+    "touch.ime_keyboard"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-048",
+   "prompt": "the card component shows duplicate icons after switching Vue themes",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [
+     "web"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.token_layers",
+    "brand.imagery_purpose"
+   ],
+   "critical_concepts": [
+    "brand.token_layers"
+   ],
+   "recommended_concepts": [
+    "brand.dark_mode_redesign"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "color"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-049",
+   "prompt": "the event log screen and the calendar event log the same icon",
+   "category": "refactor-fix",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.imagery_purpose",
+    "brand.token_layers"
+   ],
+   "critical_concepts": [
+    "brand.imagery_purpose"
+   ],
+   "recommended_concepts": [
+    "a11y.accessible_names"
+   ],
+   "forbidden_concepts": [
+    "data.exception_first",
+    "data.realtime_window"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-050",
+   "prompt": "the settings screen keeps expanding every time you click it instead of toggling",
+   "category": "refactor-fix",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "refactor",
+    "audit"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.settings_grouping",
+    "interaction.selection_visible"
+   ],
+   "critical_concepts": [
+    "layout.settings_grouping"
+   ],
+   "recommended_concepts": [
+    "a11y.semantics"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-051",
+   "prompt": "the spacing between the tab and the footer feels cramped",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.spacing_scale",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "layout.spacing_scale"
+   ],
+   "recommended_concepts": [
+    "touch.safe_areas"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-052",
+   "prompt": "the headings on this screen all look the same weight, hard to tell what matters",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.type_roles",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "brand.type_roles"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [
+    "typography"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-053",
+   "prompt": "the comparison chart sits a few pixels off from the icon set above it",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.spacing_scale",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "layout.spacing_scale"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-054",
+   "prompt": "line height on the body text feels too tight on the classroom projector",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": true
+   },
+   "required_concepts": [
+    "content.readable_measure",
+    "brand.type_roles"
+   ],
+   "critical_concepts": [
+    "content.readable_measure"
+   ],
+   "recommended_concepts": [
+    "a11y.text_scaling",
+    "env.glanceable_status"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "typography"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-055",
+   "prompt": "the buttons on the report view are all different heights",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.spacing_scale",
+    "layout.one_primary_action"
+   ],
+   "critical_concepts": [
+    "layout.spacing_scale"
+   ],
+   "recommended_concepts": [
+    "desktop.spacing_grid"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-056",
+   "prompt": "can you tighten up the alignment on the settings screen row",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.spacing_scale",
+    "layout.settings_grouping"
+   ],
+   "critical_concepts": [
+    "layout.spacing_scale"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-057",
+   "prompt": "the color contrast between the label and the background is weak",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.contrast",
+    "a11y.color_not_only"
+   ],
+   "critical_concepts": [
+    "a11y.contrast"
+   ],
+   "recommended_concepts": [
+    "brand.token_layers"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "color"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-058",
+   "prompt": "the transition when the tab bar opens feels abrupt",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.reduced_motion",
+    "adaptive.navigation_transform"
+   ],
+   "critical_concepts": [
+    "a11y.reduced_motion"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-059",
+   "prompt": "the icons in the tab bar are inconsistent sizes",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.imagery_purpose",
+    "layout.spacing_scale"
+   ],
+   "critical_concepts": [
+    "brand.imagery_purpose"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-060",
+   "prompt": "there's too much whitespace above the tab bar and not enough below it",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "mobile",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.spacing_scale",
+    "touch.safe_areas"
+   ],
+   "critical_concepts": [
+    "layout.spacing_scale"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-061",
+   "prompt": "the card text wraps awkwardly on longer names",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "content.readable_measure",
+    "content.i18n_expansion"
+   ],
+   "critical_concepts": [
+    "content.readable_measure"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [
+    "typography"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-062",
+   "prompt": "the shadow under the notification tray looks heavier than the rest of the home screen",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.token_layers",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "brand.token_layers"
+   ],
+   "recommended_concepts": [
+    "anti.decorative_gradient"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "color"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-063",
+   "prompt": "can you compare two files side by side like the comparison chart does",
+   "category": "polish",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "create",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "data.comparison_structure",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "data.comparison_structure"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "data.chart_by_question",
+    "data.accessible_chart_alternative",
+    "data.kpi_comparison"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-064",
+   "prompt": "what order should the two buttons go in on the poster print layout",
+   "category": "polish",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": true
+   },
+   "required_concepts": [
+    "layout.one_primary_action",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "layout.one_primary_action"
+   ],
+   "recommended_concepts": [
+    "navigation.platform_grammar"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-065",
+   "prompt": "the comparison chart feels crowded next to the legend behind the counter",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [
+     "kiosk"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.spacing_scale",
+    "env.glanceable_status",
+    "data.chart_by_question"
+   ],
+   "critical_concepts": [
+    "layout.spacing_scale"
+   ],
+   "recommended_concepts": [
+    "a11y.contrast"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-066",
+   "prompt": "one spacing value: how much gap under the comparison chart",
+   "category": "polish",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.spacing_scale",
+    "process.reuse_first"
+   ],
+   "critical_concepts": [
+    "layout.spacing_scale"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "data.accessible_chart_alternative",
+    "a11y.contrast"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-067",
+   "prompt": "the font size jumps between the card component and the paragraph below it",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.type_roles",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "brand.type_roles"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [
+    "typography"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-068",
+   "prompt": "margins around the report view are inconsistent from section to section",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.spacing_scale",
+    "process.reuse_first"
+   ],
+   "critical_concepts": [
+    "layout.spacing_scale"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-069",
+   "prompt": "the office remote team can't see the remote control screen preview",
+   "category": "polish",
+   "stress": "wrong-screen",
+   "scope": "partial",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": true
+   },
+   "required_concepts": [
+    "state.loading_empty_error",
+    "navigation.deep_link_state"
+   ],
+   "critical_concepts": [
+    "state.loading_empty_error"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "interaction.dpad_reachability",
+    "tv.ten_foot_typography",
+    "tv.no_touch_hover"
+   ],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-070",
+   "prompt": "the corners on the terminal display look sharper than everything else on the page",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.corner_language",
+    "brand.token_layers"
+   ],
+   "critical_concepts": [
+    "brand.corner_language"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-071",
+   "prompt": "the row dividers in the event log are darker than they need to be",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.token_layers",
+    "layout.spacing_scale"
+   ],
+   "critical_concepts": [
+    "brand.token_layers"
+   ],
+   "recommended_concepts": [
+    "a11y.contrast"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "color"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-072",
+   "prompt": "the header title feels lost among the surrounding text",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.focal_hierarchy",
+    "brand.type_roles"
+   ],
+   "critical_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [
+    "typography"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-073",
+   "prompt": "the poster-sized print export looks nothing like the movie poster thumbnail",
+   "category": "polish",
+   "stress": "wrong-screen",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": true
+   },
+   "required_concepts": [
+    "brand.imagery_purpose",
+    "perf.image_sizing",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "brand.imagery_purpose"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "media.details_play_first",
+    "layout.media_card",
+    "media.watchlist"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-074",
+   "prompt": "the search results list button placement feels like an afterthought",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.one_primary_action",
+    "data.search_results",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "layout.one_primary_action"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-075",
+   "prompt": "the loading skeleton doesn't match the real dashboard widget layout",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.loading_empty_error",
+    "perf.layout_shift"
+   ],
+   "critical_concepts": [
+    "state.loading_empty_error"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-076",
+   "prompt": "the sidebar looks fine on Avalonia but slightly squished on smaller widths",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "responsive"
+   ],
+   "platform": {
+    "required": [
+     "desktop"
+    ],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "adaptive.breakpoint_matrix",
+    "navigation.rail_semantics",
+    "desktop.spacing_grid"
+   ],
+   "critical_concepts": [
+    "adaptive.breakpoint_matrix"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-077",
+   "prompt": "just need the right shade of gray for this one divider",
+   "category": "polish",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.token_layers",
+    "a11y.contrast"
+   ],
+   "critical_concepts": [
+    "brand.token_layers"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "interaction.keyboard_navigation",
+    "state.loading_empty_error"
+   ],
+   "preservation": [
+    "color"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-078",
+   "prompt": "the tab labels in the card are centered oddly",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.spacing_scale",
+    "brand.type_roles"
+   ],
+   "critical_concepts": [
+    "layout.spacing_scale"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-079",
+   "prompt": "should the form button say Cancel or Dismiss",
+   "category": "polish",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.accessible_names",
+    "layout.one_primary_action"
+   ],
+   "critical_concepts": [
+    "a11y.accessible_names"
+   ],
+   "recommended_concepts": [
+    "feedback.confirmation_destructive"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-080",
+   "prompt": "the empty state illustration feels too big for the space",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "state.loading_empty_error",
+    "brand.imagery_purpose",
+    "layout.spacing_scale"
+   ],
+   "critical_concepts": [
+    "state.loading_empty_error"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-081",
+   "prompt": "the card and the footer feel disconnected, too much gap between them",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.spacing_scale",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "layout.spacing_scale"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-082",
+   "prompt": "the highlight color on the selected filter panel clashes with the rest of the palette",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.selection_visible",
+    "brand.token_layers"
+   ],
+   "critical_concepts": [
+    "interaction.selection_visible"
+   ],
+   "recommended_concepts": [
+    "data.filter_chips"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "color"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-083",
+   "prompt": "text inside the card feels vertically off-center",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.spacing_scale",
+    "brand.type_roles"
+   ],
+   "critical_concepts": [
+    "layout.spacing_scale"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-084",
+   "prompt": "the checkout summary looks cluttered once real data fills it in",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.focal_hierarchy",
+    "content.readable_measure",
+    "layout.spacing_scale"
+   ],
+   "critical_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "recommended_concepts": [
+    "feedback.trust_signals",
+    "table.tabular_figures"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-085",
+   "prompt": "the spacing rhythm breaks down once the card wraps to two lines",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.spacing_scale",
+    "content.i18n_expansion"
+   ],
+   "critical_concepts": [
+    "layout.spacing_scale"
+   ],
+   "recommended_concepts": [
+    "perf.layout_shift"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-086",
+   "prompt": "the comparison chart feels visually heavier than the action bar, even though it's less important",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.focal_hierarchy",
+    "layout.one_primary_action"
+   ],
+   "critical_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "recommended_concepts": [
+    "data.chart_by_question"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-087",
+   "prompt": "motion on the member profile dismiss feels too fast to register",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.reduced_motion",
+    "interaction.focus_restore"
+   ],
+   "critical_concepts": [
+    "a11y.reduced_motion"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-088",
+   "prompt": "the form caption text is set in a slightly different font than the rest",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.type_roles",
+    "anti.default_fonts"
+   ],
+   "critical_concepts": [
+    "brand.type_roles"
+   ],
+   "recommended_concepts": [
+    "brand.font_loading"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "typography"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-089",
+   "prompt": "there's a stray extra gap between the checkout summary and the divider below it",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.spacing_scale",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "layout.spacing_scale"
+   ],
+   "recommended_concepts": [
+    "process.reuse_first"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-090",
+   "prompt": "the guide overlay row height doesn't match the tooltip row height right above it",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.spacing_scale",
+    "brand.type_roles"
+   ],
+   "critical_concepts": [
+    "layout.spacing_scale"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-091",
+   "prompt": "should the toolbar icon be filled or outlined",
+   "category": "polish",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.imagery_purpose",
+    "a11y.accessible_names"
+   ],
+   "critical_concepts": [
+    "brand.imagery_purpose"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-092",
+   "prompt": "the tab icon and text baseline don't quite align",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.spacing_scale",
+    "brand.imagery_purpose"
+   ],
+   "critical_concepts": [
+    "layout.spacing_scale"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-093",
+   "prompt": "should this single label be bold or regular",
+   "category": "polish",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.type_roles",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "brand.type_roles"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "interaction.keyboard_navigation",
+    "state.loading_empty_error"
+   ],
+   "preservation": [
+    "typography"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-094",
+   "prompt": "the modal looks a bit dated compared to the rest of the dashboard",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.token_layers",
+    "brand.type_roles",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "brand.token_layers"
+   ],
+   "recommended_concepts": [
+    "brand.corner_language"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-095",
+   "prompt": "the primary and secondary buttons on the navigation drawer look too similar in weight",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.one_primary_action",
+    "brand.type_roles"
+   ],
+   "critical_concepts": [
+    "layout.one_primary_action"
+   ],
+   "recommended_concepts": [
+    "interaction.drawer_focus"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-096",
+   "prompt": "what's the right corner radius for just this one card",
+   "category": "polish",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.corner_language",
+    "process.reuse_first"
+   ],
+   "critical_concepts": [
+    "brand.corner_language"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "a11y.contrast",
+    "interaction.keyboard_navigation"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-097",
+   "prompt": "the card padding on the navigation drawer feels inconsistent left versus right",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.spacing_scale",
+    "navigation.rail_semantics"
+   ],
+   "critical_concepts": [
+    "layout.spacing_scale"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-098",
+   "prompt": "should the settings screen text be left or center aligned",
+   "category": "polish",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "content.readable_measure",
+    "layout.settings_grouping"
+   ],
+   "critical_concepts": [
+    "content.readable_measure"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "a11y.contrast",
+    "interaction.keyboard_navigation"
+   ],
+   "preservation": [
+    "typography"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-099",
+   "prompt": "what should the focus ring look like on the event log",
+   "category": "polish",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.focus_visible",
+    "a11y.contrast"
+   ],
+   "critical_concepts": [
+    "interaction.focus_visible"
+   ],
+   "recommended_concepts": [
+    "interaction.selection_visible"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "color"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-100",
+   "prompt": "the section header above the dashboard widget feels too close to the content",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.spacing_scale",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "layout.spacing_scale"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-101",
+   "prompt": "the comparison chart color feels slightly desaturated next to the rest of the brand palette",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.token_layers",
+    "a11y.contrast"
+   ],
+   "critical_concepts": [
+    "brand.token_layers"
+   ],
+   "recommended_concepts": [
+    "data.chart_by_question",
+    "a11y.color_not_only"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "color"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-102",
+   "prompt": "what color should the error label be",
+   "category": "polish",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "feedback.validation_errors",
+    "a11y.contrast",
+    "a11y.color_not_only"
+   ],
+   "critical_concepts": [
+    "feedback.validation_errors"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [
+    "color"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-103",
+   "prompt": "the modal title and subtitle feel like they're competing for attention",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.focal_hierarchy",
+    "brand.type_roles"
+   ],
+   "critical_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [
+    "typography"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-104",
+   "prompt": "the dashboard widget could use a subtle divider to separate it from the icon set",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.spacing_scale",
+    "brand.token_layers",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "layout.spacing_scale"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-105",
+   "prompt": "the form feels off-grid compared to everything else on the order summary",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.spacing_scale",
+    "process.reuse_first"
+   ],
+   "critical_concepts": [
+    "layout.spacing_scale"
+   ],
+   "recommended_concepts": [
+    "desktop.spacing_grid"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-106",
+   "prompt": "the payment card panel icon looks slightly larger than its neighbors in the row",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.imagery_purpose",
+    "layout.spacing_scale"
+   ],
+   "critical_concepts": [
+    "brand.imagery_purpose"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-107",
+   "prompt": "what order should the two buttons go in on the tab",
+   "category": "polish",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.one_primary_action",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "layout.one_primary_action"
+   ],
+   "recommended_concepts": [
+    "navigation.platform_grammar"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-108",
+   "prompt": "one spacing value: how much gap under the member profile",
+   "category": "polish",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.spacing_scale",
+    "process.reuse_first"
+   ],
+   "critical_concepts": [
+    "layout.spacing_scale"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-109",
+   "prompt": "the upload panel typography doesn't match the scale used elsewhere on the onboarding sequence",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.type_roles",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "brand.type_roles"
+   ],
+   "recommended_concepts": [
+    "onboarding.linear_wizard"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "typography"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-110",
+   "prompt": "the dashboard widget corner radius is inconsistent between the card and its buttons",
+   "category": "polish",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "polish",
+    "refactor"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.corner_language",
+    "brand.token_layers"
+   ],
+   "critical_concepts": [
+    "brand.corner_language"
+   ],
+   "recommended_concepts": [
+    "process.reuse_first"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-111",
+   "prompt": "just need the right shade of gray for this one divider",
+   "category": "audit-review",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "polish"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.token_layers",
+    "a11y.contrast"
+   ],
+   "critical_concepts": [
+    "brand.token_layers"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "interaction.keyboard_navigation",
+    "state.loading_empty_error"
+   ],
+   "preservation": [
+    "color"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-112",
+   "prompt": "score the report view for how easy it is to use for a first-time visitor",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.focal_hierarchy",
+    "navigation.orientation_and_back",
+    "layout.one_primary_action"
+   ],
+   "critical_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "recommended_concepts": [
+    "onboarding.feature_education",
+    "state.loading_empty_error"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-113",
+   "prompt": "review the onboarding flow flow end to end and flag anything that feels off",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "onboarding.linear_wizard",
+    "feedback.progress_indicator",
+    "feedback.validation_errors"
+   ],
+   "critical_concepts": [
+    "onboarding.linear_wizard"
+   ],
+   "recommended_concepts": [
+    "onboarding.permission_priming"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-114",
+   "prompt": "what would you change about this modal if you had to ship it tomorrow",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.dialog_focus",
+    "layout.one_primary_action",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "layout.one_primary_action",
+    "a11y.dialog_focus"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-115",
+   "prompt": "give me an honest read on the player screen before we show it to the client",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "tv",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "tv.player_autohide",
+    "media.track_selection",
+    "interaction.focus_visible"
+   ],
+   "critical_concepts": [
+    "tv.player_autohide"
+   ],
+   "recommended_concepts": [
+    "state.loading_empty_error"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {
+    "tv.player_autohide": [
+     "media.track_selection",
+     "interaction.hover_independence"
+    ]
+   }
+  },
+  {
+   "id": "hv5-g02-116",
+   "prompt": "walk through the navigation drawer as if you'd never seen it before, what trips you up",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "navigation.rail_semantics",
+    "interaction.drawer_focus",
+    "navigation.orientation_and_back"
+   ],
+   "critical_concepts": [
+    "navigation.rail_semantics"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-117",
+   "prompt": "should the event log button say Cancel or Dismiss",
+   "category": "audit-review",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.accessible_names",
+    "layout.one_primary_action"
+   ],
+   "critical_concepts": [
+    "a11y.accessible_names"
+   ],
+   "recommended_concepts": [
+    "feedback.confirmation_destructive"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-118",
+   "prompt": "does the status indicator hold up next to competitors' versions of the same screen",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "env.glanceable_status",
+    "a11y.color_not_only",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "env.glanceable_status"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-119",
+   "prompt": "inspect the admin console and list every inconsistency you find",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.spacing_scale",
+    "brand.token_layers",
+    "brand.type_roles"
+   ],
+   "critical_concepts": [
+    "layout.spacing_scale"
+   ],
+   "recommended_concepts": [
+    "process.reuse_first"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-120",
+   "prompt": "how would you rate the hierarchy on this landscape view, one to ten",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.focal_hierarchy",
+    "brand.type_roles",
+    "layout.spacing_scale"
+   ],
+   "critical_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-121",
+   "prompt": "go through the order summary like a design reviewer would and note the rough edges",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.focal_hierarchy",
+    "feedback.trust_signals",
+    "layout.one_primary_action"
+   ],
+   "critical_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "recommended_concepts": [
+    "table.tabular_figures"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-122",
+   "prompt": "check whether the landscape view actually communicates what it's supposed to",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.focal_hierarchy",
+    "content.readable_measure"
+   ],
+   "critical_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "recommended_concepts": [
+    "layout.hero_thesis"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-123",
+   "prompt": "review this dashboard widget for anything that would embarrass us in a demo",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "data.kpi_comparison",
+    "state.loading_empty_error",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "recommended_concepts": [
+    "data.refresh_timestamp"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-124",
+   "prompt": "take a critical pass at the profile page layout and call out what's weak",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.focal_hierarchy",
+    "layout.spacing_scale",
+    "brand.type_roles"
+   ],
+   "critical_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-125",
+   "prompt": "assess whether the header matches the tone of the rest of the product",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.type_roles",
+    "brand.token_layers",
+    "brand.imagery_purpose"
+   ],
+   "critical_concepts": [
+    "brand.type_roles"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [
+    "typography"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-126",
+   "prompt": "review the filter panel the way a new hire designer would, cold",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "data.filter_chips",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "data.filter_chips"
+   ],
+   "recommended_concepts": [
+    "state.loading_empty_error"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-127",
+   "prompt": "grade the dashboard on clarity, then tell me the single biggest issue",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.focal_hierarchy",
+    "data.kpi_comparison",
+    "data.chart_by_question"
+   ],
+   "critical_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "recommended_concepts": [
+    "data.exception_first"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-128",
+   "prompt": "look over the landscape view and tell me if the flow makes sense end to end",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "navigation.orientation_and_back",
+    "layout.focal_hierarchy",
+    "layout.one_primary_action"
+   ],
+   "critical_concepts": [
+    "navigation.orientation_and_back"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-129",
+   "prompt": "does this player screen feel finished, or does something still read unpolished",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "tv",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.focal_hierarchy",
+    "tv.player_autohide",
+    "state.loading_empty_error"
+   ],
+   "critical_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "recommended_concepts": [
+    "media.track_selection"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-130",
+   "prompt": "review the poster print layout for anything a design lead would flag in five minutes",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": true
+   },
+   "required_concepts": [
+    "layout.focal_hierarchy",
+    "brand.type_roles",
+    "layout.spacing_scale"
+   ],
+   "critical_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-131",
+   "prompt": "audit this player screen against basic usability heuristics and report back",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [
+     "tv",
+     "web"
+    ],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "tv.player_autohide",
+    "media.track_selection",
+    "state.loading_empty_error"
+   ],
+   "critical_concepts": [
+    "tv.player_autohide"
+   ],
+   "recommended_concepts": [
+    "interaction.focus_visible"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {
+    "tv.player_autohide": [
+     "media.track_selection",
+     "interaction.hover_independence"
+    ]
+   }
+  },
+  {
+   "id": "hv5-g02-132",
+   "prompt": "take a step back and evaluate whether the notification tray actually solves the problem",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "env.glanceable_status",
+    "data.exception_first",
+    "a11y.live_status"
+   ],
+   "critical_concepts": [
+    "env.glanceable_status"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-133",
+   "prompt": "compare the card against the previous version and note what regressed",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "process.safe_modification",
+    "layout.spacing_scale",
+    "brand.token_layers"
+   ],
+   "critical_concepts": [
+    "process.safe_modification"
+   ],
+   "recommended_concepts": [
+    "process.render_verify"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "behaviour"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-134",
+   "prompt": "review the home screen for anything that looks inconsistent across screens",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.token_layers",
+    "layout.spacing_scale",
+    "navigation.platform_grammar"
+   ],
+   "critical_concepts": [
+    "brand.token_layers"
+   ],
+   "recommended_concepts": [
+    "process.reuse_first"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-135",
+   "prompt": "give a quick critique of the card component, treat it like a portfolio review",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.focal_hierarchy",
+    "brand.type_roles",
+    "layout.spacing_scale"
+   ],
+   "critical_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "recommended_concepts": [
+    "layout.no_nested_cards"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-136",
+   "prompt": "should the landscape view icon be filled or outlined",
+   "category": "audit-review",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.imagery_purpose",
+    "a11y.accessible_names"
+   ],
+   "critical_concepts": [
+    "brand.imagery_purpose"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-137",
+   "prompt": "review the onboarding sequence and rank the top three things worth fixing first",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "onboarding.linear_wizard",
+    "feedback.progress_indicator"
+   ],
+   "critical_concepts": [
+    "onboarding.linear_wizard"
+   ],
+   "recommended_concepts": [
+    "onboarding.permission_priming",
+    "onboarding.feature_education"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-138",
+   "prompt": "should this single label be bold or regular",
+   "category": "audit-review",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.type_roles",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "brand.type_roles"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "interaction.keyboard_navigation",
+    "state.loading_empty_error"
+   ],
+   "preservation": [
+    "typography"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-139",
+   "prompt": "audit the report view for anything that breaks the visual rhythm of the app",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.spacing_scale",
+    "brand.type_roles",
+    "brand.corner_language"
+   ],
+   "critical_concepts": [
+    "layout.spacing_scale"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-140",
+   "prompt": "review whether the player overlay actually earns its place on this dashboard",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.focal_hierarchy",
+    "layout.one_primary_action"
+   ],
+   "critical_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "recommended_concepts": [
+    "anti.interruptive_upsell"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-141",
+   "prompt": "assess the tab the way a stakeholder walking by would judge it",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.focal_hierarchy",
+    "brand.type_roles"
+   ],
+   "critical_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "recommended_concepts": [
+    "interaction.tabs_roving"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-142",
+   "prompt": "go over the profile page and flag anything that feels inconsistent with the brand",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.token_layers",
+    "brand.type_roles",
+    "brand.imagery_purpose"
+   ],
+   "critical_concepts": [
+    "brand.token_layers"
+   ],
+   "recommended_concepts": [
+    "brand.structural_differentiation"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "color"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-143",
+   "prompt": "review the checkout summary for clarity, is it obvious what to do next",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.one_primary_action",
+    "feedback.trust_signals",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "layout.one_primary_action"
+   ],
+   "recommended_concepts": [
+    "table.tabular_figures"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-144",
+   "prompt": "take an honest pass at the checkout page, what would a critic say",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.one_primary_action",
+    "feedback.trust_signals",
+    "feedback.validation_errors"
+   ],
+   "critical_concepts": [
+    "layout.one_primary_action"
+   ],
+   "recommended_concepts": [
+    "form.autofill_attributes"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-145",
+   "prompt": "what's the right corner radius for just this one card",
+   "category": "audit-review",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "polish"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.corner_language",
+    "process.reuse_first"
+   ],
+   "critical_concepts": [
+    "brand.corner_language"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "a11y.contrast",
+    "interaction.keyboard_navigation"
+   ],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-146",
+   "prompt": "review this report view like it's someone else's work, no favoritism",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.focal_hierarchy",
+    "layout.spacing_scale",
+    "brand.type_roles"
+   ],
+   "critical_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-147",
+   "prompt": "check whether the member profile still makes sense now that the footer changed",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "process.safe_modification",
+    "layout.spacing_scale",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "process.safe_modification"
+   ],
+   "recommended_concepts": [
+    "process.render_verify"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-148",
+   "prompt": "how does the dashboard read to someone seeing it for the first time",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.focal_hierarchy",
+    "data.kpi_comparison",
+    "navigation.orientation_and_back"
+   ],
+   "critical_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-149",
+   "prompt": "should the settings screen text be left or center aligned",
+   "category": "audit-review",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "polish"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "content.readable_measure",
+    "layout.settings_grouping"
+   ],
+   "critical_concepts": [
+    "content.readable_measure"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "a11y.contrast",
+    "interaction.keyboard_navigation"
+   ],
+   "preservation": [
+    "typography"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-150",
+   "prompt": "what should the focus ring look like on the player overlay",
+   "category": "audit-review",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "interaction.focus_visible",
+    "a11y.contrast"
+   ],
+   "critical_concepts": [
+    "interaction.focus_visible"
+   ],
+   "recommended_concepts": [
+    "interaction.selection_visible"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "color"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-151",
+   "prompt": "what color should the error label be",
+   "category": "audit-review",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "accessibility"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "feedback.validation_errors",
+    "a11y.contrast",
+    "a11y.color_not_only"
+   ],
+   "critical_concepts": [
+    "feedback.validation_errors"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [
+    "color"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-152",
+   "prompt": "review the admin console flow and note where a user might get stuck",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "navigation.orientation_and_back",
+    "feedback.validation_errors",
+    "state.loading_empty_error"
+   ],
+   "critical_concepts": [
+    "navigation.orientation_and_back"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-153",
+   "prompt": "what order should the two buttons go in on the card component",
+   "category": "audit-review",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "polish"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.one_primary_action",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "layout.one_primary_action"
+   ],
+   "recommended_concepts": [
+    "navigation.platform_grammar"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-154",
+   "prompt": "give the settings screen a once-over and call out the weakest part",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.settings_grouping",
+    "layout.spacing_scale",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "layout.settings_grouping"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-155",
+   "prompt": "one spacing value: how much gap under the toolbar",
+   "category": "audit-review",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "polish"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.spacing_scale",
+    "process.reuse_first"
+   ],
+   "critical_concepts": [
+    "layout.spacing_scale"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-156",
+   "prompt": "just need the right shade of gray for this one divider",
+   "category": "audit-review",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "polish"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "brand.token_layers",
+    "a11y.contrast"
+   ],
+   "critical_concepts": [
+    "brand.token_layers"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [
+    "interaction.keyboard_navigation",
+    "state.loading_empty_error"
+   ],
+   "preservation": [
+    "color"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-157",
+   "prompt": "does the onboarding flow pull its weight, or could it be cut entirely",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "onboarding.feature_education",
+    "onboarding.setup_checklist",
+    "onboarding.linear_wizard"
+   ],
+   "critical_concepts": [
+    "onboarding.feature_education"
+   ],
+   "recommended_concepts": [],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-158",
+   "prompt": "should the dropdown button say Cancel or Dismiss",
+   "category": "audit-review",
+   "stress": "generic-guardrail",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "a11y.accessible_names",
+    "layout.one_primary_action"
+   ],
+   "critical_concepts": [
+    "a11y.accessible_names"
+   ],
+   "recommended_concepts": [
+    "feedback.confirmation_destructive"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-159",
+   "prompt": "take a hard look at the navigation drawer, is anything here just filler",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "navigation.rail_semantics",
+    "layout.focal_hierarchy"
+   ],
+   "critical_concepts": [
+    "navigation.rail_semantics"
+   ],
+   "recommended_concepts": [
+    "interaction.drawer_focus"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [
+    "navigation"
+   ],
+   "acceptable_alternatives": {}
+  },
+  {
+   "id": "hv5-g02-160",
+   "prompt": "review the profile page once more before release and log every rough spot",
+   "category": "audit-review",
+   "stress": "none",
+   "scope": "in-scope",
+   "artifact_state": "existing",
+   "acceptable_modes": [
+    "audit",
+    "review"
+   ],
+   "platform": {
+    "required": [],
+    "acceptable_inferred": [],
+    "expect_unknown": false
+   },
+   "required_concepts": [
+    "layout.spacing_scale",
+    "layout.focal_hierarchy",
+    "brand.type_roles"
+   ],
+   "critical_concepts": [
+    "layout.spacing_scale"
+   ],
+   "recommended_concepts": [
+    "process.render_verify"
+   ],
+   "forbidden_concepts": [],
+   "preservation": [],
+   "acceptable_alternatives": {}
+  }
+ ]
+}

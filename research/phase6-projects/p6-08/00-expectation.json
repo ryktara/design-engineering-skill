@@ -1,0 +1,18 @@
+{
+  "platform": "web",
+  "artifact_state": "existing",
+  "acceptable_modes": ["refactor", "polish", "audit"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "data.pagination_strategy",
+    "table.virtualization",
+    "table.tabular_figures",
+    "data.filter_chips",
+    "data.search_results",
+    "state.loading_empty_error"
+  ],
+  "critical_concepts": ["data.pagination_strategy", "table.tabular_figures"],
+  "forbidden_concepts": ["tv.ten_foot_typography", "touch.safe_areas", "media.watchlist", "onboarding.linear_wizard"],
+  "preservation": ["navigation", "theme", "typography"],
+  "reviewer_notes": "ProductsView renders all 200 seeded products in one unpaged <table> with no sorting, no sticky header, no row count control, numbers rendered in the proportional body font, and the only narrowing is a 3-control FilterBar plus a global search query. At 200 SKUs the user scrolls a 200-row slab with the header off-screen and cannot order by On hand / Unit cost. The fix must make the set navigable (page or virtualize + sort + sticky header) and align the numeric columns; it must keep the row-click route to product-detail, the existing filters, the q query param, DataTable's slot API and the token/theme system."
+}

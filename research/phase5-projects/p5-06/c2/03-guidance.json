@@ -1,0 +1,990 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "The waiting room board: nothing tells the front desk how long each patient has been sitting there.",
+  "status": "PARTIAL",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [
+      "healthcare"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "svelte",
+      "tailwind"
+    ],
+    "density": null,
+    "components": [],
+    "environment": [
+      "shared-device"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "audit"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "low",
+    "scope": {
+      "domain": "UI_INTERACTION",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "performance-ux"
+      ],
+      "change_scope": "unknown",
+      "utterance": "observation",
+      "existing": true,
+      "problem": true,
+      "facet": "general",
+      "diagnose_only": false,
+      "creation": false,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "audit: perceived-performance defect",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "left-rail",
+        "status": "KNOWN",
+        "evidence": [
+          "left-rail: 1 matches in +layout.svelte (shell/layout file)",
+          "also breadcrumb-tree: 1 matches"
+        ]
+      },
+      "theme": {
+        "value": "light-first",
+        "status": "INFERRED",
+        "evidence": [
+          "hex palette: 13 near-white, 1 near-black"
+        ]
+      },
+      "surfaces": {
+        "value": "bordered-flat",
+        "status": "INFERRED",
+        "evidence": [
+          "borders in 12 files, shadow/elevation in 2"
+        ]
+      },
+      "radius": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": []
+      },
+      "spacing": {
+        "value": 4,
+        "status": "INFERRED",
+        "evidence": [
+          "most used spacing values [16, 8, 12, 4, 24]",
+          "tailwind spacing classes (119)"
+        ]
+      },
+      "typography": {
+        "value": "custom",
+        "status": "INFERRED",
+        "evidence": [
+          "font family theme (1 refs)",
+          "tabular numerals"
+        ]
+      },
+      "components": {
+        "value": "tailwind",
+        "status": "KNOWN",
+        "evidence": [
+          "tailwind"
+        ]
+      }
+    },
+    "known": [
+      "platform=web (project inspection)",
+      "product=healthcare (request: patient)",
+      "stack=svelte (project inspection)",
+      "stack=tailwind (project inspection)",
+      "environment=shared-device (request: waiting room)",
+      "project_navigation=left-rail (repository: left-rail: 1 matches in +layout.svelte (shell/layout file); also breadcrumb-tree: 1 matches)",
+      "project_components=tailwind (repository: tailwind)"
+    ],
+    "inferred": [
+      "input=pointer (implied by platform web)",
+      "input=keyboard (implied by platform web)",
+      "input=touch (implied by platform web)",
+      "mode=audit (perceived-performance defect)",
+      "mode=refactor (fix follows the diagnosis)",
+      "project_theme=light-first (repository: hex palette: 13 near-white, 1 near-black)",
+      "project_surfaces=bordered-flat (repository: borders in 12 files, shadow/elevation in 2)",
+      "project_spacing=4 (repository: most used spacing values [16, 8, 12, 4, 24]; tailwind spacing classes (119))",
+      "project_typography=custom (repository: font family theme (1 refs); tabular numerals)"
+    ],
+    "missing": [],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [
+        "patient",
+        "waiting room"
+      ],
+      "project": [
+        "package.json: svelte@^5.16.0",
+        "package.json: @sveltejs/kit@^2.12.0",
+        "package.json: tailwindcss@^3.4.17"
+      ]
+    },
+    "activation": {
+      "decision": "activate",
+      "ui_score": 2.0,
+      "non_ui_score": 0,
+      "ui_terms": [
+        "board",
+        "front desk"
+      ],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "present-tense observation"
+      ],
+      "new": [],
+      "defect": [
+        "observed behaviour"
+      ],
+      "operations": {},
+      "domains": {
+        "performance-ux": [
+          "wait"
+        ]
+      },
+      "no_change": [],
+      "scope": {},
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "board",
+        "front desk",
+        "concept:env.glanceable_status",
+        "concept:a11y.live_status"
+      ],
+      "ux_symptoms": [
+        "nothing tells",
+        "how long each"
+      ],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_INTERACTION",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "accessibility",
+        "reason": "audit mode"
+      },
+      {
+        "concern": "interaction",
+        "reason": "audit mode: operability is part of the review"
+      },
+      {
+        "concern": "component",
+        "reason": "the reviewed component/screen"
+      },
+      {
+        "concern": "privacy",
+        "reason": "sensitive data on a shared screen"
+      },
+      {
+        "concern": "environment",
+        "reason": "environment shared-device (KNOWN)"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "states",
+        "reason": "audits check empty/loading/error handling"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "audits name generic-design defects"
+      },
+      {
+        "concern": "feedback",
+        "reason": "audits check that actions are discoverable and confirmed"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "viewport range"
+      }
+    ],
+    "optional": [
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "env.glanceable_status",
+        "reason": "named in the request: how long each, sitting there"
+      },
+      {
+        "concept": "a11y.live_status",
+        "reason": "named in the request: nothing tell, tell the front desk"
+      },
+      {
+        "concept": "a11y.color_not_only",
+        "reason": "glanceable status needs a second channel besides colour"
+      },
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "web content must be keyboard operable"
+      },
+      {
+        "concept": "interaction.hover_independence",
+        "reason": "web is used with touch as well as pointer"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "web keyboard focus"
+      },
+      {
+        "concept": "privacy.shared_device",
+        "reason": "sensitive data on a shared screen"
+      },
+      {
+        "concept": "privacy.sensitive_masking",
+        "reason": "balances / health data visible to onlookers"
+      }
+    ],
+    "recommended_concepts": [
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "process.reuse_first",
+      "touch.minimum_target",
+      "adaptive.breakpoint_matrix",
+      "feedback.confirmation_destructive",
+      "interaction.shortcuts"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "dir-clinical-workstation",
+      "kind": "direction",
+      "category": "direction",
+      "title": "Clinical workstation",
+      "facets": [
+        "direction",
+        "platform"
+      ],
+      "concerns": [
+        "brand",
+        "structure"
+      ],
+      "concepts": [],
+      "covers": [],
+      "score": 0.372,
+      "guidance": "Patient banner always visible (identity, allergies, alerts) as the focal element, master-detail for patient lists and records, strict status colour language with text and icons (never colour alone), large legible numerics with units, quiet neutral surfaces, confirmation for critical actions with the safe default, interruption-safe autosave. Identity via the banner treatment and status language; restraint is the brand.",
+      "use_when": "EHR/EMR, lab, pharmacy, ward tools for clinicians under time pressure and interruption.",
+      "avoid_when": "Patient-facing apps (use 'Service app').",
+      "risk": {
+        "a11y": "high",
+        "perf": "medium"
+      },
+      "provenance": "internal-preference",
+      "incompatible": [
+        "surface-glass",
+        "imagery-hero",
+        "motion-expressive",
+        "color-dominant-brand"
+      ],
+      "why": {
+        "lexical": 0.154,
+        "structural": 0.64,
+        "matched": [
+          "platform web",
+          "input keyboard,pointer,touch",
+          "secondary mode",
+          "product healthcare"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring direction with lexical evidence"
+    },
+    {
+      "id": "comp-toast-notification",
+      "kind": "component",
+      "category": "notification",
+      "title": "Toast / snackbar / banner",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "accessibility",
+        "component",
+        "feedback",
+        "states"
+      ],
+      "concepts": [
+        "a11y.live_status"
+      ],
+      "covers": [
+        "live region status announcements"
+      ],
+      "score": 0.18,
+      "guidance": "Toast: bottom (mobile) or bottom-left/top-right (desktop) consistent position, ≥5 s or until dismissed, undo where applicable, live region polite. Banner: inline at the top of the region it concerns, dismissible if non-critical. TV: brief overlay in the safe area that never steals focus.",
+      "use_when": "Transient confirmation (saved, sent, undo), persistent info (banner), blocking errors (dialog, not toast).",
+      "avoid_when": "Never put required actions only in a toast; never stack more than ~3; never auto-dismiss errors.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.4,
+        "matched": [
+          "mode audit"
+        ]
+      },
+      "role": "core",
+      "selected_for": "required coverage: component, live region status announcements"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "a11y-keyboard-operable",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Everything operable by keyboard, no traps",
+      "facets": [
+        "accessibility",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.keyboard_navigation",
+        "interaction.hover_independence"
+      ],
+      "covers": [
+        "keyboard navigation and focus order",
+        "no hover dependence"
+      ],
+      "score": 0.385,
+      "guidance": "Tab reaches every control in visual order; composite widgets use arrow keys with a roving tabindex so Tab is not consumed by every cell; Escape closes layers and returns focus to the invoker; nothing traps focus except a modal, and the modal itself must be escapable. Provide a keyboard alternative for every drag interaction.",
+      "use_when": "Every interactive element, including custom widgets, drag/drop, sliders, menus, date pickers, and anything that appears on hover.",
+      "avoid_when": "Never skip.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.111,
+        "structural": 0.72,
+        "matched": [
+          "platform web",
+          "input keyboard",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: accessibility, interaction, no hover dependence, keyboard navigation and focus order"
+    },
+    {
+      "id": "data-exceptions-first",
+      "kind": "rule",
+      "category": "feedback",
+      "title": "Exceptions first: surface what needs attention in lists and tables",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "accessibility",
+        "data-display",
+        "feedback"
+      ],
+      "concepts": [
+        "data.exception_first",
+        "a11y.color_not_only",
+        "env.glanceable_status",
+        "table.tabular_figures"
+      ],
+      "covers": [
+        "exceptions and anomalies first",
+        "no colour alone for status",
+        "glanceable status",
+        "tabular figures and numeric alignment"
+      ],
+      "score": 0.304,
+      "guidance": "Compute the status in the model and show it as a column or badge with a word plus icon plus colour; sort or group exceptions first (or offer a one-tap 'only overdue' filter); show a count in the header/status bar; keep the row otherwise unchanged so scanning stays fast; state the rule that makes an item an exception (e.g. '> 90 days since service').",
+      "use_when": "Any collection where some items need action (overdue, late, failed, expiring, over budget) and the user should see them without opening each one.",
+      "avoid_when": "Never rely on colour alone for the status; never bury the exception state inside the detail view; never sort exceptions below normal rows by default.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.111,
+        "structural": 0.54,
+        "matched": [
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: no colour alone for status, glanceable status"
+    },
+    {
+      "id": "a11y-skip-link",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Bypass blocks: skip links and landmark shortcuts",
+      "facets": [
+        "accessibility",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility"
+      ],
+      "concepts": [
+        "interaction.keyboard_navigation",
+        "a11y.semantics",
+        "interaction.focus_visible"
+      ],
+      "covers": [
+        "keyboard navigation and focus order",
+        "semantic structure and roles",
+        "visible focus"
+      ],
+      "score": 0.324,
+      "guidance": "Provide a 'Skip to <region>' link as the first focusable element (visible on focus), targets with tabindex=-1 and a heading; expose landmarks (main, nav, region with aria-label) so screen-reader users can jump; keep the number of tab stops before the first control small (≤ 5) and give composite widgets a single tab stop.",
+      "use_when": "Any page where the keyboard user must tab through navigation, headers or a chart before reaching controls such as filters, forms or the main content.",
+      "avoid_when": "Never make the skip link the only visible-on-focus element without a focus ring; never point it at an element that cannot receive focus.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.72,
+        "matched": [
+          "platform web",
+          "input keyboard",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: visible focus"
+    },
+    {
+      "id": "states-offline-and-sync",
+      "kind": "rule",
+      "category": "states",
+      "title": "Offline, sync, and connectivity states",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "environment",
+        "feedback",
+        "states"
+      ],
+      "concepts": [
+        "state.offline_sync",
+        "state.saving_conflict",
+        "data.refresh_timestamp"
+      ],
+      "covers": [
+        "offline and sync states",
+        "saving, saved and conflict states",
+        "last-updated / refresh state"
+      ],
+      "score": 0.297,
+      "guidance": "Design the offline state as a first-class state: show connectivity clearly but calmly (a persistent status strip, not a blocking modal), keep already-loaded content usable, queue writes locally with a visible 'pending sync' marker per item and a 'last synced' timestamp, retry automatically with backoff and let the user retry manually, never lose entered data, and resolve conflicts explicitly (show both versions or last-writer-wins with an undo). Reads: stale data is labelled with its age.",
+      "use_when": "Field, travel, and public-venue apps; anything used with poor connectivity; any screen that writes data.",
+      "avoid_when": "Read-only always-online desktop tools where connectivity loss is exceptional (still show an error, not a blank).",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "engineering-practice",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.66,
+        "matched": [
+          "platform web",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: environment"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "privacy",
+      "environment"
+    ],
+    "covered_required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "environment"
+    ],
+    "uncovered_required_concerns": [
+      "privacy"
+    ],
+    "recommended_concerns": [
+      "states",
+      "anti-pattern",
+      "feedback",
+      "adaptive"
+    ],
+    "covered_recommended_concerns": [
+      "states",
+      "feedback"
+    ],
+    "coverage_ratio": 0.8,
+    "required_concepts": [
+      "env.glanceable_status",
+      "a11y.live_status",
+      "a11y.color_not_only",
+      "interaction.keyboard_navigation",
+      "interaction.hover_independence",
+      "interaction.focus_visible",
+      "privacy.shared_device",
+      "privacy.sensitive_masking"
+    ],
+    "covered_required_concepts": [
+      "env.glanceable_status",
+      "a11y.live_status",
+      "a11y.color_not_only",
+      "interaction.keyboard_navigation",
+      "interaction.hover_independence",
+      "interaction.focus_visible"
+    ],
+    "uncovered_required_concepts": [
+      "privacy.shared_device",
+      "privacy.sensitive_masking"
+    ],
+    "concept_coverage_ratio": 0.75,
+    "recommended_concept_coverage": 0.0,
+    "bundle_size": 6,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 2,
+    "guardrail_size": 4,
+    "bundle_tokens": 951,
+    "coverage_per_1k_tokens": 6.31,
+    "mean_purity": 0.69,
+    "contaminated": [],
+    "category_diversity": 0.83,
+    "duplicate_pressure": 0.33,
+    "facet_coverage": 0.6,
+    "redundancy": 0.4
+  },
+  "token_coverage": 0.8,
+  "omitted": [
+    {
+      "id": "comp-wizard-stepper",
+      "reason": "contamination: low purity 0.00: most of its concepts are off-task; wizard-specific record with no wizard evidence in the request"
+    },
+    {
+      "id": "nav-wizard",
+      "reason": "visual pattern without wording evidence on an existing UI (would restyle what the task does not concern)"
+    },
+    {
+      "id": "layout-editorial",
+      "reason": "visual pattern without wording evidence on an existing UI (would restyle what the task does not concern)"
+    },
+    {
+      "id": "color-multicolour-semantic",
+      "reason": "visual pattern without wording evidence on an existing UI (would restyle what the task does not concern)"
+    }
+  ],
+  "rejected": [
+    {
+      "id": "comp-list-row-mobile",
+      "reason": "platform ['mobile', 'tablet'] not in request ['web']"
+    },
+    {
+      "id": "comp-tv-sign-in",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "comp-photo-capture-field",
+      "reason": "platform ['mobile', 'tablet'] not in request ['web']"
+    },
+    {
+      "id": "dir-service-app-mobile",
+      "reason": "platform ['mobile'] not in request ['web']"
+    },
+    {
+      "id": "nav-bottom-tabs",
+      "reason": "platform ['mobile'] not in request ['web']"
+    },
+    {
+      "id": "nav-hub-spoke",
+      "reason": "platform ['kiosk', 'mobile', 'tablet'] not in request ['web']"
+    },
+    {
+      "id": "layout-rails",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "focus-none-touch-only",
+      "reason": "platform ['kiosk', 'mobile'] not in request ['web']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "env.glanceable_status",
+      "priority": "required",
+      "reason": "named in the request: how long each, sitting there",
+      "candidate_records": [
+        [
+          "data-exceptions-first",
+          0.304
+        ]
+      ],
+      "selected_record": "data-exceptions-first",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.live_status",
+      "priority": "required",
+      "reason": "named in the request: nothing tell, tell the front desk",
+      "candidate_records": [
+        [
+          "feedback-progress-async",
+          0.357
+        ],
+        [
+          "interaction-drag-drop",
+          0.324
+        ],
+        [
+          "a11y-live-status",
+          0.243
+        ],
+        [
+          "search-filter-feedback",
+          0.243
+        ]
+      ],
+      "selected_record": "comp-toast-notification",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.color_not_only",
+      "priority": "required",
+      "reason": "glanceable status needs a second channel besides colour",
+      "candidate_records": [
+        [
+          "data-exceptions-first",
+          0.304
+        ],
+        [
+          "comp-chart-container",
+          0.297
+        ],
+        [
+          "a11y-color-not-only",
+          0.243
+        ],
+        [
+          "media-resume-and-details",
+          0.203
+        ]
+      ],
+      "selected_record": "data-exceptions-first",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.keyboard_navigation",
+      "priority": "required",
+      "reason": "web content must be keyboard operable",
+      "candidate_records": [
+        [
+          "grid-single-tab-stop",
+          0.422
+        ],
+        [
+          "a11y-keyboard-operable",
+          0.385
+        ],
+        [
+          "a11y-skip-link",
+          0.324
+        ],
+        [
+          "interaction-drag-drop",
+          0.324
+        ]
+      ],
+      "selected_record": "a11y-keyboard-operable",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.hover_independence",
+      "priority": "required",
+      "reason": "web is used with touch as well as pointer",
+      "candidate_records": [
+        [
+          "a11y-keyboard-operable",
+          0.385
+        ],
+        [
+          "a11y-hover-not-required",
+          0.335
+        ],
+        [
+          "anti-hover-only-actions",
+          0.324
+        ]
+      ],
+      "selected_record": "a11y-keyboard-operable",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.focus_visible",
+      "priority": "required",
+      "reason": "web keyboard focus",
+      "candidate_records": [
+        [
+          "grid-single-tab-stop",
+          0.422
+        ],
+        [
+          "a11y-focus-visible",
+          0.324
+        ],
+        [
+          "a11y-skip-link",
+          0.324
+        ],
+        [
+          "focus-ring-standard",
+          0.305
+        ]
+      ],
+      "selected_record": "a11y-skip-link",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "privacy.shared_device",
+      "priority": "required",
+      "reason": "sensitive data on a shared screen",
+      "candidate_records": [],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "carriers filtered before ranking: platform ['tv'] not in request ['web']"
+    },
+    {
+      "concept": "privacy.sensitive_masking",
+      "priority": "required",
+      "reason": "balances / health data visible to onlookers",
+      "candidate_records": [],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "carriers filtered before ranking: platform ['desktop', 'kiosk', 'tablet', 'tv'] not in request ['web']"
+    },
+    {
+      "concept": "a11y.accessible_names",
+      "priority": "recommended",
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "a11y-labels-names",
+          0.243
+        ],
+        [
+          "comp-player-controls",
+          0.198
+        ],
+        [
+          "comp-product-detail-page",
+          0.178
+        ],
+        [
+          "comp-media-card",
+          0.171
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "a11y.contrast",
+      "priority": "recommended",
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "a11y-contrast-text",
+          0.254
+        ],
+        [
+          "anti-fashion-over-usability",
+          0.243
+        ],
+        [
+          "a11y-nontext-contrast",
+          0.243
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "recommended",
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.207
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.minimum_target",
+      "priority": "recommended",
+      "reason": "touch on web",
+      "candidate_records": [
+        [
+          "a11y-target-size",
+          0.27
+        ],
+        [
+          "media-photo-viewer",
+          0.261
+        ],
+        [
+          "comp-product-detail-page",
+          0.178
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "adaptive.breakpoint_matrix",
+      "priority": "recommended",
+      "reason": "web viewport range",
+      "candidate_records": [
+        [
+          "web-responsive-breakpoints",
+          0.297
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "feedback.confirmation_destructive",
+      "priority": "recommended",
+      "reason": "sensitive domain",
+      "candidate_records": [
+        [
+          "states-persistence-and-session",
+          0.297
+        ],
+        [
+          "comp-settings-screen",
+          0.189
+        ],
+        [
+          "comp-dialog",
+          0.18
+        ],
+        [
+          "comp-checkout-one-page",
+          0.177
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.shortcuts",
+      "priority": "recommended",
+      "reason": "related to interaction.keyboard_navigation",
+      "candidate_records": [
+        [
+          "cta-toolbar-commands",
+          0.222
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates rejected as contaminated: product-specific (devtools,erp,finance,saas) vs ['healthcare']"
+    }
+  ]
+}

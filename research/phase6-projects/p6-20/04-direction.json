@@ -1,0 +1,132 @@
+{
+  "brand": "The stock adjustments grid shows 3,000 rows and scrolling is janky.",
+  "fingerprint": {
+    "navigation_model": "left-rail",
+    "layout_topology": "table-first",
+    "grid_behavior": "virtualized",
+    "content_density": "high",
+    "surface_strategy": "bordered",
+    "card_geometry": "list-row",
+    "corner_language": "sharp",
+    "color_strategy": "neutral-plus-accent"
+  },
+  "direction": {
+    "navigation": "nav-left-rail",
+    "layout": "layout-table-first",
+    "density": null,
+    "surface": "surface-bordered-panes",
+    "cards": "card-list-row",
+    "typography": null,
+    "color": "color-neutral-accent",
+    "motion": null,
+    "focus": null,
+    "cta": null,
+    "imagery": null,
+    "icon": null,
+    "metadata": null
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "desktop"
+    ],
+    "input": [
+      "keyboard",
+      "pointer"
+    ],
+    "product": [
+      "erp",
+      "finance"
+    ],
+    "screen": [],
+    "screen_subtype": [
+      "data-grid"
+    ],
+    "stack": [
+      "winui"
+    ],
+    "density": "high",
+    "components": [],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "audit"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "interaction"
+      ],
+      "change_scope": "screen",
+      "utterance": "observation",
+      "preserve": []
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "audit: interaction defect on existing UI",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": "left-rail (KNOWN)",
+      "theme": "dual-theme (INFERRED)",
+      "surfaces": "bordered-flat (INFERRED)",
+      "spacing": "4 (INFERRED)",
+      "components": "winui3, community-toolkit (KNOWN)"
+    },
+    "known": [
+      "platform=desktop",
+      "product=erp",
+      "product=finance",
+      "stack=winui",
+      "project_navigation=left-rail",
+      "project_components=winui3, community-toolkit"
+    ],
+    "inferred": [
+      "input=pointer",
+      "input=keyboard",
+      "density=high",
+      "mode=audit",
+      "mode=refactor",
+      "project_theme=dual-theme",
+      "project_surfaces=bordered-flat",
+      "project_spacing=4"
+    ],
+    "missing": [],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

@@ -1,0 +1,28 @@
+## guidance: Freezing a card happens the instant you touch the switch.
+status=PARTIAL mode=['audit', 'refactor'] platform=['mobile'] input=['touch'] product=['finance'] screen=[] stack=['compose'] density=medium env=[] risk=medium negatives=[]
+budget=low mode evidence: audit: perceived-performance defect | refactor: fix follows the diagnosis
+project context: navigation={'value': 'top-bar', 'status': 'KNOWN', 'evidence': ['top-bar: 30 matches in AccountDetailScreen.kt, AccountsScreen.kt, CardsScreen.kt (shell/layout file)']}, theme={'value': 'dual-theme', 'status': 'KNOWN', 'evidence': ['dark theme configuration signals: 3', 'light theme configuration signals: 2', 'hex palette: 0 near-white, 1 near-black'], 'default': 'light'}, surfaces={'value': 'bordered-flat', 'status': 'INFERRED', 'evidence': ['borders in 2 files, shadow/elevation in 0']}, radius={'value': 'small', 'status': 'INFERRED', 'evidence': ['most common radius 4 (2×); others [12.0, 8.0]']}, spacing={'value': 'unknown', 'status': 'UNKNOWN', 'evidence': []}, typography={'value': 'custom', 'status': 'KNOWN', 'evidence': ['font family System (8 refs)', 'weights medium, normal, bold', 'encoded type scale in 2 files']}, components={'value': 'compose, material3', 'status': 'KNOWN', 'evidence': ['compose', 'material3']}
+concepts required=1.0 covered (1/1); tokens≈380 coverage/1k=2.63 purity=0.75
+concerns required=['accessibility', 'interaction', 'component', 'data-display'] covered=0.75 uncovered=['data-display'] recommended=['states', 'anti-pattern', 'feedback', 'adaptive'] bundle=2 (core 1 + guardrails 1) diversity=1.0 redundancy=0.33
+
+### CORE (what to build)
+- **Dialog / modal** `comp-dialog` [accessibility/component/feedback/interaction] — Title as heading, one primary action, safe default for destructive confirmations, focus management per dialog rule, sized to content with max width, scroll inside the body not the page, Escape and close button, backdrop click closes only for non-destructive dialogs. Mobile: bottom sheet or full-screen; TV: full-screen with first focus on the safe action. _(covers: dialog focus management, confirmation of destructive or high-risk actions)_
+  - compose: AlertDialog / ModalBottomSheet; TV: androidx.tv.material3 has no dialog — use a full-screen composable with focusRequester.
+  - selected for: critical concept (GENERIC): confirmation of destructive or high-risk actions; lexical 0.0, structural 0.4
+
+### OPTIONAL NOTES (apply only when they fit)
+- **Target size by platform** `a11y-target-size` [accessibility/interaction; accessibility-requirement; SPECIFIC] — Web: ≥24×24 CSS px minimum (WCAG 2.5.8), 44×44 recommended for touch. iOS ≥44 pt, Android ≥48 dp, kiosk ≥60 px, desktop pointer ≥24 epx with 4–8 px spacing. Extend the hit area beyond the visual glyph rather than enlarging the icon. _(covers: large touch targets (≥44–48 px))_
+  - selected for: recommended coverage (SPECIFIC): large touch targets (≥44–48 px)
+
+Omitted (redundant): focus-none-touch-only (no positive task evidence (screen / subtype / component / job / product / wording) for a core record); icon-filled-system (no positive task evidence (screen / subtype / component / job / product / wording) for a core record); nav-bottom-tabs (no positive task evidence (screen / subtype / component / job / product / wording) for a core record); comp-checkout-one-page (no positive task evidence (screen / subtype / component / job / product / wording) for a core record); comp-settings-screen (no positive task evidence (screen / subtype / component / job / product / wording) for a core record); surface-elevated-cards (no positive task evidence (screen / subtype / component / job / product / wording) for a core record)
+Filtered out: anti-generic-sidebar-dashboard (platform ['desktop', 'web'] not in request ['mobile']); anti-desktop-scaled-to-tv (platform ['tv'] not in request ['mobile']); anti-hover-only-actions (platform ['desktop', 'web'] not in request ['mobile']); comp-kiosk-keypad (platform ['kiosk', 'tablet'] not in request ['mobile']); dir-broadcast-guide-tv (platform ['tv'] not in request ['mobile']); dir-public-kiosk (platform ['kiosk'] not in request ['mobile'])
+
+Concept trace (explain): covered feedback.confirmation_destructive [CRITICAL GENERIC], touch.minimum_target
+  - UNCOVERED a11y.accessible_names: candidates existed but the bundle cap or a lower utility left them out (candidates comp-photo-capture-field, a11y-native-semantics, a11y-labels-names)
+  - UNCOVERED a11y.contrast: candidates existed but the bundle cap or a lower utility left them out (candidates anti-fashion-over-usability, a11y-contrast-text, a11y-nontext-contrast)
+  - UNCOVERED process.reuse_first: candidates existed but the bundle cap or a lower utility left them out (candidates impl-reuse-before-new)
+  - UNCOVERED touch.gestures_discoverable: candidates existed but the bundle cap or a lower utility left them out (candidates mobile-gestures-discoverable, interaction-drag-drop, comp-list-row-mobile)
+  - UNCOVERED touch.thumb_reach: candidates existed but the bundle cap or a lower utility left them out (candidates cta-sticky-bar, anti-mobile-desktop-shrunk, mobile-thumb-reach)
+  - UNCOVERED touch.safe_areas: candidates existed but the bundle cap or a lower utility left them out (candidates cta-sticky-bar, mobile-safe-areas, mobile-orientation-size-classes)
+  - UNCOVERED navigation.platform_grammar: candidates existed but the bundle cap or a lower utility left them out (candidates nav-bottom-tabs, mobile-platform-navigation)
+  - UNCOVERED table.tabular_figures: candidates existed but the bundle cap or a lower utility left them out (candidates comp-kpi-tile, typo-scale-and-roles, data-exceptions-first)

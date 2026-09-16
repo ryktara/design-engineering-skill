@@ -1,0 +1,55 @@
+{
+ "suite": "mode",
+ "cases": [
+  {
+   "id": "reg-p6-narrow-down-is-not-responsive",
+   "query": "On the product listing, shoppers cannot narrow 120 products down to what fits them.",
+   "forbid_primary_mode": "responsive",
+   "expect_modes_any": [
+    "audit",
+    "refactor"
+   ],
+   "note": "2026-09-16 Phase 6 implemented project round (research/phase6-projects, frozen c3 → fix in c4): p6-03: 'narrow ... down' was read as a viewport cue and responsive became the primary mode. Routed: mode (responsive cues need a viewport noun)."
+  },
+  {
+   "id": "reg-p6-small-checkbox-is-not-responsive",
+   "query": "Inspectors in gloves keep missing the small checkbox on each defect row.",
+   "forbid_primary_mode": "responsive",
+   "expect_modes_any": [
+    "audit",
+    "refactor",
+    "accessibility"
+   ],
+   "note": "2026-09-16 Phase 6 implemented project round (research/phase6-projects, frozen c3 → fix in c4): p6-11: the adjective 'small' triggered a responsive mode with no viewport cue. Routed: mode."
+  },
+  {
+   "id": "reg-p6-cut-off-titles-not-responsive",
+   "query": "Titles on the poster rows are cut off and there is no way to read the full name.",
+   "forbid_primary_mode": "responsive",
+   "expect_modes_any": [
+    "polish",
+    "audit",
+    "refactor"
+   ],
+   "note": "2026-09-16 Phase 6 implemented project round (research/phase6-projects, frozen c3 → fix in c4): p6-26: 'cut off' on a fixed 1920x1080 TV surface produced a responsive mode. Routed: mode."
+  },
+  {
+   "id": "reg-p6-freeze-card-mode",
+   "query": "Freezing a card happens the instant you touch the switch.",
+   "forbid_primary_mode": "create",
+   "expect_modes_any": [
+    "audit",
+    "refactor"
+   ],
+   "note": "2026-09-16 Phase 6 implemented project round (research/phase6-projects, frozen c3 → fix in c4): p6-16: no mode cue was found and the mode fell to create on an existing-UI defect. Routed: mode (present-tense 'happens')."
+  },
+  {
+   "id": "reg-p6-site-is-a-place",
+   "query": "Add an offline banner and retry to the report list for when the site has no signal.",
+   "forbid_platforms": [
+    "web"
+   ],
+   "note": "2026-09-16 Phase 6 implemented project round (research/phase6-projects, frozen c3 → fix in c4): p6-12: 'site' (a work site with no signal) was DIRECT web evidence and overrode the Flutter repository. Routed: platform evidence (place-sense trap: 'the site has', 'site has no', 'at the site')."
+  }
+ ]
+}

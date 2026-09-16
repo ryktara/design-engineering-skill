@@ -1,0 +1,142 @@
+{
+  "brand": "add a match details screen with play, resume and add-to-watchlist, consistent with the existing dark rails home",
+  "fingerprint": {
+    "navigation_model": "tv-side-nav",
+    "layout_topology": "rails",
+    "grid_behavior": "horizontal-scroll",
+    "content_density": "medium",
+    "card_geometry": "flat-tile",
+    "corner_language": "small",
+    "typography_character": "system-native",
+    "color_strategy": "dark-with-accent",
+    "motion_character": "focus-scale",
+    "focus_strategy": "border-plus-scale",
+    "cta_strategy": "focus-selects",
+    "image_strategy": "immersive-backdrop",
+    "icon_strategy": "system",
+    "metadata_density": "focus-reveal"
+  },
+  "direction": {
+    "navigation": "nav-tv-side",
+    "layout": "layout-rails",
+    "density": "density-medium",
+    "surface": null,
+    "cards": "card-flat-tile",
+    "typography": "typography-system-native",
+    "color": "color-dark-accent",
+    "motion": "motion-focus-scale",
+    "focus": "focus-scale-glow",
+    "cta": "cta-focus-selects",
+    "imagery": "imagery-immersive-backdrop",
+    "icon": "icon-platform-native",
+    "metadata": "metadata-focus-reveal"
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "tv"
+    ],
+    "input": [
+      "remote"
+    ],
+    "product": [
+      "media"
+    ],
+    "screen": [
+      "detail",
+      "home"
+    ],
+    "screen_subtype": [
+      "rails"
+    ],
+    "stack": [
+      "compose",
+      "compose-tv"
+    ],
+    "density": "medium",
+    "components": [
+      "media"
+    ],
+    "environment": [
+      "large-display",
+      "shared-device"
+    ],
+    "jobs": [
+      "details",
+      "resume",
+      "watchlist"
+    ],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "details",
+      "resume",
+      "watchlist",
+      "create detail",
+      "create home"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "mode_evidence": [
+      "create: default (no mode cue)"
+    ],
+    "project_context": {
+      "navigation": "tv-rails (KNOWN)",
+      "theme": "dark-first (INFERRED)",
+      "surfaces": "bordered-flat (INFERRED)",
+      "radius": "medium (INFERRED)",
+      "components": "compose, compose-tv-material, media3, images:coil (KNOWN)"
+    },
+    "known": [
+      "platform=tv",
+      "input=remote",
+      "product=media",
+      "stack=compose",
+      "stack=compose-tv",
+      "screen=home",
+      "screen=detail",
+      "job=resume",
+      "job=watchlist",
+      "job=details",
+      "project_navigation=tv-rails",
+      "project_components=compose, compose-tv-material, media3, images:coil"
+    ],
+    "inferred": [
+      "density=medium",
+      "mode=create",
+      "environment=shared-device",
+      "environment=large-display",
+      "project_theme=dark-first",
+      "project_surfaces=bordered-flat",
+      "project_radius=medium"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

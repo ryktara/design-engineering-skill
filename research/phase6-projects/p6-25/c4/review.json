@@ -1,0 +1,15 @@
+{"task": "p6-25",
+ "records": [
+   {"id": "comp-media-card", "verdict": "relevant", "category": "", "why": "One-status-overlay-max and accessible name = title + status caught the replay-pill-plus-progress-bar defect."},
+   {"id": "media-resume-and-details", "verdict": "relevant", "category": "", "why": "Defines the feature: progress on each card, resume at saved position, remove finished items, return focus to the launching card."},
+   {"id": "dir-cinematic-media-tv", "verdict": "partial", "category": "generic", "why": "Carries no concepts and restates the identity the app already has; nothing actionable for a new rail."},
+   {"id": "impl-reuse-before-new", "verdict": "relevant", "category": "", "why": "Reuse RailRow/EventCard and extend through the API is the correct build order here."},
+   {"id": "tv-typography-distance", "verdict": "partial", "category": "generic", "why": "Platform-correct but SportsTypography already encodes it; no change made."},
+   {"id": "tv-dpad-axes", "verdict": "relevant", "category": "", "why": "Vertical = sections is why the row is a full rail in the column and why the rail index map had to shift."},
+   {"id": "a11y-tv-focus-always", "verdict": "relevant", "category": "", "why": "Move focus to a sensible neighbour when an item is removed drove registering the rail in railIndexById/railItemKeys."},
+   {"id": "layout-states-empty-loading-error", "verdict": "relevant", "category": "", "why": "Covers the previously missing critical concept; a Continue-watching rail is empty on a fresh install and must not be a dead row."}
+ ],
+ "missing_critical": [],
+ "unjustified_direction_slots": 0,
+ "layer_review": {"core": ["comp-media-card", "media-resume-and-details", "dir-cinematic-media-tv"], "critical": ["impl-reuse-before-new", "tv-typography-distance", "tv-dpad-axes", "a11y-tv-focus-always", "layout-states-empty-loading-error"], "optional": []},
+ "change_vs_c3": "same - still 8 records; it closes the c3 missing-critical state.loading_empty_error by adding layout-states-empty-loading-error, but pays for it by dropping comp-tv-rail, a relevant record the c3 implementer used for rail title size, per-rail focus memory and stable item keys."}

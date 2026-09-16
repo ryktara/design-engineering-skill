@@ -1,0 +1,204 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "accessibility",
+    "audit"
+  ],
+  "platform": [
+    "mobile"
+  ],
+  "input": [
+    "touch"
+  ],
+  "product": [],
+  "screen": [],
+  "screen_subtype": [],
+  "stack": [
+    "swiftui"
+  ],
+  "density": null,
+  "components": [],
+  "environment": [],
+  "jobs": [],
+  "problems": [],
+  "risk": "low",
+  "primary_jobs": [
+    "accessibility"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "focus_handling_present": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "keyboard": true,
+    "screen_reader": true,
+    "touch_targets": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "change_budget": "moderate",
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "intent": {
+    "artifact_state": "existing",
+    "operations": [
+      "diagnose",
+      "modify"
+    ],
+    "problem_domain": [
+      "accessibility",
+      "visual",
+      "design-system"
+    ],
+    "change_scope": "screen",
+    "utterance": "observation",
+    "existing": true,
+    "problem": true,
+    "facet": "accessibility",
+    "diagnose_only": false,
+    "creation": false,
+    "redesign": false,
+    "responsive_cues": false,
+    "preserve": [],
+    "scope": "moderate"
+  },
+  "platform_evidence": [],
+  "mode_evidence": [
+    "accessibility: accessibility defect on existing UI",
+    "audit: diagnose the reported defect"
+  ],
+  "project_context": {
+    "navigation": {
+      "value": "bottom-tabs",
+      "status": "KNOWN",
+      "evidence": [
+        "bottom-tabs: 7 matches in README.md, RootTabView.swift, StreaksApp.swift (shell/layout file)"
+      ]
+    },
+    "theme": {
+      "value": "dual-theme",
+      "status": "KNOWN",
+      "evidence": [
+        "dark theme configuration signals: 2",
+        "root/canvas backgrounds: 2 light, 2 dark",
+        "hex palette: 7 near-white, 6 near-black"
+      ],
+      "default": "light"
+    },
+    "surfaces": {
+      "value": "elevated",
+      "status": "INFERRED",
+      "evidence": [
+        "shadow/elevation in 5 files, borders in 1"
+      ]
+    },
+    "radius": {
+      "value": "small",
+      "status": "INFERRED",
+      "evidence": [
+        "most common radius 5 (4×); others [3.0, 8.0]"
+      ]
+    },
+    "spacing": {
+      "value": "irregular",
+      "status": "UNKNOWN",
+      "evidence": [
+        "most used spacing values [6, 32, 2, 3, 4]"
+      ]
+    },
+    "typography": {
+      "value": "custom",
+      "status": "KNOWN",
+      "evidence": [
+        "font family System (7 refs)",
+        "weights 600, 500, 700, 800",
+        "encoded type scale in 4 files"
+      ]
+    },
+    "components": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": []
+    }
+  },
+  "known": [
+    "platform=mobile (project inspection)",
+    "stack=swiftui (project inspection)",
+    "project_navigation=bottom-tabs (repository: bottom-tabs: 7 matches in README.md, RootTabView.swift, StreaksApp.swift (shell/layout file))",
+    "project_theme=dual-theme (repository: dark theme configuration signals: 2; root/canvas backgrounds: 2 light, 2 dark)",
+    "project_typography=custom (repository: font family System (7 refs); weights 600, 500, 700, 800)"
+  ],
+  "inferred": [
+    "input=touch (implied by platform mobile)",
+    "mode=accessibility (accessibility defect on existing UI)",
+    "mode=audit (diagnose the reported defect)",
+    "project_surfaces=elevated (repository: shadow/elevation in 5 files, borders in 1)",
+    "project_radius=small (repository: most common radius 5 (4×); others [3.0, 8.0])"
+  ],
+  "missing": [],
+  "status": "CONFIDENT",
+  "source": {
+    "request": [],
+    "project": [
+      "Package.swift: Apple project",
+      "Package.swift: iOS target"
+    ]
+  },
+  "activation": {
+    "decision": "activate",
+    "ui_score": 2.0,
+    "non_ui_score": 0,
+    "ui_terms": [
+      "screen",
+      "dark mode"
+    ],
+    "non_ui_terms": []
+  },
+  "intent_evidence": {
+    "existing": [
+      "present-tense observation"
+    ],
+    "new": [],
+    "defect": [
+      "are barely"
+    ],
+    "operations": {},
+    "domains": {
+      "accessibility": [
+        "barely visible"
+      ],
+      "visual": [
+        "visible"
+      ],
+      "design-system": [
+        "dark mode"
+      ]
+    },
+    "no_change": [],
+    "scope": {
+      "screen": [
+        "screen"
+      ]
+    },
+    "question": false
+  },
+  "scope_evidence": {
+    "ui": [
+      "screen",
+      "dark mode",
+      "concept:a11y.contrast"
+    ],
+    "ux_symptoms": [
+      "barely visible"
+    ],
+    "technical": {},
+    "non_visual": []
+  }
+}

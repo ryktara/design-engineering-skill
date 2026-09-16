@@ -1,0 +1,26 @@
+{
+  "task": "p5-01",
+  "reviewer_model": "claude-opus-5[1m]",
+  "c2_records": [
+    {"id": "comp-plan-comparison", "verdict": "partial", "bad_category": null},
+    {"id": "comp-data-table", "verdict": "partial", "bad_category": "generic"},
+    {"id": "grid-single-tab-stop", "verdict": "relevant", "bad_category": null},
+    {"id": "a11y-hover-not-required", "verdict": "partial", "bad_category": null},
+    {"id": "data-exceptions-first", "verdict": "relevant", "bad_category": null},
+    {"id": "layout-states-empty-loading-error", "verdict": "partial", "bad_category": null}
+  ],
+  "c2_relevant": 2,
+  "c2_partial": 4,
+  "c2_offtarget": 0,
+  "c2_bad": [
+    {"record": "comp-data-table", "category": "generic", "why": "Still carries the three forbidden concepts for this task - virtualised rows, inline edit with Enter/Escape, selection checkbox column with select-all - for a 30-row read-only invoice list. The shadcn adaptation self-limits virtualisation to >200 rows but the record text and its concept tags push the heavier artefact. It also remains the only carrier of data.pagination_strategy, which it never actually describes (comp-pagination is again absent)."},
+    {"record": "layout-states-empty-loading-error", "category": "generic", "why": "Not harmful, but the project already has route-level loading.tsx/error.tsx and an in-body empty state; the record restates what the code does and does not touch scanability. Occupies a bundle slot while process.reuse_first (critical, existing-UI fix) is again dropped by the cap."}
+  ],
+  "c2_direction_unjustified": [
+    {"slot": "fingerprint.corner_language", "why": "'sharp' contradicts the codebase: --radius is 0.5rem and every panel is rounded-lg; 01-inspect itself reports radius=small, not none."}
+  ],
+  "platform_mode_scope_ok": true,
+  "verdict_vs_c1": "better",
+  "why": "c2 adds data-exceptions-first - the exact record whose absence c1's RESULTS flagged as a knowledge gap and whose content the implementer had to invent (exceptions grouped first, count in the header, no colour alone) - and the direction drops the four c1 over-reaches (cta-toolbar-commands, imagery-data-graphics, metadata-rich, grid_behavior=virtualized) by leaving those slots null; the cost is losing web-responsive-breakpoints, which in c1 caught the 390px clipping defect.",
+  "would_have_helped": "helped"
+}

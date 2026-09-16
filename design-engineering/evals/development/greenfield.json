@@ -1,0 +1,115 @@
+{
+  "description": "Greenfield direction assembly without a repository: the ledger must declare what is MISSING, slots must be filled coherently (no incompatible pairs), and platform-appropriate choices must appear.",
+  "cases": [
+    {
+      "id": "tv-iptv-home",
+      "query": "IPTV app home screen for Android TV with live channels and VOD",
+      "expect_slots_filled_min": 12,
+      "forbid_missing_substrings": [
+        "platform"
+      ],
+      "expect_ids": [
+        "nav-tv-side",
+        "focus-scale-glow",
+        "cta-focus-selects",
+        "metadata-focus-reveal"
+      ],
+      "forbid_ids": [
+        "focus-ring-standard",
+        "nav-top-bar",
+        "surface-glass",
+        "cta-sticky-bar"
+      ],
+      "expect_fingerprint": {
+        "focus_strategy": "border-plus-scale",
+        "navigation_model": "tv-side-nav"
+      }
+    },
+    {
+      "id": "erp-po-winui",
+      "query": "WinUI purchase order entry screen for an ERP",
+      "expect_slots_filled_min": 12,
+      "forbid_missing_substrings": [
+        "platform"
+      ],
+      "expect_ids": [
+        "layout-table-first",
+        "density-high",
+        "metadata-rich",
+        "focus-ring-standard"
+      ],
+      "forbid_ids": [
+        "surface-glass",
+        "motion-cinematic",
+        "imagery-hero",
+        "nav-bottom-tabs",
+        "typography-serif-display"
+      ],
+      "expect_fingerprint": {
+        "content_density": "high"
+      }
+    },
+    {
+      "id": "ios-banking-home",
+      "query": "iOS banking app home screen",
+      "expect_slots_filled_min": 12,
+      "forbid_missing_substrings": [
+        "platform"
+      ],
+      "expect_ids": [
+        "focus-none-touch-only",
+        "cta-single-primary"
+      ],
+      "forbid_ids": [
+        "surface-glass",
+        "motion-cinematic",
+        "layout-table-first",
+        "nav-left-rail",
+        "focus-ring-standard",
+        "density-high"
+      ],
+      "expect_fingerprint": {
+        "focus_strategy": "none-touch-only"
+      }
+    },
+    {
+      "id": "unknown-platform",
+      "query": "design a dashboard",
+      "expect_missing_substrings": [
+        "platform",
+        "product"
+      ],
+      "expect_slots_filled_min": 10
+    },
+    {
+      "id": "editorial-store",
+      "query": "online store for a fashion label with a magazine feel on the web",
+      "expect_slots_filled_min": 12,
+      "forbid_ids": [
+        "layout-table-first",
+        "nav-left-rail",
+        "cta-toolbar-commands",
+        "metadata-rich"
+      ],
+      "expect_fingerprint": {
+        "navigation_model": "top-bar"
+      }
+    },
+    {
+      "id": "gf-kiosk-checkin",
+      "query": "hospital self-service check-in kiosk",
+      "expect_slots_filled_min": 12,
+      "expect_ids": [
+        "nav-hub-spoke",
+        "focus-none-touch-only",
+        "cta-single-primary"
+      ],
+      "forbid_ids": [
+        "layout-table-first",
+        "density-high",
+        "nav-menu-bar-desktop",
+        "surface-glass"
+      ]
+    }
+  ]
+}

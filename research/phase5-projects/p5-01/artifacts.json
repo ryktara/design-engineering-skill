@@ -1,0 +1,73 @@
+{
+  "task": "p5-01",
+  "project": "p3-nextjs-saas",
+  "platform_expected": "web",
+  "platform_resolved": "web",
+  "platform_correct": "yes",
+  "stack": "Next.js 15.3 app router, React 19, Tailwind v4, shadcn (new-york/zinc), Geist via next/font, Lucide",
+  "existing_ui": true,
+  "new_screen": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": ["polish", "refactor"],
+  "mode_resolved": ["audit", "refactor"],
+  "mode_correct": "acceptable",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "moderate",
+  "render_mode": "native",
+  "screenshots": [
+    "render/first-1440x900.png", "render/first-1440x900-full.png", "render/first-1440x900-invoices-collapsed.png", "render/first-1440x900-invoices-expanded-top.png", "render/first-1440x900-invoices-expanded-scrolled.png", "render/first-1440x900-invoices-focus.png",
+    "render/first-390x844.png", "render/first-390x844-full.png", "render/first-390x844-invoices-collapsed.png", "render/first-390x844-invoices-expanded-top.png", "render/first-390x844-invoices-expanded-scrolled.png", "render/first-390x844-invoices-focus.png",
+    "render/final-1440x900.png", "render/final-1440x900-full.png", "render/final-1440x900-invoices-collapsed.png", "render/final-1440x900-invoices-expanded-top.png", "render/final-1440x900-invoices-expanded-scrolled.png", "render/final-1440x900-invoices-focus.png",
+    "render/final-390x844.png", "render/final-390x844-full.png", "render/final-390x844-invoices-collapsed.png", "render/final-390x844-invoices-expanded-top.png", "render/final-390x844-invoices-expanded-scrolled.png", "render/final-390x844-invoices-focus.png"
+  ],
+  "context_detection": {"navigation": "yes", "theme": "yes", "typography": "partial", "surfaces": "yes", "spacing": "yes"},
+  "preservation": {"navigation": true, "theme": true, "typography": true, "component_reuse": true, "unjustified_structural_change": 0},
+  "expected_concepts": ["data.pagination_strategy", "table.tabular_figures", "table.column_priority", "data.exception_first", "a11y.color_not_only", "a11y.semantics", "process.reuse_first"],
+  "critical_concepts": ["data.pagination_strategy", "table.tabular_figures", "process.reuse_first"],
+  "delivered_concepts": ["table.tabular_figures", "layout.one_primary_action", "a11y.color_not_only", "feedback.confirmation_destructive", "table.selection_bulk", "data.comparison_structure", "table.inline_edit", "table.virtualization", "data.pagination_strategy", "interaction.selection_visible", "interaction.keyboard_navigation", "interaction.focus_visible", "interaction.hover_independence", "state.loading_empty_error", "adaptive.breakpoint_matrix", "adaptive.navigation_transform"],
+  "concept_recall": 0.43,
+  "critical_recall": 0.67,
+  "concept_misses": [
+    {"concept": "table.column_priority", "layer": "candidate-retrieval"},
+    {"concept": "data.exception_first", "layer": "expected-concepts"},
+    {"concept": "a11y.semantics", "layer": "expected-concepts"},
+    {"concept": "process.reuse_first", "layer": "bundle-selection"}
+  ],
+  "forbidden_concepts_delivered": ["table.virtualization", "table.inline_edit", "table.selection_bulk", "adaptive.navigation_transform"],
+  "first_render_defects": {"visual": 3, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+  "final_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+  "iterations": 3,
+  "guidance_relevant": 2,
+  "guidance_partial": 4,
+  "guidance_offtarget": 0,
+  "bad_guidance": [
+    {"record": "comp-data-table", "category": "generic", "why": "Pushes selection column + select-all, inline edit, column resize/reorder/visibility persistence and virtualised rows for a 30-row read-only invoice list; carries three forbidden concepts into the bundle and sets fingerprint grid_behavior=virtualized."},
+    {"record": "impl-reuse-before-new", "category": "missing-critical", "why": "process.reuse_first was demanded (recommended) with this candidate at 0.207 but the bundle cap dropped it; on an existing-UI fix it is critical."},
+    {"record": "comp-pagination", "category": "missing-critical", "why": "The only record that describes a load-more/pagination strategy for tables (search rank 3, 0.325) is absent; data.pagination_strategy is delivered only as a tag on comp-data-table whose text says 'virtualised rows'."}
+  ],
+  "skill_effect": "neutral",
+  "guidance_tokens": 1324,
+  "misses": [
+    {"layer": "requirements", "what": "problem_domain=layout for 'hard to scan … more than twenty rows'; the row-count cue was not read as a long-list/data-display signal, so no data concern and no pagination/exception concept became required."},
+    {"layer": "expected-concepts", "what": "data.exception_first never demanded (only for dashboard jobs); a11y.semantics never demanded in audit mode although a11y.accessible_names and a11y.contrast were."},
+    {"layer": "candidate-retrieval", "what": "table.column_priority has only mobile/tablet carrier records; filtered out on web although the table already hides columns at sm/md."},
+    {"layer": "bundle-selection", "what": "impl-reuse-before-new (process.reuse_first) dropped by the cap; comp-pagination (0.325) not selected while comp-data-table (0.264) carried the pagination tag without the content."},
+    {"layer": "direction", "what": "cta-toolbar-commands, imagery-data-graphics, metadata-rich proposed as new slots and grid_behavior=virtualized for a modify-one-read-only-table task; all had to be ignored."},
+    {"layer": "project-adaptation", "what": "components=table:tanstack asserted KNOWN from package.json with no import anywhere; react/shadcn adaptations then recommend TanStack Table. Typography evidence 'font family Var' instead of Geist via next/font."}
+  ],
+  "knowledge_gaps": ["data.exception_first (no record in data/*.jsonl carries it; search -k 12 returns nothing about exceptions-first)", "table.column_priority has no web carrier record"],
+  "regressions": [
+    {"query": "The invoices table on the billing page is hard to scan once there are more than twenty rows. (project: web, existing UI, shadcn)", "expect": "data.pagination_strategy and data.exception_first required; process.reuse_first required when artifact_state=existing and mode in polish/refactor/audit; a record that actually describes a table load-more/pagination strategy (comp-pagination) in the bundle; no core record pushing virtualisation, inline edit or bulk selection for < 100 read-only rows."},
+    {"query": "On phones the invoice table drops the wrong columns. (web project)", "expect": "table.column_priority delivered on platform web via a web carrier record."},
+    {"query": "inspect_project on a repo with @tanstack/react-table in package.json but no source import", "expect": "components does not claim table:tanstack as KNOWN; at most INFERRED with 'dependency only, no import'."},
+    {"query": "direction for a diagnose+modify task on an existing read-only table", "expect": "cta/imagery/metadata slots reported as not applicable or unchanged, not cta-toolbar-commands / imagery-data-graphics / metadata-rich; grid_behavior not virtualized below a few hundred rows."},
+    {"query": "any table-heavy audit-mode request", "expect": "a11y.semantics demanded alongside a11y.accessible_names and a11y.contrast."}
+  ],
+  "tags": ["requirements-miss", "concept-miss", "ranking-miss", "knowledge-gap", "direction-mismatch", "context-detection-miss", "render-defect-fixed", "skill-neutral", "preservation-ok"],
+  "build_hash_start": "bf034323a2b68202e8c902768e0de78cd93761b1a71670a49ee595648cd5f0d8",
+  "build_hash_end": "bf034323a2b68202e8c902768e0de78cd93761b1a71670a49ee595648cd5f0d8"
+}

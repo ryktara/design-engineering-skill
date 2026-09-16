@@ -1,0 +1,25 @@
+{"task": "p4-02", "project": "p3-nextjs-saas", "platform": "web", "stack": "nextjs-15 app-router + tailwind-v4 + shadcn-style", "existing_ui": true, "mode": "accessibility+audit", "change_budget": "low",
+ "render_mode": "native",
+ "screenshots": ["render/first-1440x900.png", "render/first-1440x900-full.png", "render/first-390x844.png", "render/first-390x844-full.png", "render/first-1440x900-focus-row.png", "render/first-1440x900-focus-action.png", "render/first-390x844-focus-row.png", "render/first-390x844-focus-action.png", "render/final-1440x900.png", "render/final-1440x900-full.png", "render/final-390x844.png", "render/final-390x844-full.png", "render/final-1440x900-focus-row.png", "render/final-1440x900-focus-action.png", "render/final-390x844-focus-row.png", "render/final-390x844-focus-action.png"],
+ "context_detection": {"navigation": "partial", "theme": "yes", "typography": "partial", "surfaces": "no", "spacing": "yes"},
+ "preservation": {"navigation": true, "theme": true, "typography": true, "component_reuse": true, "unjustified_structural_change": 0},
+ "premise_reproducible": {"row_actions_unreachable_by_keyboard": false, "status_colour_only": false, "note": "before the fix all 15 row controls were Tab stops with visible focus and every status badge had text; real findings were 15 Tab stops instead of one grid stop, identical dot shape per status, no grid name/instructions"},
+ "first_render_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+ "final_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+ "iterations": 1, "guidance_relevant": 6, "guidance_partial": 1, "guidance_offtarget": 1,
+ "guidance_metrics": {"concept_coverage": 1.0, "coverage_per_1k_tokens": 5.51, "purity": 0.93, "redundancy": 0.47, "tokens": 1452},
+ "interaction": {"grid_tab_stops": 1, "controls_reached_by_arrows": "14/14 at both viewports", "page_tab_stops_before_after": {"1440x900": [36, 23], "390x844": [32, 19]}, "status_rows_text_and_icon": "8/8, 3 distinct icon shapes", "dialog_focus_return": true, "escape_returns_to_row": true},
+ "misses": [
+  {"layer": "bundle-selection", "what": "a11y-color-not-only (search rank 6) not in the bundle although the request says 'colour only'; concept claimed by comp-plan-comparison"},
+  {"layer": "expected-concepts", "what": "audit mode has no 'reproduce the reported defect before fixing' concept; both reported defects were false for this codebase"},
+  {"layer": "requirements", "what": "screen/screen_subtype empty although the route is app/settings/billing; components lacks status badge / row actions"},
+  {"layer": "direction", "what": "layout-table-first, cta-toolbar-commands, card-list-row proposed as 'new' slots for an accessibility fix on a settings page"},
+  {"layer": "project-adaptation", "what": "surfaces UNKNOWN / font unnamed (same inspector misses as p4-01)"}
+ ],
+ "knowledge_gaps": ["audit-mode rule: reproduce and measure the reported defect before changing code", "status chip: per-state icon shape vs colour-coded dot"],
+ "regressions": [
+  {"query": "accessibility review and fix of the seat management table: keyboard users can't reach row actions and the status column is colour only", "expect": "bundle contains a11y-color-not-only and grid-single-tab-stop; guidance says reproduce first"},
+  {"query": "seat management table (project with app/settings/billing route)", "expect": "screen == settings, screen_subtype includes billing"},
+  {"query": "status badge text plus icon not colour only", "expect": "a record distinguishing identical coloured dots from per-state icon shapes"}
+ ],
+ "tags": ["requirements-miss", "ranking-miss", "knowledge-gap", "direction-mismatch", "context-detection-miss", "skill-helped", "preservation-ok"]}

@@ -1,0 +1,39 @@
+{
+ "set": "heldout-v5",
+ "cases": 525,
+ "cases_sha256": "0d8126d0ad96af8dd943e19de49485ae11fc0931464e9fe36bf54f9c838c884d",
+ "thresholds_sha256": "3d0452abb7446ad908160163938fa8c6dbc3fffe674af12e5608c9aed8ed00f3",
+ "generated": "2026-09-15",
+ "roles": {
+  "generator": "claude-sonnet (4 sessions, prompts only; brief GENERATOR-BRIEF.md)",
+  "expectation_reviewer": "claude-opus (4 sessions; REVIEWER-BRIEF.md + ONTOLOGY.md only)",
+  "bundle_quality_reviewer": "to be assigned at review time; sees prompt + guidance text with record ids stripped"
+ },
+ "independence_note": "Generator and reviewers are separate sessions with no access to records, lexicon, cases or code. Generator and expectation reviewer are different model families (Sonnet vs Opus); both are Anthropic Claude models \u2014 the shared-vendor limitation is stated. The implementing session (Fable) did not read individual cases before the run.",
+ "category_counts": {
+  "create": 70,
+  "refactor-fix": 100,
+  "polish": 60,
+  "audit-review": 50,
+  "accessibility": 45,
+  "responsive": 40,
+  "tv-media": 35,
+  "desktop-native": 30,
+  "mobile-native": 30,
+  "kiosk-public": 25,
+  "adversarial": 40
+ },
+ "stress_counts": {
+  "none": 397,
+  "wrong-screen": 62,
+  "generic-guardrail": 66
+ },
+ "scope_counts": {
+  "in-scope": 464,
+  "partial": 24,
+  "abstain": 37
+ },
+ "platform_claims": 165,
+ "critical_cases": 488,
+ "run_status": "NOT RUN \u2014 waits for research/runs/phase6-freeze.json"
+}

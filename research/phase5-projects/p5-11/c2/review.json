@@ -1,0 +1,31 @@
+{
+  "task": "p5-11",
+  "reviewer_model": "claude-opus-5[1m]",
+  "c2_records": [
+    {"id": "comp-tv-side-sheet", "verdict": "off-target", "bad_category": "generic"},
+    {"id": "media-resume-and-details", "verdict": "off-target", "bad_category": "generic"},
+    {"id": "tv-dpad-hold-pacing", "verdict": "off-target", "bad_category": "generic"},
+    {"id": "a11y-native-semantics", "verdict": "partial", "bad_category": null},
+    {"id": "tv-typography-distance", "verdict": "partial", "bad_category": null},
+    {"id": "tv-dark-first", "verdict": "relevant", "bad_category": null},
+    {"id": "a11y-live-status", "verdict": "off-target", "bad_category": "generic"},
+    {"id": "web-virtualize-long-lists", "verdict": "off-target", "bad_category": "off-platform"}
+  ],
+  "c2_relevant": 1,
+  "c2_partial": 2,
+  "c2_offtarget": 5,
+  "c2_bad": [
+    {"record": "comp-tv-side-sheet", "category": "generic", "why": "A player track-chooser sheet promoted to core on the lexical match of 'selected'; the task is focus visibility on catalogue rails, and the app's TrackPickerSheet is not the screen in scope."},
+    {"record": "media-resume-and-details", "category": "generic", "why": "Repeat of the c1 miss: details/resume/watchlist guidance selected on the words 'row' and 'selected'; says nothing about how a focused row should read at 3 m."},
+    {"record": "tv-dpad-hold-pacing", "category": "generic", "why": "Hold-repeat pacing is the p5-09 defect; here it is the sole carrier of interaction.focus_visible and a11y.reduced_motion, so the critical concept is again attached to a record that does not state the focus-contrast rule."},
+    {"record": "a11y-live-status", "category": "generic", "why": "Polite live regions and toast duration have nothing to do with a visual focus-state contrast defect."},
+    {"record": "web-virtualize-long-lists", "category": "off-platform", "why": "Repeat of the c1 miss: a web record (aria-rowcount, windowed rendering) selected for the 'performance' concern on a tvOS SwiftUI screen whose LazyHStack already virtualises."}
+  ],
+  "c2_direction_unjustified": [
+    {"slot": "navigation", "why": "nav-tv-side again: the app's shell is a top TabView (Watch/Search), not a side drawer, so the preserved slot text describes navigation the codebase does not have."}
+  ],
+  "platform_mode_scope_ok": true,
+  "verdict_vs_c1": "same",
+  "why": "Requirements got better (mode accessibility+audit, status CONFIDENT with no spurious platform-confirm, problem_domain includes accessibility) and a11y.contrast / tv.dark_first / a11y.reduced_motion are now actually delivered via tv-dark-first, but the bundle lost the two records c1 actually used (tv-safe-area for the lift/overscan budget, color-states-complete for 'selected != focused'), added a spurious core sheet record, kept media-resume-and-details and web-virtualize-long-lists, and still has no record stating focus-indicator contrast at distance or a row-level focus cue.",
+  "would_have_helped": "neutral"
+}

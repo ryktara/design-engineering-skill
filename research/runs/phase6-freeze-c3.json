@@ -1,0 +1,39 @@
+{
+ "candidate": "c3",
+ "frozen_at": "2026-09-10T15:04:49",
+ "build_sha256": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947",
+ "files": {
+  "data/antipatterns.jsonl": "ede5ef14651b028b88cdf21c71fa59a92fda1dbfffa044dfedc1fd8f5284d1f7",
+  "data/charts.jsonl": "a68845d031c11026a836060e93308aef86ac1f8c83afd25f5e6be6baaa25d980",
+  "data/components.jsonl": "f485fe4ebe4c8d9275400419b42159f662ea4ef7c5afa1544da6887873ff01c4",
+  "data/directions.jsonl": "9f3047aef8fb896e625653358a3cfbb06872a20c676b5742ff12325e2918dcd0",
+  "data/lexicon.json": "939a2f87aea14078284be43cc4e21c319b9f3600f7741b149af3e7a818b70619",
+  "data/patterns.jsonl": "e55d5480c8a785f50c1cb8bed2d4e41157a777622c5b920ca54bbcdafbdd9322",
+  "data/rules.jsonl": "69577507a1747a667a5e54f349476a89f4d38a0f63ea0fdb268e6326118ec3c9",
+  "evals/heldout-v4/ONTOLOGY.md": "ef95ecbadf05004c3fbc51c5565082f68e25ee47c7c873eb311e4b288a508cf7",
+  "evals/heldout-v4/THRESHOLDS.md": "e880c59e4c4b70ef50dd75eaa72c23ae8d9c5e4d585b22289ca617398982c3f6",
+  "scripts/advise.py": "8a411b9bb43acd54789353150d7a6eddf20bb6188fa95e3a4b981c41bc174c6c",
+  "scripts/de_core.py": "2b22de86db7ab8e31c61d2e45cc4218cf7d8b036a52265aa198f48b2782df78b",
+  "scripts/de_semantic.py": "c90a7ad52f8d69f893ee62fa9346cdf1e3a7b750d12ba44dcb54e0f9cd9a9abb",
+  "scripts/fingerprint.py": "a74b549a832b83aab0f6e7c76b8f4c2c50db3741ea81afb118eebb79bdcb9cdb",
+  "scripts/inspect_project.py": "b90816717612b5b8b2b93f8a73ce41e288702a9eccc782a5e3115e30bc24d8f0",
+  "scripts/tokens.py": "16a0ecf407c56138ae9c2e00422ed89253ab668ed7d9b0450f8e840f50e799a2",
+  "scripts/validate_skill.py": "df8bee9d36a5209be34659a440dc7395ff456e07cab8c65629e2d7d6edd7ad9b",
+  "SKILL.md": "5c942d9c83f11338bc16611c2c5f5af740a9e74dd0e2e266620c71c953e82b5f"
+ },
+ "records": 248,
+ "concepts": 114,
+ "alias_groups": 74,
+ "development_cases": 902,
+ "regression_cases": 40,
+ "gates": {
+  "development": "883/884 (only the doc-count check, which needs PHASE6-RESULTS.md)",
+  "regression": "40/40",
+  "activation_proxy": "precision 1.0 recall 1.0",
+  "mode_confusion": "145 primary / 0 incorrect",
+  "concept_diagnostics": "recall 1.0 (144/144)",
+  "platform_confusion_dev": "237 cases: correct 186, unresolved 51, wrong 0"
+ },
+ "purpose": "frozen build for the Phase 6 implemented real-project round (research/phase6-projects). No skill file may change while tasks run; a fix means candidate c4 and re-scoring.",
+ "disclosure": "scripts/de_core.py was truncated by a patch script during Phase 6 and rebuilt from the Phase 4 backup plus every recorded patch; the Phase 5 c2 hash 50966e8e... is not reproducible byte-for-byte."
+}

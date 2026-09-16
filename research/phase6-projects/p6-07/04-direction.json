@@ -1,0 +1,150 @@
+{
+  "brand": "Front desk on a tablet: the appointment chips are too small to tap.",
+  "fingerprint": {
+    "color_strategy": "neutral-plus-accent",
+    "metadata_density": "moderate"
+  },
+  "direction": {
+    "navigation": null,
+    "layout": null,
+    "density": null,
+    "surface": null,
+    "cards": null,
+    "typography": null,
+    "color": "color-neutral-accent",
+    "motion": null,
+    "focus": null,
+    "cta": null,
+    "imagery": null,
+    "icon": null,
+    "metadata": "metadata-moderate"
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "responsive",
+      "audit"
+    ],
+    "platform": [
+      "tablet"
+    ],
+    "input": [
+      "touch"
+    ],
+    "product": [
+      "healthcare"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "svelte",
+      "tailwind"
+    ],
+    "density": null,
+    "components": [],
+    "environment": [],
+    "jobs": [],
+    "problems": [
+      "visual"
+    ],
+    "risk": "medium",
+    "primary_jobs": [
+      "responsive"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "screen_reader": true,
+      "touch_targets": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_INTERACTION",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "responsive",
+        "interaction",
+        "visual"
+      ],
+      "change_scope": "unknown",
+      "utterance": "observation",
+      "preserve": []
+    },
+    "platform_evidence": [
+      {
+        "platform": "tablet",
+        "strength": "DIRECT",
+        "evidence": [
+          "tablet"
+        ]
+      },
+      {
+        "platform": "mobile",
+        "strength": "WEAK_INFERENCE",
+        "evidence": [
+          "tap"
+        ]
+      }
+    ],
+    "mode_evidence": [
+      "responsive: responsive defect",
+      "audit: diagnose first"
+    ],
+    "project_context": {
+      "navigation": "left-rail (KNOWN)",
+      "theme": "light-first (INFERRED)",
+      "surfaces": "bordered-flat (INFERRED)",
+      "spacing": "4 (INFERRED)",
+      "typography": "custom (INFERRED)",
+      "components": "tailwind (KNOWN)"
+    },
+    "known": [
+      "platform=tablet",
+      "input=touch",
+      "product=healthcare",
+      "stack=svelte",
+      "stack=tailwind",
+      "project_navigation=left-rail",
+      "project_components=tailwind"
+    ],
+    "inferred": [
+      "mode=responsive",
+      "mode=audit",
+      "project_theme=light-first",
+      "project_surfaces=bordered-flat",
+      "project_spacing=4",
+      "project_typography=custom"
+    ],
+    "missing": [],
+    "conflicts": [
+      {
+        "field": "platform",
+        "request": [
+          "tablet"
+        ],
+        "project": "web",
+        "resolution": "request kept; repository platform recorded as context"
+      }
+    ],
+    "status": "AMBIGUOUS"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

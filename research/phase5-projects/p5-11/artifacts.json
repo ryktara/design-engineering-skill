@@ -1,0 +1,77 @@
+{
+  "task": "p5-11",
+  "project": "p3-tvos-swiftui",
+  "platform_expected": "tv",
+  "platform_resolved": "tv",
+  "platform_correct": "yes",
+  "stack": "swiftui (tvOS 17, Swift package layout)",
+  "existing_ui": true,
+  "new_screen": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": ["polish", "accessibility", "refactor"],
+  "mode_resolved": ["audit", "refactor"],
+  "mode_correct": "acceptable",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "moderate",
+  "render_mode": "html-twin",
+  "screenshots": [
+    "render/first-rows-episodes.png", "render/first-rows-episodes-10ft.png", "render/first-rows-series.png", "render/first-rows-topics.png",
+    "render/first-rows-episodes-reduced-motion.png", "render/first-search-idle.png", "render/first-player-picker.png", "render/first-player-controls.png",
+    "render/final-rows-episodes.png", "render/final-rows-episodes-10ft.png", "render/final-rows-series.png", "render/final-rows-topics.png",
+    "render/final-rows-episodes-reduced-motion.png", "render/final-search-idle.png", "render/final-player-picker.png", "render/final-player-controls.png"
+  ],
+  "context_detection": {"navigation": "yes", "theme": "yes", "typography": "partial", "surfaces": "partial", "spacing": "partial"},
+  "preservation": {"navigation": true, "theme": true, "typography": true, "component_reuse": true, "unjustified_structural_change": 0},
+  "expected_concepts": ["interaction.focus_visible", "a11y.contrast", "tv.ten_foot_typography", "tv.dark_first", "a11y.reduced_motion", "interaction.selection_visible", "tv.no_touch_hover"],
+  "critical_concepts": ["interaction.focus_visible", "a11y.contrast"],
+  "delivered_concepts": ["media.details_play_first", "media.resume_playback", "media.watchlist", "interaction.focus_restore", "interaction.back_semantics", "a11y.color_not_only", "interaction.focus_visible", "interaction.selection_visible", "tv.ten_foot_typography", "interaction.dpad_reachability", "tv.safe_margins", "table.virtualization"],
+  "concept_recall": 0.43,
+  "critical_recall": 0.5,
+  "concept_misses": [
+    {"concept": "a11y.contrast", "layer": "bundle-selection"},
+    {"concept": "tv.dark_first", "layer": "bundle-selection"},
+    {"concept": "tv.no_touch_hover", "layer": "bundle-selection"},
+    {"concept": "a11y.reduced_motion", "layer": "expected-concepts"}
+  ],
+  "first_render_defects": {"visual": 1, "interaction": 0, "accessibility": 1, "platform": 1, "existing-system-mismatch": 0, "implementation-bug": 0},
+  "final_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+  "iterations": 2,
+  "guidance_relevant": 1,
+  "guidance_partial": 4,
+  "guidance_offtarget": 2,
+  "bad_guidance": [
+    {"record": "media-resume-and-details", "category": "generic", "why": "Core record about details screen / watchlist / resume rows, selected on lexical overlap ('row', 'selected'); says nothing about focus visibility."},
+    {"record": "web-virtualize-long-lists", "category": "off-platform", "why": "aria-rowcount / windowed rendering for the 'performance' concern on a SwiftUI LazyHStack rail that already virtualises."},
+    {"record": "(bundle)", "category": "missing-critical", "why": "No record states the focus-indicator contrast rule (a11y-focus-visible: >=3:1 vs the unfocused state, obvious at 3 m) or TV dark-palette contrast (tv-dark-first); both were candidates and fell to the cap because a11y.contrast was only a recommended concept."}
+  ],
+  "skill_effect": "neutral",
+  "guidance_tokens": 1199,
+  "misses": [
+    {"layer": "requirements", "what": "MISSING 'platform: only inferred from wording; confirm' although the project inspection carries 'Package.swift: tvOS target' KNOWN; downgrades guidance to PARTIAL (exit 3). Also accessibility.keyboard=true on a remote-only platform, and problem_domain=interaction for a visual/contrast defect."},
+    {"layer": "concerns", "what": "a11y.contrast (and tv.dark_first) only recommended for 'nobody can tell which row is selected from the sofa'; a11y.reduced_motion never demanded although requirements set reduced_motion=true."},
+    {"layer": "bundle-selection", "what": "color-states-complete (0.458, web state-token framing) carried interaction.focus_visible while a11y-focus-visible / a11y-tv-focus-always / focus-scale-glow (0.36) — the TV-specific rules — were dropped; media-resume-and-details chosen as core on lexical 'row/selected'; comp-tv-rail rejected as 'no tv-rail evidence in the request' despite navigation=tv-rails KNOWN in project context."},
+    {"layer": "direction", "what": "10 of 13 slots 'new' for a moderate-budget fix on an existing app: typography-grotesk-display (contradicts system-font tvOS + stacks/swiftui), motion-crossfade, imagery-immersive-backdrop, metadata-focus-reveal, cards/layout marked new though CardRail/rails exist; navigation preserved slot maps tv-rails to nav-tv-side (the shell is top tabs); density text is web numbers."},
+    {"layer": "project-adaptation", "what": "focus-scale-glow gives 'border 2-4 dp' in the Android 960x540 frame with no tvOS 1080-pt translation; the app's 4 pt ring was in range and still failed at distance."},
+    {"layer": "requirements", "what": "Context detection: tokens/typography/spacing/components UNKNOWN or [] although Theme/Tokens.swift defines explicit colour, type (76/48/34/29/23) and spacing (8/16/24/40/64) scales; radius evidence missed the 16 pt token."}
+  ],
+  "knowledge_gaps": [
+    "Row-level focus cue on rail screens (dim rails that do not hold focus, heading marker) — no record.",
+    "Focused-fill inversion (tvOS convention: focused control goes light, label dark) — no record; focus-scale-glow covers border/glow/scale only.",
+    "Ring thickness vs viewing distance (px -> arcmin at 3 m on a 55\" panel) — no record; only Android dp ranges.",
+    "Focused-vs-unfocused fill contrast as a measurable (base has only indicator >=3:1 in a11y-focus-visible)."
+  ],
+  "regressions": [
+    {"query": "From the sofa nobody can tell which row is selected on the living-room screen. (tvOS project)", "expect": "a11y.contrast and interaction.focus_visible required; focus_visible carried by a11y-focus-visible or a11y-tv-focus-always rather than color-states-complete; a11y.reduced_motion at least recommended; no media-resume-and-details core."},
+    {"query": "any tv sentence with inspection finding 'Package.swift: tvOS target' KNOWN", "expect": "no MISSING platform-confirm entry; guidance status CONFIDENT."},
+    {"query": "any rail/row sentence with project navigation = tv-rails KNOWN", "expect": "comp-tv-rail is not rejected as contamination for lack of tv-rail evidence in the request."},
+    {"query": "direction for an existing SwiftUI tvOS app, mode audit/refactor, budget moderate", "expect": "typography, cards, layout and motion slots preserved (system font, existing CardRail, existing rails); navigation preserved text describes the detected shell (top tabs), not nav-tv-side."},
+    {"query": "requirements for any tv-platform sentence", "expect": "accessibility.keyboard false, accessibility.focus true."}
+  ],
+  "tags": ["requirements-miss", "concept-miss", "ranking-miss", "knowledge-gap", "direction-mismatch", "context-detection-miss", "render-defect-fixed", "tooling-limit", "skill-neutral", "preservation-ok"],
+  "build_hash_start": "bf034323a2b68202e8c902768e0de78cd93761b1a71670a49ee595648cd5f0d8",
+  "build_hash_end": "bf034323a2b68202e8c902768e0de78cd93761b1a71670a49ee595648cd5f0d8"
+}

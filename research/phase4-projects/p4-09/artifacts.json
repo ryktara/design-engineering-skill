@@ -1,0 +1,29 @@
+{"task": "p4-09", "project": "p3-kiosk-pharmacy", "platform": "kiosk", "stack": "html-css", "existing_ui": true, "mode": "audit+accessibility", "change_budget": "low",
+ "render_mode": "html",
+ "screenshots": ["render/before-02-identify-dob.png", "render/before-03-identify-name.png", "render/before-03b-identify-error.png", "render/before-a11y-02-identify-dob.png", "render/before-a11y-03-identify-name.png", "render/before-a11y-03b-identify-error.png",
+   "render/first-02-identify-dob.png", "render/first-02b-identify-dob-error.png", "render/first-02c-identify-dob-invalid.png", "render/first-03-identify-name.png", "render/first-03b-identify-name-error.png", "render/first-a11y-02-identify-dob.png", "render/first-a11y-02b-identify-dob-error.png", "render/first-a11y-02c-identify-dob-invalid.png", "render/first-a11y-03-identify-name.png", "render/first-a11y-03b-identify-name-error.png",
+   "render/final-02-identify-dob.png", "render/final-02b-identify-dob-error.png", "render/final-02c-identify-dob-invalid.png", "render/final-03-identify-name.png", "render/final-03b-identify-name-error.png", "render/final-a11y-02-identify-dob.png", "render/final-a11y-02b-identify-dob-error.png", "render/final-a11y-02c-identify-dob-invalid.png", "render/final-a11y-03-identify-name.png", "render/final-a11y-03b-identify-name-error.png"],
+ "context_detection": {"navigation": "yes", "theme": "partial", "typography": "yes", "surfaces": "no", "spacing": "no"},
+ "preservation": {"navigation": true, "theme": true, "typography": true, "component_reuse": true, "unjustified_structural_change": 0},
+ "first_render_defects": {"visual": 0, "interaction": 0, "accessibility": 1, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+ "final_defects": {"visual": 1, "interaction": 0, "accessibility": 0, "platform": 1, "existing-system-mismatch": 0, "implementation-bug": 0},
+ "iterations": 2, "guidance_relevant": 2, "guidance_partial": 4, "guidance_offtarget": 0,
+ "misses": [
+   {"layer": "scope", "what": "status AMBIGUOUS from a false platform conflict: inspector reports 'web' for a kiosk HTML project (README + 1080x1920 viewport) and the resolver flags it against the correct request platform"},
+   {"layer": "requirements", "what": "input = touch only; the repository handles keydown (scanner wedge) and the platform file names a tactile keypad — keyboard/focus findings were the largest part of the audit"},
+   {"layer": "requirements", "what": "screen/components empty for 'identify step', 'keypad', 'name entry'; product 'government' from ADA/508 mentions"},
+   {"layer": "expected-concepts", "what": "audit+accessibility required only touch target / privacy / session / masking concepts; forms_errors, live_status, focus/keyboard were not required so the bundle was 'covered' without them"},
+   {"layer": "bundle-selection", "what": "a11y-forms-errors (rank 4) and a11y-live-status not selected"},
+   {"layer": "expected-concepts", "what": "no concept for focus retention when a screen is re-rendered from a string after each key (the most serious finding)"},
+   {"layer": "expected-concepts", "what": "no on-screen keypad/keyboard pattern and nothing on scanner-wedge + tactile keypad coexistence"},
+   {"layer": "project-adaptation", "what": "inspect_project: surfaces 'elevated' for flat 3-4 px bordered surfaces; spacing 'irregular' although tokens define an 8 px scale; theme unknown for light + high-contrast mode"},
+   {"layer": "direction", "what": "focus slot = touch-only (mobile) record for an audit whose findings were keyboard focus retention"}
+ ],
+ "knowledge_gaps": ["focus retention across innerHTML re-renders", "on-screen keypad / keyboard pattern for kiosks", "scanner keyboard-wedge vs tactile keypad input handling"],
+ "regressions": [
+   {"query": "accessibility audit of a kiosk keypad and name entry", "expect": "bundle includes a11y-forms-errors, a11y-live-status, a keyboard/focus record and target size + spacing; input includes keyboard when the project handles keydown"},
+   {"query": "inspect an HTML kiosk project (README: kiosk, viewport 1080x1920)", "expect": "platform kiosk; no AMBIGUOUS platform conflict; spacing 8 from --space-N tokens; theme light + high-contrast mode"},
+   {"query": "keypad on-screen for date of birth on a kiosk", "expect": "a keypad record: key size >= 64, gap >= 16, delete/clear placement, value read-out, persistent format hint"},
+   {"query": "focus lost after re-rendering the screen on every key press", "expect": "a rule to re-focus the equivalent control after DOM replacement, not TV focus rules"}
+ ],
+ "tags": ["scope-miss", "requirements-miss", "context-detection-miss", "ranking-miss", "knowledge-gap", "direction-mismatch", "render-defect-fixed", "render-defect-remaining", "skill-helped", "preservation-ok"]}

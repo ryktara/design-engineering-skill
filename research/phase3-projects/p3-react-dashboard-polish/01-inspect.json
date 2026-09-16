@@ -1,0 +1,45 @@
+{
+  "root": "D:\\indigo pro\\MYownSkills\\research\\phase3-projects\\p3-react-dashboard-polish\\project",
+  "findings": [
+    {
+      "status": "KNOWN",
+      "note": "package.json: react@^18.3.1"
+    },
+    {
+      "status": "KNOWN",
+      "note": "package.json: react-dom@^18.3.1"
+    }
+  ],
+  "stack_groups": [
+    "react"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "ui_libraries": [],
+  "package_manager": "npm",
+  "css_architecture": [
+    ".css (1 files)"
+  ],
+  "tokens": [],
+  "fonts": [
+    "Inter (1)"
+  ],
+  "icons": [],
+  "routing": [],
+  "breakpoints": [],
+  "accessibility": [],
+  "focus_handling": [
+    "explicit focus handling in 0 files"
+  ],
+  "design_docs": [],
+  "component_dirs": [
+    "src/components/ (5 files)"
+  ],
+  "tests": [],
+  "i18n": [],
+  "product_hints": [],
+  "sample": {
+    "files_scanned": 14
+  }
+}

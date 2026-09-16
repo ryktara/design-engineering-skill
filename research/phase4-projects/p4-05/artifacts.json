@@ -1,0 +1,29 @@
+{"task": "p4-05", "project": "p3-react-dashboard-polish", "platform": "web", "stack": "react 18 + esbuild, plain CSS tokens", "existing_ui": true, "mode": "audit+refactor", "change_budget": "low",
+ "render_mode": "native", "screenshots": [
+  "render/first-1440x900-t0.png", "render/first-1440x900-arrived.png", "render/first-1440x900-acked.png", "render/first-1440x900-clear.png",
+  "render/first-390x844-t0.png", "render/first-390x844-arrived.png", "render/first-390x844-acked.png", "render/first-390x844-clear.png",
+  "render/final-1440x900-t0.png", "render/final-1440x900-arrived.png", "render/final-1440x900-acked.png", "render/final-1440x900-clear.png",
+  "render/final-390x844-t0.png", "render/final-390x844-arrived.png", "render/final-390x844-acked.png", "render/final-390x844-clear.png"],
+ "context_detection": {"navigation": "yes", "theme": "yes", "typography": "no", "surfaces": "yes", "spacing": "partial"},
+ "preservation": {"navigation": true, "theme": true, "typography": true, "component_reuse": true, "unjustified_structural_change": 0},
+ "first_render_defects": {"visual": 1, "interaction": 0, "accessibility": 1, "platform": 0, "existing-system-mismatch": 1, "implementation-bug": 0},
+ "final_defects": {"visual": 1, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+ "iterations": 2, "guidance_relevant": 2, "guidance_partial": 2, "guidance_offtarget": 2,
+ "interaction_test": {"1440x900": {"pass": 10, "total": 10}, "390x844": {"pass": 10, "total": 10}, "checks": ["regionAnnounced", "exceptionsFirst", "featuredIsHighestSeverity", "onePrimaryAction", "noLayoutShift", "alertsListFollows", "keyboard", "notColourOnly", "targets", "preserved"]},
+ "misses": [
+  {"layer": "requirements", "what": "problems=[] for 'don't notice'; intent.preserve=[] for 'without redesigning it'"},
+  {"layer": "concerns", "what": "feedback and states derived as RECOMMENDED, so a11y-live-status was never required and not selected"},
+  {"layer": "candidate-retrieval", "what": "comp-toast-notification (inline banner at the top of the region it concerns) not retrieved for the task sentence"},
+  {"layer": "bundle-selection", "what": "layout-hierarchy-one-thing (exception_first, focal hierarchy) not selected; concept credited to chart-realtime; comp-kpi-tile and comp-chart-container selected instead"},
+  {"layer": "bundle-selection", "what": "web-cls-and-lcp, cta-single-primary, a11y-color-not-only not selected"},
+  {"layer": "expected-concepts", "what": "no record for a persistent exception/alert strip with severity ranking, acknowledge flow and a reserved slot"},
+  {"layer": "direction", "what": "card-flat-tile and typography-geometric-sans chosen under a low budget on a bordered, Inter-based UI"},
+  {"layer": "project-adaptation", "what": "inspect: typography and components UNKNOWN, so those slots cannot be preserved"}
+ ],
+ "knowledge_gaps": ["persistent exception / alert strip on a dashboard (severity ranking, acknowledge, fixed slot)"],
+ "regressions": [
+  {"query": "facility managers don't notice new alerts; make exceptions the first thing they see on the dashboard without redesigning it", "expect": "feedback concern REQUIRED; bundle has a11y-live-status, comp-toast-notification, layout-hierarchy-one-thing, web-cls-and-lcp; no comp-kpi-tile / comp-chart-container; intent.preserve non-empty"},
+  {"query": "alert banner at the top of a dashboard with one action, announced to screen readers, no layout shift", "expect": "a matching pattern record, not chart-realtime"},
+  {"query": "direction with change_budget low on a bordered-module Inter UI", "expect": "cards not flat-tile, typography not a new family"}
+ ],
+ "tags": ["requirements-miss", "concept-miss", "ranking-miss", "knowledge-gap", "direction-mismatch", "context-detection-miss", "render-defect-fixed", "render-defect-remaining", "skill-helped", "preservation-ok"]}

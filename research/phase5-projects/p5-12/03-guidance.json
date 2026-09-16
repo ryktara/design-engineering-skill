@@ -1,0 +1,852 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "Older customers time out on the identify step before they finish typing.",
+  "status": "PARTIAL",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [
+      "government",
+      "healthcare"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "html-css"
+    ],
+    "density": null,
+    "components": [],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "audit"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "low",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [],
+      "change_scope": "unknown",
+      "utterance": "observation",
+      "existing": true,
+      "problem": false,
+      "facet": "general",
+      "diagnose_only": false,
+      "creation": false,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "audit: problem statement on existing UI",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "hub-spoke",
+        "status": "KNOWN",
+        "evidence": [
+          "hub-spoke: 27 matches in README.md, app.js, i18n.js (shell/layout file)"
+        ]
+      },
+      "theme": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": [
+          "hex palette: 25 near-white, 17 near-black"
+        ]
+      },
+      "surfaces": {
+        "value": "elevated",
+        "status": "INFERRED",
+        "evidence": [
+          "weak signal: shadow 1, border 1"
+        ]
+      },
+      "radius": {
+        "value": "medium",
+        "status": "INFERRED",
+        "evidence": [
+          "most common radius 12 (1×); others [20.0, 32.0]"
+        ]
+      },
+      "spacing": {
+        "value": "irregular",
+        "status": "UNKNOWN",
+        "evidence": [
+          "most used spacing values [6, 16]"
+        ]
+      },
+      "typography": {
+        "value": "humanist-sans",
+        "status": "KNOWN",
+        "evidence": [
+          "font family Nunito (2 refs)",
+          "weights 700, 800, 600, 500",
+          "tabular numerals"
+        ]
+      },
+      "components": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": []
+      }
+    },
+    "known": [
+      "platform=web (project inspection)",
+      "product=healthcare (project inspection (README))",
+      "product=government (project inspection (README))",
+      "stack=html-css (project inspection)",
+      "project_navigation=hub-spoke (repository: hub-spoke: 27 matches in README.md, app.js, i18n.js (shell/layout file))",
+      "project_typography=humanist-sans (repository: font family Nunito (2 refs); weights 700, 800, 600, 500)"
+    ],
+    "inferred": [
+      "input=pointer (implied by platform web)",
+      "input=keyboard (implied by platform web)",
+      "input=touch (implied by platform web)",
+      "mode=audit (problem statement on existing UI)",
+      "mode=refactor (fix follows the diagnosis)",
+      "project_surfaces=elevated (repository: weak signal: shadow 1, border 1)",
+      "project_radius=medium (repository: most common radius 12 (1×); others [20.0, 32.0])"
+    ],
+    "missing": [],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [],
+      "project": [
+        "*.html without a framework manifest: plain HTML/CSS site"
+      ]
+    },
+    "activation": {
+      "decision": "skip",
+      "ui_score": 0,
+      "non_ui_score": 0,
+      "ui_terms": [],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "customers"
+      ],
+      "new": [],
+      "defect": [],
+      "operations": {},
+      "domains": {},
+      "no_change": [],
+      "scope": {},
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "step",
+        "concept:state.session_expiry"
+      ],
+      "ux_symptoms": [
+        "customers"
+      ],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "accessibility",
+        "reason": "audit mode"
+      },
+      {
+        "concern": "interaction",
+        "reason": "audit mode: operability is part of the review"
+      },
+      {
+        "concern": "component",
+        "reason": "the reviewed component/screen"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "states",
+        "reason": "audits check empty/loading/error handling"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "audits name generic-design defects"
+      },
+      {
+        "concern": "feedback",
+        "reason": "audits check that actions are discoverable and confirmed"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "viewport range"
+      }
+    ],
+    "optional": [
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "state.session_expiry",
+        "reason": "named in the request: time out, time out"
+      },
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "web content must be keyboard operable"
+      },
+      {
+        "concept": "interaction.hover_independence",
+        "reason": "web is used with touch as well as pointer"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "web keyboard focus"
+      }
+    ],
+    "recommended_concepts": [
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "process.reuse_first",
+      "touch.minimum_target",
+      "adaptive.breakpoint_matrix",
+      "feedback.confirmation_destructive",
+      "interaction.shortcuts"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "nav-wizard",
+      "kind": "pattern",
+      "category": "navigation",
+      "title": "Linear wizard / stepper",
+      "facets": [
+        "navigation"
+      ],
+      "concerns": [
+        "navigation"
+      ],
+      "concepts": [
+        "feedback.progress_indicator",
+        "onboarding.linear_wizard"
+      ],
+      "covers": [
+        "progress indicator",
+        "linear multi-step wizard"
+      ],
+      "score": 0.348,
+      "guidance": "Show step count and current step, allow going back without data loss, put one primary action per step, validate per step not at the end, and let completed steps be revisited. Save progress for flows longer than ~3 minutes. On TV, each step is a full screen with a single focused default action.",
+      "use_when": "One task with ordered dependent steps (checkout, onboarding, application forms) where finishing matters more than exploring.",
+      "avoid_when": "Steps are independent and users need to jump around (use tabs or a form with sections), or the whole thing fits on one screen.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "incompatible": [
+        "nav-left-rail",
+        "nav-tv-side"
+      ],
+      "why": {
+        "lexical": 0.22,
+        "structural": 0.46,
+        "matched": [
+          "secondary mode",
+          "product government,healthcare"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring pattern with lexical evidence"
+    },
+    {
+      "id": "surface-flat-tonal",
+      "kind": "pattern",
+      "category": "surface",
+      "title": "Flat surfaces with tonal layers",
+      "facets": [
+        "layout"
+      ],
+      "concerns": [
+        "brand",
+        "structure"
+      ],
+      "concepts": [],
+      "covers": [],
+      "score": 0.325,
+      "guidance": "Define three tonal steps per theme with measured contrast (each step ≥1.1:1 apart and borders ≥3:1 where they mark boundaries). Shadows reserved for transient layers (menus, dialogs, drag). Reads professional at any density and avoids the 'everything is a floating card' look.",
+      "use_when": "Most application UI: hierarchy expressed with subtle background tone steps (canvas → surface → elevated) and dividers rather than shadows on everything.",
+      "avoid_when": "When physical elevation carries meaning (floating menus, dragged items) it still needs a shadow; don't flatten those.",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "incompatible": [
+        "surface-glass",
+        "surface-elevated-cards"
+      ],
+      "why": {
+        "lexical": 0.183,
+        "structural": 0.32,
+        "matched": [
+          "secondary mode"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring pattern with lexical evidence"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "states-persistence-and-session",
+      "kind": "rule",
+      "category": "states",
+      "title": "Saving, saved, autosave, session expiry, and permission-denied states",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "feedback",
+        "states"
+      ],
+      "concepts": [
+        "state.saving_conflict",
+        "state.session_expiry",
+        "feedback.confirmation_destructive"
+      ],
+      "covers": [
+        "saving, saved and conflict states",
+        "session expiry and idle reset",
+        "confirmation of destructive or high-risk actions"
+      ],
+      "score": 0.571,
+      "guidance": "Show saving → saved as a quiet inline status with a timestamp (not a toast per keystroke); autosave drafts and say so; warn before a session expires with a way to extend, and never discard entered data on expiry on a personal device (restore the draft after re-authentication; on shared or public screens clear it instead); permission-denied is a designed state that explains what is missing and who can grant it rather than an empty screen; destructive or irreversible saves confirm once with the safe action as default.",
+      "use_when": "Forms and editors longer than a minute, multi-step flows, authenticated sessions with timeouts, screens whose data depends on permissions.",
+      "avoid_when": "Public kiosks and shared screens: there the session is cleared on idle and nothing is restored (see shared-device-privacy).",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.498,
+        "structural": 0.66,
+        "matched": [
+          "platform web",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "most relevant record for the request wording"
+    },
+    {
+      "id": "a11y-keyboard-operable",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Everything operable by keyboard, no traps",
+      "facets": [
+        "accessibility",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.keyboard_navigation",
+        "interaction.hover_independence"
+      ],
+      "covers": [
+        "keyboard navigation and focus order",
+        "no hover dependence"
+      ],
+      "score": 0.324,
+      "guidance": "Tab reaches every control in visual order; composite widgets use arrow keys with a roving tabindex so Tab is not consumed by every cell; Escape closes layers and returns focus to the invoker; nothing traps focus except a modal, and the modal itself must be escapable. Provide a keyboard alternative for every drag interaction.",
+      "use_when": "Every interactive element, including custom widgets, drag/drop, sliders, menus, date pickers, and anything that appears on hover.",
+      "avoid_when": "Never skip.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.72,
+        "matched": [
+          "platform web",
+          "input keyboard",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: accessibility, interaction, no hover dependence, keyboard navigation and focus order"
+    },
+    {
+      "id": "a11y-focus-visible",
+      "kind": "rule",
+      "category": "focus",
+      "title": "Focus visible and not obscured",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.focus_visible"
+      ],
+      "covers": [
+        "visible focus"
+      ],
+      "score": 0.324,
+      "guidance": "Focus indicator ≥2 px with ≥3:1 contrast against adjacent colours and against the unfocused state; sticky UI gets scroll-padding so a focused control scrolls into clear view. On TV the indicator must be obvious at 3 m (scale + border/glow).",
+      "use_when": "Every focusable element in every theme; sticky headers, footers, toasts, and cookie banners must never cover the focused element.",
+      "avoid_when": "Never remove focus styles; use :focus-visible to hide them for mouse clicks only.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.72,
+        "matched": [
+          "platform web",
+          "input keyboard",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: visible focus"
+    },
+    {
+      "id": "web-responsive-breakpoints",
+      "kind": "rule",
+      "category": "responsive",
+      "title": "Web: content-driven breakpoints and a test matrix",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "adaptive"
+      ],
+      "concepts": [
+        "adaptive.breakpoint_matrix",
+        "adaptive.navigation_transform"
+      ],
+      "covers": [
+        "breakpoint matrix",
+        "navigation transforms across widths"
+      ],
+      "score": 0.297,
+      "guidance": "Use the project's breakpoints; test at least: narrowest supported (320–360), common phone (390), tablet (768–834), laptop (1280–1366), desktop (1536–1920), plus 200% zoom. Check clipping, overflow, wrapping, tap targets, hierarchy order, and that navigation and dialogs transform (drawer ↔ rail, sheet ↔ dialog). Prefer container queries for components.",
+      "use_when": "Every responsive layout, navigation transformation, table/grid behaviour, modal/drawer switching.",
+      "avoid_when": "Never test a single viewport; never invent breakpoints when the framework/codebase defines them (Tailwind screens, MUI breakpoints, project tokens).",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "engineering-practice",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.66,
+        "matched": [
+          "platform web",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "recommended coverage: adaptive, breakpoint matrix"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "accessibility",
+      "interaction",
+      "component"
+    ],
+    "covered_required_concerns": [
+      "accessibility",
+      "interaction"
+    ],
+    "uncovered_required_concerns": [
+      "component"
+    ],
+    "recommended_concerns": [
+      "states",
+      "anti-pattern",
+      "feedback",
+      "adaptive"
+    ],
+    "covered_recommended_concerns": [
+      "states",
+      "feedback",
+      "adaptive"
+    ],
+    "coverage_ratio": 0.67,
+    "required_concepts": [
+      "state.session_expiry",
+      "interaction.keyboard_navigation",
+      "interaction.hover_independence",
+      "interaction.focus_visible"
+    ],
+    "covered_required_concepts": [
+      "state.session_expiry",
+      "interaction.keyboard_navigation",
+      "interaction.hover_independence",
+      "interaction.focus_visible"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.29,
+    "bundle_size": 6,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 2,
+    "guardrail_size": 4,
+    "bundle_tokens": 844,
+    "coverage_per_1k_tokens": 4.74,
+    "mean_purity": 0.69,
+    "contaminated": [],
+    "category_diversity": 1.0,
+    "duplicate_pressure": 0.17,
+    "facet_coverage": 0.8,
+    "redundancy": 0.2
+  },
+  "token_coverage": 0.8,
+  "omitted": [
+    {
+      "id": "comp-wizard-stepper",
+      "reason": "contamination: low purity 0.00: most of its concepts are off-task; wizard-specific record with no wizard evidence in the request"
+    },
+    {
+      "id": "comp-setup-checklist",
+      "reason": "contamination: low purity 0.00: most of its concepts are off-task; wizard-specific record with no wizard evidence in the request"
+    },
+    {
+      "id": "chart-trend-line",
+      "reason": "contamination: low purity 0.00: most of its concepts are off-task; chart record outside a data-visualisation task"
+    },
+    {
+      "id": "chart-realtime",
+      "reason": "contamination: product-specific (devtools,finance,iot) vs ['government', 'healthcare']; low purity 0.00: most of its concepts are off-task; chart record outside a data-visualisation task"
+    },
+    {
+      "id": "media-resume-and-details",
+      "reason": "contamination: product-specific (media) vs ['government', 'healthcare']; low purity 0.00: most of its concepts are off-task"
+    },
+    {
+      "id": "comp-product-detail-page",
+      "reason": "contamination: product-specific (ecommerce) vs ['government', 'healthcare']"
+    }
+  ],
+  "rejected": [
+    {
+      "id": "comp-kiosk-keypad",
+      "reason": "platform ['kiosk', 'tablet'] not in request ['web']"
+    },
+    {
+      "id": "comp-photo-capture-field",
+      "reason": "platform ['mobile', 'tablet'] not in request ['web']"
+    },
+    {
+      "id": "dir-broadcast-guide-tv",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "nav-hub-spoke",
+      "reason": "platform ['kiosk', 'mobile', 'tablet'] not in request ['web']"
+    },
+    {
+      "id": "focus-scale-glow",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "a11y-tv-focus-always",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "tv-player-controls",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "kiosk-public-use",
+      "reason": "platform ['kiosk'] not in request ['web']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "state.session_expiry",
+      "priority": "required",
+      "reason": "named in the request: time out, time out",
+      "candidate_records": [
+        [
+          "states-persistence-and-session",
+          0.571
+        ],
+        [
+          "a11y-time-and-auto",
+          0.136
+        ]
+      ],
+      "selected_record": "states-persistence-and-session",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.keyboard_navigation",
+      "priority": "required",
+      "reason": "web content must be keyboard operable",
+      "candidate_records": [
+        [
+          "a11y-keyboard-operable",
+          0.324
+        ],
+        [
+          "grid-single-tab-stop",
+          0.324
+        ],
+        [
+          "comp-data-entry-grid",
+          0.198
+        ]
+      ],
+      "selected_record": "a11y-keyboard-operable",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.hover_independence",
+      "priority": "required",
+      "reason": "web is used with touch as well as pointer",
+      "candidate_records": [
+        [
+          "anti-hover-only-actions",
+          0.324
+        ],
+        [
+          "a11y-keyboard-operable",
+          0.324
+        ],
+        [
+          "a11y-hover-not-required",
+          0.324
+        ]
+      ],
+      "selected_record": "a11y-keyboard-operable",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.focus_visible",
+      "priority": "required",
+      "reason": "web keyboard focus",
+      "candidate_records": [
+        [
+          "a11y-focus-visible",
+          0.324
+        ],
+        [
+          "grid-single-tab-stop",
+          0.324
+        ],
+        [
+          "focus-ring-standard",
+          0.305
+        ],
+        [
+          "a11y-nontext-contrast",
+          0.274
+        ]
+      ],
+      "selected_record": "a11y-focus-visible",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.accessible_names",
+      "priority": "recommended",
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "a11y-labels-names",
+          0.26
+        ],
+        [
+          "comp-product-detail-page",
+          0.23
+        ],
+        [
+          "comp-player-controls",
+          0.21
+        ],
+        [
+          "comp-media-card",
+          0.171
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "a11y.contrast",
+      "priority": "recommended",
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "a11y-nontext-contrast",
+          0.274
+        ],
+        [
+          "anti-fashion-over-usability",
+          0.261
+        ],
+        [
+          "a11y-contrast-text",
+          0.243
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "recommended",
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.207
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.minimum_target",
+      "priority": "recommended",
+      "reason": "touch on web",
+      "candidate_records": [
+        [
+          "a11y-target-size",
+          0.27
+        ],
+        [
+          "comp-product-detail-page",
+          0.23
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "adaptive.breakpoint_matrix",
+      "priority": "recommended",
+      "reason": "web viewport range",
+      "candidate_records": [
+        [
+          "web-responsive-breakpoints",
+          0.297
+        ]
+      ],
+      "selected_record": "web-responsive-breakpoints",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "feedback.confirmation_destructive",
+      "priority": "recommended",
+      "reason": "sensitive domain",
+      "candidate_records": [
+        [
+          "states-persistence-and-session",
+          0.571
+        ],
+        [
+          "comp-checkout-one-page",
+          0.182
+        ],
+        [
+          "comp-dialog",
+          0.18
+        ],
+        [
+          "comp-settings-screen",
+          0.18
+        ]
+      ],
+      "selected_record": "states-persistence-and-session",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.shortcuts",
+      "priority": "recommended",
+      "reason": "related to interaction.keyboard_navigation",
+      "candidate_records": [
+        [
+          "cta-toolbar-commands",
+          0.222
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates rejected as contaminated: product-specific (devtools,erp,finance,saas) vs ['government', 'healthcare']"
+    }
+  ]
+}

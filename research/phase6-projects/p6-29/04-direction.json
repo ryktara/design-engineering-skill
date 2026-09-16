@@ -1,0 +1,125 @@
+{
+  "brand": "The confirmation screen prints the receipt but never says the pick-up is complete.",
+  "fingerprint": {
+    "navigation_model": "hub-and-spoke",
+    "typography_character": "humanist-sans",
+    "cta_strategy": "single-primary"
+  },
+  "direction": {
+    "navigation": "nav-hub-spoke",
+    "layout": null,
+    "density": null,
+    "surface": null,
+    "cards": null,
+    "typography": "typography-humanist-sans",
+    "color": null,
+    "motion": null,
+    "focus": null,
+    "cta": "cta-single-primary",
+    "imagery": null,
+    "icon": null,
+    "metadata": null
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "kiosk"
+    ],
+    "input": [
+      "touch"
+    ],
+    "product": [
+      "healthcare",
+      "iot"
+    ],
+    "screen": [
+      "form"
+    ],
+    "screen_subtype": [],
+    "stack": [
+      "html-css"
+    ],
+    "density": null,
+    "components": [],
+    "environment": [
+      "public"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "audit form"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [],
+      "change_scope": "screen",
+      "utterance": "observation",
+      "preserve": []
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "audit: problem statement on existing UI",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": "hub-spoke (KNOWN)",
+      "surfaces": "elevated (INFERRED)",
+      "radius": "medium (INFERRED)",
+      "typography": "humanist-sans (KNOWN)"
+    },
+    "known": [
+      "platform=kiosk",
+      "product=healthcare",
+      "product=iot",
+      "stack=html-css",
+      "screen=form",
+      "environment=public",
+      "project_navigation=hub-spoke",
+      "project_typography=humanist-sans"
+    ],
+    "inferred": [
+      "input=touch",
+      "mode=audit",
+      "mode=refactor",
+      "project_surfaces=elevated",
+      "project_radius=medium"
+    ],
+    "missing": [],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

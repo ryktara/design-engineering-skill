@@ -1,0 +1,1004 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "Review the stock adjustments page against our accessibility checklist.",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "accessibility",
+      "audit",
+      "review"
+    ],
+    "platform": [
+      "desktop"
+    ],
+    "input": [
+      "keyboard",
+      "pointer"
+    ],
+    "product": [
+      "erp"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "winui"
+    ],
+    "density": "high",
+    "components": [
+      "list"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "accessibility list"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "low",
+    "scope": {
+      "domain": "UI_ACCESSIBILITY",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "review"
+      ],
+      "problem_domain": [
+        "accessibility"
+      ],
+      "change_scope": "screen",
+      "utterance": "request",
+      "existing": true,
+      "problem": false,
+      "facet": "accessibility",
+      "diagnose_only": true,
+      "creation": false,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "audit: explicit: review the",
+      "accessibility: explicit: accessibility",
+      "review: assessment without changes (review)",
+      "audit: diagnosis is part of the review",
+      "accessibility: accessibility problem domain"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "left-rail",
+        "status": "KNOWN",
+        "evidence": [
+          "left-rail: 3 matches in MainWindow.xaml, OrdersPage.xaml (shell/layout file)",
+          "also menu-bar: 11 matches"
+        ]
+      },
+      "theme": {
+        "value": "dual-theme",
+        "status": "INFERRED",
+        "evidence": [
+          "dark theme configuration signals: 1",
+          "hex palette: 0 near-white, 0 near-black"
+        ]
+      },
+      "surfaces": {
+        "value": "bordered-flat",
+        "status": "INFERRED",
+        "evidence": [
+          "weak signal: shadow 0, border 1"
+        ]
+      },
+      "radius": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": []
+      },
+      "spacing": {
+        "value": 4,
+        "status": "INFERRED",
+        "evidence": [
+          "most used spacing values [16, 8, 12, 4, 2]"
+        ]
+      },
+      "typography": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": [
+          "no font family declaration found"
+        ]
+      },
+      "components": {
+        "value": "winui3, community-toolkit",
+        "status": "KNOWN",
+        "evidence": [
+          "winui3",
+          "community-toolkit"
+        ]
+      }
+    },
+    "known": [
+      "platform=desktop (project inspection)",
+      "product=erp (project inspection (README))",
+      "stack=winui (project inspection)",
+      "mode=accessibility (explicit: accessibility; accessibility problem domain)",
+      "mode=audit (explicit: review the; diagnosis is part of the review)",
+      "project_navigation=left-rail (repository: left-rail: 3 matches in MainWindow.xaml, OrdersPage.xaml (shell/layout file); also menu-bar: 11 matches)",
+      "project_components=winui3, community-toolkit (repository: winui3; community-toolkit)"
+    ],
+    "inferred": [
+      "input=pointer (implied by platform desktop)",
+      "input=keyboard (implied by platform desktop)",
+      "density=high (implied by product erp)",
+      "mode=review (assessment without changes (review))",
+      "project_theme=dual-theme (repository: dark theme configuration signals: 1; hex palette: 0 near-white, 0 near-black)",
+      "project_surfaces=bordered-flat (repository: weak signal: shadow 0, border 1)",
+      "project_spacing=4 (repository: most used spacing values [16, 8, 12, 4, 2])"
+    ],
+    "missing": [],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [
+        "accessibility",
+        "review the"
+      ],
+      "project": [
+        "Erp.Client.csproj: Microsoft.WindowsAppSDK",
+        "Erp.Client.csproj: CommunityToolkit.WinUI"
+      ]
+    },
+    "activation": {
+      "decision": "activate",
+      "ui_score": 5.0,
+      "non_ui_score": 0,
+      "ui_terms": [
+        "page",
+        "accessibility"
+      ],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "our",
+        "the stock adjustments page"
+      ],
+      "new": [],
+      "defect": [],
+      "operations": {
+        "review": [
+          "review"
+        ]
+      },
+      "domains": {
+        "accessibility": [
+          "accessib",
+          "a11y facet"
+        ]
+      },
+      "no_change": [],
+      "scope": {
+        "screen": [
+          "page"
+        ]
+      },
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "page",
+        "accessib"
+      ],
+      "ux_symptoms": [],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_ACCESSIBILITY",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "accessibility",
+        "reason": "accessibility mode"
+      },
+      {
+        "concern": "interaction",
+        "reason": "accessibility mode: operability is part of the review"
+      },
+      {
+        "concern": "component",
+        "reason": "the reviewed component/screen"
+      },
+      {
+        "concern": "data-display",
+        "reason": "numbers, tables or charts are the content"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "states",
+        "reason": "audits check empty/loading/error handling"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "audits name generic-design defects"
+      }
+    ],
+    "optional": [
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "a11y.accessible_names",
+        "reason": "accessibility review"
+      },
+      {
+        "concept": "a11y.contrast",
+        "reason": "accessibility review"
+      },
+      {
+        "concept": "a11y.semantics",
+        "reason": "accessibility review"
+      },
+      {
+        "concept": "state.loading_empty_error",
+        "reason": "asynchronous or remote data on this screen"
+      },
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "desktop keyboard-first"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "desktop focus"
+      },
+      {
+        "concept": "table.tabular_figures",
+        "reason": "numeric data"
+      }
+    ],
+    "recommended_concepts": [
+      "a11y.text_scaling",
+      "a11y.reduced_motion",
+      "a11y.live_status",
+      "process.reuse_first",
+      "interaction.shortcuts",
+      "desktop.persist_workspace",
+      "desktop.fluent_materials",
+      "data.pagination_strategy",
+      "a11y.color_not_only"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "comp-setup-checklist",
+      "kind": "component",
+      "category": "wizard",
+      "title": "Setup / progress checklist",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "feedback",
+        "states"
+      ],
+      "concepts": [
+        "onboarding.setup_checklist",
+        "feedback.progress_indicator"
+      ],
+      "covers": [
+        "optional setup checklist",
+        "progress indicator"
+      ],
+      "score": 0.423,
+      "guidance": "A persistent checklist with a progress summary ('3 of 6 done'), each item stating outcome, time estimate, and one action; completed items stay visible and collapsed; the list is dismissible once essentials are done and reachable again from help; items deep-link to the exact screen and return to the checklist; never block the product behind it. Announce progress changes to assistive tech; keep it out of the main content's focal position.",
+      "use_when": "Multi-session onboarding where tasks can be done in any order over days (connect data, invite team, verify identity, complete profile).",
+      "avoid_when": "Strictly ordered dependent steps (use a wizard) or a single setup action.",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.408,
+        "structural": 0.44,
+        "matched": [
+          "platform desktop",
+          "secondary mode"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "imagery-none",
+      "kind": "pattern",
+      "category": "imagery",
+      "title": "No decorative imagery",
+      "facets": [
+        "visual"
+      ],
+      "concerns": [
+        "brand",
+        "content"
+      ],
+      "concepts": [],
+      "covers": [],
+      "score": 0.39,
+      "guidance": "Remove stock photos, abstract blobs, and hero illustrations from working screens; empty states may use a small, meaningful illustration or none. Identity comes from type, colour, and structure.",
+      "use_when": "Operational products: imagery only where it is data (avatars, product thumbnails, charts).",
+      "avoid_when": "Brand or content products where imagery is the content.",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "incompatible": [
+        "imagery-hero",
+        "imagery-immersive-backdrop",
+        "surface-imagery-backed"
+      ],
+      "why": {
+        "lexical": 0.206,
+        "structural": 0.46,
+        "matched": [
+          "product erp",
+          "density high"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring pattern with lexical evidence"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "a11y-nontext-contrast",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Non-text contrast 3:1 for controls and focus",
+      "facets": [
+        "accessibility"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "a11y.contrast",
+        "interaction.focus_visible"
+      ],
+      "covers": [
+        "high contrast",
+        "visible focus"
+      ],
+      "score": 0.312,
+      "guidance": "Any visual that identifies a control or its state needs ≥3:1 against adjacent colours. Hairline dividers at 1.2:1 are fine as decoration but an input whose only boundary is that hairline fails.",
+      "use_when": "Input borders, checkbox/radio outlines, focus indicators, icons that carry meaning, chart marks, toggle states.",
+      "avoid_when": "Purely decorative borders and dividers are exempt, but then they must not be the only boundary of a control.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.126,
+        "structural": 0.54,
+        "matched": [
+          "mode accessibility"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: accessibility, interaction, high contrast, visible focus"
+    },
+    {
+      "id": "a11y-native-semantics",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Native accessibility semantics (mobile/desktop)",
+      "facets": [
+        "accessibility",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility"
+      ],
+      "concepts": [
+        "a11y.semantics",
+        "a11y.accessible_names"
+      ],
+      "covers": [
+        "semantic structure and roles",
+        "accessible names and labels"
+      ],
+      "score": 0.401,
+      "guidance": "Use platform roles and traits (Compose semantics{role, contentDescription, heading()}, SwiftUI accessibilityLabel/.accessibilityAddTraits, RN accessibilityRole, WinUI/WPF AutomationProperties + AutomationPeer for custom controls); merge descendants so a card is one element; announce async status with live regions/announceForAccessibility. Test with TalkBack/VoiceOver/Narrator, not only by reading code.",
+      "use_when": "Custom composables/views/controls, merged semantics for cards, live regions for status, headings in long screens.",
+      "avoid_when": "Never build a tappable Box/View/Border without a role and name.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.189,
+        "structural": 0.66,
+        "matched": [
+          "platform desktop",
+          "mode accessibility"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: accessible names and labels, semantic structure and roles"
+    },
+    {
+      "id": "typo-scale-and-roles",
+      "kind": "rule",
+      "category": "typography",
+      "title": "One type scale with named roles",
+      "facets": [
+        "visual"
+      ],
+      "concerns": [
+        "content",
+        "data-display"
+      ],
+      "concepts": [
+        "table.tabular_figures",
+        "brand.type_roles"
+      ],
+      "covers": [
+        "tabular figures and numeric alignment",
+        "type roles and scale"
+      ],
+      "score": 0.207,
+      "guidance": "Roles display/heading/title/body/label/caption/numeric with size, line height, weight, and letter spacing per role; body ≥16 px web/mobile, 14 desktop, 24 TV; numeric role uses tabular lining figures; headings use tighter line height (1.1–1.25) and body 1.4–1.6. Generate with tokens.py scale and map the roles to the framework's text styles.",
+      "use_when": "Any screen with more than two text sizes; any design system.",
+      "avoid_when": "Never pick sizes per screen; never use more than ~7 sizes.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.46,
+        "matched": [
+          "secondary mode"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: data-display, tabular figures and numeric alignment"
+    },
+    {
+      "id": "a11y-keyboard-operable",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Everything operable by keyboard, no traps",
+      "facets": [
+        "accessibility",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.keyboard_navigation",
+        "interaction.hover_independence"
+      ],
+      "covers": [
+        "keyboard navigation and focus order",
+        "no hover dependence"
+      ],
+      "score": 0.352,
+      "guidance": "Tab reaches every control in visual order; composite widgets use arrow keys with a roving tabindex so Tab is not consumed by every cell; Escape closes layers and returns focus to the invoker; nothing traps focus except a modal, and the modal itself must be escapable. Provide a keyboard alternative for every drag interaction.",
+      "use_when": "Every interactive element, including custom widgets, drag/drop, sliders, menus, date pickers, and anything that appears on hover.",
+      "avoid_when": "Never skip.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.051,
+        "structural": 0.72,
+        "matched": [
+          "platform desktop",
+          "input keyboard",
+          "mode accessibility"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: keyboard navigation and focus order"
+    },
+    {
+      "id": "layout-states-empty-loading-error",
+      "kind": "rule",
+      "category": "feedback",
+      "title": "Design empty, loading, error, and partial states",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "states"
+      ],
+      "concepts": [
+        "state.loading_empty_error"
+      ],
+      "covers": [
+        "loading, empty and error states"
+      ],
+      "score": 0.207,
+      "guidance": "Empty: what this is, why it is empty, one action. Loading: skeleton with final dimensions, then content; announce completion. Error: what failed, what to do, retry that works; keep entered data. Partial: show what loaded, mark what didn't. On TV, focus must land somewhere valid in each state.",
+      "use_when": "Every list, table, chart, form, and detail screen.",
+      "avoid_when": "Never ship a blank area for empty data; never show a spinner for more than ~1 s without a skeleton or progress; never show an error without a next step.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.46,
+        "matched": [
+          "secondary mode"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: loading, empty and error states"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "data-display"
+    ],
+    "covered_required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "data-display"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "states",
+      "anti-pattern"
+    ],
+    "covered_recommended_concerns": [
+      "states"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "a11y.semantics",
+      "state.loading_empty_error",
+      "interaction.keyboard_navigation",
+      "interaction.focus_visible",
+      "table.tabular_figures"
+    ],
+    "covered_required_concepts": [
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "a11y.semantics",
+      "state.loading_empty_error",
+      "interaction.keyboard_navigation",
+      "interaction.focus_visible",
+      "table.tabular_figures"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.0,
+    "bundle_size": 7,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 2,
+    "guardrail_size": 5,
+    "bundle_tokens": 848,
+    "coverage_per_1k_tokens": 8.25,
+    "mean_purity": 0.71,
+    "contaminated": [],
+    "category_diversity": 0.71,
+    "duplicate_pressure": 0.43,
+    "facet_coverage": 0.6,
+    "redundancy": 0.38
+  },
+  "token_coverage": 0.83,
+  "omitted": [
+    {
+      "id": "comp-chart-container",
+      "reason": "contamination: chart-specific record with no chart evidence in the request"
+    },
+    {
+      "id": "comp-wizard-stepper",
+      "reason": "contamination: product-specific (ecommerce,finance,government,healthcare,saas) vs ['erp']; low purity 0.00: most of its concepts are off-task"
+    }
+  ],
+  "rejected": [
+    {
+      "id": "comp-product-detail-page",
+      "reason": "platform ['mobile', 'web'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-checkout-one-page",
+      "reason": "platform ['mobile', 'web'] not in request ['desktop']"
+    },
+    {
+      "id": "focus-scale-glow",
+      "reason": "platform ['tv'] not in request ['desktop']"
+    },
+    {
+      "id": "imagery-immersive-backdrop",
+      "reason": "platform ['tv', 'web'] not in request ['desktop']"
+    },
+    {
+      "id": "a11y-semantics-structure",
+      "reason": "platform ['web'] not in request ['desktop']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "a11y.accessible_names",
+      "priority": "required",
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "a11y-native-semantics",
+          0.401
+        ],
+        [
+          "a11y-labels-names",
+          0.271
+        ]
+      ],
+      "selected_record": "a11y-native-semantics",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.contrast",
+      "priority": "required",
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "a11y-nontext-contrast",
+          0.312
+        ],
+        [
+          "desktop-status-bar-and-error-navigation",
+          0.288
+        ],
+        [
+          "a11y-contrast-text",
+          0.271
+        ],
+        [
+          "anti-fashion-over-usability",
+          0.207
+        ]
+      ],
+      "selected_record": "a11y-nontext-contrast",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.semantics",
+      "priority": "required",
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "a11y-native-semantics",
+          0.401
+        ]
+      ],
+      "selected_record": "a11y-native-semantics",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "state.loading_empty_error",
+      "priority": "required",
+      "reason": "asynchronous or remote data on this screen",
+      "candidate_records": [
+        [
+          "comp-chart-container",
+          0.351
+        ],
+        [
+          "anti-no-states",
+          0.207
+        ],
+        [
+          "layout-states-empty-loading-error",
+          0.207
+        ],
+        [
+          "comp-empty-state",
+          0.144
+        ]
+      ],
+      "selected_record": "layout-states-empty-loading-error",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.keyboard_navigation",
+      "priority": "required",
+      "reason": "desktop keyboard-first",
+      "candidate_records": [
+        [
+          "comp-data-entry-grid",
+          0.366
+        ],
+        [
+          "a11y-keyboard-operable",
+          0.352
+        ],
+        [
+          "desktop-keyboard-first",
+          0.324
+        ],
+        [
+          "grid-single-tab-stop",
+          0.324
+        ]
+      ],
+      "selected_record": "a11y-keyboard-operable",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.focus_visible",
+      "priority": "required",
+      "reason": "desktop focus",
+      "candidate_records": [
+        [
+          "focus-ring-standard",
+          0.376
+        ],
+        [
+          "a11y-focus-visible",
+          0.35
+        ],
+        [
+          "desktop-keyboard-first",
+          0.324
+        ],
+        [
+          "grid-single-tab-stop",
+          0.324
+        ]
+      ],
+      "selected_record": "a11y-nontext-contrast",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "table.tabular_figures",
+      "priority": "required",
+      "reason": "numeric data",
+      "candidate_records": [
+        [
+          "layout-table-first",
+          0.348
+        ],
+        [
+          "comp-data-table",
+          0.324
+        ],
+        [
+          "data-tables-numeric",
+          0.324
+        ],
+        [
+          "comp-kpi-tile",
+          0.261
+        ]
+      ],
+      "selected_record": "typo-scale-and-roles",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.text_scaling",
+      "priority": "recommended",
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "a11y-text-scaling",
+          0.243
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "a11y.reduced_motion",
+      "priority": "recommended",
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "onboarding-first-run",
+          0.261
+        ],
+        [
+          "a11y-reduced-motion",
+          0.243
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "a11y.live_status",
+      "priority": "recommended",
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "desktop-status-bar-and-error-navigation",
+          0.288
+        ],
+        [
+          "a11y-live-status",
+          0.243
+        ],
+        [
+          "search-filter-feedback",
+          0.207
+        ],
+        [
+          "comp-toast-notification",
+          0.18
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "recommended",
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.207
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.shortcuts",
+      "priority": "recommended",
+      "reason": "desktop accelerators",
+      "candidate_records": [
+        [
+          "cta-toolbar-commands",
+          0.348
+        ],
+        [
+          "desktop-keyboard-first",
+          0.324
+        ],
+        [
+          "desktop-status-bar-and-error-navigation",
+          0.288
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "desktop.persist_workspace",
+      "priority": "recommended",
+      "reason": "desktop state persistence",
+      "candidate_records": [
+        [
+          "desktop-state-persistence",
+          0.297
+        ],
+        [
+          "desktop-status-bar-and-error-navigation",
+          0.288
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "desktop.fluent_materials",
+      "priority": "recommended",
+      "reason": "Windows stack",
+      "candidate_records": [
+        [
+          "desktop-fluent-materials",
+          0.288
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "data.pagination_strategy",
+      "priority": "recommended",
+      "reason": "long lists",
+      "candidate_records": [
+        [
+          "comp-data-table",
+          0.324
+        ],
+        [
+          "comp-pagination",
+          0.144
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "a11y.color_not_only",
+      "priority": "recommended",
+      "reason": "related to a11y.contrast",
+      "candidate_records": [
+        [
+          "comp-chart-container",
+          0.351
+        ],
+        [
+          "a11y-color-not-only",
+          0.271
+        ],
+        [
+          "chart-heatmap-matrix",
+          0.198
+        ],
+        [
+          "chart-accessible-colour",
+          0.18
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    }
+  ]
+}

@@ -1,0 +1,240 @@
+{
+  "task": "p4-15",
+  "viewport": "1080x1920",
+  "generated": "2026-09-09T08:34:58.696Z",
+  "checks": [
+    {
+      "name": "attract+chooser: all targets >= 64px",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "attract+chooser: Start still present alongside the chooser",
+      "pass": true
+    },
+    {
+      "name": "attract+chooser: chooser and its two rows have accessible names; one pressed per row",
+      "pass": true,
+      "detail": [
+        {
+          "name": "Language",
+          "pressed": [
+            "true",
+            "false"
+          ]
+        },
+        {
+          "name": "View",
+          "pressed": [
+            "true",
+            "false"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "attract+chooser: chooser text contrast >= 4.5:1",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "attract+chooser: no :hover-only rules",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "chooser: language applies immediately (html lang, attract title, pressed state) and chooser stays",
+      "pass": true,
+      "detail": {
+        "lang": "es",
+        "h1": "Recoja su receta aquí",
+        "pressed": "true",
+        "chooser": true
+      }
+    },
+    {
+      "name": "chooser: accessible mode applies immediately (data-a11y, pressed state, utilbar toggle agrees)",
+      "pass": true,
+      "detail": {
+        "a11y": "on",
+        "pressed": "true",
+        "bg": "rgb(0, 0, 0)",
+        "util": "true"
+      }
+    },
+    {
+      "name": "a11y:attract+chooser: all targets >= 64px",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:attract+chooser: Start still present alongside the chooser",
+      "pass": true
+    },
+    {
+      "name": "a11y:attract+chooser: chooser and its two rows have accessible names; one pressed per row",
+      "pass": true,
+      "detail": [
+        {
+          "name": "Idioma",
+          "pressed": [
+            "false",
+            "true"
+          ]
+        },
+        {
+          "name": "Vista",
+          "pressed": [
+            "false",
+            "true"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "a11y:attract+chooser: chooser text contrast >= 4.5:1",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:attract+chooser: no :hover-only rules",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "a11y:attract+chooser: all controls in lower 60% (y >= 768)",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "chooser: Continue dismisses it, foot language switch returns, choices kept, still on attract with no session",
+      "pass": true,
+      "detail": {
+        "chooser": false,
+        "foot": true,
+        "lang": "es",
+        "a11y": "on",
+        "screen": "attract",
+        "session": false
+      }
+    },
+    {
+      "name": "persist: es + accessible mode hold on identify, list and confirm",
+      "pass": true,
+      "detail": {
+        "s1": {
+          "lang": "es",
+          "a11y": "on",
+          "h1": "Escriba su fecha de nacimiento"
+        },
+        "s2": {
+          "lang": "es",
+          "a11y": "on",
+          "h1": "Listas para O••••r"
+        },
+        "s3": {
+          "lang": "es",
+          "a11y": "on",
+          "h1": "Confirme su recogida"
+        }
+      }
+    },
+    {
+      "name": "flow: identify -> list -> confirm reachable with the same selectors as before",
+      "pass": true
+    },
+    {
+      "name": "idle: warning dialog appears in the chosen language with a countdown",
+      "pass": true,
+      "detail": {
+        "open": true,
+        "title": "¿Sigue ahí?",
+        "cd": "1"
+      }
+    },
+    {
+      "name": "idle: reset returns to attract, clears session, closes dialog",
+      "pass": true,
+      "detail": {
+        "lang": "en",
+        "a11y": false,
+        "chosen": false
+      }
+    },
+    {
+      "name": "idle: no personal data left in DOM",
+      "pass": true
+    },
+    {
+      "name": "idle: next visitor gets defaults (en, standard) and the chooser again",
+      "pass": true,
+      "detail": {
+        "lang": "en",
+        "a11y": "off",
+        "chooser": true
+      }
+    },
+    {
+      "name": "chooser: Start over returns to attract with the chooser",
+      "pass": true,
+      "detail": {
+        "chooser": true,
+        "chosen": false
+      }
+    },
+    {
+      "name": "config: ?chooser=off restores the original attract screen",
+      "pass": true,
+      "detail": {
+        "chooser": false,
+        "foot": true
+      }
+    },
+    {
+      "name": "a11y default install: chooser pre-selects Accessible mode",
+      "pass": true
+    },
+    {
+      "name": "focus: keyboard Tab reaches the chooser with a visible ring",
+      "pass": true,
+      "detail": {
+        "label": "Continue",
+        "outline": "solid",
+        "width": "6px"
+      }
+    }
+  ],
+  "attract": {
+    "targets": 8,
+    "minTarget": 72,
+    "controls": [
+      "Touch to start@974 676x200",
+      "Continue@1382 189x72",
+      "English@1478 368x78",
+      "Español@1478 368x78",
+      "Standard view@1580 368x117",
+      "Accessible mode: larger text, high contr@1580 368x117",
+      "Accessible mode@1756 312x116",
+      "Help / call staff@1756 312x116"
+    ]
+  },
+  "a11y:attract": {
+    "targets": 8,
+    "minTarget": 84,
+    "controls": [
+      "Toque para empezar@928 530x240",
+      "Continuar@1251 230x84",
+      "English@1351 368x84",
+      "Español@1351 368x84",
+      "Vista estándar@1451 368x205",
+      "Modo accesible: texto más grande, alto c@1451 368x205",
+      "Vista estándar@1714 312x158",
+      "Ayuda / llamar personal@1714 312x158"
+    ]
+  },
+  "summary": {
+    "checks": 24,
+    "passed": 24,
+    "failed": []
+  }
+}

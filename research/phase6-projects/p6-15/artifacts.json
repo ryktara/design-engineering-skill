@@ -1,0 +1,137 @@
+{
+  "task": "p6-15",
+  "project": "p6-compose-banking",
+  "platform_expected": "mobile",
+  "platform_resolved": "mobile",
+  "platform_correct": "yes",
+  "stack": "kotlin-jetpack-compose-material3",
+  "existing_ui": true,
+  "new_screen": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": ["refactor", "polish", "audit"],
+  "mode_resolved": ["audit", "refactor"],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "moderate",
+  "render_mode": "html-twin",
+  "screenshots": [
+    "render/baseline-390x844-idle.png",
+    "render/baseline-390x844-ime.png",
+    "render/first-390x844-idle.png",
+    "render/first-390x844-ime.png",
+    "render/final-390x844-idle.png",
+    "render/final-390x844-ime.png"
+  ],
+  "context_detection": {
+    "navigation": "partial",
+    "theme": "yes",
+    "typography": "yes",
+    "surfaces": "yes",
+    "spacing": "no"
+  },
+  "preservation": {
+    "navigation": true,
+    "theme": true,
+    "typography": true,
+    "component_reuse": true,
+    "unjustified_structural_change": 0
+  },
+  "expected_concepts": [
+    "touch.ime_keyboard",
+    "form.autofill_attributes",
+    "touch.minimum_target",
+    "feedback.validation_errors",
+    "interaction.focus_visible"
+  ],
+  "critical_concepts": ["touch.ime_keyboard", "form.autofill_attributes"],
+  "delivered_concepts": [
+    "a11y.live_status",
+    "brand.type_roles",
+    "interaction.keyboard_navigation",
+    "perf.layout_shift",
+    "state.loading_empty_error",
+    "table.column_priority",
+    "table.tabular_figures",
+    "touch.gestures_discoverable",
+    "touch.ime_keyboard",
+    "touch.minimum_target"
+  ],
+  "concept_recall": 0.4,
+  "critical_recall": 0.5,
+  "concept_misses": [
+    {"concept": "form.autofill_attributes", "layer": "expected-concepts"},
+    {"concept": "feedback.validation_errors", "layer": "expected-concepts"},
+    {"concept": "interaction.focus_visible", "layer": "bundle-selection"}
+  ],
+  "layer_review": {
+    "core": [],
+    "critical": [
+      "typo-scale-and-roles",
+      "mobile-keyboard-ime",
+      "mobile-density-touch",
+      "interaction-drag-drop",
+      "layout-states-empty-loading-error"
+    ],
+    "optional": [],
+    "optional_useful": 0,
+    "optional_noise": 0
+  },
+  "first_render_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+  "final_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+  "iterations": 1,
+  "guidance_relevant": 1,
+  "guidance_partial": 3,
+  "guidance_offtarget": 1,
+  "bad_guidance": [
+    {"record": "interaction-drag-drop", "category": "generic", "why": "drag-and-drop affordances, drop targets and Escape-cancel on a Compose IME/input-type defect; entered only to cover interaction.keyboard_navigation, which came from mis-sensing 'letters keyboard' as physical keyboard input. Also the longest record in the bundle."},
+    {"record": "typo-scale-and-roles", "category": "generic", "why": "selected as the bundle's only critical-concept carrier (table.tabular_figures); the project already ships a complete 13-role Typography with tabular figures. Nothing this task needed."},
+    {"record": "mobile-density-touch", "category": "generic", "why": "table-to-list-row, filter sheets and bulk selection on a screen with no table; only the touch-target clause applies and it was already satisfied at 48.dp."},
+    {"record": "layout-states-empty-loading-error", "category": "generic", "why": "loading/empty/error state design on a change that touches neither; one adjacent clause ('keep entered data')."},
+    {"record": "<bundle>", "category": "missing-critical", "why": "pre-registered critical concept form.autofill_attributes absent from the bundle's tagged concepts; its content is in mobile-keyboard-ime's prose but the id is never demanded."}
+  ],
+  "skill_effect": "helped",
+  "guidance_used": ["mobile-keyboard-ime"],
+  "guidance_ignored": [
+    {"id": "interaction-drag-drop", "why": "no drag-and-drop anywhere on the transfer screen"},
+    {"id": "typo-scale-and-roles", "why": "type system already complete; changing it is out of budget and owned by a concurrent task"},
+    {"id": "layout-states-empty-loading-error", "why": "no loading/empty state in scope for this defect fix"},
+    {"id": "mobile-density-touch", "why": "no table on this screen; the 48.dp touch-target clause was already satisfied by NbButton"}
+  ],
+  "unjustified_direction_slots": 1,
+  "process_records_needed": false,
+  "guidance_tokens": 612,
+  "misses": [
+    {"layer": "requirements", "what": "input=keyboard extracted from 'letters keyboard' as physical-keyboard input rather than an IME; pulled interaction.keyboard_navigation into required concepts and interaction-drag-drop into the bundle"},
+    {"layer": "requirements", "what": "screen=[] on a sentence naming 'the transfer screen' with amount/reference fields and a Send button; no form/payment screen type, so comp-form and feedback.validation_errors were unreachable"},
+    {"layer": "criticality", "what": "only critical concept is table.tabular_figures; touch.ime_keyboard - what the sentence is entirely about - is non-critical"},
+    {"layer": "bundle-selection", "what": "interaction.focus_visible demanded as required, candidates color-states-complete / a11y-nontext-contrast existed, dropped by cap/utility"},
+    {"layer": "direction", "what": "cta slot marked 'new' with cta-single-primary on a screen that already has exactly one primary button; the task-relevant cta-sticky-bar ranked 0.344 vs 0.353"},
+    {"layer": "project-context", "what": "design_context.spacing=UNKNOWN despite an explicit Spacing.kt 4-pt token object; navigation=top-bar on a bottom-tab Scaffold shell"}
+  ],
+  "knowledge_gaps": [],
+  "regressions": [
+    {"query": "Typing an amount on the transfer screen brings up the letters keyboard and the Send button disappears under it.", "expect": "touch.ime_keyboard marked critical (not merely required), and form.autofill_attributes in required concepts"},
+    {"query": "Typing an amount on the transfer screen brings up the letters keyboard and the Send button disappears under it.", "expect": "interaction-drag-drop not in the bundle"},
+    {"query": "the amount field on the transfer screen opens the wrong keyboard", "expect": "requirements resolve screen to form/payment instead of [], making comp-form and feedback.validation_errors reachable"},
+    {"query": "Typing an amount on the transfer screen brings up the letters keyboard and the Send button disappears under it. (direction)", "expect": "cta slot stays preserved on an existing UI at moderate budget; if any CTA record is chosen it is cta-sticky-bar, not cta-single-primary"},
+    {"query": "inspect a Compose project with a Spacing/Dimens object of named dp values", "expect": "design_context.spacing KNOWN with a 4-pt-grid value, not UNKNOWN"},
+    {"query": "inspect a Compose app whose shell is Scaffold(bottomBar = NavigationBar) with per-screen TopAppBar", "expect": "navigation reported as bottom-tabs (or bottom-tabs + top-bar), not top-bar on raw match count"}
+  ],
+  "tags": [
+    "skill-helped",
+    "requirements-miss",
+    "concept-miss",
+    "ranking-miss",
+    "direction-mismatch",
+    "context-detection-miss",
+    "preservation-ok",
+    "partial-scope-ok",
+    "tooling-limit"
+  ],
+  "build_hash_start": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947",
+  "build_hash_end": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947"
+}

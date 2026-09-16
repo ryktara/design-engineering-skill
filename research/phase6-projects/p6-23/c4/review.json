@@ -1,0 +1,9 @@
+{"task": "p6-23",
+ "records": [
+   {"id": "typo-scale-and-roles", "verdict": "partial", "category": "generic", "why": "Type-scale advice on a keyboard-operability review at change_budget low with typography a preserved slot."},
+   {"id": "desktop-keyboard-first", "verdict": "relevant", "category": "", "why": "F6 pane cycling, Ctrl+F, grid arrow/Ctrl+Shift selection, dialog default+cancel and Alt access keys are the review checklist."}
+ ],
+ "missing_critical": [],
+ "unjustified_direction_slots": 0,
+ "layer_review": {"core": [], "critical": ["typo-scale-and-roles", "desktop-keyboard-first"], "optional": []},
+ "change_vs_c3": "same - identical 2-record bundle, table.tabular_figures still marked critical and still pulling a typography record into an accessibility review, a11y-keyboard-operable still never selected, direction still 13/13 preserved."}

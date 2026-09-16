@@ -1,0 +1,117 @@
+{
+  "task": "p6-09",
+  "project": "p6-vue-inventory",
+  "platform_expected": "web",
+  "platform_resolved": "web",
+  "platform_correct": "yes",
+  "stack": "vue3 + vite + pinia + vue-router",
+  "existing_ui": true,
+  "new_screen": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": ["polish", "refactor", "audit"],
+  "mode_resolved": ["polish", "audit"],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "low",
+  "render_mode": "native",
+  "screenshots": [
+    "render/first-desktop.png", "render/first-phone.png", "render/first-dirty.png",
+    "render/first-discard.png", "render/first-dark-discard.png",
+    "render/final-desktop.png", "render/final-phone.png", "render/final-dirty.png",
+    "render/final-discard.png", "render/final-dark-discard.png"
+  ],
+  "context_detection": {
+    "navigation": "partial",
+    "theme": "partial",
+    "typography": "yes",
+    "surfaces": "yes",
+    "spacing": "partial"
+  },
+  "preservation": {
+    "navigation": true,
+    "theme": true,
+    "typography": true,
+    "component_reuse": true,
+    "unjustified_structural_change": 0
+  },
+  "expected_concepts": [
+    "layout.one_primary_action",
+    "feedback.confirmation_destructive",
+    "a11y.accessible_names",
+    "interaction.focus_visible",
+    "state.unsaved_changes_guard",
+    "process.reuse_first"
+  ],
+  "critical_concepts": ["layout.one_primary_action", "feedback.confirmation_destructive"],
+  "delivered_concepts": [
+    "a11y.dialog_focus", "brand.structural_differentiation", "data.exception_first",
+    "feedback.confirmation_destructive", "feedback.validation_errors", "form.autofill_attributes",
+    "layout.focal_hierarchy", "layout.one_primary_action", "state.loading_empty_error",
+    "state.unsaved_changes_guard", "touch.ime_keyboard"
+  ],
+  "concept_recall": 0.5,
+  "critical_recall": 1.0,
+  "concept_misses": [
+    {"concept": "a11y.accessible_names", "layer": "expected-concepts"},
+    {"concept": "interaction.focus_visible", "layer": "candidate-retrieval"},
+    {"concept": "process.reuse_first", "layer": "bundle-selection"}
+  ],
+  "first_render_defects": {
+    "visual": 0, "interaction": 0, "accessibility": 1, "platform": 0,
+    "existing-system-mismatch": 0, "implementation-bug": 0
+  },
+  "final_defects": {
+    "visual": 0, "interaction": 0, "accessibility": 0, "platform": 0,
+    "existing-system-mismatch": 0, "implementation-bug": 0
+  },
+  "iterations": 1,
+  "guidance_relevant": 2,
+  "guidance_partial": 2,
+  "guidance_offtarget": 2,
+  "bad_guidance": [
+    {"record": "anti-brand-cosmetic-only", "category": "wrong-product", "why": "multi-brand differentiation guidance (run fingerprint.py compare) promoted to CRITICAL GUARDRAIL in a single-brand internal app; triggered lexically by 'look identical'"},
+    {"record": "layout-states-empty-loading-error", "category": "generic", "why": "loading/empty/error state design for a 5-field form with no such surfaces; says nothing the task needed"},
+    {"record": "comp-form", "category": "generic", "why": "broad form guidance (labels, autofill, IME, validation); only 'primary action last' and 'unsaved-changes guard' were relevant"},
+    {"record": "layout-form-stack", "category": "generic", "why": "restates form layout rules the codebase already satisfies; silent on action hierarchy"}
+  ],
+  "layer_review": {
+    "core": ["comp-dialog", "comp-form", "layout-form-stack"],
+    "critical": ["anti-brand-cosmetic-only", "layout-states-empty-loading-error"],
+    "optional": ["layout-hierarchy-one-thing"],
+    "optional_useful": 1,
+    "optional_noise": 0
+  },
+  "guidance_used": ["layout-hierarchy-one-thing", "comp-dialog", "comp-form"],
+  "guidance_ignored": [
+    {"id": "anti-brand-cosmetic-only", "why": "single-brand app; brand-system comparison is meaningless for a two-button hierarchy defect"},
+    {"id": "layout-states-empty-loading-error", "why": "the form has no loading/empty/error surface beyond existing notices"},
+    {"id": "layout-form-stack", "why": "the existing markup already follows it"}
+  ],
+  "unjustified_direction_slots": 1,
+  "process_records_needed": false,
+  "skill_effect": "helped",
+  "guidance_tokens": 1059,
+  "misses": [
+    {"layer": "criticality", "what": "brand.structural_differentiation made critical and layout.one_primary_action only recommended, from the phrase 'look identical'; the load-bearing record landed in OPTIONAL while both CRITICAL GUARDRAILS were off-target"},
+    {"layer": "expected-concepts", "what": "no concept or record covers primary/secondary/destructive action hierarchy in a form footer — the literal subject of the sentence"},
+    {"layer": "direction", "what": "cards slot marked 'new' (list rows) on a low-budget existing UI the task does not touch; cta slot marked 'preserved' though CTA hierarchy is the task"},
+    {"layer": "project-context", "what": "navigation detected as top-bar only (misses the persistent side rail); theme, spacing and components UNKNOWN although tokens.css states them explicitly"}
+  ],
+  "knowledge_gaps": ["No record covers action-button hierarchy in a form/dialog footer (primary vs secondary vs destructive, ordering, confirmation)."],
+  "regressions": [
+    {"query": "Stock adjustment form: Save and Discard look identical and people click the wrong one.", "expect": "layout.one_primary_action is critical; brand.structural_differentiation absent from the bundle"},
+    {"query": "the cancel button looks the same as the submit button", "expect": "a CORE record about primary / secondary / destructive action hierarchy"},
+    {"query": "inspect a Vue app whose App.vue renders both a side rail and a top bar", "expect": "navigation reports the rail, not top-bar"},
+    {"query": "inspect a project whose tokens.css defines [data-theme='dark']", "expect": "theme KNOWN (light+dark), not UNKNOWN"}
+  ],
+  "tags": [
+    "concept-miss", "ranking-miss", "knowledge-gap", "direction-mismatch",
+    "context-detection-miss", "render-defect-fixed", "skill-helped", "preservation-ok"
+  ],
+  "build_hash_start": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947",
+  "build_hash_end": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947"
+}

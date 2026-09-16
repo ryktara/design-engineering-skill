@@ -1,0 +1,129 @@
+{
+  "brand": "facility managers don't notice new alerts; make exceptions the first thing they see on the dashboard without redesigning it",
+  "fingerprint": {
+    "navigation_model": "top-bar",
+    "layout_topology": "dashboard-grid",
+    "grid_behavior": "responsive-columns",
+    "surface_strategy": "bordered",
+    "card_geometry": "flat-tile",
+    "corner_language": "small",
+    "typography_character": "geometric-sans",
+    "color_strategy": "neutral-plus-accent",
+    "motion_character": "functional-minimal",
+    "focus_strategy": "ring",
+    "cta_strategy": "contextual-inline",
+    "image_strategy": "data-graphics",
+    "icon_strategy": "outline",
+    "metadata_density": "moderate"
+  },
+  "direction": {
+    "navigation": "nav-top-bar",
+    "layout": "layout-dashboard-grid",
+    "density": null,
+    "surface": "surface-bordered-panes",
+    "cards": "card-flat-tile",
+    "typography": "typography-geometric-sans",
+    "color": "color-neutral-accent",
+    "motion": "motion-functional-minimal",
+    "focus": "focus-ring-standard",
+    "cta": "cta-contextual-inline",
+    "imagery": "imagery-data-graphics",
+    "icon": "icon-outline-system",
+    "metadata": "metadata-moderate"
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [
+      "iot"
+    ],
+    "screen": [
+      "dashboard"
+    ],
+    "screen_subtype": [],
+    "stack": [
+      "react"
+    ],
+    "density": null,
+    "components": [
+      "notification"
+    ],
+    "environment": [],
+    "jobs": [
+      "monitor"
+    ],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "monitor",
+      "audit dashboard"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "low",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "mode_evidence": [
+      "audit: problem statement on existing UI",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": "top-bar (KNOWN)",
+      "theme": "light-first (INFERRED)",
+      "surfaces": "bordered-flat (INFERRED)",
+      "radius": "small (INFERRED)",
+      "spacing": "4 (INFERRED)"
+    },
+    "known": [
+      "platform=web",
+      "product=iot",
+      "stack=react",
+      "screen=dashboard",
+      "job=monitor",
+      "project_navigation=top-bar"
+    ],
+    "inferred": [
+      "input=pointer",
+      "input=keyboard",
+      "input=touch",
+      "mode=audit",
+      "mode=refactor",
+      "project_theme=light-first",
+      "project_surfaces=bordered-flat",
+      "project_radius=small",
+      "project_spacing=4"
+    ],
+    "missing": [],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

@@ -1,0 +1,51 @@
+{"task": "p5-17", "project": "p5-avalonia-fleet", "platform_expected": "desktop", "platform_resolved": "desktop", "platform_correct": "yes",
+ "stack": "C# / Avalonia 11.2 (net8.0), hand-rolled MVVM", "existing_ui": true, "new_screen": false,
+ "artifact_state_expected": "existing", "artifact_state_resolved": "existing", "artifact_state_correct": true,
+ "mode_expected": ["refactor", "polish", "audit"], "mode_resolved": ["audit", "refactor"], "mode_correct": "yes",
+ "scope_kind_expected": "in-scope", "scope_kind_resolved": "in-scope", "scope_correct": true,
+ "change_budget": "moderate", "render_mode": "html-twin",
+ "screenshots": ["render/first-dispatch-1440x900.png", "render/first-dispatch-prompt-1440x900.png", "render/final-dispatch-1440x900.png", "render/final-dispatch-prompt-1440x900.png"],
+ "context_detection": {"navigation": "yes", "theme": "yes", "typography": "partial", "surfaces": "partial", "spacing": "no"},
+ "preservation": {"navigation": true, "theme": true, "typography": true, "component_reuse": true, "unjustified_structural_change": 0},
+ "expected_concepts": ["state.unsaved_changes_guard", "feedback.confirmation_destructive", "a11y.dialog_focus", "interaction.focus_restore", "state.saving_conflict", "process.reuse_first"],
+ "critical_concepts": ["state.unsaved_changes_guard", "feedback.confirmation_destructive"],
+ "delivered_concepts": ["feedback.validation_errors", "touch.ime_keyboard", "form.autofill_attributes", "state.unsaved_changes_guard", "layout.one_primary_action", "interaction.keyboard_navigation", "interaction.shortcuts", "interaction.focus_visible", "interaction.hover_independence", "a11y.live_status", "a11y.contrast", "desktop.persist_workspace"],
+ "concept_recall": 0.167, "critical_recall": 0.5,
+ "concept_misses": [
+  {"concept": "feedback.confirmation_destructive", "layer": "expected-concepts"},
+  {"concept": "a11y.dialog_focus", "layer": "expected-concepts"},
+  {"concept": "interaction.focus_restore", "layer": "expected-concepts"},
+  {"concept": "state.saving_conflict", "layer": "bundle-selection"},
+  {"concept": "process.reuse_first", "layer": "candidate-retrieval"}
+ ],
+ "first_render_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 1},
+ "final_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+ "iterations": 1, "guidance_relevant": 1, "guidance_partial": 3, "guidance_offtarget": 2,
+ "bad_guidance": [
+  {"record": "a11y-hover-not-required", "category": "generic", "why": "no hover-revealed content in the task; selected only to cover the accessibility concern"},
+  {"record": "a11y-forms-errors", "category": "generic", "why": "validation/error recovery; the task has no validation cue; displaces a dialog record"},
+  {"record": "bundle", "category": "missing-critical", "why": "no dialog record (focus in/trap/return, confirmation with safe default) although comp-dialog, a11y-modal-dialog and states-persistence-and-session exist and are desktop-eligible"},
+  {"record": "direction:layout", "category": "contradicts-codebase", "why": "slot 'new: layout-form-stack' for a screen that is a master-detail list + detail pane"},
+  {"record": "direction:typography", "category": "contradicts-codebase", "why": "suggests Manrope/Outfit/Urbanist under a slot marked preserve; codebase is Segoe UI / Inter"},
+  {"record": "direction:density", "category": "contradicts-codebase", "why": "reports a change 4 -> medium; the codebase already uses an 8-px medium scale (inherited inspect error)"}
+ ],
+ "skill_effect": "helped", "guidance_tokens": 1083,
+ "misses": [
+  {"layer": "requirements", "what": "problem_domain = [interaction] only; 'lose an unsaved job' yields no data-loss / dirty-state signal; preserve = []"},
+  {"layer": "concerns", "what": "state.unsaved_changes_guard (the task itself) only recommended; feedback.validation_errors required with no validation cue; feedback.confirmation_destructive, a11y.dialog_focus, interaction.focus_restore never demanded"},
+  {"layer": "bundle-selection", "what": "two generic accessibility rules fill the 6-record cap while states-persistence-and-session (rank 6 in search, desktop) is dropped"},
+  {"layer": "candidate-retrieval", "what": "impl-reuse-before-new not retrieved although process.reuse_first is recommended and artifact_state is existing"},
+  {"layer": "direction", "what": "layout slot form-stack for a master-detail screen; phantom density change; typography font list; focus/surface slots marked 'no repository evidence' although Theme.axaml has both"},
+  {"layer": "project-adaptation", "what": "inspect: spacing 4 (is 8), surfaces tonal (is bordered), radius unknown (is 4), tokens/fonts empty"}
+ ],
+ "knowledge_gaps": [],
+ "regressions": [
+  {"query": "The dispatch job form lets you lose an unsaved job by clicking another one. (avalonia desktop project)", "expect": "state.unsaved_changes_guard and feedback.confirmation_destructive required; bundle has comp-dialog or a11y-modal-dialog plus states-persistence-and-session; no hover/validation rules without a cue"},
+  {"query": "Users lose their edits when they switch records in the settings page (web, existing)", "expect": "in-scope without the word 'form'; same two critical concepts"},
+  {"query": "The editor lets you close the window with unsaved changes (desktop)", "expect": "unsaved_changes_guard, confirmation_destructive, dialog_focus demanded; a dialog record in the bundle"},
+  {"query": "direction on an existing screen with ListBox + detail Grid ColumnDefinitions=360,16,*", "expect": "layout slot preserved as master-detail, not new form-stack; surface slot preserved (borders present)"},
+  {"query": "requirements for a form task with no validation cue", "expect": "feedback.validation_errors not in required concepts"},
+  {"query": "inspect Theme.axaml with CornerRadius/Thickness/x:Double Space resources", "expect": "radius 4 KNOWN, surfaces flat-bordered, spacing 8, tokens non-empty; direction reports no density change"}
+ ],
+ "tags": ["requirements-miss", "concept-miss", "ranking-miss", "context-detection-miss", "direction-mismatch", "render-defect-fixed", "skill-helped", "preservation-ok", "tooling-limit"],
+ "build_hash_start": "bf034323a2b68202e8c902768e0de78cd93761b1a71670a49ee595648cd5f0d8", "build_hash_end": "bf034323a2b68202e8c902768e0de78cd93761b1a71670a49ee595648cd5f0d8"}

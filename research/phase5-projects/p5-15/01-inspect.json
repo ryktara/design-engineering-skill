@@ -1,0 +1,116 @@
+{
+  "root": "D:\\indigo pro\\MYownSkills\\research\\phase3-projects\\p3-winui-erp-audit\\project",
+  "findings": [
+    {
+      "status": "KNOWN",
+      "note": "Erp.Client.csproj: Microsoft.WindowsAppSDK"
+    },
+    {
+      "status": "KNOWN",
+      "note": "Erp.Client.csproj: CommunityToolkit.WinUI"
+    }
+  ],
+  "stack_groups": [
+    "winui"
+  ],
+  "platforms": [
+    "desktop"
+  ],
+  "ui_libraries": [
+    "winui3",
+    "community-toolkit"
+  ],
+  "package_manager": null,
+  "css_architecture": [],
+  "tokens": [
+    "App.xaml"
+  ],
+  "fonts": [],
+  "icons": [],
+  "routing": [
+    "Views/ (views)",
+    "ViewModels/ (mvvm viewmodels)"
+  ],
+  "breakpoints": [],
+  "accessibility": [
+    "a11y attributes present in 2 files"
+  ],
+  "focus_handling": [
+    "explicit focus handling in 3 files"
+  ],
+  "design_docs": [],
+  "component_dirs": [],
+  "tests": [],
+  "i18n": [],
+  "product_hints": [
+    "erp"
+  ],
+  "sample": {
+    "files_scanned": 15
+  },
+  "design_context": {
+    "navigation": {
+      "value": "left-rail",
+      "status": "KNOWN",
+      "evidence": [
+        "left-rail: 3 matches in MainWindow.xaml, OrdersPage.xaml (shell/layout file)",
+        "also menu-bar: 11 matches"
+      ],
+      "candidates": {
+        "left-rail": 3,
+        "menu-bar": 11
+      }
+    },
+    "theme": {
+      "value": "dual-theme",
+      "status": "INFERRED",
+      "evidence": [
+        "dark theme configuration signals: 1",
+        "hex palette: 0 near-white, 0 near-black"
+      ]
+    },
+    "surfaces": {
+      "value": "bordered-flat",
+      "status": "INFERRED",
+      "evidence": [
+        "weak signal: shadow 0, border 1"
+      ]
+    },
+    "radius": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "spacing": {
+      "value": 4,
+      "status": "INFERRED",
+      "evidence": [
+        "most used spacing values [16, 8, 12, 4, 2]"
+      ]
+    },
+    "typography": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": [
+        "no font family declaration found"
+      ],
+      "features": {
+        "weights": [
+          "semibold"
+        ],
+        "type_scale": false,
+        "monospace": false,
+        "tabular_numerals": false
+      }
+    },
+    "components": {
+      "value": "winui3, community-toolkit",
+      "status": "KNOWN",
+      "evidence": [
+        "winui3",
+        "community-toolkit"
+      ]
+    },
+    "schema": "design-context/v1"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "cases": 180,
+  "proxy": {
+    "tp": 76,
+    "fp": 3,
+    "tn": 71,
+    "fn": 0,
+    "precision": 0.962,
+    "recall": 1.0,
+    "false_positive_rate": 0.041,
+    "false_negative_rate": 0.0,
+    "ambiguous_behaviour": {
+      "activate": 13,
+      "skip": 7,
+      "ambiguous": 10
+    },
+    "per_group": {
+      "positive": {
+        "n": 60,
+        "correct": 60
+      },
+      "negative": {
+        "n": 60,
+        "correct": 59
+      },
+      "ambiguous": {
+        "n": 30,
+        "correct": 17
+      },
+      "competing": {
+        "n": 30,
+        "correct": 28
+      }
+    },
+    "false_positives": [
+      {
+        "id": "act-119",
+        "prompt": "How should we shard the tenants table for multi-tenancy"
+      },
+      {
+        "id": "act-159",
+        "prompt": "Tailwind classes aren't being purged in production build"
+      },
+      {
+        "id": "act-180",
+        "prompt": "Avalonia DataGrid binding throws on null collection at startup"
+      }
+    ],
+    "false_negatives": []
+  }
+}

@@ -1,0 +1,85 @@
+## design-engineering search: add a first-visit language and accessibility-mode chooser to the kiosk attract screen without changing the pick-up flow
+status=AMBIGUOUS modes=['accessibility', 'create'] platforms={'kiosk': 'KNOWN'} inputs={'touch': 'INFERRED'} products={'healthcare': 'KNOWN', 'government': 'KNOWN'} density=None stacks=['html-css'] screens=[] negatives=[]
+facets required=['accessibility', 'interaction', 'component', 'platform', 'anti-pattern'] unmet=[] diversity=0.92
+CONFLICTS: platform (request kept; repository platform recorded as context)
+
+### Hub and spoke  `nav-hub-spoke`  [pattern/navigation; navigation/platform] score 0.371 · heuristic
+One home screen of large, labelled entry points; each spoke is a linear flow with an obvious way back to the hub. Group entry points by user goal, not by internal system module. On kiosks, the hub also serves as the idle/attract screen and every spoke must time out back to it.
+- use when: Infrequent, distinct tasks (pay a bill, book a slot, check a reading) where users come in for one job and leave; kiosks and public-service apps.
+- avoid when: Frequent switching between areas, browsing/discovery products, or dense tools.
+- incompatible with: nav-left-rail, nav-bottom-tabs, nav-top-bar, layout-three-pane
+- why: lexical 0.079, structural 0.64 (platform kiosk, input touch, secondary mode, product government,healthcare)
+
+### Offline, sync, and connectivity states  `states-offline-and-sync`  [rule/states; component/platform] score 0.36 · engineering-practice
+Design the offline state as a first-class state: show connectivity clearly but calmly (a persistent status strip, not a blocking modal), keep already-loaded content usable, queue writes locally with a visible 'pending sync' marker per item and a 'last synced' timestamp, retry automatically with backoff and let the user retry manually, never lose entered data, and resolve conflicts explicitly (show both versions or last-writer-wins with an undo). Reads: stale data is labelled with its age.
+- use when: Field, travel, and public-venue apps; anything used with poor connectivity; any screen that writes data.
+- avoid when: Read-only always-online desktop tools where connectivity loss is exceptional (still show an error, not a blank).
+- why: lexical 0.181, structural 0.58 (platform kiosk, secondary mode)
+
+### Touch-only focus handling (mobile)  `focus-none-touch-only`  [pattern/focus; interaction/platform] score 0.321 · platform-standard
+Pressed state within 100 ms (ripple/opacity/scale), 44 pt / 48 dp targets, screen-reader focus order = visual order, and platform focus visuals left enabled for keyboard/switch users (do not disable). Kiosks: larger targets (≥ 60 px) and no hover-dependent affordances.
+- use when: Native mobile and kiosk apps where there is no persistent keyboard focus; feedback is pressed state + screen-reader focus provided by the platform.
+- avoid when: Any app that supports hardware keyboards, external pointers (iPadOS, Android desktop mode), or switch access without testing them.
+- incompatible with: focus-ring-standard, focus-scale-glow
+- why: lexical 0.0, structural 0.58 (platform kiosk, input touch, mode accessibility)
+
+### Kiosk: public, hurried, standing users  `kiosk-public-use`  [rule/input; interaction/platform] score 0.303 · platform-standard
+Targets ≥60 px, body text ≥20 px, high contrast for glare, one task per screen, reachable-height controls (ADA reach ranges: interactive elements within 380–1220 mm), idle timeout with countdown that clears the session, attract screen as the hub, audio/visual feedback on every tap, and a visible way to cancel at every step.
+- use when: Self-service, POS, check-in, ticketing, signage with touch.
+- avoid when: Never require hover, precise dragging, small text, or scrolling to find the primary action; never keep personal data on screen after inactivity.
+- incompatible with: layout-table-first, density-high, nav-menu-bar-desktop
+- why: lexical 0.027, structural 0.64 (platform kiosk, input touch, secondary mode)
+
+### Illustration system  `imagery-illustration`  [pattern/imagery; platform/visual] score 0.301 · aesthetic
+Define the style (line, flat, isometric) once, use it in ≤4 places (onboarding, empty, error, success), keep it meaningful (depicts the task), and mark decorative instances aria-hidden.
+- use when: Onboarding, empty states, and explanatory moments where a consistent illustration style (one stroke weight, one palette) supports comprehension; brands with an illustration language.
+- avoid when: As decoration on every card/section (the 'blob and person' AI marker), or when no consistent style can be maintained.
+- incompatible with: imagery-immersive-backdrop, density-high, layout-table-first
+- why: lexical 0.036, structural 0.58 (platform kiosk, secondary mode, product government,healthcare)
+
+### Rounded friendly sans  `typography-rounded-friendly`  [pattern/typography; platform/visual] score 0.298 · aesthetic
+Rounded terminals (e.g. Nunito, Quicksand for display only, Varela Round, M PLUS Rounded) with generous size; keep weights ≥500 for legibility; pair corner radius and icon style consistently with the type.
+- use when: Children, wellness, playful consumer brands, kiosks for the general public.
+- avoid when: Finance, enterprise, anything where 'friendly' undermines trust; also avoid if it is only chosen because the icons are rounded.
+- incompatible with: typography-serif-editorial, density-high, surface-bordered-panes
+- why: lexical 0.0, structural 0.64 (platform kiosk, input touch, secondary mode, product healthcare)
+
+### Dark mode is a redesign of surfaces, not an inversion  `color-dark-mode-rules`  [rule/color; visual] score 0.295 · platform-standard
+Elevation = lighter surface (not darker shadow); desaturate accents; text 87/60/38% white steps for primary/secondary/disabled; borders lighten; images may need a slight dim; charts get a dark palette; re-validate every contrast pair.
+- use when: Adding or auditing dark themes.
+- avoid when: Never invert colours programmatically; never keep saturated light-theme accents unchanged; never use pure white text.
+- why: lexical 0.161, structural 0.46 (secondary mode)
+
+### Dark mode by inversion  `anti-dark-mode-inversion`  [antipattern/craft; anti-pattern] score 0.291 · platform-standard
+Redesign surfaces (elevation = lighter), desaturate accents, use 87/60/38% white text steps, re-validate every pair, define dark chart palettes. See the dark mode rule.
+- use when: Pure black canvas with pure white text, saturated light-theme accents on dark, shadows that vanish, borders that disappear, images unchanged.
+- avoid when: Never.
+- why: lexical 0.218, structural 0.38 (generic)
+
+### Neutral workhorse sans  `typography-neutral-sans`  [pattern/typography; visual] score 0.288 · heuristic
+One family with tabular figures and a wide weight range (e.g. IBM Plex Sans, Source Sans 3, Public Sans, Atkinson Hyperlegible, or the platform system font). Display role uses the same family at heavier weight and tighter tracking rather than a second face. If the codebase already uses a system font, keep it.
+- use when: Dense, functional UI where the type must disappear: tables, forms, consoles. Prioritise x-height, tabular figures, and broad language coverage.
+- avoid when: Brand-led or editorial products where the type is part of the identity (this choice will read as default).
+- incompatible with: typography-serif-display, typography-condensed-display
+- why: lexical 0.038, structural 0.46 (secondary mode, product government,healthcare)
+
+### UI changes must not break routes, state, contracts, or tests  `impl-safe-modification`  [rule/implementation; process] score 0.284 · engineering-practice
+Keep routes, state management, API calls, data-testid/automation ids, accessibility semantics, keyboard/remote handling, playback/auth flows unchanged unless the task is about them; run the existing tests; verify each supported input mode still works after the change.
+- use when: Any modification to an existing screen.
+- avoid when: Never rename props/ids/routes/test hooks as part of a visual change; never mix backend changes into a UI commit.
+- why: lexical 0.14, structural 0.46 (secondary mode)
+
+### Single column, one task  `layout-single-column`  [pattern/layout; layout/platform] score 0.27 · heuristic
+Content width capped for reading (~60–75 characters per line), vertical rhythm from the spacing scale, primary action reachable without scrolling on the shortest supported viewport, or sticky at the bottom.
+- use when: Phone screens, forms, reading, onboarding, kiosks: one primary thing per screen.
+- avoid when: Comparison tasks, dense data, or wide desktop windows where a single narrow column wastes the viewport and forces scrolling.
+- incompatible with: layout-three-pane, layout-dashboard-grid, layout-table-first
+- why: lexical 0.022, structural 0.44 (platform kiosk, secondary mode)
+
+### Never colour alone  `a11y-color-not-only`  [rule/accessibility; accessibility] score 0.263 · accessibility-requirement
+Pair colour with text, icon, pattern, weight, or underline. Error fields get an icon and message; chart series get labels or line styles; links in prose get underlines; selected rows get a check or a border, not only a tint.
+- use when: Status, validation errors, chart series, selected/active states, required fields, links inside text.
+- avoid when: Never skip.
+- why: lexical 0.037, structural 0.54 (mode accessibility)
+
+Filtered out: anti-generic-sidebar-dashboard (platform ['desktop', 'web'] not in request ['kiosk']); chart-flow-sankey (platform ['desktop', 'web'] not in request ['kiosk']); comp-data-table (platform ['desktop', 'web'] not in request ['kiosk']); comp-chart-container (platform ['desktop', 'mobile', 'web'] not in request ['kiosk']); comp-kpi-tile (platform ['desktop', 'mobile', 'web'] not in request ['kiosk']); comp-list-row-mobile (platform ['mobile', 'tablet'] not in request ['kiosk']); comp-data-entry-grid (platform ['desktop', 'web'] not in request ['kiosk']); comp-hero-section (platform ['mobile', 'web'] not in request ['kiosk'])

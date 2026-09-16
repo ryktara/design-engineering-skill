@@ -1,0 +1,24 @@
+{
+  "task": "p5-13",
+  "reviewer_model": "claude-opus-5[1m]",
+  "c2_records": [
+    {"id": "dir-industrial-hmi", "verdict": "off-target", "bad_category": "contradicts-codebase"},
+    {"id": "comp-kiosk-keypad", "verdict": "relevant", "bad_category": null},
+    {"id": "i18n-text-expansion-rtl", "verdict": "relevant", "bad_category": null},
+    {"id": "kiosk-public-use", "verdict": "relevant", "bad_category": null},
+    {"id": "impl-reuse-before-new", "verdict": "relevant", "bad_category": null},
+    {"id": "a11y-time-and-auto", "verdict": "off-target", "bad_category": "generic"}
+  ],
+  "c2_relevant": 4,
+  "c2_partial": 0,
+  "c2_offtarget": 2,
+  "c2_bad": [
+    {"record": "dir-industrial-hmi", "category": "contradicts-codebase", "why": "Grey-scale ISA-101 industrial HMI (alarms the only saturated colour, gloves, trend sparklines, confirm-and-hold) as the top core record with lexical 0.0 for a green-branded consumer pharmacy kiosk; it would restyle the theme the task must preserve, and it says nothing about language."},
+    {"record": "a11y-time-and-auto", "category": "generic", "why": "Timed-content and idle-countdown rules belong to p5-12; adding a language control touches neither the session timer nor auto-rotating content."}
+  ],
+  "c2_direction_unjustified": [],
+  "platform_mode_scope_ok": true,
+  "verdict_vs_c1": "better",
+  "why": "c1 had zero concept recall and a core record with an empty concepts list; c2 gets platform=kiosk and both critical concepts, and i18n-text-expansion-rtl now spells out the exact contract the implementer had to derive by hand (one visible control on every screen of the flow, labelled in its own language, keeps session/typed input/selection/focus, announces politely, and re-renders every label including error text - the stale-error bug that cost the c1 render iteration), while the direction dropped its ten unjustified new slots and its self-reported poster-card violation.",
+  "would_have_helped": "helped"
+}

@@ -1,0 +1,55 @@
+{
+ "files": {
+  "cases.json": {
+   "sha256": "60f3f063a1c5a6a924765bcbbe2a9d61cc752ff6330b6703b999d3e974747b63",
+   "count": 434
+  }
+ },
+ "generated": "2026-09-09",
+ "reviewed": "2026-09-09",
+ "method": "generators: six independent claude sonnet agents, blind (ONTOLOGY.md + BRIEF.md only, no access to the skill, lexicon, scripts or earlier eval sets); expectation reviewers: three independent claude opus agents, blind (different model family from the generators), case-by-case corrections logged; bundle-quality reviewers: claude opus, blind (prompt + guidance text only). Cases were generated after the Phase 5 c1 freeze and placed here after the c2 freeze; the concept ontology is unchanged between c1 and c2.",
+ "generation_folder": "research/heldout-v4-generation (gen-g1..g6.json, review-chunk-*.json, reviewed-chunk-*.json, cases-reviewed.json)",
+ "thresholds_file": "THRESHOLDS.md",
+ "thresholds_sha256": "e880c59e4c4b70ef50dd75eaa72c23ae8d9c5e4d585b22289ca617398982c3f6",
+ "thresholds_sha256_preregistered": "e880c59e4c4b70ef50dd75eaa72c23ae8d9c5e4d585b22289ca617398982c3f6",
+ "build_under_test": {
+  "candidate": "c2",
+  "build_sha256": "50966e8e6184f31722a7b3c7f270a241dd0f7b68187492d0c971f7c79734e680"
+ },
+ "run_policy": "exactly one blind run (research/runs/heldout-v4-run1-blind.json); no case edits, no tuning against this set; results reported in full including every failed threshold",
+ "distribution": {
+  "category": {
+   "create": 72,
+   "refactor": 72,
+   "polish": 52,
+   "responsive": 30,
+   "audit-review": 42,
+   "accessibility": 40,
+   "tv-media": 26,
+   "desktop-native": 26,
+   "mobile-native": 26,
+   "kiosk": 22,
+   "adversarial": 26
+  },
+  "scope": {
+   "in-scope": 407,
+   "partial": 7,
+   "abstain": 20
+  },
+  "artifact_state": {
+   "new": 66,
+   "existing": 348,
+   "unknown": 20
+  },
+  "no_explicit_mode_verb": 0.864,
+  "platform_specific_without_canonical_name": 0.886
+ },
+ "companion_files": {
+  "THRESHOLDS.md": {
+   "sha256": "e880c59e4c4b70ef50dd75eaa72c23ae8d9c5e4d585b22289ca617398982c3f6"
+  },
+  "ONTOLOGY.md": {
+   "sha256": "ef95ecbadf05004c3fbc51c5565082f68e25ee47c7c873eb311e4b288a508cf7"
+  }
+ }
+}

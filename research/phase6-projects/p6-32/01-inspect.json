@@ -1,0 +1,112 @@
+{
+  "root": "D:\\indigo pro\\MYownSkills\\research\\phase6-projects\\p6-kiosk-transit\\project",
+  "findings": [
+    {
+      "status": "KNOWN",
+      "note": "*.html without a framework manifest: plain HTML/CSS site"
+    },
+    {
+      "status": "KNOWN",
+      "note": "README: public touch kiosk (web technology is the substrate, not the target platform)"
+    }
+  ],
+  "stack_groups": [
+    "html-css"
+  ],
+  "platforms": [
+    "kiosk"
+  ],
+  "ui_libraries": [],
+  "package_manager": null,
+  "css_architecture": [
+    "plain stylesheets",
+    ".css (2 files)"
+  ],
+  "tokens": [
+    "css custom properties: --c* (17), --sp* (6), --fs* (4), --radius* (2), --lh* (2), --shadow* (2), --primary* (1), --font* (1)"
+  ],
+  "fonts": [],
+  "icons": [],
+  "routing": [],
+  "breakpoints": [],
+  "accessibility": [
+    "a11y attributes present in 1 files"
+  ],
+  "focus_handling": [
+    "explicit focus handling in 1 files"
+  ],
+  "design_docs": [],
+  "component_dirs": [],
+  "tests": [],
+  "i18n": [],
+  "product_hints": [],
+  "environment_hints": [
+    "public"
+  ],
+  "sample": {
+    "files_scanned": 8
+  },
+  "design_context": {
+    "navigation": {
+      "value": "hub-spoke",
+      "status": "KNOWN",
+      "evidence": [
+        "hub-spoke: 24 matches in README.md, app.js, i18n.js (shell/layout file)"
+      ],
+      "candidates": {
+        "hub-spoke": 24
+      }
+    },
+    "theme": {
+      "value": "light-first",
+      "status": "INFERRED",
+      "evidence": [
+        "hex palette: 8 near-white, 1 near-black"
+      ]
+    },
+    "surfaces": {
+      "value": "elevated",
+      "status": "INFERRED",
+      "evidence": [
+        "weak signal: shadow 1, border 1"
+      ]
+    },
+    "radius": {
+      "value": "small",
+      "status": "INFERRED",
+      "evidence": [
+        "most common radius 5 (3\u00d7); others [8.0, 12.0]"
+      ]
+    },
+    "spacing": {
+      "value": 4,
+      "status": "INFERRED",
+      "evidence": [
+        "most used spacing values [6, 12, 8]"
+      ]
+    },
+    "typography": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": [
+        "no font family declaration found"
+      ],
+      "features": {
+        "weights": [
+          "700",
+          "600",
+          "800"
+        ],
+        "type_scale": true,
+        "monospace": false,
+        "tabular_numerals": true
+      }
+    },
+    "components": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "schema": "design-context/v1"
+  }
+}

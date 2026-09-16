@@ -1,0 +1,35 @@
+{
+ "note": "token estimate = chars/4; queries = development guidance (39) + held-out v1 (145); frozen build",
+ "stats": {
+  "search_k5_md": {
+   "n": 184,
+   "mean": 1027,
+   "median": 1033,
+   "p95": 1161
+  },
+  "guidance_md": {
+   "n": 184,
+   "mean": 992,
+   "median": 1001,
+   "p95": 1218
+  },
+  "guidance_json": {
+   "n": 184,
+   "mean": 2585,
+   "median": 2557,
+   "p95": 3164
+  },
+  "direction_md": {
+   "n": 40,
+   "mean": 2282,
+   "median": 2230,
+   "p95": 2659
+  },
+  "bundle_size": {
+   "n": 184,
+   "mean": 7,
+   "median": 6,
+   "p95": 8
+  }
+ }
+}

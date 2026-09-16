@@ -1,0 +1,28 @@
+{
+  "task": "p5-06",
+  "reviewer_model": "claude-opus-5[1m]",
+  "c2_records": [
+    {"id": "dir-clinical-workstation", "verdict": "partial", "bad_category": null},
+    {"id": "comp-toast-notification", "verdict": "off-target", "bad_category": "generic"},
+    {"id": "a11y-keyboard-operable", "verdict": "partial", "bad_category": null},
+    {"id": "data-exceptions-first", "verdict": "relevant", "bad_category": null},
+    {"id": "a11y-skip-link", "verdict": "off-target", "bad_category": "generic"},
+    {"id": "states-offline-and-sync", "verdict": "off-target", "bad_category": "generic"}
+  ],
+  "c2_relevant": 1,
+  "c2_partial": 2,
+  "c2_offtarget": 3,
+  "c2_bad": [
+    {"record": "comp-toast-notification", "category": "generic", "why": "Selected only to satisfy 'required coverage: live region status announcements' (lexical 0.0). A per-card elapsed-time readout that ticks every 30s must NOT be a live region or a toast; the task adds a persistent status element, not a transient notification. Following it would have produced exactly the announcement noise the expectation warns against."},
+    {"record": "a11y-skip-link", "category": "generic", "why": "Selected 'for required coverage: visible focus', a concept it barely carries. The change is adding a badge and a <time> element to existing cards; bypass blocks and landmarks are a shell concern nothing in this task touches, and ClinicBoard's rail/header shell is out of the low change budget."},
+    {"record": "states-offline-and-sync", "category": "generic", "why": "Selected 'for required coverage: environment' from env=shared-device. ClinicBoard holds all data in memory (src/lib/stores.ts, deterministic sample data) - there is no network layer, no queued write, no conflict and no sync. Only its 'label stale data with its age' clause has any bearing, and the record spends its budget on offline strips, pending-sync markers and conflict resolution that cannot be built here."},
+    {"record": "impl-reuse-before-new", "category": "missing-critical", "why": "process.reuse_first is again UNCOVERED (cap/utility) on a low-budget addition to an existing screen whose whole method was reusing Badge and Button and the project's tabular-nums convention."}
+  ],
+  "c2_direction_unjustified": [
+    {"slot": "fingerprint.corner_language", "why": "'sharp' while inspect reports radius=UNKNOWN and the code uses rounded/rounded-sm (4px/2px) on 13 files; the value is asserted from no evidence. Minor - the direction's corner slot itself is null."}
+  ],
+  "platform_mode_scope_ok": true,
+  "verdict_vs_c1": "better",
+  "why": "c1 abstained outright (OUT_OF_SCOPE, zero records, 0/7 concept recall) on a plainly in-scope UI sentence; c2 classifies it in-scope and delivers data-exceptions-first, which maps almost line-for-line onto the shipped fix (status computed in the model, word+icon+colour badge, exceptions sorted first, count in the column header, state the threshold rule) plus dir-clinical-workstation's 'never colour alone / large legible numerics' - although half the bundle is still filler (toast, skip link, offline-sync) and data.realtime_window and perf.layout_shift remain undelivered.",
+  "would_have_helped": "helped"
+}

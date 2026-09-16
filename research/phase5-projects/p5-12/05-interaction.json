@@ -1,0 +1,200 @@
+{
+  "checks": [
+    {
+      "name": "defaults: identify idle window > data-screen window",
+      "pass": true,
+      "detail": {
+        "idleWarnMs": 40000,
+        "idleCountdownS": 20,
+        "entryWarnMs": 90000,
+        "entryCountdownS": 30,
+        "doneAutoResetS": 20,
+        "revealS": 10,
+        "steps": 3
+      }
+    },
+    {
+      "name": "defaults: identify countdown >= data-screen countdown",
+      "pass": true,
+      "detail": {
+        "idleWarnMs": 40000,
+        "idleCountdownS": 20,
+        "entryWarnMs": 90000,
+        "entryCountdownS": 30,
+        "doneAutoResetS": 20,
+        "revealS": 10,
+        "steps": 3
+      }
+    },
+    {
+      "name": "defaults: data screens unchanged (40 s / 20 s)",
+      "pass": true,
+      "detail": {
+        "idleWarnMs": 40000,
+        "idleCountdownS": 20,
+        "entryWarnMs": 90000,
+        "entryCountdownS": 30,
+        "doneAutoResetS": 20,
+        "revealS": 10,
+        "steps": 3
+      }
+    },
+    {
+      "name": "timing: identify step has not warned after 0.8 s (data window would have)",
+      "pass": true
+    },
+    {
+      "name": "timing: identify step warns after its own longer window",
+      "pass": true
+    },
+    {
+      "name": "dialog: identify wording (Take your time / Keep typing) and typed value echoed",
+      "pass": true,
+      "detail": {
+        "entry": "yes",
+        "title": "Take your time",
+        "kept": "So far:04 / 12",
+        "hidden": false,
+        "btn": "Keep typing",
+        "count": "5"
+      }
+    },
+    {
+      "name": "dialog: identify countdown uses the entry value",
+      "pass": true,
+      "detail": {
+        "entry": "yes",
+        "title": "Take your time",
+        "kept": "So far:04 / 12",
+        "hidden": false,
+        "btn": "Keep typing",
+        "count": "5"
+      }
+    },
+    {
+      "name": "dismiss: touch anywhere on the warning closes it",
+      "pass": true
+    },
+    {
+      "name": "dismiss: typed value kept after the warning",
+      "pass": true,
+      "detail": "04 / 12"
+    },
+    {
+      "name": "dismiss: focus returns to the screen, not the body",
+      "pass": true,
+      "detail": {
+        "tag": "BUTTON",
+        "inApp": true
+      }
+    },
+    {
+      "name": "dismiss: backdrop tap closes the warning",
+      "pass": true
+    },
+    {
+      "name": "dismiss: physical key closes the warning and types",
+      "pass": true,
+      "detail": "04 / 12 / 1"
+    },
+    {
+      "name": "presence: touch on empty area resets the timer",
+      "pass": true
+    },
+    {
+      "name": "privacy: Escape does not dismiss the warning",
+      "pass": true
+    },
+    {
+      "name": "privacy: Finish now clears the session",
+      "pass": true
+    },
+    {
+      "name": "privacy: identify countdown expiry resets and wipes the DOM (no 1968 / 04 12 anywhere)",
+      "pass": true,
+      "detail": {
+        "hasSession": false,
+        "kept": ""
+      }
+    },
+    {
+      "name": "list: privacy wording and no echoed value",
+      "pass": true,
+      "detail": {
+        "entry": "no",
+        "title": "Are you still there?",
+        "hidden": true,
+        "btn": "I'm still here"
+      }
+    },
+    {
+      "name": "std : dialog buttons >= 64 px",
+      "pass": true,
+      "detail": [
+        {
+          "t": "Keep typing",
+          "w": 816,
+          "h": 112,
+          "y": 1112.375
+        },
+        {
+          "t": "Finish now",
+          "w": 816,
+          "h": 72,
+          "y": 1248.375
+        }
+      ]
+    },
+    {
+      "name": "std : dialog fully on the 1920 px panel",
+      "pass": true,
+      "detail": {
+        "top": 560,
+        "bottom": 1372.375
+      }
+    },
+    {
+      "name": "a11y=on&: dialog buttons >= 64 px",
+      "pass": true,
+      "detail": [
+        {
+          "t": "Keep typing",
+          "w": 816,
+          "h": 112,
+          "y": 1192.359375
+        },
+        {
+          "t": "Finish now",
+          "w": 816,
+          "h": 84,
+          "y": 1328.359375
+        }
+      ]
+    },
+    {
+      "name": "a11y=on&: dialog fully on the 1920 px panel",
+      "pass": true,
+      "detail": {
+        "top": 560,
+        "bottom": 1464.359375
+      }
+    },
+    {
+      "name": "a11y: dialog controls within the lower reach zone (y >= 768)",
+      "pass": true,
+      "detail": [
+        1192.359375,
+        1328.359375
+      ]
+    },
+    {
+      "name": "i18n: Spanish identify wording",
+      "pass": true,
+      "detail": "Tómese su tiempo\n\nLo que ha escrito se conserva. Toque la pantalla o pulse una tecla para seguir antes de que la pantall"
+    }
+  ],
+  "summary": {
+    "passed": 23,
+    "failed": 0
+  }
+}

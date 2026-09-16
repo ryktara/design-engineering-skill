@@ -1,0 +1,83 @@
+## design-engineering search: Purchase-order lines: operators keep typing the quantity into the price column.
+status=CONFIDENT modes=['audit', 'refactor'] platforms={} inputs={} products={'erp': 'KNOWN'} density=high stacks=[] screens=[] negatives=[]
+facets required=['accessibility', 'interaction', 'component', 'anti-pattern'] unmet=['interaction'] diversity=0.75
+MISSING: platform: audit targets differ by platform; not stated
+
+### Data table / grid  `comp-data-table`  [component/table; component/platform] score 0.458 · heuristic
+Sticky header, row height by density token, zebra striping optional (prefer hover/selection highlight), column resize/reorder/visibility persisted, sort indicator with aria-sort, selection checkbox column with header select-all and a count, row actions visible on focus as well as hover, inline edit with Enter/Escape, keyboard grid navigation (arrows, Home/End, PageUp/Down), virtualised rows, loading skeleton rows, empty state inside the table body. Financial tables: see numeric rule.
+- use when: Homogeneous records with several comparable attributes; sorting, filtering, selection, bulk actions, inline editing.
+- avoid when: Fewer than ~10 rows (use a list), heterogeneous items (use cards/list), phone widths (convert to rows).
+- incompatible with: layout-rails, surface-elevated-cards
+- why: lexical 0.44, structural 0.48 (mode audit, product erp, density high)
+
+### Desktop: persist layout and selection state  `desktop-state-persistence`  [rule/navigation; navigation/platform] score 0.43 · heuristic
+Restore the workspace on launch (per user, per view), offer 'reset layout', keep undo history per document, and never lose selection on data refresh (re-select by key).
+- use when: Workbenches used daily: column widths/order, sort, filters, pane sizes, last selected record, open tabs.
+- avoid when: Do not persist transient errors or half-typed forms without telling the user.
+- why: lexical 0.34, structural 0.54 (mode audit, product erp, density high)
+
+### Rich metadata (operational)  `metadata-rich`  [pattern/metadata; layout/platform] score 0.36 · heuristic
+Columns with user-controlled visibility and order, consistent formatting per type (dates, currency, IDs in monospace), status as text+colour, truncation with full value on focus/hover and in the detail pane.
+- use when: Operations: many attributes per record visible at once (tables, ledgers, tickets), with sorting/filtering on any of them.
+- avoid when: Consumer browsing, mobile, TV.
+- incompatible with: metadata-minimal, layout-rails, layout-immersive-rails, density-low
+- why: lexical 0.219, structural 0.4 (secondary mode, product erp, density high)
+
+### EPG / program guide grid  `layout-epg-grid`  [pattern/layout; layout/platform] score 0.347 · heuristic
+Two-dimensional virtualisation (channels vertical, time horizontal), sticky channel column and time header, programme cells sized by duration with a minimum width so short programmes stay focusable, current time line always visible, LEFT/RIGHT move within a channel's programmes (not by pixel), UP/DOWN keep the same time slot, long press or a shortcut jumps to now, focused cell shows full title + time in a detail strip rather than truncating inside the cell.
+- use when: Live TV channel × time grids with a 'now' line, current programme highlighted, and channel logos in a fixed column.
+- avoid when: On-demand catalogues (use rails), or phone portrait (use a per-channel list).
+- incompatible with: layout-immersive-rails, layout-feed, layout-editorial
+- why: lexical 0.496, structural 0.12 (secondary mode, product mismatch, density high)
+
+### Single column, one task  `layout-single-column`  [pattern/layout; layout/platform] score 0.309 · heuristic
+Content width capped for reading (~60–75 characters per line), vertical rhythm from the spacing scale, primary action reachable without scrolling on the shortest supported viewport, or sticky at the bottom.
+- use when: Phone screens, forms, reading, onboarding, kiosks: one primary thing per screen.
+- avoid when: Comparison tasks, dense data, or wide desktop windows where a single narrow column wastes the viewport and forces scrolling.
+- incompatible with: layout-three-pane, layout-dashboard-grid, layout-table-first
+- why: lexical 0.321, structural 0.16 (secondary mode, density conflict)
+
+### Measure, rhythm, and hierarchy by contrast of size and weight  `typo-measure-and-rhythm`  [rule/typography; visual] score 0.296 · heuristic
+45–75 characters per line for prose; vertical spacing from the spacing scale tied to line height; hierarchy from clear jumps (≥1.25×) in size or weight, not from five near-identical sizes; headings closer to the content below than to the content above.
+- use when: Reading content, forms, dashboards with mixed text.
+- avoid when: Never make everything bold; never use more than two weights per role.
+- why: lexical 0.129, structural 0.5 (mode audit)
+
+### Neutral workhorse sans  `typography-neutral-sans`  [pattern/typography; visual] score 0.293 · heuristic
+One family with tabular figures and a wide weight range (e.g. IBM Plex Sans, Source Sans 3, Public Sans, Atkinson Hyperlegible, or the platform system font). Display role uses the same family at heavier weight and tighter tracking rather than a second face. If the codebase already uses a system font, keep it.
+- use when: Dense, functional UI where the type must disappear: tables, forms, consoles. Prioritise x-height, tabular figures, and broad language coverage.
+- avoid when: Brand-led or editorial products where the type is part of the identity (this choice will read as default).
+- incompatible with: typography-serif-display, typography-condensed-display
+- why: lexical 0.015, structural 0.5 (secondary mode, product erp, density high)
+
+### Numeric tables: alignment, figures, units, precision  `data-tables-numeric`  [rule/table; component/platform] score 0.291 · heuristic
+Right-align numbers with tabular lining figures, one precision per column, unit in the header not each cell, negative values with sign and colour (and parentheses in finance if house style), thousands separators by locale, totals visually distinct, sortable columns with an explicit sort indicator.
+- use when: Any table or KPI with numbers: money, quantities, percentages, dates.
+- avoid when: Never centre numbers; never mix precisions in a column; never rely on colour alone for negative values.
+- why: lexical 0.137, structural 0.48 (mode audit, product erp, density high)
+
+### Placeholder as the only label  `anti-placeholder-labels`  [antipattern/craft; anti-pattern] score 0.264 · accessibility-requirement
+Visible persistent label (above or floating with a real label element), placeholder only for format hints, placeholder contrast ≥4.5:1.
+- use when: Inputs whose label disappears on typing; low-contrast placeholder text.
+- avoid when: Never.
+- why: lexical 0.07, structural 0.5 (mode audit)
+
+### Reuse → extend → compose → new (in that order)  `impl-reuse-before-new`  [rule/implementation; process] score 0.262 · engineering-practice
+Inspect the repository first (inspect_project.py): existing components, tokens, fonts, breakpoints, and conventions win. Reuse the existing component; if it lacks a variant, extend it through its API; if the composition is new, compose existing primitives; only create a new primitive when the gap is real, and put it where the others live.
+- use when: Any UI change in an existing codebase.
+- avoid when: Never install a second component library or a UI framework to build one screen; never fork a design-system component when a variant prop would do.
+- why: lexical 0.133, structural 0.42 (secondary mode)
+
+### Virtualise long lists and tables  `web-virtualize-long-lists`  [rule/performance; performance/platform] score 0.251 · engineering-practice
+Windowed rendering with stable row heights or measured heights, keyboard focus preserved when rows unmount (roving focus by key), aria-rowcount/aria-setsize so assistive tech knows the real size, scroll restoration on back navigation. Native: LazyColumn/List/FlatList/VirtualizingStackPanel already virtualise; keep keys stable.
+- use when: Lists/tables beyond a few hundred rows, grids of images, infinite feeds, EPGs.
+- avoid when: Small lists (<100) where virtualisation adds focus and find-in-page problems.
+- why: lexical 0.015, structural 0.54 (mode audit, product erp, density high)
+
+### Privacy on shared and public screens  `shared-device-privacy`  [rule/privacy; accessibility/platform] score 0.247 · heuristic
+Assume onlookers: mask sensitive values by default with an explicit reveal (balances, medication, addresses), gate personal profiles and purchases behind a PIN on shared TVs, keep notifications and previews generic on shared screens, clear the session and screen on idle or sign-out (kiosks, waiting rooms), and never show one user's data while another profile is active. Announce masked values to assistive tech as masked, not as the value.
+- use when: TVs in a household, waiting-room tablets, kiosks, wall displays, any screen other people can see; personal data, balances, health details, viewing history, messages.
+- avoid when: Single-user personal devices with a lock screen already protecting the data.
+- why: lexical 0.073, structural 0.46 (mode audit)
+
+Filtered out: mobile-field-use (environment ['gloves', 'outdoor'] not in request)

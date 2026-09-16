@@ -1,0 +1,25 @@
+{"task": "p4-01", "project": "p3-nextjs-saas", "platform": "web", "stack": "nextjs-15 app-router + tailwind-v4 + shadcn-style", "existing_ui": true, "mode": "polish (+refactor, spurious)", "change_budget": "low",
+ "render_mode": "native",
+ "screenshots": ["render/first-1440x900.png", "render/first-1440x900-full.png", "render/first-390x844.png", "render/first-390x844-full.png", "render/final-1440x900.png", "render/final-1440x900-full.png", "render/final-390x844.png", "render/final-390x844-full.png"],
+ "context_detection": {"navigation": "partial", "theme": "yes", "typography": "partial", "surfaces": "no", "spacing": "yes"},
+ "preservation": {"navigation": true, "theme": true, "typography": true, "component_reuse": true, "unjustified_structural_change": 0},
+ "first_render_defects": {"visual": 2, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+ "final_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+ "iterations": 2, "guidance_relevant": 7, "guidance_partial": 1, "guidance_offtarget": 0,
+ "guidance_metrics": {"concept_coverage": 1.0, "coverage_per_1k_tokens": 7.19, "purity": 0.89, "redundancy": 0.5, "tokens": 1113},
+ "misses": [
+  {"layer": "mode", "what": "mode includes refactor because 'navigation' in 'without changing navigation' was read as a structural change request"},
+  {"layer": "requirements", "what": "components contains 'navigation' from the same negative clause; product=finance and density=high still inherited from README 'invoices'"},
+  {"layer": "project-adaptation", "what": "inspector reports surfaces UNKNOWN although card.tsx uses border + shadow-sm; font (Geist via next/font) unnamed; settings tab bar not reported"},
+  {"layer": "direction", "what": "layout-table-first and cta-toolbar-commands chosen for a settings page (form-stack / contextual-inline fit)"},
+  {"layer": "expected-concepts", "what": "no concept/record for 'reuse the project's existing primitives' - the core instruction for a consistency polish"},
+  {"layer": "bundle-selection", "what": "data-tables-numeric rank 6 in search, not in bundle (low impact)"}
+ ],
+ "knowledge_gaps": ["reuse existing UI primitives (Card/Button/Badge) before restyling - consistency rule", "settings sub-navigation tabs inside a settings section"],
+ "regressions": [
+  {"query": "polish the billing settings page so plan cards, seat table and invoice history feel consistent with the rest of the admin, without changing navigation or theme", "expect": "mode == [polish]; components excludes navigation; negative_constraints == [navigation-change]; preserve navigation+color"},
+  {"query": "make this settings page consistent with the rest of the admin (nextjs+shadcn inspect)", "expect": "bundle includes a reuse-existing-primitives record; direction layout != table-first; cta != toolbar-commands for screen=settings"},
+  {"query": "inspect nextjs project with card.tsx 'rounded-lg border bg-card shadow-sm'", "expect": "design_context.surfaces KNOWN bordered/elevated, not UNKNOWN"},
+  {"query": "inspect nextjs project importing Geist from next/font/google", "expect": "fonts names Geist; typography status KNOWN"}
+ ],
+ "tags": ["mode-miss", "requirements-miss", "context-detection-miss", "knowledge-gap", "ranking-miss", "direction-mismatch", "render-defect-fixed", "skill-helped", "preservation-ok"]}

@@ -1,0 +1,1077 @@
+{
+ "description": "Phase 3 development cases for the guidance bundle. Written from Phase 2 failure CLASSES (not held-out wording): touch create tasks must carry target-size guidance, desktop grids keyboard guidance, TV players focus restoration/auto-hide, responsive tables column priority, forms validation/IME, shared screens privacy, field apps readability/offline, high-risk actions confirmation. Assertions use concern names and concept ids, never wording.",
+ "suite": "guidance",
+ "cases": [
+  {
+   "id": "g-mobile-touch-create",
+   "query": "Build the parcel pickup confirmation screen for our Android courier app",
+   "expect_required_concerns": [
+    "component",
+    "interaction",
+    "accessibility",
+    "states"
+   ],
+   "expect_concepts": [
+    "touch.minimum_target",
+    "state.loading_empty_error"
+   ],
+   "expect_coverage_min": 1.0,
+   "max_bundle": 8
+  },
+  {
+   "id": "g-desktop-grid-keyboard",
+   "query": "Avalonia inventory adjustments grid, warehouse clerks work keyboard-first",
+   "expect_required_concerns": [
+    "component",
+    "data-display",
+    "interaction"
+   ],
+   "expect_concepts": [
+    "interaction.keyboard_navigation",
+    "table.tabular_figures"
+   ],
+   "expect_ids_any": [
+    "comp-data-table",
+    "comp-data-entry-grid"
+   ],
+   "note": "2026-09-16 Phase 6 c4: concern coverage is a diagnostic; the accessibility concern is carried by keyboard/focus concepts already covered by desktop-keyboard-first, and a generic a11y rule is not added to fill the concern label"
+  },
+  {
+   "id": "g-tv-player-autohide",
+   "query": "tvOS documentary player: transport controls and subtitle picker",
+   "expect_required_concerns": [
+    "component",
+    "interaction",
+    "accessibility"
+   ],
+   "expect_concepts": [
+    "tv.player_autohide",
+    "interaction.focus_restore",
+    "interaction.back_semantics"
+   ],
+   "forbid_ids": [
+    "focus-ring-standard",
+    "nav-top-bar"
+   ],
+   "note": "2026-09-10 Phase 6: concern coverage is a diagnostic; the performance concern (focus latency) is a platform generic and may stay unsurfaced when no specific carrier fits"
+  },
+  {
+   "id": "g-responsive-table-columns",
+   "query": "our stock levels table must work on phones, warehouse managers check it from the floor",
+   "expect_concepts": [
+    "table.column_priority"
+   ],
+   "expect_ids_any": [
+    "mobile-density-touch"
+   ],
+   "expect_required_concerns": [
+    "data-display",
+    "interaction"
+   ]
+  },
+  {
+   "id": "g-web-form-validation",
+   "query": "Create the insurance claim submission form for our web portal",
+   "expect_required_concerns": [
+    "component",
+    "feedback",
+    "states",
+    "accessibility"
+   ],
+   "expect_concepts": [
+    "feedback.validation_errors",
+    "state.loading_empty_error"
+   ],
+   "expect_ids_any": [
+    "comp-form",
+    "a11y-forms-errors"
+   ]
+  },
+  {
+   "id": "g-mobile-form-ime",
+   "query": "iOS address entry screen for grocery delivery",
+   "expect_concepts": [
+    "touch.ime_keyboard",
+    "feedback.validation_errors"
+   ],
+   "expect_required_concerns": [
+    "feedback",
+    "interaction"
+   ]
+  },
+  {
+   "id": "g-shared-tv-privacy",
+   "query": "Android TV banking balance view for the whole family's living room TV",
+   "expect_required_concerns": [
+    "privacy",
+    "interaction",
+    "accessibility"
+   ],
+   "expect_concepts": [
+    "privacy.shared_device",
+    "interaction.focus_visible"
+   ],
+   "expect_ids_any": [
+    "shared-device-privacy"
+   ]
+  },
+  {
+   "id": "g-field-outdoor",
+   "query": "tablet app for pipeline inspectors working in bright sunlight with gloves",
+   "expect_required_concerns": [
+    "environment",
+    "interaction",
+    "accessibility"
+   ],
+   "expect_concepts": [
+    "env.outdoor_readability",
+    "touch.minimum_target"
+   ],
+   "expect_ids_any": [
+    "mobile-field-use"
+   ]
+  },
+  {
+   "id": "g-offline-sync",
+   "query": "mobile app for rural health workers that must work offline and sync later",
+   "expect_required_concerns": [
+    "states",
+    "environment"
+   ],
+   "expect_concepts": [
+    "state.offline_sync"
+   ],
+   "expect_ids_any": [
+    "states-offline-and-sync"
+   ]
+  },
+  {
+   "id": "g-high-risk-confirm",
+   "query": "web screen to approve a wire transfer for treasury users",
+   "expect_required_concerns": [
+    "feedback"
+   ],
+   "expect_concepts": [
+    "feedback.confirmation_destructive",
+    "table.tabular_figures"
+   ],
+   "expect_risk": "high",
+   "note": "2026-09-10 Phase 6: data-display concern coverage is diagnostic; tabular figures stay an expectation"
+  },
+  {
+   "id": "g-epg-subtype",
+   "query": "Fire TV live guide with 300 channels",
+   "expect_subtypes": [
+    "epg"
+   ],
+   "expect_concepts": [
+    "tv.epg_pinned_channels",
+    "table.virtualization",
+    "interaction.dpad_reachability"
+   ],
+   "expect_ids_any": [
+    "comp-epg",
+    "layout-epg-grid"
+   ],
+   "expect_coverage_min": 0.8
+  },
+  {
+   "id": "g-tv-signin",
+   "query": "Google TV app sign in screen with an activation code",
+   "expect_subtypes": [
+    "sign-in"
+   ],
+   "expect_ids_any": [
+    "comp-tv-sign-in"
+   ],
+   "expect_concepts": [
+    "tv.sign_in_code"
+   ]
+  },
+  {
+   "id": "g-onboarding-checklist",
+   "query": "getting started checklist for new admins of our HR SaaS web app",
+   "expect_ids_any": [
+    "comp-setup-checklist"
+   ],
+   "expect_concepts": [
+    "onboarding.setup_checklist"
+   ]
+  },
+  {
+   "id": "g-upsell",
+   "query": "the streaming app shows an upgrade pop-up on every launch, users hate it",
+   "expect_ids_any": [
+    "anti-interruptive-upsell"
+   ],
+   "expect_modes_any": [
+    "audit",
+    "polish",
+    "refactor"
+   ]
+  },
+  {
+   "id": "g-session-expiry",
+   "query": "our web tax filing form logs people out after 15 minutes and loses their answers",
+   "expect_ids_any": [
+    "states-persistence-and-session"
+   ],
+   "expect_concepts": [
+    "state.session_expiry"
+   ],
+   "expect_modes_any": [
+    "audit",
+    "refactor",
+    "polish"
+   ]
+  },
+  {
+   "id": "g-problem-visual",
+   "query": "the spacing on our settings page looks cramped and inconsistent",
+   "expect_modes_any": [
+    "polish"
+   ],
+   "forbid_primary_mode": "create",
+   "expect_concepts": [
+    "layout.spacing_scale"
+   ]
+  },
+  {
+   "id": "g-problem-interaction",
+   "query": "users keep missing the save button on the web invoice editor",
+   "expect_modes_any": [
+    "audit"
+   ],
+   "forbid_primary_mode": "create",
+   "expect_required_concerns": [
+    "interaction"
+   ],
+   "note": "2026-09-10 Phase 6: the feedback concern is demanded but need not be covered by a generic record"
+  },
+  {
+   "id": "g-problem-accessibility",
+   "query": "screen reader reads our WinUI status column as just 'text'",
+   "expect_modes_any": [
+    "accessibility"
+   ],
+   "forbid_primary_mode": "create",
+   "expect_concepts": [
+    "a11y.accessible_names"
+   ]
+  },
+  {
+   "id": "g-problem-focus-lost",
+   "query": "on our Android TV app focus gets lost when returning from the details page",
+   "expect_modes_any": [
+    "audit",
+    "refactor"
+   ],
+   "forbid_primary_mode": "create",
+   "expect_concepts": [
+    "interaction.focus_restore"
+   ],
+   "expect_ids_any": [
+    "a11y-tv-focus-always"
+   ]
+  },
+  {
+   "id": "g-explicit-create-stays",
+   "query": "Build a new settings page; the current one is confusing",
+   "expect_primary_mode": "create",
+   "expect_modes_any": [
+    "audit"
+   ]
+  },
+  {
+   "id": "g-web-pointer-hover",
+   "query": "web project board with cards you can drag between columns",
+   "expect_concepts": [
+    "interaction.hover_independence",
+    "interaction.keyboard_navigation"
+   ],
+   "expect_required_concerns": [
+    "interaction",
+    "accessibility"
+   ]
+  },
+  {
+   "id": "g-kiosk-checkin",
+   "query": "pharmacy self-checkout kiosk flow",
+   "expect_required_concerns": [
+    "environment",
+    "privacy",
+    "interaction"
+   ],
+   "expect_concepts": [
+    "touch.minimum_target",
+    "privacy.shared_device"
+   ],
+   "expect_ids_any": [
+    "kiosk-public-use",
+    "dir-public-kiosk"
+   ]
+  },
+  {
+   "id": "g-dashboard-charts",
+   "query": "React energy usage dashboard with hourly charts for facility managers",
+   "expect_required_concerns": [
+    "data-display",
+    "structure"
+   ],
+   "expect_concepts": [
+    "a11y.color_not_only"
+   ],
+   "expect_ids_any": [
+    "comp-chart-container",
+    "chart-trend-line",
+    "comp-kpi-tile"
+   ]
+  },
+  {
+   "id": "g-landing-hierarchy",
+   "query": "landing page for a compliance automation product, web",
+   "expect_required_concerns": [
+    "content",
+    "brand",
+    "structure"
+   ],
+   "expect_concepts": [
+    "layout.focal_hierarchy"
+   ],
+   "expect_ids_any": [
+    "comp-hero-section",
+    "anti-hero-template"
+   ]
+  },
+  {
+   "id": "g-bundle-compact-simple",
+   "query": "add a confirmation toast after saving on the web settings page",
+   "max_bundle": 7,
+   "note": "2026-09-09: max_bundle raised 6 -> 7. With high-relevance rules admitted as guardrails, states-persistence-and-session (saving -> saved as quiet inline status, not a toast per keystroke) joins this bundle and is directly on task; the case's 6 was a guess about compactness, 7 keeps the compactness intent (soft cap 6 for recommended coverage still holds)."
+  },
+  {
+   "id": "g-bundle-larger-complex",
+   "query": "Android TV live sports app home with rails, EPG entry, and a mini player for the family TV",
+   "min_bundle": 6,
+   "max_bundle": 8,
+   "expect_coverage_min": 0.8
+  },
+  {
+   "id": "g-negatives-respected",
+   "query": "redesign the web analytics dashboard without cards and without gradients",
+   "forbid_ids": [
+    "surface-elevated-cards",
+    "card-bordered",
+    "card-flat-tile"
+   ],
+   "expect_required_concerns": [
+    "anti-pattern"
+   ]
+  },
+  {
+   "id": "g-no-a11y-dump",
+   "query": "marketing landing page for a bakery, web",
+   "max_guardrails": 4,
+   "max_bundle": 8
+  },
+  {
+   "id": "g-audit-mode-a11y",
+   "query": "review the accessibility of our Flutter appointment booking flow",
+   "expect_required_concerns": [
+    "accessibility",
+    "interaction"
+   ],
+   "expect_concepts": [
+    "a11y.accessible_names",
+    "touch.minimum_target"
+   ],
+   "note": "2026-09-10 Phase 6: component concern coverage is diagnostic"
+  },
+  {
+   "id": "g-abstain",
+   "query": "rotate the API keys for the payments service",
+   "expect_status": "ABSTAIN"
+  },
+  {
+   "id": "g-pdp",
+   "query": "product detail page for our outdoor gear web store with variant selection and sticky add to cart",
+   "expect_ids_any": [
+    "comp-product-detail-page"
+   ],
+   "forbid_environment": [
+    "outdoor"
+   ],
+   "expect_concepts": [
+    "layout.one_primary_action",
+    "perf.layout_shift"
+   ]
+  },
+  {
+   "id": "g-checkout-one-page",
+   "query": "one-page checkout for an electronics web shop, must convert well on phones",
+   "expect_ids_any": [
+    "comp-checkout-one-page"
+   ],
+   "expect_requirements_status": "CONFIDENT",
+   "expect_modes_any": [
+    "create",
+    "responsive"
+   ],
+   "expect_concepts": [
+    "feedback.validation_errors"
+   ]
+  },
+  {
+   "id": "g-plan-comparison",
+   "query": "team billing settings page with plan comparison, seat table and invoice history for our Next.js SaaS admin",
+   "expect_ids_any": [
+    "comp-plan-comparison"
+   ],
+   "forbid_products": [
+    "finance"
+   ],
+   "expect_concepts": [
+    "table.tabular_figures",
+    "feedback.confirmation_destructive"
+   ]
+  },
+  {
+   "id": "g-mini-player",
+   "query": "Android TV sports home with rails and a mini player that keeps playing while browsing",
+   "expect_ids_any": [
+    "comp-mini-player"
+   ],
+   "expect_concepts": [
+    "interaction.focus_restore",
+    "interaction.back_semantics"
+   ]
+  },
+  {
+   "id": "g-grid-single-tab-stop",
+   "query": "WPF purchase order lines grid, clerks enter 200 lines a day with the keyboard, each row has edit and delete buttons",
+   "expect_ids_any": [
+    "grid-single-tab-stop"
+   ],
+   "expect_concepts": [
+    "interaction.keyboard_navigation",
+    "table.tabular_figures"
+   ]
+  },
+  {
+   "id": "g-keyboard-open-form",
+   "query": "iOS defect report form must stay usable with the keyboard open, photo, severity and notes",
+   "expect_ids_any": [
+    "mobile-keyboard-ime"
+   ],
+   "expect_concepts": [
+    "touch.ime_keyboard",
+    "feedback.validation_errors"
+   ]
+  },
+  {
+   "id": "g-kiosk-store-location",
+   "query": "pharmacy prescription pick-up kiosk in the store: identify the patient, show ready prescriptions, confirm",
+   "forbid_products": [
+    "ecommerce"
+   ],
+   "expect_ids_any": [
+    "shared-device-privacy",
+    "kiosk-public-use"
+   ],
+   "expect_concepts": [
+    "privacy.shared_device",
+    "state.session_expiry"
+   ],
+   "direction_ok": true,
+   "forbid_direction_slots": {
+    "density": [
+     "density-medium",
+     "density-high"
+    ],
+    "imagery": [
+     "imagery-hero"
+    ]
+   }
+  },
+  {
+   "id": "g-field-checklist-not-cards",
+   "query": "Flutter inspection checklist for utility technicians working outdoors with gloves",
+   "direction_ok": true,
+   "forbid_direction_slots": {
+    "surface": [
+     "surface-elevated-cards"
+    ],
+    "cards": [
+     "card-poster-landscape",
+     "card-poster-portrait"
+    ]
+   },
+   "expect_ids_any": [
+    "mobile-field-use"
+   ]
+  },
+  {
+   "id": "g-which-button",
+   "query": "facility managers don't know which button to press on our React energy dashboard",
+   "expect_ids_any": [
+    "cta-single-primary",
+    "layout-hierarchy-one-thing"
+   ],
+   "expect_concepts": [
+    "layout.one_primary_action"
+   ],
+   "forbid_primary_mode": "create",
+   "note": "2026-09-09: widened from cta-single-primary alone. The torture-test defect was that 'one primary action' never surfaced for this problem statement; the concept is now required and either the cta pattern or the hierarchy rule (which carries the same concept id) satisfies it. The rule wins ties in audit mode by design (positive guardrail before a slot pattern)."
+  },
+  {
+   "id": "g-dashboard-exception-first",
+   "query": "ops dashboard for a logistics control tower: show exceptions first, trend of late deliveries, drill into a hub",
+   "expect_concepts": [
+    "data.exception_first",
+    "data.drilldown",
+    "data.chart_by_question"
+   ],
+   "expect_ids_any": [
+    "layout-hierarchy-one-thing",
+    "chart-trend-line",
+    "comp-kpi-tile"
+   ],
+   "expect_required_concerns": [
+    "data-display"
+   ]
+  },
+  {
+   "id": "g-dashboard-refresh",
+   "query": "web NOC dashboard that auto-refreshes every 30 seconds with live status of 200 services",
+   "expect_concepts": [
+    "data.refresh_timestamp",
+    "data.realtime_window",
+    "a11y.color_not_only"
+   ],
+   "expect_ids_any": [
+    "chart-realtime"
+   ]
+  },
+  {
+   "id": "g-dashboard-compare-periods",
+   "query": "finance dashboard comparing this quarter to last quarter per region",
+   "expect_concepts": [
+    "data.kpi_comparison",
+    "table.tabular_figures"
+   ],
+   "expect_ids_any": [
+    "comp-kpi-tile",
+    "chart-compare-bar"
+   ]
+  },
+  {
+   "id": "g-onboarding-permissions",
+   "query": "mobile onboarding that asks for camera and location permissions for a delivery app",
+   "expect_concepts": [
+    "onboarding.permission_priming"
+   ],
+   "forbid_ids": [
+    "comp-wizard-stepper"
+   ]
+  },
+  {
+   "id": "g-onboarding-linear",
+   "query": "three-step account setup wizard for a web SaaS",
+   "expect_concepts": [
+    "onboarding.linear_wizard",
+    "feedback.progress_indicator"
+   ],
+   "expect_ids_any": [
+    "comp-wizard-stepper",
+    "nav-wizard"
+   ]
+  },
+  {
+   "id": "g-onboarding-feature-education",
+   "query": "first-run tips that teach the new editor features without blocking the user",
+   "expect_concepts": [
+    "onboarding.feature_education"
+   ],
+   "forbid_concepts": [
+    "onboarding.linear_wizard"
+   ]
+  },
+  {
+   "id": "g-onboarding-checklist-optional",
+   "query": "optional getting-started checklist for admins of our web app",
+   "expect_concepts": [
+    "onboarding.setup_checklist"
+   ],
+   "expect_ids_any": [
+    "comp-setup-checklist"
+   ]
+  },
+  {
+   "id": "g-media-resume",
+   "query": "Android TV home: continue watching row and resume playback where the user left off",
+   "expect_concepts": [
+    "media.resume_playback",
+    "interaction.focus_restore"
+   ],
+   "expect_ids_any": [
+    "comp-tv-rail",
+    "media-resume-and-details"
+   ]
+  },
+  {
+   "id": "g-media-details",
+   "query": "tvOS movie details screen with play, add to watchlist and episodes",
+   "expect_concepts": [
+    "media.details_play_first",
+    "media.watchlist"
+   ],
+   "expect_ids_any": [
+    "media-resume-and-details"
+   ]
+  },
+  {
+   "id": "g-media-search",
+   "query": "search screen for a Fire TV catalogue app",
+   "expect_concepts": [
+    "media.search_tv",
+    "interaction.dpad_reachability"
+   ],
+   "expect_ids_any": [
+    "comp-search"
+   ]
+  },
+  {
+   "id": "g-media-live",
+   "query": "live TV channel switching with a mini guide on a set-top box",
+   "expect_concepts": [
+    "media.live_channel_switching",
+    "tv.epg_pinned_channels"
+   ],
+   "expect_ids_any": [
+    "comp-epg",
+    "tv-player-controls"
+   ]
+  },
+  {
+   "id": "g-a11y-mode-concrete",
+   "query": "accessibility review of our web checkout",
+   "expect_concepts": [
+    "a11y.accessible_names",
+    "a11y.contrast",
+    "interaction.keyboard_navigation",
+    "feedback.validation_errors"
+   ],
+   "forbid_ids": [
+    "typography-serif-editorial",
+    "color-dominant-brand",
+    "dir-product-marketing-site"
+   ]
+  },
+  {
+   "id": "g-states-not-universal-static",
+   "query": "static about-us page for a bakery website",
+   "forbid_concepts": [
+    "state.loading_empty_error"
+   ],
+   "forbid_ids": [
+    "layout-states-empty-loading-error",
+    "anti-no-states"
+   ]
+  },
+  {
+   "id": "g-states-async-required",
+   "query": "orders list that loads from the API with filters, web",
+   "expect_concepts": [
+    "state.loading_empty_error"
+   ],
+   "expect_ids_any": [
+    "layout-states-empty-loading-error",
+    "comp-empty-state"
+   ]
+  },
+  {
+   "id": "g-grid-rule-not-for-plain-list",
+   "query": "simple settings list with toggles on iOS",
+   "forbid_ids": [
+    "grid-single-tab-stop"
+   ]
+  },
+  {
+   "id": "g-grid-rule-not-for-cards",
+   "query": "web pricing page with three plan cards",
+   "forbid_ids": [
+    "grid-single-tab-stop",
+    "comp-data-entry-grid"
+   ]
+  },
+  {
+   "id": "g-grid-rule-not-for-tree",
+   "query": "file tree side panel for a desktop IDE",
+   "forbid_ids": [
+    "grid-single-tab-stop"
+   ],
+   "expect_ids_any": [
+    "comp-tree-view"
+   ]
+  },
+  {
+   "id": "g-grid-rule-for-grid",
+   "query": "desktop order lines grid with edit and delete per row",
+   "expect_ids_any": [
+    "grid-single-tab-stop"
+   ]
+  },
+  {
+   "id": "g-contamination-chart-for-a11y",
+   "query": "accessible names for icon buttons in our React toolbar",
+   "forbid_ids": [
+    "comp-chart-container",
+    "chart-relationship",
+    "comp-kpi-tile"
+   ],
+   "expect_ids_any": [
+    "a11y-labels-names"
+   ]
+  },
+  {
+   "id": "g-contamination-pdp-in-plp",
+   "query": "product listing page with filters for a fashion web shop",
+   "forbid_ids": [
+    "comp-product-detail-page",
+    "comp-checkout-one-page"
+   ],
+   "expect_ids_any": [
+    "layout-grid-catalog",
+    "comp-filters"
+   ]
+  },
+  {
+   "id": "g-compact-prefers-smaller",
+   "query": "visible focus indicator for buttons on the web",
+   "expect_ids_any": [
+    "a11y-focus-visible"
+   ],
+   "max_bundle": 6
+  },
+  {
+   "id": "g-multi-concern-winui-grid",
+   "query": "Refactor this dense WinUI financial grid so keyboard users can edit quickly without changing the existing navigation.",
+   "expect_concepts": [
+    "interaction.keyboard_navigation",
+    "table.inline_edit",
+    "table.tabular_figures",
+    "interaction.focus_visible"
+   ],
+   "expect_ids_any": [
+    "comp-data-entry-grid",
+    "grid-single-tab-stop"
+   ],
+   "forbid_ids": [
+    "nav-command-palette",
+    "nav-left-rail",
+    "nav-top-bar"
+   ],
+   "expect_required_concerns": [
+    "data-display",
+    "interaction"
+   ]
+  },
+  {
+   "id": "g-screenshot-keeps-project",
+   "query": "implement this screenshot in our existing Next.js app",
+   "expect_concepts": [
+    "process.reuse_first"
+   ],
+   "expect_modes_any": [
+    "reconstruct",
+    "create"
+   ]
+  },
+  {
+   "id": "g-perf-ux-slow-feel",
+   "query": "the dashboard feels slow even though the API responds in 80 ms",
+   "expect_concepts": [
+    "state.loading_empty_error"
+   ],
+   "forbid_primary_mode": "create",
+   "note": "2026-09-09: perf.layout_shift removed from the expectation. 'Feels slow with a fast API' is perceived-latency UX (skeletons, optimistic states), not layout stability; the original expectation over-reached."
+  },
+  {
+   "id": "g-kiosk-keypad",
+   "query": "date-of-birth keypad and name entry step for a pharmacy pick-up kiosk",
+   "expect_ids_any": [
+    "comp-kiosk-keypad"
+   ],
+   "expect_concepts": [
+    "touch.minimum_target",
+    "a11y.live_status",
+    "feedback.validation_errors"
+   ]
+  },
+  {
+   "id": "g-photo-capture",
+   "query": "defect report form on Android with photos the technician can retake",
+   "expect_ids_any": [
+    "comp-photo-capture-field"
+   ],
+   "expect_concepts": [
+    "touch.minimum_target",
+    "onboarding.permission_priming"
+   ]
+  },
+  {
+   "id": "g-desktop-status-bar",
+   "query": "WPF workbench: show validation errors and sync state in the status bar with next-error navigation",
+   "expect_ids_any": [
+    "desktop-status-bar-and-error-navigation"
+   ],
+   "expect_concepts": [
+    "feedback.validation_errors",
+    "a11y.live_status"
+   ]
+  },
+  {
+   "id": "g-plp-catalog",
+   "query": "product listing page with facet filters for a fashion web shop on phones",
+   "expect_ids_any": [
+    "layout-grid-catalog",
+    "comp-filters"
+   ],
+   "expect_concepts": [
+    "data.filter_chips",
+    "touch.minimum_target"
+   ]
+  },
+  {
+   "id": "g5-selection-invisible",
+   "query": "users can't tell what's selected in the orders table on the web app",
+   "expect_concepts": [
+    "interaction.selection_visible",
+    "a11y.color_not_only"
+   ],
+   "forbid_primary_mode": "create"
+  },
+  {
+   "id": "g5-lose-place",
+   "query": "viewers lose their place in the row when they return from an episode on the TV app",
+   "expect_concepts": [
+    "interaction.focus_restore",
+    "interaction.back_semantics"
+   ],
+   "forbid_primary_mode": "create"
+  },
+  {
+   "id": "g5-too-much-to-scan",
+   "query": "there is too much to scan on our web ops screen, operators miss the important numbers",
+   "expect_concepts": [
+    "layout.focal_hierarchy",
+    "data.exception_first"
+   ],
+   "forbid_primary_mode": "create"
+  },
+  {
+   "id": "g5-numbers-hard-compare",
+   "query": "numbers in the finance report are hard to compare across rows",
+   "expect_concepts": [
+    "table.tabular_figures"
+   ],
+   "forbid_primary_mode": "create"
+  },
+  {
+   "id": "g5-cant-find-way-back",
+   "query": "people can't find their way back after drilling into a customer record in the desktop CRM",
+   "expect_concepts": [
+    "navigation.orientation_and_back"
+   ],
+   "forbid_primary_mode": "create"
+  },
+  {
+   "id": "g5-controls-never-hide",
+   "query": "the transport bar on our set-top app never goes away during playback",
+   "expect_concepts": [
+    "tv.player_autohide"
+   ],
+   "forbid_primary_mode": "create"
+  },
+  {
+   "id": "g5-controls-autohide-variants",
+   "query": "make the tvOS player controls auto hide, auto-hide timing should reset on any key",
+   "expect_concepts": [
+    "tv.player_autohide",
+    "interaction.back_semantics"
+   ]
+  },
+  {
+   "id": "g5-cant-read-sun",
+   "query": "couriers say the delivery app is impossible to read outdoors at noon",
+   "expect_concepts": [
+    "env.outdoor_readability",
+    "a11y.contrast"
+   ],
+   "forbid_primary_mode": "create"
+  },
+  {
+   "id": "g5-keyboard-trap",
+   "query": "keyboard users get trapped inside the web date picker",
+   "expect_concepts": [
+    "interaction.keyboard_navigation",
+    "a11y.dialog_focus"
+   ],
+   "forbid_primary_mode": "create"
+  },
+  {
+   "id": "g5-focus-lost-modal",
+   "query": "when the confirmation modal closes, focus lands on the page body in our React admin",
+   "expect_concepts": [
+    "a11y.dialog_focus",
+    "interaction.focus_restore"
+   ],
+   "forbid_primary_mode": "create"
+  },
+  {
+   "id": "g5-layout-jumps",
+   "query": "the product grid jumps around while images load on the phone site",
+   "expect_concepts": [
+    "perf.layout_shift",
+    "perf.image_sizing"
+   ],
+   "forbid_primary_mode": "create"
+  },
+  {
+   "id": "g5-status-colour-only",
+   "query": "colour-blind staff can't distinguish the ticket statuses in the queue view",
+   "expect_concepts": [
+    "a11y.color_not_only"
+   ],
+   "forbid_primary_mode": "create"
+  },
+  {
+   "id": "g5-compare-plans",
+   "query": "let visitors compare our three subscription plans on the web",
+   "expect_concepts": [
+    "data.comparison_structure",
+    "layout.one_primary_action"
+   ],
+   "expect_ids_any": [
+    "comp-plan-comparison"
+   ]
+  },
+  {
+   "id": "g5-approve-payment",
+   "query": "treasury users approve a large payment from the desktop app",
+   "expect_concepts": [
+    "feedback.confirmation_destructive",
+    "feedback.validation_errors",
+    "layout.one_primary_action"
+   ]
+  },
+  {
+   "id": "g5-resume-content",
+   "query": "let viewers resume a documentary where they stopped, Android TV",
+   "expect_concepts": [
+    "media.resume_playback",
+    "interaction.focus_restore"
+   ]
+  },
+  {
+   "id": "g5-editable-financial-grid",
+   "query": "editable financial grid for controllers, Avalonia",
+   "expect_concepts": [
+    "interaction.keyboard_navigation",
+    "interaction.focus_visible",
+    "table.tabular_figures",
+    "feedback.validation_errors",
+    "table.inline_edit"
+   ]
+  },
+  {
+   "id": "g5-tv-details-from-rail",
+   "query": "Fire TV details page opened from a rail",
+   "expect_concepts": [
+    "interaction.focus_restore",
+    "interaction.back_semantics",
+    "tv.ten_foot_typography",
+    "media.details_play_first"
+   ]
+  },
+  {
+   "id": "g5-checkout-trust",
+   "query": "web checkout for a furniture store, three steps",
+   "expect_concepts": [
+    "feedback.validation_errors",
+    "layout.one_primary_action",
+    "feedback.progress_indicator",
+    "feedback.trust_signals"
+   ]
+  },
+  {
+   "id": "g5-epg-time",
+   "query": "programme guide for the cable box",
+   "expect_concepts": [
+    "tv.epg_pinned_channels",
+    "tv.time_navigation",
+    "interaction.dpad_reachability"
+   ]
+  },
+  {
+   "id": "g5-player-subtitles",
+   "query": "player for the living-room app with subtitle and audio selection",
+   "expect_concepts": [
+    "tv.player_autohide",
+    "interaction.back_semantics",
+    "media.track_selection"
+   ]
+  },
+  {
+   "id": "g5-data-grid-large",
+   "query": "web grid with 50,000 rows and per-row selection for auditors",
+   "expect_concepts": [
+    "table.virtualization",
+    "table.selection_bulk",
+    "interaction.keyboard_navigation"
+   ]
+  },
+  {
+   "id": "g5-saturation-cap",
+   "query": "Android TV live sports home with rails, EPG entry, mini player, sign-in, search, settings and watchlist for the family TV",
+   "max_required_concepts": 8,
+   "max_bundle": 8
+  },
+  {
+   "id": "g5-static-page-no-states",
+   "query": "our website's imprint page needs a tidy-up",
+   "forbid_concepts": [
+    "state.loading_empty_error"
+   ]
+  },
+  {
+   "id": "g5-alias-selected-state",
+   "query": "current-row indication is missing in the WPF grid",
+   "expect_concepts": [
+    "interaction.selection_visible"
+   ]
+  },
+  {
+   "id": "g5-alias-important-columns",
+   "query": "important columns must survive when the report is viewed on a tablet",
+   "expect_concepts": [
+    "table.column_priority"
+   ]
+  },
+  {
+   "id": "g5-alias-restore-previous",
+   "query": "restore the previous item when users back out of the TV details screen",
+   "expect_concepts": [
+    "interaction.focus_restore"
+   ]
+  },
+  {
+   "id": "g5-partial-scope-virtualize",
+   "query": "Virtualize this giant table because scrolling freezes.",
+   "expect_scope_kind": "partial",
+   "expect_concepts": [
+    "table.virtualization"
+   ]
+  }
+ ]
+}

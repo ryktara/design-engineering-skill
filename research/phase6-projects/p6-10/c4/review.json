@@ -1,0 +1,11 @@
+{"task": "p6-10", "records": [
+{"id": "comp-chart-container", "verdict": "off-target", "category": "wrong-screen", "why": "The dashboard has no chart and the task calls for none; off-target in c3 too."},
+{"id": "impl-reuse-before-new", "verdict": "partial", "category": "generic", "why": "True but already stated by SKILL.md 2; consumes a critical slot."},
+{"id": "a11y-keyboard-operable", "verdict": "partial", "category": "generic", "why": "Generic keyboard boilerplate; no keyboard defect on this screen beyond the new drill-down link."},
+{"id": "a11y-focus-visible", "verdict": "partial", "category": "generic", "why": "Generic focus-ring rule, not specific to telling the manager what to reorder."},
+{"id": "data-exceptions-first", "verdict": "relevant", "category": "", "why": "The one load-bearing record: exception rule, count in header, word+icon+colour, exceptions sorted first."}
+],
+"missing_critical": ["data.drilldown", "layout.focal_hierarchy"],
+"unjustified_direction_slots": 0,
+"layer_review": {"core": ["comp-chart-container"], "critical": ["impl-reuse-before-new", "a11y-keyboard-operable", "a11y-focus-visible"], "optional": ["data-exceptions-first"]},
+"change_vs_c3": "worse — chart-relationship and interaction-drag-drop were dropped but so were two records the c3 implementer used (layout-dashboard-grid, a11y-color-not-only), replaced by generic a11y boilerplate, and both missing criticals are still absent."}

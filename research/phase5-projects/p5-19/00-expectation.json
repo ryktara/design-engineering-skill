@@ -1,0 +1,40 @@
+{
+  "task": "p5-19",
+  "sentence": "Sync status is a spinner that never says what is happening.",
+  "platform": "mobile",
+  "artifact_state": "existing",
+  "acceptable_modes": ["polish", "refactor", "audit"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "feedback.progress_indicator",
+    "state.offline_sync",
+    "a11y.live_status",
+    "env.glanceable_status",
+    "a11y.color_not_only",
+    "data.refresh_timestamp",
+    "process.reuse_first"
+  ],
+  "critical_concepts": [
+    "feedback.progress_indicator",
+    "state.offline_sync",
+    "a11y.live_status",
+    "env.glanceable_status"
+  ],
+  "forbidden_concepts": [
+    "tv.ten_foot_typography",
+    "tv.safe_margins",
+    "interaction.dpad_reachability",
+    "desktop.spacing_grid",
+    "layout.hero_thesis",
+    "anti.template_landing",
+    "table.virtualization",
+    "media.resume_playback",
+    "interaction.hover_independence"
+  ],
+  "preservation": ["navigation", "theme", "typography", "component_reuse"],
+  "reviewer_notes": {
+    "what_the_code_does": "lib/state/providers.dart: SyncState = {pending: List<PendingSync>, lastSyncedAt, syncing: bool}. drain() flips syncing=true, waits 800 ms, then clears the whole queue; there is no per-item status, no count of sent/total, no current-item label, no failure state and no error message. lib/widgets/offline_banner.dart shows 'Syncing N…' / 'N waiting to sync' + 'Last synced X' with a static cloud icon; lib/widgets/sync_queue_sheet.dart lists rows all marked 'Pending' and a 'Retry sync now' button whose label becomes 'Syncing…' while disabled. lib/screens/settings_screen.dart 'Sync queue' row repeats the pending count. lib/screens/defect_report_screen.dart Save button shows a 24 dp CircularProgressIndicator + 'Saving…' (local save; not the sync). App context: outdoor sunlight, gloves (56 dp controls, 12 dp gaps), offline-first, hand-tuned light+dark ColorScheme, StatusColors ThemeExtension, FieldSizes tokens, in-app high-contrast switch, live-region banner.",
+    "what_a_good_answer_does": "Make the sync state say what is happening: per-item status (queued / sending / sent / failed with a reason), a determinate 'Sending 2 of 3 · Photo IMG_2091.jpg' headline with a linear progress bar in the existing banner, a failed state that names the item and the reason with a Retry action (not a bare spinner), 'Last synced' timestamp kept, 'All sent' confirmation that clears itself; the queue sheet rows carry the same status as word + icon + colour (never colour alone), the Retry button label stays truthful; screen-reader live region announces the transitions (polite, not on every percent); both themes and high-contrast; reuse OfflineBanner, SyncQueueSheet, StatusColors, FieldSizes; keep routes, providers API shape, and tests intact.",
+    "what_a_bad_answer_does": "Replace one spinner with another animation, add a toast, TV/desktop/web guidance, generic 'add a progress bar' without item names or failure state, redesign the settings screen, introduce a new colour system, or make the status text live-announce every progress tick."
+  }
+}

@@ -1,0 +1,27 @@
+{"task": "p4-06", "project": "p3-ecommerce-web", "platform": "web", "stack": "html-css (@layer tokens) + vanilla js", "existing_ui": true, "new_page": true, "mode": "create", "change_budget": "moderate",
+ "render_mode": "html", "screenshots": [
+  "render/first-products-desktop-default.png", "render/first-products-desktop-default-full.png", "render/first-products-desktop-filtered.png", "render/first-products-desktop-empty.png", "render/first-products-desktop-focus.png",
+  "render/first-products-phone-default.png", "render/first-products-phone-default-full.png", "render/first-products-phone-sheet.png", "render/first-products-phone-filtered.png", "render/first-products-phone-empty.png", "render/first-products-phone-focus.png",
+  "render/final-products-desktop-default.png", "render/final-products-desktop-default-full.png", "render/final-products-desktop-filtered.png", "render/final-products-desktop-empty.png", "render/final-products-desktop-focus.png",
+  "render/final-products-phone-default.png", "render/final-products-phone-default-full.png", "render/final-products-phone-sheet.png", "render/final-products-phone-filtered.png", "render/final-products-phone-empty.png", "render/final-products-phone-focus.png"],
+ "context_detection": {"navigation": "yes", "theme": "yes", "typography": "no", "surfaces": "no", "spacing": "no"},
+ "preservation": {"navigation": true, "theme": true, "typography": true, "component_reuse": true, "unjustified_structural_change": 0},
+ "first_render_defects": {"visual": 1, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+ "final_defects": {"visual": 1, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+ "iterations": 2, "guidance_relevant": 5, "guidance_partial": 1, "guidance_offtarget": 1,
+ "direction_validation": "VIOLATIONS: non-media product: poster (media) card geometry selected (exit 3)",
+ "interaction_test": {"1440x900": {"pass": 8, "total": 8}, "390x844": {"pass": 8, "total": 8}, "checks": ["chipsKeyboardOperable", "resultCountAnnounced", "appliedChipRemovable", "urlReflectsState", "focusVisible", "targets(>=44 phone, >=24 desktop)", "emptyState", "matchesExistingPages"]},
+ "misses": [
+  {"layer": "requirements", "what": "screen=[checkout, list] and primary_jobs 'create checkout' from a page named only as a reference; components=[search] for 'filters'; jobs=[]; intent.preserve=[]"},
+  {"layer": "bundle-selection", "what": "comp-checkout-one-page selected as core (consequence of the screen miss); a11y-target-size and layout-grid-catalog not selected at default size"},
+  {"layer": "expected-concepts", "what": "no product listing tile record; no sort-control guidance"},
+  {"layer": "direction", "what": "card-poster-landscape (TV media card), imagery-hero, cta-sticky-bar, motion-crossfade for a listing page; validation flagged only the card"},
+  {"layer": "project-adaptation", "what": "inspect: surfaces 'elevated' (borders dominate), radius 'pill' (50% swatches counted), spacing 'irregular' (rem tokens not parsed), typography/components unknown"}
+ ],
+ "knowledge_gaps": ["product listing tile / product card", "sort control on listings"],
+ "regressions": [
+  {"query": "add a product listing page with filters to our outdoor gear web store, matching the existing product and checkout pages", "expect": "screen=[list]; components include filters and product card; bundle has comp-filters, layout-grid-catalog, search-filter-feedback, a11y-target-size; no comp-checkout-one-page"},
+  {"query": "direction: ecommerce listing page", "expect": "cards not poster/media, imagery not hero, cta not sticky-bar"},
+  {"query": "inspect stylesheet with rem spacing tokens, 4/8px radii, 50% swatches, shadows only on sticky/dialog", "expect": "spacing 4, radius small, surfaces bordered-flat, typography KNOWN"}
+ ],
+ "tags": ["requirements-miss", "ranking-miss", "knowledge-gap", "context-detection-miss", "direction-mismatch", "render-defect-fixed", "render-defect-remaining", "skill-helped", "preservation-ok"]}

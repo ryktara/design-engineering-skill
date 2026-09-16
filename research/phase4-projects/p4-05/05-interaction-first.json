@@ -1,0 +1,237 @@
+{
+  "label": "first",
+  "results": {
+    "1440x900": {
+      "regionAnnounced": {
+        "liveRole": "polite",
+        "textBefore": "1 open exception: 1 critical.",
+        "textOnArrival": "New warning: Chiller plant demand above threshold. 2 open exceptions: 1 critical, 1 warning.",
+        "textAfterAck": "New warning: Chiller plant demand above threshold. 1 open exception: 1 warning.",
+        "textWhenClear": "No open exceptions.",
+        "pass": true
+      },
+      "exceptionsFirst": {
+        "regionTag": "section",
+        "regionName": "Exceptions",
+        "sectionOrder": [
+          "exceptions-h",
+          "kpis-h",
+          "demand-h",
+          "meters-h",
+          "alerts-h"
+        ],
+        "indexInMain": 2,
+        "pass": true
+      },
+      "featuredIsHighestSeverity": {
+        "atArrival": {
+          "chip": "✖Critical",
+          "title": "Cold store 2 meter offline",
+          "tone": "exceptions critical"
+        },
+        "afterAck": {
+          "chip": "▲Warning",
+          "title": "Chiller plant demand above threshold",
+          "tone": "exceptions warning"
+        },
+        "pass": true
+      },
+      "onePrimaryAction": {
+        "inRegion": [
+          "button:Acknowledge"
+        ],
+        "pagePrimaries": [
+          "Export report"
+        ],
+        "pass": true
+      },
+      "noLayoutShift": {
+        "onArrival": {
+          "pagehead": 0,
+          "exceptions": 0,
+          "kpis": 0,
+          "chart": 0,
+          "meters": 0
+        },
+        "onAcknowledge": {
+          "pagehead": 0,
+          "exceptions": 0,
+          "kpis": 0,
+          "chart": 0,
+          "meters": 0
+        },
+        "onClear": {
+          "pagehead": 0,
+          "exceptions": 0,
+          "kpis": 0,
+          "chart": 0,
+          "meters": 0
+        },
+        "stripHeight": [
+          72,
+          72,
+          72,
+          72
+        ],
+        "pass": true
+      },
+      "alertsListFollows": {
+        "rows": [
+          1,
+          2
+        ],
+        "ackedAfterTwo": 2,
+        "pass": true
+      },
+      "keyboard": {
+        "tabsToReach": 8,
+        "reached": true,
+        "focusInfo": {
+          "inRegion": true,
+          "text": "Acknowledge",
+          "ring": true
+        },
+        "enterAcknowledged": true,
+        "pass": true
+      },
+      "notColourOnly": {
+        "pass": true
+      },
+      "targets": {
+        "small": [
+          {
+            "text": "Alert history",
+            "h": 16
+          }
+        ],
+        "pass": false
+      },
+      "preserved": {
+        "nav": "Overview,Meters,Reports,Settings",
+        "topbarBg": "rgb(15, 23, 42)",
+        "bodyBg": "rgb(244, 246, 248)",
+        "pageheadFirst": true,
+        "h1": 1,
+        "pass": true
+      },
+      "passCount": 9,
+      "total": 10
+    },
+    "390x844": {
+      "regionAnnounced": {
+        "liveRole": "polite",
+        "textBefore": "1 open exception: 1 critical.",
+        "textOnArrival": "New warning: Chiller plant demand above threshold. 2 open exceptions: 1 critical, 1 warning.",
+        "textAfterAck": "New warning: Chiller plant demand above threshold. 1 open exception: 1 warning.",
+        "textWhenClear": "No open exceptions.",
+        "pass": true
+      },
+      "exceptionsFirst": {
+        "regionTag": "section",
+        "regionName": "Exceptions",
+        "sectionOrder": [
+          "exceptions-h",
+          "kpis-h",
+          "demand-h",
+          "meters-h",
+          "alerts-h"
+        ],
+        "indexInMain": 2,
+        "pass": true
+      },
+      "featuredIsHighestSeverity": {
+        "atArrival": {
+          "chip": "✖Critical",
+          "title": "Cold store 2 meter offline",
+          "tone": "exceptions critical"
+        },
+        "afterAck": {
+          "chip": "▲Warning",
+          "title": "Chiller plant demand above threshold",
+          "tone": "exceptions warning"
+        },
+        "pass": true
+      },
+      "onePrimaryAction": {
+        "inRegion": [
+          "button:Acknowledge"
+        ],
+        "pagePrimaries": [
+          "Export report"
+        ],
+        "pass": true
+      },
+      "noLayoutShift": {
+        "onArrival": {
+          "pagehead": 0,
+          "exceptions": 0,
+          "kpis": 0,
+          "chart": 0,
+          "meters": 0
+        },
+        "onAcknowledge": {
+          "pagehead": 0,
+          "exceptions": 0,
+          "kpis": 0,
+          "chart": 0,
+          "meters": 0
+        },
+        "onClear": {
+          "pagehead": 0,
+          "exceptions": 0,
+          "kpis": 0,
+          "chart": 0,
+          "meters": 0
+        },
+        "stripHeight": [
+          132,
+          132,
+          132,
+          132
+        ],
+        "pass": true
+      },
+      "alertsListFollows": {
+        "rows": [
+          1,
+          2
+        ],
+        "ackedAfterTwo": 2,
+        "pass": true
+      },
+      "keyboard": {
+        "tabsToReach": 8,
+        "reached": true,
+        "focusInfo": {
+          "inRegion": true,
+          "text": "Acknowledge",
+          "ring": true
+        },
+        "enterAcknowledged": true,
+        "pass": true
+      },
+      "notColourOnly": {
+        "pass": true
+      },
+      "targets": {
+        "small": [
+          {
+            "text": "Alert history",
+            "h": 16
+          }
+        ],
+        "pass": false
+      },
+      "preserved": {
+        "nav": "Overview,Meters,Reports,Settings",
+        "topbarBg": "rgb(15, 23, 42)",
+        "bodyBg": "rgb(244, 246, 248)",
+        "pageheadFirst": true,
+        "h1": 1,
+        "pass": true
+      },
+      "passCount": 9,
+      "total": 10
+    }
+  }
+}

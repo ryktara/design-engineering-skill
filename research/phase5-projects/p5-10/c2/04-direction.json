@@ -1,0 +1,135 @@
+{
+  "brand": "Add a subtitles and audio language chooser to the player.",
+  "fingerprint": {
+    "navigation_model": "tv-side-nav",
+    "color_strategy": "dark-with-accent"
+  },
+  "direction": {
+    "navigation": "nav-tv-side",
+    "layout": null,
+    "density": null,
+    "surface": null,
+    "cards": null,
+    "typography": null,
+    "color": "color-dark-accent",
+    "motion": null,
+    "focus": null,
+    "cta": null,
+    "imagery": null,
+    "icon": null,
+    "metadata": null
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "tv"
+    ],
+    "input": [
+      "remote"
+    ],
+    "product": [
+      "media"
+    ],
+    "screen": [
+      "player"
+    ],
+    "screen_subtype": [],
+    "stack": [
+      "compose",
+      "compose-tv"
+    ],
+    "density": "medium",
+    "components": [
+      "media"
+    ],
+    "environment": [
+      "large-display",
+      "shared-device"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "create player"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "create"
+      ],
+      "problem_domain": [
+        "interaction",
+        "content"
+      ],
+      "change_scope": "screen",
+      "utterance": "request",
+      "preserve": []
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "create: build/create request on an existing surface"
+    ],
+    "project_context": {
+      "navigation": "tv-rails (KNOWN)",
+      "theme": "dark-first (KNOWN)",
+      "surfaces": "bordered-flat (INFERRED)",
+      "radius": "pill (INFERRED)",
+      "spacing": "8 (INFERRED)",
+      "typography": "custom (KNOWN)",
+      "components": "compose, compose-tv-material, media3, images:coil (KNOWN)"
+    },
+    "known": [
+      "platform=tv",
+      "input=remote",
+      "product=media",
+      "stack=compose",
+      "stack=compose-tv",
+      "screen=player",
+      "project_navigation=tv-rails",
+      "project_theme=dark-first",
+      "project_typography=custom",
+      "project_components=compose, compose-tv-material, media3, images:coil"
+    ],
+    "inferred": [
+      "density=medium",
+      "mode=create",
+      "environment=shared-device",
+      "environment=large-display",
+      "project_surfaces=bordered-flat",
+      "project_radius=pill",
+      "project_spacing=8"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

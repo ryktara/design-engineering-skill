@@ -1,0 +1,172 @@
+{
+  "case": "p3-erp-desktop-dotnet",
+  "mode": "native WPF app driven with real OS keyboard input (keybd_event) from an in-process capture harness; screenshots via RenderTargetBitmap at 96 dpi",
+  "inputMode": "os-keybd_event",
+  "windowActive": true,
+  "minControlHeight": 32,
+  "passed": 18,
+  "total": 18,
+  "checks": [
+    {
+      "check": "Arrow Down moves the current cell down",
+      "pass": true,
+      "evidence": "row 0→2, column Item"
+    },
+    {
+      "check": "Arrow Right moves the current cell right",
+      "pass": true,
+      "evidence": "column Item→Qty"
+    },
+    {
+      "check": "F2 enters edit mode",
+      "pass": true,
+      "evidence": "editing=True, focused=TextBox"
+    },
+    {
+      "check": "Enter commits the edit and moves down one row",
+      "pass": true,
+      "evidence": "row 2→3, committed qty 800.0012, dirty=True"
+    },
+    {
+      "check": "Tab moves right",
+      "pass": true,
+      "evidence": "Qty→Unit, editing=False"
+    },
+    {
+      "check": "Shift+Tab moves left",
+      "pass": true,
+      "evidence": "Unit→Qty"
+    },
+    {
+      "check": "Typing a digit starts editing (type-to-edit)",
+      "pass": true,
+      "evidence": "editing=True"
+    },
+    {
+      "check": "Escape cancels the edit and keeps the value",
+      "pass": true,
+      "evidence": "qty 36→36"
+    },
+    {
+      "check": "Tab out of an editing cell does not leave the next cell in edit mode",
+      "pass": true,
+      "evidence": "after F2,Tab: column Unit, editing=False, focused=DataGridCell",
+      "first_render_pass": false
+    },
+    {
+      "check": "Invalid value (qty 0) marks the row and updates the status-bar error count",
+      "pass": true,
+      "evidence": "row errors: Quantity must be greater than 0.; count 2→3"
+    },
+    {
+      "check": "Shift+Down extends the row selection",
+      "pass": true,
+      "evidence": "selected rows after Shift+Down x2 = 3",
+      "first_render_pass": false
+    },
+    {
+      "check": "Header stays visible while scrolled to the last row",
+      "pass": true,
+      "evidence": "header top y 115.2→115.2, vertical offset 3, row 23"
+    },
+    {
+      "check": "Enter on the last row adds a new line and moves into it",
+      "pass": true,
+      "evidence": "lines 24→25, row 24"
+    },
+    {
+      "check": "Focus ring visible on the current cell after every keyboard move",
+      "pass": true,
+      "evidence": "17/17 snapshots show a 2 px Brush.Focus.Ring border on the focused cell"
+    },
+    {
+      "check": "Numeric columns right-aligned with tabular figures; text columns left",
+      "pass": true,
+      "evidence": {
+        "Item": "Left",
+        "Description": "Left",
+        "Qty": "Right/tabular",
+        "Unit": "Left",
+        "Unit price": "Right/tabular",
+        "Disc %": "Right/tabular",
+        "Tax %": "Right/tabular",
+        "Line total": "Right/tabular",
+        "Warehouse": "Left",
+        "Requested": "Left",
+        "Status": "Left",
+        "Notes": "Left"
+      }
+    },
+    {
+      "check": "F6 cycles panes (filter → command bar → grid) and Ctrl+F focuses the filter",
+      "pass": true,
+      "evidence": {
+        "f6": [
+          "TextBox",
+          "Button",
+          "DataGridCell"
+        ],
+        "ctrlF": "TextBox(FilterBox)"
+      }
+    },
+    {
+      "check": "Reduced motion: no storyboards; only the indeterminate progress bar in the loading state (no OS reduced-motion query in WPF beyond SystemParameters.ClientAreaAnimation)",
+      "pass": true,
+      "evidence": {
+        "systemClientAreaAnimation": true,
+        "appAnimations": "none except the indeterminate ProgressBar in the loading state; no storyboards"
+      }
+    },
+    {
+      "check": "Column priority: low-priority columns hide first as the window narrows; essentials stay",
+      "pass": true,
+      "evidence": {
+        "1440x900": {
+          "hidden": 0,
+          "visible": [
+            "Item",
+            "Description",
+            "Qty",
+            "Unit",
+            "Unit price",
+            "Disc %",
+            "Tax %",
+            "Line total",
+            "Warehouse",
+            "Requested",
+            "Status",
+            "Notes"
+          ]
+        },
+        "1100x700": {
+          "hidden": 4,
+          "visible": [
+            "Item",
+            "Description",
+            "Qty",
+            "Unit",
+            "Unit price",
+            "Line total",
+            "Warehouse",
+            "Status"
+          ]
+        },
+        "820x600": {
+          "hidden": 7,
+          "visible": [
+            "Item",
+            "Description",
+            "Qty",
+            "Unit price",
+            "Line total"
+          ]
+        }
+      }
+    }
+  ],
+  "notes": [
+    "First-render failures: Tab from an editing cell left the ComboBox column in edit mode (arrows then went to the editor); Shift+Down did not extend the selection (two causes: IsSynchronizedWithCurrentItem re-syncing the selection on every CurrentCell move, and the harness sending numpad arrow keys without KEYEVENTF_EXTENDEDKEY so Windows injected a Shift release).",
+    "Harness caveat: the F2 test appends '12' after the formatted '800.00' (caret at end) producing 800.0012; this documents current caret behaviour rather than a target value.",
+    "Not verified: Narrator/NVDA, 150/200% DPI, high-contrast theme, mouse/context-menu paths, column-layout persistence (not implemented)."
+  ]
+}

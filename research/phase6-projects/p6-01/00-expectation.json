@@ -1,0 +1,33 @@
+{
+  "task": "p6-01",
+  "sentence": "Nobody can find the API keys section; it is buried at the bottom of the settings page.",
+  "platform": "web",
+  "artifact_state": "existing",
+  "acceptable_modes": ["refactor", "polish"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "layout.settings_grouping",
+    "navigation.rail_semantics",
+    "navigation.deep_link_state",
+    "layout.focal_hierarchy",
+    "privacy.sensitive_masking",
+    "process.reuse_first",
+    "process.safe_modification"
+  ],
+  "critical_concepts": ["layout.settings_grouping", "process.reuse_first"],
+  "forbidden_concepts": [
+    "adaptive.navigation_transform",
+    "brand.dark_mode_redesign",
+    "anti.template_landing",
+    "layout.hero_thesis",
+    "table.virtualization",
+    "interaction.command_palette"
+  ],
+  "preservation": ["navigation (left rail + settings tab strip)", "theme", "typography", "component-reuse (ui/card, ui/table, ui/button, settings-nav pattern)"],
+  "reviewer_notes": {
+    "codebase_facts": "Next.js 15.3 app router, React 19, Tailwind v4 @theme inline, shadcn new-york/zinc primitives, Geist Sans/Mono via next/font, light-first :root with .dark opt-in, left rail (hidden <md) + top header, settings sub-nav tab strip (General / Members / Billing / Security) in components/settings-nav.tsx; only /settings/billing and /settings/members routes exist.",
+    "premise_check": "There is NO API keys section anywhere in the code (grep 'api key' over app/, components/, lib/ returns nothing; /settings/general and /settings/security routes do not exist). The sentence presumes a section buried at the bottom of a settings page; the code has no such section. The task will be run verbatim and the fix realised as: give API keys its own settings section reachable from the settings tab strip (own route, own tab), built with the project's primitives.",
+    "what_a_good_answer_does": "Treat it as an information-architecture / findability fix on an existing settings area with a low budget: a dedicated, named entry in the settings sub-nav (aria-current, same tab pattern), its own deep-linkable route, page heading + description in the same hierarchy as Billing/Members, key values masked with a reveal-once pattern, reuse Card/Table/Button; no hero, no redesign of nav or theme, no command palette, no virtualised table.",
+    "forbidden_rationale": "A nav transform, dark-mode redesign, hero/landing patterns or a command palette would all be out of budget for 'move a section where people can find it'."
+  }
+}

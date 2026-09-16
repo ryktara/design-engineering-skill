@@ -1,0 +1,144 @@
+{
+  "task": "p6-23",
+  "project": "p3-winui-erp-audit",
+  "platform_expected": "desktop",
+  "platform_resolved": "desktop",
+  "platform_correct": "yes",
+  "stack": "winui3 (WindowsAppSDK 1.7, CommunityToolkit.Mvvm 8.4, CommunityToolkit.WinUI DataGrid 7.1.2, .NET 9)",
+  "existing_ui": true,
+  "new_screen": true,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": ["review", "audit", "accessibility"],
+  "mode_resolved": ["audit", "review"],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "low",
+  "render_mode": "html-twin",
+  "screenshots": [
+    "render/first-desktop.png",
+    "render/first-shortcuts.png",
+    "render/final-desktop.png",
+    "render/final-shortcuts.png"
+  ],
+  "context_detection": {
+    "navigation": "no",
+    "theme": "yes",
+    "typography": "partial",
+    "surfaces": "yes",
+    "spacing": "yes"
+  },
+  "preservation": {
+    "navigation": true,
+    "theme": true,
+    "typography": true,
+    "component_reuse": true,
+    "unjustified_structural_change": 0
+  },
+  "expected_concepts": [
+    "interaction.keyboard_navigation",
+    "interaction.focus_visible",
+    "interaction.shortcuts",
+    "a11y.accessible_names",
+    "interaction.selection_visible",
+    "interaction.menu_semantics",
+    "a11y.dialog_focus"
+  ],
+  "critical_concepts": [
+    "interaction.keyboard_navigation",
+    "interaction.focus_visible",
+    "interaction.shortcuts"
+  ],
+  "delivered_concepts": [
+    "interaction.keyboard_navigation",
+    "interaction.shortcuts",
+    "interaction.focus_visible",
+    "table.tabular_figures",
+    "brand.type_roles"
+  ],
+  "concept_recall": 0.43,
+  "critical_recall": 1.0,
+  "concept_misses": [
+    {"concept": "a11y.accessible_names", "layer": "bundle-selection"},
+    {"concept": "interaction.selection_visible", "layer": "expected-concepts"},
+    {"concept": "interaction.menu_semantics", "layer": "expected-concepts"},
+    {"concept": "a11y.dialog_focus", "layer": "expected-concepts"}
+  ],
+  "first_render_defects": {
+    "visual": 2,
+    "interaction": 0,
+    "accessibility": 0,
+    "platform": 0,
+    "existing-system-mismatch": 0,
+    "implementation-bug": 2
+  },
+  "final_defects": {
+    "visual": 1,
+    "interaction": 0,
+    "accessibility": 0,
+    "platform": 0,
+    "existing-system-mismatch": 0,
+    "implementation-bug": 0
+  },
+  "iterations": 2,
+  "guidance_relevant": 1,
+  "guidance_partial": 1,
+  "guidance_offtarget": 0,
+  "bad_guidance": [
+    {
+      "record": "typo-scale-and-roles",
+      "category": "generic",
+      "why": "Type-scale-and-roles advice on a keyboard-operability review with change_budget 'low' and typography a preserved slot. It entered only because table.tabular_figures was marked critical, taking half a 2-record bundle from the uncovered 'accessibility' and 'component' concerns."
+    }
+  ],
+  "layer_review": {
+    "core": [],
+    "critical": ["typo-scale-and-roles", "desktop-keyboard-first"],
+    "optional": [],
+    "optional_useful": 0,
+    "optional_noise": 0
+  },
+  "guidance_used": ["desktop-keyboard-first"],
+  "guidance_ignored": [
+    {
+      "id": "typo-scale-and-roles",
+      "why": "Typography is a preserved slot at change_budget 'low'; the project inherits the WinUI type ramp and its numeric style already sets Typography.NumeralAlignment=Tabular. Generating a new scale would be an unjustified change on a keyboard-operability task."
+    }
+  ],
+  "unjustified_direction_slots": 0,
+  "process_records_needed": false,
+  "process_records_reason": "SKILL.md §2 (reuse -> extend -> compose -> new) and §7 (render and inspect) were enough; the sibling StockAdjustmentsPage is a stronger reuse signal than any record. Noted: process.reuse_first was reported as 'not surfaced', and reuse was the decision that shaped the implementation.",
+  "skill_effect": "neutral",
+  "guidance_tokens": 245,
+  "misses": [
+    {"layer": "criticality", "what": "table.tabular_figures marked critical for a keyboard-operability review; not a keyboard concept, and it is why a GENERIC typography record occupies half the bundle."},
+    {"layer": "bundle-selection", "what": "a11y-keyboard-operable (top-ranked record for this exact sentence in `search`, 0.45) and a11y-labels-names / a11y-native-semantics never entered the bundle; a11y.accessible_names left uncovered."},
+    {"layer": "expected-concepts", "what": "interaction.selection_visible, interaction.menu_semantics and a11y.dialog_focus never demanded for a keyboard review of a desktop table screen."},
+    {"layer": "project-context", "what": "Shell navigation detected as 'menu-bar'; the app is a NavigationView left rail. Propagated into requirements, the direction's navigation slot (nav-menu-bar-desktop) and the fingerprint."},
+    {"layer": "requirements", "what": "screen: [] — 'invoice matching page' produced no screen classification, so every table / master-detail record was omitted for 'no positive task evidence' on a screen that is two tables."}
+  ],
+  "knowledge_gaps": [],
+  "regressions": [
+    {"query": "Review the supplier invoice matching page for keyboard operability.", "expect": "Bundle contains a11y-keyboard-operable or a11y-labels-names and covers a11y.accessible_names; table.tabular_figures is not critical for an interaction/keyboard review and typo-scale-and-roles does not enter the bundle."},
+    {"query": "keyboard or screen-reader review sentence naming a desktop table/grid screen", "expect": "interaction.selection_visible, interaction.menu_semantics and a11y.dialog_focus are demanded as expected concepts."},
+    {"query": "inspect_project on a WinUI/WPF project whose shell is a NavigationView with NavigationViewItems", "expect": "design_context.navigation = left-rail, not menu-bar; page-level CommandBar/MenuFlyout hits must not outweigh shell navigation evidence."},
+    {"query": "inspect_project on a project setting Typography.NumeralAlignment=\"Tabular\"", "expect": "design_context.typography.features.tabular_numerals = true."}
+  ],
+  "tags": [
+    "concept-miss",
+    "ranking-miss",
+    "context-detection-miss",
+    "requirements-miss",
+    "direction-mismatch",
+    "render-defect-fixed",
+    "render-defect-remaining",
+    "preservation-ok",
+    "partial-scope-ok",
+    "skill-neutral"
+  ],
+  "build_hash_start": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947",
+  "build_hash_end": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947"
+}

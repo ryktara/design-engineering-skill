@@ -1,0 +1,54 @@
+{
+  "description": "Regression cases for activation-proxy false positives observed on the independent activation set (framework-runtime prompts that mention UI technologies).",
+  "suite": "activation",
+  "cases": [
+    {
+      "id": "reg-act-nextjs-redirect-loop",
+      "prompt": "Next.js middleware redirect loop between /login and /dashboard",
+      "expect": "skip",
+      "note": "2026-09-08 activation run 1 FP act-097: framework runtime bug, not UI work."
+    },
+    {
+      "id": "reg-act-swiftui-state-thread",
+      "prompt": "SwiftUI @State not updating when set from a background thread",
+      "expect": "skip",
+      "note": "2026-09-08 activation run 1 FP act-099."
+    },
+    {
+      "id": "reg-act-rn-gradle",
+      "prompt": "React Native Android build fails, duplicate class in Gradle",
+      "expect": "skip",
+      "note": "2026-09-08 activation run 1 FP act-106."
+    },
+    {
+      "id": "reg-act-wpf-canexecute",
+      "prompt": "WPF MVVM: ICommand CanExecute never re-evaluates after async call",
+      "expect": "skip",
+      "note": "2026-09-08 activation run 1 FP act-110."
+    },
+    {
+      "id": "reg-act-tailwind-purge",
+      "prompt": "Tailwind classes aren't being purged in production build",
+      "expect": "skip",
+      "note": "2026-09-08 activation run 1 FP act-159."
+    },
+    {
+      "id": "reg-act-postgres-orders",
+      "prompt": "Optimise this Postgres query, it takes 12s on the orders table",
+      "expect": "skip",
+      "note": "2026-09-08 activation run 1 FP act-061: 'table' is a DB table here."
+    },
+    {
+      "id": "reg-act-kiosk-progress-positive",
+      "prompt": "Progress indicator for the 5-step kiosk checkout, users don't know how far along they are",
+      "expect": "activate",
+      "note": "2026-09-08 activation run 1 FN act-059: a kiosk checkout stepper is UI work; 'progress indicator' vocabulary was missing."
+    },
+    {
+      "id": "reg-act-ui-term-plus-stack-activates",
+      "prompt": "Purchase order lines grid for our WPF ERP client; clerks enter 200 lines a day with the keyboard",
+      "expect": "activate",
+      "note": "2026-09-09 torture test p3-erp-desktop-dotnet: a clear UI request with one UI term (grid) and a UI framework word (WPF) was reported AMBIGUOUS because stack words carried no activation weight. Fixed: a stack word breaks the tie toward UI only when a UI term is present and no non-UI term is (tailwind-purge and similar tooling prompts stay non-activating)."
+    }
+  ]
+}

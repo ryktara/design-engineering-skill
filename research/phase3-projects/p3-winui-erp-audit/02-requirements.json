@@ -1,0 +1,96 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "accessibility",
+    "audit"
+  ],
+  "platform": [
+    "desktop",
+    "tv"
+  ],
+  "input": [
+    "keyboard",
+    "pointer",
+    "remote"
+  ],
+  "product": [
+    "erp"
+  ],
+  "screen": [],
+  "screen_subtype": [],
+  "stack": [
+    "winui"
+  ],
+  "density": "medium",
+  "components": [],
+  "environment": [
+    "large-display",
+    "shared-device"
+  ],
+  "jobs": [],
+  "problems": [
+    "accessibility",
+    "interaction"
+  ],
+  "risk": "low",
+  "primary_jobs": [
+    "accessibility"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "performance_sensitive": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "keyboard": true,
+    "screen_reader": true,
+    "focus": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "known": [
+    "platform=desktop (project inspection)",
+    "platform=tv (project inspection)",
+    "input=remote (project inspection: DPAD/remote handling in source)",
+    "product=erp (request: warehouse)",
+    "stack=winui (request: winui)",
+    "mode=accessibility (request: screen reader)"
+  ],
+  "inferred": [
+    "input=pointer (implied by platform desktop)",
+    "input=keyboard (implied by platform desktop)",
+    "density=medium (implied by product erp (capped for touch/remote platform))",
+    "mode=audit (problem statement (interaction): confusing, keep missing)",
+    "environment=shared-device (a TV is normally a shared household device)",
+    "environment=large-display (TV platform)"
+  ],
+  "missing": [],
+  "status": "CONFIDENT",
+  "source": {
+    "request": [
+      "confusing",
+      "keep missing",
+      "screen reader",
+      "screen reader reads",
+      "warehouse",
+      "winui"
+    ],
+    "project": [
+      "Erp.Client.csproj: Microsoft.WindowsAppSDK",
+      "Erp.Client.csproj: CommunityToolkit.WinUI",
+      "DPAD / remote key handling found in source"
+    ]
+  },
+  "activation": {
+    "decision": "activate",
+    "ui_score": 4.0,
+    "non_ui_score": 0,
+    "ui_terms": [
+      "screen",
+      "page",
+      "confusing"
+    ],
+    "non_ui_terms": []
+  }
+}

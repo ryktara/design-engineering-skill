@@ -1,0 +1,86 @@
+## design-engineering search: add a column-defaults settings dialog to the purchase order lines window so clerks can choose default warehouse and hidden columns
+status=CONFIDENT modes=['create'] platforms={'desktop': 'KNOWN'} inputs={'pointer': 'INFERRED', 'keyboard': 'INFERRED'} products={'erp': 'KNOWN'} density=high stacks=[] screens=['settings'] negatives=[]
+facets required=['component', 'layout', 'platform', 'interaction', 'navigation', 'direction'] unmet=[] diversity=0.92
+MISSING: brand: no brand assets, guideline, or character description available; stack: implementation stack not stated and no repository evidence
+
+### Rich metadata (operational)  `metadata-rich`  [pattern/metadata; layout/platform] score 0.508 · heuristic
+Columns with user-controlled visibility and order, consistent formatting per type (dates, currency, IDs in monospace), status as text+colour, truncation with full value on focus/hover and in the detail pane.
+- use when: Operations: many attributes per record visible at once (tables, ledgers, tickets), with sorting/filtering on any of them.
+- avoid when: Consumer browsing, mobile, TV.
+- incompatible with: metadata-minimal, layout-rails, layout-immersive-rails, density-low
+- why: lexical 0.128, structural 0.84 (platform desktop, input keyboard,pointer, mode create, product erp, density high)
+
+### Dialog focus management  `a11y-modal-dialog`  [rule/dialog; component/platform] score 0.486 · accessibility-requirement
+On open: focus the first meaningful control (or the heading), trap Tab inside, inert the background, label the dialog by its title. On close: return focus to the invoker. Escape and the visible close button both close; destructive confirmations put the safe action as default. Use <dialog>/showModal, ContentDialog, .sheet, ModalBottomSheet rather than a div overlay.
+- use when: Modals, sheets, drawers, popovers, confirmations.
+- avoid when: Do not use modals for content that could be inline; do not stack modals.
+- why: lexical 0.312, structural 0.7 (platform desktop, mode create)
+
+### Persistent left rail / sidebar  `nav-left-rail`  [pattern/navigation; navigation/platform] score 0.467 · heuristic
+Fixed-width rail (collapsible to icons with labels on hover/focus) holding grouped sections; secondary navigation lives in the content header, not as a second rail. Don't add a rail because 'apps have sidebars': justify it with section count and switching frequency. Mark active section with a visible indicator that survives collapse.
+- use when: Authenticated tools with 6+ peer sections, frequent switching, and wide viewports; power users who need stable wayfinding.
+- avoid when: Marketing pages, single-task flows (checkout, onboarding), phone widths, or when the product has three destinations and the rail would be mostly empty.
+- incompatible with: nav-top-bar, nav-bottom-tabs, nav-tv-side, nav-hub-spoke
+- why: lexical 0.017, structural 0.84 (platform desktop, input keyboard,pointer, mode create, product erp, density high)
+
+### Settings screen  `comp-settings-screen`  [component/settings; component] score 0.442 · platform-standard
+Grouped rows with clear labels and current values visible, toggles for booleans with immediate effect, pickers for enums, destructive actions at the end with confirmation, search for long settings, platform idiom (grouped lists on mobile, sections/panes on desktop, TV: vertical list with DPAD and a right-side value column). Save behaviour explicit (auto vs Save button).
+- use when: Preferences, account, notifications, appearance.
+- avoid when: Never bury frequently changed settings three levels deep; never use toggles for actions.
+- why: lexical 0.378, structural 0.52 (mode create, screen settings)
+
+### Desktop menu bar + toolbar commands  `nav-menu-bar-desktop`  [pattern/navigation; navigation/platform] score 0.44 · platform-standard
+Menu bar for the complete command set with access keys and accelerators shown; toolbar/command bar for the frequent subset; context menus mirror the toolbar for the selected object. Commands must be enabled/disabled by state, never hidden, so users learn where things live.
+- use when: Document-centric or record-centric desktop apps with many commands, where discoverability through menus and accelerators matters (Alt+F, Ctrl+S).
+- avoid when: Consumer apps with a handful of actions (use a command bar), touch-first devices, or web apps pretending to be native.
+- incompatible with: nav-bottom-tabs, nav-tv-side, nav-hub-spoke
+- why: lexical 0.04, structural 0.84 (platform desktop, input keyboard,pointer, mode create, product erp, density high)
+
+### High density  `density-high`  [pattern/density; layout/platform] score 0.438 · heuristic
+4 px base grid, 32 px row height in tables, 13–14 px body, 8–12 px gaps inside groups and 16–24 px between groups; density must be achieved by tightening spacing and sizes coherently, not by shrinking text below the platform floor. Offer a 'comfortable' density toggle where users differ.
+- use when: Expert users, repeated daily use, comparison and scanning tasks, large screens with a pointer.
+- avoid when: Touch-only, first-time users, TV, or emotional/branding surfaces.
+- incompatible with: density-low, layout-editorial, typography-serif-display
+- why: lexical 0.0, structural 0.84 (platform desktop, input keyboard,pointer, mode create, product erp, density high)
+
+### Bordered panes  `surface-bordered-panes`  [pattern/surface; layout/platform] score 0.428 · heuristic
+One neutral canvas, borders with ≥3:1 contrast where they define panes, headers as slightly darker/lighter strips, no rounded card containers inside panes. Focus rings and selection highlights carry the colour.
+- use when: Dense workbenches where regions are separated by 1 px borders and the canvas is a single tone; the IDE/spreadsheet aesthetic.
+- avoid when: Consumer or brand-led products, touch-first products with fat targets.
+- incompatible with: surface-glass, surface-elevated-cards, layout-immersive-rails
+- why: lexical 0.0, structural 0.84 (platform desktop, input keyboard,pointer, mode create, product erp, density high)
+
+### Bordered cards  `card-bordered`  [pattern/cards; layout/platform] score 0.428 · heuristic
+Border token with measured contrast, 6–8 px radius, header row with title and one action, body with a clear hierarchy; selectable cards (plans) use a stronger border + check mark, never colour alone.
+- use when: Settings pages, integration lists, plan pickers: discrete objects on a light canvas where a 1 px border (≥3:1) delineates without elevation.
+- avoid when: Nested inside other cards or panels; on dark themes where borders vanish (use tonal steps).
+- incompatible with: surface-elevated-cards, surface-imagery-backed, card-none
+- why: lexical 0.083, structural 0.76 (platform desktop, input keyboard,pointer, mode create, product erp)
+
+### Desktop: layouts survive window resizing and DPI  `desktop-window-resizing`  [rule/layout; layout/platform] score 0.412 · platform-standard
+Define a minimum window size (e.g. 800×600 epx) and breakpoints (Windows: <641 small, 641–1007 medium, ≥1008 large epx); panes collapse in a documented order; use star/auto grid sizing, not absolute; test at 150% and 200% DPI; remember window size/position and pane widths per user.
+- use when: Every desktop window: minimum size, pane collapse order, DPI scaling 100–300%, multi-monitor.
+- avoid when: Never fix pixel widths for content columns; never assume 1920×1080.
+- why: lexical 0.127, structural 0.76 (platform desktop, input keyboard,pointer, mode create)
+
+### Visible focus ring (web/desktop)  `focus-ring-standard`  [pattern/focus; interaction/platform] score 0.408 · accessibility-requirement
+One focus token (colour + width + offset) applied globally; never outline:none without a replacement; ring must remain visible on the accent surface (use a two-tone ring or offset); composite focus in tables/lists uses a cell/row highlight plus the ring on the active element.
+- use when: All pointer+keyboard UI: a 2–3 px ring with ≥3:1 contrast against adjacent colours, offset so it is not hidden by borders, shown for :focus-visible.
+- avoid when: TV (needs scale/glow because the ring is too subtle at 3 m).
+- incompatible with: focus-scale-glow, focus-none-touch-only
+- why: lexical 0.089, structural 0.62 (platform desktop, input keyboard,pointer, mode create)
+
+### Everything operable by keyboard, no traps  `a11y-keyboard-operable`  [rule/accessibility; accessibility/platform] score 0.402 · accessibility-requirement
+Tab reaches every control in visual order; composite widgets use arrow keys with a roving tabindex so Tab is not consumed by every cell; Escape closes layers and returns focus to the invoker; nothing traps focus except a modal, and the modal itself must be escapable. Provide a keyboard alternative for every drag interaction.
+- use when: Every interactive element, including custom widgets, drag/drop, sliders, menus, date pickers, and anything that appears on hover.
+- avoid when: Never skip.
+- why: lexical 0.109, structural 0.76 (platform desktop, input keyboard, mode create)
+
+### Operational workbench  `dir-operational-workbench`  [direction/direction; direction/platform] score 0.378 · internal-preference
+Character comes from precision: a tight 4 px grid, tabular figures, hairline borders with real contrast, one accent used only for selection and primary commands, quiet surfaces, dense but aligned. Identity via a distinctive neutral tint, a characterful monospace for IDs/values, and a consistent status colour language. No hero, no cards-in-cards, no gradients.
+- use when: Daily-use record tools (ERP, ledgers, ticketing, admin) for trained users who value speed and scanning.
+- avoid when: Consumer, marketing, TV, or first-time-user products.
+- incompatible with: surface-glass, motion-cinematic, imagery-hero, typography-serif-display
+- why: lexical 0.0, structural 0.84 (platform desktop, input keyboard,pointer, mode create, product erp, density high)
+
+Filtered out: anti-hero-template (platform ['web'] not in request ['desktop']); anti-scroll-animation-everything (platform ['mobile', 'web'] not in request ['desktop']); anti-default-fonts (platform ['web'] not in request ['desktop']); comp-media-card (platform ['mobile', 'tv', 'web'] not in request ['desktop']); comp-epg (platform ['tablet', 'tv', 'web'] not in request ['desktop']); comp-list-row-mobile (platform ['mobile', 'tablet'] not in request ['desktop']); comp-hero-section (platform ['mobile', 'web'] not in request ['desktop']); comp-tv-sign-in (platform ['tv'] not in request ['desktop'])

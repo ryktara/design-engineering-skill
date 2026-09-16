@@ -1,0 +1,136 @@
+{
+ "task": "p5-02",
+ "build": "50966e8e6184f31722a7b3c7f270a241dd0f7b68187492d0c971f7c79734e680",
+ "c1_recorded": {
+  "platform_expected": "web",
+  "platform_resolved": [
+   "web"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "new",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": false,
+  "mode_expected": [
+   "create"
+  ],
+  "mode_resolved": [
+   "create"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "CONFIDENT",
+  "bundle_ids": [
+   "comp-plan-comparison",
+   "comp-form",
+   "cta-sticky-bar",
+   "a11y-keyboard-operable",
+   "a11y-focus-visible",
+   "web-responsive-breakpoints"
+  ],
+  "bundle_tokens": 1081,
+  "expected_concepts": [
+   "process.reuse_first",
+   "feedback.validation_errors",
+   "a11y.dialog_focus",
+   "layout.one_primary_action",
+   "state.loading_empty_error",
+   "a11y.live_status",
+   "form.autofill_attributes"
+  ],
+  "critical_concepts": [
+   "process.reuse_first",
+   "feedback.validation_errors",
+   "a11y.dialog_focus"
+  ],
+  "delivered_concepts": [
+   "a11y.color_not_only",
+   "adaptive.breakpoint_matrix",
+   "adaptive.navigation_transform",
+   "data.comparison_structure",
+   "feedback.confirmation_destructive",
+   "feedback.validation_errors",
+   "form.autofill_attributes",
+   "interaction.focus_visible",
+   "interaction.hover_independence",
+   "interaction.keyboard_navigation",
+   "layout.one_primary_action",
+   "state.unsaved_changes_guard",
+   "table.selection_bulk",
+   "table.tabular_figures",
+   "touch.ime_keyboard"
+  ],
+  "concept_recall": 0.429,
+  "critical_recall": 0.333,
+  "forbidden_delivered": [
+   "adaptive.navigation_transform"
+  ],
+  "change_budget": "moderate"
+ },
+ "c2": {
+  "platform_expected": "web",
+  "platform_resolved": [
+   "web"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "new",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": false,
+  "mode_expected": [
+   "create"
+  ],
+  "mode_resolved": [
+   "create"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "CONFIDENT",
+  "bundle_ids": [
+   "comp-plan-comparison",
+   "a11y-keyboard-operable",
+   "a11y-skip-link",
+   "impl-reuse-before-new",
+   "a11y-forms-errors",
+   "anti-no-states"
+  ],
+  "bundle_tokens": 952,
+  "expected_concepts": [
+   "process.reuse_first",
+   "feedback.validation_errors",
+   "a11y.dialog_focus",
+   "layout.one_primary_action",
+   "state.loading_empty_error",
+   "a11y.live_status",
+   "form.autofill_attributes"
+  ],
+  "critical_concepts": [
+   "process.reuse_first",
+   "feedback.validation_errors",
+   "a11y.dialog_focus"
+  ],
+  "delivered_concepts": [
+   "a11y.color_not_only",
+   "a11y.semantics",
+   "data.comparison_structure",
+   "feedback.confirmation_destructive",
+   "feedback.validation_errors",
+   "interaction.focus_visible",
+   "interaction.hover_independence",
+   "interaction.keyboard_navigation",
+   "layout.one_primary_action",
+   "process.reuse_first",
+   "state.loading_empty_error",
+   "table.selection_bulk",
+   "table.tabular_figures"
+  ],
+  "concept_recall": 0.571,
+  "critical_recall": 0.667,
+  "forbidden_delivered": [],
+  "change_budget": "moderate"
+ }
+}

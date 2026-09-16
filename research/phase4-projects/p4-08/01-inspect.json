@@ -1,0 +1,110 @@
+{
+  "root": "D:\\indigo pro\\MYownSkills\\research\\phase3-projects\\p3-erp-desktop-dotnet\\project",
+  "findings": [
+    {
+      "status": "KNOWN",
+      "note": "ErpClient.csproj: UseWPF"
+    }
+  ],
+  "stack_groups": [
+    "wpf"
+  ],
+  "platforms": [
+    "desktop"
+  ],
+  "ui_libraries": [
+    "wpf"
+  ],
+  "package_manager": null,
+  "css_architecture": [],
+  "tokens": [
+    "App.xaml"
+  ],
+  "fonts": [],
+  "icons": [],
+  "routing": [
+    "Views/ (views)",
+    "ViewModels/ (mvvm viewmodels)"
+  ],
+  "breakpoints": [],
+  "accessibility": [
+    "a11y attributes present in 2 files"
+  ],
+  "focus_handling": [
+    "explicit focus handling in 2 files"
+  ],
+  "design_docs": [],
+  "component_dirs": [
+    "Themes/ (3 files)"
+  ],
+  "tests": [],
+  "i18n": [],
+  "product_hints": [],
+  "sample": {
+    "files_scanned": 16
+  },
+  "design_context": {
+    "navigation": {
+      "value": "menu-bar",
+      "status": "INFERRED",
+      "evidence": [
+        "menu-bar: 1 matches in PurchaseOrderLinesView.xaml"
+      ],
+      "candidates": {
+        "menu-bar": 1
+      }
+    },
+    "theme": {
+      "value": "light-first",
+      "status": "INFERRED",
+      "evidence": [
+        "hex palette: 11 near-white, 1 near-black"
+      ]
+    },
+    "surfaces": {
+      "value": "bordered-flat",
+      "status": "INFERRED",
+      "evidence": [
+        "weak signal: shadow 0, border 1"
+      ]
+    },
+    "radius": {
+      "value": "small",
+      "status": "INFERRED",
+      "evidence": [
+        "most common radius 2 (2\u00d7); others [1.0, 10.0]"
+      ]
+    },
+    "spacing": {
+      "value": 4,
+      "status": "INFERRED",
+      "evidence": [
+        "most used spacing values [16, 4, 12, 10, 6]"
+      ]
+    },
+    "typography": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": [
+        "no font family declaration found"
+      ],
+      "features": {
+        "weights": [
+          "semibold",
+          "bold"
+        ],
+        "type_scale": false,
+        "monospace": false,
+        "tabular_numerals": true
+      }
+    },
+    "components": {
+      "value": "wpf",
+      "status": "KNOWN",
+      "evidence": [
+        "wpf"
+      ]
+    },
+    "schema": "design-context/v1"
+  }
+}

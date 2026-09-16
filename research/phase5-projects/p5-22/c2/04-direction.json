@@ -1,0 +1,119 @@
+{
+  "brand": "Make the Add Habit sheet work when the keyboard is up.",
+  "fingerprint": {
+    "navigation_model": "bottom-tabs",
+    "surface_strategy": "elevated",
+    "card_geometry": "elevated",
+    "corner_language": "medium",
+    "color_strategy": "neutral-plus-accent"
+  },
+  "direction": {
+    "navigation": "nav-bottom-tabs",
+    "layout": null,
+    "density": null,
+    "surface": "surface-elevated-cards",
+    "cards": null,
+    "typography": null,
+    "color": "color-neutral-accent",
+    "motion": null,
+    "focus": null,
+    "cta": null,
+    "imagery": null,
+    "icon": null,
+    "metadata": null
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "refactor"
+    ],
+    "platform": [
+      "mobile"
+    ],
+    "input": [
+      "keyboard",
+      "touch"
+    ],
+    "product": [],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "swiftui"
+    ],
+    "density": null,
+    "components": [
+      "dialog"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "refactor dialog"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_INTERACTION",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "modify"
+      ],
+      "problem_domain": [
+        "interaction"
+      ],
+      "change_scope": "unknown",
+      "utterance": "request",
+      "preserve": []
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "refactor: modification of existing UI: make"
+    ],
+    "project_context": {
+      "navigation": "bottom-tabs (KNOWN)",
+      "theme": "dual-theme (KNOWN)",
+      "surfaces": "elevated (INFERRED)",
+      "radius": "small (INFERRED)",
+      "typography": "custom (KNOWN)"
+    },
+    "known": [
+      "platform=mobile",
+      "input=keyboard",
+      "stack=swiftui",
+      "project_navigation=bottom-tabs",
+      "project_theme=dual-theme",
+      "project_typography=custom"
+    ],
+    "inferred": [
+      "input=touch",
+      "mode=refactor",
+      "project_surfaces=elevated",
+      "project_radius=small"
+    ],
+    "missing": [],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

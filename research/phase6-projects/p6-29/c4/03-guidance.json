@@ -1,0 +1,912 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "The confirmation screen prints the receipt but never says the pick-up is complete.",
+  "status": "PARTIAL",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "kiosk"
+    ],
+    "input": [
+      "touch"
+    ],
+    "product": [
+      "healthcare",
+      "iot"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "html-css"
+    ],
+    "density": null,
+    "components": [],
+    "environment": [
+      "public"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "audit"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [],
+      "change_scope": "screen",
+      "utterance": "observation",
+      "existing": true,
+      "problem": true,
+      "facet": "general",
+      "diagnose_only": false,
+      "creation": false,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "audit: problem statement on existing UI",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "hub-spoke",
+        "status": "KNOWN",
+        "evidence": [
+          "hub-spoke: 29 matches in README.md, app.js, i18n.js (shell/layout file)"
+        ]
+      },
+      "theme": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": [
+          "hex palette: 25 near-white, 17 near-black"
+        ]
+      },
+      "surfaces": {
+        "value": "elevated",
+        "status": "INFERRED",
+        "evidence": [
+          "weak signal: shadow 1, border 1"
+        ]
+      },
+      "radius": {
+        "value": "medium",
+        "status": "INFERRED",
+        "evidence": [
+          "most common radius 12 (1×); others [20.0, 32.0]"
+        ]
+      },
+      "spacing": {
+        "value": "irregular",
+        "status": "UNKNOWN",
+        "evidence": [
+          "most used spacing values [6, 16]"
+        ]
+      },
+      "typography": {
+        "value": "humanist-sans",
+        "status": "KNOWN",
+        "evidence": [
+          "font family Nunito (2 refs)",
+          "weights 700, 800, 600, 500",
+          "tabular numerals"
+        ]
+      },
+      "components": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": []
+      }
+    },
+    "known": [
+      "platform=kiosk (project inspection)",
+      "product=healthcare (project inspection (README))",
+      "product=iot (project inspection (README))",
+      "stack=html-css (project inspection)",
+      "environment=public (project inspection (README))",
+      "project_navigation=hub-spoke (repository: hub-spoke: 29 matches in README.md, app.js, i18n.js (shell/layout file))",
+      "project_typography=humanist-sans (repository: font family Nunito (2 refs); weights 700, 800, 600, 500)"
+    ],
+    "inferred": [
+      "input=touch (implied by platform kiosk)",
+      "mode=audit (problem statement on existing UI)",
+      "mode=refactor (fix follows the diagnosis)",
+      "project_surfaces=elevated (repository: weak signal: shadow 1, border 1)",
+      "project_radius=medium (repository: most common radius 12 (1×); others [20.0, 32.0])"
+    ],
+    "missing": [],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [],
+      "project": [
+        "*.html without a framework manifest: plain HTML/CSS site",
+        "README: public touch kiosk (web technology is the substrate, not the target platform)"
+      ]
+    },
+    "activation": {
+      "decision": "ambiguous",
+      "ui_score": 1.0,
+      "non_ui_score": 0,
+      "ui_terms": [
+        "screen"
+      ],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "the confirmation screen"
+      ],
+      "new": [],
+      "defect": [
+        "never"
+      ],
+      "operations": {},
+      "domains": {},
+      "no_change": [],
+      "scope": {
+        "screen": [
+          "screen"
+        ]
+      },
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "screen",
+        "concept:a11y.live_status"
+      ],
+      "ux_symptoms": [
+        "never says"
+      ],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "accessibility",
+        "reason": "audit mode"
+      },
+      {
+        "concern": "interaction",
+        "reason": "audit mode: operability is part of the review"
+      },
+      {
+        "concern": "component",
+        "reason": "the reviewed component/screen"
+      },
+      {
+        "concern": "environment",
+        "reason": "public kiosk use"
+      },
+      {
+        "concern": "privacy",
+        "reason": "shared public device"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "states",
+        "reason": "audits check empty/loading/error handling"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "audits name generic-design defects"
+      },
+      {
+        "concern": "feedback",
+        "reason": "audits check that actions are discoverable and confirmed"
+      },
+      {
+        "concern": "performance",
+        "reason": "performance-sensitive context"
+      }
+    ],
+    "optional": [
+      "content"
+    ],
+    "required_concepts": [
+      {
+        "concept": "a11y.live_status",
+        "reason": "named in the request: never say, never say",
+        "priority": 0,
+        "critical": true
+      },
+      {
+        "concept": "feedback.progress_indicator",
+        "reason": "progress feedback",
+        "priority": 0,
+        "critical": true
+      }
+    ],
+    "recommended_concepts": [
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "state.loading_empty_error",
+      "process.reuse_first",
+      "touch.gestures_discoverable",
+      "touch.thumb_reach",
+      "state.session_expiry",
+      "env.glanceable_status",
+      "feedback.confirmation_destructive",
+      "privacy.shared_device",
+      "privacy.sensitive_masking",
+      "touch.minimum_target"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "comp-toast-notification",
+      "kind": "component",
+      "category": "notification",
+      "title": "Toast / snackbar / banner",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "accessibility",
+        "component",
+        "feedback",
+        "states"
+      ],
+      "concepts": [
+        "a11y.live_status"
+      ],
+      "covers": [
+        "live region status announcements"
+      ],
+      "score": 0.19,
+      "guidance": "Toast: bottom (mobile) or bottom-left/top-right (desktop) consistent position, ≥5 s or until dismissed, undo where applicable, live region polite. Banner: inline at the top of the region it concerns, dismissible if non-critical. TV: brief overlay in the safe area that never steals focus.",
+      "use_when": "Transient confirmation (saved, sent, undo), persistent info (banner), blocking errors (dialog, not toast).",
+      "avoid_when": "Never put required actions only in a toast; never stack more than ~3; never auto-dismiss errors.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.018,
+        "structural": 0.4,
+        "matched": [
+          "mode audit"
+        ]
+      },
+      "role": "core",
+      "selected_for": "task evidence: "
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "feedback-progress-async",
+      "kind": "rule",
+      "category": "feedback",
+      "title": "Progress for background work: what, how far, what went wrong",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "feedback",
+        "states"
+      ],
+      "concepts": [
+        "feedback.progress_indicator",
+        "a11y.live_status",
+        "state.offline_sync"
+      ],
+      "covers": [
+        "progress indicator",
+        "live region status announcements",
+        "offline and sync states"
+      ],
+      "score": 0.58,
+      "guidance": "State what is happening in words ('Sending 2 of 3 · Photo …'), a determinate bar when the total is known, the current item, elapsed/remaining when useful; on failure name the item and the reason with a Retry action; on completion confirm briefly ('All sent · just now'); keep a stable-phrase live region that announces start, failure and completion once per run; keep the layout stable while the state changes.",
+      "use_when": "Sync, upload, export, import, batch send, long saves: anything that takes more than a second and can partially fail.",
+      "avoid_when": "Never show an indeterminate spinner with no words for more than a moment; never hide failures behind a generic 'something went wrong'; never announce every tick to screen readers.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.612,
+        "structural": 0.54,
+        "matched": [
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "critical concept (DIRECT): live region status announcements, progress indicator"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "environment",
+      "privacy"
+    ],
+    "covered_required_concerns": [
+      "accessibility",
+      "component"
+    ],
+    "uncovered_required_concerns": [
+      "interaction",
+      "environment",
+      "privacy"
+    ],
+    "recommended_concerns": [
+      "states",
+      "anti-pattern",
+      "feedback",
+      "performance"
+    ],
+    "covered_recommended_concerns": [
+      "states",
+      "feedback"
+    ],
+    "coverage_ratio": 0.4,
+    "required_concepts": [
+      "a11y.live_status",
+      "feedback.progress_indicator"
+    ],
+    "covered_required_concepts": [
+      "a11y.live_status",
+      "feedback.progress_indicator"
+    ],
+    "uncovered_required_concepts": [],
+    "critical_concepts": [
+      "a11y.live_status",
+      "feedback.progress_indicator"
+    ],
+    "uncovered_critical_concepts": [],
+    "critical_coverage_ratio": 1.0,
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.0,
+    "not_surfaced": [
+      {
+        "concept": "a11y.accessible_names",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "a11y.contrast",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "state.loading_empty_error",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "process.reuse_first",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "touch.gestures_discoverable",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "touch.thumb_reach",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "state.session_expiry",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "env.glanceable_status",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "feedback.confirmation_destructive",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "privacy.shared_device",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "privacy.sensitive_masking",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "touch.minimum_target",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "performance",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      }
+    ],
+    "bundle_size": 2,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 1,
+    "guardrail_size": 1,
+    "bundle_tokens": 385,
+    "coverage_per_1k_tokens": 5.19,
+    "mean_purity": 0.83,
+    "mean_specificity": 1.5,
+    "quality_counts": {
+      "DIRECT": 1,
+      "SPECIFIC": 1
+    },
+    "contaminated": [],
+    "category_diversity": 1.0,
+    "duplicate_pressure": 0.5,
+    "facet_coverage": 0.2,
+    "redundancy": 0.33,
+    "critical_trace": {
+      "covered": [
+        "a11y.live_status",
+        "feedback.progress_indicator"
+      ],
+      "uncovered": [],
+      "carrier_quality": {
+        "a11y.live_status": "DIRECT",
+        "feedback.progress_indicator": "DIRECT"
+      }
+    }
+  },
+  "token_coverage": 0.75,
+  "omitted": [
+    {
+      "id": "comp-kiosk-keypad",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "comp-wizard-stepper",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "nav-wizard",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "nav-hub-spoke",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "cta-single-primary",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "focus-none-touch-only",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "icon-filled-system",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "chart-trend-line",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "typography-rounded-friendly",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "imagery-illustration",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    }
+  ],
+  "marginal": {
+    "feedback-progress-async": {
+      "new_critical": [
+        "a11y.live_status",
+        "feedback.progress_indicator"
+      ],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [
+        "feedback",
+        "states"
+      ],
+      "specificity": 2,
+      "evidence": [
+        "lexical_strong",
+        "lexical",
+        "explicit_demand"
+      ],
+      "quality": "DIRECT",
+      "contamination": 0.0,
+      "tokens": 176
+    },
+    "comp-toast-notification": {
+      "new_critical": [],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [
+        "accessibility",
+        "component"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "explicit_demand"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 209
+    }
+  },
+  "rejected": [
+    {
+      "id": "anti-generic-sidebar-dashboard",
+      "reason": "platform ['desktop', 'web'] not in request ['kiosk']"
+    },
+    {
+      "id": "anti-scroll-animation-everything",
+      "reason": "platform ['mobile', 'web'] not in request ['kiosk']"
+    },
+    {
+      "id": "anti-hover-only-actions",
+      "reason": "platform ['desktop', 'web'] not in request ['kiosk']"
+    },
+    {
+      "id": "comp-sidebar-nav",
+      "reason": "platform ['desktop', 'tablet', 'web'] not in request ['kiosk']"
+    },
+    {
+      "id": "comp-tree-view",
+      "reason": "platform ['desktop', 'web'] not in request ['kiosk']"
+    },
+    {
+      "id": "comp-tv-sign-in",
+      "reason": "platform ['tv'] not in request ['kiosk']"
+    },
+    {
+      "id": "comp-setup-checklist",
+      "reason": "platform ['desktop', 'mobile', 'web'] not in request ['kiosk']"
+    },
+    {
+      "id": "comp-product-detail-page",
+      "reason": "platform ['mobile', 'web'] not in request ['kiosk']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "a11y.live_status",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 0,
+      "reason": "named in the request: never say, never say",
+      "candidate_records": [
+        [
+          "feedback-progress-async",
+          0.58
+        ],
+        [
+          "a11y-live-status",
+          0.352
+        ],
+        [
+          "comp-kiosk-keypad",
+          0.33
+        ],
+        [
+          "search-filter-feedback",
+          0.243
+        ]
+      ],
+      "selected_record": "feedback-progress-async",
+      "carrier_quality": "DIRECT",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "feedback.progress_indicator",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 0,
+      "reason": "progress feedback",
+      "candidate_records": [
+        [
+          "feedback-progress-async",
+          0.58
+        ],
+        [
+          "comp-wizard-stepper",
+          0.253
+        ],
+        [
+          "nav-wizard",
+          0.227
+        ]
+      ],
+      "selected_record": "feedback-progress-async",
+      "carrier_quality": "DIRECT",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.accessible_names",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "comp-kiosk-keypad",
+          0.33
+        ],
+        [
+          "a11y-labels-names",
+          0.243
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "a11y.contrast",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "a11y-nontext-contrast",
+          0.267
+        ],
+        [
+          "a11y-contrast-text",
+          0.254
+        ],
+        [
+          "anti-fashion-over-usability",
+          0.243
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "state.loading_empty_error",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "asynchronous or remote data on this screen",
+      "candidate_records": [
+        [
+          "layout-states-empty-loading-error",
+          0.272
+        ],
+        [
+          "anti-no-states",
+          0.243
+        ],
+        [
+          "comp-empty-state",
+          0.191
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.207
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.gestures_discoverable",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "touch platform",
+      "candidate_records": [],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "carriers filtered before ranking: platform ['mobile', 'tablet'] not in request ['kiosk']"
+    },
+    {
+      "concept": "touch.thumb_reach",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "one-handed use",
+      "candidate_records": [],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "carriers were not admissible for this platform/input/environment"
+    },
+    {
+      "concept": "state.session_expiry",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "kiosk idle reset",
+      "candidate_records": [
+        [
+          "kiosk-public-use",
+          0.324
+        ],
+        [
+          "shared-device-privacy",
+          0.306
+        ],
+        [
+          "a11y-time-and-auto",
+          0.243
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "env.glanceable_status",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "kiosk",
+      "candidate_records": [
+        [
+          "data-exceptions-first",
+          0.243
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "feedback.confirmation_destructive",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "sensitive domain",
+      "candidate_records": [
+        [
+          "comp-dialog",
+          0.18
+        ],
+        [
+          "comp-settings-screen",
+          0.18
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "privacy.shared_device",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "sensitive data on a shared screen (narrow task: kept as a recommendation)",
+      "candidate_records": [
+        [
+          "kiosk-public-use",
+          0.324
+        ],
+        [
+          "shared-device-privacy",
+          0.306
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "privacy.sensitive_masking",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "balances / health data visible to onlookers (narrow task: kept as a recommendation)",
+      "candidate_records": [
+        [
+          "comp-kiosk-keypad",
+          0.33
+        ],
+        [
+          "shared-device-privacy",
+          0.306
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.minimum_target",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "environment public (repository hint) (narrow task: kept as a recommendation)",
+      "candidate_records": [
+        [
+          "comp-kiosk-keypad",
+          0.33
+        ],
+        [
+          "kiosk-public-use",
+          0.324
+        ],
+        [
+          "a11y-target-size",
+          0.27
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    }
+  ]
+}

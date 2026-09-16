@@ -1,0 +1,69 @@
+{
+  "task": "p5-07",
+  "project": "p5-sveltekit-clinic",
+  "platform_expected": "web",
+  "platform_resolved": "web",
+  "platform_correct": "yes",
+  "stack": "SvelteKit 2 + Svelte 5 + Tailwind 3.4",
+  "existing_ui": true,
+  "new_screen": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": ["polish", "refactor", "create"],
+  "mode_resolved": ["audit", "refactor"],
+  "mode_correct": "acceptable",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "moderate",
+  "render_mode": "native",
+  "screenshots": [
+    "render/baseline-desktop-empty.png", "render/baseline-mobile-empty.png",
+    "render/first-desktop-empty.png", "render/first-mobile-empty.png", "render/first-desktop-results.png", "render/first-mobile-results.png",
+    "render/final-desktop-empty.png", "render/final-mobile-empty.png", "render/final-desktop-results.png", "render/final-mobile-results.png"
+  ],
+  "context_detection": {"navigation": "yes", "theme": "yes", "typography": "partial", "surfaces": "no", "spacing": "yes"},
+  "preservation": {"navigation": true, "theme": true, "typography": true, "component_reuse": true, "unjustified_structural_change": 0},
+  "expected_concepts": ["state.loading_empty_error", "data.search_results", "a11y.live_status", "process.reuse_first", "layout.one_primary_action", "interaction.focus_restore", "perf.layout_shift"],
+  "critical_concepts": ["state.loading_empty_error", "data.search_results"],
+  "delivered_concepts": ["data.search_results", "media.search_tv", "navigation.deep_link_state", "interaction.keyboard_navigation", "interaction.hover_independence", "interaction.focus_visible", "state.loading_empty_error", "a11y.live_status", "data.filter_chips"],
+  "concept_recall": 0.43,
+  "critical_recall": 1.0,
+  "concept_misses": [
+    {"concept": "process.reuse_first", "layer": "bundle-selection"},
+    {"concept": "layout.one_primary_action", "layer": "expected-concepts"},
+    {"concept": "interaction.focus_restore", "layer": "expected-concepts"},
+    {"concept": "perf.layout_shift", "layer": "expected-concepts"}
+  ],
+  "first_render_defects": {"visual": 1, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+  "final_defects": {"visual": 1, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+  "iterations": 1,
+  "guidance_relevant": 2,
+  "guidance_partial": 3,
+  "guidance_offtarget": 1,
+  "bad_guidance": [
+    {"record": "dir-clinical-workstation", "category": "generic", "why": "Patient banner / master-detail / autosave / destructive confirmation have no bearing on an empty state for a list search; selected as core on lexical 0.18 and then drove the direction's master-detail, rich-metadata and sticky-bar slots."}
+  ],
+  "skill_effect": "helped",
+  "guidance_tokens": 795,
+  "misses": [
+    {"layer": "requirements", "what": "problem_domain = [navigation, performance-ux] from the words 'find' and 'blank'; the actual domain is a missing empty state (states/feedback). mode_evidence 'audit: navigation defect on existing UI' is wrong; intent.preserve is empty on an existing repo; product includes ecommerce from the README."},
+    {"layer": "bundle-selection", "what": "Second core slot went to dir-clinical-workstation (direction, lexical 0.18) although comp-empty-state was a candidate for the one concept the sentence is about; process.reuse_first (demanded as recommended, candidate impl-reuse-before-new) was dropped."},
+    {"layer": "bundle-selection", "what": "comp-search carries media.search_tv and TV/mobile-specific instructions into a web bundle (forbidden concept delivered); purity metric did not flag it."},
+    {"layer": "expected-concepts", "what": "layout.one_primary_action, interaction.focus_restore and perf.layout_shift were never demanded for an empty state with a recovery action on a page that already has a primary CTA."},
+    {"layer": "direction", "what": "Focus slot marked 'new, no repository evidence' while inspect itself reports 'explicit focus handling in 3 files' and Button/Input/layout define focus-visible:ring-2. Density 'changed' from the spacing value 4 to density-high. Layout master-detail, surface elevated-cards, cards poster-landscape (self-flagged VIOLATION, exit 3), cta sticky-bar, imagery poster and icon text-only all contradict the codebase or overreach a moderate budget; 9 of 13 slots 'new'."},
+    {"layer": "project-adaptation", "what": "surfaces detected as flat-tonal UNKNOWN with evidence 'no shadow or border declarations found' although border-neutral-200 is on every surface; radius UNKNOWN despite a Tailwind borderRadius theme; tabular_numerals=false despite tabular-nums in 3 files. The surfaces miss propagated into the direction's elevated-cards choice."}
+  ],
+  "knowledge_gaps": [],
+  "regressions": [
+    {"query": "Patient search that finds nothing just shows a blank area.", "expect": "problem_domain includes a states/feedback domain and not navigation or performance-ux; mode polish or refactor rather than audit with 'navigation defect'; intent.preserve non-empty for an existing repo."},
+    {"query": "Patient search that finds nothing just shows a blank area.", "expect": "core includes comp-empty-state or layout-states-empty-loading-error rather than dir-clinical-workstation; process.reuse_first delivered when component_dirs is non-empty; no media.* concept delivered for platform web."},
+    {"query": "direction for the sentence on p5-sveltekit-clinic with change budget moderate", "expect": "focus slot preserved when inspect reports focus handling; surfaces bordered-flat; a validation VIOLATION (poster card geometry on a non-media product) is resolved or the slot dropped instead of emitted with exit code 3."},
+    {"query": "The filter on the orders list returns nothing and the page goes empty.", "expect": "in-scope; state.loading_empty_error and data.search_results delivered; mode polish; no abstain."},
+    {"query": "inspect_project on p5-sveltekit-clinic", "expect": "surfaces = bordered-flat (KNOWN or INFERRED); radius detected from the Tailwind borderRadius theme; typography.tabular_numerals = true."}
+  ],
+  "tags": ["requirements-miss", "concept-miss", "ranking-miss", "direction-mismatch", "context-detection-miss", "render-defect-remaining", "skill-helped", "preservation-ok"],
+  "build_hash_start": "bf034323a2b68202e8c902768e0de78cd93761b1a71670a49ee595648cd5f0d8",
+  "build_hash_end": "bf034323a2b68202e8c902768e0de78cd93761b1a71670a49ee595648cd5f0d8"
+}

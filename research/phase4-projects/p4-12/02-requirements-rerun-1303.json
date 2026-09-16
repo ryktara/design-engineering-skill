@@ -1,0 +1,99 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "create"
+  ],
+  "platform": [
+    "tv"
+  ],
+  "input": [
+    "remote"
+  ],
+  "product": [
+    "media"
+  ],
+  "screen": [
+    "auth",
+    "player",
+    "search"
+  ],
+  "screen_subtype": [
+    "sign-in"
+  ],
+  "stack": [
+    "swiftui"
+  ],
+  "density": "medium",
+  "components": [
+    "media",
+    "search"
+  ],
+  "environment": [
+    "large-display",
+    "shared-device"
+  ],
+  "jobs": [
+    "authentication",
+    "search"
+  ],
+  "problems": [],
+  "risk": "medium",
+  "primary_jobs": [
+    "authentication",
+    "search",
+    "create auth",
+    "create player",
+    "create search"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "performance_sensitive": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "screen_reader": true,
+    "focus": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "change_budget": "moderate",
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "mode_evidence": [
+    "create: default (no mode cue)"
+  ],
+  "project_context": {
+    "theme": "dark-first (INFERRED)",
+    "surfaces": "elevated (INFERRED)",
+    "radius": "medium (INFERRED)"
+  },
+  "known": [
+    "platform=tv",
+    "input=remote",
+    "product=media",
+    "stack=swiftui",
+    "screen=player",
+    "screen=search",
+    "screen=auth",
+    "job=authentication",
+    "job=search"
+  ],
+  "inferred": [
+    "density=medium",
+    "mode=create",
+    "environment=shared-device",
+    "environment=large-display",
+    "project_theme=dark-first",
+    "project_surfaces=elevated",
+    "project_radius=medium"
+  ],
+  "missing": [
+    "brand: no brand assets, guideline, or character description available"
+  ],
+  "status": "CONFIDENT"
+}

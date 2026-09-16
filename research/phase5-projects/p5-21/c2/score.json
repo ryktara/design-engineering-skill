@@ -1,0 +1,125 @@
+{
+ "task": "p5-21",
+ "build": "50966e8e6184f31722a7b3c7f270a241dd0f7b68187492d0c971f7c79734e680",
+ "c1_recorded": {
+  "platform_expected": "mobile",
+  "platform_resolved": [
+   "mobile"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "create"
+  ],
+  "mode_resolved": [
+   "create"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "CONFIDENT",
+  "bundle_ids": [
+   "comp-product-detail-page",
+   "comp-checkout-one-page",
+   "surface-elevated-cards",
+   "nav-bottom-tabs",
+   "a11y-modal-dialog",
+   "mobile-safe-areas"
+  ],
+  "bundle_tokens": 1197,
+  "expected_concepts": [
+   "data.kpi_comparison",
+   "process.reuse_first",
+   "layout.focal_hierarchy",
+   "layout.no_nested_cards",
+   "a11y.accessible_names",
+   "brand.token_layers",
+   "env.glanceable_status"
+  ],
+  "critical_concepts": [
+   "data.kpi_comparison",
+   "process.reuse_first",
+   "layout.focal_hierarchy"
+  ],
+  "delivered_concepts": [
+   "a11y.accessible_names",
+   "a11y.dialog_focus",
+   "feedback.confirmation_destructive",
+   "feedback.trust_signals",
+   "feedback.validation_errors",
+   "interaction.focus_restore",
+   "layout.one_primary_action",
+   "navigation.platform_grammar",
+   "perf.layout_shift",
+   "state.saving_conflict",
+   "touch.ime_keyboard",
+   "touch.minimum_target",
+   "touch.safe_areas"
+  ],
+  "concept_recall": 0.143,
+  "critical_recall": 0.0,
+  "forbidden_delivered": [],
+  "change_budget": "moderate"
+ },
+ "c2": {
+  "platform_expected": "mobile",
+  "platform_resolved": [
+   "mobile"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "create"
+  ],
+  "mode_resolved": [
+   "create"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "CONFIDENT",
+  "bundle_ids": [
+   "surface-elevated-cards",
+   "card-poster-landscape",
+   "comp-kpi-tile",
+   "a11y-target-size",
+   "impl-reuse-before-new",
+   "mobile-safe-areas"
+  ],
+  "bundle_tokens": 679,
+  "expected_concepts": [
+   "data.kpi_comparison",
+   "process.reuse_first",
+   "layout.focal_hierarchy",
+   "layout.no_nested_cards",
+   "a11y.accessible_names",
+   "brand.token_layers",
+   "env.glanceable_status"
+  ],
+  "critical_concepts": [
+   "data.kpi_comparison",
+   "process.reuse_first",
+   "layout.focal_hierarchy"
+  ],
+  "delivered_concepts": [
+   "data.drilldown",
+   "data.kpi_comparison",
+   "process.reuse_first",
+   "table.tabular_figures",
+   "touch.minimum_target",
+   "touch.safe_areas"
+  ],
+  "concept_recall": 0.286,
+  "critical_recall": 0.667,
+  "forbidden_delivered": [],
+  "change_budget": "moderate"
+ }
+}

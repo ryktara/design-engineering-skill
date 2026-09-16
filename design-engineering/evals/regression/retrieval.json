@@ -1,0 +1,46 @@
+{
+  "description": "Regression cases: real defects found during development or use. Never remove a valid case because the implementation changed.",
+  "suite": "retrieval",
+  "cases": [
+    {
+      "id": "reg-facet-swap-keeps-strong-component",
+      "query": "add a continue watching row on the home screen",
+      "hints": {
+        "platforms": [
+          "tv"
+        ],
+        "stacks": [
+          "compose-tv"
+        ],
+        "products": [
+          "media"
+        ]
+      },
+      "expect_ids": [
+        "comp-tv-rail"
+      ],
+      "note": "2026-09-08 Phase 2: the first facet-coverage implementation swapped out comp-tv-rail (strong lexical match) for nav-tv-side (no lexical match) to satisfy the navigation facet. Fixed with the swap_ratio guard (incoming ≥ 0.75 × outgoing)."
+    },
+    {
+      "id": "reg-winui-keyboard-in-top5",
+      "query": "WinUI desktop ERP data grid with keyboard shortcuts",
+      "expect_ids": [
+        "desktop-keyboard-first",
+        "comp-data-table"
+      ],
+      "expect_facets": [
+        "interaction",
+        "component"
+      ],
+      "max_duplicate_pressure": 0.4,
+      "note": "2026-09-08 Phase 2: Phase 1 known limitation (universal interaction rule crowded out by ERP-specific records). Fixed structurally by facet-aware result composition, not by a keyboard bonus."
+    },
+    {
+      "id": "reg-required-facets-within-k",
+      "query": "tv rail focus",
+      "k": 5,
+      "min_facet_coverage": 0.5,
+      "note": "2026-09-08 Phase 2: required facets exceeded the slot budget (6 facets, k=5), making PARTIAL status unavoidable for terse TV queries. Fixed by capping required facets to k-1."
+    }
+  ]
+}

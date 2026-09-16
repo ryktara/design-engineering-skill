@@ -1,0 +1,135 @@
+{
+  "brand": "Titles on the poster rows are cut off and there is no way to read the full name.",
+  "fingerprint": {
+    "navigation_model": "tv-side-nav",
+    "card_geometry": "poster-landscape",
+    "corner_language": "small",
+    "color_strategy": "dark-with-accent",
+    "image_strategy": "poster-art"
+  },
+  "direction": {
+    "navigation": "nav-tv-side",
+    "layout": null,
+    "density": null,
+    "surface": null,
+    "cards": "card-poster-portrait",
+    "typography": null,
+    "color": "color-dark-accent",
+    "motion": null,
+    "focus": null,
+    "cta": null,
+    "imagery": "imagery-poster",
+    "icon": null,
+    "metadata": null
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "polish",
+      "audit"
+    ],
+    "platform": [
+      "tv"
+    ],
+    "input": [
+      "remote"
+    ],
+    "product": [
+      "media"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "swiftui"
+    ],
+    "density": "medium",
+    "components": [
+      "media"
+    ],
+    "environment": [
+      "large-display",
+      "shared-device"
+    ],
+    "jobs": [],
+    "problems": [
+      "visual"
+    ],
+    "risk": "low",
+    "primary_jobs": [
+      "polish media"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "low",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "visual",
+        "layout"
+      ],
+      "change_scope": "unknown",
+      "utterance": "observation",
+      "preserve": []
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "polish: visual defect on existing UI",
+      "audit: diagnose first"
+    ],
+    "project_context": {
+      "navigation": "tv-rails (KNOWN)",
+      "theme": "dark-first (INFERRED)",
+      "surfaces": "elevated (INFERRED)",
+      "radius": "medium (INFERRED)",
+      "typography": "custom (KNOWN)"
+    },
+    "known": [
+      "platform=tv",
+      "input=remote",
+      "product=media",
+      "stack=swiftui",
+      "project_navigation=tv-rails",
+      "project_typography=custom"
+    ],
+    "inferred": [
+      "density=medium",
+      "mode=polish",
+      "mode=audit",
+      "environment=shared-device",
+      "environment=large-display",
+      "project_theme=dark-first",
+      "project_surfaces=elevated",
+      "project_radius=medium"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

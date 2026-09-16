@@ -1,0 +1,24 @@
+{
+  "platform": "desktop",
+  "artifact_state": "existing",
+  "acceptable_modes": ["refactor", "polish", "create"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "data.exception_first",
+    "a11y.color_not_only",
+    "env.glanceable_status",
+    "process.reuse_first",
+    "interaction.selection_visible",
+    "table.tabular_figures"
+  ],
+  "critical_concepts": ["data.exception_first", "a11y.color_not_only"],
+  "forbidden_concepts": [
+    "touch.minimum_target",
+    "adaptive.breakpoint_matrix",
+    "tv.ten_foot_typography",
+    "brand.dark_mode_redesign",
+    "layout.hero_thesis"
+  ],
+  "preservation": ["navigation", "theme", "typography", "component_reuse"],
+  "notes": "Existing Avalonia 11 desktop DataGrid of 30 vehicles with a Last service date column. 'Overdue for service' is not modelled: expect the fix to be a visible, non-colour-only overdue marker in the grid row (badge/text + colour, reusing Border.badge and Warning/Danger brushes from Theme.axaml), an overdue count / quick filter in the existing header, and an overdue-first ordering or filter so the exceptions surface without opening rows. Overdue rows must stay distinct from the blue AccentSoft selection highlight. The service-interval rule (what counts as overdue) is an engineering decision the skill may flag as partial scope; either in-scope or partial is acceptable. Must keep menu bar + toolbar + status bar, light theme, Segoe UI/Inter, 4px radius, 1px borders, no shadows."
+}

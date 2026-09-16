@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" data-a11y="off">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1080, initial-scale=1">
+<title>RxPoint pick-up</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/kiosk.css">
+</head>
+<body>
+<main id="app" data-screen="attract" aria-live="off"></main>
+
+<dialog id="idle-dialog" aria-labelledby="idle-title" data-entry="no">
+  <div class="dialog__body">
+    <h2 id="idle-title"></h2>
+    <p class="lede"></p>
+    <p class="dialog__kept" data-idle-kept hidden></p>
+    <p class="countdown" aria-hidden="true">20</p>
+    <div class="dialog__actions">
+      <button class="btn btn--primary" type="button" data-action="still-here"></button>
+      <button class="btn btn--secondary" type="button" data-action="finish-now"></button>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="help-dialog" aria-labelledby="help-title" data-called="no">
+  <div class="dialog__body">
+    <h2 id="help-title"></h2>
+    <p class="lede"></p>
+    <div class="dialog__actions">
+      <button class="btn btn--primary" type="button" data-action="call-staff"></button>
+      <button class="btn btn--secondary" type="button" data-action="close-help"></button>
+    </div>
+  </div>
+</dialog>
+
+<div id="live" class="visually-hidden" aria-live="assertive" aria-atomic="true"></div>
+<div id="live-polite" class="visually-hidden" role="status" aria-live="polite" aria-atomic="true"></div>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+{
+ "files": {
+  "cases.json": {
+   "sha256": "c5a3f6883b88a637b182eadcda3f3b356cbfe58171cfe95e02b86823d9f55a79",
+   "count": 311
+  }
+ },
+ "generated": "2026-09-09",
+ "reviewed": "2026-09-09",
+ "method": "generator claude opus (blind, ontology only); expectation reviewer claude sonnet (blind); bundle-quality reviewers claude opus (blind: prompt + guidance text only)",
+ "thresholds_file": "THRESHOLDS.md",
+ "thresholds_sha256": "da5990676f1f265b7f693dc792308c5eb4b9bcc86555ba8f888f0ab02b861358",
+ "thresholds_written": "2026-09-09 before generation (see phase4-freeze.json)",
+ "ontology_sha256": "3fdb0618947ad7e69a577dd0300182bb47f7ed1a76514a352b6c9cff4357e783",
+ "frozen_build": {
+  "de_core_sha256": "4ecbca0ecca2e676",
+  "de_semantic_sha256": "2bbee02f0959f68e",
+  "lexicon_sha256": "55341c3c720e75fe",
+  "inspect_project_sha256": "6e77763f547f2301"
+ },
+ "immutable_for": "phase-4",
+ "run_policy": "scored once on the frozen build; never used for tuning",
+ "categories": {
+  "abstain": 30,
+  "accessibility": 31,
+  "adversarial": 32,
+  "brand": 18,
+  "dashboards": 13,
+  "design-system": 21,
+  "desktop": 14,
+  "ecommerce": 7,
+  "erp": 5,
+  "finance": 7,
+  "forms": 4,
+  "healthcare": 5,
+  "kiosk": 10,
+  "media": 1,
+  "mobile": 21,
+  "onboarding": 8,
+  "polish": 12,
+  "responsive": 1,
+  "saas": 27,
+  "tables": 6,
+  "tablet": 4,
+  "tv": 22,
+  "web": 12
+ },
+ "scope": {
+  "in-scope": 281,
+  "abstain": 30
+ }
+}

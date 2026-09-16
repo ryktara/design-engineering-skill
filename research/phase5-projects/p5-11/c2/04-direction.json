@@ -1,0 +1,139 @@
+{
+  "brand": "From the sofa nobody can tell which row is selected on the living-room screen.",
+  "fingerprint": {
+    "navigation_model": "tv-side-nav",
+    "card_geometry": "poster-landscape",
+    "corner_language": "small",
+    "color_strategy": "dark-with-accent"
+  },
+  "direction": {
+    "navigation": "nav-tv-side",
+    "layout": null,
+    "density": null,
+    "surface": null,
+    "cards": "card-poster-landscape",
+    "typography": null,
+    "color": "color-dark-accent",
+    "motion": null,
+    "focus": null,
+    "cta": null,
+    "imagery": null,
+    "icon": null,
+    "metadata": null
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "accessibility",
+      "audit"
+    ],
+    "platform": [
+      "tv"
+    ],
+    "input": [
+      "remote"
+    ],
+    "product": [
+      "media"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "swiftui"
+    ],
+    "density": "medium",
+    "components": [],
+    "environment": [
+      "large-display",
+      "shared-device"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "accessibility"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "accessibility",
+        "interaction"
+      ],
+      "change_scope": "screen",
+      "utterance": "observation",
+      "preserve": []
+    },
+    "platform_evidence": [
+      {
+        "platform": "tv",
+        "strength": "STRONG_INFERENCE",
+        "evidence": [
+          "living-room",
+          "from the sofa",
+          "sofa"
+        ]
+      }
+    ],
+    "mode_evidence": [
+      "accessibility: accessibility defect on existing UI",
+      "audit: diagnose the reported defect"
+    ],
+    "project_context": {
+      "navigation": "tv-rails (KNOWN)",
+      "theme": "dark-first (INFERRED)",
+      "surfaces": "elevated (INFERRED)",
+      "radius": "medium (INFERRED)",
+      "typography": "custom (KNOWN)"
+    },
+    "known": [
+      "platform=tv",
+      "input=remote",
+      "product=media",
+      "stack=swiftui",
+      "project_navigation=tv-rails",
+      "project_typography=custom"
+    ],
+    "inferred": [
+      "density=medium",
+      "mode=accessibility",
+      "mode=audit",
+      "environment=shared-device",
+      "environment=large-display",
+      "project_theme=dark-first",
+      "project_surfaces=elevated",
+      "project_radius=medium"
+    ],
+    "missing": [],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "brand": "add a settings screen (sync frequency, units, high-contrast mode) to the field inspection app in its existing style",
+  "fingerprint": {
+    "layout_topology": "form-stack",
+    "grid_behavior": "fluid",
+    "content_density": "medium",
+    "surface_strategy": "elevated",
+    "card_geometry": "poster-landscape",
+    "corner_language": "large",
+    "typography_character": "rounded-friendly",
+    "color_strategy": "neutral-plus-accent",
+    "motion_character": "focus-scale",
+    "focus_strategy": "border-plus-scale",
+    "cta_strategy": "single-primary",
+    "image_strategy": "none",
+    "icon_strategy": "system",
+    "metadata_density": "moderate"
+  },
+  "direction": {
+    "navigation": null,
+    "layout": "layout-form-stack",
+    "density": "density-medium",
+    "surface": "surface-elevated-cards",
+    "cards": "card-poster-landscape",
+    "typography": "typography-rounded-friendly",
+    "color": "color-neutral-accent",
+    "motion": "motion-focus-scale",
+    "focus": "focus-scale-glow",
+    "cta": "cta-single-primary",
+    "imagery": "imagery-none",
+    "icon": "icon-platform-native",
+    "metadata": "metadata-moderate"
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "mobile",
+      "tv"
+    ],
+    "input": [
+      "remote",
+      "touch"
+    ],
+    "product": [
+      "erp",
+      "iot"
+    ],
+    "screen": [
+      "settings"
+    ],
+    "screen_subtype": [],
+    "stack": [
+      "flutter"
+    ],
+    "density": "medium",
+    "components": [
+      "form",
+      "settings"
+    ],
+    "environment": [
+      "large-display",
+      "shared-device"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "create settings"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_ACCESSIBILITY",
+      "in_scope": true,
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "mode_evidence": [
+      "create: default (no mode cue)"
+    ],
+    "project_context": {
+      "navigation": "top-bar (KNOWN)",
+      "theme": "dual-theme (KNOWN)",
+      "surfaces": "elevated (INFERRED)",
+      "spacing": "4 (INFERRED)",
+      "components": "go_router, riverpod (KNOWN)"
+    },
+    "known": [
+      "platform=mobile",
+      "platform=tv",
+      "input=remote",
+      "product=erp",
+      "product=iot",
+      "stack=flutter",
+      "screen=settings",
+      "project_navigation=top-bar",
+      "project_theme=dual-theme",
+      "project_components=go_router, riverpod"
+    ],
+    "inferred": [
+      "input=touch",
+      "density=medium",
+      "mode=create",
+      "environment=shared-device",
+      "environment=large-display",
+      "project_surfaces=elevated",
+      "project_spacing=4"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": false,
+    "violations": [
+      "non-media product: poster (media) card geometry selected"
+    ]
+  }
+}

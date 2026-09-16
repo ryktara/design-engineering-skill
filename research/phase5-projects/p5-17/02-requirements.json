@@ -1,0 +1,191 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "audit",
+    "refactor"
+  ],
+  "platform": [
+    "desktop"
+  ],
+  "input": [
+    "keyboard",
+    "pointer"
+  ],
+  "product": [],
+  "screen": [
+    "form"
+  ],
+  "screen_subtype": [],
+  "stack": [
+    "avalonia"
+  ],
+  "density": null,
+  "components": [
+    "form"
+  ],
+  "environment": [],
+  "jobs": [],
+  "problems": [],
+  "risk": "low",
+  "primary_jobs": [
+    "audit form"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "keyboard": true,
+    "screen_reader": true,
+    "focus": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "change_budget": "moderate",
+  "scope": {
+    "domain": "UI_INTERACTION",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "intent": {
+    "artifact_state": "existing",
+    "operations": [
+      "diagnose",
+      "modify"
+    ],
+    "problem_domain": [
+      "interaction"
+    ],
+    "change_scope": "unknown",
+    "utterance": "observation",
+    "existing": true,
+    "problem": true,
+    "facet": "interaction",
+    "diagnose_only": false,
+    "creation": false,
+    "redesign": false,
+    "responsive_cues": false,
+    "preserve": [],
+    "scope": "moderate"
+  },
+  "platform_evidence": [],
+  "mode_evidence": [
+    "audit: interaction defect on existing UI",
+    "refactor: fix follows the diagnosis"
+  ],
+  "project_context": {
+    "navigation": {
+      "value": "menu-bar",
+      "status": "KNOWN",
+      "evidence": [
+        "menu-bar: 1 matches in MainWindow.axaml (shell/layout file)",
+        "also left-rail: 1 matches"
+      ]
+    },
+    "theme": {
+      "value": "light-first",
+      "status": "INFERRED",
+      "evidence": [
+        "hex palette: 9 near-white, 0 near-black"
+      ]
+    },
+    "surfaces": {
+      "value": "flat-tonal",
+      "status": "UNKNOWN",
+      "evidence": [
+        "no shadow or border declarations found"
+      ]
+    },
+    "radius": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "spacing": {
+      "value": 4,
+      "status": "INFERRED",
+      "evidence": [
+        "most used spacing values [4]"
+      ]
+    },
+    "typography": {
+      "value": "geometric-sans",
+      "status": "KNOWN",
+      "evidence": [
+        "font family Segoe UI, avares://Avalonia.Fonts.Inter/Assets#Inter (2 refs)",
+        "weights semibold"
+      ]
+    },
+    "components": {
+      "value": "avalonia",
+      "status": "KNOWN",
+      "evidence": [
+        "avalonia"
+      ]
+    }
+  },
+  "known": [
+    "platform=desktop (project inspection)",
+    "stack=avalonia (project inspection)",
+    "screen=form (request: form)",
+    "project_navigation=menu-bar (repository: menu-bar: 1 matches in MainWindow.axaml (shell/layout file); also left-rail: 1 matches)",
+    "project_typography=geometric-sans (repository: font family Segoe UI, avares://Avalonia.Fonts.Inter/Assets#Inter (2 refs); weights semibold)",
+    "project_components=avalonia (repository: avalonia)"
+  ],
+  "inferred": [
+    "input=pointer (implied by platform desktop)",
+    "input=keyboard (implied by platform desktop)",
+    "mode=audit (interaction defect on existing UI)",
+    "mode=refactor (fix follows the diagnosis)",
+    "project_theme=light-first (repository: hex palette: 9 near-white, 0 near-black)",
+    "project_spacing=4 (repository: most used spacing values [4])"
+  ],
+  "missing": [],
+  "status": "CONFIDENT",
+  "source": {
+    "request": [
+      "form"
+    ],
+    "project": [
+      "FleetDesk.csproj: Avalonia"
+    ]
+  },
+  "activation": {
+    "decision": "activate",
+    "ui_score": 2.0,
+    "non_ui_score": 0,
+    "ui_terms": [
+      "form"
+    ],
+    "non_ui_terms": []
+  },
+  "intent_evidence": {
+    "existing": [
+      "the dispatch job form"
+    ],
+    "new": [],
+    "defect": [
+      "lose"
+    ],
+    "operations": {},
+    "domains": {
+      "interaction": [
+        "click"
+      ]
+    },
+    "no_change": [],
+    "scope": {},
+    "question": false
+  },
+  "scope_evidence": {
+    "ui": [
+      "form"
+    ],
+    "ux_symptoms": [],
+    "technical": {},
+    "non_visual": []
+  }
+}

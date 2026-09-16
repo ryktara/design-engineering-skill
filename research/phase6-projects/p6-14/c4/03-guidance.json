@@ -1,0 +1,1191 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "VoiceOver reads the streak ring as \"image\".",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "accessibility",
+      "audit"
+    ],
+    "platform": [
+      "mobile"
+    ],
+    "input": [
+      "touch"
+    ],
+    "product": [],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "swiftui"
+    ],
+    "density": null,
+    "components": [],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "accessibility"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "low",
+    "scope": {
+      "domain": "UI_ACCESSIBILITY",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "accessibility",
+        "visual"
+      ],
+      "change_scope": "unknown",
+      "utterance": "observation",
+      "existing": true,
+      "problem": true,
+      "facet": "accessibility",
+      "diagnose_only": false,
+      "creation": false,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "accessibility: explicit: voiceover",
+      "accessibility: accessibility defect on existing UI",
+      "audit: diagnose the reported defect"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "bottom-tabs",
+        "status": "KNOWN",
+        "evidence": [
+          "bottom-tabs: 7 matches in README.md, RootTabView.swift, StreaksApp.swift (shell/layout file)"
+        ]
+      },
+      "theme": {
+        "value": "dual-theme",
+        "status": "INFERRED",
+        "evidence": [
+          "dark theme configuration signals: 1",
+          "hex palette: 0 near-white, 0 near-black"
+        ]
+      },
+      "surfaces": {
+        "value": "elevated",
+        "status": "INFERRED",
+        "evidence": [
+          "shadow/elevation in 4 files, borders in 0"
+        ]
+      },
+      "radius": {
+        "value": "medium",
+        "status": "INFERRED",
+        "evidence": [
+          "most common radius 8 (1×); others []"
+        ]
+      },
+      "spacing": {
+        "value": 4,
+        "status": "INFERRED",
+        "evidence": [
+          "most used spacing values [2, 4, 12, 16]"
+        ]
+      },
+      "typography": {
+        "value": "custom",
+        "status": "KNOWN",
+        "evidence": [
+          "font family System (8 refs)",
+          "encoded type scale in 3 files",
+          "monospace usage"
+        ]
+      },
+      "components": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": []
+      }
+    },
+    "known": [
+      "platform=mobile (project inspection)",
+      "stack=swiftui (project inspection)",
+      "mode=accessibility (explicit: voiceover; accessibility defect on existing UI)",
+      "project_navigation=bottom-tabs (repository: bottom-tabs: 7 matches in README.md, RootTabView.swift, StreaksApp.swift (shell/layout file))",
+      "project_typography=custom (repository: font family System (8 refs); encoded type scale in 3 files)"
+    ],
+    "inferred": [
+      "input=touch (implied by platform mobile)",
+      "mode=audit (diagnose the reported defect)",
+      "project_theme=dual-theme (repository: dark theme configuration signals: 1; hex palette: 0 near-white, 0 near-black)",
+      "project_surfaces=elevated (repository: shadow/elevation in 4 files, borders in 0)",
+      "project_radius=medium (repository: most common radius 8 (1×); others [])",
+      "project_spacing=4 (repository: most used spacing values [2, 4, 12, 16])"
+    ],
+    "missing": [],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [
+        "voiceover"
+      ],
+      "project": [
+        "Package.swift: Apple project",
+        "Package.swift: iOS target"
+      ]
+    },
+    "activation": {
+      "decision": "ambiguous",
+      "ui_score": 1.0,
+      "non_ui_score": 0,
+      "ui_terms": [],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "present-tense observation"
+      ],
+      "new": [],
+      "defect": [
+        "observed behaviour"
+      ],
+      "operations": {},
+      "domains": {
+        "accessibility": [
+          "voiceover",
+          "a11y facet"
+        ],
+        "visual": [
+          "read"
+        ]
+      },
+      "no_change": [],
+      "scope": {},
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "image"
+      ],
+      "ux_symptoms": [
+        "voiceover"
+      ],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_ACCESSIBILITY",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "accessibility",
+        "reason": "accessibility mode"
+      },
+      {
+        "concern": "interaction",
+        "reason": "accessibility mode: operability is part of the review"
+      },
+      {
+        "concern": "component",
+        "reason": "the reviewed component/screen"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "states",
+        "reason": "audits check empty/loading/error handling"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "audits name generic-design defects"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "device sizes and orientation"
+      }
+    ],
+    "optional": [
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "a11y.accessible_names",
+        "reason": "accessibility review",
+        "priority": 1,
+        "critical": true
+      },
+      {
+        "concept": "a11y.contrast",
+        "reason": "accessibility review",
+        "priority": 1,
+        "critical": true
+      },
+      {
+        "concept": "a11y.semantics",
+        "reason": "accessibility review",
+        "priority": 1,
+        "critical": true
+      },
+      {
+        "concept": "a11y.color_not_only",
+        "reason": "accessibility review",
+        "priority": 1,
+        "critical": true
+      },
+      {
+        "concept": "a11y.live_status",
+        "reason": "accessibility review",
+        "priority": 1,
+        "critical": true
+      },
+      {
+        "concept": "touch.minimum_target",
+        "reason": "accessibility review on a touch platform: target size",
+        "priority": 3,
+        "critical": false
+      }
+    ],
+    "recommended_concepts": [
+      "a11y.text_scaling",
+      "a11y.reduced_motion",
+      "process.reuse_first",
+      "touch.minimum_target",
+      "touch.gestures_discoverable",
+      "touch.thumb_reach",
+      "touch.safe_areas",
+      "navigation.platform_grammar"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "comp-toast-notification",
+      "kind": "component",
+      "category": "notification",
+      "title": "Toast / snackbar / banner",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "accessibility",
+        "component",
+        "feedback",
+        "states"
+      ],
+      "concepts": [
+        "a11y.live_status"
+      ],
+      "covers": [
+        "live region status announcements"
+      ],
+      "score": 0.18,
+      "guidance": "Toast: bottom (mobile) or bottom-left/top-right (desktop) consistent position, ≥5 s or until dismissed, undo where applicable, live region polite. Banner: inline at the top of the region it concerns, dismissible if non-critical. TV: brief overlay in the safe area that never steals focus.",
+      "use_when": "Transient confirmation (saved, sent, undo), persistent info (banner), blocking errors (dialog, not toast).",
+      "avoid_when": "Never put required actions only in a toast; never stack more than ~3; never auto-dismiss errors.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "implementation": {
+        "swiftui": "No system toast; use a lightweight overlay with .accessibilityAddTraits(.updatesFrequently) announcement."
+      },
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.4,
+        "matched": [
+          "mode accessibility"
+        ]
+      },
+      "role": "core",
+      "selected_for": "task evidence: "
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "a11y-native-semantics",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Native accessibility semantics (mobile/desktop)",
+      "facets": [
+        "accessibility",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility"
+      ],
+      "concepts": [
+        "a11y.semantics",
+        "a11y.accessible_names"
+      ],
+      "covers": [
+        "semantic structure and roles",
+        "accessible names and labels"
+      ],
+      "score": 0.419,
+      "guidance": "Use platform roles and traits (Compose semantics{role, contentDescription, heading()}, SwiftUI accessibilityLabel/.accessibilityAddTraits, RN accessibilityRole, WinUI/WPF AutomationProperties + AutomationPeer for custom controls); merge descendants so a card is one element; announce async status with live regions/announceForAccessibility. Test with TalkBack/VoiceOver/Narrator, not only by reading code.",
+      "use_when": "Custom composables/views/controls, merged semantics for cards, live regions for status, headings in long screens.",
+      "avoid_when": "Never build a tappable Box/View/Border without a role and name.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.221,
+        "structural": 0.66,
+        "matched": [
+          "platform mobile",
+          "mode accessibility"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "critical concept (GENERIC): accessible names and labels, semantic structure and roles"
+    },
+    {
+      "id": "a11y-color-not-only",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Never colour alone",
+      "facets": [
+        "accessibility"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "a11y.color_not_only",
+        "interaction.selection_visible"
+      ],
+      "covers": [
+        "no colour alone for status",
+        "selected state visible and distinct from focus and hover"
+      ],
+      "score": 0.243,
+      "guidance": "Pair colour with text, icon, pattern, weight, or underline. Error fields get an icon and message; chart series get labels or line styles; links in prose get underlines; selected rows get a check or a border, not only a tint.",
+      "use_when": "Status, validation errors, chart series, selected/active states, required fields, links inside text.",
+      "avoid_when": "Never skip.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.54,
+        "matched": [
+          "mode accessibility"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "critical concept (GENERIC): no colour alone for status"
+    },
+    {
+      "id": "a11y-contrast-text",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Text contrast 4.5:1 (3:1 large)",
+      "facets": [
+        "accessibility"
+      ],
+      "concerns": [
+        "accessibility"
+      ],
+      "concepts": [
+        "a11y.contrast"
+      ],
+      "covers": [
+        "high contrast"
+      ],
+      "score": 0.243,
+      "guidance": "Body and label text ≥4.5:1, large text (≥24 px or ≥19 px bold) ≥3:1, AAA target 7:1 for long reading and for TV. Measure with tokens.py contrast, never estimate. Placeholder text is text and must pass.",
+      "use_when": "Every text/background pair in every theme and every state (hover, pressed, selected, placeholder).",
+      "avoid_when": "Never skip; disabled text and pure decoration are the only exemptions.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.54,
+        "matched": [
+          "mode accessibility"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "critical concept (GENERIC): high contrast"
+    },
+    {
+      "id": "a11y-live-status",
+      "kind": "rule",
+      "category": "feedback",
+      "title": "Announce dynamic status changes",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "accessibility",
+        "feedback"
+      ],
+      "concepts": [
+        "a11y.live_status"
+      ],
+      "covers": [
+        "live region status announcements"
+      ],
+      "score": 0.243,
+      "guidance": "Use a polite live region (role=status / accessibilityLiveRegion=polite / LiveSetting) with a complete phrase ('12 results for shoes'), assertive only for blocking errors; toasts stay ≥5 s or until dismissed and are also logged somewhere reachable.",
+      "use_when": "Toasts, saving/saved indicators, cart counts, filter result counts, chat messages, async loading completion.",
+      "avoid_when": "Do not announce every keystroke result; do not move focus for non-blocking status.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.54,
+        "matched": [
+          "mode accessibility"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "critical concept (GENERIC): live region status announcements"
+    },
+    {
+      "id": "mobile-density-touch",
+      "kind": "rule",
+      "category": "layout",
+      "title": "Mobile: density is bounded by touch",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "adaptive",
+        "data-display",
+        "interaction"
+      ],
+      "concepts": [
+        "table.column_priority",
+        "touch.minimum_target"
+      ],
+      "covers": [
+        "column priority on narrow widths",
+        "large touch targets (≥44–48 px)"
+      ],
+      "score": 0.198,
+      "guidance": "Convert tables to list rows with the 2–3 deciding columns, put the rest in a detail screen; filters in a sheet with applied-filter chips; bulk actions via selection mode; numbers stay tabular; row height ≥48 dp. Dense on phone means fewer things, not smaller things.",
+      "use_when": "Porting dense desktop tools (ERP, tables, dashboards) to phones.",
+      "avoid_when": "Never shrink a desktop table to fit; never rely on horizontal scroll for primary data.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "incompatible": [
+        "layout-table-first",
+        "density-high"
+      ],
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.44,
+        "matched": [
+          "platform mobile",
+          "input touch",
+          "secondary mode"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage (SPECIFIC): large touch targets (≥44–48 px)"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "accessibility",
+      "interaction",
+      "component"
+    ],
+    "covered_required_concerns": [
+      "accessibility",
+      "interaction",
+      "component"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "states",
+      "anti-pattern",
+      "adaptive"
+    ],
+    "covered_recommended_concerns": [
+      "states",
+      "adaptive"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "a11y.semantics",
+      "a11y.color_not_only",
+      "a11y.live_status",
+      "touch.minimum_target"
+    ],
+    "covered_required_concepts": [
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "a11y.semantics",
+      "a11y.color_not_only",
+      "a11y.live_status",
+      "touch.minimum_target"
+    ],
+    "uncovered_required_concepts": [],
+    "critical_concepts": [
+      "a11y.accessible_names",
+      "a11y.color_not_only",
+      "a11y.contrast",
+      "a11y.live_status",
+      "a11y.semantics"
+    ],
+    "uncovered_critical_concepts": [],
+    "critical_coverage_ratio": 1.0,
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.12,
+    "not_surfaced": [
+      {
+        "concept": "a11y.text_scaling",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "a11y.reduced_motion",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "process.reuse_first",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "touch.gestures_discoverable",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "touch.thumb_reach",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "touch.safe_areas",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "navigation.platform_grammar",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      }
+    ],
+    "bundle_size": 6,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 1,
+    "guardrail_size": 5,
+    "bundle_tokens": 742,
+    "coverage_per_1k_tokens": 8.09,
+    "mean_purity": 0.83,
+    "mean_specificity": 1.0,
+    "quality_counts": {
+      "SPECIFIC": 2,
+      "GENERIC": 4
+    },
+    "contaminated": [],
+    "category_diversity": 0.67,
+    "duplicate_pressure": 0.5,
+    "facet_coverage": 0.6,
+    "redundancy": 0.46,
+    "critical_trace": {
+      "covered": [
+        "a11y.accessible_names",
+        "a11y.contrast",
+        "a11y.semantics",
+        "a11y.color_not_only",
+        "a11y.live_status"
+      ],
+      "uncovered": [],
+      "carrier_quality": {
+        "a11y.accessible_names": "GENERIC",
+        "a11y.contrast": "GENERIC",
+        "a11y.semantics": "GENERIC",
+        "a11y.color_not_only": "GENERIC",
+        "a11y.live_status": "SPECIFIC"
+      }
+    }
+  },
+  "token_coverage": 0.8,
+  "omitted": [
+    {
+      "id": "comp-photo-capture-field",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "nav-bottom-tabs",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "comp-player-controls",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "media-resume-and-details",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "comp-product-detail-page",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "comp-media-card",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "chart-accessible-colour",
+      "reason": "contamination: chart record outside a data-visualisation task"
+    },
+    {
+      "id": "comp-chart-container",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    },
+    {
+      "id": "chart-composition",
+      "reason": "contamination: chart record outside a data-visualisation task"
+    },
+    {
+      "id": "focus-none-touch-only",
+      "reason": "no positive task evidence (screen / subtype / component / job / product / wording) for a core record"
+    }
+  ],
+  "marginal": {
+    "a11y-native-semantics": {
+      "new_critical": [
+        "a11y.accessible_names",
+        "a11y.semantics"
+      ],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [
+        "accessibility"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "lexical",
+        "explicit_demand"
+      ],
+      "quality": "GENERIC",
+      "contamination": 0.0,
+      "tokens": 145
+    },
+    "a11y-color-not-only": {
+      "new_critical": [
+        "a11y.color_not_only"
+      ],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [
+        "interaction"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "explicit_demand"
+      ],
+      "quality": "GENERIC",
+      "contamination": 0.0,
+      "tokens": 83
+    },
+    "a11y-contrast-text": {
+      "new_critical": [
+        "a11y.contrast"
+      ],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [],
+      "specificity": 1,
+      "evidence": [
+        "explicit_demand"
+      ],
+      "quality": "GENERIC",
+      "contamination": 0.0,
+      "tokens": 92
+    },
+    "a11y-live-status": {
+      "new_critical": [
+        "a11y.live_status"
+      ],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [
+        "feedback"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "explicit_demand"
+      ],
+      "quality": "GENERIC",
+      "contamination": 0.0,
+      "tokens": 109
+    },
+    "comp-toast-notification": {
+      "new_critical": [],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [
+        "component",
+        "states"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "explicit_demand"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 209
+    },
+    "mobile-density-touch": {
+      "new_critical": [],
+      "new_required": [
+        "touch.minimum_target"
+      ],
+      "new_recommended": [
+        "touch.minimum_target"
+      ],
+      "new_concerns": [
+        "adaptive",
+        "data-display"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "platform_specific"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 104
+    }
+  },
+  "rejected": [
+    {
+      "id": "comp-tv-rail",
+      "reason": "platform ['tv'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-plan-comparison",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-kiosk-keypad",
+      "reason": "platform ['kiosk', 'tablet'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-tv-side-sheet",
+      "reason": "platform ['tv'] not in request ['mobile']"
+    },
+    {
+      "id": "dir-broadcast-guide-tv",
+      "reason": "platform ['tv'] not in request ['mobile']"
+    },
+    {
+      "id": "layout-rails",
+      "reason": "platform ['tv'] not in request ['mobile']"
+    },
+    {
+      "id": "layout-immersive-rails",
+      "reason": "platform ['tv'] not in request ['mobile']"
+    },
+    {
+      "id": "surface-bordered-panes",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "a11y.accessible_names",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 1,
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "a11y-labels-names",
+          0.45
+        ],
+        [
+          "a11y-native-semantics",
+          0.419
+        ],
+        [
+          "comp-photo-capture-field",
+          0.283
+        ],
+        [
+          "comp-player-controls",
+          0.234
+        ]
+      ],
+      "selected_record": "a11y-native-semantics",
+      "carrier_quality": "GENERIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.contrast",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 1,
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "a11y-contrast-text",
+          0.243
+        ],
+        [
+          "a11y-nontext-contrast",
+          0.243
+        ],
+        [
+          "anti-fashion-over-usability",
+          0.207
+        ]
+      ],
+      "selected_record": "a11y-contrast-text",
+      "carrier_quality": "GENERIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.semantics",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 1,
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "a11y-native-semantics",
+          0.419
+        ]
+      ],
+      "selected_record": "a11y-native-semantics",
+      "carrier_quality": "GENERIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.color_not_only",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 1,
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "a11y-color-not-only",
+          0.243
+        ],
+        [
+          "data-exceptions-first",
+          0.207
+        ],
+        [
+          "media-resume-and-details",
+          0.198
+        ],
+        [
+          "chart-accessible-colour",
+          0.18
+        ]
+      ],
+      "selected_record": "a11y-color-not-only",
+      "carrier_quality": "GENERIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.live_status",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 1,
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "interaction-drag-drop",
+          0.288
+        ],
+        [
+          "a11y-live-status",
+          0.243
+        ],
+        [
+          "search-filter-feedback",
+          0.207
+        ],
+        [
+          "feedback-progress-async",
+          0.207
+        ]
+      ],
+      "selected_record": "a11y-live-status",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "touch.minimum_target",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 3,
+      "reason": "accessibility review on a touch platform: target size",
+      "candidate_records": [
+        [
+          "comp-photo-capture-field",
+          0.283
+        ],
+        [
+          "a11y-target-size",
+          0.27
+        ],
+        [
+          "comp-list-row-mobile",
+          0.225
+        ],
+        [
+          "media-photo-viewer",
+          0.225
+        ]
+      ],
+      "selected_record": "mobile-density-touch",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.text_scaling",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "a11y-text-scaling",
+          0.243
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "a11y.reduced_motion",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "accessibility review",
+      "candidate_records": [
+        [
+          "onboarding-first-run",
+          0.261
+        ],
+        [
+          "a11y-reduced-motion",
+          0.243
+        ],
+        [
+          "a11y-time-and-auto",
+          0.243
+        ],
+        [
+          "anti-scroll-animation-everything",
+          0.171
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.171
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.minimum_target",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "touch platform",
+      "candidate_records": [
+        [
+          "comp-photo-capture-field",
+          0.283
+        ],
+        [
+          "a11y-target-size",
+          0.27
+        ],
+        [
+          "comp-list-row-mobile",
+          0.225
+        ],
+        [
+          "media-photo-viewer",
+          0.225
+        ]
+      ],
+      "selected_record": "mobile-density-touch",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "touch.gestures_discoverable",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "touch platform",
+      "candidate_records": [
+        [
+          "mobile-gestures-discoverable",
+          0.324
+        ],
+        [
+          "interaction-drag-drop",
+          0.288
+        ],
+        [
+          "comp-list-row-mobile",
+          0.225
+        ],
+        [
+          "media-photo-viewer",
+          0.225
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.thumb_reach",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "one-handed use",
+      "candidate_records": [
+        [
+          "mobile-thumb-reach",
+          0.288
+        ],
+        [
+          "anti-mobile-desktop-shrunk",
+          0.198
+        ],
+        [
+          "cta-sticky-bar",
+          0.182
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.safe_areas",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "mobile",
+      "candidate_records": [
+        [
+          "mobile-safe-areas",
+          0.288
+        ],
+        [
+          "mobile-orientation-size-classes",
+          0.288
+        ],
+        [
+          "cta-sticky-bar",
+          0.182
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "navigation.platform_grammar",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "mobile navigation grammar",
+      "candidate_records": [
+        [
+          "mobile-platform-navigation",
+          0.288
+        ],
+        [
+          "nav-bottom-tabs",
+          0.269
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    }
+  ]
+}

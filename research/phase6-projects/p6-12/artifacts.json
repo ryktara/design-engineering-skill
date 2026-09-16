@@ -1,0 +1,164 @@
+{
+  "task": "p6-12",
+  "project": "p3-mobile-flutter-field",
+  "platform_expected": "mobile",
+  "platform_resolved": "web",
+  "platform_correct": "wrong",
+  "stack": "flutter",
+  "existing_ui": true,
+  "new_screen": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": ["create", "refactor"],
+  "mode_resolved": ["create"],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "moderate",
+  "render_mode": "html-twin",
+  "screenshots": [
+    "render/first-offline.png",
+    "render/first-offline-nosignal.png",
+    "render/first-pending.png",
+    "render/first-checklist.png",
+    "render/final-offline.png",
+    "render/final-offline-nosignal.png",
+    "render/final-pending.png",
+    "render/final-checklist.png"
+  ],
+  "context_detection": {
+    "navigation": "partial",
+    "theme": "yes",
+    "typography": "yes",
+    "surfaces": "partial",
+    "spacing": "partial"
+  },
+  "preservation": {
+    "navigation": true,
+    "theme": true,
+    "typography": true,
+    "component_reuse": true,
+    "unjustified_structural_change": 0
+  },
+  "expected_concepts": [
+    "state.offline_sync",
+    "state.loading_empty_error",
+    "a11y.live_status",
+    "touch.minimum_target",
+    "a11y.color_not_only",
+    "process.reuse_first"
+  ],
+  "critical_concepts": ["state.offline_sync", "state.loading_empty_error"],
+  "delivered_concepts": [
+    "a11y.color_not_only",
+    "a11y.live_status",
+    "data.exception_first",
+    "data.pagination_strategy",
+    "data.refresh_timestamp",
+    "env.glanceable_status",
+    "process.reuse_first",
+    "state.loading_empty_error",
+    "state.offline_sync",
+    "state.saving_conflict",
+    "table.tabular_figures",
+    "touch.minimum_target"
+  ],
+  "concept_recall": 1.0,
+  "critical_recall": 1.0,
+  "concept_misses": [],
+  "layer_review": {
+    "core": ["comp-toast-notification", "comp-pagination", "card-list-row"],
+    "critical": [
+      "states-offline-and-sync",
+      "a11y-target-size",
+      "impl-reuse-before-new",
+      "data-exceptions-first",
+      "layout-states-empty-loading-error"
+    ],
+    "optional": [],
+    "optional_useful": 0,
+    "optional_noise": 0
+  },
+  "first_render_defects": {
+    "visual": 2,
+    "interaction": 1,
+    "accessibility": 0,
+    "platform": 0,
+    "existing-system-mismatch": 0,
+    "implementation-bug": 0
+  },
+  "final_defects": {
+    "visual": 0,
+    "interaction": 0,
+    "accessibility": 0,
+    "platform": 0,
+    "existing-system-mismatch": 0,
+    "implementation-bug": 0
+  },
+  "iterations": 3,
+  "guidance_relevant": 4,
+  "guidance_partial": 3,
+  "guidance_offtarget": 1,
+  "bad_guidance": [
+    {
+      "record": "comp-pagination",
+      "category": "wrong-screen",
+      "why": "Pagination / infinite-scroll advice for a 6-item inspection checklist; marginal shows zero new concepts and zero new concerns, selected only on the word 'list'."
+    },
+    {
+      "record": "card-list-row",
+      "category": "generic",
+      "why": "Describes the rows that already exist and that the task does not touch (they belong to task p6-11); contributed no concept."
+    },
+    {
+      "record": "a11y-target-size",
+      "category": "off-platform",
+      "why": "Correct requirement but led with web CSS-px framing because platform resolved to web; the Android 48 dp figure sits mid-record."
+    },
+    {
+      "record": "data-exceptions-first",
+      "category": "generic",
+      "why": "Exceptions-first sorting for tables/lists; only env.glanceable_status was applicable to a connectivity strip."
+    }
+  ],
+  "skill_effect": "helped",
+  "guidance_used": [
+    "states-offline-and-sync",
+    "impl-reuse-before-new",
+    "comp-toast-notification",
+    "layout-states-empty-loading-error",
+    "a11y-target-size"
+  ],
+  "guidance_ignored": [
+    {"id": "comp-pagination", "why": "no pagination on a 6-item checklist"},
+    {"id": "card-list-row", "why": "rows unchanged; another task owns them"},
+    {"id": "data-exceptions-first", "why": "no table or exception ranking in this change"},
+    {"id": "direction:navigation", "why": "web collapse-to-hamburger advice on a Flutter AppBar; slot is preserved"}
+  ],
+  "unjustified_direction_slots": 0,
+  "process_records_needed": true,
+  "guidance_tokens": 1114,
+  "misses": [
+    {"layer": "platform-evidence", "what": "'site' (physical work site) + 'banner' read as DIRECT web evidence; the conflict against a detected Flutter/mobile repository resolved as 'request kept' with no confirm prompt, pulling keyboard/hover concepts and web target-size framing into the bundle."},
+    {"layer": "bundle-selection", "what": "comp-pagination entered the core layer with zero marginal concept/concern contribution."},
+    {"layer": "project-context", "what": "spacing 'irregular' and surfaces UNKNOWN although app_theme.dart defines a named 4-based scale (FieldSizes) and every tile declares a border; radius inferred 4 vs actual 8."}
+  ],
+  "knowledge_gaps": [],
+  "regressions": [
+    {"query": "Add an offline banner and retry to the report list for when the site has no signal. (Flutter/mobile project)", "expect": "platform mobile or UNKNOWN+confirm, never web; 'site' must not be DIRECT web evidence against a detected native mobile repository"},
+    {"query": "any list task on a project whose lists are a handful of items", "expect": "comp-pagination not selected into the core layer; no core record with zero marginal concept contribution"},
+    {"query": "inspect a Flutter project defining spacing/radius as named constants (class FieldSizes)", "expect": "spacing KNOWN 4-based and radius 8, not 'irregular' / 4"}
+  ],
+  "tags": [
+    "platform-miss",
+    "ranking-miss",
+    "context-detection-miss",
+    "render-defect-fixed",
+    "preservation-ok",
+    "skill-helped"
+  ],
+  "build_hash_start": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947",
+  "build_hash_end": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947"
+}

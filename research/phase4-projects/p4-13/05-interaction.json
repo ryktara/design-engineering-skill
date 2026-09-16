@@ -1,0 +1,175 @@
+{
+  "task": "p4-13",
+  "viewport": "390x844",
+  "generated": "2026-09-09T08:26:54.306Z",
+  "checks": {
+    "form_targets": {
+      "screen": "form",
+      "targets": 11,
+      "names": [
+        "Back to checklist 56x56",
+        "Photo 1 104x104",
+        "Photo 2 104x104",
+        "Add photo 196x56",
+        "Gallery 150x56",
+        "Low 173x56",
+        "Medium 173x56",
+        "High 173x56",
+        "Critical 173x56",
+        "Cancel 134x56",
+        "Save defect 212x56"
+      ],
+      "min_size_ok": true,
+      "too_small": [],
+      "spacing_ok": true,
+      "too_close": [],
+      "ok": true
+    },
+    "thumbnail_single_target": {
+      "thumbs": [
+        {
+          "label": "Photo 1",
+          "w": 104,
+          "h": 104,
+          "role": "BUTTON",
+          "describedby": "hint-thumb"
+        },
+        {
+          "label": "Photo 2",
+          "w": 104,
+          "h": 104,
+          "role": "BUTTON",
+          "describedby": "hint-thumb"
+        }
+      ],
+      "ok": true
+    },
+    "no_nested_remove_button": {
+      "nested": 0,
+      "ok": true
+    },
+    "hide_keyboard_hidden_when_closed": {
+      "hidden": true,
+      "ok": true
+    },
+    "photo_sheet_retake": {
+      "open": true,
+      "title": "Photo 1 of 2",
+      "rows": [
+        {
+          "t": "Retake photo",
+          "h": 56,
+          "top": 602
+        },
+        {
+          "t": "Replace from gallery",
+          "h": 56,
+          "top": 666
+        },
+        {
+          "t": "Remove photo",
+          "h": 56,
+          "top": 730
+        }
+      ],
+      "modal": "true",
+      "bgInert": true,
+      "ok": true
+    },
+    "photo_sheet_targets": {
+      "screen": "photo-sheet",
+      "targets": 3,
+      "names": [
+        "Retake photo 390x56",
+        "Replace from gallery 390x56",
+        "Remove photo 390x56"
+      ],
+      "min_size_ok": true,
+      "too_small": [],
+      "spacing_ok": true,
+      "too_close": [],
+      "ok": true
+    },
+    "photo_sheet_dismiss": {
+      "closed": true,
+      "ok": true
+    },
+    "form_keyboard_300": {
+      "visible_height": 544,
+      "save_top": 476,
+      "save_bottom": 532,
+      "save_reachable": true,
+      "cancel_reachable": true,
+      "bar_bottom": 544,
+      "keyboard_top": 544,
+      "bar_above_keyboard": true,
+      "notes_top": 230.546875,
+      "notes_bottom": 350.546875,
+      "notes_visible_above_bar": true,
+      "focused": "notes",
+      "hide_visible": true,
+      "hide_h": 56,
+      "ok": true
+    },
+    "hide_keyboard_visible_when_open": {
+      "hide_visible": true,
+      "hide_h": 56,
+      "ok": true
+    },
+    "form_keyboard_targets": {
+      "screen": "form-keyboard",
+      "targets": 5,
+      "names": [
+        "Back to checklist 56x56",
+        "Hide keyboard 182x56",
+        "Crack 358x120",
+        "Cancel 134x56",
+        "Save defect 212x56"
+      ],
+      "min_size_ok": true,
+      "too_small": [],
+      "spacing_ok": true,
+      "too_close": [],
+      "ok": true
+    },
+    "form_keyboard_scroll_to_top": {
+      "photo_button_bottom": 442.765625,
+      "ok": true
+    },
+    "hide_keyboard_closes": {
+      "kb": false,
+      "bar_bottom": 844,
+      "focused": "",
+      "ok": true
+    },
+    "tap_outside_closes_keyboard": {
+      "kb": false,
+      "ok": true
+    },
+    "focus_visible_textarea": {
+      "outline": "none",
+      "border": "3px",
+      "ok": true
+    }
+  },
+  "summary": {
+    "checks": 14,
+    "passed": [
+      "form_targets",
+      "thumbnail_single_target",
+      "no_nested_remove_button",
+      "hide_keyboard_hidden_when_closed",
+      "photo_sheet_retake",
+      "photo_sheet_targets",
+      "photo_sheet_dismiss",
+      "form_keyboard_300",
+      "hide_keyboard_visible_when_open",
+      "form_keyboard_targets",
+      "form_keyboard_scroll_to_top",
+      "hide_keyboard_closes",
+      "tap_outside_closes_keyboard",
+      "focus_visible_textarea"
+    ],
+    "failed": []
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "audit",
+    "accessibility",
+    "polish"
+  ],
+  "platform": [
+    "kiosk"
+  ],
+  "input": [
+    "touch"
+  ],
+  "product": [
+    "government",
+    "healthcare"
+  ],
+  "screen": [],
+  "screen_subtype": [],
+  "stack": [
+    "html-css"
+  ],
+  "density": null,
+  "components": [],
+  "environment": [
+    "public"
+  ],
+  "jobs": [],
+  "problems": [],
+  "risk": "medium",
+  "primary_jobs": [
+    "audit"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "performance_sensitive": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "keyboard": true,
+    "screen_reader": true,
+    "touch_targets": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "change_budget": "low",
+  "scope": {
+    "domain": "UI_ACCESSIBILITY",
+    "in_scope": true,
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "mode_evidence": [
+    "audit: explicit: audit",
+    "accessibility: explicit: accessibility",
+    "polish: change request about look/feel",
+    "audit: diagnose first"
+  ],
+  "project_context": {
+    "navigation": {
+      "value": "hub-spoke",
+      "status": "KNOWN",
+      "evidence": [
+        "hub-spoke: 24 matches in README.md, app.js, i18n.js (shell/layout file)"
+      ]
+    },
+    "theme": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": [
+        "hex palette: 25 near-white, 17 near-black"
+      ]
+    },
+    "surfaces": {
+      "value": "elevated",
+      "status": "INFERRED",
+      "evidence": [
+        "weak signal: shadow 1, border 1"
+      ]
+    },
+    "radius": {
+      "value": "medium",
+      "status": "INFERRED",
+      "evidence": [
+        "most common radius 12 (1×); others [20.0, 32.0]"
+      ]
+    },
+    "spacing": {
+      "value": "irregular",
+      "status": "UNKNOWN",
+      "evidence": [
+        "most used spacing values [6, 10]"
+      ]
+    },
+    "typography": {
+      "value": "humanist-sans",
+      "status": "INFERRED",
+      "evidence": [
+        "font family Nunito (1 refs)",
+        "weights 700, 800, 600, 500",
+        "tabular numerals"
+      ]
+    },
+    "components": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": []
+    }
+  },
+  "known": [
+    "platform=kiosk (request: kiosk)",
+    "product=healthcare (project inspection (README))",
+    "product=government (project inspection (README))",
+    "stack=html-css (project inspection)",
+    "mode=audit (explicit: audit; diagnose first)",
+    "mode=accessibility (explicit: accessibility)",
+    "project_navigation=hub-spoke (repository: hub-spoke: 24 matches in README.md, app.js, i18n.js (shell/layout file))"
+  ],
+  "inferred": [
+    "input=touch (implied by platform kiosk)",
+    "mode=polish (change request about look/feel)",
+    "environment=public (kiosk platform implies public use)",
+    "project_surfaces=elevated (repository: weak signal: shadow 1, border 1)",
+    "project_radius=medium (repository: most common radius 12 (1×); others [20.0, 32.0])",
+    "project_typography=humanist-sans (repository: font family Nunito (1 refs); weights 700, 800, 600, 500)"
+  ],
+  "missing": [],
+  "conflicts": [
+    {
+      "field": "platform",
+      "request": [
+        "kiosk"
+      ],
+      "project": "web",
+      "resolution": "request kept; repository platform recorded as context"
+    }
+  ],
+  "status": "AMBIGUOUS",
+  "source": {
+    "request": [
+      "accessibility",
+      "audit",
+      "kiosk"
+    ],
+    "project": [
+      "*.html without a framework manifest: plain HTML/CSS site"
+    ]
+  },
+  "activation": {
+    "decision": "activate",
+    "ui_score": 4.0,
+    "non_ui_score": 0,
+    "ui_terms": [
+      "accessibility"
+    ],
+    "non_ui_terms": []
+  },
+  "intent": {
+    "existing": true,
+    "problem": false,
+    "facet": "general",
+    "diagnose_only": false,
+    "creation": false,
+    "redesign": false,
+    "responsive_cues": false,
+    "preserve": [],
+    "scope": "low"
+  },
+  "intent_evidence": {
+    "existing": [
+      "of the"
+    ],
+    "problem": [],
+    "change": [
+      "fix"
+    ],
+    "create": [],
+    "diagnose": [
+      "audit"
+    ],
+    "no_change": [],
+    "redesign": [],
+    "look_feel": [],
+    "structural": [],
+    "responsive": [],
+    "accessibility": [],
+    "interaction": []
+  },
+  "scope_evidence": {
+    "ui": [
+      "accessib",
+      "kiosk"
+    ],
+    "ux_symptoms": [],
+    "technical": {},
+    "non_visual": []
+  }
+}

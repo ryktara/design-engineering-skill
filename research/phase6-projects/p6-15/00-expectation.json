@@ -1,0 +1,23 @@
+{
+  "platform": "mobile",
+  "artifact_state": "existing",
+  "acceptable_modes": ["refactor", "polish", "audit"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "touch.ime_keyboard",
+    "form.autofill_attributes",
+    "touch.minimum_target",
+    "feedback.validation_errors",
+    "interaction.focus_visible"
+  ],
+  "critical_concepts": ["touch.ime_keyboard", "form.autofill_attributes"],
+  "forbidden_concepts": [
+    "tv.ten_foot_typography",
+    "interaction.dpad_reachability",
+    "tv.safe_margins",
+    "interaction.shortcuts",
+    "table.virtualization"
+  ],
+  "preservation": ["navigation", "theme", "typography"],
+  "reviewer_note": "Two real defects in TransferScreen.kt: (1) the Amount OutlinedTextField has no keyboardOptions, so Compose defaults to KeyboardType.Text -> letters IME (form.autofill_attributes / input-type per field); (2) the Scaffold content Column has no imePadding()/WindowInsets.ime handling, so with adjustResize the Send NbButton at the bottom of the scroll column is covered by the IME (touch.ime_keyboard). Secondary: no ImeAction wiring between Amount and Reference, no inline amount validation (errors are Toasts only)."
+}

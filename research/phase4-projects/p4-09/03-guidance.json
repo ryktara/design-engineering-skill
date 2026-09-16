@@ -1,0 +1,451 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "accessibility audit and fix of the identify step of the pick-up kiosk: the date-of-birth keypad and name entry",
+  "status": "AMBIGUOUS",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "accessibility",
+      "polish"
+    ],
+    "platform": [
+      "kiosk"
+    ],
+    "input": [
+      "touch"
+    ],
+    "product": [
+      "government",
+      "healthcare"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "html-css"
+    ],
+    "density": null,
+    "components": [],
+    "environment": [
+      "public"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "audit"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "low",
+    "scope": {
+      "domain": "UI_ACCESSIBILITY",
+      "in_scope": true,
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "mode_evidence": [
+      "audit: explicit: audit",
+      "accessibility: explicit: accessibility",
+      "polish: change request about look/feel",
+      "audit: diagnose first"
+    ],
+    "project_context": {
+      "navigation": "hub-spoke (KNOWN)",
+      "surfaces": "elevated (INFERRED)",
+      "radius": "medium (INFERRED)",
+      "typography": "humanist-sans (INFERRED)"
+    },
+    "known": [
+      "platform=kiosk",
+      "product=healthcare",
+      "product=government",
+      "stack=html-css",
+      "mode=audit",
+      "mode=accessibility",
+      "project_navigation=hub-spoke"
+    ],
+    "inferred": [
+      "input=touch",
+      "mode=polish",
+      "environment=public",
+      "project_surfaces=elevated",
+      "project_radius=medium",
+      "project_typography=humanist-sans"
+    ],
+    "missing": [],
+    "conflicts": [
+      {
+        "field": "platform",
+        "request": [
+          "kiosk"
+        ],
+        "project": "web",
+        "resolution": "request kept; repository platform recorded as context"
+      }
+    ],
+    "status": "AMBIGUOUS"
+  },
+  "scope": {
+    "domain": "UI_ACCESSIBILITY",
+    "in_scope": true,
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "accessibility",
+        "reason": "audit mode"
+      },
+      {
+        "concern": "interaction",
+        "reason": "audit mode: operability is part of the review"
+      },
+      {
+        "concern": "component",
+        "reason": "the reviewed component/screen"
+      },
+      {
+        "concern": "environment",
+        "reason": "public kiosk use"
+      },
+      {
+        "concern": "privacy",
+        "reason": "shared public device"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "states",
+        "reason": "audits check empty/loading/error handling"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "audits name generic-design defects"
+      },
+      {
+        "concern": "feedback",
+        "reason": "audits check that actions are discoverable and confirmed"
+      },
+      {
+        "concern": "performance",
+        "reason": "performance-sensitive context"
+      }
+    ],
+    "optional": [
+      "content"
+    ],
+    "required_concepts": [
+      {
+        "concept": "touch.minimum_target",
+        "reason": "touch platform"
+      },
+      {
+        "concept": "privacy.shared_device",
+        "reason": "kiosk"
+      },
+      {
+        "concept": "state.session_expiry",
+        "reason": "kiosk idle reset"
+      },
+      {
+        "concept": "privacy.sensitive_masking",
+        "reason": "balances / health data visible to onlookers"
+      }
+    ],
+    "recommended_concepts": [
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "state.loading_empty_error",
+      "touch.gestures_discoverable",
+      "touch.thumb_reach",
+      "env.glanceable_status",
+      "feedback.confirmation_destructive"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "comp-form",
+      "kind": "component",
+      "category": "form",
+      "title": "Form",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "component",
+        "feedback",
+        "states",
+        "structure"
+      ],
+      "concepts": [
+        "feedback.validation_errors",
+        "touch.ime_keyboard",
+        "form.autofill_attributes",
+        "state.unsaved_changes_guard"
+      ],
+      "covers": [
+        "inline validation messages and error recovery",
+        "on-screen keyboard (IME) aware layout",
+        "autofill / input-type attributes per field",
+        "unsaved-changes guard"
+      ],
+      "score": 0.256,
+      "guidance": "Labels above, help text below, required marked in text, field widths sized to content, grouped by section with headings, one column, inline validation on blur, error summary on submit with links to fields, primary action last (or sticky), unsaved-changes guard, autosave with status for long forms, autofill attributes. TV: one field per row, DOWN moves to next, system keyboard, minimal fields.",
+      "use_when": "Any data entry: settings, checkout, applications, record editing.",
+      "avoid_when": "Batch entry of many similar rows (use a data-entry grid); single toggles (inline).",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "nav-wizard",
+      "kind": "pattern",
+      "category": "navigation",
+      "title": "Linear wizard / stepper",
+      "facets": [
+        "navigation"
+      ],
+      "concerns": [
+        "navigation"
+      ],
+      "concepts": [
+        "feedback.progress_indicator",
+        "onboarding.linear_wizard"
+      ],
+      "covers": [
+        "progress indicator",
+        "linear multi-step wizard"
+      ],
+      "score": 0.285,
+      "guidance": "Show step count and current step, allow going back without data loss, put one primary action per step, validate per step not at the end, and let completed steps be revisited. Save progress for flows longer than ~3 minutes. On TV, each step is a full screen with a single focused default action.",
+      "use_when": "One task with ordered dependent steps (checkout, onboarding, application forms) where finishing matters more than exploring.",
+      "avoid_when": "Steps are independent and users need to jump around (use tabs or a form with sections), or the whole thing fits on one screen.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "incompatible": [
+        "nav-left-rail",
+        "nav-tv-side"
+      ],
+      "role": "core",
+      "selected_for": "highest-scoring pattern with lexical evidence"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "kiosk-public-use",
+      "kind": "rule",
+      "category": "input",
+      "title": "Kiosk: public, hurried, standing users",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "environment",
+        "interaction",
+        "privacy"
+      ],
+      "concepts": [
+        "touch.minimum_target",
+        "privacy.shared_device",
+        "state.session_expiry"
+      ],
+      "covers": [
+        "large touch targets (≥44–48 px)",
+        "privacy of on-screen data on shared devices",
+        "session expiry and idle reset"
+      ],
+      "score": 0.335,
+      "guidance": "Targets ≥60 px, body text ≥20 px, high contrast for glare, one task per screen, reachable-height controls (ADA reach ranges: interactive elements within 380–1220 mm), idle timeout with countdown that clears the session, attract screen as the hub, audio/visual feedback on every tap, and a visible way to cancel at every step.",
+      "use_when": "Self-service, POS, check-in, ticketing, signage with touch.",
+      "avoid_when": "Never require hover, precise dragging, small text, or scrolling to find the primary action; never keep personal data on screen after inactivity.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "incompatible": [
+        "layout-table-first",
+        "density-high",
+        "nav-menu-bar-desktop"
+      ],
+      "role": "guardrail",
+      "selected_for": "required coverage: environment, interaction, privacy, privacy of on-screen data on shared devices, session expiry and idle reset, large touch targets (≥44–48 px)"
+    },
+    {
+      "id": "shared-device-privacy",
+      "kind": "rule",
+      "category": "privacy",
+      "title": "Privacy on shared and public screens",
+      "facets": [
+        "accessibility",
+        "platform"
+      ],
+      "concerns": [
+        "environment",
+        "privacy"
+      ],
+      "concepts": [
+        "privacy.shared_device",
+        "state.session_expiry",
+        "privacy.sensitive_masking"
+      ],
+      "covers": [
+        "privacy of on-screen data on shared devices",
+        "session expiry and idle reset",
+        "masking of sensitive values with explicit reveal"
+      ],
+      "score": 0.297,
+      "guidance": "Assume onlookers: mask sensitive values by default with an explicit reveal (balances, medication, addresses), gate personal profiles and purchases behind a PIN on shared TVs, keep notifications and previews generic on shared screens, clear the session and screen on idle or sign-out (kiosks, waiting rooms), and never show one user's data while another profile is active. Announce masked values to assistive tech as masked, not as the value.",
+      "use_when": "TVs in a household, waiting-room tablets, kiosks, wall displays, any screen other people can see; personal data, balances, health details, viewing history, messages.",
+      "avoid_when": "Single-user personal devices with a lock screen already protecting the data.",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "role": "guardrail",
+      "selected_for": "required coverage: masking of sensitive values with explicit reveal"
+    },
+    {
+      "id": "a11y-labels-names",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Accessible names for every control and image",
+      "facets": [
+        "accessibility"
+      ],
+      "concerns": [
+        "accessibility"
+      ],
+      "concepts": [
+        "a11y.accessible_names"
+      ],
+      "covers": [
+        "accessible names and labels"
+      ],
+      "score": 0.453,
+      "guidance": "Visible label for inputs (not placeholder-only), aria-label/accessibilityLabel/contentDescription/AutomationProperties.Name for icon-only controls, alt text for meaningful images and alt=\"\" for decorative ones, link text that makes sense out of context. The accessible name must contain the visible label text (label in name).",
+      "use_when": "Icon-only buttons, inputs, images, custom controls, links whose text is 'Read more'.",
+      "avoid_when": "Decorative images and icons beside visible text are hidden from assistive tech instead.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "role": "guardrail",
+      "selected_for": "required coverage: accessibility"
+    },
+    {
+      "id": "anti-no-states",
+      "kind": "antipattern",
+      "category": "craft",
+      "title": "Only the happy state was designed",
+      "facets": [
+        "anti-pattern"
+      ],
+      "concerns": [
+        "anti-pattern",
+        "states"
+      ],
+      "concepts": [
+        "state.loading_empty_error"
+      ],
+      "covers": [
+        "loading, empty and error states"
+      ],
+      "score": 0.243,
+      "guidance": "Enumerate states per screen and per interactive component before implementation and verify each visually; test with long strings, zero items, 10k items, and slow networks.",
+      "use_when": "Screens with no empty, loading, error, offline, partial, or long-text states; buttons with no pressed/disabled/loading states; TV cards with no focused state.",
+      "avoid_when": "Never.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "role": "guardrail",
+      "selected_for": "recommended coverage: anti-pattern, loading, empty and error states"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "environment",
+      "privacy"
+    ],
+    "covered_required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "environment",
+      "privacy"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "states",
+      "anti-pattern",
+      "feedback",
+      "performance"
+    ],
+    "covered_recommended_concerns": [
+      "states",
+      "anti-pattern",
+      "feedback"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "touch.minimum_target",
+      "privacy.shared_device",
+      "state.session_expiry",
+      "privacy.sensitive_masking"
+    ],
+    "covered_required_concepts": [
+      "touch.minimum_target",
+      "privacy.shared_device",
+      "state.session_expiry",
+      "privacy.sensitive_masking"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.29,
+    "bundle_size": 6,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 2,
+    "guardrail_size": 4,
+    "bundle_tokens": 928,
+    "coverage_per_1k_tokens": 4.31,
+    "mean_purity": 0.67,
+    "contaminated": [],
+    "category_diversity": 1.0,
+    "duplicate_pressure": 0.17,
+    "facet_coverage": 1.0,
+    "redundancy": 0.23
+  },
+  "token_coverage": 0.62
+}

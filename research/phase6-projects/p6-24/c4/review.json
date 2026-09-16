@@ -1,0 +1,12 @@
+{"task": "p6-24",
+ "records": [
+   {"id": "tv-back-behavior", "verdict": "relevant", "category": "", "why": "The record for this request: full BACK ladder player-controls to exit, plus deep-link unwind to home."},
+   {"id": "a11y-tv-focus-always", "verdict": "relevant", "category": "", "why": "Focus restoration on return is the other half of a correct BACK and drove the focus-restore check."},
+   {"id": "tv-typography-distance", "verdict": "off-target", "category": "generic", "why": "10-foot type has no bearing on a BACK fall-through; entered on platform=tv, not task evidence."},
+   {"id": "tv-dpad-axes", "verdict": "partial", "category": "generic", "why": "True for the app but says nothing a BACK fall-through needed."},
+   {"id": "tv-safe-area", "verdict": "partial", "category": "generic", "why": "Overscan margins only served to grade the twin, not the change."}
+ ],
+ "missing_critical": ["navigation.orientation_and_back"],
+ "unjustified_direction_slots": 1,
+ "layer_review": {"core": [], "critical": ["tv-back-behavior", "a11y-tv-focus-always", "tv-typography-distance", "tv-dpad-axes", "tv-safe-area"], "optional": []},
+ "change_vs_c3": "better - 6 records down to 5, dropping the off-target layout-states-empty-loading-error while keeping both records the implementer used; three TV-platform boilerplate guardrails and the missing navigation.orientation_and_back remain, and the cards slot is still unjustified."}

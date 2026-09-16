@@ -1,0 +1,29 @@
+{
+  "task": "p5-22",
+  "reviewer_model": "claude-opus-5[1m]",
+  "c2_records": [
+    {"id": "comp-drawer-panel", "verdict": "off-target", "bad_category": "generic"},
+    {"id": "comp-dialog", "verdict": "partial", "bad_category": null},
+    {"id": "media-photo-viewer", "verdict": "off-target", "bad_category": "generic"},
+    {"id": "mobile-keyboard-ime", "verdict": "relevant", "bad_category": null},
+    {"id": "impl-reuse-before-new", "verdict": "relevant", "bad_category": null},
+    {"id": "interaction-drag-drop", "verdict": "off-target", "bad_category": "generic"},
+    {"id": "a11y-modal-dialog", "verdict": "relevant", "bad_category": null},
+    {"id": "color-states-complete", "verdict": "off-target", "bad_category": "generic"}
+  ],
+  "c2_relevant": 3,
+  "c2_partial": 1,
+  "c2_offtarget": 4,
+  "c2_bad": [
+    {"record": "comp-drawer-panel", "category": "generic", "why": "A 320-480px inline-on-wide-screens drawer with a tvOS focusSection variant. The artifact is an iOS modal .sheet on a 390pt phone; nothing in the task concerns a side panel. Carried over unchanged from c1, where it was explicitly recorded as ignored."},
+    {"record": "media-photo-viewer", "category": "generic", "why": "Streaks has no photos, camera or thumbnails; the sheet is name, icon grid, frequency and reminder time. Selected at lexical 0.02 solely for 'required coverage: large touch targets'."},
+    {"record": "interaction-drag-drop", "category": "generic", "why": "Nothing in the Add Habit sheet is draggable, and the record was chosen for 'required coverage: keyboard navigation and focus order' - a concept the pre-registered expectation lists as forbidden for this task, because 'keyboard' here means the on-screen IME, not a hardware keyboard. It re-imports the exact misreading that made c1 harmful."},
+    {"record": "color-states-complete", "category": "generic", "why": "Hover/pressed/focus/disabled state tokens on a touch-only sheet; the c1 run rejected the equivalent pick (a11y-nontext-contrast for the focus ring) for the same reason."},
+    {"record": "bundle", "category": "missing-critical", "why": "touch.safe_areas, one of the two critical concepts, is listed as uncovered (mobile-safe-areas and cta-sticky-bar dropped by the cap), and safeAreaInset is the SwiftUI mechanism the actual fix used to pin the primary button above the keyboard. mobile-keyboard-ime covers the intent ('keep the primary action reachable while the keyboard is open') but not the inset/home-indicator mechanics; touch.thumb_reach and process.safe_modification are also uncovered."}
+  ],
+  "c2_direction_unjustified": [],
+  "platform_mode_scope_ok": true,
+  "verdict_vs_c1": "better",
+  "why": "c2 fixes the mode (refactor, not create) and puts mobile-keyboard-ime in the bundle - the one record that states this task's fix (return key Next/Done, scroll the focused field above the keyboard, keep the primary action reachable, dismiss on tap outside), which in c1 the implementer had to dig out of the raw search himself - and it drops the ecommerce PDP core record and the failed poster/grid/sticky-bar direction; four of eight slots are still irrelevant filler, one of which re-imports the forbidden hardware-keyboard reading.",
+  "would_have_helped": "helped"
+}

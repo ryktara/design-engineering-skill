@@ -1,0 +1,1339 @@
+{
+  "schema": "benchmark-results/v1",
+  "benchmark_method": "v2",
+  "date": "2026-09-09",
+  "versions": {
+    "python": "3.14.5",
+    "os": "Windows-11-10.0.26200-SP0",
+    "upstream_revision": "4aad058",
+    "records": 237,
+    "de_core_sha": "4ecbca0ecca2",
+    "cases_sha": "660a3223567b"
+  },
+  "timing_method": {
+    "cold": "subprocess per query incl. interpreter start, both systems identically",
+    "warm": "in-process, records preloaded, ours only (search k=5 and guidance bundle)",
+    "reps": 7
+  },
+  "queries": [
+    {
+      "id": "saas-dashboard",
+      "category": "saas",
+      "query": "design a SaaS analytics dashboard",
+      "upstream": {
+        "domain": "product",
+        "top": [
+          "Analytics Dashboard",
+          "SaaS (General)",
+          "Smart Home/IoT Dashboard"
+        ],
+        "relevant": 0.286,
+        "offtarget": 0.5,
+        "empty": false,
+        "cold": {
+          "median_ms": 225,
+          "p95_ms": 227,
+          "n": 7
+        }
+      },
+      "ours": {
+        "platforms": {
+          "web": "INFERRED"
+        },
+        "modes": [
+          "create"
+        ],
+        "top": [
+          "anti-generic-sidebar-dashboard",
+          "dir-analytical-console",
+          "layout-dashboard-grid"
+        ],
+        "relevant": 1.0,
+        "offtarget": 0.5,
+        "empty": false,
+        "status": "CONFIDENT",
+        "facet_coverage": 0.75,
+        "cold": {
+          "median_ms": 424,
+          "p95_ms": 439,
+          "n": 7
+        },
+        "warm": {
+          "median_ms": 47.8,
+          "p95_ms": 56.7,
+          "n": 7
+        }
+      },
+      "ours_guidance": {
+        "top": [
+          "dir-analytical-console",
+          "comp-chart-container",
+          "layout-dashboard-grid",
+          "comp-kpi-tile"
+        ],
+        "relevant": 1.0,
+        "offtarget": 0.0,
+        "empty": false,
+        "status": "PARTIAL",
+        "bundle_size": 7,
+        "concern_coverage": 1.0,
+        "bytes": 4695,
+        "warm": {
+          "median_ms": 58.8,
+          "p95_ms": 60.0,
+          "n": 7
+        }
+      }
+    },
+    {
+      "id": "erp-po-entry",
+      "category": "erp",
+      "query": "ERP purchase order entry screen with line items",
+      "upstream": {
+        "domain": "style",
+        "top": [],
+        "relevant": 0.0,
+        "offtarget": 0.0,
+        "empty": true,
+        "cold": {
+          "median_ms": 321,
+          "p95_ms": 331,
+          "n": 7
+        }
+      },
+      "ours": {
+        "platforms": {},
+        "modes": [
+          "create"
+        ],
+        "top": [
+          "comp-data-entry-grid",
+          "card-list-row",
+          "layout-form-stack"
+        ],
+        "relevant": 1.0,
+        "offtarget": 0.25,
+        "empty": false,
+        "status": "CONFIDENT",
+        "facet_coverage": 0.75,
+        "cold": {
+          "median_ms": 455,
+          "p95_ms": 460,
+          "n": 7
+        },
+        "warm": {
+          "median_ms": 47.3,
+          "p95_ms": 49.9,
+          "n": 7
+        }
+      },
+      "ours_guidance": {
+        "top": [
+          "comp-data-entry-grid",
+          "dir-operational-workbench",
+          "comp-form",
+          "grid-single-tab-stop"
+        ],
+        "relevant": 1.0,
+        "offtarget": 0.25,
+        "empty": false,
+        "status": "PARTIAL",
+        "bundle_size": 7,
+        "concern_coverage": 1.0,
+        "bytes": 4734,
+        "warm": {
+          "median_ms": 59.3,
+          "p95_ms": 61.3,
+          "n": 7
+        }
+      }
+    },
+    {
+      "id": "ecommerce-plp",
+      "category": "ecommerce",
+      "query": "e-commerce product listing page with filters",
+      "upstream": {
+        "domain": "landing",
+        "top": [
+          "marketplace-directory",
+          "pricing-page-cta",
+          "ai-personalization-landing"
+        ],
+        "relevant": 0.125,
+        "offtarget": 0.667,
+        "empty": false,
+        "cold": {
+          "median_ms": 201,
+          "p95_ms": 204,
+          "n": 7
+        }
+      },
+      "ours": {
+        "platforms": {},
+        "modes": [
+          "create"
+        ],
+        "top": [
+          "layout-grid-catalog",
+          "comp-filters",
+          "dir-utility-commerce"
+        ],
+        "relevant": 1.0,
+        "offtarget": 0.0,
+        "empty": false,
+        "status": "CONFIDENT",
+        "facet_coverage": 0.75,
+        "cold": {
+          "median_ms": 417,
+          "p95_ms": 419,
+          "n": 7
+        },
+        "warm": {
+          "median_ms": 44.2,
+          "p95_ms": 44.6,
+          "n": 7
+        }
+      },
+      "ours_guidance": {
+        "top": [
+          "comp-filters",
+          "dir-utility-commerce",
+          "layout-grid-catalog",
+          "layout-states-empty-loading-error"
+        ],
+        "relevant": 1.0,
+        "offtarget": 0.0,
+        "empty": false,
+        "status": "PARTIAL",
+        "bundle_size": 6,
+        "concern_coverage": 1.0,
+        "bytes": 3792,
+        "warm": {
+          "median_ms": 55.4,
+          "p95_ms": 55.9,
+          "n": 7
+        }
+      }
+    },
+    {
+      "id": "finance-table",
+      "category": "finance",
+      "query": "transactions table for a banking app",
+      "upstream": {
+        "domain": "product",
+        "top": [
+          "Banking/Traditional Finance",
+          "Fintech/Crypto",
+          "Restaurant/Food Service"
+        ],
+        "relevant": 0.0,
+        "offtarget": 0.667,
+        "empty": false,
+        "cold": {
+          "median_ms": 219,
+          "p95_ms": 227,
+          "n": 7
+        }
+      },
+      "ours": {
+        "platforms": {},
+        "modes": [
+          "create"
+        ],
+        "top": [
+          "layout-table-first",
+          "comp-data-table",
+          "data-tables-numeric"
+        ],
+        "relevant": 0.857,
+        "offtarget": 0.0,
+        "empty": false,
+        "status": "CONFIDENT",
+        "facet_coverage": 0.5,
+        "cold": {
+          "median_ms": 415,
+          "p95_ms": 421,
+          "n": 7
+        },
+        "warm": {
+          "median_ms": 42.6,
+          "p95_ms": 42.7,
+          "n": 7
+        }
+      },
+      "ours_guidance": {
+        "top": [
+          "comp-data-table",
+          "dir-service-app-mobile",
+          "layout-states-empty-loading-error",
+          "data-tables-numeric"
+        ],
+        "relevant": 0.857,
+        "offtarget": 0.0,
+        "empty": false,
+        "status": "PARTIAL",
+        "bundle_size": 6,
+        "concern_coverage": 1.0,
+        "bytes": 4584,
+        "warm": {
+          "median_ms": 51.8,
+          "p95_ms": 53.3,
+          "n": 7
+        }
+      }
+    },
+    {
+      "id": "iptv-home",
+      "category": "media",
+      "query": "IPTV home screen with live channels and VOD rails on Android TV",
+      "upstream": {
+        "domain": "style",
+        "top": [
+          "material-you-md3-mobile",
+          "inclusive-design",
+          "accessible-and-ethical"
+        ],
+        "relevant": 0.375,
+        "offtarget": 0.4,
+        "empty": false,
+        "cold": {
+          "median_ms": 208,
+          "p95_ms": 210,
+          "n": 7
+        }
+      },
+      "ours": {
+        "platforms": {
+          "tv": "KNOWN"
+        },
+        "modes": [
+          "create"
+        ],
+        "top": [
+          "layout-epg-grid",
+          "comp-epg",
+          "dir-broadcast-guide-tv"
+        ],
+        "relevant": 0.5,
+        "offtarget": 0.0,
+        "empty": false,
+        "status": "CONFIDENT",
+        "facet_coverage": 0.75,
+        "cold": {
+          "median_ms": 473,
+          "p95_ms": 479,
+          "n": 7
+        },
+        "warm": {
+          "median_ms": 54.0,
+          "p95_ms": 54.3,
+          "n": 7
+        }
+      },
+      "ours_guidance": {
+        "top": [
+          "comp-epg",
+          "dir-broadcast-guide-tv",
+          "comp-tv-rail",
+          "comp-mini-player"
+        ],
+        "relevant": 0.875,
+        "offtarget": 0.0,
+        "empty": false,
+        "status": "CONFIDENT",
+        "bundle_size": 7,
+        "concern_coverage": 1.0,
+        "bytes": 5386,
+        "warm": {
+          "median_ms": 63.8,
+          "p95_ms": 64.9,
+          "n": 7
+        }
+      }
+    },
+    {
+      "id": "tv-epg",
+      "category": "tv",
+      "query": "EPG program guide grid for a set-top box",
+      "upstream": {
+        "domain": "style",
+        "top": [
+          "bento-box-grid",
+          "editorial-grid-magazine",
+          "minimalism-and-swiss-style"
+        ],
+        "relevant": 0.143,
+        "offtarget": 0.5,
+        "empty": false,
+        "cold": {
+          "median_ms": 219,
+          "p95_ms": 223,
+          "n": 7
+        }
+      },
+      "ours": {
+        "platforms": {
+          "tv": "KNOWN"
+        },
+        "modes": [
+          "create"
+        ],
+        "top": [
+          "layout-epg-grid",
+          "comp-epg",
+          "dir-broadcast-guide-tv"
+        ],
+        "relevant": 1.0,
+        "offtarget": 0.0,
+        "empty": false,
+        "status": "CONFIDENT",
+        "facet_coverage": 0.75,
+        "cold": {
+          "median_ms": 445,
+          "p95_ms": 454,
+          "n": 7
+        },
+        "warm": {
+          "median_ms": 44.7,
+          "p95_ms": 46.7,
+          "n": 7
+        }
+      },
+      "ours_guidance": {
+        "top": [
+          "comp-epg",
+          "dir-broadcast-guide-tv",
+          "layout-epg-grid",
+          "comp-mini-player"
+        ],
+        "relevant": 1.0,
+        "offtarget": 0.0,
+        "empty": false,
+        "status": "PARTIAL",
+        "bundle_size": 8,
+        "concern_coverage": 0.88,
+        "bytes": 6146,
+        "warm": {
+          "median_ms": 57.1,
+          "p95_ms": 57.9,
+          "n": 7
+        }
+      }
+    },
+    {
+      "id": "tv-player",
+      "category": "tv",
+      "query": "video player controls for Apple TV with subtitles",
+      "upstream": {
+        "domain": "style",
+        "top": [
+          "liquid-glass",
+          "bento-box-grid",
+          "kinetic-typography"
+        ],
+        "relevant": 0.286,
+        "offtarget": 0.667,
+        "empty": false,
+        "cold": {
+          "median_ms": 198,
+          "p95_ms": 213,
+          "n": 7
+        }
+      },
+      "ours": {
+        "platforms": {
+          "tv": "KNOWN"
+        },
+        "modes": [
+          "create"
+        ],
+        "top": [
+          "tv-player-controls",
+          "layout-split-player",
+          "comp-player-controls"
+        ],
+        "relevant": 1.0,
+        "offtarget": 0.333,
+        "empty": false,
+        "status": "CONFIDENT",
+        "facet_coverage": 0.75,
+        "cold": {
+          "median_ms": 414,
+          "p95_ms": 427,
+          "n": 7
+        },
+        "warm": {
+          "median_ms": 42.4,
+          "p95_ms": 43.0,
+          "n": 7
+        }
+      },
+      "ours_guidance": {
+        "top": [
+          "comp-player-controls",
+          "layout-split-player",
+          "card-poster-landscape",
+          "comp-mini-player"
+        ],
+        "relevant": 1.0,
+        "offtarget": 0.333,
+        "empty": false,
+        "status": "PARTIAL",
+        "bundle_size": 8,
+        "concern_coverage": 0.83,
+        "bytes": 5706,
+        "warm": {
+          "median_ms": 52.4,
+          "p95_ms": 54.2,
+          "n": 7
+        }
+      }
+    },
+    {
+      "id": "mobile-onboarding",
+      "category": "mobile",
+      "query": "iOS onboarding flow for a fitness app",
+      "upstream": {
+        "domain": "product",
+        "top": [
+          "Fitness/Gym App",
+          "Booking & Appointment App",
+          "Citizen Science Platform"
+        ],
+        "relevant": 0.0,
+        "offtarget": 0.0,
+        "empty": false,
+        "cold": {
+          "median_ms": 213,
+          "p95_ms": 226,
+          "n": 7
+        }
+      },
+      "ours": {
+        "platforms": {
+          "mobile": "KNOWN"
+        },
+        "modes": [
+          "create"
+        ],
+        "top": [
+          "nav-wizard",
+          "imagery-illustration",
+          "comp-setup-checklist"
+        ],
+        "relevant": 0.571,
+        "offtarget": 0.0,
+        "empty": false,
+        "status": "CONFIDENT",
+        "facet_coverage": 1.0,
+        "cold": {
+          "median_ms": 423,
+          "p95_ms": 432,
+          "n": 7
+        },
+        "warm": {
+          "median_ms": 42.3,
+          "p95_ms": 42.8,
+          "n": 7
+        }
+      },
+      "ours_guidance": {
+        "top": [
+          "comp-setup-checklist",
+          "nav-wizard",
+          "imagery-illustration",
+          "layout-single-column"
+        ],
+        "relevant": 0.714,
+        "offtarget": 0.0,
+        "empty": false,
+        "status": "CONFIDENT",
+        "bundle_size": 6,
+        "concern_coverage": 1.0,
+        "bytes": 3723,
+        "warm": {
+          "median_ms": 54.5,
+          "p95_ms": 54.9,
+          "n": 7
+        }
+      }
+    },
+    {
+      "id": "mobile-list",
+      "category": "mobile",
+      "query": "Jetpack Compose order list with swipe actions",
+      "upstream": {
+        "domain": "style",
+        "top": [],
+        "relevant": 0.0,
+        "offtarget": 0.0,
+        "empty": true,
+        "cold": {
+          "median_ms": 284,
+          "p95_ms": 292,
+          "n": 7
+        }
+      },
+      "ours": {
+        "platforms": {
+          "mobile": "INFERRED"
+        },
+        "modes": [
+          "create"
+        ],
+        "top": [
+          "comp-list-row-mobile",
+          "mobile-gestures-discoverable",
+          "card-list-row"
+        ],
+        "relevant": 1.0,
+        "offtarget": 0.0,
+        "empty": false,
+        "status": "CONFIDENT",
+        "facet_coverage": 1.0,
+        "cold": {
+          "median_ms": 413,
+          "p95_ms": 415,
+          "n": 7
+        },
+        "warm": {
+          "median_ms": 43.9,
+          "p95_ms": 45.8,
+          "n": 7
+        }
+      },
+      "ours_guidance": {
+        "top": [
+          "comp-list-row-mobile",
+          "card-list-row",
+          "cta-fab",
+          "layout-states-empty-loading-error"
+        ],
+        "relevant": 1.0,
+        "offtarget": 0.0,
+        "empty": false,
+        "status": "CONFIDENT",
+        "bundle_size": 6,
+        "concern_coverage": 1.0,
+        "bytes": 3733,
+        "warm": {
+          "median_ms": 54.7,
+          "p95_ms": 56.0,
+          "n": 7
+        }
+      }
+    },
+    {
+      "id": "desktop-winui",
+      "category": "desktop",
+      "query": "WinUI 3 inventory management window with navigation and data grid",
+      "upstream": {
+        "domain": "ux",
+        "top": [
+          "Accessibility",
+          "Layout",
+          "Navigation"
+        ],
+        "relevant": 0.143,
+        "offtarget": 0.0,
+        "empty": false,
+        "cold": {
+          "median_ms": 195,
+          "p95_ms": 206,
+          "n": 7
+        }
+      },
+      "ours": {
+        "platforms": {
+          "desktop": "KNOWN"
+        },
+        "modes": [
+          "create"
+        ],
+        "top": [
+          "comp-data-table",
+          "grid-single-tab-stop",
+          "layout-table-first"
+        ],
+        "relevant": 0.857,
+        "offtarget": 0.0,
+        "empty": false,
+        "status": "CONFIDENT",
+        "facet_coverage": 1.0,
+        "cold": {
+          "median_ms": 437,
+          "p95_ms": 455,
+          "n": 7
+        },
+        "warm": {
+          "median_ms": 46.2,
+          "p95_ms": 47.1,
+          "n": 7
+        }
+      },
+      "ours_guidance": {
+        "top": [
+          "comp-data-table",
+          "comp-data-entry-grid",
+          "comp-sidebar-nav",
+          "grid-single-tab-stop"
+        ],
+        "relevant": 0.857,
+        "offtarget": 0.0,
+        "empty": false,
+        "status": "CONFIDENT",
+        "bundle_size": 7,
+        "concern_coverage": 1.0,
+        "bytes": 5609,
+        "warm": {
+          "median_ms": 56.1,
+          "p95_ms": 57.3,
+          "n": 7
+        }
+      }
+    },
+    {
+      "id": "desktop-wpf",
+      "category": "desktop",
+      "query": "WPF chart of accounts tree with breadcrumb",
+      "upstream": {
+        "domain": "chart",
+        "top": [
+          "Root Cause Analysis",
+          "Hierarchical / Nested Data",
+          "Performance vs Target (Compact)"
+        ],
+        "relevant": 0.5,
+        "offtarget": 0.0,
+        "empty": false,
+        "cold": {
+          "median_ms": 199,
+          "p95_ms": 205,
+          "n": 7
+        }
+      },
+      "ours": {
+        "platforms": {
+          "desktop": "INFERRED"
+        },
+        "modes": [
+          "create"
+        ],
+        "top": [
+          "nav-breadcrumb-tree",
+          "comp-tree-view",
+          "layout-dashboard-grid"
+        ],
+        "relevant": 1.0,
+        "offtarget": 0.333,
+        "empty": false,
+        "status": "CONFIDENT",
+        "facet_coverage": 1.0,
+        "cold": {
+          "median_ms": 428,
+          "p95_ms": 441,
+          "n": 7
+        },
+        "warm": {
+          "median_ms": 40.9,
+          "p95_ms": 42.4,
+          "n": 7
+        }
+      },
+      "ours_guidance": {
+        "top": [
+          "comp-tree-view",
+          "comp-chart-container",
+          "dir-analytical-console",
+          "nav-breadcrumb-tree"
+        ],
+        "relevant": 1.0,
+        "offtarget": 0.0,
+        "empty": false,
+        "status": "CONFIDENT",
+        "bundle_size": 6,
+        "concern_coverage": 1.0,
+        "bytes": 4273,
+        "warm": {
+          "median_ms": 51.5,
+          "p95_ms": 53.3,
+          "n": 7
+        }
+      }
+    },
+    {
+      "id": "landing",
+      "category": "landing",
+      "query": "landing page for a developer tool",
+      "upstream": {
+        "domain": "landing",
+        "top": [
+          "pricing-page-cta",
+          "ai-personalization-landing",
+          "pricing-focused-landing"
+        ],
+        "relevant": 0.286,
+        "offtarget": 0.0,
+        "empty": false,
+        "cold": {
+          "median_ms": 191,
+          "p95_ms": 214,
+          "n": 7
+        }
+      },
+      "ours": {
+        "platforms": {
+          "web": "KNOWN"
+        },
+        "modes": [
+          "create"
+        ],
+        "top": [
+          "dir-developer-tool",
+          "typography-monospace-technical",
+          "layout-editorial"
+        ],
+        "relevant": 0.571,
+        "offtarget": 0.0,
+        "empty": false,
+        "status": "CONFIDENT",
+        "facet_coverage": 0.75,
+        "cold": {
+          "median_ms": 376,
+          "p95_ms": 387,
+          "n": 7
+        },
+        "warm": {
+          "median_ms": 36.8,
+          "p95_ms": 39.3,
+          "n": 7
+        }
+      },
+      "ours_guidance": {
+        "top": [
+          "dir-developer-tool",
+          "typography-monospace-technical",
+          "color-dark-accent",
+          "comp-hero-section"
+        ],
+        "relevant": 0.857,
+        "offtarget": 0.0,
+        "empty": false,
+        "status": "CONFIDENT",
+        "bundle_size": 7,
+        "concern_coverage": 1.0,
+        "bytes": 4397,
+        "warm": {
+          "median_ms": 48.0,
+          "p95_ms": 48.7,
+          "n": 7
+        }
+      }
+    },
+    {
+      "id": "dense-dashboard",
+      "category": "dense",
+      "query": "dense monitoring dashboard for network operations",
+      "upstream": {
+        "domain": "style",
+        "top": [
+          "data-dense-dashboard",
+          "spectrum-design-system",
+          "bento-box-grid"
+        ],
+        "relevant": 0.286,
+        "offtarget": 0.0,
+        "empty": false,
+        "cold": {
+          "median_ms": 181,
+          "p95_ms": 187,
+          "n": 7
+        }
+      },
+      "ours": {
+        "platforms": {},
+        "modes": [
+          "create"
+        ],
+        "top": [
+          "layout-dashboard-grid",
+          "dir-analytical-console",
+          "chart-realtime"
+        ],
+        "relevant": 1.0,
+        "offtarget": 0.25,
+        "empty": false,
+        "status": "CONFIDENT",
+        "facet_coverage": 0.75,
+        "cold": {
+          "median_ms": 375,
+          "p95_ms": 381,
+          "n": 7
+        },
+        "warm": {
+          "median_ms": 38.9,
+          "p95_ms": 41.5,
+          "n": 7
+        }
+      },
+      "ours_guidance": {
+        "top": [
+          "dir-analytical-console",
+          "chart-realtime",
+          "layout-dashboard-grid",
+          "comp-chart-container"
+        ],
+        "relevant": 0.714,
+        "offtarget": 0.0,
+        "empty": false,
+        "status": "PARTIAL",
+        "bundle_size": 6,
+        "concern_coverage": 1.0,
+        "bytes": 3919,
+        "warm": {
+          "median_ms": 50.5,
+          "p95_ms": 52.1,
+          "n": 7
+        }
+      }
+    },
+    {
+      "id": "a11y-keyboard",
+      "category": "accessibility",
+      "query": "keyboard accessibility audit of a web admin panel",
+      "upstream": {
+        "domain": "ux",
+        "top": [
+          "Accessibility",
+          "Accessibility",
+          "Accessibility"
+        ],
+        "relevant": 0.667,
+        "offtarget": 0.0,
+        "empty": false,
+        "cold": {
+          "median_ms": 175,
+          "p95_ms": 178,
+          "n": 7
+        }
+      },
+      "ours": {
+        "platforms": {
+          "web": "KNOWN"
+        },
+        "modes": [
+          "audit"
+        ],
+        "top": [
+          "a11y-keyboard-operable",
+          "comp-chart-container",
+          "nav-left-rail"
+        ],
+        "relevant": 1.0,
+        "offtarget": 0.667,
+        "empty": false,
+        "status": "CONFIDENT",
+        "facet_coverage": 1.0,
+        "cold": {
+          "median_ms": 369,
+          "p95_ms": 396,
+          "n": 7
+        },
+        "warm": {
+          "median_ms": 41.3,
+          "p95_ms": 41.9,
+          "n": 7
+        }
+      },
+      "ours_guidance": {
+        "top": [
+          "dir-operational-workbench",
+          "nav-left-rail",
+          "a11y-keyboard-operable",
+          "a11y-focus-visible"
+        ],
+        "relevant": 1.0,
+        "offtarget": 0.667,
+        "empty": false,
+        "status": "PARTIAL",
+        "bundle_size": 6,
+        "concern_coverage": 0.67,
+        "bytes": 3957,
+        "warm": {
+          "median_ms": 52.9,
+          "p95_ms": 53.4,
+          "n": 7
+        }
+      }
+    },
+    {
+      "id": "a11y-contrast",
+      "category": "accessibility",
+      "query": "check colour contrast of our dark theme",
+      "upstream": {
+        "domain": "color",
+        "top": [
+          "Digital Signage / Kiosk",
+          "Wallpaper & Theme App",
+          "Photography Studio"
+        ],
+        "relevant": 0.333,
+        "offtarget": 0.0,
+        "empty": false,
+        "cold": {
+          "median_ms": 171,
+          "p95_ms": 181,
+          "n": 7
+        }
+      },
+      "ours": {
+        "platforms": {},
+        "modes": [
+          "accessibility"
+        ],
+        "top": [
+          "color-dark-mode-rules",
+          "color-dark-accent",
+          "a11y-contrast-text"
+        ],
+        "relevant": 1.0,
+        "offtarget": 0.0,
+        "empty": false,
+        "status": "CONFIDENT",
+        "facet_coverage": 0.5,
+        "cold": {
+          "median_ms": 367,
+          "p95_ms": 376,
+          "n": 7
+        },
+        "warm": {
+          "median_ms": 42.8,
+          "p95_ms": 43.6,
+          "n": 7
+        }
+      },
+      "ours_guidance": {
+        "top": [
+          "color-dark-accent",
+          "focus-ring-standard",
+          "color-dark-mode-rules",
+          "tv-dark-first"
+        ],
+        "relevant": 0.833,
+        "offtarget": 0.0,
+        "empty": false,
+        "status": "PARTIAL",
+        "bundle_size": 6,
+        "concern_coverage": 1.0,
+        "bytes": 3919,
+        "warm": {
+          "median_ms": 49.2,
+          "p95_ms": 49.9,
+          "n": 7
+        }
+      }
+    },
+    {
+      "id": "brand-differentiation",
+      "category": "brand",
+      "query": "make our four white-label brands visually distinct beyond colour and logo",
+      "upstream": {
+        "domain": "color",
+        "top": [
+          "Photography Studio",
+          "Space Tech / Aerospace",
+          "Wiki / Encyclopedia"
+        ],
+        "relevant": 0.0,
+        "offtarget": 0.0,
+        "empty": false,
+        "cold": {
+          "median_ms": 173,
+          "p95_ms": 178,
+          "n": 7
+        }
+      },
+      "ours": {
+        "platforms": {},
+        "modes": [
+          "brand"
+        ],
+        "top": [
+          "anti-brand-cosmetic-only",
+          "color-dominant-brand",
+          "color-neutral-accent"
+        ],
+        "relevant": 1.0,
+        "offtarget": 0.0,
+        "empty": false,
+        "status": "PARTIAL",
+        "facet_coverage": 0.25,
+        "cold": {
+          "median_ms": 386,
+          "p95_ms": 396,
+          "n": 7
+        },
+        "warm": {
+          "median_ms": 44.4,
+          "p95_ms": 44.8,
+          "n": 7
+        }
+      },
+      "ours_guidance": {
+        "top": [
+          "color-dominant-brand",
+          "anti-brand-cosmetic-only",
+          "color-semantic-tokens",
+          "typo-scale-and-roles"
+        ],
+        "relevant": 1.0,
+        "offtarget": 0.0,
+        "empty": false,
+        "status": "CONFIDENT",
+        "bundle_size": 6,
+        "concern_coverage": 1.0,
+        "bytes": 3698,
+        "warm": {
+          "median_ms": 58.6,
+          "p95_ms": 59.6,
+          "n": 7
+        }
+      }
+    },
+    {
+      "id": "kiosk",
+      "category": "kiosk",
+      "query": "self-service check-in kiosk for a hospital",
+      "upstream": {
+        "domain": "style",
+        "top": [],
+        "relevant": 0.0,
+        "offtarget": 0.0,
+        "empty": true,
+        "cold": {
+          "median_ms": 246,
+          "p95_ms": 249,
+          "n": 7
+        }
+      },
+      "ours": {
+        "platforms": {
+          "kiosk": "KNOWN"
+        },
+        "modes": [
+          "create"
+        ],
+        "top": [
+          "kiosk-public-use",
+          "dir-public-kiosk",
+          "nav-hub-spoke"
+        ],
+        "relevant": 1.0,
+        "offtarget": 0.333,
+        "empty": false,
+        "status": "CONFIDENT",
+        "facet_coverage": 0.75,
+        "cold": {
+          "median_ms": 386,
+          "p95_ms": 421,
+          "n": 7
+        },
+        "warm": {
+          "median_ms": 41.0,
+          "p95_ms": 41.9,
+          "n": 7
+        }
+      },
+      "ours_guidance": {
+        "top": [
+          "dir-public-kiosk",
+          "nav-hub-spoke",
+          "comp-kiosk-keypad",
+          "kiosk-public-use"
+        ],
+        "relevant": 1.0,
+        "offtarget": 0.333,
+        "empty": false,
+        "status": "CONFIDENT",
+        "bundle_size": 5,
+        "concern_coverage": 1.0,
+        "bytes": 3652,
+        "warm": {
+          "median_ms": 50.6,
+          "p95_ms": 52.1,
+          "n": 7
+        }
+      }
+    },
+    {
+      "id": "no-cards",
+      "category": "anti-generic",
+      "query": "the dashboard looks generic with cards everywhere",
+      "upstream": {
+        "domain": "style",
+        "top": [
+          "data-dense-dashboard",
+          "bento-box-grid",
+          "dimensional-layering"
+        ],
+        "relevant": 0.167,
+        "offtarget": 0.0,
+        "empty": false,
+        "cold": {
+          "median_ms": 183,
+          "p95_ms": 186,
+          "n": 7
+        }
+      },
+      "ours": {
+        "platforms": {},
+        "modes": [
+          "polish"
+        ],
+        "top": [
+          "anti-generic-sidebar-dashboard",
+          "anti-card-everything",
+          "card-none"
+        ],
+        "relevant": 1.0,
+        "offtarget": 0.0,
+        "empty": false,
+        "status": "CONFIDENT",
+        "facet_coverage": 0.5,
+        "cold": {
+          "median_ms": 368,
+          "p95_ms": 376,
+          "n": 7
+        },
+        "warm": {
+          "median_ms": 38.9,
+          "p95_ms": 41.3,
+          "n": 7
+        }
+      },
+      "ours_guidance": {
+        "top": [
+          "comp-kpi-tile",
+          "card-none",
+          "layout-dashboard-grid",
+          "comp-chart-container"
+        ],
+        "relevant": 1.0,
+        "offtarget": 0.333,
+        "empty": false,
+        "status": "PARTIAL",
+        "bundle_size": 8,
+        "concern_coverage": 1.0,
+        "bytes": 5380,
+        "warm": {
+          "median_ms": 48.6,
+          "p95_ms": 51.0,
+          "n": 7
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "queries": 18,
+    "upstream": {
+      "mean_relevant": 0.2,
+      "mean_offtarget": 0.189,
+      "empty_results": 3,
+      "cold_median_ms": 200,
+      "cold_p95_ms": 331
+    },
+    "ours": {
+      "mean_relevant": 0.909,
+      "mean_offtarget": 0.148,
+      "empty_results": 0,
+      "cold_median_ms": 414,
+      "cold_p95_ms": 479,
+      "warm_median_ms": 43,
+      "mean_facet_coverage": 0.75
+    },
+    "ours_guidance": {
+      "mean_relevant": 0.928,
+      "mean_offtarget": 0.106,
+      "empty_results": 0,
+      "warm_median_ms": 54,
+      "mean_bundle_size": 6.56,
+      "mean_concern_coverage": 0.966,
+      "mean_bytes": 4517
+    },
+    "upstream_higher": [],
+    "ties": []
+  },
+  "by_category": {
+    "saas": {
+      "n": 1,
+      "upstream": 0.286,
+      "ours": 1.0
+    },
+    "erp": {
+      "n": 1,
+      "upstream": 0.0,
+      "ours": 1.0
+    },
+    "ecommerce": {
+      "n": 1,
+      "upstream": 0.125,
+      "ours": 1.0
+    },
+    "finance": {
+      "n": 1,
+      "upstream": 0.0,
+      "ours": 0.857
+    },
+    "media": {
+      "n": 1,
+      "upstream": 0.375,
+      "ours": 0.5
+    },
+    "tv": {
+      "n": 2,
+      "upstream": 0.214,
+      "ours": 1.0
+    },
+    "mobile": {
+      "n": 2,
+      "upstream": 0.0,
+      "ours": 0.785
+    },
+    "desktop": {
+      "n": 2,
+      "upstream": 0.322,
+      "ours": 0.928
+    },
+    "landing": {
+      "n": 1,
+      "upstream": 0.286,
+      "ours": 0.571
+    },
+    "dense": {
+      "n": 1,
+      "upstream": 0.286,
+      "ours": 1.0
+    },
+    "accessibility": {
+      "n": 2,
+      "upstream": 0.5,
+      "ours": 1.0
+    },
+    "brand": {
+      "n": 1,
+      "upstream": 0.0,
+      "ours": 1.0
+    },
+    "kiosk": {
+      "n": 1,
+      "upstream": 0.0,
+      "ours": 1.0
+    },
+    "anti-generic": {
+      "n": 1,
+      "upstream": 0.167,
+      "ours": 1.0
+    }
+  },
+  "failures": []
+}

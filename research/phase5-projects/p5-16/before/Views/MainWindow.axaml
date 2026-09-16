@@ -1,0 +1,70 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:FleetDesk.ViewModels"
+        x:Class="FleetDesk.Views.MainWindow"
+        Title="FleetDesk"
+        Width="1440" Height="900"
+        MinWidth="960" MinHeight="600"
+        WindowStartupLocation="CenterScreen">
+
+  <Design.DataContext>
+    <vm:MainWindowViewModel />
+  </Design.DataContext>
+
+  <!-- Navigation = classic menu bar + toolbar under it; status bar at the bottom. -->
+  <DockPanel LastChildFill="True">
+
+    <!-- Menu bar -->
+    <Border DockPanel.Dock="Top"
+            Background="{StaticResource SurfaceBrush}"
+            BorderBrush="{StaticResource LineBrush}"
+            BorderThickness="{StaticResource AppBorderBottom}">
+      <Menu>
+        <MenuItem Header="_File">
+          <MenuItem Header="_Refresh" Command="{Binding RefreshCommand}" InputGesture="F5" />
+          <MenuItem Header="_Settings..." Command="{Binding ShowSettingsCommand}" />
+          <Separator />
+          <MenuItem Header="E_xit" Command="{Binding ExitCommand}" InputGesture="Alt+F4" />
+        </MenuItem>
+        <MenuItem Header="_Vehicles">
+          <MenuItem Header="Vehicle _list" Command="{Binding ShowVehiclesCommand}" InputGesture="Ctrl+1" />
+          <MenuItem Header="_Clear filter" Command="{Binding Vehicles.ClearFilterCommand}" />
+        </MenuItem>
+        <MenuItem Header="_Dispatch">
+          <MenuItem Header="Dispatch _board" Command="{Binding ShowDispatchCommand}" InputGesture="Ctrl+2" />
+          <MenuItem Header="_Save job" Command="{Binding Dispatch.SaveCommand}" InputGesture="Ctrl+S" />
+          <MenuItem Header="_Discard changes" Command="{Binding Dispatch.CancelCommand}" />
+        </MenuItem>
+        <MenuItem Header="_Help">
+          <MenuItem Header="_About FleetDesk" Command="{Binding AboutCommand}" />
+        </MenuItem>
+      </Menu>
+    </Border>
+
+    <!-- Toolbar -->
+    <Border DockPanel.Dock="Top" Classes="bar" BorderThickness="{StaticResource AppBorderBottom}">
+      <StackPanel Orientation="Horizontal" Spacing="{StaticResource Space1}">
+        <Button Classes="toolbar" Content="Vehicles" Command="{Binding ShowVehiclesCommand}" />
+        <Button Classes="toolbar" Content="Dispatch" Command="{Binding ShowDispatchCommand}" />
+        <Button Classes="toolbar" Content="Settings" Command="{Binding ShowSettingsCommand}" />
+        <Border Width="1" Margin="4,4" Background="{StaticResource LineBrush}" />
+        <Button Classes="toolbar" Content="Refresh" Command="{Binding RefreshCommand}" />
+        <Button Classes="toolbar" Content="Save job" Command="{Binding Dispatch.SaveCommand}" />
+      </StackPanel>
+    </Border>
+
+    <!-- Status bar -->
+    <Border DockPanel.Dock="Bottom" Classes="bar" BorderThickness="{StaticResource AppBorderTop}">
+      <DockPanel LastChildFill="True">
+        <TextBlock DockPanel.Dock="Right" Classes="muted" Text="{Binding DepotLabel}" VerticalAlignment="Center" />
+        <TextBlock DockPanel.Dock="Right" Classes="muted" Text="{Binding FleetSummary}" VerticalAlignment="Center"
+                   Margin="{StaticResource Pad2}" />
+        <TextBlock Classes="muted" Text="{Binding StatusText}" VerticalAlignment="Center" />
+      </DockPanel>
+    </Border>
+
+    <!-- Content -->
+    <ContentControl Content="{Binding CurrentView}" Margin="{StaticResource Pad2}" />
+
+  </DockPanel>
+</Window>

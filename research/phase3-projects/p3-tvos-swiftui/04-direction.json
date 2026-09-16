@@ -1,0 +1,122 @@
+{
+  "brand": "tvOS documentary streaming app: sign-in with an activation code and a player with auto-hiding transport controls and a subtitle picker",
+  "fingerprint": {
+    "navigation_model": "tv-side-nav",
+    "layout_topology": "canvas",
+    "cta_strategy": "focus-selects",
+    "content_density": "medium",
+    "surface_strategy": "imagery-backed",
+    "card_geometry": "poster-landscape",
+    "corner_language": "small",
+    "typography_character": "condensed-display",
+    "color_strategy": "dark-with-accent",
+    "motion_character": "focus-scale",
+    "focus_strategy": "border-plus-scale",
+    "image_strategy": "immersive-backdrop",
+    "icon_strategy": "filled",
+    "metadata_density": "focus-reveal"
+  },
+  "direction": {
+    "navigation": "nav-tv-side",
+    "layout": "layout-split-player",
+    "density": "density-medium",
+    "surface": "surface-imagery-backed",
+    "cards": "card-poster-landscape",
+    "typography": "typography-condensed-display",
+    "color": "color-dark-accent",
+    "motion": "motion-focus-scale",
+    "focus": "focus-scale-glow",
+    "cta": "cta-focus-selects",
+    "imagery": "imagery-immersive-backdrop",
+    "icon": "icon-filled-system",
+    "metadata": "metadata-focus-reveal"
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "tv"
+    ],
+    "input": [
+      "remote"
+    ],
+    "product": [
+      "media"
+    ],
+    "screen": [
+      "auth",
+      "player"
+    ],
+    "screen_subtype": [
+      "sign-in"
+    ],
+    "stack": [
+      "swiftui"
+    ],
+    "density": "medium",
+    "components": [
+      "media"
+    ],
+    "environment": [
+      "large-display",
+      "shared-device"
+    ],
+    "jobs": [
+      "authentication"
+    ],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "authentication",
+      "create auth",
+      "create player"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "known": [
+      "platform=tv",
+      "input=remote",
+      "product=media",
+      "stack=swiftui",
+      "screen=player",
+      "screen=auth",
+      "job=authentication"
+    ],
+    "inferred": [
+      "density=medium",
+      "mode=create",
+      "environment=shared-device",
+      "environment=large-display"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "conflicts": [
+      {
+        "field": "platform",
+        "request": [
+          "tv"
+        ],
+        "project": "mobile",
+        "resolution": "request kept; repository platform recorded as context"
+      }
+    ],
+    "status": "AMBIGUOUS"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

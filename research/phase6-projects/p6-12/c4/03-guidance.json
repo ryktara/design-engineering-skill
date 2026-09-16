@@ -1,0 +1,1239 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "Add an offline banner and retry to the report list for when the site has no signal.",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "mobile"
+    ],
+    "input": [
+      "touch"
+    ],
+    "product": [
+      "iot"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "flutter"
+    ],
+    "density": null,
+    "components": [
+      "list",
+      "notification"
+    ],
+    "environment": [
+      "gloves",
+      "low-bandwidth",
+      "outdoor"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "create list",
+      "create notification"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "screen_reader": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "create"
+      ],
+      "problem_domain": [],
+      "change_scope": "local",
+      "utterance": "request",
+      "existing": true,
+      "problem": false,
+      "facet": "general",
+      "diagnose_only": false,
+      "creation": true,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "low"
+    },
+    "platform_evidence": [
+      {
+        "platform": "web",
+        "strength": "WEAK_INFERENCE",
+        "evidence": [
+          "banner"
+        ]
+      }
+    ],
+    "mode_evidence": [
+      "create: build/create request on an existing surface"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "top-bar",
+        "status": "KNOWN",
+        "evidence": [
+          "top-bar: 6 matches in checklist_screen.dart, defect_report_screen.dart, settings_screen.dart (shell/layout file)"
+        ]
+      },
+      "theme": {
+        "value": "dual-theme",
+        "status": "KNOWN",
+        "evidence": [
+          "dark theme configuration signals: 5",
+          "light theme configuration signals: 2",
+          "hex palette: 13 near-white, 6 near-black"
+        ],
+        "default": "light"
+      },
+      "surfaces": {
+        "value": "flat-tonal",
+        "status": "UNKNOWN",
+        "evidence": [
+          "no shadow or border declarations found"
+        ]
+      },
+      "radius": {
+        "value": "small",
+        "status": "INFERRED",
+        "evidence": [
+          "most common radius 4 (1×); others []"
+        ]
+      },
+      "spacing": {
+        "value": "irregular",
+        "status": "UNKNOWN",
+        "evidence": [
+          "most used spacing values [2, 88, 12]"
+        ]
+      },
+      "typography": {
+        "value": "custom",
+        "status": "KNOWN",
+        "evidence": [
+          "font family System (7 refs)",
+          "weights w600, w700, w400",
+          "encoded type scale in 2 files"
+        ]
+      },
+      "components": {
+        "value": "go_router, riverpod",
+        "status": "KNOWN",
+        "evidence": [
+          "go_router",
+          "riverpod"
+        ]
+      }
+    },
+    "known": [
+      "platform=mobile (project inspection)",
+      "product=iot (project inspection (README))",
+      "stack=flutter (project inspection)",
+      "environment=outdoor (project inspection (README))",
+      "environment=gloves (project inspection (README))",
+      "environment=low-bandwidth (request: offline, no signal)",
+      "project_navigation=top-bar (repository: top-bar: 6 matches in checklist_screen.dart, defect_report_screen.dart, settings_screen.dart (shell/layout file))",
+      "project_theme=dual-theme (repository: dark theme configuration signals: 5; light theme configuration signals: 2)",
+      "project_typography=custom (repository: font family System (7 refs); weights w600, w700, w400)",
+      "project_components=go_router, riverpod (repository: go_router; riverpod)"
+    ],
+    "inferred": [
+      "input=touch (implied by platform mobile)",
+      "mode=create (build/create request on an existing surface)",
+      "project_radius=small (repository: most common radius 4 (1×); others [])"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [
+        "offline, no signal"
+      ],
+      "project": [
+        "pubspec.yaml: Flutter"
+      ]
+    },
+    "activation": {
+      "decision": "ambiguous",
+      "ui_score": 1.0,
+      "non_ui_score": 0,
+      "ui_terms": [],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "to the",
+        "the site",
+        "the report list"
+      ],
+      "new": [],
+      "defect": [],
+      "operations": {
+        "create": [
+          "add",
+          "add an"
+        ]
+      },
+      "domains": {},
+      "no_change": [],
+      "scope": {
+        "screen": [
+          "list"
+        ],
+        "local": [
+          "banner"
+        ]
+      },
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "list",
+        "banner",
+        "the site",
+        "report",
+        "concept:state.offline_sync"
+      ],
+      "ux_symptoms": [],
+      "technical": {
+        "FRONTEND_RUNTIME": [
+          "signal"
+        ]
+      },
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "component",
+        "reason": "a specific component/screen is requested"
+      },
+      {
+        "concern": "structure",
+        "reason": "layout topology and hierarchy"
+      },
+      {
+        "concern": "states",
+        "reason": "asynchronous or remote data on this screen"
+      },
+      {
+        "concern": "interaction",
+        "reason": "input model: touch"
+      },
+      {
+        "concern": "accessibility",
+        "reason": "platform accessibility baseline"
+      },
+      {
+        "concern": "environment",
+        "reason": "environment gloves (KNOWN)"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "navigation",
+        "reason": "how users arrive and leave"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "create/refactor requests attract generic defaults"
+      },
+      {
+        "concern": "brand",
+        "reason": "visual identity direction"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "device sizes and orientation"
+      },
+      {
+        "concern": "feedback",
+        "reason": "actions need confirmation and status"
+      },
+      {
+        "concern": "performance",
+        "reason": "performance-sensitive context"
+      }
+    ],
+    "optional": [
+      "motion",
+      "content"
+    ],
+    "required_concepts": [
+      {
+        "concept": "state.offline_sync",
+        "reason": "named in the request: no signal",
+        "priority": 0,
+        "critical": true
+      },
+      {
+        "concept": "state.loading_empty_error",
+        "reason": "asynchronous or remote data on this screen",
+        "priority": 2,
+        "critical": false
+      },
+      {
+        "concept": "process.reuse_first",
+        "reason": "existing repository: reuse its primitives",
+        "priority": 1,
+        "critical": true
+      },
+      {
+        "concept": "touch.minimum_target",
+        "reason": "touch platform",
+        "priority": 2,
+        "critical": false
+      },
+      {
+        "concept": "env.outdoor_readability",
+        "reason": "environment outdoor (repository hint)",
+        "priority": 2,
+        "critical": false
+      },
+      {
+        "concept": "env.glanceable_status",
+        "reason": "environment outdoor (repository hint)",
+        "priority": 2,
+        "critical": false
+      }
+    ],
+    "recommended_concepts": [
+      "touch.gestures_discoverable",
+      "touch.thumb_reach",
+      "touch.safe_areas",
+      "navigation.platform_grammar",
+      "a11y.live_status",
+      "data.refresh_timestamp",
+      "state.saving_conflict"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "comp-list-row-mobile",
+      "kind": "component",
+      "category": "list",
+      "title": "Mobile list and swipe actions",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "data-display",
+        "interaction"
+      ],
+      "concepts": [
+        "touch.minimum_target",
+        "touch.gestures_discoverable",
+        "data.pagination_strategy"
+      ],
+      "covers": [
+        "large touch targets (≥44–48 px)",
+        "discoverable gestures",
+        "pagination / load-more strategy"
+      ],
+      "score": 0.389,
+      "guidance": "Row ≥48 dp / 44 pt, leading avatar/icon optional, title + secondary line, trailing meta or chevron, dividers or spacing, swipe actions with labelled buttons and a menu equivalent, pull-to-refresh where data is live, sticky section headers for grouped lists, lazy lists with stable keys, selection mode via long press with a visible toolbar.",
+      "use_when": "Phone lists of homogeneous items.",
+      "avoid_when": "Image-first browsing (grid), dense comparison (desktop table).",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "platform-standard",
+      "implementation": {
+        "flutter": "ListView.builder + Dismissible/Slidable; ListTile."
+      },
+      "why": {
+        "lexical": 0.234,
+        "structural": 0.58,
+        "matched": [
+          "platform mobile",
+          "input touch",
+          "mode create"
+        ]
+      },
+      "role": "core",
+      "selected_for": "task evidence: component"
+    },
+    {
+      "id": "comp-toast-notification",
+      "kind": "component",
+      "category": "notification",
+      "title": "Toast / snackbar / banner",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "accessibility",
+        "component",
+        "feedback",
+        "states"
+      ],
+      "concepts": [
+        "a11y.live_status"
+      ],
+      "covers": [
+        "live region status announcements"
+      ],
+      "score": 0.317,
+      "guidance": "Toast: bottom (mobile) or bottom-left/top-right (desktop) consistent position, ≥5 s or until dismissed, undo where applicable, live region polite. Banner: inline at the top of the region it concerns, dismissible if non-critical. TV: brief overlay in the safe area that never steals focus.",
+      "use_when": "Transient confirmation (saved, sent, undo), persistent info (banner), blocking errors (dialog, not toast).",
+      "avoid_when": "Never put required actions only in a toast; never stack more than ~3; never auto-dismiss errors.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.249,
+        "structural": 0.4,
+        "matched": [
+          "mode create"
+        ]
+      },
+      "role": "core",
+      "selected_for": "task evidence: component"
+    },
+    {
+      "id": "card-list-row",
+      "kind": "pattern",
+      "category": "cards",
+      "title": "List rows",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "structure"
+      ],
+      "concepts": [],
+      "covers": [],
+      "score": 0.431,
+      "guidance": "Row height from the density token (48–72 dp), whole row tappable with one accessible name, trailing chevron only when it navigates, swipe actions mirrored by a visible menu.",
+      "use_when": "Homogeneous items on phones and in side panels: full-width rows with leading image/icon, title, secondary line, trailing meta, hairline dividers.",
+      "avoid_when": "Items whose image is the recognition cue (use tiles/posters).",
+      "risk": {
+        "a11y": "low",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "incompatible": [
+        "card-poster-portrait",
+        "card-poster-landscape",
+        "surface-elevated-cards"
+      ],
+      "why": {
+        "lexical": 0.267,
+        "structural": 0.52,
+        "matched": [
+          "platform mobile",
+          "mode create"
+        ]
+      },
+      "role": "core",
+      "selected_for": "task evidence: lexical_strong"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "states-offline-and-sync",
+      "kind": "rule",
+      "category": "states",
+      "title": "Offline, sync, and connectivity states",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "environment",
+        "feedback",
+        "states"
+      ],
+      "concepts": [
+        "state.offline_sync",
+        "state.saving_conflict",
+        "data.refresh_timestamp"
+      ],
+      "covers": [
+        "offline and sync states",
+        "saving, saved and conflict states",
+        "last-updated / refresh state"
+      ],
+      "score": 0.527,
+      "guidance": "Design the offline state as a first-class state: show connectivity clearly but calmly (a persistent status strip, not a blocking modal), keep already-loaded content usable, queue writes locally with a visible 'pending sync' marker per item and a 'last synced' timestamp, retry automatically with backoff and let the user retry manually, never lose entered data, and resolve conflicts explicitly (show both versions or last-writer-wins with an undo). Reads: stale data is labelled with its age.",
+      "use_when": "Field, travel, and public-venue apps; anything used with poor connectivity; any screen that writes data.",
+      "avoid_when": "Read-only always-online desktop tools where connectivity loss is exceptional (still show an error, not a blank).",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "engineering-practice",
+      "why": {
+        "lexical": 0.417,
+        "structural": 0.66,
+        "matched": [
+          "platform mobile",
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "critical concept (DIRECT): offline and sync states"
+    },
+    {
+      "id": "impl-reuse-before-new",
+      "kind": "rule",
+      "category": "implementation",
+      "title": "Reuse → extend → compose → new (in that order)",
+      "facets": [
+        "process"
+      ],
+      "concerns": [
+        "structure"
+      ],
+      "concepts": [
+        "process.reuse_first"
+      ],
+      "covers": [
+        "reuse → extend → compose → new"
+      ],
+      "score": 0.252,
+      "guidance": "Inspect the repository first (inspect_project.py): existing components, tokens, fonts, breakpoints, and conventions win. Reuse the existing component; if it lacks a variant, extend it through its API; if the composition is new, compose existing primitives; only create a new primitive when the gap is real, and put it where the others live.",
+      "use_when": "Any UI change in an existing codebase.",
+      "avoid_when": "Never install a second component library or a UI framework to build one screen; never fork a design-system component when a variant prop would do.",
+      "risk": {
+        "a11y": "low",
+        "perf": "medium"
+      },
+      "provenance": "engineering-practice",
+      "why": {
+        "lexical": 0.016,
+        "structural": 0.54,
+        "matched": [
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "critical concept (GENERIC): reuse → extend → compose → new"
+    },
+    {
+      "id": "mobile-field-use",
+      "kind": "rule",
+      "category": "environment",
+      "title": "Field use: sunlight readability and glanceable status",
+      "facets": [
+        "accessibility",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "environment",
+        "interaction"
+      ],
+      "concepts": [
+        "env.outdoor_readability",
+        "env.glanceable_status",
+        "touch.minimum_target"
+      ],
+      "covers": [
+        "high contrast outdoors / sunlight readability",
+        "glanceable status",
+        "large touch targets (≥44–48 px)"
+      ],
+      "score": 0.376,
+      "guidance": "Target ≥7:1 text contrast and avoid thin weights and pale tints (glare washes them out); prefer light UI on white or very high-contrast dark, not mid-tone surfaces; make the current state glanceable (large status word plus colour plus icon, readable at arm's length in two seconds); ≥48 dp targets with ≥12 dp spacing and no precision gestures when gloves are likely; put the next action in thumb reach; large numerals for counts and readings; keep the screen usable one-handed and interruptible (state survives backgrounding).",
+      "use_when": "Couriers, inspectors, technicians, warehouse and construction workers, outdoor kiosks: bright light, gloves, movement, interruptions.",
+      "avoid_when": "Desk-bound indoor use.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.029,
+        "structural": 0.8,
+        "matched": [
+          "platform mobile",
+          "input touch",
+          "mode create",
+          "product iot",
+          "environment gloves,outdoor"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage (GENERIC): glanceable status, high contrast outdoors / sunlight readability"
+    },
+    {
+      "id": "layout-states-empty-loading-error",
+      "kind": "rule",
+      "category": "feedback",
+      "title": "Design empty, loading, error, and partial states",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "states"
+      ],
+      "concepts": [
+        "state.loading_empty_error"
+      ],
+      "covers": [
+        "loading, empty and error states"
+      ],
+      "score": 0.345,
+      "guidance": "Empty: what this is, why it is empty, one action. Loading: skeleton with final dimensions, then content; announce completion. Error: what failed, what to do, retry that works; keep entered data. Partial: show what loaded, mark what didn't. On TV, focus must land somewhere valid in each state.",
+      "use_when": "Every list, table, chart, form, and detail screen.",
+      "avoid_when": "Never ship a blank area for empty data; never show a spinner for more than ~1 s without a skeleton or progress; never show an error without a next step.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.185,
+        "structural": 0.54,
+        "matched": [
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage (GENERIC): loading, empty and error states"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "component",
+      "structure",
+      "states",
+      "interaction",
+      "accessibility",
+      "environment"
+    ],
+    "covered_required_concerns": [
+      "component",
+      "structure",
+      "states",
+      "interaction",
+      "accessibility",
+      "environment"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "navigation",
+      "anti-pattern",
+      "brand",
+      "adaptive",
+      "feedback",
+      "performance"
+    ],
+    "covered_recommended_concerns": [
+      "feedback"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "state.offline_sync",
+      "state.loading_empty_error",
+      "process.reuse_first",
+      "touch.minimum_target",
+      "env.outdoor_readability",
+      "env.glanceable_status"
+    ],
+    "covered_required_concepts": [
+      "state.offline_sync",
+      "state.loading_empty_error",
+      "process.reuse_first",
+      "touch.minimum_target",
+      "env.outdoor_readability",
+      "env.glanceable_status"
+    ],
+    "uncovered_required_concepts": [],
+    "critical_concepts": [
+      "process.reuse_first",
+      "state.offline_sync"
+    ],
+    "uncovered_critical_concepts": [],
+    "critical_coverage_ratio": 1.0,
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.57,
+    "not_surfaced": [
+      {
+        "concept": "touch.thumb_reach",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "touch.safe_areas",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "navigation.platform_grammar",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "navigation",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "brand",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "performance",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      }
+    ],
+    "bundle_size": 7,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 3,
+    "guardrail_size": 4,
+    "bundle_tokens": 1082,
+    "coverage_per_1k_tokens": 5.55,
+    "mean_purity": 0.95,
+    "mean_specificity": 0.86,
+    "quality_counts": {
+      "DIRECT": 1,
+      "SPECIFIC": 3,
+      "GENERIC": 3
+    },
+    "contaminated": [],
+    "category_diversity": 1.0,
+    "duplicate_pressure": 0.14,
+    "facet_coverage": 0.6,
+    "redundancy": 0.5,
+    "critical_trace": {
+      "covered": [
+        "state.offline_sync",
+        "process.reuse_first"
+      ],
+      "uncovered": [],
+      "carrier_quality": {
+        "state.offline_sync": "DIRECT",
+        "process.reuse_first": "GENERIC"
+      }
+    }
+  },
+  "token_coverage": 1.0,
+  "omitted": [
+    {
+      "id": "comp-pagination",
+      "reason": "contamination: record-specific subject absent from the request"
+    }
+  ],
+  "marginal": {
+    "states-offline-and-sync": {
+      "new_critical": [
+        "state.offline_sync"
+      ],
+      "new_required": [],
+      "new_recommended": [
+        "data.refresh_timestamp",
+        "state.saving_conflict"
+      ],
+      "new_concerns": [
+        "environment",
+        "feedback",
+        "states"
+      ],
+      "specificity": 2,
+      "evidence": [
+        "lexical_strong",
+        "lexical",
+        "explicit_demand"
+      ],
+      "quality": "DIRECT",
+      "contamination": 0.0,
+      "tokens": 177
+    },
+    "impl-reuse-before-new": {
+      "new_critical": [
+        "process.reuse_first"
+      ],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [
+        "structure"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "explicit_demand",
+        "repository"
+      ],
+      "quality": "GENERIC",
+      "contamination": 0.0,
+      "tokens": 131
+    },
+    "comp-list-row-mobile": {
+      "new_critical": [],
+      "new_required": [
+        "touch.minimum_target"
+      ],
+      "new_recommended": [
+        "touch.gestures_discoverable"
+      ],
+      "new_concerns": [
+        "component",
+        "data-display",
+        "interaction"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "lexical",
+        "component"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 178
+    },
+    "comp-toast-notification": {
+      "new_critical": [],
+      "new_required": [],
+      "new_recommended": [
+        "a11y.live_status"
+      ],
+      "new_concerns": [
+        "accessibility"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "lexical",
+        "component"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 209
+    },
+    "card-list-row": {
+      "new_critical": [],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [],
+      "specificity": 1,
+      "evidence": [
+        "lexical_strong",
+        "lexical"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 94
+    },
+    "mobile-field-use": {
+      "new_critical": [],
+      "new_required": [
+        "env.glanceable_status",
+        "env.outdoor_readability"
+      ],
+      "new_recommended": [],
+      "new_concerns": [],
+      "specificity": 0,
+      "evidence": [],
+      "quality": "GENERIC",
+      "contamination": 0.0,
+      "tokens": 170
+    },
+    "layout-states-empty-loading-error": {
+      "new_critical": [],
+      "new_required": [
+        "state.loading_empty_error"
+      ],
+      "new_recommended": [],
+      "new_concerns": [],
+      "specificity": 0,
+      "evidence": [
+        "lexical"
+      ],
+      "quality": "GENERIC",
+      "contamination": 0.0,
+      "tokens": 123
+    }
+  },
+  "rejected": [
+    {
+      "id": "anti-hero-template",
+      "reason": "platform ['web'] not in request ['mobile']"
+    },
+    {
+      "id": "anti-default-fonts",
+      "reason": "platform ['web'] not in request ['mobile']"
+    },
+    {
+      "id": "chart-relationship",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "chart-heatmap-matrix",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "chart-realtime",
+      "reason": "platform ['desktop', 'tv', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-data-table",
+      "reason": "platform ['desktop', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-sidebar-nav",
+      "reason": "platform ['desktop', 'tablet', 'web'] not in request ['mobile']"
+    },
+    {
+      "id": "comp-tv-rail",
+      "reason": "platform ['tv'] not in request ['mobile']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "state.offline_sync",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 0,
+      "reason": "named in the request: no signal",
+      "candidate_records": [
+        [
+          "states-offline-and-sync",
+          0.527
+        ],
+        [
+          "comp-photo-capture-field",
+          0.345
+        ],
+        [
+          "feedback-progress-async",
+          0.324
+        ]
+      ],
+      "selected_record": "states-offline-and-sync",
+      "carrier_quality": "DIRECT",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "state.loading_empty_error",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 2,
+      "reason": "asynchronous or remote data on this screen",
+      "candidate_records": [
+        [
+          "layout-states-empty-loading-error",
+          0.345
+        ],
+        [
+          "anti-no-states",
+          0.307
+        ],
+        [
+          "comp-chart-container",
+          0.303
+        ],
+        [
+          "comp-empty-state",
+          0.281
+        ]
+      ],
+      "selected_record": "layout-states-empty-loading-error",
+      "carrier_quality": "GENERIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 1,
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.252
+        ]
+      ],
+      "selected_record": "impl-reuse-before-new",
+      "carrier_quality": "GENERIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "touch.minimum_target",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 2,
+      "reason": "touch platform",
+      "candidate_records": [
+        [
+          "comp-list-row-mobile",
+          0.389
+        ],
+        [
+          "mobile-field-use",
+          0.376
+        ],
+        [
+          "comp-photo-capture-field",
+          0.345
+        ],
+        [
+          "media-photo-viewer",
+          0.33
+        ]
+      ],
+      "selected_record": "comp-list-row-mobile",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "env.outdoor_readability",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 2,
+      "reason": "environment outdoor (repository hint)",
+      "candidate_records": [
+        [
+          "mobile-field-use",
+          0.376
+        ]
+      ],
+      "selected_record": "mobile-field-use",
+      "carrier_quality": "GENERIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "env.glanceable_status",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 2,
+      "reason": "environment outdoor (repository hint)",
+      "candidate_records": [
+        [
+          "mobile-field-use",
+          0.376
+        ],
+        [
+          "data-exceptions-first",
+          0.269
+        ]
+      ],
+      "selected_record": "mobile-field-use",
+      "carrier_quality": "GENERIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "touch.gestures_discoverable",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "touch platform",
+      "candidate_records": [
+        [
+          "comp-list-row-mobile",
+          0.389
+        ],
+        [
+          "interaction-drag-drop",
+          0.35
+        ],
+        [
+          "mobile-gestures-discoverable",
+          0.336
+        ],
+        [
+          "media-photo-viewer",
+          0.33
+        ]
+      ],
+      "selected_record": "comp-list-row-mobile",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "touch.thumb_reach",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "one-handed use",
+      "candidate_records": [
+        [
+          "mobile-thumb-reach",
+          0.324
+        ],
+        [
+          "cta-sticky-bar",
+          0.285
+        ],
+        [
+          "anti-mobile-desktop-shrunk",
+          0.208
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.safe_areas",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "mobile",
+      "candidate_records": [
+        [
+          "mobile-safe-areas",
+          0.324
+        ],
+        [
+          "mobile-orientation-size-classes",
+          0.324
+        ],
+        [
+          "cta-sticky-bar",
+          0.285
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "navigation.platform_grammar",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "mobile navigation grammar",
+      "candidate_records": [
+        [
+          "nav-bottom-tabs",
+          0.366
+        ],
+        [
+          "mobile-platform-navigation",
+          0.324
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "a11y.live_status",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "status messages",
+      "candidate_records": [
+        [
+          "interaction-drag-drop",
+          0.35
+        ],
+        [
+          "feedback-progress-async",
+          0.324
+        ],
+        [
+          "comp-toast-notification",
+          0.317
+        ],
+        [
+          "search-filter-feedback",
+          0.257
+        ]
+      ],
+      "selected_record": "comp-toast-notification",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "data.refresh_timestamp",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "related to state.offline_sync",
+      "candidate_records": [
+        [
+          "states-offline-and-sync",
+          0.527
+        ]
+      ],
+      "selected_record": "states-offline-and-sync",
+      "carrier_quality": "DIRECT",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "state.saving_conflict",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "related to state.offline_sync",
+      "candidate_records": [
+        [
+          "states-offline-and-sync",
+          0.527
+        ],
+        [
+          "states-persistence-and-session",
+          0.311
+        ],
+        [
+          "comp-checkout-one-page",
+          0.171
+        ],
+        [
+          "comp-wizard-stepper",
+          0.125
+        ]
+      ],
+      "selected_record": "states-offline-and-sync",
+      "carrier_quality": "DIRECT",
+      "status": "covered",
+      "why": ""
+    }
+  ]
+}

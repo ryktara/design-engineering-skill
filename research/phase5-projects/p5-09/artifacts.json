@@ -1,0 +1,43 @@
+{"task": "p5-09", "project": "p3-android-tv-compose", "platform_expected": "tv", "platform_resolved": "tv", "platform_correct": "yes",
+ "stack": "kotlin, jetpack-compose 1.8, androidx.tv tv-material, media3, coil", "existing_ui": true, "new_screen": false,
+ "artifact_state_expected": "existing", "artifact_state_resolved": "existing", "artifact_state_correct": true,
+ "mode_expected": ["polish", "refactor"], "mode_resolved": ["audit", "refactor"], "mode_correct": "acceptable",
+ "scope_kind_expected": "in-scope", "scope_kind_resolved": "in-scope", "scope_correct": true,
+ "change_budget": "moderate", "render_mode": "html-twin",
+ "screenshots": ["render/baseline-hold-mid.png", "render/baseline-hold-end.png", "render/first-hold-mid.png", "render/first-hold-end.png", "render/final-hold-mid.png", "render/final-hold-end.png", "render/first-home-initial.png", "render/first-home-live-rail.png", "render/first-home-epg-tile.png", "render/first-home-deep-rail.png", "render/first-details.png", "render/first-home-after-back.png", "render/first-home-nav-open.png", "render/first-home-safe-overlay.png", "render/first-home-mini-paused.png", "render/first-home-reduced-motion.png", "render/final-home-initial.png", "render/final-home-live-rail.png", "render/final-home-epg-tile.png", "render/final-home-deep-rail.png", "render/final-details.png", "render/final-home-after-back.png", "render/final-home-nav-open.png", "render/final-home-safe-overlay.png", "render/final-home-mini-paused.png", "render/final-home-reduced-motion.png"],
+ "context_detection": {"navigation": "yes", "theme": "yes", "typography": "partial", "surfaces": "partial", "spacing": "yes"},
+ "preservation": {"navigation": true, "theme": true, "typography": true, "component_reuse": true, "unjustified_structural_change": 0},
+ "expected_concepts": ["perf.focus_latency", "interaction.dpad_reachability", "interaction.focus_visible", "a11y.reduced_motion", "tv.ten_foot_typography"],
+ "critical_concepts": ["perf.focus_latency", "interaction.dpad_reachability"],
+ "delivered_concepts": ["interaction.focus_restore", "perf.focus_latency", "layout.media_card", "interaction.back_semantics", "state.loading_empty_error", "tv.safe_margins", "tv.ten_foot_typography", "interaction.dpad_reachability", "interaction.focus_visible", "media.details_play_first"],
+ "concept_recall": 0.8, "critical_recall": 1.0,
+ "concept_misses": [{"concept": "a11y.reduced_motion", "layer": "expected-concepts"}],
+ "first_render_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+ "final_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+ "iterations": 1, "guidance_relevant": 1, "guidance_partial": 3, "guidance_offtarget": 3,
+ "bad_guidance": [
+  {"record": "comp-tv-rail", "category": "missing-critical", "why": "the rail record carries perf.focus_latency but says nothing about pacing held D-pad repeats, which is the whole task"},
+  {"record": "dir-broadcast-guide-tv", "category": "contradicts-codebase", "why": "whole-product direction (top tabs, EPG grid, no glow) declared incompatible with layout-immersive-rails, which is this codebase; irrelevant to a hold-repeat defect"},
+  {"record": "comp-mini-player", "category": "generic", "why": "selected only for states/back/safe-margin coverage; unrelated to rail scroll speed"},
+  {"record": "tv-safe-area", "category": "generic", "why": "no bearing on the defect"}
+ ],
+ "skill_effect": "neutral", "guidance_tokens": 1197,
+ "misses": [
+  {"layer": "knowledge-gap", "what": "no record for D-pad auto-repeat / long-press pacing on rails; nearest records (tv-focus-performance 'never coalesce key events', motion-focus-scale 'queue focus moves') advise the opposite for this defect"},
+  {"layer": "expected-concepts", "what": "a11y.reduced_motion never demanded although accessibility.reduced_motion=true and the task is about motion"},
+  {"layer": "bundle-selection", "what": "dir-broadcast-guide-tv and comp-mini-player selected into core for concern coverage on a one-modifier defect"},
+  {"layer": "requirements", "what": "intent.preserve empty on an existing repo with KNOWN navigation/theme; change_budget moderate for a small fix"},
+  {"layer": "mode", "what": "audit inferred from 'defect on existing UI'; a reported defect is a fix request and audit mode pulled in unrelated recommended concepts"},
+  {"layer": "context-detection", "what": "design/tokens.json not detected; typography UNKNOWN despite explicit Compose Typography scale; surfaces 'bordered' when borders are focus rings; direction labels six slots the code has as 'no repository evidence'"},
+  {"layer": "direction", "what": "cards slot card-poster-portrait (code is 16:9 landscape, alternative lost at 0.38); metadata-focus-reveal would hide the titles the user wants to read"}
+ ],
+ "knowledge_gaps": ["tv: pacing of held D-pad LEFT/RIGHT (key auto-repeat) on rails/grids/EPG — admit ~3-5 cards/s, first press immediate, scroll completes per step, same pace under reduced motion; optional fast-scroll/page-jump mode"],
+ "regressions": [
+  {"query": "When you hold right on the remote the rail flies past too fast to read the titles.", "expect": "core record on pacing held D-pad repeats on rails (3-5 cards/s, first press immediate, scroll finishes per step, same pace under reduced motion); a11y.reduced_motion and perf.focus_latency demanded; no product direction record; mode polish/refactor; change_budget small"},
+  {"query": "Holding down on the remote in the guide grid skips whole hours before you can stop.", "expect": "same pacing concept for EPG grids plus tv.time_navigation"},
+  {"query": "Long-press right on the remote should fast-scroll the rail without losing the focused card.", "expect": "pacing + interaction.focus_visible; must not recommend queuing every key event"},
+  {"query": "inspect: repo with design/tokens.json and a Compose Typography(...) with explicit fontSize values", "expect": "tokens detected; typography KNOWN (scale present, system sans)"},
+  {"query": "direction: repo whose cards are 16:9 (cardW > cardH)", "expect": "cards slot preserved as landscape, never card-poster-portrait"}
+ ],
+ "tags": ["knowledge-gap", "concept-miss", "ranking-miss", "direction-mismatch", "context-detection-miss", "requirements-miss", "skill-neutral", "preservation-ok", "tooling-limit"],
+ "build_hash_start": "bf034323a2b68202e8c902768e0de78cd93761b1a71670a49ee595648cd5f0d8", "build_hash_end": "bf034323a2b68202e8c902768e0de78cd93761b1a71670a49ee595648cd5f0d8"}

@@ -1,0 +1,122 @@
+{
+ "task": "p6-28",
+ "build": "32e67640c9b8ef1d519ef9695016fb396116b92412e63c324da090aecf1df385",
+ "c1_recorded": {
+  "platform_expected": "tv",
+  "platform_resolved": [
+   "web"
+  ],
+  "platform_correct": "wrong",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "polish",
+   "refactor"
+  ],
+  "mode_resolved": [
+   "audit",
+   "refactor"
+  ],
+  "mode_correct": "acceptable",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "PARTIAL",
+  "bundle_ids": [
+   "comp-player-controls",
+   "comp-mini-player"
+  ],
+  "bundle_tokens": 581,
+  "expected_concepts": [
+   "tv.player_autohide",
+   "interaction.focus_restore",
+   "interaction.dpad_reachability",
+   "interaction.focus_visible",
+   "a11y.reduced_motion",
+   "tv.no_touch_hover"
+  ],
+  "critical_concepts": [
+   "tv.player_autohide",
+   "interaction.focus_restore"
+  ],
+  "delivered_concepts": [
+   "a11y.accessible_names",
+   "interaction.back_semantics",
+   "interaction.focus_restore",
+   "media.track_selection",
+   "state.loading_empty_error",
+   "tv.player_autohide",
+   "tv.safe_margins"
+  ],
+  "concept_recall": 0.333,
+  "critical_recall": 1.0,
+  "forbidden_delivered": [],
+  "change_budget": "moderate"
+ },
+ "c4": {
+  "platform_expected": "tv",
+  "platform_resolved": [
+   "tv"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "polish",
+   "refactor"
+  ],
+  "mode_resolved": [
+   "audit",
+   "refactor"
+  ],
+  "mode_correct": "acceptable",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "PARTIAL",
+  "bundle_ids": [
+   "comp-player-controls",
+   "layout-split-player",
+   "tv-player-controls",
+   "a11y-tv-focus-always",
+   "tv-typography-distance",
+   "tv-dpad-axes",
+   "tv-safe-area",
+   "tv-back-behavior"
+  ],
+  "bundle_tokens": 1174,
+  "expected_concepts": [
+   "tv.player_autohide",
+   "interaction.focus_restore",
+   "interaction.dpad_reachability",
+   "interaction.focus_visible",
+   "a11y.reduced_motion",
+   "tv.no_touch_hover"
+  ],
+  "critical_concepts": [
+   "tv.player_autohide",
+   "interaction.focus_restore"
+  ],
+  "delivered_concepts": [
+   "a11y.accessible_names",
+   "interaction.back_semantics",
+   "interaction.dpad_reachability",
+   "interaction.focus_restore",
+   "interaction.focus_visible",
+   "media.details_play_first",
+   "media.live_channel_switching",
+   "media.track_selection",
+   "tv.player_autohide",
+   "tv.safe_margins",
+   "tv.ten_foot_typography"
+  ],
+  "concept_recall": 0.667,
+  "critical_recall": 1.0,
+  "forbidden_delivered": [],
+  "change_budget": "moderate"
+ }
+}

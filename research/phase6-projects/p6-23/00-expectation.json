@@ -1,0 +1,28 @@
+{
+  "platform": "desktop",
+  "artifact_state": "existing",
+  "acceptable_modes": ["review", "audit", "accessibility"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "interaction.keyboard_navigation",
+    "interaction.focus_visible",
+    "interaction.shortcuts",
+    "a11y.accessible_names",
+    "interaction.selection_visible",
+    "interaction.menu_semantics",
+    "a11y.dialog_focus"
+  ],
+  "critical_concepts": [
+    "interaction.keyboard_navigation",
+    "interaction.focus_visible",
+    "interaction.shortcuts"
+  ],
+  "forbidden_concepts": [
+    "touch.minimum_target",
+    "interaction.dpad_reachability",
+    "tv.ten_foot_typography",
+    "anti.platform_scaling"
+  ],
+  "preservation": ["navigation", "theme", "typography"],
+  "reviewer_note": "The sentence presupposes a supplier invoice matching page. The codebase has no InvoicesPage: MainWindow's NavigationView declares an 'Invoices' item whose Tag falls through the `_ =>` arm in Nav_SelectionChanged and silently lands on StockAdjustmentsPage. OrdersPage is a one-line stub. So the review target is effectively absent; the honest outcome is 'the page does not exist' plus building the matching screen to the conventions already established by StockAdjustmentsPage (which task p6-09-adjacent work owns and which I must not touch). Expectation above is what the skill should produce from the sentence + inspect JSON, which is all it sees."
+}

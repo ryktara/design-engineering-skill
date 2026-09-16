@@ -1,0 +1,143 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "The waiting room board: nothing tells the front desk how long each patient has been sitting there.",
+  "status": "ABSTAIN",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [
+      "ecommerce",
+      "healthcare"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "svelte",
+      "tailwind"
+    ],
+    "density": null,
+    "components": [],
+    "environment": [
+      "shared-device"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "audit"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "low",
+    "scope": {
+      "domain": "UNKNOWN",
+      "in_scope": false,
+      "kind": "abstain",
+      "reason": "no UI vocabulary found; not a UI design task as written",
+      "nearest_ui_task": "describe the screen, component, or user-facing problem"
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "performance-ux"
+      ],
+      "change_scope": "unknown",
+      "utterance": "observation",
+      "preserve": []
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "audit: perceived-performance defect",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": "left-rail (KNOWN)",
+      "theme": "light-first (INFERRED)",
+      "spacing": "4 (INFERRED)",
+      "typography": "custom (INFERRED)",
+      "components": "tailwind (KNOWN)"
+    },
+    "known": [
+      "platform=web",
+      "product=healthcare",
+      "product=ecommerce",
+      "stack=svelte",
+      "stack=tailwind",
+      "environment=shared-device",
+      "project_navigation=left-rail",
+      "project_components=tailwind"
+    ],
+    "inferred": [
+      "input=pointer",
+      "input=keyboard",
+      "input=touch",
+      "mode=audit",
+      "mode=refactor",
+      "project_theme=light-first",
+      "project_spacing=4",
+      "project_typography=custom"
+    ],
+    "missing": [],
+    "status": "ABSTAIN"
+  },
+  "scope": {
+    "domain": "UNKNOWN",
+    "in_scope": false,
+    "reason": "no UI vocabulary found; not a UI design task as written",
+    "nearest_ui_task": "describe the screen, component, or user-facing problem"
+  },
+  "concerns": {
+    "required": [],
+    "recommended": [],
+    "optional": [],
+    "required_concepts": [],
+    "recommended_concepts": []
+  },
+  "core": [],
+  "guardrails": [],
+  "metrics": {
+    "bundle_size": 0,
+    "coverage_ratio": 0.0,
+    "concept_coverage_ratio": 0.0,
+    "uncovered_required_concerns": [],
+    "uncovered_required_concepts": [],
+    "bundle_tokens": 0,
+    "coverage_per_1k_tokens": 0.0,
+    "facet_coverage": 0.0,
+    "category_diversity": 0.0,
+    "duplicate_pressure": 0.0,
+    "redundancy": 0.0,
+    "core_size": 0,
+    "guardrail_size": 0,
+    "contaminated": [],
+    "mean_purity": 0.0
+  },
+  "token_coverage": 0.0,
+  "note": "OUT_OF_SCOPE: no UI vocabulary found; not a UI design task as written. Nearest supported UI task: describe the screen, component, or user-facing problem."
+}

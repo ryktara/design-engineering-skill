@@ -1,0 +1,54 @@
+{
+ "phase": 5,
+ "candidate": "c1",
+ "frozen": "2026-09-09T14:39:24",
+ "build_sha256": "bf034323a2b68202e8c902768e0de78cd93761b1a71670a49ee595648cd5f0d8",
+ "scripts": {
+  "scripts/advise.py": "8a411b9bb43acd54789353150d7a6eddf20bb6188fa95e3a4b981c41bc174c6c",
+  "scripts/de_core.py": "a4d87a180936bc6e60587e69c5afd4638608a06330e0fc186b1f4248476fae1e",
+  "scripts/de_semantic.py": "269f3e7ed66d41bd3e3556c9d7cd3fce103c58a1053697d684901b7e09586008",
+  "scripts/fingerprint.py": "a74b549a832b83aab0f6e7c76b8f4c2c50db3741ea81afb118eebb79bdcb9cdb",
+  "scripts/inspect_project.py": "4f6f1976448fb0d58ab5192d4fcd367aa7f3382df7aab30a23a21f62678a6658",
+  "scripts/tokens.py": "16a0ecf407c56138ae9c2e00422ed89253ab668ed7d9b0450f8e840f50e799a2",
+  "scripts/validate_skill.py": "df8bee9d36a5209be34659a440dc7395ff456e07cab8c65629e2d7d6edd7ad9b"
+ },
+ "data_files": {
+  "data/antipatterns.jsonl": "ede5ef14651b028b88cdf21c71fa59a92fda1dbfffa044dfedc1fd8f5284d1f7",
+  "data/charts.jsonl": "a5c034dbc54bb79f267a05c58117dafa4fc296197ca18c9a09f033c8410e2392",
+  "data/components.jsonl": "28a930cac31cacc0a4c68f1cb6b7ffb34053f1323c48550cebfc1c38794c87ed",
+  "data/directions.jsonl": "9f3047aef8fb896e625653358a3cfbb06872a20c676b5742ff12325e2918dcd0",
+  "data/lexicon.json": "22bf9372e42173283aa966d23179f21ff4a4909b62511e5d41a68c2a0b447643",
+  "data/patterns.jsonl": "364e4ae4e8e6a38174378730e5a8297279c80a884997d95b3f1fe2c176828a2e",
+  "data/rules.jsonl": "f3ce24aae84106d70d0509cf0e3402ca929cc05573c2d4eda110765d08e2322d"
+ },
+ "lexicon_sha256": "22bf9372e42173283aa966d23179f21ff4a4909b62511e5d41a68c2a0b447643",
+ "records": 237,
+ "concepts": 114,
+ "concerns": 16,
+ "aliases": 46,
+ "platform_evidence_platforms": [
+  "desktop",
+  "kiosk",
+  "mobile",
+  "tablet",
+  "tv",
+  "web"
+ ],
+ "concept_policy_sha256": "94ed6107843af137c533e6c197d3fdfaf299a07d91381a6de749c4a0507d059c",
+ "thresholds_sha256": "e880c59e4c4b70ef50dd75eaa72c23ae8d9c5e4d585b22289ca617398982c3f6",
+ "thresholds_sha256_file": "e880c59e4c4b70ef50dd75eaa72c23ae8d9c5e4d585b22289ca617398982c3f6",
+ "ontology_sha256": "ef95ecbadf05004c3fbc51c5565082f68e25ee47c7c873eb311e4b288a508cf7",
+ "dev_cases": 512,
+ "regression_cases": 40,
+ "dev_regression_result": "551/552 (only the doc-count check fails until PHASE5-RESULTS.md exists)",
+ "activation_proxy": {
+  "precision": 1.0,
+  "recall": 1.0,
+  "fpr": 0.0,
+  "fnr": 0.0
+ },
+ "mode_confusion": "145 mode cases: primary 145, incorrect 0, fundamental create-misses 0",
+ "concept_diagnostics": "expected 144, hit 144, misses by layer {}",
+ "note": "Candidate c1: frozen before the Phase 5 real-project round. Any fix after this point produces c2 with a new hash and a rerun of affected tasks.",
+ "dev_cases_note": "validator count (development suite files)"
+}

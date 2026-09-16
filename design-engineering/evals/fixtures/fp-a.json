@@ -1,0 +1,20 @@
+{
+ "brand": "A",
+ "fingerprint": {
+  "navigation_model": "left-rail",
+  "layout_topology": "dashboard-grid",
+  "content_density": "high",
+  "grid_behavior": "responsive-columns",
+  "card_geometry": "flat-tile",
+  "corner_language": "small",
+  "typography_character": "neutral-sans",
+  "color_strategy": "neutral-plus-accent",
+  "surface_strategy": "tonal-layers",
+  "image_strategy": "data-graphics",
+  "icon_strategy": "outline",
+  "motion_character": "functional-minimal",
+  "focus_strategy": "ring",
+  "metadata_density": "moderate",
+  "cta_strategy": "contextual-inline"
+ }
+}

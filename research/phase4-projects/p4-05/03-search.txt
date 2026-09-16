@@ -1,0 +1,82 @@
+## design-engineering search: facility managers don't notice new alerts; make exceptions the first thing they see on the dashboard without redesigning it
+status=CONFIDENT modes=['audit', 'refactor'] platforms={'web': 'KNOWN'} inputs={'pointer': 'INFERRED', 'keyboard': 'INFERRED', 'touch': 'INFERRED'} products={'iot': 'KNOWN'} density=None stacks=['react'] screens=['dashboard'] negatives=[]
+facets required=['accessibility', 'interaction', 'component', 'platform', 'anti-pattern'] unmet=[] diversity=0.92
+
+### Dashboard grid of modules  `layout-dashboard-grid`  [pattern/layout; layout/platform] score 0.557 · heuristic
+12-column responsive grid, modules sized by importance (the primary KPI or chart spans wider), reading order = importance order (top-left first), each module a region with a heading and its own loading/empty/error states. Cards are optional: a divider grid with headings is often clearer than nested boxes.
+- use when: Monitoring/overview screens where several independent modules (KPIs, charts, lists) are scanned together and ranked by importance.
+- avoid when: Task screens (forms, editors), narrow widths (stack instead), or when modules have no ordering logic and would be a wall of equal boxes.
+- incompatible with: layout-single-column, layout-immersive-rails, layout-rails, layout-editorial
+- why: lexical 0.301, structural 0.76 (platform web, input keyboard,pointer,touch, secondary mode, product iot, screen dashboard)
+
+### Analytical console  `dir-analytical-console`  [direction/direction; direction/platform] score 0.468 · internal-preference
+Charts are the imagery; one chart palette; modules sized by importance not by a uniform card grid; dark-first tonal surfaces with the accent reserved for alerts and selection; large readable numerics; small multiples over spaghetti charts. Distinctiveness via chart mark style and a signature numeric typeface.
+- use when: Monitoring and analysis: dashboards with real questions, alerting, drill-down, often on dark themes for long sessions or wall displays.
+- avoid when: Task-entry tools (workbench), consumer products.
+- incompatible with: surface-glass, imagery-hero, motion-cinematic, typography-serif-editorial
+- why: lexical 0.295, structural 0.68 (platform web, input keyboard,pointer, secondary mode, product iot)
+
+### First-run: permission priming and feature education without blocking  `onboarding-first-run`  [rule/feedback; component/platform] score 0.456 · platform-standard
+Ask for a permission only at the moment the feature needs it, preceded by a one-screen explanation of the benefit and what happens on refusal (priming), then trigger the system prompt; never chain several permission prompts on launch, and always offer a way to continue without the permission. Feature education is non-blocking: a dismissible coach mark or inline tip anchored to the real control, one at a time, never a modal tour on first launch; it can be replayed from help, is skipped for keyboard/screen-reader users unless it is accessible, and stops after it has been dismissed once. Both respect reduced motion and never cover the primary action.
+- use when: Apps that need OS permissions (camera, location, notifications) or that introduce new features to returning users.
+- avoid when: Strictly ordered setup where every step is mandatory (use a wizard) or products with no permissions and no new features.
+- why: lexical 0.257, structural 0.7 (platform web, mode audit)
+
+### The default SaaS dashboard (sidebar + 4 KPI cards + chart + table)  `anti-generic-sidebar-dashboard`  [antipattern/generic-ai; anti-pattern/platform] score 0.453 · heuristic
+Start from the user's job: what decision or action happens here, how often, and what must be noticed first. Many 'dashboards' should be a table-first working screen, a queue, or a single chart with alerts. Choose navigation by section count, KPIs by decisions, charts by questions. If the result is a sidebar and four KPIs, be able to say why.
+- use when: Any 'dashboard' request answered with the same skeleton regardless of what the user monitors or does.
+- avoid when: Each element can be right; the failure is choosing them before knowing the task.
+- why: lexical 0.48, structural 0.42 (platform web, mode audit, product mismatch)
+
+### Offline, sync, and connectivity states  `states-offline-and-sync`  [rule/states; component/platform] score 0.418 · engineering-practice
+Design the offline state as a first-class state: show connectivity clearly but calmly (a persistent status strip, not a blocking modal), keep already-loaded content usable, queue writes locally with a visible 'pending sync' marker per item and a 'last synced' timestamp, retry automatically with backoff and let the user retry manually, never lose entered data, and resolve conflicts explicitly (show both versions or last-writer-wins with an undo). Reads: stale data is labelled with its age.
+- use when: Field, travel, and public-venue apps; anything used with poor connectivity; any screen that writes data.
+- avoid when: Read-only always-online desktop tools where connectivity loss is exceptional (still show an error, not a blank).
+- why: lexical 0.187, structural 0.7 (platform web, mode audit)
+
+### KPI / stat tile  `comp-kpi-tile`  [component/chart; component/platform] score 0.403 · heuristic
+Label, value with unit and tabular figures, comparison (vs previous period) with sign + arrow + colour, optional sparkline, consistent decimal precision, the most important KPI larger or first, no icon per tile unless it disambiguates, whole tile links to the detail. Avoid the 'four identical cards with big numbers and a gradient' default.
+- use when: Headline metrics on dashboards.
+- avoid when: More than ~6 KPIs in a row (users stop reading); KPIs without context (no comparison, no unit).
+- why: lexical 0.095, structural 0.78 (platform web, mode audit, product iot, screen dashboard)
+
+### Chart container and interaction  `comp-chart-container`  [component/chart; component/platform] score 0.401 · heuristic
+Title that states the question, unit and time range visible, legend as direct labels where possible, tooltip also keyboard-reachable (focusable points or a data table toggle), accessible summary text, consistent palette, responsive (reduce ticks, not data), empty/loading/error states, no animation beyond a single load transition and none on data refresh. Provide the data table or CSV.
+- use when: Any chart in a product.
+- avoid when: Decorative charts with no question; charts of fewer than ~4 points (use a stat).
+- react: Recharts/Visx/ECharts already in the project; add role=img + aria-label summary and a table fallback.
+- why: lexical 0.09, structural 0.78 (platform web, mode audit, product iot, screen dashboard)
+
+### Web: reserve space, load fonts and images without shift  `web-cls-and-lcp`  [rule/performance; performance/platform] score 0.389 · engineering-practice
+width/height or aspect-ratio on every media element, font-display: swap with size-adjust or a metric-compatible fallback, preload the display font and LCP image, skeletons match final dimensions, sticky elements don't push content. Target CLS < 0.1, LCP < 2.5 s.
+- use when: Images, embeds, ads, web fonts, skeletons, lazy sections, hero media.
+- avoid when: Never lazy-load the LCP image; never inject content above existing content without reserved space.
+- why: lexical 0.134, structural 0.7 (platform web, mode audit)
+
+### Dark canvas + accent (dark-first)  `color-dark-accent`  [pattern/color; platform/visual] score 0.364 · platform-standard
+Canvas is a dark tinted neutral (not #000 unless OLED black is deliberate), surfaces step lighter with elevation, text primary ≈ 87–92% white not pure white, accent desaturated slightly for dark backgrounds, error/success re-tuned for dark contrast. On TV target ≥7:1 for body text and avoid saturated reds/oranges at large areas (bloom on cheap panels).
+- use when: TV and media (viewing in dim rooms, OLED power), trading/monitoring consoles used for hours, developer tools; when imagery must pop.
+- avoid when: Long-form reading in bright environments, forms-heavy products for the general public, print-adjacent content.
+- incompatible with: color-monochrome-light
+- why: lexical 0.064, structural 0.62 (platform web, secondary mode, product iot)
+
+### Persistent left rail / sidebar  `nav-left-rail`  [pattern/navigation; navigation/platform] score 0.348 · heuristic
+Fixed-width rail (collapsible to icons with labels on hover/focus) holding grouped sections; secondary navigation lives in the content header, not as a second rail. Don't add a rail because 'apps have sidebars': justify it with section count and switching frequency. Mark active section with a visible indicator that survives collapse.
+- use when: Authenticated tools with 6+ peer sections, frequent switching, and wide viewports; power users who need stable wayfinding.
+- avoid when: Marketing pages, single-task flows (checkout, onboarding), phone widths, or when the product has three destinations and the rail would be mostly empty.
+- incompatible with: nav-top-bar, nav-bottom-tabs, nav-tv-side, nav-hub-spoke
+- why: lexical 0.161, structural 0.4 (platform web, input keyboard,pointer,touch, secondary mode, product mismatch)
+
+### Focus visible and not obscured  `a11y-focus-visible`  [rule/focus; interaction/platform] score 0.342 · accessibility-requirement
+Focus indicator ≥2 px with ≥3:1 contrast against adjacent colours and against the unfocused state; sticky UI gets scroll-padding so a focused control scrolls into clear view. On TV the indicator must be obvious at 3 m (scale + border/glow).
+- use when: Every focusable element in every theme; sticky headers, footers, toasts, and cookie banners must never cover the focused element.
+- avoid when: Never remove focus styles; use :focus-visible to hide them for mouse clicks only.
+- why: lexical 0.0, structural 0.76 (platform web, input keyboard, mode audit)
+
+### Everything operable by keyboard, no traps  `a11y-keyboard-operable`  [rule/accessibility; accessibility/platform] score 0.342 · accessibility-requirement
+Tab reaches every control in visual order; composite widgets use arrow keys with a roving tabindex so Tab is not consumed by every cell; Escape closes layers and returns focus to the invoker; nothing traps focus except a modal, and the modal itself must be escapable. Provide a keyboard alternative for every drag interaction.
+- use when: Every interactive element, including custom widgets, drag/drop, sliders, menus, date pickers, and anything that appears on hover.
+- avoid when: Never skip.
+- why: lexical 0.0, structural 0.76 (platform web, input keyboard, mode audit)
+
+Filtered out: anti-mobile-desktop-shrunk (platform ['mobile'] not in request ['web']); comp-tv-rail (platform ['tv'] not in request ['web']); dir-broadcast-guide-tv (platform ['tv'] not in request ['web']); dir-social-feed-mobile (platform ['mobile'] not in request ['web']); dir-industrial-hmi (platform ['desktop', 'kiosk', 'tablet'] not in request ['web']); nav-bottom-tabs (platform ['mobile'] not in request ['web']); nav-tv-side (platform ['tv'] not in request ['web']); nav-menu-bar-desktop (platform ['desktop'] not in request ['web'])

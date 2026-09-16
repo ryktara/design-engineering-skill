@@ -1,0 +1,5 @@
+{"platform": "desktop", "artifact_state": "existing", "acceptable_modes": ["refactor", "polish", "audit"], "scope_kind": "in-scope",
+ "expected_concepts": ["table.virtualization", "perf.layout_shift", "perf.focus_latency", "data.pagination_strategy", "desktop.persist_workspace", "state.loading_empty_error"],
+ "critical_concepts": ["table.virtualization", "perf.layout_shift"],
+ "forbidden_concepts": ["tv.ten_foot_typography", "touch.minimum_target", "layout.hero_thesis", "onboarding.setup_checklist", "brand.structural_differentiation"],
+ "preservation": ["navigation", "theme", "typography"]}

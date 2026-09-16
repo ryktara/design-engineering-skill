@@ -1,0 +1,46 @@
+{"task": "p5-15", "project": "p3-winui-erp-audit", "platform_expected": "desktop", "platform_resolved": "desktop", "platform_correct": "yes",
+ "stack": "WinUI 3 (Windows App SDK 1.7) + CommunityToolkit DataGrid 7.1.2 + CommunityToolkit.Mvvm 8.4, C#/XAML", "existing_ui": true, "new_screen": false,
+ "artifact_state_expected": "existing", "artifact_state_resolved": "existing", "artifact_state_correct": true,
+ "mode_expected": ["audit", "accessibility", "review"], "mode_resolved": ["accessibility", "audit", "review"], "mode_correct": "yes",
+ "scope_kind_expected": "in-scope", "scope_kind_resolved": "in-scope", "scope_correct": true,
+ "change_budget": "low", "render_mode": "static-review", "screenshots": ["render/first-desktop.png", "render/final-desktop.png"],
+ "context_detection": {"navigation": "yes", "theme": "yes", "typography": "partial", "surfaces": "yes", "spacing": "yes"},
+ "preservation": {"navigation": true, "theme": true, "typography": true, "component_reuse": true, "unjustified_structural_change": 0},
+ "expected_concepts": ["a11y.accessible_names", "a11y.color_not_only", "a11y.contrast", "interaction.keyboard_navigation", "interaction.focus_visible", "interaction.hover_independence", "a11y.live_status"],
+ "critical_concepts": ["a11y.accessible_names", "a11y.color_not_only", "a11y.contrast", "interaction.keyboard_navigation"],
+ "delivered_concepts": ["a11y.contrast", "interaction.focus_visible", "a11y.semantics", "a11y.accessible_names", "table.tabular_figures", "brand.type_roles", "interaction.keyboard_navigation", "interaction.hover_independence", "state.loading_empty_error", "onboarding.setup_checklist", "feedback.progress_indicator"],
+ "concept_recall": 0.714, "critical_recall": 0.75,
+ "concept_misses": [{"concept": "a11y.color_not_only", "layer": "bundle-selection"}, {"concept": "a11y.live_status", "layer": "bundle-selection"}],
+ "first_render_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+ "final_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+ "iterations": 1, "guidance_relevant": 3, "guidance_partial": 2, "guidance_offtarget": 2,
+ "bad_guidance": [
+   {"record": "comp-setup-checklist", "category": "wrong-mode", "why": "Selected as a core 'what to build' component on the lexical hit 'checklist' (0.408) in a diagnose-only audit; the checklist in the sentence is the review instrument, not UI."},
+   {"record": "imagery-none", "category": "generic", "why": "No imagery on the page; a core slot spent on a record with no bearing on an accessibility review."}
+ ],
+ "skill_effect": "neutral", "guidance_tokens": 848,
+ "misses": [
+   {"layer": "requirements", "what": "components=['list'], screen=[], primary_jobs=['accessibility list'], preserve=[] for a read-only review of a DataGrid page"},
+   {"layer": "expected-concepts", "what": "a11y.color_not_only, a11y.live_status, a11y.text_scaling demanded only as recommended in an accessibility audit"},
+   {"layer": "bundle-selection", "what": "a11y-color-not-only, a11y-live-status, a11y-text-scaling and grid-single-tab-stop had candidates and were dropped; comp-setup-checklist took a core slot"},
+   {"layer": "context-detection", "what": "radius UNKNOWN and corner_language=sharp despite OverlayCornerRadius/ControlCornerRadius; typography UNKNOWN and tabular_numerals=false despite Typography.NumeralAlignment=Tabular; focus slot never read from UseSystemFocusVisuals so direction marks it new"},
+   {"layer": "knowledge-gap", "what": "WinUI UIA mechanics: LiveSetting needs RaiseAutomationEvent(LiveRegionChanged); InfoBar announces only on closed->open; Panels have no automation peer; Toolkit DataGrid header/cell names only from string Header / direct TextBlock / ClipboardContentBinding; fixed RowHeight vs text scaling 225%"}
+ ],
+ "knowledge_gaps": [
+   "XAML live regions: AutomationProperties.LiveSetting alone is silent; the app must raise AutomationEvents.LiveRegionChanged after the text changes (no record carries this; a11y-live-status has no WinUI note)",
+   "WinUI InfoBar raises its AT notification only on the closed-to-open transition; a one-way IsOpen binding to a boolean must be toggled",
+   "StackPanel/Grid/Border have no automation peer: AutomationProperties.Name on them is not the cell's name; Toolkit DataGridCellAutomationPeer names template cells only via direct TextBlock/TextBox or ClipboardContentBinding",
+   "Toolkit DataGridColumnHeaderAutomationPeer names the header only when Header is a string; an element Header has no UIA name",
+   "Windows text scaling (100-225%) vs fixed RowHeight/ColumnHeaderHeight/Width in WinUI grids and filter rows (a11y-text-scaling exists but has no WinUI note)",
+   "Toolkit DataGrid TabNavigation=Once + read-only ProcessTabKey: buttons inside template cells are keyboard-unreachable; grid-single-tab-stop knows this but was not selected"
+ ],
+ "regressions": [
+   {"query": "Review the stock adjustments page against our accessibility checklist. (--project desktop/winui/erp)", "expect": "diagnose-only audit selects no lexical 'what to build' core component; comp-setup-checklist absent"},
+   {"query": "any accessibility-mode audit on desktop or web", "expect": "a11y.color_not_only, a11y.live_status, a11y.text_scaling are required concepts and covered by a11y-color-not-only / a11y-live-status / a11y-text-scaling"},
+   {"query": "accessibility review of a WinUI page with a DataGrid and per-row buttons", "expect": "grid-single-tab-stop (or comp-data-table) selected for interaction.keyboard_navigation ahead of the generic a11y-keyboard-operable"},
+   {"query": "inspect a WinUI project using OverlayCornerRadius/ControlCornerRadius and Typography.NumeralAlignment=Tabular", "expect": "radius KNOWN, typography KNOWN (system styles), tabular_numerals true, corner_language not sharp"},
+   {"query": "direction, low budget, repo with UseSystemFocusVisuals=True", "expect": "focus slot preserved (system focus visuals), not new"},
+   {"query": "search 'WinUI live region LiveSetting announce status change'", "expect": "a11y-live-status carries a WinUI note about RaiseAutomationEvent(LiveRegionChanged) and InfoBar open-only announcement"}
+ ],
+ "tags": ["requirements-miss", "concept-miss", "ranking-miss", "knowledge-gap", "context-detection-miss", "skill-neutral", "preservation-ok", "tooling-limit"],
+ "build_hash_start": "bf034323a2b68202e8c902768e0de78cd93761b1a71670a49ee595648cd5f0d8", "build_hash_end": "bf034323a2b68202e8c902768e0de78cd93761b1a71670a49ee595648cd5f0d8"}

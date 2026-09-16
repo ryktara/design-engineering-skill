@@ -1,0 +1,128 @@
+{
+  "task": "p6-14",
+  "project": "p5-swiftui-habits",
+  "platform_expected": "mobile",
+  "platform_resolved": "mobile",
+  "platform_correct": "yes",
+  "stack": "swiftui",
+  "existing_ui": true,
+  "new_screen": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": ["accessibility", "audit", "polish"],
+  "mode_resolved": ["accessibility", "audit"],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "low",
+  "render_mode": "html-twin",
+  "screenshots": [
+    "render/first-today-light-390x844.png",
+    "render/first-today-dark-390x844.png",
+    "render/final-today-light-390x844.png",
+    "render/final-today-dark-390x844.png"
+  ],
+  "context_detection": {
+    "navigation": "yes",
+    "theme": "yes",
+    "typography": "partial",
+    "surfaces": "yes",
+    "spacing": "no"
+  },
+  "preservation": {
+    "navigation": true,
+    "theme": true,
+    "typography": true,
+    "component_reuse": true,
+    "unjustified_structural_change": 0
+  },
+  "expected_concepts": [
+    "a11y.accessible_names",
+    "a11y.semantics",
+    "data.accessible_chart_alternative",
+    "a11y.color_not_only",
+    "a11y.text_scaling",
+    "process.safe_modification"
+  ],
+  "critical_concepts": ["a11y.accessible_names", "a11y.semantics"],
+  "delivered_concepts": [
+    "a11y.accessible_names",
+    "a11y.color_not_only",
+    "a11y.contrast",
+    "a11y.live_status",
+    "a11y.semantics",
+    "interaction.keyboard_navigation",
+    "interaction.selection_visible",
+    "perf.layout_shift",
+    "table.column_priority",
+    "touch.gestures_discoverable",
+    "touch.minimum_target"
+  ],
+  "concept_recall": 0.5,
+  "critical_recall": 1.0,
+  "concept_misses": [
+    {"concept": "data.accessible_chart_alternative", "layer": "expected-concepts"},
+    {"concept": "a11y.text_scaling", "layer": "bundle-selection"},
+    {"concept": "process.safe_modification", "layer": "expected-concepts"}
+  ],
+  "layer_review": {
+    "core": [],
+    "critical": ["interaction-drag-drop", "a11y-native-semantics", "mobile-density-touch", "a11y-color-not-only", "a11y-contrast-text"],
+    "optional": [],
+    "optional_useful": 0,
+    "optional_noise": 0
+  },
+  "first_render_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 1, "implementation-bug": 1},
+  "final_defects": {"visual": 0, "interaction": 0, "accessibility": 1, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+  "iterations": 2,
+  "guidance_relevant": 1,
+  "guidance_partial": 2,
+  "guidance_offtarget": 2,
+  "bad_guidance": [
+    {"record": "interaction-drag-drop", "category": "wrong-screen", "why": "drag-and-drop affordances, drop targets and keyboard move alternatives; nothing on the Today screen is draggable. Entered as the bundle's only CRITICAL record because interaction.keyboard_navigation was mis-flagged critical for a touch-only VoiceOver task."},
+    {"record": "mobile-density-touch", "category": "wrong-screen", "why": "tables to list rows, filter sheets, bulk selection, row height; the screen has no table, filter or selection and the defect is a missing accessible name."},
+    {"record": "a11y-contrast-text", "category": "generic", "why": "text contrast was never the complaint and already passes; the ring's real contrast problem is non-text (WCAG 1.4.11), which this record does not cover."},
+    {"record": "a11y-color-not-only", "category": "generic", "why": "true of the ring but already satisfied by the existing arc + numeral; changed nothing about the fix."}
+  ],
+  "skill_effect": "helped",
+  "guidance_used": ["a11y-native-semantics"],
+  "guidance_ignored": [
+    {"id": "interaction-drag-drop", "why": "no draggable element on this screen"},
+    {"id": "mobile-density-touch", "why": "no table, filter or selection on this screen"},
+    {"id": "a11y-contrast-text", "why": "text contrast unchanged and passing; the ring issue is non-text contrast"},
+    {"id": "direction:imagery", "why": "a vector progress ring has no imagery slot; the task is a VoiceOver label"}
+  ],
+  "unjustified_direction_slots": 1,
+  "process_records_needed": false,
+  "guidance_tokens": 583,
+  "misses": [
+    {"layer": "criticality", "what": "metrics.critical_concepts = ['interaction.keyboard_navigation'] for a touch-only iOS VoiceOver task; a11y.accessible_names and a11y.semantics were only 'required', so critical_coverage_ratio 1.0 reports success on the wrong concept"},
+    {"layer": "expected-concepts", "what": "data.accessible_chart_alternative never demanded although a progress ring is a data graphic and its spoken textual alternative is the entire fix"},
+    {"layer": "bundle-selection", "what": "a11y.text_scaling dropped despite a11y-text-scaling being a candidate"},
+    {"layer": "direction", "what": "imagery slot marked 'new' (Functional thumbnails) on an existing UI with change budget low"},
+    {"layer": "project-context", "what": "inspect reports radius 'small' (actual 16 / 10) and spacing 'irregular' UNKNOWN (actual declared 4/8/12/16/24 scale); typography evidence names the system fallback rather than Nunito"}
+  ],
+  "knowledge_gaps": [],
+  "regressions": [
+    {"query": "VoiceOver reads the streak ring as \"image\".", "expect": "criticals are a11y.accessible_names and a11y.semantics; interaction.keyboard_navigation is not critical and interaction-drag-drop does not enter the bundle for a touch-only iOS screen"},
+    {"query": "VoiceOver reads the streak ring as \"image\".", "expect": "data.accessible_chart_alternative is demanded — a ring/gauge/donut is a data graphic needing a spoken textual alternative"},
+    {"query": "The progress ring on the dashboard is announced as an unlabelled graphic.", "expect": "same accessible-name/semantics concepts, no mobile-density-touch, no imagery direction slot"},
+    {"query": "any low-budget accessibility fix on an existing UI", "expect": "direction marks no evidence-free slot (e.g. imagery) as 'new'"},
+    {"query": "inspect p5-swiftui-habits", "expect": "radius resolves to 16 or UNKNOWN (not 'small'); spacing resolves to the declared 4/8/12/16/24 scale (not 'irregular')"}
+  ],
+  "tags": [
+    "skill-helped",
+    "concept-miss",
+    "ranking-miss",
+    "direction-mismatch",
+    "context-detection-miss",
+    "render-defect-fixed",
+    "render-defect-remaining",
+    "preservation-ok",
+    "partial-scope-ok"
+  ],
+  "build_hash_start": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947",
+  "build_hash_end": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947"
+}

@@ -1,0 +1,1 @@
+<Page x:Class="Erp.Client.Views.OrdersPage" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"><NavigationView><controls:DataGrid xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls" AutomationProperties.Name="Orders" IsTabStop="True"/></NavigationView></Page>

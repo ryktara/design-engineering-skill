@@ -1,0 +1,91 @@
+## design-engineering search: Android TV live sports app home with rails, EPG entry and a mini player for the family TV, Compose
+status=CONFIDENT modes=['create'] platforms={'tv': 'KNOWN'} inputs={'remote': 'INFERRED'} products={'media': 'KNOWN'} density=medium stacks=['compose', 'compose-tv'] screens=['home', 'list', 'player'] negatives=[]
+facets required=['component', 'layout', 'platform', 'interaction', 'navigation', 'direction'] unmet=[] diversity=0.75
+MISSING: brand: no brand assets, guideline, or character description available
+
+### Player transport controls  `comp-player-controls`  [component/player; component/platform] score 0.66 · platform-standard
+Play/pause, seek slider with time readout and keyboard/remote stepping, skip ±10 s, next/previous where relevant, captions and audio track selectors, quality only if user-facing, live indicator and go-to-live for live streams, volume on web/desktop only (TV uses the remote), controls overlay auto-hides except while focused/hovered; every control labelled; captions styling respects system preferences.
+- use when: Video/audio playback surfaces.
+- avoid when: Never custom-build when the platform control set already meets the need and the brand allows it.
+- compose-tv: Media3 with a Compose overlay; KEYCODE handling for media keys; focusRequester on play/pause.
+- why: lexical 0.512, structural 0.84 (platform tv, input remote, mode create, product media, screen player)
+
+### Broadcast guide (TV)  `dir-broadcast-guide-tv`  [direction/direction; direction/platform] score 0.636 · internal-preference
+Top tabs (Live, Guide, Catch-up, Search), a fast EPG grid with a now-line and channel logos, landscape channel cards with live badges, condensed titles with tabular times, flat tonal surfaces so text stays legible over 200 channels, focus border + scale (no glow needed), mini-player while browsing. Identity via the guide's colour coding of genres and the channel-card treatment.
+- use when: Live-TV-first products: many channels, EPG, catch-up, sports; users switch fast and read schedules.
+- avoid when: On-demand-first catalogues with rich art (use 'Cinematic media').
+- incompatible with: layout-immersive-rails, surface-imagery-backed, surface-glass, nav-left-rail
+- why: lexical 0.535, structural 0.76 (platform tv, input remote, mode create, product media)
+
+### Horizontal rails (rows of content)  `layout-rails`  [pattern/layout; layout/platform] score 0.594 · platform-standard
+Each rail has a visible title, focused item scrolls to a fixed pivot (about 20–30% from the left) rather than centring, rails remember their last focused index when returning, row heights are consistent within a rail, and off-screen items are partially visible to signal continuation. Lazy-load rails and images; never render every rail on first paint. Keep the safe margin (~5% / 48 dp horizontal, 27 dp vertical at 960×540 dp).
+- use when: TV browsing of categorised content: vertical axis moves between categories, horizontal axis moves within a category. The default TV home structure.
+- avoid when: Fewer than ~8 items total (use a grid or list), or content that must be compared side by side.
+- compose-tv: LazyColumn of LazyRow (Compose Foundation ≥1.7 has focus-aware scrolling); wrap each row in focusRestorer(); set LocalBringIntoViewSpec for the pivot; TvLazyRow is deprecated.
+- incompatible with: layout-single-column, layout-table-first, layout-three-pane, layout-dashboard-grid, nav-top-bar, nav-left-rail
+- why: lexical 0.219, structural 0.92 (platform tv, input remote, mode create, product media, screen home,list, density medium)
+
+### Condensed display for broadcast/media  `typography-condensed-display`  [pattern/typography; platform/visual] score 0.588 · aesthetic
+Condensed only for titles and channel names (e.g. Barlow Condensed, Oswald, Roboto Condensed, Archivo Narrow) at heavy weights; body and metadata in a normal-width sans with tabular figures for times.
+- use when: Sports, live TV, EPG and news where many titles must fit and a broadcast feel is wanted.
+- avoid when: Body text, small sizes on TV (condensed faces lose legibility below ~24 sp), forms.
+- incompatible with: typography-serif-editorial, typography-humanist-sans, density-low
+- why: lexical 0.394, structural 0.78 (platform tv, mode create, product media, density medium)
+
+### Immersive hero + rails  `layout-immersive-rails`  [pattern/layout; layout/platform] score 0.553 · platform-standard
+Backdrop crossfades on focus change with a debounce (~300 ms) so scrubbing across a rail doesn't thrash decodes; a scrim gradient guarantees text contrast over any image; the hero text block sits in the safe area with title, one line of metadata, and a short synopsis; the first rail is partially visible so users know to press DOWN. Provide a reduced-motion path with a static backdrop.
+- use when: Media apps that want the focused item's artwork to fill the background while rails sit below; strongest when artwork quality is high and consistent.
+- avoid when: Poor or inconsistent artwork, catalogues where text metadata matters more than imagery, or low-end devices where large image decode causes jank.
+- compose-tv: ImmersiveList is deprecated; build with a Box(backdrop AsyncImage with Crossfade) + LazyColumn; use snapshotFlow on focused item with debounce.
+- incompatible with: layout-rails, layout-single-column, layout-table-first, surface-bordered-panes, nav-top-bar, nav-left-rail
+- why: lexical 0.18, structural 0.92 (platform tv, input remote, mode create, product media, screen home, density medium)
+
+### TV side navigation (collapsible drawer)  `nav-tv-side`  [pattern/navigation; navigation/platform] score 0.547 · platform-standard
+Collapsed icon strip on the left that expands to icons+labels when focus enters it; pressing LEFT from the first item of any rail moves focus into the drawer, RIGHT returns to the last focused content item (focus restoration is mandatory). Back from content returns to the drawer, Back from the drawer exits or goes Home. Never require UP to reach navigation from deep in a page.
+- use when: TV apps with 4–8 sections (Home, Live, Movies, Series, Search, Settings) where the vertical axis is free for section switching and the horizontal axis is used for browsing rails.
+- avoid when: Two or three sections (use top tabs), single-purpose players, or when content rails need the full width and the drawer would fight with left-edge focus.
+- compose-tv: NavigationDrawer/ModalNavigationDrawer from androidx.tv.material3; wrap content in focusRestorer() so RIGHT returns to the previous item; give the drawer a focusGroup.
+- incompatible with: nav-top-bar, nav-left-rail, nav-bottom-tabs, nav-tv-top-tabs
+- why: lexical 0.161, structural 0.84 (platform tv, input remote, mode create, product media, density medium)
+
+### TV: transport control conventions  `tv-player-controls`  [rule/player; component/platform] score 0.546 · platform-standard
+Media keys work without showing the overlay (PLAY/PAUSE, FF/RW); DPAD_CENTER on the playing video toggles play/pause or shows controls (pick one and be consistent with the platform); LEFT/RIGHT on the progress bar seek in fixed steps with preview; overlay auto-hides after 3–5 s of no input; subtitle/audio pickers are side sheets that keep playback visible; live TV adds channel UP/DOWN and a mini guide.
+- use when: Video/audio playback screens.
+- avoid when: Never hide controls while a control is focused; never require SELECT twice to pause.
+- why: lexical 0.371, structural 0.76 (platform tv, input remote, mode create, product media)
+
+### EPG / programme guide  `comp-epg`  [component/epg; component/platform] score 0.518 · heuristic
+See the EPG grid pattern for structure; component specifics: cell shows title + time with ellipsis, minimum cell width so 5-minute programmes stay focusable (with a time label on focus), current programme highlighted and the 'now' line updates every minute, channel column sticky with logo + number, day picker above the grid, focus moves by programme not by pixel, long press or a key opens programme detail with record/remind actions, jump-to-now shortcut, mini preview of the focused channel optional.
+- use when: Live TV with many channels.
+- avoid when: On-demand only catalogues; phones in portrait (use a per-channel list).
+- compose-tv: Custom LazyLayout or LazyRow-of-LazyColumn sharing horizontal scroll; measure cells from time deltas; use Modifier.focusProperties to override up/down to the same time slot.
+- incompatible with: layout-immersive-rails
+- why: lexical 0.255, structural 0.84 (platform tv, input remote, mode create, product media, screen home,list)
+
+### Landscape media cards (16:9)  `card-poster-landscape`  [pattern/cards; layout/platform] score 0.51 · platform-standard
+Fixed 16:9, progress bar inside the art bottom edge with a scrim, duration/remaining badge with text, channel logo for live, 4 per row on TV at 960 dp with 20 dp gutters, title below.
+- use when: Episodes, live channels, sports, continue-watching rows, video tutorials: landscape thumbnails with a progress bar and duration.
+- avoid when: Portrait-native art collections.
+- incompatible with: card-list-row, card-poster-portrait, layout-table-first
+- why: lexical 0.198, structural 0.78 (platform tv, mode create, product media, density medium)
+
+### TV: predictable BACK  `tv-back-behavior`  [rule/navigation; navigation/platform] score 0.477 · platform-standard
+BACK closes the topmost layer (player controls → player → detail → home → nav → exit); in a rail-based home, BACK from content first moves focus to the navigation (side nav or top tabs) and scrolls to top, then exits. Deep-linked entries still unwind to the app home. Splash screens are never in the back stack.
+- use when: Every screen and overlay.
+- avoid when: Never show an on-screen Back button (the remote has one); never trap the user in an exit-confirmation loop.
+- why: lexical 0.246, structural 0.76 (platform tv, input remote, mode create)
+
+### Focus is the action (TV)  `cta-focus-selects`  [pattern/cta; layout/platform] score 0.458 · platform-standard
+No 'button-like' cards with an inner button; the whole card is focusable and selectable. Detail screen: ≤4 actions in one row, first focus on Play/Resume, LEFT/RIGHT between them, DOWN to rails. Long press or a Menu key can open secondary actions. Never require diagonal or multi-key gestures.
+- use when: TV browse/detail screens: the focused card is the call to action, SELECT opens, and detail screens expose a small row of focusable buttons (Play, Resume, Add to list) with a deterministic first focus.
+- avoid when: Never on touch/pointer platforms.
+- incompatible with: cta-single-primary, cta-toolbar-commands, cta-sticky-bar
+- why: lexical 0.0, structural 0.84 (platform tv, input remote, mode create, product media, screen home,list,player)
+
+### TV: no touch, no hover, no scrollbars  `tv-no-touch-hover`  [rule/input; interaction/platform] score 0.363 · platform-standard
+Every interaction maps to DPAD + SELECT + BACK (+ optional MENU/PLAY keys); text entry is minimal and uses the system keyboard or voice; no hover-only affordances; no visible scrollbars; no small inline links; a desktop layout enlarged is not a TV layout.
+- use when: Porting web or mobile screens to TV; reviewing any TV screen.
+- avoid when: Never ship swipe gestures, hover menus, drag handles, pinch zoom, or on-screen keyboards as the primary text input on TV.
+- why: lexical 0.039, structural 0.76 (platform tv, input remote, mode create)
+
+Filtered out: anti-hero-template (platform ['web'] not in request ['tv']); comp-data-table (platform ['desktop', 'web'] not in request ['tv']); comp-list-row-mobile (platform ['mobile', 'tablet'] not in request ['tv']); comp-data-entry-grid (platform ['desktop', 'web'] not in request ['tv']); comp-hero-section (platform ['mobile', 'web'] not in request ['tv']); dir-service-app-mobile (platform ['mobile'] not in request ['tv']); nav-left-rail (platform ['desktop', 'web'] not in request ['tv']); nav-bottom-tabs (platform ['mobile'] not in request ['tv'])

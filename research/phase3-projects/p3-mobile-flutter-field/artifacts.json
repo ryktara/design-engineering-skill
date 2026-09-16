@@ -1,0 +1,96 @@
+{
+  "case": "p3-mobile-flutter-field",
+  "platform": "mobile",
+  "stack": "flutter",
+  "rendered": true,
+  "render_mode": "html-twin",
+  "render_note": "Flutter SDK not installed; Dart reviewed statically, HTML twin (render/twin.html, values mirrored from lib/theme/app_theme.dart) screenshotted at 390x844 with Playwright 1.63.0",
+  "screenshots": [
+    "render/first-checklist.png",
+    "render/first-offline.png",
+    "render/first-offline-queue.png",
+    "render/first-pending.png",
+    "render/first-form.png",
+    "render/first-form-keyboard.png",
+    "render/first-form-offline-keyboard.png",
+    "render/first-empty.png",
+    "render/first-loading.png",
+    "render/first-error.png",
+    "render/final-checklist.png",
+    "render/final-offline.png",
+    "render/final-offline-queue.png",
+    "render/final-pending.png",
+    "render/final-form.png",
+    "render/final-form-keyboard.png",
+    "render/final-form-offline-keyboard.png",
+    "render/final-empty.png",
+    "render/final-loading.png",
+    "render/final-error.png"
+  ],
+  "first_render_defects": 7,
+  "final_defects": 1,
+  "iterations": 2,
+  "guidance_relevant": 5,
+  "guidance_partial": 2,
+  "guidance_offtarget": 0,
+  "knowledge_gaps": [
+    "photo/camera capture field in a form (thumbnails, remove/retake, offline storage)",
+    "single-select severity chooser as large toggle buttons / radio group at phone width",
+    "tri-state (pass/fail/skip) result selection for inspection checklist items",
+    "product vocabulary for field service / inspection / utilities (README 'utility technicians' mapped to erp)"
+  ],
+  "ranking_misses": [
+    "mobile-keyboard-ime",
+    "mobile-safe-areas",
+    "layout-states-empty-loading-error",
+    "comp-empty-state",
+    "a11y-live-status",
+    "a11y-target-size",
+    "comp-list-row-mobile",
+    "mobile-gestures-discoverable",
+    "comp-setup-checklist",
+    "comp-toast-notification"
+  ],
+  "requirements_errors": [
+    "product=erp (KNOWN) from README heuristic; actual product is field-service/utility inspection",
+    "screen=[form] only; checklist (list) screen not recognised",
+    "components=[form] only; list, status badge, banner, photo capture missed",
+    "primary_jobs=['create form'] and jobs=[]; the job is record inspection results / report defects",
+    "risk=low for a safety-hazard reporting tool",
+    "density=medium not adjusted for gloves"
+  ],
+  "direction_issues": [
+    "navigation=nav-bottom-tabs for a linear stack app (hub-and-spoke was the alternative)",
+    "surface=surface-elevated-cards contradicts mobile-field-use guardrail in the same output",
+    "cards=card-poster-landscape (16:9 media cards) for an inspection checklist; validation OK"
+  ],
+  "inspector_issues": [
+    "product_hints erp from README",
+    "routing empty despite go_router",
+    "ThemeData/ThemeExtension not detected as tokens",
+    "test/ directory not detected",
+    "false-positive DPAD/remote handling after implementation"
+  ],
+  "interaction_test": {
+    "file": "05-interaction.json",
+    "first_run": "05-interaction-first.json",
+    "checks": 18,
+    "passed_first": 13,
+    "passed_final": 18,
+    "min_text_contrast": 7.82,
+    "primary_action_top_px": 742,
+    "keyboard_inset_px": 300
+  },
+  "tokens_check": "06-tokens-check.txt: OK, 0 errors, 3 advisory warnings",
+  "tags": [
+    "requirements-miss",
+    "vocabulary-gap",
+    "ranking-miss",
+    "knowledge-gap",
+    "direction-invariant",
+    "render-defect-fixed",
+    "render-defect-remaining",
+    "tooling-limit",
+    "skill-helped"
+  ]
+}

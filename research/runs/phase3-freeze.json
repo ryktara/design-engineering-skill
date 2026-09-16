@@ -1,0 +1,24 @@
+{
+ "frozen": "2026-09-09T01:00:56",
+ "de_core_sha256": "d2352454f5f5f095d756f21d35b43afb78050df6d15ea3013302f9dcbfb08b45",
+ "lexicon_sha256": "1f01ba61cd5ad92ccddd76e28e93526d4c612dbf044c289b68af72ac7946e81d",
+ "data_files": {
+  "antipatterns.jsonl": "3944d051997b52adcafb2af84431c50c9e019a49071651246b606bf17b27b4f7",
+  "charts.jsonl": "5d2d2bbede092956231ff60056933a4a3c74c34a09814e61dcf3fc0510d9e229",
+  "components.jsonl": "e3ff1b647c12439c24883cdf142a5d3eb608c17be6a9e8237b2d0c811e4a5df2",
+  "directions.jsonl": "9f3047aef8fb896e625653358a3cfbb06872a20c676b5742ff12325e2918dcd0",
+  "patterns.jsonl": "e4f94482ebf51f62df92315d21c493e57b3b27535491fdcb43645f27f540b09f",
+  "rules.jsonl": "3dd35f30747990e644b6818814596e731268b72332bb3afb73fd9930094d038d"
+ },
+ "records": 232,
+ "concepts": 57,
+ "concerns": 16,
+ "scripts": {
+  "advise.py": "8a411b9bb43acd54789353150d7a6eddf20bb6188fa95e3a4b981c41bc174c6c",
+  "de_core.py": "d2352454f5f5f095d756f21d35b43afb78050df6d15ea3013302f9dcbfb08b45",
+  "fingerprint.py": "a74b549a832b83aab0f6e7c76b8f4c2c50db3741ea81afb118eebb79bdcb9cdb",
+  "inspect_project.py": "0c3c255c5fa03e8ef32e9cd54965309bd7f0c16228dade82a2f8bf4ee7b940e7",
+  "tokens.py": "16a0ecf407c56138ae9c2e00422ed89253ab668ed7d9b0450f8e840f50e799a2",
+  "validate_skill.py": "79a1774fc6e6878efe41c3dfc605d6d0f5a8f9ccea43538acdb7fc4d39af46f3"
+ }
+}

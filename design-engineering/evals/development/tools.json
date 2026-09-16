@@ -1,0 +1,282 @@
+{
+  "description": "Deterministic tool contracts: contrast maths, token validation exit codes, fingerprint verdicts, error messages.",
+  "cases": [
+    {
+      "id": "contrast-white-black",
+      "tool": "tokens",
+      "args": [
+        "contrast",
+        "#000000",
+        "#FFFFFF"
+      ],
+      "expect_exit": 0,
+      "expect_stdout_contains": [
+        "21.0:1"
+      ]
+    },
+    {
+      "id": "contrast-known-pair",
+      "tool": "tokens",
+      "args": [
+        "contrast",
+        "#767676",
+        "#FFFFFF"
+      ],
+      "expect_exit": 0,
+      "expect_stdout_contains": [
+        "4.54:1",
+        "AA text pass"
+      ]
+    },
+    {
+      "id": "contrast-fail",
+      "tool": "tokens",
+      "args": [
+        "contrast",
+        "#999999",
+        "#FFFFFF"
+      ],
+      "expect_exit": 0,
+      "expect_stdout_contains": [
+        "2.85:1",
+        "AA text FAIL"
+      ]
+    },
+    {
+      "id": "contrast-bad-hex",
+      "tool": "tokens",
+      "args": [
+        "contrast",
+        "blue",
+        "#FFFFFF"
+      ],
+      "expect_exit": 1
+    },
+    {
+      "id": "tokens-skeleton-valid",
+      "tool": "tokens",
+      "args": [
+        "validate",
+        "${EVALS}/fixtures/tokens-good.json"
+      ],
+      "expect_exit": 0,
+      "expect_stdout_contains": [
+        "OK"
+      ]
+    },
+    {
+      "id": "tokens-bad-fails",
+      "tool": "tokens",
+      "args": [
+        "validate",
+        "${EVALS}/fixtures/tokens-bad.json"
+      ],
+      "expect_exit": 1,
+      "expect_stdout_contains": [
+        "FAIL",
+        "missing required role color.focus.ring",
+        "label on primary action"
+      ]
+    },
+    {
+      "id": "tokens-tv-stricter",
+      "tool": "tokens",
+      "args": [
+        "validate",
+        "${EVALS}/fixtures/tokens-good.json",
+        "--platform",
+        "tv"
+      ],
+      "expect_exit": 0,
+      "expect_stdout_contains": [
+        "10-foot"
+      ]
+    },
+    {
+      "id": "scale-tv",
+      "tool": "tokens",
+      "args": [
+        "scale",
+        "--platform",
+        "tv"
+      ],
+      "expect_exit": 0,
+      "expect_stdout_contains": [
+        "body",
+        "tnum"
+      ]
+    },
+    {
+      "id": "fingerprint-validate-bad",
+      "tool": "fingerprint",
+      "args": [
+        "validate",
+        "${EVALS}/fixtures/fp-bad.json"
+      ],
+      "expect_exit": 1,
+      "expect_stdout_contains": [
+        "unknown value"
+      ]
+    },
+    {
+      "id": "fingerprint-compare-fail",
+      "tool": "fingerprint",
+      "args": [
+        "compare",
+        "${EVALS}/fixtures/fp-a.json",
+        "${EVALS}/fixtures/fp-a-skin.json"
+      ],
+      "expect_exit": 2,
+      "expect_stdout_contains": [
+        "COSMETIC-ONLY",
+        "FAIL"
+      ]
+    },
+    {
+      "id": "fingerprint-compare-pass",
+      "tool": "fingerprint",
+      "args": [
+        "compare",
+        "${EVALS}/fixtures/fp-a.json",
+        "${EVALS}/fixtures/fp-b.json"
+      ],
+      "expect_exit": 0,
+      "expect_stdout_contains": [
+        "DISTINCT",
+        "PASS"
+      ]
+    },
+    {
+      "id": "advise-unknown-record",
+      "tool": "advise",
+      "args": [
+        "show",
+        "no-such-record"
+      ],
+      "expect_exit": 2,
+      "note": "2026-09-08: exit code contract changed in Phase 2 (2 = invalid input, 1 = tool failure)."
+    },
+    {
+      "id": "advise-search-md",
+      "tool": "advise",
+      "args": [
+        "search",
+        "tv rail focus",
+        "-k",
+        "2",
+        "--exit-zero"
+      ],
+      "expect_exit": 0,
+      "expect_stdout_contains": [
+        "platforms={'tv': 'KNOWN'}"
+      ],
+      "note": "2026-09-08: search now exits with the retrieval status (3 PARTIAL etc.); --exit-zero keeps this case about output content."
+    },
+    {
+      "id": "inspect-missing-dir",
+      "tool": "inspect_project",
+      "args": [
+        "${EVALS}/fixtures/does-not-exist"
+      ],
+      "expect_exit": 1
+    },
+    {
+      "id": "validate-skill",
+      "tool": "validate_skill",
+      "args": [],
+      "expect_exit": 0,
+      "expect_stdout_contains": [
+        "OK"
+      ]
+    },
+    {
+      "id": "requirements-confident",
+      "tool": "advise",
+      "args": [
+        "requirements",
+        "Build an Android TV EPG in Compose."
+      ],
+      "expect_exit": 0,
+      "expect_stdout_contains": [
+        "design-requirements/v1",
+        "\"tv\"",
+        "compose-tv",
+        "remote"
+      ]
+    },
+    {
+      "id": "requirements-abstain-exit",
+      "tool": "advise",
+      "args": [
+        "requirements",
+        "fix the SQL deadlock in the orders service"
+      ],
+      "expect_exit": 5,
+      "expect_stdout_contains": [
+        "ABSTAIN"
+      ]
+    },
+    {
+      "id": "requirements-ambiguous-exit",
+      "tool": "advise",
+      "args": [
+        "requirements",
+        "Android dashboard",
+        "--pretty"
+      ],
+      "expect_exit": 4,
+      "expect_stdout_contains": [
+        "AMBIGUOUS"
+      ]
+    },
+    {
+      "id": "requirements-explain",
+      "tool": "advise",
+      "args": [
+        "requirements",
+        "iOS banking app home screen",
+        "--explain",
+        "--pretty"
+      ],
+      "expect_exit": 0,
+      "expect_stdout_contains": [
+        "implied by platform mobile",
+        "request:"
+      ]
+    },
+    {
+      "id": "requirements-empty-input",
+      "tool": "advise",
+      "args": [
+        "requirements",
+        "   "
+      ],
+      "expect_exit": 2
+    },
+    {
+      "id": "activation-metrics-proxy",
+      "tool": "activation_metrics",
+      "args": [
+        "--limit",
+        "20"
+      ],
+      "expect_exit": 0,
+      "expect_stdout_contains": [
+        "proxy: precision"
+      ]
+    },
+    {
+      "id": "direction-validation-shown",
+      "tool": "advise",
+      "args": [
+        "direction",
+        "IPTV home screen for Android TV",
+        "--exit-zero"
+      ],
+      "expect_exit": 0,
+      "expect_stdout_contains": [
+        "## Validation: OK"
+      ]
+    }
+  ]
+}

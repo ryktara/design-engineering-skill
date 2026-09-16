@@ -1,0 +1,79 @@
+## design-engineering search: The appointments grid re-renders the whole day when one chip is dragged, so dragging stutters.
+status=PARTIAL modes=['audit', 'refactor'] platforms={} inputs={} products={} density=None stacks=[] screens=[] negatives=[]
+facets required=['accessibility', 'interaction', 'component', 'anti-pattern'] unmet=[] diversity=0.83
+MISSING: platform: audit targets differ by platform; not stated
+
+### Grids with row actions are one Tab stop  `grid-single-tab-stop`  [rule/table; component/platform] score 0.444 · accessibility-requirement
+Tab enters the grid once and leaves it once; arrow keys move between cells/rows (roving tabindex or a focus manager), Enter/Space activates the focused cell's action, Escape returns from an edited cell to navigation mode; row actions become reachable when the row or actions cell is focused and are also available from a row context/actions menu; a table with 24 rows must never produce 24 Tab stops per action column. Announce the current row/column (aria-rowindex/colindex or the platform's automation properties) and keep a visible focus indicator on the active cell.
+- use when: Data tables or grids where each row has buttons/links (edit, delete, approve, download) and there are more than a handful of rows.
+- avoid when: Small static tables with no interactive cells.
+- why: lexical 0.48, structural 0.4 (mode audit)
+
+### Pills for everything  `anti-pill-everything`  [antipattern/generic-ai; anti-pattern] score 0.349 · heuristic
+Pick one corner language for controls (small/medium radius) and reserve full-round for chips/badges; ≤2 badges per item; buttons and inputs share a radius; if everything is a pill, nothing reads as a tag.
+- use when: Pill-shaped buttons, inputs, nav items, badges, and tags all at once; pill badges on every list item.
+- avoid when: Pills are right for filters/tags, compact status, segmented controls.
+- why: lexical 0.226, structural 0.5 (mode audit)
+
+### Render, screenshot, inspect before claiming done  `verify-render-and-inspect`  [rule/verification; process] score 0.336 · engineering-practice
+Run the app, capture the representative viewports/devices, look at the image: overflow, clipping, hierarchy, alignment, contrast, empty/loading states, focus visibility (Tab or DPAD through it), reduced motion. Fix what you see and re-capture. Compilation passing is not visual success.
+- use when: Any substantial UI change where a browser, emulator, simulator, or screenshot tool is available.
+- avoid when: Tiny CSS edits can skip the full loop but still need a render check when they affect layout.
+- why: lexical 0.267, structural 0.42 (secondary mode)
+
+### One primary action per screen  `cta-single-primary`  [pattern/cta; layout] score 0.321 · heuristic
+Exactly one filled button per view, secondaries as outlined/text, destructive actions separated and confirmed, button label is a verb phrase naming the outcome ('Save changes'), disabled only with an explanation nearby.
+- use when: Task screens (forms, checkout, onboarding, settings) where one action completes the job; the primary is filled, secondaries are quiet.
+- avoid when: Workbenches with many equal commands (toolbar pattern) or browse screens where selection is the action (focus-selects).
+- incompatible with: cta-toolbar-commands, cta-focus-selects
+- why: lexical 0.126, structural 0.36 (mode audit)
+
+### Mobile: primary actions in thumb reach  `mobile-thumb-reach`  [rule/layout; layout/platform] score 0.314 · heuristic
+Frequent actions in the bottom third; top-left/right for rare actions (back, settings); large phones make top targets a two-handed reach so provide bottom alternatives (bottom search bar, pull-down). Sheets and menus open from the bottom.
+- use when: Deciding where the primary action, tab bar, search, and frequent controls go on phones.
+- avoid when: Do not put destructive actions in the easiest-to-hit zone.
+- why: lexical 0.243, structural 0.4 (mode audit)
+
+### Search and filters: visible state and instant feedback  `search-filter-feedback`  [rule/search; component] score 0.298 · heuristic
+Applied filters as removable chips with a 'clear all', result count announced, debounced query (≈300 ms) with a loading indicator, empty results suggest next steps, filter state in the URL/route, and on TV a search screen with a system keyboard/voice plus results as rails.
+- use when: Catalogues, tables, media libraries, admin lists.
+- avoid when: Never hide applied filters; never reset filters on navigation without asking; never search on every keystroke against a slow backend without debounce.
+- why: lexical 0.133, structural 0.5 (mode audit)
+
+### Decorative icon next to every heading/feature  `anti-icon-per-heading`  [antipattern/generic-ai; anti-pattern] score 0.298 · heuristic
+Remove icons that don't carry meaning; never use emoji as UI icons; if a feature grid needs visuals, use real product imagery or none. Icon count on a screen should track the number of distinct actions/states, not the number of headings.
+- use when: Feature grids with an icon in a tinted circle above each title, list items with a random icon each, headings with emoji.
+- avoid when: Icons that disambiguate (file type, status, action) are fine.
+- why: lexical 0.133, structural 0.5 (mode audit)
+
+### Spacing from one scale, grouping by proximity  `layout-spacing-scale`  [rule/layout; layout] score 0.297 · heuristic
+A geometric-ish scale (4/8/12/16/24/32/48/64), inside-group spacing smaller than between-group spacing (ratio ≥1.5×), alignment to a grid, consistent inset per container type, optical alignment for icons and text baselines. Inconsistent spacing is the most common 'unprofessional' signal.
+- use when: Every layout decision; every 'spacing feels off' complaint.
+- avoid when: Never use arbitrary values (13px, 22px); never use equal spacing everywhere (kills grouping).
+- why: lexical 0.13, structural 0.5 (mode audit)
+
+### Part-to-whole → stacked bar, waffle, or (rarely) donut  `chart-composition`  [chart/chart; data-viz] score 0.272 · heuristic
+Prefer a single stacked horizontal bar or a waffle; a donut only with ≤4 parts, labels with percentages on or beside slices, the largest starting at 12 o'clock, colour-blind-safe palette, and never a 3D pie or exploded slices.
+- use when: Shares of a total with ≤5 parts; one moment in time.
+- avoid when: More than 5 slices, comparing parts across many totals (use 100% stacked bars), when precise comparison matters (angles are hard to read).
+- why: lexical 0.2, structural 0.36 (mode audit)
+
+### One type scale with named roles  `typo-scale-and-roles`  [rule/typography; visual] score 0.268 · heuristic
+Roles display/heading/title/body/label/caption/numeric with size, line height, weight, and letter spacing per role; body ≥16 px web/mobile, 14 desktop, 24 TV; numeric role uses tabular lining figures; headings use tighter line height (1.1–1.25) and body 1.4–1.6. Generate with tokens.py scale and map the roles to the framework's text styles.
+- use when: Any screen with more than two text sizes; any design system.
+- avoid when: Never pick sizes per screen; never use more than ~7 sizes.
+- why: lexical 0.078, structural 0.5 (mode audit)
+
+### TV: exactly one visible focus at all times  `a11y-tv-focus-always`  [rule/focus; interaction/platform] score 0.257 · platform-standard
+Set initial focus deterministically (first actionable content or Play on detail), restore focus to the previously focused item when returning, keep focus on screen (scroll into view), move focus to a sensible neighbour when the focused item is removed, and never rely on colour tint alone for the focused state.
+- use when: Every TV screen, after every navigation, after data loads, after dialogs close, after list updates.
+- avoid when: Never leave focus on a hidden or off-screen element; never let focus disappear after a list refresh.
+- why: lexical 0.14, structural 0.4 (mode audit)
+
+### Semantic structure: headings, landmarks, lists, tables  `a11y-semantics-structure`  [rule/accessibility; accessibility/platform] score 0.251 · accessibility-requirement
+Structure first, style second: choose the element for its meaning and restyle it. Data tables use <th scope>; layout tables are forbidden; visually hidden headings are fine for screen readers when the visual design omits them.
+- use when: Every page: one h1, ordered heading levels, main/nav/aside landmarks, real <button>/<a>/<table>, lists for lists.
+- avoid when: Never use divs with click handlers as buttons; never use heading levels for visual size.
+- why: lexical 0.08, structural 0.46 (mode audit)
+
+Filtered out: mobile-field-use (environment ['gloves', 'outdoor'] not in request)

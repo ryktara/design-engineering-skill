@@ -1,0 +1,27 @@
+{
+  "platform": "mobile",
+  "artifact_state": "existing",
+  "acceptable_modes": ["polish", "refactor", "responsive"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "touch.ime_keyboard",
+    "touch.safe_areas",
+    "layout.one_primary_action",
+    "touch.thumb_reach",
+    "a11y.dialog_focus",
+    "process.safe_modification",
+    "process.reuse_first"
+  ],
+  "critical_concepts": ["touch.ime_keyboard", "touch.safe_areas"],
+  "forbidden_concepts": [
+    "interaction.keyboard_navigation",
+    "interaction.shortcuts",
+    "interaction.dpad_reachability",
+    "tv.no_touch_hover",
+    "desktop.spacing_grid",
+    "brand.dark_mode_redesign",
+    "adaptive.breakpoint_matrix"
+  ],
+  "preservation": ["navigation", "theme", "typography", "component_reuse (PrimaryButton, Form sections, toolbar Cancel/Save)"],
+  "notes": "Written from Sources/Streaks/Views/AddHabitSheet.swift before any advise run. Symptoms with the on-screen keyboard: TextField has no FocusState, no submitLabel/onSubmit, no keyboard Done, Form has no scrollDismissesKeyboard, and the in-form PrimaryButton (last section) is covered by a ~336 pt keyboard at 390x844 (sheet top 44 + nav 44 + Name/Icon/Frequency/Reminder groups push Save past y~508). Expected fix: focus management + keyboard dismissal + primary action kept reachable above the keyboard (safeAreaInset or scroll), no theme/typography/navigation change."
+}

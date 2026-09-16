@@ -1,0 +1,197 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "audit",
+    "refactor"
+  ],
+  "platform": [
+    "mobile"
+  ],
+  "input": [
+    "touch"
+  ],
+  "product": [
+    "finance"
+  ],
+  "screen": [],
+  "screen_subtype": [],
+  "stack": [
+    "compose"
+  ],
+  "density": "medium",
+  "components": [],
+  "environment": [],
+  "jobs": [],
+  "problems": [],
+  "risk": "medium",
+  "primary_jobs": [
+    "audit"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "focus_handling_present": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "keyboard": true,
+    "screen_reader": true,
+    "touch_targets": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "change_budget": "low",
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "intent": {
+    "artifact_state": "existing",
+    "operations": [
+      "diagnose",
+      "modify"
+    ],
+    "problem_domain": [
+      "performance-ux"
+    ],
+    "change_scope": "unknown",
+    "utterance": "observation",
+    "existing": true,
+    "problem": true,
+    "facet": "general",
+    "diagnose_only": false,
+    "creation": false,
+    "redesign": false,
+    "responsive_cues": false,
+    "preserve": [],
+    "scope": "moderate"
+  },
+  "platform_evidence": [],
+  "mode_evidence": [
+    "audit: perceived-performance defect",
+    "refactor: fix follows the diagnosis"
+  ],
+  "project_context": {
+    "navigation": {
+      "value": "top-bar",
+      "status": "KNOWN",
+      "evidence": [
+        "top-bar: 30 matches in AccountDetailScreen.kt, AccountsScreen.kt, CardsScreen.kt (shell/layout file)"
+      ]
+    },
+    "theme": {
+      "value": "dual-theme",
+      "status": "KNOWN",
+      "evidence": [
+        "dark theme configuration signals: 3",
+        "light theme configuration signals: 2",
+        "hex palette: 0 near-white, 1 near-black"
+      ],
+      "default": "light"
+    },
+    "surfaces": {
+      "value": "bordered-flat",
+      "status": "INFERRED",
+      "evidence": [
+        "borders in 2 files, shadow/elevation in 0"
+      ]
+    },
+    "radius": {
+      "value": "small",
+      "status": "INFERRED",
+      "evidence": [
+        "most common radius 4 (2×); others [12.0, 8.0]"
+      ]
+    },
+    "spacing": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "typography": {
+      "value": "custom",
+      "status": "KNOWN",
+      "evidence": [
+        "font family System (8 refs)",
+        "weights medium, normal, bold",
+        "encoded type scale in 2 files"
+      ]
+    },
+    "components": {
+      "value": "compose, material3",
+      "status": "KNOWN",
+      "evidence": [
+        "compose",
+        "material3"
+      ]
+    }
+  },
+  "known": [
+    "platform=mobile (project inspection)",
+    "input=touch (request: touch)",
+    "product=finance (project inspection (README))",
+    "stack=compose (project inspection)",
+    "project_navigation=top-bar (repository: top-bar: 30 matches in AccountDetailScreen.kt, AccountsScreen.kt, CardsScreen.kt (shell/layout file))",
+    "project_theme=dual-theme (repository: dark theme configuration signals: 3; light theme configuration signals: 2)",
+    "project_typography=custom (repository: font family System (8 refs); weights medium, normal, bold)",
+    "project_components=compose, material3 (repository: compose; material3)"
+  ],
+  "inferred": [
+    "density=medium (implied by product finance (capped for touch/remote platform))",
+    "mode=audit (perceived-performance defect)",
+    "mode=refactor (fix follows the diagnosis)",
+    "project_surfaces=bordered-flat (repository: borders in 2 files, shadow/elevation in 0)",
+    "project_radius=small (repository: most common radius 4 (2×); others [12.0, 8.0])"
+  ],
+  "missing": [],
+  "status": "CONFIDENT",
+  "source": {
+    "request": [
+      "touch"
+    ],
+    "project": [
+      "app\\build.gradle.kts: androidx.compose",
+      "app\\build.gradle.kts: androidx.compose.material3"
+    ]
+  },
+  "activation": {
+    "decision": "ambiguous",
+    "ui_score": 1.0,
+    "non_ui_score": 0,
+    "ui_terms": [
+      "card"
+    ],
+    "non_ui_terms": []
+  },
+  "intent_evidence": {
+    "existing": [
+      "present-tense observation"
+    ],
+    "new": [],
+    "defect": [
+      "observed behaviour"
+    ],
+    "operations": {},
+    "domains": {
+      "performance-ux": [
+        "freez"
+      ]
+    },
+    "no_change": [],
+    "scope": {},
+    "question": false
+  },
+  "scope_evidence": {
+    "ui": [
+      "card",
+      "touch",
+      "concept:feedback.confirmation_destructive"
+    ],
+    "ux_symptoms": [],
+    "technical": {},
+    "non_visual": []
+  }
+}

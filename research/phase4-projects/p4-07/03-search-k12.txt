@@ -1,0 +1,89 @@
+## design-engineering search: polish this existing light-theme WPF purchase-order screen: inconsistent spacing in the toolbar and status bar, and validation errors are hard to read
+status=CONFIDENT modes=['polish', 'audit'] platforms={'desktop': 'INFERRED'} inputs={'pointer': 'INFERRED', 'keyboard': 'INFERRED'} products={'erp': 'KNOWN'} density=high stacks=['wpf'] screens=[] negatives=[]
+facets required=['anti-pattern', 'layout', 'visual', 'component'] unmet=['visual'] diversity=0.83
+MISSING: brand: no brand assets, guideline, or character description available
+
+### Toolbar / command bar with selection-driven commands  `cta-toolbar-commands`  [pattern/cta; layout/platform] score 0.55 · platform-standard
+Primary commands as labelled buttons, overflow into a menu, disabled (not hidden) when no selection, keyboard accelerators shown in tooltips, and the count of selected items visible near the commands.
+- use when: Workbenches and tables: commands apply to the current selection, live in a persistent bar, and are mirrored by context menus and shortcuts.
+- avoid when: Consumer or single-task screens; touch-first products.
+- wpf: ToolBar with ICommand.CanExecute driving IsEnabled.
+- incompatible with: cta-single-primary, cta-focus-selects, cta-sticky-bar
+- why: lexical 0.368, structural 0.64 (platform desktop, input keyboard,pointer, product erp, density high)
+
+### Desktop menu bar + toolbar commands  `nav-menu-bar-desktop`  [pattern/navigation; navigation/platform] score 0.5 · platform-standard
+Menu bar for the complete command set with access keys and accelerators shown; toolbar/command bar for the frequent subset; context menus mirror the toolbar for the selected object. Commands must be enabled/disabled by state, never hidden, so users learn where things live.
+- use when: Document-centric or record-centric desktop apps with many commands, where discoverability through menus and accelerators matters (Alt+F, Ctrl+S).
+- avoid when: Consumer apps with a handful of actions (use a command bar), touch-first devices, or web apps pretending to be native.
+- wpf: Menu/ToolBar bound to ICommand with InputGestureText; RoutedUICommand gives free accelerators.
+- incompatible with: nav-bottom-tabs, nav-tv-side, nav-hub-spoke
+- why: lexical 0.312, structural 0.64 (platform desktop, input keyboard,pointer, product erp, density high)
+
+### Spacing from one scale, grouping by proximity  `layout-spacing-scale`  [rule/layout; layout] score 0.426 · heuristic
+A geometric-ish scale (4/8/12/16/24/32/48/64), inside-group spacing smaller than between-group spacing (ratio ≥1.5×), alignment to a grid, consistent inset per container type, optical alignment for icons and text baselines. Inconsistent spacing is the most common 'unprofessional' signal.
+- use when: Every layout decision; every 'spacing feels off' complaint.
+- avoid when: Never use arbitrary values (13px, 22px); never use equal spacing everywhere (kills grouping).
+- why: lexical 0.333, structural 0.54 (mode polish)
+
+### Data table / grid  `comp-data-table`  [component/table; component/platform] score 0.416 · heuristic
+Sticky header, row height by density token, zebra striping optional (prefer hover/selection highlight), column resize/reorder/visibility persisted, sort indicator with aria-sort, selection checkbox column with header select-all and a count, row actions visible on focus as well as hover, inline edit with Enter/Escape, keyboard grid navigation (arrows, Home/End, PageUp/Down), virtualised rows, loading skeleton rows, empty state inside the table body. Financial tables: see numeric rule.
+- use when: Homogeneous records with several comparable attributes; sorting, filtering, selection, bulk actions, inline editing.
+- avoid when: Fewer than ~10 rows (use a list), heterogeneous items (use cards/list), phone widths (convert to rows).
+- wpf: DataGrid with virtualisation flags; DevExpress GridControl if present in the project.
+- incompatible with: layout-rails, surface-elevated-cards
+- why: lexical 0.102, structural 0.8 (platform desktop, input keyboard,pointer, mode polish, product erp, density high)
+
+### Reuse → extend → compose → new (in that order)  `impl-reuse-before-new`  [rule/implementation; process] score 0.397 · engineering-practice
+Inspect the repository first (inspect_project.py): existing components, tokens, fonts, breakpoints, and conventions win. Reuse the existing component; if it lacks a variant, extend it through its API; if the composition is new, compose existing primitives; only create a new primitive when the gap is real, and put it where the others live.
+- use when: Any UI change in an existing codebase.
+- avoid when: Never install a second component library or a UI framework to build one screen; never fork a design-system component when a variant prop would do.
+- why: lexical 0.28, structural 0.54 (mode polish)
+
+### Never colour alone  `a11y-color-not-only`  [rule/accessibility; accessibility] score 0.396 · accessibility-requirement
+Pair colour with text, icon, pattern, weight, or underline. Error fields get an icon and message; chart series get labels or line styles; links in prose get underlines; selected rows get a check or a border, not only a tint.
+- use when: Status, validation errors, chart series, selected/active states, required fields, links inside text.
+- avoid when: Never skip.
+- why: lexical 0.344, structural 0.46 (secondary mode)
+
+### Table-first working screen  `layout-table-first`  [pattern/layout; layout/platform] score 0.39 · heuristic
+Table fills the viewport height with internal scrolling and sticky header, row density selectable, column widths persisted, filters as a row of chips/fields above the table (not a hidden drawer), bulk actions appear in the toolbar on selection. Numeric columns right-aligned with tabular figures. Virtualise beyond a few hundred rows.
+- use when: The record set is the product (orders, transactions, tickets, inventory): users filter, sort, select, and bulk-act. Screen = toolbar + filters + table + optional side panel.
+- avoid when: Phone widths (switch to list rows), fewer than ~20 rows, or when each record needs rich media.
+- wpf: DataGrid with EnableRowVirtualization and VirtualizingPanel.IsVirtualizingWhenGrouping; DevExpress GridControl if already present.
+- incompatible with: layout-single-column, layout-immersive-rails, layout-feed, layout-editorial
+- why: lexical 0.077, structural 0.64 (platform desktop, input keyboard,pointer, product erp, density high)
+
+### Form labels, errors, and recovery  `a11y-forms-errors`  [rule/forms; component] score 0.382 · accessibility-requirement
+Label above or beside, never placeholder-only; error message next to the field, programmatically associated (aria-describedby / accessibilityHint / AutomationProperties.HelpText), with what is wrong and how to fix; move focus to the first error or the error summary on submit; keep entered data; autocomplete attributes for personal data; allow paste and password managers.
+- use when: Every form: visible labels, required markers in text, inline errors linked to fields, error summary for long forms, no data loss on error.
+- avoid when: Never validate on every keystroke for fields the user has not finished; validate on blur and on submit.
+- why: lexical 0.318, structural 0.46 (secondary mode)
+
+### Arbitrary spacing and misaligned edges  `anti-inconsistent-spacing`  [antipattern/craft; anti-pattern] score 0.373 · heuristic
+Snap every value to the spacing scale, align left edges of text across components, use one inset per container type, check icon/text baseline alignment, and equalise gaps in repeated structures. This single fix does more for 'looks professional' than any colour change.
+- use when: Paddings like 13/18/22 px, cards with different inner padding, text not aligned to the grid, icons off-baseline, unequal gaps between equal items.
+- avoid when: Never.
+- why: lexical 0.236, structural 0.54 (mode polish)
+
+### Rich metadata (operational)  `metadata-rich`  [pattern/metadata; layout/platform] score 0.369 · heuristic
+Columns with user-controlled visibility and order, consistent formatting per type (dates, currency, IDs in monospace), status as text+colour, truncation with full value on focus/hover and in the detail pane.
+- use when: Operations: many attributes per record visible at once (tables, ledgers, tickets), with sorting/filtering on any of them.
+- avoid when: Consumer browsing, mobile, TV.
+- incompatible with: metadata-minimal, layout-rails, layout-immersive-rails, density-low
+- why: lexical 0.038, structural 0.64 (platform desktop, input keyboard,pointer, product erp, density high)
+
+### Persistent left rail / sidebar  `nav-left-rail`  [pattern/navigation; navigation/platform] score 0.368 · heuristic
+Fixed-width rail (collapsible to icons with labels on hover/focus) holding grouped sections; secondary navigation lives in the content header, not as a second rail. Don't add a rail because 'apps have sidebars': justify it with section count and switching frequency. Mark active section with a visible indicator that survives collapse.
+- use when: Authenticated tools with 6+ peer sections, frequent switching, and wide viewports; power users who need stable wayfinding.
+- avoid when: Marketing pages, single-task flows (checkout, onboarding), phone widths, or when the product has three destinations and the rail would be mostly empty.
+- wpf: Left ListBox/TreeView bound to view models with IsSynchronizedWithCurrentItem; ensure KeyboardNavigation.TabNavigation=Once so Tab leaves the rail in one press.
+- incompatible with: nav-top-bar, nav-bottom-tabs, nav-tv-side, nav-hub-spoke
+- why: lexical 0.0, structural 0.64 (platform desktop, input keyboard,pointer, product erp, density high)
+
+### Focus visible and not obscured  `a11y-focus-visible`  [rule/focus; interaction/platform] score 0.368 · accessibility-requirement
+Focus indicator ≥2 px with ≥3:1 contrast against adjacent colours and against the unfocused state; sticky UI gets scroll-padding so a focused control scrolls into clear view. On TV the indicator must be obvious at 3 m (scale + border/glow).
+- use when: Every focusable element in every theme; sticky headers, footers, toasts, and cookie banners must never cover the focused element.
+- avoid when: Never remove focus styles; use :focus-visible to hide them for mouse clicks only.
+- why: lexical 0.079, structural 0.72 (platform desktop, input keyboard, mode polish)
+
+Filtered out: anti-hero-template (platform ['web'] not in request ['desktop']); anti-mobile-desktop-shrunk (platform ['mobile'] not in request ['desktop']); comp-media-card (platform ['mobile', 'tv', 'web'] not in request ['desktop']); comp-player-controls (platform ['mobile', 'tv', 'web'] not in request ['desktop']); comp-list-row-mobile (platform ['mobile', 'tablet'] not in request ['desktop']); comp-product-detail-page (platform ['mobile', 'web'] not in request ['desktop']); comp-checkout-one-page (platform ['mobile', 'web'] not in request ['desktop']); comp-mini-player (platform ['mobile', 'tv', 'web'] not in request ['desktop'])

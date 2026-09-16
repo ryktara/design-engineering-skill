@@ -1,0 +1,23 @@
+{
+  "task": "p5-17",
+  "reviewer_model": "claude-opus-5[1m]",
+  "c2_records": [
+    {"id": "comp-form", "verdict": "partial", "bad_category": null},
+    {"id": "cta-single-primary", "verdict": "partial", "bad_category": null},
+    {"id": "a11y-skip-link", "verdict": "off-target", "bad_category": "off-platform"},
+    {"id": "states-persistence-and-session", "verdict": "relevant", "bad_category": null},
+    {"id": "desktop-status-bar-and-error-navigation", "verdict": "partial", "bad_category": null},
+    {"id": "anti-no-states", "verdict": "partial", "bad_category": null}
+  ],
+  "c2_relevant": 1,
+  "c2_partial": 4,
+  "c2_offtarget": 1,
+  "c2_bad": [
+    {"record": "a11y-skip-link", "category": "off-platform", "why": "Skip links, tabindex=-1 targets and aria-label landmarks are web markup; the target is an Avalonia 11 desktop window with a menu bar, toolbar and a 360px master list plus detail form. Nothing in the task involves bypass blocks. It was selected purely to tick the required 'accessibility' concern, exactly as a11y-hover-not-required and a11y-forms-errors were in c1."}
+  ],
+  "c2_direction_unjustified": [],
+  "platform_mode_scope_ok": true,
+  "verdict_vs_c1": "better",
+  "why": "c2 swaps c1's two pure-filler accessibility records (a11y-hover-not-required, a11y-forms-errors, both about validation/hover the task does not have) for states-persistence-and-session, which states the second critical concept outright - 'destructive or irreversible saves confirm once with the safe action as default', plus saving/saved status and never discarding entered data - and the direction no longer proposes the harmful layout=form-stack slot that would have restructured the master-detail screen.",
+  "would_have_helped": "helped"
+}

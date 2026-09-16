@@ -1,0 +1,27 @@
+{
+  "platform": "mobile",
+  "artifact_state": "existing",
+  "acceptable_modes": ["refactor", "polish"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "feedback.confirmation_destructive",
+    "state.saving_conflict",
+    "a11y.live_status",
+    "a11y.accessible_names",
+    "a11y.color_not_only",
+    "state.loading_empty_error"
+  ],
+  "critical_concepts": [
+    "feedback.confirmation_destructive",
+    "state.saving_conflict"
+  ],
+  "forbidden_concepts": [
+    "interaction.dpad_reachability",
+    "tv.ten_foot_typography",
+    "table.virtualization",
+    "data.pagination_strategy",
+    "onboarding.linear_wizard"
+  ],
+  "preservation": ["navigation", "theme", "typography"],
+  "reviewer_note": "CardsScreen.kt Switch calls repository.setCardFrozen directly in onCheckedChange: no confirmation for a consequential/irreversible-feeling action, no pending state while the suspend call runs, no undo, no result announcement. Frozen state is signalled only by a white 55% overlay on the card art plus a subtitle. Expected change is confined to the cards screen (and possibly a new confirm-dialog component); transfer screen and theme are owned by other tasks."
+}

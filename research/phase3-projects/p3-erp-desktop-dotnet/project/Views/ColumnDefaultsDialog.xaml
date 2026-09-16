@@ -1,0 +1,55 @@
+<Window x:Class="ErpClient.Views.ColumnDefaultsDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Column defaults"
+        Width="520" SizeToContent="Height" ResizeMode="NoResize" ShowInTaskbar="False"
+        WindowStartupLocation="CenterOwner"
+        Background="{DynamicResource Brush.Bg.Canvas}"
+        FontFamily="{StaticResource Font.UI}" FontSize="{StaticResource Font.Size.Body}"
+        Foreground="{DynamicResource Brush.Text.Primary}"
+        UseLayoutRounding="True" SnapsToDevicePixels="True"
+        TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType"
+        AutomationProperties.HelpText="Choose the warehouse new lines start with and which columns stay hidden. Enter applies, Escape cancels.">
+    <!-- Owned modal dialog (ShowDialog): title = heading, one primary action (OK, default), Cancel (Escape), focus lands on the first control and returns to the invoker. -->
+    <DockPanel Margin="{StaticResource Space.Dialog.Inset}">
+
+        <!-- Button row: secondary "Restore defaults" on the left, OK / Cancel on the right in Windows order -->
+        <Grid DockPanel.Dock="Bottom" Margin="0,20,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="RestoreButton" Style="{StaticResource Btn.Tool}" Content="_Restore defaults" Click="OnRestore" HorizontalAlignment="Left" Margin="0"
+                    ToolTip="Main warehouse, no hidden columns (the window-width rule still applies)"/>
+            <Button x:Name="OkButton" Grid.Column="1" Style="{StaticResource Btn.Primary}" Content="OK" IsDefault="True" Click="OnOk" MinWidth="88" ToolTip="Apply and remember these defaults (Enter)"/>
+            <Button x:Name="CancelButton" Grid.Column="2" Style="{StaticResource Btn.Tool}" Content="Cancel" IsCancel="True" MinWidth="88" Margin="0" ToolTip="Close without changes (Esc)"/>
+        </Grid>
+
+        <StackPanel>
+            <!-- Section 1: default warehouse (label above, help below) -->
+            <TextBlock Style="{StaticResource Text.Body}" FontWeight="SemiBold" Text="Default warehouse" Margin="0,0,0,4" x:Name="WarehouseLabel"/>
+            <ComboBox x:Name="WarehouseBox" Style="{StaticResource Input.Combo}" Width="240" HorizontalAlignment="Left"
+                      AutomationProperties.LabeledBy="{Binding ElementName=WarehouseLabel}"
+                      AutomationProperties.HelpText="Warehouse for lines added with Add line, Ins, or Enter on the last row"/>
+            <TextBlock Style="{StaticResource Text.Caption}" Margin="0,4,0,0" TextWrapping="Wrap"
+                       Text="Used for lines added with Add line, Ins, or Enter on the last row. Existing lines are not changed."/>
+
+            <!-- Section 2: hidden columns (checked = shown) -->
+            <TextBlock Style="{StaticResource Text.Body}" FontWeight="SemiBold" Text="Columns shown" Margin="0,20,0,4" x:Name="ColumnsLabel"/>
+            <TextBlock Style="{StaticResource Text.Caption}" Margin="0,0,0,8" TextWrapping="Wrap"
+                       Text="Unticked columns stay hidden at every window size. Item, Description, Quantity, Unit price, and Line total are always shown."/>
+            <ItemsControl x:Name="ColumnList" Focusable="False" AutomationProperties.LabeledBy="{Binding ElementName=ColumnsLabel}" KeyboardNavigation.TabNavigation="Continue">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate><UniformGrid Columns="2"/></ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <CheckBox Style="{StaticResource Check.Std}" Content="{Binding Label}" IsChecked="{Binding IsShown, Mode=TwoWay}" IsEnabled="{Binding CanHide}"
+                                  ToolTip="{Binding Hint}" AutomationProperties.HelpText="{Binding Hint}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+    </DockPanel>
+</Window>

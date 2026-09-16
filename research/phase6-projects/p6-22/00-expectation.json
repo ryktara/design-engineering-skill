@@ -1,0 +1,28 @@
+{
+  "platform": "desktop",
+  "artifact_state": "existing",
+  "acceptable_modes": ["refactor", "audit", "review", "polish"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "process.reuse_first",
+    "a11y.accessible_names",
+    "state.unsaved_changes_guard",
+    "layout.settings_grouping",
+    "desktop.spacing_grid",
+    "interaction.keyboard_navigation"
+  ],
+  "critical_concepts": [
+    "process.reuse_first",
+    "a11y.accessible_names",
+    "state.unsaved_changes_guard"
+  ],
+  "forbidden_concepts": [
+    "touch.minimum_target",
+    "tv.ten_foot_typography",
+    "adaptive.breakpoint_matrix",
+    "media.resume_playback",
+    "onboarding.linear_wizard"
+  ],
+  "preservation": ["navigation", "theme", "typography"],
+  "reviewer_note": "Premise check first: the Dispatch job form (Views/DispatchView.axaml) has NO driver field at all - fields are Title, Customer, Priority, Pickup, Drop-off, Assigned vehicle, Notes. Driver lives only on Models/Vehicle.cs and is shown only on the Vehicles screen. So nothing is literally asked twice; the real defect is that driver identity is implied by an opaque vehicle-id combo ('V-102'), forcing dispatchers to cross-reference the Vehicles grid and re-type the driver name into Notes. Correct fix: surface the driver as a DERIVED, read-only value next to Assigned vehicle (single source of truth on Vehicle), do NOT add an editable Driver field, and do not break the existing dirty/unsaved-changes guard or the ComboBox binding."
+}

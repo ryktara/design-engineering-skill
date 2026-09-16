@@ -1,0 +1,18 @@
+{
+  "platform": "desktop",
+  "artifact_state": "existing",
+  "acceptable_modes": ["responsive", "refactor", "polish"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "adaptive.breakpoint_matrix",
+    "table.column_priority",
+    "layout.spacing_scale",
+    "desktop.spacing_grid",
+    "process.safe_modification",
+    "content.readable_measure"
+  ],
+  "critical_concepts": ["adaptive.breakpoint_matrix", "table.column_priority"],
+  "forbidden_concepts": ["touch.minimum_target", "tv.safe_margins", "touch.safe_areas", "navigation.deep_link_state", "media.search_tv"],
+  "preservation": ["navigation", "theme", "typography"],
+  "reviewer_note": "Read before any advise command. The project (FleetDesk, Avalonia, MainWindow MinWidth=960) has NO map anywhere: VehiclesView.axaml is a DockPanel with a header row (title + checkbox + 280px filter TextBox + Clear), a bottom selection-summary Border and a DataGrid. grep -i map over the whole project returns only an unrelated README word. The sentence's premise ('vehicle map and the list fight for space') is therefore FALSE for this codebase. The real narrow-window contention is (a) the header Grid: column 0 title/summary vs column 1 a fixed 280px TextBox + checkbox + button, which collide well before MinWidth 960, and (b) the DataGrid, whose fixed columns total 90+110+140+140+130+140 = 750px plus a star Driver column, so Driver is crushed and a horizontal scrollbar appears when narrow. The skill cannot know the map is absent, so a bundle about width adaptation / column priority is the correct output; the project-adaptation layer is where the absence must be caught."
+}

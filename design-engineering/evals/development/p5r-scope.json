@@ -1,0 +1,63 @@
+{
+  "description": "Phase 5 real-project round c1 (2026-09-09): scope regressions written before the c2 fix. Sentences are verbatim task sentences or the agents' proposed variants. Root defect: sentences with no lexicon UI noun abstained ('no UI vocabulary found') although they describe user-facing behaviour.",
+  "suite": "scope",
+  "cases": [
+    {
+      "id": "p5r-scope-overdue-vehicles",
+      "query": "Dispatchers want to see which vehicles are overdue for service without opening each one.",
+      "expect_in_scope": true
+    },
+    {
+      "id": "p5r-scope-late-orders",
+      "query": "Ops wants to see which orders are late in the list without opening each one.",
+      "expect_in_scope": true
+    },
+    {
+      "id": "p5r-scope-waiting-board",
+      "query": "The waiting room board: nothing tells the front desk how long each patient has been sitting there.",
+      "expect_in_scope": true
+    },
+    {
+      "id": "p5r-scope-lose-edits",
+      "query": "Users lose their edits when they switch records in the settings page",
+      "expect_in_scope": true
+    },
+    {
+      "id": "p5r-scope-upload-spinner",
+      "query": "the upload spinner never says what is happening",
+      "expect_in_scope": true
+    },
+    {
+      "id": "p5r-scope-sync-spinner",
+      "query": "Sync status is a spinner that never says what is happening.",
+      "expect_in_scope": true
+    },
+    {
+      "id": "p5r-scope-po-lines",
+      "query": "Purchase-order lines: operators keep typing the quantity into the price column.",
+      "expect_in_scope": true
+    },
+    {
+      "id": "p5r-scope-thumbnails",
+      "query": "Photos attached to a defect report are tiny thumbnails you can't check in the field.",
+      "expect_in_scope": true
+    },
+    {
+      "id": "p5r-scope-kanban-drag",
+      "query": "Dragging cards between columns on the kanban board feels laggy and there is no way to do it from the keyboard.",
+      "expect_in_scope": true
+    },
+    {
+      "id": "p5r-scope-still-abstain-migration",
+      "query": "write the migration that adds the overdue_for_service column to the vehicles table",
+      "expect_in_scope": false,
+      "note": "the c2 vocabulary widening must not pull data work into scope"
+    },
+    {
+      "id": "p5r-scope-still-abstain-cron",
+      "query": "the nightly sync job never finishes because the worker lock is not released",
+      "expect_in_scope": false,
+      "note": "2026-09-09: corrected before implementation: the first wording ('spinner lock') mixed a UI word into a backend sentence by accident"
+    }
+  ]
+}

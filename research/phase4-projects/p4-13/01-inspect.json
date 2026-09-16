@@ -1,0 +1,121 @@
+{
+  "root": "D:\\indigo pro\\MYownSkills\\research\\phase3-projects\\p3-mobile-flutter-field\\project",
+  "findings": [
+    {
+      "status": "KNOWN",
+      "note": "pubspec.yaml: Flutter"
+    },
+    {
+      "status": "INFERRED",
+      "note": "DPAD / remote key handling found in source"
+    }
+  ],
+  "stack_groups": [
+    "flutter"
+  ],
+  "platforms": [
+    "mobile",
+    "tv"
+  ],
+  "ui_libraries": [
+    "go_router",
+    "riverpod"
+  ],
+  "package_manager": null,
+  "css_architecture": [],
+  "tokens": [
+    "design-tokens.json"
+  ],
+  "fonts": [],
+  "icons": [],
+  "routing": [],
+  "breakpoints": [],
+  "accessibility": [
+    "a11y attributes present in 7 files"
+  ],
+  "focus_handling": [
+    "explicit focus handling in 0 files",
+    "DPAD/remote/TV-focus handling in 1 files"
+  ],
+  "design_docs": [],
+  "component_dirs": [
+    "lib/widgets/ (5 files)"
+  ],
+  "tests": [],
+  "i18n": [],
+  "product_hints": [
+    "erp",
+    "iot"
+  ],
+  "sample": {
+    "files_scanned": 16
+  },
+  "design_context": {
+    "navigation": {
+      "value": "top-bar",
+      "status": "KNOWN",
+      "evidence": [
+        "top-bar: 2 matches in checklist_screen.dart, defect_report_screen.dart (shell/layout file)"
+      ],
+      "candidates": {
+        "top-bar": 2
+      }
+    },
+    "theme": {
+      "value": "dual-theme",
+      "default": "light",
+      "status": "KNOWN",
+      "evidence": [
+        "dark theme configuration signals: 4",
+        "light theme configuration signals: 1",
+        "hex palette: 13 near-white, 6 near-black",
+        "default polarity light (root canvas)"
+      ]
+    },
+    "surfaces": {
+      "value": "elevated",
+      "status": "INFERRED",
+      "evidence": [
+        "weak signal: shadow 1, border 0"
+      ]
+    },
+    "radius": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": []
+    },
+    "spacing": {
+      "value": 4,
+      "status": "INFERRED",
+      "evidence": [
+        "most used spacing values [12]"
+      ]
+    },
+    "typography": {
+      "value": "unknown",
+      "status": "UNKNOWN",
+      "evidence": [
+        "no font family declaration found"
+      ],
+      "features": {
+        "weights": [
+          "w600",
+          "w700",
+          "w400"
+        ],
+        "type_scale": true,
+        "monospace": false,
+        "tabular_numerals": false
+      }
+    },
+    "components": {
+      "value": "go_router, riverpod",
+      "status": "KNOWN",
+      "evidence": [
+        "go_router",
+        "riverpod"
+      ]
+    },
+    "schema": "design-context/v1"
+  }
+}

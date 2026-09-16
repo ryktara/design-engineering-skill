@@ -1,0 +1,1219 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "The stock adjustments grid shows 3,000 rows and scrolling is janky.",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "desktop"
+    ],
+    "input": [
+      "keyboard",
+      "pointer"
+    ],
+    "product": [
+      "erp",
+      "finance"
+    ],
+    "screen": [],
+    "screen_subtype": [
+      "data-grid"
+    ],
+    "stack": [
+      "winui"
+    ],
+    "density": "high",
+    "components": [],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "audit"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "interaction"
+      ],
+      "change_scope": "screen",
+      "utterance": "observation",
+      "existing": true,
+      "problem": true,
+      "facet": "interaction",
+      "diagnose_only": false,
+      "creation": false,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "audit: interaction defect on existing UI",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "left-rail",
+        "status": "KNOWN",
+        "evidence": [
+          "left-rail: 3 matches in MainWindow.xaml, OrdersPage.xaml (shell/layout file)",
+          "also menu-bar: 11 matches"
+        ]
+      },
+      "theme": {
+        "value": "dual-theme",
+        "status": "INFERRED",
+        "evidence": [
+          "dark theme configuration signals: 1",
+          "hex palette: 0 near-white, 0 near-black"
+        ]
+      },
+      "surfaces": {
+        "value": "bordered-flat",
+        "status": "INFERRED",
+        "evidence": [
+          "borders in 2 files, shadow/elevation in 0"
+        ]
+      },
+      "radius": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": []
+      },
+      "spacing": {
+        "value": 4,
+        "status": "INFERRED",
+        "evidence": [
+          "most used spacing values [16, 8, 12, 4, 2]"
+        ]
+      },
+      "typography": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": [
+          "no font family declaration found"
+        ]
+      },
+      "components": {
+        "value": "winui3, community-toolkit",
+        "status": "KNOWN",
+        "evidence": [
+          "winui3",
+          "community-toolkit"
+        ]
+      }
+    },
+    "known": [
+      "platform=desktop (project inspection)",
+      "product=erp (project inspection (README))",
+      "product=finance (project inspection (README))",
+      "stack=winui (project inspection)",
+      "project_navigation=left-rail (repository: left-rail: 3 matches in MainWindow.xaml, OrdersPage.xaml (shell/layout file); also menu-bar: 11 matches)",
+      "project_components=winui3, community-toolkit (repository: winui3; community-toolkit)"
+    ],
+    "inferred": [
+      "input=pointer (implied by platform desktop)",
+      "input=keyboard (implied by platform desktop)",
+      "density=high (implied by product erp)",
+      "mode=audit (interaction defect on existing UI)",
+      "mode=refactor (fix follows the diagnosis)",
+      "project_theme=dual-theme (repository: dark theme configuration signals: 1; hex palette: 0 near-white, 0 near-black)",
+      "project_surfaces=bordered-flat (repository: borders in 2 files, shadow/elevation in 0)",
+      "project_spacing=4 (repository: most used spacing values [16, 8, 12, 4, 2])"
+    ],
+    "missing": [],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [],
+      "project": [
+        "Erp.Client.csproj: Microsoft.WindowsAppSDK",
+        "Erp.Client.csproj: CommunityToolkit.WinUI"
+      ]
+    },
+    "activation": {
+      "decision": "ambiguous",
+      "ui_score": 1.0,
+      "non_ui_score": 0,
+      "ui_terms": [
+        "grid"
+      ],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "the stock adjustments grid"
+      ],
+      "new": [],
+      "defect": [
+        "observed behaviour"
+      ],
+      "operations": {},
+      "domains": {
+        "interaction": [
+          "scroll"
+        ]
+      },
+      "no_change": [],
+      "scope": {
+        "screen": [
+          "grid"
+        ]
+      },
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "grid",
+        "row",
+        "scroll",
+        "rows"
+      ],
+      "ux_symptoms": [
+        "janky",
+        "scrolling"
+      ],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "accessibility",
+        "reason": "audit mode"
+      },
+      {
+        "concern": "interaction",
+        "reason": "audit mode: operability is part of the review"
+      },
+      {
+        "concern": "component",
+        "reason": "the reviewed component/screen"
+      },
+      {
+        "concern": "data-display",
+        "reason": "numbers, tables or charts are the content"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "states",
+        "reason": "audits check empty/loading/error handling"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "audits name generic-design defects"
+      },
+      {
+        "concern": "feedback",
+        "reason": "audits check that actions are discoverable and confirmed"
+      }
+    ],
+    "optional": [
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "desktop keyboard-first",
+        "priority": 3,
+        "critical": false
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "desktop focus",
+        "priority": 3,
+        "critical": false
+      },
+      {
+        "concept": "table.tabular_figures",
+        "reason": "numeric data",
+        "priority": 1,
+        "critical": true
+      },
+      {
+        "concept": "table.selection_bulk",
+        "reason": "screen subtype data-grid",
+        "priority": 1,
+        "critical": true
+      },
+      {
+        "concept": "a11y.color_not_only",
+        "reason": "required by table.selection_bulk",
+        "priority": 2,
+        "critical": false
+      }
+    ],
+    "recommended_concepts": [
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "process.reuse_first",
+      "interaction.shortcuts",
+      "desktop.persist_workspace",
+      "desktop.fluent_materials",
+      "table.column_priority",
+      "table.virtualization",
+      "interaction.selection_visible",
+      "table.inline_edit",
+      "feedback.confirmation_destructive"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "comp-data-table",
+      "kind": "component",
+      "category": "table",
+      "title": "Data table / grid",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "data-display",
+        "structure"
+      ],
+      "concepts": [
+        "table.selection_bulk",
+        "table.inline_edit",
+        "table.virtualization",
+        "table.tabular_figures",
+        "data.pagination_strategy",
+        "interaction.selection_visible"
+      ],
+      "covers": [
+        "selection state and bulk actions",
+        "inline editing",
+        "virtualization of long collections",
+        "tabular figures and numeric alignment",
+        "pagination / load-more strategy",
+        "selected state visible and distinct from focus and hover"
+      ],
+      "score": 0.524,
+      "guidance": "Sticky header, row height by density token, zebra striping optional (prefer hover/selection highlight), column resize/reorder/visibility persisted, sort indicator with aria-sort, selection checkbox column with header select-all and a count, row actions visible on focus as well as hover, inline edit with Enter/Escape, keyboard grid navigation (arrows, Home/End, PageUp/Down), virtualised rows, loading skeleton rows, empty state inside the table body. Financial tables: see numeric rule.",
+      "use_when": "Homogeneous records with several comparable attributes; sorting, filtering, selection, bulk actions, inline editing.",
+      "avoid_when": "Fewer than ~10 rows (use a list), heterogeneous items (use cards/list), phone widths (convert to rows).",
+      "risk": {
+        "a11y": "high",
+        "perf": "high"
+      },
+      "provenance": "heuristic",
+      "implementation": {
+        "winui": "CommunityToolkit DataGrid (keyboard + UIA built in) or ItemsView; avoid ListView with a fake header row."
+      },
+      "incompatible": [
+        "layout-rails",
+        "surface-elevated-cards"
+      ],
+      "why": {
+        "lexical": 0.298,
+        "structural": 0.8,
+        "matched": [
+          "platform desktop",
+          "input keyboard,pointer",
+          "mode audit",
+          "product erp,finance",
+          "density high"
+        ]
+      },
+      "role": "core",
+      "selected_for": "critical concept (GENERIC): selection state and bulk actions, tabular figures and numeric alignment"
+    },
+    {
+      "id": "comp-data-entry-grid",
+      "kind": "component",
+      "category": "table",
+      "title": "Data-entry grid (spreadsheet-like)",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "data-display",
+        "interaction"
+      ],
+      "concepts": [
+        "table.inline_edit",
+        "interaction.keyboard_navigation"
+      ],
+      "covers": [
+        "inline editing",
+        "keyboard navigation and focus order"
+      ],
+      "score": 0.588,
+      "guidance": "Enter/Tab move predictably (configurable), F2 edits, Escape cancels, arrow keys move without editing, type-to-edit on a cell, lookup cells with a picker (F4), validation per cell with a visible marker and a summary, totals row, paste from spreadsheet, undo, row add via Enter on the last row, keyboard shortcuts documented in a help panel.",
+      "use_when": "Batch entry of many similar rows (invoice lines, journal entries, stock counts).",
+      "avoid_when": "Occasional single-record edits (use a form).",
+      "risk": {
+        "a11y": "high",
+        "perf": "high"
+      },
+      "provenance": "heuristic",
+      "implementation": {
+        "winui": "CommunityToolkit DataGrid editing + KeyboardAccelerator overrides."
+      },
+      "incompatible": [
+        "layout-single-column",
+        "nav-bottom-tabs"
+      ],
+      "why": {
+        "lexical": 0.415,
+        "structural": 0.8,
+        "matched": [
+          "platform desktop",
+          "input keyboard,pointer",
+          "mode audit",
+          "product erp,finance",
+          "density high"
+        ]
+      },
+      "role": "core",
+      "selected_for": "task evidence: subtype, lexical_strong"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "grid-single-tab-stop",
+      "kind": "rule",
+      "category": "table",
+      "title": "Grids with row actions are one Tab stop",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "data-display",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.keyboard_navigation",
+        "interaction.focus_visible",
+        "table.selection_bulk",
+        "interaction.selection_visible"
+      ],
+      "covers": [
+        "keyboard navigation and focus order",
+        "visible focus",
+        "selection state and bulk actions",
+        "selected state visible and distinct from focus and hover"
+      ],
+      "score": 0.599,
+      "guidance": "Tab enters the grid once and leaves it once; arrow keys move between cells/rows (roving tabindex or a focus manager), Enter/Space activates the focused cell's action, Escape returns from an edited cell to navigation mode; row actions become reachable when the row or actions cell is focused and are also available from a row context/actions menu; a table with 24 rows must never produce 24 Tab stops per action column. Announce the current row/column (aria-rowindex/colindex or the platform's automation properties) and keep a visible focus indicator on the active cell.",
+      "use_when": "Data tables or grids where each row has buttons/links (edit, delete, approve, download) and there are more than a handful of rows.",
+      "avoid_when": "Small static tables with no interactive cells.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "implementation": {
+        "winui": "DataGrid: KeyboardNavigation.TabNavigation=Once, cell focus via SelectionUnit=Cell; expose row actions in a CommandBarFlyout on Menu key / Shift+F10."
+      },
+      "why": {
+        "lexical": 0.5,
+        "structural": 0.72,
+        "matched": [
+          "platform desktop",
+          "input keyboard,pointer",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "most relevant record for the request wording"
+    },
+    {
+      "id": "data-exceptions-first",
+      "kind": "rule",
+      "category": "feedback",
+      "title": "Exceptions first: surface what needs attention in lists and tables",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "accessibility",
+        "data-display",
+        "feedback"
+      ],
+      "concepts": [
+        "data.exception_first",
+        "a11y.color_not_only",
+        "env.glanceable_status",
+        "table.tabular_figures"
+      ],
+      "covers": [
+        "exceptions and anomalies first",
+        "no colour alone for status",
+        "glanceable status",
+        "tabular figures and numeric alignment"
+      ],
+      "score": 0.317,
+      "guidance": "Compute the status in the model and show it as a column or badge with a word plus icon plus colour; sort or group exceptions first (or offer a one-tap 'only overdue' filter); show a count in the header/status bar; keep the row otherwise unchanged so scanning stays fast; state the rule that makes an item an exception (e.g. '> 90 days since service').",
+      "use_when": "Any collection where some items need action (overdue, late, failed, expiring, over budget) and the user should see them without opening each one.",
+      "avoid_when": "Never rely on colour alone for the status; never bury the exception state inside the detail view; never sort exceptions below normal rows by default.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.134,
+        "structural": 0.54,
+        "matched": [
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage (GENERIC): no colour alone for status"
+    },
+    {
+      "id": "table-column-disambiguation",
+      "kind": "rule",
+      "category": "table",
+      "title": "Editable grids: make the current column and its unit unmistakable",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "data-display"
+      ],
+      "concepts": [
+        "table.tabular_figures",
+        "table.inline_edit",
+        "feedback.validation_errors"
+      ],
+      "covers": [
+        "tabular figures and numeric alignment",
+        "inline editing",
+        "inline validation messages and error recovery"
+      ],
+      "score": 0.435,
+      "guidance": "Mark the active column in the header (bar + strong text); show the unit as an affix inside the editor (EA suffix for quantities, currency prefix for money); use role-distinct formats (integers for counts, fixed decimals for money, unit in the header); bracket money columns with a stronger divider; validate implausible values (a price typed as a quantity) inline before commit.",
+      "use_when": "Data-entry grids where adjacent numeric columns hold different roles (quantity vs price, hours vs rate) and operators type into the wrong one.",
+      "avoid_when": "Never format a count like money; never rely on header text alone; never leave the active column unmarked while typing.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.202,
+        "structural": 0.72,
+        "matched": [
+          "platform desktop",
+          "input keyboard,pointer",
+          "mode audit",
+          "product erp,finance"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "specialist rule for tabular figures and numeric alignment (only covered by a composite record)"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "data-display"
+    ],
+    "covered_required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "data-display"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "states",
+      "anti-pattern",
+      "feedback"
+    ],
+    "covered_recommended_concerns": [
+      "feedback"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "interaction.keyboard_navigation",
+      "interaction.focus_visible",
+      "table.tabular_figures",
+      "table.selection_bulk",
+      "a11y.color_not_only"
+    ],
+    "covered_required_concepts": [
+      "interaction.keyboard_navigation",
+      "interaction.focus_visible",
+      "table.tabular_figures",
+      "table.selection_bulk",
+      "a11y.color_not_only"
+    ],
+    "uncovered_required_concepts": [],
+    "critical_concepts": [
+      "table.selection_bulk",
+      "table.tabular_figures"
+    ],
+    "uncovered_critical_concepts": [],
+    "critical_coverage_ratio": 1.0,
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.27,
+    "not_surfaced": [
+      {
+        "concept": "a11y.accessible_names",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "a11y.contrast",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "process.reuse_first",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "interaction.shortcuts",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "desktop.persist_workspace",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "desktop.fluent_materials",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "table.column_priority",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "feedback.confirmation_destructive",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "states",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      }
+    ],
+    "bundle_size": 5,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 2,
+    "guardrail_size": 3,
+    "bundle_tokens": 1141,
+    "coverage_per_1k_tokens": 4.38,
+    "mean_purity": 0.8,
+    "mean_specificity": 2.2,
+    "quality_counts": {
+      "DIRECT": 1,
+      "SPECIFIC": 2,
+      "GENERIC": 2
+    },
+    "contaminated": [],
+    "category_diversity": 0.4,
+    "duplicate_pressure": 0.8,
+    "facet_coverage": 0.4,
+    "redundancy": 0.54,
+    "critical_trace": {
+      "covered": [
+        "table.tabular_figures",
+        "table.selection_bulk"
+      ],
+      "uncovered": [],
+      "carrier_quality": {
+        "table.tabular_figures": "DIRECT",
+        "table.selection_bulk": "SPECIFIC"
+      }
+    }
+  },
+  "token_coverage": 0.75,
+  "omitted": [],
+  "marginal": {
+    "comp-data-table": {
+      "new_critical": [
+        "table.selection_bulk",
+        "table.tabular_figures"
+      ],
+      "new_required": [],
+      "new_recommended": [
+        "interaction.selection_visible",
+        "table.inline_edit",
+        "table.virtualization"
+      ],
+      "new_concerns": [
+        "component",
+        "data-display",
+        "structure"
+      ],
+      "specificity": 3,
+      "evidence": [
+        "lexical_strong",
+        "lexical",
+        "subtype",
+        "explicit_demand"
+      ],
+      "quality": "GENERIC",
+      "contamination": 0.0,
+      "tokens": 328
+    },
+    "comp-data-entry-grid": {
+      "new_critical": [],
+      "new_required": [
+        "interaction.keyboard_navigation"
+      ],
+      "new_recommended": [],
+      "new_concerns": [
+        "interaction"
+      ],
+      "specificity": 2,
+      "evidence": [
+        "lexical_strong",
+        "lexical",
+        "subtype"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 178
+    },
+    "grid-single-tab-stop": {
+      "new_critical": [],
+      "new_required": [
+        "interaction.focus_visible"
+      ],
+      "new_recommended": [],
+      "new_concerns": [
+        "accessibility"
+      ],
+      "specificity": 3,
+      "evidence": [
+        "lexical_strong",
+        "lexical",
+        "subtype",
+        "explicit_demand"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 315
+    },
+    "data-exceptions-first": {
+      "new_critical": [],
+      "new_required": [
+        "a11y.color_not_only"
+      ],
+      "new_recommended": [],
+      "new_concerns": [
+        "feedback"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "lexical",
+        "explicit_demand"
+      ],
+      "quality": "GENERIC",
+      "contamination": 0.0,
+      "tokens": 161
+    },
+    "table-column-disambiguation": {
+      "new_critical": [],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [],
+      "specificity": 2,
+      "evidence": [
+        "lexical",
+        "subtype",
+        "explicit_demand"
+      ],
+      "quality": "DIRECT",
+      "contamination": 0.0,
+      "tokens": 159
+    }
+  },
+  "rejected": [
+    {
+      "id": "anti-hero-template",
+      "reason": "platform ['web'] not in request ['desktop']"
+    },
+    {
+      "id": "anti-desktop-scaled-to-tv",
+      "reason": "platform ['tv'] not in request ['desktop']"
+    },
+    {
+      "id": "anti-mobile-desktop-shrunk",
+      "reason": "platform ['mobile'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-media-card",
+      "reason": "platform ['mobile', 'tv', 'web'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-tv-rail",
+      "reason": "platform ['tv'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-epg",
+      "reason": "platform ['tablet', 'tv', 'web'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-list-row-mobile",
+      "reason": "platform ['mobile', 'tablet'] not in request ['desktop']"
+    },
+    {
+      "id": "comp-hero-section",
+      "reason": "platform ['mobile', 'web'] not in request ['desktop']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "interaction.keyboard_navigation",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 3,
+      "reason": "desktop keyboard-first",
+      "candidate_records": [
+        [
+          "grid-single-tab-stop",
+          0.599
+        ],
+        [
+          "comp-data-entry-grid",
+          0.588
+        ],
+        [
+          "desktop-keyboard-first",
+          0.387
+        ],
+        [
+          "interaction-drag-drop",
+          0.366
+        ]
+      ],
+      "selected_record": "grid-single-tab-stop",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.focus_visible",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 3,
+      "reason": "desktop focus",
+      "candidate_records": [
+        [
+          "grid-single-tab-stop",
+          0.599
+        ],
+        [
+          "desktop-keyboard-first",
+          0.387
+        ],
+        [
+          "a11y-focus-visible",
+          0.324
+        ],
+        [
+          "focus-ring-standard",
+          0.314
+        ]
+      ],
+      "selected_record": "grid-single-tab-stop",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "table.tabular_figures",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 1,
+      "reason": "numeric data",
+      "candidate_records": [
+        [
+          "comp-data-table",
+          0.524
+        ],
+        [
+          "layout-table-first",
+          0.5
+        ],
+        [
+          "table-column-disambiguation",
+          0.435
+        ],
+        [
+          "metadata-rich",
+          0.384
+        ]
+      ],
+      "selected_record": "comp-data-table",
+      "carrier_quality": "DIRECT",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "table.selection_bulk",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 1,
+      "reason": "screen subtype data-grid",
+      "candidate_records": [
+        [
+          "grid-single-tab-stop",
+          0.599
+        ],
+        [
+          "comp-data-table",
+          0.524
+        ],
+        [
+          "cta-toolbar-commands",
+          0.384
+        ],
+        [
+          "comp-plan-comparison",
+          0.176
+        ]
+      ],
+      "selected_record": "grid-single-tab-stop",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.color_not_only",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 2,
+      "reason": "required by table.selection_bulk",
+      "candidate_records": [
+        [
+          "chart-heatmap-matrix",
+          0.369
+        ],
+        [
+          "chart-realtime",
+          0.333
+        ],
+        [
+          "data-exceptions-first",
+          0.317
+        ],
+        [
+          "comp-chart-container",
+          0.297
+        ]
+      ],
+      "selected_record": "data-exceptions-first",
+      "carrier_quality": "GENERIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.accessible_names",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "a11y-native-semantics",
+          0.297
+        ],
+        [
+          "a11y-labels-names",
+          0.243
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "a11y.contrast",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "desktop-status-bar-and-error-navigation",
+          0.33
+        ],
+        [
+          "anti-fashion-over-usability",
+          0.255
+        ],
+        [
+          "a11y-contrast-text",
+          0.243
+        ],
+        [
+          "a11y-nontext-contrast",
+          0.243
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.207
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "interaction.shortcuts",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "desktop accelerators",
+      "candidate_records": [
+        [
+          "desktop-keyboard-first",
+          0.387
+        ],
+        [
+          "cta-toolbar-commands",
+          0.384
+        ],
+        [
+          "desktop-status-bar-and-error-navigation",
+          0.33
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "desktop.persist_workspace",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "desktop state persistence",
+      "candidate_records": [
+        [
+          "desktop-state-persistence",
+          0.333
+        ],
+        [
+          "desktop-status-bar-and-error-navigation",
+          0.33
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "desktop.fluent_materials",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "Windows stack",
+      "candidate_records": [
+        [
+          "desktop-fluent-materials",
+          0.288
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "table.column_priority",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "table on narrower widths",
+      "candidate_records": [
+        [
+          "desktop-window-resizing",
+          0.334
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "table.virtualization",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "large collections",
+      "candidate_records": [
+        [
+          "comp-data-table",
+          0.524
+        ],
+        [
+          "layout-table-first",
+          0.5
+        ],
+        [
+          "web-virtualize-long-lists",
+          0.452
+        ],
+        [
+          "comp-tree-view",
+          0.36
+        ]
+      ],
+      "selected_record": "comp-data-table",
+      "carrier_quality": "GENERIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.selection_visible",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "selectable rows",
+      "candidate_records": [
+        [
+          "grid-single-tab-stop",
+          0.599
+        ],
+        [
+          "comp-data-table",
+          0.524
+        ],
+        [
+          "color-states-complete",
+          0.262
+        ],
+        [
+          "a11y-color-not-only",
+          0.252
+        ]
+      ],
+      "selected_record": "grid-single-tab-stop",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "table.inline_edit",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "screen subtype data-grid",
+      "candidate_records": [
+        [
+          "comp-data-entry-grid",
+          0.588
+        ],
+        [
+          "comp-data-table",
+          0.524
+        ],
+        [
+          "table-column-disambiguation",
+          0.435
+        ]
+      ],
+      "selected_record": "comp-data-entry-grid",
+      "carrier_quality": "DIRECT",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "feedback.confirmation_destructive",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "sensitive domain",
+      "candidate_records": [
+        [
+          "states-persistence-and-session",
+          0.304
+        ],
+        [
+          "comp-settings-screen",
+          0.188
+        ],
+        [
+          "comp-dialog",
+          0.18
+        ],
+        [
+          "comp-plan-comparison",
+          0.176
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "description": "Phase 5 real-project round c1 (2026-09-09): task-intent and mode regressions written before the c2 fix.",
+  "suite": "mode",
+  "cases": [
+    {"id": "p5r-mode-add-habit-sheet", "query": "Make the Add Habit sheet work when the keyboard is up.", "expect_intent": {"artifact_state": "existing", "operations_any": ["modify"]}, "expect_primary_any": ["polish", "refactor", "responsive"], "forbid_primary": "create", "note": "'Add' inside the screen name 'Add Habit sheet' is not a create verb"},
+    {"id": "p5r-mode-new-order-dialog", "query": "the New Order dialog loses the customer when you tab away", "expect_intent": {"artifact_state": "existing"}, "forbid_primary": "create"},
+    {"id": "p5r-mode-dark-bars", "query": "Stats screen in dark mode: the bars are barely visible.", "expect_intent": {"artifact_state": "existing", "problem_domain_any": ["accessibility", "visual"]}, "expect_primary_any": ["accessibility", "polish", "audit"]},
+    {"id": "p5r-mode-sofa-selected", "query": "From the sofa nobody can tell which row is selected on the living-room screen.", "expect_intent": {"artifact_state": "existing", "problem_domain_any": ["accessibility", "visual", "interaction"]}, "expect_primary_any": ["accessibility", "audit", "polish", "refactor"]},
+    {"id": "p5r-mode-kiosk-timeout", "query": "Older customers time out on the identify step before they finish typing.", "expect_intent": {"artifact_state": "existing", "problem_domain_any": ["accessibility", "interaction"]}, "expect_primary_any": ["accessibility", "refactor", "audit"]},
+    {"id": "p5r-mode-po-lines", "query": "Purchase-order lines: operators keep typing the quantity into the price column.", "expect_intent": {"artifact_state": "existing", "operations_any": ["diagnose", "modify"], "problem_domain_any": ["interaction", "layout"]}},
+    {"id": "p5r-mode-unsaved-job", "query": "The dispatch job form lets you lose an unsaved job by clicking another one.", "expect_intent": {"artifact_state": "existing", "problem_domain_any": ["interaction"]}, "expect_primary_any": ["audit", "refactor"]},
+    {"id": "p5r-mode-sync-spinner", "query": "Sync status is a spinner that never says what is happening.", "expect_intent": {"artifact_state": "existing", "operations_any": ["diagnose", "modify"]}, "forbid_primary": "create"},
+    {"id": "p5r-mode-overdue-vehicles", "query": "Dispatchers want to see which vehicles are overdue for service without opening each one.", "expect_intent": {"artifact_state": "existing", "operations_any": ["modify"]}, "forbid_primary": "create"},
+    {"id": "p5r-mode-spanish-switch", "query": "Add a Spanish language switch to the pick-up flow.", "expect_intent": {"artifact_state": "existing", "operations_any": ["create", "modify"], "problem_domain_any": ["content"]}, "expect_primary_any": ["create", "refactor"]}
+  ]
+}

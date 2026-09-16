@@ -1,0 +1,179 @@
+{
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "tag": "final",
+  "before": {
+    "file": "before.html",
+    "label": "before",
+    "tabOrder": [
+      "A: Orders",
+      "A: Invoices",
+      "A: Inventory",
+      "A: Stock adjustments",
+      "BUTTON: ",
+      "BUTTON: ",
+      "INPUT: ",
+      "INPUT: ",
+      "SELECT: StatusDraftPendingPostedRejected",
+      "UL[listbox]: ADJ-10421PLT-0032Euro pallet, heat treat"
+    ],
+    "rowActionsReachable": {
+      "total": 24,
+      "visibleWithoutHover": 0,
+      "named": 0,
+      "minTarget": 20,
+      "reachedViaArrowRight": false,
+      "focusedAfterArrows": "UL: ADJ-10421PLT-0032Euro pallet, heat treat",
+      "pass": false
+    },
+    "focusVisible": {
+      "focusables": 10,
+      "withVisibleIndicator": 10,
+      "pass": true
+    },
+    "statusNotColourOnly": {
+      "rows": 8,
+      "withText": 0,
+      "withIcon": 0,
+      "withAccessibleName": 0,
+      "pass": false
+    },
+    "numericAlignment": {
+      "numericCells": 4,
+      "rightAligned": 1,
+      "tabularNums": 0,
+      "pass": false
+    },
+    "filterLabels": {
+      "inputs": 3,
+      "withVisibleOrAccessibleLabel": 0,
+      "pass": false
+    },
+    "emptyState": {
+      "present": false,
+      "pass": false
+    },
+    "reducedMotion": {
+      "transitionDuration": "0s",
+      "pass": true
+    },
+    "accessibleNames": {
+      "toolbarButtons": 2,
+      "withName": 0,
+      "pass": false
+    },
+    "headerReachable": {
+      "focused": "UL: ADJ-10421PLT-0032Euro pallet, heat treat",
+      "visibleFocus": true,
+      "pass": false
+    },
+    "horizontalOverflow": {
+      "scrollWidth": 1112,
+      "clientWidth": 1112,
+      "pass": true
+    },
+    "statusTruncated": {
+      "cells": 0,
+      "truncated": 0
+    },
+    "contrast": {
+      "text-1 on card": 17.22,
+      "text-2 on card": 6.19,
+      "caution on card": 5.25,
+      "success on card": 5.44,
+      "critical on card": 5.66,
+      "before: placeholder #8A8A8A on #FBFBFB": 3.34,
+      "before: orange dot on white": 1.97
+    }
+  },
+  "after": {
+    "file": "after.html",
+    "label": "after",
+    "tabOrder": [
+      "A: Orders",
+      "A: Invoices",
+      "A: Inventory",
+      "A: Stock adjustments",
+      "BUTTON: New adjustment (Ctrl+N)",
+      "BUTTON: Approve selected (Ctrl+Shift+A)",
+      "BUTTON: Reject selected (Ctrl+Shift+R)",
+      "BUTTON: Refresh (F5)",
+      "INPUT: Search (Ctrl+F)",
+      "INPUT: ",
+      "SELECT: Any statusDraftPending approvalPostedRej",
+      "TR[row]: Pending\n      ADJ-10421PLT-0032Euro pal"
+    ],
+    "rowActionsReachable": {
+      "total": 24,
+      "visibleWithoutHover": 24,
+      "named": 24,
+      "minTarget": 28,
+      "reachedViaArrowRight": true,
+      "focusedAfterArrows": "BUTTON: Edit ADJ-10420",
+      "pass": true
+    },
+    "focusVisible": {
+      "focusables": 12,
+      "withVisibleIndicator": 12,
+      "pass": true
+    },
+    "statusNotColourOnly": {
+      "rows": 8,
+      "withText": 8,
+      "withIcon": 8,
+      "withAccessibleName": 8,
+      "pass": true
+    },
+    "numericAlignment": {
+      "numericCells": 4,
+      "rightAligned": 4,
+      "tabularNums": 4,
+      "pass": true
+    },
+    "filterLabels": {
+      "inputs": 3,
+      "withVisibleOrAccessibleLabel": 3,
+      "pass": true
+    },
+    "emptyState": {
+      "present": true,
+      "heading": "No stock adjustments yet",
+      "action": "New adjustment",
+      "pass": true
+    },
+    "reducedMotion": {
+      "transitionDuration": "0s",
+      "pass": true
+    },
+    "accessibleNames": {
+      "toolbarButtons": 4,
+      "withName": 4,
+      "pass": true
+    },
+    "headerReachable": {
+      "focused": "BUTTON: Status",
+      "visibleFocus": true,
+      "pass": true
+    },
+    "horizontalOverflow": {
+      "scrollWidth": 1086,
+      "clientWidth": 1086,
+      "pass": true
+    },
+    "statusTruncated": {
+      "cells": 8,
+      "truncated": 0
+    },
+    "contrast": {
+      "text-1 on card": 17.22,
+      "text-2 on card": 6.19,
+      "caution on card": 5.25,
+      "success on card": 5.44,
+      "critical on card": 5.66,
+      "before: placeholder #8A8A8A on #FBFBFB": 3.34,
+      "before: orange dot on white": 1.97
+    }
+  }
+}

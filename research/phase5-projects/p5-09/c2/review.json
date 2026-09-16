@@ -1,0 +1,25 @@
+{
+  "task": "p5-09",
+  "reviewer_model": "claude-opus-5[1m]",
+  "c2_records": [
+    {"id": "comp-tv-rail", "verdict": "relevant", "bad_category": null},
+    {"id": "tv-dpad-hold-pacing", "verdict": "relevant", "bad_category": null},
+    {"id": "tv-typography-distance", "verdict": "partial", "bad_category": null},
+    {"id": "layout-states-empty-loading-error", "verdict": "off-target", "bad_category": "generic"},
+    {"id": "tv-dark-first", "verdict": "off-target", "bad_category": "generic"},
+    {"id": "shared-device-privacy", "verdict": "off-target", "bad_category": "generic"}
+  ],
+  "c2_relevant": 2,
+  "c2_partial": 1,
+  "c2_offtarget": 3,
+  "c2_bad": [
+    {"record": "layout-states-empty-loading-error", "category": "generic", "why": "Empty/loading/error state design has no bearing on D-pad key-repeat pacing on a populated rail; pulled in only for 'recommended coverage' of states."},
+    {"record": "tv-dark-first", "category": "generic", "why": "Palette guardrail on an app the inspect step already recorded as dark-first (darkColorScheme only); restates the existing system and says nothing about the defect."},
+    {"record": "shared-device-privacy", "category": "generic", "why": "PIN gating, masking balances/medication/addresses and idle session clearing are irrelevant to a sports-rail scroll-speed bug; selected purely from the inferred environment=shared-device."}
+  ],
+  "c2_direction_unjustified": [],
+  "platform_mode_scope_ok": true,
+  "verdict_vs_c1": "better",
+  "why": "c2 adds tv-dpad-hold-pacing, which carries the exact fix (first press immediate, ~3-5 cards/s while held, finish each scroll step, keep the focused card at a stable position, same pace under reduced motion) that c1 lacked entirely, and it drops the three worst c1 picks (dir-broadcast-guide-tv, comp-mini-player, and the card-poster-portrait / metadata-focus-reveal direction slots that contradicted the 16:9 cards and would have hidden the very titles the user wants to read).",
+  "would_have_helped": "helped"
+}

@@ -1,0 +1,6 @@
+{"platform": "web", "artifact_state": "existing", "acceptable_modes": ["refactor", "polish", "create"], "scope_kind": "in-scope",
+ "expected_concepts": ["data.filter_chips", "navigation.deep_link_state", "a11y.live_status", "state.loading_empty_error", "data.pagination_strategy", "interaction.keyboard_navigation", "process.reuse_first"],
+ "critical_concepts": ["data.filter_chips", "a11y.live_status"],
+ "forbidden_concepts": ["table.virtualization", "table.selection_bulk", "tv.ten_foot_typography", "touch.ime_keyboard", "anti.template_landing", "brand.structural_differentiation", "brand.dark_mode_redesign"],
+ "preservation": ["navigation", "theme", "typography", "existing facet chips / applied row / count / sort / URL state"],
+ "reviewer_note": "products.html already has category/price/feature facets, applied chips, live count, sort, URL state, empty state, phone disclosure. Catalog is 12 static cards. 'What fits them' = no size/fit facet; product.html sells sizes XS-XXL. Expected fix: add a Size facet (OR within facet, AND across facets) wired into the existing chip/count/URL/applied machinery; optionally a load-more strategy for 120 products."}

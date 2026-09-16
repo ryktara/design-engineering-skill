@@ -1,0 +1,88 @@
+{
+  "task": "p6-04",
+  "project": "p3-ecommerce-web",
+  "platform_expected": "web",
+  "platform_resolved": "web",
+  "platform_correct": "yes",
+  "stack": "html-css (plain HTML/CSS/JS, no framework)",
+  "existing_ui": true,
+  "new_screen": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": ["refactor", "polish"],
+  "mode_resolved": ["audit", "refactor"],
+  "mode_correct": "acceptable",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "moderate",
+  "render_mode": "html",
+  "screenshots": [
+    "render/first-desktop-cart.png", "render/first-desktop-removed.png", "render/first-desktop-undone.png",
+    "render/first-phone-cart.png", "render/first-phone-removed.png", "render/first-phone-undone.png",
+    "render/final-desktop-cart.png", "render/final-desktop-removed.png", "render/final-desktop-undone.png",
+    "render/final-phone-cart.png", "render/final-phone-removed.png", "render/final-phone-undone.png"
+  ],
+  "context_detection": {"navigation": "yes", "theme": "yes", "typography": "yes", "surfaces": "no", "spacing": "partial"},
+  "preservation": {"navigation": true, "theme": true, "typography": true, "component_reuse": true, "unjustified_structural_change": 0},
+  "expected_concepts": ["feedback.confirmation_destructive", "a11y.live_status", "a11y.accessible_names", "interaction.focus_restore", "touch.minimum_target", "a11y.dialog_focus"],
+  "critical_concepts": ["feedback.confirmation_destructive", "a11y.live_status"],
+  "delivered_concepts": ["content.readable_measure", "data.exception_first", "feedback.confirmation_destructive", "feedback.trust_signals", "feedback.validation_errors", "layout.focal_hierarchy", "layout.one_primary_action", "state.loading_empty_error", "state.saving_conflict", "touch.ime_keyboard", "touch.safe_areas", "touch.thumb_reach"],
+  "concept_recall": 0.17,
+  "critical_recall": 0.5,
+  "concept_misses": [
+    {"concept": "a11y.live_status", "layer": "expected-concepts"},
+    {"concept": "a11y.accessible_names", "layer": "bundle-selection"},
+    {"concept": "touch.minimum_target", "layer": "bundle-selection"},
+    {"concept": "interaction.focus_restore", "layer": "expected-concepts"},
+    {"concept": "a11y.dialog_focus", "layer": "expected-concepts"}
+  ],
+  "first_render_defects": {"visual": 1, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 1},
+  "final_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+  "iterations": 1,
+  "guidance_relevant": 1,
+  "guidance_partial": 1,
+  "guidance_offtarget": 3,
+  "layer_review": {
+    "core": ["comp-checkout-one-page", "cta-sticky-bar"],
+    "critical": ["layout-states-empty-loading-error", "layout-hierarchy-one-thing", "ecommerce-delivery-promise"],
+    "optional": [],
+    "optional_useful": 0,
+    "optional_noise": 0
+  },
+  "bad_guidance": [
+    {"record": "comp-checkout-one-page", "category": "generic", "why": "whole-checkout composite; carries feedback.confirmation_destructive as a token but its text never mentions line removal, undo, or a safe default"},
+    {"record": "cta-sticky-bar", "category": "wrong-screen", "why": "the sticky pay bar already exists and is not what the sentence is about"},
+    {"record": "ecommerce-delivery-promise", "category": "wrong-screen", "why": "delivery window and returns copy next to the price; unrelated to accidental removal"},
+    {"record": "layout-hierarchy-one-thing", "category": "generic", "why": "true in general, contributed nothing to this change"},
+    {"record": "<bundle>", "category": "missing-critical", "why": "pre-registered critical concept a11y.live_status absent; comp-toast-notification (undo + polite live region) exists in the base and never became a candidate"}
+  ],
+  "skill_effect": "helped",
+  "guidance_used": ["layout-states-empty-loading-error", "comp-checkout-one-page"],
+  "guidance_ignored": [
+    {"id": "cta-sticky-bar", "why": "already implemented in the codebase; not the task"},
+    {"id": "ecommerce-delivery-promise", "why": "wrong screen for this change"},
+    {"id": "layout-hierarchy-one-thing", "why": "no hierarchy change was justified at a moderate budget"},
+    {"id": "direction:surface", "why": "'elevated cards' contradicts a border-first system"},
+    {"id": "direction:typography", "why": "suggests choosing a new typeface in a slot marked preserved"}
+  ],
+  "unjustified_direction_slots": 0,
+  "process_records_needed": false,
+  "guidance_tokens": 778,
+  "misses": [
+    {"layer": "requirements", "what": "intent.problem_domain empty for a sentence that explicitly describes an accidental destructive action"},
+    {"layer": "expected-concepts", "what": "a11y.live_status / interaction.focus_restore never demanded, so comp-toast-notification never entered retrieval"},
+    {"layer": "bundle-selection", "what": "a11y.accessible_names and touch.minimum_target had candidates and were dropped in favour of cta-sticky-bar and ecommerce-delivery-promise"},
+    {"layer": "project-context", "what": "surfaces=elevated and radius=pill confidently wrong against a border-first, 4/8px-radius token system"}
+  ],
+  "knowledge_gaps": [],
+  "regressions": [
+    {"query": "The cart page: removing an item happens instantly and people do it by accident.", "expect": "a11y.live_status and feedback.confirmation_destructive required; comp-toast-notification (undo + polite live region) in the bundle"},
+    {"query": "delete a saved address from the account page with no way to get it back", "expect": "an undo/confirm record rather than a whole-screen composite"},
+    {"query": "inspect p3-ecommerce-web", "expect": "radius medium (4/8px semantic tokens) and surfaces bordered/flat, not pill/elevated"}
+  ],
+  "tags": ["concept-miss", "ranking-miss", "requirements-miss", "context-detection-miss", "render-defect-fixed", "skill-helped", "preservation-ok", "partial-scope-ok"],
+  "build_hash_start": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947",
+  "build_hash_end": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947"
+}

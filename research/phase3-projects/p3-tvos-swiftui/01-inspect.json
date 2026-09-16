@@ -1,0 +1,49 @@
+{
+  "root": "D:\\indigo pro\\MYownSkills\\research\\phase3-projects\\p3-tvos-swiftui\\project",
+  "findings": [
+    {
+      "status": "KNOWN",
+      "note": "Package.swift: Apple project"
+    },
+    {
+      "status": "KNOWN",
+      "note": "Package.swift: tvOS target"
+    },
+    {
+      "status": "INFERRED",
+      "note": "DPAD / remote key handling found in source"
+    }
+  ],
+  "stack_groups": [
+    "swiftui"
+  ],
+  "platforms": [
+    "mobile",
+    "tv"
+  ],
+  "ui_libraries": [],
+  "package_manager": null,
+  "css_architecture": [],
+  "tokens": [],
+  "fonts": [],
+  "icons": [],
+  "routing": [],
+  "breakpoints": [],
+  "accessibility": [
+    "a11y attributes present in 4 files"
+  ],
+  "focus_handling": [
+    "explicit focus handling in 5 files",
+    "DPAD/remote/TV-focus handling in 4 files"
+  ],
+  "design_docs": [],
+  "component_dirs": [],
+  "tests": [],
+  "i18n": [],
+  "product_hints": [
+    "media"
+  ],
+  "sample": {
+    "files_scanned": 17
+  }
+}

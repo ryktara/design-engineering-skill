@@ -1,0 +1,105 @@
+{
+  "task": "p6-26",
+  "project": "p3-tvos-swiftui",
+  "platform_expected": "tv",
+  "platform_resolved": "tv",
+  "platform_correct": "yes",
+  "stack": "swiftui (tvOS, SwiftPM)",
+  "existing_ui": true,
+  "new_screen": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": ["polish", "refactor", "accessibility"],
+  "mode_resolved": ["polish", "responsive", "audit"],
+  "mode_correct": "acceptable",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "low",
+  "render_mode": "html-twin",
+  "screenshots": [
+    "render/first-01-search-rails.png",
+    "render/first-02-long-titles-focused.png",
+    "render/first-03-long-titles-focus-3rd.png",
+    "render/final-01-search-rails.png",
+    "render/final-02-long-titles-focused.png",
+    "render/final-03-long-titles-focus-3rd.png",
+    "render/final-04-episodes-rail-scrolled.png",
+    "render/evidence-before-long-titles.png"
+  ],
+  "context_detection": {
+    "navigation": "yes",
+    "theme": "yes",
+    "typography": "partial",
+    "surfaces": "partial",
+    "spacing": "partial"
+  },
+  "preservation": {
+    "navigation": true,
+    "theme": true,
+    "typography": true,
+    "component_reuse": true,
+    "unjustified_structural_change": 0
+  },
+  "expected_concepts": ["tv.ten_foot_typography", "layout.media_card", "perf.layout_shift", "content.i18n_expansion", "a11y.accessible_names", "tv.no_touch_hover"],
+  "critical_concepts": ["tv.ten_foot_typography", "layout.media_card", "perf.layout_shift"],
+  "delivered_concepts": ["a11y.accessible_names", "data.exception_first", "interaction.back_semantics", "interaction.dpad_reachability", "interaction.focus_restore", "interaction.focus_visible", "interaction.selection_visible", "layout.focal_hierarchy", "layout.media_card", "layout.one_primary_action", "layout.spacing_scale", "process.reuse_first", "state.loading_empty_error", "tv.safe_margins", "tv.ten_foot_typography"],
+  "concept_recall": 0.5,
+  "critical_recall": 0.667,
+  "concept_misses": [
+    {"concept": "perf.layout_shift", "layer": "expected-concepts"},
+    {"concept": "content.i18n_expansion", "layer": "expected-concepts"},
+    {"concept": "tv.no_touch_hover", "layer": "bundle-selection"}
+  ],
+  "first_render_defects": {"visual": 2, "interaction": 0, "accessibility": 0, "platform": 1, "existing-system-mismatch": 0, "implementation-bug": 1},
+  "final_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+  "iterations": 2,
+  "guidance_relevant": 2,
+  "guidance_partial": 3,
+  "guidance_offtarget": 3,
+  "bad_guidance": [
+    {"record": "comp-mini-player", "category": "wrong-screen", "why": "the task is the search poster rails; the record specifies a picture-in-picture mini player, a screen this app does not have. Its one useful sentence ('full title on focus') is incidental."},
+    {"record": "color-states-complete", "category": "generic", "why": "no colour-state work in a text-truncation fix; the project already defines focus/pressed/selected fills."},
+    {"record": "layout-hierarchy-one-thing", "category": "generic", "why": "screen-level hierarchy advice; says nothing about a truncated caption."},
+    {"record": "tv-dpad-axes", "category": "generic", "why": "true for the app and already satisfied (.focusSection per rail); the change touches no traversal."},
+    {"record": "layout-spacing-scale", "category": "generic", "why": "the project already has LumenSpace; the record adds nothing task-specific."},
+    {"record": "impl-reuse-before-new", "category": "generic", "why": "SKILL.md §2 already says this; it took one of eight bundle slots."},
+    {"record": "<bundle>", "category": "missing-critical", "why": "perf.layout_shift is absent. Reserving the second title line so a focus change does not move the subtitle or the rail below is the single hardest constraint of this fix and nothing in the bundle mentions it; I hit the defect at first render."}
+  ],
+  "layer_review": {
+    "core": ["comp-media-card", "comp-mini-player"],
+    "critical": ["impl-reuse-before-new", "tv-typography-distance", "tv-dpad-axes", "color-states-complete", "layout-spacing-scale", "layout-hierarchy-one-thing"],
+    "optional": [],
+    "optional_useful": 0,
+    "optional_noise": 0
+  },
+  "guidance_used": ["comp-media-card", "tv-typography-distance", "comp-mini-player"],
+  "guidance_ignored": [
+    {"id": "tv-dpad-axes", "why": "already satisfied by the existing .focusSection rails; nothing to change"},
+    {"id": "color-states-complete", "why": "no colour or state token work in this change"},
+    {"id": "layout-hierarchy-one-thing", "why": "screen-level, not applicable to a caption fix"},
+    {"id": "layout-spacing-scale", "why": "LumenSpace already is that scale; reused it"},
+    {"id": "impl-reuse-before-new", "why": "followed, but from SKILL.md §2 rather than from the bundle"}
+  ],
+  "unjustified_direction_slots": 2,
+  "process_records_needed": false,
+  "skill_effect": "helped",
+  "guidance_tokens": 1219,
+  "misses": [
+    {"layer": "mode", "what": "mode includes 'responsive' on a fixed 1920x1080 tvOS app; 'cut off' was read as a viewport cue. Harmless here but wrong."},
+    {"layer": "expected-concepts", "what": "perf.layout_shift was never demanded for a focus-reveal task on a rail — the one constraint that decides whether the fix is correct."},
+    {"layer": "bundle-selection", "what": "tv.no_touch_hover had a candidate (tv-no-touch-hover) and was dropped at the cap; it is the reason 'reveal on focus' is the only available mechanism on TV."},
+    {"layer": "direction", "what": "cards slot changed to 'Portrait poster cards (2:3)' on a low budget against a codebase whose rail cards are fixed 400x225 16:9; the fingerprint in the same file says card_geometry=poster-landscape."},
+    {"layer": "project-context", "what": "inspect reported tokens=[] and spacing UNKNOWN/'irregular' although Theme/Tokens.swift defines LumenColor/LumenFont/LumenSpace/LumenFocus explicitly; components UNKNOWN although Sources/LumenTV/Components exists."}
+  ],
+  "knowledge_gaps": [],
+  "regressions": [
+    {"query": "Titles on the poster rows are cut off and there is no way to read the full name.", "expect": "the bundle carries perf.layout_shift (reserve the expanded height so a focus change does not move the rail) and tv.no_touch_hover (no hover/tooltip on TV: the focused item is the only place to reveal a longer string)"},
+    {"query": "Titles on the poster rows are cut off and there is no way to read the full name.", "expect": "direction does not introduce a new card geometry (portrait 2:3) on an existing TV codebase at change budget 'low'; cards stays 'preserved'"},
+    {"query": "The episode name in the rail is truncated on tvOS", "expect": "no picture-in-picture / mini-player record in CORE"}
+  ],
+  "tags": ["skill-helped", "mode-miss", "concept-miss", "ranking-miss", "direction-mismatch", "context-detection-miss", "render-defect-fixed", "preservation-ok"],
+  "build_hash_start": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947",
+  "build_hash_end": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947"
+}

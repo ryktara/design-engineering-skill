@@ -1,0 +1,28 @@
+{
+  "platform": "mobile",
+  "artifact_state": "existing",
+  "acceptable_modes": ["create", "refactor", "polish"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "state.loading_empty_error",
+    "layout.one_primary_action",
+    "a11y.accessible_names",
+    "touch.minimum_target",
+    "process.reuse_first",
+    "layout.focal_hierarchy"
+  ],
+  "critical_concepts": [
+    "state.loading_empty_error",
+    "layout.one_primary_action"
+  ],
+  "forbidden_concepts": [
+    "tv.ten_foot_typography",
+    "interaction.dpad_reachability",
+    "desktop.spacing_grid",
+    "data.chart_by_question",
+    "adaptive.breakpoint_matrix",
+    "anti.template_landing"
+  ],
+  "preservation": ["navigation", "theme", "typography"],
+  "note": "HabitsView is an existing SwiftUI List with Active/Archived sections; with zero habits the List renders only an 'Active' header and blank rows. Expect an empty state with an explanatory line and a primary 'Add habit' action reusing PrimaryButton + Theme tokens; tab bar, nav title 'Habits', toolbar + button must be preserved."
+}

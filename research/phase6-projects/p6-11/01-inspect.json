@@ -1,0 +1,123 @@
+{
+  "root": "D:\\indigo pro\\MYownSkills\\research\\phase3-projects\\p3-mobile-flutter-field\\project",
+  "findings": [
+    {
+      "status": "KNOWN",
+      "note": "pubspec.yaml: Flutter"
+    }
+  ],
+  "stack_groups": [
+    "flutter"
+  ],
+  "platforms": [
+    "mobile"
+  ],
+  "ui_libraries": [
+    "go_router",
+    "riverpod"
+  ],
+  "package_manager": null,
+  "css_architecture": [],
+  "tokens": [
+    "design-tokens.json"
+  ],
+  "fonts": [],
+  "icons": [],
+  "routing": [],
+  "breakpoints": [],
+  "accessibility": [
+    "a11y attributes present in 8 files"
+  ],
+  "focus_handling": [
+    "explicit focus handling in 0 files"
+  ],
+  "design_docs": [],
+  "component_dirs": [
+    "lib/widgets/ (5 files)"
+  ],
+  "tests": [],
+  "i18n": [],
+  "product_hints": [
+    "iot"
+  ],
+  "environment_hints": [
+    "outdoor",
+    "gloves",
+    "low-bandwidth"
+  ],
+  "sample": {
+    "files_scanned": 18
+  },
+  "design_context": {
+    "navigation": {
+      "value": "top-bar",
+      "status": "KNOWN",
+      "evidence": [
+        "top-bar: 6 matches in checklist_screen.dart, defect_report_screen.dart, settings_screen.dart (shell/layout file)"
+      ],
+      "candidates": {
+        "top-bar": 6
+      }
+    },
+    "theme": {
+      "value": "dual-theme",
+      "default": "light",
+      "status": "KNOWN",
+      "evidence": [
+        "dark theme configuration signals: 5",
+        "light theme configuration signals: 2",
+        "hex palette: 13 near-white, 6 near-black",
+        "default polarity light (root canvas)"
+      ]
+    },
+    "surfaces": {
+      "value": "flat-tonal",
+      "status": "UNKNOWN",
+      "evidence": [
+        "no shadow or border declarations found"
+      ]
+    },
+    "radius": {
+      "value": "small",
+      "status": "INFERRED",
+      "evidence": [
+        "most common radius 4 (1\u00d7); others []"
+      ]
+    },
+    "spacing": {
+      "value": "irregular",
+      "status": "UNKNOWN",
+      "evidence": [
+        "most used spacing values [2, 12]"
+      ]
+    },
+    "typography": {
+      "value": "custom",
+      "status": "KNOWN",
+      "evidence": [
+        "font family System (7 refs)",
+        "weights w600, w700, w400",
+        "encoded type scale in 2 files"
+      ],
+      "features": {
+        "weights": [
+          "w600",
+          "w700",
+          "w400"
+        ],
+        "type_scale": true,
+        "monospace": false,
+        "tabular_numerals": false
+      }
+    },
+    "components": {
+      "value": "go_router, riverpod",
+      "status": "KNOWN",
+      "evidence": [
+        "go_router",
+        "riverpod"
+      ]
+    },
+    "schema": "design-context/v1"
+  }
+}

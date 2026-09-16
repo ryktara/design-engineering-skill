@@ -1,0 +1,5220 @@
+{
+ "description": "HELD-OUT set. Generated 2026-09-08 by an independent Claude subagent that saw only the requirement taxonomy labels (platforms/modes/inputs/screens/negatives/missing) and NO knowledge records, lexicon, or existing eval cases. Expectations are label sets and concept phrases matched against returned text, never record ids. Frozen for Phase 2: not used for tuning retrieval weights, lexicon entries, or records. Invalid cases are moved to archive.json with a reason, never rewritten.",
+ "generated": "2026-09-08",
+ "method": "independent-subagent-from-taxonomy-only",
+ "cases": [
+  {
+   "id": "ho-001",
+   "query": "Build a public outage map page for our electricity utility's website, people check it on phones during storms.",
+   "expect": {
+    "platforms": [
+     "web",
+     "mobile"
+    ],
+    "modes": [
+     "create",
+     "responsive"
+    ],
+    "inputs": [
+     "touch",
+     "pointer"
+    ],
+    "screens": [
+     "landing",
+     "search"
+    ],
+    "negatives": [],
+    "concepts": [
+     "mobile-first layout",
+     "address search",
+     "status legend",
+     "low bandwidth",
+     "last updated timestamp",
+     "high contrast outdoors"
+    ],
+    "offtarget": [
+     "dpad focus",
+     "hover-only tooltips",
+     "marketing hero"
+    ],
+    "missing": [
+     "stack",
+     "brand"
+    ]
+   },
+   "category": "web"
+  },
+  {
+   "id": "ho-002",
+   "query": "our city council site has a 'report a pothole' page thats a mess, redo the layout",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "refactor",
+     "polish"
+    ],
+    "inputs": [
+     "pointer",
+     "touch"
+    ],
+    "screens": [
+     "form"
+    ],
+    "negatives": [],
+    "concepts": [
+     "single column form",
+     "inspect existing markup first",
+     "location picker",
+     "photo upload",
+     "clear submission confirmation",
+     "plain language labels"
+    ],
+    "offtarget": [
+     "sidebar navigation redesign",
+     "remote focus",
+     "gradient hero"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "web"
+  },
+  {
+   "id": "ho-003",
+   "query": "Website for a regional bus operator: timetable page. Keep it plain HTML/CSS, no JS frameworks.",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "pointer",
+     "touch"
+    ],
+    "screens": [
+     "list",
+     "search"
+    ],
+    "negatives": [
+     "dependencies"
+    ],
+    "concepts": [
+     "semantic table markup",
+     "route and stop filter",
+     "tabular figures",
+     "print stylesheet",
+     "responsive table strategy",
+     "progressive enhancement"
+    ],
+    "offtarget": [
+     "react component library",
+     "install tailwind",
+     "tv rails"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "web"
+  },
+  {
+   "id": "ho-004",
+   "query": "Refresh the header and footer of our school district site so it works on the old Chromebooks the teachers use",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "refactor",
+     "polish"
+    ],
+    "inputs": [
+     "pointer",
+     "keyboard"
+    ],
+    "screens": [],
+    "negatives": [],
+    "concepts": [
+     "skip link",
+     "landmark regions",
+     "performance budget",
+     "keyboard operable menu",
+     "browser support baseline",
+     "touchpad friendly targets"
+    ],
+    "offtarget": [
+     "heavy animation library",
+     "webgl background",
+     "dpad navigation"
+    ],
+    "missing": [
+     "stack",
+     "brand"
+    ]
+   },
+   "category": "web"
+  },
+  {
+   "id": "ho-005",
+   "query": "iPhone app for a parcel courier: the driver's stop list screen. Drivers wear gloves in winter.",
+   "expect": {
+    "platforms": [
+     "mobile"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [
+     "list"
+    ],
+    "negatives": [],
+    "concepts": [
+     "large touch targets",
+     "one-handed reach",
+     "swipe actions with confirmation",
+     "glanceable status",
+     "offline state",
+     "safe area insets"
+    ],
+    "offtarget": [
+     "hover states",
+     "sidebar",
+     "dense desktop grid"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "mobile"
+  },
+  {
+   "id": "ho-006",
+   "query": "Android app, pharmacy chain. Prescription refill flow feels clunky, can you audit it?",
+   "expect": {
+    "platforms": [
+     "mobile"
+    ],
+    "modes": [
+     "audit"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [
+     "form",
+     "detail"
+    ],
+    "negatives": [],
+    "concepts": [
+     "step count reduction",
+     "material guidelines",
+     "back stack behaviour",
+     "error recovery",
+     "bottom sheet",
+     "readable body text size"
+    ],
+    "offtarget": [
+     "hover",
+     "keyboard shortcuts",
+     "tv focus ring"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "mobile"
+  },
+  {
+   "id": "ho-007",
+   "query": "React Native banking app – redesign the account overview so balances are readable at a glance",
+   "expect": {
+    "platforms": [
+     "mobile"
+    ],
+    "modes": [
+     "polish",
+     "refactor"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [
+     "home",
+     "dashboard"
+    ],
+    "negatives": [],
+    "concepts": [
+     "tabular figures",
+     "currency formatting",
+     "hide balance toggle",
+     "visual hierarchy",
+     "pull to refresh",
+     "loading skeleton"
+    ],
+    "offtarget": [
+     "hover tooltips",
+     "sidebar layout",
+     "marketing hero"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "mobile"
+  },
+  {
+   "id": "ho-008",
+   "query": "mobile app for field inspectors at a water utility, works in bright sun and often no signal. design the inspection screen",
+   "expect": {
+    "platforms": [
+     "mobile"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [
+     "form",
+     "detail"
+    ],
+    "negatives": [],
+    "concepts": [
+     "high contrast outdoors",
+     "offline first",
+     "sync status indicator",
+     "large touch targets",
+     "photo capture",
+     "progress saved locally"
+    ],
+    "offtarget": [
+     "glass effects",
+     "hover",
+     "dense data grid"
+    ],
+    "missing": [
+     "platform",
+     "stack"
+    ]
+   },
+   "category": "mobile"
+  },
+  {
+   "id": "ho-009",
+   "query": "Android TV app for a national broadcaster, need the home screen with live channels and catch-up",
+   "expect": {
+    "platforms": [
+     "tv"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "remote"
+    ],
+    "screens": [
+     "home"
+    ],
+    "negatives": [],
+    "concepts": [
+     "dpad focus",
+     "focus restoration",
+     "safe margins",
+     "10 foot typography",
+     "leanback rows",
+     "live badge"
+    ],
+    "offtarget": [
+     "hover",
+     "touch gestures",
+     "hamburger menu"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "android-tv"
+  },
+  {
+   "id": "ho-010",
+   "query": "Our Fire TV app loses focus when you come back from the player, fix the focus handling on the detail page",
+   "expect": {
+    "platforms": [
+     "tv"
+    ],
+    "modes": [
+     "refactor",
+     "audit"
+    ],
+    "inputs": [
+     "remote"
+    ],
+    "screens": [
+     "detail",
+     "player"
+    ],
+    "negatives": [],
+    "concepts": [
+     "focus restoration",
+     "remember last focused item",
+     "back button behaviour",
+     "focus scale animation",
+     "predictable dpad order"
+    ],
+    "offtarget": [
+     "hover",
+     "scrollbar",
+     "touch ripple"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "android-tv"
+  },
+  {
+   "id": "ho-011",
+   "query": "IPTV box app: build the EPG grid, 7 days, hundreds of channels. Old cheap remotes.",
+   "expect": {
+    "platforms": [
+     "tv"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "remote"
+    ],
+    "screens": [
+     "list",
+     "player"
+    ],
+    "negatives": [],
+    "concepts": [
+     "virtualization",
+     "now marker",
+     "channel column pinned",
+     "long press fast scroll",
+     "focus memory per row",
+     "safe margins"
+    ],
+    "offtarget": [
+     "mouse wheel",
+     "hover",
+     "pinch zoom"
+    ],
+    "missing": [
+     "brand",
+     "stack"
+    ]
+   },
+   "category": "android-tv"
+  },
+  {
+   "id": "ho-012",
+   "query": "google tv sports app, settings screen for subtitle language and audio track, make it usable w/ remote",
+   "expect": {
+    "platforms": [
+     "tv"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "remote"
+    ],
+    "screens": [
+     "settings"
+    ],
+    "negatives": [],
+    "concepts": [
+     "two pane settings",
+     "dpad focus",
+     "large focus ring",
+     "immediate apply",
+     "safe margins",
+     "readable at distance"
+    ],
+    "offtarget": [
+     "toggle switch hover",
+     "modal dialogs stacked",
+     "touch slider"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "android-tv"
+  },
+  {
+   "id": "ho-013",
+   "query": "tvOS app for a documentary streamer, design the browse screen with top shelf support",
+   "expect": {
+    "platforms": [
+     "tv"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "remote"
+    ],
+    "screens": [
+     "home",
+     "list"
+    ],
+    "negatives": [],
+    "concepts": [
+     "focus engine",
+     "parallax focus",
+     "top shelf",
+     "safe margins",
+     "siri remote swipe",
+     "collection rows"
+    ],
+    "offtarget": [
+     "hover",
+     "touch targets 44pt",
+     "sidebar hamburger"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "tvos"
+  },
+  {
+   "id": "ho-014",
+   "query": "Apple TV: our video player controls disappear too fast and the scrubber is hard to use. Review please.",
+   "expect": {
+    "platforms": [
+     "tv"
+    ],
+    "modes": [
+     "review",
+     "polish"
+    ],
+    "inputs": [
+     "remote"
+    ],
+    "screens": [
+     "player"
+    ],
+    "negatives": [],
+    "concepts": [
+     "transport bar",
+     "auto hide timing",
+     "scrub preview thumbnails",
+     "siri remote gestures",
+     "focus on play button",
+     "info panel"
+    ],
+    "offtarget": [
+     "click to seek",
+     "hover scrubber",
+     "touch drag"
+    ],
+    "missing": []
+   },
+   "category": "tvos"
+  },
+  {
+   "id": "ho-015",
+   "query": "tvos sign-in screen for a pay TV operator, typing passwords with remote is awful",
+   "expect": {
+    "platforms": [
+     "tv"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "remote"
+    ],
+    "screens": [
+     "auth"
+    ],
+    "negatives": [],
+    "concepts": [
+     "qr code sign in",
+     "activation code",
+     "avoid text entry",
+     "large code typography",
+     "companion device",
+     "safe margins"
+    ],
+    "offtarget": [
+     "password strength meter",
+     "hover",
+     "on-screen keyboard as primary"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "tvos"
+  },
+  {
+   "id": "ho-016",
+   "query": "Make our tvOS kids section accessible – VoiceOver and reduced motion.",
+   "expect": {
+    "platforms": [
+     "tv"
+    ],
+    "modes": [
+     "accessibility"
+    ],
+    "inputs": [
+     "remote"
+    ],
+    "screens": [
+     "home",
+     "list"
+    ],
+    "negatives": [],
+    "concepts": [
+     "voiceover labels",
+     "focus order",
+     "reduced motion",
+     "reduce transparency",
+     "audio descriptions toggle",
+     "high contrast focus"
+    ],
+    "offtarget": [
+     "hover",
+     "skip link",
+     "aria-live"
+    ],
+    "missing": []
+   },
+   "category": "tvos"
+  },
+  {
+   "id": "ho-017",
+   "query": "Self-service kiosk for a hospital outpatient check-in, 32 inch touchscreen portrait",
+   "expect": {
+    "platforms": [
+     "kiosk"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [
+     "onboarding",
+     "form"
+    ],
+    "negatives": [],
+    "concepts": [
+     "large touch targets",
+     "idle timeout reset",
+     "privacy of on-screen data",
+     "one primary action",
+     "reachable height",
+     "attract screen"
+    ],
+    "offtarget": [
+     "hover",
+     "keyboard shortcuts",
+     "dense grid"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "kiosk"
+  },
+  {
+   "id": "ho-018",
+   "query": "kiosk at a train station selling tickets, needs wheelchair users to reach everything. audit the layout",
+   "expect": {
+    "platforms": [
+     "kiosk"
+    ],
+    "modes": [
+     "accessibility",
+     "audit"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [
+     "checkout",
+     "search"
+    ],
+    "negatives": [],
+    "concepts": [
+     "reachable zone",
+     "large touch targets",
+     "high contrast",
+     "session timeout warning",
+     "audio guidance",
+     "no hover dependence"
+    ],
+    "offtarget": [
+     "hover",
+     "keyboard tab order",
+     "dpad"
+    ],
+    "missing": []
+   },
+   "category": "kiosk"
+  },
+  {
+   "id": "ho-019",
+   "query": "photo of our current printed menu board attached, turn it into ordering kiosk screens with cart. retailer wants upsell without annoying people",
+   "expect": {
+    "platforms": [
+     "kiosk"
+    ],
+    "modes": [
+     "reconstruct",
+     "create"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [
+     "list",
+     "checkout"
+    ],
+    "negatives": [],
+    "concepts": [
+     "map menu structure to screens",
+     "large touch targets",
+     "persistent cart summary",
+     "one primary action",
+     "idle timeout",
+     "dismissable upsell"
+    ],
+    "offtarget": [
+     "hover",
+     "infinite scroll",
+     "keyboard"
+    ],
+    "missing": [
+     "brand",
+     "stack"
+    ]
+   },
+   "category": "kiosk"
+  },
+  {
+   "id": "ho-020",
+   "query": "Library kiosk for returning books, screen is landscape 1080p, users often elderly",
+   "expect": {
+    "platforms": [
+     "kiosk"
+    ],
+    "modes": [
+     "create",
+     "accessibility"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [
+     "home",
+     "detail"
+    ],
+    "negatives": [],
+    "concepts": [
+     "large type",
+     "high contrast",
+     "single step per screen",
+     "clear confirmation",
+     "idle reset",
+     "generous spacing"
+    ],
+    "offtarget": [
+     "hover",
+     "small icons without labels",
+     "sidebar"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "kiosk"
+  },
+  {
+   "id": "ho-021",
+   "query": "Screenshot of our old WinForms dispatcher app attached. Rebuild it as a WinUI 3 shell showing trucks and jobs.",
+   "expect": {
+    "platforms": [
+     "desktop"
+    ],
+    "modes": [
+     "reconstruct",
+     "create"
+    ],
+    "inputs": [
+     "pointer",
+     "keyboard"
+    ],
+    "screens": [
+     "dashboard",
+     "list"
+    ],
+    "negatives": [],
+    "concepts": [
+     "preserve workflow from screenshot",
+     "navigationview",
+     "fluent design",
+     "keyboard accelerators",
+     "master detail",
+     "dense data grid"
+    ],
+    "offtarget": [
+     "bottom tab bar",
+     "dpad",
+     "touch-first bottom sheet"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "winui"
+  },
+  {
+   "id": "ho-022",
+   "query": "winui settings page for our warehouse scanner software, follow windows 11 look",
+   "expect": {
+    "platforms": [
+     "desktop"
+    ],
+    "modes": [
+     "create",
+     "design-system"
+    ],
+    "inputs": [
+     "pointer",
+     "keyboard"
+    ],
+    "screens": [
+     "settings"
+    ],
+    "negatives": [],
+    "concepts": [
+     "settingscard",
+     "expander groups",
+     "mica material",
+     "keyboard navigation",
+     "system theme respect",
+     "toggle switch alignment"
+    ],
+    "offtarget": [
+     "hamburger menu",
+     "remote focus",
+     "ios grouped list"
+    ],
+    "missing": []
+   },
+   "category": "winui"
+  },
+  {
+   "id": "ho-023",
+   "query": "Our WinUI app is unusable with Narrator, the datagrid especially. Please fix accessibility.",
+   "expect": {
+    "platforms": [
+     "desktop"
+    ],
+    "modes": [
+     "accessibility"
+    ],
+    "inputs": [
+     "keyboard",
+     "pointer"
+    ],
+    "screens": [
+     "list"
+    ],
+    "negatives": [],
+    "concepts": [
+     "automation properties",
+     "focus visuals",
+     "keyboard navigation",
+     "high contrast themes",
+     "accessible names",
+     "live region announcements"
+    ],
+    "offtarget": [
+     "aria attributes",
+     "voiceover rotor",
+     "touch targets"
+    ],
+    "missing": []
+   },
+   "category": "winui"
+  },
+  {
+   "id": "ho-024",
+   "query": "govt case-management desktop app in WinUI, clerks complain about too many clicks. review the workflow screens",
+   "expect": {
+    "platforms": [
+     "desktop"
+    ],
+    "modes": [
+     "review",
+     "refactor"
+    ],
+    "inputs": [
+     "keyboard",
+     "pointer"
+    ],
+    "screens": [
+     "detail",
+     "form",
+     "list"
+    ],
+    "negatives": [],
+    "concepts": [
+     "keyboard accelerators",
+     "inline editing",
+     "command bar",
+     "reduce modal dialogs",
+     "task flow analysis",
+     "density"
+    ],
+    "offtarget": [
+     "hero section",
+     "bottom navigation",
+     "swipe gestures"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "winui"
+  },
+  {
+   "id": "ho-025",
+   "query": "WPF app for a hospital lab: results entry grid, techs use keyboard only all day",
+   "expect": {
+    "platforms": [
+     "desktop"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "keyboard"
+    ],
+    "screens": [
+     "form",
+     "list"
+    ],
+    "negatives": [],
+    "concepts": [
+     "tab order",
+     "keyboard-first editing",
+     "validation inline",
+     "tabular figures",
+     "abnormal value highlight",
+     "enter to commit"
+    ],
+    "offtarget": [
+     "touch gestures",
+     "hover-only affordance",
+     "hamburger nav"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "wpf"
+  },
+  {
+   "id": "ho-026",
+   "query": "Modernize the look of our 2012 WPF inventory app without rewriting the XAML structure",
+   "expect": {
+    "platforms": [
+     "desktop"
+    ],
+    "modes": [
+     "polish",
+     "design-system"
+    ],
+    "inputs": [
+     "pointer",
+     "keyboard"
+    ],
+    "screens": [],
+    "negatives": [],
+    "concepts": [
+     "resource dictionary",
+     "implicit styles",
+     "control templates",
+     "consistent spacing scale",
+     "per-monitor dpi",
+     "keep layout structure"
+    ],
+    "offtarget": [
+     "rebuild in react",
+     "bottom tabs",
+     "remote focus"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "wpf"
+  },
+  {
+   "id": "ho-027",
+   "query": "wpf ribbon based app for a bank's back office, dark mode requested by night shift",
+   "expect": {
+    "platforms": [
+     "desktop"
+    ],
+    "modes": [
+     "design-system",
+     "create"
+    ],
+    "inputs": [
+     "pointer",
+     "keyboard"
+    ],
+    "screens": [],
+    "negatives": [],
+    "concepts": [
+     "theme resource dictionaries",
+     "dark theme contrast",
+     "dynamic resource",
+     "semantic colour tokens",
+     "status colours on dark",
+     "runtime theme switch"
+    ],
+    "offtarget": [
+     "css variables",
+     "prefers-color-scheme",
+     "material you"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "wpf"
+  },
+  {
+   "id": "ho-028",
+   "query": "my WPF dialog boxes look different on every screen, some have ok on left some on right. standardise them",
+   "expect": {
+    "platforms": [
+     "desktop"
+    ],
+    "modes": [
+     "design-system",
+     "refactor"
+    ],
+    "inputs": [
+     "pointer",
+     "keyboard"
+    ],
+    "screens": [],
+    "negatives": [],
+    "concepts": [
+     "button order convention",
+     "default and cancel buttons",
+     "dialog template",
+     "consistent padding",
+     "escape to cancel",
+     "windows platform conventions"
+    ],
+    "offtarget": [
+     "bottom sheet",
+     "hover card",
+     "material dialog"
+    ],
+    "missing": []
+   },
+   "category": "wpf"
+  },
+  {
+   "id": "ho-029",
+   "query": "Avalonia cross-platform app for a shipping port, runs on Windows and Linux terminals. Design the vessel schedule view.",
+   "expect": {
+    "platforms": [
+     "desktop"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "pointer",
+     "keyboard"
+    ],
+    "screens": [
+     "list",
+     "dashboard"
+    ],
+    "negatives": [],
+    "concepts": [
+     "fluent theme",
+     "datagrid virtualization",
+     "keyboard navigation",
+     "cross-platform fonts",
+     "timeline density",
+     "status colour tokens"
+    ],
+    "offtarget": [
+     "touch bottom nav",
+     "dpad",
+     "web css"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "avalonia"
+  },
+  {
+   "id": "ho-030",
+   "query": "avalonia app, our custom controls ignore the system theme. audit theming",
+   "expect": {
+    "platforms": [
+     "desktop"
+    ],
+    "modes": [
+     "audit",
+     "design-system"
+    ],
+    "inputs": [
+     "pointer",
+     "keyboard"
+    ],
+    "screens": [],
+    "negatives": [],
+    "concepts": [
+     "dynamic resource",
+     "theme variant",
+     "control themes",
+     "semantic tokens",
+     "high contrast",
+     "resource inheritance"
+    ],
+    "offtarget": [
+     "css media query",
+     "material theme",
+     "hover-only"
+    ],
+    "missing": []
+   },
+   "category": "avalonia"
+  },
+  {
+   "id": "ho-031",
+   "query": "Build a settings window in Avalonia for a school timetabling tool, many options, must not overwhelm",
+   "expect": {
+    "platforms": [
+     "desktop"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "pointer",
+     "keyboard"
+    ],
+    "screens": [
+     "settings"
+    ],
+    "negatives": [],
+    "concepts": [
+     "grouped sections",
+     "search settings",
+     "progressive disclosure",
+     "keyboard navigation",
+     "apply vs instant",
+     "sensible defaults"
+    ],
+    "offtarget": [
+     "ios grouped list",
+     "bottom sheet",
+     "remote focus"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "avalonia"
+  },
+  {
+   "id": "ho-032",
+   "query": "Avalonia desktop client for a broadcaster's playout system, operators need to see errors instantly from across the room",
+   "expect": {
+    "platforms": [
+     "desktop"
+    ],
+    "modes": [
+     "create",
+     "polish"
+    ],
+    "inputs": [
+     "pointer",
+     "keyboard"
+    ],
+    "screens": [
+     "dashboard"
+    ],
+    "negatives": [],
+    "concepts": [
+     "status colour semantics",
+     "large alert indicators",
+     "dark control room theme",
+     "no colour alone",
+     "audible or flashing alert",
+     "glanceable layout"
+    ],
+    "offtarget": [
+     "hover tooltips only",
+     "touch",
+     "marketing typography"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "avalonia"
+  },
+  {
+   "id": "ho-033",
+   "query": "React app for a clinic, appointment booking component. Use our existing components dont add new libs",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "pointer",
+     "keyboard",
+     "touch"
+    ],
+    "screens": [
+     "form"
+    ],
+    "negatives": [
+     "dependencies"
+    ],
+    "concepts": [
+     "inspect existing component library",
+     "date and slot picker",
+     "keyboard operable",
+     "validation messages",
+     "confirmation summary",
+     "responsive"
+    ],
+    "offtarget": [
+     "install date library",
+     "dpad",
+     "sidebar redesign"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "react"
+  },
+  {
+   "id": "ho-034",
+   "query": "react admin for a retailer, the product table rerenders slow and looks cramped. refactor",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "refactor"
+    ],
+    "inputs": [
+     "pointer",
+     "keyboard"
+    ],
+    "screens": [
+     "list"
+    ],
+    "negatives": [],
+    "concepts": [
+     "virtualization",
+     "memoization",
+     "column widths",
+     "row height density",
+     "sticky header",
+     "tabular figures"
+    ],
+    "offtarget": [
+     "landing hero",
+     "carousel",
+     "remote focus"
+    ],
+    "missing": []
+   },
+   "category": "react"
+  },
+  {
+   "id": "ho-035",
+   "query": "React + Tailwind, need a design token setup so our three regional brands share components",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "design-system",
+     "brand"
+    ],
+    "inputs": [],
+    "screens": [],
+    "negatives": [],
+    "concepts": [
+     "css variables",
+     "semantic tokens",
+     "brand structural differences",
+     "theme provider",
+     "tailwind config extend",
+     "component variants"
+    ],
+    "offtarget": [
+     "hardcoded hex",
+     "one colour swap only",
+     "dpad"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "react"
+  },
+  {
+   "id": "ho-036",
+   "query": "review my react modal component, something feels off with focus",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "review",
+     "accessibility"
+    ],
+    "inputs": [
+     "keyboard",
+     "pointer"
+    ],
+    "screens": [],
+    "negatives": [],
+    "concepts": [
+     "focus trap",
+     "focus restoration",
+     "escape to close",
+     "aria-modal",
+     "inert background",
+     "initial focus"
+    ],
+    "offtarget": [
+     "hover",
+     "bottom sheet",
+     "dpad"
+    ],
+    "missing": []
+   },
+   "category": "react"
+  },
+  {
+   "id": "ho-037",
+   "query": "Next.js marketing site for a fintech startup, homepage. Make it stand out.",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "create",
+     "brand"
+    ],
+    "inputs": [
+     "pointer",
+     "touch"
+    ],
+    "screens": [
+     "landing"
+    ],
+    "negatives": [],
+    "concepts": [
+     "distinct typography",
+     "clear value proposition",
+     "one primary action",
+     "core web vitals",
+     "server components",
+     "trust signals"
+    ],
+    "offtarget": [
+     "dpad",
+     "generic gradient hero",
+     "dense data grid"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "nextjs"
+  },
+  {
+   "id": "ho-038",
+   "query": "nextjs app router, government benefits portal. layout shifts on load, fix it",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "refactor",
+     "polish"
+    ],
+    "inputs": [
+     "pointer",
+     "keyboard"
+    ],
+    "screens": [],
+    "negatives": [],
+    "concepts": [
+     "cumulative layout shift",
+     "font loading strategy",
+     "image dimensions",
+     "skeleton placeholders",
+     "suspense boundaries",
+     "reserved space"
+    ],
+    "offtarget": [
+     "hero redesign",
+     "animation library",
+     "remote focus"
+    ],
+    "missing": []
+   },
+   "category": "nextjs"
+  },
+  {
+   "id": "ho-039",
+   "query": "Next.js ecommerce for a furniture retailer, product detail page with variants and 3D viewer",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "pointer",
+     "touch"
+    ],
+    "screens": [
+     "detail",
+     "checkout"
+    ],
+    "negatives": [],
+    "concepts": [
+     "variant selection",
+     "sticky add to cart",
+     "image gallery",
+     "lazy load 3d",
+     "delivery info",
+     "responsive"
+    ],
+    "offtarget": [
+     "dpad",
+     "sidebar",
+     "epg"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "nextjs"
+  },
+  {
+   "id": "ho-040",
+   "query": "add dark mode to our next.js docs site without flash on load",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "design-system",
+     "create"
+    ],
+    "inputs": [
+     "pointer",
+     "keyboard"
+    ],
+    "screens": [],
+    "negatives": [],
+    "concepts": [
+     "prefers-color-scheme",
+     "css variables",
+     "no flash inline script",
+     "dark theme contrast",
+     "code block theme",
+     "persist preference"
+    ],
+    "offtarget": [
+     "resource dictionary",
+     "material you",
+     "dpad"
+    ],
+    "missing": []
+   },
+   "category": "nextjs"
+  },
+  {
+   "id": "ho-041",
+   "query": "Jetpack Compose screen for a hospital nurse app: patient vitals detail",
+   "expect": {
+    "platforms": [
+     "mobile"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [
+     "detail"
+    ],
+    "negatives": [],
+    "concepts": [
+     "material 3",
+     "critical value emphasis",
+     "tabular figures",
+     "content description",
+     "scaffold with top app bar",
+     "large touch targets"
+    ],
+    "offtarget": [
+     "hover",
+     "sidebar",
+     "css grid"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "compose"
+  },
+  {
+   "id": "ho-042",
+   "query": "compose multiplatform, our list screen jank on low end android phones, refactor",
+   "expect": {
+    "platforms": [
+     "mobile"
+    ],
+    "modes": [
+     "refactor"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [
+     "list"
+    ],
+    "negatives": [],
+    "concepts": [
+     "lazycolumn keys",
+     "stable state",
+     "avoid recomposition",
+     "image loading",
+     "content padding",
+     "item placeholders"
+    ],
+    "offtarget": [
+     "hover",
+     "virtual dom",
+     "dpad"
+    ],
+    "missing": []
+   },
+   "category": "compose"
+  },
+  {
+   "id": "ho-043",
+   "query": "Compose for TV: build the channel guide screen for our cable operator app",
+   "expect": {
+    "platforms": [
+     "tv"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "remote"
+    ],
+    "screens": [
+     "list",
+     "player"
+    ],
+    "negatives": [],
+    "concepts": [
+     "tv-material",
+     "focus restoration",
+     "safe margins",
+     "lazy rows",
+     "now marker",
+     "dpad focus"
+    ],
+    "offtarget": [
+     "touch ripple",
+     "swipe to refresh",
+     "bottom navigation"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "compose"
+  },
+  {
+   "id": "ho-044",
+   "query": "jetpack compose onboarding for a public transport app, 3 screens max, talkback friendly",
+   "expect": {
+    "platforms": [
+     "mobile"
+    ],
+    "modes": [
+     "create",
+     "accessibility"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [
+     "onboarding"
+    ],
+    "negatives": [],
+    "concepts": [
+     "content descriptions",
+     "skip option",
+     "pager indicator semantics",
+     "large touch targets",
+     "focus order",
+     "one message per screen"
+    ],
+    "offtarget": [
+     "hover",
+     "aria",
+     "dpad"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "compose"
+  },
+  {
+   "id": "ho-045",
+   "query": "[figma export attached] implement this transfer money screen in SwiftUI for our credit union, follow HIG where the mockup deviates",
+   "expect": {
+    "platforms": [
+     "mobile"
+    ],
+    "modes": [
+     "reconstruct",
+     "create"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [
+     "form",
+     "checkout"
+    ],
+    "negatives": [],
+    "concepts": [
+     "match mockup spacing and type",
+     "human interface guidelines",
+     "dynamic type",
+     "amount entry keyboard",
+     "confirmation step",
+     "safe area"
+    ],
+    "offtarget": [
+     "hover",
+     "material",
+     "dpad"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "swiftui"
+  },
+  {
+   "id": "ho-046",
+   "query": "swiftui ipad app for restaurant managers, sidebar + detail, review the layout on split view",
+   "expect": {
+    "platforms": [
+     "tablet"
+    ],
+    "modes": [
+     "review",
+     "responsive"
+    ],
+    "inputs": [
+     "touch",
+     "pointer",
+     "keyboard"
+    ],
+    "screens": [
+     "list",
+     "detail"
+    ],
+    "negatives": [],
+    "concepts": [
+     "navigationsplitview",
+     "size classes",
+     "multitasking widths",
+     "pointer hover support",
+     "keyboard shortcuts",
+     "column visibility"
+    ],
+    "offtarget": [
+     "dpad",
+     "css breakpoints",
+     "bottom tabs only"
+    ],
+    "missing": []
+   },
+   "category": "swiftui"
+  },
+  {
+   "id": "ho-047",
+   "query": "my swiftui views break with largest dynamic type sizes, fix the recipe detail screen",
+   "expect": {
+    "platforms": [
+     "mobile"
+    ],
+    "modes": [
+     "accessibility",
+     "refactor"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [
+     "detail"
+    ],
+    "negatives": [],
+    "concepts": [
+     "dynamic type",
+     "viewthatfits",
+     "layout switch at accessibility sizes",
+     "scaled metric",
+     "line limits",
+     "avoid fixed frames"
+    ],
+    "offtarget": [
+     "css rem",
+     "hover",
+     "dpad"
+    ],
+    "missing": []
+   },
+   "category": "swiftui"
+  },
+  {
+   "id": "ho-048",
+   "query": "SwiftUI macOS app for a radio station's playlist scheduler, feels like an iphone app blown up. make it mac-like",
+   "expect": {
+    "platforms": [
+     "desktop"
+    ],
+    "modes": [
+     "refactor",
+     "polish"
+    ],
+    "inputs": [
+     "pointer",
+     "keyboard"
+    ],
+    "screens": [
+     "list",
+     "detail"
+    ],
+    "negatives": [],
+    "concepts": [
+     "mac idioms",
+     "toolbar",
+     "keyboard shortcuts",
+     "table view density",
+     "hover affordances",
+     "menu bar commands"
+    ],
+    "offtarget": [
+     "bottom tab bar",
+     "large touch targets",
+     "swipe to delete"
+    ],
+    "missing": []
+   },
+   "category": "swiftui"
+  },
+  {
+   "id": "ho-049",
+   "query": "Flutter app for a grocery retailer, cart screen. Both iOS and Android.",
+   "expect": {
+    "platforms": [
+     "mobile"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [
+     "checkout",
+     "list"
+    ],
+    "negatives": [],
+    "concepts": [
+     "platform adaptive widgets",
+     "quantity stepper",
+     "sticky total",
+     "one primary action",
+     "safe area",
+     "large touch targets"
+    ],
+    "offtarget": [
+     "hover",
+     "sidebar",
+     "dpad"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "flutter"
+  },
+  {
+   "id": "ho-050",
+   "query": "flutter web + mobile dashboard for a solar utility, same codebase. how should the layout adapt?",
+   "expect": {
+    "platforms": [
+     "web",
+     "mobile"
+    ],
+    "modes": [
+     "responsive",
+     "create"
+    ],
+    "inputs": [
+     "touch",
+     "pointer"
+    ],
+    "screens": [
+     "dashboard"
+    ],
+    "negatives": [],
+    "concepts": [
+     "layoutbuilder breakpoints",
+     "navigation rail vs bottom bar",
+     "chart legibility",
+     "pointer vs touch targets",
+     "adaptive density",
+     "text scaling"
+    ],
+    "offtarget": [
+     "dpad",
+     "css media query",
+     "epg"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "flutter"
+  },
+  {
+   "id": "ho-051",
+   "query": "Flutter app, screen reader users cant use our custom date picker. fix",
+   "expect": {
+    "platforms": [
+     "mobile"
+    ],
+    "modes": [
+     "accessibility"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [
+     "form"
+    ],
+    "negatives": [],
+    "concepts": [
+     "semantics widget",
+     "labels and hints",
+     "focus traversal",
+     "announce selection",
+     "large touch targets",
+     "talkback and voiceover testing"
+    ],
+    "offtarget": [
+     "aria",
+     "hover",
+     "keyboard shortcuts"
+    ],
+    "missing": []
+   },
+   "category": "flutter"
+  },
+  {
+   "id": "ho-052",
+   "query": "flutter theme for our insurance app is a mess of hardcoded colours, set up a proper ThemeData system",
+   "expect": {
+    "platforms": [
+     "mobile"
+    ],
+    "modes": [
+     "design-system",
+     "refactor"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [],
+    "negatives": [],
+    "concepts": [
+     "colorscheme",
+     "theme extensions",
+     "text theme",
+     "semantic tokens",
+     "dark theme contrast",
+     "remove hardcoded values"
+    ],
+    "offtarget": [
+     "css variables",
+     "resource dictionary",
+     "dpad"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "flutter"
+  },
+  {
+   "id": "ho-053",
+   "query": "ERP purchase order entry screen for a manufacturer, 40+ fields, users enter hundreds a day",
+   "expect": {
+    "platforms": [],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "keyboard"
+    ],
+    "screens": [
+     "form"
+    ],
+    "negatives": [],
+    "concepts": [
+     "dense layout",
+     "tab order",
+     "keyboard-first",
+     "inline validation",
+     "field grouping",
+     "line items grid"
+    ],
+    "offtarget": [
+     "landing hero",
+     "one field per screen",
+     "large touch targets"
+    ],
+    "missing": [
+     "platform",
+     "stack"
+    ]
+   },
+   "category": "erp"
+  },
+  {
+   "id": "ho-054",
+   "query": "our erp's inventory grid in the browser has 60 columns, users hate it, audit and propose fixes",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "audit",
+     "refactor"
+    ],
+    "inputs": [
+     "pointer",
+     "keyboard"
+    ],
+    "screens": [
+     "list"
+    ],
+    "negatives": [],
+    "concepts": [
+     "column priority",
+     "pinned columns",
+     "saved views",
+     "row density",
+     "virtualization",
+     "horizontal scroll strategy"
+    ],
+    "offtarget": [
+     "card layout",
+     "hero",
+     "carousel"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "erp"
+  },
+  {
+   "id": "ho-055",
+   "query": "Warehouse management admin: design the stock transfer screen, mostly used on rugged Windows tablets",
+   "expect": {
+    "platforms": [
+     "tablet",
+     "desktop"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "touch",
+     "keyboard"
+    ],
+    "screens": [
+     "form",
+     "list"
+    ],
+    "negatives": [],
+    "concepts": [
+     "large touch targets",
+     "barcode scan input",
+     "dense but touchable",
+     "keyboard wedge support",
+     "confirmation of quantities",
+     "high contrast"
+    ],
+    "offtarget": [
+     "hover",
+     "dpad",
+     "marketing typography"
+    ],
+    "missing": [
+     "stack",
+     "brand"
+    ]
+   },
+   "category": "erp"
+  },
+  {
+   "id": "ho-056",
+   "query": "hospital ERP, billing reconciliation page. accountants want it to look like a spreadsheet but smarter",
+   "expect": {
+    "platforms": [],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "keyboard",
+     "pointer"
+    ],
+    "screens": [
+     "list",
+     "dashboard"
+    ],
+    "negatives": [],
+    "concepts": [
+     "tabular figures",
+     "right aligned numbers",
+     "keyboard cell navigation",
+     "difference highlighting",
+     "totals row",
+     "dense typography"
+    ],
+    "offtarget": [
+     "cards",
+     "hero",
+     "touch bottom sheet"
+    ],
+    "missing": [
+     "platform",
+     "stack"
+    ]
+   },
+   "category": "erp"
+  },
+  {
+   "id": "ho-057",
+   "query": "B2B SaaS for fleet managers, redesign the sidebar navigation, we have 30 sections now",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "refactor"
+    ],
+    "inputs": [
+     "pointer",
+     "keyboard"
+    ],
+    "screens": [],
+    "negatives": [],
+    "concepts": [
+     "information architecture",
+     "grouping and collapse",
+     "search in nav",
+     "keyboard navigation",
+     "collapsed rail state",
+     "active state clarity"
+    ],
+    "offtarget": [
+     "bottom tabs",
+     "dpad",
+     "hero"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "saas"
+  },
+  {
+   "id": "ho-058",
+   "query": "saas billing settings page, customers keep missing where to update their card",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "polish",
+     "audit"
+    ],
+    "inputs": [
+     "pointer"
+    ],
+    "screens": [
+     "settings"
+    ],
+    "negatives": [],
+    "concepts": [
+     "visual hierarchy",
+     "one primary action",
+     "payment method card placement",
+     "plan summary",
+     "clear labels",
+     "inspect current layout"
+    ],
+    "offtarget": [
+     "dpad",
+     "landing hero",
+     "epg"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "saas"
+  },
+  {
+   "id": "ho-059",
+   "query": "Build an empty-state and first-run experience for our HR SaaS when a company has no employees yet",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "pointer"
+    ],
+    "screens": [
+     "onboarding",
+     "dashboard"
+    ],
+    "negatives": [],
+    "concepts": [
+     "empty state guidance",
+     "one primary action",
+     "import vs add manually",
+     "progress checklist",
+     "sample data option",
+     "dismissable"
+    ],
+    "offtarget": [
+     "dpad",
+     "dense grid",
+     "carousel"
+    ],
+    "missing": [
+     "stack",
+     "brand"
+    ]
+   },
+   "category": "saas"
+  },
+  {
+   "id": "ho-060",
+   "query": "multi-tenant saas, each customer can upload a logo and pick a colour. make sure the UI stays readable whatever they pick",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "brand",
+     "design-system"
+    ],
+    "inputs": [],
+    "screens": [],
+    "negatives": [],
+    "concepts": [
+     "contrast computation",
+     "derived tones",
+     "semantic tokens",
+     "fallback colours",
+     "logo safe area",
+     "limit brand colour scope"
+    ],
+    "offtarget": [
+     "hardcoded palette",
+     "dpad",
+     "hero"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "saas"
+  },
+  {
+   "id": "ho-061",
+   "query": "trading desk web app for a bank, order ticket needs to be faster to use. traders hate scrolling",
+   "expect": {
+    "platforms": [
+     "desktop",
+     "web"
+    ],
+    "modes": [
+     "refactor"
+    ],
+    "inputs": [
+     "keyboard",
+     "pointer"
+    ],
+    "screens": [
+     "form"
+    ],
+    "negatives": [],
+    "concepts": [
+     "keyboard shortcuts",
+     "dense layout",
+     "tabular figures",
+     "no scroll fit",
+     "confirmation safeguards",
+     "colour for buy sell"
+    ],
+    "offtarget": [
+     "hero",
+     "bottom sheet",
+     "large touch targets"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "finance"
+  },
+  {
+   "id": "ho-062",
+   "query": "mobile banking statement screen, numbers misalign and negative amounts hard to spot",
+   "expect": {
+    "platforms": [
+     "mobile"
+    ],
+    "modes": [
+     "polish"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [
+     "list"
+    ],
+    "negatives": [],
+    "concepts": [
+     "tabular figures",
+     "right alignment",
+     "negative amount styling",
+     "no colour alone",
+     "date grouping",
+     "running balance"
+    ],
+    "offtarget": [
+     "hover",
+     "sidebar",
+     "dpad"
+    ],
+    "missing": [
+     "platform",
+     "stack"
+    ]
+   },
+   "category": "finance"
+  },
+  {
+   "id": "ho-063",
+   "query": "Design a loan application wizard for a credit union website, must meet WCAG AA",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "create",
+     "accessibility"
+    ],
+    "inputs": [
+     "keyboard",
+     "pointer",
+     "touch"
+    ],
+    "screens": [
+     "form",
+     "onboarding"
+    ],
+    "negatives": [],
+    "concepts": [
+     "step indicator",
+     "error summary",
+     "label association",
+     "save and resume",
+     "focus management between steps",
+     "contrast"
+    ],
+    "offtarget": [
+     "dpad",
+     "hover-only",
+     "carousel"
+    ],
+    "missing": [
+     "stack",
+     "brand"
+    ]
+   },
+   "category": "finance"
+  },
+  {
+   "id": "ho-064",
+   "query": "portfolio dashboard, wealth mgmt clients, pls make the charts not look like a gaming site. no gradients or glow",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "polish",
+     "brand"
+    ],
+    "inputs": [
+     "pointer"
+    ],
+    "screens": [
+     "dashboard"
+    ],
+    "negatives": [
+     "gradient"
+    ],
+    "concepts": [
+     "restrained palette",
+     "chart hierarchy",
+     "tabular figures",
+     "muted gridlines",
+     "typography for trust",
+     "consistent number formatting"
+    ],
+    "offtarget": [
+     "neon gradients",
+     "glow effects",
+     "dpad"
+    ],
+    "missing": [
+     "stack",
+     "brand"
+    ]
+   },
+   "category": "finance"
+  },
+  {
+   "id": "ho-065",
+   "query": "Hospital bedside tablet for patients: menu ordering and nurse call. Design it.",
+   "expect": {
+    "platforms": [
+     "tablet"
+    ],
+    "modes": [
+     "create",
+     "accessibility"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [
+     "home",
+     "list"
+    ],
+    "negatives": [],
+    "concepts": [
+     "large touch targets",
+     "large type",
+     "high contrast",
+     "nurse call always visible",
+     "simple language",
+     "dietary restrictions"
+    ],
+    "offtarget": [
+     "hover",
+     "dense grid",
+     "keyboard shortcuts"
+    ],
+    "missing": [
+     "platform",
+     "stack",
+     "brand"
+    ]
+   },
+   "category": "healthcare"
+  },
+  {
+   "id": "ho-066",
+   "query": "clinician EHR web app, medication list. errors here can hurt people, review the design",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "review"
+    ],
+    "inputs": [
+     "pointer",
+     "keyboard"
+    ],
+    "screens": [
+     "list",
+     "detail"
+    ],
+    "negatives": [],
+    "concepts": [
+     "tall man lettering",
+     "dose and unit separation",
+     "allergy alerts",
+     "confirmation for critical actions",
+     "dense but scannable",
+     "no truncation of names"
+    ],
+    "offtarget": [
+     "hero",
+     "carousel",
+     "dpad"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "healthcare"
+  },
+  {
+   "id": "ho-067",
+   "query": "Waiting room display for a clinic on a wall TV, shows queue numbers. Not interactive.",
+   "expect": {
+    "platforms": [
+     "tv"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [],
+    "screens": [
+     "dashboard"
+    ],
+    "negatives": [],
+    "concepts": [
+     "10 foot typography",
+     "safe margins",
+     "auto refresh",
+     "high contrast",
+     "no personal data",
+     "burn-in avoidance"
+    ],
+    "offtarget": [
+     "dpad focus",
+     "hover",
+     "buttons"
+    ],
+    "missing": [
+     "stack",
+     "brand"
+    ]
+   },
+   "category": "healthcare"
+  },
+  {
+   "id": "ho-068",
+   "query": "patient portal mobile app, appointment reminders screen, many users are 70+",
+   "expect": {
+    "platforms": [
+     "mobile"
+    ],
+    "modes": [
+     "create",
+     "accessibility"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [
+     "list",
+     "detail"
+    ],
+    "negatives": [],
+    "concepts": [
+     "large type",
+     "dynamic type",
+     "large touch targets",
+     "plain language",
+     "high contrast",
+     "add to calendar"
+    ],
+    "offtarget": [
+     "hover",
+     "dense grid",
+     "gesture-only actions"
+    ],
+    "missing": [
+     "platform",
+     "stack"
+    ]
+   },
+   "category": "healthcare"
+  },
+  {
+   "id": "ho-069",
+   "query": "checkout page for an electronics retailer, conversion is bad on mobile",
+   "expect": {
+    "platforms": [
+     "web",
+     "mobile"
+    ],
+    "modes": [
+     "audit",
+     "refactor"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [
+     "checkout"
+    ],
+    "negatives": [],
+    "concepts": [
+     "guest checkout",
+     "form field reduction",
+     "autofill attributes",
+     "sticky order summary",
+     "one primary action",
+     "input types for keyboards"
+    ],
+    "offtarget": [
+     "dpad",
+     "sidebar",
+     "hover"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "ecommerce"
+  },
+  {
+   "id": "ho-070",
+   "query": "attached screenshot of a competitor's fashion listing page w/ filters, build ours like it, 10k products",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "reconstruct",
+     "create"
+    ],
+    "inputs": [
+     "pointer",
+     "touch"
+    ],
+    "screens": [
+     "list",
+     "search"
+    ],
+    "negatives": [],
+    "concepts": [
+     "analyse layout structure",
+     "faceted filters",
+     "filter drawer on mobile",
+     "applied filter chips",
+     "avoid copying brand assets",
+     "image aspect ratio"
+    ],
+    "offtarget": [
+     "dpad",
+     "epg",
+     "dense spreadsheet grid"
+    ],
+    "missing": [
+     "stack",
+     "brand"
+    ]
+   },
+   "category": "ecommerce"
+  },
+  {
+   "id": "ho-071",
+   "query": "pharmacy ecommerce: order tracking page, customers phone support because they cant find status",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "polish",
+     "audit"
+    ],
+    "inputs": [
+     "pointer",
+     "touch"
+    ],
+    "screens": [
+     "detail"
+    ],
+    "negatives": [],
+    "concepts": [
+     "status timeline",
+     "visual hierarchy",
+     "estimated delivery prominence",
+     "plain language statuses",
+     "contact support placement",
+     "inspect existing page"
+    ],
+    "offtarget": [
+     "dpad",
+     "hero",
+     "carousel"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "ecommerce"
+  },
+  {
+   "id": "ho-072",
+   "query": "Build a size guide modal for our shoe store, works on phone and desktop",
+   "expect": {
+    "platforms": [
+     "web",
+     "mobile"
+    ],
+    "modes": [
+     "create",
+     "responsive"
+    ],
+    "inputs": [
+     "touch",
+     "pointer",
+     "keyboard"
+    ],
+    "screens": [
+     "detail"
+    ],
+    "negatives": [],
+    "concepts": [
+     "bottom sheet on mobile",
+     "focus trap",
+     "unit toggle",
+     "scrollable table",
+     "escape to close",
+     "sticky header row"
+    ],
+    "offtarget": [
+     "dpad",
+     "hover-only",
+     "sidebar"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "ecommerce"
+  },
+  {
+   "id": "ho-073",
+   "query": "Video player UI for a news broadcaster's website, live and VOD, ads too",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "pointer",
+     "keyboard",
+     "touch"
+    ],
+    "screens": [
+     "player"
+    ],
+    "negatives": [],
+    "concepts": [
+     "transport controls",
+     "live indicator",
+     "keyboard shortcuts",
+     "captions toggle",
+     "ad countdown",
+     "auto hide controls"
+    ],
+    "offtarget": [
+     "dpad",
+     "sidebar",
+     "epg"
+    ],
+    "missing": [
+     "stack",
+     "brand"
+    ]
+   },
+   "category": "media"
+  },
+  {
+   "id": "ho-074",
+   "query": "podcast app on android, now playing screen, redesign",
+   "expect": {
+    "platforms": [
+     "mobile"
+    ],
+    "modes": [
+     "refactor",
+     "polish"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [
+     "player"
+    ],
+    "negatives": [],
+    "concepts": [
+     "large play button",
+     "skip intervals",
+     "sleep timer",
+     "speed control",
+     "artwork hierarchy",
+     "media notification"
+    ],
+    "offtarget": [
+     "hover",
+     "dpad",
+     "sidebar"
+    ],
+    "missing": [
+     "stack",
+     "brand"
+    ]
+   },
+   "category": "media"
+  },
+  {
+   "id": "ho-075",
+   "query": "Fire TV app for a music video channel, the player controls overlay. Remote only.",
+   "expect": {
+    "platforms": [
+     "tv"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "remote"
+    ],
+    "screens": [
+     "player"
+    ],
+    "negatives": [],
+    "concepts": [
+     "transport bar",
+     "dpad focus",
+     "auto hide timing",
+     "safe margins",
+     "focus on play pause",
+     "up next"
+    ],
+    "offtarget": [
+     "hover",
+     "click to seek",
+     "touch scrub"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "media"
+  },
+  {
+   "id": "ho-076",
+   "query": "radio station web app, listen live button gets lost among the schedule. fix hierarchy",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "polish"
+    ],
+    "inputs": [
+     "pointer",
+     "touch"
+    ],
+    "screens": [
+     "home",
+     "player"
+    ],
+    "negatives": [],
+    "concepts": [
+     "one primary action",
+     "persistent mini player",
+     "visual hierarchy",
+     "now playing",
+     "schedule secondary",
+     "inspect current page"
+    ],
+    "offtarget": [
+     "dpad",
+     "epg grid",
+     "dense table"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "media"
+  },
+  {
+   "id": "ho-077",
+   "query": "settings screen for our iOS smart thermostat app, follow apple conventions",
+   "expect": {
+    "platforms": [
+     "mobile"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [
+     "settings"
+    ],
+    "negatives": [],
+    "concepts": [
+     "grouped list style",
+     "toggle alignment",
+     "footer explanations",
+     "navigation links for subpages",
+     "dynamic type",
+     "destructive action placement"
+    ],
+    "offtarget": [
+     "hover",
+     "settingscard",
+     "dpad"
+    ],
+    "missing": []
+   },
+   "category": "settings"
+  },
+  {
+   "id": "ho-078",
+   "query": "Notification preferences page on our web app, 40 toggles, users say its overwhelming",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "refactor"
+    ],
+    "inputs": [
+     "pointer",
+     "keyboard"
+    ],
+    "screens": [
+     "settings"
+    ],
+    "negatives": [],
+    "concepts": [
+     "grouping by channel",
+     "matrix layout",
+     "master toggles",
+     "sensible defaults",
+     "progressive disclosure",
+     "instant save feedback"
+    ],
+    "offtarget": [
+     "dpad",
+     "hero",
+     "carousel"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "settings"
+  },
+  {
+   "id": "ho-079",
+   "query": "settings for a set-top box: network, display, parental controls. dpad only",
+   "expect": {
+    "platforms": [
+     "tv"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "remote"
+    ],
+    "screens": [
+     "settings"
+    ],
+    "negatives": [],
+    "concepts": [
+     "two pane settings",
+     "dpad focus",
+     "pin entry",
+     "safe margins",
+     "readable at distance",
+     "focus restoration"
+    ],
+    "offtarget": [
+     "hover",
+     "toggle switch drag",
+     "keyboard shortcuts"
+    ],
+    "missing": [
+     "stack",
+     "brand"
+    ]
+   },
+   "category": "settings"
+  },
+  {
+   "id": "ho-080",
+   "query": "our desktop app settings dialog has 12 tabs, nobody can find anything. redesign",
+   "expect": {
+    "platforms": [
+     "desktop"
+    ],
+    "modes": [
+     "refactor"
+    ],
+    "inputs": [
+     "pointer",
+     "keyboard"
+    ],
+    "screens": [
+     "settings"
+    ],
+    "negatives": [],
+    "concepts": [
+     "search settings",
+     "grouped navigation list",
+     "information architecture",
+     "keyboard navigation",
+     "apply vs instant",
+     "reset to defaults"
+    ],
+    "offtarget": [
+     "bottom sheet",
+     "dpad",
+     "hero"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "settings"
+  },
+  {
+   "id": "ho-081",
+   "query": "school enrollment form, parents fill it on phones, 60 questions. help",
+   "expect": {
+    "platforms": [
+     "mobile",
+     "web"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [
+     "form"
+    ],
+    "negatives": [],
+    "concepts": [
+     "multi step with progress",
+     "save and resume",
+     "one question group per step",
+     "input types",
+     "inline validation",
+     "review before submit"
+    ],
+    "offtarget": [
+     "dpad",
+     "dense grid",
+     "hover"
+    ],
+    "missing": [
+     "stack",
+     "brand"
+    ]
+   },
+   "category": "forms"
+  },
+  {
+   "id": "ho-082",
+   "query": "Form validation in our web app shows errors only on submit and users miss them. Improve.",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "polish",
+     "accessibility"
+    ],
+    "inputs": [
+     "keyboard",
+     "pointer"
+    ],
+    "screens": [
+     "form"
+    ],
+    "negatives": [],
+    "concepts": [
+     "error summary",
+     "inline validation timing",
+     "aria-describedby",
+     "focus first error",
+     "no colour alone",
+     "persistent error text"
+    ],
+    "offtarget": [
+     "dpad",
+     "toast only",
+     "hover"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "forms"
+  },
+  {
+   "id": "ho-083",
+   "query": "address form for a logistics site, international customers, stop forcing US format",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "refactor"
+    ],
+    "inputs": [
+     "keyboard",
+     "pointer"
+    ],
+    "screens": [
+     "form"
+    ],
+    "negatives": [],
+    "concepts": [
+     "country first",
+     "adaptive field set",
+     "postal code flexibility",
+     "autocomplete attributes",
+     "single name field option",
+     "no required state field"
+    ],
+    "offtarget": [
+     "dpad",
+     "hero",
+     "carousel"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "forms"
+  },
+  {
+   "id": "ho-084",
+   "query": "date of birth input, our users are confused by the calendar picker",
+   "expect": {
+    "platforms": [],
+    "modes": [
+     "refactor"
+    ],
+    "inputs": [],
+    "screens": [
+     "form"
+    ],
+    "negatives": [],
+    "concepts": [
+     "three text fields",
+     "avoid calendar for far dates",
+     "numeric input mode",
+     "format hint",
+     "validation messages",
+     "autocomplete bday"
+    ],
+    "offtarget": [
+     "month grid picker",
+     "dpad",
+     "hero"
+    ],
+    "missing": [
+     "platform",
+     "stack"
+    ]
+   },
+   "category": "forms"
+  },
+  {
+   "id": "ho-085",
+   "query": "data table for a utility's meter readings, 200k rows, needs to work in the browser",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "pointer",
+     "keyboard"
+    ],
+    "screens": [
+     "list"
+    ],
+    "negatives": [],
+    "concepts": [
+     "virtualization",
+     "server side pagination",
+     "sticky header",
+     "tabular figures",
+     "column resizing",
+     "keyboard row navigation"
+    ],
+    "offtarget": [
+     "card layout",
+     "hero",
+     "dpad"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "tables"
+  },
+  {
+   "id": "ho-086",
+   "query": "make this employee table work on phones without hiding important columns",
+   "expect": {
+    "platforms": [
+     "mobile",
+     "web"
+    ],
+    "modes": [
+     "responsive"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [
+     "list"
+    ],
+    "negatives": [],
+    "concepts": [
+     "column priority",
+     "stacked rows",
+     "horizontal scroll with pinned column",
+     "expandable row details",
+     "semantic table preserved",
+     "touch targets"
+    ],
+    "offtarget": [
+     "dpad",
+     "hover",
+     "sidebar"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "tables"
+  },
+  {
+   "id": "ho-087",
+   "query": "admin table with bulk actions, selection state is confusing when paginated",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "refactor"
+    ],
+    "inputs": [
+     "pointer",
+     "keyboard"
+    ],
+    "screens": [
+     "list"
+    ],
+    "negatives": [],
+    "concepts": [
+     "select all across pages",
+     "selection count banner",
+     "indeterminate checkbox",
+     "bulk action bar",
+     "clear selection",
+     "keyboard shift select"
+    ],
+    "offtarget": [
+     "dpad",
+     "hero",
+     "carousel"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "tables"
+  },
+  {
+   "id": "ho-088",
+   "query": "financial statements table in our reporting tool, numbers dont line up and headers wrap badly",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "polish"
+    ],
+    "inputs": [
+     "pointer"
+    ],
+    "screens": [
+     "list",
+     "dashboard"
+    ],
+    "negatives": [],
+    "concepts": [
+     "tabular figures",
+     "right alignment",
+     "header wrapping strategy",
+     "column min widths",
+     "row striping or rules",
+     "consistent decimals"
+    ],
+    "offtarget": [
+     "cards",
+     "dpad",
+     "hero"
+    ],
+    "missing": [
+     "stack",
+     "platform"
+    ]
+   },
+   "category": "tables"
+  },
+  {
+   "id": "ho-089",
+   "query": "site search for a government portal, thousands of pages, people cant find anything",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "create",
+     "refactor"
+    ],
+    "inputs": [
+     "keyboard",
+     "pointer"
+    ],
+    "screens": [
+     "search"
+    ],
+    "negatives": [],
+    "concepts": [
+     "prominent search field",
+     "autosuggest",
+     "facets",
+     "result snippets",
+     "spelling correction",
+     "keyboard navigation of results"
+    ],
+    "offtarget": [
+     "dpad",
+     "hero",
+     "carousel"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "search"
+  },
+  {
+   "id": "ho-090",
+   "query": "search on our Android TV app requires typing on the on screen keyboard, make it better",
+   "expect": {
+    "platforms": [
+     "tv"
+    ],
+    "modes": [
+     "refactor"
+    ],
+    "inputs": [
+     "remote"
+    ],
+    "screens": [
+     "search"
+    ],
+    "negatives": [],
+    "concepts": [
+     "voice search",
+     "search as you type",
+     "custom keyboard layout",
+     "recent searches",
+     "dpad focus",
+     "results grid focus"
+    ],
+    "offtarget": [
+     "hover",
+     "touch keyboard",
+     "sidebar"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "search"
+  },
+  {
+   "id": "ho-091",
+   "query": "product search in our mobile grocery app, add filters and recent searches",
+   "expect": {
+    "platforms": [
+     "mobile"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [
+     "search"
+    ],
+    "negatives": [],
+    "concepts": [
+     "bottom sheet filters",
+     "recent searches",
+     "autosuggest",
+     "applied filter chips",
+     "empty results state",
+     "large touch targets"
+    ],
+    "offtarget": [
+     "hover",
+     "dpad",
+     "sidebar facets"
+    ],
+    "missing": [
+     "platform",
+     "stack"
+    ]
+   },
+   "category": "search"
+  },
+  {
+   "id": "ho-092",
+   "query": "desktop app global search (ctrl+k style) for an insurance claims system",
+   "expect": {
+    "platforms": [
+     "desktop"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "keyboard",
+     "pointer"
+    ],
+    "screens": [
+     "search"
+    ],
+    "negatives": [],
+    "concepts": [
+     "command palette",
+     "keyboard shortcut",
+     "grouped results",
+     "arrow key navigation",
+     "recent items",
+     "focus restoration on close"
+    ],
+    "offtarget": [
+     "dpad",
+     "touch",
+     "hero"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "search"
+  },
+  {
+   "id": "ho-093",
+   "query": "Ops dashboard for a logistics control tower, shown on big wall screens and laptops",
+   "expect": {
+    "platforms": [
+     "web",
+     "tv",
+     "desktop"
+    ],
+    "modes": [
+     "create",
+     "responsive"
+    ],
+    "inputs": [
+     "pointer"
+    ],
+    "screens": [
+     "dashboard"
+    ],
+    "negatives": [],
+    "concepts": [
+     "glanceable hierarchy",
+     "large type for wall",
+     "status colour semantics",
+     "auto refresh",
+     "dense mode for laptop",
+     "no hover dependence"
+    ],
+    "offtarget": [
+     "dpad",
+     "bottom sheet",
+     "hero"
+    ],
+    "missing": [
+     "stack",
+     "brand"
+    ]
+   },
+   "category": "dashboards"
+  },
+  {
+   "id": "ho-094",
+   "query": "school admin dashboard, attendance stats, too many charts. simplify, and dont add any animations",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "refactor",
+     "polish"
+    ],
+    "inputs": [
+     "pointer"
+    ],
+    "screens": [
+     "dashboard"
+    ],
+    "negatives": [
+     "animation"
+    ],
+    "concepts": [
+     "prioritise key metrics",
+     "chart selection",
+     "consistent scales",
+     "reduce chart count",
+     "drill down",
+     "readable labels"
+    ],
+    "offtarget": [
+     "dpad",
+     "hero",
+     "carousel"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "dashboards"
+  },
+  {
+   "id": "ho-095",
+   "query": "hospital bed capacity dashboard for charge nurses on a tablet",
+   "expect": {
+    "platforms": [
+     "tablet"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [
+     "dashboard"
+    ],
+    "negatives": [],
+    "concepts": [
+     "glanceable status",
+     "large touch targets",
+     "status colour semantics",
+     "no colour alone",
+     "auto refresh",
+     "drill to ward"
+    ],
+    "offtarget": [
+     "hover tooltips",
+     "dpad",
+     "hero"
+    ],
+    "missing": [
+     "platform",
+     "stack"
+    ]
+   },
+   "category": "dashboards"
+  },
+  {
+   "id": "ho-096",
+   "query": "make our KPI dashboard cards accessible, screen reader reads meaningless numbers",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "accessibility"
+    ],
+    "inputs": [
+     "keyboard"
+    ],
+    "screens": [
+     "dashboard"
+    ],
+    "negatives": [],
+    "concepts": [
+     "accessible names for metrics",
+     "chart text alternatives",
+     "heading structure",
+     "trend described in text",
+     "live region restraint",
+     "focus order"
+    ],
+    "offtarget": [
+     "dpad",
+     "hover",
+     "hero"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "dashboards"
+  },
+  {
+   "id": "ho-097",
+   "query": "onboarding for a mobile banking app, KYC with ID photo, users drop off at 40%",
+   "expect": {
+    "platforms": [
+     "mobile"
+    ],
+    "modes": [
+     "audit",
+     "refactor"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [
+     "onboarding",
+     "auth"
+    ],
+    "negatives": [],
+    "concepts": [
+     "progress indicator",
+     "camera guidance overlay",
+     "save and resume",
+     "explain why data needed",
+     "error recovery",
+     "one task per screen"
+    ],
+    "offtarget": [
+     "hover",
+     "dpad",
+     "sidebar"
+    ],
+    "missing": [
+     "platform",
+     "stack"
+    ]
+   },
+   "category": "onboarding"
+  },
+  {
+   "id": "ho-098",
+   "query": "first launch of our smart TV app, need to pair with the phone app. design the flow",
+   "expect": {
+    "platforms": [
+     "tv"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "remote"
+    ],
+    "screens": [
+     "onboarding",
+     "auth"
+    ],
+    "negatives": [],
+    "concepts": [
+     "qr code pairing",
+     "activation code",
+     "large code typography",
+     "safe margins",
+     "skip for now",
+     "dpad focus"
+    ],
+    "offtarget": [
+     "hover",
+     "text password entry",
+     "touch"
+    ],
+    "missing": [
+     "stack",
+     "brand"
+    ]
+   },
+   "category": "onboarding"
+  },
+  {
+   "id": "ho-099",
+   "query": "Desktop app onboarding for a CAD-like tool, users skip the tour and then get lost",
+   "expect": {
+    "platforms": [
+     "desktop"
+    ],
+    "modes": [
+     "create",
+     "refactor"
+    ],
+    "inputs": [
+     "pointer",
+     "keyboard"
+    ],
+    "screens": [
+     "onboarding"
+    ],
+    "negatives": [],
+    "concepts": [
+     "contextual tips",
+     "progressive onboarding",
+     "sample project",
+     "empty state guidance",
+     "keyboard shortcut hints",
+     "dismiss and revisit"
+    ],
+    "offtarget": [
+     "dpad",
+     "bottom sheet",
+     "hero"
+    ],
+    "missing": [
+     "stack",
+     "brand"
+    ]
+   },
+   "category": "onboarding"
+  },
+  {
+   "id": "ho-100",
+   "query": "web onboarding checklist for new admins of our school SaaS",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "pointer"
+    ],
+    "screens": [
+     "onboarding",
+     "dashboard"
+    ],
+    "negatives": [],
+    "concepts": [
+     "progress checklist",
+     "one primary action",
+     "dismissable",
+     "persist completion",
+     "link to each task",
+     "celebration restraint"
+    ],
+    "offtarget": [
+     "dpad",
+     "carousel",
+     "dense grid"
+    ],
+    "missing": [
+     "stack",
+     "brand"
+    ]
+   },
+   "category": "onboarding"
+  },
+  {
+   "id": "ho-101",
+   "query": "Full accessibility audit of our council's web portal against WCAG 2.2 AA",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "accessibility",
+     "audit"
+    ],
+    "inputs": [
+     "keyboard",
+     "pointer",
+     "touch"
+    ],
+    "screens": [],
+    "negatives": [],
+    "concepts": [
+     "skip link",
+     "focus visible",
+     "target size",
+     "contrast",
+     "heading structure",
+     "form labels"
+    ],
+    "offtarget": [
+     "dpad",
+     "voiceover rotor",
+     "automation properties"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "accessibility"
+  },
+  {
+   "id": "ho-102",
+   "query": "our android tv app cant be used with talkback, focus jumps everywhere",
+   "expect": {
+    "platforms": [
+     "tv"
+    ],
+    "modes": [
+     "accessibility"
+    ],
+    "inputs": [
+     "remote"
+    ],
+    "screens": [],
+    "negatives": [],
+    "concepts": [
+     "focus order",
+     "content descriptions",
+     "focus restoration",
+     "focus visible",
+     "announce row titles",
+     "avoid focus traps"
+    ],
+    "offtarget": [
+     "aria",
+     "hover",
+     "skip link"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "accessibility"
+  },
+  {
+   "id": "ho-103",
+   "query": "colour blind users cant read our logistics status map (red/green). fix across web and mobile",
+   "expect": {
+    "platforms": [
+     "web",
+     "mobile"
+    ],
+    "modes": [
+     "accessibility",
+     "design-system"
+    ],
+    "inputs": [],
+    "screens": [
+     "dashboard"
+    ],
+    "negatives": [],
+    "concepts": [
+     "no colour alone",
+     "shape and icon encoding",
+     "colour blind safe palette",
+     "text labels",
+     "pattern fills",
+     "legend"
+    ],
+    "offtarget": [
+     "dpad",
+     "hero",
+     "carousel"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "accessibility"
+  },
+  {
+   "id": "ho-104",
+   "query": "WPF app for a court system, judges use switch access devices. make it work",
+   "expect": {
+    "platforms": [
+     "desktop"
+    ],
+    "modes": [
+     "accessibility"
+    ],
+    "inputs": [
+     "keyboard"
+    ],
+    "screens": [],
+    "negatives": [],
+    "concepts": [
+     "keyboard operability",
+     "automation properties",
+     "focus visuals",
+     "logical tab order",
+     "avoid timed actions",
+     "large focus targets"
+    ],
+    "offtarget": [
+     "aria",
+     "hover",
+     "touch gestures"
+    ],
+    "missing": []
+   },
+   "category": "accessibility"
+  },
+  {
+   "id": "ho-105",
+   "query": "We run a budget airline and a premium airline on one codebase. Make the two brands feel actually different, not just colours.",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "brand",
+     "design-system"
+    ],
+    "inputs": [],
+    "screens": [],
+    "negatives": [],
+    "concepts": [
+     "structural differences",
+     "typography per brand",
+     "density per brand",
+     "component variants",
+     "semantic tokens",
+     "motion character"
+    ],
+    "offtarget": [
+     "colour swap only",
+     "dpad",
+     "one theme file"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "brand"
+  },
+  {
+   "id": "ho-106",
+   "query": "broadcaster with 4 channel brands, one Android TV app. how do I theme per channel?",
+   "expect": {
+    "platforms": [
+     "tv"
+    ],
+    "modes": [
+     "brand",
+     "design-system"
+    ],
+    "inputs": [
+     "remote"
+    ],
+    "screens": [
+     "home"
+    ],
+    "negatives": [],
+    "concepts": [
+     "theme tokens",
+     "focus ring per brand",
+     "dark theme contrast",
+     "brand-specific row layouts",
+     "safe margins",
+     "logo placement"
+    ],
+    "offtarget": [
+     "hover",
+     "css variables",
+     "colour swap only"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "brand"
+  },
+  {
+   "id": "ho-107",
+   "query": "apply our new brand guidelines pdf to the existing react component library",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "brand",
+     "refactor"
+    ],
+    "inputs": [],
+    "screens": [],
+    "negatives": [],
+    "concepts": [
+     "map guidelines to tokens",
+     "typography scale",
+     "colour roles",
+     "audit existing components",
+     "contrast check",
+     "spacing scale"
+    ],
+    "offtarget": [
+     "dpad",
+     "rewrite components",
+     "hero"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "brand"
+  },
+  {
+   "id": "ho-108",
+   "query": "retail group: supermarket brand vs luxury brand, same Flutter app. supermarket = busy, luxury = calm. set it up",
+   "expect": {
+    "platforms": [
+     "mobile"
+    ],
+    "modes": [
+     "brand",
+     "design-system"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [],
+    "negatives": [],
+    "concepts": [
+     "density per brand",
+     "typography per brand",
+     "theme extensions",
+     "spacing scale per brand",
+     "component variants",
+     "motion character"
+    ],
+    "offtarget": [
+     "css variables",
+     "hover",
+     "colour swap only"
+    ],
+    "missing": []
+   },
+   "category": "brand"
+  },
+  {
+   "id": "ho-109",
+   "query": "our booking site breaks between 768 and 1024px, fix the layout",
+   "expect": {
+    "platforms": [
+     "web",
+     "tablet"
+    ],
+    "modes": [
+     "responsive"
+    ],
+    "inputs": [
+     "touch",
+     "pointer"
+    ],
+    "screens": [],
+    "negatives": [],
+    "concepts": [
+     "container queries",
+     "intermediate breakpoint",
+     "fluid grid",
+     "inspect existing css",
+     "navigation collapse point",
+     "touch targets at tablet"
+    ],
+    "offtarget": [
+     "dpad",
+     "hero redesign",
+     "carousel"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "responsive"
+  },
+  {
+   "id": "ho-110",
+   "query": "make our winui app handle window resizing and snap layouts gracefully",
+   "expect": {
+    "platforms": [
+     "desktop"
+    ],
+    "modes": [
+     "responsive"
+    ],
+    "inputs": [
+     "pointer",
+     "keyboard"
+    ],
+    "screens": [],
+    "negatives": [],
+    "concepts": [
+     "visual state triggers",
+     "adaptive navigationview",
+     "minimum window size",
+     "collapsing panes",
+     "text reflow",
+     "dpi scaling"
+    ],
+    "offtarget": [
+     "css media query",
+     "bottom sheet",
+     "dpad"
+    ],
+    "missing": []
+   },
+   "category": "responsive"
+  },
+  {
+   "id": "ho-111",
+   "query": "Android app for a utility: landscape and foldable support for the bill detail screen",
+   "expect": {
+    "platforms": [
+     "mobile",
+     "tablet"
+    ],
+    "modes": [
+     "responsive"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [
+     "detail"
+    ],
+    "negatives": [],
+    "concepts": [
+     "window size classes",
+     "two pane on wide",
+     "fold posture",
+     "state preservation on rotate",
+     "hinge avoidance",
+     "reachability"
+    ],
+    "offtarget": [
+     "css breakpoints",
+     "dpad",
+     "hover"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "responsive"
+  },
+  {
+   "id": "ho-112",
+   "query": "email template for order confirmations, looks broken in Outlook and on phones",
+   "expect": {
+    "platforms": [
+     "web",
+     "mobile"
+    ],
+    "modes": [
+     "responsive",
+     "refactor"
+    ],
+    "inputs": [],
+    "screens": [],
+    "negatives": [],
+    "concepts": [
+     "table based layout",
+     "inline styles",
+     "fluid hybrid approach",
+     "outlook conditionals",
+     "dark mode in email",
+     "single column on mobile"
+    ],
+    "offtarget": [
+     "css grid",
+     "javascript",
+     "dpad"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "responsive"
+  },
+  {
+   "id": "ho-113",
+   "query": "here's a screenshot of a competitor's banking dashboard, rebuild it for our web app",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "reconstruct"
+    ],
+    "inputs": [
+     "pointer"
+    ],
+    "screens": [
+     "dashboard"
+    ],
+    "negatives": [],
+    "concepts": [
+     "analyse layout structure",
+     "extract spacing and type scale",
+     "adapt to our tokens",
+     "avoid copying brand assets",
+     "tabular figures",
+     "responsive interpretation"
+    ],
+    "offtarget": [
+     "dpad",
+     "pixel-copy logo",
+     "hero"
+    ],
+    "missing": [
+     "stack",
+     "brand"
+    ]
+   },
+   "category": "screenshot"
+  },
+  {
+   "id": "ho-114",
+   "query": "[image attached] implement this Android TV home screen mockup from our designer",
+   "expect": {
+    "platforms": [
+     "tv"
+    ],
+    "modes": [
+     "reconstruct"
+    ],
+    "inputs": [
+     "remote"
+    ],
+    "screens": [
+     "home"
+    ],
+    "negatives": [],
+    "concepts": [
+     "dpad focus",
+     "safe margins",
+     "focus scale",
+     "row structure from mockup",
+     "10 foot typography",
+     "verify by rendering"
+    ],
+    "offtarget": [
+     "hover",
+     "touch",
+     "css hover"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "screenshot"
+  },
+  {
+   "id": "ho-115",
+   "query": "attached photo of a paper hospital intake form, turn it into a tablet form",
+   "expect": {
+    "platforms": [
+     "tablet"
+    ],
+    "modes": [
+     "reconstruct",
+     "create"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [
+     "form"
+    ],
+    "negatives": [],
+    "concepts": [
+     "map paper fields to inputs",
+     "large touch targets",
+     "logical grouping",
+     "input types",
+     "signature capture",
+     "progress indication"
+    ],
+    "offtarget": [
+     "hover",
+     "dpad",
+     "dense grid"
+    ],
+    "missing": [
+     "platform",
+     "stack"
+    ]
+   },
+   "category": "screenshot"
+  },
+  {
+   "id": "ho-116",
+   "query": "screenshot of our old WPF invoice screen attached, recreate in Avalonia but cleaner",
+   "expect": {
+    "platforms": [
+     "desktop"
+    ],
+    "modes": [
+     "reconstruct",
+     "polish"
+    ],
+    "inputs": [
+     "pointer",
+     "keyboard"
+    ],
+    "screens": [
+     "form",
+     "detail"
+    ],
+    "negatives": [],
+    "concepts": [
+     "preserve workflow",
+     "consistent spacing scale",
+     "tab order",
+     "tabular figures",
+     "fluent theme",
+     "keyboard shortcuts preserved"
+    ],
+    "offtarget": [
+     "bottom sheet",
+     "dpad",
+     "hover-only"
+    ],
+    "missing": []
+   },
+   "category": "screenshot"
+  },
+  {
+   "id": "ho-117",
+   "query": "the spacing on our settings page is all over the place, tidy it",
+   "expect": {
+    "platforms": [],
+    "modes": [
+     "polish"
+    ],
+    "inputs": [],
+    "screens": [
+     "settings"
+    ],
+    "negatives": [],
+    "concepts": [
+     "spacing scale",
+     "alignment grid",
+     "consistent gaps",
+     "inspect existing styles",
+     "vertical rhythm",
+     "group separation"
+    ],
+    "offtarget": [
+     "redesign navigation",
+     "dpad",
+     "hero"
+    ],
+    "missing": [
+     "platform",
+     "stack"
+    ]
+   },
+   "category": "polish"
+  },
+  {
+   "id": "ho-118",
+   "query": "typography on our news site feels amateurish, improve it w/o changing the fonts",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "polish"
+    ],
+    "inputs": [],
+    "screens": [
+     "detail",
+     "home"
+    ],
+    "negatives": [
+     "typography-change"
+    ],
+    "concepts": [
+     "type scale",
+     "line height",
+     "measure line length",
+     "hierarchy via weight and size",
+     "keep existing font families",
+     "consistent margins"
+    ],
+    "offtarget": [
+     "new font pairing",
+     "dpad",
+     "hero"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "polish"
+  },
+  {
+   "id": "ho-119",
+   "query": "Micro-interactions for our iOS fitness app buttons, subtle please",
+   "expect": {
+    "platforms": [
+     "mobile"
+    ],
+    "modes": [
+     "polish"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [],
+    "negatives": [],
+    "concepts": [
+     "press state feedback",
+     "haptics",
+     "spring animation",
+     "reduced motion",
+     "short duration",
+     "consistent easing"
+    ],
+    "offtarget": [
+     "hover",
+     "dpad",
+     "css transitions"
+    ],
+    "missing": []
+   },
+   "category": "polish"
+  },
+  {
+   "id": "ho-120",
+   "query": "loading states in our admin panel are inconsistent, spinners everywhere. fix",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "polish",
+     "design-system"
+    ],
+    "inputs": [],
+    "screens": [],
+    "negatives": [],
+    "concepts": [
+     "skeleton placeholders",
+     "loading pattern per context",
+     "delay before showing",
+     "reserved space",
+     "optimistic updates",
+     "consistent component"
+    ],
+    "offtarget": [
+     "dpad",
+     "hero",
+     "carousel"
+    ],
+    "missing": [
+     "stack"
+    ]
+   },
+   "category": "polish"
+  },
+  {
+   "id": "ho-121",
+   "query": "redesign the dashboard but do NOT use cards, no gradients, and don't touch the nav",
+   "expect": {
+    "platforms": [],
+    "modes": [
+     "refactor"
+    ],
+    "inputs": [],
+    "screens": [
+     "dashboard"
+    ],
+    "negatives": [
+     "card",
+     "gradient",
+     "navigation-change"
+    ],
+    "concepts": [
+     "rules and whitespace grouping",
+     "tabular layout",
+     "visual hierarchy",
+     "flat surfaces",
+     "keep navigation intact",
+     "typography hierarchy"
+    ],
+    "offtarget": [
+     "card grid",
+     "gradient hero",
+     "sidebar rework"
+    ],
+    "missing": [
+     "platform",
+     "stack"
+    ]
+   },
+   "category": "negative-constraint"
+  },
+  {
+   "id": "ho-122",
+   "query": "build the tvOS home screen, no hero banner, no glass blur effects",
+   "expect": {
+    "platforms": [
+     "tv"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "remote"
+    ],
+    "screens": [
+     "home"
+    ],
+    "negatives": [
+     "hero",
+     "glass"
+    ],
+    "concepts": [
+     "dpad focus",
+     "safe margins",
+     "collection rows",
+     "solid surfaces",
+     "focus engine",
+     "start with content rows"
+    ],
+    "offtarget": [
+     "hero banner",
+     "material blur",
+     "hover"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "negative-constraint"
+  },
+  {
+   "id": "ho-123",
+   "query": "improve the mobile product page. no new dependencies, no animations, keep the icon set",
+   "expect": {
+    "platforms": [
+     "mobile"
+    ],
+    "modes": [
+     "polish"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [
+     "detail"
+    ],
+    "negatives": [
+     "dependencies",
+     "animation",
+     "icon"
+    ],
+    "concepts": [
+     "visual hierarchy",
+     "spacing scale",
+     "sticky add to cart",
+     "existing components only",
+     "static states",
+     "typography"
+    ],
+    "offtarget": [
+     "install animation lib",
+     "new icon pack",
+     "hover"
+    ],
+    "missing": [
+     "platform",
+     "stack"
+    ]
+   },
+   "category": "negative-constraint"
+  },
+  {
+   "id": "ho-124",
+   "query": "Refresh our WinUI file manager. Don't use pill buttons and absolutely no hover-only actions.",
+   "expect": {
+    "platforms": [
+     "desktop"
+    ],
+    "modes": [
+     "polish",
+     "refactor"
+    ],
+    "inputs": [
+     "pointer",
+     "keyboard"
+    ],
+    "screens": [
+     "list"
+    ],
+    "negatives": [
+     "pill",
+     "hover"
+    ],
+    "concepts": [
+     "fluent design",
+     "always visible actions",
+     "command bar",
+     "keyboard accelerators",
+     "rectangular buttons",
+     "context menu"
+    ],
+    "offtarget": [
+     "pill buttons",
+     "hover reveal",
+     "dpad"
+    ],
+    "missing": []
+   },
+   "category": "negative-constraint"
+  },
+  {
+   "id": "ho-125",
+   "query": "Android dashboard for our warehouse team",
+   "expect": {
+    "platforms": [],
+    "modes": [
+     "create"
+    ],
+    "inputs": [],
+    "screens": [
+     "dashboard"
+    ],
+    "negatives": [],
+    "concepts": [
+     "clarify android phone tablet or tv",
+     "glanceable status",
+     "density depends on device",
+     "material 3",
+     "ask before assuming input"
+    ],
+    "offtarget": [
+     "assume dpad",
+     "assume touch only",
+     "hero"
+    ],
+    "missing": [
+     "platform",
+     "stack"
+    ]
+   },
+   "category": "adversarial"
+  },
+  {
+   "id": "ho-126",
+   "query": "desktop-style mobile inventory table for our retail stores",
+   "expect": {
+    "platforms": [
+     "mobile"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "touch"
+    ],
+    "screens": [
+     "list"
+    ],
+    "negatives": [],
+    "concepts": [
+     "flag conflict density vs touch",
+     "column priority",
+     "pinned first column",
+     "touch targets",
+     "horizontal scroll",
+     "expandable rows"
+    ],
+    "offtarget": [
+     "hover",
+     "60 visible columns",
+     "mouse resizing"
+    ],
+    "missing": [
+     "platform",
+     "stack"
+    ]
+   },
+   "category": "adversarial"
+  },
+  {
+   "id": "ho-127",
+   "query": "TV app with touch controls for our hotel rooms",
+   "expect": {
+    "platforms": [
+     "tv"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "remote",
+     "touch"
+    ],
+    "screens": [
+     "home"
+    ],
+    "negatives": [],
+    "concepts": [
+     "clarify touch source",
+     "remote as primary",
+     "companion tablet",
+     "safe margins",
+     "dpad focus",
+     "10 foot typography"
+    ],
+    "offtarget": [
+     "touch targets on tv panel",
+     "hover",
+     "swipe gestures on screen"
+    ],
+    "missing": [
+     "platform",
+     "stack"
+    ]
+   },
+   "category": "adversarial"
+  },
+  {
+   "id": "ho-128",
+   "query": "responsive WinUI interface for our clinic app",
+   "expect": {
+    "platforms": [
+     "desktop"
+    ],
+    "modes": [
+     "responsive",
+     "create"
+    ],
+    "inputs": [
+     "pointer",
+     "keyboard",
+     "touch"
+    ],
+    "screens": [],
+    "negatives": [],
+    "concepts": [
+     "visual state triggers",
+     "adaptive navigationview",
+     "window size not viewport",
+     "minimum window size",
+     "dpi scaling"
+    ],
+    "offtarget": [
+     "css media queries",
+     "mobile breakpoints",
+     "dpad"
+    ],
+    "missing": []
+   },
+   "category": "adversarial"
+  },
+  {
+   "id": "ho-129",
+   "query": "make it like Netflix but no rails and no hero",
+   "expect": {
+    "platforms": [],
+    "modes": [
+     "create"
+    ],
+    "inputs": [],
+    "screens": [
+     "home"
+    ],
+    "negatives": [
+     "rails",
+     "hero"
+    ],
+    "concepts": [
+     "grid or list alternative",
+     "clarify platform",
+     "content-first browse",
+     "respect prohibitions over reference",
+     "focus or touch depending platform"
+    ],
+    "offtarget": [
+     "horizontal rails",
+     "hero banner",
+     "copy netflix layout"
+    ],
+    "missing": [
+     "platform",
+     "stack",
+     "brand"
+    ]
+   },
+   "category": "adversarial"
+  },
+  {
+   "id": "ho-130",
+   "query": "make my backend UI faster",
+   "expect": {
+    "platforms": [],
+    "modes": [
+     "audit"
+    ],
+    "inputs": [],
+    "screens": [],
+    "negatives": [],
+    "concepts": [
+     "clarify admin ui vs server",
+     "perceived performance",
+     "inspect existing code",
+     "skeletons and optimistic updates",
+     "measure before changing"
+    ],
+    "offtarget": [
+     "database indexing",
+     "hero",
+     "dpad"
+    ],
+    "missing": [
+     "platform",
+     "stack",
+     "product"
+    ]
+   },
+   "category": "adversarial"
+  },
+  {
+   "id": "ho-131",
+   "query": "iPhone app but it should work with a keyboard and mouse mainly",
+   "expect": {
+    "platforms": [
+     "mobile"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "touch",
+     "keyboard",
+     "pointer"
+    ],
+    "screens": [],
+    "negatives": [],
+    "concepts": [
+     "clarify ipad or mac catalyst",
+     "touch remains primary on iphone",
+     "keyboard shortcuts",
+     "pointer hover support",
+     "focus state"
+    ],
+    "offtarget": [
+     "dpad",
+     "desktop window chrome",
+     "hover-only"
+    ],
+    "missing": [
+     "product",
+     "stack"
+    ]
+   },
+   "category": "adversarial"
+  },
+  {
+   "id": "ho-132",
+   "query": "kiosk web page but people will mostly use it from home on their laptops",
+   "expect": {
+    "platforms": [
+     "web",
+     "desktop"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "pointer",
+     "keyboard"
+    ],
+    "screens": [],
+    "negatives": [],
+    "concepts": [
+     "flag kiosk vs web conflict",
+     "clarify deployment",
+     "keyboard navigation",
+     "no idle reset on web",
+     "pointer targets"
+    ],
+    "offtarget": [
+     "idle timeout",
+     "huge touch targets",
+     "attract screen"
+    ],
+    "missing": [
+     "product",
+     "stack"
+    ]
+   },
+   "category": "adversarial"
+  },
+  {
+   "id": "ho-133",
+   "query": "Apple TV app, add a hamburger menu and pull to refresh",
+   "expect": {
+    "platforms": [
+     "tv"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "remote"
+    ],
+    "screens": [
+     "home"
+    ],
+    "negatives": [],
+    "concepts": [
+     "push back on mobile patterns",
+     "tab bar for tvos",
+     "focus engine",
+     "no pull gesture on remote",
+     "menu button behaviour"
+    ],
+    "offtarget": [
+     "hamburger menu",
+     "pull to refresh",
+     "hover"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "adversarial"
+  },
+  {
+   "id": "ho-134",
+   "query": "Material design for our WPF banking app",
+   "expect": {
+    "platforms": [
+     "desktop"
+    ],
+    "modes": [
+     "design-system"
+    ],
+    "inputs": [
+     "pointer",
+     "keyboard"
+    ],
+    "screens": [],
+    "negatives": [],
+    "concepts": [
+     "flag platform convention mismatch",
+     "windows conventions",
+     "adapt material principles not widgets",
+     "dense desktop density",
+     "keyboard accelerators"
+    ],
+    "offtarget": [
+     "bottom navigation",
+     "floating action button",
+     "touch ripple"
+    ],
+    "missing": []
+   },
+   "category": "adversarial"
+  },
+  {
+   "id": "ho-135",
+   "query": "Netflix style landing page for our ERP",
+   "expect": {
+    "platforms": [
+     "web"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "pointer",
+     "keyboard"
+    ],
+    "screens": [
+     "home",
+     "dashboard"
+    ],
+    "negatives": [],
+    "concepts": [
+     "question fit of media patterns",
+     "task-oriented home",
+     "dense data needs",
+     "recently used modules",
+     "keyboard access"
+    ],
+    "offtarget": [
+     "poster rails",
+     "autoplay hero video",
+     "dpad"
+    ],
+    "missing": [
+     "stack",
+     "product"
+    ]
+   },
+   "category": "adversarial"
+  },
+  {
+   "id": "ho-136",
+   "query": "mobile-first design for our IPTV set top box EPG",
+   "expect": {
+    "platforms": [
+     "tv"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "remote"
+    ],
+    "screens": [
+     "list"
+    ],
+    "negatives": [],
+    "concepts": [
+     "flag mobile-first mismatch",
+     "dpad focus",
+     "safe margins",
+     "virtualization",
+     "10 foot typography",
+     "channel column pinned"
+    ],
+    "offtarget": [
+     "mobile breakpoints",
+     "touch targets",
+     "hamburger menu"
+    ],
+    "missing": [
+     "stack",
+     "brand"
+    ]
+   },
+   "category": "adversarial"
+  },
+  {
+   "id": "ho-137",
+   "query": "a dashboard",
+   "expect": {
+    "platforms": [],
+    "modes": [
+     "create"
+    ],
+    "inputs": [],
+    "screens": [
+     "dashboard"
+    ],
+    "negatives": [],
+    "concepts": [
+     "ask about platform and users",
+     "inspect project if exists",
+     "key metrics first",
+     "avoid assumptions"
+    ],
+    "offtarget": [
+     "assume web",
+     "hero",
+     "dpad"
+    ],
+    "missing": [
+     "platform",
+     "stack",
+     "product",
+     "brand"
+    ]
+   },
+   "category": "adversarial"
+  },
+  {
+   "id": "ho-138",
+   "query": "Windows tablet kiosk app in WinUI, patients tap in, but staff use it with keyboard at the desk",
+   "expect": {
+    "platforms": [
+     "kiosk",
+     "tablet",
+     "desktop"
+    ],
+    "modes": [
+     "create"
+    ],
+    "inputs": [
+     "touch",
+     "keyboard"
+    ],
+    "screens": [
+     "form",
+     "home"
+    ],
+    "negatives": [],
+    "concepts": [
+     "dual mode interaction",
+     "large touch targets",
+     "keyboard accelerators",
+     "idle reset for patient mode",
+     "staff mode switch",
+     "privacy of on-screen data"
+    ],
+    "offtarget": [
+     "hover-only",
+     "dpad",
+     "hero"
+    ],
+    "missing": [
+     "brand"
+    ]
+   },
+   "category": "adversarial"
+  },
+  {
+   "id": "ho-139",
+   "query": "make the app look premium, glassy, lots of gradients — it's a hospital emergency triage tool",
+   "expect": {
+    "platforms": [],
+    "modes": [
+     "polish",
+     "review"
+    ],
+    "inputs": [],
+    "screens": [],
+    "negatives": [],
+    "concepts": [
+     "push back on style vs safety",
+     "legibility under stress",
+     "high contrast",
+     "no colour alone",
+     "clinical clarity",
+     "restrained visual effects"
+    ],
+    "offtarget": [
+     "glass blur on critical data",
+     "decorative gradients",
+     "hero"
+    ],
+    "missing": [
+     "platform",
+     "stack"
+    ]
+   },
+   "category": "adversarial"
+  },
+  {
+   "id": "ho-140",
+   "query": "postgres deadlock between two update statements on the orders table, how do I fix it",
+   "expect": {
+    "platforms": [],
+    "modes": [],
+    "inputs": [],
+    "screens": [],
+    "negatives": [],
+    "concepts": [],
+    "offtarget": [
+     "ui layout",
+     "typography",
+     "focus"
+    ],
+    "missing": []
+   },
+   "category": "abstain",
+   "expect_abstain": true
+  },
+  {
+   "id": "ho-141",
+   "query": "write a Dockerfile for our node api with multi stage build",
+   "expect": {
+    "platforms": [],
+    "modes": [],
+    "inputs": [],
+    "screens": [],
+    "negatives": [],
+    "concepts": [],
+    "offtarget": [
+     "ui",
+     "design tokens",
+     "responsive"
+    ],
+    "missing": []
+   },
+   "category": "abstain",
+   "expect_abstain": true
+  },
+  {
+   "id": "ho-142",
+   "query": "asdkjh qwe 123 ??? design",
+   "expect": {
+    "platforms": [],
+    "modes": [],
+    "inputs": [],
+    "screens": [],
+    "negatives": [],
+    "concepts": [],
+    "offtarget": [
+     "any concrete ui proposal"
+    ],
+    "missing": [
+     "platform",
+     "product",
+     "stack"
+    ]
+   },
+   "category": "abstain",
+   "expect_abstain": true
+  },
+  {
+   "id": "ho-143",
+   "query": "kubernetes pods keep restarting with OOMKilled, help",
+   "expect": {
+    "platforms": [],
+    "modes": [],
+    "inputs": [],
+    "screens": [],
+    "negatives": [],
+    "concepts": [],
+    "offtarget": [
+     "ui",
+     "layout",
+     "dashboard design"
+    ],
+    "missing": []
+   },
+   "category": "abstain",
+   "expect_abstain": true
+  },
+  {
+   "id": "ho-144",
+   "query": "rotate our AWS access keys and update the CI secrets",
+   "expect": {
+    "platforms": [],
+    "modes": [],
+    "inputs": [],
+    "screens": [],
+    "negatives": [],
+    "concepts": [],
+    "offtarget": [
+     "ui",
+     "form design",
+     "settings screen"
+    ],
+    "missing": []
+   },
+   "category": "abstain",
+   "expect_abstain": true
+  },
+  {
+   "id": "ho-145",
+   "query": "explain the difference between TCP and UDP for my networking exam",
+   "expect": {
+    "platforms": [],
+    "modes": [],
+    "inputs": [],
+    "screens": [],
+    "negatives": [],
+    "concepts": [],
+    "offtarget": [
+     "ui",
+     "design",
+     "layout"
+    ],
+    "missing": []
+   },
+   "category": "abstain",
+   "expect_abstain": true
+  }
+ ]
+}

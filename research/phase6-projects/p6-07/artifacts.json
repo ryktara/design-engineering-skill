@@ -1,0 +1,134 @@
+{
+  "task": "p6-07",
+  "project": "p5-sveltekit-clinic",
+  "platform_expected": "web",
+  "platform_resolved": "tablet",
+  "platform_correct": "yes",
+  "stack": "sveltekit-2 + svelte-5 + tailwind-3",
+  "existing_ui": true,
+  "new_screen": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": ["refactor", "responsive", "polish", "accessibility"],
+  "mode_resolved": ["responsive", "audit"],
+  "mode_correct": "acceptable",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "moderate",
+  "render_mode": "native",
+  "screenshots": [
+    "render/first-tablet-1024x768.png",
+    "render/first-tablet-1280x800.png",
+    "render/first-desktop-1280x800.png",
+    "render/final-tablet-1024x768.png",
+    "render/final-tablet-1280x800.png",
+    "render/final-desktop-1280x800.png"
+  ],
+  "context_detection": {
+    "navigation": "yes",
+    "theme": "yes",
+    "typography": "yes",
+    "surfaces": "yes",
+    "spacing": "yes"
+  },
+  "preservation": {
+    "navigation": true,
+    "theme": true,
+    "typography": true,
+    "component_reuse": true,
+    "unjustified_structural_change": 0
+  },
+  "expected_concepts": [
+    "touch.minimum_target",
+    "interaction.hover_independence",
+    "adaptive.breakpoint_matrix",
+    "layout.spacing_scale",
+    "touch.gestures_discoverable",
+    "interaction.focus_visible"
+  ],
+  "critical_concepts": ["touch.minimum_target"],
+  "delivered_concepts": [
+    "touch.minimum_target",
+    "adaptive.breakpoint_matrix",
+    "adaptive.navigation_transform",
+    "touch.safe_areas",
+    "layout.spacing_scale",
+    "layout.focal_hierarchy",
+    "layout.one_primary_action",
+    "data.exception_first",
+    "process.reuse_first",
+    "privacy.shared_device",
+    "privacy.sensitive_masking",
+    "state.session_expiry"
+  ],
+  "concept_recall": 0.5,
+  "critical_recall": 1.0,
+  "concept_misses": [
+    {"concept": "interaction.hover_independence", "layer": "candidate-compatibility"},
+    {"concept": "touch.gestures_discoverable", "layer": "bundle-selection"},
+    {"concept": "interaction.focus_visible", "layer": "expected-concepts"}
+  ],
+  "first_render_defects": {"visual": 0, "interaction": 0, "accessibility": 1, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+  "final_defects": {"visual": 0, "interaction": 0, "accessibility": 0, "platform": 0, "existing-system-mismatch": 0, "implementation-bug": 0},
+  "iterations": 1,
+  "guidance_relevant": 2,
+  "guidance_partial": 3,
+  "guidance_offtarget": 1,
+  "bad_guidance": [
+    {"record": "shared-device-privacy", "category": "generic", "why": "Masking / PIN / idle-reset advice selected as a CRITICAL concept from the healthcare product hint alone; nothing in a tap-target defect on a staff-facing day grid needed it, and it is the biggest record in a 6-record bundle."},
+    {"record": "mobile-orientation-size-classes", "category": "off-platform", "why": "Phone record (bottom navigation, safe areas, IME) applied to a tablet web app with a left rail; only the breakpoint-matrix concept was usable."},
+    {"record": "layout-hierarchy-one-thing", "category": "generic", "why": "True in general, says nothing about touch target sizing in a time grid."},
+    {"record": "layout-spacing-scale", "category": "generic", "why": "Usable only incidentally (the 4px inter-chip gap); the record is generic spacing advice."}
+  ],
+  "layer_review": {
+    "core": [],
+    "critical": [
+      "shared-device-privacy",
+      "impl-reuse-before-new",
+      "a11y-target-size",
+      "layout-hierarchy-one-thing",
+      "layout-spacing-scale",
+      "mobile-orientation-size-classes"
+    ],
+    "optional": [],
+    "optional_useful": 0,
+    "optional_noise": 0
+  },
+  "guidance_used": ["a11y-target-size", "impl-reuse-before-new", "layout-spacing-scale"],
+  "guidance_ignored": [
+    {"id": "shared-device-privacy", "why": "No sensitive value on this screen needed masking; acting on it would have changed a screen the task is not about."},
+    {"id": "mobile-orientation-size-classes", "why": "Bottom-nav / safe-area / IME advice does not apply to a tablet web app with a left rail."},
+    {"id": "layout-hierarchy-one-thing", "why": "Re-ranking the grid's focal point was outside a moderate budget and outside the request."}
+  ],
+  "unjustified_direction_slots": 1,
+  "process_records_needed": false,
+  "skill_effect": "helped",
+  "guidance_tokens": 815,
+  "misses": [
+    {"layer": "candidate-compatibility", "what": "Resolved platform 'tablet' filtered out every web/desktop record (anti-hover-only-actions, comp-menu, comp-filters); a tablet request against a web codebase must stay compatible with web records."},
+    {"layer": "bundle-selection", "what": "touch.gestures_discoverable dropped on a screen whose whole interaction is drag-to-reschedule."},
+    {"layer": "criticality", "what": "privacy.shared_device / privacy.sensitive_masking marked critical from the healthcare product hint alone on a touch-target defect."},
+    {"layer": "direction", "what": "metadata slot returned 'new' on an existing UI at a moderate budget with no metadata wording in the task."},
+    {"layer": "project-context", "what": "radius reported UNKNOWN although tailwind.config.ts declares the full radius scale."}
+  ],
+  "knowledge_gaps": [],
+  "regressions": [
+    {"query": "Front desk on a tablet: the appointment chips are too small to tap.", "expect": "Records tagged platform web/desktop are not filtered out when the resolved platform is 'tablet'; anti-hover-only-actions is reachable."},
+    {"query": "Front desk on a tablet: the appointment chips are too small to tap.", "expect": "privacy.shared_device and privacy.sensitive_masking are not critical required concepts when the only privacy evidence is a healthcare product hint and the request is a touch-target defect."},
+    {"query": "The drag-to-reorder cards on the tablet board are hard to grab.", "expect": "A gesture-discoverability concept is delivered alongside touch.minimum_target."},
+    {"query": "Front desk on a tablet: the appointment chips are too small to tap.", "expect": "Direction keeps the metadata slot 'preserved' on an existing UI at a moderate budget."}
+  ],
+  "tags": [
+    "skill-helped",
+    "concept-miss",
+    "ranking-miss",
+    "direction-mismatch",
+    "context-detection-miss",
+    "render-defect-fixed",
+    "preservation-ok"
+  ],
+  "build_hash_start": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947",
+  "build_hash_end": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947"
+}

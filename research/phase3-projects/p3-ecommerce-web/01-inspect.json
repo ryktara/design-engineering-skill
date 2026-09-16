@@ -1,0 +1,42 @@
+{
+  "root": "D:\\indigo pro\\MYownSkills\\research\\phase3-projects\\p3-ecommerce-web\\project",
+  "findings": [
+    {
+      "status": "INFERRED",
+      "note": "no recognised UI stack; treat stack as MISSING and ask or inspect further"
+    }
+  ],
+  "stack_groups": [],
+  "platforms": [],
+  "ui_libraries": [],
+  "package_manager": null,
+  "css_architecture": [
+    ".css (1 files)"
+  ],
+  "tokens": [
+    "css custom properties: --color* (18), --sp* (9), --fs* (6), --font* (2), --lh* (2), --radius* (2), --primary* (2), --tap* (1)"
+  ],
+  "fonts": [],
+  "icons": [],
+  "routing": [],
+  "breakpoints": [
+    "900px (5 rules)",
+    "720px (2 rules)",
+    "901px (1 rules)",
+    "560px (1 rules)"
+  ],
+  "accessibility": [
+    "a11y attributes present in 5 files"
+  ],
+  "focus_handling": [
+    "explicit focus handling in 1 files"
+  ],
+  "design_docs": [],
+  "component_dirs": [],
+  "tests": [],
+  "i18n": [],
+  "product_hints": [],
+  "sample": {
+    "files_scanned": 5
+  }
+}

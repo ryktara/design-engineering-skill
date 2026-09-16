@@ -1,0 +1,28 @@
+## guidance: Warehouse clerks say our WinUI stock adjustments page is confusing and they keep missing rows; the screen reader reads the status column as just text
+status=CONFIDENT mode=['accessibility', 'audit'] platform=['desktop', 'tv'] input=['keyboard', 'pointer', 'remote'] product=['erp'] screen=[] stack=['winui'] density=medium env=['large-display', 'shared-device'] risk=low negatives=[]
+concerns required=['accessibility', 'interaction', 'component', 'feedback', 'performance', 'data-display'] covered=1.0 uncovered=[] recommended=['states', 'anti-pattern', 'content', 'environment'] bundle=8 (core 2 + guardrails 6) diversity=0.88 redundancy=0.43
+uncovered required concepts (no record carries them for this context): interaction.dpad_reachability, tv.ten_foot_typography
+
+### Core (what to build)
+- **Data table / grid** `comp-data-table` [component/data-display/structure] — Sticky header, row height by density token, zebra striping optional (prefer hover/selection highlight), column resize/reorder/visibility persisted, sort indicator with aria-sort, selection checkbox column with header select-all and a count, row actions visible on focus as well as hover, inline edit with Enter/Escape, keyboard grid navigation (arrows, Home/End, PageUp/Down), virtualised rows, loading skeleton rows, empty state inside the table body. Financial tables: see numeric rule.
+  - winui: CommunityToolkit DataGrid (keyboard + UIA built in) or ItemsView; avoid ListView with a fake header row.
+  - selected for: highest-scoring component with lexical evidence; lexical 0.205, structural 0.64
+- **TV rail (horizontal row of cards)** `comp-tv-rail` [component/navigation] — Rail title (≥24 sp) left-aligned in the safe area, cards of one aspect ratio, focused card scrolls to a fixed pivot (~10–30% from left) with LEFT at index 0 going to navigation, focus memory per rail, lazy loading of items and images, 'see all' as the last card if the rail is capped, no wrap-around, consistent card counts per width (Android: ~4 landscape / ~6 portrait at 960 dp).
+  - selected for: highest-scoring component with lexical evidence; lexical 0.142, structural 0.52
+
+### Guardrails (must hold)
+- **Non-text contrast 3:1 for controls and focus** `a11y-nontext-contrast` [accessibility; accessibility-requirement] — Any visual that identifies a control or its state needs ≥3:1 against adjacent colours. Hairline dividers at 1.2:1 are fine as decoration but an input whose only boundary is that hairline fails.
+  - selected for: required concern accessibility: accessibility mode
+- **TV: overscan-safe margins** `tv-safe-area` [interaction/structure; platform-standard] — Keep interactive and text content ≥5% from edges: at the 960×540 dp design frame that is 48 dp horizontal and 27 dp vertical (Android guidance: up to 58/28 dp for maximum safety; tvOS: 60 pt sides, 60 pt top/bottom on the 1920×1080 frame). Let rails scroll under the margin so partial cards hint at more content.
+  - selected for: required concern interaction: accessibility mode: operability is part of the review
+- **Announce dynamic status changes** `a11y-live-status` [accessibility/feedback; accessibility-requirement] — Use a polite live region (role=status / accessibilityLiveRegion=polite / LiveSetting) with a complete phrase ('12 results for shoes'), assertive only for blocking errors; toasts stay ≥5 s or until dismissed and are also logged somewhere reachable.
+  - selected for: required concern feedback: interaction problem: discoverability and confirmation of actions
+- **Virtualise long lists and tables** `web-virtualize-long-lists` [data-display/performance; engineering-practice] — Windowed rendering with stable row heights or measured heights, keyboard focus preserved when rows unmount (roving focus by key), aria-rowcount/aria-setsize so assistive tech knows the real size, scroll restoration on back navigation. Native: LazyColumn/List/FlatList/VirtualizingStackPanel already virtualise; keep keys stable.
+  - selected for: required concern performance: focus latency and catalog virtualization on TV
+- **Accessible names for every control and image** `a11y-labels-names` [accessibility; accessibility-requirement] — Visible label for inputs (not placeholder-only), aria-label/accessibilityLabel/contentDescription/AutomationProperties.Name for icon-only controls, alt text for meaningful images and alt="" for decorative ones, link text that makes sense out of context. The accessible name must contain the visible label text (label in name).
+  - selected for: required concept a11y.accessible_names
+- **Desktop: keyboard is a first-class input** `desktop-keyboard-first` [interaction; platform-standard] — Document shortcuts in menus and tooltips; F2 edits, Delete deletes with undo, Ctrl+F finds, F6 cycles panes; grids use arrow keys and Ctrl/Shift selection; every dialog has a default and cancel button; access keys shown on Alt (Windows).
+  - selected for: required concept interaction.keyboard_navigation
+
+Omitted (redundant): comp-data-entry-grid (same category as a core pick or incompatible with one)
+Filtered out: anti-scroll-animation-everything (platform ['mobile', 'web'] not in request ['desktop', 'tv']); anti-mobile-desktop-shrunk (platform ['mobile'] not in request ['desktop', 'tv']); comp-list-row-mobile (platform ['mobile', 'tablet'] not in request ['desktop', 'tv']); comp-hero-section (platform ['mobile', 'web'] not in request ['desktop', 'tv']); dir-service-app-mobile (platform ['mobile'] not in request ['desktop', 'tv']); dir-public-kiosk (platform ['kiosk'] not in request ['desktop', 'tv'])

@@ -1,0 +1,111 @@
+{
+  "root": "D:\\indigo pro\\MYownSkills\\research\\phase5-projects\\p5-avalonia-fleet\\project",
+  "findings": [
+    {
+      "status": "KNOWN",
+      "note": "FleetDesk.csproj: Avalonia"
+    }
+  ],
+  "stack_groups": [
+    "avalonia"
+  ],
+  "platforms": [
+    "desktop"
+  ],
+  "ui_libraries": [
+    "avalonia"
+  ],
+  "package_manager": null,
+  "css_architecture": [],
+  "tokens": [],
+  "fonts": [],
+  "icons": [],
+  "routing": [
+    "Views/ (views)",
+    "ViewModels/ (mvvm viewmodels)"
+  ],
+  "breakpoints": [],
+  "accessibility": [
+    "a11y attributes present in 2 files"
+  ],
+  "focus_handling": [
+    "explicit focus handling in 1 files"
+  ],
+  "design_docs": [],
+  "component_dirs": [
+    "Styles/ (1 files)"
+  ],
+  "tests": [],
+  "i18n": [],
+  "product_hints": [],
+  "environment_hints": [],
+  "sample": {
+    "files_scanned": 22
+  },
+  "design_context": {
+    "navigation": {
+      "value": "menu-bar",
+      "status": "KNOWN",
+      "evidence": [
+        "menu-bar: 1 matches in MainWindow.axaml (shell/layout file)",
+        "also left-rail: 1 matches"
+      ],
+      "candidates": {
+        "menu-bar": 1,
+        "left-rail": 1
+      }
+    },
+    "theme": {
+      "value": "light-first",
+      "status": "INFERRED",
+      "evidence": [
+        "hex palette: 9 near-white, 0 near-black"
+      ]
+    },
+    "surfaces": {
+      "value": "bordered-flat",
+      "status": "INFERRED",
+      "evidence": [
+        "borders in 2 files, shadow/elevation in 0"
+      ]
+    },
+    "radius": {
+      "value": "small",
+      "status": "INFERRED",
+      "evidence": [
+        "most common radius 4 (2\u00d7); others []"
+      ]
+    },
+    "spacing": {
+      "value": 4,
+      "status": "INFERRED",
+      "evidence": [
+        "most used spacing values [4, 8, 16, 24, 2]"
+      ]
+    },
+    "typography": {
+      "value": "humanist-sans",
+      "status": "KNOWN",
+      "evidence": [
+        "font family Segoe UI, avares://Avalonia.Fonts.Inter/Assets#Inter (2 refs)",
+        "weights semibold"
+      ],
+      "features": {
+        "weights": [
+          "semibold"
+        ],
+        "type_scale": false,
+        "monospace": false,
+        "tabular_numerals": false
+      }
+    },
+    "components": {
+      "value": "avalonia",
+      "status": "KNOWN",
+      "evidence": [
+        "avalonia"
+      ]
+    },
+    "schema": "design-context/v1"
+  }
+}

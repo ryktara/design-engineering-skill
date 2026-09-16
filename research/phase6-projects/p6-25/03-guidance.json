@@ -1,0 +1,1374 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "Add a \"continue watching\" row to the home screen.",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "tv"
+    ],
+    "input": [
+      "remote"
+    ],
+    "product": [
+      "media"
+    ],
+    "screen": [
+      "home"
+    ],
+    "screen_subtype": [],
+    "stack": [
+      "compose",
+      "compose-tv"
+    ],
+    "density": "medium",
+    "components": [],
+    "environment": [
+      "large-display",
+      "shared-device"
+    ],
+    "jobs": [
+      "resume"
+    ],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "resume",
+      "create home"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "create"
+      ],
+      "problem_domain": [],
+      "change_scope": "screen",
+      "utterance": "request",
+      "existing": true,
+      "problem": false,
+      "facet": "general",
+      "diagnose_only": false,
+      "creation": true,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "create: build/create request on an existing surface"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "tv-rails",
+        "status": "KNOWN",
+        "evidence": [
+          "tv-rails: 100 matches in AppState.kt, Cards.kt, EventDetailsScreen.kt (shell/layout file)"
+        ]
+      },
+      "theme": {
+        "value": "dark-first",
+        "status": "KNOWN",
+        "evidence": [
+          "dark theme configuration signals: 1",
+          "root/canvas backgrounds: 0 light, 1 dark",
+          "hex palette: 2 near-white, 4 near-black"
+        ]
+      },
+      "surfaces": {
+        "value": "bordered-flat",
+        "status": "INFERRED",
+        "evidence": [
+          "borders in 8 files, shadow/elevation in 1"
+        ]
+      },
+      "radius": {
+        "value": "pill",
+        "status": "INFERRED",
+        "evidence": [
+          "most common radius 50 (6×); others [8.0, 4.0]"
+        ]
+      },
+      "spacing": {
+        "value": 8,
+        "status": "INFERRED",
+        "evidence": [
+          "most used spacing values [16, 10, 8]"
+        ]
+      },
+      "typography": {
+        "value": "custom",
+        "status": "KNOWN",
+        "evidence": [
+          "font family System (5 refs)",
+          "weights bold, semibold, normal, medium",
+          "encoded type scale in 1 files"
+        ]
+      },
+      "components": {
+        "value": "compose, compose-tv-material, media3, images:coil",
+        "status": "KNOWN",
+        "evidence": [
+          "compose",
+          "compose-tv-material",
+          "media3"
+        ]
+      }
+    },
+    "known": [
+      "platform=tv (project inspection)",
+      "input=remote (project inspection: DPAD/remote handling in source)",
+      "product=media (request: continue watching)",
+      "stack=compose (project inspection)",
+      "stack=compose-tv (project inspection)",
+      "screen=home (request: home screen, home)",
+      "job=resume (request: continue watching)",
+      "project_navigation=tv-rails (repository: tv-rails: 100 matches in AppState.kt, Cards.kt, EventDetailsScreen.kt (shell/layout file))",
+      "project_theme=dark-first (repository: dark theme configuration signals: 1; root/canvas backgrounds: 0 light, 1 dark)",
+      "project_typography=custom (repository: font family System (5 refs); weights bold, semibold, normal, medium)",
+      "project_components=compose, compose-tv-material, media3, images:coil (repository: compose; compose-tv-material)"
+    ],
+    "inferred": [
+      "density=medium (implied by product media)",
+      "mode=create (build/create request on an existing surface)",
+      "environment=shared-device (a TV is normally a shared household device)",
+      "environment=large-display (TV platform)",
+      "project_surfaces=bordered-flat (repository: borders in 8 files, shadow/elevation in 1)",
+      "project_radius=pill (repository: most common radius 50 (6×); others [8.0, 4.0])",
+      "project_spacing=8 (repository: most used spacing values [16, 10, 8])"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available"
+    ],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [
+        "continue watching",
+        "home screen, home"
+      ],
+      "project": [
+        "app\\build.gradle.kts: androidx.compose",
+        "app\\build.gradle.kts: androidx.tv:tv-material",
+        "app\\build.gradle.kts: androidx.media3",
+        "app\\build.gradle.kts: coil",
+        "app\\src\\main\\AndroidManifest.xml: leanback launcher (Android TV)",
+        "touchscreen not required in manifest (TV/set-top)",
+        "DPAD / remote key handling found in source",
+        "Compose dependencies imply mobile but the only launcher is leanback: TV-only app"
+      ]
+    },
+    "activation": {
+      "decision": "ambiguous",
+      "ui_score": 1.0,
+      "non_ui_score": 0,
+      "ui_terms": [
+        "screen"
+      ],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "to the",
+        "the home screen"
+      ],
+      "new": [],
+      "defect": [],
+      "operations": {
+        "create": [
+          "add",
+          "add a"
+        ]
+      },
+      "domains": {},
+      "no_change": [],
+      "scope": {
+        "screen": [
+          "screen",
+          "home"
+        ]
+      },
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "screen",
+        "row",
+        "concept:media.resume_playback"
+      ],
+      "ux_symptoms": [],
+      "technical": {},
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "structure",
+        "reason": "layout topology and hierarchy"
+      },
+      {
+        "concern": "navigation",
+        "reason": "entry screen or navigation component"
+      },
+      {
+        "concern": "states",
+        "reason": "asynchronous or remote data on this screen"
+      },
+      {
+        "concern": "interaction",
+        "reason": "input model: remote"
+      },
+      {
+        "concern": "accessibility",
+        "reason": "platform accessibility baseline"
+      },
+      {
+        "concern": "performance",
+        "reason": "focus latency and catalog virtualization on TV"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "anti-pattern",
+        "reason": "create/refactor requests attract generic defaults"
+      },
+      {
+        "concern": "brand",
+        "reason": "visual identity direction"
+      },
+      {
+        "concern": "content",
+        "reason": "10-foot readability"
+      },
+      {
+        "concern": "environment",
+        "reason": "environment large-display (INFERRED)"
+      }
+    ],
+    "optional": [
+      "motion"
+    ],
+    "required_concepts": [
+      {
+        "concept": "media.resume_playback",
+        "reason": "named in the request: continue watching",
+        "priority": 0,
+        "critical": true
+      },
+      {
+        "concept": "state.loading_empty_error",
+        "reason": "asynchronous or remote data on this screen",
+        "priority": 2,
+        "critical": false
+      },
+      {
+        "concept": "process.reuse_first",
+        "reason": "existing repository: reuse its primitives",
+        "priority": 1,
+        "critical": true
+      },
+      {
+        "concept": "interaction.dpad_reachability",
+        "reason": "TV / remote input",
+        "priority": 3,
+        "critical": false
+      },
+      {
+        "concept": "interaction.focus_restore",
+        "reason": "TV / remote input",
+        "priority": 3,
+        "critical": false
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "TV / remote input",
+        "priority": 3,
+        "critical": false
+      },
+      {
+        "concept": "tv.ten_foot_typography",
+        "reason": "TV / remote input",
+        "priority": 3,
+        "critical": false
+      },
+      {
+        "concept": "layout.media_card",
+        "reason": "TV browse",
+        "priority": 1,
+        "critical": true
+      }
+    ],
+    "recommended_concepts": [
+      "interaction.back_semantics",
+      "tv.no_touch_hover",
+      "perf.focus_latency",
+      "tv.dark_first",
+      "navigation.orientation_and_back",
+      "privacy.shared_device",
+      "tv.safe_margins"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "comp-media-card",
+      "kind": "component",
+      "category": "media-card",
+      "title": "Media card (poster/thumbnail)",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "component",
+        "content"
+      ],
+      "concepts": [
+        "layout.media_card",
+        "a11y.accessible_names"
+      ],
+      "covers": [
+        "media card with one focus target and one status overlay",
+        "accessible names and labels"
+      ],
+      "score": 0.779,
+      "guidance": "Fixed aspect, image with placeholder + title fallback, title below (1–2 lines, ellipsis), one status overlay max (progress bar, live badge, new), whole card is one focusable/tappable element with an accessible name (title + status), TV focus = scale + border/glow, hover on web = subtle lift, touch = pressed state; no inner buttons on TV.",
+      "use_when": "Items recognised by artwork in rails, grids, and continue-watching rows.",
+      "avoid_when": "Text-recognised items; dense lists.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "platform-standard",
+      "implementation": {
+        "compose-tv": "androidx.tv.material3 Card/StandardCardContainer with scale/border in focused state."
+      },
+      "incompatible": [
+        "layout-table-first"
+      ],
+      "why": {
+        "lexical": 0.713,
+        "structural": 0.86,
+        "matched": [
+          "platform tv",
+          "mode create",
+          "product media",
+          "screen home",
+          "density medium"
+        ]
+      },
+      "role": "core",
+      "selected_for": "critical concept (DIRECT): media card with one focus target and one status overlay"
+    },
+    {
+      "id": "media-resume-and-details",
+      "kind": "component",
+      "category": "detail",
+      "title": "Media details screen, resume playback and watchlist",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "interaction",
+        "navigation",
+        "states"
+      ],
+      "concepts": [
+        "media.details_play_first",
+        "media.resume_playback",
+        "media.watchlist",
+        "interaction.focus_restore",
+        "interaction.back_semantics",
+        "a11y.color_not_only"
+      ],
+      "covers": [
+        "details screen with Play as default focus",
+        "continue watching / resume playback",
+        "watchlist / save for later",
+        "focus restoration",
+        "BACK behaviour",
+        "no colour alone for status"
+      ],
+      "score": 0.906,
+      "guidance": "Details: the primary action is Play (or Resume with the remaining time and a Start over alternative) and it takes default focus; metadata is a short scannable block (duration, year, rating, badges as text not colour), synopsis ≤3 lines with an expander, episodes as a rail or list with progress bars and the next unwatched episode preselected; secondary actions (watchlist, trailer, more like this) sit after Play in one row. Resume: a continue-watching row shows progress on each card, resumes at the saved position, and removes finished items; entering a title from the row returns focus to that card. Watchlist: one toggle with a clear on/off state and text label, works from cards and details, and is reflected immediately in the watchlist row. Everything is reachable with D-pad UP/DOWN/LEFT/RIGHT and BACK returns to the row that launched the details.",
+      "use_when": "Title/episode details, continue-watching rows, watchlist actions in a streaming or catch-up app.",
+      "avoid_when": "Live-only channels without on-demand content (use the guide and player rules).",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "platform-standard",
+      "implementation": {
+        "compose-tv": "focusRequester on the Play button in the details Column; LazyRow with focusRestorer for episodes; remember the launching card key to restore focus on BACK."
+      },
+      "why": {
+        "lexical": 0.894,
+        "structural": 0.92,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode create",
+          "product media",
+          "screen home"
+        ]
+      },
+      "role": "core",
+      "selected_for": "critical concept (SPECIFIC): continue watching / resume playback"
+    },
+    {
+      "id": "dir-cinematic-media-tv",
+      "kind": "direction",
+      "category": "direction",
+      "title": "Cinematic media (TV)",
+      "facets": [
+        "direction",
+        "platform"
+      ],
+      "concerns": [
+        "brand",
+        "structure"
+      ],
+      "concepts": [],
+      "covers": [],
+      "score": 0.43,
+      "guidance": "Backdrop-driven home, side navigation, landscape rails with focus scale + glow, focus-revealed metadata, dark tinted canvas, a heavy display face for titles, filled icons at ≥32 dp, cinematic but debounced crossfades, and a player with transient controls. Identity via backdrop treatment (scrim shape, grain), display type, and the focus glow colour.",
+      "use_when": "Streaming/IPTV/VOD apps on TV with strong artwork; the brand wants immersion.",
+      "avoid_when": "Weak artwork, low-end boxes, catalogues where text metadata dominates (use 'Broadcast guide').",
+      "risk": {
+        "a11y": "medium",
+        "perf": "high"
+      },
+      "provenance": "internal-preference",
+      "incompatible": [
+        "nav-top-bar",
+        "layout-table-first",
+        "surface-bordered-panes",
+        "focus-ring-standard",
+        "motion-spring"
+      ],
+      "why": {
+        "lexical": 0.029,
+        "structural": 0.92,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode create",
+          "product media",
+          "density medium"
+        ]
+      },
+      "role": "core",
+      "selected_for": "task evidence: product"
+    },
+    {
+      "id": "comp-tv-rail",
+      "kind": "component",
+      "category": "tv-rail",
+      "title": "TV rail (horizontal row of cards)",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "navigation",
+        "performance"
+      ],
+      "concepts": [
+        "interaction.focus_restore",
+        "perf.focus_latency",
+        "layout.media_card"
+      ],
+      "covers": [
+        "focus restoration",
+        "focus latency",
+        "media card with one focus target and one status overlay"
+      ],
+      "score": 0.643,
+      "guidance": "Rail title (≥24 sp) left-aligned in the safe area, cards of one aspect ratio, focused card scrolls to a fixed pivot (~10–30% from left) with LEFT at index 0 going to navigation, focus memory per rail, lazy loading of items and images, 'see all' as the last card if the rail is capped, no wrap-around, consistent card counts per width (Android: ~4 landscape / ~6 portrait at 960 dp).",
+      "use_when": "Categorised browsing on TV home, section, and search screens.",
+      "avoid_when": "Fewer than ~4 items (use a grid row), comparison tasks.",
+      "risk": {
+        "a11y": "high",
+        "perf": "high"
+      },
+      "provenance": "platform-standard",
+      "implementation": {
+        "compose-tv": "LazyRow inside LazyColumn with focusRestorer() and LocalBringIntoViewSpec for pivot; item keys stable; contentPadding = safe margins."
+      },
+      "incompatible": [
+        "layout-table-first"
+      ],
+      "why": {
+        "lexical": 0.351,
+        "structural": 1.0,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode create",
+          "product media",
+          "screen home",
+          "density medium"
+        ]
+      },
+      "role": "core",
+      "selected_for": "required coverage (GENERIC): performance"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "impl-reuse-before-new",
+      "kind": "rule",
+      "category": "implementation",
+      "title": "Reuse → extend → compose → new (in that order)",
+      "facets": [
+        "process"
+      ],
+      "concerns": [
+        "structure"
+      ],
+      "concepts": [
+        "process.reuse_first"
+      ],
+      "covers": [
+        "reuse → extend → compose → new"
+      ],
+      "score": 0.261,
+      "guidance": "Inspect the repository first (inspect_project.py): existing components, tokens, fonts, breakpoints, and conventions win. Reuse the existing component; if it lacks a variant, extend it through its API; if the composition is new, compose existing primitives; only create a new primitive when the gap is real, and put it where the others live.",
+      "use_when": "Any UI change in an existing codebase.",
+      "avoid_when": "Never install a second component library or a UI framework to build one screen; never fork a design-system component when a variant prop would do.",
+      "risk": {
+        "a11y": "low",
+        "perf": "medium"
+      },
+      "provenance": "engineering-practice",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.58,
+        "matched": [
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "critical concept (GENERIC): reuse → extend → compose → new"
+    },
+    {
+      "id": "tv-typography-distance",
+      "kind": "rule",
+      "category": "typography",
+      "title": "TV: 10-foot typography",
+      "facets": [
+        "platform",
+        "visual"
+      ],
+      "concerns": [
+        "accessibility",
+        "content"
+      ],
+      "concepts": [
+        "tv.ten_foot_typography"
+      ],
+      "covers": [
+        "10-foot typography, readable at distance"
+      ],
+      "score": 0.378,
+      "guidance": "Body ≥24 sp (Android) / ≥29 pt (tvOS) at 1080p design scale, captions ≥20 sp, titles 32–48, display 57–72; sans with large x-height and open counters; short strings (titles ≤2 lines, synopsis ≤3 lines with expansion); avoid thin weights (<400) and light text on busy imagery; line height ≥1.3.",
+      "use_when": "All text on TV.",
+      "avoid_when": "Never scale a desktop type ramp up by a factor; rebuild the scale for distance and for reduced text volume.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "incompatible": [
+        "typography-serif-editorial"
+      ],
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.84,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage (SPECIFIC): 10-foot typography, readable at distance"
+    },
+    {
+      "id": "tv-dpad-axes",
+      "kind": "rule",
+      "category": "navigation",
+      "title": "TV: vertical = sections, horizontal = items",
+      "facets": [
+        "navigation",
+        "platform"
+      ],
+      "concerns": [
+        "interaction",
+        "navigation"
+      ],
+      "concepts": [
+        "interaction.dpad_reachability"
+      ],
+      "covers": [
+        "D-pad focus reachability"
+      ],
+      "score": 0.388,
+      "guidance": "Every focusable element must be reachable with straight UP/DOWN/LEFT/RIGHT presses; no diagonal reasoning, no hidden hops. Search and settings live at a predictable edge. Grids: LEFT at the first column may enter side navigation, RIGHT at the last column stays. Forms: one field per row, DOWN advances.",
+      "use_when": "Any TV layout: rails, grids, menus, settings, forms.",
+      "avoid_when": "Avoid nested horizontal groups inside horizontal groups; avoid controls placed where no straight DPAD path reaches them.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.017,
+        "structural": 0.84,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage (SPECIFIC): D-pad focus reachability"
+    },
+    {
+      "id": "a11y-tv-focus-always",
+      "kind": "rule",
+      "category": "focus",
+      "title": "TV: exactly one visible focus at all times",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "component",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.focus_restore",
+        "interaction.focus_visible",
+        "media.details_play_first"
+      ],
+      "covers": [
+        "focus restoration",
+        "visible focus",
+        "details screen with Play as default focus"
+      ],
+      "score": 0.378,
+      "guidance": "Set initial focus deterministically (first actionable content or Play on detail), restore focus to the previously focused item when returning, keep focus on screen (scroll into view), move focus to a sensible neighbour when the focused item is removed, and never rely on colour tint alone for the focused state.",
+      "use_when": "Every TV screen, after every navigation, after data loads, after dialogs close, after list updates.",
+      "avoid_when": "Never leave focus on a hidden or off-screen element; never let focus disappear after a list refresh.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.84,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "mode create"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage (SPECIFIC): visible focus"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "structure",
+      "navigation",
+      "states",
+      "interaction",
+      "accessibility",
+      "performance"
+    ],
+    "covered_required_concerns": [
+      "structure",
+      "navigation",
+      "states",
+      "interaction",
+      "accessibility",
+      "performance"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "anti-pattern",
+      "brand",
+      "content",
+      "environment"
+    ],
+    "covered_recommended_concerns": [
+      "brand",
+      "content"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "media.resume_playback",
+      "state.loading_empty_error",
+      "process.reuse_first",
+      "interaction.dpad_reachability",
+      "interaction.focus_restore",
+      "interaction.focus_visible",
+      "tv.ten_foot_typography",
+      "layout.media_card"
+    ],
+    "covered_required_concepts": [
+      "media.resume_playback",
+      "process.reuse_first",
+      "interaction.dpad_reachability",
+      "interaction.focus_restore",
+      "interaction.focus_visible",
+      "tv.ten_foot_typography",
+      "layout.media_card"
+    ],
+    "uncovered_required_concepts": [
+      "state.loading_empty_error"
+    ],
+    "critical_concepts": [
+      "layout.media_card",
+      "media.resume_playback",
+      "process.reuse_first"
+    ],
+    "uncovered_critical_concepts": [],
+    "critical_coverage_ratio": 1.0,
+    "concept_coverage_ratio": 0.88,
+    "recommended_concept_coverage": 0.29,
+    "not_surfaced": [
+      {
+        "concept": "tv.no_touch_hover",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "tv.dark_first",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "navigation.orientation_and_back",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "privacy.shared_device",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concept": "tv.safe_margins",
+        "reason": "recommended concept not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      },
+      {
+        "concern": "environment",
+        "reason": "recommended concern not surfaced: no sufficiently specific guidance"
+      }
+    ],
+    "bundle_size": 8,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 4,
+    "guardrail_size": 4,
+    "bundle_tokens": 1352,
+    "coverage_per_1k_tokens": 5.18,
+    "mean_purity": 0.83,
+    "mean_specificity": 2.5,
+    "quality_counts": {
+      "DIRECT": 1,
+      "SPECIFIC": 5,
+      "GENERIC": 2
+    },
+    "contaminated": [],
+    "category_diversity": 1.0,
+    "duplicate_pressure": 0.12,
+    "facet_coverage": 0.83,
+    "redundancy": 0.55,
+    "critical_trace": {
+      "covered": [
+        "media.resume_playback",
+        "process.reuse_first",
+        "layout.media_card"
+      ],
+      "uncovered": [],
+      "carrier_quality": {
+        "media.resume_playback": "SPECIFIC",
+        "process.reuse_first": "GENERIC",
+        "layout.media_card": "DIRECT"
+      }
+    }
+  },
+  "token_coverage": 1.0,
+  "omitted": [],
+  "marginal": {
+    "comp-media-card": {
+      "new_critical": [
+        "layout.media_card"
+      ],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [
+        "accessibility",
+        "component",
+        "content"
+      ],
+      "specificity": 5,
+      "evidence": [
+        "lexical_strong",
+        "lexical",
+        "screen",
+        "job",
+        "product",
+        "explicit_demand"
+      ],
+      "quality": "DIRECT",
+      "contamination": 0.0,
+      "tokens": 179
+    },
+    "media-resume-and-details": {
+      "new_critical": [
+        "media.resume_playback"
+      ],
+      "new_required": [
+        "interaction.focus_restore"
+      ],
+      "new_recommended": [
+        "interaction.back_semantics"
+      ],
+      "new_concerns": [
+        "interaction",
+        "navigation",
+        "states"
+      ],
+      "specificity": 5,
+      "evidence": [
+        "lexical_strong",
+        "lexical",
+        "screen",
+        "job",
+        "product",
+        "explicit_demand"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 326
+    },
+    "impl-reuse-before-new": {
+      "new_critical": [
+        "process.reuse_first"
+      ],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [
+        "structure"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "explicit_demand",
+        "repository"
+      ],
+      "quality": "GENERIC",
+      "contamination": 0.0,
+      "tokens": 131
+    },
+    "dir-cinematic-media-tv": {
+      "new_critical": [],
+      "new_required": [],
+      "new_recommended": [],
+      "new_concerns": [
+        "brand"
+      ],
+      "specificity": 1,
+      "evidence": [
+        "product"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 130
+    },
+    "tv-typography-distance": {
+      "new_critical": [],
+      "new_required": [
+        "tv.ten_foot_typography"
+      ],
+      "new_recommended": [],
+      "new_concerns": [],
+      "specificity": 1,
+      "evidence": [
+        "platform_specific"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 103
+    },
+    "tv-dpad-axes": {
+      "new_critical": [],
+      "new_required": [
+        "interaction.dpad_reachability"
+      ],
+      "new_recommended": [],
+      "new_concerns": [],
+      "specificity": 1,
+      "evidence": [
+        "platform_specific"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 118
+    },
+    "a11y-tv-focus-always": {
+      "new_critical": [],
+      "new_required": [
+        "interaction.focus_visible"
+      ],
+      "new_recommended": [],
+      "new_concerns": [],
+      "specificity": 1,
+      "evidence": [
+        "platform_specific"
+      ],
+      "quality": "SPECIFIC",
+      "contamination": 0.0,
+      "tokens": 127
+    },
+    "comp-tv-rail": {
+      "new_critical": [],
+      "new_required": [],
+      "new_recommended": [
+        "perf.focus_latency"
+      ],
+      "new_concerns": [
+        "performance"
+      ],
+      "specificity": 5,
+      "evidence": [
+        "lexical_strong",
+        "lexical",
+        "screen",
+        "job",
+        "product",
+        "explicit_demand"
+      ],
+      "quality": "GENERIC",
+      "contamination": 0.0,
+      "tokens": 238
+    }
+  },
+  "rejected": [
+    {
+      "id": "anti-mobile-desktop-shrunk",
+      "reason": "platform ['mobile'] not in request ['tv']"
+    },
+    {
+      "id": "anti-hover-only-actions",
+      "reason": "platform ['desktop', 'web'] not in request ['tv']"
+    },
+    {
+      "id": "chart-heatmap-matrix",
+      "reason": "platform ['desktop', 'web'] not in request ['tv']"
+    },
+    {
+      "id": "comp-data-table",
+      "reason": "platform ['desktop', 'web'] not in request ['tv']"
+    },
+    {
+      "id": "comp-filters",
+      "reason": "platform ['desktop', 'mobile', 'web'] not in request ['tv']"
+    },
+    {
+      "id": "comp-list-row-mobile",
+      "reason": "platform ['mobile', 'tablet'] not in request ['tv']"
+    },
+    {
+      "id": "comp-data-entry-grid",
+      "reason": "platform ['desktop', 'web'] not in request ['tv']"
+    },
+    {
+      "id": "comp-product-detail-page",
+      "reason": "platform ['mobile', 'web'] not in request ['tv']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "media.resume_playback",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 0,
+      "reason": "named in the request: continue watching",
+      "candidate_records": [
+        [
+          "media-resume-and-details",
+          0.906
+        ]
+      ],
+      "selected_record": "media-resume-and-details",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "state.loading_empty_error",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 2,
+      "reason": "asynchronous or remote data on this screen",
+      "candidate_records": [
+        [
+          "comp-mini-player",
+          0.489
+        ],
+        [
+          "anti-no-states",
+          0.261
+        ],
+        [
+          "layout-states-empty-loading-error",
+          0.261
+        ],
+        [
+          "comp-empty-state",
+          0.198
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 1,
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.261
+        ]
+      ],
+      "selected_record": "impl-reuse-before-new",
+      "carrier_quality": "GENERIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.dpad_reachability",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 3,
+      "reason": "TV / remote input",
+      "candidate_records": [
+        [
+          "comp-epg",
+          0.414
+        ],
+        [
+          "tv-dpad-axes",
+          0.388
+        ],
+        [
+          "tv-search-input",
+          0.378
+        ]
+      ],
+      "selected_record": "tv-dpad-axes",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.focus_restore",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 3,
+      "reason": "TV / remote input",
+      "candidate_records": [
+        [
+          "media-resume-and-details",
+          0.906
+        ],
+        [
+          "layout-rails",
+          0.82
+        ],
+        [
+          "comp-tv-rail",
+          0.643
+        ],
+        [
+          "layout-immersive-rails",
+          0.579
+        ]
+      ],
+      "selected_record": "media-resume-and-details",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.focus_visible",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 3,
+      "reason": "TV / remote input",
+      "candidate_records": [
+        [
+          "focus-scale-glow",
+          0.395
+        ],
+        [
+          "a11y-focus-visible",
+          0.378
+        ],
+        [
+          "a11y-tv-focus-always",
+          0.378
+        ],
+        [
+          "tv-dpad-hold-pacing",
+          0.378
+        ]
+      ],
+      "selected_record": "a11y-tv-focus-always",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "tv.ten_foot_typography",
+      "priority": "required",
+      "critical": false,
+      "concept_priority": 3,
+      "reason": "TV / remote input",
+      "candidate_records": [
+        [
+          "tv-typography-distance",
+          0.378
+        ]
+      ],
+      "selected_record": "tv-typography-distance",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "layout.media_card",
+      "priority": "required",
+      "critical": true,
+      "concept_priority": 1,
+      "reason": "TV browse",
+      "candidate_records": [
+        [
+          "comp-media-card",
+          0.779
+        ],
+        [
+          "comp-tv-rail",
+          0.643
+        ],
+        [
+          "layout-immersive-rails",
+          0.579
+        ]
+      ],
+      "selected_record": "comp-media-card",
+      "carrier_quality": "DIRECT",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.back_semantics",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "remote input",
+      "candidate_records": [
+        [
+          "media-resume-and-details",
+          0.906
+        ],
+        [
+          "comp-mini-player",
+          0.489
+        ],
+        [
+          "tv-back-behavior",
+          0.404
+        ],
+        [
+          "tv-player-controls",
+          0.391
+        ]
+      ],
+      "selected_record": "media-resume-and-details",
+      "carrier_quality": "SPECIFIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "tv.no_touch_hover",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "tv",
+      "candidate_records": [
+        [
+          "tv-no-touch-hover",
+          0.378
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "perf.focus_latency",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "tv",
+      "candidate_records": [
+        [
+          "comp-tv-rail",
+          0.643
+        ],
+        [
+          "tv-focus-performance",
+          0.387
+        ],
+        [
+          "tv-dpad-hold-pacing",
+          0.378
+        ]
+      ],
+      "selected_record": "comp-tv-rail",
+      "carrier_quality": "GENERIC",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "tv.dark_first",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "tv",
+      "candidate_records": [
+        [
+          "tv-dark-first",
+          0.378
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "navigation.orientation_and_back",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "navigation surface",
+      "candidate_records": [
+        [
+          "nav-orientation-and-back",
+          0.261
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "privacy.shared_device",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "environment shared-device",
+      "candidate_records": [
+        [
+          "shared-device-privacy",
+          0.315
+        ],
+        [
+          "comp-tv-sign-in",
+          0.27
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "tv.safe_margins",
+      "priority": "recommended",
+      "critical": false,
+      "concept_priority": null,
+      "reason": "TV / remote input (demoted: saturation cap)",
+      "candidate_records": [
+        [
+          "comp-mini-player",
+          0.489
+        ],
+        [
+          "anti-desktop-scaled-to-tv",
+          0.378
+        ],
+        [
+          "tv-safe-area",
+          0.378
+        ]
+      ],
+      "selected_record": null,
+      "carrier_quality": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    }
+  ]
+}

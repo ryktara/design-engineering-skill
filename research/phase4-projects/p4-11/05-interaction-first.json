@@ -1,0 +1,225 @@
+{
+  "label": "first",
+  "viewport": "1920x1080",
+  "checks": [
+    {
+      "name": "SELECT on a live card opens details",
+      "pass": true
+    },
+    {
+      "name": "Play (Watch live) takes default focus",
+      "pass": true,
+      "detail": {
+        "key": "details:play",
+        "text": "Watch live"
+      }
+    },
+    {
+      "name": "LIVE actions = Watch live · Watch from start · Add to watchlist (<=4, one primary)",
+      "pass": true,
+      "detail": [
+        "Watch live",
+        "Watch from start",
+        "+Add to watchlist"
+      ]
+    },
+    {
+      "name": "RIGHT walks the action row to the watchlist toggle",
+      "pass": true
+    },
+    {
+      "name": "RIGHT at the last action stays",
+      "pass": true
+    },
+    {
+      "name": "watchlist toggle: text state Add to watchlist → In watchlist, aria-pressed, focus stays",
+      "pass": true,
+      "detail": {
+        "text": "✓In watchlist",
+        "pressed": "true",
+        "toast": "Added Arsenal v Liverpool to your watchlist",
+        "focus": "details:watchlist"
+      }
+    },
+    {
+      "name": "watchlist change is announced (role=status toast)",
+      "pass": true,
+      "detail": "Added Arsenal v Liverpool to your watchlist"
+    },
+    {
+      "name": "home card reflects the watchlist immediately (SAVED pill)",
+      "pass": true
+    },
+    {
+      "name": "toggle off returns to Add to watchlist",
+      "pass": true
+    },
+    {
+      "name": "DOWN from actions enters the related rail; rail scrolled into view; focus visible",
+      "pass": true,
+      "detail": {
+        "key": "rail:d-related:u2",
+        "fv": {
+          "ring": true,
+          "onScreen": true,
+          "rect": [
+            84,
+            526,
+            524,
+            446
+          ]
+        }
+      }
+    },
+    {
+      "name": "every related card reachable by RIGHT, focus visible and on screen",
+      "pass": true,
+      "detail": {
+        "relCount": 4,
+        "walked": [
+          {
+            "a": "rail:d-related:r1",
+            "ring": true,
+            "on": true
+          },
+          {
+            "a": "rail:d-related:u1",
+            "ring": true,
+            "on": true
+          },
+          {
+            "a": "rail:d-related:r6",
+            "ring": true,
+            "on": true
+          },
+          {
+            "a": "rail:d-related:r6",
+            "ring": true,
+            "on": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "related rail has a heading",
+      "pass": true,
+      "detail": "More Premier League"
+    },
+    {
+      "name": "UP from the rail returns to the remembered action (watchlist)",
+      "pass": true
+    },
+    {
+      "name": "SELECT on a related card re-targets details with focus on Play",
+      "pass": true,
+      "detail": {
+        "relKey": "rail:d-related:r1",
+        "detailsId": "r1"
+      }
+    },
+    {
+      "name": "BACK returns home with focus on the launching card",
+      "pass": true,
+      "detail": {
+        "launching": "rail:live:e1",
+        "after": "rail:live:e1"
+      }
+    },
+    {
+      "name": "REPLAY without a position: Play (primary) + watchlist only",
+      "pass": true,
+      "detail": [
+        "Play",
+        "+Add to watchlist"
+      ]
+    },
+    {
+      "name": "Play opens the player from the start",
+      "pass": true
+    },
+    {
+      "name": "BACK from player returns home to the launching card",
+      "pass": true
+    },
+    {
+      "name": "re-opened details offers Resume · N min left (primary, default focus) + Start over + watchlist",
+      "pass": true,
+      "detail": {
+        "acts": [
+          "Resume · 118 min left",
+          "Start over",
+          "+Add to watchlist"
+        ],
+        "pos": {
+          "r2": 12
+        },
+        "ev": "r2"
+      }
+    },
+    {
+      "name": "metadata block is text (channel, kick-off, length, status with minutes left)",
+      "pass": true,
+      "detail": [
+        "Channel=415 MotorMax",
+        "Kick-off=10:40",
+        "Length=130 min",
+        "Status=118 min left"
+      ]
+    },
+    {
+      "name": "Resume starts the player at the saved position",
+      "pass": true
+    },
+    {
+      "name": "home card shows the watched fraction (continue watching)",
+      "pass": false,
+      "detail": null
+    },
+    {
+      "name": "Start over opens the player at 0",
+      "pass": true
+    },
+    {
+      "name": "UPCOMING: Set reminder (primary) + watchlist",
+      "pass": true,
+      "detail": [
+        "Set reminder",
+        "+Add to watchlist"
+      ]
+    },
+    {
+      "name": "all visible details text >= 40 px (20 sp caption floor)",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "details persistent UI inside the 5% safe frame",
+      "pass": false,
+      "detail": [
+        {
+          "el": "d-actions",
+          "rect": [
+            80,
+            926,
+            1049,
+            1030
+          ]
+        }
+      ]
+    },
+    {
+      "name": "no :hover rules",
+      "pass": true
+    },
+    {
+      "name": "reduced motion: no scale on the focused action, ring kept",
+      "pass": true,
+      "detail": {
+        "transform": "none",
+        "border": "rgb(255, 255, 255)"
+      }
+    }
+  ],
+  "pass": 26,
+  "fail": 2
+}

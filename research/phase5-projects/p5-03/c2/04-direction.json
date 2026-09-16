@@ -1,0 +1,146 @@
+{
+  "brand": "Checkout on phones: the order summary pushes the pay button below the fold.",
+  "fingerprint": {
+    "navigation_model": "top-bar",
+    "surface_strategy": "elevated",
+    "card_geometry": "elevated",
+    "corner_language": "medium",
+    "typography_character": "geometric-sans",
+    "color_strategy": "neutral-plus-accent",
+    "cta_strategy": "single-primary"
+  },
+  "direction": {
+    "navigation": "nav-top-bar",
+    "layout": null,
+    "density": null,
+    "surface": "surface-elevated-cards",
+    "cards": null,
+    "typography": "typography-geometric-sans",
+    "color": "color-neutral-accent",
+    "motion": null,
+    "focus": null,
+    "cta": "cta-single-primary",
+    "imagery": null,
+    "icon": null,
+    "metadata": null
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "responsive",
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [
+      "ecommerce"
+    ],
+    "screen": [
+      "checkout"
+    ],
+    "screen_subtype": [],
+    "stack": [
+      "html-css"
+    ],
+    "density": null,
+    "components": [
+      "button"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "responsive checkout"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "layout",
+        "interaction",
+        "responsive"
+      ],
+      "change_scope": "local",
+      "utterance": "observation",
+      "preserve": []
+    },
+    "platform_evidence": [
+      {
+        "platform": "mobile",
+        "strength": "DIRECT",
+        "evidence": [
+          "phones"
+        ]
+      }
+    ],
+    "mode_evidence": [
+      "responsive: explicit: on phones",
+      "audit: layout/structure defect on existing UI",
+      "refactor: structural fix follows"
+    ],
+    "project_context": {
+      "navigation": "top-bar (KNOWN)",
+      "theme": "light-first (INFERRED)",
+      "surfaces": "elevated (INFERRED)",
+      "radius": "pill (INFERRED)",
+      "typography": "geometric-sans (INFERRED)"
+    },
+    "known": [
+      "platform=web",
+      "product=ecommerce",
+      "stack=html-css",
+      "screen=checkout",
+      "mode=responsive",
+      "project_navigation=top-bar"
+    ],
+    "inferred": [
+      "input=pointer",
+      "input=keyboard",
+      "input=touch",
+      "mode=audit",
+      "mode=refactor",
+      "project_theme=light-first",
+      "project_surfaces=elevated",
+      "project_radius=pill",
+      "project_typography=geometric-sans"
+    ],
+    "missing": [],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

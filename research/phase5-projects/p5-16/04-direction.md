@@ -1,0 +1,56 @@
+# Design direction: Dispatchers want to see which vehicles are overdue for service without opening each one.
+
+**KNOWN:** platform: desktop (project inspection); stack: avalonia (project inspection); project_navigation: menu-bar (repository: menu-bar: 1 matches in MainWindow.axaml (shell/layout file); also left-rail: 1 matches); project_typography: geometric-sans (repository: font family Segoe UI, avares://Avalonia.Fonts.Inter/Assets#Inter (2 refs); weights semibold); project_components: avalonia (repository: avalonia)
+**INFERRED:** input: pointer (implied by platform desktop); input: keyboard (implied by platform desktop); mode: audit (problem statement on existing UI); mode: refactor (fix follows the diagnosis); project_theme: light-first (repository: hex palette: 9 near-white, 0 near-black); project_spacing: 4 (repository: most used spacing values [4])
+**Project context:** navigation=menu-bar (KNOWN); theme=light-first (INFERRED); spacing=4 (INFERRED); typography=geometric-sans (KNOWN); components=avalonia (KNOWN)
+**Change budget:** low · preserved ['navigation', 'layout', 'density', 'surface', 'cards', 'typography', 'color', 'motion', 'cta', 'imagery', 'icon', 'metadata'] · changed []
+
+| Slot | Choice | Status | Why |
+|---|---|---|---|
+| navigation | Preserve existing navigation: menu-bar (KNOWN) (`nav-menu-bar-desktop`) | preserved | repository evidence with change budget 'low' |
+| layout | Preserve existing layout: as implemented | preserved | change budget 'low': the task does not concern this slot |
+| density | Preserve existing density: spacing base 4 (INFERRED) | preserved | repository spacing rhythm with change budget 'low' |
+| surface | Preserve existing surface: as implemented | preserved | change budget 'low': the task does not concern this slot |
+| cards | Preserve existing cards: as implemented | preserved | change budget 'low': the task does not concern this slot |
+| typography | Preserve existing typography: geometric-sans (KNOWN) (`typography-geometric-sans`) | preserved | repository evidence with change budget 'low' |
+| color | Preserve existing color: light-first (INFERRED) (`color-neutral-accent`) | preserved | repository evidence with change budget 'low' |
+| motion | Preserve existing motion: as implemented | preserved | change budget 'low': the task does not concern this slot |
+| focus | Visible focus ring (web/desktop) (`focus-ring-standard`) | new | no repository evidence for this slot |
+| cta | Preserve existing cta: as implemented | preserved | change budget 'low': the task does not concern this slot |
+| imagery | Preserve existing imagery: as implemented | preserved | change budget 'low': the task does not concern this slot |
+| icon | Preserve existing icon: as implemented | preserved | change budget 'low': the task does not concern this slot |
+| metadata | Preserve existing metadata: as implemented | preserved | change budget 'low': the task does not concern this slot |
+
+## Guidance per slot
+- **navigation** — Menu bar for the complete command set with access keys and accelerators shown; toolbar/command bar for the frequent subset; context menus mirror the toolbar for the selected object. Commands must be enabled/disabled by state, never hidden, so users learn where things live. (Existing system: do not replace it for this task.)
+- **layout** — Keep the current layout; inspect and reuse it. (Existing system: do not replace it for this task.)
+- **density** — Keep the current density; inspect and reuse it. (Existing system: do not replace it for this task.)
+- **surface** — Keep the current surface; inspect and reuse it. (Existing system: do not replace it for this task.)
+- **cards** — Keep the current cards; inspect and reuse it. (Existing system: do not replace it for this task.)
+- **typography** — Choose a face the category is not saturated with (e.g. Manrope, Outfit, Urbanist, Sora, Figtree, Plus Jakarta Sans, Albert Sans, Geist for dev tools) and verify numerals and weights. Use the display cut only for the largest role. (Existing system: do not replace it for this task.)
+- **color** — Neutral scale with a slight brand tint (not pure grey), one accent used for ≤10% of the screen, feedback colours distinct from the accent by hue family (error must not be the accent's hue). Charts get their own categorical palette. Validate every pair with tokens.py. (Existing system: do not replace it for this task.)
+- **motion** — Keep the current motion; inspect and reuse it. (Existing system: do not replace it for this task.)
+- **focus** — One focus token (colour + width + offset) applied globally; never outline:none without a replacement; ring must remain visible on the accent surface (use a two-tone ring or offset); composite focus in tables/lists uses a cell/row highlight plus the ring on the active element.
+- **cta** — Keep the current cta; inspect and reuse it. (Existing system: do not replace it for this task.)
+- **imagery** — Keep the current imagery; inspect and reuse it. (Existing system: do not replace it for this task.)
+- **icon** — Keep the current icon; inspect and reuse it. (Existing system: do not replace it for this task.)
+- **metadata** — Keep the current metadata; inspect and reuse it. (Existing system: do not replace it for this task.)
+
+## Guardrails (required concerns: ; uncovered: none)
+
+## Fingerprint
+```json
+{
+  "navigation_model": "menu-bar",
+  "typography_character": "geometric-sans",
+  "color_strategy": "neutral-plus-accent",
+  "focus_strategy": "ring"
+}
+```
+
+## Validation: VIOLATIONS
+- audit: no accessibility constraints attached
+
+## Alternatives considered
+
+Reconcile every slot with the existing codebase before implementing; preserved slots are the existing system and win unless the task is to change them. Guardrails are not optional.

@@ -1,0 +1,7 @@
+{"task": "p6-16", "records": [
+{"id": "comp-dialog", "verdict": "relevant", "category": "", "why": "Supplies the confirmation-of-destructive-action pattern the c3 implementer had to invent unaided."},
+{"id": "a11y-target-size", "verdict": "partial", "category": "generic", "why": "Correct platform minimums but the switch already meets them; touch size is not the defect."}
+],
+"missing_critical": ["state.saving_conflict"], "unjustified_direction_slots": 1,
+"layer_review": {"core": ["comp-dialog"], "critical": [], "optional": ["a11y-target-size"]},
+"change_vs_c3": "Better: card-none, typo-scale-and-roles and mobile-density-touch are gone and comp-dialog now carries the critical confirmation concept; the only c3-used record (impl-reuse-before-new) was dropped but is process-generic and already stated in SKILL.md section 2."}

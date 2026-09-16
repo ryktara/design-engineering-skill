@@ -1,0 +1,29 @@
+{
+  "platform": "kiosk",
+  "artifact_state": "existing",
+  "acceptable_modes": ["create", "refactor"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "content.i18n_expansion",
+    "touch.minimum_target",
+    "interaction.selection_visible",
+    "a11y.accessible_names",
+    "state.session_expiry",
+    "process.reuse_first"
+  ],
+  "critical_concepts": [
+    "content.i18n_expansion",
+    "touch.minimum_target",
+    "interaction.selection_visible"
+  ],
+  "forbidden_concepts": [
+    "tv.ten_foot_typography",
+    "tv.dark_first",
+    "interaction.dpad_reachability",
+    "media.search_tv",
+    "brand.dark_mode_redesign",
+    "desktop.fluent_materials"
+  ],
+  "preservation": ["navigation", "theme", "typography"],
+  "reviewer_notes": "Existing kiosk (1080x1920 portrait, fixed layout, no scroll). js/i18n.js has a single flat STRINGS map hard-wired to English and a comment saying kiosks are English-only; the footer has a static <span class=\"footer__lang\">EN</span> badge. Correct change: turn STRINGS into per-locale maps (en + cy), add setLang/re-apply, and turn the footer badge into a real EN/CY toggle sized to --touch with a visible selected state and an accessible name. Welsh strings run ~25-35% longer than English, so buttons/labels must not overflow the fixed 1080px layout. Language should reset to EN on idle reset / Start over (shared device). Must not touch the idle timeout constant or the quantity stepper (concurrent tasks)."
+}

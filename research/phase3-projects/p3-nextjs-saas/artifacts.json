@@ -1,0 +1,53 @@
+{
+  "case": "p3-nextjs-saas",
+  "platform": "web",
+  "stack": "nextjs-app-router + tailwind-v4 + shadcn-style",
+  "rendered": true,
+  "render_mode": "native",
+  "screenshots": [
+    "render/first-1440x900.png",
+    "render/first-1440x900-full.png",
+    "render/first-390x844.png",
+    "render/first-390x844-full.png",
+    "render/final-1440x900.png",
+    "render/final-1440x900-full.png",
+    "render/final-390x844.png",
+    "render/final-390x844-full.png"
+  ],
+  "first_render_defects": 9,
+  "final_defects": 4,
+  "iterations": 2,
+  "guidance_relevant": 5,
+  "guidance_partial": 1,
+  "guidance_offtarget": 1,
+  "knowledge_gaps": [
+    "plan/pricing comparison component (current plan, upgrade vs downgrade, seat-limit block, billing cycle toggle)",
+    "seat/member management table (inline role change, owner protection, invited/deactivated states, seat meter)",
+    "invoice history / download list (status vocabulary, download link naming, past-due alert)",
+    "payment method summary block",
+    "settings sub-navigation (tabs in content header)"
+  ],
+  "ranking_misses": [
+    "card-bordered (top search hit, mentions selectable plan cards; not in guidance bundle)",
+    "comp-data-table (dropped as redundant with off-target comp-data-entry-grid)",
+    "comp-dialog (destructive confirm never surfaced)",
+    "a11y-semantics-structure (in search, not in bundle)"
+  ],
+  "requirements_errors": [
+    "product=finance inferred from 'invoice'; product is saas",
+    "density=high inherited from finance; settings page is medium",
+    "components missing plan-cards/pricing, invoice-list, dialog",
+    "jobs missing manage (seats) and download (invoices); primary_jobs contains 'create settings'",
+    "screen_subtype empty (billing)"
+  ],
+  "tags": [
+    "requirements-miss",
+    "ranking-miss",
+    "knowledge-gap",
+    "direction-invariant",
+    "render-defect-fixed",
+    "render-defect-remaining",
+    "tooling-limit",
+    "skill-helped"
+  ]
+}

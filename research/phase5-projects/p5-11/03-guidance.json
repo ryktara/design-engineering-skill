@@ -1,0 +1,520 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "From the sofa nobody can tell which row is selected on the living-room screen.",
+  "status": "PARTIAL",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "tv"
+    ],
+    "input": [
+      "remote"
+    ],
+    "product": [
+      "media"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "swiftui"
+    ],
+    "density": "medium",
+    "components": [],
+    "environment": [
+      "large-display",
+      "shared-device"
+    ],
+    "jobs": [],
+    "problems": [],
+    "risk": "low",
+    "primary_jobs": [
+      "audit"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_DESIGN",
+      "in_scope": true,
+      "kind": "in-scope",
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "interaction"
+      ],
+      "change_scope": "screen",
+      "utterance": "observation",
+      "preserve": []
+    },
+    "platform_evidence": [
+      {
+        "platform": "tv",
+        "strength": "STRONG_INFERENCE",
+        "evidence": [
+          "living-room",
+          "from the sofa",
+          "sofa"
+        ]
+      }
+    ],
+    "mode_evidence": [
+      "audit: interaction defect on existing UI",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": "tv-rails (KNOWN)",
+      "theme": "dark-first (INFERRED)",
+      "surfaces": "elevated (INFERRED)",
+      "radius": "medium (INFERRED)"
+    },
+    "known": [
+      "input=remote",
+      "product=media",
+      "stack=swiftui",
+      "project_navigation=tv-rails"
+    ],
+    "inferred": [
+      "platform=tv",
+      "density=medium",
+      "mode=audit",
+      "mode=refactor",
+      "environment=shared-device",
+      "environment=large-display",
+      "project_theme=dark-first",
+      "project_surfaces=elevated",
+      "project_radius=medium"
+    ],
+    "missing": [
+      "platform: only inferred from wording (tv); confirm before committing"
+    ],
+    "status": "CONFIDENT"
+  },
+  "scope": {
+    "domain": "UI_DESIGN",
+    "in_scope": true,
+    "kind": "in-scope",
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "accessibility",
+        "reason": "audit mode"
+      },
+      {
+        "concern": "interaction",
+        "reason": "audit mode: operability is part of the review"
+      },
+      {
+        "concern": "component",
+        "reason": "the reviewed component/screen"
+      },
+      {
+        "concern": "performance",
+        "reason": "focus latency and catalog virtualization on TV"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "states",
+        "reason": "audits check empty/loading/error handling"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "audits name generic-design defects"
+      },
+      {
+        "concern": "feedback",
+        "reason": "audits check that actions are discoverable and confirmed"
+      },
+      {
+        "concern": "content",
+        "reason": "10-foot readability"
+      },
+      {
+        "concern": "environment",
+        "reason": "environment large-display (INFERRED)"
+      }
+    ],
+    "optional": [],
+    "required_concepts": [
+      {
+        "concept": "interaction.selection_visible",
+        "reason": "named in the request: which row is selected"
+      },
+      {
+        "concept": "tv.ten_foot_typography",
+        "reason": "named in the request: from the sofa"
+      },
+      {
+        "concept": "interaction.dpad_reachability",
+        "reason": "TV / remote input"
+      },
+      {
+        "concept": "interaction.focus_restore",
+        "reason": "TV / remote input"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "TV / remote input"
+      },
+      {
+        "concept": "tv.safe_margins",
+        "reason": "TV / remote input"
+      },
+      {
+        "concept": "a11y.color_not_only",
+        "reason": "required by interaction.selection_visible"
+      }
+    ],
+    "recommended_concepts": [
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "state.loading_empty_error",
+      "process.reuse_first",
+      "interaction.back_semantics",
+      "tv.no_touch_hover",
+      "perf.focus_latency",
+      "tv.dark_first",
+      "privacy.shared_device"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "media-resume-and-details",
+      "kind": "component",
+      "category": "detail",
+      "title": "Media details screen, resume playback and watchlist",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "interaction",
+        "navigation",
+        "states"
+      ],
+      "concepts": [
+        "media.details_play_first",
+        "media.resume_playback",
+        "media.watchlist",
+        "interaction.focus_restore",
+        "interaction.back_semantics",
+        "a11y.color_not_only"
+      ],
+      "covers": [
+        "details screen with Play as default focus",
+        "continue watching / resume playback",
+        "watchlist / save for later",
+        "focus restoration",
+        "BACK behaviour",
+        "no colour alone for status"
+      ],
+      "score": 0.418,
+      "guidance": "Details: the primary action is Play (or Resume with the remaining time and a Start over alternative) and it takes default focus; metadata is a short scannable block (duration, year, rating, badges as text not colour), synopsis ≤3 lines with an expander, episodes as a rail or list with progress bars and the next unwatched episode preselected; secondary actions (watchlist, trailer, more like this) sit after Play in one row. Resume: a continue-watching row shows progress on each card, resumes at the saved position, and removes finished items; entering a title from the row returns focus to that card. Watchlist: one toggle with a clear on/off state and text label, works from cards and details, and is reflected immediately in the watchlist row. Everything is reachable with D-pad UP/DOWN/LEFT/RIGHT and BACK returns to the row that launched the details.",
+      "use_when": "Title/episode details, continue-watching rows, watchlist actions in a streaming or catch-up app.",
+      "avoid_when": "Live-only channels without on-demand content (use the guide and player rules).",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "platform-standard",
+      "implementation": {
+        "swiftui": "tvOS: .prefersDefaultFocus on Play inside a focusScope; NavigationStack path keeps the row/card identity for restoration."
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "layout-rails",
+      "kind": "pattern",
+      "category": "layout",
+      "title": "Horizontal rails (rows of content)",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "structure"
+      ],
+      "concepts": [
+        "interaction.focus_restore"
+      ],
+      "covers": [
+        "focus restoration"
+      ],
+      "score": 0.576,
+      "guidance": "Each rail has a visible title, focused item scrolls to a fixed pivot (about 20–30% from the left) rather than centring, rails remember their last focused index when returning, row heights are consistent within a rail, and off-screen items are partially visible to signal continuation. Lazy-load rails and images; never render every rail on first paint. Keep the safe margin (~5% / 48 dp horizontal, 27 dp vertical at 960×540 dp).",
+      "use_when": "TV browsing of categorised content: vertical axis moves between categories, horizontal axis moves within a category. The default TV home structure.",
+      "avoid_when": "Fewer than ~8 items total (use a grid or list), or content that must be compared side by side.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "high"
+      },
+      "provenance": "platform-standard",
+      "implementation": {
+        "swiftui": "tvOS: ScrollView(.horizontal) with LazyHStack and .focusSection(); use .scrollTargetLayout for pivot behaviour."
+      },
+      "incompatible": [
+        "layout-single-column",
+        "layout-table-first",
+        "layout-three-pane",
+        "layout-dashboard-grid",
+        "nav-top-bar",
+        "nav-left-rail"
+      ],
+      "role": "core",
+      "selected_for": "highest-scoring pattern with lexical evidence"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "color-states-complete",
+      "kind": "rule",
+      "category": "color",
+      "title": "Every interactive colour has hover/pressed/focus/disabled/selected",
+      "facets": [
+        "visual"
+      ],
+      "concerns": [
+        "brand",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.focus_visible",
+        "interaction.selection_visible"
+      ],
+      "covers": [
+        "visible focus",
+        "selected state visible and distinct from focus and hover"
+      ],
+      "score": 0.458,
+      "guidance": "Define state tokens per role (action.primary-hover/-pressed, bg.selected, text.disabled), keep label contrast on every state, make disabled visibly weaker but readable (≥3:1 recommended even though exempt), selected ≠ focused ≠ hovered. Dark theme redefines all of them.",
+      "use_when": "Buttons, links, list rows, tabs, chips, inputs, cards that are tappable, focus on TV.",
+      "avoid_when": "Never leave a state to the framework default on one platform and custom on another.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "role": "guardrail",
+      "selected_for": "required coverage: visible focus, selected state visible and distinct from focus and hover"
+    },
+    {
+      "id": "tv-typography-distance",
+      "kind": "rule",
+      "category": "typography",
+      "title": "TV: 10-foot typography",
+      "facets": [
+        "platform",
+        "visual"
+      ],
+      "concerns": [
+        "accessibility",
+        "content"
+      ],
+      "concepts": [
+        "tv.ten_foot_typography"
+      ],
+      "covers": [
+        "10-foot typography, readable at distance"
+      ],
+      "score": 0.403,
+      "guidance": "Body ≥24 sp (Android) / ≥29 pt (tvOS) at 1080p design scale, captions ≥20 sp, titles 32–48, display 57–72; sans with large x-height and open counters; short strings (titles ≤2 lines, synopsis ≤3 lines with expansion); avoid thin weights (<400) and light text on busy imagery; line height ≥1.3.",
+      "use_when": "All text on TV.",
+      "avoid_when": "Never scale a desktop type ramp up by a factor; rebuild the scale for distance and for reduced text volume.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "incompatible": [
+        "typography-serif-editorial"
+      ],
+      "role": "guardrail",
+      "selected_for": "required coverage: accessibility, 10-foot typography, readable at distance"
+    },
+    {
+      "id": "tv-dpad-axes",
+      "kind": "rule",
+      "category": "navigation",
+      "title": "TV: vertical = sections, horizontal = items",
+      "facets": [
+        "navigation",
+        "platform"
+      ],
+      "concerns": [
+        "interaction",
+        "navigation"
+      ],
+      "concepts": [
+        "interaction.dpad_reachability"
+      ],
+      "covers": [
+        "D-pad focus reachability"
+      ],
+      "score": 0.369,
+      "guidance": "Every focusable element must be reachable with straight UP/DOWN/LEFT/RIGHT presses; no diagonal reasoning, no hidden hops. Search and settings live at a predictable edge. Grids: LEFT at the first column may enter side navigation, RIGHT at the last column stays. Forms: one field per row, DOWN advances.",
+      "use_when": "Any TV layout: rails, grids, menus, settings, forms.",
+      "avoid_when": "Avoid nested horizontal groups inside horizontal groups; avoid controls placed where no straight DPAD path reaches them.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "role": "guardrail",
+      "selected_for": "required coverage: D-pad focus reachability"
+    },
+    {
+      "id": "tv-safe-area",
+      "kind": "rule",
+      "category": "layout",
+      "title": "TV: overscan-safe margins",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "interaction",
+        "structure"
+      ],
+      "concepts": [
+        "tv.safe_margins"
+      ],
+      "covers": [
+        "TV safe margins"
+      ],
+      "score": 0.367,
+      "guidance": "Keep interactive and text content ≥5% from edges: at the 960×540 dp design frame that is 48 dp horizontal and 27 dp vertical (Android guidance: up to 58/28 dp for maximum safety; tvOS: 60 pt sides, 60 pt top/bottom on the 1920×1080 frame). Let rails scroll under the margin so partial cards hint at more content.",
+      "use_when": "All persistent UI (nav, titles, buttons, subtitles); backgrounds and artwork may bleed.",
+      "avoid_when": "Do not inset full-bleed imagery; do not rely on the panel reporting overscan.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "role": "guardrail",
+      "selected_for": "required coverage: TV safe margins"
+    },
+    {
+      "id": "web-virtualize-long-lists",
+      "kind": "rule",
+      "category": "performance",
+      "title": "Virtualise long lists and tables",
+      "facets": [
+        "performance",
+        "platform"
+      ],
+      "concerns": [
+        "data-display",
+        "performance"
+      ],
+      "concepts": [
+        "table.virtualization"
+      ],
+      "covers": [
+        "virtualization of long collections"
+      ],
+      "score": 0.37,
+      "guidance": "Windowed rendering with stable row heights or measured heights, keyboard focus preserved when rows unmount (roving focus by key), aria-rowcount/aria-setsize so assistive tech knows the real size, scroll restoration on back navigation. Native: LazyColumn/List/FlatList/VirtualizingStackPanel already virtualise; keep keys stable.",
+      "use_when": "Lists/tables beyond a few hundred rows, grids of images, infinite feeds, EPGs.",
+      "avoid_when": "Small lists (<100) where virtualisation adds focus and find-in-page problems.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "high"
+      },
+      "provenance": "engineering-practice",
+      "role": "guardrail",
+      "selected_for": "required coverage: performance"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "performance"
+    ],
+    "covered_required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "performance"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "states",
+      "anti-pattern",
+      "feedback",
+      "content",
+      "environment"
+    ],
+    "covered_recommended_concerns": [
+      "states",
+      "content"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "interaction.selection_visible",
+      "tv.ten_foot_typography",
+      "interaction.dpad_reachability",
+      "interaction.focus_restore",
+      "interaction.focus_visible",
+      "tv.safe_margins",
+      "a11y.color_not_only"
+    ],
+    "covered_required_concepts": [
+      "interaction.selection_visible",
+      "tv.ten_foot_typography",
+      "interaction.dpad_reachability",
+      "interaction.focus_restore",
+      "interaction.focus_visible",
+      "tv.safe_margins",
+      "a11y.color_not_only"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.11,
+    "bundle_size": 7,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 2,
+    "guardrail_size": 5,
+    "bundle_tokens": 1199,
+    "coverage_per_1k_tokens": 5.84,
+    "mean_purity": 0.93,
+    "contaminated": [],
+    "category_diversity": 0.86,
+    "duplicate_pressure": 0.29,
+    "facet_coverage": 0.4,
+    "redundancy": 0.33
+  },
+  "token_coverage": 0.6
+}

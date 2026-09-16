@@ -1,0 +1,962 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "The appointments grid re-renders the whole day when one chip is dragged, so dragging stutters.",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "audit",
+      "refactor"
+    ],
+    "platform": [
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [
+      "healthcare"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "svelte",
+      "tailwind"
+    ],
+    "density": null,
+    "components": [],
+    "environment": [],
+    "jobs": [],
+    "problems": [],
+    "risk": "medium",
+    "primary_jobs": [
+      "audit"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "focus_handling_present": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "moderate",
+    "scope": {
+      "domain": "UI_IMPLEMENTATION",
+      "in_scope": true,
+      "kind": "partial",
+      "reason": "technical cause (re-render) with a user-visible symptom (stutter); design-engineering contributes the UX side",
+      "nearest_ui_task": "design-engineering contribution: the user-facing states, responsiveness and feedback around 'stutter'; non-design portion: frontend runtime work (re-render) belongs to the engineering side"
+    },
+    "intent": {
+      "artifact_state": "existing",
+      "operations": [
+        "diagnose",
+        "modify"
+      ],
+      "problem_domain": [
+        "interaction",
+        "performance-ux"
+      ],
+      "change_scope": "screen",
+      "utterance": "observation",
+      "existing": true,
+      "problem": true,
+      "facet": "interaction",
+      "diagnose_only": false,
+      "creation": false,
+      "redesign": false,
+      "responsive_cues": false,
+      "preserve": [],
+      "scope": "moderate"
+    },
+    "platform_evidence": [],
+    "mode_evidence": [
+      "audit: interaction defect on existing UI",
+      "refactor: fix follows the diagnosis"
+    ],
+    "project_context": {
+      "navigation": {
+        "value": "left-rail",
+        "status": "KNOWN",
+        "evidence": [
+          "left-rail: 1 matches in +layout.svelte (shell/layout file)",
+          "also breadcrumb-tree: 1 matches"
+        ]
+      },
+      "theme": {
+        "value": "light-first",
+        "status": "INFERRED",
+        "evidence": [
+          "hex palette: 13 near-white, 1 near-black"
+        ]
+      },
+      "surfaces": {
+        "value": "bordered-flat",
+        "status": "INFERRED",
+        "evidence": [
+          "borders in 12 files, shadow/elevation in 2"
+        ]
+      },
+      "radius": {
+        "value": "unknown",
+        "status": "UNKNOWN",
+        "evidence": []
+      },
+      "spacing": {
+        "value": 4,
+        "status": "INFERRED",
+        "evidence": [
+          "most used spacing values [16, 8, 12, 4, 24]",
+          "tailwind spacing classes (119)"
+        ]
+      },
+      "typography": {
+        "value": "custom",
+        "status": "INFERRED",
+        "evidence": [
+          "font family theme (1 refs)",
+          "tabular numerals"
+        ]
+      },
+      "components": {
+        "value": "tailwind",
+        "status": "KNOWN",
+        "evidence": [
+          "tailwind"
+        ]
+      }
+    },
+    "known": [
+      "platform=web (project inspection)",
+      "product=healthcare (project inspection (README))",
+      "stack=svelte (project inspection)",
+      "stack=tailwind (project inspection)",
+      "project_navigation=left-rail (repository: left-rail: 1 matches in +layout.svelte (shell/layout file); also breadcrumb-tree: 1 matches)",
+      "project_components=tailwind (repository: tailwind)"
+    ],
+    "inferred": [
+      "input=pointer (implied by platform web)",
+      "input=keyboard (implied by platform web)",
+      "input=touch (implied by platform web)",
+      "mode=audit (interaction defect on existing UI)",
+      "mode=refactor (fix follows the diagnosis)",
+      "project_theme=light-first (repository: hex palette: 13 near-white, 1 near-black)",
+      "project_surfaces=bordered-flat (repository: borders in 12 files, shadow/elevation in 2)",
+      "project_spacing=4 (repository: most used spacing values [16, 8, 12, 4, 24]; tailwind spacing classes (119))",
+      "project_typography=custom (repository: font family theme (1 refs); tabular numerals)"
+    ],
+    "missing": [],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [],
+      "project": [
+        "package.json: svelte@^5.16.0",
+        "package.json: @sveltejs/kit@^2.12.0",
+        "package.json: tailwindcss@^3.4.17"
+      ]
+    },
+    "activation": {
+      "decision": "activate",
+      "ui_score": 2.0,
+      "non_ui_score": 0,
+      "ui_terms": [
+        "grid",
+        "chip"
+      ],
+      "non_ui_terms": []
+    },
+    "intent_evidence": {
+      "existing": [
+        "the appointments grid"
+      ],
+      "new": [],
+      "defect": [
+        "observed behaviour"
+      ],
+      "operations": {},
+      "domains": {
+        "interaction": [
+          "drag",
+          "drag"
+        ],
+        "performance-ux": [
+          "stutter"
+        ]
+      },
+      "no_change": [],
+      "scope": {
+        "screen": [
+          "grid"
+        ]
+      },
+      "question": false
+    },
+    "scope_evidence": {
+      "ui": [
+        "grid",
+        "chip",
+        "concept:touch.gestures_discoverable"
+      ],
+      "ux_symptoms": [
+        "stutter"
+      ],
+      "technical": {
+        "FRONTEND_RUNTIME": [
+          "re-render"
+        ]
+      },
+      "non_visual": []
+    }
+  },
+  "scope": {
+    "domain": "UI_IMPLEMENTATION",
+    "in_scope": true,
+    "kind": "partial",
+    "reason": "technical cause (re-render) with a user-visible symptom (stutter); design-engineering contributes the UX side",
+    "nearest_ui_task": "design-engineering contribution: the user-facing states, responsiveness and feedback around 'stutter'; non-design portion: frontend runtime work (re-render) belongs to the engineering side"
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "accessibility",
+        "reason": "audit mode"
+      },
+      {
+        "concern": "interaction",
+        "reason": "audit mode: operability is part of the review"
+      },
+      {
+        "concern": "component",
+        "reason": "the reviewed component/screen"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "states",
+        "reason": "audits check empty/loading/error handling"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "audits name generic-design defects"
+      },
+      {
+        "concern": "feedback",
+        "reason": "audits check that actions are discoverable and confirmed"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "viewport range"
+      }
+    ],
+    "optional": [
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "touch.gestures_discoverable",
+        "reason": "named in the request: dragging, dragged"
+      },
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "every gesture needs a keyboard/button alternative"
+      },
+      {
+        "concept": "interaction.hover_independence",
+        "reason": "web is used with touch as well as pointer"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "web keyboard focus"
+      }
+    ],
+    "recommended_concepts": [
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "a11y.live_status",
+      "process.reuse_first",
+      "touch.minimum_target",
+      "adaptive.breakpoint_matrix",
+      "feedback.confirmation_destructive",
+      "interaction.shortcuts"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "dir-analytical-console",
+      "kind": "direction",
+      "category": "direction",
+      "title": "Analytical console",
+      "facets": [
+        "direction",
+        "platform"
+      ],
+      "concerns": [
+        "brand",
+        "structure"
+      ],
+      "concepts": [],
+      "covers": [],
+      "score": 0.304,
+      "guidance": "Charts are the imagery; one chart palette; modules sized by importance not by a uniform card grid; dark-first tonal surfaces with the accent reserved for alerts and selection; large readable numerics; small multiples over spaghetti charts. Distinctiveness via chart mark style and a signature numeric typeface.",
+      "use_when": "Monitoring and analysis: dashboards with real questions, alerting, drill-down, often on dark themes for long sessions or wall displays.",
+      "avoid_when": "Task-entry tools (workbench), consumer products.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "medium"
+      },
+      "provenance": "internal-preference",
+      "incompatible": [
+        "surface-glass",
+        "imagery-hero",
+        "motion-cinematic",
+        "typography-serif-editorial"
+      ],
+      "why": {
+        "lexical": 0.029,
+        "structural": 0.64,
+        "matched": [
+          "platform web",
+          "input keyboard,pointer",
+          "secondary mode",
+          "product healthcare"
+        ]
+      },
+      "role": "core",
+      "selected_for": "no record matched the wording; best structural fit for platform/product"
+    },
+    {
+      "id": "comp-data-table",
+      "kind": "component",
+      "category": "table",
+      "title": "Data table / grid",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "data-display",
+        "structure"
+      ],
+      "concepts": [
+        "table.selection_bulk",
+        "table.inline_edit",
+        "table.virtualization",
+        "table.tabular_figures",
+        "data.pagination_strategy",
+        "interaction.selection_visible"
+      ],
+      "covers": [
+        "selection state and bulk actions",
+        "inline editing",
+        "virtualization of long collections",
+        "tabular figures and numeric alignment",
+        "pagination / load-more strategy",
+        "selected state visible and distinct from focus and hover"
+      ],
+      "score": 0.379,
+      "guidance": "Sticky header, row height by density token, zebra striping optional (prefer hover/selection highlight), column resize/reorder/visibility persisted, sort indicator with aria-sort, selection checkbox column with header select-all and a count, row actions visible on focus as well as hover, inline edit with Enter/Escape, keyboard grid navigation (arrows, Home/End, PageUp/Down), virtualised rows, loading skeleton rows, empty state inside the table body. Financial tables: see numeric rule.",
+      "use_when": "Homogeneous records with several comparable attributes; sorting, filtering, selection, bulk actions, inline editing.",
+      "avoid_when": "Fewer than ~10 rows (use a list), heterogeneous items (use cards/list), phone widths (convert to rows).",
+      "risk": {
+        "a11y": "high",
+        "perf": "high"
+      },
+      "provenance": "heuristic",
+      "incompatible": [
+        "layout-rails",
+        "surface-elevated-cards"
+      ],
+      "why": {
+        "lexical": 0.1,
+        "structural": 0.72,
+        "matched": [
+          "platform web",
+          "input keyboard,pointer",
+          "mode audit",
+          "product healthcare"
+        ]
+      },
+      "role": "core",
+      "selected_for": "required coverage: component"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "interaction-drag-drop",
+      "kind": "rule",
+      "category": "input",
+      "title": "Drag and drop: affordance, feedback, keyboard alternative, no layout thrash",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "interaction"
+      ],
+      "concepts": [
+        "touch.gestures_discoverable",
+        "interaction.keyboard_navigation",
+        "a11y.live_status",
+        "perf.layout_shift"
+      ],
+      "covers": [
+        "discoverable gestures",
+        "keyboard navigation and focus order",
+        "live region status announcements",
+        "no layout shift"
+      ],
+      "score": 0.629,
+      "guidance": "Show a grip or lift affordance; on lift raise the item (shadow/scale) and move it with a transform only; show a snapped drop target with the value it will take (time slot, column); write state once on drop; provide a keyboard/button alternative (arrow keys or a 'Move to…' menu) with focus kept on the moved item; announce the result in a live region; Escape cancels; respect reduced motion.",
+      "use_when": "Reordering, rescheduling, moving cards between columns, dragging chips in a grid.",
+      "avoid_when": "Never make drag the only way (WCAG 2.5.7); never re-render the whole collection on every pointer move; never drop without a visible target and a result announcement.",
+      "risk": {
+        "a11y": "high",
+        "perf": "medium"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.555,
+        "structural": 0.72,
+        "matched": [
+          "platform web",
+          "input keyboard,pointer,touch",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "most relevant record for the request wording"
+    },
+    {
+      "id": "grid-single-tab-stop",
+      "kind": "rule",
+      "category": "table",
+      "title": "Grids with row actions are one Tab stop",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "data-display",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.keyboard_navigation",
+        "interaction.focus_visible",
+        "table.selection_bulk",
+        "interaction.selection_visible"
+      ],
+      "covers": [
+        "keyboard navigation and focus order",
+        "visible focus",
+        "selection state and bulk actions",
+        "selected state visible and distinct from focus and hover"
+      ],
+      "score": 0.497,
+      "guidance": "Tab enters the grid once and leaves it once; arrow keys move between cells/rows (roving tabindex or a focus manager), Enter/Space activates the focused cell's action, Escape returns from an edited cell to navigation mode; row actions become reachable when the row or actions cell is focused and are also available from a row context/actions menu; a table with 24 rows must never produce 24 Tab stops per action column. Announce the current row/column (aria-rowindex/colindex or the platform's automation properties) and keep a visible focus indicator on the active cell.",
+      "use_when": "Data tables or grids where each row has buttons/links (edit, delete, approve, download) and there are more than a handful of rows.",
+      "avoid_when": "Small static tables with no interactive cells.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.314,
+        "structural": 0.72,
+        "matched": [
+          "platform web",
+          "input keyboard,pointer",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: accessibility, visible focus"
+    },
+    {
+      "id": "a11y-hover-not-required",
+      "kind": "rule",
+      "category": "input",
+      "title": "Hover reveals need a non-hover path",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.hover_independence"
+      ],
+      "covers": [
+        "no hover dependence"
+      ],
+      "score": 0.324,
+      "guidance": "Hover-revealed content must also appear on focus and be reachable by touch (persistent affordance, long-press, or an explicit menu). Tooltips: dismissible, hoverable, persistent (WCAG 1.4.13). Never put essential actions only in hover.",
+      "use_when": "Row actions that appear on hover, tooltips, hover cards, mega menus.",
+      "avoid_when": "Never rely on hover alone; touch and keyboard users never hover.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.72,
+        "matched": [
+          "platform web",
+          "input keyboard,pointer,touch",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required coverage: no hover dependence"
+    },
+    {
+      "id": "states-persistence-and-session",
+      "kind": "rule",
+      "category": "states",
+      "title": "Saving, saved, autosave, session expiry, and permission-denied states",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "feedback",
+        "states"
+      ],
+      "concepts": [
+        "state.saving_conflict",
+        "state.session_expiry",
+        "feedback.confirmation_destructive"
+      ],
+      "covers": [
+        "saving, saved and conflict states",
+        "session expiry and idle reset",
+        "confirmation of destructive or high-risk actions"
+      ],
+      "score": 0.302,
+      "guidance": "Show saving → saved as a quiet inline status with a timestamp (not a toast per keystroke); autosave drafts and say so; warn before a session expires with a way to extend, and never discard entered data on expiry on a personal device (restore the draft after re-authentication; on shared or public screens clear it instead); permission-denied is a designed state that explains what is missing and who can grant it rather than an empty screen; destructive or irreversible saves confirm once with the safe action as default.",
+      "use_when": "Forms and editors longer than a minute, multi-step flows, authenticated sessions with timeouts, screens whose data depends on permissions.",
+      "avoid_when": "Public kiosks and shared screens: there the session is cleared on idle and nothing is restored (see shared-device-privacy).",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "why": {
+        "lexical": 0.009,
+        "structural": 0.66,
+        "matched": [
+          "platform web",
+          "mode audit"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "recommended coverage: feedback, states, confirmation of destructive or high-risk actions"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "accessibility",
+      "interaction",
+      "component"
+    ],
+    "covered_required_concerns": [
+      "accessibility",
+      "interaction",
+      "component"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "states",
+      "anti-pattern",
+      "feedback",
+      "adaptive"
+    ],
+    "covered_recommended_concerns": [
+      "states",
+      "feedback"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "touch.gestures_discoverable",
+      "interaction.keyboard_navigation",
+      "interaction.hover_independence",
+      "interaction.focus_visible"
+    ],
+    "covered_required_concepts": [
+      "touch.gestures_discoverable",
+      "interaction.keyboard_navigation",
+      "interaction.hover_independence",
+      "interaction.focus_visible"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.25,
+    "bundle_size": 6,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 2,
+    "guardrail_size": 4,
+    "bundle_tokens": 1211,
+    "coverage_per_1k_tokens": 3.3,
+    "mean_purity": 0.6,
+    "contaminated": [],
+    "category_diversity": 0.67,
+    "duplicate_pressure": 0.33,
+    "facet_coverage": 0.6,
+    "redundancy": 0.38
+  },
+  "token_coverage": 0.92,
+  "note": "PARTIAL_SCOPE: design-engineering contribution: the user-facing states, responsiveness and feedback around 'stutter'; non-design portion: frontend runtime work (re-render) belongs to the engineering side",
+  "omitted": [
+    {
+      "id": "chart-small-multiples",
+      "reason": "contamination: chart record outside a data-visualisation task"
+    },
+    {
+      "id": "comp-checkout-one-page",
+      "reason": "contamination: product-specific (ecommerce) vs ['healthcare']; low purity 0.17: most of its concepts are off-task"
+    },
+    {
+      "id": "comp-epg",
+      "reason": "contamination: product-specific (media) vs ['healthcare']; low purity 0.00: most of its concepts are off-task; epg-specific record with no epg evidence in the request"
+    },
+    {
+      "id": "chart-composition",
+      "reason": "contamination: low purity 0.00: most of its concepts are off-task; chart record outside a data-visualisation task"
+    },
+    {
+      "id": "comp-filters",
+      "reason": "contamination: product-specific (ecommerce,erp,finance,media,saas) vs ['healthcare']; low purity 0.00: most of its concepts are off-task; search-specific record with no search evidence in the request"
+    },
+    {
+      "id": "layout-dashboard-grid",
+      "reason": "visual pattern without wording evidence on an existing UI (would restyle what the task does not concern)"
+    },
+    {
+      "id": "surface-elevated-cards",
+      "reason": "visual pattern without wording evidence on an existing UI (would restyle what the task does not concern)"
+    },
+    {
+      "id": "layout-grid-catalog",
+      "reason": "visual pattern without wording evidence on an existing UI (would restyle what the task does not concern)"
+    },
+    {
+      "id": "layout-table-first",
+      "reason": "visual pattern without wording evidence on an existing UI (would restyle what the task does not concern)"
+    },
+    {
+      "id": "layout-epg-grid",
+      "reason": "visual pattern without wording evidence on an existing UI (would restyle what the task does not concern)"
+    }
+  ],
+  "rejected": [
+    {
+      "id": "anti-desktop-scaled-to-tv",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "comp-tv-rail",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "comp-tv-sign-in",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "comp-kiosk-keypad",
+      "reason": "platform ['kiosk', 'tablet'] not in request ['web']"
+    },
+    {
+      "id": "comp-photo-capture-field",
+      "reason": "platform ['mobile', 'tablet'] not in request ['web']"
+    },
+    {
+      "id": "comp-tv-side-sheet",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "dir-broadcast-guide-tv",
+      "reason": "platform ['tv'] not in request ['web']"
+    },
+    {
+      "id": "dir-service-app-mobile",
+      "reason": "platform ['mobile'] not in request ['web']"
+    }
+  ],
+  "concept_trace": [
+    {
+      "concept": "touch.gestures_discoverable",
+      "priority": "required",
+      "reason": "named in the request: dragging, dragged",
+      "candidate_records": [
+        [
+          "interaction-drag-drop",
+          0.629
+        ],
+        [
+          "media-photo-viewer",
+          0.269
+        ]
+      ],
+      "selected_record": "interaction-drag-drop",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.keyboard_navigation",
+      "priority": "required",
+      "reason": "every gesture needs a keyboard/button alternative",
+      "candidate_records": [
+        [
+          "interaction-drag-drop",
+          0.629
+        ],
+        [
+          "grid-single-tab-stop",
+          0.497
+        ],
+        [
+          "a11y-keyboard-operable",
+          0.33
+        ],
+        [
+          "a11y-skip-link",
+          0.33
+        ]
+      ],
+      "selected_record": "interaction-drag-drop",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.hover_independence",
+      "priority": "required",
+      "reason": "web is used with touch as well as pointer",
+      "candidate_records": [
+        [
+          "a11y-keyboard-operable",
+          0.33
+        ],
+        [
+          "anti-hover-only-actions",
+          0.324
+        ],
+        [
+          "a11y-hover-not-required",
+          0.324
+        ]
+      ],
+      "selected_record": "a11y-hover-not-required",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.focus_visible",
+      "priority": "required",
+      "reason": "web keyboard focus",
+      "candidate_records": [
+        [
+          "grid-single-tab-stop",
+          0.497
+        ],
+        [
+          "focus-ring-standard",
+          0.338
+        ],
+        [
+          "a11y-skip-link",
+          0.33
+        ],
+        [
+          "a11y-focus-visible",
+          0.329
+        ]
+      ],
+      "selected_record": "grid-single-tab-stop",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "a11y.accessible_names",
+      "priority": "recommended",
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "a11y-labels-names",
+          0.247
+        ],
+        [
+          "comp-media-card",
+          0.222
+        ],
+        [
+          "comp-player-controls",
+          0.198
+        ],
+        [
+          "comp-product-detail-page",
+          0.173
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "a11y.contrast",
+      "priority": "recommended",
+      "reason": "audit mode",
+      "candidate_records": [
+        [
+          "anti-fashion-over-usability",
+          0.252
+        ],
+        [
+          "a11y-contrast-text",
+          0.243
+        ],
+        [
+          "a11y-nontext-contrast",
+          0.243
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "a11y.live_status",
+      "priority": "recommended",
+      "reason": "announce the result of a drag",
+      "candidate_records": [
+        [
+          "interaction-drag-drop",
+          0.629
+        ],
+        [
+          "search-filter-feedback",
+          0.292
+        ],
+        [
+          "feedback-progress-async",
+          0.253
+        ],
+        [
+          "a11y-live-status",
+          0.243
+        ]
+      ],
+      "selected_record": "interaction-drag-drop",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "process.reuse_first",
+      "priority": "recommended",
+      "reason": "existing repository: reuse its primitives",
+      "candidate_records": [
+        [
+          "impl-reuse-before-new",
+          0.215
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "touch.minimum_target",
+      "priority": "recommended",
+      "reason": "touch on web",
+      "candidate_records": [
+        [
+          "a11y-target-size",
+          0.29
+        ],
+        [
+          "media-photo-viewer",
+          0.269
+        ],
+        [
+          "comp-product-detail-page",
+          0.173
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "adaptive.breakpoint_matrix",
+      "priority": "recommended",
+      "reason": "web viewport range",
+      "candidate_records": [
+        [
+          "web-responsive-breakpoints",
+          0.31
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates existed but the bundle cap or a lower utility left them out"
+    },
+    {
+      "concept": "feedback.confirmation_destructive",
+      "priority": "recommended",
+      "reason": "sensitive domain",
+      "candidate_records": [
+        [
+          "states-persistence-and-session",
+          0.302
+        ],
+        [
+          "comp-checkout-one-page",
+          0.292
+        ],
+        [
+          "comp-dialog",
+          0.183
+        ],
+        [
+          "comp-settings-screen",
+          0.18
+        ]
+      ],
+      "selected_record": "states-persistence-and-session",
+      "status": "covered",
+      "why": ""
+    },
+    {
+      "concept": "interaction.shortcuts",
+      "priority": "recommended",
+      "reason": "related to interaction.keyboard_navigation",
+      "candidate_records": [
+        [
+          "cta-toolbar-commands",
+          0.232
+        ]
+      ],
+      "selected_record": null,
+      "status": "uncovered",
+      "why": "candidates rejected as contaminated: product-specific (devtools,erp,finance,saas) vs ['healthcare']"
+    }
+  ]
+}

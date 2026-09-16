@@ -1,0 +1,82 @@
+## design-engineering search: Dispatchers want to see which vehicles are overdue for service without opening each one.
+status=ABSTAIN modes=['audit', 'refactor'] platforms={} inputs={} products={} density=None stacks=[] screens=[] negatives=[]
+facets required=['accessibility', 'interaction', 'component', 'anti-pattern'] unmet=[] diversity=0.83
+MISSING: platform: audit targets differ by platform; not stated
+
+### Grids with row actions are one Tab stop  `grid-single-tab-stop`  [rule/table; component/platform] score 0.481 · accessibility-requirement
+Tab enters the grid once and leaves it once; arrow keys move between cells/rows (roving tabindex or a focus manager), Enter/Space activates the focused cell's action, Escape returns from an edited cell to navigation mode; row actions become reachable when the row or actions cell is focused and are also available from a row context/actions menu; a table with 24 rows must never produce 24 Tab stops per action column. Announce the current row/column (aria-rowindex/colindex or the platform's automation properties) and keep a visible focus indicator on the active cell.
+- use when: Data tables or grids where each row has buttons/links (edit, delete, approve, download) and there are more than a handful of rows.
+- avoid when: Small static tables with no interactive cells.
+- why: lexical 0.548, structural 0.4 (mode audit)
+
+### One primary action per screen  `cta-single-primary`  [pattern/cta; layout] score 0.412 · heuristic
+Exactly one filled button per view, secondaries as outlined/text, destructive actions separated and confirmed, button label is a verb phrase naming the outcome ('Save changes'), disabled only with an explanation nearby.
+- use when: Task screens (forms, checkout, onboarding, settings) where one action completes the job; the primary is filled, secondaries are quiet.
+- avoid when: Workbenches with many equal commands (toolbar pattern) or browse screens where selection is the action (focus-selects).
+- incompatible with: cta-toolbar-commands, cta-focus-selects
+- why: lexical 0.291, structural 0.36 (mode audit)
+
+### One-page checkout  `comp-checkout-one-page`  [component/form; component/platform] score 0.348 · heuristic
+Order summary is visible on desktop (side column) and collapsible-but-present at the top on phones with the total always shown; guest checkout first, account optional; sections in the order contact → shipping → payment → review, each with a visible heading and inline validation on blur plus a focused error summary on submit; address fields use autocomplete attributes and correct input types/IME; the pay button states the amount, is disabled only while processing (with a visible status), and is protected against double submission; trust and cost information (shipping, tax) appears before payment, never as a surprise; progress is saved locally so a reload does not lose entries.
+- use when: Purchase flows with contact, shipping, payment and review on one scrolling page.
+- avoid when: Multi-session or regulated flows that need a stepper with server-side validation per step.
+- incompatible with: nav-wizard
+- why: lexical 0.42, structural 0.26 (mode audit)
+
+### One clear focal point per screen  `layout-hierarchy-one-thing`  [rule/layout; layout] score 0.338 · heuristic
+Decide the screen's job and the one element that serves it; give that element the strongest size/contrast/position; demote everything else by one or two steps; navigation and chrome are quieter than content. On dashboards the focal point is the most important metric or the anomaly, not the page title.
+- use when: Designing any screen; reviewing 'it looks busy'.
+- avoid when: Never give three elements the same maximum emphasis; never make the primary content compete with chrome.
+- why: lexical 0.205, structural 0.5 (mode audit)
+
+### Single column, one task  `layout-single-column`  [pattern/layout; layout/platform] score 0.316 · heuristic
+Content width capped for reading (~60–75 characters per line), vertical rhythm from the spacing scale, primary action reachable without scrolling on the shortest supported viewport, or sticky at the bottom.
+- use when: Phone screens, forms, reading, onboarding, kiosks: one primary thing per screen.
+- avoid when: Comparison tasks, dense data, or wide desktop windows where a single narrow column wastes the viewport and forces scrolling.
+- incompatible with: layout-three-pane, layout-dashboard-grid, layout-table-first
+- why: lexical 0.27, structural 0.24 (secondary mode)
+
+### Glassmorphism without a reason  `anti-glass-everywhere`  [antipattern/generic-ai; anti-pattern] score 0.315 · heuristic
+Replace with solid tonal surfaces unless the layer must reveal content beneath it; if kept, use the platform material, verify contrast against worst-case backgrounds, and measure GPU cost on low-end devices and TV.
+- use when: Frosted panels, blurred cards, translucent nav bars in application UI.
+- avoid when: Platform materials for transient layers (sheets, menus) are legitimate.
+- incompatible with: surface-glass
+- why: lexical 0.163, structural 0.5 (mode audit)
+
+### First-run: permission priming and feature education without blocking  `onboarding-first-run`  [rule/feedback; component/platform] score 0.312 · platform-standard
+Ask for a permission only at the moment the feature needs it, preceded by a one-screen explanation of the benefit and what happens on refusal (priming), then trigger the system prompt; never chain several permission prompts on launch, and always offer a way to continue without the permission. Feature education is non-blocking: a dismissible coach mark or inline tip anchored to the real control, one at a time, never a modal tour on first launch; it can be replayed from help, is skipped for keyboard/screen-reader users unless it is accessible, and stops after it has been dismissed once. Both respect reduced motion and never cover the primary action.
+- use when: Apps that need OS permissions (camera, location, notifications) or that introduce new features to returning users.
+- avoid when: Strictly ordered setup where every step is mandatory (use a wizard) or products with no permissions and no new features.
+- why: lexical 0.192, structural 0.46 (mode audit)
+
+### Users always know where they are and how to go back  `nav-orientation-and-back`  [rule/navigation; navigation] score 0.283 · heuristic
+Current location marked (aria-current, selected tab, breadcrumb, page title); URL/route reflects state on web and deep-linkable screens; back returns to the previous screen with its scroll and selection; titles match the navigation label that led there.
+- use when: Every navigation model; deep links; multi-step flows; tabs that hold stacks.
+- avoid when: Never break the browser/system back; never use a single URL for many states on the web.
+- why: lexical 0.106, structural 0.5 (mode audit)
+
+### Cards inside cards, everything in a rounded box  `anti-card-everything`  [antipattern/generic-ai; anti-pattern] score 0.283 · heuristic
+Justify each container: does the boundary mean something (tappable object, elevation, grouping that spacing cannot express)? If not, replace with headings, spacing, and hairline dividers. Never nest a card in a card; never wrap a single KPI number in a card just to make a grid.
+- use when: Reviewing any layout where sections, lists, forms, and even single lines are wrapped in bordered/elevated containers.
+- avoid when: A card is fine when the item is a discrete tappable object or needs elevation (drag, overlay).
+- why: lexical 0.105, structural 0.5 (mode audit)
+
+### One type scale with named roles  `typo-scale-and-roles`  [rule/typography; visual] score 0.28 · heuristic
+Roles display/heading/title/body/label/caption/numeric with size, line height, weight, and letter spacing per role; body ≥16 px web/mobile, 14 desktop, 24 TV; numeric role uses tabular lining figures; headings use tighter line height (1.1–1.25) and body 1.4–1.6. Generate with tokens.py scale and map the roles to the framework's text styles.
+- use when: Any screen with more than two text sizes; any design system.
+- avoid when: Never pick sizes per screen; never use more than ~7 sizes.
+- why: lexical 0.099, structural 0.5 (mode audit)
+
+### Semantic structure: headings, landmarks, lists, tables  `a11y-semantics-structure`  [rule/accessibility; accessibility/platform] score 0.266 · accessibility-requirement
+Structure first, style second: choose the element for its meaning and restyle it. Data tables use <th scope>; layout tables are forbidden; visually hidden headings are fine for screen readers when the visual design omits them.
+- use when: Every page: one h1, ordered heading levels, main/nav/aside landmarks, real <button>/<a>/<table>, lists for lists.
+- avoid when: Never use divs with click handlers as buttons; never use heading levels for visual size.
+- why: lexical 0.108, structural 0.46 (mode audit)
+
+### Mobile: gestures are shortcuts, not the only way  `mobile-gestures-discoverable`  [rule/input; interaction/platform] score 0.243 · accessibility-requirement
+Every gesture action has a visible equivalent (overflow menu, button); swipe actions reveal labelled buttons; avoid horizontal swipes inside horizontally scrolling content; respect the platform back gesture; long press shows a menu, never a hidden critical action.
+- use when: Swipe-to-delete, swipe between tabs, pull to refresh, long press menus, pinch zoom.
+- avoid when: Never make a gesture the only path to an action; never fight system gestures (back swipe edge, home).
+- why: lexical 0.114, structural 0.4 (mode audit)
+
+Filtered out: mobile-field-use (environment ['gloves', 'outdoor'] not in request)

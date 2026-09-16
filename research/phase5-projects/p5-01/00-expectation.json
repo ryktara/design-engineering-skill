@@ -1,0 +1,34 @@
+{
+  "task": "p5-01",
+  "sentence": "The invoices table on the billing page is hard to scan once there are more than twenty rows.",
+  "platform": "web",
+  "artifact_state": "existing",
+  "acceptable_modes": ["polish", "refactor"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "data.pagination_strategy",
+    "table.tabular_figures",
+    "table.column_priority",
+    "data.exception_first",
+    "a11y.color_not_only",
+    "a11y.semantics",
+    "process.reuse_first"
+  ],
+  "critical_concepts": ["data.pagination_strategy", "table.tabular_figures", "process.reuse_first"],
+  "forbidden_concepts": [
+    "table.virtualization",
+    "table.inline_edit",
+    "table.selection_bulk",
+    "layout.hero_thesis",
+    "brand.dark_mode_redesign",
+    "adaptive.navigation_transform",
+    "anti.template_landing"
+  ],
+  "preservation": ["navigation", "theme", "typography", "component-reuse (ui/table, StatusBadge, buttonVariants)"],
+  "reviewer_notes": {
+    "codebase_facts": "Next.js 15.3 app router, React 19, Tailwind v4 CSS-first @theme inline, shadcn new-york/zinc primitives (Table/Badge/Button/Card/Dialog), Geist Sans + Geist Mono via next/font, light-first :root with .dark opt-in, left rail (hidden <md) + top header, settings sub-nav tabs, radius 0.5rem, table rows h-10 header / py-2 cells, Lucide icons.",
+    "existing_invoice_table": "components/billing/invoice-history.tsx: 6 fixture rows, columns Invoice (mono id) / Issued / Period / Amount / Status / Download; responsive column hiding sm/md; status badge with icon + label; no sticky header, no grouping, no pagination, no sort, no exception-first ordering, no zebra/row banding.",
+    "what_a_good_answer_does": "Keep the same Table primitive and column set; make 20+ rows scannable: sticky/pinned header, exceptions (open / past due) surfaced first or grouped, tighter fixed row height, tabular numerals already present, year grouping or a paginate/show-more with a row count, optional status filter chips, mono id kept; no virtualization (20-100 rows), no inline edit, no bulk selection, do not change navigation/theme/typography.",
+    "fixture_note": "Fixture has only 6 invoices; to reproduce the task the fixture will be extended to ~30 rows (data change, recorded under before/)."
+  }
+}

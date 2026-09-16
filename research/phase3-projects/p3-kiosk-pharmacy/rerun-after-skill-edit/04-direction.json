@@ -1,0 +1,98 @@
+{
+  "brand": "Pharmacy prescription pick-up kiosk flow: identify the patient, show ready prescriptions, confirm; public touch screen in the store",
+  "fingerprint": {
+    "navigation_model": "hub-and-spoke",
+    "layout_topology": "single-column",
+    "grid_behavior": "fluid",
+    "content_density": "medium",
+    "surface_strategy": "tonal-layers",
+    "card_geometry": "none",
+    "corner_language": "large",
+    "typography_character": "rounded-friendly",
+    "color_strategy": "dominant-brand",
+    "motion_character": "crossfade",
+    "focus_strategy": "none-touch-only",
+    "cta_strategy": "single-primary",
+    "image_strategy": "hero-imagery",
+    "icon_strategy": "filled",
+    "metadata_density": "moderate"
+  },
+  "direction": {
+    "navigation": "nav-hub-spoke",
+    "layout": "layout-single-column",
+    "density": "density-medium",
+    "surface": "surface-flat-tonal",
+    "cards": "card-none",
+    "typography": "typography-rounded-friendly",
+    "color": "color-dominant-brand",
+    "motion": "motion-crossfade",
+    "focus": "focus-none-touch-only",
+    "cta": "cta-single-primary",
+    "imagery": "imagery-hero",
+    "icon": "icon-filled-system",
+    "metadata": "metadata-moderate"
+  },
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "create"
+    ],
+    "platform": [
+      "kiosk"
+    ],
+    "input": [
+      "touch"
+    ],
+    "product": [
+      "ecommerce",
+      "healthcare"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [],
+    "density": null,
+    "components": [],
+    "environment": [
+      "public"
+    ],
+    "jobs": [
+      "high-risk-action"
+    ],
+    "problems": [],
+    "risk": "high",
+    "primary_jobs": [
+      "high-risk-action",
+      "create"
+    ],
+    "constraints": {
+      "performance_sensitive": true
+    },
+    "accessibility": {
+      "screen_reader": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "known": [
+      "platform=kiosk",
+      "input=touch",
+      "product=ecommerce",
+      "product=healthcare",
+      "job=high-risk-action"
+    ],
+    "inferred": [
+      "mode=create",
+      "environment=public"
+    ],
+    "missing": [
+      "brand: no brand assets, guideline, or character description available",
+      "stack: implementation stack not stated and no repository evidence"
+    ],
+    "status": "CONFIDENT"
+  },
+  "validation": {
+    "ok": true,
+    "violations": []
+  }
+}

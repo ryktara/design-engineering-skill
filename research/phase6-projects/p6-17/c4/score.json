@@ -1,0 +1,102 @@
+{
+ "task": "p6-17",
+ "build": "32e67640c9b8ef1d519ef9695016fb396116b92412e63c324da090aecf1df385",
+ "c1_recorded": {
+  "platform_expected": "mobile",
+  "platform_resolved": [
+   "mobile"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "accessibility",
+   "audit",
+   "polish",
+   "refactor"
+  ],
+  "mode_resolved": [
+   "accessibility",
+   "audit"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "PARTIAL",
+  "bundle_ids": [
+   "a11y-nontext-contrast"
+  ],
+  "bundle_tokens": 103,
+  "expected_concepts": [
+   "a11y.contrast",
+   "brand.token_layers",
+   "brand.dark_mode_redesign",
+   "layout.focal_hierarchy",
+   "process.safe_modification"
+  ],
+  "critical_concepts": [
+   "a11y.contrast",
+   "brand.token_layers"
+  ],
+  "delivered_concepts": [
+   "a11y.contrast",
+   "interaction.focus_visible"
+  ],
+  "concept_recall": 0.2,
+  "critical_recall": 0.5,
+  "forbidden_delivered": [],
+  "change_budget": "low"
+ },
+ "c4": {
+  "platform_expected": "mobile",
+  "platform_resolved": [
+   "mobile"
+  ],
+  "platform_correct": "yes",
+  "missing_platform_entry": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": [
+   "accessibility",
+   "audit",
+   "polish",
+   "refactor"
+  ],
+  "mode_resolved": [
+   "accessibility",
+   "audit"
+  ],
+  "mode_correct": "yes",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "status": "PARTIAL",
+  "bundle_ids": [
+   "a11y-nontext-contrast"
+  ],
+  "bundle_tokens": 103,
+  "expected_concepts": [
+   "a11y.contrast",
+   "brand.token_layers",
+   "brand.dark_mode_redesign",
+   "layout.focal_hierarchy",
+   "process.safe_modification"
+  ],
+  "critical_concepts": [
+   "a11y.contrast",
+   "brand.token_layers"
+  ],
+  "delivered_concepts": [
+   "a11y.contrast",
+   "interaction.focus_visible"
+  ],
+  "concept_recall": 0.2,
+  "critical_recall": 0.5,
+  "forbidden_delivered": [],
+  "change_budget": "low"
+ }
+}

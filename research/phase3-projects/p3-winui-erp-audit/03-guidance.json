@@ -1,0 +1,610 @@
+{
+  "schema": "guidance-bundle/v1",
+  "query": "Warehouse clerks say our WinUI stock adjustments page is confusing and they keep missing rows; the screen reader reads the status column as just text",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "accessibility",
+      "audit"
+    ],
+    "platform": [
+      "desktop",
+      "tv"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "remote"
+    ],
+    "product": [
+      "erp"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "winui"
+    ],
+    "density": "medium",
+    "components": [],
+    "environment": [
+      "large-display",
+      "shared-device"
+    ],
+    "jobs": [],
+    "problems": [
+      "accessibility",
+      "interaction"
+    ],
+    "risk": "low",
+    "primary_jobs": [
+      "accessibility"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "performance_sensitive": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "known": [
+      "platform=desktop (project inspection)",
+      "platform=tv (project inspection)",
+      "input=remote (project inspection: DPAD/remote handling in source)",
+      "product=erp (request: warehouse)",
+      "stack=winui (request: winui)",
+      "mode=accessibility (request: screen reader)"
+    ],
+    "inferred": [
+      "input=pointer (implied by platform desktop)",
+      "input=keyboard (implied by platform desktop)",
+      "density=medium (implied by product erp (capped for touch/remote platform))",
+      "mode=audit (problem statement (interaction): confusing, keep missing)",
+      "environment=shared-device (a TV is normally a shared household device)",
+      "environment=large-display (TV platform)"
+    ],
+    "missing": [],
+    "status": "CONFIDENT",
+    "source": {
+      "request": [
+        "confusing",
+        "keep missing",
+        "screen reader",
+        "screen reader reads",
+        "warehouse",
+        "winui"
+      ],
+      "project": [
+        "Erp.Client.csproj: Microsoft.WindowsAppSDK",
+        "Erp.Client.csproj: CommunityToolkit.WinUI",
+        "DPAD / remote key handling found in source"
+      ]
+    },
+    "activation": {
+      "decision": "activate",
+      "ui_score": 4.0,
+      "non_ui_score": 0,
+      "ui_terms": [
+        "screen",
+        "page",
+        "confusing"
+      ],
+      "non_ui_terms": []
+    }
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "accessibility",
+        "reason": "accessibility mode"
+      },
+      {
+        "concern": "interaction",
+        "reason": "accessibility mode: operability is part of the review"
+      },
+      {
+        "concern": "component",
+        "reason": "the reviewed component/screen"
+      },
+      {
+        "concern": "feedback",
+        "reason": "interaction problem: discoverability and confirmation of actions"
+      },
+      {
+        "concern": "performance",
+        "reason": "focus latency and catalog virtualization on TV"
+      },
+      {
+        "concern": "data-display",
+        "reason": "numbers, tables or charts are the content"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "states",
+        "reason": "audits check empty/loading/error handling"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "audits name generic-design defects"
+      },
+      {
+        "concern": "content",
+        "reason": "10-foot readability"
+      },
+      {
+        "concern": "environment",
+        "reason": "environment large-display (INFERRED)"
+      }
+    ],
+    "optional": [],
+    "required_concepts": [
+      {
+        "concept": "a11y.accessible_names",
+        "reason": "accessibility review"
+      },
+      {
+        "concept": "a11y.contrast",
+        "reason": "accessibility review"
+      },
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "desktop keyboard-first"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "desktop focus"
+      },
+      {
+        "concept": "interaction.dpad_reachability",
+        "reason": "remote input"
+      },
+      {
+        "concept": "interaction.focus_restore",
+        "reason": "remote input"
+      },
+      {
+        "concept": "tv.ten_foot_typography",
+        "reason": "tv"
+      },
+      {
+        "concept": "tv.safe_margins",
+        "reason": "tv"
+      },
+      {
+        "concept": "table.tabular_figures",
+        "reason": "numeric data"
+      }
+    ],
+    "recommended_concepts": [
+      "a11y.semantics",
+      "a11y.text_scaling",
+      "layout.one_primary_action",
+      "interaction.shortcuts",
+      "interaction.back_semantics",
+      "tv.no_touch_hover",
+      "perf.focus_latency",
+      "tv.dark_first",
+      "privacy.shared_device"
+    ]
+  },
+  "core": [
+    {
+      "id": "comp-data-table",
+      "kind": "component",
+      "category": "table",
+      "title": "Data table / grid",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "data-display",
+        "structure"
+      ],
+      "concepts": [
+        "table.selection_bulk",
+        "table.inline_edit",
+        "table.virtualization",
+        "table.tabular_figures"
+      ],
+      "score": 0.401,
+      "guidance": "Sticky header, row height by density token, zebra striping optional (prefer hover/selection highlight), column resize/reorder/visibility persisted, sort indicator with aria-sort, selection checkbox column with header select-all and a count, row actions visible on focus as well as hover, inline edit with Enter/Escape, keyboard grid navigation (arrows, Home/End, PageUp/Down), virtualised rows, loading skeleton rows, empty state inside the table body. Financial tables: see numeric rule.",
+      "use_when": "Homogeneous records with several comparable attributes; sorting, filtering, selection, bulk actions, inline editing.",
+      "avoid_when": "Fewer than ~10 rows (use a list), heterogeneous items (use cards/list), phone widths (convert to rows).",
+      "risk": {
+        "a11y": "high",
+        "perf": "high"
+      },
+      "provenance": "heuristic",
+      "implementation": {
+        "winui": "CommunityToolkit DataGrid (keyboard + UIA built in) or ItemsView; avoid ListView with a fake header row."
+      },
+      "incompatible": [
+        "layout-rails",
+        "surface-elevated-cards"
+      ],
+      "why": {
+        "lexical": 0.205,
+        "structural": 0.64,
+        "matched": [
+          "platform desktop",
+          "input keyboard,pointer",
+          "secondary mode",
+          "product erp"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "comp-tv-rail",
+      "kind": "component",
+      "category": "tv-rail",
+      "title": "TV rail (horizontal row of cards)",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "navigation"
+      ],
+      "concepts": [
+        "interaction.focus_restore",
+        "perf.focus_latency"
+      ],
+      "score": 0.312,
+      "guidance": "Rail title (≥24 sp) left-aligned in the safe area, cards of one aspect ratio, focused card scrolls to a fixed pivot (~10–30% from left) with LEFT at index 0 going to navigation, focus memory per rail, lazy loading of items and images, 'see all' as the last card if the rail is capped, no wrap-around, consistent card counts per width (Android: ~4 landscape / ~6 portrait at 960 dp).",
+      "use_when": "Categorised browsing on TV home, section, and search screens.",
+      "avoid_when": "Fewer than ~4 items (use a grid row), comparison tasks.",
+      "risk": {
+        "a11y": "high",
+        "perf": "high"
+      },
+      "provenance": "platform-standard",
+      "incompatible": [
+        "layout-table-first"
+      ],
+      "why": {
+        "lexical": 0.142,
+        "structural": 0.52,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "secondary mode",
+          "product mismatch",
+          "density medium"
+        ]
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "a11y-nontext-contrast",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Non-text contrast 3:1 for controls and focus",
+      "facets": [
+        "accessibility"
+      ],
+      "concerns": [
+        "accessibility"
+      ],
+      "concepts": [
+        "a11y.contrast",
+        "interaction.focus_visible"
+      ],
+      "score": 0.243,
+      "guidance": "Any visual that identifies a control or its state needs ≥3:1 against adjacent colours. Hairline dividers at 1.2:1 are fine as decoration but an input whose only boundary is that hairline fails.",
+      "use_when": "Input borders, checkbox/radio outlines, focus indicators, icons that carry meaning, chart marks, toggle states.",
+      "avoid_when": "Purely decorative borders and dividers are exempt, but then they must not be the only boundary of a control.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.54,
+        "matched": [
+          "mode accessibility"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required concern accessibility: accessibility mode"
+    },
+    {
+      "id": "tv-safe-area",
+      "kind": "rule",
+      "category": "layout",
+      "title": "TV: overscan-safe margins",
+      "facets": [
+        "layout",
+        "platform"
+      ],
+      "concerns": [
+        "interaction",
+        "structure"
+      ],
+      "concepts": [
+        "tv.safe_margins"
+      ],
+      "score": 0.339,
+      "guidance": "Keep interactive and text content ≥5% from edges: at the 960×540 dp design frame that is 48 dp horizontal and 27 dp vertical (Android guidance: up to 58/28 dp for maximum safety; tvOS: 60 pt sides, 60 pt top/bottom on the 1920×1080 frame). Let rails scroll under the margin so partial cards hint at more content.",
+      "use_when": "All persistent UI (nav, titles, buttons, subtitles); backgrounds and artwork may bleed.",
+      "avoid_when": "Do not inset full-bleed imagery; do not rely on the panel reporting overscan.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.027,
+        "structural": 0.72,
+        "matched": [
+          "platform tv",
+          "input remote (stated)",
+          "secondary mode"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required concern interaction: accessibility mode: operability is part of the review"
+    },
+    {
+      "id": "a11y-live-status",
+      "kind": "rule",
+      "category": "feedback",
+      "title": "Announce dynamic status changes",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "accessibility",
+        "feedback"
+      ],
+      "concepts": [
+        "a11y.live_status"
+      ],
+      "score": 0.346,
+      "guidance": "Use a polite live region (role=status / accessibilityLiveRegion=polite / LiveSetting) with a complete phrase ('12 results for shoes'), assertive only for blocking errors; toasts stay ≥5 s or until dismissed and are also logged somewhere reachable.",
+      "use_when": "Toasts, saving/saved indicators, cart counts, filter result counts, chat messages, async loading completion.",
+      "avoid_when": "Do not announce every keystroke result; do not move focus for non-blocking status.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.187,
+        "structural": 0.54,
+        "matched": [
+          "mode accessibility"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required concern feedback: interaction problem: discoverability and confirmation of actions"
+    },
+    {
+      "id": "web-virtualize-long-lists",
+      "kind": "rule",
+      "category": "performance",
+      "title": "Virtualise long lists and tables",
+      "facets": [
+        "performance",
+        "platform"
+      ],
+      "concerns": [
+        "data-display",
+        "performance"
+      ],
+      "concepts": [
+        "table.virtualization"
+      ],
+      "score": 0.357,
+      "guidance": "Windowed rendering with stable row heights or measured heights, keyboard focus preserved when rows unmount (roving focus by key), aria-rowcount/aria-setsize so assistive tech knows the real size, scroll restoration on back navigation. Native: LazyColumn/List/FlatList/VirtualizingStackPanel already virtualise; keep keys stable.",
+      "use_when": "Lists/tables beyond a few hundred rows, grids of images, infinite feeds, EPGs.",
+      "avoid_when": "Small lists (<100) where virtualisation adds focus and find-in-page problems.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "high"
+      },
+      "provenance": "engineering-practice",
+      "why": {
+        "lexical": 0.175,
+        "structural": 0.58,
+        "matched": [
+          "platform desktop,tv",
+          "secondary mode",
+          "product erp"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required concern performance: focus latency and catalog virtualization on TV"
+    },
+    {
+      "id": "a11y-labels-names",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Accessible names for every control and image",
+      "facets": [
+        "accessibility"
+      ],
+      "concerns": [
+        "accessibility"
+      ],
+      "concepts": [
+        "a11y.accessible_names"
+      ],
+      "score": 0.349,
+      "guidance": "Visible label for inputs (not placeholder-only), aria-label/accessibilityLabel/contentDescription/AutomationProperties.Name for icon-only controls, alt text for meaningful images and alt=\"\" for decorative ones, link text that makes sense out of context. The accessible name must contain the visible label text (label in name).",
+      "use_when": "Icon-only buttons, inputs, images, custom controls, links whose text is 'Read more'.",
+      "avoid_when": "Decorative images and icons beside visible text are hidden from assistive tech instead.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "why": {
+        "lexical": 0.192,
+        "structural": 0.54,
+        "matched": [
+          "mode accessibility"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required concept a11y.accessible_names"
+    },
+    {
+      "id": "desktop-keyboard-first",
+      "kind": "rule",
+      "category": "input",
+      "title": "Desktop: keyboard is a first-class input",
+      "facets": [
+        "interaction",
+        "platform"
+      ],
+      "concerns": [
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.keyboard_navigation",
+        "interaction.shortcuts",
+        "interaction.focus_visible"
+      ],
+      "score": 0.324,
+      "guidance": "Document shortcuts in menus and tooltips; F2 edits, Delete deletes with undo, Ctrl+F finds, F6 cycles panes; grids use arrow keys and Ctrl/Shift selection; every dialog has a default and cancel button; access keys shown on Alt (Windows).",
+      "use_when": "Every desktop screen: shortcuts for frequent commands, access keys for menus, Tab/arrow semantics in lists, trees, grids, and toolbars, Enter/Escape in dialogs.",
+      "avoid_when": "Never assign shortcuts that collide with platform or assistive-tech shortcuts; never make Tab stop on every cell of a grid.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "platform-standard",
+      "why": {
+        "lexical": 0.0,
+        "structural": 0.72,
+        "matched": [
+          "platform desktop",
+          "input keyboard,pointer",
+          "mode accessibility"
+        ]
+      },
+      "role": "guardrail",
+      "selected_for": "required concept interaction.keyboard_navigation"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "feedback",
+      "performance",
+      "data-display"
+    ],
+    "covered_required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "feedback",
+      "performance",
+      "data-display"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "states",
+      "anti-pattern",
+      "content",
+      "environment"
+    ],
+    "covered_recommended_concerns": [],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "interaction.keyboard_navigation",
+      "interaction.focus_visible",
+      "interaction.dpad_reachability",
+      "interaction.focus_restore",
+      "tv.ten_foot_typography",
+      "tv.safe_margins",
+      "table.tabular_figures"
+    ],
+    "covered_required_concepts": [
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "interaction.keyboard_navigation",
+      "interaction.focus_visible",
+      "interaction.focus_restore",
+      "tv.safe_margins",
+      "table.tabular_figures"
+    ],
+    "uncovered_required_concepts": [
+      "interaction.dpad_reachability",
+      "tv.ten_foot_typography"
+    ],
+    "concept_coverage_ratio": 0.78,
+    "bundle_size": 8,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 2,
+    "guardrail_size": 6,
+    "category_diversity": 0.88,
+    "duplicate_pressure": 0.25,
+    "facet_coverage": 0.8,
+    "redundancy": 0.43
+  },
+  "token_coverage": 0.81,
+  "omitted": [
+    {
+      "id": "comp-data-entry-grid",
+      "reason": "same category as a core pick or incompatible with one"
+    }
+  ],
+  "rejected": [
+    {
+      "id": "anti-scroll-animation-everything",
+      "reason": "platform ['mobile', 'web'] not in request ['desktop', 'tv']"
+    },
+    {
+      "id": "anti-mobile-desktop-shrunk",
+      "reason": "platform ['mobile'] not in request ['desktop', 'tv']"
+    },
+    {
+      "id": "comp-list-row-mobile",
+      "reason": "platform ['mobile', 'tablet'] not in request ['desktop', 'tv']"
+    },
+    {
+      "id": "comp-hero-section",
+      "reason": "platform ['mobile', 'web'] not in request ['desktop', 'tv']"
+    },
+    {
+      "id": "dir-service-app-mobile",
+      "reason": "platform ['mobile'] not in request ['desktop', 'tv']"
+    },
+    {
+      "id": "dir-public-kiosk",
+      "reason": "platform ['kiosk'] not in request ['desktop', 'tv']"
+    },
+    {
+      "id": "nav-top-bar",
+      "reason": "platform ['web'] not in request ['desktop', 'tv']"
+    },
+    {
+      "id": "nav-bottom-tabs",
+      "reason": "platform ['mobile'] not in request ['desktop', 'tv']"
+    }
+  ]
+}

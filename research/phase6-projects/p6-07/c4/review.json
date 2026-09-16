@@ -1,0 +1,8 @@
+{"task": "p6-07", "records": [
+{"id": "a11y-target-size", "verdict": "relevant", "category": "", "why": "The record that drove the fix: 44px touch target and extend the hit area, not the glyph."},
+{"id": "layout-hierarchy-one-thing", "verdict": "partial", "category": "generic", "why": "Focal-point heuristic, not actionable for a tap-target defect (partial in c3)."},
+{"id": "layout-spacing-scale", "verdict": "partial", "category": "generic", "why": "Generic spacing rule; supplied only the 4px inter-chip gap (partial in c3)."}],
+ "missing_critical": [],
+ "unjustified_direction_slots": 0,
+ "layer_review": {"core": [], "critical": ["a11y-target-size", "layout-hierarchy-one-thing", "layout-spacing-scale"], "optional": []},
+ "change_vs_c3": "Better: shared-device-privacy (off-target) and the off-platform mobile-orientation-size-classes are gone and a11y-target-size is kept; impl-reuse-before-new also dropped but the c3 implementer recorded it as unnecessary."}

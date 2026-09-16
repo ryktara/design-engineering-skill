@@ -1,0 +1,42 @@
+{
+  "task": "p5-21",
+  "sentence": "Add a weekly summary card to the top of the Today screen.",
+  "platform": "mobile",
+  "artifact_state": "existing",
+  "acceptable_modes": ["create"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "data.kpi_comparison",
+    "process.reuse_first",
+    "layout.focal_hierarchy",
+    "layout.no_nested_cards",
+    "a11y.accessible_names",
+    "brand.token_layers",
+    "env.glanceable_status"
+  ],
+  "critical_concepts": ["data.kpi_comparison", "process.reuse_first", "layout.focal_hierarchy"],
+  "forbidden_concepts": [
+    "tv.dark_first",
+    "tv.ten_foot_typography",
+    "anti.platform_scaling",
+    "interaction.dpad_reachability",
+    "interaction.keyboard_navigation",
+    "desktop.fluent_materials",
+    "desktop.spacing_grid",
+    "layout.hero_thesis",
+    "anti.template_landing",
+    "table.virtualization",
+    "data.pagination_strategy"
+  ],
+  "preservation": ["navigation", "theme", "typography", "component_reuse"],
+  "reviewer_notes": {
+    "artifact_state_note": "The Today screen exists (Views/TodayView.swift: ScrollView > VStack{header(ring card), habitList}). The card is a new component on an existing screen, so 'existing' is the expected artifact state; 'new' is acceptable only if the skill clearly scopes it to the card and still lists preservation of the screen.",
+    "expected_shape_from_code": "Store already exposes weeklyCompletions (Mon..Sun completed/total) and weeklyCompletionRate; the Stats tab already shows 'This week' (bar chart, 71%). A Today summary card should reuse that data via the store (no new model), reuse cardSurface + Theme spacing/radius/typography, and be compact (one card, one row: a weekly rate KPI plus a 7-day strip) so it does not compete with the progress ring, which is the screen's focal point. It goes first in the VStack (the sentence says 'top'), above the ring card.",
+    "focal_hierarchy_risk": "Two full-height cards stacked at the top would push the habit list below the fold on 390x844 and create two competing focal points. The card must be low (~80-100pt).",
+    "data_note": "The sample week already contains today's data as Sun (2/5 = todayProgress 0.4); the card should not double-count. Show week-to-date rate and per-day ratio, not a comparison against last week (no data exists for it; do not invent).",
+    "a11y_note": "Group the card with accessibilityElement(children: .combine) or .ignore + label/value like ProgressRing does; the 7 dots need a text alternative (per-day 'Mon 4 of 5'). Colour must not be the only carrier of day status (dot fill + ratio text / accessibility value).",
+    "no_nested_cards": "Do not put the summary inside the existing header card as a card-in-card; either a sibling card or plain rows inside a card.",
+    "drilldown_note": "Tap-to-open-Stats would need tab selection lifted out of RootTabView's local @State; that is outside the sentence and should not be required.",
+    "preservation": "Bottom tabs, NavigationStack per tab, Nunito via Theme.Typography, radius 16/10, spacing 4/8/12/16/24, the ring header and HabitCard untouched. p5-20 changed the Stats chart colours (chartTrack token); do not touch StatsView or that token."
+  }
+}

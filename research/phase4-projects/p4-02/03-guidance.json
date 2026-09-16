@@ -1,0 +1,548 @@
+{
+  "schema": "guidance-bundle/v2",
+  "query": "accessibility review and fix of the seat management table: keyboard users can't reach row actions and the status column is colour only",
+  "status": "CONFIDENT",
+  "requirements": {
+    "schema": "design-requirements/v1",
+    "mode": [
+      "accessibility",
+      "audit"
+    ],
+    "platform": [
+      "web"
+    ],
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "product": [
+      "finance",
+      "saas"
+    ],
+    "screen": [],
+    "screen_subtype": [],
+    "stack": [
+      "nextjs",
+      "react",
+      "shadcn",
+      "tailwind"
+    ],
+    "density": "high",
+    "components": [
+      "table"
+    ],
+    "environment": [],
+    "jobs": [],
+    "problems": [
+      "accessibility"
+    ],
+    "risk": "medium",
+    "primary_jobs": [
+      "accessibility table"
+    ],
+    "constraints": {
+      "preserve_existing_system": true,
+      "brand_system_present": false
+    },
+    "accessibility": {
+      "keyboard": true,
+      "screen_reader": true,
+      "focus": true,
+      "touch_targets": true,
+      "reduced_motion": true,
+      "contrast": true
+    },
+    "negative_constraints": [],
+    "change_budget": "low",
+    "scope": {
+      "domain": "UI_ACCESSIBILITY",
+      "in_scope": true,
+      "reason": "UI design / interaction task",
+      "nearest_ui_task": null
+    },
+    "mode_evidence": [
+      "accessibility: explicit: accessibility",
+      "accessibility: problem statement about assistive tech / accessibility",
+      "audit: diagnose the reported defect"
+    ],
+    "project_context": {
+      "navigation": "left-rail (KNOWN)",
+      "theme": "dual-theme (KNOWN)",
+      "radius": "small (INFERRED)",
+      "spacing": "8 (INFERRED)",
+      "typography": "custom (INFERRED)",
+      "components": "tailwind, radix, shadcn-style cva, table:tanstack, shadcn (KNOWN)"
+    },
+    "known": [
+      "platform=web",
+      "input=keyboard",
+      "product=finance",
+      "product=saas",
+      "stack=nextjs",
+      "stack=react",
+      "stack=tailwind",
+      "stack=shadcn",
+      "mode=accessibility",
+      "project_navigation=left-rail",
+      "project_theme=dual-theme",
+      "project_components=tailwind, radix, shadcn-style cva, table:tanstack, shadcn"
+    ],
+    "inferred": [
+      "input=pointer",
+      "input=touch",
+      "density=high",
+      "mode=audit",
+      "project_radius=small",
+      "project_spacing=8",
+      "project_typography=custom"
+    ],
+    "missing": [],
+    "status": "CONFIDENT"
+  },
+  "scope": {
+    "domain": "UI_ACCESSIBILITY",
+    "in_scope": true,
+    "reason": "UI design / interaction task",
+    "nearest_ui_task": null
+  },
+  "concerns": {
+    "required": [
+      {
+        "concern": "accessibility",
+        "reason": "accessibility mode"
+      },
+      {
+        "concern": "interaction",
+        "reason": "accessibility mode: operability is part of the review"
+      },
+      {
+        "concern": "component",
+        "reason": "the reviewed component/screen"
+      },
+      {
+        "concern": "data-display",
+        "reason": "numbers, tables or charts are the content"
+      }
+    ],
+    "recommended": [
+      {
+        "concern": "states",
+        "reason": "audits check empty/loading/error handling"
+      },
+      {
+        "concern": "anti-pattern",
+        "reason": "audits name generic-design defects"
+      },
+      {
+        "concern": "adaptive",
+        "reason": "viewport range"
+      },
+      {
+        "concern": "feedback",
+        "reason": "sensitive domain: errors must be recoverable"
+      }
+    ],
+    "optional": [
+      "content",
+      "performance"
+    ],
+    "required_concepts": [
+      {
+        "concept": "a11y.accessible_names",
+        "reason": "accessibility review"
+      },
+      {
+        "concept": "a11y.contrast",
+        "reason": "accessibility review"
+      },
+      {
+        "concept": "a11y.semantics",
+        "reason": "accessibility review"
+      },
+      {
+        "concept": "state.loading_empty_error",
+        "reason": "asynchronous or remote data on this screen"
+      },
+      {
+        "concept": "interaction.keyboard_navigation",
+        "reason": "web content must be keyboard operable"
+      },
+      {
+        "concept": "interaction.hover_independence",
+        "reason": "web is used with touch as well as pointer"
+      },
+      {
+        "concept": "interaction.focus_visible",
+        "reason": "web keyboard focus"
+      },
+      {
+        "concept": "table.tabular_figures",
+        "reason": "numeric data"
+      }
+    ],
+    "recommended_concepts": [
+      "a11y.text_scaling",
+      "a11y.reduced_motion",
+      "a11y.live_status",
+      "touch.minimum_target",
+      "adaptive.breakpoint_matrix",
+      "table.column_priority",
+      "table.virtualization",
+      "table.selection_bulk",
+      "feedback.confirmation_destructive",
+      "a11y.color_not_only",
+      "interaction.shortcuts"
+    ],
+    "concept_policy": "concept-policy/v1"
+  },
+  "core": [
+    {
+      "id": "comp-plan-comparison",
+      "kind": "component",
+      "category": "settings",
+      "title": "Plan comparison and billing management",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "data-display",
+        "feedback",
+        "structure"
+      ],
+      "concepts": [
+        "table.tabular_figures",
+        "layout.one_primary_action",
+        "a11y.color_not_only",
+        "feedback.confirmation_destructive",
+        "table.selection_bulk"
+      ],
+      "covers": [
+        "tabular figures and numeric alignment",
+        "one primary action per view",
+        "no colour alone for status",
+        "confirmation of destructive or high-risk actions",
+        "selection state and bulk actions"
+      ],
+      "score": 0.637,
+      "guidance": "Plans are a radio group of equal-width cards with the current plan marked in text (not colour only), prices with tabular figures and the billing period stated, a feature list with real text (no bare check marks without labels), and one primary action per state (Upgrade / Downgrade / Current); every card is one Tab stop with a visible focus ring, arrow keys move between plans; seat management is a data table (name, role, status, last active) with row actions reachable from the keyboard and a bulk selection state; invoice history is a table with date, amount (tabular), status text + icon and a real download link (not a hover-only icon); plan changes and seat removals confirm in a dialog that states the billing consequence and returns focus; billing settings sub-navigation is a vertical list with aria-current.",
+      "use_when": "Billing/plan pages: choosing or changing a plan, seat management, invoice history, payment method.",
+      "avoid_when": "Public pricing marketing pages (hero + narrative) or checkout for a one-off purchase.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "implementation": {
+        "nextjs": "Server component for the invoice table; client radio group for plans; shadcn Dialog with returnFocus; Table with <th scope> and numeric cells using tabular-nums.",
+        "react": "role=radiogroup on the plan row; roving tabindex; download as <a download> with the file name in the link text."
+      },
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    },
+    {
+      "id": "comp-data-table",
+      "kind": "component",
+      "category": "table",
+      "title": "Data table / grid",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "component",
+        "data-display",
+        "structure"
+      ],
+      "concepts": [
+        "table.selection_bulk",
+        "table.inline_edit",
+        "table.virtualization",
+        "table.tabular_figures",
+        "data.pagination_strategy"
+      ],
+      "covers": [
+        "selection state and bulk actions",
+        "inline editing",
+        "virtualization of long collections",
+        "tabular figures and numeric alignment",
+        "pagination / load-more strategy"
+      ],
+      "score": 0.605,
+      "guidance": "Sticky header, row height by density token, zebra striping optional (prefer hover/selection highlight), column resize/reorder/visibility persisted, sort indicator with aria-sort, selection checkbox column with header select-all and a count, row actions visible on focus as well as hover, inline edit with Enter/Escape, keyboard grid navigation (arrows, Home/End, PageUp/Down), virtualised rows, loading skeleton rows, empty state inside the table body. Financial tables: see numeric rule.",
+      "use_when": "Homogeneous records with several comparable attributes; sorting, filtering, selection, bulk actions, inline editing.",
+      "avoid_when": "Fewer than ~10 rows (use a list), heterogeneous items (use cards/list), phone widths (convert to rows).",
+      "risk": {
+        "a11y": "high",
+        "perf": "high"
+      },
+      "provenance": "heuristic",
+      "implementation": {
+        "react": "TanStack Table (headless) + TanStack Virtual; render semantic <table> when static, role=grid when interactive; sticky via position: sticky on th.",
+        "shadcn": "DataTable recipe (TanStack) is the convention; keep the Table primitives, add virtualisation for >200 rows."
+      },
+      "incompatible": [
+        "layout-rails",
+        "surface-elevated-cards"
+      ],
+      "role": "core",
+      "selected_for": "highest-scoring component with lexical evidence"
+    }
+  ],
+  "guardrails": [
+    {
+      "id": "anti-hover-only-actions",
+      "kind": "antipattern",
+      "category": "craft",
+      "title": "Actions only on hover",
+      "facets": [
+        "anti-pattern",
+        "platform"
+      ],
+      "concerns": [
+        "anti-pattern"
+      ],
+      "concepts": [
+        "interaction.hover_independence"
+      ],
+      "covers": [
+        "no hover dependence"
+      ],
+      "score": 0.654,
+      "guidance": "Show on focus too, keep a visible affordance (overflow menu) for touch, and never on TV.",
+      "use_when": "Row actions, card menus, and edit buttons that appear only on mouse hover.",
+      "avoid_when": "Never as the sole path.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "role": "guardrail",
+      "selected_for": "most relevant record for the request wording"
+    },
+    {
+      "id": "grid-single-tab-stop",
+      "kind": "rule",
+      "category": "table",
+      "title": "Grids with row actions are one Tab stop",
+      "facets": [
+        "component",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility",
+        "data-display",
+        "interaction"
+      ],
+      "concepts": [
+        "interaction.keyboard_navigation",
+        "interaction.focus_visible",
+        "table.selection_bulk"
+      ],
+      "covers": [
+        "keyboard navigation and focus order",
+        "visible focus",
+        "selection state and bulk actions"
+      ],
+      "score": 0.6,
+      "guidance": "Tab enters the grid once and leaves it once; arrow keys move between cells/rows (roving tabindex or a focus manager), Enter/Space activates the focused cell's action, Escape returns from an edited cell to navigation mode; row actions become reachable when the row or actions cell is focused and are also available from a row context/actions menu; a table with 24 rows must never produce 24 Tab stops per action column. Announce the current row/column (aria-rowindex/colindex or the platform's automation properties) and keep a visible focus indicator on the active cell.",
+      "use_when": "Data tables or grids where each row has buttons/links (edit, delete, approve, download) and there are more than a handful of rows.",
+      "avoid_when": "Small static tables with no interactive cells.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "implementation": {
+        "react": "role=grid with a roving tabindex hook; tabIndex=-1 on non-active cells; key handlers on the grid container."
+      },
+      "role": "guardrail",
+      "selected_for": "most relevant record for the request wording"
+    },
+    {
+      "id": "a11y-semantics-structure",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Semantic structure: headings, landmarks, lists, tables",
+      "facets": [
+        "accessibility",
+        "platform"
+      ],
+      "concerns": [
+        "accessibility"
+      ],
+      "concepts": [
+        "a11y.semantics"
+      ],
+      "covers": [
+        "semantic structure and roles"
+      ],
+      "score": 0.38,
+      "guidance": "Structure first, style second: choose the element for its meaning and restyle it. Data tables use <th scope>; layout tables are forbidden; visually hidden headings are fine for screen readers when the visual design omits them.",
+      "use_when": "Every page: one h1, ordered heading levels, main/nav/aside landmarks, real <button>/<a>/<table>, lists for lists.",
+      "avoid_when": "Never use divs with click handlers as buttons; never use heading levels for visual size.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "role": "guardrail",
+      "selected_for": "required coverage: semantic structure and roles"
+    },
+    {
+      "id": "a11y-contrast-text",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Text contrast 4.5:1 (3:1 large)",
+      "facets": [
+        "accessibility"
+      ],
+      "concerns": [
+        "accessibility"
+      ],
+      "concepts": [
+        "a11y.contrast"
+      ],
+      "covers": [
+        "high contrast"
+      ],
+      "score": 0.269,
+      "guidance": "Body and label text ≥4.5:1, large text (≥24 px or ≥19 px bold) ≥3:1, AAA target 7:1 for long reading and for TV. Measure with tokens.py contrast, never estimate. Placeholder text is text and must pass.",
+      "use_when": "Every text/background pair in every theme and every state (hover, pressed, selected, placeholder).",
+      "avoid_when": "Never skip; disabled text and pure decoration are the only exemptions.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "role": "guardrail",
+      "selected_for": "required coverage: high contrast"
+    },
+    {
+      "id": "a11y-labels-names",
+      "kind": "rule",
+      "category": "accessibility",
+      "title": "Accessible names for every control and image",
+      "facets": [
+        "accessibility"
+      ],
+      "concerns": [
+        "accessibility"
+      ],
+      "concepts": [
+        "a11y.accessible_names"
+      ],
+      "covers": [
+        "accessible names and labels"
+      ],
+      "score": 0.273,
+      "guidance": "Visible label for inputs (not placeholder-only), aria-label/accessibilityLabel/contentDescription/AutomationProperties.Name for icon-only controls, alt text for meaningful images and alt=\"\" for decorative ones, link text that makes sense out of context. The accessible name must contain the visible label text (label in name).",
+      "use_when": "Icon-only buttons, inputs, images, custom controls, links whose text is 'Read more'.",
+      "avoid_when": "Decorative images and icons beside visible text are hidden from assistive tech instead.",
+      "risk": {
+        "a11y": "high",
+        "perf": "low"
+      },
+      "provenance": "accessibility-requirement",
+      "role": "guardrail",
+      "selected_for": "required coverage: accessible names and labels"
+    },
+    {
+      "id": "layout-states-empty-loading-error",
+      "kind": "rule",
+      "category": "feedback",
+      "title": "Design empty, loading, error, and partial states",
+      "facets": [
+        "component"
+      ],
+      "concerns": [
+        "states"
+      ],
+      "concepts": [
+        "state.loading_empty_error"
+      ],
+      "covers": [
+        "loading, empty and error states"
+      ],
+      "score": 0.224,
+      "guidance": "Empty: what this is, why it is empty, one action. Loading: skeleton with final dimensions, then content; announce completion. Error: what failed, what to do, retry that works; keep entered data. Partial: show what loaded, mark what didn't. On TV, focus must land somewhere valid in each state.",
+      "use_when": "Every list, table, chart, form, and detail screen.",
+      "avoid_when": "Never ship a blank area for empty data; never show a spinner for more than ~1 s without a skeleton or progress; never show an error without a next step.",
+      "risk": {
+        "a11y": "medium",
+        "perf": "low"
+      },
+      "provenance": "heuristic",
+      "role": "guardrail",
+      "selected_for": "required coverage: loading, empty and error states"
+    }
+  ],
+  "metrics": {
+    "required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "data-display"
+    ],
+    "covered_required_concerns": [
+      "accessibility",
+      "interaction",
+      "component",
+      "data-display"
+    ],
+    "uncovered_required_concerns": [],
+    "recommended_concerns": [
+      "states",
+      "anti-pattern",
+      "adaptive",
+      "feedback"
+    ],
+    "covered_recommended_concerns": [
+      "states",
+      "anti-pattern",
+      "feedback"
+    ],
+    "coverage_ratio": 1.0,
+    "required_concepts": [
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "a11y.semantics",
+      "state.loading_empty_error",
+      "interaction.keyboard_navigation",
+      "interaction.hover_independence",
+      "interaction.focus_visible",
+      "table.tabular_figures"
+    ],
+    "covered_required_concepts": [
+      "a11y.accessible_names",
+      "a11y.contrast",
+      "a11y.semantics",
+      "state.loading_empty_error",
+      "interaction.keyboard_navigation",
+      "interaction.hover_independence",
+      "interaction.focus_visible",
+      "table.tabular_figures"
+    ],
+    "uncovered_required_concepts": [],
+    "concept_coverage_ratio": 1.0,
+    "recommended_concept_coverage": 0.36,
+    "bundle_size": 8,
+    "cap": {
+      "soft": 6,
+      "hard": 8
+    },
+    "core_size": 2,
+    "guardrail_size": 6,
+    "bundle_tokens": 1452,
+    "coverage_per_1k_tokens": 5.51,
+    "mean_purity": 0.93,
+    "contaminated": [],
+    "category_diversity": 0.62,
+    "duplicate_pressure": 0.38,
+    "facet_coverage": 0.8,
+    "redundancy": 0.47
+  },
+  "token_coverage": 1.0
+}

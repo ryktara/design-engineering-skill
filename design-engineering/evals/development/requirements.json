@@ -1,0 +1,190 @@
+{
+  "description": "Requirements-contract extraction cases: KNOWN / INFERRED / MISSING entries and negative constraints. expect_known/expect_inferred are field=value strings; expect_missing lists fields; expect_negatives lists labels; forbid_* assert absence.",
+  "cases": [
+    {
+      "id": "req-tv-epg-compose",
+      "query": "Build an Android TV EPG in Compose.",
+      "expect_known": [
+        "platform=tv",
+        "stack=compose",
+        "screen=list",
+        "mode=create",
+        "product=media"
+      ],
+      "expect_inferred": [
+        "input=remote",
+        "stack=compose-tv"
+      ],
+      "expect_missing": [
+        "brand"
+      ],
+      "forbid_known": [
+        "input=touch",
+        "platform=mobile"
+      ],
+      "note": "2026-09-08: 'product' removed from expect_missing — an EPG unambiguously implies a media product; the original expectation was wrong, not the implementation. Stack 'compose' is what the user said (KNOWN); 'compose-tv' is the platform variant (INFERRED). Phase 2 defect fixed here: stack words were listed as platform evidence, making 'mobile' KNOWN for a TV request."
+    },
+    {
+      "id": "req-audit-checkout",
+      "query": "Audit our checkout form.",
+      "expect_known": [
+        "mode=audit",
+        "screen=checkout",
+        "screen=form"
+      ],
+      "expect_missing": [
+        "platform"
+      ],
+      "forbid_known": [
+        "platform=web"
+      ],
+      "forbid_inferred": [
+        "platform=web"
+      ]
+    },
+    {
+      "id": "req-compact-web-admin",
+      "query": "Make this existing web admin more compact.",
+      "expect_known": [
+        "platform=web",
+        "density=high"
+      ],
+      "forbid_known": [
+        "platform=mobile"
+      ]
+    },
+    {
+      "id": "req-remote-only",
+      "query": "TV settings screen, remote only, no on-screen keyboard",
+      "expect_known": [
+        "platform=tv",
+        "input=remote",
+        "screen=settings"
+      ],
+      "forbid_inferred": [
+        "input=touch"
+      ],
+      "expect_constraint": {
+        "input_only": "remote"
+      }
+    },
+    {
+      "id": "req-keep-navigation",
+      "query": "Refresh the visual style of the dashboard but do not change navigation",
+      "expect_negatives": [
+        "navigation-change"
+      ],
+      "expect_constraint": {
+        "preserve_navigation": true
+      },
+      "expect_known": [
+        "mode=polish"
+      ]
+    },
+    {
+      "id": "req-no-deps",
+      "query": "add a date picker without adding dependencies",
+      "expect_negatives": [
+        "dependencies"
+      ],
+      "expect_constraint": {
+        "no_new_dependencies": true
+      }
+    },
+    {
+      "id": "req-no-hover",
+      "query": "row actions must work with no hover-dependent controls on the web table",
+      "expect_negatives": [
+        "hover"
+      ],
+      "expect_known": [
+        "platform=web"
+      ]
+    },
+    {
+      "id": "req-keep-fonts",
+      "query": "modernize the settings page but keep the fonts",
+      "expect_negatives": [
+        "typography-change"
+      ],
+      "expect_constraint": {
+        "preserve_typography": true
+      }
+    },
+    {
+      "id": "req-without-not-negative",
+      "query": "a checkout flow without friction for returning customers",
+      "forbid_negatives": [
+        "card",
+        "hero",
+        "rails",
+        "sidebar",
+        "gradient"
+      ]
+    },
+    {
+      "id": "req-brand-missing",
+      "query": "create a landing page for our developer tool on the web",
+      "expect_known": [
+        "platform=web",
+        "product=devtools",
+        "screen=landing"
+      ],
+      "expect_missing": [
+        "brand"
+      ]
+    },
+    {
+      "id": "req-ios-banking",
+      "query": "iOS banking app home screen",
+      "expect_known": [
+        "platform=mobile",
+        "product=finance",
+        "screen=home"
+      ],
+      "expect_inferred": [
+        "input=touch",
+        "density=medium"
+      ],
+      "forbid_inferred": [
+        "density=high"
+      ]
+    },
+    {
+      "id": "req-kiosk-touch",
+      "query": "hospital check-in kiosk",
+      "expect_known": [
+        "platform=kiosk",
+        "product=healthcare"
+      ],
+      "expect_inferred": [
+        "input=touch"
+      ]
+    },
+    {
+      "id": "req-desktop-shortcuts",
+      "query": "WinUI desktop ERP data grid with keyboard shortcuts",
+      "expect_known": [
+        "platform=desktop",
+        "stack=winui",
+        "input=keyboard",
+        "product=erp"
+      ],
+      "expect_inferred": [
+        "input=pointer",
+        "density=high"
+      ]
+    },
+    {
+      "id": "req-abstain-sql",
+      "query": "fix the SQL deadlock in the orders service",
+      "expect_status": "ABSTAIN"
+    },
+    {
+      "id": "req-ambiguous-android",
+      "query": "Android dashboard",
+      "expect_status": "AMBIGUOUS",
+      "note": "'Android' alone could be phone, tablet, TV, automotive; 'dashboard' is a layout. The lexicon must not resolve this to one platform."
+    }
+  ]
+}

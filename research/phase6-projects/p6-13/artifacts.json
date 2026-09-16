@@ -1,0 +1,129 @@
+{
+  "task": "p6-13",
+  "project": "p5-swiftui-habits",
+  "platform_expected": "mobile",
+  "platform_resolved": "mobile",
+  "platform_correct": "yes",
+  "stack": "swiftui",
+  "existing_ui": true,
+  "new_screen": false,
+  "artifact_state_expected": "existing",
+  "artifact_state_resolved": "existing",
+  "artifact_state_correct": true,
+  "mode_expected": ["create", "refactor", "polish"],
+  "mode_resolved": ["audit", "refactor"],
+  "mode_correct": "acceptable",
+  "scope_kind_expected": "in-scope",
+  "scope_kind_resolved": "in-scope",
+  "scope_correct": true,
+  "change_budget": "moderate",
+  "render_mode": "html-twin",
+  "screenshots": [
+    "render/first-habits-empty-light-390x844.png",
+    "render/first-habits-empty-dark-390x844.png",
+    "render/final-habits-empty-light-390x844.png",
+    "render/final-habits-empty-dark-390x844.png"
+  ],
+  "context_detection": {
+    "navigation": "yes",
+    "theme": "yes",
+    "typography": "partial",
+    "surfaces": "yes",
+    "spacing": "partial"
+  },
+  "preservation": {
+    "navigation": true,
+    "theme": true,
+    "typography": true,
+    "component_reuse": true,
+    "unjustified_structural_change": 0
+  },
+  "expected_concepts": [
+    "state.loading_empty_error",
+    "layout.one_primary_action",
+    "a11y.accessible_names",
+    "touch.minimum_target",
+    "process.reuse_first",
+    "layout.focal_hierarchy"
+  ],
+  "critical_concepts": ["state.loading_empty_error", "layout.one_primary_action"],
+  "delivered_concepts": [
+    "state.loading_empty_error",
+    "touch.minimum_target",
+    "touch.gestures_discoverable",
+    "data.pagination_strategy"
+  ],
+  "concept_recall": 0.33,
+  "critical_recall": 0.5,
+  "concept_misses": [
+    {"concept": "layout.one_primary_action", "layer": "expected-concepts"},
+    {"concept": "layout.focal_hierarchy", "layer": "expected-concepts"},
+    {"concept": "a11y.accessible_names", "layer": "bundle-selection"},
+    {"concept": "process.reuse_first", "layer": "bundle-selection"}
+  ],
+  "first_render_defects": {
+    "visual": 1,
+    "interaction": 0,
+    "accessibility": 0,
+    "platform": 0,
+    "existing-system-mismatch": 1,
+    "implementation-bug": 0
+  },
+  "final_defects": {
+    "visual": 0,
+    "interaction": 0,
+    "accessibility": 0,
+    "platform": 0,
+    "existing-system-mismatch": 0,
+    "implementation-bug": 0
+  },
+  "iterations": 1,
+  "guidance_relevant": 1,
+  "guidance_partial": 1,
+  "guidance_offtarget": 0,
+  "bad_guidance": [
+    {
+      "record": "comp-list-row-mobile",
+      "category": "generic",
+      "why": "Right screen and platform, but it describes the populated list (rows, swipe actions, pull-to-refresh, selection mode) — the state the task says is absent. Contributed only the >=44 pt touch-target line."
+    }
+  ],
+  "layer_review": {
+    "core": ["comp-empty-state", "comp-list-row-mobile"],
+    "critical": [],
+    "optional": [],
+    "optional_useful": 0,
+    "optional_noise": 0
+  },
+  "guidance_used": ["comp-empty-state", "comp-list-row-mobile"],
+  "guidance_ignored": [
+    {"id": "comp-list-row-mobile", "why": "pull-to-refresh, sticky headers and long-press selection do not apply to an empty in-memory list; only the touch-target line was used"}
+  ],
+  "unjustified_direction_slots": 0,
+  "process_records_needed": false,
+  "skill_effect": "helped",
+  "guidance_tokens": 277,
+  "misses": [
+    {"layer": "project-context", "what": "radius reported 'small (5)' against Theme.cornerRadius = 16, spacing 'irregular' against a strict 4/8/12/16/24 scale, components UNKNOWN despite Sources/Streaks/Components/*.swift — the inspector samples render/twin.html SVG path numbers as design values"},
+    {"layer": "expected-concepts", "what": "layout.one_primary_action and layout.focal_hierarchy never demanded for a zero-state task (the comp-empty-state prose covers the first)"},
+    {"layer": "bundle-selection", "what": "a11y.accessible_names and process.reuse_first demanded with live candidates, dropped; the bundle reports 'accessibility' as an uncovered required concern and ships an empty guardrail layer"},
+    {"layer": "requirements", "what": "intent.problem_domain empty on a sentence that is unmistakably about empty/first-run states"}
+  ],
+  "knowledge_gaps": [],
+  "regressions": [
+    {"query": "The habit list has nothing to say the first time you open the app.", "expect": "bundle demands layout.one_primary_action alongside state.loading_empty_error for a zero-state task"},
+    {"query": "The habit list has nothing to say the first time you open the app.", "expect": "at least one accessibility record (a11y-labels-names / a11y-native-semantics) is selected when accessibility is a required-but-uncovered concern and the guardrail layer is empty"},
+    {"query": "inspect_project on p5-swiftui-habits", "expect": "radius not 'small', spacing not 'irregular' (Theme declares 16 and 4/8/12/16/24), components detected from Sources/Streaks/Components/*.swift"}
+  ],
+  "tags": [
+    "context-detection-miss",
+    "concept-miss",
+    "requirements-miss",
+    "render-defect-fixed",
+    "skill-helped",
+    "preservation-ok",
+    "partial-scope-ok"
+  ],
+  "build_hash_start": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947",
+  "build_hash_end": "ea8eed723aa6b2aa24cf367ef723e3289197525987d4e43311cd6073575d9947"
+}

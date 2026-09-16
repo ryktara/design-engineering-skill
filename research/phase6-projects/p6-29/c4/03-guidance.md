@@ -1,0 +1,27 @@
+## guidance: The confirmation screen prints the receipt but never says the pick-up is complete.
+status=PARTIAL mode=['audit', 'refactor'] platform=['kiosk'] input=['touch'] product=['healthcare', 'iot'] screen=[] stack=['html-css'] density=None env=['public'] risk=medium negatives=[]
+budget=moderate mode evidence: audit: problem statement on existing UI | refactor: fix follows the diagnosis
+project context: navigation={'value': 'hub-spoke', 'status': 'KNOWN', 'evidence': ['hub-spoke: 29 matches in README.md, app.js, i18n.js (shell/layout file)']}, theme={'value': 'unknown', 'status': 'UNKNOWN', 'evidence': ['hex palette: 25 near-white, 17 near-black']}, surfaces={'value': 'elevated', 'status': 'INFERRED', 'evidence': ['weak signal: shadow 1, border 1']}, radius={'value': 'medium', 'status': 'INFERRED', 'evidence': ['most common radius 12 (1×); others [20.0, 32.0]']}, spacing={'value': 'irregular', 'status': 'UNKNOWN', 'evidence': ['most used spacing values [6, 16]']}, typography={'value': 'humanist-sans', 'status': 'KNOWN', 'evidence': ['font family Nunito (2 refs)', 'weights 700, 800, 600, 500', 'tabular numerals']}, components={'value': 'unknown', 'status': 'UNKNOWN', 'evidence': []}
+concepts required=1.0 covered (2/2); tokens≈385 coverage/1k=5.19 purity=0.83
+concerns required=['accessibility', 'interaction', 'component', 'environment', 'privacy'] covered=0.4 uncovered=['interaction', 'environment', 'privacy'] recommended=['states', 'anti-pattern', 'feedback', 'performance'] bundle=2 (core 1 + guardrails 1) diversity=1.0 redundancy=0.33
+
+### CORE (what to build)
+- **Toast / snackbar / banner** `comp-toast-notification` [accessibility/component/feedback/states] — Toast: bottom (mobile) or bottom-left/top-right (desktop) consistent position, ≥5 s or until dismissed, undo where applicable, live region polite. Banner: inline at the top of the region it concerns, dismissible if non-critical. TV: brief overlay in the safe area that never steals focus. _(covers: live region status announcements)_
+  - selected for: task evidence: ; lexical 0.018, structural 0.4
+
+### CRITICAL GUARDRAILS (must hold)
+- **Progress for background work: what, how far, what went wrong** `feedback-progress-async` [feedback/states; heuristic; DIRECT] — State what is happening in words ('Sending 2 of 3 · Photo …'), a determinate bar when the total is known, the current item, elapsed/remaining when useful; on failure name the item and the reason with a Retry action; on completion confirm briefly ('All sent · just now'); keep a stable-phrase live region that announces start, failure and completion once per run; keep the layout stable while the state changes. _(covers: progress indicator, live region status announcements, offline and sync states)_
+  - selected for: critical concept (DIRECT): live region status announcements, progress indicator
+
+Omitted (redundant): comp-kiosk-keypad (no positive task evidence (screen / subtype / component / job / product / wording) for a core record); comp-wizard-stepper (no positive task evidence (screen / subtype / component / job / product / wording) for a core record); nav-wizard (no positive task evidence (screen / subtype / component / job / product / wording) for a core record); nav-hub-spoke (no positive task evidence (screen / subtype / component / job / product / wording) for a core record); cta-single-primary (no positive task evidence (screen / subtype / component / job / product / wording) for a core record); focus-none-touch-only (no positive task evidence (screen / subtype / component / job / product / wording) for a core record)
+Filtered out: anti-generic-sidebar-dashboard (platform ['desktop', 'web'] not in request ['kiosk']); anti-scroll-animation-everything (platform ['mobile', 'web'] not in request ['kiosk']); anti-hover-only-actions (platform ['desktop', 'web'] not in request ['kiosk']); comp-sidebar-nav (platform ['desktop', 'tablet', 'web'] not in request ['kiosk']); comp-tree-view (platform ['desktop', 'web'] not in request ['kiosk']); comp-tv-sign-in (platform ['tv'] not in request ['kiosk'])
+
+Concept trace (explain): covered a11y.live_status [CRITICAL DIRECT], feedback.progress_indicator [CRITICAL DIRECT]
+  - UNCOVERED a11y.accessible_names: candidates existed but the bundle cap or a lower utility left them out (candidates comp-kiosk-keypad, a11y-labels-names)
+  - UNCOVERED a11y.contrast: candidates existed but the bundle cap or a lower utility left them out (candidates a11y-nontext-contrast, a11y-contrast-text, anti-fashion-over-usability)
+  - UNCOVERED state.loading_empty_error: candidates existed but the bundle cap or a lower utility left them out (candidates layout-states-empty-loading-error, anti-no-states, comp-empty-state)
+  - UNCOVERED process.reuse_first: candidates existed but the bundle cap or a lower utility left them out (candidates impl-reuse-before-new)
+  - UNCOVERED touch.gestures_discoverable: carriers filtered before ranking: platform ['mobile', 'tablet'] not in request ['kiosk']
+  - UNCOVERED touch.thumb_reach: carriers were not admissible for this platform/input/environment
+  - UNCOVERED state.session_expiry: candidates existed but the bundle cap or a lower utility left them out (candidates kiosk-public-use, shared-device-privacy, a11y-time-and-auto)
+  - UNCOVERED env.glanceable_status: candidates existed but the bundle cap or a lower utility left them out (candidates data-exceptions-first)

@@ -1,0 +1,94 @@
+{
+  "schema": "design-requirements/v1",
+  "mode": [
+    "polish",
+    "audit"
+  ],
+  "platform": [
+    "web"
+  ],
+  "input": [
+    "keyboard",
+    "pointer",
+    "touch"
+  ],
+  "product": [],
+  "screen": [
+    "dashboard"
+  ],
+  "screen_subtype": [],
+  "stack": [
+    "react"
+  ],
+  "density": null,
+  "components": [
+    "button"
+  ],
+  "environment": [],
+  "jobs": [],
+  "problems": [
+    "general",
+    "visual"
+  ],
+  "risk": "low",
+  "primary_jobs": [
+    "polish dashboard"
+  ],
+  "constraints": {
+    "preserve_existing_system": true,
+    "brand_system_present": false
+  },
+  "accessibility": {
+    "keyboard": true,
+    "screen_reader": true,
+    "focus": true,
+    "touch_targets": true,
+    "reduced_motion": true,
+    "contrast": true
+  },
+  "negative_constraints": [],
+  "known": [
+    "platform=web (project inspection)",
+    "stack=react (request: react)",
+    "screen=dashboard (request: dashboard)"
+  ],
+  "inferred": [
+    "input=pointer (implied by platform web)",
+    "input=keyboard (implied by platform web)",
+    "input=touch (implied by platform web)",
+    "mode=polish (problem statement (visual): looks cramped, cramped, inconsistent, hard to read)",
+    "mode=audit (follows from visual problem statement)"
+  ],
+  "missing": [
+    "brand: no brand assets, guideline, or character description available"
+  ],
+  "status": "CONFIDENT",
+  "source": {
+    "request": [
+      "complain",
+      "cramped",
+      "dashboard",
+      "hard to read",
+      "inconsistent",
+      "looks cramped",
+      "react"
+    ],
+    "project": [
+      "package.json: react@^18.3.1",
+      "package.json: react-dom@^18.3.1"
+    ]
+  },
+  "activation": {
+    "decision": "activate",
+    "ui_score": 8.0,
+    "non_ui_score": 0,
+    "ui_terms": [
+      "button",
+      "dashboard",
+      "look",
+      "cramped",
+      "hard to read"
+    ],
+    "non_ui_terms": []
+  }
+}

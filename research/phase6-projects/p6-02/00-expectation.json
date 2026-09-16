@@ -1,0 +1,30 @@
+{
+  "platform": "web",
+  "artifact_state": "new",
+  "acceptable_modes": ["create"],
+  "scope_kind": "in-scope",
+  "expected_concepts": [
+    "data.kpi_comparison",
+    "navigation.orientation_and_back",
+    "state.loading_empty_error",
+    "a11y.semantics",
+    "table.tabular_figures",
+    "data.refresh_timestamp",
+    "process.reuse_first"
+  ],
+  "critical_concepts": [
+    "data.kpi_comparison",
+    "navigation.orientation_and_back",
+    "state.loading_empty_error"
+  ],
+  "forbidden_concepts": [
+    "tv.ten_foot_typography",
+    "interaction.dpad_reachability",
+    "media.resume_playback",
+    "env.outdoor_readability",
+    "onboarding.linear_wizard",
+    "anti.interruptive_upsell"
+  ],
+  "preservation": ["navigation", "theme", "typography", "component_reuse", "settings_shell"],
+  "note": "New settings sub-page in an existing Next.js 15 App Router + Tailwind v4 + shadcn (zinc/new-york) console. The page must be reachable from SettingsNav (which already lists tabs), reuse Card/Table/Badge primitives, provide loading.tsx and error.tsx like every other settings route, express calls-used vs plan quota as a KPI with a comparison and an accessible meter, use tabular figures, and state the billing period it covers. Quota data does not exist in lib/ yet (lib/billing.ts has plans with seats only), so a lib/usage.ts fixture in the same style is expected."
+}

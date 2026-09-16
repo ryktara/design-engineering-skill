@@ -1,0 +1,29 @@
+## guidance: Android TV live sports app home with rails, EPG entry and a mini player for the family TV, Compose
+status=AMBIGUOUS mode=['create'] platform=['tv'] input=['remote'] product=['media'] screen=['home', 'list', 'player']/epg,rails stack=['compose', 'compose-tv'] density=medium env=['large-display', 'shared-device'] risk=low negatives=[]
+MISSING: brand: no brand assets, guideline, or character description available
+CONFLICTS: platform (request kept; repository platform recorded as context)
+concerns required=['component', 'structure', 'navigation', 'states', 'interaction', 'accessibility', 'performance', 'data-display'] covered=1.0 uncovered=[] recommended=['anti-pattern', 'brand', 'content', 'environment'] bundle=8 (core 3 + guardrails 5) diversity=1.0 redundancy=0.42
+uncovered required concepts (no record carries them for this context): interaction.back_semantics
+
+### Core (what to build)
+- **Player transport controls** `comp-player-controls` [component/interaction/structure] — Play/pause, seek slider with time readout and keyboard/remote stepping, skip ±10 s, next/previous where relevant, captions and audio track selectors, quality only if user-facing, live indicator and go-to-live for live streams, volume on web/desktop only (TV uses the remote), controls overlay auto-hides except while focused/hovered; every control labelled; captions styling respects system preferences.
+  - compose-tv: Media3 with a Compose overlay; KEYCODE handling for media keys; focusRequester on play/pause.
+  - selected for: highest-scoring component with lexical evidence; lexical 0.512, structural 0.92
+- **Broadcast guide (TV)** `dir-broadcast-guide-tv` [brand/structure] — Top tabs (Live, Guide, Catch-up, Search), a fast EPG grid with a now-line and channel logos, landscape channel cards with live badges, condensed titles with tabular times, flat tonal surfaces so text stays legible over 200 channels, focus border + scale (no glow needed), mini-player while browsing. Identity via the guide's colour coding of genres and the channel-card treatment.
+  - selected for: highest-scoring direction with lexical evidence; lexical 0.535, structural 0.84
+- **EPG / programme guide** `comp-epg` [component/data-display/navigation/structure] — See the EPG grid pattern for structure; component specifics: cell shows title + time with ellipsis, minimum cell width so 5-minute programmes stay focusable (with a time label on focus), current programme highlighted and the 'now' line updates every minute, channel column sticky with logo + number, day picker above the grid, focus moves by programme not by pixel, long press or a key opens programme detail with record/remind actions, jump-to-now shortcut, mini preview of the focused channel optional.
+  - compose-tv: Custom LazyLayout or LazyRow-of-LazyColumn sharing horizontal scroll; measure cells from time deltas; use Modifier.focusProperties to override up/down to the same time slot.
+  - selected for: highest-scoring component with lexical evidence; lexical 0.255, structural 0.92
+
+### Guardrails (must hold)
+- **Only the happy state was designed** `anti-no-states` [anti-pattern/states; heuristic] — Enumerate states per screen and per interactive component before implementation and verify each visually; test with long strings, zero items, 10k items, and slow networks.
+  - selected for: required concern states: every screen ships empty/loading/error states
+- **TV: exactly one visible focus at all times** `a11y-tv-focus-always` [accessibility/interaction; platform-standard] — Set initial focus deterministically (first actionable content or Play on detail), restore focus to the previously focused item when returning, keep focus on screen (scroll into view), move focus to a sensible neighbour when the focused item is removed, and never rely on colour tint alone for the focused state.
+  - selected for: required concern accessibility: platform accessibility baseline
+- **TV: focus response and list performance** `tv-focus-performance` [interaction/performance; engineering-practice] — Focus moves must render within one frame (≤16 ms at 60 Hz) even while images load; key events are never dropped or coalesced into jumps; images sized to card, cached, and loaded with placeholders; rows virtualised vertically and horizontally; heavy backdrops debounced; test on the cheapest target device (e.g. 1–2 GB RAM set-top boxes), not the emulator.
+  - selected for: required concern performance: focus latency and catalog virtualization on TV
+- **TV: 10-foot typography** `tv-typography-distance` [accessibility/content; platform-standard] — Body ≥24 sp (Android) / ≥29 pt (tvOS) at 1080p design scale, captions ≥20 sp, titles 32–48, display 57–72; sans with large x-height and open counters; short strings (titles ≤2 lines, synopsis ≤3 lines with expansion); avoid thin weights (<400) and light text on busy imagery; line height ≥1.3.
+  - selected for: required concept tv.ten_foot_typography
+- **TV: overscan-safe margins** `tv-safe-area` [interaction/structure; platform-standard] — Keep interactive and text content ≥5% from edges: at the 960×540 dp design frame that is 48 dp horizontal and 27 dp vertical (Android guidance: up to 58/28 dp for maximum safety; tvOS: 60 pt sides, 60 pt top/bottom on the 1920×1080 frame). Let rails scroll under the margin so partial cards hint at more content.
+  - selected for: required concept tv.safe_margins
+Filtered out: anti-hero-template (platform ['web'] not in request ['tv']); comp-data-table (platform ['desktop', 'web'] not in request ['tv']); comp-list-row-mobile (platform ['mobile', 'tablet'] not in request ['tv']); comp-data-entry-grid (platform ['desktop', 'web'] not in request ['tv']); comp-hero-section (platform ['mobile', 'web'] not in request ['tv']); dir-service-app-mobile (platform ['mobile'] not in request ['tv'])
