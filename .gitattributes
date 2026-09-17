@@ -1,0 +1,5 @@
+# GitHub language statistics: the fixture apps and round evidence under research/ are test material,
+# not the skill's own code. Count only design-engineering/.
+research/** linguist-vendored
+research/**/*.md linguist-documentation
+*.jsonl linguist-language=JSON
