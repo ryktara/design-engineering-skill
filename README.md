@@ -4,7 +4,6 @@ A Claude Code skill that helps an AI coding agent design and change user interfa
 
 This repository is the skill plus the complete research record behind it: six development phases, five blind held-out sets, four real-project qualification rounds and every evaluation run, published as-is. The current verdict by the skill's own pre-registered standard is **personal-production-ready, not stable-candidate** (see [Status](#status)).
 
-> Not affiliated with, and containing no code from, [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill), which was studied as read-only input before this skill was written. Provenance: [NOTICE-SOURCES.md](NOTICE-SOURCES.md).
 
 ## What it does
 
